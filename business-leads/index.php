@@ -2,9 +2,9 @@
 $basePath = '../';
 $bp = '../';
 require_once __DIR__ . '/../config/business-leads.php';
-require_once __DIR__ . '/../config/contact.php';
+$HBContact = require __DIR__ . '/../config/contact.php';
 
-$pageTitle = 'Browse by Business Category | 16 Business Leads Datasets | InboxWa';
+$pageTitle = 'Browse by Business Category – 16 Business Leads Datasets';
 $pageDescription = '16 major categories of business data to explore and request. Get verified leads, automated WhatsApp qualification, and targeted datasets for your industry.';
 $canonicalUrl = 'https://inboxwa.com/business-leads/';
 $ogImage = 'assets/images/og-image.png';

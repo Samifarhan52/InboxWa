@@ -2,7 +2,7 @@
 $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../config/business-leads.php';
-require_once __DIR__ . '/../config/contact.php';
+$HBContact = require __DIR__ . '/../config/contact.php';
 
 $categorySlug = trim($_GET['category'] ?? 'real-estate');
 $category = get_business_lead_category($categorySlug);
@@ -13,8 +13,8 @@ if (!$category) {
     $category = get_business_lead_category('real-estate');
 }
 
-$pageTitle = htmlspecialchars($category['name']) . ' Business Leads & WhatsApp Automation | InboxWa';
-$pageDescription = htmlspecialchars($category['subtitle']) . ' Get verified mobile contacts, automated WhatsApp qualification, and high-converting workflows with InboxWa.';
+$pageTitle = $category['name'] . ' Business Leads & WhatsApp Automation';
+$pageDescription = $category['subtitle'] . ' Get verified mobile contacts, automated WhatsApp qualification, and high-converting workflows with InboxWa.';
 $canonicalUrl = 'https://inboxwa.com/business-leads/' . urlencode($category['slug']) . '/';
 $ogImage = 'assets/images/og-image.png';
 
