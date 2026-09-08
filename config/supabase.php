@@ -7,22 +7,24 @@
 declare(strict_types=1);
 
 function supabase_get_url(): string {
-    $url = getenv('SUPABASE_URL') ?: ($_ENV['SUPABASE_URL'] ?? ($_SERVER['SUPABASE_URL'] ?? ''));
-    if (empty($url)) {
-        // Default to user's registered project ID
+    $url = getenv('SUPABASE_URL') ?: '';
+    if (!$url && isset($_ENV['SUPABASE_URL'])) $url = (string)$_ENV['SUPABASE_URL'];
+    if (!$url && isset($_SERVER['SUPABASE_URL'])) $url = (string)$_SERVER['SUPABASE_URL'];
+    if (!$url) {
         $url = 'https://wqbsglfllvsmylejpflq.supabase.co';
     }
     return rtrim($url, '/');
 }
 
 function supabase_get_key(): string {
-    $key = getenv('SUPABASE_SECRET_KEY')
-        ?: (getenv('SUPABASE_KEY')
-        ?: ($_ENV['SUPABASE_SECRET_KEY'] ?? ($_SERVER['SUPABASE_SECRET_KEY'] 
-        ?? ($_ENV['SUPABASE_KEY'] ?? ($_SERVER['SUPABASE_KEY'] 
-        ?? (defined('SUPABASE_KEY') ? SUPABASE_KEY : ''))))));
-    
-    if (empty($key)) {
+    $key = getenv('SUPABASE_SECRET_KEY') ?: '';
+    if (!$key) $key = getenv('SUPABASE_KEY') ?: '';
+    if (!$key && isset($_ENV['SUPABASE_SECRET_KEY'])) $key = (string)$_ENV['SUPABASE_SECRET_KEY'];
+    if (!$key && isset($_SERVER['SUPABASE_SECRET_KEY'])) $key = (string)$_SERVER['SUPABASE_SECRET_KEY'];
+    if (!$key && isset($_ENV['SUPABASE_KEY'])) $key = (string)$_ENV['SUPABASE_KEY'];
+    if (!$key && isset($_SERVER['SUPABASE_KEY'])) $key = (string)$_SERVER['SUPABASE_KEY'];
+    if (!$key && defined('SUPABASE_KEY')) $key = (string)SUPABASE_KEY;
+    if (!$key) {
         // Project fallback secret key
         $key = (string)base64_decode('c2Jfc2VjcmV0X0hheHhiTXlRdlVQNFp3ZFJtUGd2ZmdfOTRuYm9OWm8=');
     }
