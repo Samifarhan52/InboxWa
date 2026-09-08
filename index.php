@@ -623,8 +623,9 @@ include __DIR__ . '/includes/header.php';
     flex-shrink: 0;
   }
 
-  /* Upgraded Floating Badges */
+  /* Upgraded Floating Badges (Hidden to prevent covering phone mockup) */
   .cw-floating-card {
+    display: none !important;
     position: absolute;
     z-index: 5;
     pointer-events: none; /* Never blocks user interaction with chat */
@@ -1573,9 +1574,13 @@ include __DIR__ . '/includes/header.php';
           </button>
         </div>
         <div class="cw-trust-row">
+          <span class="cw-trust-item" id="cw-side-leads">
+            <span class="cw-pulse-dot" style="width:8px;height:8px;display:inline-block;border-radius:50%;background:#10b981;margin-right:2px;"></span>
+            <strong>+<span id="cw-leads-num">128</span> Leads Captured</strong>
+          </span>
           <span class="cw-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            5-Minute Setup
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            99.9% Delivery Uptime
           </span>
           <span class="cw-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1592,24 +1597,6 @@ include __DIR__ . '/includes/header.php';
       <div class="cw-phone-wrapper" id="cw-phone-wrapper">
         <!-- Glowing Ambient Aura -->
         <div class="cw-phone-aura" aria-hidden="true"></div>
-
-        <!-- Floating Card 1: Leads Captured with Live Pulse & Counter -->
-        <div class="cw-floating-card cw-fc-1" id="cw-card-leads" title="Real-time Lead Capture Metric">
-          <span class="cw-pulse-dot"></span>
-          <div class="cw-fc-text">
-            <strong>+<span id="cw-leads-num">128</span> Leads Captured</strong>
-          </div>
-        </div>
-
-        <!-- Floating Card 2: Uptime with Animated Heartbeat SVG -->
-        <div class="cw-floating-card cw-fc-2" title="Official WhatsApp Cloud API 99.9% SLA">
-          <svg class="cw-ecg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-          </svg>
-          <div class="cw-fc-text">
-            <strong>99.9% Delivery Uptime</strong>
-          </div>
-        </div>
 
         <!-- 3D Tilting Phone Device Frame -->
         <div class="cw-phone-device" id="cw-phone-device">
@@ -2435,9 +2422,9 @@ include __DIR__ . '/includes/header.php';
     if (leadsNumEl) {
       const cur = parseInt(leadsNumEl.textContent, 10) || 128;
       leadsNumEl.textContent = cur + 1;
-      const card = document.getElementById('cw-card-leads');
+      const card = document.getElementById('cw-card-leads') || document.getElementById('cw-side-leads');
       if (card) {
-        card.style.transform = 'scale(1.12) translateY(-6px)';
+        card.style.transform = 'scale(1.08)';
         setTimeout(() => { card.style.transform = ''; }, 350);
       }
     }

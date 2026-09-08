@@ -260,6 +260,7 @@ include __DIR__ . '/../../../includes/header.php';
     margin-top: 3px;
   }
   .cw-floating-card {
+    display: none !important;
     position: absolute;
     z-index: 3;
     background: #ffffff;
@@ -1094,8 +1095,12 @@ include __DIR__ . '/../../../includes/header.php';
         </div>
         <div class="cw-trust-row">
           <span class="cw-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            5-Minute Setup
+            <span style="width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;margin-right:2px;"></span>
+            <strong>+128 Leads Captured</strong>
+          </span>
+          <span class="cw-trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            99.9% Delivery Uptime
           </span>
           <span class="cw-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1110,15 +1115,6 @@ include __DIR__ . '/../../../includes/header.php';
 
       <!-- Phone Simulator Stage -->
       <div class="cw-phone-wrapper">
-        <div class="cw-floating-card cw-fc-1">
-          <span style="width:10px;height:10px;border-radius:50%;background:#10b981;display:inline-block;"></span>
-          <span style="font-size:0.8rem;font-weight:700;color:#0f172a;">+128 Leads Captured</span>
-        </div>
-        <div class="cw-floating-card cw-fc-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <span style="font-size:0.8rem;font-weight:700;color:#0f172a;">99.9% Delivery Uptime</span>
-        </div>
-
         <div class="cw-phone-device">
           <div class="cw-phone-notch"></div>
           <div class="cw-phone-screen">
