@@ -208,5 +208,5 @@ ON CONFLICT (slug) DO NOTHING;
 
 -- SEED SAMPLE COMMENT
 INSERT INTO public.comments (post_id, post_title, author_name, author_email, author_url, content, status) VALUES
-    (1, 'Hello world!', 'An ElavateX User', 'support@inboxwa.com', 'https://elavatex.com', 'Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.', 'approved')
+    (1, 'Hello world!', 'An InboxWa User', 'support@inboxwa.com', 'https://inboxwa.com', 'Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.', 'approved')
 ON CONFLICT DO NOTHING;
