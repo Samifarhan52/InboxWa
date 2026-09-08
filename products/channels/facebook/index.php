@@ -4,19 +4,20 @@ $bp = '../../../';
 require_once __DIR__ . '/../../../config/cms.php';
 
 $pageTitle = 'Facebook Messenger Automation & Lead Ads Sync | InboxWa';
-$pageDescription = 'Connect Facebook Pages, capture leads from Instant Forms automatically, and automate Messenger chats with official Meta Business API.';
+$pageDescription = 'Connect your Facebook business pages, automatically save customer form details from your ads, chat in a single inbox, and send easy automated messages with InboxWa.';
 $canonicalUrl = 'https://inboxwa.com/channel/facebook/';
-$ogImage = 'assets/images/og-image.png';
+$ogImage = 'assets/images/channel/facebook/hero.png';
 
 include __DIR__ . '/../../../includes/header.php';
 ?>
 
 <style>
   :root {
-    --fb-blue: #2563eb;
+    --fb-blue: #1877f2;
     --fb-darkblue: #1d4ed8;
-    --fb-gradient: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-    --fb-gradient-subtle: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+    --fb-light: #2563eb;
+    --fb-gradient: linear-gradient(135deg, #1877f2 0%, #2563eb 100%);
+    --fb-gradient-subtle: linear-gradient(135deg, rgba(24, 119, 242, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%);
   }
 
   .cfb-page {
@@ -59,7 +60,7 @@ include __DIR__ . '/../../../includes/header.php';
   }
   .cfb-hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3.5rem;
     align-items: center;
   }
@@ -67,691 +68,599 @@ include __DIR__ . '/../../../includes/header.php';
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(37, 99, 235, 0.1);
-    border: 1px solid rgba(37, 99, 235, 0.25);
-    color: #2563eb;
-    font-size: 0.82rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 9999px;
+    background: var(--fb-gradient-subtle);
+    color: var(--fb-blue);
+    font-size: 0.78rem;
     font-weight: 700;
-    padding: 0.35rem 0.85rem;
-    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid rgba(24, 119, 242, 0.2);
     margin-bottom: 1.25rem;
+  }
+  .cfb-badge-pill svg {
+    flex-shrink: 0;
   }
   .cfb-hero-title {
-    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-    font-weight: 800;
+    font-size: clamp(2.2rem, 4vw, 3.25rem);
+    font-weight: 900;
     line-height: 1.15;
     color: #0f172a;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.25rem;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.025em;
   }
-  .cfb-hero-title .highlight-blue {
+  .cfb-hero-title .highlight-fb {
     background: var(--fb-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
   }
   .cfb-hero-desc {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.65;
     color: #475569;
-    margin-bottom: 2rem;
-    max-width: 540px;
+    margin: 0 0 2rem;
+    max-width: 520px;
   }
   .cfb-hero-actions {
     display: flex;
-    align-items: center;
-    gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
   }
   .cfb-btn-primary {
-    background: var(--fb-gradient);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 0.85rem 1.85rem;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    background: var(--fb-gradient);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.98rem;
+    padding: 0.875rem 1.85rem;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -5px rgba(24, 119, 242, 0.38);
+    transition: all 0.2s ease;
     border: none;
+    cursor: pointer;
   }
   .cfb-btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.55);
-    color: #ffffff;
+    box-shadow: 0 15px 30px -5px rgba(24, 119, 242, 0.5);
+    color: #ffffff !important;
   }
   .cfb-btn-secondary {
-    background: #ffffff;
-    color: #0f172a;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.85rem 1.75rem;
-    border-radius: 999px;
-    border: 1px solid #cbd5e1;
-    text-decoration: none;
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    background: #f8fafc;
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 0.875rem 1.65rem;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    cursor: pointer;
   }
   .cfb-btn-secondary:hover {
-    background: #f8fafc;
-    border-color: #94a3b8;
+    background: #f1f5f9;
     color: #0f172a;
-    transform: translateY(-2px);
+    border-color: #cbd5e1;
   }
   .cfb-trust-row {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
     flex-wrap: wrap;
+    gap: 1.5rem;
     font-size: 0.85rem;
-    font-weight: 600;
     color: #64748b;
+    font-weight: 600;
+    align-items: center;
   }
   .cfb-trust-item {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
   }
-
-  /* Interactive Mockup Phone Stage */
-  .cfb-phone-wrapper {
-    position: relative;
-    max-width: 380px;
-    margin: 0 auto;
-  }
-  .cfb-phone-device {
-    background: #000000;
-    border-radius: 36px;
-    padding: 12px;
-    box-shadow: 0 25px 60px -15px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border: 3px solid #1e293b;
-    position: relative;
-    z-index: 2;
-  }
-  .cfb-phone-notch {
-    width: 90px;
-    height: 18px;
-    background: #1e293b;
-    border-radius: 0 0 12px 12px;
-    margin: 0 auto 8px;
-  }
-  .cfb-phone-screen {
-    background: #ffffff;
-    border-radius: 26px;
-    overflow: hidden;
-    height: 480px;
-    display: flex;
-    flex-direction: column;
-    color: #0f172a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-  .cfb-chat-header {
-    background: #f1f5f9;
-    padding: 12px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  .cfb-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--fb-gradient);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
-    color: #fff;
+  .cfb-trust-item svg {
+    color: var(--fb-blue);
     flex-shrink: 0;
   }
-  .cfb-header-info {
-    flex: 1;
-    min-width: 0;
-  }
-  .cfb-header-name {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #0f172a;
-  }
-  .cfb-header-status {
-    font-size: 0.72rem;
-    color: #10b981;
-    font-weight: 600;
-  }
-  .cfb-chat-messages {
-    flex: 1;
-    padding: 14px;
-    overflow-y: auto;
+  .cfb-hero-visual {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: #f8fafc;
-  }
-  .cfb-msg {
-    max-width: 84%;
-    padding: 9px 13px;
-    border-radius: 18px;
-    font-size: 0.84rem;
-    line-height: 1.4;
-    position: relative;
-    word-break: break-word;
-  }
-  .cfb-msg-in {
-    background: #e2e8f0;
-    color: #0f172a;
-    align-self: flex-start;
-    border-bottom-left-radius: 4px;
-  }
-  .cfb-msg-out {
-    background: #2563eb;
-    color: #ffffff;
-    align-self: flex-end;
-    border-bottom-right-radius: 4px;
-  }
-  .cfb-ad-badge {
-    font-size: 0.7rem;
-    color: #64748b;
-    margin-bottom: 4px;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
+    position: relative;
+  }
+  .cfb-hero-img-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(24, 119, 242, 0.2);
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid rgba(24, 119, 242, 0.15);
+  }
+  .cfb-hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: translateZ(0);
   }
 
-  /* Features Grid Section */
-  .cfb-features-section {
-    padding: 5rem 1.5rem;
-    background: #f8fafc;
+  /* Section Containers */
+  .cfb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
   }
   .cfb-section-header {
     text-align: center;
-    max-width: 700px;
+    max-width: 760px;
     margin: 0 auto 3.5rem;
   }
   .cfb-section-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
     font-weight: 800;
     color: #0f172a;
+    margin: 0 0 1rem;
     letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
+    line-height: 1.2;
   }
   .cfb-section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #64748b;
     line-height: 1.6;
+    margin: 0;
   }
-  .cfb-features-grid {
+
+  /* 4 Showcase Rows */
+  .cfb-showcases-section {
+    padding: 5rem 0;
+    background: #ffffff;
+  }
+  .cfb-showcases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5rem;
+  }
+  .cfb-showcase-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .cfb-showcase-row.reversed {
+    direction: rtl;
+  }
+  .cfb-showcase-row.reversed .cfb-sc-text {
+    direction: ltr;
+  }
+  .cfb-showcase-row.reversed .cfb-sc-visual {
+    direction: ltr;
+  }
+  .cfb-sc-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    background: rgba(24, 119, 242, 0.1);
+    color: var(--fb-blue);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .cfb-sc-title {
+    font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+  .cfb-sc-desc {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 1.5rem;
+  }
+  .cfb-sc-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .cfb-sc-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #334155;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .cfb-sc-bullet svg {
+    color: var(--fb-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .cfb-sc-visual {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cfb-sc-visual:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(24, 119, 242, 0.18);
+  }
+  .cfb-sc-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Built-In Tools Grid (6 tools) */
+  .cfb-tools-section {
+    padding: 5.5rem 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .cfb-tools-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 1.75rem;
   }
-  .cfb-feature-card {
+  .cfb-tool-card {
     background: #ffffff;
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
+    transition: all 0.25s ease;
+  }
+  .cfb-tool-card:hover {
+    border-color: var(--fb-blue);
+    box-shadow: 0 15px 35px -5px rgba(24, 119, 242, 0.12);
+    transform: translateY(-3px);
+  }
+  .cfb-tool-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--fb-gradient-subtle);
+    color: var(--fb-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(24, 119, 242, 0.2);
+  }
+  .cfb-tool-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .cfb-tool-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.75rem;
+  }
+  .cfb-tool-card p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+  }
+
+  /* 4 Steps Section */
+  .cfb-steps-section {
+    padding: 5.5rem 0;
+    background: #ffffff;
+  }
+  .cfb-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .cfb-step-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    position: relative;
     transition: all 0.25s ease;
     display: flex;
     flex-direction: column;
   }
-  .cfb-feature-card:hover {
+  .cfb-step-card:hover {
     transform: translateY(-4px);
-    border-color: #cbd5e1;
-    box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.12);
+    border-color: var(--fb-blue);
+    box-shadow: 0 15px 30px -5px rgba(24, 119, 242, 0.12);
   }
-  .cfb-feature-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 18px;
-  }
-  .cfb-feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: var(--fb-gradient-subtle);
-    color: #2563eb;
-    display: flex;
+  .cfb-step-number {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--fb-gradient-subtle);
+    color: var(--fb-blue);
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(24, 119, 242, 0.2);
   }
-  .cfb-feature-badge {
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .cfb-feature-title {
-    font-size: 1.2rem;
-    font-weight: 700;
+  .cfb-step-card h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
     color: #0f172a;
-    margin-bottom: 8px;
+    margin: 0 0 0.65rem;
+    line-height: 1.3;
   }
-  .cfb-feature-desc {
-    font-size: 0.92rem;
-    color: #64748b;
+  .cfb-step-card p {
+    font-size: 0.9rem;
     line-height: 1.6;
+    color: #64748b;
+    margin: 0;
   }
 
-  /* Visual Customer Journey & Steps Section */
-  .cfb-steps-section {
-    padding: 6rem 1.5rem;
-    background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
-    position: relative;
-    overflow: hidden;
+  /* Enterprise Capabilities Grid */
+  .cfb-capabilities-section {
+    padding: 5.5rem 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
   }
-  .cfb-journey-flow {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 1160px;
-    margin: 0 auto;
-  }
-  .cfb-journey-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 24px;
-    padding: 2.5rem;
+  .cfb-cap-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.06);
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
   }
-  .cfb-journey-card:hover {
-    border-color: #60a5fa;
-    box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.15);
+  .cfb-cap-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+  }
+  .cfb-cap-card:hover {
+    border-color: var(--fb-blue);
+    box-shadow: 0 15px 35px -5px rgba(24, 119, 242, 0.12);
     transform: translateY(-3px);
   }
-  .cfb-journey-card.reverse {
-    direction: rtl;
-  }
-  .cfb-journey-card.reverse > * {
-    direction: ltr;
-  }
-  .cfb-journey-media {
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12);
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .cfb-journey-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 18px;
-    transition: transform 0.4s ease;
-  }
-  .cfb-journey-card:hover .cfb-journey-img {
-    transform: scale(1.025);
-  }
-  .cfb-journey-badge-float {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: rgba(15, 23, 42, 0.88);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(96, 165, 250, 0.35);
-    color: #60a5fa;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-  .cfb-journey-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .cfb-journey-step-header {
+  .cfb-cap-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--fb-gradient-subtle);
+    color: var(--fb-blue);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(24, 119, 242, 0.2);
   }
-  .cfb-journey-step-pill {
-    background: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-    border: 1px solid rgba(37, 99, 235, 0.3);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    padding: 4px 12px;
-    border-radius: 999px;
-    text-transform: uppercase;
+  .cfb-cap-icon svg {
+    width: 26px;
+    height: 26px;
   }
-  .cfb-journey-step-time {
-    color: #64748b;
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cfb-journey-title {
-    font-size: 1.55rem;
+  .cfb-cap-card h3 {
+    font-size: 1.2rem;
     font-weight: 800;
     color: #0f172a;
-    line-height: 1.3;
-    margin: 0;
+    margin: 0 0 0.75rem;
   }
-  .cfb-journey-desc {
-    font-size: 0.95rem;
-    color: #475569;
+  .cfb-cap-card p {
+    font-size: 0.92rem;
     line-height: 1.6;
+    color: #64748b;
     margin: 0;
-  }
-  .cfb-journey-guide-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-  .cfb-journey-guide-box {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 1.1rem 1.25rem;
-  }
-  .cfb-journey-box-label {
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: #2563eb;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.55rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .cfb-journey-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .cfb-journey-list li {
-    font-size: 0.88rem;
-    color: #334155;
-    line-height: 1.45;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-  .cfb-journey-list li svg {
-    flex-shrink: 0;
-    color: #2563eb;
-    margin-top: 3px;
-  }
-  .cfb-journey-kpi-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #2563eb;
-    background: rgba(37, 99, 235, 0.08);
-    border: 1px solid rgba(37, 99, 235, 0.25);
-    padding: 7px 14px;
-    border-radius: 10px;
-    align-self: flex-start;
   }
 
-  /* Sales CTA Section */
-  .cfb-sales-section {
-    padding: 5rem 1.5rem;
-    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-    color: #ffffff;
-    text-align: center;
+  /* FAQs Section */
+  .cfb-faq-section {
+    padding: 5.5rem 0;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
   }
-  .cfb-sales-inner {
+  .cfb-faq-list {
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  .cfb-sales-title {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+  .cfb-faq-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  .cfb-faq-item.active {
+    border-color: var(--fb-blue);
+    box-shadow: 0 10px 25px -5px rgba(24, 119, 242, 0.08);
+  }
+  .cfb-faq-trigger {
+    width: 100%;
+    padding: 1.35rem 1.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+  }
+  .cfb-faq-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+  }
+  .cfb-faq-item.active .cfb-faq-icon {
+    transform: rotate(180deg);
+    color: var(--fb-blue);
+  }
+  .cfb-faq-content {
+    display: none;
+    padding: 0 1.5rem 1.35rem;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.65;
+  }
+  .cfb-faq-item.active .cfb-faq-content {
+    display: block;
+  }
+
+  /* Sales Banner */
+  .cfb-sales-section {
+    padding: 5rem 1.5rem;
+    background: #f8fafc;
+  }
+  .cfb-cta-banner {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--fb-gradient);
+    border-radius: 24px;
+    padding: 4.5rem 2.5rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 25px 50px -12px rgba(24, 119, 242, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .cfb-cta-banner::before {
+    content: ;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cfb-cta-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 900;
+    margin: 0 0 1rem;
     line-height: 1.2;
+    color: #ffffff;
   }
-  .cfb-sales-desc {
+  .cfb-cta-subtitle {
     font-size: 1.15rem;
-    color: #bfdbfe;
+    opacity: 0.95;
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
     line-height: 1.6;
-    margin-bottom: 2.5rem;
+    color: #ffffff;
   }
-  .cfb-sales-actions {
+  .cfb-cta-actions {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
   }
   .cfb-btn-white {
     background: #ffffff;
-    color: #1e3a8a;
-    font-weight: 700;
+    color: var(--fb-blue) !important;
+    font-weight: 800;
     font-size: 1rem;
-    padding: 0.9rem 2.2rem;
-    border-radius: 999px;
+    padding: 0.95rem 2.2rem;
+    border-radius: 12px;
     text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
   .cfb-btn-white:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    color: var(--fb-blue) !important;
+  }
+  .cfb-cta-trust {
+    margin-top: 1.75rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    color: #ffffff;
   }
 
-  @media (max-width: 900px) {
+  /* Responsive Rules */
+  @media (max-width: 1024px) {
+    .cfb-hero-grid, .cfb-showcase-row {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .cfb-showcase-row.reversed {
+      direction: ltr;
+    }
+    .cfb-showcase-row.reversed .cfb-sc-visual {
+      order: 2;
+    }
+    .cfb-showcase-row.reversed .cfb-sc-text {
+      order: 1;
+    }
+    .cfb-tools-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cfb-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cfb-cap-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
     .cfb-hero-section {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 1.5rem 1rem 3rem !important;
-      box-sizing: border-box !important;
-      overflow-x: hidden !important;
+      padding: 1.5rem 1rem 3.5rem;
     }
-    .cfb-hero-grid {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 2rem !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      box-sizing: border-box !important;
+    .cfb-tools-grid {
+      grid-template-columns: 1fr;
     }
-    .cfb-hero-grid > div:first-child {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      box-sizing: border-box !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
+    .cfb-steps-grid {
+      grid-template-columns: 1fr;
     }
-    .cfb-badge-pill {
-      margin: 0 auto 1.25rem !important;
-      white-space: normal !important;
-      word-break: break-word !important;
-      text-align: center !important;
-      max-width: 100% !important;
+    .cfb-cap-grid {
+      grid-template-columns: 1fr;
     }
-    .cfb-hero-title {
-      font-size: clamp(1.65rem, 6.8vw, 2.35rem) !important;
-      line-height: 1.22 !important;
-      word-break: break-word !important;
-      overflow-wrap: break-word !important;
-      text-align: center !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      margin-bottom: 1rem !important;
-    }
-    .cfb-hero-desc {
-      font-size: 0.95rem !important;
-      line-height: 1.55 !important;
-      word-break: break-word !important;
-      overflow-wrap: break-word !important;
-      text-align: center !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      margin: 0 auto 1.5rem !important;
+    .cfb-cta-banner {
+      padding: 3rem 1.5rem;
     }
     .cfb-hero-actions {
-      display: flex !important;
-      flex-direction: column !important;
-      width: 100% !important;
-      max-width: 320px !important;
-      margin: 0 auto 1.5rem !important;
-      gap: 0.65rem !important;
-      align-items: stretch !important;
+      flex-direction: column;
+      align-items: stretch;
     }
-    .cfb-btn-primary,
-    .cfb-btn-secondary {
-      width: 100% !important;
-      box-sizing: border-box !important;
-      justify-content: center !important;
-      text-align: center !important;
-      padding: 0.85rem 1.25rem !important;
-      font-size: 0.95rem !important;
-    }
-    .cfb-trust-row {
-      width: 100% !important;
-      max-width: 100% !important;
-      justify-content: center !important;
-      flex-wrap: wrap !important;
-      gap: 0.65rem 1.25rem !important;
-      font-size: 0.8rem !important;
-      margin: 0 auto !important;
-    }
-    .cfb-phone-wrapper {
-      width: min(315px, calc(100vw - 32px)) !important;
-      max-width: 315px !important;
-      margin: 1.25rem auto 0 !important;
-      box-sizing: border-box !important;
-      perspective: none !important;
-      transform-style: flat !important;
-      overflow: visible !important;
-    }
-    .cfb-phone-device {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      transform: none !important;
-      transform-style: flat !important;
-      border-radius: 36px !important;
-      padding: 8px 8px 6px !important;
-      border-width: 2.5px !important;
-    }
-    .cfb-phone-screen {
-      height: 440px !important;
-      border-radius: 26px !important;
-    }
-    .cfb-floating-card {
-      display: none !important;
-    }
-    .cfb-features-section,
-    .cfb-steps-section,
-    .cfb-sales-section {
-      padding: 3rem 1rem !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .cfb-journey-flow {
-      gap: 2rem !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-    .cfb-journey-card {
-      grid-template-columns: 1fr !important;
-      gap: 1.5rem !important;
-      padding: 1.5rem 1.2rem !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-    .cfb-journey-card.reverse {
-      direction: ltr !important;
-    }
-    .cfb-journey-card.reverse .cfb-journey-media {
-      order: -1 !important;
-    }
-    .cfb-journey-title {
-      font-size: 1.3rem !important;
-    }
-    .cfb-features-grid,
-    .cfb-steps-grid {
-      grid-template-columns: 1fr !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      gap: 1rem !important;
-    }
-    .cfb-feature-card,
-    .cfb-step-card {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      padding: 1.5rem 1.25rem !important;
-    }
-    .cfb-sales-inner {
-      padding: 2.5rem 1.25rem !important;
-      border-radius: 24px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .cfb-sales-title {
-      font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
-    }
-    .cfb-sales-desc {
-      font-size: 0.95rem !important;
-    }
-    .cfb-sales-actions {
-      flex-direction: column !important;
-      width: 100% !important;
-      max-width: 300px !important;
-      margin: 0 auto 1.25rem !important;
-      gap: 0.65rem !important;
-    }
-    .cfb-sales-actions .btn {
-      width: 100% !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-    }
-    .cfb-sales-trust {
-      flex-direction: column !important;
-      gap: 0.4rem !important;
-      align-items: center !important;
+    .cfb-btn-primary, .cfb-btn-secondary {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>
@@ -763,339 +672,465 @@ include __DIR__ . '/../../../includes/header.php';
     <span>/</span>
     <span>Channels</span>
     <span>/</span>
-    <span style="color:#2563eb;font-weight:600;">Facebook</span>
+    <span style="color:#1877f2;font-weight:600;">Facebook</span>
   </nav>
 
   <!-- 1. HERO SECTION -->
   <section class="cfb-hero-section">
     <div class="cfb-hero-grid">
-      <div>
-        <div class="cfb-badge-pill">
+      <div class="cfb-hero-content">
+        <span class="cfb-badge-pill">
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          FACEBOOK &amp; META ADS INTEGRATION
-        </div>
+          FACEBOOK MESSENGER &amp; LEAD ADS
+        </span>
         <h1 class="cfb-hero-title">
-          Facebook Messenger Automation &amp; <span class="highlight-blue">Lead Ads Sync</span>
+          Automate Your Facebook <span class="highlight-fb">Pages &amp; Lead Ads</span>
         </h1>
         <p class="cfb-hero-desc">
-          Connect your Facebook Pages, capture leads from Facebook Instant Forms automatically, and reply to Messenger chats with automated AI workflows.
+          Connect your Facebook business pages, automatically save customer form details from your ads, chat in a single inbox, and send easy automated messages.
         </p>
         <div class="cfb-hero-actions">
           <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">
-            Connect Facebook Pages &rarr;
+            Start Free Trial &rarr;
           </a>
           <button type="button" class="cfb-btn-secondary btn-demo-open">
-            Book Messenger Demo
+            Book Facebook Demo
           </button>
         </div>
         <div class="cfb-trust-row">
           <span class="cfb-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Official Meta Partner
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Official Meta Business API
           </span>
           <span class="cfb-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Instant Lead Form Sync
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Instant Lead Sync
           </span>
           <span class="cfb-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Multi-Page Support
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            2-Minute Setup
           </span>
         </div>
       </div>
 
-      <!-- Live Simulator -->
-      <div class="cfb-phone-wrapper">
-        <div class="cfb-phone-device">
-          <div class="cfb-phone-notch"></div>
-          <div class="cfb-phone-screen">
-            <div class="cfb-chat-header">
-              <div class="cfb-avatar">FB</div>
-              <div class="cfb-header-info">
-                <div class="cfb-header-name">Acme Solutions</div>
-                <div class="cfb-header-status">● Verified Facebook Page</div>
-              </div>
-            </div>
-            <div class="cfb-chat-messages">
-              <div class="cfb-ad-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
-                Lead arrived from Click-to-Messenger Ad #401
-              </div>
-              <div class="cfb-msg cfb-msg-in">
-                Hi! I filled out your Facebook ad for commercial real estate consultation.
-              </div>
-              <div class="cfb-msg cfb-msg-out">
-                Hello David! We received your inquiry for 3-Bedroom Executive Suites. Would you like a property brochure or a phone call with our advisor?
-              </div>
-              <div class="cfb-msg cfb-msg-in">
-                Please send the brochure PDF and schedule a call for tomorrow 3 PM.
-              </div>
-              <div class="cfb-msg cfb-msg-out">
-                Done! Brochure PDF sent. Appointment confirmed for tomorrow at 3:00 PM. Our senior advisor Alex will call you.
-              </div>
-            </div>
-            <div style="padding:10px 12px;background:#f1f5f9;display:flex;align-items:center;gap:8px;border-top:1px solid #e2e8f0;">
-              <div style="flex:1;background:#ffffff;border:1px solid #cbd5e1;border-radius:18px;padding:6px 12px;font-size:0.8rem;color:#94a3b8;">Type a message...</div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </div>
+      <div class="cfb-hero-visual">
+        <div class="cfb-hero-img-wrap">
+          <img src="<?php echo $bp; ?>assets/images/channel/facebook/hero.png" alt="InboxWa Facebook Automation" class="cfb-hero-img" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 4 FEATURE SHOWCASE CARDS -->
+  <section class="cfb-showcases-section">
+    <div class="cfb-container">
+      <div class="cfb-section-header">
+        <span class="cfb-badge-pill">Features</span>
+        <h2 class="cfb-section-title">Grow Your Facebook Page Automatically</h2>
+        <p class="cfb-section-subtitle">
+          Here is everything you can set up to manage your customer conversations and ads in one place.
+        </p>
+      </div>
+
+      <div class="cfb-showcases-list">
+        <!-- Showcase 1: Link Your Facebook Pages -->
+        <div class="cfb-showcase-row">
+          <div class="cfb-sc-text">
+            <span class="cfb-sc-tag">Multi-Page Management</span>
+            <h3 class="cfb-sc-title">Link Your Facebook Pages</h3>
+            <p class="cfb-sc-desc">
+              Connect and manage all your Facebook business pages in one clean dashboard. Choose which page sends automated messages to customers.
+            </p>
+            <ul class="cfb-sc-bullets">
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                1-click official Meta OAuth authorization
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Manage multiple pages and brand identities under one roof
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Configure granular team permissions and role assignments
+              </li>
+            </ul>
+            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Link Your Pages Free &rarr;</a>
+          </div>
+          <div class="cfb-sc-visual">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/link-pages.png" alt="Link Your Facebook Pages" class="cfb-sc-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Showcase 2: Save Customer Form Details (Reversed) -->
+        <div class="cfb-showcase-row reversed">
+          <div class="cfb-sc-text">
+            <span class="cfb-sc-tag">Instant Lead Ads Sync</span>
+            <h3 class="cfb-sc-title">Save Customer Form Details</h3>
+            <p class="cfb-sc-desc">
+              Instantly save details when customers fill out forms on your Facebook ads. Save their info directly to your contact list and reply to them automatically.
+            </p>
+            <ul class="cfb-sc-bullets">
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Real-time webhook ingestion from Instant Forms &amp; Lead Ads
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Instantly fire automated WhatsApp or Messenger welcome sequences
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                10x lead response speed to close deals while intent is hot
+              </li>
+            </ul>
+            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Automate Lead Forms &rarr;</a>
+          </div>
+          <div class="cfb-sc-visual">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/save-leads.png" alt="Save Customer Form Details" class="cfb-sc-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Showcase 3: Track Your Ad Campaigns -->
+        <div class="cfb-showcase-row">
+          <div class="cfb-sc-text">
+            <span class="cfb-sc-tag">Campaign Control</span>
+            <h3 class="cfb-sc-title">Track Your Ad Campaigns</h3>
+            <p class="cfb-sc-desc">
+              See all your active Facebook ads in one simple view. Pause, start, or check the status of your ads without leaving your dashboard.
+            </p>
+            <ul class="cfb-sc-bullets">
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Real-time campaign status monitoring and ad spend visibility
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Identify highest performing ad creatives and lead forms
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Direct Messenger and WhatsApp click-to-chat ad tracking
+              </li>
+            </ul>
+            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Track Ad Campaigns &rarr;</a>
+          </div>
+          <div class="cfb-sc-visual">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/track-ads.png" alt="Track Your Ad Campaigns" class="cfb-sc-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Showcase 4: View Simple Ad Reports (Reversed) -->
+        <div class="cfb-showcase-row reversed">
+          <div class="cfb-sc-text">
+            <span class="cfb-sc-tag">Clear Analytics</span>
+            <h3 class="cfb-sc-title">View Simple Ad Reports</h3>
+            <p class="cfb-sc-desc">
+              Understand how your ads are doing. See simple counts of clicks, views, cost-per-lead, and how many people you have reached.
+            </p>
+            <ul class="cfb-sc-bullets">
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Clean visual charts for impressions, clicks, leads, and spend
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Real-time cost-per-acquisition and conversion rate reporting
+              </li>
+              <li class="cfb-sc-bullet">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Export CSV reports for executive reviews and client presentations
+              </li>
+            </ul>
+            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Explore Ad Reports &rarr;</a>
+          </div>
+          <div class="cfb-sc-visual">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/ad-reports.png" alt="View Simple Ad Reports" class="cfb-sc-img" loading="lazy">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. HOW IT WORKS / CUSTOMER JOURNEY -->
+  <!-- 3. BUILT-IN PAGE & MESSAGE TOOLS -->
+  <section class="cfb-tools-section">
+    <div class="cfb-container">
+      <div class="cfb-section-header">
+        <span class="cfb-badge-pill">Built-In Tools</span>
+        <h2 class="cfb-section-title">Built-In Page &amp; Message Tools</h2>
+        <p class="cfb-section-subtitle">
+          Every tool you need to track delivery, send replies, and manage customer chats.
+        </p>
+      </div>
+
+      <div class="cfb-tools-grid">
+        <div class="cfb-tool-card">
+          <div class="cfb-tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h4>Unified Inbox</h4>
+          <p>Manage all customer chat messages in one single inbox across Facebook, WhatsApp, and Instagram.</p>
+        </div>
+
+        <div class="cfb-tool-card">
+          <div class="cfb-tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h4>Simple Reply Flows</h4>
+          <p>Build automated answers for customers using a visual drag-and-drop layout builder with zero code.</p>
+        </div>
+
+        <div class="cfb-tool-card">
+          <div class="cfb-tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg>
+          </div>
+          <h4>Message Templates</h4>
+          <p>Create easy pre-written answers with clickable customer buttons and approved interactive cards.</p>
+        </div>
+
+        <div class="cfb-tool-card">
+          <div class="cfb-tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h4>Bulk Messaging</h4>
+          <p>Send one message to multiple customer groups at the same time with full Meta policy compliance.</p>
+        </div>
+
+        <div class="cfb-tool-card">
+          <div class="cfb-tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h4>Word Auto-Replies</h4>
+          <p>Instantly reply when customers type words like 'price' or 'help' in public comments or private messages.</p>
+        </div>
+
+        <div class="cfb-tool-card">
+          <div class="cfb-tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h4>Delivery Reports</h4>
+          <p>Check whether messages have been successfully sent, delivered, or read in real-time audits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. START IN 4 EASY STEPS -->
   <section class="cfb-steps-section" id="how-it-works">
-    <div class="cfb-section-header">
-      <span class="cfb-badge-pill">Customer Journey &amp; Process</span>
-      <h2 class="cfb-section-title">How It Works: 3 Steps to Facebook Automation</h2>
-      <p class="cfb-section-subtitle">Link your Facebook Pages, capture leads from sponsored ads in real-time, and drive high-converting Messenger and WhatsApp sales conversations.</p>
+    <div class="cfb-container">
+      <div class="cfb-section-header">
+        <span class="cfb-badge-pill">Process &amp; Setup</span>
+        <h2 class="cfb-section-title">Start in 4 Easy Steps</h2>
+        <p class="cfb-section-subtitle">
+          No complicated codes or technical steps. Just connect and go.
+        </p>
+      </div>
+
+      <div class="cfb-steps-grid">
+        <div class="cfb-step-card">
+          <div class="cfb-step-number">01</div>
+          <h4>Log In Securely</h4>
+          <p>Log in with your Facebook account via our secure official Meta connection in one click.</p>
+        </div>
+
+        <div class="cfb-step-card">
+          <div class="cfb-step-number">02</div>
+          <h4>Select Pages &amp; Ads</h4>
+          <p>Pick the Facebook pages and active ad campaigns you want to connect to InboxWa.</p>
+        </div>
+
+        <div class="cfb-step-card">
+          <div class="cfb-step-number">03</div>
+          <h4>Link Your Forms</h4>
+          <p>Choose how to save info when customers fill out your Facebook instant ad forms.</p>
+        </div>
+
+        <div class="cfb-step-card">
+          <div class="cfb-step-number">04</div>
+          <h4>Automate &amp; Reply</h4>
+          <p>Watch new customer leads get saved and answered automatically in under two seconds.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="cfb-journey-flow">
-      <!-- Step 1 -->
-      <div class="cfb-journey-card">
-        <div class="cfb-journey-media">
-          <span class="cfb-journey-badge-float">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Meta Business Partner
-          </span>
-          <img src="<?php echo $bp; ?>assets/images/journey/fb-step-1.jpg" alt="Facebook Step 1: Connect Facebook Pages" class="cfb-journey-img" loading="lazy" />
-        </div>
-        <div class="cfb-journey-content">
-          <div class="cfb-journey-step-header">
-            <span class="cfb-journey-step-pill">Step 01 &bull; Integration</span>
-            <span class="cfb-journey-step-time">⏱️ 1-Click Connection</span>
-          </div>
-          <h3 class="cfb-journey-title">Connect Facebook Business Pages &amp; Meta Business Suite</h3>
-          <p class="cfb-journey-desc">Seamlessly link one or multiple Facebook Pages using official Meta OAuth authorization. No technical configuration or complex API permissions required.</p>
-          
-          <div class="cfb-journey-guide-grid">
-            <div class="cfb-journey-guide-box">
-              <div class="cfb-journey-box-label">👉 What You Do</div>
-              <ul class="cfb-journey-list">
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Click "Connect Facebook" and log in through your official Meta Business account</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Select the business pages you want to manage inside your workspace</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Activate 24/7 automated messaging and lead notification listeners</span>
-                </li>
-              </ul>
-            </div>
-            <div class="cfb-journey-guide-box">
-              <div class="cfb-journey-box-label">⚙️ How It Works Behind The Scenes</div>
-              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">InboxWa securely registers enterprise webhooks with Meta, guaranteeing 100% uptime and immediate delivery of all incoming comments, reviews, and Messenger chats.</p>
-            </div>
-          </div>
-
-          <div class="cfb-journey-kpi-badge">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Official Meta Cloud Integration &bull; Multi-Page Workspace Support
-          </div>
-        </div>
+  <!-- 5. ENTERPRISE CAPABILITIES & LEAD CRM -->
+  <section class="cfb-capabilities-section">
+    <div class="cfb-container">
+      <div class="cfb-section-header">
+        <span class="cfb-badge-pill">Enterprise Infrastructure</span>
+        <h2 class="cfb-section-title">Enterprise Facebook Marketing &amp; Lead Automation</h2>
+        <p class="cfb-section-subtitle">
+          Bridge the gap between Facebook Lead Ads and real-time sales conversions.
+        </p>
       </div>
 
-      <!-- Step 2 -->
-      <div class="cfb-journey-card reverse">
-        <div class="cfb-journey-media">
-          <span class="cfb-journey-badge-float">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Instant Lead Ad Sync
-          </span>
-          <img src="<?php echo $bp; ?>assets/images/journey/fb-step-2.jpg" alt="Facebook Step 2: Instant Lead Ad Sync and Messenger Auto-Reply" class="cfb-journey-img" loading="lazy" />
+      <div class="cfb-cap-grid">
+        <div class="cfb-cap-card">
+          <div class="cfb-cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Lead Ads Instant Webhooks</h3>
+          <p>Capture contact submissions the exact millisecond they hit your Facebook Instant Forms, bypassing manual CSV export delays completely.</p>
         </div>
-        <div class="cfb-journey-content">
-          <div class="cfb-journey-step-header">
-            <span class="cfb-journey-step-pill">Step 02 &bull; Lead Automation</span>
-            <span class="cfb-journey-step-time">⚡ Under 2 Seconds</span>
-          </div>
-          <h3 class="cfb-journey-title">Sync Instant Lead Ads &amp; Trigger Immediate Auto-Replies</h3>
-          <p class="cfb-journey-desc">Never let a paid lead go cold. The millisecond a customer submits a Facebook Lead Form, InboxWa syncs the contact into your CRM and triggers an automated reply in Messenger.</p>
-          
-          <div class="cfb-journey-guide-grid">
-            <div class="cfb-journey-guide-box">
-              <div class="cfb-journey-box-label">👉 What You Do</div>
-              <ul class="cfb-journey-list">
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Select your active Facebook Lead Gen Ad campaigns from the drop-down menu</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Map form fields (Name, Phone, Email, Requirements) straight into your CRM</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Set up an automated appointment booking or demo schedule message</span>
-                </li>
-              </ul>
-            </div>
-            <div class="cfb-journey-guide-box">
-              <div class="cfb-journey-box-label">⚙️ How It Works Behind The Scenes</div>
-              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">InboxWa captures the webhook payload instantly, verifies phone numbers, alerts your sales reps via push notification, and launches the automated onboarding sequence.</p>
-            </div>
-          </div>
 
-          <div class="cfb-journey-kpi-badge">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            2-Second Lead Follow-up Speed &bull; 80% Faster Lead Response
+        <div class="cfb-cap-card">
+          <div class="cfb-cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </div>
+          <h3>Click-to-WhatsApp Ads Bridge</h3>
+          <p>Route Facebook and Instagram ad traffic straight into high-converting WhatsApp conversations with automated keyword pre-fill triggers.</p>
+        </div>
+
+        <div class="cfb-cap-card">
+          <div class="cfb-cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Messenger Auto-Responder</h3>
+          <p>Engage prospective buyers 24/7 with interactive chat flows, qualifying lead questions, automated product recommendations, and human handover.</p>
+        </div>
+
+        <div class="cfb-cap-card">
+          <div class="cfb-cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Post Comment Auto-Replies</h3>
+          <p>Automatically like comments on page posts, reply publicly with social proof, and send private follow-ups directly to their inbox.</p>
+        </div>
+
+        <div class="cfb-cap-card">
+          <div class="cfb-cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>CRM &amp; Webhook Data Sync</h3>
+          <p>Instantly sync lead entries to HubSpot, Salesforce, Zoho, Google Sheets, or any custom ERP via real-time webhooks and REST APIs.</p>
+        </div>
+
+        <div class="cfb-cap-card">
+          <div class="cfb-cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Official Meta API Compliance</h3>
+          <p>Built exclusively with Meta Graph API v20.0 standards ensuring zero account restrictions, guaranteed message delivery, and enterprise security.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Step 3 -->
-      <div class="cfb-journey-card">
-        <div class="cfb-journey-media">
-          <span class="cfb-journey-badge-float">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            Click-to-WhatsApp Funnel
-          </span>
-          <img src="<?php echo $bp; ?>assets/images/journey/fb-step-3.jpg" alt="Facebook Step 3: Messenger Conversion and Click to WhatsApp Funnels" class="cfb-journey-img" loading="lazy" />
+  <!-- 6. FREQUENTLY ASKED QUESTIONS -->
+  <section class="cfb-faq-section">
+    <div class="cfb-container">
+      <div class="cfb-section-header">
+        <span class="cfb-badge-pill">FAQ</span>
+        <h2 class="cfb-section-title">Frequently Asked Questions</h2>
+        <p class="cfb-section-subtitle">
+          Everything you need to know about Facebook automation and lead syncing with InboxWa.
+        </p>
+      </div>
+
+      <div class="cfb-faq-list">
+        <div class="cfb-faq-item active">
+          <button type="button" class="cfb-faq-trigger">
+            <span>How does InboxWa connect to my Facebook Pages and Lead Ads?</span>
+            <span class="cfb-faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="cfb-faq-content">
+            InboxWa connects using official Meta OAuth. You simply log in with your Facebook account, grant page and ad management permissions, and select the pages you want to automate. No technical knowledge or server setup is required.
+          </div>
         </div>
-        <div class="cfb-journey-content">
-          <div class="cfb-journey-step-header">
-            <span class="cfb-journey-step-pill">Step 03 &bull; Conversion</span>
-            <span class="cfb-journey-step-time">💬 Cross-Channel Power</span>
-          </div>
-          <h3 class="cfb-journey-title">Convert Messenger Chats &amp; Funnel to WhatsApp</h3>
-          <p class="cfb-journey-desc">Engage prospects with interactive product cards, answer inquiries with smart AI, and funnel high-intent buyers directly into WhatsApp for rapid deal closing.</p>
-          
-          <div class="cfb-journey-guide-grid">
-            <div class="cfb-journey-guide-box">
-              <div class="cfb-journey-box-label">👉 What You Do</div>
-              <ul class="cfb-journey-list">
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Deploy interactive product carousels inside Facebook Messenger chats</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Add 1-tap "Chat on WhatsApp" buttons for high-ticket personalized selling</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Track full conversion metrics, cost per acquisition, and agent ROI</span>
-                </li>
-              </ul>
-            </div>
-            <div class="cfb-journey-guide-box">
-              <div class="cfb-journey-box-label">⚙️ How It Works Behind The Scenes</div>
-              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">InboxWa connects your Facebook Ad campaigns directly to your WhatsApp Business pipeline, unifying conversation histories into one frictionless customer view.</p>
-            </div>
-          </div>
 
-          <div class="cfb-journey-kpi-badge">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            4.8x Higher Conversion &bull; Unified Cross-Channel Omnichannel
+        <div class="cfb-faq-item">
+          <button type="button" class="cfb-faq-trigger">
+            <span>How quickly are Facebook Lead Ad submissions received?</span>
+            <span class="cfb-faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="cfb-faq-content">
+            Submissions are received in real-time via Meta webhooks—typically within 1 to 2 seconds of a user submitting the instant form. InboxWa immediately triggers your configured auto-reply or sends the lead to your CRM.
+          </div>
+        </div>
+
+        <div class="cfb-faq-item">
+          <button type="button" class="cfb-faq-trigger">
+            <span>Can I auto-respond to comments on Facebook posts and reels?</span>
+            <span class="cfb-faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="cfb-faq-content">
+            Yes! InboxWa can automatically like comments, post a public reply to boost post engagement, and send a private Messenger message or WhatsApp follow-up containing brochures, pricing, or checkout links.
+          </div>
+        </div>
+
+        <div class="cfb-faq-item">
+          <button type="button" class="cfb-faq-trigger">
+            <span>Is my Facebook account safe from bans or restrictions?</span>
+            <span class="cfb-faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="cfb-faq-content">
+            Absolutely. InboxWa operates exclusively via official Meta Graph API v20.0 endpoints. We never scrape, use unofficial browser extensions, or bypass platform rules, guaranteeing 100% compliance with Meta platform terms.
+          </div>
+        </div>
+
+        <div class="cfb-faq-item">
+          <button type="button" class="cfb-faq-trigger">
+            <span>Can multiple team members manage Facebook conversations?</span>
+            <span class="cfb-faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="cfb-faq-content">
+            Yes. With our multi-agent shared inbox, multiple agents can respond to Facebook Messenger conversations simultaneously, assign chats, leave internal notes, and monitor response resolution metrics.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. CORE FEATURES -->
-  <section class="cfb-features-section">
-    <div class="cfb-section-header">
-      <span class="cfb-badge-pill">Key Capabilities</span>
-      <h2 class="cfb-section-title">Connect Facebook Marketing to Scalable Revenue</h2>
-      <p class="cfb-section-subtitle">Manage pages, instant forms, and ad replies from a single high-performance dashboard.</p>
-    </div>
-
-    <div class="cfb-features-grid">
-      <div class="cfb-feature-card">
-        <div class="cfb-feature-top">
-          <div class="cfb-feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-          </div>
-          <span class="cfb-feature-badge">Page Hub</span>
-        </div>
-        <h3 class="cfb-feature-title">Link Your Facebook Pages</h3>
-        <p class="cfb-feature-desc">Connect and manage all your Facebook business pages in one clean dashboard. Choose which page sends automated messages to customers.</p>
-      </div>
-
-      <div class="cfb-feature-card">
-        <div class="cfb-feature-top">
-          <div class="cfb-feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <span class="cfb-feature-badge">Lead Sync</span>
-        </div>
-        <h3 class="cfb-feature-title">Save Customer Form Details</h3>
-        <p class="cfb-feature-desc">Instantly save details when customers fill out forms on your Facebook ads. Save their info directly to your contact list and reply to them automatically.</p>
-      </div>
-
-      <div class="cfb-feature-card">
-        <div class="cfb-feature-top">
-          <div class="cfb-feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <span class="cfb-feature-badge">Analytics</span>
-        </div>
-        <h3 class="cfb-feature-title">View Simple Ad Reports</h3>
-        <p class="cfb-feature-desc">Understand how your ads are doing. See simple counts of clicks, views, cost-per-lead, and how many people you have reached.</p>
-      </div>
-
-      <div class="cfb-feature-card">
-        <div class="cfb-feature-top">
-          <div class="cfb-feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <span class="cfb-feature-badge">Omnichannel</span>
-        </div>
-        <h3 class="cfb-feature-title">Omnichannel Messenger Inbox</h3>
-        <p class="cfb-feature-desc">Reply to Facebook post comments and Messenger direct chats directly from the shared team inbox interface.</p>
-      </div>
-
-      <div class="cfb-feature-card">
-        <div class="cfb-feature-top">
-          <div class="cfb-feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <span class="cfb-feature-badge">Meta Ads</span>
-        </div>
-        <h3 class="cfb-feature-title">Click-to-WhatsApp Ads</h3>
-        <p class="cfb-feature-desc">Launch Facebook ad campaigns that redirect interested prospects directly into WhatsApp chats with pre-filled promo text.</p>
-      </div>
-
-      <div class="cfb-feature-card">
-        <div class="cfb-feature-top">
-          <div class="cfb-feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          </div>
-          <span class="cfb-feature-badge">AI Chatbot</span>
-        </div>
-        <h3 class="cfb-feature-title">24/7 Messenger AI Chatbot</h3>
-        <p class="cfb-feature-desc">Automate answers to common prospect questions, qualify customer requirements, and collect contact info around the clock.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. FINAL SALES CTA -->
+  <!-- 7. SALES CTA BANNER -->
   <section class="cfb-sales-section">
-    <div class="cfb-sales-inner">
-      <h2 class="cfb-sales-title">Scale Your Facebook Lead Generation</h2>
-      <p class="cfb-sales-desc">Stop losing leads to slow follow-ups. Capture, qualify, and respond to Facebook ad inquiries in seconds.</p>
-      <div class="cfb-sales-actions">
+    <div class="cfb-cta-banner">
+      <h2 class="cfb-cta-title">Automate Your Facebook Ads &amp; Leads Today</h2>
+      <p class="cfb-cta-subtitle">
+        Link your pages, track active ad campaigns, save lead form answers, and reply to customers automatically.
+      </p>
+      <div class="cfb-cta-actions">
         <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-white">
-          Connect Pages Free &rarr;
+          Start Free Trial &rarr;
         </a>
-        <button type="button" class="cfb-btn-secondary btn-demo-open" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.4);">
-          Schedule a Demo
+        <button type="button" class="cfb-btn-secondary btn-demo-open" style="background:rgba(255,255,255,0.15);color:#ffffff;border-color:rgba(255,255,255,0.3);">
+          Book Facebook Demo
         </button>
       </div>
-      <div style="font-size:0.88rem;color:#bfdbfe;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
-        <span>✓ Official Meta API</span>
-        <span>✓ Instant form sync</span>
-        <span>✓ Cancel anytime</span>
+      <div class="cfb-cta-trust">
+        Free 14-day trial &bull; No credit card required &bull; 2-minute setup
       </div>
     </div>
   </section>
 </div>
 
-<?php include __DIR__ . '/../../../includes/footer.php'; ?>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // FAQ accordion
+  const faqItems = document.querySelectorAll('.cfb-faq-item');
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.cfb-faq-trigger');
+    trigger.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+});
+</script>
+
+<?php
+include __DIR__ . '/../../../includes/offer-popup.php';
+include __DIR__ . '/../../../includes/callback-popup.php';
+include __DIR__ . '/../../../includes/footer.php';
+?>
