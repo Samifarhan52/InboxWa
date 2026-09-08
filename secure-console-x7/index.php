@@ -46,7 +46,7 @@ if (!hb_is_admin_logged_in()) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log In &lsaquo; InboxWa &mdash; WordPress</title>
+        <title>Log In &lsaquo; InboxWa &mdash; ElavateX</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>
             * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -70,8 +70,8 @@ if (!hb_is_admin_logged_in()) {
     </head>
     <body>
         <div class="login-brand">
-            <div class="login-wp-logo">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-10 10c0 4.41 2.87 8.16 6.84 9.49L5.3 11.23l2.8-.02 3.9 10.74c.03-.01.05-.02.08-.03a9.98 9.98 0 0 0 6.78-9.92c0-2.43-.88-4.13-1.64-5.46-.99-1.65-1.92-3.04-1.92-4.67 0-1.83 1.38-3.53 3.32-3.53.09 0 .17.01.25.02A9.97 9.97 0 0 0 12 2zm-5.07 10.76l2.94 8.76A8.04 8.04 0 0 1 4 12c0-.52.05-1.03.14-1.52l2.79 2.28zm8.79-.31c.39 1.13.78 2.37.78 3.51 0 1.25-.42 2.76-.87 4.19a8.03 8.03 0 0 1-5.05 1.54l4.23-11.64.91 2.4zm2.14-6.32c.31.55.62 1.25.62 2.2 0 1.4-.73 2.87-1.46 4.34l-2.45-6.72c1.47.03 2.76.08 3.29.18z"/></svg>
+            <div class="login-wp-logo" style="background:transparent;box-shadow:none;margin-bottom:8px;">
+                <img src="/assets/images/favicon-32x32.png" width="56" height="56" style="border-radius:12px;display:inline-block;" alt="InboxWa" onerror="this.outerHTML='<svg width=\'56\' height=\'56\' viewBox=\'0 0 32 32\'><rect width=\'32\' height=\'32\' rx=\'8\' fill=\'#7C3AED\'/><rect x=\'11\' y=\'11\' width=\'10\' height=\'10\' rx=\'2.5\' fill=\'#FFFFFF\'/></svg>'">
             </div>
             <a href="/"><span>InboxWa Admin</span></a>
         </div>
@@ -392,8 +392,8 @@ $pluginsList = hb_get_plugins();
 $mediaFiles = hb_get_media_files();
 
 $currentAdminUser = hb_get_setting('admin_user', 'admin');
-$siteTitle = hb_get_setting('site_title', 'My WordPress Website');
-$siteTagline = hb_get_setting('site_tagline', 'Just another WordPress site');
+$siteTitle = hb_get_setting('site_title', 'InboxWa');
+$siteTagline = hb_get_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
 $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
 ?>
 <!DOCTYPE html>
@@ -401,7 +401,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title><?php echo ucfirst($page); ?> &lsaquo; <?php echo htmlspecialchars($siteTitle); ?> &mdash; WordPress</title>
+    <title><?php echo ucfirst($page); ?> &lsaquo; <?php echo htmlspecialchars($siteTitle); ?> &mdash; ElavateX</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dashicons/0.9.0/css/dashicons.min.css">
     <style>
         /* ==========================================================================
@@ -864,16 +864,16 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
             </li>
-            <li class="menupop wp-logo">
-                <a class="ab-item" href="https://wordpress.org" target="_blank" title="About WordPress">
-                    <span class="ab-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 2a10 10 0 0 0-10 10c0 4.41 2.87 8.16 6.84 9.49L5.3 11.23l2.8-.02 3.9 10.74c.03-.01.05-.02.08-.03a9.98 9.98 0 0 0 6.78-9.92c0-2.43-.88-4.13-1.64-5.46-.99-1.65-1.92-3.04-1.92-4.67 0-1.83 1.38-3.53 3.32-3.53.09 0 .17.01.25.02A9.97 9.97 0 0 0 12 2zm-5.07 10.76l2.94 8.76A8.04 8.04 0 0 1 4 12c0-.52.05-1.03.14-1.52l2.79 2.28zm8.79-.31c.39 1.13.78 2.37.78 3.51 0 1.25-.42 2.76-.87 4.19a8.03 8.03 0 0 1-5.05 1.54l4.23-11.64.91 2.4zm2.14-6.32c.31.55.62 1.25.62 2.2 0 1.4-.73 2.87-1.46 4.34l-2.45-6.72c1.47.03 2.76.08 3.29.18z"/></svg>
+            <li class="menupop wp-logo elavatex-logo">
+                <a class="ab-item" href="https://elavatex.com" target="_blank" rel="noopener" title="About ElavateX">
+                    <span class="ab-icon" style="display:inline-flex;align-items:center;justify-content:center;line-height:1;">
+                        <img src="/assets/images/favicon-32x32.png" alt="InboxWa" style="width:20px;height:20px;border-radius:4px;vertical-align:middle;display:inline-block;" onerror="this.outerHTML='<svg width=\'20\' height=\'20\' viewBox=\'0 0 32 32\' style=\'border-radius:5px;display:block;\'><rect width=\'32\' height=\'32\' rx=\'7\' fill=\'#7C3AED\'/><rect x=\'11\' y=\'11\' width=\'10\' height=\'10\' rx=\'2\' fill=\'#FFFFFF\'/></svg>'">
                     </span>
                 </a>
                 <div class="ab-sub-wrapper">
-                    <a href="https://wordpress.org/about/" target="_blank">About WordPress</a>
-                    <a href="https://wordpress.org/documentation/" target="_blank">Documentation</a>
-                    <a href="https://wordpress.org/support/forums/" target="_blank">Support</a>
+                    <a href="https://elavatex.com" target="_blank" rel="noopener">About ElavateX</a>
+                    <a href="https://elavatex.com/#services-overview" target="_blank" rel="noopener">Documentation</a>
+                    <a href="https://elavatex.com/#cta" target="_blank" rel="noopener">Support</a>
                 </div>
             </li>
             <li class="menupop site-name">
@@ -1151,7 +1151,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                                                 </li>
                                             </ul>
                                             <p id="wp-version-message">
-                                                WordPress 6.5.4 running <a href="<?php echo $adminBase; ?>?page=themes">InboxWa</a> theme.
+                                                ElavateX 6.5.4 running <a href="<?php echo $adminBase; ?>?page=themes">InboxWa</a> theme.
                                             </p>
                                         </div>
                                     </div>
@@ -1266,24 +1266,23 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                                     </div>
                                 </div>
 
-                                <!-- WordPress Events and News Widget -->
+                                <!-- ElavateX Events and News Widget -->
                                 <div id="dashboard_primary" class="postbox">
                                     <div class="postbox-header">
                                         <h2>
-                                            <span>WordPress Events and News</span>
+                                            <span>ElavateX Community &amp; News</span>
                                         </h2>
                                         <span title="Edit" style="cursor:pointer; color:#646970;">&#9998;</span>
                                     </div>
                                     <div class="inside">
-                                        <p style="margin-bottom:8px; color:#3c434a;">Attend an upcoming event near you. <span style="color:#2271b1; cursor:pointer;">&#9998;</span></p>
+                                        <p style="margin-bottom:8px; color:#3c434a;">Latest product updates and automation insights. <span style="color:#2271b1; cursor:pointer;">&#9998;</span></p>
                                         <div class="events-callout">
-                                            There aren't any events scheduled near you at the moment. Would you like to <a href="https://make.wordpress.org/community/" target="_blank">organize one</a>?
+                                            Scale your business messaging. Visit <a href="https://elavatex.com" target="_blank" rel="noopener">ElavateX</a> for tailored automation suites.
                                         </div>
                                         <ul class="rss-news-list">
-                                            <li><a href="https://wordpress.org/news/" target="_blank">The Month in WordPress: March 2026</a></li>
-                                            <li><a href="https://akismet.com/blog/" target="_blank">Akismet: Version 5.3 of the Akismet WordPress Plugin Is Now Available</a></li>
-                                            <li><a href="https://wptavern.com/" target="_blank">WPTavern: Jetpack 13.2 Increases Security of the Contact Form Engine</a></li>
-                                            <li><a href="https://wptavern.com/" target="_blank">WPTavern: WPWeekly Episode 310 – WordCamp US 2026 Recap</a></li>
+                                            <li><a href="https://elavatex.com" target="_blank" rel="noopener">The Month in ElavateX &amp; InboxWa: March 2026</a></li>
+                                            <li><a href="https://elavatex.com/#services-overview" target="_blank" rel="noopener">ElavateX: WhatsApp Cloud API &amp; Multi-Agent Automation Suite</a></li>
+                                            <li><a href="https://elavatex.com/#about" target="_blank" rel="noopener">About ElavateX Digital Ecosystem &amp; Next-Gen Tech</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1297,13 +1296,13 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                 // 2. UPDATES SCREEN
                 // =============================================================
                 elseif ($page === 'updates'): ?>
-                    <h1 class="wp-heading-inline">WordPress Updates</h1>
+                    <h1 class="wp-heading-inline">ElavateX Updates</h1>
                     <p style="margin: 10px 0 16px; color:#555;">Last checked on <?php echo date('F j, Y \a\t g:i a'); ?>. <a href="<?php echo $adminBase; ?>?page=updates" class="button button-small">Check Again</a></p>
 
                     <div class="postbox">
                         <div class="postbox-header"><h2>Current Status</h2></div>
                         <div class="inside">
-                            <p style="font-size:14px; color:#00a32a; font-weight:600; margin-bottom:10px;">&#10004; You have the latest version of WordPress (6.5.4).</p>
+                            <p style="font-size:14px; color:#00a32a; font-weight:600; margin-bottom:10px;">&#10004; You have the latest version of ElavateX (6.5.4).</p>
                             <p style="color:#646970;">Future security updates will be applied automatically.</p>
                         </div>
                     </div>
@@ -1853,7 +1852,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                                         <th scope="row"><label for="blogdescription">Tagline</label></th>
                                         <td>
                                             <input name="site_tagline" type="text" id="blogdescription" value="<?php echo htmlspecialchars($siteTagline); ?>" class="regular-text">
-                                            <p class="description" id="tagline-description">In a few words, explain what this site is about. Example: &ldquo;Just another WordPress site.&rdquo;</p>
+                                            <p class="description" id="tagline-description">In a few words, explain what this site is about. Example: &ldquo;All-in-One WhatsApp Marketing &amp; Business Automation Platform.&rdquo;</p>
                                         </td>
                                     </tr>
 
@@ -1866,7 +1865,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                                                 <img id="site-icon-preview" src="<?php echo htmlspecialchars($siteIcon); ?>" alt="Site Icon" style="width:34px; height:34px; border-radius:4px; border:1px solid #c3c4c7; padding:2px; background:#fff; object-fit:contain;">
                                             </div>
                                             <input type="hidden" name="favicon_url" id="site_icon_input" value="<?php echo htmlspecialchars($siteIcon); ?>">
-                                            <p class="description">The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>512 by 512</code> pixels.</p>
+                                            <p class="description">The Site Icon is what you see in browser tabs, bookmark bars, and within mobile apps. It should be square and at least <code>512 by 512</code> pixels.</p>
                                         </td>
                                     </tr>
 
@@ -2027,7 +2026,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                                                 </label>
                                                 <p class="date-time-doc" style="margin-top:6px; color:#50575e;">
                                                     <strong>Preview:</strong> <span id="time-preview"><?php echo date('g:i a'); ?></span><br>
-                                                    <a href="https://wordpress.org/documentation/article/customize-date-and-time-format/" target="_blank">Documentation on date and time formatting</a>.
+                                                    <a href="https://elavatex.com/#services-overview" target="_blank" rel="noopener">Documentation on date and time formatting</a>.
                                                 </p>
                                             </fieldset>
                                         </td>
@@ -2218,9 +2217,9 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                         </form>
                     <?php endif; ?>
 
-                    <!-- WordPress Core Footer -->
+                    <!-- Platform Core Footer -->
                     <div id="wpfooter">
-                        <p id="footer-left">Thank you for creating with <a href="https://wordpress.org/" target="_blank">WordPress</a>.</p>
+                        <p id="footer-left">Thank you for creating with <a href="https://elavatex.com" target="_blank" rel="noopener">ElavateX</a>.</p>
                         <p id="footer-upgrade">Version 6.5.4</p>
                     </div>
 
