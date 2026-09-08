@@ -109,6 +109,7 @@ $noticeError = '';
 
 // Current active page
 $page = $_GET['page'] ?? 'dashboard';
+$settingsTab = $_GET['tab'] ?? 'general';
 
 // -------------------------------------------------------------
 // POST Handlers
@@ -158,12 +159,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Save General Settings
-    if ($action === 'save_settings') {
-        $settingsKeys = ['site_title', 'site_tagline', 'support_whatsapp', 'phone_number', 'sales_email', 'support_email', 'office_address', 'ga_id', 'meta_pixel_id', 'custom_header_code', 'custom_footer_code'];
+    // Save Settings (General, Writing, Reading, Discussion, Media, Permalinks, Privacy, WhatsApp)
+    if ($action === 'save_settings' || $action === 'save_general_settings') {
+        $settingsKeys = [
+            'site_title',
+            'site_tagline',
+            'favicon_url',
+            'admin_email',
+            'sales_email',
+            'support_email',
+            'support_whatsapp',
+            'phone_number',
+            'office_address',
+            'default_role',
+            'site_language',
+            'timezone_string',
+            'date_format',
+            'date_format_custom',
+            'time_format',
+            'time_format_custom',
+            'start_of_week',
+            'ga_id',
+            'meta_pixel_id',
+            'custom_header_code',
+            'custom_footer_code',
+            'default_post_category',
+            'default_post_format',
+            'posts_per_page',
+            'blog_public',
+            'default_ping_status',
+            'default_comment_status',
+            'require_name_email',
+            'thumbnail_size_w',
+            'thumbnail_size_h',
+            'medium_size_w',
+            'medium_size_h',
+            'large_size_w',
+            'large_size_h',
+            'permalink_structure',
+            'privacy_policy_page',
+            'whatsapp_phone_number_id',
+            'whatsapp_access_token',
+            'whatsapp_waba_id',
+            'webhook_verify_token'
+        ];
+
+        // Checkbox: users_can_register
+        hb_set_setting('users_can_register', isset($_POST['users_can_register']) ? '1' : '0');
+
         foreach ($settingsKeys as $k) {
             if (isset($_POST[$k])) {
-                hb_set_setting($k, trim($_POST[$k]));
+                hb_set_setting($k, trim((string)$_POST[$k]));
             }
         }
         $noticeSuccess = 'Settings saved.';
@@ -346,7 +392,9 @@ $pluginsList = hb_get_plugins();
 $mediaFiles = hb_get_media_files();
 
 $currentAdminUser = hb_get_setting('admin_user', 'admin');
-$siteTitle = hb_get_setting('site_title', 'InboxWa');
+$siteTitle = hb_get_setting('site_title', 'My WordPress Website');
+$siteTagline = hb_get_setting('site_tagline', 'Just another WordPress site');
+$siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -357,20 +405,20 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dashicons/0.9.0/css/dashicons.min.css">
     <style>
         /* ==========================================================================
-           AUTHENTIC WORDPRESS 6.x CORE CSS (MATCHING media_1788876670751.png)
+           AUTHENTIC WORDPRESS 6.x CORE CSS (MATCHING media_1788876670751.png & media_1788877451432.png)
            ========================================================================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html, body {
             background: #f1f1f1;
-            color: #444;
+            color: #3c434a;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             font-size: 13px;
             line-height: 1.4em;
             min-height: 100vh;
         }
 
-        a { color: #0073aa; text-decoration: none; transition: color 0.1s ease-in-out; }
-        a:hover { color: #00a0d2; }
+        a { color: #2271b1; text-decoration: none; transition: color 0.1s ease-in-out; }
+        a:hover { color: #135e96; }
 
         /* Top Admin Bar (#wpadminbar) */
         #wpadminbar {
@@ -379,8 +427,8 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             left: 0;
             width: 100%;
             height: 32px;
-            background: #23282d;
-            color: #ccc;
+            background: #1d2327;
+            color: #c3c4c7;
             z-index: 99999;
             font-size: 13px;
             display: flex;
@@ -397,24 +445,24 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             gap: 6px;
             height: 32px;
             padding: 0 10px;
-            color: #eee;
+            color: #c3c4c7;
             font-size: 13px;
             font-weight: 400;
             text-decoration: none;
         }
         .ab-top-menu > li:hover > .ab-item,
         .ab-top-menu > li.hover > .ab-item {
-            background: #32373c;
-            color: #00b9eb;
+            background: #2c3338;
+            color: #72aee6;
         }
-        .ab-icon { display: inline-flex; align-items: center; color: #a0a5aa; }
-        .ab-top-menu > li:hover .ab-icon { color: #00b9eb; }
+        .ab-icon { display: inline-flex; align-items: center; color: #a7aaad; }
+        .ab-top-menu > li:hover .ab-icon { color: #72aee6; }
         .ab-sub-wrapper {
             display: none;
             position: absolute;
             top: 32px;
             left: 0;
-            background: #32373c;
+            background: #2c3338;
             box-shadow: 0 3px 5px rgba(0,0,0,0.2);
             min-width: 160px;
             z-index: 100000;
@@ -423,12 +471,12 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
         .ab-sub-wrapper a {
             display: block;
             padding: 7px 14px;
-            color: #b4b9be;
+            color: #c3c4c7;
             font-size: 13px;
             text-decoration: none;
             white-space: nowrap;
         }
-        .ab-sub-wrapper a:hover { background: #23282d; color: #00b9eb; }
+        .ab-sub-wrapper a:hover { background: #1d2327; color: #72aee6; }
 
         /* Right side user dropdown */
         .ab-right .ab-sub-wrapper { left: auto; right: 0; }
@@ -445,14 +493,14 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
         /* Sidebar Navigation (#adminmenu) */
         #adminmenuback, #adminmenuwrap {
             width: 160px;
-            background: #23282d;
+            background: #1d2327;
             flex-shrink: 0;
             z-index: 9990;
         }
         #adminmenuwrap { position: fixed; top: 32px; bottom: 0; left: 0; overflow-y: auto; overflow-x: hidden; }
         #adminmenu { list-style: none; margin: 0; padding: 0; width: 160px; }
 
-        .wp-menu-separator { height: 5px; margin: 4px 0; background: #191e23; }
+        .wp-menu-separator { height: 5px; margin: 4px 0; background: #101517; }
         .menu-top { position: relative; }
         .menu-top > a.menu-link {
             display: flex;
@@ -460,20 +508,20 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             gap: 8px;
             padding: 0 10px;
             height: 34px;
-            color: #eee;
+            color: #f0f0f1;
             font-size: 14px;
             font-weight: 400;
             text-decoration: none;
             position: relative;
         }
         .menu-top > a.menu-link:hover {
-            background: #191e23;
-            color: #00b9eb;
+            background: #135e96;
+            color: #72aee6;
         }
 
         /* ACTIVE MENU ITEM WITH CLASSIC WORDPRESS TRIANGLE POINTER */
         .menu-top.current > a.menu-link {
-            background: #0073aa;
+            background: #2271b1;
             color: #fff;
             font-weight: 600;
         }
@@ -490,12 +538,12 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
 
         .menu-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; fill: currentColor; opacity: 0.85; flex-shrink: 0; }
         .menu-top:hover .menu-icon, .menu-top.current .menu-icon { opacity: 1; color: inherit; }
-        .menu-badge { margin-left: auto; background: #0073aa; color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px; line-height: 14px; }
+        .menu-badge { margin-left: auto; background: #2271b1; color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px; line-height: 14px; }
         .menu-badge.badge-pending { background: #d63638; }
 
         /* Submenus */
         .wp-submenu {
-            background: #32373c;
+            background: #2c3338;
             padding: 4px 0;
             list-style: none;
             margin: 0;
@@ -504,10 +552,10 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             display: block;
             padding: 6px 12px 6px 16px;
             font-size: 13px;
-            color: #b4b9be;
+            color: #c3c4c7;
             text-decoration: none;
         }
-        .wp-submenu a:hover { color: #00b9eb; }
+        .wp-submenu a:hover { color: #72aee6; }
         .wp-submenu li.current a { color: #fff; font-weight: 600; }
 
         /* Collapse menu button */
@@ -516,7 +564,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             width: 100%;
             background: transparent;
             border: none;
-            color: #a0a5aa;
+            color: #a7aaad;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -525,7 +573,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             cursor: pointer;
             text-align: left;
         }
-        #collapse-button:hover { color: #00b9eb; }
+        #collapse-button:hover { color: #72aee6; }
 
         /* Folded Sidebar Mode */
         body.folded #adminmenuback,
@@ -548,7 +596,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             left: 36px;
             top: 0;
             width: 180px;
-            background: #32373c;
+            background: #2c3338;
             box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
             z-index: 99999;
         }
@@ -566,11 +614,11 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             background: #f1f1f1;
             min-width: 0;
         }
-        .wrap { max-width: 1200px; margin: 0 auto; }
+        .wrap { max-width: 1200px; margin: 0 auto; position: relative; }
         h1.wp-heading-inline {
             font-size: 23px;
             font-weight: 400;
-            color: #23282d;
+            color: #1d2327;
             margin: 10px 0 16px 0;
             display: inline-block;
         }
@@ -583,19 +631,19 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             margin-left: 6px;
             padding: 0 10px;
             cursor: pointer;
-            border: 1px solid #0073aa;
+            border: 1px solid #2271b1;
             border-radius: 3px;
             background: #f6f7f7;
-            color: #0073aa;
+            color: #2271b1;
             vertical-align: middle;
             font-weight: 600;
         }
-        .page-title-action:hover { background: #f0f0f1; border-color: #005177; color: #005177; }
+        .page-title-action:hover { background: #f0f0f1; border-color: #0a4b78; color: #0a4b78; }
 
         /* WordPress Notices */
         .notice {
             background: #fff;
-            border: 1px solid #ccd0d4;
+            border: 1px solid #c3c4c7;
             border-left-width: 4px;
             box-shadow: 0 1px 1px rgba(0,0,0,.04);
             margin: 15px 0 20px;
@@ -603,19 +651,19 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             font-size: 13px;
             border-radius: 2px;
         }
-        .notice-success { border-left-color: #46b450; }
-        .notice-error { border-left-color: #dc3232; }
+        .notice-success { border-left-color: #00a32a; }
+        .notice-error { border-left-color: #d63638; }
 
         /* Postboxes & Widgets */
         .postbox {
             background: #fff;
-            border: 1px solid #e5e5e5;
+            border: 1px solid #c3c4c7;
             box-shadow: 0 1px 1px rgba(0,0,0,.04);
             margin-bottom: 20px;
         }
         .postbox-header {
             padding: 8px 12px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #c3c4c7;
             background: #fff;
             display: flex;
             align-items: center;
@@ -624,7 +672,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
         .postbox-header h2 {
             font-size: 14px;
             font-weight: 600;
-            color: #23282d;
+            color: #1d2327;
             margin: 0;
             display: flex;
             align-items: center;
@@ -633,7 +681,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
         .handlediv {
             background: none;
             border: none;
-            color: #72777c;
+            color: #646970;
             cursor: pointer;
             padding: 4px;
             font-size: 11px;
@@ -642,7 +690,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             padding: 12px 14px;
             font-size: 13px;
             line-height: 1.4em;
-            color: #444;
+            color: #3c434a;
         }
 
         /* 2-Column Dashboard Grid */
@@ -658,27 +706,28 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
 
         /* At a Glance Widget */
         #dashboard_right_now ul { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        #dashboard_right_now li { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #444; }
-        #dashboard_right_now li a { color: #0073aa; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
-        #wp-version-message { font-size: 12px; color: #646970; border-top: 1px solid #eee; padding-top: 10px; margin-top: 10px; }
+        #dashboard_right_now li { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #3c434a; }
+        #dashboard_right_now li a { color: #2271b1; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
+        #wp-version-message { font-size: 12px; color: #646970; border-top: 1px solid #c3c4c7; padding-top: 10px; margin-top: 10px; }
 
         /* Activity Widget */
-        .sub-heading { font-size: 13px; font-weight: 600; color: #72777c; border-bottom: 1px solid #eee; padding-bottom: 6px; margin: 6px 0 10px; }
+        .sub-heading { font-size: 13px; font-weight: 600; color: #646970; border-bottom: 1px solid #c3c4c7; padding-bottom: 6px; margin: 6px 0 10px; }
         .activity-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13px; }
-        .activity-date { color: #72777c; white-space: nowrap; }
+        .activity-date { color: #646970; white-space: nowrap; }
         .comment-avatar { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; }
-        .comment-meta { font-size: 13px; color: #555; margin-bottom: 4px; }
-        .comment-meta a { color: #0073aa; font-weight: 600; }
-        .comment-text { font-size: 13px; color: #444; line-height: 1.4em; margin-bottom: 6px; }
-        .row-actions a { color: #0073aa; font-size: 12px; }
-        .row-actions a.spam, .row-actions a.trash { color: #a00; }
+        .comment-meta { font-size: 13px; color: #50575e; margin-bottom: 4px; }
+        .comment-meta a { color: #2271b1; font-weight: 600; }
+        .comment-text { font-size: 13px; color: #3c434a; line-height: 1.4em; margin-bottom: 6px; }
+        .row-actions a { color: #2271b1; font-size: 12px; }
+        .row-actions a.spam, .row-actions a.trash { color: #b32d2e; }
 
         /* Quick Draft Form */
         .draft-input {
             width: 100%;
             height: 32px;
             padding: 4px 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #8c8f94;
+            border-radius: 4px;
             box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
             font-size: 13px;
             margin-bottom: 12px;
@@ -688,7 +737,8 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             width: 100%;
             height: 90px;
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #8c8f94;
+            border-radius: 4px;
             box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
             font-size: 13px;
             margin-bottom: 12px;
@@ -696,7 +746,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             resize: vertical;
             outline: none;
         }
-        .draft-input:focus, .draft-textarea:focus { border-color: #0073aa; box-shadow: 0 0 0 1px #0073aa; }
+        .draft-input:focus, .draft-textarea:focus { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; }
 
         /* Buttons */
         .button {
@@ -706,55 +756,60 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             line-height: 2.15;
             min-height: 30px;
             margin: 0;
-            padding: 0 12px;
+            padding: 0 10px;
             cursor: pointer;
-            border: 1px solid #0073aa;
+            border: 1px solid #2271b1;
             border-radius: 3px;
             background: #f6f7f7;
-            color: #0073aa;
-            font-weight: 600;
+            color: #2271b1;
+            font-weight: 500;
             vertical-align: middle;
         }
-        .button:hover { background: #f0f0f1; border-color: #005177; color: #005177; }
-        .button-primary { background: #0073aa; border-color: #0073aa; color: #fff; }
-        .button-primary:hover { background: #005177; border-color: #005177; color: #fff; }
+        .button:hover { background: #f0f0f1; border-color: #0a4b78; color: #0a4b78; }
+        .button-primary { background: #2271b1; border-color: #2271b1; color: #fff; font-weight: 600; }
+        .button-primary:hover { background: #135e96; border-color: #135e96; color: #fff; }
         .button-danger { border-color: #d63638; color: #d63638; }
         .button-danger:hover { background: #d63638; color: #fff; }
         .button-small { min-height: 26px; line-height: 2; font-size: 12px; padding: 0 8px; }
 
         /* Events and News Widget */
         .events-callout {
-            border-left: 4px solid #0073aa;
-            background: #f9f9f9;
+            border-left: 4px solid #2271b1;
+            background: #fff;
+            border-top: 1px solid #c3c4c7;
+            border-right: 1px solid #c3c4c7;
+            border-bottom: 1px solid #c3c4c7;
             padding: 10px 14px;
             margin: 10px 0 14px;
             font-size: 13px;
-            color: #444;
+            color: #3c434a;
         }
         .rss-news-list { list-style: none; margin: 0; padding: 0; }
         .rss-news-list li { margin-bottom: 10px; }
-        .rss-news-list a { color: #0073aa; font-weight: 500; }
+        .rss-news-list a { color: #2271b1; font-weight: 500; }
 
         /* Tables */
-        .wp-table-responsive { width: 100%; overflow-x: auto; background: #fff; border: 1px solid #e5e5e5; box-shadow: 0 1px 1px rgba(0,0,0,.04); margin: 16px 0; }
+        .wp-table-responsive { width: 100%; overflow-x: auto; background: #fff; border: 1px solid #c3c4c7; box-shadow: 0 1px 1px rgba(0,0,0,.04); margin: 16px 0; }
         .wp-list-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
-        .wp-list-table th { background: #f6f7f7; padding: 10px 12px; font-weight: 600; color: #2c3338; border-bottom: 1px solid #e5e5e5; }
+        .wp-list-table th { background: #f6f7f7; padding: 10px 12px; font-weight: 600; color: #2c3338; border-bottom: 1px solid #c3c4c7; }
         .wp-list-table td { padding: 10px 12px; border-bottom: 1px solid #f0f0f1; vertical-align: middle; }
         .wp-list-table tr:hover td { background: #f9f9f9; }
 
-        /* Form Tables */
+        /* Form Tables (WordPress Core Layout) */
         .form-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        .form-table th { width: 200px; padding: 16px 10px 16px 0; vertical-align: top; text-align: left; font-weight: 600; font-size: 13px; color: #1d2327; }
-        .form-table td { padding: 12px 10px 12px 0; vertical-align: top; }
-        .regular-text { width: 100%; max-width: 420px; padding: 0 8px; line-height: 2; min-height: 32px; border: 1px solid #8c8f94; border-radius: 4px; font-size: 13px; color: #2c3338; outline: none; }
-        .large-text { width: 100%; padding: 0 8px; line-height: 2; min-height: 32px; border: 1px solid #8c8f94; border-radius: 4px; font-size: 13px; color: #2c3338; outline: none; }
-        textarea.large-text { padding: 8px; min-height: 90px; line-height: 1.5; font-family: inherit; }
-        .regular-text:focus, .large-text:focus, select.large-text:focus { border-color: #0073aa; box-shadow: 0 0 0 1px #0073aa; }
-        .description { font-size: 12px; color: #646970; margin-top: 4px; font-style: italic; }
+        .form-table th { width: 220px; padding: 18px 10px 18px 0; vertical-align: top; text-align: left; font-weight: 600; font-size: 14px; color: #1d2327; }
+        .form-table td { padding: 14px 10px; vertical-align: top; font-size: 14px; color: #2c3338; }
+        .regular-text { width: 100%; max-width: 400px; padding: 0 8px; line-height: 2; min-height: 32px; border: 1px solid #8c8f94; border-radius: 4px; font-size: 14px; color: #2c3338; outline: none; background: #fff; }
+        .large-text { width: 100%; padding: 0 8px; line-height: 2; min-height: 32px; border: 1px solid #8c8f94; border-radius: 4px; font-size: 14px; color: #2c3338; outline: none; background: #fff; }
+        select.regular-text, select.large-text, select { padding: 0 24px 0 8px; height: 32px; border: 1px solid #8c8f94; border-radius: 4px; font-size: 14px; color: #2c3338; background: #fff; outline: none; }
+        textarea.large-text { padding: 8px; min-height: 90px; line-height: 1.5; font-family: inherit; font-size: 14px; }
+        .regular-text:focus, .large-text:focus, select:focus, textarea:focus { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; }
+        .description { font-size: 13px; color: #646970; margin-top: 4px; line-height: 1.4em; }
+        code { background: #f0f0f1; border: 1px solid #dcdcde; padding: 2px 6px; font-size: 13px; border-radius: 3px; font-family: Consolas, Monaco, monospace; color: #2c3338; }
 
         /* Subsubsub Filter Bar */
         .subsubsub { list-style: none; margin: 10px 0 14px; padding: 0; font-size: 13px; color: #646970; display: flex; flex-wrap: wrap; gap: 6px; }
-        .subsubsub li a { color: #0073aa; }
+        .subsubsub li a { color: #2271b1; }
         .subsubsub li a.current { font-weight: 600; color: #000; }
 
         /* Badges */
@@ -763,6 +818,18 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
         .badge-contacted { background: #fff9db; color: #f59f00; }
         .badge-converted { background: #ebfbee; color: #2f9e44; }
         .badge-type { background: #f1f3f5; color: #495057; border: 1px solid #dee2e6; }
+
+        /* WordPress Footer */
+        #wpfooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0 12px;
+            border-top: 1px solid #dcdcde;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #646970;
+        }
 
         /* Mobile Hamburger */
         .mobile-hamburger { display: none; background: transparent; border: none; color: #fff; padding: 6px; cursor: pointer; }
@@ -783,6 +850,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
             #wpcontent { margin-left: 0; padding: 12px; margin-top: 46px; }
             #wpwrap { margin-top: 0; }
             .form-table th, .form-table td { display: block; width: 100%; padding: 6px 0; }
+            .regular-text, .large-text { max-width: 100%; }
         }
     </style>
 </head>
@@ -950,7 +1018,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                     <a href="<?php echo $adminBase; ?>?page=plugins" class="menu-link">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V5H6c-1.1 0-2 .9-2 2v3.8H2.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5H4v4c0 1.1.9 2 2 2h4v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h4c1.1 0 2-.9 2-2v-4h1.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/></svg></span>
                         <span class="wp-menu-name">Plugins</span>
-                        <span class="menu-badge" style="background:#46b450">5</span>
+                        <span class="menu-badge" style="background:#00a32a">5</span>
                     </a>
                     <ul class="wp-submenu">
                         <li class="<?php echo $page === 'plugins' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=plugins">Installed Plugins</a></li>
@@ -984,22 +1052,27 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                     </ul>
                 </li>
 
-                <!-- 11. Settings -->
-                <li class="menu-top <?php echo in_array($page, ['settings', 'general', 'writing', 'reading', 'discussion', 'media-settings', 'permalinks']) ? 'current' : ''; ?>">
+                <!-- 11. Settings (MATCHING media_1788877451432.png) -->
+                <li class="menu-top <?php echo ($page === 'settings') ? 'current' : ''; ?>">
                     <a href="<?php echo $adminBase; ?>?page=settings" class="menu-link">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></span>
                         <span class="wp-menu-name">Settings</span>
                     </a>
                     <ul class="wp-submenu">
-                        <li class="<?php echo $page === 'settings' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings">General</a></li>
-                        <li><a href="<?php echo $adminBase; ?>?page=settings&tab=whatsapp">WhatsApp API</a></li>
-                        <li><a href="<?php echo $adminBase; ?>?page=settings&tab=permalinks">Permalinks</a></li>
+                        <li class="<?php echo ($page === 'settings' && (!isset($_GET['tab']) || $_GET['tab'] === 'general')) ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings">General</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'writing') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=writing">Writing</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'reading') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=reading">Reading</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'discussion') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=discussion">Discussion</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'media') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=media">Media</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'permalinks') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=permalinks">Permalinks</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'privacy') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=privacy">Privacy</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'whatsapp') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=whatsapp">WhatsApp &amp; API</a></li>
                     </ul>
                 </li>
 
                 <li class="wp-menu-separator"></li>
 
-                <!-- Extra CMS features (preserved) -->
+                <!-- Extra CRM features (preserved) -->
                 <li class="menu-top <?php echo $page === 'leads' ? 'current' : ''; ?>">
                     <a href="<?php echo $adminBase; ?>?page=leads" class="menu-link">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
@@ -1116,7 +1189,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                             <?php 
                                             $recentComments = hb_get_comments('all', 3);
                                             if (empty($recentComments)): ?>
-                                                <p style="color:#72777c; font-style:italic;">No comments yet.</p>
+                                                <p style="color:#646970; font-style:italic;">No comments yet.</p>
                                             <?php else:
                                                 foreach ($recentComments as $c): 
                                                     $gravHash = md5(strtolower(trim($c['author_email'] ?? 'wp@wordpress.org')));
@@ -1178,13 +1251,13 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                         <?php 
                                         $recentDrafts = hb_get_recent_drafts(3);
                                         if (!empty($recentDrafts)): ?>
-                                            <div style="margin-top:16px; border-top:1px solid #eee; padding-top:12px;">
+                                            <div style="margin-top:16px; border-top:1px solid #c3c4c7; padding-top:12px;">
                                                 <div class="sub-heading" style="margin-bottom:8px;">Recent Drafts</div>
                                                 <ul style="list-style:none; padding:0; margin:0;">
                                                     <?php foreach ($recentDrafts as $rd): ?>
                                                         <li style="margin-bottom:8px; font-size:12px;">
                                                             <a href="<?php echo $adminBase; ?>?page=posts&action=edit&id=<?php echo $rd['id']; ?>" style="font-weight:600;"><?php echo htmlspecialchars($rd['title']); ?></a>
-                                                            <span style="color:#888; font-size:11px;"> &mdash; <?php echo date('M jS, Y', strtotime($rd['created_at'])); ?></span>
+                                                            <span style="color:#646970; font-size:11px;"> &mdash; <?php echo date('M jS, Y', strtotime($rd['created_at'])); ?></span>
                                                         </li>
                                                     <?php endforeach; ?>
                                                 </ul>
@@ -1199,10 +1272,10 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                         <h2>
                                             <span>WordPress Events and News</span>
                                         </h2>
-                                        <span title="Edit" style="cursor:pointer; color:#72777c;">&#9998;</span>
+                                        <span title="Edit" style="cursor:pointer; color:#646970;">&#9998;</span>
                                     </div>
                                     <div class="inside">
-                                        <p style="margin-bottom:8px; color:#555;">Attend an upcoming event near you. <span style="color:#0073aa; cursor:pointer;">&#9998;</span></p>
+                                        <p style="margin-bottom:8px; color:#3c434a;">Attend an upcoming event near you. <span style="color:#2271b1; cursor:pointer;">&#9998;</span></p>
                                         <div class="events-callout">
                                             There aren't any events scheduled near you at the moment. Would you like to <a href="https://make.wordpress.org/community/" target="_blank">organize one</a>?
                                         </div>
@@ -1230,7 +1303,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                     <div class="postbox">
                         <div class="postbox-header"><h2>Current Status</h2></div>
                         <div class="inside">
-                            <p style="font-size:14px; color:#46b450; font-weight:600; margin-bottom:10px;">&#10004; You have the latest version of WordPress (6.5.4).</p>
+                            <p style="font-size:14px; color:#00a32a; font-weight:600; margin-bottom:10px;">&#10004; You have the latest version of WordPress (6.5.4).</p>
                             <p style="color:#646970;">Future security updates will be applied automatically.</p>
                         </div>
                     </div>
@@ -1238,8 +1311,8 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                     <div class="postbox">
                         <div class="postbox-header"><h2>Plugins &amp; Themes</h2></div>
                         <div class="inside">
-                            <p style="color:#46b450; font-weight:600; margin-bottom:6px;">&#10004; Your plugins are all up to date.</p>
-                            <p style="color:#46b450; font-weight:600;">&#10004; Your themes are all up to date.</p>
+                            <p style="color:#00a32a; font-weight:600; margin-bottom:6px;">&#10004; Your plugins are all up to date.</p>
+                            <p style="color:#00a32a; font-weight:600;">&#10004; Your themes are all up to date.</p>
                         </div>
                     </div>
 
@@ -1342,7 +1415,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                             <td>
                                                 <strong><a href="<?php echo $adminBase; ?>?page=posts&action=edit&id=<?php echo $p['id']; ?>"><?php echo htmlspecialchars($p['title']); ?></a></strong>
                                                 <?php if ($p['status'] === 'draft'): ?>
-                                                    <span style="color:#72777c; font-size:12px;"> &mdash; Draft</span>
+                                                    <span style="color:#646970; font-size:12px;"> &mdash; Draft</span>
                                                 <?php endif; ?>
                                                 <div class="row-actions" style="margin-top:4px; font-size:12px;">
                                                     <a href="<?php echo $adminBase; ?>?page=posts&action=edit&id=<?php echo $p['id']; ?>">Edit</a> |
@@ -1356,7 +1429,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                             <td><span class="badge badge-type">1</span></td>
                                             <td>
                                                 <?php echo ucfirst($p['status'] ?: 'published'); ?><br>
-                                                <span style="color:#72777c; font-size:11px;"><?php echo date('Y/m/d', strtotime($p['created_at'])); ?></span>
+                                                <span style="color:#646970; font-size:11px;"><?php echo date('Y/m/d', strtotime($p['created_at'])); ?></span>
                                             </td>
                                         </tr>
                                     <?php endforeach; endif; ?>
@@ -1387,15 +1460,15 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
 
                     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:14px; margin-top:16px;">
                         <?php if (empty($mediaFiles)): ?>
-                            <p style="color:#72777c;">No media items found.</p>
+                            <p style="color:#646970;">No media items found.</p>
                         <?php else:
                             foreach ($mediaFiles as $mf): ?>
                             <div class="postbox" style="margin-bottom:0; text-align:center; padding:10px; cursor:pointer;" onclick="prompt('Media URL:', '<?php echo htmlspecialchars($mf['url']); ?>')">
-                                <div style="height:90px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fafafa; margin-bottom:8px; border:1px solid #eee;">
+                                <div style="height:90px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fafafa; margin-bottom:8px; border:1px solid #c3c4c7;">
                                     <img src="<?php echo htmlspecialchars($mf['url']); ?>" alt="<?php echo htmlspecialchars($mf['filename']); ?>" style="max-height:80px; max-width:100%; object-fit:contain;">
                                 </div>
-                                <div style="font-size:11px; font-weight:600; color:#333; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><?php echo htmlspecialchars($mf['filename']); ?></div>
-                                <div style="font-size:10px; color:#888;"><?php echo round($mf['size']/1024, 1); ?> KB</div>
+                                <div style="font-size:11px; font-weight:600; color:#3c434a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><?php echo htmlspecialchars($mf['filename']); ?></div>
+                                <div style="font-size:10px; color:#646970;"><?php echo round($mf['size']/1024, 1); ?> KB</div>
                             </div>
                         <?php endforeach; endif; ?>
                     </div>
@@ -1441,7 +1514,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                     </td>
                                     <td><?php echo htmlspecialchars($pg['author']); ?></td>
                                     <td><code><?php echo htmlspecialchars($pg['url']); ?></code></td>
-                                    <td>Published<br><span style="color:#72777c; font-size:11px;"><?php echo htmlspecialchars($pg['date']); ?></span></td>
+                                    <td>Published<br><span style="color:#646970; font-size:11px;"><?php echo htmlspecialchars($pg['date']); ?></span></td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -1491,7 +1564,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                                 <img class="comment-avatar" src="https://secure.gravatar.com/avatar/<?php echo $cHash; ?>?s=36&d=retro" alt="Avatar">
                                                 <div>
                                                     <strong><?php echo htmlspecialchars($cm['author_name']); ?></strong><br>
-                                                    <span style="font-size:11px; color:#0073aa;"><?php echo htmlspecialchars($cm['author_email']); ?></span><br>
+                                                    <span style="font-size:11px; color:#2271b1;"><?php echo htmlspecialchars($cm['author_email']); ?></span><br>
                                                     <span style="font-size:10px; color:#888;"><?php echo htmlspecialchars($cm['author_ip'] ?? '127.0.0.1'); ?></span>
                                                 </div>
                                             </div>
@@ -1511,7 +1584,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                         <td>
                                             <a href="<?php echo $adminBase; ?>?page=posts"><strong><?php echo htmlspecialchars($cm['post_title'] ?? 'Hello world!'); ?></strong></a>
                                         </td>
-                                        <td style="white-space:nowrap; font-size:12px; color:#72777c;">
+                                        <td style="white-space:nowrap; font-size:12px; color:#646970;">
                                             <?php echo date('Y/m/d \a\t g:i a', strtotime($cm['created_at'])); ?>
                                         </td>
                                     </tr>
@@ -1529,7 +1602,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
 
                     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px; margin-top:16px;">
                         <!-- Active Theme -->
-                        <div class="postbox" style="margin-bottom:0; border-top: 4px solid #0073aa;">
+                        <div class="postbox" style="margin-bottom:0; border-top: 4px solid #2271b1;">
                             <div style="height:150px; background:linear-gradient(135deg, #1d2327 0%, #2c3338 100%); display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:700;">
                                 InboxWa Modern
                             </div>
@@ -1597,13 +1670,13 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                                 <?php if ($isActive): ?>
                                                     <a href="<?php echo $adminBase; ?>?action=toggle_plugin&slug=<?php echo $pl['slug']; ?>" style="color:#d63638;">Deactivate</a>
                                                 <?php else: ?>
-                                                    <a href="<?php echo $adminBase; ?>?action=toggle_plugin&slug=<?php echo $pl['slug']; ?>" style="color:#0073aa; font-weight:600;">Activate</a>
+                                                    <a href="<?php echo $adminBase; ?>?action=toggle_plugin&slug=<?php echo $pl['slug']; ?>" style="color:#2271b1; font-weight:600;">Activate</a>
                                                 <?php endif; ?>
                                             </div>
                                         </td>
                                         <td>
                                             <p style="margin-bottom:6px; color:#3c434a;"><?php echo htmlspecialchars($pl['description']); ?></p>
-                                            <div style="font-size:11px; color:#72777c;">
+                                            <div style="font-size:11px; color:#646970;">
                                                 Version <?php echo htmlspecialchars($pl['version']); ?> | By <a href="/"><?php echo htmlspecialchars($pl['author']); ?></a> | Status: <strong><?php echo ucfirst($pl['status']); ?></strong>
                                             </div>
                                         </td>
@@ -1705,7 +1778,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                             <div class="postbox-header"><h2>Site Health &amp; Diagnostics</h2></div>
                             <div class="inside">
                                 <ul style="list-style:none; padding:0; margin:0; font-size:13px; line-height:1.8em;">
-                                    <li>&#10004; PHP Version: <strong>8.2+ (Serverless Runtime)</strong></li>
+                                    <li>&#10004; PHP Version: <strong>8.3+ (Vercel Serverless)</strong></li>
                                     <li>&#10004; SQLite CMS Database: <strong>Connected &amp; Healthy</strong></li>
                                     <li>&#10004; HTTPS Security: <strong>Active (SSL Verified)</strong></li>
                                     <li>&#10004; WhatsApp Graph API: <strong>Active (v20.0)</strong></li>
@@ -1717,57 +1790,438 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
 
                 <?php
                 // =============================================================
-                // 11. GENERAL SETTINGS SCREEN
+                // 11. GENERAL SETTINGS SCREEN (EXACT MATCH FOR media_1788877451432.png)
                 // =============================================================
-                elseif ($page === 'settings'): ?>
-                    <h1 class="wp-heading-inline">General Settings</h1>
+                elseif ($page === 'settings'): 
+                    $curDate = date('Y-m-d');
+                    $curTime = date('H:i:s');
+                    $curDateFormat = hb_get_setting('date_format', 'F j, Y');
+                    $curDateCustom = hb_get_setting('date_format_custom', 'F j, Y');
+                    $curTimeFormat = hb_get_setting('time_format', 'g:i a');
+                    $curTimeCustom = hb_get_setting('time_format_custom', 'g:i a');
+                    $curTz = hb_get_setting('timezone_string', 'UTC+0');
+                    $curLang = hb_get_setting('site_language', 'en_US');
+                    $defRole = hb_get_setting('default_role', 'subscriber');
+                    $weekStart = hb_get_setting('start_of_week', '1');
+                    $canRegister = hb_get_setting('users_can_register', '0') === '1';
+                ?>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h1 class="wp-heading-inline">General Settings</h1>
+                        <button type="button" class="button" style="margin-top:10px;" onclick="var h = document.getElementById('contextual-help-panel'); h.style.display = (h.style.display === 'none' ? 'block' : 'none');">Help &#9660;</button>
+                    </div>
 
-                    <div class="postbox" style="margin-top:16px;">
-                        <div class="inside" style="padding:20px;">
-                            <form method="post" action="">
-                                <input type="hidden" name="form_action" value="save_settings">
-                                <table class="form-table">
-                                    <tr>
-                                        <th>Site Title</th>
-                                        <td><input type="text" name="site_title" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('site_title', 'InboxWa')); ?>" required></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tagline</th>
-                                        <td>
-                                            <input type="text" name="site_tagline" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('site_tagline', 'WhatsApp Marketing & Automation Platform')); ?>">
-                                            <p class="description">In a few words, explain what this site is about.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>WordPress Address (URL)</th>
-                                        <td><input type="text" class="large-text" value="<?php echo (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'inboxwa.com'); ?>" readonly></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Site Address (URL)</th>
-                                        <td><input type="text" class="large-text" value="<?php echo (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'inboxwa.com'); ?>" readonly></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Administration Email Address</th>
-                                        <td>
-                                            <input type="email" name="sales_email" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('sales_email', 'mail@inboxwa.com')); ?>">
-                                            <p class="description">This address is used for admin notifications.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Support WhatsApp Number</th>
-                                        <td>
-                                            <input type="text" name="support_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854445')); ?>" required>
-                                            <p class="description">Used for customer click-to-chat interactions.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Office Address</th>
-                                        <td><textarea name="office_address" class="large-text" rows="2"><?php echo htmlspecialchars(hb_get_setting('office_address', 'InboxWa AI Technologies Pvt Ltd, Bangalore, India')); ?></textarea></td>
-                                    </tr>
-                                </table>
-                                <p class="submit"><button type="submit" class="button button-primary">Save Changes</button></p>
-                            </form>
+                    <!-- Slide down Help Drawer -->
+                    <div id="contextual-help-panel" style="display:none; background:#fff; border:1px solid #c3c4c7; padding:16px 20px; margin:10px 0 20px; border-radius:2px; box-shadow:0 1px 1px rgba(0,0,0,0.04);">
+                        <h3 style="font-size:14px; margin-bottom:8px; color:#1d2327;">Overview of General Settings</h3>
+                        <p style="color:#50575e; line-height:1.5;">The fields on this screen determine the fundamental identity and localized configuration of your website. Changes made here apply across both the public-facing portal and the admin dashboard.</p>
+                    </div>
+
+                    <!-- Site Icon Modal -->
+                    <div id="modal-site-icon" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:100000; align-items:center; justify-content:center;">
+                        <div style="background:#fff; border-radius:4px; max-width:480px; width:90%; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.3);">
+                            <h3 style="margin-bottom:12px; font-size:16px;">Select Site Icon (512 &times; 512)</h3>
+                            <p style="color:#646970; font-size:12px; margin-bottom:14px;">Choose an icon URL or select from your brand assets.</p>
+                            <div style="display:flex; gap:10px; margin-bottom:16px;">
+                                <img src="/assets/images/favicon-32x32.png" onclick="setSiteIcon(this.src)" style="cursor:pointer; width:48px; height:48px; border:2px solid #ddd; border-radius:4px; padding:4px;" title="Standard Favicon">
+                                <img src="/assets/images/logo.png" onclick="setSiteIcon(this.src)" style="cursor:pointer; width:48px; height:48px; border:2px solid #ddd; border-radius:4px; padding:4px; object-fit:contain;" title="Main Logo">
+                            </div>
+                            <label style="display:block; font-weight:600; margin-bottom:4px; font-size:12px;">Custom Image URL:</label>
+                            <input type="text" id="custom-icon-url-input" class="regular-text" style="max-width:100%; margin-bottom:14px;" placeholder="/assets/images/..." value="<?php echo htmlspecialchars($siteIcon); ?>">
+                            <div style="display:flex; justify-content:flex-end; gap:8px;">
+                                <button type="button" class="button" onclick="document.getElementById('modal-site-icon').style.display='none'">Cancel</button>
+                                <button type="button" class="button button-primary" onclick="setSiteIcon(document.getElementById('custom-icon-url-input').value); document.getElementById('modal-site-icon').style.display='none'">Set Site Icon</button>
+                            </div>
                         </div>
+                    </div>
+
+                    <?php if ($settingsTab === 'general'): ?>
+                        <form method="post" action="" novalidate="novalidate">
+                            <input type="hidden" name="form_action" value="save_settings">
+
+                            <table class="form-table" role="presentation">
+                                <tbody>
+                                    <!-- Site Title -->
+                                    <tr>
+                                        <th scope="row"><label for="blogname">Site Title</label></th>
+                                        <td>
+                                            <input name="site_title" type="text" id="blogname" value="<?php echo htmlspecialchars($siteTitle); ?>" class="regular-text" required>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Tagline -->
+                                    <tr>
+                                        <th scope="row"><label for="blogdescription">Tagline</label></th>
+                                        <td>
+                                            <input name="site_tagline" type="text" id="blogdescription" value="<?php echo htmlspecialchars($siteTagline); ?>" class="regular-text">
+                                            <p class="description" id="tagline-description">In a few words, explain what this site is about. Example: &ldquo;Just another WordPress site.&rdquo;</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Site Icon -->
+                                    <tr>
+                                        <th scope="row">Site Icon</th>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+                                                <button type="button" class="button" onclick="document.getElementById('modal-site-icon').style.display='flex'">Choose a Site Icon</button>
+                                                <img id="site-icon-preview" src="<?php echo htmlspecialchars($siteIcon); ?>" alt="Site Icon" style="width:34px; height:34px; border-radius:4px; border:1px solid #c3c4c7; padding:2px; background:#fff; object-fit:contain;">
+                                            </div>
+                                            <input type="hidden" name="favicon_url" id="site_icon_input" value="<?php echo htmlspecialchars($siteIcon); ?>">
+                                            <p class="description">The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>512 by 512</code> pixels.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- WordPress Address (URL) -->
+                                    <tr>
+                                        <th scope="row"><label for="siteurl">WordPress Address (URL)</label></th>
+                                        <td>
+                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz-fm3x-eta.vercel.app')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Site Address (URL) -->
+                                    <tr>
+                                        <th scope="row"><label for="home">Site Address (URL)</label></th>
+                                        <td>
+                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz-fm3x-eta.vercel.app')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Administration Email Address -->
+                                    <tr>
+                                        <th scope="row"><label for="admin_email">Administration Email Address</label></th>
+                                        <td>
+                                            <input name="admin_email" type="email" id="admin_email" value="<?php echo htmlspecialchars(hb_get_setting('admin_email', hb_get_setting('sales_email', 'admin@inboxwa.com'))); ?>" class="regular-text ltr">
+                                            <p class="description">This address is used for admin purposes. If you change this, an email will be sent to your new address to confirm it. <strong>The new address will not become active until confirmed.</strong></p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Membership -->
+                                    <tr>
+                                        <th scope="row">Membership</th>
+                                        <td>
+                                            <fieldset>
+                                                <label for="users_can_register">
+                                                    <input name="users_can_register" type="checkbox" id="users_can_register" value="1" <?php echo $canRegister ? 'checked' : ''; ?>>
+                                                    Anyone can register
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+
+                                    <!-- New User Default Role -->
+                                    <tr>
+                                        <th scope="row"><label for="default_role">New User Default Role</label></th>
+                                        <td>
+                                            <select name="default_role" id="default_role">
+                                                <option value="subscriber" <?php echo $defRole === 'subscriber' ? 'selected' : ''; ?>>Subscriber</option>
+                                                <option value="contributor" <?php echo $defRole === 'contributor' ? 'selected' : ''; ?>>Contributor</option>
+                                                <option value="author" <?php echo $defRole === 'author' ? 'selected' : ''; ?>>Author</option>
+                                                <option value="editor" <?php echo $defRole === 'editor' ? 'selected' : ''; ?>>Editor</option>
+                                                <option value="administrator" <?php echo $defRole === 'administrator' ? 'selected' : ''; ?>>Administrator</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Site Language -->
+                                    <tr>
+                                        <th scope="row"><label for="WPLANG">Site Language <span class="dashicons dashicons-translation" style="vertical-align:middle; font-size:16px;">🌐</span></label></th>
+                                        <td>
+                                            <select name="site_language" id="WPLANG">
+                                                <option value="en_US" <?php echo $curLang === 'en_US' ? 'selected' : ''; ?>>English (United States)</option>
+                                                <option value="en_GB" <?php echo $curLang === 'en_GB' ? 'selected' : ''; ?>>English (UK)</option>
+                                                <option value="hi_IN" <?php echo $curLang === 'hi_IN' ? 'selected' : ''; ?>>Hindi (हिन्दी)</option>
+                                                <option value="ar" <?php echo $curLang === 'ar' ? 'selected' : ''; ?>>Arabic (العربية)</option>
+                                                <option value="es_ES" <?php echo $curLang === 'es_ES' ? 'selected' : ''; ?>>Spanish (Español)</option>
+                                                <option value="de_DE" <?php echo $curLang === 'de_DE' ? 'selected' : ''; ?>>German (Deutsch)</option>
+                                                <option value="fr_FR" <?php echo $curLang === 'fr_FR' ? 'selected' : ''; ?>>French (Français)</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Timezone -->
+                                    <tr>
+                                        <th scope="row"><label for="timezone_string">Timezone</label></th>
+                                        <td>
+                                            <select id="timezone_string" name="timezone_string">
+                                                <option value="UTC+0" <?php echo $curTz === 'UTC+0' ? 'selected' : ''; ?>>UTC+0</option>
+                                                <option value="UTC+5.5" <?php echo $curTz === 'UTC+5.5' ? 'selected' : ''; ?>>UTC+5:30 (India Standard Time)</option>
+                                                <option value="UTC+4" <?php echo $curTz === 'UTC+4' ? 'selected' : ''; ?>>UTC+4 (Dubai / GST)</option>
+                                                <option value="UTC+1" <?php echo $curTz === 'UTC+1' ? 'selected' : ''; ?>>UTC+1 (London / BST)</option>
+                                                <option value="UTC+2" <?php echo $curTz === 'UTC+2' ? 'selected' : ''; ?>>UTC+2 (Cairo / EET)</option>
+                                                <option value="UTC+3" <?php echo $curTz === 'UTC+3' ? 'selected' : ''; ?>>UTC+3 (Riyadh / AST)</option>
+                                                <option value="UTC+8" <?php echo $curTz === 'UTC+8' ? 'selected' : ''; ?>>UTC+8 (Singapore / CST)</option>
+                                                <option value="UTC-5" <?php echo $curTz === 'UTC-5' ? 'selected' : ''; ?>>UTC-5 (New York / EST)</option>
+                                                <option value="UTC-8" <?php echo $curTz === 'UTC-8' ? 'selected' : ''; ?>>UTC-8 (Los Angeles / PST)</option>
+                                            </select>
+                                            <p class="description">Choose either a city in the same timezone as you or a UTC (Coordinated Universal Time) time offset.</p>
+                                            <p class="timezone-info" style="margin-top:4px; color:#646970;">Universal time is <code><?php echo gmdate('Y-m-d H:i:s'); ?></code>.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Date Format -->
+                                    <tr>
+                                        <th scope="row">Date Format</th>
+                                        <td>
+                                            <fieldset>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="date_format" value="F j, Y" <?php echo $curDateFormat === 'F j, Y' ? 'checked' : ''; ?> onchange="updateDatePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:130px;"><?php echo date('F j, Y'); ?></span>
+                                                    <code>F j, Y</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="date_format" value="Y-m-d" <?php echo $curDateFormat === 'Y-m-d' ? 'checked' : ''; ?> onchange="updateDatePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:130px;"><?php echo date('Y-m-d'); ?></span>
+                                                    <code>Y-m-d</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="date_format" value="m/d/Y" <?php echo $curDateFormat === 'm/d/Y' ? 'checked' : ''; ?> onchange="updateDatePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:130px;"><?php echo date('m/d/Y'); ?></span>
+                                                    <code>m/d/Y</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="date_format" value="d/m/Y" <?php echo $curDateFormat === 'd/m/Y' ? 'checked' : ''; ?> onchange="updateDatePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:130px;"><?php echo date('d/m/Y'); ?></span>
+                                                    <code>d/m/Y</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="date_format" value="d.m.Y" <?php echo $curDateFormat === 'd.m.Y' ? 'checked' : ''; ?> onchange="updateDatePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:130px;"><?php echo date('d.m.Y'); ?></span>
+                                                    <code>d.m.Y</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="date_format" value="custom" <?php echo $curDateFormat === 'custom' ? 'checked' : ''; ?> onchange="updateDatePreview(document.getElementById('date_format_custom').value)">
+                                                    <span style="min-width:60px;">Custom:</span>
+                                                    <input type="text" name="date_format_custom" id="date_format_custom" value="<?php echo htmlspecialchars($curDateCustom); ?>" class="small-text" style="width:120px; padding:3px 6px; border:1px solid #8c8f94; border-radius:3px;" oninput="document.querySelector('input[name=date_format][value=custom]').checked = true; updateDatePreview(this.value)">
+                                                </label>
+                                                <p class="date-time-doc" style="margin-top:6px; color:#50575e;">
+                                                    <strong>Preview:</strong> <span id="date-preview"><?php echo date('F j, Y'); ?></span>
+                                                </p>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Time Format -->
+                                    <tr>
+                                        <th scope="row">Time Format</th>
+                                        <td>
+                                            <fieldset>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="time_format" value="g:i a" <?php echo $curTimeFormat === 'g:i a' ? 'checked' : ''; ?> onchange="updateTimePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:100px;"><?php echo date('g:i a'); ?></span>
+                                                    <code>g:i a</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="time_format" value="g:i A" <?php echo $curTimeFormat === 'g:i A' ? 'checked' : ''; ?> onchange="updateTimePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:100px;"><?php echo date('g:i A'); ?></span>
+                                                    <code>g:i A</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="time_format" value="H:i" <?php echo $curTimeFormat === 'H:i' ? 'checked' : ''; ?> onchange="updateTimePreview(this.value)">
+                                                    <span class="date-time-text" style="min-width:100px;"><?php echo date('H:i'); ?></span>
+                                                    <code>H:i</code>
+                                                </label>
+                                                <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                                                    <input type="radio" name="time_format" value="custom" <?php echo $curTimeFormat === 'custom' ? 'checked' : ''; ?> onchange="updateTimePreview(document.getElementById('time_format_custom').value)">
+                                                    <span style="min-width:60px;">Custom:</span>
+                                                    <input type="text" name="time_format_custom" id="time_format_custom" value="<?php echo htmlspecialchars($curTimeCustom); ?>" class="small-text" style="width:100px; padding:3px 6px; border:1px solid #8c8f94; border-radius:3px;" oninput="document.querySelector('input[name=time_format][value=custom]').checked = true; updateTimePreview(this.value)">
+                                                </label>
+                                                <p class="date-time-doc" style="margin-top:6px; color:#50575e;">
+                                                    <strong>Preview:</strong> <span id="time-preview"><?php echo date('g:i a'); ?></span><br>
+                                                    <a href="https://wordpress.org/documentation/article/customize-date-and-time-format/" target="_blank">Documentation on date and time formatting</a>.
+                                                </p>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Week Starts On -->
+                                    <tr>
+                                        <th scope="row"><label for="start_of_week">Week Starts On</label></th>
+                                        <td>
+                                            <select name="start_of_week" id="start_of_week">
+                                                <option value="1" <?php echo $weekStart === '1' ? 'selected' : ''; ?>>Monday</option>
+                                                <option value="0" <?php echo $weekStart === '0' ? 'selected' : ''; ?>>Sunday</option>
+                                                <option value="6" <?php echo $weekStart === '6' ? 'selected' : ''; ?>>Saturday</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class="submit" style="margin-top:24px;">
+                                <button type="submit" name="submit" id="submit" class="button button-primary" style="background:#2271b1; border-color:#2271b1; min-height:34px; padding:0 16px; font-weight:600; font-size:13px;">Save Changes</button>
+                            </p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'writing'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Writing Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Default Post Category</th>
+                                    <td>
+                                        <select name="default_post_category">
+                                            <option value="Uncategorized">Uncategorized</option>
+                                            <option value="Guide">Guide</option>
+                                            <option value="Automation">Automation</option>
+                                            <option value="CRM">CRM</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Default Post Format</th>
+                                    <td>
+                                        <select name="default_post_format">
+                                            <option value="standard">Standard</option>
+                                            <option value="aside">Aside</option>
+                                            <option value="chat">Chat</option>
+                                            <option value="gallery">Gallery</option>
+                                            <option value="link">Link</option>
+                                            <option value="image">Image</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Save Changes</button></p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'reading'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Reading Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Your homepage displays</th>
+                                    <td>
+                                        <label><input type="radio" name="show_on_front" value="page" checked> A static page (Homepage)</label><br>
+                                        <label><input type="radio" name="show_on_front" value="posts"> Your latest posts</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Blog pages show at most</th>
+                                    <td><input type="number" name="posts_per_page" value="<?php echo htmlspecialchars(hb_get_setting('posts_per_page', '10')); ?>" class="small-text" style="width:60px;"> posts</td>
+                                </tr>
+                                <tr>
+                                    <th>Search engine visibility</th>
+                                    <td><label><input type="checkbox" name="blog_public" value="1" <?php echo hb_get_setting('blog_public', '0') === '1' ? 'checked' : ''; ?>> Discourage search engines from indexing this site</label></td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Save Changes</button></p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'discussion'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Discussion Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Default post settings</th>
+                                    <td>
+                                        <label><input type="checkbox" name="default_ping_status" value="1" checked> Attempt to notify any blogs linked to from the post</label><br>
+                                        <label><input type="checkbox" name="default_comment_status" value="1" checked> Allow people to submit comments on new posts</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Other comment settings</th>
+                                    <td>
+                                        <label><input type="checkbox" name="require_name_email" value="1" checked> Comment author must fill out name and email</label>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Save Changes</button></p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'media'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Media Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Thumbnail size</th>
+                                    <td>Width: <input type="number" name="thumbnail_size_w" value="150" class="small-text" style="width:70px;"> Height: <input type="number" name="thumbnail_size_h" value="150" class="small-text" style="width:70px;"></td>
+                                </tr>
+                                <tr>
+                                    <th>Medium size</th>
+                                    <td>Max Width: <input type="number" name="medium_size_w" value="300" class="small-text" style="width:70px;"> Max Height: <input type="number" name="medium_size_h" value="300" class="small-text" style="width:70px;"></td>
+                                </tr>
+                                <tr>
+                                    <th>Large size</th>
+                                    <td>Max Width: <input type="number" name="large_size_w" value="1024" class="small-text" style="width:70px;"> Max Height: <input type="number" name="large_size_h" value="1024" class="small-text" style="width:70px;"></td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Save Changes</button></p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'permalinks'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Permalink Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Common Settings</th>
+                                    <td>
+                                        <label style="display:block; margin-bottom:8px;"><input type="radio" name="permalink_structure" value="plain"> Plain <code>/?p=123</code></label>
+                                        <label style="display:block; margin-bottom:8px;"><input type="radio" name="permalink_structure" value="day_name"> Day and name <code>/2026/09/08/sample-post/</code></label>
+                                        <label style="display:block; margin-bottom:8px;"><input type="radio" name="permalink_structure" value="month_name"> Month and name <code>/2026/09/sample-post/</code></label>
+                                        <label style="display:block; margin-bottom:8px;"><input type="radio" name="permalink_structure" value="post_name" checked> Post name <code>/resources/blog/sample-post/</code> (Default)</label>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Save Changes</button></p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'privacy'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Privacy Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Change your Privacy Policy page</th>
+                                    <td>
+                                        <select name="privacy_policy_page">
+                                            <option value="/privacy/">Privacy Policy (/privacy/)</option>
+                                            <option value="/terms/">Terms of Service (/terms/)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Use This Page</button></p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'whatsapp'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">WhatsApp &amp; Meta Cloud API Settings</h2>
+                        <form method="post" action="">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Support WhatsApp Number</th>
+                                    <td><input type="text" name="support_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854445')); ?>" required></td>
+                                </tr>
+                                <tr>
+                                    <th>Meta Graph API Token</th>
+                                    <td><input type="password" name="whatsapp_access_token" class="large-text" placeholder="EAAB..." value="<?php echo htmlspecialchars(hb_get_setting('whatsapp_access_token', '')); ?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Phone Number ID</th>
+                                    <td><input type="text" name="whatsapp_phone_number_id" class="large-text" placeholder="1029384756..." value="<?php echo htmlspecialchars(hb_get_setting('whatsapp_phone_number_id', '')); ?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>WhatsApp Business Account ID (WABA ID)</th>
+                                    <td><input type="text" name="whatsapp_waba_id" class="large-text" placeholder="192837465..." value="<?php echo htmlspecialchars(hb_get_setting('whatsapp_waba_id', '')); ?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Webhook Verify Token</th>
+                                    <td><input type="text" name="webhook_verify_token" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('webhook_verify_token', 'inboxwa_webhook_token_secure')); ?>"></td>
+                                </tr>
+                            </table>
+                            <p class="submit"><button type="submit" class="button button-primary">Save WhatsApp API Credentials</button></p>
+                        </form>
+                    <?php endif; ?>
+
+                    <!-- WordPress Core Footer -->
+                    <div id="wpfooter">
+                        <p id="footer-left">Thank you for creating with <a href="https://wordpress.org/" target="_blank">WordPress</a>.</p>
+                        <p id="footer-upgrade">Version 6.5.4</p>
                     </div>
 
                 <?php
@@ -2021,7 +2475,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                         <td><span class="badge badge-type"><?php echo htmlspecialchars($l['type'] ?? 'contact'); ?></span></td>
                                         <td>
                                             <strong><?php echo htmlspecialchars($l['name']); ?></strong><br>
-                                            <span style="color:#0073aa; font-size:11px;"><?php echo htmlspecialchars($l['email'] ?: 'N/A'); ?></span><br>
+                                            <span style="color:#2271b1; font-size:11px;"><?php echo htmlspecialchars($l['email'] ?: 'N/A'); ?></span><br>
                                             <span style="color:#2271b1; font-size:11px;"><?php echo htmlspecialchars($l['phone'] ?: 'N/A'); ?></span>
                                         </td>
                                         <td>
@@ -2037,7 +2491,7 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
                                             <?php if ($st === 'new'): ?>
                                                 <a href="<?php echo $adminBase; ?>?action=update_status&id=<?php echo $l['id']; ?>&status=contacted" class="button button-small">Contacted</a>
                                             <?php elseif ($st === 'contacted'): ?>
-                                                <a href="<?php echo $adminBase; ?>?action=update_status&id=<?php echo $l['id']; ?>&status=converted" class="button button-small" style="color:#46b450; border-color:#46b450;">Converted</a>
+                                                <a href="<?php echo $adminBase; ?>?action=update_status&id=<?php echo $l['id']; ?>&status=converted" class="button button-small" style="color:#00a32a; border-color:#00a32a;">Converted</a>
                                             <?php endif; ?>
                                             <a href="<?php echo $adminBase; ?>?action=delete_lead&id=<?php echo $l['id']; ?>" onclick="return confirm('Delete this lead?')" class="button button-small button-danger">Delete</a>
                                         </td>
@@ -2052,13 +2506,60 @@ $siteTitle = hb_get_setting('site_title', 'InboxWa');
         </div>
     </div>
 
-    <!-- JAVASCRIPT: SIDEBAR COLLAPSE & MOBILE DRAWER -->
+    <!-- JAVASCRIPT: SIDEBAR COLLAPSE, MODALS & LIVE PREVIEWS -->
     <script>
+    function setSiteIcon(url) {
+        var prev = document.getElementById('site-icon-preview');
+        var input = document.getElementById('site_icon_input');
+        if (prev) prev.src = url;
+        if (input) input.value = url;
+    }
+
+    function updateDatePreview(val) {
+        var now = new Date();
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var d = now.getDate();
+        var m = months[now.getMonth()];
+        var y = now.getFullYear();
+        var mm = String(now.getMonth() + 1).padStart(2, '0');
+        var dd = String(d).padStart(2, '0');
+        
+        var text = "";
+        if (val === 'F j, Y') text = m + " " + d + ", " + y;
+        else if (val === 'Y-m-d') text = y + "-" + mm + "-" + dd;
+        else if (val === 'm/d/Y') text = mm + "/" + dd + "/" + y;
+        else if (val === 'd/m/Y') text = dd + "/" + mm + "/" + y;
+        else if (val === 'd.m.Y') text = dd + "." + mm + "." + y;
+        else text = val || (m + " " + d + ", " + y);
+        
+        var prev = document.getElementById('date-preview');
+        if (prev) prev.textContent = text;
+    }
+
+    function updateTimePreview(val) {
+        var now = new Date();
+        var h = now.getHours();
+        var min = String(now.getMinutes()).padStart(2, '0');
+        var ampm = h >= 12 ? 'pm' : 'am';
+        var ampmU = h >= 12 ? 'PM' : 'AM';
+        var h12 = h % 12;
+        if (h12 === 0) h12 = 12;
+        var h24 = String(h).padStart(2, '0');
+
+        var text = "";
+        if (val === 'g:i a') text = h12 + ":" + min + " " + ampm;
+        else if (val === 'g:i A') text = h12 + ":" + min + " " + ampmU;
+        else if (val === 'H:i') text = h24 + ":" + min;
+        else text = val || (h12 + ":" + min + " " + ampm);
+
+        var prev = document.getElementById('time-preview');
+        if (prev) prev.textContent = text;
+    }
+
     (function(){
         // 1. Sidebar folded mode toggle
         var collapseBtn = document.getElementById('collapse-button');
         if (collapseBtn) {
-            // Restore from localStorage
             if (localStorage.getItem('wp_sidebar_folded') === '1') {
                 document.body.classList.add('folded');
             }
