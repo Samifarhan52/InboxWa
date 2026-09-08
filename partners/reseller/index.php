@@ -138,7 +138,7 @@ include __DIR__ . '/../../includes/header.php';
     var fd=new FormData(f);
     var msg='*InboxWa Partner — Reseller*\n'+fd.get('name')+' | '+fd.get('company')+'\n'+fd.get('email')+' | '+fd.get('whatsapp')+'\n'+(fd.get('message')||'');
     fetch('/api/lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'partner',source_page:'/partners/reseller/',name:fd.get('name'),email:fd.get('email'),phone:fd.get('whatsapp'),company:fd.get('company'),message:fd.get('message')}),credentials:'same-origin'}).catch(function(){});
-    window.open('https://wa.me/919638911838?text='+encodeURIComponent(msg),'_blank','noopener');
+    window.open('https://wa.me/918050854445?text='+encodeURIComponent(msg),'_blank','noopener');
     var st=document.getElementById('pf-status-reseller'); if(st){st.style.display='block';st.textContent='Thanks — WhatsApp opened for your partner request.';}
     f.reset();
   });}

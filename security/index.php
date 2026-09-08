@@ -28,12 +28,12 @@ include __DIR__ . '/../includes/header.php';
 <p>Configure message templates and automations in line with WhatsApp policy and local law.</p>
 <p>Do not submit sensitive personal data in forms unless necessary and lawful.</p>
 <h2>Vulnerability reporting</h2>
-<p>If you believe you have found a security issue, email hello@inboxwa.com with details. Please avoid public disclosure until we have had a reasonable chance to investigate.</p>
+<p>If you believe you have found a security issue, email mail@inboxwa.com with details. Please avoid public disclosure until we have had a reasonable chance to investigate.</p>
 <h2>Data requests & incidents</h2>
 <p>Privacy-related requests are handled under our Privacy Policy.</p>
 <p>If a security incident affects your workspace, we will notify affected customers as required by applicable law and our incident process.</p>
 
-      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:hello@inboxwa.com">hello@inboxwa.com</a> · WhatsApp <a href="https://wa.me/919638911838" target="_blank" rel="noopener">+91 96389 11838</a></p>
+      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a> · WhatsApp <a href="https://wa.me/918050854445" target="_blank" rel="noopener">+91 80508 54445</a></p>
     </div>
   </div>
 </section>

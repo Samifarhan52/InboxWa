@@ -19,7 +19,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </div>
 </section>
-<section class="section"><div class="container"><div class="card" style="max-width:640px;margin:0 auto"><p>We hire for product, engineering, success and sales. Email <a href="mailto:hello@inboxwa.com">hello@inboxwa.com</a> with your role interest.</p></div></div></section>
+<section class="section"><div class="container"><div class="card" style="max-width:640px;margin:0 auto"><p>We hire for product, engineering, success and sales. Email <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a> with your role interest.</p></div></div></section>
 <section class="section section-dark">
   <div class="container">
     <div class="section-header reveal" style="text-align:center">

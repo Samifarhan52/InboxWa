@@ -42,7 +42,7 @@ include __DIR__ . '/../includes/header.php';
 <h2>Governing law</h2>
 <p>These Terms are governed by the laws of India, without prejudice to mandatory consumer protections that may apply in your jurisdiction.</p>
 
-      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:hello@inboxwa.com">hello@inboxwa.com</a> · WhatsApp <a href="https://wa.me/919638911838" target="_blank" rel="noopener">+91 96389 11838</a></p>
+      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a> · WhatsApp <a href="https://wa.me/918050854445" target="_blank" rel="noopener">+91 80508 54445</a></p>
     </div>
   </div>
 </section>

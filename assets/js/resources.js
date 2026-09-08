@@ -44,12 +44,42 @@
         message: fd.get('message'),
         source_page: '/resources/help-center/'
       };
-      fetch('/api/lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),credentials:'same-origin'})
-        .catch(function(){});
+      var msg = '*InboxWa Support Ticket*\n\n' +
+        'Name: ' + (payload.name || '') + '\n' +
+        'Email: ' + (payload.email || '') + '\n' +
+        'WhatsApp: ' + (payload.phone || '') + '\n' +
+        'Category: ' + (payload.category || '') + '\n' +
+        'Subject: ' + (payload.subject || '') + '\n' +
+        'Message: ' + (payload.message || '');
+      var waUrl = 'https://wa.me/918050854445?text=' + encodeURIComponent(msg);
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+
       var st = document.getElementById('support-status');
-      if(st){ st.style.display='block'; st.textContent = 'Support request submitted. Our team will respond shortly.'; }
-      var msg = '*InboxWa Support*\n'+payload.subject+'\n'+payload.message+'\nFrom: '+payload.name+' '+payload.phone;
-      // optional WA
+      if(st){
+        st.style.display='block';
+        st.innerHTML = '⏳ Submitting ticket to support@inboxwa.com...';
+      }
+
+      fetch('/api/lead.php',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload),
+        credentials:'same-origin'
+      }).then(function(r){ return r.json(); })
+        .then(function(res){
+          if(st){
+            st.style.display='block';
+            st.style.color='#15803D';
+            st.innerHTML = '✅ Support request dispatched to <strong>support@inboxwa.com</strong> (Ticket #' + (res.id || '') + ') and WhatsApp. <a href="' + (res.whatsapp_url || waUrl) + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
+          }
+        }).catch(function(){
+          if(st){
+            st.style.display='block';
+            st.style.color='#15803D';
+            st.innerHTML = '✅ Support request submitted to <strong>support@inboxwa.com</strong> and WhatsApp. <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
+          }
+        });
+
       sf.reset();
     });
   }

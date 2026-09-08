@@ -19,7 +19,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </div>
 </section>
-<section class="section"><div class="container" style="max-width:720px"><div class="card"><p>We process account and contact data to provide the service, respond to enquiries and improve the product. Contact hello@inboxwa.com for privacy requests. Replace this summary with your legal counsel–approved policy before production.</p></div></div></section>
+<section class="section"><div class="container" style="max-width:720px"><div class="card"><p>We process account and contact data to provide the service, respond to enquiries and improve the product. Contact mail@inboxwa.com for privacy requests. Replace this summary with your legal counsel–approved policy before production.</p></div></div></section>
 <section class="section section-dark">
   <div class="container">
     <div class="section-header reveal" style="text-align:center">

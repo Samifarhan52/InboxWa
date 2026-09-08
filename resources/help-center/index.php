@@ -36,7 +36,7 @@ include __DIR__ . '/../../includes/header.php';
 <label>Message *</label><textarea name="message" required rows="4" style="width:100%;margin-bottom:1rem;padding:.65rem;border-radius:8px;border:1px solid var(--bd)"></textarea>
 <div style="display:flex;flex-wrap:wrap;gap:.75rem">
 <button type="submit" class="btn btn-primary">Submit Support Request</button>
-<a class="btn btn-outline" href="https://wa.me/919638911838" target="_blank" rel="noopener">Chat on WhatsApp</a>
+<a class="btn btn-outline" href="https://wa.me/918050854445" target="_blank" rel="noopener">Chat on WhatsApp</a>
 </div>
 <p id="support-status" style="margin-top:.75rem;display:none;color:#15803D"></p>
 </form>

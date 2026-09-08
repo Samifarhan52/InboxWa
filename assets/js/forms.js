@@ -6,12 +6,13 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '918050854445';
+  var WA_NUMBER = (window.INBOXWA_CONFIG && window.INBOXWA_CONFIG.whatsapp) || '918050854445';
   var FORM_MODE = 'both';
-  var FORM_ENDPOINT = 'api/lead.php';
+  var FORM_ENDPOINT = '/api/lead.php';
 
   function openWhatsApp(text) {
-    var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+    var num = (window.INBOXWA_CONFIG && window.INBOXWA_CONFIG.whatsapp) || WA_NUMBER;
+    var url = 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 
@@ -89,15 +90,7 @@
         utm_campaign: (new URLSearchParams(location.search)).get('utm_campaign') || ''
       };
       if (FORM_MODE === 'api' || FORM_MODE === 'both') {
-        try {
-          var ep = FORM_ENDPOINT;
-          if (ep && ep.indexOf('http') !== 0) {
-            var depth = (location.pathname.match(/\//g) || []).length - 1;
-            var base = '';
-            for (var bi = 0; bi < Math.max(0, depth - 1); bi++) base += '../';
-            ep = base + ep;
-          }
-          fetch(ep, {
+          fetch(FORM_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),

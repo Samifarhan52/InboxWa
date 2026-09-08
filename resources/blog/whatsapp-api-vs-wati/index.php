@@ -24,7 +24,7 @@ include __DIR__ . '/../../../includes/header.php';
 </div>
 <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem">
 <a class="btn btn-primary" href="/#contact-section">Book Demo</a>
-<a class="btn btn-outline" href="https://wa.me/919638911838" target="_blank" rel="noopener">WhatsApp Support</a>
+<a class="btn btn-outline" href="https://wa.me/918050854445" target="_blank" rel="noopener">WhatsApp Support</a>
 <a class="btn btn-outline" href="/resources/blog/">More articles</a>
 </div>
 </div></article>

@@ -39,13 +39,13 @@ include __DIR__ . '/../includes/header.php';
 <p>We apply administrative and technical safeguards appropriate to the nature of the service. No method of transmission is 100% secure.</p>
 <h2>Your rights</h2>
 <p>Depending on your location, you may have rights to access, correct, delete or export personal data, or to object to certain processing.</p>
-<p>Contact hello@inboxwa.com for privacy requests. We may need to verify your identity before responding.</p>
+<p>Contact mail@inboxwa.com for privacy requests. We may need to verify your identity before responding.</p>
 <h2>Cookies</h2>
 <p>We use essential cookies for authentication and security. Analytics cookies, if used, help us improve the site. You can control cookies in your browser settings.</p>
 <h2>Changes</h2>
 <p>We may update this policy from time to time. The “Last updated” date will change when we do. Continued use of the service after updates constitutes acceptance where permitted by law.</p>
 
-      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:hello@inboxwa.com">hello@inboxwa.com</a> · WhatsApp <a href="https://wa.me/919638911838" target="_blank" rel="noopener">+91 96389 11838</a></p>
+      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a> · WhatsApp <a href="https://wa.me/918050854445" target="_blank" rel="noopener">+91 80508 54445</a></p>
     </div>
   </div>
 </section>

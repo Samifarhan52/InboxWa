@@ -14,14 +14,14 @@ include __DIR__ . '/../includes/header.php';
 $contactConfig = @include __DIR__ . '/../config/contact.php';
 if (!is_array($contactConfig)) {
   $contactConfig = [
-    'support_whatsapp' => '919638911838',
-    'sales_email' => 'hello@inboxwa.com',
-    'support_email' => 'hello@inboxwa.com',
+    'support_whatsapp' => '918050854445',
+    'sales_email' => 'mail@inboxwa.com',
+    'support_email' => 'support@inboxwa.com',
   ];
 }
-$wa = preg_replace('/\D/', '', $contactConfig['support_whatsapp'] ?? '919638911838');
-$waDisplay = '+91 ' . substr($wa, 2, 5) . ' ' . substr($wa, 7);
-$email = $contactConfig['sales_email'] ?? 'hello@inboxwa.com';
+$wa = preg_replace('/\D/', '', $contactConfig['support_whatsapp'] ?? '918050854445');
+$waDisplay = '+91 80508 54445';
+$email = $contactConfig['sales_email'] ?? 'mail@inboxwa.com';
 $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like to connect.");
 ?>
 
@@ -919,8 +919,11 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         </div>
         <div class="ct-form-success" id="ct-form-success">
           <div class="ok-icon"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h3>Thanks! Your request has been received.</h3>
-          <p>Our team will get back to you shortly.</p>
+          <h3>Thanks! Your message has been sent.</h3>
+          <p id="ct-success-desc">An email notification has been dispatched to our team at <strong>mail@inboxwa.com</strong> and WhatsApp.</p>
+          <div style="margin-top:1.25rem;">
+            <a href="https://wa.me/918050854445" id="ct-success-wa-btn" class="btn btn-primary" target="_blank" rel="noopener">Continue on WhatsApp (+91 80508 54445)</a>
+          </div>
         </div>
       </div>
       <div class="ct-wa-card reveal">
@@ -1348,10 +1351,12 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
 (function () {
   'use strict';
 
-  /* Form validation + success state */
+  /* Form validation + submit handling */
   var form = document.getElementById('ct-contact-form');
   var formBody = document.getElementById('ct-form-body');
   var formSuccess = document.getElementById('ct-form-success');
+  var successDesc = document.getElementById('ct-success-desc');
+  var successWaBtn = document.getElementById('ct-success-wa-btn');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -1371,9 +1376,71 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         email.style.borderColor = '#EF4444';
       }
       if (!ok) return;
-      /* Front-end success; wire to backend when available */
+
+      var name = (document.getElementById('ct-name') || {}).value || '';
+      var business = (document.getElementById('ct-business') || {}).value || '';
+      var emailVal = (email ? email.value.trim() : '');
+      var phone = (document.getElementById('ct-phone') || {}).value || '';
+      var country = (document.getElementById('ct-country') || {}).value || '';
+      var interest = (document.getElementById('ct-interest') || {}).value || '';
+      var message = (document.getElementById('ct-message') || {}).value || '';
+
+      var isSupport = (interest === 'Support' || interest === 'Custom API / Webhooks');
+      var type = isSupport ? 'support' : 'contact';
+      var targetEmail = isSupport ? 'support@inboxwa.com' : 'mail@inboxwa.com';
+
+      var payload = {
+        type: type,
+        name: name,
+        business: business,
+        email: emailVal,
+        phone: phone,
+        country: country,
+        requirement: interest,
+        message: message,
+        source_page: '/contact/'
+      };
+
+      var msg = (isSupport ? '*InboxWa Technical Support Request*\n\n' : '*New Contact Enquiry - InboxWa*\n\n') +
+        'Name: ' + name + '\n' +
+        (business ? 'Business: ' + business + '\n' : '') +
+        (emailVal ? 'Email: ' + emailVal + '\n' : '') +
+        'Phone: ' + phone + '\n' +
+        (country ? 'Country: ' + country + '\n' : '') +
+        (interest ? 'Interest: ' + interest + '\n' : '') +
+        'Message: ' + (message || '—');
+
+      var waUrl = 'https://wa.me/918050854445?text=' + encodeURIComponent(msg);
+
+      // Dispatch to API endpoint (saves to DB and dispatches mail notification)
+      try {
+        fetch('/api/lead.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          credentials: 'same-origin'
+        }).then(function(res) { return res.json(); })
+          .then(function(res) {
+            if (res && res.whatsapp_url) {
+              if (successWaBtn) successWaBtn.href = res.whatsapp_url;
+            }
+          }).catch(function() {});
+      } catch (err) {}
+
+      // Automatically open WhatsApp
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+      // Update success card
       if (formBody) formBody.style.display = 'none';
-      if (formSuccess) formSuccess.classList.add('is-visible');
+      if (formSuccess) {
+        formSuccess.classList.add('is-visible');
+        if (successDesc) {
+          successDesc.innerHTML = 'Your message has been automatically dispatched to our team at <strong>' + targetEmail + '</strong> and WhatsApp. We look forward to speaking with you!';
+        }
+        if (successWaBtn) {
+          successWaBtn.href = waUrl;
+        }
+      }
     });
   }
 

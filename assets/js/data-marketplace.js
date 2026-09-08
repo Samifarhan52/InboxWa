@@ -110,6 +110,28 @@
       form.style.display = 'none';
       if (success) success.hidden = false;
 
+      var payload = {
+        type: 'lead',
+        name: name,
+        business: company,
+        email: em,
+        phone: phone,
+        whatsapp: phone,
+        country: location,
+        product: 'Data Marketplace (' + industry + ')',
+        requirement: req,
+        message: 'Expected Size: ' + size + ' | Format: ' + format + ' | Purpose: ' + purpose,
+        source_page: '/solutions/data-marketplace/'
+      };
+      try {
+        fetch('/api/lead.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          credentials: 'same-origin'
+        }).catch(function () {});
+      } catch (err) {}
+
       setTimeout(function () {
         window.open('https://wa.me/' + wa + '?text=' + msg, '_blank');
       }, 600);
