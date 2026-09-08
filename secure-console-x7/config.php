@@ -513,9 +513,9 @@ function hb_pdo(): PDO {
             [
                 1,
                 'Hello world!',
-                'A WordPress Commenter',
-                'wap@wordpress.org',
-                'https://wordpress.org/',
+                'An ElavateX User',
+                'support@inboxwa.com',
+                'https://elavatex.com',
                 '127.0.0.1',
                 'Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from Gravatar.',
                 'approved',
