@@ -380,3 +380,340 @@ html, body {
   }
 }
 
+/* =========================================================
+   OMNICHANNEL & HOMEPAGE MASTER MOBILE SYSTEM
+   Applies to .cw- (WhatsApp & Home), .cig- (Instagram),
+   .ctg- (Telegram), and .cfb- (Facebook)
+   ========================================================= */
+
+html, body, main#main, #main, .site-main,
+.cw-main-page, .cw-page, .cig-page, .ctg-page, .cfb-page, .page-wrapper {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+  /* Hero Section Containers */
+  .cw-hero-wrap, .cw-hero-section, .cig-hero-section, .ctg-hero-section, .cfb-hero-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5rem 1rem 3rem !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 2-Column Hero Grids convert to Stacked Composition */
+  .cw-hero-grid, .cig-hero-grid, .ctg-hero-grid, .cfb-hero-grid,
+  .ca-hero-grid, .bot-hero-grid, .wbp-hero-grid, .wf-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Centered Hero Content & Headers */
+  .cw-hero-content,
+  .cig-hero-grid > div:first-child,
+  .ctg-hero-grid > div:first-child,
+  .cfb-hero-grid > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Badge Pills */
+  .cw-badge-pill, .cig-badge-pill, .ctg-badge-pill, .cfb-badge-pill {
+    margin: 0 auto 1.25rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+  }
+
+  /* Hero Titles */
+  .cw-hero-title, .cig-hero-title, .ctg-hero-title, .cfb-hero-title {
+    font-size: clamp(1.65rem, 6.8vw, 2.35rem) !important;
+    line-height: 1.22 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Hero Leads */
+  .cw-hero-desc, .cig-hero-desc, .ctg-hero-desc, .cfb-hero-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto 1.5rem !important;
+  }
+
+  /* CTA Buttons Rows */
+  .cw-hero-actions, .cig-hero-actions, .ctg-hero-actions, .cfb-hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 1.5rem !important;
+    gap: 0.65rem !important;
+    align-items: stretch !important;
+  }
+
+  .cw-btn-primary, .cw-btn-secondary,
+  .cig-btn-primary, .cig-btn-secondary,
+  .ctg-btn-primary, .ctg-btn-secondary,
+  .cfb-btn-primary, .cfb-btn-secondary {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Trust Badges */
+  .cw-trust-row, .cig-trust-row, .ctg-trust-row, .cfb-trust-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.65rem 1.25rem !important;
+    font-size: 0.8rem !important;
+    margin: 0 auto !important;
+  }
+
+  /* Phone Mockup Simulators */
+  .cw-phone-wrapper, .cig-phone-wrapper, .ctg-phone-wrapper, .cfb-phone-wrapper {
+    width: min(315px, calc(100vw - 32px)) !important;
+    max-width: 315px !important;
+    margin: 1.25rem auto 0 !important;
+    box-sizing: border-box !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    overflow: visible !important;
+  }
+
+  .cw-phone-device, .cig-phone-device, .ctg-phone-device, .cfb-phone-device {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    transform-style: flat !important;
+    border-radius: 36px !important;
+    padding: 8px 8px 6px !important;
+    border-width: 2.5px !important;
+  }
+
+  .cw-phone-screen, .cig-phone-screen, .ctg-phone-screen, .cfb-phone-screen {
+    height: 440px !important;
+    border-radius: 28px !important;
+  }
+
+  .cw-phone-aura {
+    inset: 0 !important;
+    filter: blur(16px) !important;
+    border-radius: 40px !important;
+  }
+
+  /* Hide floating badges on mobile to prevent overflow */
+  .cw-floating-card, .cig-floating-card, .ctg-floating-card, .cfb-floating-card {
+    display: none !important;
+  }
+
+  /* Comparison Tables — clean horizontal touch scroll */
+  .cw-table-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  .cw-comp-table {
+    min-width: 560px !important;
+    width: 100% !important;
+  }
+
+  .cw-comp-table th,
+  .cw-comp-table td {
+    padding: 12px 14px !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Feature & Step Grids */
+  .cw-showcase-section, .cw-steps-section, .cw-comparison-section, .cw-sales-section,
+  .cig-features-section, .cig-steps-section, .cig-sales-section,
+  .ctg-features-section, .ctg-steps-section, .ctg-sales-section,
+  .cfb-features-section, .cfb-steps-section, .cfb-sales-section {
+    padding: 3rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cw-showcase-grid, .cw-steps-grid,
+  .cig-features-grid, .cig-steps-grid,
+  .ctg-features-grid, .ctg-steps-grid,
+  .cfb-features-grid, .cfb-steps-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 1rem !important;
+  }
+
+  .cw-card, .cw-step-card,
+  .cig-feature-card, .cig-step-card,
+  .ctg-feature-card, .ctg-step-card,
+  .cfb-feature-card, .cfb-step-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem 1.25rem !important;
+  }
+
+  /* Sales CTA Banners */
+  .cw-sales-inner, .cig-sales-inner, .ctg-sales-inner, .cfb-sales-inner {
+    padding: 2.5rem 1.25rem !important;
+    border-radius: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cw-sales-title, .cig-sales-title, .ctg-sales-title, .cfb-sales-title {
+    font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+  }
+
+  .cw-sales-desc, .cig-sales-desc, .ctg-sales-desc, .cfb-sales-desc {
+    font-size: 0.95rem !important;
+  }
+
+  .cw-sales-actions, .cig-sales-actions, .ctg-sales-actions, .cfb-sales-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto 1.25rem !important;
+    gap: 0.65rem !important;
+  }
+
+  .cw-btn-white, .cw-btn-transparent,
+  .cig-sales-actions .btn, .ctg-sales-actions .btn, .cfb-sales-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .cw-sales-trust, .cig-sales-trust, .ctg-sales-trust, .cfb-sales-trust {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Prevent iOS Auto-Zoom on form fields */
+  input, textarea, select, .cw-chat-input {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100% !important;
+  }
+
+  .cw-wa-body, .cig-chat-messages, .ctg-chat-messages, .cfb-chat-messages {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+  }
+
+  .cw-section-title, .cig-section-title, .ctg-section-title, .cfb-section-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+  }
+
+  .cw-section-subtitle, .cig-section-subtitle, .ctg-section-subtitle, .cfb-section-subtitle {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .cw-hero-wrap, .cw-hero-section, .cig-hero-section, .ctg-hero-section, .cfb-hero-section {
+    padding: 1.25rem 0.75rem 2.25rem !important;
+  }
+
+  .cw-hero-title, .cig-hero-title, .ctg-hero-title, .cfb-hero-title {
+    font-size: clamp(1.4rem, 6.2vw, 1.7rem) !important;
+  }
+
+  .cw-phone-wrapper, .cig-phone-wrapper, .ctg-phone-wrapper, .cfb-phone-wrapper {
+    width: min(290px, calc(100vw - 20px)) !important;
+    max-width: 290px !important;
+  }
+
+  .cw-phone-device, .cig-phone-device, .ctg-phone-device, .cfb-phone-device {
+    border-radius: 32px !important;
+    padding: 6px 6px 5px !important;
+  }
+
+  .cw-phone-screen, .cig-phone-screen, .ctg-phone-screen, .cfb-phone-screen {
+    height: 400px !important;
+    border-radius: 24px !important;
+  }
+
+  .cw-wa-header, .cig-chat-header, .ctg-chat-header, .cfb-chat-header {
+    padding: 7px 8px !important;
+    gap: 6px !important;
+  }
+
+  .cw-wa-title-row strong, .cig-header-name, .ctg-header-name, .cfb-header-name {
+    font-size: 0.76rem !important;
+  }
+
+  .cw-wa-subtitle, .cig-header-status, .ctg-header-status, .cfb-header-status {
+    font-size: 0.62rem !important;
+  }
+
+  .cw-chips-scroll {
+    gap: 4px !important;
+  }
+
+  .cw-chip {
+    padding: 4px 8px !important;
+    font-size: 0.66rem !important;
+  }
+
+  .cw-chat-footer {
+    padding: 5px 6px 6px !important;
+    gap: 4px !important;
+  }
+
+  .cw-chat-input {
+    padding: 6px 9px !important;
+  }
+
+  .cw-chat-send {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+  }
+}
+
+

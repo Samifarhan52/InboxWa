@@ -21,13 +21,18 @@ include __DIR__ . '/includes/header.php';
     background: #ffffff;
     color: #1e293b;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   /* Hero Section */
   .cw-hero-wrap {
     padding: 2.5rem 1.25rem 4.5rem;
     max-width: 1240px;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
   }
   .cw-hero-grid {
     display: grid;
@@ -721,13 +726,16 @@ include __DIR__ . '/includes/header.php';
   }
 
   .cw-table-container {
+    width: 100%;
     max-width: 1050px;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 20px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
   }
   .cw-comp-table {
     width: 100%;
@@ -979,238 +987,260 @@ include __DIR__ . '/includes/header.php';
      COMPREHENSIVE MOBILE RESPONSIVE ENGINE
      ========================================= */
   @media (max-width: 900px) {
+    .cw-hero-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 1.5rem 1rem 3rem !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
     .cw-hero-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
     }
     .cw-hero-content {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
     .cw-badge-pill {
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 1.25rem !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      text-align: center !important;
+      max-width: 100% !important;
+    }
+    .cw-hero-title {
+      font-size: clamp(1.65rem, 6.8vw, 2.35rem) !important;
+      line-height: 1.22 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-bottom: 1rem !important;
     }
     .cw-hero-desc {
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 0.95rem !important;
+      line-height: 1.55 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 0 auto 1.5rem !important;
     }
     .cw-hero-actions {
-      justify-content: center;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 320px !important;
+      margin: 0 auto 1.5rem !important;
+      gap: 0.65rem !important;
+      align-items: stretch !important;
+    }
+    .cw-btn-primary,
+    .cw-btn-secondary {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 0.85rem 1.25rem !important;
+      font-size: 0.95rem !important;
     }
     .cw-trust-row {
-      justify-content: center;
+      width: 100% !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 0.65rem 1.25rem !important;
+      font-size: 0.8rem !important;
+      margin: 0 auto !important;
     }
     .cw-phone-wrapper {
-      margin-top: 1rem;
+      width: min(315px, calc(100vw - 32px)) !important;
+      max-width: 315px !important;
+      margin: 1.25rem auto 0 !important;
+      box-sizing: border-box !important;
+      perspective: none !important;
+      transform-style: flat !important;
+      overflow: visible !important;
+    }
+    .cw-phone-device {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      transform: none !important;
+      transform-style: flat !important;
+      border-radius: 36px !important;
+      padding: 8px 8px 6px !important;
+      border-width: 2.5px !important;
+    }
+    .cw-phone-screen {
+      height: 440px !important;
+      border-radius: 28px !important;
+    }
+    .cw-phone-aura {
+      inset: 0 !important;
+      filter: blur(16px) !important;
+      border-radius: 40px !important;
+    }
+    .cw-floating-card {
+      display: none !important;
     }
     .cw-table-container {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      border-radius: 14px !important;
+      margin: 0 auto !important;
     }
-    .cw-showcase-grid {
-      grid-template-columns: 1fr;
+    .cw-comp-table {
+      min-width: 560px !important;
+      width: 100% !important;
+    }
+    .cw-comp-table th,
+    .cw-comp-table td {
+      padding: 12px 14px !important;
+      font-size: 0.82rem !important;
+    }
+    .cw-showcase-section,
+    .cw-steps-section,
+    .cw-comparison-section,
+    .cw-sales-section {
+      padding: 3rem 1rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .cw-showcase-grid,
+    .cw-steps-grid {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      gap: 1rem !important;
+    }
+    .cw-card,
+    .cw-step-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 1.5rem 1.25rem !important;
+    }
+    .cw-sales-inner {
+      padding: 2.5rem 1.25rem !important;
+      border-radius: 24px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .cw-sales-title {
+      font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+    }
+    .cw-sales-desc {
+      font-size: 0.95rem !important;
+    }
+    .cw-sales-actions {
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 300px !important;
+      margin: 0 auto 1.25rem !important;
+      gap: 0.65rem !important;
+    }
+    .cw-btn-white,
+    .cw-btn-transparent {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+    .cw-sales-trust {
+      flex-direction: column !important;
+      gap: 0.4rem !important;
+      align-items: center !important;
     }
   }
 
   @media (max-width: 768px) {
-    .cw-hero-wrap {
-      padding: 1.5rem 1rem 3rem;
-      overflow-x: clip;
-    }
-    .cw-hero-title {
-      font-size: clamp(1.85rem, 7.5vw, 2.75rem);
-      line-height: 1.2;
-    }
-    .cw-hero-desc {
-      font-size: 1rem;
-      line-height: 1.55;
-      margin-bottom: 1.5rem;
-    }
-    .cw-hero-actions {
-      flex-direction: column;
-      width: 100%;
-      max-width: 360px;
-      margin-left: auto;
-      margin-right: auto;
-      gap: 0.75rem;
-    }
-    .cw-btn-primary,
-    .cw-btn-secondary {
-      width: 100%;
-      justify-content: center;
-      padding: 0.85rem 1.5rem;
-      font-size: 0.95rem;
-    }
-    .cw-trust-row {
-      gap: 0.85rem 1.25rem;
-      font-size: 0.8rem;
-    }
-
-    /* Mobile Chat Input - Crucial iOS Zoom Prevention */
     .cw-chat-input {
       font-size: 16px !important;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    /* Phone Device on Tablets & Phones */
-    .cw-phone-wrapper {
-      width: 100%;
-      max-width: 360px;
-      margin: 1.25rem auto 0;
-    }
-    .cw-phone-device {
-      transform: none !important;
-      border-radius: 38px;
-      padding: 8px 8px 6px;
-      border-width: 2.5px;
-    }
-    .cw-phone-screen {
-      height: 460px;
-      border-radius: 30px;
+      -webkit-text-size-adjust: 100% !important;
     }
     .cw-wa-body {
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
-      padding: 8px 10px;
-      gap: 7px;
-    }
-    .cw-floating-card {
-      transform: scale(0.82);
-    }
-    .cw-fc-1 {
-      left: -8px;
-      top: 4%;
-      transform-origin: top left;
-    }
-    .cw-fc-2 {
-      right: -8px;
-      bottom: 27%;
-      transform-origin: bottom right;
-    }
-
-    /* Steps Section Mobile */
-    .cw-steps-section {
-      padding: 3rem 1rem;
-    }
-    .cw-steps-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .cw-step-card {
-      padding: 1.5rem 1.25rem;
-    }
-
-    /* Showcase Section Mobile */
-    .cw-showcase-section {
-      padding: 3rem 1rem;
-    }
-    .cw-card {
-      padding: 1.5rem 1.25rem;
-    }
-
-    /* Comparison Section Mobile */
-    .cw-comparison-section {
-      padding: 3rem 1rem;
-    }
-    .cw-section-header {
-      margin-bottom: 2rem;
+      -webkit-overflow-scrolling: touch !important;
+      overscroll-behavior: contain !important;
+      padding: 8px 10px !important;
+      gap: 7px !important;
     }
     .cw-section-title {
-      font-size: 1.75rem;
+      font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
     }
     .cw-section-subtitle {
-      font-size: 0.95rem;
-    }
-
-    /* Final Sales Banner Mobile */
-    .cw-sales-section {
-      padding: 3rem 1rem;
-    }
-    .cw-sales-inner {
-      padding: 2.5rem 1.25rem;
-      border-radius: 24px;
-    }
-    .cw-sales-title {
-      font-size: 1.75rem;
-    }
-    .cw-sales-desc {
-      font-size: 0.95rem;
-    }
-    .cw-sales-actions {
-      flex-direction: column;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto 1.5rem;
-    }
-    .cw-btn-white,
-    .cw-btn-transparent {
-      width: 100%;
-      justify-content: center;
-    }
-    .cw-sales-trust {
-      flex-direction: column;
-      gap: 0.4rem;
+      font-size: 0.9rem !important;
     }
   }
 
-  /* Compact Mobile Viewports (<= 400px - iPhone SE, Galaxy S) */
   @media (max-width: 400px) {
     .cw-hero-wrap {
-      padding: 1.25rem 0.75rem 2.5rem;
+      padding: 1.25rem 0.75rem 2.25rem !important;
+    }
+    .cw-hero-title {
+      font-size: clamp(1.4rem, 6.2vw, 1.7rem) !important;
     }
     .cw-phone-wrapper {
-      max-width: 315px;
+      width: min(290px, calc(100vw - 20px)) !important;
+      max-width: 290px !important;
     }
     .cw-phone-device {
-      border-radius: 34px;
-      padding: 7px 7px 5px;
+      border-radius: 32px !important;
+      padding: 6px 6px 5px !important;
     }
     .cw-phone-screen {
-      height: 430px;
-      border-radius: 26px;
+      height: 400px !important;
+      border-radius: 24px !important;
     }
     .cw-wa-header {
-      padding: 8px 10px;
-      gap: 7px;
+      padding: 7px 8px !important;
+      gap: 6px !important;
     }
     .cw-wa-title-row strong {
-      font-size: 0.78rem;
+      font-size: 0.76rem !important;
     }
     .cw-wa-subtitle {
-      font-size: 0.65rem;
-    }
-    .cw-floating-card {
-      transform: scale(0.72);
-    }
-    .cw-fc-1 {
-      left: -4px;
-      top: 3%;
-    }
-    .cw-fc-2 {
-      right: -4px;
-      bottom: 27%;
+      font-size: 0.62rem !important;
     }
     .cw-chips-scroll {
-      gap: 4px;
+      gap: 4px !important;
     }
     .cw-chip {
-      padding: 4px 9px;
-      font-size: 0.68rem;
+      padding: 4px 8px !important;
+      font-size: 0.66rem !important;
     }
     .cw-chat-footer {
-      padding: 6px 7px 7px;
-      gap: 4px;
+      padding: 5px 6px 6px !important;
+      gap: 4px !important;
     }
     .cw-chat-input {
-      padding: 7px 10px;
+      padding: 6px 9px !important;
     }
     .cw-chat-send {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
+      width: 30px !important;
+      height: 30px !important;
+      min-width: 30px !important;
     }
   }
 </style>

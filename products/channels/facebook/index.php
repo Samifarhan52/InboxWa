@@ -24,6 +24,9 @@ include __DIR__ . '/../../../includes/header.php';
     color: #1e293b;
     font-family: inherit;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   /* Breadcrumb */
@@ -50,7 +53,9 @@ include __DIR__ . '/../../../includes/header.php';
   .cfb-hero-section {
     padding: 2.5rem 1.5rem 4.5rem;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
   }
   .cfb-hero-grid {
     display: grid;
@@ -433,14 +438,168 @@ include __DIR__ . '/../../../includes/header.php';
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   }
 
-  @media (max-width: 1024px) {
-    .cfb-hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .cfb-features-grid { grid-template-columns: repeat(2, 1fr); }
-    .cfb-steps-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .cfb-features-grid { grid-template-columns: 1fr; }
-    .cfb-steps-grid { grid-template-columns: 1fr; }
+  @media (max-width: 900px) {
+    .cfb-hero-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 1.5rem 1rem 3rem !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+    .cfb-hero-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .cfb-hero-grid > div:first-child {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .cfb-badge-pill {
+      margin: 0 auto 1.25rem !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      text-align: center !important;
+      max-width: 100% !important;
+    }
+    .cfb-hero-title {
+      font-size: clamp(1.65rem, 6.8vw, 2.35rem) !important;
+      line-height: 1.22 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-bottom: 1rem !important;
+    }
+    .cfb-hero-desc {
+      font-size: 0.95rem !important;
+      line-height: 1.55 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 0 auto 1.5rem !important;
+    }
+    .cfb-hero-actions {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 320px !important;
+      margin: 0 auto 1.5rem !important;
+      gap: 0.65rem !important;
+      align-items: stretch !important;
+    }
+    .cfb-btn-primary,
+    .cfb-btn-secondary {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 0.85rem 1.25rem !important;
+      font-size: 0.95rem !important;
+    }
+    .cfb-trust-row {
+      width: 100% !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 0.65rem 1.25rem !important;
+      font-size: 0.8rem !important;
+      margin: 0 auto !important;
+    }
+    .cfb-phone-wrapper {
+      width: min(315px, calc(100vw - 32px)) !important;
+      max-width: 315px !important;
+      margin: 1.25rem auto 0 !important;
+      box-sizing: border-box !important;
+      perspective: none !important;
+      transform-style: flat !important;
+      overflow: visible !important;
+    }
+    .cfb-phone-device {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      transform: none !important;
+      transform-style: flat !important;
+      border-radius: 36px !important;
+      padding: 8px 8px 6px !important;
+      border-width: 2.5px !important;
+    }
+    .cfb-phone-screen {
+      height: 440px !important;
+      border-radius: 26px !important;
+    }
+    .cfb-floating-card {
+      display: none !important;
+    }
+    .cfb-features-section,
+    .cfb-steps-section,
+    .cfb-sales-section {
+      padding: 3rem 1rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .cfb-features-grid,
+    .cfb-steps-grid {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      gap: 1rem !important;
+    }
+    .cfb-feature-card,
+    .cfb-step-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 1.5rem 1.25rem !important;
+    }
+    .cfb-sales-inner {
+      padding: 2.5rem 1.25rem !important;
+      border-radius: 24px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .cfb-sales-title {
+      font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+    }
+    .cfb-sales-desc {
+      font-size: 0.95rem !important;
+    }
+    .cfb-sales-actions {
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 300px !important;
+      margin: 0 auto 1.25rem !important;
+      gap: 0.65rem !important;
+    }
+    .cfb-sales-actions .btn {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+    .cfb-sales-trust {
+      flex-direction: column !important;
+      gap: 0.4rem !important;
+      align-items: center !important;
+    }
   }
 </style>
 
@@ -666,4 +825,4 @@ include __DIR__ . '/../../../includes/header.php';
   </section>
 </div>
 
-<?php include __DIR__ . '/../../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>

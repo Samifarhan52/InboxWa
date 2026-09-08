@@ -26,6 +26,9 @@ include __DIR__ . '/../../../includes/header.php';
     color: #1e293b;
     font-family: inherit;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   /* Breadcrumb */
@@ -52,7 +55,9 @@ include __DIR__ . '/../../../includes/header.php';
   .cw-hero-section {
     padding: 2.5rem 1.5rem 4.5rem;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
   }
   .cw-hero-grid {
     display: grid;
@@ -555,10 +560,192 @@ include __DIR__ . '/../../../includes/header.php';
   }
 
   @media (max-width: 900px) {
-    .cw-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .cw-phone-wrapper { margin-top: 1rem; }
-    .cw-table-container { overflow-x: auto; }
-    .cw-showcase-grid { grid-template-columns: 1fr; }
+    .cw-hero-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 1.5rem 1rem 3rem !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+    .cw-hero-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .cw-hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .cw-badge-pill {
+      margin: 0 auto 1.25rem !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      text-align: center !important;
+      max-width: 100% !important;
+    }
+    .cw-hero-title {
+      font-size: clamp(1.65rem, 6.8vw, 2.35rem) !important;
+      line-height: 1.22 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-bottom: 1rem !important;
+    }
+    .cw-hero-desc {
+      font-size: 0.95rem !important;
+      line-height: 1.55 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 0 auto 1.5rem !important;
+    }
+    .cw-hero-actions {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 320px !important;
+      margin: 0 auto 1.5rem !important;
+      gap: 0.65rem !important;
+      align-items: stretch !important;
+    }
+    .cw-btn-primary,
+    .cw-btn-secondary {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 0.85rem 1.25rem !important;
+      font-size: 0.95rem !important;
+    }
+    .cw-trust-row {
+      width: 100% !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 0.65rem 1.25rem !important;
+      font-size: 0.8rem !important;
+      margin: 0 auto !important;
+    }
+    .cw-phone-wrapper {
+      width: min(315px, calc(100vw - 32px)) !important;
+      max-width: 315px !important;
+      margin: 1.25rem auto 0 !important;
+      box-sizing: border-box !important;
+      perspective: none !important;
+      transform-style: flat !important;
+      overflow: visible !important;
+    }
+    .cw-phone-device {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      transform: none !important;
+      transform-style: flat !important;
+      border-radius: 36px !important;
+      padding: 8px 8px 6px !important;
+      border-width: 2.5px !important;
+    }
+    .cw-phone-screen {
+      height: 440px !important;
+      border-radius: 28px !important;
+    }
+    .cw-phone-aura {
+      inset: 0 !important;
+      filter: blur(16px) !important;
+      border-radius: 40px !important;
+    }
+    .cw-floating-card {
+      display: none !important;
+    }
+    .cw-table-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      border-radius: 14px !important;
+      margin: 0 auto !important;
+    }
+    .cw-comp-table {
+      min-width: 560px !important;
+      width: 100% !important;
+    }
+    .cw-comp-table th,
+    .cw-comp-table td {
+      padding: 12px 14px !important;
+      font-size: 0.82rem !important;
+    }
+    .cw-showcase-section,
+    .cw-steps-section,
+    .cw-comparison-section,
+    .cw-sales-section {
+      padding: 3rem 1rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .cw-showcase-grid,
+    .cw-steps-grid {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      gap: 1rem !important;
+    }
+    .cw-card,
+    .cw-step-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 1.5rem 1.25rem !important;
+    }
+    .cw-sales-inner {
+      padding: 2.5rem 1.25rem !important;
+      border-radius: 24px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .cw-sales-title {
+      font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+    }
+    .cw-sales-desc {
+      font-size: 0.95rem !important;
+    }
+    .cw-sales-actions {
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 300px !important;
+      margin: 0 auto 1.25rem !important;
+      gap: 0.65rem !important;
+    }
+    .cw-btn-white,
+    .cw-btn-transparent {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+    .cw-sales-trust {
+      flex-direction: column !important;
+      gap: 0.4rem !important;
+      align-items: center !important;
+    }
   }
 </style>
 
@@ -892,5 +1079,5 @@ include __DIR__ . '/../../../includes/header.php';
 <?php
 include __DIR__ . '/../../includes/offer-popup.php';
 include __DIR__ . '/../../includes/callback-popup.php';
-include __DIR__ . '/../../../includes/footer.php';
+include __DIR__ . '/../../includes/footer.php';
 ?>
