@@ -5,7 +5,7 @@
  */
 
 function get_all_business_leads_categories() {
-    return [
+    $categories = [
         'real-estate' => [
             'slug' => 'real-estate',
             'name' => 'Real Estate',
@@ -2022,6 +2022,35 @@ function get_all_business_leads_categories() {
             ]
         ]
     ];
+
+    foreach ($categories as $slug => &$cat) {
+        $cat['svg'] = get_business_lead_svg($slug);
+    }
+    unset($cat);
+
+    return $categories;
+}
+
+function get_business_lead_svg($slug, $width = 20, $height = 20) {
+    $icons = [
+        'real-estate' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+        'education' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
+        'healthcare' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+        'ecommerce' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>',
+        'finance-insurance' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="9" y1="11" x2="15" y2="11"/></svg>',
+        'automotive' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-2z"/><path d="M5 17l-1-7h16l-1 7"/><path d="M7 10V7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3"/><circle cx="7.5" cy="14" r="1.5"/><circle cx="16.5" cy="14" r="1.5"/></svg>',
+        'travel-hospitality' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
+        'restaurants-food' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2v20M6 2v6a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V2M9 11v11"/></svg>',
+        'beauty-wellness' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L21 12l-6.6 2.8L12 22l-2.4-7.2L3 12l6.6-2.8z"/></svg>',
+        'it-software' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+        'digital-marketing' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>',
+        'professional-services' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+        'manufacturing' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l4 4V8l4 4V4l8 6v10"/></svg>',
+        'retail' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>',
+        'b2b-suppliers' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+        'events-wedding' => '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+    ];
+    return $icons[$slug] ?? '<svg viewBox="0 0 24 24" width="' . $width . '" height="' . $height . '" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>';
 }
 
 function get_business_lead_category($slug) {

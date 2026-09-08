@@ -15,7 +15,7 @@ $waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918884058241';
 include __DIR__ . '/../includes/header.php';
 ?>
 
-<link rel="stylesheet" href="/assets/css/business-leads.css?v=2">
+<link rel="stylesheet" href="/assets/css/business-leads.css?v=3">
 
 <main class="bl-page">
   <!-- HERO -->
@@ -43,8 +43,8 @@ include __DIR__ . '/../includes/header.php';
         <?php foreach ($allCategories as $cat): ?>
         <article class="bl-hub-card" data-title="<?php echo strtolower(htmlspecialchars($cat['name'])); ?>" data-desc="<?php echo strtolower(htmlspecialchars($cat['subtitle'])); ?>">
           <div>
-            <div class="bl-hub-emoji" style="background:<?php echo $cat['color_light']; ?>;">
-              <?php echo $cat['emoji']; ?>
+            <div class="bl-hub-icon" style="background:<?php echo $cat['color_light']; ?>;color:<?php echo $cat['color']; ?>;">
+              <?php echo $cat['svg']; ?>
             </div>
             <h3><?php echo htmlspecialchars($cat['name']); ?></h3>
             <p><?php echo htmlspecialchars($cat['subtitle']); ?></p>

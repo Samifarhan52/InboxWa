@@ -24,7 +24,7 @@ $defaultWaMsg = urlencode("Hi InboxWa team, I would like to request verified bus
 include __DIR__ . '/../includes/header.php';
 ?>
 
-<link rel="stylesheet" href="/assets/css/business-leads.css?v=2">
+<link rel="stylesheet" href="/assets/css/business-leads.css?v=3">
 
 <main class="bl-page">
   <!-- BREADCRUMB -->
@@ -43,7 +43,7 @@ include __DIR__ . '/../includes/header.php';
       <div class="bl-hero-grid">
         <div class="bl-hero-copy">
           <div class="bl-badge-pill">
-            <span><?php echo $category['emoji']; ?></span>
+            <span class="bl-badge-icon" style="color:<?php echo $category['color']; ?>;"><?php echo $category['svg']; ?></span>
             <span><?php echo htmlspecialchars($category['badge']); ?></span>
           </div>
           <h1 class="bl-hero-title"><?php echo $category['hero_title']; ?></h1>
@@ -96,7 +96,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="bl-phone-notch"></div>
             <div class="bl-phone-screen">
               <div class="bl-wa-header">
-                <div class="bl-wa-avatar"><?php echo $category['chat_sim']['avatar'] ?? '💬'; ?></div>
+                <div class="bl-wa-avatar" style="background:<?php echo $category['color']; ?>;color:#ffffff;display:flex;align-items:center;justify-content:center;"><?php echo $category['svg']; ?></div>
                 <div class="bl-wa-meta">
                   <strong><?php echo htmlspecialchars($category['chat_sim']['bot_name']); ?></strong>
                   <small>● <?php echo htmlspecialchars($category['chat_sim']['bot_status']); ?></small>

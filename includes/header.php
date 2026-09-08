@@ -109,11 +109,11 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/app.css?v=50">
-  <link rel="stylesheet" href="/assets/css/style.css?v=50">
-  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=50">
-  <link rel="stylesheet" href="/assets/css/story-journey.css?v=50">
-  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=50">
+  <link rel="stylesheet" href="/app.css?v=51">
+  <link rel="stylesheet" href="/assets/css/style.css?v=51">
+  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=51">
+  <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
+  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
 
   <script type="application/ld+json">
   {
@@ -907,16 +907,28 @@ if (!function_exists('hb_seo_esc')) {
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
+      transition: transform 0.18s ease, box-shadow 0.18s ease !important;
     }
-    .mega-emoji {
-      font-size: 1.15rem !important;
-      line-height: 1 !important;
-      display: inline-block !important;
+    .mega-panel-leads-grid .mega-icon svg {
+      width: 18px !important;
+      height: 18px !important;
+      stroke-width: 2 !important;
+      stroke: currentColor !important;
+      fill: none !important;
+      transition: transform 0.18s ease !important;
     }
-    .mega-icon-amber { background: #FEF3C7 !important; color: #D97706 !important; }
-    .mega-icon-indigo { background: #EEF2FF !important; color: #4F46E5 !important; }
-    .mega-icon-cyan { background: #E0F2FE !important; color: #0284C7 !important; }
-    .mega-icon-orange { background: #FFEDD5 !important; color: #EA580C !important; }
+    .mega-panel-leads-grid .mega-link:hover .mega-icon {
+      transform: scale(1.06) !important;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08) !important;
+    }
+    .mega-icon-blue { background: #EFF6FF !important; color: #2563EB !important; border: 1px solid rgba(37, 99, 235, 0.12) !important; }
+    .mega-icon-green { background: #ECFDF5 !important; color: #059669 !important; border: 1px solid rgba(5, 150, 105, 0.12) !important; }
+    .mega-icon-pink { background: #FFF1F2 !important; color: #E11D48 !important; border: 1px solid rgba(225, 29, 72, 0.12) !important; }
+    .mega-icon-purple { background: #F5F3FF !important; color: #7C3AED !important; border: 1px solid rgba(124, 58, 237, 0.12) !important; }
+    .mega-icon-amber { background: #FFFBEB !important; color: #D97706 !important; border: 1px solid rgba(217, 119, 6, 0.12) !important; }
+    .mega-icon-indigo { background: #EEF2FF !important; color: #4F46E5 !important; border: 1px solid rgba(79, 70, 229, 0.12) !important; }
+    .mega-icon-cyan { background: #F0F9FF !important; color: #0284C7 !important; border: 1px solid rgba(2, 132, 199, 0.12) !important; }
+    .mega-icon-orange { background: #FFF7ED !important; color: #EA580C !important; border: 1px solid rgba(234, 88, 12, 0.12) !important; }
     .mega-panel-leads-grid .mega-link-title {
       font-size: 0.86rem !important;
       font-weight: 700 !important;
@@ -1364,7 +1376,7 @@ if (!function_exists('hb_seo_esc')) {
               <div class="mega-panel-links mega-panel-leads-grid">
                 <!-- 1. Real Estate -->
                 <a href="<?php echo $bp; ?>business-leads/real-estate/" class="mega-link" role="menuitem" title="Builders, developers, brokers, property consultants and real estate businesses.">
-                  <span class="mega-icon mega-icon-blue"><span class="mega-emoji">🏠</span></span>
+                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Real Estate</span>
                     <span class="mega-link-desc">Builders, brokers &amp; property</span>
@@ -1373,7 +1385,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 2. Education -->
                 <a href="<?php echo $bp; ?>business-leads/education/" class="mega-link" role="menuitem" title="Schools, colleges, coaching institutes, training centres and education businesses.">
-                  <span class="mega-icon mega-icon-green"><span class="mega-emoji">🎓</span></span>
+                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Education</span>
                     <span class="mega-link-desc">Schools, colleges &amp; coaching</span>
@@ -1382,7 +1394,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 3. Healthcare -->
                 <a href="<?php echo $bp; ?>business-leads/healthcare/" class="mega-link" role="menuitem" title="Hospitals, clinics, diagnostic centres, wellness and healthcare businesses.">
-                  <span class="mega-icon mega-icon-pink"><span class="mega-emoji">🏥</span></span>
+                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Healthcare</span>
                     <span class="mega-link-desc">Hospitals, clinics &amp; diagnostic</span>
@@ -1391,7 +1403,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 4. E-commerce -->
                 <a href="<?php echo $bp; ?>business-leads/ecommerce/" class="mega-link" role="menuitem" title="Online stores, D2C brands, retailers and e-commerce businesses.">
-                  <span class="mega-icon mega-icon-purple"><span class="mega-emoji">🛍️</span></span>
+                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">E-commerce</span>
                     <span class="mega-link-desc">Online stores &amp; D2C brands</span>
@@ -1400,7 +1412,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 5. Finance & Insurance -->
                 <a href="<?php echo $bp; ?>business-leads/finance-insurance/" class="mega-link" role="menuitem" title="Financial services, insurance agencies, consultants and related businesses.">
-                  <span class="mega-icon mega-icon-amber"><span class="mega-emoji">💰</span></span>
+                  <span class="mega-icon mega-icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="9" y1="11" x2="15" y2="11"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Finance &amp; Insurance</span>
                     <span class="mega-link-desc">BFSI, insurance &amp; advisory</span>
@@ -1409,7 +1421,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 6. Automotive -->
                 <a href="<?php echo $bp; ?>business-leads/automotive/" class="mega-link" role="menuitem" title="Dealers, service centres, automobile businesses and automotive professionals.">
-                  <span class="mega-icon mega-icon-cyan"><span class="mega-emoji">🚗</span></span>
+                  <span class="mega-icon mega-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-2z"/><path d="M5 17l-1-7h16l-1 7"/><path d="M7 10V7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3"/><circle cx="7.5" cy="14" r="1.5"/><circle cx="16.5" cy="14" r="1.5"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Automotive</span>
                     <span class="mega-link-desc">Dealers, service &amp; auto pros</span>
@@ -1418,7 +1430,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 7. Travel & Hospitality -->
                 <a href="<?php echo $bp; ?>business-leads/travel-hospitality/" class="mega-link" role="menuitem" title="Hotels, resorts, travel agencies, tour operators and hospitality businesses.">
-                  <span class="mega-icon mega-icon-indigo"><span class="mega-emoji">✈️</span></span>
+                  <span class="mega-icon mega-icon-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Travel &amp; Hospitality</span>
                     <span class="mega-link-desc">Hotels, resorts &amp; tour agencies</span>
@@ -1427,7 +1439,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 8. Restaurants & Food -->
                 <a href="<?php echo $bp; ?>business-leads/restaurants-food/" class="mega-link" role="menuitem" title="Restaurants, cafes, cloud kitchens, catering and food businesses.">
-                  <span class="mega-icon mega-icon-orange"><span class="mega-emoji">🍽️</span></span>
+                  <span class="mega-icon mega-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2v20M6 2v6a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V2M9 11v11"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Restaurants &amp; Food</span>
                     <span class="mega-link-desc">Cafes, kitchens &amp; catering</span>
@@ -1436,7 +1448,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 9. Beauty & Wellness -->
                 <a href="<?php echo $bp; ?>business-leads/beauty-wellness/" class="mega-link" role="menuitem" title="Salons, spas, beauty clinics, wellness centres and professionals.">
-                  <span class="mega-icon mega-icon-pink"><span class="mega-emoji">💅</span></span>
+                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L21 12l-6.6 2.8L12 22l-2.4-7.2L3 12l6.6-2.8z"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Beauty &amp; Wellness</span>
                     <span class="mega-link-desc">Salons, spas &amp; beauty clinics</span>
@@ -1445,7 +1457,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 10. IT & Software -->
                 <a href="<?php echo $bp; ?>business-leads/it-software/" class="mega-link" role="menuitem" title="IT companies, software businesses, technology providers and SaaS companies.">
-                  <span class="mega-icon mega-icon-purple"><span class="mega-emoji">💻</span></span>
+                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">IT &amp; Software</span>
                     <span class="mega-link-desc">Tech providers, SaaS &amp; IT</span>
@@ -1454,7 +1466,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 11. Digital Marketing -->
                 <a href="<?php echo $bp; ?>business-leads/digital-marketing/" class="mega-link" role="menuitem" title="Marketing agencies, advertising agencies, SEO businesses and consultants.">
-                  <span class="mega-icon mega-icon-blue"><span class="mega-emoji">📣</span></span>
+                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Digital Marketing</span>
                     <span class="mega-link-desc">Agencies, advertising &amp; SEO</span>
@@ -1463,7 +1475,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 12. Professional Services -->
                 <a href="<?php echo $bp; ?>business-leads/professional-services/" class="mega-link" role="menuitem" title="Consultants, legal, accounting, HR, business and professional service providers.">
-                  <span class="mega-icon mega-icon-indigo"><span class="mega-emoji">💼</span></span>
+                  <span class="mega-icon mega-icon-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Professional Services</span>
                     <span class="mega-link-desc">Legal, accounting, HR &amp; advice</span>
@@ -1472,7 +1484,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 13. Manufacturing -->
                 <a href="<?php echo $bp; ?>business-leads/manufacturing/" class="mega-link" role="menuitem" title="Manufacturers, factories, suppliers and industrial businesses.">
-                  <span class="mega-icon mega-icon-amber"><span class="mega-emoji">🏭</span></span>
+                  <span class="mega-icon mega-icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l4 4V8l4 4V4l8 6v10"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Manufacturing</span>
                     <span class="mega-link-desc">Factories, suppliers &amp; industrial</span>
@@ -1481,7 +1493,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 14. Retail -->
                 <a href="<?php echo $bp; ?>business-leads/retail/" class="mega-link" role="menuitem" title="Local retailers, stores, distributors and consumer businesses.">
-                  <span class="mega-icon mega-icon-green"><span class="mega-emoji">🏪</span></span>
+                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Retail</span>
                     <span class="mega-link-desc">Local stores &amp; distributors</span>
@@ -1490,7 +1502,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 15. B2B & Suppliers -->
                 <a href="<?php echo $bp; ?>business-leads/b2b-suppliers/" class="mega-link" role="menuitem" title="Wholesalers, distributors, suppliers, vendors and B2B businesses.">
-                  <span class="mega-icon mega-icon-cyan"><span class="mega-emoji">📦</span></span>
+                  <span class="mega-icon mega-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">B2B &amp; Suppliers</span>
                     <span class="mega-link-desc">Wholesalers, vendors &amp; supply</span>
@@ -1499,7 +1511,7 @@ if (!function_exists('hb_seo_esc')) {
 
                 <!-- 16. Events & Wedding -->
                 <a href="<?php echo $bp; ?>business-leads/events-wedding/" class="mega-link" role="menuitem" title="Event planners, wedding businesses, photographers, venues and related services.">
-                  <span class="mega-icon mega-icon-pink"><span class="mega-emoji">🎉</span></span>
+                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
                   <span class="mega-link-text">
                     <span class="mega-link-title">Events &amp; Wedding</span>
                     <span class="mega-link-desc">Planners, venues &amp; photo</span>
@@ -1696,22 +1708,22 @@ if (!function_exists('hb_seo_esc')) {
           </button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <a href="<?php echo $bp; ?>business-leads/"><strong>All 16 Categories &rarr;</strong></a>
-            <a href="<?php echo $bp; ?>business-leads/real-estate/">🏠 Real Estate</a>
-            <a href="<?php echo $bp; ?>business-leads/education/">🎓 Education</a>
-            <a href="<?php echo $bp; ?>business-leads/healthcare/">🏥 Healthcare</a>
-            <a href="<?php echo $bp; ?>business-leads/ecommerce/">🛍️ E-commerce</a>
-            <a href="<?php echo $bp; ?>business-leads/finance-insurance/">💰 Finance &amp; Insurance</a>
-            <a href="<?php echo $bp; ?>business-leads/automotive/">🚗 Automotive</a>
-            <a href="<?php echo $bp; ?>business-leads/travel-hospitality/">✈️ Travel &amp; Hospitality</a>
-            <a href="<?php echo $bp; ?>business-leads/restaurants-food/">🍽️ Restaurants &amp; Food</a>
-            <a href="<?php echo $bp; ?>business-leads/beauty-wellness/">💅 Beauty &amp; Wellness</a>
-            <a href="<?php echo $bp; ?>business-leads/it-software/">💻 IT &amp; Software</a>
-            <a href="<?php echo $bp; ?>business-leads/digital-marketing/">📣 Digital Marketing</a>
-            <a href="<?php echo $bp; ?>business-leads/professional-services/">💼 Professional Services</a>
-            <a href="<?php echo $bp; ?>business-leads/manufacturing/">🏭 Manufacturing</a>
-            <a href="<?php echo $bp; ?>business-leads/retail/">🏪 Retail</a>
-            <a href="<?php echo $bp; ?>business-leads/b2b-suppliers/">📦 B2B &amp; Suppliers</a>
-            <a href="<?php echo $bp; ?>business-leads/events-wedding/">🎉 Events &amp; Wedding</a>
+            <a href="<?php echo $bp; ?>business-leads/real-estate/">Real Estate</a>
+            <a href="<?php echo $bp; ?>business-leads/education/">Education</a>
+            <a href="<?php echo $bp; ?>business-leads/healthcare/">Healthcare</a>
+            <a href="<?php echo $bp; ?>business-leads/ecommerce/">E-commerce</a>
+            <a href="<?php echo $bp; ?>business-leads/finance-insurance/">Finance &amp; Insurance</a>
+            <a href="<?php echo $bp; ?>business-leads/automotive/">Automotive</a>
+            <a href="<?php echo $bp; ?>business-leads/travel-hospitality/">Travel &amp; Hospitality</a>
+            <a href="<?php echo $bp; ?>business-leads/restaurants-food/">Restaurants &amp; Food</a>
+            <a href="<?php echo $bp; ?>business-leads/beauty-wellness/">Beauty &amp; Wellness</a>
+            <a href="<?php echo $bp; ?>business-leads/it-software/">IT &amp; Software</a>
+            <a href="<?php echo $bp; ?>business-leads/digital-marketing/">Digital Marketing</a>
+            <a href="<?php echo $bp; ?>business-leads/professional-services/">Professional Services</a>
+            <a href="<?php echo $bp; ?>business-leads/manufacturing/">Manufacturing</a>
+            <a href="<?php echo $bp; ?>business-leads/retail/">Retail</a>
+            <a href="<?php echo $bp; ?>business-leads/b2b-suppliers/">B2B &amp; Suppliers</a>
+            <a href="<?php echo $bp; ?>business-leads/events-wedding/">Events &amp; Wedding</a>
             <a href="<?php echo $bp; ?>solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
           </div></div>
         </div>
