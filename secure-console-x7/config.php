@@ -9,6 +9,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+require_once dirname(__DIR__) . '/config/supabase.php';
+
 function hb_get_db_path(): string {
     $localDir = __DIR__ . "/data";
     if (!is_dir($localDir)) {
@@ -561,6 +563,14 @@ function hb_get_setting(string $key, string $default = ''): string {
     if (isset($cache[$key])) {
         return $cache[$key];
     }
+    // Check Supabase Cloud if configured
+    if (function_exists('supabase_is_configured') && supabase_is_configured()) {
+        $sbVal = supabase_get_setting($key, '__NOT_FOUND__');
+        if ($sbVal !== '__NOT_FOUND__') {
+            $cache[$key] = $sbVal;
+            return $sbVal;
+        }
+    }
     try {
         $db = hb_pdo();
         $stmt = $db->prepare("SELECT value FROM settings WHERE key = ?");
@@ -575,6 +585,10 @@ function hb_get_setting(string $key, string $default = ''): string {
 }
 
 function hb_set_setting(string $key, string $value): void {
+    // Write to Supabase Cloud if configured
+    if (function_exists('supabase_is_configured') && supabase_is_configured()) {
+        supabase_set_setting($key, $value);
+    }
     try {
         $db = hb_pdo();
         $stmt = $db->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
