@@ -479,8 +479,19 @@ include __DIR__ . '/includes/header.php';
   .cw-chips-wrap {
     background: rgba(11, 20, 26, 0.98);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 6px 8px;
+    padding: 6px 10px 4px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 15;
+  }
+  .cw-chips-hint {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.65rem;
+    color: #8696a0;
+    margin-bottom: 4px;
+    font-weight: 600;
   }
   .cw-chips-scroll {
     display: flex;
@@ -489,28 +500,35 @@ include __DIR__ . '/includes/header.php';
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
   }
   .cw-chips-scroll::-webkit-scrollbar {
     display: none;
   }
   .cw-chip {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
     color: #e9edef;
     border-radius: 14px;
-    font-size: 0.69rem;
-    font-weight: 500;
-    padding: 4px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 11px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
     flex-shrink: 0;
+    position: relative;
+    z-index: 20;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   .cw-chip:hover {
     background: #059669;
     border-color: #10b981;
     color: #ffffff;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
+  }
+  .cw-chip:active {
+    transform: scale(0.96);
   }
 
   /* WhatsApp Chat Input Footer */
@@ -518,10 +536,12 @@ include __DIR__ . '/includes/header.php';
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 10px 8px;
+    padding: 7px 10px 9px;
     background: #1f2c34;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-shrink: 0;
+    position: relative;
+    z-index: 20;
   }
   .cw-chat-btn-emoji {
     background: transparent;
@@ -530,34 +550,42 @@ include __DIR__ . '/includes/header.php';
     cursor: pointer;
     padding: 3px;
     line-height: 1;
-    opacity: 0.8;
+    opacity: 0.85;
     transition: opacity 0.2s, transform 0.2s;
+    position: relative;
+    z-index: 25;
   }
   .cw-chat-btn-emoji:hover {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
   .cw-chat-input {
     flex: 1;
     background: #2a3942;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
-    padding: 7px 12px;
-    color: #e9edef;
-    font-size: 0.77rem;
+    padding: 8px 14px;
+    color: #ffffff;
+    font-size: 0.8rem;
     outline: none;
-    transition: border-color 0.2s, background 0.2s;
+    transition: all 0.2s ease;
+    cursor: text;
+    user-select: text;
+    -webkit-user-select: text;
+    position: relative;
+    z-index: 25;
   }
   .cw-chat-input:focus {
     border-color: #00a884;
     background: #32434d;
+    box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.3);
   }
   .cw-chat-input::placeholder {
     color: #8696a0;
   }
   .cw-chat-send {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: #00a884;
     border: none;
@@ -566,16 +594,18 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
     flex-shrink: 0;
-    box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 168, 132, 0.4);
+    position: relative;
+    z-index: 25;
   }
   .cw-chat-send:hover {
     background: #10b981;
-    transform: scale(1.08);
+    transform: scale(1.1);
   }
   .cw-chat-send:active {
-    transform: scale(0.95);
+    transform: scale(0.94);
   }
 
   /* Bottom iOS Home Indicator */
@@ -592,31 +622,26 @@ include __DIR__ . '/includes/header.php';
   .cw-floating-card {
     position: absolute;
     z-index: 5;
-    background: rgba(255, 255, 255, 0.94);
+    pointer-events: none; /* Never blocks user interaction with chat */
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.85);
-    padding: 9px 14px;
+    padding: 8px 14px;
     border-radius: 16px;
     box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16), 0 2px 6px rgba(0, 0, 0, 0.04);
     display: flex;
     align-items: center;
     gap: 9px;
     animation: cwFloat 4.5s ease-in-out infinite alternate;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-    cursor: default;
-  }
-  .cw-floating-card:hover {
-    transform: scale(1.06) translateY(-4px);
-    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.22);
   }
   .cw-fc-1 {
-    top: 9%;
-    left: -26px;
+    top: 8%;
+    left: -32px;
   }
   .cw-fc-2 {
-    bottom: 14%;
-    right: -26px;
+    bottom: 27%;
+    right: -28px;
     animation-delay: -2.25s;
   }
   .cw-fc-text strong {
@@ -671,10 +696,10 @@ include __DIR__ . '/includes/header.php';
 
   @media (max-width: 480px) {
     .cw-phone-wrapper { max-width: 320px; }
-    .cw-phone-screen { height: 440px; }
-    .cw-floating-card { transform: scale(0.85); }
-    .cw-fc-1 { left: -12px; top: 3%; }
-    .cw-fc-2 { right: -12px; bottom: 8%; }
+    .cw-phone-screen { height: 460px; }
+    .cw-floating-card { transform: scale(0.82); }
+    .cw-fc-1 { left: -14px; top: 4%; }
+    .cw-fc-2 { right: -14px; bottom: 27%; }
   }
 
   /* Comparison Section */
@@ -1113,6 +1138,10 @@ include __DIR__ . '/includes/header.php';
 
             <!-- Quick Suggestion Chips Carousel -->
             <div class="cw-chips-wrap">
+              <div class="cw-chips-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Tap a topic or type below:</span>
+              </div>
               <div class="cw-chips-scroll" id="cw-chips-container">
                 <button type="button" class="cw-chip" data-query="See pricing & plans">💰 See Pricing</button>
                 <button type="button" class="cw-chip" data-query="How does AI Bot work?">🤖 How AI Works</button>
@@ -1124,13 +1153,13 @@ include __DIR__ . '/includes/header.php';
             </div>
 
             <!-- WhatsApp Chat Composer Footer -->
-            <form class="cw-chat-footer" id="cw-chat-form" onsubmit="return false;">
+            <div class="cw-chat-footer" id="cw-chat-footer">
               <button type="button" class="cw-chat-btn-emoji" id="cw-emoji-btn" title="Add emoji">😊</button>
               <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message or ask anything..." autocomplete="off" maxlength="150">
-              <button type="submit" id="cw-chat-send" class="cw-chat-send" aria-label="Send message">
+              <button type="button" id="cw-chat-send" class="cw-chat-send" aria-label="Send message" title="Send message">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
               </button>
-            </form>
+            </div>
 
             <!-- Bottom iOS Home Indicator -->
             <div class="cw-home-bar"></div>
@@ -1455,7 +1484,7 @@ include __DIR__ . '/includes/header.php';
   // 4. Live Chatbot Engine
   const cwBody = document.getElementById('cw-live-body');
   const typingIndicator = document.getElementById('cw-typing-indicator');
-  const chatForm = document.getElementById('cw-chat-form');
+  const chatSendBtn = document.getElementById('cw-chat-send');
   const chatInput = document.getElementById('cw-chat-input');
   const chatReset = document.getElementById('cw-chat-reset');
   const emojiBtn = document.getElementById('cw-emoji-btn');
@@ -1718,27 +1747,88 @@ include __DIR__ . '/includes/header.php';
     }, 750);
   }
 
-  // Form Submit Listener
-  if (chatForm && chatInput) {
-    chatForm.addEventListener('submit', function(e) {
+  // Trigger Send Action
+  function sendCurrentInput() {
+    if (!chatInput) return;
+    const val = chatInput.value;
+    if (!val || !val.trim()) {
+      chatInput.focus();
+      return;
+    }
+    chatInput.value = '';
+    if (chatSendBtn) {
+      chatSendBtn.style.transform = '';
+      chatSendBtn.style.boxShadow = '';
+    }
+    handleUserMessage(val);
+  }
+
+  // Click on Send Button
+  if (chatSendBtn) {
+    chatSendBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      const val = chatInput.value;
-      if (!val || !val.trim()) return;
-      chatInput.value = '';
-      handleUserMessage(val);
+      e.stopPropagation();
+      sendCurrentInput();
+    });
+  }
+
+  // Press Enter key inside Input
+  if (chatInput) {
+    chatInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        e.stopPropagation();
+        sendCurrentInput();
+      }
+    });
+
+    // Visual feedback when typing text
+    chatInput.addEventListener('input', function() {
+      if (chatSendBtn) {
+        if (chatInput.value.trim().length > 0) {
+          chatSendBtn.style.transform = 'scale(1.12)';
+          chatSendBtn.style.boxShadow = '0 0 10px rgba(0, 168, 132, 0.8)';
+        } else {
+          chatSendBtn.style.transform = '';
+          chatSendBtn.style.boxShadow = '';
+        }
+      }
+    });
+  }
+
+  // Click inside chat body auto-focuses input
+  if (cwBody) {
+    cwBody.addEventListener('click', function(e) {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      if (chatInput) chatInput.focus();
     });
   }
 
   // Quick Suggestion Chips Listener
   const chips = document.querySelectorAll('.cw-chip');
   chips.forEach(function(chip) {
-    chip.addEventListener('click', function() {
+    chip.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       const q = chip.getAttribute('data-query');
       if (q) {
         handleUserMessage(q);
       }
     });
   });
+
+  // Highlight first chip gently after 2.5s if user hasn't interacted yet
+  setTimeout(function() {
+    const firstChip = document.querySelector('.cw-chip');
+    if (firstChip && chatInput && !chatInput.value) {
+      firstChip.style.transform = 'scale(1.08) translateY(-2px)';
+      firstChip.style.boxShadow = '0 0 12px rgba(16, 185, 129, 0.7)';
+      setTimeout(function() {
+        firstChip.style.transform = '';
+        firstChip.style.boxShadow = '';
+      }, 1200);
+    }
+  }, 2500);
 })();
 </script>
 
