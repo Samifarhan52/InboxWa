@@ -2597,7 +2597,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="siteurl">WordPress Address (URL)</label></th>
                                         <td>
-                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz-fm3x-eta.vercel.app')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'inboxwa.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
                                         </td>
                                     </tr>
 
@@ -2605,7 +2605,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="home">Site Address (URL)</label></th>
                                         <td>
-                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz-fm3x-eta.vercel.app')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'inboxwa.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
                                         </td>
                                     </tr>
 

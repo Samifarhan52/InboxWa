@@ -395,7 +395,7 @@ if (!function_exists('hb_seo_esc')) {
       position: static !important;
     }
 
-    /* Hellobotz-Style Dark Mega Menu for Channels (100% Centered & Never Cut Off) */
+    /* InboxWa Dark Mega Menu for Channels (100% Centered & Never Cut Off) */
     .mega-menu-channels,
     .mega-menu-channels.align-left,
     .mega-menu-channels.align-right {
@@ -1312,7 +1312,7 @@ if (!function_exists('hb_seo_esc')) {
           </div>
         </div>
 
-        <!-- CHANNELS [LIVE] MEGAMENU (Hellobotz Style) -->
+        <!-- CHANNELS [LIVE] MEGAMENU (InboxWa Suite) -->
         <div class="nav-item nav-item-channels" data-mega>
           <button type="button" class="nav-link nav-link-channels" aria-expanded="false" aria-haspopup="true">
             Channels <span class="badge-live-pill">Live</span>

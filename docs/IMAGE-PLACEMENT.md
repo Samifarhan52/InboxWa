@@ -1,4 +1,4 @@
-# HelloBotz — Image placement list
+# InboxWa — Image placement list
 
 Place real assets under `/assets/images/`. Use WebP/PNG. Always set width/height and alt.
 

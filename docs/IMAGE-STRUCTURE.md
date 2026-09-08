@@ -1,4 +1,4 @@
-# HelloBotz complete image structure
+# InboxWa complete image structure
 
 ```
 /assets/images/

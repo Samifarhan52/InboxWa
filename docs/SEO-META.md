@@ -6,8 +6,8 @@ Every page can set (before including header.php):
 $pageTitle = 'AI WhatsApp Chatbot';
 $pageDescription = '150–160 char summary with primary keyword.';
 $pageKeywords = 'optional, comma, keywords';
-$canonicalUrl = 'https://hellobotz.com/Products/Chatbot/';
-$ogImage = 'https://hellobotz.com/assets/images/og/chatbot.png';
+$canonicalUrl = 'https://inboxwa.com/Products/Chatbot/';
+$ogImage = 'https://inboxwa.com/assets/images/og/chatbot.png';
 $ogType = 'website'; // or article
 $robots = 'index, follow'; // or noindex, nofollow
 ```
@@ -22,4 +22,4 @@ Header auto-builds:
 
 Auth pages use `noindex, nofollow`.
 
-Domain constant: `https://hellobotz.com` in header SEO engine.
+Domain constant: `https://inboxwa.com` in header SEO engine.

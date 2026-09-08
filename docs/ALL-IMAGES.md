@@ -1,4 +1,4 @@
-# HelloBotz — Complete image list (name + location)
+# InboxWa — Complete image list (name + location)
 
 Place files under web root. Prefer WebP. Missing files use CSS gradients (no broken icons).
 

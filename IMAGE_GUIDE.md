@@ -1,4 +1,4 @@
-# HelloBotz — Image Placement & Size Guide
+# InboxWa — Image Placement & Size Guide
 
 Use this file when replacing placeholders or adding new visuals.  
 **Rule:** Keep existing layout; only swap image files or fill empty slots. Prefer **WebP** (fallback PNG). Always set width/height attributes or use CSS aspect-ratio classes to avoid layout shift.
@@ -155,4 +155,4 @@ Use `.img-slot-hero` for page heroes, `.img-slot-md` for feature rows.
 
 ---
 
-*Generated for HelloBotz production UI package. Paths are root-relative from site root.*
+*Generated for InboxWa production UI package. Paths are root-relative from site root.*

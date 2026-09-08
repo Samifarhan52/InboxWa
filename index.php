@@ -1774,7 +1774,7 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- 2.5 CLONED 5-STEP JOURNEY FLOW (HELLOBOTZ CLONE) -->
+  <!-- 2.5 5-STEP JOURNEY FLOW (INBOXWA AUTOMATION) -->
   <section class="jf-section" id="journey-flow">
     <!-- SECTION HEADER -->
     <div class="jf-header">
