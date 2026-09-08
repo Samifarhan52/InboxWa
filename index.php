@@ -132,42 +132,140 @@ include __DIR__ . '/includes/header.php';
     gap: 0.45rem;
   }
 
-  /* Interactive Mockup Phone Stage */
+  /* Interactive 3D Mockup Phone Stage */
   .cw-phone-wrapper {
     position: relative;
-    max-width: 380px;
+    max-width: 385px;
     margin: 0 auto;
+    perspective: 1200px;
+    transform-style: preserve-3d;
   }
+  
+  /* Glowing Ambient Aura */
+  .cw-phone-aura {
+    position: absolute;
+    inset: -25px;
+    border-radius: 60px;
+    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.28) 0%, rgba(124, 58, 237, 0.18) 45%, rgba(6, 182, 212, 0.12) 65%, transparent 80%);
+    filter: blur(35px);
+    z-index: 1;
+    pointer-events: none;
+    animation: cwAuraPulse 6s ease-in-out infinite alternate;
+  }
+  @keyframes cwAuraPulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    100% { transform: scale(1.06); opacity: 1; }
+  }
+
+  /* Phone Device Frame (Titanium Slate) */
   .cw-phone-device {
-    background: #0b141a;
-    border-radius: 36px;
-    padding: 12px;
-    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border: 3px solid #1e293b;
+    background: #0d151c;
+    border-radius: 44px;
+    padding: 10px 10px 8px;
+    box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.6), 0 0 0 1.5px rgba(255, 255, 255, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+    border: 3px solid #22303c;
     position: relative;
     z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+    will-change: transform;
   }
-  .cw-phone-notch {
-    width: 90px;
+
+  /* Glare Sweep Reflection */
+  .cw-phone-glare {
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Hardware Top Bar (Status Clock + Dynamic Island) */
+  .cw-phone-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 14px 6px;
+    color: #e9edef;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  .cw-status-time {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .cw-dynamic-island {
+    background: #000000;
+    border-radius: 20px;
     height: 18px;
-    background: #1e293b;
-    border-radius: 0 0 12px 12px;
-    margin: 0 auto 8px;
+    width: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.15);
   }
+  .cw-island-camera {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #111a24;
+    border: 1px solid #1f2c38;
+    position: relative;
+  }
+  .cw-island-camera::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.8);
+  }
+  .cw-island-speaker {
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background: #1c2630;
+  }
+  .cw-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.85;
+  }
+  .cw-status-5g {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  /* Phone Internal Screen */
   .cw-phone-screen {
     background: #0b141a;
-    border-radius: 26px;
-    height: 440px;
+    border-radius: 34px;
+    height: 485px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
+
+  /* WhatsApp Header */
   .cw-wa-header {
     background: #1f2c34;
-    padding: 10px 14px;
+    padding: 9px 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
   }
   .cw-wa-avatar {
     width: 36px;
@@ -178,76 +276,405 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-weight: 800;
-    font-size: 0.85rem;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
   }
-  .cw-wa-header-info strong {
-    display: block;
-    color: #e9edef;
-    font-size: 0.85rem;
-    font-weight: 700;
+  .cw-wa-avatar-badge {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+    border: 2px solid #1f2c34;
   }
-  .cw-wa-header-info span {
-    color: #8696a0;
-    font-size: 0.72rem;
+  .cw-wa-header-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .cw-wa-title-row {
     display: flex;
     align-items: center;
     gap: 4px;
   }
+  .cw-wa-title-row strong {
+    color: #e9edef;
+    font-size: 0.83rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cw-verified-check {
+    flex-shrink: 0;
+  }
+  .cw-wa-subtitle {
+    color: #8696a0;
+    font-size: 0.68rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 1px;
+  }
+  .cw-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+  }
+  .cw-wa-header-tools {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .cw-tool-btn {
+    background: transparent;
+    border: none;
+    color: #8696a0;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .cw-tool-btn:hover {
+    color: #e9edef;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* WhatsApp Messages Scroll Area */
   .cw-wa-body {
     flex: 1;
-    padding: 12px;
+    padding: 10px 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    justify-content: flex-end;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    background-color: #0b141a;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
     background-size: 16px 16px;
   }
+  .cw-wa-body::-webkit-scrollbar {
+    width: 4px;
+  }
+  .cw-wa-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+  }
+
+  /* Chat Bubbles */
   .cw-bubble {
-    max-width: 88%;
-    padding: 8px 12px;
+    max-width: 86%;
+    padding: 8px 11px;
     border-radius: 12px;
-    font-size: 0.8rem;
-    line-height: 1.45;
+    font-size: 0.78rem;
+    line-height: 1.42;
+    position: relative;
+    word-break: break-word;
+    animation: cwBubblePop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes cwBubblePop {
+    from { opacity: 0; transform: translateY(8px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
   .cw-bubble.user {
     align-self: flex-end;
     background: #005c4b;
     color: #e9edef;
     border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   }
   .cw-bubble.bot {
     align-self: flex-start;
     background: #1f2c34;
     color: #e9edef;
     border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   }
-  .cw-bubble .time {
-    display: block;
-    text-align: right;
-    font-size: 0.65rem;
-    color: #8696a0;
-    margin-top: 3px;
-  }
-  .cw-floating-card {
-    position: absolute;
-    z-index: 3;
-    background: #ffffff;
-    padding: 10px 14px;
-    border-radius: 14px;
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.15);
-    border: 1px solid #e2e8f0;
+  .cw-bubble-meta {
     display: flex;
     align-items: center;
-    gap: 10px;
-    animation: cwFloat 4s ease-in-out infinite alternate;
+    justify-content: flex-end;
+    gap: 3px;
+    margin-top: 3px;
+    font-size: 0.63rem;
+    color: #8696a0;
   }
-  .cw-fc-1 { top: 12%; left: -24px; }
-  .cw-fc-2 { bottom: 18%; right: -24px; animation-delay: -2s; }
+  .cw-ticks {
+    font-size: 0.7rem;
+    letter-spacing: -2px;
+    font-weight: 700;
+  }
+  .cw-ticks.double-blue {
+    color: #53bdeb;
+  }
+  .cw-ticks.grey {
+    color: #8696a0;
+  }
+
+  /* Interactive Bot CTA Action Button */
+  .cw-bot-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #34d399;
+    border-radius: 8px;
+    padding: 5px 9px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-top: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cw-bot-action-btn:hover {
+    background: #059669;
+    color: #ffffff;
+    border-color: #10b981;
+    transform: translateY(-1px);
+  }
+
+  /* Typing Indicator Bubble */
+  .cw-typing-bubble {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .cw-typing-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .cw-typing-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+    animation: cwBounceDot 1.4s infinite ease-in-out;
+  }
+  .cw-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .cw-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes cwBounceDot {
+    0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+    40% { transform: translateY(-5px); opacity: 1; }
+  }
+  .cw-typing-label {
+    font-size: 0.7rem;
+    color: #8696a0;
+    font-style: italic;
+  }
+
+  /* Quick Suggestion Chips Carousel */
+  .cw-chips-wrap {
+    background: rgba(11, 20, 26, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 8px;
+    flex-shrink: 0;
+  }
+  .cw-chips-scroll {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+  }
+  .cw-chips-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .cw-chip {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e9edef;
+    border-radius: 14px;
+    font-size: 0.69rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .cw-chip:hover {
+    background: #059669;
+    border-color: #10b981;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  /* WhatsApp Chat Input Footer */
+  .cw-chat-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px 8px;
+    background: #1f2c34;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+  }
+  .cw-chat-btn-emoji {
+    background: transparent;
+    border: none;
+    font-size: 1.15rem;
+    cursor: pointer;
+    padding: 3px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .cw-chat-btn-emoji:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .cw-chat-input {
+    flex: 1;
+    background: #2a3942;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 7px 12px;
+    color: #e9edef;
+    font-size: 0.77rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .cw-chat-input:focus {
+    border-color: #00a884;
+    background: #32434d;
+  }
+  .cw-chat-input::placeholder {
+    color: #8696a0;
+  }
+  .cw-chat-send {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #00a884;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+  }
+  .cw-chat-send:hover {
+    background: #10b981;
+    transform: scale(1.08);
+  }
+  .cw-chat-send:active {
+    transform: scale(0.95);
+  }
+
+  /* Bottom iOS Home Indicator */
+  .cw-home-bar {
+    width: 90px;
+    height: 4px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 4px auto 3px;
+    flex-shrink: 0;
+  }
+
+  /* Upgraded Floating Badges */
+  .cw-floating-card {
+    position: absolute;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    padding: 9px 14px;
+    border-radius: 16px;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16), 0 2px 6px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    animation: cwFloat 4.5s ease-in-out infinite alternate;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .cw-floating-card:hover {
+    transform: scale(1.06) translateY(-4px);
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.22);
+  }
+  .cw-fc-1 {
+    top: 9%;
+    left: -26px;
+  }
+  .cw-fc-2 {
+    bottom: 14%;
+    right: -26px;
+    animation-delay: -2.25s;
+  }
+  .cw-fc-text strong {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .cw-fc-text span {
+    display: block;
+    font-size: 0.68rem;
+    color: #64748b;
+  }
+
+  /* Live Pulsing Green Dot */
+  .cw-pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: cwPulseDot 2s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes cwPulseDot {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+
+  /* Animated ECG Heartbeat Pulse */
+  .cw-ecg-icon polyline {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: cwEcgPulse 3s ease-in-out infinite;
+  }
+  @keyframes cwEcgPulse {
+    0% { stroke-dashoffset: 50; opacity: 0.3; }
+    40% { stroke-dashoffset: 0; opacity: 1; }
+    80% { stroke-dashoffset: -50; opacity: 1; }
+    100% { stroke-dashoffset: -50; opacity: 0.3; }
+  }
+
   @keyframes cwFloat {
     from { transform: translateY(0); }
-    to { transform: translateY(-8px); }
+    to { transform: translateY(-9px); }
+  }
+
+  @media (max-width: 480px) {
+    .cw-phone-wrapper { max-width: 320px; }
+    .cw-phone-screen { height: 440px; }
+    .cw-floating-card { transform: scale(0.85); }
+    .cw-fc-1 { left: -12px; top: 3%; }
+    .cw-fc-2 { right: -12px; bottom: 8%; }
   }
 
   /* Comparison Section */
@@ -579,45 +1006,134 @@ include __DIR__ . '/includes/header.php';
         </div>
       </div>
 
-      <!-- Phone Simulator Stage -->
-      <div class="cw-phone-wrapper">
-        <div class="cw-floating-card cw-fc-1">
-          <span style="width:10px;height:10px;border-radius:50%;background:#10b981;display:inline-block;"></span>
-          <span style="font-size:0.8rem;font-weight:700;color:#0f172a;">+128 Leads Captured</span>
-        </div>
-        <div class="cw-floating-card cw-fc-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <span style="font-size:0.8rem;font-weight:700;color:#0f172a;">99.9% Delivery Uptime</span>
+      <!-- Interactive 3D Phone Simulator Stage -->
+      <div class="cw-phone-wrapper" id="cw-phone-wrapper">
+        <!-- Glowing Ambient Aura -->
+        <div class="cw-phone-aura" aria-hidden="true"></div>
+
+        <!-- Floating Card 1: Leads Captured with Live Pulse & Counter -->
+        <div class="cw-floating-card cw-fc-1" id="cw-card-leads" title="Real-time Lead Capture Metric">
+          <span class="cw-pulse-dot"></span>
+          <div class="cw-fc-text">
+            <strong>+<span id="cw-leads-num">128</span> Leads Captured</strong>
+          </div>
         </div>
 
-        <div class="cw-phone-device">
-          <div class="cw-phone-notch"></div>
+        <!-- Floating Card 2: Uptime with Animated Heartbeat SVG -->
+        <div class="cw-floating-card cw-fc-2" title="Official WhatsApp Cloud API 99.9% SLA">
+          <svg class="cw-ecg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <div class="cw-fc-text">
+            <strong>99.9% Delivery Uptime</strong>
+          </div>
+        </div>
+
+        <!-- 3D Tilting Phone Device Frame -->
+        <div class="cw-phone-device" id="cw-phone-device">
+          <!-- Glass Glare Sweep -->
+          <div class="cw-phone-glare" aria-hidden="true"></div>
+
+          <!-- Hardware Top Bar: Live Clock & Dynamic Island -->
+          <div class="cw-phone-topbar">
+            <span class="cw-status-time" id="cw-status-clock">10:43</span>
+            <div class="cw-dynamic-island">
+              <span class="cw-island-camera"></span>
+              <span class="cw-island-speaker"></span>
+            </div>
+            <div class="cw-status-icons">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9.46 2.02-12.73 5.3l1.42 1.42C3.37 7.03 7.42 5.2 12 5.2s8.63 1.83 11.31 4.52l1.42-1.42C21.46 5.02 16.97 3 12 3zm0 4c-3.87 0-7.37 1.57-9.9 4.1l1.41 1.42C5.69 10.5 8.66 9.2 12 9.2s6.31 1.3 8.49 3.32l1.41-1.42C19.37 8.57 15.87 7 12 7zm0 4c-2.76 0-5.26 1.12-7.07 2.93l1.41 1.41C7.79 13.9 9.77 13 12 13s4.21.9 5.66 2.34l1.41-1.41C17.26 12.12 14.76 11 12 11zm0 4c-1.66 0-3.16.67-4.24 1.76L12 21.01l4.24-4.25C15.16 15.67 13.66 15 12 15z"/></svg>
+              <span class="cw-status-5g">5G</span>
+              <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="7" width="17" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 9h11v6H5z"/><rect x="20" y="10" width="2" height="4" rx="0.5"/></svg>
+            </div>
+          </div>
+
+          <!-- Phone Screen -->
           <div class="cw-phone-screen">
+            <!-- WhatsApp Chat Header -->
             <div class="cw-wa-header">
-              <div class="cw-wa-avatar">IW</div>
+              <div class="cw-wa-avatar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span class="cw-wa-avatar-badge"></span>
+              </div>
               <div class="cw-wa-header-info">
-                <strong>InboxWa Business AI</strong>
-                <span><i style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;"></i> Online</span>
+                <div class="cw-wa-title-row">
+                  <strong>InboxWa Business AI</strong>
+                  <svg class="cw-verified-check" width="13" height="13" viewBox="0 0 24 24" fill="#10b981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <span class="cw-wa-subtitle"><i class="cw-live-dot"></i> Online • Official Meta Partner</span>
+              </div>
+              <div class="cw-wa-header-tools">
+                <button type="button" class="cw-tool-btn" id="cw-audio-toggle" title="Toggle audio sound (Click to mute/unmute)">
+                  <svg id="cw-audio-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                </button>
+                <button type="button" class="cw-tool-btn" id="cw-chat-reset" title="Restart conversation">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+                </button>
               </div>
             </div>
+
+            <!-- WhatsApp Chat Messages Body -->
             <div class="cw-wa-body" id="cw-live-body">
               <div class="cw-bubble user">
-                Hi! How can InboxWa automate our customer sales on WhatsApp?
-                <span class="time">10:42 AM</span>
+                <span>Hi! How can InboxWa automate our customer sales on WhatsApp?</span>
+                <div class="cw-bubble-meta">
+                  <span class="time">10:42 AM</span>
+                  <span class="cw-ticks double-blue">✓✓</span>
+                </div>
               </div>
               <div class="cw-bubble bot">
-                👋 Hello! With Official WhatsApp API, you can send broadcasts with 98% open rates, auto-qualify leads 24/7, and assign chats across your entire team from 1 single number!
-                <span class="time">10:42 AM</span>
+                <span>👋 Hello! With Official WhatsApp API, you can send broadcasts with 98% open rates, auto-qualify leads 24/7, and assign chats across your entire team from 1 single number!</span>
+                <div class="cw-bubble-meta">
+                  <span class="time">10:42 AM</span>
+                </div>
               </div>
               <div class="cw-bubble user">
-                Can I connect my Shopify store & CRM?
-                <span class="time">10:43 AM</span>
+                <span>Can I connect my Shopify store &amp; CRM?</span>
+                <div class="cw-bubble-meta">
+                  <span class="time">10:43 AM</span>
+                  <span class="cw-ticks double-blue">✓✓</span>
+                </div>
               </div>
               <div class="cw-bubble bot">
-                ✅ Yes! Orders, abandoned cart recoveries, and contact sync happen automatically with zero code.
-                <span class="time">10:43 AM</span>
+                <span>✅ Yes! Orders, abandoned cart recoveries, and contact sync happen automatically with zero code.</span>
+                <div class="cw-bubble-meta">
+                  <span class="time">10:43 AM</span>
+                </div>
+              </div>
+
+              <!-- Typing Indicator Bubble (controlled via JS) -->
+              <div class="cw-bubble bot cw-typing-bubble" id="cw-typing-indicator" style="display:none;">
+                <div class="cw-typing-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="cw-typing-label">InboxWa AI is typing...</span>
               </div>
             </div>
+
+            <!-- Quick Suggestion Chips Carousel -->
+            <div class="cw-chips-wrap">
+              <div class="cw-chips-scroll" id="cw-chips-container">
+                <button type="button" class="cw-chip" data-query="See pricing & plans">💰 See Pricing</button>
+                <button type="button" class="cw-chip" data-query="How does AI Bot work?">🤖 How AI Works</button>
+                <button type="button" class="cw-chip" data-query="Can I send 50k bulk broadcasts?">📢 Send Broadcasts</button>
+                <button type="button" class="cw-chip" data-query="Is there zero ban risk with Meta API?">⚡ 0% Ban Guarantee</button>
+                <button type="button" class="cw-chip" data-query="How does multi-agent team inbox work?">👥 Team Inbox</button>
+                <button type="button" class="cw-chip" data-query="I want to book a live demo">📞 Book Live Demo</button>
+              </div>
+            </div>
+
+            <!-- WhatsApp Chat Composer Footer -->
+            <form class="cw-chat-footer" id="cw-chat-form" onsubmit="return false;">
+              <button type="button" class="cw-chat-btn-emoji" id="cw-emoji-btn" title="Add emoji">😊</button>
+              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message or ask anything..." autocomplete="off" maxlength="150">
+              <button type="submit" id="cw-chat-send" class="cw-chat-send" aria-label="Send message">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </button>
+            </form>
+
+            <!-- Bottom iOS Home Indicator -->
+            <div class="cw-home-bar"></div>
           </div>
         </div>
       </div>
@@ -856,6 +1372,375 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 </div>
+
+<script>
+(function() {
+  // 1. Live Clock in Phone Hardware Top Bar
+  function updatePhoneClock() {
+    const clockEl = document.getElementById('cw-status-clock');
+    if (!clockEl) return;
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    hours = hours % 12 || 12;
+    clockEl.textContent = hours + ':' + minutes;
+  }
+  updatePhoneClock();
+  setInterval(updatePhoneClock, 30000);
+
+  // 2. 3D Tilt Effect on Desktop Hover
+  const phoneWrapper = document.getElementById('cw-phone-wrapper');
+  const phoneDevice = document.getElementById('cw-phone-device');
+  if (phoneWrapper && phoneDevice && window.matchMedia('(pointer: fine)').matches) {
+    phoneWrapper.addEventListener('mousemove', function(e) {
+      const rect = phoneWrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const dx = (x - cx) / cx;
+      const dy = (y - cy) / cy;
+      phoneDevice.style.transform = `perspective(1200px) rotateY(${dx * 9}deg) rotateX(${-dy * 9}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    phoneWrapper.addEventListener('mouseleave', function() {
+      phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+    });
+  }
+
+  // 3. Realistic Web Audio Chimes (Synthesized - zero external file dependencies)
+  let audioEnabled = true;
+  const audioToggle = document.getElementById('cw-audio-toggle');
+  const audioIcon = document.getElementById('cw-audio-icon');
+
+  if (audioToggle) {
+    audioToggle.addEventListener('click', function() {
+      audioEnabled = !audioEnabled;
+      if (audioEnabled) {
+        audioToggle.setAttribute('title', 'Audio sound ON (Click to mute)');
+        audioToggle.style.color = '#10b981';
+        audioIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+      } else {
+        audioToggle.setAttribute('title', 'Audio sound MUTED (Click to unmute)');
+        audioToggle.style.color = '#ef4444';
+        audioIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+      }
+    });
+  }
+
+  function playChime(isBot) {
+    if (!audioEnabled) return;
+    try {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      const ctx = new AudioContext();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      if (isBot) {
+        osc.frequency.setValueAtTime(587.33, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.08);
+      } else {
+        osc.frequency.setValueAtTime(440, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(659.25, ctx.currentTime + 0.06);
+      }
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.16);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.16);
+    } catch (err) {}
+  }
+
+  // 4. Live Chatbot Engine
+  const cwBody = document.getElementById('cw-live-body');
+  const typingIndicator = document.getElementById('cw-typing-indicator');
+  const chatForm = document.getElementById('cw-chat-form');
+  const chatInput = document.getElementById('cw-chat-input');
+  const chatReset = document.getElementById('cw-chat-reset');
+  const emojiBtn = document.getElementById('cw-emoji-btn');
+  const leadsNumEl = document.getElementById('cw-leads-num');
+
+  function getFormattedTime() {
+    const now = new Date();
+    let h = now.getHours();
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return `${h}:${m} ${ampm}`;
+  }
+
+  function scrollToBottom() {
+    if (!cwBody) return;
+    cwBody.scrollTo({ top: cwBody.scrollHeight, behavior: 'smooth' });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>'"]/g, function(tag) {
+      return ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      })[tag] || tag;
+    });
+  }
+
+  // Default initial message markup for reset
+  const defaultChatHtml = `
+    <div class="cw-bubble user">
+      <span>Hi! How can InboxWa automate our customer sales on WhatsApp?</span>
+      <div class="cw-bubble-meta">
+        <span class="time">10:42 AM</span>
+        <span class="cw-ticks double-blue">✓✓</span>
+      </div>
+    </div>
+    <div class="cw-bubble bot">
+      <span>👋 Hello! With Official WhatsApp API, you can send broadcasts with 98% open rates, auto-qualify leads 24/7, and assign chats across your entire team from 1 single number!</span>
+      <div class="cw-bubble-meta">
+        <span class="time">10:42 AM</span>
+      </div>
+    </div>
+    <div class="cw-bubble user">
+      <span>Can I connect my Shopify store &amp; CRM?</span>
+      <div class="cw-bubble-meta">
+        <span class="time">10:43 AM</span>
+        <span class="cw-ticks double-blue">✓✓</span>
+      </div>
+    </div>
+    <div class="cw-bubble bot">
+      <span>✅ Yes! Orders, abandoned cart recoveries, and contact sync happen automatically with zero code.</span>
+      <div class="cw-bubble-meta">
+        <span class="time">10:43 AM</span>
+      </div>
+    </div>
+    <div class="cw-bubble bot cw-typing-bubble" id="cw-typing-indicator" style="display:none;">
+      <div class="cw-typing-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="cw-typing-label">InboxWa AI is typing...</span>
+    </div>
+  `;
+
+  if (chatReset) {
+    chatReset.addEventListener('click', function() {
+      if (!cwBody) return;
+      cwBody.innerHTML = defaultChatHtml;
+      playChime(true);
+      scrollToBottom();
+    });
+  }
+
+  // Emoji button quick rotator
+  const emojiList = ['🚀', '🛍️', '💰', '🤖', '⚡', '📦', '💬'];
+  let emojiIdx = 0;
+  if (emojiBtn && chatInput) {
+    emojiBtn.addEventListener('click', function() {
+      chatInput.value += emojiList[emojiIdx % emojiList.length] + ' ';
+      emojiIdx++;
+      chatInput.focus();
+    });
+  }
+
+  // Conversational AI NLP Matcher
+  function generateBotReply(text) {
+    const q = text.toLowerCase().trim();
+
+    if (q.includes('price') || q.includes('pricing') || q.includes('plan') || q.includes('cost') || q.includes('fee') || q.includes('rate')) {
+      return {
+        text: "💳 Plans start at just $29/month with 0% markup on Meta messages! Includes unlimited contacts, team inbox, broadcast manager, and AI visual builder.",
+        actionText: "View Pricing Plans",
+        actionUrl: "/pricing"
+      };
+    }
+    if (q.includes('shopify') || q.includes('woo') || q.includes('store') || q.includes('cart') || q.includes('abandoned') || q.includes('order')) {
+      return {
+        text: "🛍️ 1-Click Shopify & WooCommerce integration! Automatically send abandoned cart recovery links (recapturing ~35% lost sales), order confirmations, and live shipment tracking via WhatsApp.",
+        actionText: "Explore Shopify Sync",
+        actionUrl: "/channel/whatsapp/"
+      };
+    }
+    if (q.includes('broadcast') || q.includes('bulk') || q.includes('blast') || q.includes('campaign') || q.includes('mass') || q.includes('csv')) {
+      return {
+        text: "📢 Send 10,000 to 1,000,000+ broadcasts in minutes with 98% average open rates! Powered by the Official Meta WhatsApp Cloud API with smart pacing so delivery is 100% reliable.",
+        actionText: "Start Free Trial",
+        actionUrl: "/auth/register"
+      };
+    }
+    if (q.includes('ban') || q.includes('risk') || q.includes('meta') || q.includes('official') || q.includes('api') || q.includes('safe')) {
+      return {
+        text: "🛡️ Zero Ban Risk! Unlike unofficial QR-scraping extensions that get accounts banned, InboxWa connects directly through the official Meta Business Cloud API with 100% compliance guarantee.",
+        actionText: "Verify API Status",
+        actionUrl: "/channel/whatsapp/"
+      };
+    }
+    if (q.includes('team') || q.includes('agent') || q.includes('inbox') || q.includes('seat') || q.includes('multi') || q.includes('assign')) {
+      return {
+        text: "👥 Connect unlimited team members to 1 single WhatsApp number! Includes automated department routing, private notes, quick canned replies, and agent analytics.",
+        actionText: "Learn More",
+        actionUrl: "/channel/whatsapp/"
+      };
+    }
+    if (q.includes('bot') || q.includes('ai') || q.includes('flow') || q.includes('builder') || q.includes('automate') || q.includes('chatgpt')) {
+      return {
+        text: "🤖 Build intelligent auto-reply flows in minutes with our visual drag-and-drop builder! Train your AI on website URLs or FAQs to qualify prospects and close deals 24/7.",
+        actionText: "Try Flow Builder",
+        actionUrl: "/auth/register"
+      };
+    }
+    if (q.includes('demo') || q.includes('call') || q.includes('talk') || q.includes('sales') || q.includes('meeting') || q.includes('specialist')) {
+      return {
+        text: "📞 We'd love to show you InboxWa in action! Schedule a personalized 15-minute walkthrough with our automation architects.",
+        actionText: "Book Live Demo",
+        actionUrl: "#demo"
+      };
+    }
+    if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('hola') || q.includes('good')) {
+      return {
+        text: "👋 Hello! Welcome to InboxWa! Ask me about pricing, Shopify integration, bulk broadcasts, or click any chip above to test.",
+        actionText: "Get Started Free",
+        actionUrl: "/auth/register"
+      };
+    }
+    if (q.includes('trial') || q.includes('free') || q.includes('sign') || q.includes('register') || q.includes('start')) {
+      return {
+        text: "🚀 You can start right now with our 14-day free trial! Zero credit card required and 5-minute setup.",
+        actionText: "Start Free Trial",
+        actionUrl: "/auth/register"
+      };
+    }
+    if (q.includes('green tick') || q.includes('tick') || q.includes('badge') || q.includes('verify')) {
+      return {
+        text: "✅ We help your business apply for and secure the official Meta Verified Green Tick badge beside your brand name for maximum trust.",
+        actionText: "Request Green Tick Help",
+        actionUrl: "/channel/whatsapp/"
+      };
+    }
+
+    return {
+      text: "⚡ InboxWa empowers you to scale WhatsApp sales with official Meta Cloud API, automated AI chat funnels, 98% open-rate broadcasts, and 1-click CRM/Shopify sync!",
+      actionText: "Start 14-Day Trial",
+      actionUrl: "/auth/register"
+    };
+  }
+
+  function handleUserMessage(msgText) {
+    if (!msgText || !msgText.trim() || !cwBody) return;
+    const cleanText = msgText.trim();
+
+    // 1. Append User Message
+    const userDiv = document.createElement('div');
+    userDiv.className = 'cw-bubble user';
+    userDiv.innerHTML = `
+      <span>${escapeHtml(cleanText)}</span>
+      <div class="cw-bubble-meta">
+        <span class="time">${getFormattedTime()}</span>
+        <span class="cw-ticks grey">✓</span>
+      </div>
+    `;
+    const typingIndicatorEl = document.getElementById('cw-typing-indicator');
+    if (typingIndicatorEl) {
+      cwBody.insertBefore(userDiv, typingIndicatorEl);
+    } else {
+      cwBody.appendChild(userDiv);
+    }
+    scrollToBottom();
+    playChime(false);
+
+    // 2. Change tick to double blue after 220ms
+    setTimeout(function() {
+      const ticks = userDiv.querySelector('.cw-ticks');
+      if (ticks) {
+        ticks.className = 'cw-ticks double-blue';
+        ticks.textContent = '✓✓';
+      }
+    }, 220);
+
+    // 3. Increment Leads Captured Metric with bounce
+    if (leadsNumEl) {
+      const cur = parseInt(leadsNumEl.textContent, 10) || 128;
+      leadsNumEl.textContent = cur + 1;
+      const card = document.getElementById('cw-card-leads');
+      if (card) {
+        card.style.transform = 'scale(1.12) translateY(-6px)';
+        setTimeout(() => { card.style.transform = ''; }, 350);
+      }
+    }
+
+    // 4. Show Typing Indicator
+    if (typingIndicatorEl) {
+      typingIndicatorEl.style.display = 'flex';
+      scrollToBottom();
+    }
+
+    // Disable input while bot is typing
+    if (chatInput) chatInput.disabled = true;
+
+    // 5. Bot Response after realistic delay
+    setTimeout(function() {
+      if (typingIndicatorEl) typingIndicatorEl.style.display = 'none';
+
+      const botReply = generateBotReply(cleanText);
+      const botDiv = document.createElement('div');
+      botDiv.className = 'cw-bubble bot';
+
+      let actionBtnHtml = '';
+      if (botReply.actionText && botReply.actionUrl) {
+        if (botReply.actionUrl === '#demo') {
+          actionBtnHtml = `<button type="button" class="cw-bot-action-btn btn-demo-open">${escapeHtml(botReply.actionText)} &rarr;</button>`;
+        } else {
+          actionBtnHtml = `<a href="${escapeHtml(botReply.actionUrl)}" class="cw-bot-action-btn">${escapeHtml(botReply.actionText)} &rarr;</a>`;
+        }
+      }
+
+      botDiv.innerHTML = `
+        <span>${escapeHtml(botReply.text)}</span>
+        ${actionBtnHtml}
+        <div class="cw-bubble-meta">
+          <span class="time">${getFormattedTime()}</span>
+        </div>
+      `;
+
+      if (typingIndicatorEl) {
+        cwBody.insertBefore(botDiv, typingIndicatorEl);
+      } else {
+        cwBody.appendChild(botDiv);
+      }
+
+      scrollToBottom();
+      playChime(true);
+
+      if (chatInput) {
+        chatInput.disabled = false;
+        chatInput.focus();
+      }
+    }, 750);
+  }
+
+  // Form Submit Listener
+  if (chatForm && chatInput) {
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const val = chatInput.value;
+      if (!val || !val.trim()) return;
+      chatInput.value = '';
+      handleUserMessage(val);
+    });
+  }
+
+  // Quick Suggestion Chips Listener
+  const chips = document.querySelectorAll('.cw-chip');
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      const q = chip.getAttribute('data-query');
+      if (q) {
+        handleUserMessage(q);
+      }
+    });
+  });
+})();
+</script>
 
 <?php
 include __DIR__ . '/includes/offer-popup.php';
