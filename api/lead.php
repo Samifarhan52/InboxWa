@@ -81,32 +81,6 @@ try {
   ]);
   $insertedId = (int)$db->lastInsertId();
 
-  // Push to Supabase Cloud if configured
-  if (function_exists('supabase_is_configured') && supabase_is_configured()) {
-      supabase_insert_lead([
-          'type' => $type,
-          'name' => $name,
-          'business' => trim((string)($input['business'] ?? '')),
-          'email' => $email,
-          'phone' => $phone,
-          'whatsapp' => trim((string)($input['whatsapp'] ?? '')),
-          'country' => trim((string)($input['country'] ?? '')),
-          'city' => trim((string)($input['city'] ?? '')),
-          'product' => trim((string)($input['product'] ?? '')),
-          'requirement' => trim((string)($input['requirement'] ?? '')),
-          'message' => trim((string)($input['message'] ?? '')),
-          'preferred_date' => trim((string)($input['preferred_date'] ?? '')),
-          'preferred_time' => trim((string)($input['preferred_time'] ?? '')),
-          'source_page' => trim((string)($input['source_page'] ?? ($_SERVER['HTTP_REFERER'] ?? ''))),
-          'referrer' => trim((string)($input['referrer'] ?? '')),
-          'utm_source' => trim((string)($input['utm_source'] ?? '')),
-          'utm_medium' => trim((string)($input['utm_medium'] ?? '')),
-          'utm_campaign' => trim((string)($input['utm_campaign'] ?? '')),
-          'ip' => $ip,
-          'status' => 'new'
-      ]);
-  }
-
   echo json_encode(['ok' => true, 'id' => $insertedId]);
 } catch (Throwable $e) {
   http_response_code(500);

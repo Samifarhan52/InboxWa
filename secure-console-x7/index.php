@@ -334,9 +334,6 @@ if (isset($_GET['action'])) {
         $st = preg_replace('/[^a-z_]/', '', strtolower($_GET['status']));
         $stmt = $db->prepare("UPDATE leads SET status = ? WHERE id = ?");
         $stmt->execute([$st, $id]);
-        if (function_exists('supabase_update_lead_status')) {
-            supabase_update_lead_status($id, $st);
-        }
         header('Location: ' . $adminBase . '?page=leads');
         exit;
     }
@@ -346,9 +343,6 @@ if (isset($_GET['action'])) {
         $id = (int)$_GET['id'];
         $stmt = $db->prepare("DELETE FROM leads WHERE id = ?");
         $stmt->execute([$id]);
-        if (function_exists('supabase_delete_lead')) {
-            supabase_delete_lead($id);
-        }
         header('Location: ' . $adminBase . '?page=leads');
         exit;
     }
@@ -413,15 +407,6 @@ if (isset($_GET['action'])) {
         hb_set_setting('theme_palette_preset', 'modern-violet');
 
         $noticeSuccess = 'Color palette reset to default InboxWa styling.';
-    }
-}
-
-// -------------------------------------------------------------
-// Sync cloud leads from Supabase Cloud if available
-// -------------------------------------------------------------
-if ($page === 'leads' || $page === 'dashboard') {
-    if (function_exists('supabase_sync_leads')) {
-        supabase_sync_leads($db);
     }
 }
 
