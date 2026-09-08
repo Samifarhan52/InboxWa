@@ -354,77 +354,169 @@ include __DIR__ . '/../../../includes/header.php';
     background: rgba(5, 150, 105, 0.03);
   }
 
-  /* Interactive 9-Feature Showcase */
+  /* Interactive Select Capabilities Showcase */
   .cw-showcase-section {
     padding: 5.5rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
   }
-  .cw-showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 24px;
-    margin-top: 3rem;
-  }
-  .cw-card {
+  .cw-cap-container {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 18px;
-    padding: 26px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 24px;
+    box-shadow: 0 4px 30px -4px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    margin-top: 3rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .cw-cap-sidebar {
+    padding: 2rem 1.25rem 2rem 1.5rem;
+    border-right: 1px solid #f1f5f9;
     display: flex;
     flex-direction: column;
+    background: #ffffff;
   }
-  .cw-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.1);
-    border-color: rgba(5, 150, 105, 0.3);
+  .cw-cap-sidebar-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0f172a;
+    padding-left: 0.5rem;
+    padding-bottom: 1.15rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid #f1f5f9;
+    letter-spacing: -0.01em;
   }
-  .cw-card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: rgba(5, 150, 105, 0.1);
-    color: #059669;
+  .cw-cap-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 540px;
+    overflow-y: auto;
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: #059669 #f1f5f9;
+  }
+  .cw-cap-tabs::-webkit-scrollbar {
+    width: 5px;
+  }
+  .cw-cap-tabs::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 6px;
+  }
+  .cw-cap-tabs::-webkit-scrollbar-thumb {
+    background: #059669;
+    border-radius: 6px;
+  }
+  .cw-cap-tab {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+    user-select: none;
+  }
+  .cw-cap-tab:hover:not(.active) {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+  .cw-cap-tab.active {
+    background: #059669;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+  }
+  .cw-cap-tab svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: #64748b;
+    transition: stroke 0.2s ease;
+  }
+  .cw-cap-tab.active svg {
+    stroke: #ffffff;
+  }
+  .cw-cap-panel {
+    padding: 2.25rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+  }
+  .cw-cap-preview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #f8faff 0%, #f1f5f9 100%);
+    border: 1px solid #f1f5f9;
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+    position: relative;
   }
-  .cw-card-title {
-    font-size: 1.25rem;
+  .cw-cap-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cw-cap-img.animating {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  .cw-cap-content {
+    margin-top: 1.75rem;
+  }
+  .cw-cap-title {
+    font-size: 1.85rem;
     font-weight: 800;
     color: #0f172a;
-    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem 0;
+    transition: opacity 0.2s ease;
   }
-  .cw-card-desc {
-    font-size: 0.92rem;
+  .cw-cap-desc {
+    font-size: 1.02rem;
     color: #475569;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
+    line-height: 1.65;
+    margin: 0 0 1.5rem 0;
+    max-width: 720px;
+    transition: opacity 0.2s ease;
   }
-  .cw-card-bullets {
+  .cw-cap-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 3rem;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 16px;
+    transition: opacity 0.2s ease;
   }
-  .cw-card-bullets li {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #334155;
-    display: flex;
+  .cw-cap-bullet-item {
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
   }
-  .cw-card-bullets li svg {
+  .cw-cap-bullet-item svg {
     color: #059669;
+    stroke: #059669;
     flex-shrink: 0;
   }
 
@@ -861,7 +953,49 @@ include __DIR__ . '/../../../includes/header.php';
     .cw-journey-title {
       font-size: 1.3rem !important;
     }
-    .cw-showcase-grid,
+    .cw-cap-container {
+      grid-template-columns: 1fr !important;
+      border-radius: 18px !important;
+      margin-top: 2rem !important;
+    }
+    .cw-cap-sidebar {
+      border-right: none !important;
+      border-bottom: 1px solid #f1f5f9 !important;
+      padding: 1.25rem 1rem !important;
+    }
+    .cw-cap-tabs {
+      flex-direction: row !important;
+      overflow-x: auto !important;
+      white-space: nowrap !important;
+      max-height: none !important;
+      gap: 8px !important;
+      padding-bottom: 6px !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    .cw-cap-tab {
+      flex-shrink: 0 !important;
+      width: auto !important;
+      padding: 9px 14px !important;
+      font-size: 0.88rem !important;
+    }
+    .cw-cap-panel {
+      padding: 1.5rem 1.2rem !important;
+    }
+    .cw-cap-preview {
+      border-radius: 14px !important;
+    }
+    .cw-cap-title {
+      font-size: 1.45rem !important;
+      margin-top: 1.25rem !important;
+    }
+    .cw-cap-desc {
+      font-size: 0.92rem !important;
+      margin-bottom: 1.25rem !important;
+    }
+    .cw-cap-bullets {
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+    }
     .cw-steps-grid {
       grid-template-columns: 1fr !important;
       width: 100% !important;
@@ -869,7 +1003,6 @@ include __DIR__ . '/../../../includes/header.php';
       box-sizing: border-box !important;
       gap: 1rem !important;
     }
-    .cw-card,
     .cw-step-card {
       width: 100% !important;
       max-width: 100% !important;
@@ -1060,122 +1193,69 @@ include __DIR__ . '/../../../includes/header.php';
       <p class="cw-section-subtitle">Explore the exact capabilities engineered within our platform to help you automate customer operations completely.</p>
     </div>
 
-    <div class="cw-showcase-grid">
-      <!-- Feature 1 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    <div class="cw-cap-container">
+      <!-- Left Sidebar: Select Capabilities -->
+      <div class="cw-cap-sidebar">
+        <div class="cw-cap-sidebar-title">Select Capabilities</div>
+        <div class="cw-cap-tabs" id="cwCapTabs" role="tablist">
+          <button type="button" class="cw-cap-tab active" data-index="0" role="tab" aria-selected="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <span>Shared Team Inbox</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="1" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            <span>Visual Reply Builder</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="2" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span>Bulk Messaging</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="3" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Smart AI Calling</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="4" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Easy Scheduling</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="5" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span>Send Simple Forms</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="6" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+            <span>AI Chat Assistant</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="7" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span>Link Your Existing Tools</span>
+          </button>
+          <button type="button" class="cw-cap-tab" data-index="8" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Showcase Your Products</span>
+          </button>
         </div>
-        <h3 class="cw-card-title">Shared Team Inbox</h3>
-        <p class="cw-card-desc">Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Send chats to the right person</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Write notes only your team can see</li>
-        </ul>
       </div>
 
-      <!-- Feature 2 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      <!-- Right Panel: Capability Showcase Display -->
+      <div class="cw-cap-panel">
+        <div class="cw-cap-preview">
+          <img id="cwCapImg" src="<?php echo $bp; ?>assets/images/capabilities/shared-team-inbox.png" alt="Shared Team Inbox" class="cw-cap-img" />
         </div>
-        <h3 class="cw-card-title">Visual Reply Builder</h3>
-        <p class="cw-card-desc">Create simple automatic replies for customer questions. Set up answers that trigger when customers type specific words or tap buttons.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Taps and words trigger replies</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Add interactive options menu</li>
-        </ul>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        <div class="cw-cap-content">
+          <h3 id="cwCapTitle" class="cw-cap-title">Shared Team Inbox</h3>
+          <p id="cwCapDesc" class="cw-cap-desc">Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.</p>
+          <ul id="cwCapBullets" class="cw-cap-bullets">
+            <li class="cw-cap-bullet-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Send chats to the right person</span>
+            </li>
+            <li class="cw-cap-bullet-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Write notes only your team can see</span>
+            </li>
+          </ul>
         </div>
-        <h3 class="cw-card-title">Bulk Messaging</h3>
-        <p class="cw-card-desc">Send announcements or notifications to thousands of customers at once. Add their names or personal details to make messages friendly.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Add customer names automatically</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> See who opened and clicked links</li>
-        </ul>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </div>
-        <h3 class="cw-card-title">Smart AI Calling</h3>
-        <p class="cw-card-desc">Let smart voice assistants make and answer phone calls for your business. Help customers get information without waiting on hold.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Clear and friendly AI voices</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> See summary logs of every call</li>
-        </ul>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>
-        </div>
-        <h3 class="cw-card-title">Easy Scheduling</h3>
-        <p class="cw-card-desc">Let customers book appointments and schedule meetings directly inside the WhatsApp chat window. No outside links needed.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Choose calendar dates in chat</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Send automated appointment reminders</li>
-        </ul>
-      </div>
-
-      <!-- Feature 6 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
-        </div>
-        <h3 class="cw-card-title">Send Simple Forms</h3>
-        <p class="cw-card-desc">Create and send simple forms inside the chat so customers can fill out their details, sign up, or share info without leaving WhatsApp.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Fill out forms inside the chat</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Save customer answers instantly</li>
-        </ul>
-      </div>
-
-      <!-- Feature 7 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
-        </div>
-        <h3 class="cw-card-title">AI Chat Assistant</h3>
-        <p class="cw-card-desc">Train an AI helper using your own business files or website links. It can answer customer questions about pricing and product availability 24/7.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI answers customer questions</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hand over to a real person if needed</li>
-        </ul>
-      </div>
-
-      <!-- Feature 8 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        </div>
-        <h3 class="cw-card-title">Link Your Existing Tools</h3>
-        <p class="cw-card-desc">Connect WhatsApp with the tools you already use like Shopify or your customer database. Send messages automatically when orders are placed or shipped.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Connect with tools like Shopify</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Send messages automatically on updates</li>
-        </ul>
-      </div>
-
-      <!-- Feature 9 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        </div>
-        <h3 class="cw-card-title">Showcase Your Products</h3>
-        <p class="cw-card-desc">Display your product inventory, catalog items, and pictures directly in the chat. Let customers select items and check out right inside WhatsApp.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Show product lists and pictures</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Quick and easy checkout in chat</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -1356,6 +1436,157 @@ include __DIR__ . '/../../../includes/header.php';
     </div>
   </section>
 </div>
+
+<script>
+(function() {
+  var basePath = "<?php echo $bp; ?>";
+  var capabilities = [
+    {
+      title: "Shared Team Inbox",
+      desc: "Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.",
+      img: basePath + "assets/images/capabilities/shared-team-inbox.png",
+      bullets: [
+        "Send chats to the right person",
+        "Write notes only your team can see"
+      ]
+    },
+    {
+      title: "Visual Reply Builder",
+      desc: "Create simple automatic replies for customer questions. Set up answers that trigger when customers type specific words or tap buttons.",
+      img: basePath + "assets/images/capabilities/visual-reply-builder.png",
+      bullets: [
+        "Taps and words trigger replies",
+        "Add interactive options menu"
+      ]
+    },
+    {
+      title: "Bulk Messaging",
+      desc: "Send announcements or notifications to thousands of customers at once. Add their names or personal details to make messages friendly.",
+      img: basePath + "assets/images/capabilities/bulk-messaging.png",
+      bullets: [
+        "Add customer names automatically",
+        "See who opened and clicked links"
+      ]
+    },
+    {
+      title: "Smart AI Calling",
+      desc: "Let smart voice assistants make and answer phone calls for your business. Help customers get information without waiting on hold.",
+      img: basePath + "assets/images/capabilities/smart-ai-calling.png",
+      bullets: [
+        "Clear and friendly AI voices",
+        "See summary logs of every call"
+      ]
+    },
+    {
+      title: "Easy Scheduling",
+      desc: "Let customers book appointments and schedule meetings directly inside the WhatsApp chat window. No outside links needed.",
+      img: basePath + "assets/images/capabilities/easy-scheduling.png",
+      bullets: [
+        "Choose calendar dates in chat",
+        "Send automated appointment reminders"
+      ]
+    },
+    {
+      title: "Send Simple Forms",
+      desc: "Create and send simple forms inside the chat so customers can fill out their details, sign up, or share info without leaving WhatsApp.",
+      img: basePath + "assets/images/capabilities/send-simple-forms.png",
+      bullets: [
+        "Fill out forms inside the chat",
+        "Save customer answers instantly"
+      ]
+    },
+    {
+      title: "AI Chat Assistant",
+      desc: "Train an AI helper using your own business files or website links. It can answer customer questions about pricing and product availability 24/7.",
+      img: basePath + "assets/images/capabilities/ai-chat-assistant.png",
+      bullets: [
+        "AI answers customer questions",
+        "Hand over to a real person if needed"
+      ]
+    },
+    {
+      title: "Link Your Existing Tools",
+      desc: "Connect WhatsApp with the tools you already use like Shopify or your customer database. Send messages automatically when orders are placed or shipped.",
+      img: basePath + "assets/images/capabilities/link-existing-tools.png",
+      bullets: [
+        "Connect with tools like Shopify",
+        "Send messages automatically when things update"
+      ]
+    },
+    {
+      title: "Showcase Your Products",
+      desc: "Display your product inventory, catalog items, and pictures directly in the chat. Let customers select items and check out right inside WhatsApp.",
+      img: basePath + "assets/images/capabilities/showcase-products.png",
+      bullets: [
+        "Show product lists and pictures",
+        "Quick and easy checkout in chat"
+      ]
+    }
+  ];
+
+  // Preload all capability preview images for instant switching
+  capabilities.forEach(function(item) {
+    var preload = new Image();
+    preload.src = item.img;
+  });
+
+  var tabs = document.querySelectorAll(".cw-cap-tab");
+  var imgEl = document.getElementById("cwCapImg");
+  var titleEl = document.getElementById("cwCapTitle");
+  var descEl = document.getElementById("cwCapDesc");
+  var bulletsEl = document.getElementById("cwCapBullets");
+
+  if (!tabs.length || !imgEl || !titleEl || !descEl || !bulletsEl) return;
+
+  function setCapability(index) {
+    var item = capabilities[index];
+    if (!item) return;
+
+    tabs.forEach(function(tab, i) {
+      if (i === index) {
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+        tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      } else {
+        tab.classList.remove("active");
+        tab.setAttribute("aria-selected", "false");
+      }
+    });
+
+    imgEl.classList.add("animating");
+
+    setTimeout(function() {
+      imgEl.src = item.img;
+      imgEl.alt = item.title;
+      titleEl.textContent = item.title;
+      descEl.textContent = item.desc;
+
+      var bulletsHtml = "";
+      item.bullets.forEach(function(b) {
+        bulletsHtml += '<li class="cw-cap-bullet-item">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+          '<span>' + b + '</span>' +
+          '</li>';
+      });
+      bulletsEl.innerHTML = bulletsHtml;
+
+      imgEl.onload = function() {
+        imgEl.classList.remove("animating");
+      };
+      setTimeout(function() {
+        imgEl.classList.remove("animating");
+      }, 50);
+    }, 110);
+  }
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener("click", function() {
+      var idx = parseInt(this.getAttribute("data-index"), 10);
+      setCapability(idx);
+    });
+  });
+})();
+</script>
 
 <?php
 include __DIR__ . '/../../../includes/offer-popup.php';
