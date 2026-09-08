@@ -1,32 +1,57 @@
 <?php
-$basePath = "";
-require_once __DIR__ . '/config/cms.php';
+$basePath = '../../';
+$bp = '../../';
+require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = cms_setting('site_title', 'InboxWa') . ' – ' . cms_setting('site_tagline', 'Scale Your Sales and Support on WhatsApp');
-$pageDescription = 'Official WhatsApp Business API platform with shared inbox, AI chatbots, visual flow builder, bulk broadcasts, and CRM integrations.';
-$canonicalUrl = 'https://inboxwa.com/';
+$pageTitle = 'WhatsApp Business API & Automation Platform | InboxWa';
+$pageDescription = 'Scale your sales and customer support with Official Meta WhatsApp Business API. Multi-agent shared inbox, automated AI reply builder, bulk broadcasts, and zero-ban compliance.';
+$canonicalUrl = 'https://inboxwa.com/channel/whatsapp/';
+$ogImage = 'assets/images/og-image.png';
 
-include __DIR__ . '/includes/header.php';
+include __DIR__ . '/../../includes/header.php';
 ?>
 
 <style>
+  /* Channel WhatsApp Page Styles */
   :root {
     --wa-green: #059669;
     --wa-green-hover: #047857;
+    --wa-green-light: rgba(5, 150, 105, 0.1);
     --wa-dark: #0f172a;
     --wa-slate: #1e293b;
   }
 
-  .cw-main-page {
+  .cw-page {
     background: #ffffff;
     color: #1e293b;
+    font-family: inherit;
     overflow-x: hidden;
   }
 
+  /* Breadcrumb */
+  .cw-breadcrumb {
+    padding: calc(var(--nav, 72px) + 1.25rem) 1.5rem 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cw-breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .cw-breadcrumb a:hover {
+    color: var(--wa-green);
+  }
+
   /* Hero Section */
-  .cw-hero-wrap {
-    padding: 2.5rem 1.25rem 4.5rem;
-    max-width: 1240px;
+  .cw-hero-section {
+    padding: 2.5rem 1.5rem 4.5rem;
+    max-width: 1200px;
     margin: 0 auto;
   }
   .cw-hero-grid {
@@ -42,14 +67,14 @@ include __DIR__ . '/includes/header.php';
     background: rgba(5, 150, 105, 0.1);
     border: 1px solid rgba(5, 150, 105, 0.25);
     color: #059669;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    padding: 0.4rem 0.95rem;
+    padding: 0.35rem 0.85rem;
     border-radius: 999px;
     margin-bottom: 1.25rem;
   }
   .cw-hero-title {
-    font-size: clamp(2.25rem, 4.5vw, 3.65rem);
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.15;
     color: #0f172a;
@@ -67,7 +92,7 @@ include __DIR__ . '/includes/header.php';
     line-height: 1.65;
     color: #475569;
     margin-bottom: 2rem;
-    max-width: 560px;
+    max-width: 540px;
   }
   .cw-hero-actions {
     display: flex;
@@ -109,7 +134,6 @@ include __DIR__ . '/includes/header.php';
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    cursor: pointer;
   }
   .cw-btn-secondary:hover {
     background: #f8fafc;
@@ -122,14 +146,14 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #64748b;
   }
   .cw-trust-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.4rem;
   }
 
   /* Interactive Mockup Phone Stage */
@@ -253,7 +277,7 @@ include __DIR__ . '/includes/header.php';
   /* Comparison Section */
   .cw-comparison-section {
     background: #f8fafc;
-    padding: 5rem 1.25rem;
+    padding: 5rem 1.5rem;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
   }
@@ -327,8 +351,8 @@ include __DIR__ . '/includes/header.php';
 
   /* Interactive 9-Feature Showcase */
   .cw-showcase-section {
-    padding: 5.5rem 1.25rem;
-    max-width: 1240px;
+    padding: 5.5rem 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
   }
   .cw-showcase-grid {
@@ -403,7 +427,7 @@ include __DIR__ . '/includes/header.php';
   .cw-steps-section {
     background: #0f172a;
     color: #ffffff;
-    padding: 5.5rem 1.25rem;
+    padding: 5.5rem 1.5rem;
   }
   .cw-steps-header {
     text-align: center;
@@ -459,7 +483,7 @@ include __DIR__ . '/includes/header.php';
   .cw-sales-section {
     background: linear-gradient(135deg, #059669 0%, #047857 100%);
     color: #ffffff;
-    padding: 5.5rem 1.25rem;
+    padding: 5.5rem 1.5rem;
     text-align: center;
   }
   .cw-sales-inner {
@@ -512,7 +536,6 @@ include __DIR__ . '/includes/header.php';
     border: 2px solid rgba(255, 255, 255, 0.6);
     text-decoration: none;
     transition: all 0.2s ease;
-    cursor: pointer;
   }
   .cw-btn-transparent:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -539,28 +562,37 @@ include __DIR__ . '/includes/header.php';
   }
 </style>
 
-<div class="cw-main-page">
+<div class="cw-page">
+  <!-- Breadcrumb -->
+  <nav class="cw-breadcrumb" aria-label="Breadcrumb">
+    <a href="<?php echo $bp; ?>">Home</a>
+    <span>/</span>
+    <a href="<?php echo $bp; ?>#channels">Channels</a>
+    <span>/</span>
+    <span style="color:#0f172a;font-weight:600;">WhatsApp</span>
+  </nav>
+
   <!-- 1. HERO SECTION -->
-  <section class="cw-hero-wrap">
+  <section class="cw-hero-section">
     <div class="cw-hero-grid">
       <div class="cw-hero-content">
         <span class="cw-badge-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          <?php echo htmlspecialchars(cms_section('hero', 'badge', 'Official WhatsApp Connection')); ?>
+          Official WhatsApp Connection
         </span>
         <h1 class="cw-hero-title">
           Scale Your Sales and Support on <span class="highlight-green">WhatsApp</span>
         </h1>
         <p class="cw-hero-desc">
-          <?php echo htmlspecialchars(cms_section('hero', 'lead', 'Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.')); ?>
+          Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.
         </p>
         <div class="cw-hero-actions">
-          <a href="<?php echo htmlspecialchars(cms_section('hero', 'cta1_link', '/auth/register')); ?>" class="cw-btn-primary">
-            <?php echo htmlspecialchars(cms_section('hero', 'cta1_text', 'Start Free Trial')); ?>
+          <a href="<?php echo $bp; ?>auth/register" class="cw-btn-primary">
+            Start Free Trial
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <button type="button" class="cw-btn-secondary btn-demo-open">
-            <?php echo htmlspecialchars(cms_section('hero', 'cta2_text', 'Book a Demo')); ?>
+            Book a Demo
           </button>
         </div>
         <div class="cw-trust-row">
@@ -600,7 +632,7 @@ include __DIR__ . '/includes/header.php';
                 <span><i style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;"></i> Online</span>
               </div>
             </div>
-            <div class="cw-wa-body" id="cw-live-body">
+            <div class="cw-wa-body">
               <div class="cw-bubble user">
                 Hi! How can InboxWa automate our customer sales on WhatsApp?
                 <span class="time">10:42 AM</span>
@@ -788,7 +820,7 @@ include __DIR__ . '/includes/header.php';
       <!-- Feature 9 -->
       <div class="cw-card">
         <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         </div>
         <h3 class="cw-card-title">Showcase Your Products</h3>
         <p class="cw-card-desc">Display your product inventory, catalog items, and pictures directly in the chat. Let customers select items and check out right inside WhatsApp.</p>
@@ -858,7 +890,7 @@ include __DIR__ . '/includes/header.php';
 </div>
 
 <?php
-include __DIR__ . '/includes/offer-popup.php';
-include __DIR__ . '/includes/callback-popup.php';
-include __DIR__ . '/includes/footer.php';
+include __DIR__ . '/../../includes/offer-popup.php';
+include __DIR__ . '/../../includes/callback-popup.php';
+include __DIR__ . '/../../includes/footer.php';
 ?>

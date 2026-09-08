@@ -1,41 +1,5 @@
 <?php
-$basePath = '../../';
-$pageTitle = 'WhatsApp API for Education';
-$pageDescription = 'Admissions, fee reminders and parent communication on WhatsApp — for schools, colleges, coaching and EdTech.';
-$canonicalUrl = 'https://inboxwa.com/industries/education';
-include __DIR__ . '/../includes/header.php';
-?>
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Industries / Education</nav>
-<section class="section page-hero" style="padding-top:1.25rem">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="badge badge-primary">Industry</span>
-      <h1>WhatsApp API for Education</h1>
-      <p class="lead">Admissions, fee reminders and parent communication on WhatsApp — for schools, colleges, coaching and EdTech.</p>
-      <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Book Demo</a>
-        <a href="<?php echo $bp; ?>products/whatsapp-api/" class="btn btn-outline btn-lg">WhatsApp API</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section section-gradient-1"><div class="container">
-  <div class="section-header reveal"><h2>Problems teams face</h2></div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem"><div class="card reveal"><h3>Slow counselling</h3><p>Enquiries wait while forms sit in email.</p></div><div class="card reveal"><h3>Fee friction</h3><p>Reminders are late or inconsistent.</p></div><div class="card reveal"><h3>Parent updates</h3><p>Scattered across SMS, app and paper notes.</p></div></div>
-</div></section>
-<section class="section"><div class="container">
-  <div class="section-header reveal"><h2>Example workflows</h2></div>
-  <ul class="feature-list" style="max-width:720px;margin:1.25rem auto 0;display:flex;flex-direction:column;gap:.65rem"><li class="feature-list-item reveal"><span class="check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Campaign/ad → course interest → counsellor assignment</span></li><li class="feature-list-item reveal"><span class="check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Document checklist → application status updates</span></li><li class="feature-list-item reveal"><span class="check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fee reminder templates on schedule</span></li><li class="feature-list-item reveal"><span class="check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Parent alerts for events and attendance summaries where appropriate</span></li></ul>
-</div></section>
-<section class="section section-alt"><div class="container">
-  <div class="section-header reveal"><h2>How InboxWa helps</h2></div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:1.25rem"><div class="card card-feature reveal"><h3>Admissions bots</h3><p>Qualify program interest 24/7.</p></div><div class="card card-feature reveal"><h3>Counsellor inbox</h3><p>Shared ownership of hot leads.</p></div><div class="card card-feature reveal"><h3>Broadcast to batches</h3><p>Announcements to opted-in lists.</p></div><div class="card card-feature reveal"><h3>Reminder automation</h3><p>Fees, exams, orientation.</p></div><div class="card card-feature reveal"><h3>Multi-language</h3><p>Serve families in preferred languages.</p></div><div class="card card-feature reveal"><h3>CRM for cohorts</h3><p>Track stage from lead to enrolled.</p></div></div>
-</div></section>
-<section class="section section-dark"><div class="container"><div class="section-header reveal" style="text-align:center">
-  <h2 style="color:#fff">Build messaging that fits this industry</h2>
-  <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-    <a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Talk to sales</a>
-    <a href="<?php echo $bp; ?>products/chatbot/" class="btn btn-white btn-lg">See Chatbot</a>
-  </div>
-</div></div></section>
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+/**
+ * Canonical redirect/bridge for education
+ */
+require_once __DIR__ . "/education/index.php";

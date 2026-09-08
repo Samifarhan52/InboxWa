@@ -1,6 +1,14 @@
 <?php if (!isset($bp)) { $bp = isset($basePath) ? $basePath : ""; } ?>
 </main>
 
+<?php
+require_once dirname(__DIR__) . '/config/cms.php';
+$fWa = cms_setting('support_whatsapp', '918050854445');
+$fPhone = cms_setting('phone_number', '+91 80508 54445');
+$fSalesEmail = cms_setting('sales_email', 'mail@inboxwa.com');
+$fSupportEmail = cms_setting('support_email', 'support@inboxwa.com');
+$fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead Office — Bangalore, India");
+?>
   <!-- Contact band before footer -->
   <section class="footer-contact-section" id="contact-section">
     <div class="container">
@@ -11,19 +19,19 @@
           <div class="footer-address">
             <div class="footer-address-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>InboxWa AI Technologies Pvt Ltd<br>Head Office — Bangalore, India</span>
+              <span><?php echo nl2br(htmlspecialchars($fAddress)); ?></span>
             </div>
             <div class="footer-address-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <span><a href="https://wa.me/918050854445" target="_blank" rel="noopener"><strong>Call / WhatsApp Us</strong></a></span>
+              <span><a href="https://wa.me/<?php echo urlencode($fWa); ?>" target="_blank" rel="noopener"><strong>Call / WhatsApp Us: <?php echo htmlspecialchars($fPhone); ?></strong></a></span>
             </div>
             <div class="footer-address-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-              <span><a href="mailto:mail@inboxwa.com"><strong>Send Enquiry Email</strong></a></span>
+              <span><a href="mailto:<?php echo htmlspecialchars($fSalesEmail); ?>"><strong>Send Enquiry Email: <?php echo htmlspecialchars($fSalesEmail); ?></strong></a></span>
             </div>
             <div class="footer-address-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-              <span><a href="mailto:support@inboxwa.com"><strong>Email Technical Support</strong></a></span>
+              <span><a href="mailto:<?php echo htmlspecialchars($fSupportEmail); ?>"><strong>Email Technical Support: <?php echo htmlspecialchars($fSupportEmail); ?></strong></a></span>
             </div>
           </div>
           <div class="footer-app-download" style="margin-top:1.25rem">
@@ -128,7 +136,7 @@
           <ul>
             <li><a href="<?php echo $bp; ?>company/about/">About InboxWa</a></li>
             <li><a href="/contact/">Contact Us</a></li>
-            <li><a href="<?php echo $bp; ?>Partners">Partner Program</a></li>
+            <li><a href="/partners/">Partner Program</a></li>
             <li><a href="/resources/blog/">Blog &amp; Resources</a></li>
             <li><a href="/resources/help-center/">Help Center</a></li>
           </ul>
@@ -157,5 +165,6 @@
 <script src="/assets/js/mobile-menu.js?v=38"></script>
 
   <script src="/forms.js?v=22" defer></script>
+  <?php echo cms_setting('custom_footer_code', ''); ?>
 </body>
 </html>

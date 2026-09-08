@@ -49,7 +49,7 @@ if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $type = preg_replace('/[^a-z_]/', '', strtolower((string)($input['type'] ?? 'contact'))) ?: 'contact';
-$allowed = ['contact','demo','callback','offer','partner','product'];
+$allowed = ['contact','demo','callback','offer','partner','product','addon'];
 if (!in_array($type, $allowed, true)) $type = 'contact';
 
 try {

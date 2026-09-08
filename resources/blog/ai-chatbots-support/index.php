@@ -1,9 +1,9 @@
 <?php
-$basePath = '../../';
+$basePath = '../../../';
 $pageTitle = 'How AI Chatbots Improve Customer Support — InboxWa Blog';
 $pageDescription = 'Deflection, handoff and quality monitoring.';
 $canonicalUrl = 'https://inboxwa.com/resources/blog/ai-chatbots-support/';
-include __DIR__ . '/../../includes/header.php';
+include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
@@ -30,4 +30,4 @@ include __DIR__ . '/../../includes/header.php';
 </div></article>
 
 <script src="/assets/js/resources.js?v=1" defer></script>
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../../includes/footer.php'; ?>

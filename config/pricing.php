@@ -3,15 +3,33 @@
  * InboxWa – Centralized pricing configuration (source of truth)
  * All plan prices in INR. USD derived via INR_TO_USD_RATE.
  */
-return [
-  'currency_default' => 'INR',
-  'INR_TO_USD_RATE' => 0.012, // configurable – not a live FX feed
-  'gst_rate' => 0.18,
-  'trial_days' => 14,
-  'register_url' => '/auth/register',
-  'whatsapp' => '918050854445',
+require_once __DIR__ . '/cms.php';
 
-  'plans' => [
+$customPlans = [];
+try {
+  $rawPlans = hb_get_pricing_plans();
+  if (!empty($rawPlans)) {
+    foreach ($rawPlans as $p) {
+      $pid = $p['plan_id'];
+      $customPlans[$pid] = [
+        'id' => $pid,
+        'name' => $p['name'],
+        'badge' => $p['badge'] ?: null,
+        'tagline' => $p['tagline'] ?? '',
+        'channels' => json_decode($p['channels_json'] ?: '[]', true) ?: ['WhatsApp'],
+        'monthly' => (int)$p['monthly'],
+        'yearly' => (int)$p['yearly'],
+        'setup_fee_monthly' => (int)($p['setup_fee_monthly'] ?? 0),
+        'setup_fee_yearly' => (int)($p['setup_fee_yearly'] ?? 0),
+        'cta' => $p['cta_text'] ?: 'Start Free',
+        'cta_link' => $p['cta_link'] ?: '/auth/register',
+        'features' => json_decode($p['features_json'] ?: '[]', true) ?: []
+      ];
+    }
+  }
+} catch (Throwable $e) {}
+
+$defaultPlans = [
     'growth' => [
       'id' => 'growth',
       'name' => 'Growth',
@@ -92,8 +110,18 @@ return [
         'WhatsApp, Instagram, Facebook, Telegram',
       ],
     ],
-  ],
+  ];
 
+$activePlans = !empty($customPlans) ? $customPlans : $defaultPlans;
+
+return [
+  'currency_default' => 'INR',
+  'INR_TO_USD_RATE' => 0.012,
+  'gst_rate' => 0.18,
+  'trial_days' => 14,
+  'register_url' => '/auth/register',
+  'whatsapp' => cms_setting('support_whatsapp', '918050854445'),
+  'plans' => $activePlans,
   'comparison' => [
     ['Contacts', '50,000', '100,000', 'Unlimited'],
     ['Conversations', '50,000', '100,000', 'Unlimited'],

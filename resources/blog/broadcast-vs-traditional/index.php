@@ -1,9 +1,9 @@
 <?php
-$basePath = '../../';
+$basePath = '../../../';
 $pageTitle = 'WhatsApp Broadcast vs Traditional Marketing — InboxWa Blog';
 $pageDescription = 'When template messaging outperforms email and SMS.';
 $canonicalUrl = 'https://inboxwa.com/resources/blog/broadcast-vs-traditional/';
-include __DIR__ . '/../../includes/header.php';
+include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
@@ -30,4 +30,4 @@ include __DIR__ . '/../../includes/header.php';
 </div></article>
 
 <script src="/assets/js/resources.js?v=1" defer></script>
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../../includes/footer.php'; ?>

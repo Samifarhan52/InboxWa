@@ -7,9 +7,20 @@
 if (!isset($basePath)) { $basePath = ''; }
 $bp = $basePath;
 
-$SITE_NAME   = 'InboxWa';
+require_once dirname(__DIR__) . '/config/cms.php';
+
+$SITE_NAME   = cms_setting('site_title', 'InboxWa');
+$SITE_TAGLINE = cms_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
 $SITE_DOMAIN = 'https://inboxwa.com';
 $DEFAULT_OG  = $SITE_DOMAIN . '/assets/images/og-image.png';
+$cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
+$cmsLogo     = cms_setting('logo_url', '/assets/images/logo.png');
+$announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
+$announcementText = cms_setting('announcement_text', '');
+$announcementLink = cms_setting('announcement_link', '/auth/register');
+$gaId        = cms_setting('ga_id', '');
+$pixelId     = cms_setting('meta_pixel_id', '');
+$customHead  = cms_setting('custom_header_code', '');
 
 $pageTitle       = isset($pageTitle) ? trim((string)$pageTitle) : '';
 $pageDescription = isset($pageDescription) ? trim((string)$pageDescription) : '';
@@ -159,15 +170,366 @@ if (!function_exists('hb_seo_esc')) {
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free trial available" }
   }
   </script>
+  <?php if (!empty($gaId)): ?>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo htmlspecialchars($gaId); ?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '<?php echo htmlspecialchars($gaId); ?>');
+  </script>
+  <?php endif; ?>
+  <?php if (!empty($pixelId)): ?>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '<?php echo htmlspecialchars($pixelId); ?>');
+    fbq('track', 'PageView');
+  </script>
+  <?php endif; ?>
+  <?php if (!empty($customHead)) echo $customHead; ?>
   <?php if (!empty($extraHead)) echo $extraHead; ?>
+  <script>
+    window.INBOXWA_CONFIG = {
+      whatsapp: <?php echo json_encode($cmsWhatsapp); ?>,
+      siteName: <?php echo json_encode($SITE_NAME); ?>
+    };
+  </script>
+  <style id="inboxwa-floating-pill-navbar-style">
+    /* FLOATING PILL NAVBAR SYSTEM (100% Fixed & Always Visible on Scroll) */
+    html {
+      scroll-padding-top: 100px;
+    }
+    body {
+      padding-top: 86px !important;
+    }
+    .site-header {
+      position: fixed !important;
+      top: 14px !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      z-index: 99999 !important;
+      padding: 0 16px !important;
+      pointer-events: none !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      transition: top 0.25s ease !important;
+    }
+    .header-inner {
+      pointer-events: auto !important;
+      max-width: min(1280px, 96vw) !important;
+      margin: 0 auto !important;
+      height: 60px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 0 1.25rem 0 1.5rem !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.1), 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+      transition: all 0.25s ease !important;
+    }
+    .site-header.scrolled .header-inner {
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 16px 40px -4px rgba(15, 23, 42, 0.16), 0 6px 18px rgba(15, 23, 42, 0.08) !important;
+      border-color: rgba(203, 213, 225, 0.95) !important;
+    }
+
+    /* Red Live Badge */
+    .badge-live-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ef4444;
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: 2px 7px;
+      border-radius: 999px;
+      margin-left: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      animation: hbPulseLive 2s infinite ease-in-out;
+    }
+    @keyframes hbPulseLive {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+      50% { box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); }
+    }
+
+    /* Hellobotz-Style Dark Mega Menu for Channels */
+    .mega-menu-channels {
+      position: absolute !important;
+      top: calc(100% + 14px) !important;
+      left: 50% !important;
+      transform: translateX(-50%) translateY(8px) !important;
+      width: min(780px, 94vw) !important;
+      background: #0d111c !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06) !important;
+      padding: 22px 24px !important;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s !important;
+      z-index: 1000 !important;
+      pointer-events: none;
+    }
+    .nav-item-channels:hover .mega-menu-channels,
+    .nav-item-channels:focus-within .mega-menu-channels {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateX(-50%) translateY(0) !important;
+      pointer-events: auto !important;
+    }
+
+    .mega-channels-container {
+      display: grid !important;
+      grid-template-columns: 1.45fr 1fr !important;
+      gap: 22px !important;
+      align-items: stretch !important;
+    }
+    .mega-channels-left {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .mega-channels-heading {
+      font-size: 0.72rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.08em !important;
+      color: #818cf8 !important;
+      text-transform: uppercase !important;
+      margin-bottom: 12px !important;
+    }
+    .mega-channels-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px 14px !important;
+    }
+    .mega-channel-item {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+      padding: 10px 12px !important;
+      border-radius: 12px !important;
+      text-decoration: none !important;
+      transition: all 0.18s ease !important;
+      background: transparent !important;
+    }
+    .mega-channel-item:hover {
+      background: rgba(255, 255, 255, 0.06) !important;
+      transform: translateY(-2px) !important;
+    }
+    .channel-icon-wrap {
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 11px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+    .wa-icon-wrap { background: rgba(37, 211, 102, 0.15) !important; color: #25d366 !important; }
+    .ig-icon-wrap { background: rgba(236, 72, 153, 0.15) !important; color: #f43f5e !important; }
+    .tg-icon-wrap { background: rgba(14, 165, 233, 0.15) !important; color: #0284c7 !important; }
+    .fb-icon-wrap { background: rgba(59, 130, 246, 0.15) !important; color: #3b82f6 !important; }
+
+    .channel-text {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .channel-name {
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+    }
+    .channel-desc {
+      font-size: 0.75rem !important;
+      color: #94a3b8 !important;
+      line-height: 1.35 !important;
+      margin-top: 3px !important;
+    }
+
+    /* Right Promo Card */
+    .mega-channels-promo {
+      background: linear-gradient(145deg, #161b2e 0%, #111524 100%) !important;
+      border: 1px solid rgba(139, 92, 246, 0.25) !important;
+      border-radius: 16px !important;
+      padding: 20px 22px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+    .promo-offer-pill {
+      display: inline-block !important;
+      align-self: flex-start !important;
+      background: rgba(139, 92, 246, 0.22) !important;
+      color: #c084fc !important;
+      border: 1px solid rgba(168, 85, 247, 0.35) !important;
+      font-size: 0.68rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase !important;
+      padding: 3px 9px !important;
+      border-radius: 999px !important;
+      margin-bottom: 12px !important;
+    }
+    .promo-offer-title {
+      font-size: 1.15rem !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      margin: 0 0 8px 0 !important;
+      line-height: 1.3 !important;
+    }
+    .promo-offer-desc {
+      font-size: 0.82rem !important;
+      color: #cbd5e1 !important;
+      line-height: 1.5 !important;
+      margin: 0 0 16px 0 !important;
+    }
+    .promo-offer-cta {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      color: #a78bfa !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      transition: all 0.15s ease !important;
+    }
+    .promo-offer-cta:hover {
+      color: #c4b5fd !important;
+      gap: 9px !important;
+    }
+
+    /* Screenshot-matching Pill Action Buttons */
+    .header-login {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0.42rem 1.15rem !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: #334155 !important;
+      background: #ffffff !important;
+      border: 1.5px solid #cbd5e1 !important;
+      border-radius: 999px !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+    .header-login:hover {
+      border-color: #8b5cf6 !important;
+      color: #8b5cf6 !important;
+      background: #fbfbfe !important;
+    }
+    .header-cta-start {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0.48rem 1.25rem !important;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%) !important;
+      border-radius: 999px !important;
+      border: none !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35) !important;
+      transition: all 0.2s ease !important;
+    }
+    .header-cta-start:hover {
+      transform: translateY(-1px) !important;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.45) !important;
+      color: #ffffff !important;
+    }
+    .lang-switch-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.35rem !important;
+      padding: 0.38rem 0.75rem !important;
+      border-radius: 999px !important;
+      border: 1.5px solid #e2e8f0 !important;
+      background: #ffffff !important;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      cursor: pointer !important;
+    }
+
+    @media (max-width: 1240px) {
+      .nav-desktop .nav-link {
+        padding: 0.45rem 0.45rem !important;
+        font-size: 0.82rem !important;
+      }
+      .nav-desktop {
+        gap: 0.05rem !important;
+      }
+      .header-inner {
+        padding: 0 1rem !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .site-header {
+        top: 8px !important;
+        padding: 0 10px !important;
+      }
+      .header-inner {
+        height: 56px !important;
+        border-radius: 999px !important;
+        padding: 0 1rem !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .mega-channels-container { grid-template-columns: 1fr !important; }
+      .mega-channels-promo { display: none !important; }
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      var header = document.querySelector('.site-header');
+      if (header) {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    }, { passive: true });
+  </script>
 </head>
 <body>
+
+  <?php if ($announcementEnabled && !empty($announcementText)): ?>
+  <aside class="announcement-banner" style="background:linear-gradient(90deg,#8B5CF6,#6366F1,#06B6D4);color:#fff;text-align:center;padding:0.45rem 1rem;font-size:0.875rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:0.5rem;z-index:9999;position:relative;">
+    <a href="<?php echo htmlspecialchars($announcementLink); ?>" style="color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;">
+      <span><?php echo htmlspecialchars($announcementText); ?></span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </aside>
+  <?php endif; ?>
 
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a href="<?php echo $bp; ?>" class="logo" aria-label="InboxWa Home">
-        <img src="<?php echo $bp; ?>assets/images/logo.png" alt="InboxWa" class="logo-img" width="140" height="36" onerror="this.onerror=null;this.src='';this.style.display='none';var f=this.parentNode.querySelector('.logo-fallback');if(f)f.style.display='inline-flex'">
+      <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
+        <img src="<?php echo htmlspecialchars($cmsLogo); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="140" height="36" onerror="this.onerror=null;this.src='';this.style.display='none';var f=this.parentNode.querySelector('.logo-fallback');if(f)f.style.display='inline-flex'">
         <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
           <span class="logo-icon" style="width:36px;height:36px;display:inline-flex;background:linear-gradient(135deg,#8B5CF6,#6366F1);border-radius:10px;color:#fff;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
           <span style="font-weight:800;font-size:1.15rem;color:#0F172A">InboxWa</span>
@@ -243,7 +605,65 @@ if (!function_exists('hb_seo_esc')) {
           </div>
         </div>
 
-        
+        <!-- CHANNELS [LIVE] MEGAMENU (Hellobotz Style) -->
+        <div class="nav-item nav-item-channels" data-mega>
+          <button type="button" class="nav-link nav-link-channels" aria-expanded="false" aria-haspopup="true">
+            Channels <span class="badge-live-pill">Live</span>
+            <svg class="nav-chevron" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="mega-menu mega-menu-channels" role="menu">
+            <div class="mega-channels-container">
+              <div class="mega-channels-left">
+                <div class="mega-channels-heading">CHANNELS</div>
+                <div class="mega-channels-grid">
+                  <a href="<?php echo $bp; ?>channel/whatsapp/" class="mega-channel-item" role="menuitem">
+                    <div class="channel-icon-wrap wa-icon-wrap">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <div class="channel-text">
+                      <span class="channel-name">WhatsApp</span>
+                      <span class="channel-desc">Official WhatsApp Business API...</span>
+                    </div>
+                  </a>
+                  <a href="<?php echo $bp; ?>products/channels/instagram/" class="mega-channel-item" role="menuitem">
+                    <div class="channel-icon-wrap ig-icon-wrap">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                    <div class="channel-text">
+                      <span class="channel-name">Instagram</span>
+                      <span class="channel-desc">Manage Instagram DMs &...</span>
+                    </div>
+                  </a>
+                  <a href="<?php echo $bp; ?>products/channels/telegram/" class="mega-channel-item" role="menuitem">
+                    <div class="channel-icon-wrap tg-icon-wrap">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.942z"/></svg>
+                    </div>
+                    <div class="channel-text">
+                      <span class="channel-name">Telegram</span>
+                      <span class="channel-desc">Telegram bots & group...</span>
+                    </div>
+                  </a>
+                  <a href="<?php echo $bp; ?>products/channels/facebook/" class="mega-channel-item" role="menuitem">
+                    <div class="channel-icon-wrap fb-icon-wrap">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <div class="channel-text">
+                      <span class="channel-name">Facebook</span>
+                      <span class="channel-desc">Facebook Messenger & page...</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="mega-channels-promo">
+                <span class="promo-offer-pill">PROMO OFFER</span>
+                <h4 class="promo-offer-title">Build Custom Bots in Minutes</h4>
+                <p class="promo-offer-desc">Engage customers with custom WhatsApp templates & workflows.</p>
+                <a href="<?php echo $bp; ?>auth/register" class="promo-offer-cta">Start Free Trial <span class="arr">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="nav-item" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-solutions" role="menu">
@@ -451,6 +871,18 @@ if (!function_exists('hb_seo_esc')) {
             <a href="/products/channels/facebook/">Facebook</a>
             <a href="/products/channels/instagram/">Instagram</a>
             <a href="/products/channels/telegram/">Telegram</a>
+          </div></div>
+        </div>
+        <div class="mobile-nav-item" data-accordion>
+          <button type="button" class="mobile-nav-link" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <span>Channels <span class="badge-live-pill" style="margin-left:6px;">Live</span></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="mobile-submenu"><div class="mobile-submenu-inner">
+            <a href="/channel/whatsapp/" style="font-weight:700;color:#10b981;">WhatsApp Business API</a>
+            <a href="/products/channels/instagram/">Instagram DM Automation</a>
+            <a href="/products/channels/telegram/">Telegram Bot Platform</a>
+            <a href="/products/channels/facebook/">Facebook Messenger</a>
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>

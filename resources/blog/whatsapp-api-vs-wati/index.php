@@ -1,9 +1,9 @@
 <?php
-$basePath = '../../';
+$basePath = '../../../';
 $pageTitle = 'WhatsApp API vs WATI vs AiSensy — InboxWa Blog';
 $pageDescription = 'Capability checklist for choosing a platform.';
 $canonicalUrl = 'https://inboxwa.com/resources/blog/whatsapp-api-vs-wati/';
-include __DIR__ . '/../../includes/header.php';
+include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
@@ -30,4 +30,4 @@ include __DIR__ . '/../../includes/header.php';
 </div></article>
 
 <script src="/assets/js/resources.js?v=1" defer></script>
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../../includes/footer.php'; ?>

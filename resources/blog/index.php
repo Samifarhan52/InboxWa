@@ -1,113 +1,71 @@
 <?php
-$basePath = '../../';
-$pageTitle = 'Blog — InboxWa Insights';
-$pageDescription = 'AI automation, WhatsApp API, omnichannel engagement, CRM and business growth insights.';
-$canonicalUrl = 'https://inboxwa.com/resources/blog/';
-include __DIR__ . '/../../includes/header.php';
+$basePath = "../../";
+$pageTitle = "Blog — InboxWa Insights";
+$pageDescription = "AI automation, WhatsApp API, omnichannel engagement, CRM and business growth insights.";
+$canonicalUrl = "https://inboxwa.com/resources/blog/";
+include __DIR__ . "/../../includes/header.php";
+
+$posts = cms_posts(0);
+$featured = !empty($posts) ? $posts[0] : null;
+$latest = count($posts) > 1 ? array_slice($posts, 1) : $posts;
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Resources / Blog</nav>
-<section class="section page-hero" style="padding-top:1.25rem"><div class="container"><div class="section-header reveal">
-<span class="badge badge-primary">Blog</span>
-<h1>InboxWa Insights</h1>
-<p class="lead">AI automation, WhatsApp API, omnichannel engagement, CRM and business growth insights.</p>
-</div></div></section>
-<section class="section section-gradient-1"><div class="container">
-<article class="card reveal" style="padding:1.5rem;display:grid;gap:1rem;grid-template-columns:1.2fr 1fr">
-<div class="blog-img-ph blog-img-ph--lg"></div>
-<div>
-<span class="badge badge-primary">Featured</span>
-<h2 style="margin:.5rem 0"><a href="/resources/blog/whatsapp-api-guide/" style="text-decoration:none;color:inherit">WhatsApp API for Business: Complete Guide</a></h2>
-<p>How businesses use Official WhatsApp Business API for support and sales.</p>
-<a class="btn btn-primary btn-sm" href="/resources/blog/whatsapp-api-guide/">Read Featured</a>
-</div>
-</article>
-</div></section>
-<section class="section"><div class="container">
-<div class="section-header reveal"><h2>Latest articles</h2></div>
-<div class="res-grid"><article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp API for Business: Complete Guide"></div>
-<span class="badge badge-primary">Guide</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/whatsapp-api-guide/" style="text-decoration:none;color:inherit">WhatsApp API for Business: Complete Guide</a></h3>
-<p>How businesses use Official WhatsApp Business API for support and sales.</p>
-<p style="font-size:.8rem;color:var(--t3)">12 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/whatsapp-api-guide/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp Chatbot Automation for Businesses"></div>
-<span class="badge badge-primary">Automation</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/whatsapp-chatbot-automation/" style="text-decoration:none;color:inherit">WhatsApp Chatbot Automation for Businesses</a></h3>
-<p>Design flows that qualify leads and deflect FAQs.</p>
-<p style="font-size:.8rem;color:var(--t3)">9 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/whatsapp-chatbot-automation/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp Broadcast vs Traditional Marketing"></div>
-<span class="badge badge-primary">Marketing</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/broadcast-vs-traditional/" style="text-decoration:none;color:inherit">WhatsApp Broadcast vs Traditional Marketing</a></h3>
-<p>When template messaging outperforms email and SMS.</p>
-<p style="font-size:.8rem;color:var(--t3)">7 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/broadcast-vs-traditional/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="How AI Chatbots Improve Customer Support"></div>
-<span class="badge badge-primary">Support</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/ai-chatbots-support/" style="text-decoration:none;color:inherit">How AI Chatbots Improve Customer Support</a></h3>
-<p>Deflection, handoff and quality monitoring.</p>
-<p style="font-size:.8rem;color:var(--t3)">8 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/ai-chatbots-support/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp CRM Automation for Lead Management"></div>
-<span class="badge badge-primary">Sales</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/whatsapp-crm-leads/" style="text-decoration:none;color:inherit">WhatsApp CRM Automation for Lead Management</a></h3>
-<p>From first message to pipeline stage.</p>
-<p style="font-size:.8rem;color:var(--t3)">10 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/whatsapp-crm-leads/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="Instagram + WhatsApp Omnichannel Automation"></div>
-<span class="badge badge-primary">Omnichannel</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/instagram-whatsapp-omni/" style="text-decoration:none;color:inherit">Instagram + WhatsApp Omnichannel Automation</a></h3>
-<p>One team inbox across Meta channels.</p>
-<p style="font-size:.8rem;color:var(--t3)">8 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/instagram-whatsapp-omni/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp Appointment Booking Automation"></div>
-<span class="badge badge-primary">Operations</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/appointment-booking/" style="text-decoration:none;color:inherit">WhatsApp Appointment Booking Automation</a></h3>
-<p>Slots, reminders and reschedules in chat.</p>
-<p style="font-size:.8rem;color:var(--t3)">6 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/appointment-booking/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="How to Automate E-commerce Customer Support"></div>
-<span class="badge badge-primary">E-commerce</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/ecommerce-support/" style="text-decoration:none;color:inherit">How to Automate E-commerce Customer Support</a></h3>
-<p>Orders, returns and cart recovery patterns.</p>
-<p style="font-size:.8rem;color:var(--t3)">11 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/ecommerce-support/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp Lead Generation Automation"></div>
-<span class="badge badge-primary">Growth</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/lead-generation/" style="text-decoration:none;color:inherit">WhatsApp Lead Generation Automation</a></h3>
-<p>Click-to-WhatsApp ads to qualified chats.</p>
-<p style="font-size:.8rem;color:var(--t3)">9 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/lead-generation/">Read More</a>
-</article>
-<article class="card res-card reveal">
-<div class="blog-img-ph" role="img" aria-label="WhatsApp API vs WATI vs AiSensy"></div>
-<span class="badge badge-primary">Compare</span>
-<h3 style="margin:.5rem 0"><a href="/resources/blog/whatsapp-api-vs-wati/" style="text-decoration:none;color:inherit">WhatsApp API vs WATI vs AiSensy</a></h3>
-<p>Capability checklist for choosing a platform.</p>
-<p style="font-size:.8rem;color:var(--t3)">10 min · 2026</p>
-<a class="btn btn-sm btn-outline" href="/resources/blog/whatsapp-api-vs-wati/">Read More</a>
-</article>
-</div>
-</div></section>
+<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)">
+  <a href="/">Home</a> / Resources / Blog
+</nav>
 
-<script src="/assets/js/resources.js?v=1" defer></script>
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<section class="section page-hero" style="padding-top:1.25rem">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge badge-primary">Blog</span>
+      <h1>InboxWa Insights</h1>
+      <p class="lead">AI automation, WhatsApp API, omnichannel engagement, CRM and business growth insights.</p>
+    </div>
+  </div>
+</section>
+
+<?php if ($featured): ?>
+<section class="section section-gradient-1">
+  <div class="container">
+    <article class="card reveal" style="padding:1.5rem;display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));align-items:center;">
+      <div class="blog-img-ph blog-img-ph--lg" style="min-height:220px;border-radius:12px;background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(6,182,212,0.15));display:flex;align-items:center;justify-content:center;color:#8B5CF6;font-size:2.5rem;">
+        📰
+      </div>
+      <div>
+        <span class="badge badge-primary">Featured · <?php echo htmlspecialchars($featured["category"] ?: "Article"); ?></span>
+        <h2 style="margin:.75rem 0 .5rem"><a href="/resources/blog/<?php echo htmlspecialchars($featured["slug"]); ?>/" style="text-decoration:none;color:inherit"><?php echo htmlspecialchars($featured["title"]); ?></a></h2>
+        <p style="color:var(--t2);line-height:1.6;margin-bottom:1rem"><?php echo htmlspecialchars($featured["excerpt"] ?: "Discover insights on WhatsApp automation and customer communication."); ?></p>
+        <div style="font-size:0.85rem;color:var(--t3);margin-bottom:1rem">By <?php echo htmlspecialchars($featured["author"] ?: "InboxWa Team"); ?> · <?php echo date("M j, Y", strtotime($featured["created_at"])); ?></div>
+        <a class="btn btn-primary btn-sm" href="/resources/blog/<?php echo htmlspecialchars($featured["slug"]); ?>/">Read Article &rarr;</a>
+      </div>
+    </article>
+  </div>
+</section>
+<?php endif; ?>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal"><h2>Latest Articles</h2></div>
+    <div class="res-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;margin-top:1.5rem;">
+      <?php foreach ($latest as $p): ?>
+      <article class="card res-card reveal" style="display:flex;flex-direction:column;justify-content:space-between;padding:1.5rem;border-radius:14px;">
+        <div>
+          <div class="blog-img-ph" role="img" aria-label="<?php echo htmlspecialchars($p["title"]); ?>" style="height:140px;border-radius:10px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1rem;">
+            📝
+          </div>
+          <span class="badge badge-primary"><?php echo htmlspecialchars($p["category"] ?: "Guide"); ?></span>
+          <h3 style="margin:.65rem 0 .35rem;font-size:1.15rem"><a href="/resources/blog/<?php echo htmlspecialchars($p["slug"]); ?>/" style="text-decoration:none;color:inherit"><?php echo htmlspecialchars($p["title"]); ?></a></h3>
+          <p style="color:var(--t2);font-size:.9rem;line-height:1.5"><?php echo htmlspecialchars($p["excerpt"]); ?></p>
+        </div>
+        <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(0,0,0,0.05);padding-top:0.75rem;">
+          <span style="font-size:.8rem;color:var(--t3)"><?php echo date("M Y", strtotime($p["created_at"])); ?></span>
+          <a class="btn btn-sm btn-outline" href="/resources/blog/<?php echo htmlspecialchars($p["slug"]); ?>/">Read More</a>
+        </div>
+      </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<?php include __DIR__ . "/../../includes/footer.php"; ?>

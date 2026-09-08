@@ -1,9 +1,9 @@
 <?php
-$basePath = '../../';
+$basePath = '../../../';
 $pageTitle = 'WhatsApp API for Business: Complete Guide — InboxWa Blog';
 $pageDescription = 'How businesses use Official WhatsApp Business API for support and sales.';
 $canonicalUrl = 'https://inboxwa.com/resources/blog/whatsapp-api-guide/';
-include __DIR__ . '/../../includes/header.php';
+include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
@@ -30,4 +30,4 @@ include __DIR__ . '/../../includes/header.php';
 </div></article>
 
 <script src="/assets/js/resources.js?v=1" defer></script>
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../../includes/footer.php'; ?>

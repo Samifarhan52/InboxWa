@@ -20,16 +20,16 @@ $parts = array_values(array_filter(explode('/', $cleanPath)));
 
 // 1. Direct exact path match check
 $directPath = $rootDir . '/' . implode('/', $parts);
+if (is_dir($directPath) && is_file(rtrim($directPath, '/') . '/index.php')) {
+    require rtrim($directPath, '/') . '/index.php';
+    exit;
+}
 if (is_file($directPath) && substr($directPath, -4) === '.php') {
     require $directPath;
     exit;
 }
 if (is_file($directPath . '.php')) {
     require $directPath . '.php';
-    exit;
-}
-if (is_dir($directPath) && is_file(rtrim($directPath, '/') . '/index.php')) {
-    require rtrim($directPath, '/') . '/index.php';
     exit;
 }
 
@@ -51,6 +51,9 @@ foreach ($parts as $part) {
     if ($partLower === 'industry') {
         $partLower = 'industries';
     }
+    if ($partLower === 'channels') {
+        $partLower = 'channel';
+    }
 
     foreach ($entries as $entry) {
         if ($entry === '.' || $entry === '..') continue;
@@ -68,13 +71,41 @@ foreach ($parts as $part) {
 }
 
 if ($resolved) {
+    if (is_dir($current) && is_file(rtrim($current, '/') . '/index.php')) {
+        require rtrim($current, '/') . '/index.php';
+        exit;
+    }
     if (is_file($current) && substr($current, -4) === '.php') {
         require $current;
         exit;
     }
-    if (is_dir($current) && is_file(rtrim($current, '/') . '/index.php')) {
-        require rtrim($current, '/') . '/index.php';
+}
+
+// Dynamic Blog Post Route
+if (isset($parts[0], $parts[1], $parts[2]) && strtolower($parts[0]) === 'resources' && strtolower($parts[1]) === 'blog') {
+    require_once $rootDir . '/config/cms.php';
+    $postSlug = strtolower($parts[2]);
+    $post = hb_get_post($postSlug);
+    if ($post) {
+        $_GET['slug'] = $postSlug;
+        require $rootDir . '/resources/blog/single.php';
         exit;
+    }
+}
+
+// Dynamic Location Route
+if (isset($parts[0], $parts[1]) && strtolower($parts[0]) === 'locations') {
+    require_once $rootDir . '/config/cms.php';
+    $locSlug = strtolower($parts[1]);
+    $all = cms_locations();
+    foreach ($all as $k => $locData) {
+        if (strtolower($k) === $locSlug || strtolower($locData['slug'] ?? '') === $locSlug) {
+            $basePath = '../';
+            $bp = '../';
+            $loc = $locData;
+            require $rootDir . '/includes/location-page-template.php';
+            exit;
+        }
     }
 }
 
