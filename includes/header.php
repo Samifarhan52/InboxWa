@@ -115,6 +115,56 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
 
+  <?php
+  // Dynamic Website Color Palette from Admin Settings
+  $themePrimary = cms_setting('theme_primary_color', '#8B5CF6');
+  $themePrimaryHover = cms_setting('theme_primary_hover', '#7C3AED');
+  $themeAccent = cms_setting('theme_accent_color', '#06B6D4');
+  $themeSuccess = cms_setting('theme_success_color', '#16A34A');
+  $themeBg = cms_setting('theme_bg_color', '#FFFFFF');
+  $themeText = cms_setting('theme_text_color', '#0F172A');
+  ?>
+  <style id="inboxwa-theme-palette">
+    :root {
+      --p: <?php echo htmlspecialchars($themePrimary); ?> !important;
+      --p2: <?php echo htmlspecialchars($themePrimaryHover); ?> !important;
+      --p3: <?php echo htmlspecialchars($themePrimaryHover); ?> !important;
+      --p-l: <?php echo htmlspecialchars($themePrimary); ?>18 !important;
+      --p-m: <?php echo htmlspecialchars($themePrimary); ?>35 !important;
+      --a: <?php echo htmlspecialchars($themeAccent); ?> !important;
+      --a2: <?php echo htmlspecialchars($themeAccent); ?>cc !important;
+      --g: <?php echo htmlspecialchars($themeSuccess); ?> !important;
+      <?php if (!empty($themeBg) && strtoupper($themeBg) !== '#FFFFFF'): ?>
+      --bg: <?php echo htmlspecialchars($themeBg); ?> !important;
+      <?php endif; ?>
+      <?php if (!empty($themeText) && strtoupper($themeText) !== '#0F172A'): ?>
+      --t: <?php echo htmlspecialchars($themeText); ?> !important;
+      <?php endif; ?>
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?> 0%, <?php echo htmlspecialchars($themePrimaryHover); ?> 50%, <?php echo htmlspecialchars($themeAccent); ?> 100%) !important;
+      box-shadow: 0 4px 20px <?php echo htmlspecialchars($themePrimary); ?>66 !important;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 8px 25px <?php echo htmlspecialchars($themePrimary); ?>88 !important;
+    }
+    .logo-icon {
+      background: linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?>, <?php echo htmlspecialchars($themeAccent); ?>) !important;
+    }
+    .badge, .pill, .cw-hero-badge {
+      background: <?php echo htmlspecialchars($themePrimary); ?>18 !important;
+      color: <?php echo htmlspecialchars($themePrimaryHover); ?> !important;
+      border-color: <?php echo htmlspecialchars($themePrimary); ?>35 !important;
+    }
+    .icon-box-gradient {
+      background: linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?>15, <?php echo htmlspecialchars($themeAccent); ?>20) !important;
+      color: <?php echo htmlspecialchars($themePrimaryHover); ?> !important;
+    }
+    .cta-band {
+      background: linear-gradient(135deg, <?php echo htmlspecialchars($themePrimaryHover); ?>, <?php echo htmlspecialchars($themePrimary); ?>, <?php echo htmlspecialchars($themeAccent); ?>) !important;
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

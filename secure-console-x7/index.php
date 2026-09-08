@@ -374,6 +374,40 @@ if (isset($_GET['action'])) {
             exit;
         }
     }
+
+    // Save Color Palette Settings
+    if ($action === 'save_color_palette') {
+        $primary = trim($_POST['theme_primary_color'] ?? '#8B5CF6');
+        $primaryHover = trim($_POST['theme_primary_hover'] ?? '#7C3AED');
+        $accent = trim($_POST['theme_accent_color'] ?? '#06B6D4');
+        $success = trim($_POST['theme_success_color'] ?? '#16A34A');
+        $bg = trim($_POST['theme_bg_color'] ?? '#FFFFFF');
+        $text = trim($_POST['theme_text_color'] ?? '#0F172A');
+        $preset = trim($_POST['theme_palette_preset'] ?? 'custom');
+
+        hb_set_setting('theme_primary_color', $primary);
+        hb_set_setting('theme_primary_hover', $primaryHover);
+        hb_set_setting('theme_accent_color', $accent);
+        hb_set_setting('theme_success_color', $success);
+        hb_set_setting('theme_bg_color', $bg);
+        hb_set_setting('theme_text_color', $text);
+        hb_set_setting('theme_palette_preset', $preset);
+
+        $noticeSuccess = 'Color palette saved successfully! Website colors have been updated live across all pages.';
+    }
+
+    // Reset Color Palette to Default
+    if ($action === 'reset_color_palette') {
+        hb_set_setting('theme_primary_color', '#8B5CF6');
+        hb_set_setting('theme_primary_hover', '#7C3AED');
+        hb_set_setting('theme_accent_color', '#06B6D4');
+        hb_set_setting('theme_success_color', '#16A34A');
+        hb_set_setting('theme_bg_color', '#FFFFFF');
+        hb_set_setting('theme_text_color', '#0F172A');
+        hb_set_setting('theme_palette_preset', 'modern-violet');
+
+        $noticeSuccess = 'Color palette reset to default InboxWa styling.';
+    }
 }
 
 // -------------------------------------------------------------
@@ -395,6 +429,14 @@ $currentAdminUser = hb_get_setting('admin_user', 'admin');
 $siteTitle = hb_get_setting('site_title', 'InboxWa');
 $siteTagline = hb_get_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
 $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
+$themePrimary = hb_get_setting('theme_primary_color', '#8B5CF6');
+$themePrimaryHover = hb_get_setting('theme_primary_hover', '#7C3AED');
+$themeAccent = hb_get_setting('theme_accent_color', '#06B6D4');
+$themeSuccess = hb_get_setting('theme_success_color', '#16A34A');
+$themeBg = hb_get_setting('theme_bg_color', '#FFFFFF');
+$themeText = hb_get_setting('theme_text_color', '#0F172A');
+$themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -819,6 +861,211 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
         .badge-converted { background: #ebfbee; color: #2f9e44; }
         .badge-type { background: #f1f3f5; color: #495057; border: 1px solid #dee2e6; }
 
+
+        /* Color Palette Customizer Styles */
+        .color-picker-row { display: flex; align-items: center; gap: 12px; }
+        .color-picker-wrap {
+            position: relative;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            border: 2px solid #c3c4c7;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+        .color-picker-wrap input[type="color"] {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 60px;
+            height: 60px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+        }
+        .color-hex-input {
+            width: 120px !important;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px;
+        }
+        .palette-preset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .palette-card {
+            border: 2px solid #dcdcde;
+            border-radius: 8px;
+            padding: 16px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .palette-card:hover {
+            border-color: #2271b1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+        .palette-card.active {
+            border-color: #2271b1;
+            background: #f0f6fc;
+            box-shadow: 0 0 0 1px #2271b1;
+        }
+        .palette-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+        .palette-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1d2327;
+        }
+        .palette-card-desc {
+            font-size: 12px;
+            color: #646970;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        .palette-swatches {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .palette-swatch-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+        .palette-btn-apply {
+            display: inline-block;
+            text-align: center;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            border: 1px solid #2271b1;
+            color: #2271b1;
+            background: #fff;
+            transition: all 0.15s;
+        }
+        .palette-card:hover .palette-btn-apply {
+            background: #2271b1;
+            color: #fff;
+        }
+        .palette-card.active .palette-btn-apply {
+            background: #2271b1;
+            color: #fff;
+        }
+        /* Live Preview Canvas */
+        .preview-canvas {
+            border-radius: 12px;
+            border: 1px solid #dcdcde;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            background: #fff;
+            transition: background 0.3s;
+        }
+        .preview-header {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+        .preview-hero {
+            padding: 24px 20px;
+            text-align: center;
+        }
+        .preview-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .preview-title {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .preview-subtitle {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .preview-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .preview-btn-primary {
+            padding: 8px 18px;
+            border-radius: 999px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .preview-btn-outline {
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            background: #fff;
+        }
+        .preview-feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 14px;
+            text-align: left;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .preview-icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
         /* WordPress Footer */
         #wpfooter {
             display: flex;
@@ -1002,7 +1249,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                 <li class="wp-menu-separator"></li>
 
                 <!-- 7. Appearance -->
-                <li class="menu-top <?php echo in_array($page, ['appearance', 'themes', 'editor']) ? 'current' : ''; ?>">
+                <li class="menu-top <?php echo in_array($page, ['appearance', 'themes', 'editor', 'colors']) ? 'current' : ''; ?>">
                     <a href="<?php echo $adminBase; ?>?page=themes" class="menu-link">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.59 10.56 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg></span>
                         <span class="wp-menu-name">Appearance</span>
@@ -1010,6 +1257,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                     <ul class="wp-submenu">
                         <li class="<?php echo $page === 'themes' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=themes">Themes</a></li>
                         <li class="<?php echo $page === 'editor' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=editor">Customize (Live CMS)</a></li>
+                        <li class="<?php echo $page === 'colors' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=colors">Color Palette</a></li>
                     </ul>
                 </li>
 
@@ -1067,6 +1315,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'permalinks') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=permalinks">Permalinks</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'privacy') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=privacy">Privacy</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'whatsapp') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=whatsapp">WhatsApp &amp; API</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'colors') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=colors">Colors &amp; Palette</a></li>
                     </ul>
                 </li>
 
@@ -1612,6 +1861,7 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                                 </div>
                                 <p style="color:#646970; font-size:12px; margin-bottom:12px;">By InboxWa Engineering. High-converting enterprise marketing and automated messaging theme.</p>
                                 <a href="<?php echo $adminBase; ?>?page=editor" class="button button-primary">Customize</a>
+                                <a href="<?php echo $adminBase; ?>?page=colors" class="button" style="margin-left:6px;">Color Palette</a>
                             </div>
                         </div>
 
@@ -1644,6 +1894,484 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                 // =============================================================
                 // 8. PLUGINS SCREEN
                 // =============================================================
+
+                <!-- ============================================================= -->
+                <!-- 7B. WEBSITE COLOR PALETTE SCREEN -->
+                <!-- ============================================================= -->
+                <?php elseif ($page === 'colors' || ($page === 'settings' && $settingsTab === 'colors')): ?>
+                    <h1 class="wp-heading-inline">Website Color Palette &amp; Appearance</h1>
+                    <a href="/" target="_blank" class="page-title-action" style="margin-left:10px;">View Live Site &nearr;</a>
+                    <p class="description" style="margin:8px 0 20px; font-size:13px; color:#50575e;">
+                        Customize global branding colors across InboxWa. Choose from curated design presets or pick custom colors for primary buttons, gradients, accents, and backgrounds. All adjustments apply in real time.
+                    </p>
+
+                    <!-- Presets Section -->
+                    <div class="postbox" style="margin-bottom:24px;">
+                        <div class="postbox-header">
+                            <h2>Curated Color Presets</h2>
+                            <span style="font-size:12px; color:#646970;">Click any preset to preview and apply</span>
+                        </div>
+                        <div class="inside" style="padding:16px;">
+                            <div class="palette-preset-grid">
+                                <!-- Preset 1: Modern Violet & Cyan -->
+                                <div class="palette-card <?php echo $themePreset === 'modern-violet' ? 'active' : ''; ?>" onclick="applyPreset('modern-violet', '#8B5CF6', '#7C3AED', '#06B6D4', '#16A34A', '#FFFFFF', '#0F172A')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Modern Violet &amp; Cyan</div>
+                                            <span style="font-size:11px; background:#ede9fe; color:#7c3aed; padding:2px 6px; border-radius:4px; font-weight:700;">Default</span>
+                                        </div>
+                                        <div class="palette-card-desc">Signature high-tech vibrant SaaS gradient for automated messaging platforms.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#8B5CF6;" title="Primary: #8B5CF6"></span>
+                                            <span class="palette-swatch-circle" style="background:#7C3AED;" title="Hover: #7C3AED"></span>
+                                            <span class="palette-swatch-circle" style="background:#06B6D4;" title="Accent: #06B6D4"></span>
+                                            <span class="palette-swatch-circle" style="background:#16A34A;" title="Success: #16A34A"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 2: WhatsApp Official Emerald -->
+                                <div class="palette-card <?php echo $themePreset === 'whatsapp-emerald' ? 'active' : ''; ?>" onclick="applyPreset('whatsapp-emerald', '#25D366', '#128C7E', '#00A884', '#22C55E', '#FFFFFF', '#111B21')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">WhatsApp Emerald &amp; Teal</div>
+                                            <span style="font-size:11px; background:#dcfce7; color:#15803d; padding:2px 6px; border-radius:4px; font-weight:700;">Official WA</span>
+                                        </div>
+                                        <div class="palette-card-desc">Authentic WhatsApp green brand palette for high recognition and trust.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#25D366;" title="Primary: #25D366"></span>
+                                            <span class="palette-swatch-circle" style="background:#128C7E;" title="Hover: #128C7E"></span>
+                                            <span class="palette-swatch-circle" style="background:#00A884;" title="Accent: #00A884"></span>
+                                            <span class="palette-swatch-circle" style="background:#22C55E;" title="Success: #22C55E"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 3: Ocean Blue & Cobalt -->
+                                <div class="palette-card <?php echo $themePreset === 'ocean-blue' ? 'active' : ''; ?>" onclick="applyPreset('ocean-blue', '#2563EB', '#1D4ED8', '#38BDF8', '#10B981', '#FFFFFF', '#0F172A')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Ocean Blue &amp; Cobalt</div>
+                                            <span style="font-size:11px; background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700;">Corporate</span>
+                                        </div>
+                                        <div class="palette-card-desc">Clean corporate enterprise tone with deep royal blues and sky highlights.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#2563EB;" title="Primary: #2563EB"></span>
+                                            <span class="palette-swatch-circle" style="background:#1D4ED8;" title="Hover: #1D4ED8"></span>
+                                            <span class="palette-swatch-circle" style="background:#38BDF8;" title="Accent: #38BDF8"></span>
+                                            <span class="palette-swatch-circle" style="background:#10B981;" title="Success: #10B981"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 4: Sunset Amber & Coral Fire -->
+                                <div class="palette-card <?php echo $themePreset === 'sunset-amber' ? 'active' : ''; ?>" onclick="applyPreset('sunset-amber', '#F59E0B', '#D97706', '#EC4899', '#10B981', '#FFFFFF', '#18181B')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Sunset Amber &amp; Coral</div>
+                                            <span style="font-size:11px; background:#fef3c7; color:#b45309; padding:2px 6px; border-radius:4px; font-weight:700;">Warm</span>
+                                        </div>
+                                        <div class="palette-card-desc">High-energy warm amber gradient ideal for e-commerce and growth campaigns.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#F59E0B;" title="Primary: #F59E0B"></span>
+                                            <span class="palette-swatch-circle" style="background:#D97706;" title="Hover: #D97706"></span>
+                                            <span class="palette-swatch-circle" style="background:#EC4899;" title="Accent: #EC4899"></span>
+                                            <span class="palette-swatch-circle" style="background:#10B981;" title="Success: #10B981"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 5: Electric Indigo -->
+                                <div class="palette-card <?php echo $themePreset === 'electric-indigo' ? 'active' : ''; ?>" onclick="applyPreset('electric-indigo', '#4F46E5', '#4338CA', '#06B6D4', '#10B981', '#FFFFFF', '#0F172A')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Electric Indigo</div>
+                                            <span style="font-size:11px; background:#e0e7ff; color:#3730a3; padding:2px 6px; border-radius:4px; font-weight:700;">Modern</span>
+                                        </div>
+                                        <div class="palette-card-desc">Deep indigo paired with electric cyan highlights for modern tech startups.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#4F46E5;" title="Primary: #4F46E5"></span>
+                                            <span class="palette-swatch-circle" style="background:#4338CA;" title="Hover: #4338CA"></span>
+                                            <span class="palette-swatch-circle" style="background:#06B6D4;" title="Accent: #06B6D4"></span>
+                                            <span class="palette-swatch-circle" style="background:#10B981;" title="Success: #10B981"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 6: Ruby Crimson & Rose -->
+                                <div class="palette-card <?php echo $themePreset === 'ruby-crimson' ? 'active' : ''; ?>" onclick="applyPreset('ruby-crimson', '#E11D48', '#BE123C', '#FB7185', '#10B981', '#FFFFFF', '#0F172A')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Ruby Crimson &amp; Rose</div>
+                                            <span style="font-size:11px; background:#ffe4e6; color:#9f1239; padding:2px 6px; border-radius:4px; font-weight:700;">Bold</span>
+                                        </div>
+                                        <div class="palette-card-desc">Bold and luxurious crimson red with soft rose accents for high visual impact.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#E11D48;" title="Primary: #E11D48"></span>
+                                            <span class="palette-swatch-circle" style="background:#BE123C;" title="Hover: #BE123C"></span>
+                                            <span class="palette-swatch-circle" style="background:#FB7185;" title="Accent: #FB7185"></span>
+                                            <span class="palette-swatch-circle" style="background:#10B981;" title="Success: #10B981"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 7: Forest Mint & Pine -->
+                                <div class="palette-card <?php echo $themePreset === 'forest-mint' ? 'active' : ''; ?>" onclick="applyPreset('forest-mint', '#059669', '#047857', '#34D399', '#10B981', '#FFFFFF', '#064E3B')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Forest Mint &amp; Pine</div>
+                                            <span style="font-size:11px; background:#d1fae5; color:#065f46; padding:2px 6px; border-radius:4px; font-weight:700;">Nature</span>
+                                        </div>
+                                        <div class="palette-card-desc">Refreshing organic emerald and mint tones for healthcare and finance.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#059669;" title="Primary: #059669"></span>
+                                            <span class="palette-swatch-circle" style="background:#047857;" title="Hover: #047857"></span>
+                                            <span class="palette-swatch-circle" style="background:#34D399;" title="Accent: #34D399"></span>
+                                            <span class="palette-swatch-circle" style="background:#10B981;" title="Success: #10B981"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+
+                                <!-- Preset 8: Midnight Cyberpunk Dark -->
+                                <div class="palette-card <?php echo $themePreset === 'midnight-dark' ? 'active' : ''; ?>" onclick="applyPreset('midnight-dark', '#6366F1', '#4F46E5', '#22D3EE', '#10B981', '#0B0F19', '#F8FAFC')">
+                                    <div>
+                                        <div class="palette-card-header">
+                                            <div class="palette-card-title">Midnight Cyberpunk</div>
+                                            <span style="font-size:11px; background:#1e1b4b; color:#a5b4fc; padding:2px 6px; border-radius:4px; font-weight:700;">Dark Theme</span>
+                                        </div>
+                                        <div class="palette-card-desc">Deep nocturnal obsidian background with neon cyan and electric indigo glow.</div>
+                                    </div>
+                                    <div>
+                                        <div class="palette-swatches">
+                                            <span class="palette-swatch-circle" style="background:#6366F1;" title="Primary: #6366F1"></span>
+                                            <span class="palette-swatch-circle" style="background:#4F46E5;" title="Hover: #4F46E5"></span>
+                                            <span class="palette-swatch-circle" style="background:#22D3EE;" title="Accent: #22D3EE"></span>
+                                            <span class="palette-swatch-circle" style="background:#0B0F19; border-color:#64748b;" title="Bg: #0B0F19"></span>
+                                        </div>
+                                        <span class="palette-btn-apply">Apply Preset</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Color Pickers & Live Preview Grid -->
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:start;">
+                        <!-- Left: Custom Color Controls Form -->
+                        <div class="postbox">
+                            <div class="postbox-header"><h2>Custom Color Controls</h2></div>
+                            <div class="inside" style="padding:16px;">
+                                <form method="post" action="" id="color-palette-form">
+                                    <input type="hidden" name="form_action" value="save_color_palette">
+                                    <input type="hidden" name="theme_palette_preset" id="theme_palette_preset" value="<?php echo htmlspecialchars($themePreset); ?>">
+
+                                    <table class="form-table" style="margin-top:0;">
+                                        <!-- Primary Brand Color -->
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="theme_primary_color">Primary Brand Color</label>
+                                                <div style="font-weight:normal; font-size:12px; color:#646970;">Main buttons, highlights &amp; gradient start</div>
+                                            </th>
+                                            <td>
+                                                <div class="color-picker-row">
+                                                    <div class="color-picker-wrap">
+                                                        <input type="color" id="theme_primary_picker" value="<?php echo htmlspecialchars($themePrimary); ?>" oninput="syncColor('theme_primary_color', this.value)">
+                                                    </div>
+                                                    <input type="text" name="theme_primary_color" id="theme_primary_color" value="<?php echo htmlspecialchars($themePrimary); ?>" class="color-hex-input" oninput="syncPicker('theme_primary_picker', this.value)" maxlength="7">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Primary Hover / Gradient Mid -->
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="theme_primary_hover">Primary Hover / Midtone</label>
+                                                <div style="font-weight:normal; font-size:12px; color:#646970;">Button hover state &amp; gradient center</div>
+                                            </th>
+                                            <td>
+                                                <div class="color-picker-row">
+                                                    <div class="color-picker-wrap">
+                                                        <input type="color" id="theme_primary_hover_picker" value="<?php echo htmlspecialchars($themePrimaryHover); ?>" oninput="syncColor('theme_primary_hover', this.value)">
+                                                    </div>
+                                                    <input type="text" name="theme_primary_hover" id="theme_primary_hover" value="<?php echo htmlspecialchars($themePrimaryHover); ?>" class="color-hex-input" oninput="syncPicker('theme_primary_hover_picker', this.value)" maxlength="7">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Accent Highlight Color -->
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="theme_accent_color">Accent Highlight Color</label>
+                                                <div style="font-weight:normal; font-size:12px; color:#646970;">Gradient finish, cyan pills &amp; icons</div>
+                                            </th>
+                                            <td>
+                                                <div class="color-picker-row">
+                                                    <div class="color-picker-wrap">
+                                                        <input type="color" id="theme_accent_picker" value="<?php echo htmlspecialchars($themeAccent); ?>" oninput="syncColor('theme_accent_color', this.value)">
+                                                    </div>
+                                                    <input type="text" name="theme_accent_color" id="theme_accent_color" value="<?php echo htmlspecialchars($themeAccent); ?>" class="color-hex-input" oninput="syncPicker('theme_accent_picker', this.value)" maxlength="7">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Success / Badges Color -->
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="theme_success_color">Success &amp; Verification</label>
+                                                <div style="font-weight:normal; font-size:12px; color:#646970;">WhatsApp checkmarks &amp; badges</div>
+                                            </th>
+                                            <td>
+                                                <div class="color-picker-row">
+                                                    <div class="color-picker-wrap">
+                                                        <input type="color" id="theme_success_picker" value="<?php echo htmlspecialchars($themeSuccess); ?>" oninput="syncColor('theme_success_color', this.value)">
+                                                    </div>
+                                                    <input type="text" name="theme_success_color" id="theme_success_color" value="<?php echo htmlspecialchars($themeSuccess); ?>" class="color-hex-input" oninput="syncPicker('theme_success_picker', this.value)" maxlength="7">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Website Background Color -->
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="theme_bg_color">Website Background</label>
+                                                <div style="font-weight:normal; font-size:12px; color:#646970;">Main page canvas background color</div>
+                                            </th>
+                                            <td>
+                                                <div class="color-picker-row">
+                                                    <div class="color-picker-wrap">
+                                                        <input type="color" id="theme_bg_picker" value="<?php echo htmlspecialchars($themeBg); ?>" oninput="syncColor('theme_bg_color', this.value)">
+                                                    </div>
+                                                    <input type="text" name="theme_bg_color" id="theme_bg_color" value="<?php echo htmlspecialchars($themeBg); ?>" class="color-hex-input" oninput="syncPicker('theme_bg_picker', this.value)" maxlength="7">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Heading & Text Color -->
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="theme_text_color">Heading &amp; Text Color</label>
+                                                <div style="font-weight:normal; font-size:12px; color:#646970;">Main headers, titles and dark text</div>
+                                            </th>
+                                            <td>
+                                                <div class="color-picker-row">
+                                                    <div class="color-picker-wrap">
+                                                        <input type="color" id="theme_text_picker" value="<?php echo htmlspecialchars($themeText); ?>" oninput="syncColor('theme_text_color', this.value)">
+                                                    </div>
+                                                    <input type="text" name="theme_text_color" id="theme_text_color" value="<?php echo htmlspecialchars($themeText); ?>" class="color-hex-input" oninput="syncPicker('theme_text_picker', this.value)" maxlength="7">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div style="display:flex; gap:12px; align-items:center; margin-top:24px; padding-top:16px; border-top:1px solid #dcdcde;">
+                                        <button type="submit" class="button button-primary" style="height:36px; padding:0 18px; font-weight:700; font-size:13px;">Save Color Palette</button>
+                                        <button type="button" class="button" onclick="document.getElementById('reset-color-form').submit();" style="height:36px; padding:0 14px;">Reset to Default</button>
+                                        <a href="/" target="_blank" style="margin-left:auto; font-size:13px; text-decoration:none; color:#2271b1;">View live homepage &nearr;</a>
+                                    </div>
+                                </form>
+
+                                <form method="post" action="" id="reset-color-form" style="display:none;">
+                                    <input type="hidden" name="form_action" value="reset_color_palette">
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Right: Live Real-Time Website Preview Card -->
+                        <div class="postbox" style="position:sticky; top:50px;">
+                            <div class="postbox-header">
+                                <h2>Live Website Preview</h2>
+                                <span style="font-size:11px; background:#dcfce7; color:#15803d; font-weight:700; padding:2px 8px; border-radius:4px;">Updates in Real-Time</span>
+                            </div>
+                            <div class="inside" style="padding:20px;">
+                                <div class="preview-canvas" id="preview-canvas-box">
+                                    <!-- Mock Navbar -->
+                                    <div class="preview-header">
+                                        <div style="display:flex; align-items:center; gap:8px;">
+                                            <div id="preview-logo-icon" class="preview-icon-box" style="width:28px; height:28px; border-radius:6px; background:linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?>, <?php echo htmlspecialchars($themeAccent); ?>);">
+                                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                            </div>
+                                            <strong style="font-size:14px; color:#0f172a;">Inbox<span id="preview-wa-brand" style="color:<?php echo htmlspecialchars($themePrimary); ?>;">Wa</span></strong>
+                                        </div>
+                                        <div style="display:flex; gap:12px; font-size:11px; font-weight:600; color:#64748b;">
+                                            <span>Channels</span>
+                                            <span>Solutions</span>
+                                            <span>Pricing</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mock Hero Stage -->
+                                    <div class="preview-hero" id="preview-hero-container">
+                                        <div id="preview-badge-pill" class="preview-badge" style="background:<?php echo htmlspecialchars($themePrimary); ?>18; color:<?php echo htmlspecialchars($themePrimaryHover); ?>; border-color:<?php echo htmlspecialchars($themePrimary); ?>35;">
+                                            <span>&#9889; Meta Tech Partner &middot; Official API</span>
+                                        </div>
+
+                                        <div class="preview-title" id="preview-title-elem" style="color:<?php echo htmlspecialchars($themeText); ?>;">
+                                            Automate WhatsApp Marketing with <span id="preview-title-gradient" style="background:linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?>, <?php echo htmlspecialchars($themeAccent); ?>); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">AI Chatbots</span>
+                                        </div>
+
+                                        <p class="preview-subtitle">
+                                            Send broadcasts, deploy intelligent sales chatbots, and convert leads seamlessly on official WhatsApp Cloud API.
+                                        </p>
+
+                                        <div class="preview-actions">
+                                            <a href="javascript:void(0)" id="preview-btn-primary" class="preview-btn-primary" style="background:linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?> 0%, <?php echo htmlspecialchars($themePrimaryHover); ?> 50%, <?php echo htmlspecialchars($themeAccent); ?> 100%); box-shadow:0 4px 14px <?php echo htmlspecialchars($themePrimary); ?>66;">
+                                                Start Free Trial &rarr;
+                                            </a>
+                                            <a href="javascript:void(0)" class="preview-btn-outline">
+                                                Watch Demo
+                                            </a>
+                                        </div>
+
+                                        <!-- Mock Feature Card with Gradient Icon -->
+                                        <div class="preview-feature-card">
+                                            <div id="preview-icon-box-feature" class="preview-icon-box" style="background:linear-gradient(135deg, <?php echo htmlspecialchars($themePrimary); ?>20, <?php echo htmlspecialchars($themeAccent); ?>25); color:<?php echo htmlspecialchars($themePrimaryHover); ?>;">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                            </div>
+                                            <div>
+                                                <strong style="font-size:12px; color:#0f172a; display:block;">Automated WhatsApp Broadcasts</strong>
+                                                <span style="font-size:11px; color:#64748b;">Reach 100,000+ customers with 98% open rates instantly.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client-Side Real-Time Preview Scripts -->
+                    <script>
+                    function syncColor(inputId, val) {
+                        if (val && val.charAt(0) !== '#') val = '#' + val;
+                        const el = document.getElementById(inputId);
+                        if (el) el.value = val.toUpperCase();
+                        updateLivePalettePreview();
+                    }
+
+                    function syncPicker(pickerId, val) {
+                        if (!val) return;
+                        if (val.charAt(0) !== '#') val = '#' + val;
+                        if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+                            const p = document.getElementById(pickerId);
+                            if (p) p.value = val;
+                            updateLivePalettePreview();
+                        }
+                    }
+
+                    function applyPreset(presetKey, p, p2, a, g, bg, t) {
+                        document.getElementById('theme_palette_preset').value = presetKey;
+                        
+                        document.getElementById('theme_primary_color').value = p.toUpperCase();
+                        document.getElementById('theme_primary_picker').value = p;
+
+                        document.getElementById('theme_primary_hover').value = p2.toUpperCase();
+                        document.getElementById('theme_primary_hover_picker').value = p2;
+
+                        document.getElementById('theme_accent_color').value = a.toUpperCase();
+                        document.getElementById('theme_accent_picker').value = a;
+
+                        document.getElementById('theme_success_color').value = g.toUpperCase();
+                        document.getElementById('theme_success_picker').value = g;
+
+                        document.getElementById('theme_bg_color').value = bg.toUpperCase();
+                        document.getElementById('theme_bg_picker').value = bg;
+
+                        document.getElementById('theme_text_color').value = t.toUpperCase();
+                        document.getElementById('theme_text_picker').value = t;
+
+                        document.querySelectorAll('.palette-card').forEach(card => card.classList.remove('active'));
+                        if (event && event.currentTarget) {
+                            event.currentTarget.classList.add('active');
+                        }
+
+                        updateLivePalettePreview();
+                    }
+
+                    function updateLivePalettePreview() {
+                        const p = document.getElementById('theme_primary_color').value;
+                        const p2 = document.getElementById('theme_primary_hover').value;
+                        const a = document.getElementById('theme_accent_color').value;
+                        const bg = document.getElementById('theme_bg_color').value;
+                        const t = document.getElementById('theme_text_color').value;
+
+                        // 1. Primary Button
+                        const btn = document.getElementById('preview-btn-primary');
+                        if (btn) {
+                            btn.style.background = `linear-gradient(135deg, ${p} 0%, ${p2} 50%, ${a} 100%)`;
+                            btn.style.boxShadow = `0 4px 14px ${p}66`;
+                        }
+
+                        // 2. Logo Icon
+                        const logo = document.getElementById('preview-logo-icon');
+                        if (logo) {
+                            logo.style.background = `linear-gradient(135deg, ${p}, ${a})`;
+                        }
+
+                        // 3. Brand Text
+                        const brandWa = document.getElementById('preview-wa-brand');
+                        if (brandWa) brandWa.style.color = p;
+
+                        // 4. Badge Pill
+                        const badge = document.getElementById('preview-badge-pill');
+                        if (badge) {
+                            badge.style.background = `${p}18`;
+                            badge.style.color = p2;
+                            badge.style.borderColor = `${p}35`;
+                        }
+
+                        // 5. Title Gradient & Text
+                        const titleGradient = document.getElementById('preview-title-gradient');
+                        if (titleGradient) {
+                            titleGradient.style.background = `linear-gradient(135deg, ${p}, ${a})`;
+                            titleGradient.style.webkitBackgroundClip = 'text';
+                            titleGradient.style.webkitTextFillColor = 'transparent';
+                        }
+                        const titleElem = document.getElementById('preview-title-elem');
+                        if (titleElem) titleElem.style.color = t;
+
+                        // 6. Feature icon box
+                        const iconBox = document.getElementById('preview-icon-box-feature');
+                        if (iconBox) {
+                            iconBox.style.background = `linear-gradient(135deg, ${p}20, ${a}25)`;
+                            iconBox.style.color = p2;
+                        }
+
+                        // 7. Canvas Background
+                        const canvas = document.getElementById('preview-canvas-box');
+                        if (canvas) {
+                            canvas.style.background = bg;
+                            if (bg.toUpperCase() !== '#FFFFFF' && bg.toUpperCase() !== '#FFF') {
+                                canvas.style.color = '#fff';
+                            } else {
+                                canvas.style.color = '#0f172a';
+                            }
+                        }
+                    }
+
+                    // Initial preview render
+                    document.addEventListener('DOMContentLoaded', updateLivePalettePreview);
+                    </script>
+
                 elseif ($page === 'plugins' || $page === 'plugin-new'): ?>
                     <h1 class="wp-heading-inline">Plugins</h1>
                     <a href="<?php echo $adminBase; ?>?page=plugin-new" class="page-title-action">Add New</a>
@@ -2238,7 +2966,8 @@ $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=stats" class="<?php echo $editorTab === 'stats' ? 'current' : ''; ?>">Stats Counter Row</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=simulator" class="<?php echo $editorTab === 'simulator' ? 'current' : ''; ?>">WhatsApp Simulator</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=announcement" class="<?php echo $editorTab === 'announcement' ? 'current' : ''; ?>">Announcement Top Bar</a> |</li>
-                        <li><a href="<?php echo $adminBase; ?>?page=editor&tab=cta" class="<?php echo $editorTab === 'cta' ? 'current' : ''; ?>">CTA Banner</a></li>
+                        <li><a href="<?php echo $adminBase; ?>?page=editor&tab=cta" class="<?php echo $editorTab === 'cta' ? 'current' : ''; ?>">CTA Banner</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=colors">Color Palette &rarr;</a></li>
                     </ul>
 
                     <?php if ($editorTab === 'hero'): ?>
