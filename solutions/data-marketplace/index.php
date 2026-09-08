@@ -55,6 +55,24 @@ include __DIR__ . '/../../includes/header.php';
     </div>
     <div class="dm-cats">
       <?php
+      $slugMap = [
+        'Real Estate' => 'real-estate',
+        'Education' => 'education',
+        'Healthcare' => 'healthcare',
+        'E-commerce' => 'ecommerce',
+        'Finance & Insurance' => 'finance-insurance',
+        'Automotive' => 'automotive',
+        'Travel & Hospitality' => 'travel-hospitality',
+        'Restaurants & Food' => 'restaurants-food',
+        'Beauty & Wellness' => 'beauty-wellness',
+        'IT & Software' => 'it-software',
+        'Digital Marketing' => 'digital-marketing',
+        'Professional Services' => 'professional-services',
+        'Manufacturing' => 'manufacturing',
+        'Retail' => 'retail',
+        'B2B & Suppliers' => 'b2b-suppliers',
+        'Events & Wedding' => 'events-wedding',
+      ];
       $categories = [
         ['Real Estate','Builders, developers, brokers, property consultants and real estate businesses.','<svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'],
         ['Education','Schools, colleges, coaching institutes, training centres and education businesses.','<svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'],
@@ -73,13 +91,18 @@ include __DIR__ . '/../../includes/header.php';
         ['B2B & Suppliers','Wholesalers, distributors, suppliers, vendors and B2B businesses.','<svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>'],
         ['Events & Wedding','Event planners, wedding businesses, photographers, venues and related services.','<svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'],
       ];
-      foreach ($categories as $i => $c): ?>
+      foreach ($categories as $i => $c): 
+        $catSlug = $slugMap[$c[0]] ?? 'real-estate';
+      ?>
       <article class="dm-cat-card reveal" data-cat="<?php echo htmlspecialchars($c[0]); ?>">
         <div class="dm-cat-icon"><?php echo $c[2]; ?></div>
         <h3><?php echo htmlspecialchars($c[0]); ?></h3>
         <p><?php echo htmlspecialchars($c[1]); ?></p>
         <span class="dm-cat-badge">Available Data</span>
-        <button type="button" class="btn btn-sm btn-primary dm-open-form" data-industry="<?php echo htmlspecialchars($c[0]); ?>">Explore Data</button>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:auto;">
+          <a href="/business-leads/<?php echo $catSlug; ?>/" class="btn btn-sm btn-primary">Explore Data</a>
+          <button type="button" class="btn btn-sm btn-outline dm-open-form" data-industry="<?php echo htmlspecialchars($c[0]); ?>">Request Data</button>
+        </div>
       </article>
       <?php endforeach; ?>
     </div>
