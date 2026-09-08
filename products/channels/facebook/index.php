@@ -715,7 +715,7 @@ include __DIR__ . '/../../../includes/header.php';
 
       <div class="cfb-hero-visual">
         <div class="cfb-hero-img-wrap">
-          <img src="<?php echo $bp; ?>assets/images/channel/facebook/hero.png" alt="InboxWa Facebook Automation" class="cfb-hero-img" loading="eager">
+          <img src="<?php echo $bp; ?>assets/images/channel/facebook/hero.png?v=20260909" alt="InboxWa Facebook Automation" class="cfb-hero-img" loading="eager">
         </div>
       </div>
     </div>
@@ -758,7 +758,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Link Your Pages Free &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/facebook/link-pages.png" alt="Link Your Facebook Pages" class="cfb-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/link-pages.png?v=20260909" alt="Link Your Facebook Pages" class="cfb-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -787,7 +787,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Automate Lead Forms &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/facebook/save-leads.png" alt="Save Customer Form Details" class="cfb-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/save-leads.png?v=20260909" alt="Save Customer Form Details" class="cfb-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -816,7 +816,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Track Ad Campaigns &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/facebook/track-ads.png" alt="Track Your Ad Campaigns" class="cfb-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/track-ads.png?v=20260909" alt="Track Your Ad Campaigns" class="cfb-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -845,7 +845,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Explore Ad Reports &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/facebook/ad-reports.png" alt="View Simple Ad Reports" class="cfb-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/facebook/ad-reports.png?v=20260909" alt="View Simple Ad Reports" class="cfb-sc-img" loading="lazy">
           </div>
         </div>
       </div>

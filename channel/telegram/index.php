@@ -714,7 +714,7 @@ include __DIR__ . '/../../includes/header.php';
 
       <div class="ctg-hero-visual">
         <div class="ctg-hero-img-wrap">
-          <img src="<?php echo $bp; ?>assets/images/channel/telegram/hero.png" alt="InboxWa Telegram Automation" class="ctg-hero-img" loading="eager">
+          <img src="<?php echo $bp; ?>assets/images/channel/telegram/hero.png?v=20260909" alt="InboxWa Telegram Automation" class="ctg-hero-img" loading="eager">
         </div>
       </div>
     </div>
@@ -757,7 +757,7 @@ include __DIR__ . '/../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="ctg-btn-primary">Connect Telegram Free &rarr;</a>
           </div>
           <div class="ctg-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/telegram/easy-setup.png" alt="Easy Account Setup" class="ctg-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/telegram/easy-setup.png?v=20260909" alt="Easy Account Setup" class="ctg-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -786,7 +786,7 @@ include __DIR__ . '/../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="ctg-btn-primary">Create Button Workflows &rarr;</a>
           </div>
           <div class="ctg-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/telegram/quick-buttons.png" alt="Messages with Quick Buttons" class="ctg-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/telegram/quick-buttons.png?v=20260909" alt="Messages with Quick Buttons" class="ctg-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -815,7 +815,7 @@ include __DIR__ . '/../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="ctg-btn-primary">Configure Keyword Rules &rarr;</a>
           </div>
           <div class="ctg-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/telegram/word-detection.png" alt="Word Detection Rules" class="ctg-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/telegram/word-detection.png?v=20260909" alt="Word Detection Rules" class="ctg-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -844,7 +844,7 @@ include __DIR__ . '/../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="ctg-btn-primary">View Message Analytics &rarr;</a>
           </div>
           <div class="ctg-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/telegram/message-logs.png" alt="Real-Time Message Logs" class="ctg-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/telegram/message-logs.png?v=20260909" alt="Real-Time Message Logs" class="ctg-sc-img" loading="lazy">
           </div>
         </div>
       </div>

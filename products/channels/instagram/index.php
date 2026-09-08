@@ -927,7 +927,7 @@ include __DIR__ . '/../../../includes/header.php';
 
       <div class="cig-hero-visual">
         <div class="cig-hero-img-wrap">
-          <img src="<?php echo $bp; ?>assets/images/channel/instagram/hero.png" alt="InboxWa Instagram DM Automation" class="cig-hero-img" loading="eager">
+          <img src="<?php echo $bp; ?>assets/images/channel/instagram/hero.png?v=20260909" alt="InboxWa Instagram DM Automation" class="cig-hero-img" loading="eager">
         </div>
       </div>
     </div>
@@ -1068,7 +1068,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Get Started Free</a>
           </div>
           <div class="cig-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/instagram/ask-followers.png" alt="Ask Followers to Follow You" class="cig-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/instagram/ask-followers.png?v=20260909" alt="Ask Followers to Follow You" class="cig-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -1097,7 +1097,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Boost Engagement Now</a>
           </div>
           <div class="cig-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/instagram/auto-like.png" alt="Auto Like Instagram Comments" class="cig-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/instagram/auto-like.png?v=20260909" alt="Auto Like Instagram Comments" class="cig-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -1126,7 +1126,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Protect Your Brand</a>
           </div>
           <div class="cig-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/instagram/hide-hate.png" alt="Hide Hate Comments Automatically" class="cig-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/instagram/hide-hate.png?v=20260909" alt="Hide Hate Comments Automatically" class="cig-sc-img" loading="lazy">
           </div>
         </div>
 
@@ -1155,7 +1155,7 @@ include __DIR__ . '/../../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Deploy AI Chatbot</a>
           </div>
           <div class="cig-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/instagram/smart-ai-bot.png" alt="24/7 Smart AI Chatbot" class="cig-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/instagram/smart-ai-bot.png?v=20260909" alt="24/7 Smart AI Chatbot" class="cig-sc-img" loading="lazy">
           </div>
         </div>
       </div>
