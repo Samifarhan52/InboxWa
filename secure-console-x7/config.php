@@ -178,6 +178,36 @@ function hb_pdo(): PDO {
         );
     ");
 
+    // 9. Plugins table
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS plugins (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            slug TEXT UNIQUE NOT NULL,
+            name TEXT NOT NULL,
+            description TEXT,
+            version TEXT DEFAULT '1.0.0',
+            author TEXT DEFAULT 'InboxWa Core',
+            status TEXT DEFAULT 'active',
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    ");
+
+    // 10. Comments table
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS comments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            post_id INTEGER DEFAULT 1,
+            post_title TEXT DEFAULT 'Hello world!',
+            author_name TEXT NOT NULL,
+            author_email TEXT,
+            author_url TEXT,
+            author_ip TEXT DEFAULT '127.0.0.1',
+            content TEXT NOT NULL,
+            status TEXT DEFAULT 'approved',
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    ");
+
     // Seed default settings if empty
     $stCount = (int)$pdo->query("SELECT COUNT(*) FROM settings")->fetchColumn();
     if ($stCount === 0) {
@@ -443,6 +473,82 @@ function hb_pdo(): PDO {
         }
     }
 
+    // Seed plugins if empty
+    $pluginCount = (int)$pdo->query("SELECT COUNT(*) FROM plugins")->fetchColumn();
+    if ($pluginCount === 0) {
+        $pIns = $pdo->prepare("INSERT INTO plugins (slug, name, description, version, author, status) VALUES (?, ?, ?, ?, ?, ?)");
+        $seedPlugins = [
+            ['whatsapp-cloud-api', 'WhatsApp Cloud API Gateway', 'Official Meta Graph API gateway handling high-throughput webhooks, verified templates, and interactive button messages.', '3.2.0', 'InboxWa Core', 'active'],
+            ['ai-flow-builder', 'Conversational AI Flow Builder', 'Visual drag-and-drop conversational designer with intent recognition, entity capture, and OpenAI GPT integration.', '2.8.4', 'InboxWa AI', 'active'],
+            ['lead-capture', 'Omnichannel Lead Capture & CRM Sync', 'Embeds interactive inquiry forms, smart appointment scheduling, and CRM pipeline tracking in WhatsApp chats.', '2.1.0', 'InboxWa Automations', 'active'],
+            ['woocommerce-sync', 'WooCommerce & Shopify Cart Recovery', 'Syncs orders, triggers automatic abandoned cart recovery WhatsApp messages, and provides dispatch updates.', '1.9.5', 'InboxWa Commerce', 'active'],
+            ['sheets-connector', 'Google Sheets Live Connector', 'Automatically appends newly captured leads, demo bookings, and marketing responses to connected Google Spreadsheets.', '1.5.0', 'InboxWa Integrations', 'inactive'],
+        ];
+        foreach ($seedPlugins as $sp) {
+            $pIns->execute($sp);
+        }
+    }
+
+    // Seed Hello world! post if not exists
+    $helloPost = $pdo->query("SELECT id FROM posts WHERE slug = 'hello-world'")->fetchColumn();
+    if (!$helloPost) {
+        $pdo->prepare("INSERT INTO posts (title, slug, category, excerpt, content, author, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+            ->execute([
+                'Hello world!',
+                'hello-world',
+                'Uncategorized',
+                'Welcome to WordPress. This is your first post. Edit or delete it, then start writing!',
+                '<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>',
+                'admin',
+                'published',
+                date('Y-m-d 07:59:00', strtotime('-1 day'))
+            ]);
+    }
+
+    // Seed comments if empty
+    $commentCount = (int)$pdo->query("SELECT COUNT(*) FROM comments")->fetchColumn();
+    if ($commentCount === 0) {
+        $cIns = $pdo->prepare("INSERT INTO comments (post_id, post_title, author_name, author_email, author_url, author_ip, content, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $seedComments = [
+            [
+                1,
+                'Hello world!',
+                'A WordPress Commenter',
+                'wap@wordpress.org',
+                'https://wordpress.org/',
+                '127.0.0.1',
+                'Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from Gravatar.',
+                'approved',
+                date('Y-m-d 07:59:00', strtotime('-1 day'))
+            ],
+            [
+                1,
+                'WhatsApp API for Business: Complete Guide',
+                'Rahul Sharma',
+                'rahul.sharma@apexedtech.in',
+                '',
+                '122.161.45.12',
+                'Can this API handle automated admission reminders for our university portal? We have around 50,000 students.',
+                'approved',
+                date('Y-m-d 11:30:00', strtotime('-2 hours'))
+            ],
+            [
+                1,
+                'WhatsApp Chatbot Automation for Businesses',
+                'Sarah Al-Maktoum',
+                'sarah@gulfretail.ae',
+                '',
+                '86.98.112.4',
+                'Interested in the Shopify abandoned cart recovery integration for UAE numbers.',
+                'pending',
+                date('Y-m-d 14:15:00', strtotime('-5 hours'))
+            ]
+        ];
+        foreach ($seedComments as $sc) {
+            $cIns->execute($sc);
+        }
+    }
+
     return $pdo;
 }
 
@@ -570,3 +676,141 @@ function hb_get_testimonials(): array {
 function hb_is_admin_logged_in(): bool {
     return isset($_SESSION['hb_admin_auth']) && $_SESSION['hb_admin_auth'] === true;
 }
+
+function hb_save_quick_draft(string $title, string $content): int {
+    $db = hb_pdo();
+    $slug = preg_replace('/[^a-z0-9]+/i', '-', strtolower(trim($title)));
+    $slug = trim($slug, '-');
+    if (empty($slug)) {
+        $slug = 'draft-' . time();
+    } else {
+        $slug .= '-' . time();
+    }
+    $excerpt = mb_substr(strip_tags($content), 0, 120);
+    $stmt = $db->prepare("INSERT INTO posts (title, slug, category, excerpt, content, author, status, created_at, updated_at) VALUES (?, ?, 'Uncategorized', ?, ?, 'admin', 'draft', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+    $stmt->execute([$title, $slug, $excerpt, $content]);
+    return (int)$db->lastInsertId();
+}
+
+function hb_get_recent_drafts(int $limit = 5): array {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("SELECT * FROM posts WHERE status = 'draft' ORDER BY id DESC LIMIT ?");
+        $stmt->bindValue(1, $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_get_comments(string $status = 'all', int $limit = 20): array {
+    try {
+        $db = hb_pdo();
+        if ($status === 'all') {
+            $stmt = $db->prepare("SELECT * FROM comments ORDER BY id DESC LIMIT ?");
+            $stmt->bindValue(1, $limit, PDO::PARAM_INT);
+        } else {
+            $stmt = $db->prepare("SELECT * FROM comments WHERE status = ? ORDER BY id DESC LIMIT ?");
+            $stmt->bindValue(1, $status, PDO::PARAM_STR);
+            $stmt->bindValue(2, $limit, PDO::PARAM_INT);
+        }
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_get_comment_counts(): array {
+    $counts = ['all' => 0, 'pending' => 0, 'approved' => 0, 'spam' => 0, 'trash' => 0];
+    try {
+        $db = hb_pdo();
+        $rows = $db->query("SELECT status, COUNT(*) as cnt FROM comments GROUP BY status")->fetchAll();
+        $total = 0;
+        foreach ($rows as $r) {
+            $st = $r['status'] ?? 'pending';
+            $c = (int)$r['cnt'];
+            if (isset($counts[$st])) {
+                $counts[$st] = $c;
+            }
+            if ($st !== 'trash') {
+                $total += $c;
+            }
+        }
+        $counts['all'] = $total;
+    } catch (Throwable $e) {}
+    return $counts;
+}
+
+function hb_update_comment_status(int $id, string $status): void {
+    try {
+        $db = hb_pdo();
+        if ($status === 'delete' || $status === 'trash_permanent') {
+            $stmt = $db->prepare("DELETE FROM comments WHERE id = ?");
+            $stmt->execute([$id]);
+        } else {
+            $stmt = $db->prepare("UPDATE comments SET status = ? WHERE id = ?");
+            $stmt->execute([$status, $id]);
+        }
+    } catch (Throwable $e) {}
+}
+
+function hb_get_plugins(): array {
+    try {
+        $db = hb_pdo();
+        return $db->query("SELECT * FROM plugins ORDER BY id ASC")->fetchAll();
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_toggle_plugin(string $slug): string {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("SELECT status FROM plugins WHERE slug = ?");
+        $stmt->execute([$slug]);
+        $curr = $stmt->fetchColumn();
+        if ($curr === false) return '';
+        $new = ($curr === 'active') ? 'inactive' : 'active';
+        $uStmt = $db->prepare("UPDATE plugins SET status = ?, updated_at = CURRENT_TIMESTAMP WHERE slug = ?");
+        $uStmt->execute([$new, $slug]);
+        return $new;
+    } catch (Throwable $e) {
+        return '';
+    }
+}
+
+function hb_get_media_files(): array {
+    $results = [];
+    $baseDir = dirname(__DIR__);
+    $imagesDir = $baseDir . '/assets/images';
+    if (is_dir($imagesDir)) {
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($imagesDir, RecursiveDirectoryIterator::SKIP_DOTS)
+        );
+        foreach ($iterator as $file) {
+            if ($file->isFile()) {
+                $ext = strtolower($file->getExtension());
+                if (in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif', 'svg'])) {
+                    $abs = $file->getPathname();
+                    $rel = str_replace($baseDir, '', $abs);
+                    $size = $file->getSize();
+                    $dims = @getimagesize($abs);
+                    $results[] = [
+                        'filename' => $file->getFilename(),
+                        'url' => $rel,
+                        'path' => $abs,
+                        'size' => $size,
+                        'width' => $dims ? $dims[0] : null,
+                        'height' => $dims ? $dims[1] : null,
+                        'mtime' => $file->getMTime(),
+                    ];
+                }
+            }
+        }
+    }
+    usort($results, fn($a, $b) => $b['mtime'] <=> $a['mtime']);
+    return array_slice($results, 0, 50);
+}
+
