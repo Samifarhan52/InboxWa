@@ -452,12 +452,13 @@ include __DIR__ . '/../../../includes/header.php';
     padding: 2.25rem 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     background: #ffffff;
   }
   .cw-cap-preview {
     width: 100%;
     aspect-ratio: 16 / 9;
+    max-height: 440px;
     background: linear-gradient(135deg, #f8faff 0%, #f1f5f9 100%);
     border: 1px solid #f1f5f9;
     border-radius: 20px;
@@ -467,11 +468,13 @@ include __DIR__ . '/../../../includes/header.php';
     justify-content: center;
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     position: relative;
+    flex-shrink: 0;
   }
   .cw-cap-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
     transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .cw-cap-img.animating {
@@ -983,6 +986,10 @@ include __DIR__ . '/../../../includes/header.php';
     }
     .cw-cap-preview {
       border-radius: 14px !important;
+      aspect-ratio: 16 / 9 !important;
+      width: 100% !important;
+      max-height: 240px !important;
+      flex-shrink: 0 !important;
     }
     .cw-cap-title {
       font-size: 1.45rem !important;
