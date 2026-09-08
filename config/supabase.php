@@ -17,16 +17,14 @@ function supabase_get_url(): string {
 
 function supabase_get_key(): string {
     $key = getenv('SUPABASE_SECRET_KEY')
-        ?: ($_ENV['SUPABASE_SECRET_KEY']
-        ?: ($_SERVER['SUPABASE_SECRET_KEY']
         ?: (getenv('SUPABASE_KEY')
-        ?: ($_ENV['SUPABASE_KEY']
-        ?: ($_SERVER['SUPABASE_KEY']
-        ?: (defined('SUPABASE_KEY') ? SUPABASE_KEY : ''))))));
+        ?: ($_ENV['SUPABASE_SECRET_KEY'] ?? ($_SERVER['SUPABASE_SECRET_KEY'] 
+        ?? ($_ENV['SUPABASE_KEY'] ?? ($_SERVER['SUPABASE_KEY'] 
+        ?? (defined('SUPABASE_KEY') ? SUPABASE_KEY : ''))))));
     
     if (empty($key)) {
         // Project fallback secret key
-        $key = base64_decode('c2Jfc2VjcmV0X0hheHhiTXlRdlVQNFp3ZFJtUGd2ZmdfOTRuYm9OWm8=');
+        $key = (string)base64_decode('c2Jfc2VjcmV0X0hheHhiTXlRdlVQNFp3ZFJtUGd2ZmdfOTRuYm9OWm8=');
     }
     return trim($key);
 }
