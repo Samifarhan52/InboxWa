@@ -694,14 +694,6 @@ include __DIR__ . '/includes/header.php';
     to { transform: translateY(-9px); }
   }
 
-  @media (max-width: 480px) {
-    .cw-phone-wrapper { max-width: 320px; }
-    .cw-phone-screen { height: 460px; }
-    .cw-floating-card { transform: scale(0.82); }
-    .cw-fc-1 { left: -14px; top: 4%; }
-    .cw-fc-2 { right: -14px; bottom: 27%; }
-  }
-
   /* Comparison Section */
   .cw-comparison-section {
     background: #f8fafc;
@@ -983,11 +975,243 @@ include __DIR__ . '/includes/header.php';
     flex-wrap: wrap;
   }
 
+  /* =========================================
+     COMPREHENSIVE MOBILE RESPONSIVE ENGINE
+     ========================================= */
   @media (max-width: 900px) {
-    .cw-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .cw-phone-wrapper { margin-top: 1rem; }
-    .cw-table-container { overflow-x: auto; }
-    .cw-showcase-grid { grid-template-columns: 1fr; }
+    .cw-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .cw-hero-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cw-badge-pill {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cw-hero-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cw-hero-actions {
+      justify-content: center;
+    }
+    .cw-trust-row {
+      justify-content: center;
+    }
+    .cw-phone-wrapper {
+      margin-top: 1rem;
+    }
+    .cw-table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cw-showcase-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cw-hero-wrap {
+      padding: 1.5rem 1rem 3rem;
+      overflow-x: clip;
+    }
+    .cw-hero-title {
+      font-size: clamp(1.85rem, 7.5vw, 2.75rem);
+      line-height: 1.2;
+    }
+    .cw-hero-desc {
+      font-size: 1rem;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+    .cw-hero-actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 0.75rem;
+    }
+    .cw-btn-primary,
+    .cw-btn-secondary {
+      width: 100%;
+      justify-content: center;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+    }
+    .cw-trust-row {
+      gap: 0.85rem 1.25rem;
+      font-size: 0.8rem;
+    }
+
+    /* Mobile Chat Input - Crucial iOS Zoom Prevention */
+    .cw-chat-input {
+      font-size: 16px !important;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Phone Device on Tablets & Phones */
+    .cw-phone-wrapper {
+      width: 100%;
+      max-width: 360px;
+      margin: 1.25rem auto 0;
+    }
+    .cw-phone-device {
+      transform: none !important;
+      border-radius: 38px;
+      padding: 8px 8px 6px;
+      border-width: 2.5px;
+    }
+    .cw-phone-screen {
+      height: 460px;
+      border-radius: 30px;
+    }
+    .cw-wa-body {
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      padding: 8px 10px;
+      gap: 7px;
+    }
+    .cw-floating-card {
+      transform: scale(0.82);
+    }
+    .cw-fc-1 {
+      left: -8px;
+      top: 4%;
+      transform-origin: top left;
+    }
+    .cw-fc-2 {
+      right: -8px;
+      bottom: 27%;
+      transform-origin: bottom right;
+    }
+
+    /* Steps Section Mobile */
+    .cw-steps-section {
+      padding: 3rem 1rem;
+    }
+    .cw-steps-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .cw-step-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* Showcase Section Mobile */
+    .cw-showcase-section {
+      padding: 3rem 1rem;
+    }
+    .cw-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* Comparison Section Mobile */
+    .cw-comparison-section {
+      padding: 3rem 1rem;
+    }
+    .cw-section-header {
+      margin-bottom: 2rem;
+    }
+    .cw-section-title {
+      font-size: 1.75rem;
+    }
+    .cw-section-subtitle {
+      font-size: 0.95rem;
+    }
+
+    /* Final Sales Banner Mobile */
+    .cw-sales-section {
+      padding: 3rem 1rem;
+    }
+    .cw-sales-inner {
+      padding: 2.5rem 1.25rem;
+      border-radius: 24px;
+    }
+    .cw-sales-title {
+      font-size: 1.75rem;
+    }
+    .cw-sales-desc {
+      font-size: 0.95rem;
+    }
+    .cw-sales-actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 1.5rem;
+    }
+    .cw-btn-white,
+    .cw-btn-transparent {
+      width: 100%;
+      justify-content: center;
+    }
+    .cw-sales-trust {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+
+  /* Compact Mobile Viewports (<= 400px - iPhone SE, Galaxy S) */
+  @media (max-width: 400px) {
+    .cw-hero-wrap {
+      padding: 1.25rem 0.75rem 2.5rem;
+    }
+    .cw-phone-wrapper {
+      max-width: 315px;
+    }
+    .cw-phone-device {
+      border-radius: 34px;
+      padding: 7px 7px 5px;
+    }
+    .cw-phone-screen {
+      height: 430px;
+      border-radius: 26px;
+    }
+    .cw-wa-header {
+      padding: 8px 10px;
+      gap: 7px;
+    }
+    .cw-wa-title-row strong {
+      font-size: 0.78rem;
+    }
+    .cw-wa-subtitle {
+      font-size: 0.65rem;
+    }
+    .cw-floating-card {
+      transform: scale(0.72);
+    }
+    .cw-fc-1 {
+      left: -4px;
+      top: 3%;
+    }
+    .cw-fc-2 {
+      right: -4px;
+      bottom: 27%;
+    }
+    .cw-chips-scroll {
+      gap: 4px;
+    }
+    .cw-chip {
+      padding: 4px 9px;
+      font-size: 0.68rem;
+    }
+    .cw-chat-footer {
+      padding: 6px 7px 7px;
+      gap: 4px;
+    }
+    .cw-chat-input {
+      padding: 7px 10px;
+    }
+    .cw-chat-send {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+    }
   }
 </style>
 
