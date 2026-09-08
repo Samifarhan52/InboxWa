@@ -115,6 +115,8 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
         <div class="footer-col">
           <div class="footer-heading">Solutions</div>
           <ul>
+            <li><a href="<?php echo $bp; ?>business-leads/">Business Leads (16 Categories)</a></li>
+            <li><a href="<?php echo $bp; ?>solutions/data-marketplace/">Data Marketplace</a></li>
             <li><a href="<?php echo $bp; ?>solutions/sales">Sales on WhatsApp</a></li>
             <li><a href="<?php echo $bp; ?>solutions/customer-support">Customer Support</a></li>
             <li><a href="<?php echo $bp; ?>solutions/lead-generation">Lead Generation</a></li>

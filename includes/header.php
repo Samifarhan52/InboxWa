@@ -109,11 +109,11 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/app.css?v=48">
-  <link rel="stylesheet" href="/assets/css/style.css?v=48">
-  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=48">
-  <link rel="stylesheet" href="/assets/css/story-journey.css?v=48">
-  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=48">
+  <link rel="stylesheet" href="/app.css?v=50">
+  <link rel="stylesheet" href="/assets/css/style.css?v=50">
+  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=50">
+  <link rel="stylesheet" href="/assets/css/story-journey.css?v=50">
+  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=50">
 
   <script type="application/ld+json">
   {
@@ -784,6 +784,75 @@ if (!function_exists('hb_seo_esc')) {
       }
     }
 
+    /* BUSINESS LEADS NAVBAR BUTTON: Prominently highlighted pill - ALWAYS visible on all screen sizes */
+    .nav-item-leads {
+      display: inline-flex !important;
+      align-items: center !important;
+      position: static !important;
+    }
+    .nav-link-leads {
+      background: linear-gradient(180deg, #f0f4ff 0%, #e6edff 100%) !important;
+      color: #3730a3 !important;
+      font-weight: 700 !important;
+      border: 1px solid rgba(99, 102, 241, 0.28) !important;
+      padding: 0.36rem 0.72rem !important;
+      border-radius: 999px !important;
+      box-shadow: 0 1px 4px rgba(79, 70, 229, 0.08) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .nav-link-leads:hover,
+    .nav-item-leads:hover > .nav-link-leads,
+    .nav-item-leads.open > .nav-link-leads,
+    .nav-link-leads.active {
+      background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border-color: #4338ca !important;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+    }
+    .nav-link-leads:hover svg,
+    .nav-item-leads:hover > .nav-link-leads svg,
+    .nav-item-leads.open > .nav-link-leads svg,
+    .nav-link-leads.active svg {
+      opacity: 1 !important;
+      color: #ffffff !important;
+      transform: rotate(180deg) !important;
+    }
+    .nav-leads-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.64rem !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+      padding: 2px 6px !important;
+      border-radius: 999px !important;
+      background: #4f46e5 !important;
+      color: #ffffff !important;
+      letter-spacing: 0.02em !important;
+      transition: all 0.18s ease !important;
+    }
+    .nav-link-leads:hover .nav-leads-pill,
+    .nav-item-leads:hover > .nav-link-leads .nav-leads-pill,
+    .nav-item-leads.open > .nav-link-leads .nav-leads-pill,
+    .nav-link-leads.active .nav-leads-pill {
+      background: #ffffff !important;
+      color: #4338ca !important;
+    }
+
+    /* Mega menu leads open/hover visibility guarantee */
+    .nav-item-leads.open > .mega-menu-leads,
+    .nav-item-leads:hover > .mega-menu-leads,
+    .nav-item.open > .mega-menu-leads,
+    .nav-item:hover > .mega-menu-leads {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateX(-50%) translateY(0) !important;
+    }
+
     /* BUSINESS LEADS MEGA MENU: 16 Categories 2-Column Grid + Featured Aside */
     .mega-menu-leads {
       width: min(920px, calc(100vw - 28px)) !important;
@@ -1012,8 +1081,12 @@ if (!function_exists('hb_seo_esc')) {
         display: none !important;
       }
       .nav-link {
-        padding: 0.35rem 0.45rem !important;
-        font-size: 0.8rem !important;
+        padding: 0.32rem 0.42rem !important;
+        font-size: 0.79rem !important;
+      }
+      .nav-link-leads {
+        padding: 0.32rem 0.55rem !important;
+        font-size: 0.79rem !important;
       }
     }
     @media (max-width: 1140px) {
@@ -1279,8 +1352,13 @@ if (!function_exists('hb_seo_esc')) {
           </div>
         </div>
 
-<div class="nav-item nav-item-secondary" data-mega>
-          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Business Leads <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <?php $isLeadsActive = (strpos($_SERVER['REQUEST_URI'] ?? '', '/business-leads') !== false); ?>
+        <div class="nav-item nav-item-leads" data-mega>
+          <button type="button" class="nav-link nav-link-leads<?php echo $isLeadsActive ? ' active' : ''; ?>" aria-expanded="false" aria-haspopup="true">
+            <span>Business Leads</span>
+            <span class="nav-leads-pill">16</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
           <div class="mega-menu mega-menu-panel mega-menu-leads" role="menu">
             <div class="mega-panel mega-panel-leads">
               <div class="mega-panel-links mega-panel-leads-grid">
@@ -1612,7 +1690,10 @@ if (!function_exists('hb_seo_esc')) {
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>
-          <button type="button" class="mobile-nav-link">Business Leads <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <button type="button" class="mobile-nav-link" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <span>Business Leads <span class="badge-live-pill" style="margin-left:6px;background:rgba(99,102,241,0.14);color:#4338ca;font-weight:800;border:1px solid rgba(99,102,241,0.3);">16 Categories</span></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <a href="<?php echo $bp; ?>business-leads/"><strong>All 16 Categories &rarr;</strong></a>
             <a href="<?php echo $bp; ?>business-leads/real-estate/">🏠 Real Estate</a>
