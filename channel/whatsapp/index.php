@@ -463,14 +463,13 @@ include __DIR__ . '/../../includes/header.php';
     border: 1px solid #f1f5f9;
     border-radius: 20px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     position: relative;
-    flex-shrink: 0;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
   }
   .cw-cap-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -988,19 +987,16 @@ include __DIR__ . '/../../includes/header.php';
       border-radius: 14px !important;
       aspect-ratio: 16 / 9 !important;
       width: 100% !important;
-      height: auto !important;
-      min-height: 180px !important;
       max-height: 240px !important;
-      flex-shrink: 0 !important;
+      position: relative !important;
       overflow: hidden !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
     }
     .cw-cap-img {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      max-height: 100% !important;
       object-fit: contain !important;
       display: block !important;
     }
