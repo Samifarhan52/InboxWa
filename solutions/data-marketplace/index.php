@@ -396,5 +396,5 @@ include __DIR__ . '/../../includes/header.php';
 <script>
 window.DM_WA = '<?php echo htmlspecialchars($waNumber); ?>';
 </script>
-<script src="/assets/js/data-marketplace.js?v=2" defer></script>
+<script src="/assets/js/data-marketplace.js?v=3" defer></script>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

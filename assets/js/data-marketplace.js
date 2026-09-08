@@ -150,4 +150,29 @@
     });
   }
 
+  // Handle URL ?industry= parameter from mega menu navigation
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var targetIndustry = params.get('industry');
+    if (targetIndustry) {
+      var indSelect = document.getElementById('dm-f-industry');
+      if (indSelect) {
+        indSelect.value = targetIndustry;
+        indSelect.dispatchEvent(new Event('change'));
+      }
+      var targetCard = document.querySelector('[data-cat="' + targetIndustry + '"]');
+      if (targetCard) {
+        setTimeout(function () {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetCard.style.outline = '2px solid #2563eb';
+          targetCard.style.boxShadow = '0 0 20px rgba(37,99,235,0.25)';
+          setTimeout(function () {
+            targetCard.style.outline = '';
+            targetCard.style.boxShadow = '';
+          }, 2500);
+        }, 300);
+      }
+    }
+  } catch (e) {}
+
 })();

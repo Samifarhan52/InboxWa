@@ -109,11 +109,11 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/app.css?v=46">
-  <link rel="stylesheet" href="/assets/css/style.css?v=46">
-  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=46">
-  <link rel="stylesheet" href="/assets/css/story-journey.css?v=46">
-  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=46">
+  <link rel="stylesheet" href="/app.css?v=47">
+  <link rel="stylesheet" href="/assets/css/style.css?v=47">
+  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=47">
+  <link rel="stylesheet" href="/assets/css/story-journey.css?v=47">
+  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=47">
 
   <script type="application/ld+json">
   {
@@ -782,6 +782,139 @@ if (!function_exists('hb_seo_esc')) {
       .mega-products-grid .mega-link-desc {
         font-size: 0.72rem !important;
       }
+    /* BUSINESS LEADS MEGA MENU: 16 Categories 2-Column Grid + Featured Aside */
+    .mega-menu-leads {
+      width: min(920px, calc(100vw - 28px)) !important;
+      max-width: calc(100vw - 28px) !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+    .mega-panel-leads {
+      display: grid !important;
+      grid-template-columns: 1fr 240px !important;
+      min-height: 480px;
+    }
+    .mega-panel-leads-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 3px 12px !important;
+      padding: 16px 18px !important;
+      max-height: 520px !important;
+      overflow-y: auto !important;
+    }
+    .mega-panel-leads-grid::-webkit-scrollbar {
+      width: 5px;
+    }
+    .mega-panel-leads-grid::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.4);
+      border-radius: 999px;
+    }
+    .mega-panel-leads-grid .mega-link {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 6px 10px !important;
+      border-radius: 10px !important;
+      transition: background 0.15s ease, transform 0.15s ease !important;
+      text-decoration: none !important;
+    }
+    .mega-panel-leads-grid .mega-link:hover {
+      background: #f1f5f9 !important;
+      transform: translateX(2px) !important;
+    }
+    .mega-panel-leads-grid .mega-icon {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      border-radius: 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+    .mega-emoji {
+      font-size: 1.15rem !important;
+      line-height: 1 !important;
+      display: inline-block !important;
+    }
+    .mega-icon-amber { background: #FEF3C7 !important; color: #D97706 !important; }
+    .mega-icon-indigo { background: #EEF2FF !important; color: #4F46E5 !important; }
+    .mega-icon-cyan { background: #E0F2FE !important; color: #0284C7 !important; }
+    .mega-icon-orange { background: #FFEDD5 !important; color: #EA580C !important; }
+    .mega-panel-leads-grid .mega-link-title {
+      font-size: 0.86rem !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      line-height: 1.25 !important;
+      display: block !important;
+    }
+    .mega-panel-leads-grid .mega-link-desc {
+      font-size: 0.72rem !important;
+      color: #64748b !important;
+      line-height: 1.25 !important;
+      display: block !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-width: 215px !important;
+    }
+    .mega-panel-aside {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      border-left: 1px solid #e2e8f0 !important;
+      padding: 24px 20px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      box-sizing: border-box !important;
+      text-align: left !important;
+    }
+    .mega-aside-badge {
+      background: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      display: inline-block;
+      align-self: flex-start;
+      text-transform: uppercase;
+    }
+    .mega-panel-aside strong {
+      font-size: 1.12rem !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+    .mega-panel-aside p {
+      font-size: 0.84rem !important;
+      color: #64748b !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+    }
+    .mega-panel-aside .btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      text-align: center !important;
+    }
+    @media (max-width: 1100px) {
+      .mega-menu-leads {
+        width: min(820px, calc(100vw - 20px)) !important;
+      }
+      .mega-panel-leads-grid .mega-link-desc {
+        max-width: 170px !important;
+      }
     }
 
     /* Compact Small Dropdowns for Partners & Company */
@@ -1146,22 +1279,159 @@ if (!function_exists('hb_seo_esc')) {
 
 <div class="nav-item nav-item-secondary" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Business Leads <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="mega-menu mega-menu-panel" role="menu">
-            <div class="mega-panel">
-              <div class="mega-panel-links">
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span><span class="mega-link-text"><span class="mega-link-title">All Datasets</span><span class="mega-link-desc">Browse marketplace</span></span></a>
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><span class="mega-link-text"><span class="mega-link-title">Real Estate Leads</span><span class="mega-link-desc">Buyers & businesses</span></span></a>
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10l-10-5L2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><span class="mega-link-text"><span class="mega-link-title">Education Leads</span><span class="mega-link-desc">Institutes & students</span></span></a>
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><span class="mega-link-text"><span class="mega-link-title">Healthcare Leads</span><span class="mega-link-desc">Clinics & wellness</span></span></a>
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span><span class="mega-link-text"><span class="mega-link-title">E-commerce Leads</span><span class="mega-link-desc">D2C & online brands</span></span></a>
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14v2H5v-2z"/><path d="M5 17l-1-7h16l-1 7"/></svg></span><span class="mega-link-text"><span class="mega-link-title">Automotive Leads</span><span class="mega-link-desc">Dealers & buyers</span></span></a>
-                <a href="/solutions/data-marketplace/" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span><span class="mega-link-text"><span class="mega-link-title">B2B Business Data</span><span class="mega-link-desc">Owners & companies</span></span></a>
-                <a href="/solutions/data-marketplace/#custom-request" class="mega-link" role="menuitem"><span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span><span class="mega-link-text"><span class="mega-link-title">Custom Data Request</span><span class="mega-link-desc">Tell us your audience</span></span></a>
+          <div class="mega-menu mega-menu-panel mega-menu-leads" role="menu">
+            <div class="mega-panel mega-panel-leads">
+              <div class="mega-panel-links mega-panel-leads-grid">
+                <!-- 1. Real Estate -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Real+Estate#browse" class="mega-link" role="menuitem" title="Builders, developers, brokers, property consultants and real estate businesses.">
+                  <span class="mega-icon mega-icon-blue"><span class="mega-emoji">🏠</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Real Estate</span>
+                    <span class="mega-link-desc">Builders, brokers &amp; property</span>
+                  </span>
+                </a>
+
+                <!-- 2. Education -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Education#browse" class="mega-link" role="menuitem" title="Schools, colleges, coaching institutes, training centres and education businesses.">
+                  <span class="mega-icon mega-icon-green"><span class="mega-emoji">🎓</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Education</span>
+                    <span class="mega-link-desc">Schools, colleges &amp; coaching</span>
+                  </span>
+                </a>
+
+                <!-- 3. Healthcare -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Healthcare#browse" class="mega-link" role="menuitem" title="Hospitals, clinics, diagnostic centres, wellness and healthcare businesses.">
+                  <span class="mega-icon mega-icon-pink"><span class="mega-emoji">🏥</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Healthcare</span>
+                    <span class="mega-link-desc">Hospitals, clinics &amp; diagnostic</span>
+                  </span>
+                </a>
+
+                <!-- 4. E-commerce -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=E-commerce#browse" class="mega-link" role="menuitem" title="Online stores, D2C brands, retailers and e-commerce businesses.">
+                  <span class="mega-icon mega-icon-purple"><span class="mega-emoji">🛍️</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">E-commerce</span>
+                    <span class="mega-link-desc">Online stores &amp; D2C brands</span>
+                  </span>
+                </a>
+
+                <!-- 5. Finance & Insurance -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Finance+%26+Insurance#browse" class="mega-link" role="menuitem" title="Financial services, insurance agencies, consultants and related businesses.">
+                  <span class="mega-icon mega-icon-amber"><span class="mega-emoji">💰</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Finance &amp; Insurance</span>
+                    <span class="mega-link-desc">BFSI, insurance &amp; advisory</span>
+                  </span>
+                </a>
+
+                <!-- 6. Automotive -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Automotive#browse" class="mega-link" role="menuitem" title="Dealers, service centres, automobile businesses and automotive professionals.">
+                  <span class="mega-icon mega-icon-cyan"><span class="mega-emoji">🚗</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Automotive</span>
+                    <span class="mega-link-desc">Dealers, service &amp; auto pros</span>
+                  </span>
+                </a>
+
+                <!-- 7. Travel & Hospitality -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Travel+%26+Hospitality#browse" class="mega-link" role="menuitem" title="Hotels, resorts, travel agencies, tour operators and hospitality businesses.">
+                  <span class="mega-icon mega-icon-indigo"><span class="mega-emoji">✈️</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Travel &amp; Hospitality</span>
+                    <span class="mega-link-desc">Hotels, resorts &amp; tour agencies</span>
+                  </span>
+                </a>
+
+                <!-- 8. Restaurants & Food -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Restaurants+%26+Food#browse" class="mega-link" role="menuitem" title="Restaurants, cafes, cloud kitchens, catering and food businesses.">
+                  <span class="mega-icon mega-icon-orange"><span class="mega-emoji">🍽️</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Restaurants &amp; Food</span>
+                    <span class="mega-link-desc">Cafes, kitchens &amp; catering</span>
+                  </span>
+                </a>
+
+                <!-- 9. Beauty & Wellness -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Beauty+%26+Wellness#browse" class="mega-link" role="menuitem" title="Salons, spas, beauty clinics, wellness centres and professionals.">
+                  <span class="mega-icon mega-icon-pink"><span class="mega-emoji">💅</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Beauty &amp; Wellness</span>
+                    <span class="mega-link-desc">Salons, spas &amp; beauty clinics</span>
+                  </span>
+                </a>
+
+                <!-- 10. IT & Software -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=IT+%26+Software#browse" class="mega-link" role="menuitem" title="IT companies, software businesses, technology providers and SaaS companies.">
+                  <span class="mega-icon mega-icon-purple"><span class="mega-emoji">💻</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">IT &amp; Software</span>
+                    <span class="mega-link-desc">Tech providers, SaaS &amp; IT</span>
+                  </span>
+                </a>
+
+                <!-- 11. Digital Marketing -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Digital+Marketing#browse" class="mega-link" role="menuitem" title="Marketing agencies, advertising agencies, SEO businesses and consultants.">
+                  <span class="mega-icon mega-icon-blue"><span class="mega-emoji">📣</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Digital Marketing</span>
+                    <span class="mega-link-desc">Agencies, advertising &amp; SEO</span>
+                  </span>
+                </a>
+
+                <!-- 12. Professional Services -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Professional+Services#browse" class="mega-link" role="menuitem" title="Consultants, legal, accounting, HR, business and professional service providers.">
+                  <span class="mega-icon mega-icon-indigo"><span class="mega-emoji">💼</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Professional Services</span>
+                    <span class="mega-link-desc">Legal, accounting, HR &amp; advice</span>
+                  </span>
+                </a>
+
+                <!-- 13. Manufacturing -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Manufacturing#browse" class="mega-link" role="menuitem" title="Manufacturers, factories, suppliers and industrial businesses.">
+                  <span class="mega-icon mega-icon-amber"><span class="mega-emoji">🏭</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Manufacturing</span>
+                    <span class="mega-link-desc">Factories, suppliers &amp; industrial</span>
+                  </span>
+                </a>
+
+                <!-- 14. Retail -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Retail#browse" class="mega-link" role="menuitem" title="Local retailers, stores, distributors and consumer businesses.">
+                  <span class="mega-icon mega-icon-green"><span class="mega-emoji">🏪</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Retail</span>
+                    <span class="mega-link-desc">Local stores &amp; distributors</span>
+                  </span>
+                </a>
+
+                <!-- 15. B2B & Suppliers -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=B2B+%26+Suppliers#browse" class="mega-link" role="menuitem" title="Wholesalers, distributors, suppliers, vendors and B2B businesses.">
+                  <span class="mega-icon mega-icon-cyan"><span class="mega-emoji">📦</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">B2B &amp; Suppliers</span>
+                    <span class="mega-link-desc">Wholesalers, vendors &amp; supply</span>
+                  </span>
+                </a>
+
+                <!-- 16. Events & Wedding -->
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Events+%26+Wedding#browse" class="mega-link" role="menuitem" title="Event planners, wedding businesses, photographers, venues and related services.">
+                  <span class="mega-icon mega-icon-pink"><span class="mega-emoji">🎉</span></span>
+                  <span class="mega-link-text">
+                    <span class="mega-link-title">Events &amp; Wedding</span>
+                    <span class="mega-link-desc">Planners, venues &amp; photo</span>
+                  </span>
+                </a>
               </div>
               <div class="mega-panel-aside">
+                <span class="mega-aside-badge">16 Categories</span>
                 <strong>Data Marketplace</strong>
                 <p>Category-wise business datasets. Request access on WhatsApp — no public pricing.</p>
-                <a href="/solutions/data-marketplace/" class="btn btn-primary btn-sm">Explore Marketplace</a>
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/" class="btn btn-primary btn-sm">Explore Marketplace</a>
+                <a href="<?php echo $bp; ?>solutions/data-marketplace/#custom-request" class="btn btn-outline btn-sm" style="margin-top:2px;">Custom Data Request</a>
               </div>
             </div>
           </div>
@@ -1342,13 +1612,24 @@ if (!function_exists('hb_seo_esc')) {
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Business Leads <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="/solutions/data-marketplace/">All Datasets</a>
-            <a href="/solutions/data-marketplace/">Real Estate Leads</a>
-            <a href="/solutions/data-marketplace/">Education Leads</a>
-            <a href="/solutions/data-marketplace/">Healthcare Leads</a>
-            <a href="/solutions/data-marketplace/">E-commerce Leads</a>
-            <a href="/solutions/data-marketplace/">B2B Business Data</a>
-            <a href="/solutions/data-marketplace/#custom-request">Custom Request</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/"><strong>All 16 Categories &rarr;</strong></a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Real+Estate#browse">🏠 Real Estate</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Education#browse">🎓 Education</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Healthcare#browse">🏥 Healthcare</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=E-commerce#browse">🛍️ E-commerce</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Finance+%26+Insurance#browse">💰 Finance &amp; Insurance</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Automotive#browse">🚗 Automotive</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Travel+%26+Hospitality#browse">✈️ Travel &amp; Hospitality</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Restaurants+%26+Food#browse">🍽️ Restaurants &amp; Food</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Beauty+%26+Wellness#browse">💅 Beauty &amp; Wellness</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=IT+%26+Software#browse">💻 IT &amp; Software</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Digital+Marketing#browse">📣 Digital Marketing</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Professional+Services#browse">💼 Professional Services</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Manufacturing#browse">🏭 Manufacturing</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Retail#browse">🏪 Retail</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=B2B+%26+Suppliers#browse">📦 B2B &amp; Suppliers</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/?industry=Events+%26+Wedding#browse">🎉 Events &amp; Wedding</a>
+            <a href="<?php echo $bp; ?>solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>
