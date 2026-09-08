@@ -988,8 +988,21 @@ include __DIR__ . '/../../includes/header.php';
       border-radius: 14px !important;
       aspect-ratio: 16 / 9 !important;
       width: 100% !important;
+      height: auto !important;
+      min-height: 180px !important;
       max-height: 240px !important;
       flex-shrink: 0 !important;
+      overflow: hidden !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .cw-cap-img {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+      display: block !important;
     }
     .cw-cap-title {
       font-size: 1.45rem !important;
@@ -1247,7 +1260,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Right Panel: Capability Showcase Display -->
       <div class="cw-cap-panel">
         <div class="cw-cap-preview">
-          <img id="cwCapImg" src="<?php echo $bp; ?>assets/images/capabilities/shared-team-inbox.png" alt="Shared Team Inbox" class="cw-cap-img" />
+          <img id="cwCapImg" src="/assets/images/capabilities/shared-team-inbox.png" alt="Shared Team Inbox" class="cw-cap-img" loading="eager" />
         </div>
         <div class="cw-cap-content">
           <h3 id="cwCapTitle" class="cw-cap-title">Shared Team Inbox</h3>
@@ -1446,12 +1459,12 @@ include __DIR__ . '/../../includes/header.php';
 
 <script>
 (function() {
-  var basePath = "<?php echo $bp; ?>";
+  var basePath = "/assets/images/capabilities/";
   var capabilities = [
     {
       title: "Shared Team Inbox",
       desc: "Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.",
-      img: basePath + "assets/images/capabilities/shared-team-inbox.png",
+      img: basePath + "shared-team-inbox.png",
       bullets: [
         "Send chats to the right person",
         "Write notes only your team can see"
@@ -1460,7 +1473,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Visual Reply Builder",
       desc: "Create simple automatic replies for customer questions. Set up answers that trigger when customers type specific words or tap buttons.",
-      img: basePath + "assets/images/capabilities/visual-reply-builder.png",
+      img: basePath + "visual-reply-builder.png",
       bullets: [
         "Taps and words trigger replies",
         "Add interactive options menu"
@@ -1469,7 +1482,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Bulk Messaging",
       desc: "Send announcements or notifications to thousands of customers at once. Add their names or personal details to make messages friendly.",
-      img: basePath + "assets/images/capabilities/bulk-messaging.png",
+      img: basePath + "bulk-messaging.png",
       bullets: [
         "Add customer names automatically",
         "See who opened and clicked links"
@@ -1478,7 +1491,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Smart AI Calling",
       desc: "Let smart voice assistants make and answer phone calls for your business. Help customers get information without waiting on hold.",
-      img: basePath + "assets/images/capabilities/smart-ai-calling.png",
+      img: basePath + "smart-ai-calling.png",
       bullets: [
         "Clear and friendly AI voices",
         "See summary logs of every call"
@@ -1487,7 +1500,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Easy Scheduling",
       desc: "Let customers book appointments and schedule meetings directly inside the WhatsApp chat window. No outside links needed.",
-      img: basePath + "assets/images/capabilities/easy-scheduling.png",
+      img: basePath + "easy-scheduling.png",
       bullets: [
         "Choose calendar dates in chat",
         "Send automated appointment reminders"
@@ -1496,7 +1509,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Send Simple Forms",
       desc: "Create and send simple forms inside the chat so customers can fill out their details, sign up, or share info without leaving WhatsApp.",
-      img: basePath + "assets/images/capabilities/send-simple-forms.png",
+      img: basePath + "send-simple-forms.png",
       bullets: [
         "Fill out forms inside the chat",
         "Save customer answers instantly"
@@ -1505,7 +1518,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "AI Chat Assistant",
       desc: "Train an AI helper using your own business files or website links. It can answer customer questions about pricing and product availability 24/7.",
-      img: basePath + "assets/images/capabilities/ai-chat-assistant.png",
+      img: basePath + "ai-chat-assistant.png",
       bullets: [
         "AI answers customer questions",
         "Hand over to a real person if needed"
@@ -1514,7 +1527,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Link Your Existing Tools",
       desc: "Connect WhatsApp with the tools you already use like Shopify or your customer database. Send messages automatically when orders are placed or shipped.",
-      img: basePath + "assets/images/capabilities/link-existing-tools.png",
+      img: basePath + "link-existing-tools.png",
       bullets: [
         "Connect with tools like Shopify",
         "Send messages automatically when things update"
@@ -1523,7 +1536,7 @@ include __DIR__ . '/../../includes/header.php';
     {
       title: "Showcase Your Products",
       desc: "Display your product inventory, catalog items, and pictures directly in the chat. Let customers select items and check out right inside WhatsApp.",
-      img: basePath + "assets/images/capabilities/showcase-products.png",
+      img: basePath + "showcase-products.png",
       bullets: [
         "Show product lists and pictures",
         "Quick and easy checkout in chat"
