@@ -1,14 +1,14 @@
 <?php
-$basePath = '../../../';
-$bp = '../../../';
-require_once __DIR__ . '/../../../config/cms.php';
+$basePath = '../../';
+$bp = '../../';
+require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'Instagram DM Automation & Comment-to-DM Platform | InboxWa';
 $pageDescription = 'Automate Instagram Direct Messages, auto-reply to Post & Reel comments, capture leads, and scale customer support with official Meta API compliance.';
 $canonicalUrl = 'https://inboxwa.com/channel/instagram/';
 $ogImage = 'assets/images/og-image.png';
 
-include __DIR__ . '/../../../includes/header.php';
+include __DIR__ . '/../../includes/header.php';
 ?>
 
 <style>
@@ -715,4 +715,4 @@ include __DIR__ . '/../../../includes/header.php';
   </section>
 </div>
 
-<?php include __DIR__ . '/../../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>

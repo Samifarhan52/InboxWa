@@ -1,14 +1,14 @@
 <?php
-$basePath = '../../../';
-$bp = '../../../';
-require_once __DIR__ . '/../../../config/cms.php';
+$basePath = '../../';
+$bp = '../../';
+require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'Facebook Messenger Automation & Lead Ads Sync | InboxWa';
 $pageDescription = 'Connect Facebook Pages, capture leads from Instant Forms automatically, and automate Messenger chats with official Meta Business API.';
 $canonicalUrl = 'https://inboxwa.com/channel/facebook/';
 $ogImage = 'assets/images/og-image.png';
 
-include __DIR__ . '/../../../includes/header.php';
+include __DIR__ . '/../../includes/header.php';
 ?>
 
 <style>
@@ -666,4 +666,4 @@ include __DIR__ . '/../../../includes/header.php';
   </section>
 </div>
 
-<?php include __DIR__ . '/../../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>

@@ -92,7 +92,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="<?php echo $bp; ?>" class="logo" aria-label="InboxWa Home">
-            <img src="<?php echo $bp; ?>assets/images/logo-footer.png" alt="InboxWa - WhatsApp API Platform" class="logo-img" width="140" height="36" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
+            <img src="<?php echo $bp; ?>assets/images/logo-footer.svg" alt="InboxWa - WhatsApp API Platform" class="logo-img" width="140" height="36" onerror="this.src='<?php echo $bp; ?>assets/images/logo-footer.png'">
             <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
               <span class="logo-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
               <span style="font-weight:800;color:#fff">InboxWa</span>

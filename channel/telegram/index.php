@@ -1,14 +1,14 @@
 <?php
-$basePath = '../../../';
-$bp = '../../../';
-require_once __DIR__ . '/../../../config/cms.php';
+$basePath = '../../';
+$bp = '../../';
+require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'Telegram Bot Automation & Broadcast Platform | InboxWa';
 $pageDescription = 'Create Telegram bots, send unlimited message broadcasts to channels and groups, and automate 24/7 customer support with interactive button flows.';
 $canonicalUrl = 'https://inboxwa.com/channel/telegram/';
 $ogImage = 'assets/images/og-image.png';
 
-include __DIR__ . '/../../../includes/header.php';
+include __DIR__ . '/../../includes/header.php';
 ?>
 
 <style>
@@ -750,4 +750,4 @@ include __DIR__ . '/../../../includes/header.php';
   </section>
 </div>
 
-<?php include __DIR__ . '/../../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>

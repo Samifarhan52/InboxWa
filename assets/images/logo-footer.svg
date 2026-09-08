@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40" fill="none">
+  <defs>
+    <linearGradient id="inboxwaGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <!-- Squircle Icon with center white dot -->
+  <rect x="2" y="4" width="32" height="32" rx="9" fill="url(#inboxwaGradFoot)"/>
+  <rect x="14" y="16" width="8" height="8" rx="2" fill="#FFFFFF"/>
+  <!-- Typography "InboxWa" -->
+  <text x="44" y="27.5" font-family="-apple-system, BlinkMacSystemFont, Inter, Segoe UI, sans-serif" font-size="21" font-weight="800" letter-spacing="-0.02em" fill="#FFFFFF">Inbox<tspan fill="url(#inboxwaGradFoot)">Wa</tspan></text>
+</svg>
