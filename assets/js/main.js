@@ -71,9 +71,17 @@
 
       menu.classList.remove('align-left', 'align-right');
 
-      // Reset to center for measurement
+      // Wide mega menus are centered to header-inner container via CSS and should never be shifted
+      if (menu.classList.contains('mega-menu-channels') || 
+          menu.classList.contains('mega-menu-products') || 
+          menu.classList.contains('mega-menu-solutions') || 
+          menu.classList.contains('mega-menu-panel')) {
+        return;
+      }
+
+      // Small dropdowns (e.g. Partners, Company) can align if needed
       const rect = item.getBoundingClientRect();
-      const menuWidth = menu.offsetWidth || 560;
+      const menuWidth = menu.offsetWidth || 260;
       const viewportWidth = window.innerWidth;
       const padding = 16;
 

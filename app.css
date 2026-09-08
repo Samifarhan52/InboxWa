@@ -2874,16 +2874,10 @@ body.menu-open{overflow:hidden !important}
   transition:color .2s,background .2s;
 }
 .nav-link::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:5px;
-  width:0;
-  height:2px;
-  border-radius:2px;
-  background:var(--grad-brand);
-  transform:translateX(-50%);
-  transition:width .25s var(--ease-out);
+  display:none !important;
+  content:none !important;
+  width:0 !important;
+  height:0 !important;
 }
 .nav-link:hover,
 .nav-item.open > .nav-link,
@@ -2894,7 +2888,9 @@ body.menu-open{overflow:hidden !important}
 .nav-link:hover::after,
 .nav-item.open > .nav-link::after,
 .nav-item:hover > .nav-link::after{
-  width:calc(100% - 1.5rem);
+  display:none !important;
+  content:none !important;
+  width:0 !important;
 }
 .nav-link svg{
   width:13px;height:13px;

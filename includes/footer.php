@@ -160,7 +160,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
   <?php include __DIR__ . '/callback-popup.php'; ?>
   <?php include __DIR__ . '/offer-popup.php'; ?>
   <script src="/i18n.js?v=22" defer></script>
-  <script src="/main.js?v=38" defer></script>
+  <script src="/main.js?v=39" defer></script>
 
 <script src="/assets/js/mobile-menu.js?v=38"></script>
 
