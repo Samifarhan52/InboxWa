@@ -392,49 +392,181 @@ include __DIR__ . '/../../../includes/header.php';
     line-height: 1.6;
   }
 
-  /* 4-Step Journey Section */
+  /* Visual Customer Journey & Steps Section */
   .cig-steps-section {
-    padding: 5rem 1.5rem;
-    background: #ffffff;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fcf7fa 100%);
+    position: relative;
+    overflow: hidden;
   }
-  .cig-steps-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    max-width: 1200px;
+  .cig-journey-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1160px;
     margin: 0 auto;
   }
-  .cig-step-card {
-    background: #f8fafc;
+  .cig-journey-card {
+    background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 26px;
-    position: relative;
-    transition: all 0.25s ease;
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
   }
-  .cig-step-card:hover {
+  .cig-journey-card:hover {
     border-color: #f472b6;
+    box-shadow: 0 20px 45px -10px rgba(236, 72, 153, 0.14);
     transform: translateY(-3px);
   }
-  .cig-step-num {
-    font-size: 2.25rem;
-    font-weight: 900;
-    background: var(--ig-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-    margin-bottom: 12px;
+  .cig-journey-card.reverse {
+    direction: rtl;
   }
-  .cig-step-title {
-    font-size: 1.15rem;
+  .cig-journey-card.reverse > * {
+    direction: ltr;
+  }
+  .cig-journey-media {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cig-journey-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    transition: transform 0.4s ease;
+  }
+  .cig-journey-card:hover .cig-journey-img {
+    transform: scale(1.025);
+  }
+  .cig-journey-badge-float {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(236, 72, 153, 0.35);
+    color: #f472b6;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   }
-  .cig-step-desc {
-    font-size: 0.88rem;
+  .cig-journey-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .cig-journey-step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .cig-journey-step-pill {
+    background: rgba(236, 72, 153, 0.1);
+    color: #db2777;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .cig-journey-step-time {
     color: #64748b;
-    line-height: 1.55;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .cig-journey-title {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .cig-journey-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .cig-journey-guide-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .cig-journey-guide-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+  }
+  .cig-journey-box-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.55rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cig-journey-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cig-journey-list li {
+    font-size: 0.88rem;
+    color: #334155;
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .cig-journey-list li svg {
+    flex-shrink: 0;
+    color: #ec4899;
+    margin-top: 3px;
+  }
+  .cig-journey-kpi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #db2777;
+    background: rgba(236, 72, 153, 0.08);
+    border: 1px solid rgba(236, 72, 153, 0.25);
+    padding: 7px 14px;
+    border-radius: 10px;
+    align-self: flex-start;
   }
 
   /* Sales CTA Section */
@@ -602,6 +734,27 @@ include __DIR__ . '/../../../includes/header.php';
       max-width: 100% !important;
       box-sizing: border-box !important;
     }
+    .cig-journey-flow {
+      gap: 2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .cig-journey-card {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+      padding: 1.5rem 1.2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .cig-journey-card.reverse {
+      direction: ltr !important;
+    }
+    .cig-journey-card.reverse .cig-journey-media {
+      order: -1 !important;
+    }
+    .cig-journey-title {
+      font-size: 1.3rem !important;
+    }
     .cig-features-grid,
     .cig-steps-grid {
       grid-template-columns: 1fr !important;
@@ -740,37 +893,157 @@ include __DIR__ . '/../../../includes/header.php';
     </div>
   </section>
 
-  <!-- 2. HOW IT WORKS / 4 EASY STEPS -->
-  <section class="cig-steps-section">
+  <!-- 2. HOW IT WORKS / CUSTOMER JOURNEY -->
+  <section class="cig-steps-section" id="how-it-works">
     <div class="cig-section-header">
-      <span class="cig-badge-pill">How It Works</span>
-      <h2 class="cig-section-title">Start in 4 Easy Steps</h2>
-      <p class="cig-section-subtitle">Set up automated Instagram comment replies and DM workflows in under 2 minutes.</p>
+      <span class="cig-badge-pill">Customer Journey &amp; Process</span>
+      <h2 class="cig-section-title">How It Works: 3 Steps to Instagram Growth</h2>
+      <p class="cig-section-subtitle">See how InboxWa turns every Instagram comment and reel into automated direct messages, qualified leads, and immediate purchases.</p>
     </div>
 
-    <div class="cig-steps-grid">
-      <div class="cig-step-card">
-        <div class="cig-step-num">01</div>
-        <h3 class="cig-step-title">Link Your Account</h3>
-        <p class="cig-step-desc">Connect your business page securely using your official Instagram and Facebook log in details.</p>
+    <div class="cig-journey-flow">
+      <!-- Step 1 -->
+      <div class="cig-journey-card">
+        <div class="cig-journey-media">
+          <span class="cig-journey-badge-float">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Official Meta Graph API
+          </span>
+          <img src="<?php echo $bp; ?>assets/images/journey/ig-step-1.jpg" alt="Instagram Step 1: Connect Business Profile" class="cig-journey-img" loading="lazy" />
+        </div>
+        <div class="cig-journey-content">
+          <div class="cig-journey-step-header">
+            <span class="cig-journey-step-pill">Step 01 &bull; Integration</span>
+            <span class="cig-journey-step-time">⏱️ Under 60 Seconds</span>
+          </div>
+          <h3 class="cig-journey-title">Connect Your Instagram Business Account</h3>
+          <p class="cig-journey-desc">Authorize your Instagram Creator or Business page in one click via Meta's secure permissions dialogue. No passwords or sensitive login tokens shared.</p>
+          
+          <div class="cig-journey-guide-grid">
+            <div class="cig-journey-guide-box">
+              <div class="cig-journey-box-label">👉 What You Do</div>
+              <ul class="cig-journey-list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Click "Connect Instagram" and authorize with your Facebook Business login</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Select your business handles and grant DM automation permissions</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Your live profile, reels, and feeds sync instantaneously</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cig-journey-guide-box">
+              <div class="cig-journey-box-label">⚙️ How It Works Behind The Scenes</div>
+              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">InboxWa binds to Meta's webhooks, listening for every new follower comment, mention, and DM request across all your public posts in real time.</p>
+            </div>
+          </div>
+
+          <div class="cig-journey-kpi-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% Meta Compliant &bull; No Shadowban or Action Block Risk
+          </div>
+        </div>
       </div>
 
-      <div class="cig-step-card">
-        <div class="cig-step-num">02</div>
-        <h3 class="cig-step-title">Choose Reply Words</h3>
-        <p class="cig-step-desc">Select the key words (like "price", "link", "deal") that customers use when they want to get details.</p>
+      <!-- Step 2 -->
+      <div class="cig-journey-card reverse">
+        <div class="cig-journey-media">
+          <span class="cig-journey-badge-float">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Automated Comment-to-DM
+          </span>
+          <img src="<?php echo $bp; ?>assets/images/journey/ig-step-2.jpg" alt="Instagram Step 2: Reel and Post Triggers" class="cig-journey-img" loading="lazy" />
+        </div>
+        <div class="cig-journey-content">
+          <div class="cig-journey-step-header">
+            <span class="cig-journey-step-pill">Step 02 &bull; Automation</span>
+            <span class="cig-journey-step-time">⚡ Instant Triggering</span>
+          </div>
+          <h3 class="cig-journey-title">Set Automated Comment-to-DM Triggers</h3>
+          <p class="cig-journey-desc">Turn viral Reels and Posts into automated lead machines. When viewers comment keywords like "PRICE" or "LINK", InboxWa instantly drops the link in their private DMs.</p>
+          
+          <div class="cig-journey-guide-grid">
+            <div class="cig-journey-guide-box">
+              <div class="cig-journey-box-label">👉 What You Do</div>
+              <ul class="cig-journey-list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Select any post or Reel and choose trigger words (e.g. "OFFER", "LINK", "INFO")</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Customize the public comment reply to boost algorithm reach</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Write the personalized direct message with clickable buttons and coupon codes</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cig-journey-guide-box">
+              <div class="cig-journey-box-label">⚙️ How It Works Behind The Scenes</div>
+              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">The automated system replies to the comment publicly (telling Instagram's algorithm your post is trending) while simultaneously opening a private DM with the user.</p>
+            </div>
+          </div>
+
+          <div class="cig-journey-kpi-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            0.8s Trigger Speed &bull; 300% Boost in Organic Post Reach
+          </div>
+        </div>
       </div>
 
-      <div class="cig-step-card">
-        <div class="cig-step-num">03</div>
-        <h3 class="cig-step-title">Create Your Answers</h3>
-        <p class="cig-step-desc">Type in the answers or activate our AI helper to answer customer questions automatically 24/7.</p>
-      </div>
+      <!-- Step 3 -->
+      <div class="cig-journey-card">
+        <div class="cig-journey-media">
+          <span class="cig-journey-badge-float">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            DM Checkout &amp; Leads
+          </span>
+          <img src="<?php echo $bp; ?>assets/images/journey/ig-step-3.jpg" alt="Instagram Step 3: DM Sales and CRM Sync" class="cig-journey-img" loading="lazy" />
+        </div>
+        <div class="cig-journey-content">
+          <div class="cig-journey-step-header">
+            <span class="cig-journey-step-pill">Step 03 &bull; Monetization</span>
+            <span class="cig-journey-step-time">💰 3.5x Sales Conversion</span>
+          </div>
+          <h3 class="cig-journey-title">Convert Followers Into Paying Customers</h3>
+          <p class="cig-journey-desc">Close sales right inside Instagram DM. Provide exclusive discount coupons, capture phone numbers and email addresses, and route VIP buyers to human closers.</p>
+          
+          <div class="cig-journey-guide-grid">
+            <div class="cig-journey-guide-box">
+              <div class="cig-journey-box-label">👉 What You Do</div>
+              <ul class="cig-journey-list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Deliver instant coupon codes with direct-to-cart checkout buttons</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Capture verified customer emails and phone numbers for retargeting</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Seamlessly transfer high-ticket conversations to your human sales reps</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cig-journey-guide-box">
+              <div class="cig-journey-box-label">⚙️ How It Works Behind The Scenes</div>
+              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">Every interaction is mapped into InboxWa's CRM with full attribution. You see exactly which reel generated which lead, customer, and dollar in revenue.</p>
+            </div>
+          </div>
 
-      <div class="cig-step-card">
-        <div class="cig-step-num">04</div>
-        <h3 class="cig-step-title">Launch & Grow</h3>
-        <p class="cig-step-desc">Watch comment words automatically send direct messages and turn followers into paying customers!</p>
+          <div class="cig-journey-kpi-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            3.5x Average Conversion Lift &bull; 100% Automated Follow-ups
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -874,4 +1147,4 @@ include __DIR__ . '/../../../includes/header.php';
   </section>
 </div>
 
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../../includes/footer.php'; ?>

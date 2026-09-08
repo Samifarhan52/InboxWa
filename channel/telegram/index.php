@@ -386,49 +386,181 @@ include __DIR__ . '/../../includes/header.php';
     flex-shrink: 0;
   }
 
-  /* 4-Step Journey Section */
+  /* Visual Customer Journey & Steps Section */
   .ctg-steps-section {
-    padding: 5rem 1.5rem;
-    background: #ffffff;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+    position: relative;
+    overflow: hidden;
   }
-  .ctg-steps-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    max-width: 1200px;
+  .ctg-journey-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1160px;
     margin: 0 auto;
   }
-  .ctg-step-card {
-    background: #f8fafc;
+  .ctg-journey-card {
+    background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 26px;
-    position: relative;
-    transition: all 0.25s ease;
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
   }
-  .ctg-step-card:hover {
+  .ctg-journey-card:hover {
     border-color: #38bdf8;
+    box-shadow: 0 20px 45px -10px rgba(2, 132, 199, 0.15);
     transform: translateY(-3px);
   }
-  .ctg-step-num {
-    font-size: 2.25rem;
-    font-weight: 900;
-    background: var(--tg-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-    margin-bottom: 12px;
+  .ctg-journey-card.reverse {
+    direction: rtl;
   }
-  .ctg-step-title {
-    font-size: 1.15rem;
+  .ctg-journey-card.reverse > * {
+    direction: ltr;
+  }
+  .ctg-journey-media {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ctg-journey-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    transition: transform 0.4s ease;
+  }
+  .ctg-journey-card:hover .ctg-journey-img {
+    transform: scale(1.025);
+  }
+  .ctg-journey-badge-float {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #38bdf8;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   }
-  .ctg-step-desc {
-    font-size: 0.88rem;
+  .ctg-journey-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .ctg-journey-step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .ctg-journey-step-pill {
+    background: rgba(2, 132, 199, 0.1);
+    color: #0284c7;
+    border: 1px solid rgba(2, 132, 199, 0.3);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .ctg-journey-step-time {
     color: #64748b;
-    line-height: 1.55;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .ctg-journey-title {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .ctg-journey-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .ctg-journey-guide-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .ctg-journey-guide-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+  }
+  .ctg-journey-box-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.55rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ctg-journey-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ctg-journey-list li {
+    font-size: 0.88rem;
+    color: #334155;
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .ctg-journey-list li svg {
+    flex-shrink: 0;
+    color: #0284c7;
+    margin-top: 3px;
+  }
+  .ctg-journey-kpi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0284c7;
+    background: rgba(2, 132, 199, 0.08);
+    border: 1px solid rgba(2, 132, 199, 0.25);
+    padding: 7px 14px;
+    border-radius: 10px;
+    align-self: flex-start;
   }
 
   /* Sales CTA Section */
@@ -595,6 +727,27 @@ include __DIR__ . '/../../includes/header.php';
       width: 100% !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
+    }
+    .ctg-journey-flow {
+      gap: 2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .ctg-journey-card {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+      padding: 1.5rem 1.2rem !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .ctg-journey-card.reverse {
+      direction: ltr !important;
+    }
+    .ctg-journey-card.reverse .ctg-journey-media {
+      order: -1 !important;
+    }
+    .ctg-journey-title {
+      font-size: 1.3rem !important;
     }
     .ctg-features-grid,
     .ctg-steps-grid {
@@ -775,37 +928,157 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </section>
 
-  <!-- 3. HOW IT WORKS / 4 EASY STEPS -->
-  <section class="ctg-steps-section">
+  <!-- 3. HOW IT WORKS / CUSTOMER JOURNEY -->
+  <section class="ctg-steps-section" id="how-it-works">
     <div class="ctg-section-header">
-      <span class="ctg-badge-pill">Workflow Journey</span>
-      <h2 class="ctg-section-title">Start in 4 Easy Steps</h2>
-      <p class="ctg-section-subtitle">Zero servers, zero complicated code. Build professional customer journeys in minutes.</p>
+      <span class="ctg-badge-pill">Customer Journey &amp; Process</span>
+      <h2 class="ctg-section-title">How It Works: 3 Steps to Telegram Automation</h2>
+      <p class="ctg-section-subtitle">Connect your official Telegram bot in 60 seconds, build rich inline interactive menus, and broadcast to millions without message fees.</p>
     </div>
 
-    <div class="ctg-steps-grid">
-      <div class="ctg-step-card">
-        <div class="ctg-step-num">01</div>
-        <h3 class="ctg-step-title">Link Your Chat</h3>
-        <p class="ctg-step-desc">Enter your Telegram bot token to connect your chat securely in one second.</p>
+    <div class="ctg-journey-flow">
+      <!-- Step 1 -->
+      <div class="ctg-journey-card">
+        <div class="ctg-journey-media">
+          <span class="ctg-journey-badge-float">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            BotFather Official API
+          </span>
+          <img src="<?php echo $bp; ?>assets/images/journey/tg-step-1.jpg" alt="Telegram Step 1: Create Bot via BotFather and Connect Token" class="ctg-journey-img" loading="lazy" />
+        </div>
+        <div class="ctg-journey-content">
+          <div class="ctg-journey-step-header">
+            <span class="ctg-journey-step-pill">Step 01 &bull; Bot Pairing</span>
+            <span class="ctg-journey-step-time">⏱️ Under 60 Seconds</span>
+          </div>
+          <h3 class="ctg-journey-title">Create Telegram Bot via @BotFather &amp; Paste API Token</h3>
+          <p class="ctg-journey-desc">No complex server installations. Generate an official bot token inside Telegram with one message and paste it into InboxWa for instant pairing.</p>
+          
+          <div class="ctg-journey-guide-grid">
+            <div class="ctg-journey-guide-box">
+              <div class="ctg-journey-box-label">👉 What You Do</div>
+              <ul class="ctg-journey-list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Open Telegram and send <code>/newbot</code> to official <strong>@BotFather</strong></span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Choose your bot's name and unique username (e.g. <code>MyStore_bot</code>)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Copy the generated HTTP API token and paste it into your InboxWa workspace</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ctg-journey-guide-box">
+              <div class="ctg-journey-box-label">⚙️ How It Works Behind The Scenes</div>
+              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">InboxWa establishes a high-concurrency webhook pipe directly to Telegram's cloud datacenter, delivering sub-second message response times with unlimited bandwidth.</p>
+            </div>
+          </div>
+
+          <div class="ctg-journey-kpi-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Instant Cloud Activation &bull; Zero Server Maintenance
+          </div>
+        </div>
       </div>
 
-      <div class="ctg-step-card">
-        <div class="ctg-step-num">02</div>
-        <h3 class="ctg-step-title">Choose Reply Words</h3>
-        <p class="ctg-step-desc">Pick key words that customers often ask (like 'price', 'delivery') so your chat knows what to answer.</p>
+      <!-- Step 2 -->
+      <div class="ctg-journey-card reverse">
+        <div class="ctg-journey-media">
+          <span class="ctg-journey-badge-float">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Inline Keyboard Flows
+          </span>
+          <img src="<?php echo $bp; ?>assets/images/journey/tg-step-2.jpg" alt="Telegram Step 2: Interactive Menus and Inline Buttons" class="ctg-journey-img" loading="lazy" />
+        </div>
+        <div class="ctg-journey-content">
+          <div class="ctg-journey-step-header">
+            <span class="ctg-journey-step-pill">Step 02 &bull; Interaction</span>
+            <span class="ctg-journey-step-time">🔘 Rich Clickable Menus</span>
+          </div>
+          <h3 class="ctg-journey-title">Build Rich Interactive Menus &amp; Inline Button Flows</h3>
+          <p class="ctg-journey-desc">Give your users an app-like experience right inside Telegram. Construct interactive inline button menus, product price cards, digital downloads, and automated FAQs.</p>
+          
+          <div class="ctg-journey-guide-grid">
+            <div class="ctg-journey-guide-box">
+              <div class="ctg-journey-box-label">👉 What You Do</div>
+              <ul class="ctg-journey-list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Build inline buttons: <code>[Browse Catalog]</code>, <code>[Pricing]</code>, <code>[VIP Support]</code></span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Attach PDFs, download links, product photos, and web app links</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Configure automated greeting messages and auto-approve channel join requests</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ctg-journey-guide-box">
+              <div class="ctg-journey-box-label">⚙️ How It Works Behind The Scenes</div>
+              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">Whenever users tap an inline button, InboxWa routes the callback in under 0.1s, delivering instant dynamic answers, payment checkouts, or live support escalations.</p>
+            </div>
+          </div>
+
+          <div class="ctg-journey-kpi-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            0.1s Callback Latency &bull; 100% Responsive UI Buttons
+          </div>
+        </div>
       </div>
 
-      <div class="ctg-step-card">
-        <div class="ctg-step-num">03</div>
-        <h3 class="ctg-step-title">Create Answers</h3>
-        <p class="ctg-step-desc">Type out your answer messages and add helpful quick clickable buttons for customers to tap.</p>
-      </div>
+      <!-- Step 3 -->
+      <div class="ctg-journey-card">
+        <div class="ctg-journey-media">
+          <span class="ctg-journey-badge-float">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            Zero Cost Broadcasts
+          </span>
+          <img src="<?php echo $bp; ?>assets/images/journey/tg-step-3.jpg" alt="Telegram Step 3: Broadcast Campaigns and Group Management" class="ctg-journey-img" loading="lazy" />
+        </div>
+        <div class="ctg-journey-content">
+          <div class="ctg-journey-step-header">
+            <span class="ctg-journey-step-pill">Step 03 &bull; Broadcast &amp; Scale</span>
+            <span class="ctg-journey-step-time">📢 100% Free Blasts</span>
+          </div>
+          <h3 class="ctg-journey-title">Broadcast to Channels &amp; Automate Group Communities</h3>
+          <p class="ctg-journey-desc">Reach 10,000 or 1,000,000 subscribers simultaneously with zero per-message charges, zero rate throttling, and complete media freedom.</p>
+          
+          <div class="ctg-journey-guide-grid">
+            <div class="ctg-journey-guide-box">
+              <div class="ctg-journey-box-label">👉 What You Do</div>
+              <ul class="ctg-journey-list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Connect your public announcement channels and community supergroups</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Schedule rich broadcasts with buttons, video updates, and discount codes</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Track open views, tap rates, and member growth in your live dashboard</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ctg-journey-guide-box">
+              <div class="ctg-journey-box-label">⚙️ How It Works Behind The Scenes</div>
+              <p style="font-size:0.86rem;color:#64748b;line-height:1.5;margin:0;">InboxWa queues and distributes high-volume messages across Telegram's channel infrastructure without hitting flood limits or incurring extra per-message SMS costs.</p>
+            </div>
+          </div>
 
-      <div class="ctg-step-card">
-        <div class="ctg-step-num">04</div>
-        <h3 class="ctg-step-title">Start Answering</h3>
-        <p class="ctg-step-desc">Your chat assistant is ready! It will automatically reply to customer questions 24 hours a day.</p>
+          <div class="ctg-journey-kpi-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Zero Per-Message Fees &bull; Unlimited Subscribers
+          </div>
+        </div>
       </div>
     </div>
   </section>
