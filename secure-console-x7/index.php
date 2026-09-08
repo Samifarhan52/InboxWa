@@ -1892,13 +1892,9 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
-                // 8. PLUGINS SCREEN
+                // 7B. WEBSITE COLOR PALETTE SCREEN
                 // =============================================================
-
-                <!-- ============================================================= -->
-                <!-- 7B. WEBSITE COLOR PALETTE SCREEN -->
-                <!-- ============================================================= -->
-                <?php elseif ($page === 'colors' || ($page === 'settings' && $settingsTab === 'colors')): ?>
+                elseif ($page === 'colors' || ($page === 'settings' && $settingsTab === 'colors')): ?>
                     <h1 class="wp-heading-inline">Website Color Palette &amp; Appearance</h1>
                     <a href="/" target="_blank" class="page-title-action" style="margin-left:10px;">View Live Site &nearr;</a>
                     <p class="description" style="margin:8px 0 20px; font-size:13px; color:#50575e;">
@@ -2372,7 +2368,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     document.addEventListener('DOMContentLoaded', updateLivePalettePreview);
                     </script>
 
-                elseif ($page === 'plugins' || $page === 'plugin-new'): ?>
+                <?php elseif ($page === 'plugins' || $page === 'plugin-new'): ?>
                     <h1 class="wp-heading-inline">Plugins</h1>
                     <a href="<?php echo $adminBase; ?>?page=plugin-new" class="page-title-action">Add New</a>
 
