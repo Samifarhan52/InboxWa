@@ -5,6 +5,12 @@ require_once __DIR__ . '/../config/business-leads.php';
 $HBContact = require __DIR__ . '/../config/contact.php';
 
 $categorySlug = trim($_GET['category'] ?? 'real-estate');
+
+if ($categorySlug === 'education' && !defined('IN_EDUCATION_PAGE')) {
+    require __DIR__ . '/education/index.php';
+    exit;
+}
+
 $category = get_business_lead_category($categorySlug);
 
 if (!$category) {

@@ -996,3 +996,570 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Getgabs Cloned & Enhanced Sections for Education & EdTech
+   ========================================================================== */
+
+/* Understand WhatsApp for EdTech */
+.edu-overview-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  border-bottom: 1px solid #E2E8F0;
+}
+.edu-overview-box {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.edu-overview-lead {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #334155;
+  margin: 1.5rem auto 2.5rem;
+  max-width: 860px;
+}
+.edu-overview-lead a {
+  color: #7C3AED;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.edu-overview-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+.edu-overview-pill {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.edu-overview-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.1);
+  border-color: #DDD6FE;
+}
+.edu-overview-pill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.1);
+  color: #7C3AED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.edu-overview-pill h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.4rem;
+}
+.edu-overview-pill p {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Why WhatsApp Marketing in 2026 */
+.edu-why-section {
+  padding: 5rem 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F1F5F9;
+}
+.edu-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+}
+.edu-why-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.edu-why-card:hover {
+  background: #FFFFFF;
+  border-color: #8B5CF6;
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(139, 92, 246, 0.12);
+}
+.edu-why-val {
+  font-size: clamp(2.2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+.edu-why-card:nth-child(2) .edu-why-val {
+  background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.edu-why-card:nth-child(3) .edu-why-val {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.edu-why-card:nth-child(4) .edu-why-val {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.edu-why-lbl {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.35rem;
+}
+.edu-why-sub {
+  font-size: 0.82rem;
+  color: #64748B;
+}
+
+/* Why Use WhatsApp Business API for EdTech Banner */
+.edu-why-use-banner {
+  margin: 3rem 0;
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.edu-why-use-copy h3 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.edu-why-use-copy p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.75rem;
+}
+.edu-why-use-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.edu-why-use-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #E2E8F0;
+}
+.edu-why-use-point svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #10B981;
+}
+
+/* How InboxWa is Different from Other BSPs */
+.edu-bsp-section {
+  padding: 5.5rem 0;
+  background: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+.edu-bsp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.edu-bsp-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.edu-bsp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.08);
+  border-color: #C4B5FD;
+}
+.edu-bsp-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.edu-bsp-card:nth-child(even) .edu-bsp-icon {
+  background: rgba(124, 58, 237, 0.12);
+  color: #7C3AED;
+}
+.edu-bsp-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 0.35rem;
+}
+.edu-bsp-info p {
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Department Wise Uses */
+.edu-dept-section {
+  padding: 5.5rem 0;
+  background: #FFFFFF;
+}
+.edu-dept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.edu-dept-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 22px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.edu-dept-card:hover {
+  transform: translateY(-5px);
+  border-color: #8B5CF6;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.12);
+}
+.edu-dept-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.edu-dept-card:nth-child(2) .edu-dept-icon {
+  background: rgba(124, 58, 237, 0.12);
+  color: #7C3AED;
+}
+.edu-dept-card:nth-child(3) .edu-dept-icon {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563EB;
+}
+.edu-dept-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.65rem;
+}
+.edu-dept-card p {
+  color: #64748B;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+.edu-dept-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.edu-dept-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #334155;
+  font-weight: 600;
+}
+.edu-dept-list li svg {
+  color: #10B981;
+  flex-shrink: 0;
+}
+
+/* Explore Industry-Wise WhatsApp Use Cases Grid */
+.edu-ind-section {
+  padding: 5.5rem 0;
+  background: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
+}
+.edu-ind-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+.edu-ind-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 1.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: #0F172A;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.edu-ind-card:hover {
+  transform: translateY(-4px);
+  border-color: #8B5CF6;
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+  color: #7C3AED;
+}
+.edu-ind-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edu-ind-card h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Available Datasets Section */
+.edu-datasets-section {
+  padding: 5.5rem 0;
+  background: #FFFFFF;
+}
+.edu-datasets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+.edu-dataset-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 22px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+  position: relative;
+}
+.edu-dataset-card:hover {
+  transform: translateY(-4px);
+  border-color: #10B981;
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
+}
+.edu-dataset-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+.edu-dataset-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.edu-dataset-count {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+.edu-dataset-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.65rem;
+  line-height: 1.35;
+}
+.edu-dataset-coverage {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #64748B;
+  margin-bottom: 1.15rem;
+}
+.edu-dataset-fields-box {
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.edu-dataset-fields-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748B;
+  margin-bottom: 0.45rem;
+}
+.edu-dataset-fields-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.edu-field-tag {
+  font-size: 0.74rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #334155;
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.edu-dataset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #10B981;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 1.25rem;
+}
+.edu-dataset-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+/* FAQ Accordion */
+.edu-faq-section {
+  padding: 5.5rem 0;
+  background: #FFFFFF;
+}
+.edu-faq-accordion {
+  max-width: 820px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.edu-faq-item {
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  background: #FFFFFF;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.edu-faq-item.active {
+  border-color: #8B5CF6;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
+}
+.edu-faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.35rem 1.6rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+  gap: 1rem;
+}
+.edu-faq-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #64748B;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.edu-faq-item.active .edu-faq-icon {
+  transform: rotate(180deg);
+  color: #8B5CF6;
+}
+.edu-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.6rem;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.edu-faq-item.active .edu-faq-answer {
+  max-height: 400px;
+  padding: 0 1.6rem 1.35rem;
+}
+
+@media (max-width: 1100px) {
+  .edu-ind-grid { grid-template-columns: repeat(4, 1fr); }
+  .edu-why-use-banner { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 900px) {
+  .edu-overview-features,
+  .edu-datasets-grid,
+  .edu-dept-grid,
+  .edu-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .edu-bsp-grid { grid-template-columns: 1fr; }
+  .edu-ind-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .edu-overview-features,
+  .edu-datasets-grid,
+  .edu-dept-grid,
+  .edu-why-grid { grid-template-columns: 1fr; }
+  .edu-ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .edu-why-use-banner { padding: 2rem 1.5rem; }
+}
+
