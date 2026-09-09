@@ -197,10 +197,19 @@
 
   // CRM Filter buttons
   var filterBtns = document.querySelectorAll('.edu-crm-filter-btns button');
+  var crmRows = document.querySelectorAll('.edu-crm-table tbody tr');
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       filterBtns.forEach(function(b) { b.classList.remove('active'); });
       this.classList.add('active');
+      var dept = this.getAttribute('data-dept') || 'all';
+      crmRows.forEach(function(row) {
+        if (dept === 'all' || row.getAttribute('data-dept') === dept) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
     });
   });
 

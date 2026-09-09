@@ -3,8 +3,8 @@ if (!defined('IN_EDUCATION_PAGE')) {
     define('IN_EDUCATION_PAGE', true);
 }
 
-$basePath = '../../';
-$bp = '../../';
+$basePath = '/';
+$bp = '/';
 require_once __DIR__ . '/../../config/business-leads.php';
 $HBContact = require __DIR__ . '/../../config/contact.php';
 
@@ -27,7 +27,7 @@ if (!$category) {
 $pageTitle = 'WhatsApp for EdTech, Schools, Colleges & Institutes | Verified Leads & Automation | InboxWa';
 $pageDescription = 'Boost admissions and student learning with official WhatsApp Business API for EdTech. Automate enrollments, class reminders, exam hall tickets, fee payments, and 24/7 student counseling.';
 $canonicalUrl = 'https://inboxwa.com/business-leads/education/';
-$ogImage = 'assets/images/og-image.png';
+$ogImage = '/assets/images/og-image.png';
 
 $waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918050854445';
 $defaultWaMsg = urlencode("Hi InboxWa team, I would like to request verified student & institute leads and EdTech WhatsApp automation for Education. Please share details.");
@@ -36,10 +36,10 @@ include __DIR__ . '/../../includes/header.php';
 ?>
 
 <link rel="stylesheet" href="/assets/css/business-leads.css?v=5">
-<link rel="stylesheet" href="/assets/css/education.css?v=50">
+<link rel="stylesheet" href="/assets/css/education.css?v=52">
 <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=7">
 
-<main class="bl-page">
+<div class="bl-page">
   <!-- BREADCRUMB -->
   <nav class="bl-breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
@@ -777,11 +777,11 @@ include __DIR__ . '/../../includes/header.php';
             <span><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span> 2026 Student Admission Tracker (Live CRM)
           </div>
           <div class="edu-crm-filter-btns">
-            <button type="button" class="active">All Departments</button>
-            <button type="button">Engineering</button>
-            <button type="button">Business / MBA</button>
-            <button type="button">Medical</button>
-            <button type="button">Online EdTech</button>
+            <button type="button" class="active" data-dept="all">All Departments</button>
+            <button type="button" data-dept="engineering">Engineering</button>
+            <button type="button" data-dept="mba">Business / MBA</button>
+            <button type="button" data-dept="medical">Medical</button>
+            <button type="button" data-dept="edtech">Online EdTech</button>
           </div>
         </div>
 
@@ -797,40 +797,54 @@ include __DIR__ . '/../../includes/header.php';
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr data-dept="engineering">
                 <td><b>Rohan Sharma</b></td>
                 <td>B.Tech Computer Science</td>
                 <td><span class="edu-pill new">New Lead</span></td>
                 <td>Priya Sharma</td>
                 <td>Send Syllabus PDF via WhatsApp</td>
               </tr>
-              <tr>
+              <tr data-dept="mba">
                 <td><b>Ananya Verma</b></td>
                 <td>MBA Marketing &amp; Finance</td>
                 <td><span class="edu-pill qual">Qualified</span></td>
                 <td>Vikram Malhotra</td>
                 <td>Schedule 1-on-1 Counseling Call</td>
               </tr>
-              <tr>
+              <tr data-dept="mba">
                 <td><b>Kabir Mehta</b></td>
                 <td>BBA International Business</td>
                 <td><span class="edu-pill visit">Campus Visit Booked</span></td>
                 <td>Neha Gupta</td>
                 <td>Campus Tour Reminder (Tomorrow 10 AM)</td>
               </tr>
-              <tr>
+              <tr data-dept="edtech">
                 <td><b>Sneha Kulkarni</b></td>
-                <td>BCA Data Science</td>
+                <td>Online Full-Stack AI Bootcamp</td>
                 <td><span class="edu-pill app">Application Submitted</span></td>
                 <td>Priya Sharma</td>
                 <td>Verify 12th Marksheet PDF Upload</td>
               </tr>
-              <tr>
+              <tr data-dept="engineering">
                 <td><b>Aarav Patel</b></td>
                 <td>B.Tech Mechanical</td>
                 <td><span class="edu-pill enrolled">Enrolled &amp; Fee Paid</span></td>
                 <td>Accounts Team</td>
                 <td>Dispatch Welcome Kit &amp; LMS Login</td>
+              </tr>
+              <tr data-dept="medical">
+                <td><b>Dr. Ritu Deshmukh</b></td>
+                <td>MBBS / NEET PG Test Prep</td>
+                <td><span class="edu-pill qual">Qualified</span></td>
+                <td>Dr. Sameer Khan</td>
+                <td>Send NEET Mock Test Schedule on WhatsApp</td>
+              </tr>
+              <tr data-dept="edtech">
+                <td><b>Devansh Rao</b></td>
+                <td>Data Science &amp; ML Masterclass</td>
+                <td><span class="edu-pill enrolled">Enrolled &amp; Fee Paid</span></td>
+                <td>EdTech Ops</td>
+                <td>Trigger WhatsApp LMS Access &amp; Community Invite</td>
               </tr>
             </tbody>
           </table>
@@ -1252,10 +1266,10 @@ include __DIR__ . '/../../includes/header.php';
       </div>
     </div>
   </section>
-</main>
+</div>
 
 <!-- Interactive Simulator & Calculator Scripts -->
-<script src="/assets/js/education-sim.js?v=42" defer></script>
+<script src="/assets/js/education-sim.js?v=43" defer></script>
 
 <!-- Inline FAQ Accordion Toggle Script -->
 <script>

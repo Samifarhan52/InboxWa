@@ -1,6 +1,6 @@
 <?php
-$basePath = '../../';
-$bp = '../../';
+$basePath = '/';
+$bp = '/';
 require_once __DIR__ . '/../config/business-leads.php';
 $HBContact = require __DIR__ . '/../config/contact.php';
 
@@ -22,7 +22,7 @@ if (!$category) {
 $pageTitle = $category['name'] . ' Business Leads & WhatsApp Automation';
 $pageDescription = $category['subtitle'] . ' Get verified mobile contacts, automated WhatsApp qualification, and high-converting workflows with InboxWa.';
 $canonicalUrl = 'https://inboxwa.com/business-leads/' . urlencode($category['slug']) . '/';
-$ogImage = 'assets/images/og-image.png';
+$ogImage = '/assets/images/og-image.png';
 
 $waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918884058241';
 $defaultWaMsg = urlencode("Hi InboxWa team, I would like to request verified business leads and datasets for {$category['name']}. Please share available counts and sample preview.");
@@ -32,7 +32,7 @@ include __DIR__ . '/../includes/header.php';
 
 <link rel="stylesheet" href="/assets/css/business-leads.css?v=3">
 
-<main class="bl-page">
+<div class="bl-page">
   <!-- BREADCRUMB -->
   <nav class="bl-breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
@@ -317,6 +317,6 @@ include __DIR__ . '/../includes/header.php';
       </div>
     </div>
   </section>
-</main>
+</div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
