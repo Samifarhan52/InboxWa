@@ -643,6 +643,22 @@ function hb_pdo(): PDO {
         }
     }
 
+    // Automatically synchronize state from config/cms_state.json on serverless / fresh containers
+    static $stateSyncLoaded = false;
+    if (!$stateSyncLoaded) {
+        $stateSyncLoaded = true;
+        $jsonStatePath = dirname(__DIR__) . '/config/cms_state.json';
+        if (file_exists($jsonStatePath)) {
+            $rawState = @file_get_contents($jsonStatePath);
+            if ($rawState) {
+                $parsedState = json_decode($rawState, true);
+                if (is_array($parsedState)) {
+                    hb_import_cms_state($parsedState);
+                }
+            }
+        }
+    }
+
     return $pdo;
 }
 
@@ -673,6 +689,7 @@ function hb_set_setting(string $key, string $value): void {
         $db = hb_pdo();
         $stmt = $db->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
         $stmt->execute([$key, $value]);
+        hb_save_cms_state_file();
     } catch (Throwable $e) {
     }
 }
@@ -701,6 +718,7 @@ function hb_set_section(string $section, string $field, string $value): void {
         $db = hb_pdo();
         $stmt = $db->prepare("INSERT INTO site_sections (section, field, value, updated_at) VALUES (?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(section, field) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
         $stmt->execute([$section, $field, $value]);
+        hb_save_cms_state_file();
     } catch (Throwable $e) {
     }
 }
@@ -1250,5 +1268,189 @@ function hb_purge_all_caches(): bool {
     }
     hb_set_setting('cache_bust_ts', (string)time());
     return true;
+}
+
+// -------------------------------------------------------------
+// Global Serverless CMS State & Cloud Sync
+// -------------------------------------------------------------
+
+function hb_export_cms_state(): array {
+    $db = hb_pdo();
+    $tables = ['settings', 'site_sections', 'pricing_plans', 'testimonials', 'faqs', 'categories', 'tags', 'pages', 'custom_locations'];
+    $data = [];
+    foreach ($tables as $t) {
+        try {
+            $data[$t] = $db->query("SELECT * FROM {$t}")->fetchAll() ?: [];
+        } catch (Throwable $e) {
+            $data[$t] = [];
+        }
+    }
+    return $data;
+}
+
+function hb_import_cms_state(array $data): bool {
+    if (empty($data)) return false;
+    $db = hb_pdo();
+    try {
+        if (!empty($data['settings'])) {
+            $stmt = $db->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
+            foreach ($data['settings'] as $s) {
+                if (isset($s['key'], $s['value'])) {
+                    $stmt->execute([$s['key'], $s['value']]);
+                }
+            }
+        }
+        if (!empty($data['site_sections'])) {
+            $stmt = $db->prepare("INSERT INTO site_sections (section, field, value, updated_at) VALUES (?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(section, field) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
+            foreach ($data['site_sections'] as $s) {
+                if (isset($s['section'], $s['field'], $s['value'])) {
+                    $stmt->execute([$s['section'], $s['field'], $s['value']]);
+                }
+            }
+        }
+        if (!empty($data['pricing_plans'])) {
+            $stmt = $db->prepare("INSERT INTO pricing_plans (plan_id, name, badge, tagline, monthly, yearly, setup_fee_monthly, setup_fee_yearly, cta_text, cta_link, channels_json, features_json, is_popular, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(plan_id) DO UPDATE SET name=excluded.name, badge=excluded.badge, tagline=excluded.tagline, monthly=excluded.monthly, yearly=excluded.yearly, setup_fee_monthly=excluded.setup_fee_monthly, setup_fee_yearly=excluded.setup_fee_yearly, cta_text=excluded.cta_text, cta_link=excluded.cta_link, channels_json=excluded.channels_json, features_json=excluded.features_json, is_popular=excluded.is_popular, sort_order=excluded.sort_order");
+            foreach ($data['pricing_plans'] as $p) {
+                if (isset($p['plan_id'], $p['name'])) {
+                    $stmt->execute([
+                        $p['plan_id'], $p['name'], $p['badge'] ?? '', $p['tagline'] ?? '',
+                        (int)($p['monthly'] ?? 0), (int)($p['yearly'] ?? 0), (int)($p['setup_fee_monthly'] ?? 0),
+                        (int)($p['setup_fee_yearly'] ?? 0), $p['cta_text'] ?? 'Start Free', $p['cta_link'] ?? '/auth/register',
+                        $p['channels_json'] ?? '[]', $p['features_json'] ?? '[]',
+                        (int)($p['is_popular'] ?? 0), (int)($p['sort_order'] ?? 0)
+                    ]);
+                }
+            }
+        }
+        if (!empty($data['faqs'])) {
+            foreach ($data['faqs'] as $f) {
+                hb_save_faq($f);
+            }
+        }
+        if (!empty($data['testimonials'])) {
+            foreach ($data['testimonials'] as $t) {
+                hb_save_testimonial($t);
+            }
+        }
+        return true;
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_save_cms_state_file(): bool {
+    $filePath = dirname(__DIR__) . '/config/cms_state.json';
+    $state = hb_export_cms_state();
+    $json = json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if ($json === false) return false;
+    
+    if (is_writable(dirname($filePath)) || (file_exists($filePath) && is_writable($filePath))) {
+        @file_put_contents($filePath, $json);
+    }
+    @file_put_contents(sys_get_temp_dir() . '/cms_state.json', $json);
+    
+    hb_sync_cloud();
+    return true;
+}
+
+function hb_github_sync_push(string $commitMsg = 'CMS update via Admin'): array {
+    $token = trim((string)(hb_get_setting('github_token') ?: getenv('GITHUB_TOKEN') ?: ''));
+    if (empty($token)) {
+        return ['ok' => false, 'error' => 'No GitHub token configured. Please enter your GitHub Personal Access Token in Settings > Cloud Sync.'];
+    }
+    $repo = trim((string)hb_get_setting('github_repo', 'Samifarhan52/InboxWa'));
+    $path = 'config/cms_state.json';
+    $state = hb_export_cms_state();
+    $content = json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    $b64 = base64_encode($content);
+
+    $url = "https://api.github.com/repos/{$repo}/contents/{$path}";
+    
+    // 1. Get SHA
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer {$token}",
+            "User-Agent: InboxWa-CMS-Vercel-Sync",
+            "Accept: application/vnd.github.v3+json"
+        ],
+        CURLOPT_TIMEOUT => 8
+    ]);
+    $res = curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    $sha = null;
+    if ($code === 200 && $res) {
+        $json = json_decode($res, true);
+        $sha = $json['sha'] ?? null;
+    }
+
+    // 2. Put
+    $payload = [
+        'message' => $commitMsg,
+        'content' => $b64,
+        'branch' => 'main'
+    ];
+    if ($sha) {
+        $payload['sha'] = $sha;
+    }
+
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CUSTOMREQUEST => 'PUT',
+        CURLOPT_POSTFIELDS => json_encode($payload),
+        CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer {$token}",
+            "User-Agent: InboxWa-CMS-Vercel-Sync",
+            "Accept: application/vnd.github.v3+json",
+            "Content-Type: application/json"
+        ],
+        CURLOPT_TIMEOUT => 12
+    ]);
+    $putRes = curl_exec($ch);
+    $putCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($putCode === 200 || $putCode === 201) {
+        return ['ok' => true, 'message' => 'Successfully committed to GitHub repository. Vercel is now building and deploying changes globally.'];
+    } else {
+        $errJson = json_decode((string)$putRes, true);
+        return ['ok' => false, 'error' => $errJson['message'] ?? ("GitHub API HTTP " . $putCode)];
+    }
+}
+
+function hb_sync_cloud(): void {
+    $kvUrl = getenv('KV_REST_API_URL') ?: getenv('UPSTASH_REDIS_REST_URL') ?: hb_get_setting('upstash_url');
+    $kvToken = getenv('KV_REST_API_TOKEN') ?: getenv('UPSTASH_REDIS_REST_TOKEN') ?: hb_get_setting('upstash_token');
+    if (!empty($kvUrl) && !empty($kvToken)) {
+        try {
+            $state = hb_export_cms_state();
+            $ch = curl_init(rtrim($kvUrl, '/') . '/set/inboxwa_cms_state');
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => json_encode($state),
+                CURLOPT_HTTPHEADER => [
+                    "Authorization: Bearer {$kvToken}",
+                    "Content-Type: application/json"
+                ],
+                CURLOPT_TIMEOUT => 3
+            ]);
+            curl_exec($ch);
+            curl_close($ch);
+        } catch (Throwable $e) {}
+    }
+
+    // If auto-commit is enabled and github_token is present, push to GitHub
+    $autoGit = hb_get_setting('github_auto_sync', '1') === '1';
+    $gitToken = hb_get_setting('github_token') ?: getenv('GITHUB_TOKEN');
+    if ($autoGit && !empty($gitToken)) {
+        try {
+            hb_github_sync_push('Auto-sync CMS update via Admin');
+        } catch (Throwable $e) {}
+    }
 }
 

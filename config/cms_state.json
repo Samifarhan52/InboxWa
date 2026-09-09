@@ -1,0 +1,662 @@
+{
+  "settings": [
+    {
+      "key": "admin_user",
+      "value": "admin",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "admin_pass",
+      "value": "admin123",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "site_title",
+      "value": "InboxWa",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "site_tagline",
+      "value": "WhatsApp Marketing & Automation Platform",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "support_whatsapp",
+      "value": "918050854445",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "phone_number",
+      "value": "+91 80508 54445",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "notification_email",
+      "value": "mail@inboxwa.com",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "sales_email",
+      "value": "mail@inboxwa.com",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "support_email",
+      "value": "support@inboxwa.com",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "office_address",
+      "value": "InboxWa AI Technologies Pvt Ltd, Bangalore, India",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "webhook_url",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "ga_id",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "meta_pixel_id",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "custom_header_code",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "custom_footer_code",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "announcement_enabled",
+      "value": "0",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "announcement_text",
+      "value": "Official WhatsApp Business API & AI Chatbots — Start 14-Day Free Trial Today!",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "announcement_link",
+      "value": "/auth/register",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "logo_url",
+      "value": "/assets/images/logo.svg",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "logo_footer_url",
+      "value": "/assets/images/logo-footer.svg",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "favicon_url",
+      "value": "/assets/images/favicon-32x32.png",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "social_whatsapp",
+      "value": "https://wa.me/918050854445",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "social_facebook",
+      "value": "https://facebook.com/inboxwa",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "social_instagram",
+      "value": "https://instagram.com/inboxwa",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "social_linkedin",
+      "value": "https://linkedin.com/company/inboxwa",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "social_youtube",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "social_twitter",
+      "value": "",
+      "updated_at": "2026-09-08 07:53:03"
+    }
+  ],
+  "site_sections": [
+    {
+      "section": "hero",
+      "field": "badge",
+      "value": "Official WhatsApp Business API · Meta Tech Partner",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "headline_prefix",
+      "value": "WhatsApp Automation Software & ",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "headline_gradient",
+      "value": "AI Chatbot",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "headline_suffix",
+      "value": " for Business",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "lead",
+      "value": "Boost engagement, qualify leads, and provide 24/7 support with seamless, AI-powered WhatsApp conversations. Integrate instantly and scale efficiently.",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "cta1_text",
+      "value": "Start Automating - It's Free",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "cta1_link",
+      "value": "/auth/register",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "cta2_text",
+      "value": "Book a Demo",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "cta2_link",
+      "value": "#demo",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "float1_val",
+      "value": "+128 Leads",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "float1_label",
+      "value": "Captured today",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "float2_val",
+      "value": "24/7 Active",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "float2_label",
+      "value": "AI Chatbot",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "float3_val",
+      "value": "99.9%",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "hero",
+      "field": "float3_label",
+      "value": "Delivery Rate",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat1_val",
+      "value": "10M+",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat1_label",
+      "value": "Messages delivered",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat2_val",
+      "value": "99.9%",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat2_label",
+      "value": "API uptime",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat3_val",
+      "value": "24/7",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat3_label",
+      "value": "Bot coverage",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat4_val",
+      "value": "1 inbox",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "stats",
+      "field": "stat4_label",
+      "value": "All channels",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "simulator",
+      "field": "bot_greeting",
+      "value": "👋 Hello! Welcome to InboxWa. How can we help automate your business today?",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "simulator",
+      "field": "btn1",
+      "value": "🤖 AI Chatbot for Leads",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "simulator",
+      "field": "btn2",
+      "value": "📢 Broadcast Campaigns",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "simulator",
+      "field": "btn3",
+      "value": "👥 Shared Team Inbox",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "simulator",
+      "field": "bot_response",
+      "value": "Great choice! InboxWa equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification.",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "cta_banner",
+      "field": "title",
+      "value": "Ready to turn customer conversations into revenue?",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "cta_banner",
+      "field": "lead",
+      "value": "Join fast-growing companies using InboxWa for WhatsApp marketing, AI automation, and omnichannel support.",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "cta_banner",
+      "field": "btn_text",
+      "value": "Start Free 14-Day Trial",
+      "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "section": "cta_banner",
+      "field": "btn_link",
+      "value": "/auth/register",
+      "updated_at": "2026-09-08 07:53:03"
+    }
+  ],
+  "pricing_plans": [
+    {
+      "id": 1,
+      "plan_id": "growth",
+      "name": "Growth",
+      "badge": "",
+      "tagline": "For businesses starting out on WhatsApp",
+      "monthly": 1999,
+      "yearly": 19990,
+      "setup_fee_monthly": 2999,
+      "setup_fee_yearly": 0,
+      "cta_text": "Start Free",
+      "cta_link": "/auth/register",
+      "channels_json": "[\"WhatsApp\"]",
+      "features_json": "[\"50,000 contacts & conversations\", \"500 campaigns / month\", \"100 AI prompts\", \"3 team seats\", \"Priority support\", \"25 bot flows\", \"30 tags\", \"Official WhatsApp channel\"]",
+      "is_popular": 0,
+      "sort_order": 1
+    },
+    {
+      "id": 2,
+      "plan_id": "pro",
+      "name": "Pro",
+      "badge": "MOST POPULAR",
+      "tagline": "Full power across every channel",
+      "monthly": 4999,
+      "yearly": 49990,
+      "setup_fee_monthly": 0,
+      "setup_fee_yearly": 0,
+      "cta_text": "Start Free",
+      "cta_link": "/auth/register",
+      "channels_json": "[\"WhatsApp\", \"Instagram\", \"Facebook\", \"Telegram\"]",
+      "features_json": "[\"100,000 contacts & conversations\", \"2,000 campaigns / month\", \"500 AI prompts\", \"10 team seats\", \"Dedicated support\", \"20 AI calling agent credits\", \"50 bot flows\", \"60 custom fields & tags\", \"60 WhatsApp forms\", \"20 appointment bookings\", \"WhatsApp, Instagram, Facebook, Telegram\"]",
+      "is_popular": 1,
+      "sort_order": 2
+    },
+    {
+      "id": 3,
+      "plan_id": "business",
+      "name": "Business",
+      "badge": "BEST VALUE",
+      "tagline": "Unlimited scale for serious operations",
+      "monthly": 7999,
+      "yearly": 76790,
+      "setup_fee_monthly": 0,
+      "setup_fee_yearly": 0,
+      "cta_text": "Start Free",
+      "cta_link": "/auth/register",
+      "channels_json": "[\"WhatsApp\", \"Instagram\", \"Facebook\", \"Telegram\"]",
+      "features_json": "[\"Unlimited contacts & conversations\", \"10,000 campaigns / month\", \"2,000 AI prompts\", \"25 team seats\", \"Dedicated account manager\", \"50 AI calling agent credits\", \"150 bot flows\", \"100 custom fields & tags\", \"100 WhatsApp forms\", \"50 appointment bookings\", \"30 Kanban funnels & 25 workspaces\", \"WhatsApp, Instagram, Facebook, Telegram\"]",
+      "is_popular": 0,
+      "sort_order": 3
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Aditya Singhania",
+      "role": "Head of Growth",
+      "company": "Zenith Retail Brands",
+      "avatar": "",
+      "rating": 5,
+      "quote": "Switching to InboxWa increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered ₹18 Lakhs in the first quarter.",
+      "sort_order": 1
+    },
+    {
+      "id": 2,
+      "name": "Priya Natarajan",
+      "role": "Customer Experience Director",
+      "company": "CarePulse Health",
+      "avatar": "",
+      "rating": 5,
+      "quote": "Our clinic appointment no-shows dropped from 28% to less than 4% once we automated calendar confirmations and pre-visit reminders over WhatsApp.",
+      "sort_order": 2
+    },
+    {
+      "id": 3,
+      "name": "Farhan Al-Zaidi",
+      "role": "Operations VP",
+      "company": "Apex Gulf Properties",
+      "avatar": "",
+      "rating": 5,
+      "quote": "Official Meta API verification was seamless. Our sales agents manage over 4,000 property buyer conversations per week smoothly inside one centralized dashboard.",
+      "sort_order": 3
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "category": "general",
+      "question": "What is Official WhatsApp Business API?",
+      "answer": "Official WhatsApp Business API is Meta's enterprise cloud solution that allows businesses to message customers programmatically, maintain verified sender branding, deploy multi-agent team inboxes, and build conversational AI chatbots without risking account bans.",
+      "sort_order": 1
+    },
+    {
+      "id": 2,
+      "category": "general",
+      "question": "How does InboxWa connect to my WhatsApp number?",
+      "answer": "InboxWa connects directly to Meta's Official Cloud API. You can register a new phone number or migrate your existing business number in a few simple verification steps.",
+      "sort_order": 2
+    },
+    {
+      "id": 3,
+      "category": "pricing",
+      "question": "Can I upgrade or cancel my plan anytime?",
+      "answer": "Yes, you can upgrade, downgrade, or cancel your plan at any time directly from your dashboard. We offer a 14-day free trial on all plans.",
+      "sort_order": 1
+    },
+    {
+      "id": 4,
+      "category": "pricing",
+      "question": "Are WhatsApp conversation charges included?",
+      "answer": "InboxWa subscription covers platform features, flow builders, team seats, and shared inbox. Meta API conversation markup charges (if applicable) are billed at transparent Meta rates.",
+      "sort_order": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Guide",
+      "slug": "guide",
+      "description": "Guides and tutorials on WhatsApp Business API and automation.",
+      "parent_id": 0,
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 2,
+      "name": "Automation",
+      "slug": "automation",
+      "description": "Workflows, chatbots, and trigger-based marketing.",
+      "parent_id": 0,
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 3,
+      "name": "CRM",
+      "slug": "crm",
+      "description": "Lead tracking, customer conversations, and pipeline management.",
+      "parent_id": 0,
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 4,
+      "name": "Strategy",
+      "slug": "strategy",
+      "description": "High-converting messaging strategies and campaign tips.",
+      "parent_id": 0,
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 5,
+      "name": "E-commerce",
+      "slug": "ecommerce",
+      "description": "Shopify, WooCommerce, and abandoned cart recovery.",
+      "parent_id": 0,
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 6,
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "description": "General updates and unclassified posts.",
+      "parent_id": 0,
+      "created_at": "2026-09-09 09:00:12"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "WhatsApp API",
+      "slug": "whatsapp-api",
+      "description": "Official Cloud & On-Premise API.",
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 2,
+      "name": "Chatbot",
+      "slug": "chatbot",
+      "description": "AI conversational assistants.",
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 3,
+      "name": "Meta Partner",
+      "slug": "meta-partner",
+      "description": "Verified business solutions.",
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 4,
+      "name": "Omnichannel",
+      "slug": "omnichannel",
+      "description": "WhatsApp, Telegram, Facebook, Instagram unified.",
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 5,
+      "name": "Shopify",
+      "slug": "shopify",
+      "description": "E-commerce store integrations.",
+      "created_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 6,
+      "name": "Lead Generation",
+      "slug": "lead-generation",
+      "description": "High-intent prospect acquisition.",
+      "created_at": "2026-09-09 09:00:12"
+    }
+  ],
+  "pages": [
+    {
+      "id": 1,
+      "title": "Home",
+      "slug": "/",
+      "content": "Official WhatsApp Business API, AI Chatbot & Omnichannel Marketing Platform.",
+      "template": "home",
+      "meta_title": "InboxWa – WhatsApp Automation & AI Chatbots",
+      "meta_description": "Scale customer engagement with verified Meta WhatsApp API and AI chatbots.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 2,
+      "title": "Solutions – WhatsApp API",
+      "slug": "/solutions/whatsapp-api/",
+      "content": "Complete enterprise WhatsApp API solutions with shared inbox and broadcasts.",
+      "template": "default",
+      "meta_title": "WhatsApp API Solutions | InboxWa",
+      "meta_description": "Official Meta WhatsApp Business API for high-growth enterprises.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 3,
+      "title": "Pricing & Plans",
+      "slug": "/pricing/",
+      "content": "Transparent pricing for WhatsApp API, AI bots and multi-agent seats.",
+      "template": "default",
+      "meta_title": "InboxWa Pricing – Plans & Addons",
+      "meta_description": "Simple transparent pricing starting at ₹1,999/month.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 4,
+      "title": "Blog & Insights",
+      "slug": "/resources/blog/",
+      "content": "Latest articles, strategies and updates for WhatsApp marketing.",
+      "template": "default",
+      "meta_title": "Blog & Industry Insights | InboxWa",
+      "meta_description": "Actionable guides and strategies for conversational sales.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 5,
+      "title": "Business Leads Directory",
+      "slug": "/business-leads/",
+      "content": "Verified B2B business leads directory across 16 major categories.",
+      "template": "default",
+      "meta_title": "Business Leads Directory | InboxWa",
+      "meta_description": "Find verified high-intent business leads in India and UAE.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 6,
+      "title": "Contact Sales & Support",
+      "slug": "/contact/",
+      "content": "Talk to our product specialists and technical support engineers.",
+      "template": "default",
+      "meta_title": "Contact Us | InboxWa",
+      "meta_description": "Get in touch with InboxWa sales and technical support.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 7,
+      "title": "Instagram Channel",
+      "slug": "/channel/instagram/",
+      "content": "Automate Instagram DMs and comment-to-DM flows seamlessly.",
+      "template": "channel",
+      "meta_title": "Instagram DM Automation | InboxWa",
+      "meta_description": "Turn Instagram comments and story mentions into automated sales.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 8,
+      "title": "Telegram Channel",
+      "slug": "/channel/telegram/",
+      "content": "Broadcast to unlimited Telegram subscribers with rich bots.",
+      "template": "channel",
+      "meta_title": "Telegram Bot Automation | InboxWa",
+      "meta_description": "Build high-volume Telegram automation and customer support bots.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    },
+    {
+      "id": 9,
+      "title": "Facebook Channel",
+      "slug": "/channel/facebook/",
+      "content": "Connect Messenger to unified shared team inboxes.",
+      "template": "channel",
+      "meta_title": "Facebook Messenger Automation | InboxWa",
+      "meta_description": "Omnichannel Facebook Messenger customer support and auto-replies.",
+      "status": "published",
+      "author": "admin",
+      "created_at": "2026-09-09 09:00:12",
+      "updated_at": "2026-09-09 09:00:12"
+    }
+  ],
+  "custom_locations": []
+}

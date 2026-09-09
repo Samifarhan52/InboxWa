@@ -22,14 +22,39 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 
 // Handle Login POST
 $loginError = '';
+$lostPasswordError = '';
+
+// Handle Lost Password Verification POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lostpassword_submit'])) {
+    $answer = trim((string)($_POST['security_answer'] ?? ''));
+    $normalized = strtolower(preg_replace('/\s+/', ' ', $answer));
+    
+    // Check answer: "Farhan from ElavateX"
+    $isCorrect = ($normalized === 'farhan from elavatex')
+        || ($normalized === 'farhan from elevatex')
+        || ($normalized === 'farhan from elavate-x')
+        || (str_contains($normalized, 'farhan') && (str_contains($normalized, 'elavatex') || str_contains($normalized, 'elevatex')));
+
+    if ($isCorrect) {
+        $_SESSION['hb_admin_auth'] = true;
+        $_SESSION['hb_flash_notice'] = 'Security verification passed! You are now logged in. Please update your username and password below.';
+        header('Location: ' . $adminBase . '?page=profile&verified_reset=1');
+        exit;
+    } else {
+        $lostPasswordError = 'Incorrect answer. Please verify and try again.';
+    }
+}
+
+// Handle Standard Login POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_submit'])) {
     $user = trim($_POST['username'] ?? '');
     $pass = trim($_POST['password'] ?? '');
     
     $expectedUser = hb_get_setting('admin_user', 'admin');
+    $expectedEmail = hb_get_setting('admin_email', hb_get_setting('notification_email', 'admin@inboxwa.com'));
     $expectedPass = hb_get_setting('admin_pass', 'admin123');
 
-    if ($user === $expectedUser && $pass === $expectedPass) {
+    if (($user === $expectedUser || (str_contains($user, '@') && strtolower($user) === strtolower($expectedEmail))) && $pass === $expectedPass) {
         $_SESSION['hb_admin_auth'] = true;
         header('Location: ' . $adminBase);
         exit;
@@ -38,15 +63,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_submit'])) {
     }
 }
 
-// Render Login Page if Not Authenticated
+// Render Login or Lost Password Page if Not Authenticated
 if (!hb_is_admin_logged_in()) {
+    $isLostPassword = (isset($_GET['action']) && $_GET['action'] === 'lostpassword');
     ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log In &lsaquo; InboxWa &mdash; ElavateX</title>
+        <title><?php echo $isLostPassword ? 'Lost Password' : 'Log In'; ?> &lsaquo; InboxWa &mdash; ElavateX</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>
             * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -54,18 +80,18 @@ if (!hb_is_admin_logged_in()) {
             .login-brand { margin-bottom: 1.5rem; text-align: center; }
             .login-brand a { text-decoration: none; color: #1d2327; display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.5rem; }
             .login-wp-logo { width: 56px; height: 56px; border-radius: 50%; background: #23282d; display: flex; align-items: center; justify-content: center; color: #fff; margin: 0 auto 12px; }
-            .login-card { background: #fff; border: 1px solid #c3c4c7; box-shadow: 0 1px 3px rgba(0,0,0,0.04); width: 100%; max-width: 360px; padding: 26px 24px; border-radius: 4px; }
+            .login-card { background: #fff; border: 1px solid #c3c4c7; box-shadow: 0 1px 3px rgba(0,0,0,0.04); width: 100%; max-width: 380px; padding: 26px 24px; border-radius: 4px; }
             .form-group { margin-bottom: 1.25rem; }
             .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: #1d2327; margin-bottom: 0.4rem; }
             .form-control { width: 100%; padding: 0.65rem 0.85rem; background: #fff; border: 1px solid #8c8f94; border-radius: 4px; font-size: 0.95rem; color: #2c3338; outline: none; }
             .form-control:focus { border-color: #0073aa; box-shadow: 0 0 0 1px #0073aa; }
             .btn-submit { width: 100%; padding: 0.7rem; background: #0073aa; border: 1px solid #0073aa; border-radius: 4px; color: #fff; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.15s; }
             .btn-submit:hover { background: #005177; border-color: #005177; }
-            .error-notice { background: #fff; border-left: 4px solid #d63638; box-shadow: 0 1px 1px 0 rgba(0,0,0,.1); padding: 12px; margin-bottom: 1.25rem; font-size: 0.85rem; color: #3c434a; max-width: 360px; width: 100%; }
+            .error-notice { background: #fff; border-left: 4px solid #d63638; box-shadow: 0 1px 1px 0 rgba(0,0,0,.1); padding: 12px; margin-bottom: 1.25rem; font-size: 0.85rem; color: #3c434a; max-width: 380px; width: 100%; }
             .login-footer { margin-top: 1.5rem; text-align: center; font-size: 0.825rem; color: #646970; }
             .login-footer a { color: #0073aa; text-decoration: none; }
             .login-footer a:hover { text-decoration: underline; }
-            .default-cred { margin-top: 1.25rem; padding: 0.75rem; background: #f6f7f7; border: 1px solid #dcdcde; border-radius: 4px; font-size: 0.8rem; color: #50575e; text-align: center; }
+            .sec-box { background: #f6f7f7; border: 1px solid #dcdcde; border-left: 4px solid #0073aa; padding: 12px; margin-bottom: 1.25rem; font-size: 0.9rem; color: #1d2327; }
         </style>
     </head>
     <body>
@@ -75,24 +101,51 @@ if (!hb_is_admin_logged_in()) {
             </div>
             <a href="/"><span>InboxWa Admin</span></a>
         </div>
+
         <?php if ($loginError): ?>
             <div class="error-notice"><strong>Error:</strong> <?php echo htmlspecialchars($loginError); ?></div>
         <?php endif; ?>
+
+        <?php if ($lostPasswordError): ?>
+            <div class="error-notice"><strong>Verification Failed:</strong> <?php echo htmlspecialchars($lostPasswordError); ?></div>
+        <?php endif; ?>
+
         <div class="login-card">
-            <form method="post" action="">
-                <div class="form-group">
-                    <label for="username">Username or Email Address</label>
-                    <input type="text" id="username" name="username" class="form-control" required autofocus placeholder="admin">
+            <?php if ($isLostPassword): ?>
+                <h2 style="font-size:1.15rem; margin-bottom:0.6rem; color:#1d2327;">Security Verification</h2>
+                <p style="font-size:0.85rem; color:#646970; margin-bottom:1.25rem; line-height:1.4;">
+                    Answer the verified security question below to access your administrator dashboard and reset your password.
+                </p>
+                <form method="post" action="">
+                    <div class="form-group">
+                        <label style="font-weight:600; color:#1d2327; margin-bottom:0.4rem;">Security Question</label>
+                        <div class="sec-box">
+                            <strong>Who build this CMS?</strong>
+                        </div>
+                        <label for="security_answer">Your Answer</label>
+                        <input type="text" id="security_answer" name="security_answer" class="form-control" required autofocus placeholder="Type your answer here..." autocomplete="off">
+                    </div>
+                    <button type="submit" name="lostpassword_submit" class="btn-submit">Verify &amp; Reset Password</button>
+                </form>
+                <div style="margin-top:1.25rem; text-align:center;">
+                    <a href="<?php echo $adminBase; ?>" style="color:#0073aa; text-decoration:none; font-size:0.85rem;">&larr; Back to Log In</a>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" required placeholder="••••••••">
+            <?php else: ?>
+                <form method="post" action="">
+                    <div class="form-group">
+                        <label for="username">Username or Email Address</label>
+                        <input type="text" id="username" name="username" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" name="login_submit" class="btn-submit">Log In</button>
+                </form>
+                <div style="margin-top:1.25rem; text-align:center;">
+                    <a href="<?php echo $adminBase; ?>?action=lostpassword" style="color:#0073aa; text-decoration:none; font-size:0.85rem;">Lost your password?</a>
                 </div>
-                <button type="submit" name="login_submit" class="btn-submit">Log In</button>
-            </form>
-            <div class="default-cred">
-                Default credentials: <code>admin</code> / <code>admin123</code>
-            </div>
+            <?php endif; ?>
         </div>
         <div class="login-footer">
             <a href="/">&larr; Go to InboxWa live website</a>
@@ -109,6 +162,10 @@ $noticeError = '';
 
 // Current active page
 $page = $_GET['page'] ?? 'dashboard';
+if ($page === 'themes' || $page === 'appearance') {
+    header('Location: ' . $adminBase . '?page=editor');
+    exit;
+}
 $settingsTab = $_GET['tab'] ?? 'general';
 
 // -------------------------------------------------------------
@@ -201,28 +258,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'whatsapp_phone_number_id',
             'whatsapp_access_token',
             'whatsapp_waba_id',
-            'webhook_verify_token'
+            'webhook_verify_token',
+            'github_token',
+            'github_repo',
+            'github_branch'
         ];
 
         // Checkbox: users_can_register
-        hb_set_setting('users_can_register', isset($_POST['users_can_register']) ? '1' : '0');
+        if (isset($_POST['users_can_register']) || (!isset($_POST['redirect_tab']))) {
+            hb_set_setting('users_can_register', isset($_POST['users_can_register']) ? '1' : '0');
+        }
+
+        // Checkbox: github_auto_sync
+        if (isset($_POST['redirect_tab']) && $_POST['redirect_tab'] === 'sync') {
+            hb_set_setting('github_auto_sync', isset($_POST['github_auto_sync']) ? '1' : '0');
+        }
 
         foreach ($settingsKeys as $k) {
             if (isset($_POST[$k])) {
                 hb_set_setting($k, trim((string)$_POST[$k]));
             }
         }
-        $noticeSuccess = 'Settings saved.';
+        if (isset($_POST['redirect_tab'])) {
+            $settingsTab = trim($_POST['redirect_tab']);
+        }
+        $noticeSuccess = 'Settings saved successfully.';
     }
 
     // Change Admin Credentials
     if ($action === 'change_password') {
         $newUser = trim($_POST['new_username'] ?? '');
         $newPass = trim($_POST['new_password'] ?? '');
-        if (!empty($newUser) && !empty($newPass)) {
+        $adminEmail = trim($_POST['admin_email'] ?? '');
+        $updated = false;
+
+        if (!empty($newUser)) {
             hb_set_setting('admin_user', $newUser);
-            hb_set_setting('admin_pass', $newPass);
-            $noticeSuccess = 'Administrator credentials updated.';
+            $currentAdminUser = $newUser;
+            $updated = true;
+        }
+        if (!empty($adminEmail)) {
+            hb_set_setting('admin_email', $adminEmail);
+            hb_set_setting('notification_email', $adminEmail);
+            $updated = true;
+        }
+        if (!empty($newPass)) {
+            if (strlen($newPass) >= 6) {
+                hb_set_setting('admin_pass', $newPass);
+                $updated = true;
+                $noticeSuccess = 'Administrator credentials and password updated successfully.';
+            } else {
+                $noticeError = 'Password must be at least 6 characters.';
+            }
+        } elseif ($updated) {
+            $noticeSuccess = 'Profile details updated successfully.';
+        }
+        if ($updated) {
+            hb_save_cms_state_file();
+        }
+    }
+
+    // Sync to GitHub / Deploy Globally
+    if ($action === 'sync_github') {
+        $commitMsg = trim($_POST['commit_message'] ?? 'Update CMS configuration via Admin');
+        $syncRes = hb_github_sync_push($commitMsg);
+        if ($syncRes['ok']) {
+            $noticeSuccess = $syncRes['message'];
+        } else {
+            $noticeError = 'GitHub Sync Error: ' . $syncRes['error'];
         }
     }
 
@@ -562,6 +665,27 @@ if (isset($_GET['action'])) {
         hb_delete_location((int)$_GET['id']);
         header('Location: ' . $adminBase . '?page=locations');
         exit;
+    }
+
+    // Export CMS JSON State File
+    if ($act === 'export_cms_json') {
+        $state = hb_export_cms_state();
+        header('Content-Type: application/json; charset=utf-8');
+        header('Content-Disposition: attachment; filename="inboxwa_cms_state_' . date('Y-m-d') . '.json"');
+        echo json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    // Export SQLite Database File
+    if ($act === 'export_sqlite_db') {
+        $dbPath = hb_get_db_path();
+        if (file_exists($dbPath)) {
+            header('Content-Type: application/x-sqlite3');
+            header('Content-Disposition: attachment; filename="leads.sqlite"');
+            header('Content-Length: ' . filesize($dbPath));
+            readfile($dbPath);
+            exit;
+        }
     }
 
     // Comment Moderation
@@ -1516,15 +1640,14 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <li class="wp-menu-separator"></li>
 
-                <!-- 7. Appearance -->
+                <!-- 7. Appearance / Customize (Live CMS) -->
                 <li class="menu-top <?php echo in_array($page, ['appearance', 'themes', 'editor', 'colors']) ? 'current' : ''; ?>">
-                    <a href="<?php echo $adminBase; ?>?page=themes" class="menu-link">
+                    <a href="<?php echo $adminBase; ?>?page=editor" class="menu-link">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.59 10.56 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg></span>
                         <span class="wp-menu-name">Appearance</span>
                     </a>
                     <ul class="wp-submenu">
-                        <li class="<?php echo $page === 'themes' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=themes">Themes</a></li>
-                        <li class="<?php echo $page === 'editor' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=editor">Customize (Live CMS)</a></li>
+                        <li class="<?php echo ($page === 'editor' || $page === 'appearance' || $page === 'themes') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=editor">Customize (Live CMS)</a></li>
                         <li class="<?php echo $page === 'colors' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=colors">Color Palette</a></li>
                     </ul>
                 </li>
@@ -1584,6 +1707,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'privacy') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=privacy">Privacy</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'whatsapp') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=whatsapp">WhatsApp &amp; API</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'colors') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=colors">Colors &amp; Palette</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'sync') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=sync">Cloud &amp; Git Sync</a></li>
                     </ul>
                 </li>
 
@@ -1699,9 +1823,9 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <p id="wp-version-message">
-                                                ElavateX 6.5.4 running <a href="<?php echo $adminBase; ?>?page=themes">InboxWa</a> theme.
-                                            </p>
+                                             <p id="wp-version-message">
+                                                 ElavateX 6.5.4 running <a href="<?php echo $adminBase; ?>?page=editor">InboxWa Modern</a>.
+                                             </p>
                                         </div>
                                     </div>
                                 </div>
@@ -1857,10 +1981,10 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     </div>
 
                     <div class="postbox">
-                        <div class="postbox-header"><h2>Plugins &amp; Themes</h2></div>
+                        <div class="postbox-header"><h2>Plugins &amp; Extensions</h2></div>
                         <div class="inside">
-                            <p style="color:#00a32a; font-weight:600; margin-bottom:6px;">&#10004; Your plugins are all up to date.</p>
-                            <p style="color:#00a32a; font-weight:600;">&#10004; Your themes are all up to date.</p>
+                            <p style="color:#00a32a; font-weight:600; margin-bottom:6px;">&#10004; Your plugins and integrations are all up to date.</p>
+                            <p style="color:#00a32a; font-weight:600;">&#10004; Your CMS core is running the latest production release.</p>
                         </div>
                     </div>
 
@@ -2434,52 +2558,11 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
-                // 7. APPEARANCE & THEMES SCREEN
+                // 7. APPEARANCE (REDIRECT TO LIVE CMS CUSTOMIZER)
                 // =============================================================
                 elseif ($page === 'themes' || $page === 'appearance'): ?>
-                    <h1 class="wp-heading-inline">Themes</h1>
-
-                    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px; margin-top:16px;">
-                        <!-- Active Theme -->
-                        <div class="postbox" style="margin-bottom:0; border-top: 4px solid #2271b1;">
-                            <div style="height:150px; background:linear-gradient(135deg, #1d2327 0%, #2c3338 100%); display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:700;">
-                                InboxWa Modern
-                            </div>
-                            <div class="inside">
-                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                                    <strong style="font-size:15px;">Active: InboxWa Modern</strong>
-                                    <span class="badge badge-converted">v3.2.0</span>
-                                </div>
-                                <p style="color:#646970; font-size:12px; margin-bottom:12px;">By InboxWa Engineering. High-converting enterprise marketing and automated messaging theme.</p>
-                                <a href="<?php echo $adminBase; ?>?page=editor" class="button button-primary">Customize</a>
-                                <a href="<?php echo $adminBase; ?>?page=colors" class="button" style="margin-left:6px;">Color Palette</a>
-                            </div>
-                        </div>
-
-                        <!-- Twenty Seventeen -->
-                        <div class="postbox" style="margin-bottom:0; opacity:0.8;">
-                            <div style="height:150px; background:#e0e0e0; display:flex; align-items:center; justify-content:center; color:#555; font-size:18px; font-weight:600;">
-                                Twenty Seventeen
-                            </div>
-                            <div class="inside">
-                                <strong style="font-size:14px;">Twenty Seventeen</strong>
-                                <p style="color:#646970; font-size:12px; margin:6px 0 12px;">Classic WordPress default theme.</p>
-                                <button type="button" class="button button-small" onclick="alert('InboxWa Modern is the required production theme.')">Activate</button>
-                            </div>
-                        </div>
-
-                        <!-- Twenty Twenty-Four -->
-                        <div class="postbox" style="margin-bottom:0; opacity:0.8;">
-                            <div style="height:150px; background:#e0e0e0; display:flex; align-items:center; justify-content:center; color:#555; font-size:18px; font-weight:600;">
-                                Twenty Twenty-Four
-                            </div>
-                            <div class="inside">
-                                <strong style="font-size:14px;">Twenty Twenty-Four</strong>
-                                <p style="color:#646970; font-size:12px; margin:6px 0 12px;">Full site editing block theme.</p>
-                                <button type="button" class="button button-small" onclick="alert('InboxWa Modern is the required production theme.')">Activate</button>
-                            </div>
-                        </div>
-                    </div>
+                    <script>window.location.href = "<?php echo $adminBase; ?>?page=editor";</script>
+                    <p style="padding:20px; color:#646970;">Redirecting to Live CMS Customizer...</p>
 
                 <?php
                 // =============================================================
@@ -3083,6 +3166,13 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         <div class="postbox" style="margin-top:16px;">
                             <div class="inside" style="padding:20px;">
                                 <h2>Your Profile &amp; Security Credentials</h2>
+                                <?php if (isset($_GET['verified_reset'])): ?>
+                                    <div class="notice notice-success inline" style="margin:12px 0 16px; padding:12px 16px; border-left:4px solid #00a32a; background:#f0fbf0; border-radius:3px;">
+                                        <p style="margin:0; font-size:14px; font-weight:600; color:#1d2327;">
+                                            &#10004; Security Question Verified! Please enter your new password below and click <strong>Update Profile</strong> to complete resetting your credentials.
+                                        </p>
+                                    </div>
+                                <?php endif; ?>
                                 <form method="post" action="">
                                     <input type="hidden" name="form_action" value="change_password">
                                     <table class="form-table">
@@ -3097,8 +3187,8 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <tr>
                                             <th>New Password</th>
                                             <td>
-                                                <input type="password" name="new_password" class="regular-text" placeholder="Enter new strong password" required>
-                                                <p class="description">Must be at least 6 characters.</p>
+                                                <input type="password" name="new_password" class="regular-text" placeholder="Enter new password (leave blank to keep current)" <?php echo isset($_GET['verified_reset']) ? 'autofocus style="border-color:#2271b1; box-shadow:0 0 0 2px rgba(34,113,177,0.3);"' : ''; ?>>
+                                                <p class="description">Must be at least 6 characters. Leave blank if you only wish to update username or email.</p>
                                             </td>
                                         </tr>
                                     </table>
@@ -3644,6 +3734,94 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                             </table>
                             <p class="submit"><button type="submit" class="button button-primary">Save WhatsApp API Credentials</button></p>
                         </form>
+
+                    <?php elseif ($settingsTab === 'sync'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:16px;">Vercel &amp; Cloud Global Sync</h2>
+                        <p class="description" style="margin-bottom:16px;">
+                            Deploy and persist all CMS settings globally across Vercel serverless edge nodes. 
+                            You can push updates directly to GitHub to trigger automatic Vercel production deployments, or download database backups.
+                        </p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:20px; margin-bottom:24px;">
+                            <!-- Git Sync Card -->
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>GitHub Auto-Deploy to Vercel</h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <p style="color:#50575e; font-size:13px; line-height:1.5; margin-bottom:14px;">
+                                        When you save changes or click <strong>Deploy Globally to Vercel</strong>, InboxWa commits <code>config/cms_state.json</code> directly to your GitHub repository (<code><?php echo htmlspecialchars(hb_get_setting('github_repo', 'Samifarhan52/InboxWa')); ?></code>). Vercel detects the commit and immediately rebuilds &amp; deploys the website globally to every edge datacenter worldwide.
+                                    </p>
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="save_settings">
+                                        <input type="hidden" name="redirect_tab" value="sync">
+                                        <table class="form-table" style="margin-top:0;">
+                                            <tr>
+                                                <th style="width:140px;">GitHub Token</th>
+                                                <td>
+                                                    <input type="password" name="github_token" class="regular-text" placeholder="ghp_... or github_pat_..." value="<?php echo htmlspecialchars(hb_get_setting('github_token', '')); ?>">
+                                                    <p class="description">Personal Access Token (with <code>repo</code> or contents read/write permission).</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Repository</th>
+                                                <td>
+                                                    <input type="text" name="github_repo" class="regular-text" value="<?php echo htmlspecialchars(hb_get_setting('github_repo', 'Samifarhan52/InboxWa')); ?>">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Branch</th>
+                                                <td>
+                                                    <input type="text" name="github_branch" class="regular-text" value="<?php echo htmlspecialchars(hb_get_setting('github_branch', 'main')); ?>">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Auto-Publish</th>
+                                                <td>
+                                                    <label>
+                                                        <input type="checkbox" name="github_auto_sync" value="1" <?php echo hb_get_setting('github_auto_sync', '1') === '1' ? 'checked' : ''; ?>>
+                                                        Automatically push to GitHub on every admin change
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p class="submit" style="margin-top:10px;">
+                                            <button type="submit" class="button button-primary">Save Sync Settings</button>
+                                        </p>
+                                    </form>
+
+                                    <hr style="border:0; border-top:1px solid #dcdcde; margin:16px 0;">
+
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="sync_github">
+                                        <input type="hidden" name="commit_message" value="Deploy CMS updates to Vercel via Admin Console">
+                                        <button type="submit" class="button button-secondary" style="color:#0073aa; font-weight:600;">
+                                            &#128640; Deploy Globally to Vercel Now (Push to GitHub)
+                                        </button>
+                                        <p class="description" style="margin-top:6px;">Forces an immediate commit to GitHub to trigger a fresh Vercel production deployment.</p>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Snapshots & Backup -->
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>Instant State Backups</h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <p style="color:#50575e; font-size:13px; line-height:1.5; margin-bottom:14px;">
+                                        Export your complete website configuration, dynamic pages, pricing tables, testimonials, FAQs, and customizer sections at any time.
+                                    </p>
+                                    <div style="display:flex; flex-direction:column; gap:10px;">
+                                        <a href="<?php echo $adminBase; ?>?action=export_cms_json" class="button" style="text-align:center; padding:6px 12px;">
+                                            &#128190; Download Portable State (cms_state.json)
+                                        </a>
+                                        <a href="<?php echo $adminBase; ?>?action=export_sqlite_db" class="button" style="text-align:center; padding:6px 12px;">
+                                            &#128451; Download Database (leads.sqlite)
+                                        </a>
+                                        <a href="<?php echo $adminBase; ?>?action=export&format=csv" class="button" style="text-align:center; padding:6px 12px;">
+                                            &#128203; Export All Leads &amp; Inquiries (CSV)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php endif; ?>
 
                     <!-- Platform Core Footer -->
