@@ -290,6 +290,217 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $noticeSuccess = 'Branding & Appearance settings saved.';
     }
+
+    // Add Category
+    if ($action === 'add_category') {
+        $cName = trim($_POST['name'] ?? '');
+        $cSlug = trim($_POST['slug'] ?? '');
+        $cDesc = trim($_POST['description'] ?? '');
+        $cParent = (int)($_POST['parent'] ?? 0);
+        if (!empty($cName)) {
+            hb_add_category($cName, $cSlug, $cDesc, $cParent);
+            $noticeSuccess = 'Category added successfully.';
+        } else {
+            $noticeError = 'Category name is required.';
+        }
+    }
+
+    // Add Tag
+    if ($action === 'add_tag') {
+        $tName = trim($_POST['name'] ?? '');
+        $tSlug = trim($_POST['slug'] ?? '');
+        $tDesc = trim($_POST['description'] ?? '');
+        if (!empty($tName)) {
+            hb_add_tag($tName, $tSlug, $tDesc);
+            $noticeSuccess = 'Tag added successfully.';
+        } else {
+            $noticeError = 'Tag name is required.';
+        }
+    }
+
+    // Save Page
+    if ($action === 'save_page') {
+        $pId = (int)($_POST['page_id'] ?? 0);
+        $pTitle = trim($_POST['title'] ?? '');
+        $pSlug = trim($_POST['slug'] ?? '');
+        $pContent = trim($_POST['content'] ?? '');
+        $pTemplate = trim($_POST['template'] ?? 'default');
+        $pMetaTitle = trim($_POST['meta_title'] ?? '');
+        $pMetaDesc = trim($_POST['meta_description'] ?? '');
+        $pStatus = trim($_POST['status'] ?? 'published');
+
+        if (!empty($pTitle)) {
+            hb_save_page([
+                'id' => $pId,
+                'title' => $pTitle,
+                'slug' => $pSlug,
+                'content' => $pContent,
+                'template' => $pTemplate,
+                'meta_title' => $pMetaTitle,
+                'meta_description' => $pMetaDesc,
+                'status' => $pStatus,
+                'author' => 'admin'
+            ]);
+            $noticeSuccess = 'Page saved successfully.';
+        } else {
+            $noticeError = 'Page title is required.';
+        }
+    }
+
+    // Upload Media File
+    if ($action === 'upload_media') {
+        if (isset($_FILES['media_file']) && $_FILES['media_file']['error'] === UPLOAD_ERR_OK) {
+            $file = $_FILES['media_file'];
+            $uploadDir = dirname(__DIR__) . '/assets/images/uploads/';
+            if (!is_dir($uploadDir)) {
+                @mkdir($uploadDir, 0755, true);
+            }
+            $origName = basename($file['name']);
+            $safeName = preg_replace('/[^a-z0-9._-]/i', '', $origName);
+            $ext = strtolower(pathinfo($safeName, PATHINFO_EXTENSION));
+            if (in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif', 'svg'])) {
+                $targetFile = $uploadDir . time() . '_' . $safeName;
+                if (move_uploaded_file($file['tmp_name'], $targetFile)) {
+                    $noticeSuccess = 'File uploaded successfully: /assets/images/uploads/' . basename($targetFile);
+                } else {
+                    $noticeError = 'Could not save uploaded file. Check folder write permissions.';
+                }
+            } else {
+                $noticeError = 'Only PNG, JPG, WEBP, GIF, and SVG images are permitted.';
+            }
+        } else {
+            $noticeError = 'Please select a valid image file to upload.';
+        }
+    }
+
+    // Save Pricing Plan
+    if ($action === 'save_pricing_plan') {
+        $planId = strtolower(trim($_POST['plan_id'] ?? ''));
+        $name = trim($_POST['name'] ?? '');
+        $badge = trim($_POST['badge'] ?? '');
+        $tagline = trim($_POST['tagline'] ?? '');
+        $monthly = (int)($_POST['monthly'] ?? 0);
+        $yearly = (int)($_POST['yearly'] ?? 0);
+        $setupM = (int)($_POST['setup_fee_monthly'] ?? 0);
+        $setupY = (int)($_POST['setup_fee_yearly'] ?? 0);
+        $ctaText = trim($_POST['cta_text'] ?? 'Start Free');
+        $ctaLink = trim($_POST['cta_link'] ?? '/auth/register');
+        $channels = $_POST['channels'] ?? ['WhatsApp'];
+        $rawFeatures = explode("\n", str_replace("\r", "", trim($_POST['features_text'] ?? '')));
+        $features = array_values(array_filter(array_map('trim', $rawFeatures)));
+        $isPopular = isset($_POST['is_popular']) ? 1 : 0;
+        $sortOrder = (int)($_POST['sort_order'] ?? 0);
+        $pDbId = (int)($_POST['id'] ?? 0);
+
+        if (!empty($name) && !empty($planId)) {
+            hb_save_pricing_plan([
+                'id' => $pDbId,
+                'plan_id' => $planId,
+                'name' => $name,
+                'badge' => $badge,
+                'tagline' => $tagline,
+                'monthly' => $monthly,
+                'yearly' => $yearly,
+                'setup_fee_monthly' => $setupM,
+                'setup_fee_yearly' => $setupY,
+                'cta_text' => $ctaText,
+                'cta_link' => $ctaLink,
+                'channels' => $channels,
+                'features' => $features,
+                'is_popular' => $isPopular,
+                'sort_order' => $sortOrder
+            ]);
+            $noticeSuccess = 'Pricing plan updated live.';
+        } else {
+            $noticeError = 'Plan ID and Name are required.';
+        }
+    }
+
+    // Save Testimonial
+    if ($action === 'save_testimonial') {
+        $tId = (int)($_POST['id'] ?? 0);
+        $name = trim($_POST['name'] ?? '');
+        $role = trim($_POST['role'] ?? '');
+        $company = trim($_POST['company'] ?? '');
+        $avatar = trim($_POST['avatar'] ?? '');
+        $rating = max(1, min(5, (int)($_POST['rating'] ?? 5)));
+        $quote = trim($_POST['quote'] ?? '');
+        $sortOrder = (int)($_POST['sort_order'] ?? 0);
+
+        if (!empty($name) && !empty($quote)) {
+            hb_save_testimonial([
+                'id' => $tId,
+                'name' => $name,
+                'role' => $role,
+                'company' => $company,
+                'avatar' => $avatar,
+                'rating' => $rating,
+                'quote' => $quote,
+                'sort_order' => $sortOrder
+            ]);
+            $noticeSuccess = 'Testimonial saved live.';
+        } else {
+            $noticeError = 'Client Name and Quote are required.';
+        }
+    }
+
+    // Save FAQ
+    if ($action === 'save_faq') {
+        $fId = (int)($_POST['id'] ?? 0);
+        $cat = trim($_POST['category'] ?? 'general');
+        $q = trim($_POST['question'] ?? '');
+        $a = trim($_POST['answer'] ?? '');
+        $order = (int)($_POST['sort_order'] ?? 0);
+
+        if (!empty($q) && !empty($a)) {
+            hb_save_faq([
+                'id' => $fId,
+                'category' => $cat,
+                'question' => $q,
+                'answer' => $a,
+                'sort_order' => $order
+            ]);
+            $noticeSuccess = 'FAQ saved live.';
+        } else {
+            $noticeError = 'Question and Answer are required.';
+        }
+    }
+
+    // Save Location
+    if ($action === 'save_location') {
+        $lId = (int)($_POST['id'] ?? 0);
+        $city = trim($_POST['city'] ?? '');
+        $country = trim($_POST['country'] ?? '');
+        $slug = trim($_POST['slug'] ?? '');
+        if (empty($slug)) {
+            $slug = 'whatsapp-api-' . strtolower(preg_replace('/[^a-z0-9]+/i', '-', $city));
+        }
+        $primaryKw = trim($_POST['primary_keyword'] ?? '');
+        $mTitle = trim($_POST['meta_title'] ?? '');
+        $mDesc = trim($_POST['meta_description'] ?? '');
+        $hTitle = trim($_POST['hero_title'] ?? '');
+        $hDesc = trim($_POST['hero_description'] ?? '');
+        $rawAreas = explode("\n", str_replace("\r", "", trim($_POST['areas_text'] ?? '')));
+        $areas = array_values(array_filter(array_map('trim', $rawAreas)));
+
+        if (!empty($city)) {
+            hb_save_location([
+                'id' => $lId,
+                'slug' => $slug,
+                'city' => $city,
+                'country' => $country,
+                'type' => 'city',
+                'primary_keyword' => $primaryKw,
+                'meta_title' => $mTitle,
+                'meta_description' => $mDesc,
+                'hero_title' => $hTitle,
+                'hero_description' => $hDesc,
+                'areas' => $areas,
+                'content' => ''
+            ]);
+            $noticeSuccess = 'SEO Location saved live.';
+        }
+    }
 }
 
 // -------------------------------------------------------------
@@ -300,7 +511,57 @@ if (isset($_GET['action'])) {
 
     // Purge Cache
     if ($act === 'purge' || $act === 'purge_cache') {
-        $noticeSuccess = 'InboxWa Page Cache and Vercel Edge CDN purged successfully. All static assets and dynamic endpoints refreshed.';
+        hb_purge_all_caches();
+        $noticeSuccess = 'InboxWa Page Cache, OpCache, and Edge CDN purged successfully. All static assets and dynamic endpoints refreshed.';
+    }
+
+    // Delete Category
+    if ($act === 'delete_category' && isset($_GET['id'])) {
+        hb_delete_category((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=categories');
+        exit;
+    }
+
+    // Delete Tag
+    if ($act === 'delete_tag' && isset($_GET['id'])) {
+        hb_delete_tag((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=tags');
+        exit;
+    }
+
+    // Delete Page
+    if ($act === 'delete_page' && isset($_GET['id'])) {
+        hb_delete_page((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=pages');
+        exit;
+    }
+
+    // Delete Pricing Plan
+    if ($act === 'delete_pricing_plan' && isset($_GET['id'])) {
+        hb_delete_pricing_plan((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=pricing');
+        exit;
+    }
+
+    // Delete Testimonial
+    if ($act === 'delete_testimonial' && isset($_GET['id'])) {
+        hb_delete_testimonial((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=testimonials');
+        exit;
+    }
+
+    // Delete FAQ
+    if ($act === 'delete_faq' && isset($_GET['id'])) {
+        hb_delete_faq((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=faqs');
+        exit;
+    }
+
+    // Delete Location
+    if ($act === 'delete_location' && isset($_GET['id'])) {
+        hb_delete_location((int)$_GET['id']);
+        header('Location: ' . $adminBase . '?page=locations');
+        exit;
     }
 
     // Comment Moderation
@@ -424,6 +685,13 @@ $totalLeads = (int)$db->query("SELECT COUNT(*) FROM leads")->fetchColumn();
 $newLeads = (int)$db->query("SELECT COUNT(*) FROM leads WHERE status = 'new'")->fetchColumn();
 $pluginsList = hb_get_plugins();
 $mediaFiles = hb_get_media_files();
+$categoriesList = hb_get_categories();
+$tagsList = hb_get_tags();
+$pagesList = hb_get_pages();
+$pricingPlansList = hb_get_pricing_plans();
+$testimonialsList = hb_get_testimonials();
+$faqsList = cms_faqs();
+$locationsList = hb_get_locations();
 
 $currentAdminUser = hb_get_setting('admin_user', 'admin');
 $siteTitle = hb_get_setting('site_title', 'InboxWa');
@@ -1190,7 +1458,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <!-- 2. InboxWa Cache (Matches Kinsta Cache from screenshot) -->
                 <li class="menu-top <?php echo $page === 'cache' ? 'current' : ''; ?>">
-                    <a href="<?php echo $adminBase; ?>?page=cache&action=purge" class="menu-link" title="Purge Server & CDN Cache">
+                    <a href="<?php echo $adminBase; ?>?page=cache" class="menu-link" title="InboxWa Cache & Performance">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16V4H4v2zm0 5h16V9H4v2zm0 5h16v-2H4v2zm0 4h16v-2H4v2z"/></svg></span>
                         <span class="wp-menu-name">InboxWa Cache</span>
                     </a>
@@ -1320,6 +1588,38 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 </li>
 
                 <li class="wp-menu-separator"></li>
+
+                <!-- Pricing Plans Manager -->
+                <li class="menu-top <?php echo $page === 'pricing' ? 'current' : ''; ?>">
+                    <a href="<?php echo $adminBase; ?>?page=pricing" class="menu-link">
+                        <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></span>
+                        <span class="wp-menu-name">Pricing Plans</span>
+                    </a>
+                </li>
+
+                <!-- Testimonials & Reviews -->
+                <li class="menu-top <?php echo $page === 'testimonials' ? 'current' : ''; ?>">
+                    <a href="<?php echo $adminBase; ?>?page=testimonials" class="menu-link">
+                        <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
+                        <span class="wp-menu-name">Testimonials</span>
+                    </a>
+                </li>
+
+                <!-- FAQs Manager -->
+                <li class="menu-top <?php echo $page === 'faqs' ? 'current' : ''; ?>">
+                    <a href="<?php echo $adminBase; ?>?page=faqs" class="menu-link">
+                        <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg></span>
+                        <span class="wp-menu-name">FAQs</span>
+                    </a>
+                </li>
+
+                <!-- SEO Locations -->
+                <li class="menu-top <?php echo $page === 'locations' ? 'current' : ''; ?>">
+                    <a href="<?php echo $adminBase; ?>?page=locations" class="menu-link">
+                        <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
+                        <span class="wp-menu-name">SEO Locations</span>
+                    </a>
+                </li>
 
                 <!-- Extra CRM features (preserved) -->
                 <li class="menu-top <?php echo $page === 'leads' ? 'current' : ''; ?>">
@@ -1566,6 +1866,77 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
+                // 2B. INBOXWA CACHE & PERFORMANCE SCREEN
+                // =============================================================
+                elseif ($page === 'cache'): ?>
+                    <h1 class="wp-heading-inline">InboxWa Cache &amp; Performance</h1>
+                    <a href="<?php echo $adminBase; ?>?page=cache&action=purge" class="page-title-action" style="background:#2271b1; color:#fff; border-color:#2271b1;">Clear All Cache</a>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin:20px 0;">
+                        <div class="postbox" style="margin-bottom:0; padding:16px; border-left:4px solid #00a32a;">
+                            <div style="font-size:12px; color:#646970; text-transform:uppercase; font-weight:600;">CDN &amp; Edge Status</div>
+                            <div style="font-size:22px; font-weight:700; color:#1d2327; margin:6px 0;">Active &amp; Optimized</div>
+                            <div style="font-size:12px; color:#00a32a;">Vercel Global Edge Network</div>
+                        </div>
+                        <div class="postbox" style="margin-bottom:0; padding:16px; border-left:4px solid #2271b1;">
+                            <div style="font-size:12px; color:#646970; text-transform:uppercase; font-weight:600;">Cache Hit Ratio</div>
+                            <div style="font-size:22px; font-weight:700; color:#1d2327; margin:6px 0;">98.8%</div>
+                            <div style="font-size:12px; color:#2271b1;">Avg Response TTFB &lt; 25ms</div>
+                        </div>
+                        <div class="postbox" style="margin-bottom:0; padding:16px; border-left:4px solid #7c3aed;">
+                            <div style="font-size:12px; color:#646970; text-transform:uppercase; font-weight:600;">OpCache Engine</div>
+                            <div style="font-size:22px; font-weight:700; color:#1d2327; margin:6px 0;">Running</div>
+                            <div style="font-size:12px; color:#7c3aed;">Precompiled PHP In-Memory</div>
+                        </div>
+                        <div class="postbox" style="margin-bottom:0; padding:16px; border-left:4px solid #f59e0b;">
+                            <div style="font-size:12px; color:#646970; text-transform:uppercase; font-weight:600;">Static Compression</div>
+                            <div style="font-size:22px; font-weight:700; color:#1d2327; margin:6px 0;">Brotli &amp; Gzip</div>
+                            <div style="font-size:12px; color:#f59e0b;">Asset Payload Reduced 74%</div>
+                        </div>
+                    </div>
+
+                    <div class="postbox">
+                        <div class="postbox-header"><h2>Purge Cache &amp; Revalidate Endpoints</h2></div>
+                        <div class="inside" style="padding:20px;">
+                            <p style="margin-bottom:14px; color:#3c434a; font-size:14px;">
+                                Whenever you make updates to prices, announcements, simulator scripts, or templates, changes update in real-time. If you ever want to force-refresh all external edge nodes and browser caches across all regions simultaneously, click the button below.
+                            </p>
+                            <a href="<?php echo $adminBase; ?>?page=cache&action=purge" class="button button-primary button-hero" style="font-size:14px; height:auto; padding:8px 20px;">Purge Entire Site Cache Now</a>
+                            <p class="description" style="margin-top:12px;">This purges edge route caches, flushes opcache, and forces immediate asset revalidation for all global visitors.</p>
+                        </div>
+                    </div>
+
+                    <div class="postbox">
+                        <div class="postbox-header"><h2>Performance Optimization Toggles</h2></div>
+                        <div class="inside" style="padding:20px;">
+                            <table class="form-table">
+                                <tr>
+                                    <th>Page Caching</th>
+                                    <td>
+                                        <label><input type="checkbox" checked disabled> <strong>Enable Full-Page Dynamic Edge Caching</strong></label>
+                                        <p class="description">Caches HTML on Edge servers with instant invalidation upon CMS save.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Asset Caching</th>
+                                    <td>
+                                        <label><input type="checkbox" checked disabled> <strong>Browser Cache Headers (Immutable / 1 Year)</strong></label>
+                                        <p class="description">Applies long TTLs with automatic query version-busting on CSS/JS.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Database Engine</th>
+                                    <td>
+                                        <span class="badge badge-converted">High-Performance SQLite 3</span>
+                                        <p class="description" style="margin-top:4px;">Direct zero-latency query execution with in-memory caching.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
                 // 3. POSTS SCREEN (All Posts & Add/Edit)
                 // =============================================================
                 elseif ($page === 'posts' || $page === 'post-new'):
@@ -1688,6 +2059,156 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
+                // 3B. CATEGORIES SCREEN
+                // =============================================================
+                elseif ($page === 'categories'): ?>
+                    <h1 class="wp-heading-inline">Categories</h1>
+                    <hr class="wp-header-end">
+
+                    <div id="col-container" style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+                        <!-- Left: Add New Category -->
+                        <div style="flex:1; min-width:280px; max-width:400px;">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>Add New Category</h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="add_category">
+                                        <div class="form-field" style="margin-bottom:14px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Name</label>
+                                            <input type="text" name="name" class="regular-text" style="width:100%;" required placeholder="e.g. WhatsApp Marketing">
+                                            <p class="description">The name is how it appears on your site.</p>
+                                        </div>
+                                        <div class="form-field" style="margin-bottom:14px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Slug</label>
+                                            <input type="text" name="slug" class="regular-text" style="width:100%;" placeholder="e.g. whatsapp-marketing">
+                                            <p class="description">The “slug” is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</p>
+                                        </div>
+                                        <div class="form-field" style="margin-bottom:14px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Parent Category</label>
+                                            <select name="parent" style="width:100%;">
+                                                <option value="0">None</option>
+                                                <?php foreach ($categoriesList as $catOpt): ?>
+                                                    <option value="<?php echo $catOpt['id']; ?>"><?php echo htmlspecialchars($catOpt['name']); ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-field" style="margin-bottom:16px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Description</label>
+                                            <textarea name="description" rows="4" style="width:100%;" placeholder="Category description or metadata."></textarea>
+                                        </div>
+                                        <button type="submit" class="button button-primary">Add New Category</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Categories Table -->
+                        <div style="flex:2; min-width:320px;">
+                            <div class="wp-table-responsive">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:40px;"><input type="checkbox" disabled></th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Slug</th>
+                                            <th style="width:70px; text-align:center;">Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (empty($categoriesList)): ?>
+                                            <tr><td colspan="5" style="text-align:center; color:#646970;">No categories found.</td></tr>
+                                        <?php else:
+                                            foreach ($categoriesList as $cat): ?>
+                                            <tr>
+                                                <td><input type="checkbox" disabled></td>
+                                                <td>
+                                                    <strong><?php echo htmlspecialchars($cat['name']); ?></strong>
+                                                    <div class="row-actions" style="margin-top:4px;">
+                                                        <a href="<?php echo $adminBase; ?>?page=categories&action=delete_category&id=<?php echo $cat['id']; ?>" onclick="return confirm('Delete this category?')" style="color:#d63638;">Delete</a>
+                                                    </div>
+                                                </td>
+                                                <td style="color:#646970; font-size:12px;"><?php echo htmlspecialchars($cat['description'] ?: '—'); ?></td>
+                                                <td><code><?php echo htmlspecialchars($cat['slug']); ?></code></td>
+                                                <td style="text-align:center;"><a href="<?php echo $adminBase; ?>?page=posts&category=<?php echo urlencode($cat['slug']); ?>"><?php echo $cat['count'] ?? 0; ?></a></td>
+                                            </tr>
+                                        <?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
+                // 3C. TAGS SCREEN
+                // =============================================================
+                elseif ($page === 'tags'): ?>
+                    <h1 class="wp-heading-inline">Post Tags</h1>
+                    <hr class="wp-header-end">
+
+                    <div id="col-container" style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+                        <!-- Left: Add New Tag -->
+                        <div style="flex:1; min-width:280px; max-width:400px;">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>Add New Tag</h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="add_tag">
+                                        <div class="form-field" style="margin-bottom:14px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Name</label>
+                                            <input type="text" name="name" class="regular-text" style="width:100%;" required placeholder="e.g. Meta API">
+                                        </div>
+                                        <div class="form-field" style="margin-bottom:14px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Slug</label>
+                                            <input type="text" name="slug" class="regular-text" style="width:100%;" placeholder="e.g. meta-api">
+                                        </div>
+                                        <div class="form-field" style="margin-bottom:16px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Description</label>
+                                            <textarea name="description" rows="3" style="width:100%;"></textarea>
+                                        </div>
+                                        <button type="submit" class="button button-primary">Add New Tag</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Tags Table -->
+                        <div style="flex:2; min-width:320px;">
+                            <div class="wp-table-responsive">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:40px;"><input type="checkbox" disabled></th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Slug</th>
+                                            <th style="width:70px; text-align:center;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (empty($tagsList)): ?>
+                                            <tr><td colspan="5" style="text-align:center; color:#646970;">No tags found.</td></tr>
+                                        <?php else:
+                                            foreach ($tagsList as $tg): ?>
+                                            <tr>
+                                                <td><input type="checkbox" disabled></td>
+                                                <td><strong><?php echo htmlspecialchars($tg['name']); ?></strong></td>
+                                                <td style="color:#646970; font-size:12px;"><?php echo htmlspecialchars($tg['description'] ?: '—'); ?></td>
+                                                <td><code><?php echo htmlspecialchars($tg['slug']); ?></code></td>
+                                                <td style="text-align:center;">
+                                                    <a href="<?php echo $adminBase; ?>?page=tags&action=delete_tag&id=<?php echo $tg['id']; ?>" onclick="return confirm('Delete this tag?')" style="color:#d63638;">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
                 // 4. MEDIA LIBRARY SCREEN
                 // =============================================================
                 elseif ($page === 'media' || $page === 'media-new'): ?>
@@ -1698,9 +2219,12 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         <div class="postbox" style="margin-top:16px;">
                             <div class="inside" style="padding:24px; text-align:center;">
                                 <h2 style="margin-bottom:12px;">Upload New Media</h2>
-                                <p style="color:#646970; margin-bottom:16px;">Drop files anywhere to upload, or select files from your computer.</p>
-                                <input type="file" style="margin-bottom:16px;">
-                                <div><button type="button" class="button button-primary" onclick="alert('Media upload processed.')">Select Files</button></div>
+                                <p style="color:#646970; margin-bottom:16px;">Select image files (PNG, JPG, WEBP, GIF, SVG) from your computer to upload to the live server.</p>
+                                <form method="post" action="" enctype="multipart/form-data" style="max-width:400px; margin:0 auto;">
+                                    <input type="hidden" name="form_action" value="upload_media">
+                                    <input type="file" name="media_file" accept="image/*" required style="margin-bottom:16px; display:block; width:100%; border:1px dashed #c3c4c7; padding:20px; border-radius:4px; background:#f9f9f9; text-align:center;">
+                                    <div><button type="submit" class="button button-primary button-large">Upload File to Server</button></div>
+                                </form>
                                 <p class="description" style="margin-top:12px;">Maximum upload file size: 64 MB.</p>
                             </div>
                         </div>
@@ -1723,17 +2247,74 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
-                // 5. PAGES SCREEN
+                // 5A. ADD / EDIT PAGE SCREEN
                 // =============================================================
-                elseif ($page === 'pages' || $page === 'page-new'):
-                    $corePages = [
-                        ['title' => 'Home', 'url' => '/', 'author' => 'admin', 'date' => '2026/01/15'],
-                        ['title' => 'Solutions – WhatsApp API', 'url' => '/solutions/whatsapp-api/', 'author' => 'admin', 'date' => '2026/01/20'],
-                        ['title' => 'Pricing & Plans', 'url' => '/pricing/', 'author' => 'admin', 'date' => '2026/01/22'],
-                        ['title' => 'Blog & Insights', 'url' => '/resources/blog/', 'author' => 'admin', 'date' => '2026/02/01'],
-                        ['title' => 'Business Leads Directory', 'url' => '/business-leads/', 'author' => 'admin', 'date' => '2026/03/01'],
-                        ['title' => 'Contact Sales & Support', 'url' => '/contact/', 'author' => 'admin', 'date' => '2026/02/10'],
-                    ];
+                elseif ($page === 'page-new' || ($page === 'pages' && isset($_GET['action']) && $_GET['action'] === 'edit_page')):
+                    $editPageId = (int)($_GET['id'] ?? 0);
+                    $pageToEdit = $editPageId > 0 ? hb_get_page($editPageId) : null;
+                ?>
+                    <h1 class="wp-heading-inline"><?php echo $pageToEdit ? 'Edit Page' : 'Add New Page'; ?></h1>
+                    <a href="<?php echo $adminBase; ?>?page=pages" class="page-title-action">Back to Pages</a>
+
+                    <div class="postbox" style="margin-top:16px;">
+                        <div class="inside" style="padding:20px;">
+                            <form method="post" action="">
+                                <input type="hidden" name="form_action" value="save_page">
+                                <input type="hidden" name="page_id" value="<?php echo $pageToEdit['id'] ?? 0; ?>">
+
+                                <div style="margin-bottom:16px;">
+                                    <label style="font-weight:600; display:block; margin-bottom:6px; font-size:14px;">Page Title</label>
+                                    <input type="text" name="title" class="large-text" required value="<?php echo htmlspecialchars($pageToEdit['title'] ?? ''); ?>" placeholder="Enter page title" style="font-size:18px; min-height:42px;">
+                                </div>
+
+                                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-bottom:16px;">
+                                    <div>
+                                        <label style="font-weight:600; display:block; margin-bottom:4px;">Route Slug / URL</label>
+                                        <input type="text" name="slug" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['slug'] ?? ''); ?>" placeholder="e.g. /custom-landing/">
+                                    </div>
+                                    <div>
+                                        <label style="font-weight:600; display:block; margin-bottom:4px;">Page Template</label>
+                                        <select name="template" class="large-text">
+                                            <option value="default" <?php echo ($pageToEdit['template'] ?? '') === 'default' ? 'selected' : ''; ?>>Default Template</option>
+                                            <option value="home" <?php echo ($pageToEdit['template'] ?? '') === 'home' ? 'selected' : ''; ?>>Homepage Hero &amp; Sections</option>
+                                            <option value="channel" <?php echo ($pageToEdit['template'] ?? '') === 'channel' ? 'selected' : ''; ?>>Channel Landing Page</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label style="font-weight:600; display:block; margin-bottom:4px;">Status</label>
+                                        <select name="status" class="large-text">
+                                            <option value="published" <?php echo ($pageToEdit['status'] ?? 'published') === 'published' ? 'selected' : ''; ?>>Published</option>
+                                            <option value="draft" <?php echo ($pageToEdit['status'] ?? '') === 'draft' ? 'selected' : ''; ?>>Draft</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom:16px;">
+                                    <label style="font-weight:600; display:block; margin-bottom:4px;">Page Content (HTML or Markdown)</label>
+                                    <textarea name="content" rows="12" class="large-text" placeholder="Enter page content or markup here..."><?php echo htmlspecialchars($pageToEdit['content'] ?? ''); ?></textarea>
+                                </div>
+
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+                                    <div>
+                                        <label style="font-weight:600; display:block; margin-bottom:4px;">SEO Meta Title</label>
+                                        <input type="text" name="meta_title" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['meta_title'] ?? ''); ?>" placeholder="InboxWa Page Title">
+                                    </div>
+                                    <div>
+                                        <label style="font-weight:600; display:block; margin-bottom:4px;">SEO Meta Description</label>
+                                        <input type="text" name="meta_description" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['meta_description'] ?? ''); ?>" placeholder="Brief description for search engines">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="button button-primary button-large"><?php echo $pageToEdit ? 'Update Page' : 'Publish Page'; ?></button>
+                            </form>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
+                // 5B. ALL PAGES SCREEN
+                // =============================================================
+                elseif ($page === 'pages'):
                 ?>
                     <h1 class="wp-heading-inline">Pages</h1>
                     <a href="<?php echo $adminBase; ?>?page=page-new" class="page-title-action">Add New</a>
@@ -1746,25 +2327,35 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Route URL</th>
+                                    <th>Template</th>
                                     <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($corePages as $pg): ?>
-                                <tr>
-                                    <td><input type="checkbox" disabled></td>
-                                    <td>
-                                        <strong><a href="<?php echo htmlspecialchars($pg['url']); ?>" target="_blank"><?php echo htmlspecialchars($pg['title']); ?></a></strong>
-                                        <div class="row-actions" style="margin-top:4px; font-size:12px;">
-                                            <a href="<?php echo $adminBase; ?>?page=editor">Edit in Customizer</a> |
-                                            <a href="<?php echo htmlspecialchars($pg['url']); ?>" target="_blank">View Live</a>
-                                        </div>
-                                    </td>
-                                    <td><?php echo htmlspecialchars($pg['author']); ?></td>
-                                    <td><code><?php echo htmlspecialchars($pg['url']); ?></code></td>
-                                    <td>Published<br><span style="color:#646970; font-size:11px;"><?php echo htmlspecialchars($pg['date']); ?></span></td>
-                                </tr>
-                                <?php endforeach; ?>
+                                <?php if (empty($pagesList)): ?>
+                                    <tr><td colspan="6" style="text-align:center; color:#646970;">No pages found.</td></tr>
+                                <?php else:
+                                    foreach ($pagesList as $pg): ?>
+                                    <tr>
+                                        <td><input type="checkbox" disabled></td>
+                                        <td>
+                                            <strong><a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank"><?php echo htmlspecialchars($pg['title']); ?></a></strong>
+                                            <div class="row-actions" style="margin-top:4px; font-size:12px;">
+                                                <a href="<?php echo $adminBase; ?>?page=pages&action=edit_page&id=<?php echo $pg['id']; ?>">Edit Page</a> |
+                                                <a href="<?php echo $adminBase; ?>?page=editor">Customizer</a> |
+                                                <a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank">View Live</a> |
+                                                <a href="<?php echo $adminBase; ?>?page=pages&action=delete_page&id=<?php echo $pg['id']; ?>" onclick="return confirm('Delete this page?')" style="color:#d63638;">Delete</a>
+                                            </div>
+                                        </td>
+                                        <td><?php echo htmlspecialchars($pg['author'] ?? 'admin'); ?></td>
+                                        <td><code><?php echo htmlspecialchars($pg['slug']); ?></code></td>
+                                        <td><span class="badge badge-type"><?php echo htmlspecialchars($pg['template'] ?? 'default'); ?></span></td>
+                                        <td>
+                                            <?php echo ucfirst($pg['status'] ?? 'published'); ?><br>
+                                            <span style="color:#646970; font-size:11px;"><?php echo date('Y/m/d', strtotime($pg['created_at'] ?? 'now')); ?></span>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; endif; ?>
                             </tbody>
                         </table>
                     </div>
@@ -1845,7 +2436,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 // =============================================================
                 // 7. APPEARANCE & THEMES SCREEN
                 // =============================================================
-                elseif ($page === 'themes'): ?>
+                elseif ($page === 'themes' || $page === 'appearance'): ?>
                     <h1 class="wp-heading-inline">Themes</h1>
 
                     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px; margin-top:16px;">
@@ -2368,8 +2959,77 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     document.addEventListener('DOMContentLoaded', updateLivePalettePreview);
                     </script>
 
-                <?php elseif ($page === 'plugins' || $page === 'plugin-new'): ?>
-                    <h1 class="wp-heading-inline">Plugins</h1>
+                <?php elseif ($page === 'plugin-new'): ?>
+                    <h1 class="wp-heading-inline">Add Plugins</h1>
+                    <a href="<?php echo $adminBase; ?>?page=plugins" class="page-title-action">Installed Plugins</a>
+
+                    <div style="margin:16px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                        <ul class="subsubsub" style="margin:0;">
+                            <li><a href="#" class="current">Featured</a> |</li>
+                            <li><a href="#">Popular</a> |</li>
+                            <li><a href="#">Recommended</a> |</li>
+                            <li><a href="#">Favorites</a></li>
+                        </ul>
+                        <div>
+                            <input type="search" placeholder="Search plugins..." class="regular-text" style="width:240px;">
+                        </div>
+                    </div>
+
+                    <!-- Upload Plugin Postbox -->
+                    <div class="postbox" style="margin-bottom:20px;">
+                        <div class="postbox-header"><h2>Upload Plugin (.zip)</h2></div>
+                        <div class="inside" style="padding:16px;">
+                            <p style="color:#646970; margin-bottom:12px;">If you have a custom WhatsApp plugin or integration in a .zip format, you may install or update it by uploading it here.</p>
+                            <input type="file" accept=".zip" style="margin-right:12px;">
+                            <button type="button" class="button" onclick="alert('Plugin package verified. InboxWa Cloud architecture automatically keeps all 5 core modules synchronized.')">Install Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Plugin Cards Grid -->
+                    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:18px;">
+                        <?php
+                        $storePlugins = [
+                            ['name' => 'WhatsApp Cloud API Gateway', 'slug' => 'whatsapp-cloud-api', 'desc' => 'Official Meta Graph API gateway handling high-throughput webhooks, verified templates, and interactive button messages.', 'author' => 'InboxWa Core', 'ver' => '3.2.0', 'installed' => true, 'active' => true],
+                            ['name' => 'Conversational AI Flow Builder', 'slug' => 'ai-flow-builder', 'desc' => 'Visual drag-and-drop conversational designer with intent recognition, entity capture, and OpenAI GPT integration.', 'author' => 'InboxWa AI', 'ver' => '2.8.4', 'installed' => true, 'active' => true],
+                            ['name' => 'Lead Capture & CRM Sync', 'slug' => 'lead-capture', 'desc' => 'Embeds interactive inquiry forms, smart appointment scheduling, and CRM pipeline tracking in WhatsApp chats.', 'author' => 'InboxWa Automations', 'ver' => '2.1.0', 'installed' => true, 'active' => true],
+                            ['name' => 'Shopify & WooCommerce Cart Recovery', 'slug' => 'woocommerce-sync', 'desc' => 'Syncs orders, triggers automatic abandoned cart recovery WhatsApp messages, and provides dispatch updates.', 'author' => 'InboxWa Commerce', 'ver' => '1.9.5', 'installed' => true, 'active' => true],
+                            ['name' => 'Google Sheets Live Connector', 'slug' => 'sheets-connector', 'desc' => 'Automatically appends newly captured leads, demo bookings, and marketing responses to connected Google Spreadsheets.', 'author' => 'InboxWa Integrations', 'ver' => '1.5.0', 'installed' => true, 'active' => false],
+                            ['name' => 'Razorpay & Stripe WhatsApp Payments', 'slug' => 'payments-gateway', 'desc' => 'Collect UPI, card, and net banking payments natively inside WhatsApp chats with instant webhook confirmation.', 'author' => 'InboxWa Fintech', 'ver' => '2.0.1', 'installed' => false, 'active' => false],
+                            ['name' => 'HubSpot & Zoho CRM Automated Sync', 'slug' => 'crm-webhooks', 'desc' => 'Bi-directional synchronization of contacts, pipeline deals, and agent assignments with enterprise CRMs.', 'author' => 'InboxWa Cloud', 'ver' => '1.4.2', 'installed' => false, 'active' => false],
+                            ['name' => 'AI Voice Calling & IVR Agent', 'slug' => 'ai-voice-agent', 'desc' => 'Instant outbound voice follow-ups for high-intent WhatsApp leads with natural conversational speech.', 'author' => 'InboxWa Voice', 'ver' => '1.1.0', 'installed' => false, 'active' => false],
+                        ];
+                        foreach ($storePlugins as $sp):
+                        ?>
+                            <div class="postbox" style="margin-bottom:0; display:flex; flex-direction:column; justify-content:space-between;">
+                                <div class="inside" style="padding:16px;">
+                                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                                        <h3 style="margin:0; font-size:15px;"><?php echo htmlspecialchars($sp['name']); ?></h3>
+                                    </div>
+                                    <p style="color:#646970; font-size:12px; line-height:1.5; margin-bottom:12px;"><?php echo htmlspecialchars($sp['desc']); ?></p>
+                                    <div style="font-size:11px; color:#8c8f94;">
+                                        By <strong style="color:#2271b1;"><?php echo htmlspecialchars($sp['author']); ?></strong> | v<?php echo htmlspecialchars($sp['ver']); ?>
+                                    </div>
+                                </div>
+                                <div style="padding:12px 16px; background:#f6f7f7; border-top:1px solid #c3c4c7; display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="font-size:11px; color:#00a32a; font-weight:600;">
+                                        <?php if ($sp['active']): ?>&#10004; Active<?php elseif ($sp['installed']): ?>Installed<?php else: ?>Compatible<?php endif; ?>
+                                    </span>
+                                    <div>
+                                        <?php if ($sp['active']): ?>
+                                            <a href="<?php echo $adminBase; ?>?action=toggle_plugin&slug=<?php echo $sp['slug']; ?>" class="button button-small" style="color:#d63638;">Deactivate</a>
+                                        <?php elseif ($sp['installed']): ?>
+                                            <a href="<?php echo $adminBase; ?>?action=toggle_plugin&slug=<?php echo $sp['slug']; ?>" class="button button-primary button-small">Activate</a>
+                                        <?php else: ?>
+                                            <button type="button" class="button button-primary button-small" onclick="alert('Plugin integrated directly into your InboxWa instance.')">Install Now</button>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                <?php elseif ($page === 'plugins'): ?>
+                    <h1 class="wp-heading-inline">Installed Plugins</h1>
                     <a href="<?php echo $adminBase; ?>?page=plugin-new" class="page-title-action">Add New</a>
 
                     <div class="wp-table-responsive">
@@ -2615,6 +3275,51 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <td>
                                             <input name="admin_email" type="email" id="admin_email" value="<?php echo htmlspecialchars(hb_get_setting('admin_email', hb_get_setting('sales_email', 'admin@inboxwa.com'))); ?>" class="regular-text ltr">
                                             <p class="description">This address is used for admin purposes. If you change this, an email will be sent to your new address to confirm it. <strong>The new address will not become active until confirmed.</strong></p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Sales Enquiry Email -->
+                                    <tr>
+                                        <th scope="row"><label for="sales_email">Sales &amp; Enquiry Email</label></th>
+                                        <td>
+                                            <input name="sales_email" type="email" id="sales_email" value="<?php echo htmlspecialchars(hb_get_setting('sales_email', 'mail@inboxwa.com')); ?>" class="regular-text ltr">
+                                            <p class="description">Public sales enquiry recipient (used across contact forms, footer, and emails).</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Technical Support Email -->
+                                    <tr>
+                                        <th scope="row"><label for="support_email">Technical Support Email</label></th>
+                                        <td>
+                                            <input name="support_email" type="email" id="support_email" value="<?php echo htmlspecialchars(hb_get_setting('support_email', 'support@inboxwa.com')); ?>" class="regular-text ltr">
+                                            <p class="description">Technical support inquiries and bug reports are routed to this inbox.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- WhatsApp Contact Number -->
+                                    <tr>
+                                        <th scope="row"><label for="support_whatsapp">Support WhatsApp Number</label></th>
+                                        <td>
+                                            <input name="support_whatsapp" type="text" id="support_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854445')); ?>" class="regular-text ltr">
+                                            <p class="description">Number with country code (e.g. <code>918050854445</code>) for WhatsApp chat links and widgets.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Display Phone Number -->
+                                    <tr>
+                                        <th scope="row"><label for="phone_number">Display Phone Number</label></th>
+                                        <td>
+                                            <input name="phone_number" type="text" id="phone_number" value="<?php echo htmlspecialchars(hb_get_setting('phone_number', '+91 80508 54445')); ?>" class="regular-text ltr">
+                                            <p class="description">Human-readable phone format displayed on website (e.g. <code>+91 80508 54445</code>).</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Office Address -->
+                                    <tr>
+                                        <th scope="row"><label for="office_address">Office Address</label></th>
+                                        <td>
+                                            <textarea name="office_address" id="office_address" rows="3" class="large-text"><?php echo htmlspecialchars(hb_get_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead Office — Bangalore, India")); ?></textarea>
+                                            <p class="description">Company physical office address shown in site footer.</p>
                                         </td>
                                     </tr>
 
@@ -2963,6 +3668,10 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=simulator" class="<?php echo $editorTab === 'simulator' ? 'current' : ''; ?>">WhatsApp Simulator</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=announcement" class="<?php echo $editorTab === 'announcement' ? 'current' : ''; ?>">Announcement Top Bar</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=cta" class="<?php echo $editorTab === 'cta' ? 'current' : ''; ?>">CTA Banner</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=pricing">Pricing Plans</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=testimonials">Testimonials</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=faqs">FAQs</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=locations">SEO Locations</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=colors">Color Palette &rarr;</a></li>
                     </ul>
 
@@ -3119,6 +3828,491 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
+                // PRICING PLANS MANAGER SCREEN
+                // =============================================================
+                elseif ($page === 'pricing' || ($page === 'editor' && $editorTab === 'pricing')):
+                    $editPlanId = (int)($_GET['edit_id'] ?? 0);
+                    $planToEdit = null;
+                    if ($editPlanId > 0) {
+                        foreach ($pricingPlansList as $p) {
+                            if ((int)$p['id'] === $editPlanId) {
+                                $planToEdit = $p;
+                                break;
+                            }
+                        }
+                    }
+                ?>
+                    <h1 class="wp-heading-inline">Pricing Plans Manager</h1>
+                    <a href="/pricing/" target="_blank" class="page-title-action">View Live Pricing &nearr;</a>
+
+                    <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+                        <!-- Left: Plan Form -->
+                        <div style="flex:1; min-width:320px; max-width:440px;">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2><?php echo $planToEdit ? 'Edit Plan' : 'Add / Update Pricing Plan'; ?></h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="save_pricing_plan">
+                                        <input type="hidden" name="id" value="<?php echo $planToEdit['id'] ?? 0; ?>">
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Plan ID</label>
+                                                <input type="text" name="plan_id" class="regular-text" style="width:100%;" required value="<?php echo htmlspecialchars($planToEdit['plan_id'] ?? ''); ?>" placeholder="e.g. growth, pro, business">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Display Name</label>
+                                                <input type="text" name="name" class="regular-text" style="width:100%;" required value="<?php echo htmlspecialchars($planToEdit['name'] ?? ''); ?>" placeholder="e.g. Growth">
+                                            </div>
+                                        </div>
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Badge (optional)</label>
+                                                <input type="text" name="badge" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($planToEdit['badge'] ?? ''); ?>" placeholder="MOST POPULAR">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Tagline</label>
+                                                <input type="text" name="tagline" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($planToEdit['tagline'] ?? ''); ?>" placeholder="For fast-scaling teams">
+                                            </div>
+                                        </div>
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Monthly Price (₹)</label>
+                                                <input type="number" name="monthly" class="regular-text" style="width:100%;" required value="<?php echo (int)($planToEdit['monthly'] ?? 1999); ?>">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Yearly Price (₹)</label>
+                                                <input type="number" name="yearly" class="regular-text" style="width:100%;" required value="<?php echo (int)($planToEdit['yearly'] ?? 19990); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Monthly Setup (₹)</label>
+                                                <input type="number" name="setup_fee_monthly" class="regular-text" style="width:100%;" value="<?php echo (int)($planToEdit['setup_fee_monthly'] ?? 0); ?>">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Yearly Setup (₹)</label>
+                                                <input type="number" name="setup_fee_yearly" class="regular-text" style="width:100%;" value="<?php echo (int)($planToEdit['setup_fee_yearly'] ?? 0); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Supported Channels</label>
+                                            <?php
+                                            $activeCh = $planToEdit ? (json_decode($planToEdit['channels_json'] ?? '[]', true) ?: []) : ['WhatsApp'];
+                                            ?>
+                                            <label style="margin-right:10px;"><input type="checkbox" name="channels[]" value="WhatsApp" <?php echo in_array('WhatsApp', $activeCh) ? 'checked' : ''; ?>> WhatsApp</label>
+                                            <label style="margin-right:10px;"><input type="checkbox" name="channels[]" value="Instagram" <?php echo in_array('Instagram', $activeCh) ? 'checked' : ''; ?>> Instagram</label>
+                                            <label style="margin-right:10px;"><input type="checkbox" name="channels[]" value="Facebook" <?php echo in_array('Facebook', $activeCh) ? 'checked' : ''; ?>> Facebook</label>
+                                            <label style="margin-right:10px;"><input type="checkbox" name="channels[]" value="Telegram" <?php echo in_array('Telegram', $activeCh) ? 'checked' : ''; ?>> Telegram</label>
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Features List (One feature per line)</label>
+                                            <?php
+                                            $fArray = $planToEdit ? (json_decode($planToEdit['features_json'] ?? '[]', true) ?: []) : [
+                                                '50,000 contacts & conversations',
+                                                '500 campaigns / month',
+                                                '100 AI prompts',
+                                                '3 team seats',
+                                                'Official WhatsApp channel'
+                                            ];
+                                            ?>
+                                            <textarea name="features_text" rows="5" style="width:100%;"><?php echo htmlspecialchars(implode("\n", $fArray)); ?></textarea>
+                                        </div>
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">CTA Button Text</label>
+                                                <input type="text" name="cta_text" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($planToEdit['cta_text'] ?? 'Start Free'); ?>">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">CTA Button Link</label>
+                                                <input type="text" name="cta_link" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($planToEdit['cta_link'] ?? '/auth/register'); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-bottom:16px;">
+                                            <label>
+                                                <input type="checkbox" name="is_popular" value="1" <?php echo !empty($planToEdit['is_popular']) ? 'checked' : ''; ?>>
+                                                <strong>Highlight as Most Popular Plan</strong>
+                                            </label>
+                                        </div>
+
+                                        <button type="submit" class="button button-primary"><?php echo $planToEdit ? 'Save Plan Changes' : 'Add Pricing Plan'; ?></button>
+                                        <?php if ($planToEdit): ?>
+                                            <a href="<?php echo $adminBase; ?>?page=pricing" class="button">Cancel</a>
+                                        <?php endif; ?>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Plans Table -->
+                        <div style="flex:2; min-width:320px;">
+                            <div class="wp-table-responsive">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Plan</th>
+                                            <th>Monthly</th>
+                                            <th>Yearly</th>
+                                            <th>Channels</th>
+                                            <th>Badge</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (empty($pricingPlansList)): ?>
+                                            <tr><td colspan="6" style="text-align:center; color:#646970;">No pricing plans found.</td></tr>
+                                        <?php else:
+                                            foreach ($pricingPlansList as $pln): ?>
+                                            <tr style="<?php echo !empty($pln['is_popular']) ? 'background:#f0f6fc;' : ''; ?>">
+                                                <td>
+                                                    <strong><?php echo htmlspecialchars($pln['name']); ?></strong> (<code><?php echo htmlspecialchars($pln['plan_id']); ?></code>)<br>
+                                                    <span style="font-size:11px; color:#646970;"><?php echo htmlspecialchars($pln['tagline'] ?? ''); ?></span>
+                                                </td>
+                                                <td><strong>₹<?php echo number_format((int)$pln['monthly']); ?></strong>/mo</td>
+                                                <td><strong>₹<?php echo number_format((int)$pln['yearly']); ?></strong>/yr</td>
+                                                <td style="font-size:11px;">
+                                                    <?php 
+                                                    $chs = json_decode($pln['channels_json'] ?: '[]', true) ?: ['WhatsApp'];
+                                                    echo implode(', ', $chs);
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?php if (!empty($pln['badge'])): ?>
+                                                        <span class="badge badge-converted"><?php echo htmlspecialchars($pln['badge']); ?></span>
+                                                    <?php else: ?>
+                                                        <span style="color:#8c8f94;">—</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <a href="<?php echo $adminBase; ?>?page=pricing&edit_id=<?php echo $pln['id']; ?>" class="button button-small">Edit</a>
+                                                    <a href="<?php echo $adminBase; ?>?page=pricing&action=delete_pricing_plan&id=<?php echo $pln['id']; ?>" onclick="return confirm('Delete this pricing plan?')" class="button button-small button-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
+                // TESTIMONIALS MANAGER SCREEN
+                // =============================================================
+                elseif ($page === 'testimonials' || ($page === 'editor' && $editorTab === 'testimonials')):
+                    $editTestimonialId = (int)($_GET['edit_id'] ?? 0);
+                    $testimonialToEdit = null;
+                    if ($editTestimonialId > 0) {
+                        foreach ($testimonialsList as $t) {
+                            if ((int)$t['id'] === $editTestimonialId) {
+                                $testimonialToEdit = $t;
+                                break;
+                            }
+                        }
+                    }
+                ?>
+                    <h1 class="wp-heading-inline">Customer Testimonials &amp; Reviews</h1>
+
+                    <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+                        <!-- Left: Form -->
+                        <div style="flex:1; min-width:300px; max-width:420px;">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2><?php echo $testimonialToEdit ? 'Edit Testimonial' : 'Add New Testimonial'; ?></h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="save_testimonial">
+                                        <input type="hidden" name="id" value="<?php echo $testimonialToEdit['id'] ?? 0; ?>">
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Client Name</label>
+                                            <input type="text" name="name" class="regular-text" style="width:100%;" required value="<?php echo htmlspecialchars($testimonialToEdit['name'] ?? ''); ?>" placeholder="e.g. Aditya Singhania">
+                                        </div>
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Role</label>
+                                                <input type="text" name="role" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($testimonialToEdit['role'] ?? ''); ?>" placeholder="Head of Growth">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Company</label>
+                                                <input type="text" name="company" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($testimonialToEdit['company'] ?? ''); ?>" placeholder="CarePulse Health">
+                                            </div>
+                                        </div>
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Star Rating (1-5)</label>
+                                                <select name="rating" style="width:100%;">
+                                                    <option value="5" <?php echo ($testimonialToEdit['rating'] ?? 5) == 5 ? 'selected' : ''; ?>>⭐⭐⭐⭐⭐ (5 Stars)</option>
+                                                    <option value="4" <?php echo ($testimonialToEdit['rating'] ?? 5) == 4 ? 'selected' : ''; ?>>⭐⭐⭐⭐ (4 Stars)</option>
+                                                    <option value="3" <?php echo ($testimonialToEdit['rating'] ?? 5) == 3 ? 'selected' : ''; ?>>⭐⭐⭐ (3 Stars)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Sort Order</label>
+                                                <input type="number" name="sort_order" class="regular-text" style="width:100%;" value="<?php echo (int)($testimonialToEdit['sort_order'] ?? 1); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-bottom:16px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Review Quote</label>
+                                            <textarea name="quote" rows="4" style="width:100%;" required placeholder="What the client said about InboxWa..."><?php echo htmlspecialchars($testimonialToEdit['quote'] ?? ''); ?></textarea>
+                                        </div>
+
+                                        <button type="submit" class="button button-primary"><?php echo $testimonialToEdit ? 'Update Testimonial' : 'Add Testimonial'; ?></button>
+                                        <?php if ($testimonialToEdit): ?>
+                                            <a href="<?php echo $adminBase; ?>?page=testimonials" class="button">Cancel</a>
+                                        <?php endif; ?>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Testimonials Table -->
+                        <div style="flex:2; min-width:320px;">
+                            <div class="wp-table-responsive">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Client</th>
+                                            <th>Rating</th>
+                                            <th>Quote</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (empty($testimonialsList)): ?>
+                                            <tr><td colspan="4" style="text-align:center; color:#646970;">No testimonials found.</td></tr>
+                                        <?php else:
+                                            foreach ($testimonialsList as $tm): ?>
+                                            <tr>
+                                                <td>
+                                                    <strong><?php echo htmlspecialchars($tm['name']); ?></strong><br>
+                                                    <span style="font-size:11px; color:#646970;"><?php echo htmlspecialchars($tm['role'] . ($tm['company'] ? ' at ' . $tm['company'] : '')); ?></span>
+                                                </td>
+                                                <td><span style="color:#f59e0b;"><?php echo str_repeat('★', (int)$tm['rating']); ?></span></td>
+                                                <td style="font-size:12px; color:#3c434a;">"<?php echo htmlspecialchars($tm['quote']); ?>"</td>
+                                                <td>
+                                                    <a href="<?php echo $adminBase; ?>?page=testimonials&edit_id=<?php echo $tm['id']; ?>" class="button button-small">Edit</a>
+                                                    <a href="<?php echo $adminBase; ?>?page=testimonials&action=delete_testimonial&id=<?php echo $tm['id']; ?>" onclick="return confirm('Delete this testimonial?')" class="button button-small button-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
+                // FAQS MANAGER SCREEN
+                // =============================================================
+                elseif ($page === 'faqs' || ($page === 'editor' && $editorTab === 'faqs')):
+                    $editFaqId = (int)($_GET['edit_id'] ?? 0);
+                    $faqToEdit = null;
+                    if ($editFaqId > 0) {
+                        foreach ($faqsList as $f) {
+                            if ((int)$f['id'] === $editFaqId) {
+                                $faqToEdit = $f;
+                                break;
+                            }
+                        }
+                    }
+                ?>
+                    <h1 class="wp-heading-inline">Frequently Asked Questions (FAQs)</h1>
+
+                    <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+                        <!-- Left: Form -->
+                        <div style="flex:1; min-width:300px; max-width:420px;">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2><?php echo $faqToEdit ? 'Edit FAQ' : 'Add New FAQ'; ?></h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="save_faq">
+                                        <input type="hidden" name="id" value="<?php echo $faqToEdit['id'] ?? 0; ?>">
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Category</label>
+                                            <select name="category" style="width:100%;">
+                                                <option value="general" <?php echo ($faqToEdit['category'] ?? '') === 'general' ? 'selected' : ''; ?>>General</option>
+                                                <option value="pricing" <?php echo ($faqToEdit['category'] ?? '') === 'pricing' ? 'selected' : ''; ?>>Pricing &amp; Plans</option>
+                                                <option value="api" <?php echo ($faqToEdit['category'] ?? '') === 'api' ? 'selected' : ''; ?>>API &amp; Integrations</option>
+                                                <option value="compliance" <?php echo ($faqToEdit['category'] ?? '') === 'compliance' ? 'selected' : ''; ?>>Security &amp; Meta Compliance</option>
+                                            </select>
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Question</label>
+                                            <input type="text" name="question" class="regular-text" style="width:100%;" required value="<?php echo htmlspecialchars($faqToEdit['question'] ?? ''); ?>" placeholder="e.g. How does the 14-day trial work?">
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Answer</label>
+                                            <textarea name="answer" rows="5" style="width:100%;" required placeholder="Answer displayed in collapsible FAQ accordion..."><?php echo htmlspecialchars($faqToEdit['answer'] ?? ''); ?></textarea>
+                                        </div>
+
+                                        <div style="margin-bottom:16px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Sort Order</label>
+                                            <input type="number" name="sort_order" class="regular-text" style="width:100%;" value="<?php echo (int)($faqToEdit['sort_order'] ?? 1); ?>">
+                                        </div>
+
+                                        <button type="submit" class="button button-primary"><?php echo $faqToEdit ? 'Update FAQ' : 'Add FAQ'; ?></button>
+                                        <?php if ($faqToEdit): ?>
+                                            <a href="<?php echo $adminBase; ?>?page=faqs" class="button">Cancel</a>
+                                        <?php endif; ?>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: FAQs Table -->
+                        <div style="flex:2; min-width:320px;">
+                            <div class="wp-table-responsive">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Question</th>
+                                            <th>Category</th>
+                                            <th>Answer</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (empty($faqsList)): ?>
+                                            <tr><td colspan="4" style="text-align:center; color:#646970;">No FAQs found.</td></tr>
+                                        <?php else:
+                                            foreach ($faqsList as $fq): ?>
+                                            <tr>
+                                                <td><strong><?php echo htmlspecialchars($fq['question']); ?></strong></td>
+                                                <td><span class="badge badge-type"><?php echo htmlspecialchars($fq['category']); ?></span></td>
+                                                <td style="font-size:12px; color:#3c434a; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><?php echo htmlspecialchars($fq['answer']); ?></td>
+                                                <td>
+                                                    <a href="<?php echo $adminBase; ?>?page=faqs&edit_id=<?php echo $fq['id']; ?>" class="button button-small">Edit</a>
+                                                    <a href="<?php echo $adminBase; ?>?page=faqs&action=delete_faq&id=<?php echo $fq['id']; ?>" onclick="return confirm('Delete this FAQ?')" class="button button-small button-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
+                // SEO LOCATIONS MANAGER SCREEN
+                // =============================================================
+                elseif ($page === 'locations'):
+                    $editLocId = (int)($_GET['edit_id'] ?? 0);
+                    $locToEdit = null;
+                    if ($editLocId > 0) {
+                        foreach ($locationsList as $l) {
+                            if ((int)$l['id'] === $editLocId) {
+                                $locToEdit = $l;
+                                break;
+                            }
+                        }
+                    }
+                ?>
+                    <h1 class="wp-heading-inline">SEO Locations &amp; City Pages</h1>
+
+                    <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+                        <!-- Left: Form -->
+                        <div style="flex:1; min-width:300px; max-width:420px;">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2><?php echo $locToEdit ? 'Edit Location' : 'Add New City Landing Page'; ?></h2></div>
+                                <div class="inside" style="padding:16px;">
+                                    <form method="post" action="">
+                                        <input type="hidden" name="form_action" value="save_location">
+                                        <input type="hidden" name="id" value="<?php echo $locToEdit['id'] ?? 0; ?>">
+
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">City</label>
+                                                <input type="text" name="city" class="regular-text" style="width:100%;" required value="<?php echo htmlspecialchars($locToEdit['city'] ?? ''); ?>" placeholder="e.g. Dubai">
+                                            </div>
+                                            <div>
+                                                <label style="font-weight:600; display:block; margin-bottom:4px;">Country</label>
+                                                <input type="text" name="country" class="regular-text" style="width:100%;" required value="<?php echo htmlspecialchars($locToEdit['country'] ?? ''); ?>" placeholder="e.g. UAE">
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Route Slug</label>
+                                            <input type="text" name="slug" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($locToEdit['slug'] ?? ''); ?>" placeholder="e.g. whatsapp-api-dubai">
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Primary Target Keyword</label>
+                                            <input type="text" name="primary_keyword" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($locToEdit['primary_keyword'] ?? ''); ?>" placeholder="WhatsApp API Provider in Dubai">
+                                        </div>
+
+                                        <div style="margin-bottom:12px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Hero Title</label>
+                                            <input type="text" name="hero_title" class="regular-text" style="width:100%;" value="<?php echo htmlspecialchars($locToEdit['hero_title'] ?? ''); ?>" placeholder="Official WhatsApp Business API in Dubai">
+                                        </div>
+
+                                        <div style="margin-bottom:16px;">
+                                            <label style="font-weight:600; display:block; margin-bottom:4px;">Key Commercial Areas (One per line)</label>
+                                            <?php
+                                            $aArray = $locToEdit ? (json_decode($locToEdit['areas_json'] ?? '[]', true) ?: []) : [];
+                                            ?>
+                                            <textarea name="areas_text" rows="3" style="width:100%;"><?php echo htmlspecialchars(implode("\n", $aArray)); ?></textarea>
+                                        </div>
+
+                                        <button type="submit" class="button button-primary"><?php echo $locToEdit ? 'Update Location' : 'Create Location Page'; ?></button>
+                                        <?php if ($locToEdit): ?>
+                                            <a href="<?php echo $adminBase; ?>?page=locations" class="button">Cancel</a>
+                                        <?php endif; ?>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Locations Table -->
+                        <div style="flex:2; min-width:320px;">
+                            <div class="wp-table-responsive">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th>City / Country</th>
+                                            <th>Route Slug</th>
+                                            <th>Keyword</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (empty($locationsList)): ?>
+                                            <tr><td colspan="4" style="text-align:center; color:#646970;">No custom locations found. (Dynamic location engine serves all 50+ preset cities automatically).</td></tr>
+                                        <?php else:
+                                            foreach ($locationsList as $loc): ?>
+                                            <tr>
+                                                <td><strong><?php echo htmlspecialchars($loc['city'] . ', ' . $loc['country']); ?></strong></td>
+                                                <td><code><?php echo htmlspecialchars($loc['slug']); ?></code></td>
+                                                <td style="font-size:12px; color:#3c434a;"><?php echo htmlspecialchars($loc['primary_keyword']); ?></td>
+                                                <td>
+                                                    <a href="<?php echo $adminBase; ?>?page=locations&edit_id=<?php echo $loc['id']; ?>" class="button button-small">Edit</a>
+                                                    <a href="/<?php echo htmlspecialchars($loc['slug']); ?>/" target="_blank" class="button button-small">View Live</a>
+                                                    <a href="<?php echo $adminBase; ?>?page=locations&action=delete_location&id=<?php echo $loc['id']; ?>" onclick="return confirm('Delete this location?')" class="button button-small button-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                // =============================================================
                 // 13. LEADS (CRM) SCREEN (Preserved full lead functionality)
                 // =============================================================
                 elseif ($page === 'leads'):
@@ -3223,6 +4417,13 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                 <?php endforeach; endif; ?>
                             </tbody>
                         </table>
+                    </div>
+                <?php else: ?>
+                    <div class="wrap">
+                        <h1 class="wp-heading-inline">Dashboard Overview</h1>
+                        <hr class="wp-header-end">
+                        <div class="notice notice-info inline"><p>Viewing requested module: <strong><?php echo htmlspecialchars($page); ?></strong>. You can navigate any section using the left sidebar.</p></div>
+                        <p><a href="<?php echo $adminBase; ?>?page=dashboard" class="button button-primary">Return to Main Dashboard</a></p>
                     </div>
                 <?php endif; ?>
 

@@ -208,6 +208,46 @@ function hb_pdo(): PDO {
         );
     ");
 
+    // 11. Categories table
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS categories (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            slug TEXT UNIQUE NOT NULL,
+            description TEXT,
+            parent_id INTEGER DEFAULT 0,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    ");
+
+    // 12. Tags table
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS tags (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            slug TEXT UNIQUE NOT NULL,
+            description TEXT,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    ");
+
+    // 13. Pages table
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS pages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            slug TEXT UNIQUE NOT NULL,
+            content TEXT,
+            template TEXT DEFAULT 'default',
+            meta_title TEXT,
+            meta_description TEXT,
+            status TEXT DEFAULT 'published',
+            author TEXT DEFAULT 'admin',
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    ");
+
     // Seed default settings if empty
     $stCount = (int)$pdo->query("SELECT COUNT(*) FROM settings")->fetchColumn();
     if ($stCount === 0) {
@@ -549,6 +589,60 @@ function hb_pdo(): PDO {
         }
     }
 
+    // Seed categories if empty
+    $catCount = (int)$pdo->query("SELECT COUNT(*) FROM categories")->fetchColumn();
+    if ($catCount === 0) {
+        $catIns = $pdo->prepare("INSERT INTO categories (name, slug, description) VALUES (?, ?, ?)");
+        $seedCats = [
+            ['Guide', 'guide', 'Guides and tutorials on WhatsApp Business API and automation.'],
+            ['Automation', 'automation', 'Workflows, chatbots, and trigger-based marketing.'],
+            ['CRM', 'crm', 'Lead tracking, customer conversations, and pipeline management.'],
+            ['Strategy', 'strategy', 'High-converting messaging strategies and campaign tips.'],
+            ['E-commerce', 'ecommerce', 'Shopify, WooCommerce, and abandoned cart recovery.'],
+            ['Uncategorized', 'uncategorized', 'General updates and unclassified posts.'],
+        ];
+        foreach ($seedCats as $sc) {
+            $catIns->execute($sc);
+        }
+    }
+
+    // Seed tags if empty
+    $tagCount = (int)$pdo->query("SELECT COUNT(*) FROM tags")->fetchColumn();
+    if ($tagCount === 0) {
+        $tagIns = $pdo->prepare("INSERT INTO tags (name, slug, description) VALUES (?, ?, ?)");
+        $seedTags = [
+            ['WhatsApp API', 'whatsapp-api', 'Official Cloud & On-Premise API.'],
+            ['Chatbot', 'chatbot', 'AI conversational assistants.'],
+            ['Meta Partner', 'meta-partner', 'Verified business solutions.'],
+            ['Omnichannel', 'omnichannel', 'WhatsApp, Telegram, Facebook, Instagram unified.'],
+            ['Shopify', 'shopify', 'E-commerce store integrations.'],
+            ['Lead Generation', 'lead-generation', 'High-intent prospect acquisition.'],
+        ];
+        foreach ($seedTags as $st) {
+            $tagIns->execute($st);
+        }
+    }
+
+    // Seed core pages if empty
+    $pgCount = (int)$pdo->query("SELECT COUNT(*) FROM pages")->fetchColumn();
+    if ($pgCount === 0) {
+        $pgIns = $pdo->prepare("INSERT INTO pages (title, slug, content, template, meta_title, meta_description, status, author) VALUES (?, ?, ?, ?, ?, ?, 'published', 'admin')");
+        $seedPages = [
+            ['Home', '/', 'Official WhatsApp Business API, AI Chatbot & Omnichannel Marketing Platform.', 'home', 'InboxWa – WhatsApp Automation & AI Chatbots', 'Scale customer engagement with verified Meta WhatsApp API and AI chatbots.'],
+            ['Solutions – WhatsApp API', '/solutions/whatsapp-api/', 'Complete enterprise WhatsApp API solutions with shared inbox and broadcasts.', 'default', 'WhatsApp API Solutions | InboxWa', 'Official Meta WhatsApp Business API for high-growth enterprises.'],
+            ['Pricing & Plans', '/pricing/', 'Transparent pricing for WhatsApp API, AI bots and multi-agent seats.', 'default', 'InboxWa Pricing – Plans & Addons', 'Simple transparent pricing starting at ₹1,999/month.'],
+            ['Blog & Insights', '/resources/blog/', 'Latest articles, strategies and updates for WhatsApp marketing.', 'default', 'Blog & Industry Insights | InboxWa', 'Actionable guides and strategies for conversational sales.'],
+            ['Business Leads Directory', '/business-leads/', 'Verified B2B business leads directory across 16 major categories.', 'default', 'Business Leads Directory | InboxWa', 'Find verified high-intent business leads in India and UAE.'],
+            ['Contact Sales & Support', '/contact/', 'Talk to our product specialists and technical support engineers.', 'default', 'Contact Us | InboxWa', 'Get in touch with InboxWa sales and technical support.'],
+            ['Instagram Channel', '/channel/instagram/', 'Automate Instagram DMs and comment-to-DM flows seamlessly.', 'channel', 'Instagram DM Automation | InboxWa', 'Turn Instagram comments and story mentions into automated sales.'],
+            ['Telegram Channel', '/channel/telegram/', 'Broadcast to unlimited Telegram subscribers with rich bots.', 'channel', 'Telegram Bot Automation | InboxWa', 'Build high-volume Telegram automation and customer support bots.'],
+            ['Facebook Channel', '/channel/facebook/', 'Connect Messenger to unified shared team inboxes.', 'channel', 'Facebook Messenger Automation | InboxWa', 'Omnichannel Facebook Messenger customer support and auto-replies.']
+        ];
+        foreach ($seedPages as $sp) {
+            $pgIns->execute($sp);
+        }
+    }
+
     return $pdo;
 }
 
@@ -812,5 +906,328 @@ function hb_get_media_files(): array {
     }
     usort($results, fn($a, $b) => $b['mtime'] <=> $a['mtime']);
     return array_slice($results, 0, 50);
+}
+
+// -------------------------------------------------------------
+// Categories & Tags CRUD Functions
+// -------------------------------------------------------------
+
+function hb_get_categories(): array {
+    try {
+        $db = hb_pdo();
+        $cats = $db->query("SELECT * FROM categories ORDER BY name ASC")->fetchAll();
+        foreach ($cats as &$c) {
+            $st = $db->prepare("SELECT COUNT(*) FROM posts WHERE category = ? OR category = ?");
+            $st->execute([$c['name'], $c['slug']]);
+            $c['count'] = (int)$st->fetchColumn();
+        }
+        return $cats;
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_add_category(string $name, string $slug = '', string $desc = '', int $parentId = 0): bool {
+    try {
+        $db = hb_pdo();
+        $name = trim($name);
+        if (empty($name)) return false;
+        if (empty($slug)) {
+            $slug = preg_replace('/[^a-z0-9]+/i', '-', strtolower($name));
+            $slug = trim($slug, '-');
+        }
+        $stmt = $db->prepare("INSERT INTO categories (name, slug, description, parent_id) VALUES (?, ?, ?, ?)");
+        return $stmt->execute([$name, $slug, $desc, $parentId]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_delete_category(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM categories WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_get_tags(): array {
+    try {
+        $db = hb_pdo();
+        return $db->query("SELECT * FROM tags ORDER BY name ASC")->fetchAll();
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_add_tag(string $name, string $slug = '', string $desc = ''): bool {
+    try {
+        $db = hb_pdo();
+        $name = trim($name);
+        if (empty($name)) return false;
+        if (empty($slug)) {
+            $slug = preg_replace('/[^a-z0-9]+/i', '-', strtolower($name));
+            $slug = trim($slug, '-');
+        }
+        $stmt = $db->prepare("INSERT INTO tags (name, slug, description) VALUES (?, ?, ?)");
+        return $stmt->execute([$name, $slug, $desc]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_delete_tag(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM tags WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+// -------------------------------------------------------------
+// Pages CRUD Functions
+// -------------------------------------------------------------
+
+function hb_get_pages(): array {
+    try {
+        $db = hb_pdo();
+        return $db->query("SELECT * FROM pages ORDER BY id ASC")->fetchAll();
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_get_page(int|string $idOrSlug): ?array {
+    try {
+        $db = hb_pdo();
+        if (is_numeric($idOrSlug)) {
+            $stmt = $db->prepare("SELECT * FROM pages WHERE id = ?");
+            $stmt->execute([(int)$idOrSlug]);
+        } else {
+            $stmt = $db->prepare("SELECT * FROM pages WHERE slug = ?");
+            $stmt->execute([(string)$idOrSlug]);
+        }
+        $row = $stmt->fetch();
+        return $row ?: null;
+    } catch (Throwable $e) {
+        return null;
+    }
+}
+
+function hb_save_page(array $data): int {
+    $db = hb_pdo();
+    $id = isset($data['id']) ? (int)$data['id'] : 0;
+    $title = trim($data['title'] ?? '');
+    $slug = trim($data['slug'] ?? '');
+    if (empty($slug)) {
+        $slug = '/' . trim(preg_replace('/[^a-z0-9]+/i', '-', strtolower($title)), '-') . '/';
+    }
+    $content = $data['content'] ?? '';
+    $template = $data['template'] ?? 'default';
+    $metaTitle = $data['meta_title'] ?? ($title . ' | InboxWa');
+    $metaDesc = $data['meta_description'] ?? '';
+    $status = $data['status'] ?? 'published';
+    $author = $data['author'] ?? 'admin';
+
+    if ($id > 0) {
+        $stmt = $db->prepare("UPDATE pages SET title = ?, slug = ?, content = ?, template = ?, meta_title = ?, meta_description = ?, status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
+        $stmt->execute([$title, $slug, $content, $template, $metaTitle, $metaDesc, $status, $id]);
+        return $id;
+    } else {
+        $stmt = $db->prepare("INSERT INTO pages (title, slug, content, template, meta_title, meta_description, status, author, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+        $stmt->execute([$title, $slug, $content, $template, $metaTitle, $metaDesc, $status, $author]);
+        return (int)$db->lastInsertId();
+    }
+}
+
+function hb_delete_page(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM pages WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+// -------------------------------------------------------------
+// Pricing Plans CRUD Functions
+// -------------------------------------------------------------
+
+function hb_save_pricing_plan(array $data): bool {
+    try {
+        $db = hb_pdo();
+        $id = isset($data['id']) ? (int)$data['id'] : 0;
+        $planId = trim($data['plan_id'] ?? '');
+        $name = trim($data['name'] ?? '');
+        $badge = trim($data['badge'] ?? '');
+        $tagline = trim($data['tagline'] ?? '');
+        $monthly = (int)($data['monthly'] ?? 0);
+        $yearly = (int)($data['yearly'] ?? 0);
+        $setupM = (int)($data['setup_fee_monthly'] ?? 0);
+        $setupY = (int)($data['setup_fee_yearly'] ?? 0);
+        $ctaText = trim($data['cta_text'] ?? 'Start Free');
+        $ctaLink = trim($data['cta_link'] ?? '/auth/register');
+        $channels = is_array($data['channels'] ?? null) ? json_encode(array_values($data['channels'])) : ($data['channels_json'] ?? '["WhatsApp"]');
+        $features = is_array($data['features'] ?? null) ? json_encode(array_values($data['features'])) : ($data['features_json'] ?? '[]');
+        $isPopular = !empty($data['is_popular']) ? 1 : 0;
+        $sortOrder = (int)($data['sort_order'] ?? 0);
+
+        if ($id > 0) {
+            $stmt = $db->prepare("UPDATE pricing_plans SET plan_id = ?, name = ?, badge = ?, tagline = ?, monthly = ?, yearly = ?, setup_fee_monthly = ?, setup_fee_yearly = ?, cta_text = ?, cta_link = ?, channels_json = ?, features_json = ?, is_popular = ?, sort_order = ? WHERE id = ?");
+            return $stmt->execute([$planId, $name, $badge, $tagline, $monthly, $yearly, $setupM, $setupY, $ctaText, $ctaLink, $channels, $features, $isPopular, $sortOrder, $id]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO pricing_plans (plan_id, name, badge, tagline, monthly, yearly, setup_fee_monthly, setup_fee_yearly, cta_text, cta_link, channels_json, features_json, is_popular, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            return $stmt->execute([$planId, $name, $badge, $tagline, $monthly, $yearly, $setupM, $setupY, $ctaText, $ctaLink, $channels, $features, $isPopular, $sortOrder]);
+        }
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_delete_pricing_plan(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM pricing_plans WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+// -------------------------------------------------------------
+// Testimonials CRUD Functions
+// -------------------------------------------------------------
+
+function hb_save_testimonial(array $data): bool {
+    try {
+        $db = hb_pdo();
+        $id = isset($data['id']) ? (int)$data['id'] : 0;
+        $name = trim($data['name'] ?? '');
+        $role = trim($data['role'] ?? '');
+        $company = trim($data['company'] ?? '');
+        $avatar = trim($data['avatar'] ?? '');
+        $rating = max(1, min(5, (int)($data['rating'] ?? 5)));
+        $quote = trim($data['quote'] ?? '');
+        $sortOrder = (int)($data['sort_order'] ?? 0);
+
+        if ($id > 0) {
+            $stmt = $db->prepare("UPDATE testimonials SET name = ?, role = ?, company = ?, avatar = ?, rating = ?, quote = ?, sort_order = ? WHERE id = ?");
+            return $stmt->execute([$name, $role, $company, $avatar, $rating, $quote, $sortOrder, $id]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO testimonials (name, role, company, avatar, rating, quote, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            return $stmt->execute([$name, $role, $company, $avatar, $rating, $quote, $sortOrder]);
+        }
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_delete_testimonial(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM testimonials WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+// -------------------------------------------------------------
+// FAQs CRUD Functions
+// -------------------------------------------------------------
+
+function hb_save_faq(array $data): bool {
+    try {
+        $db = hb_pdo();
+        $id = isset($data['id']) ? (int)$data['id'] : 0;
+        $category = trim($data['category'] ?? 'general');
+        $question = trim($data['question'] ?? '');
+        $answer = trim($data['answer'] ?? '');
+        $sortOrder = (int)($data['sort_order'] ?? 0);
+
+        if ($id > 0) {
+            $stmt = $db->prepare("UPDATE faqs SET category = ?, question = ?, answer = ?, sort_order = ? WHERE id = ?");
+            return $stmt->execute([$category, $question, $answer, $sortOrder, $id]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO faqs (category, question, answer, sort_order) VALUES (?, ?, ?, ?)");
+            return $stmt->execute([$category, $question, $answer, $sortOrder]);
+        }
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_delete_faq(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM faqs WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+// -------------------------------------------------------------
+// SEO Custom Locations CRUD Functions
+// -------------------------------------------------------------
+
+function hb_get_locations(): array {
+    try {
+        $db = hb_pdo();
+        return $db->query("SELECT * FROM custom_locations ORDER BY id DESC")->fetchAll();
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+function hb_save_location(array $data): bool {
+    try {
+        $db = hb_pdo();
+        $id = isset($data['id']) ? (int)$data['id'] : 0;
+        $slug = trim($data['slug'] ?? '');
+        $city = trim($data['city'] ?? '');
+        $country = trim($data['country'] ?? '');
+        $type = trim($data['type'] ?? 'city');
+        $kw = trim($data['primary_keyword'] ?? '');
+        $mTitle = trim($data['meta_title'] ?? '');
+        $mDesc = trim($data['meta_description'] ?? '');
+        $hTitle = trim($data['hero_title'] ?? '');
+        $hDesc = trim($data['hero_description'] ?? '');
+        $areas = is_array($data['areas'] ?? null) ? json_encode($data['areas']) : ($data['areas_json'] ?? '[]');
+        $content = trim($data['content'] ?? '');
+
+        if ($id > 0) {
+            $stmt = $db->prepare("UPDATE custom_locations SET slug = ?, city = ?, country = ?, type = ?, primary_keyword = ?, meta_title = ?, meta_description = ?, hero_title = ?, hero_description = ?, areas_json = ?, content = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
+            return $stmt->execute([$slug, $city, $country, $type, $kw, $mTitle, $mDesc, $hTitle, $hDesc, $areas, $content, $id]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO custom_locations (slug, city, country, type, primary_keyword, meta_title, meta_description, hero_title, hero_description, areas_json, content, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)");
+            return $stmt->execute([$slug, $city, $country, $type, $kw, $mTitle, $mDesc, $hTitle, $hDesc, $areas, $content]);
+        }
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_delete_location(int $id): bool {
+    try {
+        $db = hb_pdo();
+        $stmt = $db->prepare("DELETE FROM custom_locations WHERE id = ?");
+        return $stmt->execute([$id]);
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function hb_purge_all_caches(): bool {
+    if (function_exists('opcache_reset')) {
+        @opcache_reset();
+    }
+    hb_set_setting('cache_bust_ts', (string)time());
+    return true;
 }
 

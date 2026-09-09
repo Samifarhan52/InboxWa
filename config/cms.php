@@ -125,3 +125,31 @@ function cms_locations(): array {
     }
     return $list;
 }
+
+/**
+ * Get all categories
+ */
+function cms_categories(): array {
+    return hb_get_categories();
+}
+
+/**
+ * Get all tags
+ */
+function cms_tags(): array {
+    return hb_get_tags();
+}
+
+/**
+ * Get all pages
+ */
+function cms_pages(): array {
+    return hb_get_pages();
+}
+
+/**
+ * Get single page
+ */
+function cms_page(int|string $idOrSlug): ?array {
+    return hb_get_page($idOrSlug);
+}

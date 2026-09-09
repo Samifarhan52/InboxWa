@@ -14,6 +14,9 @@ $SITE_TAGLINE = cms_setting('site_tagline', 'WhatsApp Marketing & Automation Pla
 $SITE_DOMAIN = 'https://inboxwa.com';
 $DEFAULT_OG  = $SITE_DOMAIN . '/assets/images/og-image.png';
 $cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
+$cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
+$cmsSalesEmail = cms_setting('sales_email', 'mail@inboxwa.com');
+$cmsSupportEmail = cms_setting('support_email', 'support@inboxwa.com');
 $cmsLogo     = cms_setting('logo_url', '/assets/images/logo.svg');
 $announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
 $announcementText = cms_setting('announcement_text', '');
@@ -173,20 +176,20 @@ if (!function_exists('hb_seo_esc')) {
     "url": "https://inboxwa.com/",
     "logo": "https://inboxwa.com/assets/images/logo.png",
     "description": "Official WhatsApp Business API and Omnichannel automation platform for WhatsApp, Instagram, Facebook and Telegram.",
-    "email": "mail@inboxwa.com",
-    "telephone": "+91-8050854445",
+    "email": "<?php echo htmlspecialchars($cmsSalesEmail); ?>",
+    "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
     "address": { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Bangalore" },
     "contactPoint": [{
       "@type": "ContactPoint",
-      "telephone": "+91-8050854445",
+      "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
       "contactType": "sales",
       "areaServed": "IN",
       "availableLanguage": ["English", "Hindi"]
     }, {
       "@type": "ContactPoint",
-      "telephone": "+91-8050854445",
+      "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
       "contactType": "customer support",
-      "email": "support@inboxwa.com"
+      "email": "<?php echo htmlspecialchars($cmsSupportEmail); ?>"
     }],
     "sameAs": [
       "https://facebook.com/inboxwa",

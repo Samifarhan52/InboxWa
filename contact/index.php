@@ -11,6 +11,7 @@ $pageKeywords = 'InboxWa contact, InboxWa support, InboxWa sales, WhatsApp API d
 $canonicalUrl = 'https://inboxwa.com/contact/';
 include __DIR__ . '/../includes/header.php';
 
+require_once __DIR__ . '/../config/cms.php';
 $contactConfig = @include __DIR__ . '/../config/contact.php';
 if (!is_array($contactConfig)) {
   $contactConfig = [
@@ -19,9 +20,11 @@ if (!is_array($contactConfig)) {
     'support_email' => 'support@inboxwa.com',
   ];
 }
-$wa = preg_replace('/\D/', '', $contactConfig['support_whatsapp'] ?? '918050854445');
-$waDisplay = '+91 80508 54445';
-$email = $contactConfig['sales_email'] ?? 'mail@inboxwa.com';
+$waRaw = cms_setting('support_whatsapp', $contactConfig['support_whatsapp'] ?? '918050854445');
+$wa = preg_replace('/\D/', '', $waRaw);
+$waDisplay = cms_setting('phone_number', '+91 80508 54445');
+$email = cms_setting('sales_email', $contactConfig['sales_email'] ?? 'mail@inboxwa.com');
+$supportEmail = cms_setting('support_email', $contactConfig['support_email'] ?? 'support@inboxwa.com');
 $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like to connect.");
 ?>
 
@@ -920,9 +923,9 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         <div class="ct-form-success" id="ct-form-success">
           <div class="ok-icon"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Thanks! Your message has been sent.</h3>
-          <p id="ct-success-desc">An email notification has been dispatched to our team at <strong>mail@inboxwa.com</strong> and WhatsApp.</p>
+          <p id="ct-success-desc">An email notification has been dispatched to our team at <strong><?php echo htmlspecialchars($email); ?></strong> and WhatsApp.</p>
           <div style="margin-top:1.25rem;">
-            <a href="https://wa.me/918050854445" id="ct-success-wa-btn" class="btn btn-primary" target="_blank" rel="noopener">Continue on WhatsApp (+91 80508 54445)</a>
+            <a href="<?php echo htmlspecialchars($waLink); ?>" id="ct-success-wa-btn" class="btn btn-primary" target="_blank" rel="noopener">Continue on WhatsApp (<?php echo htmlspecialchars($waDisplay); ?>)</a>
           </div>
         </div>
       </div>
@@ -1387,7 +1390,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
 
       var isSupport = (interest === 'Support' || interest === 'Custom API / Webhooks');
       var type = isSupport ? 'support' : 'contact';
-      var targetEmail = isSupport ? 'support@inboxwa.com' : 'mail@inboxwa.com';
+      var targetEmail = isSupport ? '<?php echo htmlspecialchars($supportEmail); ?>' : '<?php echo htmlspecialchars($email); ?>';
 
       var payload = {
         type: type,
@@ -1410,7 +1413,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         (interest ? 'Interest: ' + interest + '\n' : '') +
         'Message: ' + (message || '—');
 
-      var waUrl = 'https://wa.me/918050854445?text=' + encodeURIComponent(msg);
+      var waUrl = 'https://wa.me/<?php echo $wa; ?>?text=' + encodeURIComponent(msg);
 
       // Dispatch to API endpoint (saves to DB and dispatches mail notification)
       try {

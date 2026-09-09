@@ -1559,7 +1559,7 @@ include __DIR__ . '/includes/header.php';
           <?php echo htmlspecialchars(cms_section('hero', 'badge', 'Official WhatsApp Connection')); ?>
         </span>
         <h1 class="cw-hero-title">
-          Scale Your Sales and Support on <span class="highlight-green">WhatsApp</span>
+          <?php echo htmlspecialchars(cms_section('hero', 'headline_prefix', 'Scale Your Sales and Support on ')); ?><span class="highlight-green"><?php echo htmlspecialchars(cms_section('hero', 'headline_gradient', 'WhatsApp')); ?></span><?php echo htmlspecialchars(cms_section('hero', 'headline_suffix', '')); ?>
         </h1>
         <p class="cw-hero-desc">
           <?php echo htmlspecialchars(cms_section('hero', 'lead', 'Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.')); ?>
@@ -1576,19 +1576,19 @@ include __DIR__ . '/includes/header.php';
         <div class="cw-trust-row">
           <span class="cw-trust-item" id="cw-side-leads">
             <span class="cw-pulse-dot" style="width:8px;height:8px;display:inline-block;border-radius:50%;background:#10b981;margin-right:2px;"></span>
-            <strong>+<span id="cw-leads-num">128</span> Leads Captured</strong>
+            <strong><span id="cw-leads-num"><?php echo htmlspecialchars(cms_section('hero', 'float1_val', '+128')); ?></span> <?php echo htmlspecialchars(cms_section('hero', 'float1_label', 'Leads Captured')); ?></strong>
           </span>
           <span class="cw-trust-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            99.9% Delivery Uptime
+            <?php echo htmlspecialchars(cms_section('hero', 'float3_val', '99.9%')); ?> <?php echo htmlspecialchars(cms_section('hero', 'float3_label', 'Delivery Uptime')); ?>
           </span>
           <span class="cw-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Official Meta API
+            <?php echo htmlspecialchars(cms_section('hero', 'float2_val', 'Official Meta API')); ?>
           </span>
           <span class="cw-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Zero Ban Risk
+            <?php echo htmlspecialchars(cms_section('hero', 'float2_label', 'Zero Ban Risk')); ?>
           </span>
         </div>
       </div>
@@ -1687,12 +1687,12 @@ include __DIR__ . '/includes/header.php';
                 <span>Tap a topic or type below:</span>
               </div>
               <div class="cw-chips-scroll" id="cw-chips-container">
-                <button type="button" class="cw-chip" data-query="See pricing & plans">💰 See Pricing</button>
-                <button type="button" class="cw-chip" data-query="How does AI Bot work?">🤖 How AI Works</button>
-                <button type="button" class="cw-chip" data-query="Can I send 50k bulk broadcasts?">📢 Send Broadcasts</button>
-                <button type="button" class="cw-chip" data-query="Is there zero ban risk with Meta API?">⚡ 0% Ban Guarantee</button>
-                <button type="button" class="cw-chip" data-query="How does multi-agent team inbox work?">👥 Team Inbox</button>
-                <button type="button" class="cw-chip" data-query="I want to book a live demo">📞 Book Live Demo</button>
+                <button type="button" class="cw-chip" data-query="<?php echo htmlspecialchars(cms_section('simulator', 'btn1', '💰 See Pricing')); ?>"><?php echo htmlspecialchars(cms_section('simulator', 'btn1', '💰 See Pricing')); ?></button>
+                <button type="button" class="cw-chip" data-query="<?php echo htmlspecialchars(cms_section('simulator', 'btn2', '🤖 How AI Works')); ?>"><?php echo htmlspecialchars(cms_section('simulator', 'btn2', '🤖 How AI Works')); ?></button>
+                <button type="button" class="cw-chip" data-query="<?php echo htmlspecialchars(cms_section('simulator', 'btn3', '📢 Send Broadcasts')); ?>"><?php echo htmlspecialchars(cms_section('simulator', 'btn3', '📢 Send Broadcasts')); ?></button>
+                <button type="button" class="cw-chip" data-query="⚡ 0% Ban Guarantee">⚡ 0% Ban Guarantee</button>
+                <button type="button" class="cw-chip" data-query="👥 Team Inbox">👥 Team Inbox</button>
+                <button type="button" class="cw-chip" data-query="📞 Book Live Demo">📞 Book Live Demo</button>
               </div>
             </div>
 
@@ -2115,11 +2115,11 @@ include __DIR__ . '/includes/header.php';
   <!-- 5. FINAL SALES CTA BANNER -->
   <section class="cw-sales-section">
     <div class="cw-sales-inner">
-      <h2 class="cw-sales-title">Turn Your WhatsApp Into A Sales Engine Today</h2>
-      <p class="cw-sales-desc">Start sending announcements, managing team chats, and answering customer questions automatically right now.</p>
+      <h2 class="cw-sales-title"><?php echo htmlspecialchars(cms_section('cta_banner', 'title', 'Turn Your WhatsApp Into A Sales Engine Today')); ?></h2>
+      <p class="cw-sales-desc"><?php echo htmlspecialchars(cms_section('cta_banner', 'lead', 'Start sending announcements, managing team chats, and answering customer questions automatically right now.')); ?></p>
       <div class="cw-sales-actions">
-        <a href="<?php echo $bp; ?>auth/register" class="cw-btn-white">
-          Try For Free &rarr;
+        <a href="<?php echo htmlspecialchars(cms_section('cta_banner', 'btn_link', $bp . 'auth/register')); ?>" class="cw-btn-white">
+          <?php echo htmlspecialchars(cms_section('cta_banner', 'btn_text', 'Try For Free →')); ?>
         </a>
         <button type="button" class="cw-btn-transparent btn-demo-open">
           Talk to Sales

@@ -4,7 +4,12 @@ $pageTitle = 'InboxWa Pricing – WhatsApp API, AI Chatbot & Omnichannel Automat
 $pageDescription = 'Transparent pricing for WhatsApp Business API, AI chatbot and omnichannel automation. Growth ₹1,999, Pro ₹4,999, Business ₹7,999. 14-day free trial. 18% GST at checkout.';
 $pageKeywords = 'InboxWa pricing, WhatsApp API price, AI chatbot plans, omnichannel pricing India';
 $canonicalUrl = 'https://inboxwa.com/pricing/';
+require_once __DIR__ . '/../config/cms.php';
 $pricing = require __DIR__ . '/../config/pricing.php';
+$dbPlans = cms_pricing_plans();
+if (!empty($dbPlans)) {
+  $pricing['plans'] = $dbPlans;
+}
 include __DIR__ . '/../includes/header.php';
 $reg = htmlspecialchars($pricing['register_url']);
 $gst = (int)round($pricing['gst_rate'] * 100);
@@ -230,18 +235,29 @@ $rate = (float)$pricing['INR_TO_USD_RATE'];
     <div class="section-header reveal"><span class="badge badge-primary">FAQ</span><h2>Pricing questions</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
       <?php
-      $faqs = [
-        ['What is included in each plan?', 'Each plan includes contacts, campaigns, AI prompts, seats and channel access as listed in the comparison table. Meta conversation charges are separate.'],
-        ['Can I switch plans?', 'Yes. Contact support or upgrade from your account — changes apply as per your billing cycle.'],
-        ['Can I change monthly to yearly billing?', 'Yes. Yearly billing unlocks the annual rate and, on Growth, waives the setup fee.'],
-        ['Is GST included?', 'Displayed prices are exclusive of GST. 18% GST applies at checkout on eligible amounts.'],
-        ['What happens after the free trial?', 'You can choose Growth, Pro or Business to continue. We will guide you before the trial ends.'],
-        ['Can I add Instagram or Facebook to Growth?', 'Yes — via channel add-ons. Pro and Business already include all four channels.'],
-        ['What are capacity add-ons?', 'Optional monthly boosts for contacts, campaigns, AI prompts, seats or AI calling credits on any plan.'],
-        ['Can I request a custom plan?', 'Yes. Use Talk to Sales for higher limits and enterprise needs.'],
-        ['Do Pro and Business include all channels?', 'Yes — WhatsApp, Instagram, Facebook and Telegram.'],
-        ['Are Meta/WhatsApp conversation charges included?', 'No. Meta usage / conversation charges are billed separately according to Meta’s pricing and your WABA setup.'],
-      ];
+      $dbFaqs = cms_faqs('pricing');
+      if (empty($dbFaqs)) {
+        $dbFaqs = cms_faqs();
+      }
+      if (!empty($dbFaqs)) {
+        $faqs = [];
+        foreach ($dbFaqs as $df) {
+          $faqs[] = [$df['question'], $df['answer']];
+        }
+      } else {
+        $faqs = [
+          ['What is included in each plan?', 'Each plan includes contacts, campaigns, AI prompts, seats and channel access as listed in the comparison table. Meta conversation charges are separate.'],
+          ['Can I switch plans?', 'Yes. Contact support or upgrade from your account — changes apply as per your billing cycle.'],
+          ['Can I change monthly to yearly billing?', 'Yes. Yearly billing unlocks the annual rate and, on Growth, waives the setup fee.'],
+          ['Is GST included?', 'Displayed prices are exclusive of GST. 18% GST applies at checkout on eligible amounts.'],
+          ['What happens after the free trial?', 'You can choose Growth, Pro or Business to continue. We will guide you before the trial ends.'],
+          ['Can I add Instagram or Facebook to Growth?', 'Yes — via channel add-ons. Pro and Business already include all four channels.'],
+          ['What are capacity add-ons?', 'Optional monthly boosts for contacts, campaigns, AI prompts, seats or AI calling credits on any plan.'],
+          ['Can I request a custom plan?', 'Yes. Use Talk to Sales for higher limits and enterprise needs.'],
+          ['Do Pro and Business include all channels?', 'Yes — WhatsApp, Instagram, Facebook and Telegram.'],
+          ['Are Meta/WhatsApp conversation charges included?', 'No. Meta usage / conversation charges are billed separately according to Meta’s pricing and your WABA setup.'],
+        ];
+      }
       foreach ($faqs as $f): ?>
       <div class="faq-item reveal">
         <button type="button" class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($f[0]); ?><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
