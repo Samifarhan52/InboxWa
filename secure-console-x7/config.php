@@ -1141,6 +1141,27 @@ function hb_delete_testimonial(int $id): bool {
 // FAQs CRUD Functions
 // -------------------------------------------------------------
 
+function hb_get_faqs(string $category = ''): array {
+    try {
+        $db = hb_pdo();
+        if ($category !== '' && $category !== 'all') {
+            $stmt = $db->prepare("SELECT * FROM faqs WHERE category = ? ORDER BY sort_order ASC, id ASC");
+            $stmt->execute([$category]);
+        } else {
+            $stmt = $db->query("SELECT * FROM faqs ORDER BY sort_order ASC, id ASC");
+        }
+        return $stmt->fetchAll() ?: [];
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
+if (!function_exists('cms_faqs')) {
+    function cms_faqs(string $category = ''): array {
+        return hb_get_faqs($category);
+    }
+}
+
 function hb_save_faq(array $data): bool {
     try {
         $db = hb_pdo();

@@ -690,7 +690,7 @@ $tagsList = hb_get_tags();
 $pagesList = hb_get_pages();
 $pricingPlansList = hb_get_pricing_plans();
 $testimonialsList = hb_get_testimonials();
-$faqsList = cms_faqs();
+$faqsList = hb_get_faqs();
 $locationsList = hb_get_locations();
 
 $currentAdminUser = hb_get_setting('admin_user', 'admin');

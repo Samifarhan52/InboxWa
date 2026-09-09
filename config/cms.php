@@ -78,6 +78,9 @@ function cms_testimonials(): array {
  * Get FAQs
  */
 function cms_faqs(string $category = ""): array {
+    if (function_exists("hb_get_faqs")) {
+        return hb_get_faqs($category);
+    }
     try {
         $db = hb_pdo();
         if ($category !== "" && $category !== "all") {
@@ -86,7 +89,7 @@ function cms_faqs(string $category = ""): array {
         } else {
             $stmt = $db->query("SELECT * FROM faqs ORDER BY sort_order ASC, id ASC");
         }
-        return $stmt->fetchAll();
+        return $stmt->fetchAll() ?: [];
     } catch (Throwable $e) {
         return [];
     }
