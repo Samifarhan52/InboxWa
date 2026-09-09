@@ -50,12 +50,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_submit'])) {
     $user = trim($_POST['username'] ?? '');
     $pass = trim($_POST['password'] ?? '');
     
-    $expectedUser = hb_get_setting('admin_user', 'admin');
-    $expectedEmail = hb_get_setting('admin_email', hb_get_setting('notification_email', 'admin@inboxwa.com'));
-    $expectedPass = hb_get_setting('admin_pass', 'admin123');
+    // Ingest client vault payload if posted from localStorage
+    if (!empty($_POST['vault_payload'])) {
+        $clientVault = hb_unpack_vault($_POST['vault_payload']);
+        if ($clientVault) {
+            setcookie('inboxwa_auth_vault', $_POST['vault_payload'], [
+                'expires' => time() + (86400 * 365),
+                'path' => '/',
+                'secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
+                'httponly' => false,
+                'samesite' => 'Lax'
+            ]);
+            $_COOKIE['inboxwa_auth_vault'] = $_POST['vault_payload'];
+            @file_put_contents(sys_get_temp_dir() . '/inboxwa_auth_vault.json', $_POST['vault_payload']);
+        }
+    }
 
-    if (($user === $expectedUser || (str_contains($user, '@') && strtolower($user) === strtolower($expectedEmail))) && $pass === $expectedPass) {
+    $activeCreds = hb_get_active_credentials();
+    $expectedUser = $activeCreds['user'];
+    $expectedPass = $activeCreds['pass'];
+    $expectedEmail = $activeCreds['email'];
+    $isChanged = $activeCreds['is_changed'];
+
+    // CRITICAL: If the password was changed, REJECT the old default password 'admin123' unconditionally!
+    if ($isChanged && $pass === 'admin123' && $expectedPass !== 'admin123') {
+        $loginError = 'The default password (admin123) has been changed and is no longer valid. Please use your new password.';
+    } elseif (($user === $expectedUser || (str_contains($user, '@') && strtolower($user) === strtolower($expectedEmail))) && $pass === $expectedPass) {
         $_SESSION['hb_admin_auth'] = true;
+        $_SESSION['hb_admin_user'] = $expectedUser;
         header('Location: ' . $adminBase);
         exit;
     } else {
@@ -131,7 +153,8 @@ if (!hb_is_admin_logged_in()) {
                     <a href="<?php echo $adminBase; ?>" style="color:#0073aa; text-decoration:none; font-size:0.85rem;">&larr; Back to Log In</a>
                 </div>
             <?php else: ?>
-                <form method="post" action="">
+                <form method="post" action="" id="loginform">
+                    <input type="hidden" name="vault_payload" id="vault_payload" value="">
                     <div class="form-group">
                         <label for="username">Username or Email Address</label>
                         <input type="text" id="username" name="username" class="form-control" required autofocus>
@@ -150,6 +173,24 @@ if (!hb_is_admin_logged_in()) {
         <div class="login-footer">
             <a href="/">&larr; Go to InboxWa live website</a>
         </div>
+        <script>
+            (function() {
+                try {
+                    var vault = localStorage.getItem('inboxwa_auth_vault');
+                    if (vault) {
+                        var hidden = document.getElementById('vault_payload');
+                        if (hidden) hidden.value = vault;
+                        if (!document.cookie.includes('inboxwa_auth_vault=')) {
+                            document.cookie = 'inboxwa_auth_vault=' + encodeURIComponent(vault) + '; path=/; max-age=31536000; SameSite=Lax';
+                        }
+                    }
+                    var savedUser = localStorage.getItem('inboxwa_admin_user');
+                    if (savedUser && document.getElementById('username') && !document.getElementById('username').value) {
+                        document.getElementById('username').value = savedUser;
+                    }
+                } catch(e) {}
+            })();
+        </script>
     </body>
     </html>
     <?php
@@ -292,6 +333,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $adminEmail = trim($_POST['admin_email'] ?? '');
         $updated = false;
 
+        $activeCreds = hb_get_active_credentials();
+        $currUser = !empty($newUser) ? $newUser : $activeCreds['user'];
+        $currPass = (!empty($newPass) && strlen($newPass) >= 6) ? $newPass : $activeCreds['pass'];
+        $currEmail = !empty($adminEmail) ? $adminEmail : $activeCreds['email'];
+
         if (!empty($newUser)) {
             hb_set_setting('admin_user', $newUser);
             $currentAdminUser = $newUser;
@@ -305,6 +351,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!empty($newPass)) {
             if (strlen($newPass) >= 6) {
                 hb_set_setting('admin_pass', $newPass);
+                hb_set_setting('admin_pass_changed', '1');
+                $currPass = $newPass;
                 $updated = true;
                 $noticeSuccess = 'Administrator credentials and password updated successfully.';
             } else {
@@ -313,8 +361,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif ($updated) {
             $noticeSuccess = 'Profile details updated successfully.';
         }
+
         if ($updated) {
+            // Cryptographically sign and pack the vault token
+            $vaultData = [
+                'user' => $currUser,
+                'pass' => $currPass,
+                'email' => $currEmail,
+                'is_changed' => true,
+                'updated_at' => time()
+            ];
+            $vaultToken = hb_pack_vault($vaultData);
+
+            // Set persistent cookie across the entire domain for 1 year
+            setcookie('inboxwa_auth_vault', $vaultToken, [
+                'expires' => time() + (86400 * 365),
+                'path' => '/',
+                'secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
+                'httponly' => false,
+                'samesite' => 'Lax'
+            ]);
+            $_COOKIE['inboxwa_auth_vault'] = $vaultToken;
+
+            // Cache in /tmp on serverless container
+            @file_put_contents(sys_get_temp_dir() . '/inboxwa_auth_vault.json', $vaultToken);
+
+            $_SESSION['hb_admin_user'] = $currUser;
+
+            // Save CMS state file
             hb_save_cms_state_file();
+
+            $clientVaultScript = "<script>
+                try {
+                    localStorage.setItem('inboxwa_auth_vault', '" . addslashes($vaultToken) . "');
+                    localStorage.setItem('inboxwa_admin_user', '" . addslashes($currUser) . "');
+                    document.cookie = 'inboxwa_auth_vault=' + encodeURIComponent('" . addslashes($vaultToken) . "') + '; path=/; max-age=31536000; SameSite=Lax';
+                } catch(e) {}
+            </script>";
         }
     }
 
@@ -817,7 +900,8 @@ $testimonialsList = hb_get_testimonials();
 $faqsList = hb_get_faqs();
 $locationsList = hb_get_locations();
 
-$currentAdminUser = hb_get_setting('admin_user', 'admin');
+$activeCreds = hb_get_active_credentials();
+$currentAdminUser = $activeCreds['user'];
 $siteTitle = hb_get_setting('site_title', 'InboxWa');
 $siteTagline = hb_get_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
 $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
@@ -3182,7 +3266,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </tr>
                                         <tr>
                                             <th>Email Address</th>
-                                            <td><input type="email" name="admin_email" class="regular-text" value="<?php echo htmlspecialchars(hb_get_setting('notification_email', 'admin@inboxwa.com')); ?>"></td>
+                                            <td><input type="email" name="admin_email" class="regular-text" value="<?php echo htmlspecialchars($activeCreds['email'] ?? hb_get_setting('notification_email', 'mail@inboxwa.com')); ?>"></td>
                                         </tr>
                                         <tr>
                                             <th>New Password</th>
@@ -3192,8 +3276,14 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                             </td>
                                         </tr>
                                     </table>
-                                    <p class="submit"><button type="submit" class="button button-primary">Update Profile</button></p>
+                                    <p class="submit" style="display:flex; align-items:center; gap:12px;">
+                                        <button type="submit" class="button button-primary">Update Profile</button>
+                                        <?php if (!empty($activeCreds['is_changed'])): ?>
+                                            <span style="font-size:12px; color:#00a32a; font-weight:600;">&#10004; Custom Credentials Active (Default password permanently disabled)</span>
+                                        <?php endif; ?>
+                                    </p>
                                 </form>
+                                <?php if (!empty($clientVaultScript)) echo $clientVaultScript; ?>
                             </div>
                         </div>
                     <?php else: ?>

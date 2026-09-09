@@ -27,6 +27,28 @@ function hb_get_db_path(): string {
     return $tmpFile;
 }
 
+if (!defined('INBOXWA_AUTH_SALT')) {
+    define('INBOXWA_AUTH_SALT', 'inboxwa_vault_salt_sec_918050854445_elavatex');
+}
+
+function hb_pack_vault(array $data): string {
+    $json = json_encode($data);
+    $sig = hash_hmac('sha256', $json, INBOXWA_AUTH_SALT);
+    return base64_encode($json . '::' . $sig);
+}
+
+function hb_unpack_vault(?string $raw): ?array {
+    if (empty($raw)) return null;
+    $raw = trim($raw);
+    $decoded = base64_decode($raw);
+    if (!$decoded || !str_contains($decoded, '::')) return null;
+    [$json, $sig] = explode('::', $decoded, 2);
+    $expected = hash_hmac('sha256', $json, INBOXWA_AUTH_SALT);
+    if (!hash_equals($expected, $sig)) return null;
+    $arr = json_decode($json, true);
+    return is_array($arr) ? $arr : null;
+}
+
 function hb_pdo(): PDO {
     static $pdo = null;
     if ($pdo !== null) {
@@ -659,12 +681,79 @@ function hb_pdo(): PDO {
         }
     }
 
+    // Automatically enforce active vault credentials across all containers
+    $vault = hb_unpack_vault($_COOKIE['inboxwa_auth_vault'] ?? null);
+    if (!$vault && !empty($_POST['vault_payload'])) {
+        $vault = hb_unpack_vault((string)$_POST['vault_payload']);
+    }
+    if (!$vault) {
+        $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
+        if (file_exists($tmpVaultFile)) {
+            $rawTmp = @file_get_contents($tmpVaultFile);
+            if ($rawTmp) $vault = hb_unpack_vault($rawTmp);
+        }
+    }
+    if ($vault && (!empty($vault['is_changed']) || !empty($vault['pass']))) {
+        try {
+            $uStmt = $pdo->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
+            if (!empty($vault['user'])) {
+                $uStmt->execute(['admin_user', (string)$vault['user']]);
+            }
+            if (!empty($vault['pass'])) {
+                $uStmt->execute(['admin_pass', (string)$vault['pass']]);
+                $uStmt->execute(['admin_pass_changed', '1']);
+            }
+            if (!empty($vault['email'])) {
+                $uStmt->execute(['admin_email', (string)$vault['email']]);
+                $uStmt->execute(['notification_email', (string)$vault['email']]);
+            }
+        } catch (Throwable $e) {}
+    }
+
     return $pdo;
 }
 
 // -------------------------------------------------------------
 // Core CMS Accessor & Mutator Functions
 // -------------------------------------------------------------
+
+function hb_get_active_credentials(): array {
+    $user = hb_get_setting('admin_user', 'admin');
+    $pass = hb_get_setting('admin_pass', 'admin123');
+    $email = hb_get_setting('admin_email', hb_get_setting('notification_email', 'mail@inboxwa.com'));
+    $isChanged = hb_get_setting('admin_pass_changed', '0') === '1';
+
+    // 1. Check signed cookie vault
+    $vault = hb_unpack_vault($_COOKIE['inboxwa_auth_vault'] ?? null);
+    if (!$vault && !empty($_POST['vault_payload'])) {
+        $vault = hb_unpack_vault((string)$_POST['vault_payload']);
+    }
+    if (!$vault) {
+        $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
+        if (file_exists($tmpVaultFile)) {
+            $rawTmp = @file_get_contents($tmpVaultFile);
+            if ($rawTmp) $vault = hb_unpack_vault($rawTmp);
+        }
+    }
+
+    if ($vault) {
+        if (!empty($vault['user'])) $user = (string)$vault['user'];
+        if (!empty($vault['pass'])) {
+            $pass = (string)$vault['pass'];
+            $isChanged = true;
+        }
+        if (!empty($vault['email'])) $email = (string)$vault['email'];
+        if (isset($vault['is_changed'])) $isChanged = (bool)$vault['is_changed'];
+    }
+
+    return [
+        'user' => $user,
+        'pass' => $pass,
+        'email' => $email,
+        'is_changed' => $isChanged,
+        'vault' => $vault
+    ];
+}
 
 function hb_get_setting(string $key, string $default = ''): string {
     static $cache = [];

@@ -11,6 +11,11 @@
       "updated_at": "2026-09-08 07:53:03"
     },
     {
+      "key": "admin_pass_changed",
+      "value": "0",
+      "updated_at": "2026-09-09 15:30:00"
+    },
+    {
       "key": "site_title",
       "value": "InboxWa",
       "updated_at": "2026-09-08 07:53:03"
