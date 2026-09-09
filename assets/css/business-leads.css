@@ -969,4 +969,221 @@
   .bl-datasets-grid {
     grid-template-columns: 1fr;
   }
+
+  .bl-dept-grid,
+  .bl-features-grid,
+  .bl-bsp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Extended Showcase Styles (Features, BSP Comparison, Depts, FAQs)
+   ========================================================================== */
+.bl-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.bl-feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.bl-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.1);
+}
+
+.bl-feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+}
+
+.bl-feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.bl-feature-card p {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* BSP Comparison Grid */
+.bl-bsp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.bl-bsp-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+}
+
+.bl-bsp-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08);
+}
+
+.bl-bsp-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bl-bsp-info h4 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.35rem 0;
+}
+
+.bl-bsp-info p {
+  font-size: 0.84rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Department Uses Grid */
+.bl-dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.bl-dept-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+.bl-dept-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.1);
+}
+
+.bl-dept-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bl-dept-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 1.15rem 0 0.6rem 0;
+}
+
+.bl-dept-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.58;
+  margin-bottom: 1.25rem;
+}
+
+/* FAQ Accordion */
+.bl-faq-accordion {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bl-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: border-color 0.2s ease;
+}
+
+.bl-faq-item.active {
+  border-color: #cbd5e1;
+}
+
+.bl-faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bl-faq-question svg {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.bl-faq-item.active .bl-faq-question svg {
+  transform: rotate(180deg);
+  color: #2563eb;
+}
+
+.bl-faq-answer {
+  display: none;
+  padding: 0 1.5rem 1.35rem;
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.bl-faq-item.active .bl-faq-answer {
+  display: block;
 }
