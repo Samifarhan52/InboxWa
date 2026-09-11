@@ -1,108 +1,269 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Catalog | Showcase Products Inside WhatsApp | InboxWa';
-$pageDescription = 'Showcase products, services and collections directly inside WhatsApp chats. Enable seamless in-chat product browsing and instant cart orders with InboxWa.';
+$bp = '../../';
+require_once __DIR__ . '/../../config/cms.php';
+
+$pageTitle = 'Product Catalog & WhatsApp Storefront Commerce | InboxWa';
+$pageDescription = 'Turn WhatsApp into a direct storefront with native product catalogs, multi-item carts, inventory sync with Shopify/WooCommerce, and instant payment checkout links.';
 $canonicalUrl = 'https://inboxwa.com/products/catalog/';
+$ogImage = 'assets/images/products/catalog/hero.png';
+
 include __DIR__ . '/../../includes/header.php';
 ?>
-<section class="page-hero-premium">
-  <div class="page-hero-premium__bg" aria-hidden="true">
-    <div class="hero-fallback-bg" style="background:linear-gradient(135deg,#064E3B 0%,#065F46 50%,#047857 100%)"></div>
-  </div>
-  <div class="page-hero-premium__overlay"></div>
-  <div class="container">
-    <span class="badge" style="background:rgba(16,185,129,0.25);color:#6EE7B7;border:1px solid rgba(16,185,129,0.4)">Feature</span>
-    <h1>WhatsApp Product Catalog &amp; In-Chat Store</h1>
-    <p class="lead">Showcase your products, variants, and collections directly inside WhatsApp chats. Let customers browse, add to cart, and checkout seamlessly without ever leaving WhatsApp.</p>
-    <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-      <a href="/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
-      <a href="/#contact-section" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Book a Demo</a>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal"><h2>Native WhatsApp Commerce &amp; Catalog Management</h2></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem">
-      <div class="card reveal" style="padding:1.4rem">
-        <div style="width:42px;height:42px;border-radius:12px;background:#F0FDF4;color:#16A34A;display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        </div>
-        <h3>In-Chat Product Browsing</h3>
-        <p>Customers can view high-res product photos, descriptions, variants, and pricing right inside WhatsApp.</p>
-      </div>
-      <div class="card reveal" style="padding:1.4rem">
-        <div style="width:42px;height:42px;border-radius:12px;background:#ECFEFF;color:#0891B2;display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        </div>
-        <h3>Multi-Item WhatsApp Cart</h3>
-        <p>Allow shoppers to build multi-item shopping carts and send their order directly to your sales team.</p>
-      </div>
-      <div class="card reveal" style="padding:1.4rem">
-        <div style="width:42px;height:42px;border-radius:12px;background:#FAF5FF;color:#9333EA;display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        </div>
-        <h3>Shopify &amp; WooCommerce Sync</h3>
-        <p>Auto-sync inventory, product descriptions, prices and out-of-stock statuses in real time.</p>
-      </div>
-      <div class="card reveal" style="padding:1.4rem">
-        <div style="width:42px;height:42px;border-radius:12px;background:#FDF2F8;color:#DB2777;display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        </div>
-        <h3>Instant WhatsApp Payments</h3>
-        <p>Accept payments directly via UPI, cards, and payment gateways with automated invoice receipts.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/product-pages.css">
 
-<section class="section section-dark" id="flow">
-  <div class="container">
-    <div class="section-header reveal"><h2 style="color:#fff">How WhatsApp Catalog Works</h2></div>
-    <div class="workflow-sim" id="ws-pr-cat"><div class="ws-step">Catalog view</div><div class="ws-step">Product selection</div><div class="ws-step">Add to cart</div><div class="ws-step">Order confirmation</div><div class="ws-step">Payment &amp; dispatch</div></div>
-    <div class="ws-controls">
-      <button type="button" class="btn btn-sm btn-primary ws-next" data-sim="ws-pr-cat">Next step</button>
-      <button type="button" class="btn btn-sm btn-outline ws-auto" style="color:#fff;border-color:rgba(255,255,255,.35)" data-sim="ws-pr-cat">Auto-play</button>
-    </div>
-  </div>
-</section>
+<div class="prod-page">
+  <div class="prod-ambient-1"></div>
+  <div class="prod-ambient-2"></div>
 
-<section class="section">
-  <div class="container" style="max-width:720px;text-align:center">
-    <h2 class="reveal">Turn Conversations Into Instant E-Commerce Orders</h2>
-    <p class="lead reveal" style="margin-top:1rem">Launch your official WhatsApp storefront and showcase your full inventory to millions of shoppers with InboxWa.</p>
-    <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-      <a href="/pricing/" class="btn btn-outline">View pricing</a>
-      <a href="/#contact-section" class="btn btn-primary">Book a Catalog Demo</a>
+  <!-- Hero Section -->
+  <section class="prod-hero">
+    <div class="prod-hero-grid">
+      <div class="prod-hero-content">
+        <div class="prod-badge">
+          <span class="prod-badge-dot"></span>
+          WhatsApp Commerce
+        </div>
+        <h1 class="prod-hero-title">
+          Turn WhatsApp into a Direct <span class="prod-gradient-text">Storefront for Checkout</span>
+        </h1>
+        <p class="prod-hero-desc">
+          Showcase physical items, service packages, and menus directly inside customer chats. Allow clients to build shopping carts and finalize orders with automated payment integrations.
+        </p>
+        <div class="prod-hero-ctas">
+          <a href="<?php echo $bp; ?>auth/register" class="prod-btn-primary">
+            Start Free Trial
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#capabilities" class="prod-btn-secondary">
+            Explore Capabilities
+          </a>
+        </div>
+        <div class="prod-bullets">
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Shopify & WooCommerce Sync
+          </div>
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Instant in-chat payment links
+          </div>
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            0% transaction fees on InboxWa
+          </div>
+        </div>
+      </div>
+      <div class="prod-hero-media">
+        <div class="prod-hero-media-wrapper">
+          <img src="<?php echo $bp; ?>assets/images/products/catalog/hero.png" alt="WhatsApp Product Catalog Storefront" class="prod-hero-media-img" width="1080" height="1080">
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Use Cases Showcase -->
+  <section class="prod-section prod-section-alt" id="use-cases">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">USE CASES</span>
+        <h2 class="prod-section-title">Real-Time Catalog Integration Examples</h2>
+        <p class="prod-section-desc">
+          See how top industries utilize synced digital catalogs on WhatsApp to convert conversations into instant orders.
+        </p>
+      </div>
+
+      <div class="prod-showcase-box">
+        <div class="prod-showcase-grid">
+          <div class="prod-tabs-list" id="catalog-tabs">
+            <button type="button" class="prod-tab-item active" data-img="<?php echo $bp; ?>assets/images/products/catalog/usecase-shopify.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">01. E-Commerce Checkout</div>
+                <div class="prod-tab-text-desc">Retailers link Shopify databases to automatically reflect pricing and inventory levels on WhatsApp.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/catalog/usecase-restaurant.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">02. Restaurant Digital Ordering</div>
+                <div class="prod-tab-text-desc">Interactive menus with sizes and spice customizations. Orders print directly to kitchen tickets.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/catalog/usecase-consulting.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">03. Professional Service Packages</div>
+                <div class="prod-tab-text-desc">Agencies and coaches showcase consultation retainers and audits with one-tap payment checkout.</div>
+              </div>
+            </button>
+          </div>
+          <div class="prod-tab-preview-pane">
+            <img id="catalog-preview-img" src="<?php echo $bp; ?>assets/images/products/catalog/usecase-shopify.png" alt="Catalog Use Case Preview" class="prod-preview-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section -->
+  <section class="prod-section" id="capabilities">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">Catalog Capabilities</span>
+        <h2 class="prod-section-title">Everything You Need to Power Mobile Commerce</h2>
+        <p class="prod-section-desc">
+          Built-in e-commerce infrastructure designed for frictionless WhatsApp shopping.
+        </p>
+      </div>
+      <div class="prod-grid-4">
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Meta Catalog Sync</h3>
+          <p class="prod-card-desc">
+            Instantly sync existing products from Meta Business Manager or upload spreadsheet directories directly.
+          </p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Dynamic Carts</h3>
+          <p class="prod-card-desc">
+            Allow clients to pick multiple items, increment quantities, and submit complete orders without leaving the chat viewport.
+          </p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <h3 class="prod-card-title">Auto-Invoicing</h3>
+          <p class="prod-card-desc">
+            Connect Stripe, Razorpay, or PayPal to automatically dispatch secure checkout links once items are compiled in the cart.
+          </p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Abandoned Cart Recovery</h3>
+          <p class="prod-card-desc">
+            Automatically re-engage shoppers who added catalog items to their cart but left without completing checkout.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="prod-section prod-section-alt" id="faqs">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">FAQs</span>
+        <h2 class="prod-section-title">Questions about Catalog Integrations?</h2>
+        <p class="prod-section-desc">
+          Learn how WhatsApp catalogs, payment gateways, and inventory syncing work in InboxWa.
+        </p>
+      </div>
+      <div class="prod-faq-container">
+        <div class="prod-faq-list">
+          <div class="prod-faq-item active">
+            <button type="button" class="prod-faq-question">
+              Is a Meta Business Manager catalog required?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Yes, to use official WhatsApp product collections, you sync your products to Meta Catalog Manager. The InboxWa app simplifies this by giving you a direct API linkage to upload items from your local spreadsheet inventory in seconds.
+            </div>
+          </div>
+          <div class="prod-faq-item">
+            <button type="button" class="prod-faq-question">
+              How do customers pay once they submit their orders?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Once the order checkout is compiled in chat, the bot triggers an automated Stripe, Razorpay, or PayPal payment transaction link. Once the customer completes the payment, the bot instantly dispatches a confirmation message and updates the order status.
+            </div>
+          </div>
+          <div class="prod-faq-item">
+            <button type="button" class="prod-faq-question">
+              Can I trigger chatbot automations when a customer buys?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Absolutely. When a customer adds items or checkouts, it fires webhook signals that can trigger specific automation builders (like assigning tags, enrolling the contact in automated email flows, or routing them to human inbox specialists).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Box -->
+  <section class="prod-section">
+    <div class="prod-container">
+      <div class="prod-cta-box">
+        <div class="prod-cta-glow"></div>
+        <h2 class="prod-cta-title">Start Selling Directly on WhatsApp</h2>
+        <p class="prod-cta-subtitle">
+          Turn passive conversations into active checkouts with automated digital catalogs.
+        </p>
+        <div class="prod-cta-actions">
+          <a href="<?php echo $bp; ?>auth/register" class="prod-cta-btn-white">
+            Start Free Trial
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="<?php echo $bp; ?>#contact-section" class="prod-cta-btn-trans">
+            Book a Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <script>
-(function(){
-  var steps=document.querySelectorAll('#ws-pr-cat .ws-step');
-  var i=0,timer=null;
-  function showStep(idx){
-    steps.forEach(function(s,k){s.classList.toggle('active',k===idx);});
-  }
-  showStep(0);
-  var nextBtn=document.querySelector('.ws-next[data-sim="ws-pr-cat"]');
-  if(nextBtn){
-    nextBtn.addEventListener('click',function(){
-      i=(i+1)%steps.length;
-      showStep(i);
-    });
-  }
-  var autoBtn=document.querySelector('.ws-auto[data-sim="ws-pr-cat"]');
-  if(autoBtn){
-    autoBtn.addEventListener('click',function(){
-      if(timer){clearInterval(timer);timer=null;autoBtn.textContent='Auto-play';}
-      else{
-        timer=setInterval(function(){i=(i+1)%steps.length;showStep(i);},1600);
-        autoBtn.textContent='Pause';
+document.addEventListener('DOMContentLoaded', function() {
+  var tabs = document.querySelectorAll('#catalog-tabs .prod-tab-item');
+  var previewImg = document.getElementById('catalog-preview-img');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var newSrc = tab.getAttribute('data-img');
+      if (newSrc && previewImg) {
+        previewImg.style.opacity = '0.3';
+        previewImg.style.transform = 'scale(0.98)';
+        setTimeout(function() {
+          previewImg.src = newSrc;
+          previewImg.style.opacity = '1';
+          previewImg.style.transform = 'scale(1)';
+        }, 150);
       }
     });
-  }
-})();
+  });
+
+  var faqItems = document.querySelectorAll('.prod-faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.prod-faq-question');
+    btn.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+      faqItems.forEach(function(fi) { fi.classList.remove('active'); });
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+});
 </script>
+
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

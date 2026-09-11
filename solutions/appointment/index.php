@@ -1,210 +1,280 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Appointment Automation | Book, Remind & Follow Up | InboxWa';
-$pageDescription = 'Let customers book appointments on WhatsApp, sync calendars, send reminders and manage your team from one connected InboxWa workflow.';
+$bp = '../../';
+require_once __DIR__ . '/../../config/cms.php';
+
+$pageTitle = 'Appointment Booking on WhatsApp Flows | Calendar Sync | InboxWa';
+$pageDescription = 'Automate appointments and bookings natively inside WhatsApp. Bi-directional Google & Outlook calendar sync, automated deposit collection, and 80% lower no-shows.';
 $canonicalUrl = 'https://inboxwa.com/solutions/appointment/';
+$ogImage = 'assets/images/products/appointment/hero.png';
+
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/appointment.css?v=1">
-<link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=2">
 
-<section class="ap-hero" aria-label="Appointment automation hero">
-  <div class="ap-hero-bg" aria-hidden="true"></div>
-  <div class="container">
-    <div class="ap-hero-grid">
-      <div class="ap-hero-copy">
-        <span class="badge ap-badge">APPOINTMENT AUTOMATION</span>
-        <h1>Turn Every Enquiry Into a <span class="grad">Confirmed Appointment</span></h1>
-        <p class="ap-lead">Let customers discover available slots, book appointments, receive WhatsApp confirmations and reminders, while your team manages everything from one connected workflow.</p>
-        <div class="ap-ctas">
-          <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
-          <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/product-pages.css">
+
+<div class="prod-page">
+  <div class="prod-ambient-1"></div>
+  <div class="prod-ambient-2"></div>
+
+  <!-- Hero Section -->
+  <section class="prod-hero">
+    <div class="prod-hero-grid">
+      <div class="prod-hero-content">
+        <div class="prod-badge">
+          <span class="prod-badge-dot"></span>
+          Automated Booking
+        </div>
+        <h1 class="prod-hero-title">
+          Automate Appointments and Timelines on <span class="prod-gradient-text">WhatsApp Flows</span>
+        </h1>
+        <p class="prod-hero-desc">
+          Let clients pick dates, select practitioners, and book appointments inside WhatsApp. Sync with Google and Outlook calendars, collect deposits, and reduce no-shows with automated reminders.
+        </p>
+        <div class="prod-hero-ctas">
+          <a href="<?php echo $bp; ?>auth/register" class="prod-btn-primary">
+            Start Booking Free
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#scheduling-engine" class="prod-btn-secondary">
+            Explore Engine
+          </a>
+        </div>
+        <div class="prod-bullets">
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Google & Outlook Sync
+          </div>
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Interactive booking maps
+          </div>
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            80% lower no-show rates
+          </div>
         </div>
       </div>
-      <div class="ap-phone-stage">
-        <div class="ap-phone">
-          <div class="ap-notch"></div>
-          <div class="ap-screen">
-            <div class="ap-head"><div class="ap-av">AP</div><div><strong>Book Appointment</strong><small>Demo booking</small></div></div>
-            <div class="ap-body" id="ap-body"><div class="ap-typing" id="ap-typing"><i></i><i></i><i></i></div></div>
+      <div class="prod-hero-media">
+        <div class="prod-hero-media-wrapper">
+          <img src="<?php echo $bp; ?>assets/images/products/appointment/hero.png" alt="WhatsApp Appointment Booking Flow" class="prod-hero-media-img" width="1080" height="1080">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Chat Booking Journey (3 Steps) -->
+  <section class="prod-section prod-section-alt" id="scheduling-engine">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">SCHEDULING ENGINE</span>
+        <h2 class="prod-section-title">The In-Chat Booking Journey</h2>
+        <p class="prod-section-desc">
+          Provide a complete self-service scheduling journey directly within WhatsApp conversations without redirects.
+        </p>
+      </div>
+      <div class="prod-steps-grid">
+        <div class="prod-step-card">
+          <div class="prod-step-media">
+            <img src="<?php echo $bp; ?>assets/images/products/appointment/journey-browse.png" alt="Browse and Select Slots" class="prod-step-img">
+          </div>
+          <div class="prod-step-body">
+            <span class="prod-step-num">Step 01</span>
+            <h3 class="prod-step-title">Browse & Select</h3>
+            <p class="prod-step-desc">Clients browse availability dates and pick specialist slots natively inside WhatsApp — no website redirects needed.</p>
+          </div>
+        </div>
+        <div class="prod-step-card">
+          <div class="prod-step-media">
+            <img src="<?php echo $bp; ?>assets/images/products/appointment/journey-deposit.png" alt="Deposit and Lock" class="prod-step-img">
+          </div>
+          <div class="prod-step-body">
+            <span class="prod-step-num">Step 02</span>
+            <h3 class="prod-step-title">Deposit & Lock</h3>
+            <p class="prod-step-desc">Reduce no-shows by collecting secure booking deposit fees directly inside the chat with one-tap payment.</p>
+          </div>
+        </div>
+        <div class="prod-step-card">
+          <div class="prod-step-media">
+            <img src="<?php echo $bp; ?>assets/images/products/appointment/journey-calendar.png" alt="Calendar Sync" class="prod-step-img">
+          </div>
+          <div class="prod-step-body">
+            <span class="prod-step-num">Step 03</span>
+            <h3 class="prod-step-title">Calendar Sync</h3>
+            <p class="prod-step-desc">Reserved slots write immediately to Google/Outlook calendar to block conflicts in real time.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="journey">
-  <div class="container">
-    <div class="section-header reveal"><h2>From Enquiry to Appointment — Automatically</h2></div>
-    <div class="ap-steps">
-      <div class="card reveal"><span>01</span><strong>Enquiry</strong><p>Customer contacts your business.</p></div>
-      <div class="card reveal"><span>02</span><strong>Service</strong><p>Selects required service.</p></div>
-      <div class="card reveal"><span>03</span><strong>Slot</strong><p>Chooses date &amp; time.</p></div>
-      <div class="card reveal"><span>04</span><strong>Confirm</strong><p>Appointment confirmed.</p></div>
-      <div class="card reveal"><span>05</span><strong>Reminder</strong><p>Automated reminder sent.</p></div>
-      <div class="card reveal"><span>06</span><strong>Follow-up</strong><p>Post-appointment communication.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="interactive">
-  <div class="container">
-    <div class="section-header reveal"><h2>See How Customers Book an Appointment</h2></div>
-    <div class="ap-book-steps" id="ap-book-steps">
-      <button type="button" class="is-active" data-step="0">Service</button>
-      <button type="button" data-step="1">Date</button>
-      <button type="button" data-step="2">Time</button>
-      <button type="button" data-step="3">Details</button>
-      <button type="button" data-step="4">Confirmed</button>
-    </div>
-    <div class="ap-book-panel reveal" id="ap-book-panel">Select Service · Consultation · Demo · Meeting</div>
-  </div>
-</section>
-
-<section class="section" id="whatsapp">
-  <div class="container">
-    <div class="section-header reveal"><h2>Let Customers Book Directly on WhatsApp</h2></div>
-    <div class="ap-chat reveal">
-      <p class="m user">I want to book an appointment.</p>
-      <p class="m bot">Sure! Please select a service.</p>
-      <p class="m bot">Consultation · Demo · Meeting</p>
-      <p class="m ok">Appointment confirmed <svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> · View · Calendar · Talk to Team · Demo</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-gradient-1" id="calendar">
-  <div class="container">
-    <div class="section-header reveal"><h2>Keep Your Team Calendar in Sync</h2></div>
-    <div class="ap-flow reveal">
-      <span>Customer</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
-      <span>Available Slot</span><span class="arr">→</span>
-      <span>Calendar</span><span class="arr">→</span>
-      <span>Confirmed</span>
-    </div>
-    <p class="ap-note reveal">Google Calendar connectivity depends on your configured integration.</p>
-  </div>
-</section>
-
-<section class="section" id="reminders">
-  <div class="container">
-    <div class="section-header reveal"><h2>Reduce Missed Appointments With Smart Reminders</h2></div>
-    <div class="ap-flow reveal">
-      <span>Booked</span><span class="arr">↓</span>
-      <span>24h Before</span><span class="arr">↓</span>
-      <span>2h Before</span><span class="arr">↓</span>
-      <span>Appointment Time</span>
-    </div>
-    <p class="ap-note reveal">Reminder timing is configurable where supported — not a fixed guarantee.</p>
-  </div>
-</section>
-
-<section class="section section-alt" id="reschedule">
-  <div class="container">
-    <div class="section-header reveal"><h2>Make Rescheduling Simple</h2></div>
-    <div class="ap-flow reveal">
-      <span>Reschedule Request</span><span class="arr">→</span>
-      <span>New Slot</span><span class="arr">→</span>
-      <span>Calendar Updated</span><span class="arr">→</span>
-      <span>Customer Notified</span>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="team">
-  <div class="container">
-    <div class="section-header reveal"><h2>Give Your Team a Clear View of Every Appointment</h2><p class="lead">Demo Data</p></div>
-    <div class="ap-cards">
-      <div class="card reveal">Today</div>
-      <div class="card reveal">Upcoming</div>
-      <div class="card reveal">Pending</div>
-      <div class="card reveal">Completed</div>
-      <div class="card reveal">Rescheduled</div>
-      <div class="card reveal">Cancelled</div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="play">
-  <div class="container" style="text-align:center">
-    <div class="section-header reveal"><h2 style="color:#fff">Watch the Complete Appointment Journey</h2></div>
-    <button type="button" class="btn btn-primary btn-lg" id="ap-play">▶ Play Appointment Journey</button>
-    <div class="ap-play-out" id="ap-play-out">Click play to animate the full journey.</div>
-  </div>
-</section>
-
-<section class="section" id="industries">
-  <div class="container">
-    <div class="section-header reveal"><h2>Appointment Automation for Every Business</h2></div>
-    <div class="ap-cards">
-      <div class="card reveal"><h3>Healthcare</h3><p>Enquiry → booking → reminder</p></div>
-      <div class="card reveal"><h3>Education</h3><p>Counselling / demo booking</p></div>
-      <div class="card reveal"><h3>Real Estate</h3><p>Property visit + agent</p></div>
-      <div class="card reveal"><h3>Sales</h3><p>Product demo meetings</p></div>
-      <div class="card reveal"><h3>Professional Services</h3><p>Consultation + follow-up</p></div>
-      <div class="card reveal"><h3>Beauty &amp; Wellness</h3><p>Service booking</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="hb-img-slot" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Booking Mobile Screen</strong><span>Service · date · time selection.</span></div>
-</div>
-<div class="hb-img-slot hb-img-slot--dark" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>WhatsApp Booking</strong><span>Conversation-based appointment flow.</span></div>
-</div>
-<div class="hb-img-slot" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Calendar Dashboard</strong><span>Team calendar and slot management.</span></div>
-</div>
-<div class="hb-img-slot hb-img-slot--dark" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Appointment Management</strong><span>Statuses, staff and services.</span></div>
-</div>
-<div class="hb-img-slot" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Complete Automation</strong><span>Book → Confirm → Remind → Follow-up</span></div>
-</div>
-
-<section class="section section-alt" id="benefits">
-  <div class="container">
-    <div class="section-header reveal"><h2>Benefits</h2></div>
-    <div class="ap-cards">
-      <div class="card reveal">24/7 Booking</div>
-      <div class="card reveal">Faster Response</div>
-      <div class="card reveal">Automated Reminders</div>
-      <div class="card reveal">Calendar Connectivity</div>
-      <div class="card reveal">Team Visibility</div>
-      <div class="card reveal">Easy Rescheduling</div>
-      <div class="card reveal">Centralized Appointments</div>
-      <div class="card reveal">Customer Follow-up</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-header reveal"><h2>FAQ</h2></div>
-    <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers book appointments through WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — guide customers through service, date and time selection in conversation where configured.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect Google Calendar?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Where Google Calendar integration is enabled for your account, appointments can sync with available slots.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers reschedule appointments?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — reschedule and cancel flows can be offered based on your automation setup.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I send automatic reminders?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — reminder messages can be scheduled according to your configuration and messaging policies.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark">
-  <div class="container" style="text-align:center">
-    <div class="section-header reveal">
-      <h2 style="color:#fff">Make Appointment Booking Effortless</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Let customers book, confirm, reschedule and receive reminders through one connected workflow.</p>
-      <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
-        <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
+  <!-- Industry Use Cases Grid -->
+  <section class="prod-section" id="usecases">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">USE CASES</span>
+        <h2 class="prod-section-title">Real-Time Scheduling Automation Examples</h2>
+        <p class="prod-section-desc">
+          See how medical, salon, sales, and automotive teams eliminate booking friction.
+        </p>
+      </div>
+      <div class="prod-grid-4">
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Medical Clinics</h3>
+          <p class="prod-card-desc">Patients select doctors, choose open times, and answer simple pre-consultation health questions straight from WhatsApp chat bubbles.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Spas & Salons</h3>
+          <p class="prod-card-desc">Beauty salons and spas let customers choose specific therapist operators, book massage slots, and secure bookings via reservation links.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3 class="prod-card-title">Sales Demos</h3>
+          <p class="prod-card-desc">B2B consultancies sync corporate Google calendars. When prospects interact with the WhatsApp Flow, they book Zoom video meet calls.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+          <h3 class="prod-card-title">Automotive Test Drives</h3>
+          <p class="prod-card-desc">Dealerships allow potential car buyers to select vehicle models and reserve preferred test-drive test slots directly.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="/assets/js/appointment.js?v=1" defer></script>
+  <!-- Scheduling Architecture -->
+  <section class="prod-section prod-section-alt" id="architecture">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">Architecture</span>
+        <h2 class="prod-section-title">Robust Appointment Scheduling Architecture</h2>
+        <p class="prod-section-desc">
+          Built on official WhatsApp Flows to guarantee zero drop-offs and seamless calendar locking.
+        </p>
+      </div>
+      <div class="prod-grid-4">
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <h3 class="prod-card-title">Native WhatsApp Flows</h3>
+          <p class="prod-card-desc">Build multi-step scheduling forms that display calendar lists natively inside WhatsApp without loading web browser links.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Calendar Integrations</h3>
+          <p class="prod-card-desc">Establish bi-directional updates with Google Calendar, Outlook, and major CRM sheets to block booked slot items instantly.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+          <h3 class="prod-card-title">No-Show Reminders</h3>
+          <p class="prod-card-desc">Dispatch automated follow-up warnings (24 hours or 2 hours prior) via WhatsApp, helping businesses cut down missed bookings.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+          </div>
+          <h3 class="prod-card-title">Rescheduling & Cancellations</h3>
+          <p class="prod-card-desc">Let clients manage their appointments with one-tap reschedule or cancellation buttons right in their confirmation chat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="prod-section" id="faqs">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">FAQs</span>
+        <h2 class="prod-section-title">Questions about Scheduling?</h2>
+        <p class="prod-section-desc">
+          Common questions about real-time calendar syncing, buffer times, and multi-timezone handling.
+        </p>
+      </div>
+      <div class="prod-faq-container">
+        <div class="prod-faq-list">
+          <div class="prod-faq-item active">
+            <button type="button" class="prod-faq-question">
+              How does the calendar sync prevent overlap?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              InboxWa operates with real-time API integrations. Whenever a customer opens the WhatsApp Flow scheduler form, InboxWa queries your Google/Outlook calendar to block out slots that contain existing events.
+            </div>
+          </div>
+          <div class="prod-faq-item">
+            <button type="button" class="prod-faq-question">
+              Can customers reschedule or cancel their slots?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Absolutely. The confirmation cards dispatched to WhatsApp contain reschedule and cancel CTA buttons. Clicking them releases the blocked calendar slot and allows picking a new timing.
+            </div>
+          </div>
+          <div class="prod-faq-item">
+            <button type="button" class="prod-faq-question">
+              Does it support multiple timezones?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Yes. Timezones are managed dynamically. When a client triggers the scheduling form, the system automatically detects their phone's local timezone settings and displays calendar slot schedules adjusted accordingly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Box -->
+  <section class="prod-section prod-section-alt">
+    <div class="prod-container">
+      <div class="prod-cta-box">
+        <div class="prod-cta-glow"></div>
+        <h2 class="prod-cta-title">Automate your appointments on WhatsApp</h2>
+        <p class="prod-cta-subtitle">
+          Save 15+ hours each week on scheduling back-and-forth and cut no-show rates by 80%.
+        </p>
+        <div class="prod-cta-actions">
+          <a href="<?php echo $bp; ?>auth/register" class="prod-cta-btn-white">
+            Start Booking Free
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="<?php echo $bp; ?>#contact-section" class="prod-cta-btn-trans">
+            Book a Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var faqItems = document.querySelectorAll('.prod-faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.prod-faq-question');
+    btn.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+      faqItems.forEach(function(fi) { fi.classList.remove('active'); });
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

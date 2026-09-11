@@ -1,226 +1,318 @@
 <?php
 $basePath = '../';
-$pageTitle = 'Facebook Ads + WhatsApp Automation | Lead to Sales | InboxWa';
-$pageDescription = 'Turn Facebook Ad clicks into WhatsApp conversations — capture leads, qualify prospects and send them to CRM and sales teams with InboxWa.';
+$bp = '../';
+require_once __DIR__ . '/../config/cms.php';
+
+$pageTitle = 'Click to WhatsApp Ads (CTWA) | Facebook & Instagram Ads | InboxWa';
+$pageDescription = 'Turn Facebook & Instagram Ads into live WhatsApp conversations. Launch CTWA campaigns with a 3-step wizard, targeted ad sets, automated welcome messages, and real-time ROAS analytics.';
 $canonicalUrl = 'https://inboxwa.com/facebook-ads/';
+$ogImage = 'assets/images/products/ctwa/hero.png';
+
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/facebook-ads.css?v=1">
-<link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=2">
 
-<section class="fa-hero" aria-label="Facebook Ads automation hero">
-  <div class="fa-hero-bg" aria-hidden="true"></div>
-  <div class="container">
-    <div class="fa-hero-grid">
-      <div class="fa-hero-copy">
-        <span class="badge fa-badge">FACEBOOK ADS + WHATSAPP AUTOMATION</span>
-        <h1>Turn Facebook Ad Clicks Into Real <span class="grad">WhatsApp Conversations</span></h1>
-        <p class="fa-lead">Capture leads from Facebook Ads, instantly engage them on WhatsApp, qualify prospects and send them to your sales team automatically.</p>
-        <div class="fa-ctas">
-          <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
-          <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/product-pages.css">
+
+<div class="prod-page">
+  <div class="prod-ambient-1"></div>
+  <div class="prod-ambient-2"></div>
+
+  <!-- Hero Section -->
+  <section class="prod-hero">
+    <div class="prod-hero-grid">
+      <div class="prod-hero-content">
+        <div class="prod-badge">
+          <span class="prod-badge-dot"></span>
+          Click to WhatsApp Ads
+        </div>
+        <h1 class="prod-hero-title">
+          Turn Facebook & Instagram Ads into <span class="prod-gradient-text">Live WhatsApp Conversations</span>
+        </h1>
+        <p class="prod-hero-desc">
+          Create, manage, and optimize ad campaigns that open WhatsApp chats directly. Target high-intent audiences on Meta platforms, capture verified phone numbers instantly, and convert clicks into paying customers.
+        </p>
+        <div class="prod-hero-ctas">
+          <a href="<?php echo $bp; ?>auth/register" class="prod-btn-primary">
+            Launch Your First Campaign
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#ctwa-features" class="prod-btn-secondary">
+            Explore Features
+          </a>
+        </div>
+        <div class="prod-bullets">
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Facebook & Instagram
+          </div>
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            3-Step Wizard
+          </div>
+          <div class="prod-bullet-item">
+            <span class="prod-bullet-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Real-Time Analytics
+          </div>
         </div>
       </div>
-      <div class="fa-phone-stage">
-        <div class="fa-phone">
-          <div class="fa-notch"></div>
-          <div class="fa-screen">
-            <div class="fa-head"><div class="fa-av">FB</div><div><strong>Your Brand</strong><small>From Facebook Ads</small></div></div>
-            <div class="fa-body" id="fa-body"><div class="fa-typing" id="fa-typing"><i></i><i></i><i></i></div></div>
+      <div class="prod-hero-media">
+        <div class="prod-hero-media-wrapper">
+          <img src="<?php echo $bp; ?>assets/images/products/ctwa/hero.png" alt="Click to WhatsApp Ads Dashboard" class="prod-hero-media-img" width="900" height="400">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hierarchy Structure Section -->
+  <section class="prod-section prod-section-alt" id="structure">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">Structure</span>
+        <h2 class="prod-section-title">Campaign hierarchy, visualized</h2>
+        <p class="prod-section-desc">
+          Three levels that define your ad strategy — from broad targeting to precise creative execution.
+        </p>
+      </div>
+      <div class="prod-grid-3">
+        <div class="prod-card" style="text-align: center; align-items: center;">
+          <div class="prod-card-icon" style="background:#ede9fe;color:#7c3aed">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+          </div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #7c3aed; text-transform: uppercase; margin-bottom: 0.35rem;">Level 01</span>
+          <h3 class="prod-card-title">Campaigns</h3>
+          <p class="prod-card-desc">Define objective, budget & schedule. Choose from engagement, traffic, awareness, or leads goals.</p>
+        </div>
+        <div class="prod-card" style="text-align: center; align-items: center;">
+          <div class="prod-card-icon" style="background:#e0f2fe;color:#0284c7">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #0284c7; text-transform: uppercase; margin-bottom: 0.35rem;">Level 02</span>
+          <h3 class="prod-card-title">Ad Sets</h3>
+          <p class="prod-card-desc">Target by location, age, gender & platform. Set bids, scheduling, and delivery optimization.</p>
+        </div>
+        <div class="prod-card" style="text-align: center; align-items: center;">
+          <div class="prod-card-icon" style="background:#dcfce7;color:#16a34a">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          </div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #16a34a; text-transform: uppercase; margin-bottom: 0.35rem;">Level 03</span>
+          <h3 class="prod-card-title">Ads</h3>
+          <p class="prod-card-desc">Create the creative — image, video, or carousel — with WhatsApp CTA button and welcome experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Interactive Showcase -->
+  <section class="prod-section" id="ctwa-features">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">Features</span>
+        <h2 class="prod-section-title">Built for campaign success</h2>
+        <p class="prod-section-desc">
+          Everything you need to launch and optimize profitable Click to WhatsApp ad funnels.
+        </p>
+      </div>
+
+      <div class="prod-showcase-box">
+        <div class="prod-showcase-grid">
+          <div class="prod-tabs-list" id="ctwa-tabs">
+            <button type="button" class="prod-tab-item active" data-img="<?php echo $bp; ?>assets/images/products/ctwa/feature-sync.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">Asset Synchronization</div>
+                <div class="prod-tab-text-desc">Connect Facebook Pages and Instagram accounts in one click. Automatically sync ad accounts.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/ctwa/feature-wizard.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">3-Step Campaign Wizard</div>
+                <div class="prod-tab-text-desc">Guided walkthrough: campaign details, ad set targeting, and creative with WhatsApp CTA.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/ctwa/feature-targeting.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">Location & Demographic Targeting</div>
+                <div class="prod-tab-text-desc">Target by country, age range, gender, and platform. Set daily budgets and optimization goals.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/ctwa/feature-formats.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">Multiple Creative Formats</div>
+                <div class="prod-tab-text-desc">Single image, video, and carousel ads with custom primary text, headlines, and descriptions.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/ctwa/feature-welcome.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">WhatsApp Welcome Experience</div>
+                <div class="prod-tab-text-desc">Pre-filled greeting messages and ice breaker suggestions that prompt the user to start chatting.</div>
+              </div>
+            </button>
+            <button type="button" class="prod-tab-item" data-img="<?php echo $bp; ?>assets/images/products/ctwa/feature-analytics.png">
+              <div class="prod-tab-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <div>
+                <div class="prod-tab-text-title">Real-Time Performance Analytics</div>
+                <div class="prod-tab-text-desc">Track spend, impressions, clicks, conversations started, cost-per-result, and CTR across campaigns.</div>
+              </div>
+            </button>
+          </div>
+          <div class="prod-tab-preview-pane">
+            <img id="ctwa-preview-img" src="<?php echo $bp; ?>assets/images/products/ctwa/feature-sync.png" alt="CTWA Feature Preview" class="prod-preview-img">
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="journey">
-  <div class="container">
-    <div class="section-header reveal"><h2>From Ad Click to Customer Conversation</h2></div>
-    <div class="fa-steps">
-      <div class="card reveal"><span>01</span><strong>Facebook Ad</strong><p>Customer sees your advertisement.</p></div>
-      <div class="card reveal"><span>02</span><strong>Lead</strong><p>Customer submits enquiry/lead.</p></div>
-      <div class="card reveal"><span>03</span><strong>WhatsApp</strong><p>Lead enters a WhatsApp conversation.</p></div>
-      <div class="card reveal"><span>04</span><strong>Qualification</strong><p>Questions capture the required information.</p></div>
-      <div class="card reveal"><span>05</span><strong>Sales</strong><p>Qualified lead reaches the sales team/CRM.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="lead-ads">
-  <div class="container">
-    <div class="section-header reveal"><h2>Facebook Lead Ads Simulation</h2><p class="lead">Demo UI — not a pixel-perfect Facebook interface</p></div>
-    <div class="fa-ad-mock reveal">
-      <strong>Your Brand</strong>
-      <p>Special Offer / Product / Service</p>
-      <button type="button" class="btn btn-sm btn-primary" id="fa-ad-click">Learn More</button>
-      <div class="fa-ad-status" id="fa-ad-status">Click Learn More to simulate Ad → Lead → WhatsApp</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="wa">
-  <div class="container">
-    <div class="section-header reveal"><h2>Start the Conversation Instantly</h2></div>
-    <div class="fa-chat reveal">
-      <p class="m user">Hello, I came from your Facebook ad.</p>
-      <p class="m bot">Welcome! What are you looking for?</p>
-      <p class="m bot">Product Details · Pricing · Book Demo · Talk to Sales</p>
-      <p class="m ok">Source: Facebook Ads · Status: Qualified · Assigned: Sales · Demo Data</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-gradient-1" id="qualify">
-  <div class="container">
-    <div class="section-header reveal"><h2>Automatically Qualify Your Facebook Leads</h2></div>
-    <div class="fa-flow reveal">
-      <span>New Lead</span><span class="arr">→</span>
-      <span>Ask Questions</span><span class="arr">→</span>
-      <span>Capture Requirement</span><span class="arr">→</span>
-      <span>Status</span><span class="arr">→</span>
-      <span>Sales Team</span>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="crm">
-  <div class="container">
-    <div class="section-header reveal"><h2>Send Facebook Leads Straight to Your CRM</h2></div>
-    <div class="fa-flow reveal">
-      <span>Facebook Ads</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
-      <span>CRM</span><span class="arr">→</span>
-      <span>Sales Team</span>
-    </div>
-    <div class="fa-crm-cards">
-      <div class="card reveal">Zoho CRM</div>
-      <div class="card reveal">HubSpot</div>
-      <div class="card reveal">Salesforce</div>
-      <div class="card reveal">Custom CRM</div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="followup">
-  <div class="container">
-    <div class="section-header reveal"><h2 style="color:#fff">Never Let a Facebook Lead Go Cold</h2></div>
-    <div class="fa-timeline reveal">
-      <p>10:30 AM — Lead Captured</p>
-      <p>10:31 AM — WhatsApp Message Sent</p>
-      <p>10:35 AM — Customer Responded</p>
-      <p>10:36 AM — Sales Team Notified · Demo Timeline</p>
-    </div>
-    <p class="fa-policy reveal">WhatsApp business-initiated messages should follow Meta policies, consent and approved templates where required.</p>
-  </div>
-</section>
-
-<section class="section" id="campaigns">
-  <div class="container">
-    <div class="section-header reveal"><h2>Campaign Types</h2></div>
-    <div class="fa-cards">
-      <div class="card reveal"><h3>Lead Generation</h3><p>Ad → Lead → WhatsApp → Sales</p></div>
-      <div class="card reveal"><h3>Product Enquiry</h3><p>Ad → Lead → WhatsApp → Sales</p></div>
-      <div class="card reveal"><h3>Demo Booking</h3><p>Ad → Lead → WhatsApp → Sales</p></div>
-      <div class="card reveal"><h3>Appointment</h3><p>Ad → Lead → WhatsApp → Sales</p></div>
-      <div class="card reveal"><h3>Offer Campaign</h3><p>Ad → Lead → WhatsApp → Sales</p></div>
-      <div class="card reveal"><h3>Real Estate / Education / E-com</h3><p>Ad → Lead → WhatsApp → Sales</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="industries">
-  <div class="container">
-    <div class="section-header reveal"><h2>Facebook Ads Automation for Every Business</h2></div>
-    <div class="fa-cards">
-      <div class="card reveal"><h3>Real Estate</h3><p>Property enquiry → WhatsApp → Agent</p></div>
-      <div class="card reveal"><h3>Education</h3><p>Course enquiry → Counsellor</p></div>
-      <div class="card reveal"><h3>E-commerce</h3><p>Product interest → Store/Sales</p></div>
-      <div class="card reveal"><h3>Healthcare</h3><p>Appointment enquiry → Team</p></div>
-      <div class="card reveal"><h3>Automotive</h3><p>Vehicle enquiry → Sales</p></div>
-      <div class="card reveal"><h3>Travel / Finance / Agencies</h3><p>Enquiry → Qualification → Team</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="play">
-  <div class="container" style="text-align:center">
-    <div class="section-header reveal"><h2 style="color:#fff">Watch a Lead Move Through Your Entire Funnel</h2></div>
-    <button type="button" class="btn btn-primary btn-lg" id="fa-play">▶ Play Lead Journey</button>
-    <div class="fa-play-out" id="fa-play-out">Click play to animate the full funnel.</div>
-  </div>
-</section>
-
-<section class="section" id="dashboard">
-  <div class="container">
-    <div class="section-header reveal"><h2>Facebook Ads Dashboard</h2><p class="lead">Demo Data — not performance guarantees</p></div>
-    <div class="fa-cards">
-      <div class="card reveal">Campaign</div>
-      <div class="card reveal">Leads</div>
-      <div class="card reveal">Conversations</div>
-      <div class="card reveal">Qualified</div>
-      <div class="card reveal">Follow-ups</div>
-      <div class="card reveal">Sales Pipeline</div>
-    </div>
-  </div>
-</section>
-
-<div class="edu-img-card-wrap reveal" style="margin: 2.5rem 0;">
-  <img src="/assets/images/facebook_ad_funnel_banner.jpg" alt="Click-to-WhatsApp Facebook & Instagram Ad Conversion Funnel" loading="lazy">
-  <div class="edu-img-caption-badge">
-    <strong><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Click-to-WhatsApp Ad Funnel Architecture</strong>
-    <span>Ad Click → Instant WhatsApp Chat → AI Qualification → CRM Sync</span>
-  </div>
-</div>
-
-<div class="edu-img-card-wrap reveal" style="margin: 2.5rem 0;">
-  <img src="/assets/images/edtech_shared_inbox.jpg" alt="InboxWa Lead Assignment & Multi-Agent CRM Pipeline" loading="lazy">
-  <div class="edu-img-caption-badge">
-    <strong><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Centralized Lead Pipeline &amp; Multi-Agent Sales Workspace</strong>
-    <span>Zero Lead Leakage &amp; 3x Higher Conversion</span>
-  </div>
-</div>
-
-<section class="section section-alt" id="benefits">
-  <div class="container">
-    <div class="section-header reveal"><h2>Benefits</h2></div>
-    <div class="fa-cards">
-      <div class="card reveal">Instant Lead Engagement</div>
-      <div class="card reveal">Centralized Lead Data</div>
-      <div class="card reveal">Automated Qualification</div>
-      <div class="card reveal">Faster Follow-up</div>
-      <div class="card reveal">CRM Connectivity</div>
-      <div class="card reveal">Sales Team Notifications</div>
-      <div class="card reveal">WhatsApp Conversations</div>
-      <div class="card reveal">Campaign Visibility</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-header reveal"><h2>FAQ</h2></div>
-    <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How does Facebook Lead Ads integration work?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Leads from your Facebook lead setup can flow into InboxWa, then into WhatsApp conversations and CRM where configured.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can Facebook leads be connected to WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — engage leads on WhatsApp according to your automation and messaging policies.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can Facebook leads be sent to CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Where CRM integration is available or configured via API/webhooks.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Does WhatsApp messaging require approved templates/consent?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Business-initiated messages outside the customer care window typically require approved templates and proper consent under Meta rules.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark fa-final">
-  <div class="container" style="text-align:center">
-    <div class="section-header reveal">
-      <h2 style="color:#fff">Turn Your Facebook Leads Into Conversations</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Capture. Connect. Qualify. Follow Up. Convert.</p>
-      <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
-        <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
+  <!-- 3 Simple Steps to Launch -->
+  <section class="prod-section prod-section-alt" id="wizard">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">Wizard</span>
+        <h2 class="prod-section-title">Three simple steps to launch</h2>
+        <p class="prod-section-desc">From concept to live campaign in minutes.</p>
+      </div>
+      <div class="prod-steps-grid">
+        <div class="prod-step-card">
+          <div class="prod-step-body" style="padding: 2.25rem;">
+            <span class="prod-step-num">Step 01</span>
+            <h3 class="prod-step-title">Campaign Setup</h3>
+            <p class="prod-step-desc">Choose your campaign objective — engagement, traffic, awareness, or leads. Define the campaign name, set daily budget, select the special ad category, and pick your optimization goal.</p>
+          </div>
+        </div>
+        <div class="prod-step-card">
+          <div class="prod-step-body" style="padding: 2.25rem;">
+            <span class="prod-step-num">Step 02</span>
+            <h3 class="prod-step-title">Targeting Configuration</h3>
+            <p class="prod-step-desc">Define who sees your ads. Set targeting by gender, age range, and platforms (Facebook, Instagram, or both). Configure ad set name, daily budget, schedule start/end times, and billing event.</p>
+          </div>
+        </div>
+        <div class="prod-step-card">
+          <div class="prod-step-body" style="padding: 2.25rem;">
+            <span class="prod-step-num">Step 03</span>
+            <h3 class="prod-step-title">Creative & Welcome</h3>
+            <p class="prod-step-desc">Upload your ad creative — image, video, or carousel. Add the WhatsApp CTA button with your WhatsApp Business number. Configure the Welcome Experience with greeting messages and ice breakers.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="/assets/js/facebook-ads.js?v=1" defer></script>
+  <!-- FAQs Section -->
+  <section class="prod-section" id="faqs">
+    <div class="prod-container">
+      <div class="prod-section-header">
+        <span class="prod-section-badge">FAQs</span>
+        <h2 class="prod-section-title">Click to WhatsApp Ads — common questions</h2>
+        <p class="prod-section-desc">
+          Everything you need to know about setting up Facebook & Instagram ads that open WhatsApp.
+        </p>
+      </div>
+      <div class="prod-faq-container">
+        <div class="prod-faq-list">
+          <div class="prod-faq-item active">
+            <button type="button" class="prod-faq-question">
+              What is Click to WhatsApp Ads and how does it work?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Click to WhatsApp Ads are Facebook and Instagram advertisements that include a Call-to-Action button opening a WhatsApp chat conversation. When users tap the ad CTA, they're taken directly into a WhatsApp chat with your business — no forms, no landing pages, no friction.
+            </div>
+          </div>
+          <div class="prod-faq-item">
+            <button type="button" class="prod-faq-question">
+              Do I need a Facebook Business Manager to create ads?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              Yes. Our system connects to your existing Facebook Business Manager to sync your ad accounts, Facebook Pages, and Instagram professional accounts. Once connected, you can create, manage, and track campaigns directly from our dashboard without ever opening Ads Manager.
+            </div>
+          </div>
+          <div class="prod-faq-item">
+            <button type="button" class="prod-faq-question">
+              What ad formats and creative types are supported?
+              <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="prod-faq-answer">
+              We support image, video, and carousel ad formats. Each creative can include a WhatsApp CTA button and be paired with a Welcome Experience — a customizable greeting message with ice breaker suggestion buttons that appear when users land in your WhatsApp chat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Box -->
+  <section class="prod-section prod-section-alt">
+    <div class="prod-container">
+      <div class="prod-cta-box">
+        <div class="prod-cta-glow"></div>
+        <h2 class="prod-cta-title">Turn ad clicks into direct conversations</h2>
+        <p class="prod-cta-subtitle">
+          Drive 3x more qualified leads from Facebook and Instagram with instant WhatsApp chat openings.
+        </p>
+        <div class="prod-cta-actions">
+          <a href="<?php echo $bp; ?>auth/register" class="prod-cta-btn-white">
+            Launch Your First Campaign
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="<?php echo $bp; ?>#contact-section" class="prod-cta-btn-trans">
+            Book a Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var tabs = document.querySelectorAll('#ctwa-tabs .prod-tab-item');
+  var previewImg = document.getElementById('ctwa-preview-img');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var newSrc = tab.getAttribute('data-img');
+      if (newSrc && previewImg) {
+        previewImg.style.opacity = '0.3';
+        previewImg.style.transform = 'scale(0.98)';
+        setTimeout(function() {
+          previewImg.src = newSrc;
+          previewImg.style.opacity = '1';
+          previewImg.style.transform = 'scale(1)';
+        }, 150);
+      }
+    });
+  });
+
+  var faqItems = document.querySelectorAll('.prod-faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.prod-faq-question');
+    btn.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+      faqItems.forEach(function(fi) { fi.classList.remove('active'); });
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
 <?php include __DIR__ . '/../includes/footer.php'; ?>
