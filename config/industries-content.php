@@ -2459,3 +2459,114 @@ function getExtendedIndustryData($slug) {
         'cta_desc' => 'Get started with official WhatsApp Business API today.'
     ];
 }
+
+function getIndustryChips($slug) {
+    $chipsMap = [
+        'real-estate' => [
+            '🏡 Book Site Visit',
+            '📄 Brochure & Pricing',
+            '📍 360° Virtual Tour',
+            '💰 Downpayment & EMI',
+            '📞 Talk to Advisor'
+        ],
+        'healthcare' => [
+            '🩺 Book Doctor Appointment',
+            '🧪 Lab Test Reports',
+            '🏥 Emergency OP Timings',
+            '💊 Prescription Refill',
+            '📞 Talk to Clinic Support'
+        ],
+        'travel-hospitality' => [
+            '✈️ Explore Holiday Packages',
+            '🏨 Hotel & Villa Booking',
+            '📋 Download Itinerary',
+            '💳 Flight Web Check-in',
+            '📞 Speak to Travel Agent'
+        ],
+        'beauty-wellness' => [
+            '💆 Book Spa & Salon Slot',
+            '📜 View Service Menu & Rates',
+            '🎁 Check Loyalty Points',
+            '✨ Festival Offers (20% OFF)',
+            '📞 Talk to Reception'
+        ],
+        'ecommerce' => [
+            '📦 Track My Order',
+            '🛒 Abandoned Cart Recovery',
+            '💳 COD Confirmation',
+            '🔄 Return & Exchange',
+            '📞 Live Customer Support'
+        ],
+        'automotive' => [
+            '🚗 Book Home Test Drive',
+            '💰 Get On-Road Price Quote',
+            '🔧 Book Car Service',
+            '📄 Download Brochure & Specs',
+            '📞 Speak to Sales Advisor'
+        ],
+        'restaurants-food' => [
+            '🍽️ Reserve a Table',
+            '📜 View Digital Menu',
+            '🛵 Track Food Order',
+            '🎉 Book Party / Catering',
+            '📞 Call Restaurant'
+        ],
+        'manufacturing' => [
+            '🏭 Request Bulk RFQ Quote',
+            '📄 Technical Spec Sheets',
+            '📦 Track Factory Dispatch',
+            '💼 Dealer Credit & Ledger',
+            '📞 Talk to Plant Engineer'
+        ],
+        'events-wedding' => [
+            '🎉 RSVP & Get Entry QR',
+            '📍 Venue Location & Map',
+            '📅 Event Schedule & Itinerary',
+            '🏨 Guest Accommodation Info',
+            '📞 Contact Event Coordinator'
+        ],
+        'digital-marketing' => [
+            '📈 Agency Partner Program',
+            '🏷️ White-Label Reseller Portal',
+            '📢 Click-to-WhatsApp Ads ROI',
+            '⚡ Multi-Tenant Client Setup',
+            '📞 Schedule Agency Demo'
+        ],
+        'it-software' => [
+            '⚡ Get API Key & Sandbox',
+            '🔐 WhatsApp OTP & 2FA Setup',
+            '🔄 Webhook Event Triggers',
+            '📊 High-Volume Enterprise SLA',
+            '📞 Speak to Solutions Architect'
+        ],
+        'retail' => [
+            '🏬 In-Store Stock Check',
+            '🎁 Check Loyalty Points',
+            '🏷️ Weekend Store Offers',
+            '📍 Store Locator & Hours',
+            '📞 Contact Store Associate'
+        ],
+        'professional-services' => [
+            '💼 Schedule Consultation',
+            '📄 Secure Document Upload',
+            '⚖️ Fee Structure & Retainers',
+            '🔒 NDA & Confidentiality',
+            '📞 Speak to Senior Partner'
+        ],
+        'b2b-suppliers' => [
+            '📦 Repeat Last Bulk Order',
+            '💰 View Wholesale Rate Sheet',
+            '📄 Download Ledger Statement',
+            '🚚 Live Shipment Dispatch',
+            '📞 Speak to Account Manager'
+        ]
+    ];
+    return $chipsMap[$slug] ?? [
+        '💰 See Pricing',
+        '🤖 How AI Works',
+        '📢 Send Broadcasts',
+        '⚡ 0% Ban Guarantee',
+        '📞 Book Live Demo'
+    ];
+}
+
