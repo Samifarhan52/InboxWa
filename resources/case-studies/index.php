@@ -110,7 +110,7 @@ $caseStudies = [
   ]
 ];
 ?>
-<link rel="stylesheet" href="/assets/css/resources.css?v=2">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
 <nav class="container res-breadcrumbs" aria-label="Breadcrumb">
   <ol>
@@ -241,6 +241,6 @@ $caseStudies = [
   </div>
 </section>
 
-<script src="/assets/js/resources.js?v=2" defer></script>
+<script src="/assets/js/resources.js?v=3" defer></script>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
 

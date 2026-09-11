@@ -27,7 +27,7 @@ $pageDescription = htmlspecialchars($post["excerpt"] ?: substr(strip_tags($post[
 $canonicalUrl = "https://inboxwa.com/resources/blog/" . urlencode($post["slug"]) . "/";
 include dirname(__DIR__, 2) . "/includes/header.php";
 ?>
-<link rel="stylesheet" href="/assets/css/resources.css?v=1">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
 <nav class="container res-breadcrumb" aria-label="Breadcrumb">
   <a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / <span><?php echo htmlspecialchars($post["title"]); ?></span>

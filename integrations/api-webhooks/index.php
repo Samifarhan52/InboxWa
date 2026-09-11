@@ -6,7 +6,7 @@ $canonicalUrl = 'https://inboxwa.com/integrations/api-webhooks/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/api-webhooks.css?v=3">
-<link rel="stylesheet" href="/assets/css/resources.css?v=2">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
 <section class="api-hero" aria-label="API Webhooks hero">
   <div class="api-hero-bg" aria-hidden="true"></div>

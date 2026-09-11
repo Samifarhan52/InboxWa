@@ -5,7 +5,7 @@ $pageDescription = 'InboxWa REST API overview: authentication, messages, contact
 $canonicalUrl = 'https://inboxwa.com/resources/api-docs/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/resources.css?v=1">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Resources / API Docs</nav>
 <section class="section page-hero" style="padding-top:1.25rem"><div class="container"><div class="section-header reveal">
@@ -59,5 +59,5 @@ curl_setopt_array($ch, [CURLOPT_POST=>true, CURLOPT_HTTPHEADER=>['Authorization:
 </section>
 </div></div></section>
 
-<script src="/assets/js/resources.js?v=1" defer></script>
+<script src="/assets/js/resources.js?v=3" defer></script>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

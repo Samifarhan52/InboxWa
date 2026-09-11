@@ -5,7 +5,7 @@ $pageDescription = 'Help center, API docs, blog, case studies, templates and app
 $canonicalUrl = 'https://inboxwa.com/resources/';
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/resources.css?v=1">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Resources</nav>
 <section class="section page-hero" style="padding-top:1.25rem"><div class="container"><div class="section-header reveal">
 <span class="badge badge-primary">Resources</span>

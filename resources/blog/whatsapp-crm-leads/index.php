@@ -5,7 +5,7 @@ $pageDescription = 'From first message to pipeline stage.';
 $canonicalUrl = 'https://inboxwa.com/resources/blog/whatsapp-crm-leads/';
 include __DIR__ . '/../../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/resources.css?v=1">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
 <nav class="container res-breadcrumb"><a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / WhatsApp CRM Automation for Lead Managem</nav>
 <article class="section" style="padding-top:1.25rem"><div class="container" style="max-width:800px">
@@ -29,5 +29,5 @@ include __DIR__ . '/../../../includes/header.php';
 </div>
 </div></article>
 
-<script src="/assets/js/resources.js?v=1" defer></script>
+<script src="/assets/js/resources.js?v=3" defer></script>
 <?php include __DIR__ . '/../../../includes/footer.php'; ?>

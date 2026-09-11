@@ -5,7 +5,7 @@ $pageDescription = 'Official InboxWa Help Center. Explore guides, setup tutorial
 $canonicalUrl = 'https://inboxwa.com/resources/help-center/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/resources.css?v=2">
+<link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
 <div class="container">
   <nav class="res-breadcrumb" aria-label="Breadcrumb">
@@ -412,5 +412,5 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<script src="/assets/js/resources.js?v=2" defer></script>
+<script src="/assets/js/resources.js?v=3" defer></script>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
