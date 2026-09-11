@@ -83,4 +83,50 @@
       sf.reset();
     });
   }
+
+  // FAQ Accordion
+  document.querySelectorAll('.res-faq-question').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.res-faq-item');
+      var wasOpen = item.classList.contains('is-open');
+      var parent = item.parentElement;
+      parent.querySelectorAll('.res-faq-item').forEach(function(i){ i.classList.remove('is-open'); });
+      if(!wasOpen){ item.classList.add('is-open'); }
+    });
+  });
+
+  // Category Filter Tabs (Case Studies & Templates)
+  document.querySelectorAll('.res-filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var filter = btn.getAttribute('data-filter');
+      var root = btn.closest('section') || document;
+      root.querySelectorAll('.res-filter-btn').forEach(function(b){ b.classList.toggle('is-active', b === btn); });
+      root.querySelectorAll('[data-category]').forEach(function(card){
+        if(filter === 'all' || card.getAttribute('data-category') === filter){
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Help Center, Blog, Templates & Case Studies Quick Search
+  var searchInputs = ['hc-search', 'blog-search', 'tpl-search', 'cs-search'];
+  searchInputs.forEach(function(id){
+    var input = document.getElementById(id);
+    if(!input) return;
+    input.addEventListener('input', function(){
+      var q = input.value.toLowerCase().trim();
+      var targetCards = document.querySelectorAll('.res-card, .res-faq-item, .wa-tpl-card, .cs-card');
+      targetCards.forEach(function(el){
+        var text = (el.textContent || '').toLowerCase();
+        if(!q || text.indexOf(q) !== -1){
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+  });
 })();

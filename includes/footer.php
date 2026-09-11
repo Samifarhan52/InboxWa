@@ -132,7 +132,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
             <li><a href="<?php echo $bp; ?>integrations/shopify">Shopify Integration</a></li>
             <li><a href="<?php echo $bp; ?>integrations/woocommerce">WooCommerce Integration</a></li>
             <li><a href="<?php echo $bp; ?>integrations/google-calendar">Google Workspace</a></li>
-            <li><a href="<?php echo $bp; ?>integrations/webhooks">Webhooks &amp; API</a></li>
+            <li><a href="<?php echo $bp; ?>integrations/api-webhooks/">Webhooks &amp; API</a></li>
           </ul>
         </div>
         <div class="footer-col">
