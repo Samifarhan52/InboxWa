@@ -5,7 +5,7 @@ $pageDescription = 'Connect your website, CRM, ERP or custom applications to Inb
 $canonicalUrl = 'https://inboxwa.com/integrations/api-webhooks/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/api-webhooks.css?v=2">
+<link rel="stylesheet" href="/assets/css/api-webhooks.css?v=3">
 <link rel="stylesheet" href="/assets/css/resources.css?v=2">
 
 <section class="api-hero" aria-label="API Webhooks hero">
@@ -96,40 +96,85 @@ include __DIR__ . '/../../includes/header.php';
     </div>
 
     <div class="api-code-tabs" id="api-code-tabs">
-      <button type="button" class="is-active" data-lang="curl">cURL</button>
-      <button type="button" data-lang="js">Node.js / JavaScript</button>
-      <button type="button" data-lang="py">Python</button>
-      <button type="button" data-lang="php">PHP</button>
+      <button type="button" class="is-active" data-lang="curl">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        cURL
+      </button>
+      <button type="button" data-lang="js">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4"></rect><path d="M7 15V9h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H7"></path></svg>
+        Node.js / JavaScript
+      </button>
+      <button type="button" data-lang="py">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"></path></svg>
+        Python
+      </button>
+      <button type="button" data-lang="php">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        PHP
+      </button>
     </div>
 
-    <pre class="api-code" id="api-code-block"><code>curl -X POST https://api.inboxwa.com/v1/messages \
-  -H "Authorization: Bearer YOUR_INBOXWA_API_KEY" \
+    <!-- Code Terminal Window -->
+    <div class="api-code-window reveal">
+      <div class="api-code-topbar">
+        <div class="api-code-dots">
+          <span class="api-code-dot api-code-dot--red"></span>
+          <span class="api-code-dot api-code-dot--yellow"></span>
+          <span class="api-code-dot api-code-dot--green"></span>
+          <span class="api-code-label" style="margin-left:8px">POST https://api.inboxwa.com/v1/messages</span>
+        </div>
+        <button type="button" class="api-copy-btn" id="copy-code-btn">
+          📋 Copy Code
+        </button>
+      </div>
+      <pre class="api-code" id="api-code-block"><code>curl -X POST "https://api.inboxwa.com/v1/messages" \
+  -H "Authorization: Bearer inb_live_sec_918050854445" \
   -H "Content-Type: application/json" \
   -d '{
-    "to": "+919876543210",
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "+918050854445",
     "type": "template",
     "template": {
-      "name": "order_confirmation_v2",
-      "language": "en_US",
-      "parameters": [
-        { "type": "text", "text": "Rahul" },
-        { "type": "text", "text": "ORD-9842" },
-        { "type": "text", "text": "₹2,499" }
+      "name": "order_confirmation",
+      "language": { "code": "en_US" },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Aanya Kapoor" },
+            { "type": "text", "text": "ORD-84920" },
+            { "type": "text", "text": "₹2,499" }
+          ]
+        }
       ]
     }
   }'</code></pre>
+    </div>
 
-    <div class="api-response reveal" style="max-width:720px;margin:1.25rem auto 0;background:#0B1120;color:#E2E8F0;border:1px solid #1E293B;border-radius:14px;padding:1.25rem;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
-        <strong style="color:#34D399;font-size:0.85rem;font-family:monospace">HTTP/1.1 200 OK</strong>
-        <span style="font-size:0.75rem;color:#94A3B8;font-family:monospace">Latency: 142ms</span>
+    <!-- Live Response Terminal Window -->
+    <div class="api-response-window reveal">
+      <div class="api-response-topbar">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="color:#10B981;font-size:0.82rem;font-weight:700;background:rgba(16,185,129,0.15);padding:2px 8px;border-radius:6px;font-family:monospace">HTTP/1.1 200 OK</span>
+          <span style="font-size:0.75rem;color:#94A3B8;font-family:monospace">Content-Type: application/json</span>
+        </div>
+        <span style="font-size:0.75rem;color:#67E8F9;font-family:monospace">Latency: 118ms</span>
       </div>
-      <pre style="margin:0;font-size:0.82rem;line-height:1.45;color:#A5F3FC;font-family:monospace"><code>{
-  "success": true,
-  "message_id": "wamid.HBgLOTE5ODc2NTQzMjEwFQIAEhgWM0VCMDAxMkJFQ0QwNDk5OTQyM0I0MQA=",
-  "recipient": "+919876543210",
-  "status": "queued",
-  "created_at": "2026-09-11T12:30:00Z"
+      <pre class="api-response-body"><code>{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "+918050854445",
+      "wa_id": "918050854445"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgLOTE4MDUwODU0NDQ1FQIAEhgWM0VCMDAxMkJFQ0QwNDk5OTQyM0I0MQA=",
+      "message_status": "accepted"
+    }
+  ]
 }</code></pre>
     </div>
   </div>
@@ -341,6 +386,6 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<script src="/assets/js/api-webhooks.js?v=2" defer></script>
+<script src="/assets/js/api-webhooks.js?v=3" defer></script>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
 
