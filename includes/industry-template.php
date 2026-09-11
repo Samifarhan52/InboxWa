@@ -77,46 +77,63 @@ include __DIR__ . '/header.php';
           </div>
         </div>
 
-        <!-- Phone Mockup Simulator -->
+        <!-- Hero Visual: Authentic Cloned & Branded Image Graphic + Live Interactive Overlay -->
         <div class="ind-hero-visual">
-          <div class="ind-phone-container">
-            <div class="ind-phone-screen">
-              <div class="ind-phone-header">
-                <div class="ind-phone-avatar">IW</div>
-                <div class="ind-phone-meta">
-                  <strong><?php echo htmlspecialchars($indData['chat_title'] ?? 'InboxWa AI Bot'); ?> <svg width="14" height="14" viewBox="0 0 24 24" fill="#00D26A"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></strong>
-                  <small>Verified Official Account · Online</small>
+          <div class="ind-hero-media-card">
+            <img src="/assets/images/industries/<?php echo $indData['slug']; ?>/hero-branded.png" 
+                 alt="<?php echo htmlspecialchars($indData['title']); ?> - InboxWa" 
+                 class="ind-hero-media-img" 
+                 loading="eager">
+
+            <!-- Floating Verified Metric Pill -->
+            <?php if (!empty($indData['floating_metric'])): ?>
+              <div class="ind-floating-metric">
+                <div class="ind-metric-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <div class="ind-metric-info">
+                  <strong><?php echo htmlspecialchars($indData['floating_metric']['value']); ?></strong>
+                  <span><?php echo htmlspecialchars($indData['floating_metric']['label']); ?></span>
                 </div>
               </div>
-              <div class="ind-phone-body">
-                <?php foreach (($indData['chat_messages'] ?? []) as $msg): ?>
-                  <div class="ind-msg <?php echo $msg['type']; ?>">
-                    <?php echo $msg['text']; ?>
-                    <?php if (!empty($msg['buttons'])): ?>
-                      <div class="ind-msg-buttons">
-                        <?php foreach ($msg['buttons'] as $btn): ?>
-                          <div class="ind-msg-btn"><?php echo htmlspecialchars($btn); ?></div>
-                        <?php endforeach; ?>
-                      </div>
-                    <?php endif; ?>
-                    <span class="msg-time"><?php echo date('h:i A'); ?></span>
-                  </div>
-                <?php endforeach; ?>
+            <?php endif; ?>
+
+            <!-- Live Verified WhatsApp Chat Pill Float -->
+            <div class="ind-hero-chat-pill">
+              <div class="ind-pill-avatar">IW</div>
+              <div class="ind-pill-text">
+                <span class="ind-pill-title">InboxWa AI <?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'Bot'); ?> <svg width="12" height="12" viewBox="0 0 24 24" fill="#00D26A"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+                <span class="ind-pill-desc">Meta Official Tech Partner · Online 24/7</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <?php if (!empty($indData['floating_metric'])): ?>
-            <div class="ind-floating-metric">
-              <div class="ind-metric-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+  <!-- =========================================================================
+       CLIENT TRUST LOGO MARQUEE
+       ========================================================================= -->
+  <section class="ind-marquee-section">
+    <div class="container">
+      <p class="ind-marquee-label">Trusted by leading <?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'industry'); ?> enterprises &amp; fast-growing brands</p>
+      <div class="ind-marquee-container">
+        <div class="ind-marquee-track">
+          <?php 
+          $slug = $indData['slug'];
+          $logos = [
+            "/assets/images/industries/{$slug}/logo-1.png",
+            "/assets/images/industries/{$slug}/logo-2.png",
+            "/assets/images/industries/{$slug}/logo-3.png",
+            "/assets/images/industries/{$slug}/logo-4.png"
+          ];
+          for ($r = 0; $r < 5; $r++):
+            foreach ($logos as $lg): ?>
+              <div class="ind-logo-slide">
+                <img src="<?php echo $lg; ?>" alt="<?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'Industry'); ?> Client Partner - InboxWa" loading="lazy">
               </div>
-              <div class="ind-metric-info">
-                <strong><?php echo htmlspecialchars($indData['floating_metric']['value']); ?></strong>
-                <span><?php echo htmlspecialchars($indData['floating_metric']['label']); ?></span>
-              </div>
-            </div>
-          <?php endif; ?>
+          <?php endforeach; endfor; ?>
         </div>
       </div>
     </div>
@@ -155,6 +172,17 @@ include __DIR__ . '/header.php';
       <?php foreach (($indData['use_cases'] ?? []) as $index => $uc): ?>
         <div class="ind-usecase-row <?php echo ($index % 2 === 1) ? 'reverse' : ''; ?>">
           <div class="ind-usecase-visual">
+            <div class="ind-usecase-media-box">
+              <img src="/assets/images/industries/<?php echo $indData['slug']; ?>/usecase-<?php echo ($index + 1); ?>.webp" 
+                   alt="<?php echo htmlspecialchars($uc['title']); ?> - InboxWa" 
+                   class="ind-usecase-img" 
+                   loading="lazy">
+              <div class="ind-usecase-media-pill">
+                <span class="ind-badge-dot"></span>
+                InboxWa · <?php echo htmlspecialchars($uc['tag'] ?? 'Core Solution'); ?>
+              </div>
+            </div>
+
             <div class="ind-interactive-chat">
               <div class="ind-chat-header-mini">
                 <span class="status-dot"></span>

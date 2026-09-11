@@ -242,12 +242,96 @@
   color: var(--ind-accent-green);
 }
 
-/* Hero Simulator / Visual */
+/* Hero Media Card with Authentic Graphic & Floatings */
 .ind-hero-visual {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.ind-hero-media-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  padding: 10px;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.ind-hero-media-card:hover {
+  transform: translateY(-4px);
+}
+
+.ind-hero-media-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Verified WhatsApp Chat Pill Float */
+.ind-hero-chat-pill {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 8px 18px 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+  animation: floatPill 4s ease-in-out infinite;
+}
+
+@keyframes floatPill {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.ind-pill-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #605BE5, #4651A8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(96, 91, 229, 0.4);
+}
+
+.ind-pill-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ind-pill-title {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ind-pill-desc {
+  color: #00D26A;
+  font-size: 0.72rem;
+  font-weight: 500;
 }
 
 .ind-phone-container {
@@ -414,6 +498,72 @@
 }
 
 /* =========================================================================
+   2. CLIENT TRUST LOGO MARQUEE
+   ========================================================================= */
+.ind-marquee-section {
+  padding: 2.75rem 0;
+  background: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ind-marquee-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  margin-bottom: 1.5rem;
+}
+
+.ind-marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.ind-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  width: max-content;
+  animation: indMarqueeScroll 30s linear infinite;
+}
+
+.ind-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes indMarqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ind-logo-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ind-logo-slide img {
+  height: 40px;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(75%) opacity(0.7);
+  transition: all 0.3s ease;
+}
+
+.ind-logo-slide img:hover {
+  filter: grayscale(0%) contrast(100%) opacity(1);
+  transform: scale(1.06);
+}
+
+/* =========================================================================
    3. SOCIAL PROOF / STATS STRIP
    ========================================================================= */
 .ind-stats-section {
@@ -504,6 +654,47 @@
 
 .ind-usecase-row.reverse > * {
   direction: ltr;
+}
+
+.ind-usecase-media-box {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.9);
+  margin-bottom: 1.5rem;
+  background: #ffffff;
+}
+
+.ind-usecase-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.ind-usecase-media-box:hover .ind-usecase-img {
+  transform: scale(1.025);
+}
+
+.ind-usecase-media-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ind-usecase-card {
@@ -1122,6 +1313,14 @@
     margin-top: 1rem;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .ind-hero-chat-pill {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
   }
   
   .ind-journey-grid {
