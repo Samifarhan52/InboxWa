@@ -2806,6 +2806,287 @@
   font-size: 1.2rem;
 }
 
+/* Branded Image & Video Showcase Containers */
+.edu-media-container {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-media-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 60px -15px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+.edu-media-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.edu-media-topbar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.edu-media-topbar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.edu-media-topbar-badge.blue {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+  color: #1E40AF;
+}
+
+.edu-media-topbar-badge.amber {
+  background: #FFFBEB;
+  border-color: #FDE68A;
+  color: #92400E;
+}
+
+.edu-media-topbar-badge.purple {
+  background: #FAF5FF;
+  border-color: #DDD6FE;
+  color: #6B21A8;
+}
+
+.edu-media-content {
+  padding: 1.25rem;
+  background: #FAFAFA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-feature-img {
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+.edu-feature-video {
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  display: block;
+  border-radius: 12px;
+  background: #0F172A;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Dedicated 4-Stage Student & Parent Journey Flow Showcase */
+.edu-journey-showcase-section {
+  padding: 5.5rem 0;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F1F5F9 100%);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.edu-journey-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3rem;
+}
+
+.edu-journey-header h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.2;
+  margin: 0.85rem 0 1rem;
+}
+
+.edu-journey-header p {
+  font-size: 1.1rem;
+  color: #64748B;
+  line-height: 1.65;
+}
+
+.edu-journey-image-card {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -15px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.edu-journey-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #F1F5F9;
+  margin-bottom: 1.25rem;
+}
+
+.edu-journey-stage-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.stage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #F8FAFC;
+  color: #334155;
+  border: 1px solid #E2E8F0;
+}
+
+.stage-tag.s1 { background: #ECFDF5; color: #065F46; border-color: #A7F3D0; }
+.stage-tag.s2 { background: #EFF6FF; color: #1E40AF; border-color: #BFDBFE; }
+.stage-tag.s3 { background: #FFFBEB; color: #92400E; border-color: #FDE68A; }
+.stage-tag.s4 { background: #FAF5FF; color: #6B21A8; border-color: #DDD6FE; }
+
+.btn-expand-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0F172A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-expand-flow:hover {
+  background: #10B981;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.edu-journey-img-scroll {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  border-radius: 14px;
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+}
+
+.edu-journey-img {
+  width: 100%;
+  min-width: 1100px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.edu-journey-img:hover {
+  transform: scale(1.005);
+}
+
+.edu-journey-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #F1F5F9;
+  font-size: 0.82rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+/* Lightbox Modal for Flow Image */
+.flow-lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(7, 11, 22, 0.88);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.flow-lightbox-overlay.is-active {
+  display: flex;
+}
+
+.flow-lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.flow-lightbox-content img {
+  width: 100%;
+  min-width: 1400px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.flow-lightbox-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 100000;
+}
+
+.flow-lightbox-close:hover {
+  background: rgba(239, 68, 68, 0.9);
+}
+
 /* Responsive Media Queries */
 @media (max-width: 992px) {
   .edu-feature-row,
@@ -2832,3 +3113,4 @@
     font-size: 0.85rem;
   }
 }
+

@@ -5,7 +5,7 @@ $pageDescription = 'Power higher enrollments and better ROI with WhatsApp Busine
 $canonicalUrl = 'https://inboxwa.com/industries/education/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/education.css?v=52">
+<link rel="stylesheet" href="/assets/css/education.css?v=53">
 
 <!-- =========================================================================
      1. HERO SECTION (Meritto Match + Superior InboxWa Experience)
@@ -180,57 +180,18 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 1 UI Mockup: InboxWa Broadcast Studio -->
+      <!-- Feature 1 Visual: High-Reach Broadcasts Media -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/></svg>
               InboxWa Education CRM · Broadcast Manager
-            </div>
-            <div class="edu-mockup-badge">● Campaign Live</div>
+            </span>
+            <span class="edu-media-topbar-badge">● Campaign Live</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-campaign-preview">
-              <div class="edu-campaign-stats-bar">
-                <div class="edu-cstat"><b>12,480</b><span>Recipients</span></div>
-                <div class="edu-cstat"><b>99.6%</b><span>Delivered</span></div>
-                <div class="edu-cstat"><b>97.4%</b><span>Read</span></div>
-                <div class="edu-cstat"><b>44.2%</b><span>Clicked</span></div>
-              </div>
-
-              <div class="edu-wa-bubble-card">
-                <div class="edu-wa-chat-bubble">
-                  <div class="edu-wa-header-row">
-                    <div class="edu-wa-avatar">AGU</div>
-                    <div>
-                      <div class="edu-wa-sender-name">Apex Global University <span class="edu-green-tick">✔</span></div>
-                    </div>
-                  </div>
-                  <div class="edu-wa-bubble-text">
-                    🎓 <b>Spring 2026 Admissions &amp; Merit Scholarships Open!</b><br><br>
-                    Dear <b>Rahul Sharma</b>, congratulations on your high school results! Admissions for B.Tech &amp; MBA programs are now officially open with up to <b>50% Merit Scholarships</b>.<br><br>
-                    Review the eligibility criteria and apply before the early bird deadline on Oct 15th.
-                  </div>
-                  <div class="edu-wa-actions-stack">
-                    <div class="edu-wa-action-btn">🎓 Apply For Scholarship</div>
-                    <div class="edu-wa-action-btn">📄 Download 2026 Prospectus PDF</div>
-                    <div class="edu-wa-action-btn">💬 Chat with Admissions Counselor</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="edu-crm-toast">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>✓ 5,516 student responses automatically captured &amp; tagged in InboxWa CRM</span>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-broadcast.png" alt="Broadcast campaigns with confidence that drives action" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -271,65 +232,18 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 2 UI Mockup: Meta Template Hub -->
+      <!-- Feature 2 Visual: Meta Template Hub Media -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
               InboxWa Template Hub · Meta Cloud API
-            </div>
-            <div class="edu-mockup-badge">✔ Meta Approved</div>
+            </span>
+            <span class="edu-media-topbar-badge blue">✔ Meta Approved</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <table class="edu-template-table">
-              <thead>
-                <tr>
-                  <th>Template Name</th>
-                  <th>Category</th>
-                  <th>Meta Status</th>
-                  <th>Quality Rating</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><b>admission_offer_letter</b></td>
-                  <td>Utility</td>
-                  <td><span class="edu-pill-approved">✔ Approved</span></td>
-                  <td><span class="edu-stars">★★★★★ High</span></td>
-                </tr>
-                <tr>
-                  <td><b>entrance_hall_ticket</b></td>
-                  <td>Utility</td>
-                  <td><span class="edu-pill-approved">✔ Approved</span></td>
-                  <td><span class="edu-stars">★★★★★ High</span></td>
-                </tr>
-                <tr>
-                  <td><b>scholarship_alert_2026</b></td>
-                  <td>Marketing</td>
-                  <td><span class="edu-pill-approved">✔ Approved</span></td>
-                  <td><span class="edu-stars">★★★★★ High</span></td>
-                </tr>
-                <tr>
-                  <td><b>counselling_slot_booked</b></td>
-                  <td>Service</td>
-                  <td><span class="edu-pill-approved">✔ Approved</span></td>
-                  <td><span class="edu-stars">★★★★★ High</span></td>
-                </tr>
-                <tr>
-                  <td><b>tuition_fee_installment</b></td>
-                  <td>Utility</td>
-                  <td><span class="edu-pill-approved">✔ Approved</span></td>
-                  <td><span class="edu-stars">★★★★★ High</span></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-templates.png" alt="Manage custom templates for instant communication and better delivery" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -370,58 +284,20 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 3 UI Mockup: Visual Admission Journey Flow Builder -->
+      <!-- Feature 3 Visual: Smart Automations Video -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
               InboxWa Journey FlowBuilder · Student Lifecycle
-            </div>
-            <div class="edu-mockup-badge">⚡ Live Flow</div>
+            </span>
+            <span class="edu-media-topbar-badge amber">⚡ Smart Reminders</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-flow-canvas">
-              <!-- Flow Node 1 -->
-              <div class="edu-flow-node trigger">
-                <span class="edu-flow-badge">Trigger</span>
-                <div class="edu-flow-title">New Lead Captured from Meta Ad / Web</div>
-                <p class="edu-flow-desc">Student indicates interest in B.Tech Computer Science</p>
-              </div>
-
-              <div class="edu-flow-arrow">↓</div>
-
-              <!-- Flow Node 2 -->
-              <div class="edu-flow-node action">
-                <span class="edu-flow-badge">Action</span>
-                <div class="edu-flow-title">Send WhatsApp Welcome &amp; 2026 Prospectus</div>
-                <p class="edu-flow-desc">Dispatched within 3 seconds with personalized student greeting</p>
-              </div>
-
-              <div class="edu-flow-arrow">↓</div>
-
-              <!-- Flow Node 3 -->
-              <div class="edu-flow-node condition">
-                <span class="edu-flow-badge">Decision Logic</span>
-                <div class="edu-flow-title">Did student tap [Start Application]?</div>
-                <p class="edu-flow-desc">Real-time button click tracking via Meta Cloud API</p>
-              </div>
-
-              <div class="edu-flow-arrow">↓</div>
-
-              <!-- Flow Node 4 -->
-              <div class="edu-flow-node branch-yes">
-                <span class="edu-flow-badge">Branch: YES (Fast-Track)</span>
-                <div class="edu-flow-title">Tag 'Hot Lead' + Assign Counselor Priya</div>
-                <p class="edu-flow-desc">Dispatches WhatsApp In-Chat Document Upload Flow</p>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <video class="edu-feature-video" autoplay loop muted playsinline poster="/assets/images/education-meritto/inboxwa-journey-flow.png">
+              <source src="/assets/images/education-meritto/smart-reminders.webm" type="video/webm">
+            </video>
           </div>
         </div>
       </div>
@@ -462,57 +338,18 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 4 UI Mockup: WhatsApp In-Chat Form -->
+      <!-- Feature 4 Visual: In-Chat Forms Media -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-              WhatsApp Native Flows · Form Preview
-            </div>
-            <div class="edu-mockup-badge">🔒 Encrypted</div>
+              InboxWa WhatsApp Native Flows · Form Preview
+            </span>
+            <span class="edu-media-topbar-badge blue">🔒 Encrypted Lead Sync</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-chat-form-wrap">
-              <div class="edu-inchat-form-box">
-                <div class="edu-inchat-form-title">
-                  <span>🎓</span> Apex University Admission Flow
-                </div>
-                <div class="edu-inchat-form-subtitle">Complete your details to calculate scholarship eligibility</div>
-
-                <div class="edu-inchat-field">
-                  <label>Full Student Name</label>
-                  <input type="text" value="Ananya Verma" readonly>
-                </div>
-
-                <div class="edu-inchat-field">
-                  <label>Interested Program</label>
-                  <select disabled>
-                    <option selected>MBA in Marketing &amp; Business Analytics</option>
-                  </select>
-                </div>
-
-                <div class="edu-inchat-field">
-                  <label>Graduation / 12th Percentage (%)</label>
-                  <input type="text" value="88.4%" readonly>
-                </div>
-
-                <div class="edu-inchat-field">
-                  <label>Preferred Counseling Mode</label>
-                  <select disabled>
-                    <option selected>1-on-1 WhatsApp Video Session</option>
-                  </select>
-                </div>
-
-                <button type="button" class="edu-inchat-submit">Submit Application to InboxWa CRM ✔</button>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-forms.png" alt="Capture details with customizable forms inside every chat" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -553,60 +390,20 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 5 UI Mockup: Multi-Counselor Shared Inbox -->
+      <!-- Feature 5 Visual: Live Chat Video -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
               InboxWa Shared Team Inbox · Admissions Desk
-            </div>
-            <div class="edu-mockup-badge">● 8 Counselors Online</div>
+            </span>
+            <span class="edu-media-topbar-badge">● Multi-Counselor Live</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-shared-inbox-grid">
-              <div class="edu-inbox-sidebar">
-                <div class="edu-inbox-item active">
-                  <strong>Rohan Sharma</strong>
-                  <span>B.Tech CS · 🔥 Hot Lead</span>
-                </div>
-                <div class="edu-inbox-item">
-                  <strong>Ananya Verma</strong>
-                  <span>MBA · ⏳ Fee Pending</span>
-                </div>
-                <div class="edu-inbox-item">
-                  <strong>Kabir Mehta</strong>
-                  <span>BBA · 🏛️ Visit Booked</span>
-                </div>
-              </div>
-
-              <div class="edu-inbox-chat-pane">
-                <div class="edu-pane-header">
-                  <span>Chat with Rohan Sharma</span>
-                  <span class="edu-pane-counselor-tag">Assigned to: Priya Sharma</span>
-                </div>
-
-                <div style="padding: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem;">
-                  <div style="background:#fff; border:1px solid #E2E8F0; padding:6px 10px; border-radius:8px 8px 8px 0; font-size:0.75rem; max-width:85%;">
-                    Hello Sir, I have uploaded my 12th CBSE marksheet. Can you confirm if I qualify for the 40% scholarship?
-                  </div>
-                  <div style="background:#DCF8C6; padding:6px 10px; border-radius:8px 8px 0 8px; font-size:0.75rem; max-width:85%; align-self:flex-end;">
-                    Hi Rohan! Yes, with 94.2% you qualify for the Dean's Merit 50% waiver! I have attached the official offer letter below.
-                  </div>
-                </div>
-
-                <div style="background:#fff; border:1px solid #CBD5E1; border-radius:6px; padding:6px 10px; font-size:0.72rem; color:#64748B; display:flex; justify-content:space-between;">
-                  <span>Type message or type / to insert quick template...</span>
-                  <span style="color:#10B981; font-weight:700;">Send ↗</span>
-                </div>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <video class="edu-feature-video" autoplay loop muted playsinline>
+              <source src="/assets/images/education-meritto/live-chat.webm" type="video/webm">
+            </video>
           </div>
         </div>
       </div>
@@ -647,49 +444,18 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 6 UI Mockup: AI Chatbot Conversation -->
+      <!-- Feature 6 Visual: AI Chatbot Media -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/></svg>
               InboxWa AI Education Assistant · 24/7 Virtual Desk
-            </div>
-            <div class="edu-mockup-badge">🤖 AI Active</div>
+            </span>
+            <span class="edu-media-topbar-badge purple">🤖 AI Active</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-wa-bubble-card">
-              <div class="edu-wa-chat-bubble" style="align-self: flex-end; background:#DCF8C6; border-radius:12px 12px 0 12px; max-width:80%;">
-                <div class="edu-wa-bubble-text">
-                  Hi, what is the annual hostel fee and scholarship criteria for B.Tech CSE?
-                </div>
-              </div>
-
-              <div class="edu-wa-chat-bubble" style="max-width:92%;">
-                <div class="edu-wa-header-row">
-                  <div class="edu-wa-avatar" style="background:#8B5CF6;">AI</div>
-                  <div class="edu-wa-sender-name">InboxWa Campus Bot <span class="edu-green-tick">✔</span></div>
-                </div>
-                <div class="edu-wa-bubble-text">
-                  Hello! Here are the details for <b>B.Tech CSE at Apex University</b>:<br><br>
-                  🏠 <b>Hostel Fee:</b> ₹85,000 / year (includes 3 meals/day, Wi-Fi, laundry, and AC).<br>
-                  🏆 <b>Scholarships:</b><br>
-                  • 95%+ in 12th: 50% Tuition Waiver<br>
-                  • 85% - 94%: 25% Tuition Waiver<br><br>
-                  Would you like to speak to a senior counselor or schedule a campus tour?
-                </div>
-                <div class="edu-wa-actions-stack">
-                  <div class="edu-wa-action-btn">🏛️ Book Campus Visit (Sat 11 AM)</div>
-                  <div class="edu-wa-action-btn">📞 Connect to Senior Counselor</div>
-                </div>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-automate-replies.png" alt="Automate replies for instant 24/7 engagement with InboxWa AI" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -730,49 +496,18 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 7 UI Mockup: Smart Auto-Retry Engine -->
+      <!-- Feature 7 Visual: Auto-Retry Media -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
               InboxWa Deliverability Engine · Auto-Retry Queue
-            </div>
-            <div class="edu-mockup-badge">⚙️ Engine Active</div>
+            </span>
+            <span class="edu-media-topbar-badge amber">⚙️ Engine Active</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-retry-engine-card">
-              <div class="edu-retry-header">
-                <span style="font-size:0.85rem; font-weight:800; color:#0F172A;">Multi-Interval Fallback Schedule</span>
-                <span class="edu-retry-status-badge">● 4 Attempts Configured</span>
-              </div>
-
-              <div class="edu-retry-steps">
-                <div class="edu-retry-step-row">
-                  <span><b>Attempt 1:</b> Instant Broadcast</span>
-                  <span style="color:#10B981; font-weight:700;">84.2% Delivered</span>
-                </div>
-                <div class="edu-retry-step-row">
-                  <span><b>Attempt 2:</b> Retry after 8 Hours</span>
-                  <span style="color:#0284C7; font-weight:700;">+9.4% Recovered</span>
-                </div>
-                <div class="edu-retry-step-row">
-                  <span><b>Attempt 3:</b> Retry after 24 Hours</span>
-                  <span style="color:#7C3AED; font-weight:700;">+4.8% Recovered</span>
-                </div>
-              </div>
-
-              <div class="edu-retry-stat-highlight">
-                <strong>98.4% Total Net Delivery</strong>
-                <span>1,842 student leads successfully reached via InboxWa Auto-Retry Engine</span>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-retry.png" alt="Retry undelivered messages automatically for better reach" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -813,75 +548,69 @@ include __DIR__ . '/../../includes/header.php';
         </a>
       </div>
 
-      <!-- Feature 8 UI Mockup: ROI Analytics Dashboard -->
+      <!-- Feature 8 Visual: ROI Analytics Media -->
       <div class="edu-feature-visual">
-        <div class="edu-mockup-frame">
-          <div class="edu-mockup-topbar">
-            <div class="edu-window-dots">
-              <span class="edu-window-dot red"></span>
-              <span class="edu-window-dot yellow"></span>
-              <span class="edu-window-dot green"></span>
-            </div>
-            <div class="edu-mockup-apptitle">
+        <div class="edu-media-container">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               InboxWa Analytics · Admission Funnel Yield
-            </div>
-            <div class="edu-mockup-badge">📈 +43% YoY</div>
+            </span>
+            <span class="edu-media-topbar-badge">📈 +43% Conversion</span>
           </div>
-
-          <div class="edu-mockup-body">
-            <div class="edu-roi-dash-card">
-              <div class="edu-funnel-stages">
-                <div class="edu-funnel-bar-item">
-                  <div class="edu-funnel-lbl">
-                    <span>1. WhatsApp Inquiries Captured</span>
-                    <b>10,450 Leads (100%)</b>
-                  </div>
-                  <div class="edu-funnel-track"><div class="edu-funnel-fill" style="width: 100%;"></div></div>
-                </div>
-
-                <div class="edu-funnel-bar-item">
-                  <div class="edu-funnel-lbl">
-                    <span>2. AI Qualified &amp; Brochure Downloaded</span>
-                    <b>6,820 Students (65.2%)</b>
-                  </div>
-                  <div class="edu-funnel-track"><div class="edu-funnel-fill" style="width: 65%;"></div></div>
-                </div>
-
-                <div class="edu-funnel-bar-item">
-                  <div class="edu-funnel-lbl">
-                    <span>3. In-Chat Application Submitted</span>
-                    <b>2,940 Applicants (28.1%)</b>
-                  </div>
-                  <div class="edu-funnel-track"><div class="edu-funnel-fill" style="width: 38%;"></div></div>
-                </div>
-
-                <div class="edu-funnel-bar-item">
-                  <div class="edu-funnel-lbl">
-                    <span>4. Verified Enrollment &amp; Fee Paid</span>
-                    <b>840 Enrolled (8.0%)</b>
-                  </div>
-                  <div class="edu-funnel-track"><div class="edu-funnel-fill" style="width: 18%; background:#10B981;"></div></div>
-                </div>
-              </div>
-
-              <div class="edu-roi-summary-row">
-                <div class="edu-roi-summary-box">
-                  <b>₹7.4 Cr</b>
-                  <span>Tuition Revenue Generated</span>
-                </div>
-                <div class="edu-roi-summary-box">
-                  <b>14.2x</b>
-                  <span>Attributed Campaign ROAS</span>
-                </div>
-              </div>
-            </div>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-roi.png" alt="Track and measure ROI from campaigns and conversations" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- =========================================================================
+     DEDICATED 4-STAGE STUDENT & PARENT JOURNEY FLOW SHOWCASE
+     ========================================================================= -->
+<section class="edu-journey-showcase-section" id="journey-flow-showcase">
+  <div class="container">
+    <div class="edu-journey-header">
+      <span class="edu-feature-pill green">Full Student & Parent Lifecycle</span>
+      <h2>Automate every touchpoint from initial inquiry to convocation</h2>
+      <p>Explore how InboxWa’s integrated WhatsApp Business API drives seamless student transitions through 4 automated admission stages—delivering personalized guidance, automated verification, and higher enrollment yields.</p>
+    </div>
+
+    <div class="edu-journey-image-card">
+      <div class="edu-journey-card-topbar">
+        <div class="edu-journey-stage-tags">
+          <span class="stage-tag s1">Stage 01 · Inquiry &amp; Discovery</span>
+          <span class="stage-tag s2">Stage 02 · Application &amp; Verification</span>
+          <span class="stage-tag s3">Stage 03 · Offer &amp; Fee Payment</span>
+          <span class="stage-tag s4">Stage 04 · Onboarding &amp; Induction</span>
+        </div>
+        <button type="button" class="btn-expand-flow" onclick="openFlowModal()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          <span>View Full Journey Map</span>
+        </button>
+      </div>
+
+      <div class="edu-journey-img-scroll" onclick="openFlowModal()" title="Click to zoom full screen">
+        <img src="/assets/images/education-meritto/inboxwa-journey-flow.png" alt="InboxWa 4-Stage Student and Parent Admission Lifecycle Journey Flow" class="edu-journey-img" loading="lazy">
+      </div>
+
+      <div class="edu-journey-caption">
+        <span>⚡ 4 Connected Stages · 16 Automated Meta Cloud Workflows · Bi-directional CRM Sync</span>
+        <span style="color:#059669; font-weight:700; cursor:pointer;" onclick="openFlowModal()">Click image to zoom full screen 🔍</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Full-Screen Lightbox Modal for Journey Flow -->
+<div class="flow-lightbox-overlay" id="flowLightboxModal" onclick="closeFlowModal(event)">
+  <button type="button" class="flow-lightbox-close" onclick="closeFlowModal()" aria-label="Close modal">&times;</button>
+  <div class="flow-lightbox-content" onclick="event.stopPropagation()">
+    <img src="/assets/images/education-meritto/inboxwa-journey-flow.png" alt="InboxWa Admission Lifecycle Journey Map Full View">
+  </div>
+</div>
 
 
 <!-- =========================================================================
@@ -909,16 +638,17 @@ include __DIR__ . '/../../includes/header.php';
       </div>
 
       <div class="edu-bsp-visual">
-        <div class="edu-meta-badge-card">
-          <div class="edu-meta-official-logo">
-            <svg viewBox="0 0 24 24" fill="#0081FB"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            <span>Meta Tech Partner</span>
+        <div class="edu-media-container" style="max-width:540px; margin:0 auto;">
+          <div class="edu-media-topbar">
+            <span class="edu-media-topbar-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              InboxWa · WhatsApp Business Manager
+            </span>
+            <span class="edu-media-topbar-badge blue">✔ Meta Tech Partner</span>
           </div>
-          <div class="edu-green-tick-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Official WhatsApp Green Tick Partner</span>
+          <div class="edu-media-content">
+            <img src="/assets/images/education-meritto/inboxwa-getting-started.png" alt="InboxWa Meta WhatsApp Business Manager Onboarding" class="edu-feature-img" loading="lazy">
           </div>
-          <p style="font-size:0.82rem; color:#475569; margin:0;">Enterprise 99.99% Cloud SLA · ISO 27001 Certified · Full DPDP &amp; GDPR Student Data Compliance</p>
         </div>
       </div>
     </div>
@@ -1252,6 +982,27 @@ function handleModalSubmit(e) {
     }, 2500);
   }, 800);
 }
+
+function openFlowModal() {
+  const m = document.getElementById('flowLightboxModal');
+  if (m) m.classList.add('is-active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFlowModal(e) {
+  if (!e || e.target.id === 'flowLightboxModal' || e.target.classList.contains('flow-lightbox-close')) {
+    const m = document.getElementById('flowLightboxModal');
+    if (m) m.classList.remove('is-active');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeFlowModal();
+    closeEduModal();
+  }
+});
 </script>
 
 <!-- Global Site Footer (User Requirement: Use our footer, not Meritto's) -->
