@@ -18,6 +18,13 @@ if (empty($cleanPath)) {
 
 $parts = array_values(array_filter(explode('/', $cleanPath)));
 
+// Education shortcuts & aliases
+if ((count($parts) === 1 && strtolower($parts[0]) === 'education') ||
+    (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'industry', 'industries']) && strtolower($parts[1]) === 'education')) {
+    require $rootDir . '/Industries/education/index.php';
+    exit;
+}
+
 // 1. Direct exact path match check
 $directPath = $rootDir . '/' . implode('/', $parts);
 if (is_dir($directPath) && is_file(rtrim($directPath, '/') . '/index.php')) {
