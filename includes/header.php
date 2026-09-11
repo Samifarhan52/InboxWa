@@ -585,24 +585,39 @@ if (!function_exists('hb_seo_esc')) {
       max-width: calc(100vw - 32px) !important;
       box-sizing: border-box !important;
       z-index: 100000 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
     }
     .nav-item.open > .mega-menu-features,
     .nav-item:hover > .mega-menu-features,
+    .nav-item:focus-within > .mega-menu-features,
     .nav-item.open > .mega-menu-products,
     .nav-item:hover > .mega-menu-products,
+    .nav-item:focus-within > .mega-menu-products,
     .nav-item.open > .mega-menu-solutions,
     .nav-item:hover > .mega-menu-solutions,
+    .nav-item:focus-within > .mega-menu-solutions,
     .nav-item.open > .mega-menu-panel,
     .nav-item:hover > .mega-menu-panel,
+    .nav-item:focus-within > .mega-menu-panel,
     .nav-item.open > .mega-menu-features.align-left,
     .nav-item:hover > .mega-menu-features.align-left,
+    .nav-item:focus-within > .mega-menu-features.align-left,
     .nav-item.open > .mega-menu-products.align-left,
     .nav-item:hover > .mega-menu-products.align-left,
+    .nav-item:focus-within > .mega-menu-products.align-left,
     .nav-item.open > .mega-menu-solutions.align-left,
     .nav-item:hover > .mega-menu-solutions.align-left,
+    .nav-item:focus-within > .mega-menu-solutions.align-left,
     .nav-item.open > .mega-menu-panel.align-left,
-    .nav-item:hover > .mega-menu-panel.align-left {
+    .nav-item:hover > .mega-menu-panel.align-left,
+    .nav-item:focus-within > .mega-menu-panel.align-left {
       transform: translateX(-50%) translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
     }
 
     /* CRITICAL OVERRIDE: Prevent any mega menu content from inheriting white-space: nowrap */
@@ -746,9 +761,10 @@ if (!function_exists('hb_seo_esc')) {
       }
     }
 
-    /* PRODUCTS MEGA MENU: Clean 4-Column Balanced Grid */
+    /* SOLUTIONS & PRODUCTS MEGA MENU: Clean 5-Column Balanced Grid Matching InboxWa Theme */
+    .mega-menu-solutions,
     .mega-menu-products {
-      width: min(1080px, calc(100vw - 28px)) !important;
+      width: min(1180px, calc(100vw - 28px)) !important;
       max-width: calc(100vw - 28px) !important;
       background: #ffffff !important;
       border: 1px solid rgba(226, 232, 240, 0.95) !important;
@@ -758,86 +774,97 @@ if (!function_exists('hb_seo_esc')) {
       box-sizing: border-box !important;
     }
 
+    .mega-solutions-grid,
     .mega-products-grid {
       display: grid !important;
-      grid-template-columns: 1.15fr 1.18fr 1.05fr 1.28fr !important;
-      gap: 18px !important;
+      grid-template-columns: 1.25fr 1fr 1fr 1fr 1fr !important;
+      gap: 16px !important;
       align-items: stretch !important;
       width: 100% !important;
     }
 
+    .mega-solutions-grid .mega-sol-col,
     .mega-products-grid .mega-sol-col {
       display: flex !important;
       flex-direction: column !important;
-      gap: 6px !important;
+      gap: 5px !important;
       padding: 0 !important;
       border: none !important;
       min-width: 0 !important;
     }
 
+    .mega-solutions-grid .mega-sol-col + .mega-sol-col,
     .mega-products-grid .mega-sol-col + .mega-sol-col {
       border-left: 1px solid #f1f5f9 !important;
-      padding-left: 18px !important;
+      padding-left: 16px !important;
     }
 
+    .mega-solutions-grid .mega-col-title,
     .mega-products-grid .mega-col-title {
       font-size: 0.72rem !important;
       font-weight: 800 !important;
       letter-spacing: 0.08em !important;
       text-transform: uppercase !important;
       color: #8b5cf6 !important;
-      padding: 2px 8px 10px !important;
+      padding: 2px 6px 10px !important;
       margin-bottom: 2px !important;
       border-bottom: 2px solid rgba(139, 92, 246, 0.15) !important;
     }
 
+    .mega-solutions-grid .mega-link,
     .mega-products-grid .mega-link {
       display: flex !important;
       align-items: flex-start !important;
-      gap: 11px !important;
-      padding: 8px 10px !important;
+      gap: 10px !important;
+      padding: 7px 8px !important;
       border-radius: 12px !important;
       text-decoration: none !important;
       transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
       background: transparent !important;
     }
 
+    .mega-solutions-grid .mega-link:hover,
     .mega-products-grid .mega-link:hover {
       background: #f8fafc !important;
       transform: translateX(3px) !important;
     }
 
+    .mega-solutions-grid .mega-icon,
     .mega-products-grid .mega-icon {
-      width: 38px !important;
-      height: 38px !important;
-      border-radius: 11px !important;
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 10px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
     }
 
+    .mega-solutions-grid .mega-icon svg,
     .mega-products-grid .mega-icon svg {
       width: 18px !important;
       height: 18px !important;
     }
 
+    .mega-solutions-grid .mega-link-text,
     .mega-products-grid .mega-link-text {
       display: flex !important;
       flex-direction: column !important;
       min-width: 0 !important;
     }
 
+    .mega-solutions-grid .mega-link-title,
     .mega-products-grid .mega-link-title {
-      font-size: 0.88rem !important;
+      font-size: 0.86rem !important;
       font-weight: 700 !important;
       color: #0f172a !important;
       line-height: 1.25 !important;
       white-space: normal !important;
     }
 
+    .mega-solutions-grid .mega-link-desc,
     .mega-products-grid .mega-link-desc {
-      font-size: 0.75rem !important;
+      font-size: 0.73rem !important;
       color: #64748b !important;
       line-height: 1.35 !important;
       margin-top: 2px !important;
@@ -945,30 +972,37 @@ if (!function_exists('hb_seo_esc')) {
     }
 
     @media (max-width: 1220px) {
+      .mega-menu-solutions,
       .mega-menu-products {
-        width: min(980px, calc(100vw - 24px)) !important;
-        padding: 18px 18px !important;
+        width: min(980px, calc(100vw - 20px)) !important;
+        padding: 18px 16px !important;
       }
+      .mega-solutions-grid,
       .mega-products-grid {
-        gap: 14px !important;
-        grid-template-columns: 1.1fr 1.1fr 1fr 1.2fr !important;
+        gap: 12px !important;
+        grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr !important;
       }
+      .mega-solutions-grid .mega-sol-col + .mega-sol-col,
       .mega-products-grid .mega-sol-col + .mega-sol-col {
-        padding-left: 14px !important;
+        padding-left: 12px !important;
       }
+      .mega-solutions-grid .mega-link,
       .mega-products-grid .mega-link {
-        padding: 6px 8px !important;
-        gap: 8px !important;
+        padding: 6px 6px !important;
+        gap: 7px !important;
       }
+      .mega-solutions-grid .mega-icon,
       .mega-products-grid .mega-icon {
-        width: 34px !important;
-        height: 34px !important;
+        width: 32px !important;
+        height: 32px !important;
       }
+      .mega-solutions-grid .mega-link-title,
       .mega-products-grid .mega-link-title {
-        font-size: 0.82rem !important;
+        font-size: 0.8rem !important;
       }
+      .mega-solutions-grid .mega-link-desc,
       .mega-products-grid .mega-link-desc {
-        font-size: 0.72rem !important;
+        font-size: 0.7rem !important;
       }
     }
 
@@ -1202,10 +1236,18 @@ if (!function_exists('hb_seo_esc')) {
       max-width: calc(100vw - 32px) !important;
       box-sizing: border-box !important;
       z-index: 100000 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
     }
     .nav-item:hover > .mega-menu-sm,
-    .nav-item.open > .mega-menu-sm {
+    .nav-item.open > .mega-menu-sm,
+    .nav-item:focus-within > .mega-menu-sm {
       transform: translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
     }
 
     /* Action Buttons: Lang, Login, Start Free */

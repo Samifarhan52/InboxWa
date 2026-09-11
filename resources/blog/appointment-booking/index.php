@@ -7,7 +7,7 @@ include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / WhatsApp Appointment Booking Automation</nav>
+<nav class="container res-breadcrumb"><a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / WhatsApp Appointment Booking Automation</nav>
 <article class="section" style="padding-top:1.25rem"><div class="container" style="max-width:800px">
 <span class="badge badge-primary">Operations</span>
 <h1 style="margin:.75rem 0">WhatsApp Appointment Booking Automation</h1>

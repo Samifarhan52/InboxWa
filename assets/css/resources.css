@@ -2,27 +2,65 @@
 /* InboxWa Resources Design System */
 body { overflow-x: hidden; }
 
-/* Breadcrumb Navigation */
+/* Breadcrumb Navigation (Universal for .res-breadcrumbs and .res-breadcrumb) */
+.res-breadcrumbs,
 .res-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 0.85rem;
-  color: var(--t3, #6B7280);
-  padding: calc(var(--nav, 72px) + 1.25rem) 0 0.5rem;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  font-size: 0.85rem !important;
+  color: var(--t3, #64748B) !important;
+  padding: calc(var(--nav, 72px) + 1.25rem) 0 0.5rem !important;
+  margin: 0 auto !important;
 }
+
+.res-breadcrumbs ol {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.res-breadcrumbs li {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: var(--t3, #64748B) !important;
+  font-size: 0.85rem !important;
+}
+
+.res-breadcrumbs li:not(:last-child)::after {
+  content: "/" !important;
+  color: #CBD5E1 !important;
+  font-weight: 400 !important;
+  margin-left: 2px !important;
+}
+
+.res-breadcrumbs a,
 .res-breadcrumb a {
-  color: var(--t2, #4B5563);
-  text-decoration: none;
-  transition: color 0.15s ease;
+  color: var(--t2, #475569) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
 }
+
+.res-breadcrumbs a:hover,
 .res-breadcrumb a:hover {
-  color: var(--p2, #7C3AED);
+  color: var(--p2, #7C3AED) !important;
 }
+
+.res-breadcrumbs li[aria-current="page"],
+.res-breadcrumb span:last-child {
+  color: var(--t, #0F172A) !important;
+  font-weight: 600 !important;
+}
+
 .res-breadcrumb .sep {
-  color: #D1D5DB;
-  margin: 0 2px;
+  color: #CBD5E1 !important;
+  margin: 0 2px !important;
 }
 
 /* Page Hero Extensions */
@@ -46,39 +84,54 @@ body { overflow-x: hidden; }
 }
 
 /* Search Bar & Quick Topic Pills */
+.res-search-box,
 .hc-search-wrap {
-  max-width: 640px;
+  max-width: 580px;
   margin: 1.75rem auto 0;
-  position: relative;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
-.hc-search-input-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+
+.res-search-icon,
 .hc-search-icon {
-  position: absolute;
-  left: 1.1rem;
-  color: #9CA3AF;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
+  position: absolute !important;
+  left: 1.15rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #94A3B8 !important;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  pointer-events: none !important;
+  flex-shrink: 0 !important;
+  z-index: 2 !important;
 }
+
+.res-search-box input,
 .hc-search-input {
-  width: 100%;
-  padding: 0.95rem 1rem 0.95rem 3rem;
-  border-radius: 14px;
-  border: 1.5px solid #E5E7EB;
-  background: #FFFFFF;
-  font-size: 1rem;
-  color: #111827;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+  width: 100% !important;
+  padding: 0.88rem 1.25rem 0.88rem 3rem !important;
+  border-radius: 9999px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  background: #FFFFFF !important;
+  font-size: 0.95rem !important;
+  color: #0F172A !important;
+  box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05) !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
 }
+
+.res-search-box input:focus,
 .hc-search-input:focus {
-  outline: none;
-  border-color: #8B5CF6;
-  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+  outline: none !important;
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15) !important;
 }
 .hc-quick-pills {
   display: flex;

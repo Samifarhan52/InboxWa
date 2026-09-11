@@ -7,7 +7,7 @@ include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / WhatsApp Lead Generation Automation</nav>
+<nav class="container res-breadcrumb"><a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / WhatsApp Lead Generation Automation</nav>
 <article class="section" style="padding-top:1.25rem"><div class="container" style="max-width:800px">
 <span class="badge badge-primary">Growth</span>
 <h1 style="margin:.75rem 0">WhatsApp Lead Generation Automation</h1>

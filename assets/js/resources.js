@@ -95,13 +95,14 @@
     });
   });
 
-  // Category Filter Tabs (Case Studies & Templates)
+  // Category Filter Tabs (Case Studies, Templates & Blog)
   document.querySelectorAll('.res-filter-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       var filter = btn.getAttribute('data-filter');
-      var root = btn.closest('section') || document;
-      root.querySelectorAll('.res-filter-btn').forEach(function(b){ b.classList.toggle('is-active', b === btn); });
-      root.querySelectorAll('[data-category]').forEach(function(card){
+      document.querySelectorAll('.res-filter-btn').forEach(function(b){
+        b.classList.toggle('is-active', b === btn);
+      });
+      document.querySelectorAll('[data-category]').forEach(function(card){
         if(filter === 'all' || card.getAttribute('data-category') === filter){
           card.style.display = '';
         } else {
@@ -118,7 +119,7 @@
     if(!input) return;
     input.addEventListener('input', function(){
       var q = input.value.toLowerCase().trim();
-      var targetCards = document.querySelectorAll('.res-card, .res-faq-item, .wa-tpl-card, .cs-card');
+      var targetCards = document.querySelectorAll('.res-card, .res-faq-item, .wa-tpl-card, .cs-card, .download-card');
       targetCards.forEach(function(el){
         var text = (el.textContent || '').toLowerCase();
         if(!q || text.indexOf(q) !== -1){

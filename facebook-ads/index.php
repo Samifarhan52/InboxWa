@@ -1,6 +1,6 @@
 <?php
-$basePath = '../';
-$bp = '../';
+if (!isset($basePath)) { $basePath = '../'; }
+if (!isset($bp)) { $bp = $basePath; }
 require_once __DIR__ . '/../config/cms.php';
 
 $pageTitle = 'Click to WhatsApp Ads (CTWA) | Facebook & Instagram Ads | InboxWa';

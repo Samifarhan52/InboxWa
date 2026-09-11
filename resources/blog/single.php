@@ -17,7 +17,7 @@ if (!$post) {
     header("HTTP/1.0 404 Not Found");
     $pageTitle = "Post Not Found";
     include dirname(__DIR__, 2) . "/includes/header.php";
-    echo "<div class="container" style="padding:6rem 1rem;text-align:center;"><h1>Article Not Found</h1><p>The requested blog article could not be found.</p><a href="/resources/blog/" class="btn btn-primary" style="margin-top:1rem;">Back to Blog</a></div>";
+    echo '<div class="container" style="padding:6rem 1rem;text-align:center;"><h1>Article Not Found</h1><p>The requested blog article could not be found.</p><a href="/resources/blog/" class="btn btn-primary" style="margin-top:1rem;">Back to Blog</a></div>';
     include dirname(__DIR__, 2) . "/includes/footer.php";
     exit;
 }
@@ -29,8 +29,8 @@ include dirname(__DIR__, 2) . "/includes/header.php";
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=1">
 
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1.25rem);font-size:.85rem;color:var(--t3)">
-  <a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / <?php echo htmlspecialchars($post["title"]); ?>
+<nav class="container res-breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a> / <a href="/resources/blog/">Blog</a> / <span><?php echo htmlspecialchars($post["title"]); ?></span>
 </nav>
 
 <article class="section" style="padding-top:1.25rem;padding-bottom:4rem;">
