@@ -2439,7 +2439,7 @@ function getExtendedIndustryData($slug) {
         ];
     }
 
-    return $industries[$slug] ?? [
+    return $extended[$slug] ?? [
         'slug' => $slug,
         'breadcrumb_label' => ucwords(str_replace('-', ' ', $slug)),
         'title' => ucwords(str_replace('-', ' ', $slug)) . ' WhatsApp Automation | InboxWa',
