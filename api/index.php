@@ -131,6 +131,10 @@ if (isset($parts[0]) && in_array(strtolower($parts[0]), ['business-leads', 'lead
             require $rootDir . '/Industries/education/index.php';
             exit;
         }
+        if (in_array($cat, ['finance-insurance', 'bfsi', 'finance-bfsi'])) {
+            require $rootDir . '/business-leads/finance-insurance/index.php';
+            exit;
+        }
         $_GET['category'] = $cat;
         require $rootDir . '/business-leads/single.php';
         exit;
