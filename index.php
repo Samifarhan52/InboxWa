@@ -700,82 +700,289 @@ include __DIR__ . '/includes/header.php';
     to { transform: translateY(-9px); }
   }
 
-  /* Comparison Section */
-  .cw-comparison-section {
-    background: #f8fafc;
-    padding: 5rem 1.25rem;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  .cw-section-header {
+  /* ==========================================================================
+     CLIENT LOGO SCROLLER (MERITTO CLONE)
+     ========================================================================== */
+  .customer-proof-strip {
+    position: relative;
+    padding: 3rem 1.5rem 3.5rem;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
     text-align: center;
-    max-width: 760px;
-    margin: 0 auto 3.5rem;
+    overflow: hidden;
   }
-  .cw-section-title {
-    font-size: clamp(1.85rem, 3.5vw, 2.75rem);
-    font-weight: 800;
-    color: #0f172a;
-    line-height: 1.2;
-    margin: 0.75rem 0 1rem;
+  .customer-proof-strip .label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 1.75rem;
     letter-spacing: -0.01em;
   }
-  .cw-section-subtitle {
-    font-size: 1.1rem;
-    color: #64748b;
-    line-height: 1.6;
+  .customer-proof-strip .label b {
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .customer-logo-marquee {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .customer-logo-track {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    width: max-content;
+    animation: customerLogoScroll 42s linear infinite;
+    will-change: transform;
+  }
+  .customer-logo-marquee:hover .customer-logo-track {
+    animation-play-state: paused;
+  }
+  .customer-logo-item {
+    height: 52px;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  .customer-logo-item img {
+    display: block;
+    max-height: 44px;
+    max-width: 140px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(15%);
+    opacity: 0.88;
+    mix-blend-mode: multiply;
+    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  }
+  .customer-logo-item:hover img {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  @keyframes customerLogoScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (max-width: 768px) {
+    .customer-proof-strip { padding: 2rem 1rem 2.5rem; }
+    .customer-logo-track { gap: 32px; }
+    .customer-logo-item { min-width: 90px; height: 42px; }
+    .customer-logo-item img { max-width: 110px; max-height: 36px; }
   }
 
-  .cw-table-container {
-    width: 100%;
-    max-width: 1050px;
+  /* ==========================================================================
+     5-STAGE INTERACTIVE LIFECYCLE TOUR (MERITTO CLONE)
+     ========================================================================== */
+  .stages-native {
+    position: relative;
+    padding: 6rem 1.5rem 7rem;
+    background: #f8fafc;
+    overflow: hidden;
+  }
+  .stages-native:before {
+    content: "";
+    position: absolute;
+    width: 900px;
+    height: 500px;
+    left: 50%;
+    bottom: -250px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse, rgba(165, 187, 252, 0.25), rgba(213, 226, 255, 0.15) 40%, transparent 72%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+  .stages-wrap {
+    max-width: 1240px;
     margin: 0 auto;
-    background: #ffffff;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
   }
-  .cw-comp-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+  .stage-heading {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3rem;
   }
-  .cw-comp-table th {
-    padding: 18px 24px;
+  .stage-kicker {
+    display: inline-block;
     font-size: 0.85rem;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background: #f1f5f9;
-    border-bottom: 2px solid #e2e8f0;
+    letter-spacing: 0.08em;
+    color: #4338ca;
+    background: #eef2ff;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
   }
-  .cw-comp-table th.col-api {
-    background: rgba(5, 150, 105, 0.1);
-    color: #059669;
-  }
-  .cw-comp-table td {
-    padding: 20px 24px;
-    border-bottom: 1px solid #e2e8f0;
-    font-size: 0.95rem;
-    vertical-align: middle;
-  }
-  .cw-comp-table tr:last-child td {
-    border-bottom: none;
-  }
-  .cw-comp-feature {
-    font-weight: 700;
+  .stage-display-title {
+    font-size: clamp(2rem, 3.8vw, 2.9rem);
+    font-weight: 800;
+    line-height: 1.18;
     color: #0f172a;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
   }
-  .cw-comp-standard {
+  .stage-subtitle {
+    font-size: 1.12rem;
+    line-height: 1.7;
     color: #64748b;
+    max-width: 720px;
+    margin: 0 auto;
   }
-  .cw-comp-api {
-    color: #059669;
+  .stage-tabs {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 6px;
+    max-width: 940px;
+    margin: 2.5rem auto 2.5rem;
+    padding: 6px;
+    border-radius: 18px;
+    background: #e2e8f0;
+    box-shadow: 0 2px 18px rgba(28, 40, 90, 0.06);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .stage-tabs::-webkit-scrollbar { display: none; }
+  .stage-tab {
+    flex: 1 0 160px;
+    border: 0;
+    background: transparent;
+    color: #64748b;
+    border-radius: 13px;
+    padding: 13px 14px;
+    font-size: 0.88rem;
     font-weight: 700;
-    background: rgba(5, 150, 105, 0.03);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    text-align: center;
+  }
+  .stage-tab:hover {
+    color: #4338ca;
+    background: rgba(255, 255, 255, 0.65);
+  }
+  .stage-tab.active {
+    color: #312e81;
+    background: #ffffff;
+    box-shadow: 0 3px 14px rgba(28, 40, 90, 0.12);
+  }
+  .stage-panes {
+    position: relative;
+    z-index: 2;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 24px 70px rgba(47, 59, 104, 0.08);
+  }
+  .stage-pane {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+  }
+  .stage-pane.active {
+    display: grid;
+    animation: stageFadeIn 0.38s ease;
+  }
+  @keyframes stageFadeIn {
+    from { opacity: 0.35; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+  .stage-copy {
+    padding: 50px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .stage-demo-label {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4f46e5;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  .stage-copy h3 {
+    font-size: clamp(1.85rem, 2.6vw, 2.45rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+    margin: 10px 0 14px;
+  }
+  .stage-copy p {
+    font-size: 1rem;
+    line-height: 1.68;
+    color: #475569;
+    margin: 0 0 20px;
+    max-width: 520px;
+  }
+  .stage-features {
+    display: grid;
+    gap: 12px;
+    margin-top: 15px;
+  }
+  .stage-feature-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: #1e293b;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .stage-feature-item i {
+    font-style: normal;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg, #4f46e5, #3730a3);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+  .stage-media {
+    background: #eef2ff;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    position: relative;
+  }
+  .stage-media img {
+    display: block;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 30px rgba(47, 59, 104, 0.12));
+    border-radius: 12px;
+  }
+  @media (max-width: 991px) {
+    .stage-pane, .stage-pane.active { grid-template-columns: 1fr; }
+    .stage-copy { padding: 36px 28px; }
+    .stage-media { padding: 28px 20px; min-height: 320px; }
+    .stage-media img { width: 95%; }
+  }
+  @media (max-width: 640px) {
+    .stage-tabs { margin: 1.5rem auto 1.5rem; }
+    .stage-tab { flex-basis: 140px; font-size: 0.8rem; padding: 10px 10px; }
+    .stage-panes { border-radius: 20px; }
+    .stage-copy { padding: 24px 20px; }
+    .stage-copy h3 { font-size: 1.6rem; }
+    .stage-media { padding: 20px 14px; min-height: 240px; }
   }
 
   /* Interactive 9-Feature Showcase */
@@ -908,82 +1115,6 @@ include __DIR__ . '/includes/header.php';
     margin: 0;
   }
 
-  /* Sales CTA Section */
-  .cw-sales-section {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
-    color: #ffffff;
-    padding: 5.5rem 1.25rem;
-    text-align: center;
-  }
-  .cw-sales-inner {
-    max-width: 820px;
-    margin: 0 auto;
-  }
-  .cw-sales-title {
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.01em;
-  }
-  .cw-sales-desc {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.92);
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-  }
-  .cw-sales-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    margin-bottom: 2.25rem;
-  }
-  .cw-btn-white {
-    background: #ffffff;
-    color: #059669;
-    font-weight: 800;
-    font-size: 1.05rem;
-    padding: 0.95rem 2.25rem;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    transition: all 0.2s ease;
-  }
-  .cw-btn-white:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    color: #047857;
-  }
-  .cw-btn-transparent {
-    background: transparent;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1.05rem;
-    padding: 0.95rem 2.25rem;
-    border-radius: 999px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: all 0.2s ease;
-    cursor: pointer;
-  }
-  .cw-btn-transparent:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #ffffff;
-    color: #ffffff;
-    transform: translateY(-2px);
-  }
-  .cw-sales-trust {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
-    flex-wrap: wrap;
-  }
-
   /* =========================================
      COMPREHENSIVE MOBILE RESPONSIVE ENGINE
      ========================================= */
@@ -1114,15 +1245,8 @@ include __DIR__ . '/includes/header.php';
       min-width: 560px !important;
       width: 100% !important;
     }
-    .cw-comp-table th,
-    .cw-comp-table td {
-      padding: 12px 14px !important;
-      font-size: 0.82rem !important;
-    }
     .cw-showcase-section,
-    .cw-steps-section,
-    .cw-comparison-section,
-    .cw-sales-section {
+    .cw-steps-section {
       padding: 3rem 1rem !important;
       width: 100% !important;
       max-width: 100% !important;
@@ -1713,51 +1837,170 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- 2. COMPARISON GRID SECTION -->
-  <section class="cw-comparison-section">
-    <div class="cw-section-header">
-      <span class="cw-badge-pill">Comparison Grid</span>
-      <h2 class="cw-section-title">Standard WhatsApp vs WhatsApp Business API</h2>
-      <p class="cw-section-subtitle">Discover why scaling on WhatsApp requires switching from the generic app to an official API-powered workflow built for teams.</p>
+  <!-- 2. CLIENT LOGO MARQUEE SCROLLER (MERITTO CLONE) -->
+  <div class="logo-band customer-proof-strip">
+    <div class="label"><b>1,000+ educational institutions &amp; fast-growing enterprises</b> trust InboxWa</div>
+    <div aria-label="Institutions using InboxWa" class="customer-logo-marquee">
+      <div class="customer-logo-track">
+        <?php
+        $meritto_logos = [
+          ['name' => 'Physics Wallah', 'file' => 'physics-wallah.png'],
+          ['name' => 'Asia Pacific University', 'file' => 'apu.png'],
+          ['name' => 'BITS Pilani Digital', 'file' => 'bits.jpg'],
+          ['name' => 'Dibber', 'file' => 'dibber.jpg'],
+          ['name' => 'IIM Bangalore', 'file' => 'iimb.jpg'],
+          ['name' => 'American University in the Emirates', 'file' => 'aue.png'],
+          ['name' => 'Kalinga Institute', 'file' => 'kiit.jpg'],
+          ['name' => 'Coursera', 'file' => 'coursera.png'],
+          ['name' => 'SRM', 'file' => 'srm.jpg'],
+          ['name' => 'MIT World Peace University', 'file' => 'mit.jpg'],
+          ['name' => 'GMAC NMAT', 'file' => 'gmac.jpg'],
+          ['name' => 'XLRI', 'file' => 'xlri.png'],
+          ['name' => 'Ashoka University', 'file' => 'ashoka.jpg'],
+          ['name' => 'Lovely Professional University', 'file' => 'lpu.jpg'],
+          ['name' => 'SPJIMR', 'file' => 'spjimr.jpg'],
+          ['name' => 'MDI', 'file' => 'mdi.jpg'],
+          ['name' => 'IMI', 'file' => 'imi.jpg'],
+          ['name' => 'Shiv Nadar University', 'file' => 'shiv-nadar.jpg'],
+          ['name' => 'SLIIT', 'file' => 'sliit.jpg'],
+          ['name' => 'Plaksha University', 'file' => 'plaksha.jpg'],
+          ['name' => 'Woxsen University', 'file' => 'woxsen.jpg'],
+          ['name' => 'Thapar Institute', 'file' => 'thapar.png']
+        ];
+        for ($loop = 0; $loop < 2; $loop++):
+          foreach ($meritto_logos as $logo):
+        ?>
+          <div class="customer-logo-item">
+            <img decoding="async" alt="<?php echo htmlspecialchars($logo['name']); ?>" src="<?php echo $bp; ?>assets/images/home-meritto/logos/<?php echo $logo['file']; ?>" loading="lazy">
+          </div>
+        <?php
+          endforeach;
+        endfor;
+        ?>
+      </div>
     </div>
+  </div>
 
-    <div class="cw-table-container">
-      <table class="cw-comp-table">
-        <thead>
-          <tr>
-            <th style="width:30%;">Platform Feature</th>
-            <th style="width:35%;">WhatsApp App (Standard)</th>
-            <th style="width:35%;" class="col-api">Official API (InboxWa)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="cw-comp-feature">Multi-Agent Support</td>
-            <td class="cw-comp-standard">Max 4 devices (Single device focus)</td>
-            <td class="cw-comp-api">Unlimited agents, dynamic routing</td>
-          </tr>
-          <tr>
-            <td class="cw-comp-feature">Broadcast Limits</td>
-            <td class="cw-comp-standard">Max 256 contacts per list (Risk of Ban)</td>
-            <td class="cw-comp-api">Unlimited broadcasts, safe delivery</td>
-          </tr>
-          <tr>
-            <td class="cw-comp-feature">Auto-Reply Bots</td>
-            <td class="cw-comp-standard">Extremely basic auto-responder</td>
-            <td class="cw-comp-api">Visual flow builder + AI Support</td>
-          </tr>
-          <tr>
-            <td class="cw-comp-feature">Green Tick Verification</td>
-            <td class="cw-comp-standard">Not available for standard accounts</td>
-            <td class="cw-comp-api">Official verified green tick badge</td>
-          </tr>
-          <tr>
-            <td class="cw-comp-feature">CRM & API Integrations</td>
-            <td class="cw-comp-standard">No Webhook or API connections</td>
-            <td class="cw-comp-api">Robust REST APIs + Webhooks ready</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- 2.1 5-STAGE INTERACTIVE LIFECYCLE TOUR (MERITTO CLONE) -->
+  <section class="stages-native" id="platform">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">One Connected Growth &amp; Enrollment System</span>
+        <h2 class="stage-display-title">Run every stage of enrollment on one connected system</h2>
+        <p class="stage-subtitle">Bring marketing, admissions, applications, payments and student engagement together on one purpose-built InboxWa platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Enrollment stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Attract &amp; Capture</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Engage &amp; Nurture</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Apply &amp; Enroll</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Collect &amp; Reconcile</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Unlock Intelligence</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: ATTRACT & CAPTURE -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Attract &amp; Capture</div>
+            <h3>Every enquiry <br>captured, attributed, <br>and owned.</h3>
+            <p>Online, offline, partner and campaign demand lands in one connected pipeline, with source, attribution and ownership preserved from the moment an enquiry enters InboxWa.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Enquiries centralised across every channel and campaign.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Primary, secondary and tertiary source attribution.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Auto source tracking that cannot be edited later.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Lead verification and de-duplication at entry.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Publisher panel with quality and impact scoring.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>200+ lead sources, 40 ERPs and 20 exam systems integrated.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="InboxWa Attract and Capture Dashboard" src="<?php echo $bp; ?>assets/images/home-meritto/attract-and-capture.png" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: ENGAGE & NURTURE -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Engage &amp; Nurture</div>
+            <h3>The right journey,<br> on the right channel,<br> with the right counsellor.</h3>
+            <p>Every enquiry is scored, matched to a journey and routed to the counsellor most likely to convert it — then engaged wherever the student actually replies.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Personalised marketing journeys triggered by intent and stage.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Lead scoring and prediction that ranks the pipeline.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Omnichannel nurture across WhatsApp, email, SMS and voice.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>InboxWa Live Chat for live counselling; InboxWa AI for always-on qualification.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Smart lead distribution by programme, campus, language or performance.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>InboxWa AI Guide and Voice for autonomous engagement at scale.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="InboxWa Engage and Nurture Dashboard" src="<?php echo $bp; ?>assets/images/home-meritto/engage-and-nurture.png" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: APPLY & ENROLL -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Apply &amp; Enroll</div>
+            <h3>Move applicants from application started to successfully enrolled.</h3>
+            <p>Manage applications, documents, reviews, interviews, offers and enrollment stages with visibility across every student movement.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>No-code, programme-specific forms and admission portal.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Document collection, verification and eligibility checks.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Shortlisting, GD-PI and interview scheduling.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Merit lists and offer letters issued in-system.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Drop-off alerts before applicants go cold.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Role-based access and full audit trails.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="InboxWa Apply and Enroll Dashboard" src="<?php echo $bp; ?>assets/images/home-meritto/apply-and-enroll.png" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: COLLECT & RECONCILE -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Collect &amp; Reconcile</div>
+            <h3>Payment is part of enrollment, not a separate chase.</h3>
+            <p>InboxWa Pay connects fee collection to the student record, so reconciliation stops being a month-end reconstruction across disconnected systems and teams.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Application, tuition, hostel, transport and event fees.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>One-time, partial, recurring and financed structures.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Payment links from CRM, portal and campaigns.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time reconciliation against the student record.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Failure analytics and default tracking for finance.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>InboxWa Smart ID for identity, access and payments.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="InboxWa Collect and Reconcile Dashboard" src="<?php echo $bp; ?>assets/images/home-meritto/collect-and-reconcile.png" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: UNLOCK INTELLIGENCE -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Unlock Intelligence</div>
+            <h3>One view of the funnel, and the context that makes AI useful.</h3>
+            <p>Enquiries, conversations, applications and payments in one system means leadership sees the whole picture, and InboxWa AI reasons over real institutional context.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Live dashboards from enquiry quality to fee realisation.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Marketing ROI by source, publisher and campaign.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Turnaround time, stage conversion and drop-off analysis.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Programme, campus and vertical performance in one builder.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>InboxWa AI Coach surfacing next-best actions for counsellors.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Every module deepens the context intelligence works from.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="InboxWa Reports and Analysis Dashboard" src="<?php echo $bp; ?>assets/images/home-meritto/reports-and-analysis.png" loading="lazy">
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -2112,30 +2355,34 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- 5. FINAL SALES CTA BANNER -->
-  <section class="cw-sales-section">
-    <div class="cw-sales-inner">
-      <h2 class="cw-sales-title"><?php echo htmlspecialchars(cms_section('cta_banner', 'title', 'Turn Your WhatsApp Into A Sales Engine Today')); ?></h2>
-      <p class="cw-sales-desc"><?php echo htmlspecialchars(cms_section('cta_banner', 'lead', 'Start sending announcements, managing team chats, and answering customer questions automatically right now.')); ?></p>
-      <div class="cw-sales-actions">
-        <a href="<?php echo htmlspecialchars(cms_section('cta_banner', 'btn_link', $bp . 'auth/register')); ?>" class="cw-btn-white">
-          <?php echo htmlspecialchars(cms_section('cta_banner', 'btn_text', 'Try For Free →')); ?>
-        </a>
-        <button type="button" class="cw-btn-transparent btn-demo-open">
-          Talk to Sales
-        </button>
-      </div>
-      <div class="cw-sales-trust">
-        <span>✓ 5-Minute Setup</span>
-        <span>✓ Official Connection</span>
-        <span>✓ Cancel Anytime</span>
-      </div>
-    </div>
-  </section>
 </div>
 
 <script>
 (function() {
+  // 0. 5-Stage Interactive Lifecycle Tour Tabs Switcher
+  const stageTabs = document.querySelectorAll('.stage-tab');
+  const stagePanes = document.querySelectorAll('.stage-pane');
+  if (stageTabs.length && stagePanes.length) {
+    stageTabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        const stageIdx = this.getAttribute('data-stage');
+        stageTabs.forEach(function(t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        
+        stagePanes.forEach(function(pane) {
+          if (pane.getAttribute('data-pane') === stageIdx) {
+            pane.classList.add('active');
+          } else {
+            pane.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
   // 1. Live Clock in Phone Hardware Top Bar
   function updatePhoneClock() {
     const clockEl = document.getElementById('cw-status-clock');
