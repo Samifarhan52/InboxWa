@@ -1,3 +1,6 @@
 <?php
-$_GET['category'] = 'manufacturing';
-require_once __DIR__ . '/../single.php';
+$basePath = '../../';
+$categorySlug = 'manufacturing';
+require_once __DIR__ . '/../../config/industries-content.php';
+$indData = getIndustryData($categorySlug);
+require_once __DIR__ . '/../../includes/industry-template.php';

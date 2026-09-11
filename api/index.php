@@ -135,12 +135,56 @@ if (isset($parts[0]) && in_array(strtolower($parts[0]), ['business-leads', 'lead
             require $rootDir . '/business-leads/finance-insurance/index.php';
             exit;
         }
+        $catDir = $rootDir . '/business-leads/' . $cat;
+        if (is_dir($catDir) && is_file($catDir . '/index.php')) {
+            require $catDir . '/index.php';
+            exit;
+        }
         $_GET['category'] = $cat;
         require $rootDir . '/business-leads/single.php';
         exit;
     } else {
         require $rootDir . '/business-leads/index.php';
         exit;
+    }
+}
+
+// Dynamic Industry / Industries Route
+if (isset($parts[0]) && in_array(strtolower($parts[0]), ['industry', 'industries'])) {
+    if (isset($parts[1])) {
+        $ind = strtolower($parts[1]);
+        $aliasMap = [
+            'education' => 'education',
+            'finance-bfsi' => 'finance-insurance',
+            'finance' => 'finance-insurance',
+            'bfsi' => 'finance-insurance',
+            'real-estate' => 'real-estate',
+            'healthcare' => 'healthcare',
+            'travel-hospitality' => 'travel-hospitality',
+            'travel-and-tourism' => 'travel-hospitality',
+            'travel' => 'travel-hospitality',
+            'beauty-wellness' => 'beauty-wellness',
+            'ecommerce' => 'ecommerce',
+            'automotive' => 'automotive',
+            'restaurants-food' => 'restaurants-food',
+            'restaurant' => 'restaurants-food',
+            'manufacturing' => 'manufacturing',
+            'events-wedding' => 'events-wedding',
+            'digital-marketing' => 'digital-marketing',
+            'it-software' => 'it-software',
+            'retail' => 'retail',
+            'professional-services' => 'professional-services',
+            'b2b-suppliers' => 'b2b-suppliers'
+        ];
+        $mappedCat = $aliasMap[$ind] ?? $ind;
+        if ($mappedCat === 'education') {
+            require $rootDir . '/Industries/education/index.php';
+            exit;
+        }
+        if (is_file($rootDir . '/business-leads/' . $mappedCat . '/index.php')) {
+            require $rootDir . '/business-leads/' . $mappedCat . '/index.php';
+            exit;
+        }
     }
 }
 
