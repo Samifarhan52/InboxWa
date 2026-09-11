@@ -25,6 +25,13 @@ if ((count($parts) === 1 && strtolower($parts[0]) === 'education') ||
     exit;
 }
 
+// BFSI / Finance & Insurance shortcuts & aliases
+if ((count($parts) === 1 && in_array(strtolower($parts[0]), ['bfsi', 'finance-insurance'])) ||
+    (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'industry', 'industries', 'business-leads', 'leads']) && in_array(strtolower($parts[1]), ['finance-insurance', 'bfsi', 'finance-bfsi']))) {
+    require $rootDir . '/business-leads/finance-insurance/index.php';
+    exit;
+}
+
 // 1. Direct exact path match check
 $directPath = $rootDir . '/' . implode('/', $parts);
 if (is_dir($directPath) && is_file(rtrim($directPath, '/') . '/index.php')) {
