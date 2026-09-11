@@ -1,12 +1,152 @@
 /**
- * InboxWa i18n — EN, AR, ES, PT, DE, FR
- * Applies to all [data-i18n] on the page. Future pages: same attributes + this file.
+ * InboxWa Internationalization (i18n) Engine
+ * Multi-Language: English (EN), Arabic (AR), Spanish (ES), Portuguese (PT), German (DE), French (FR)
+ * Seamless 2-tier architecture:
+ * 1. Instant 0ms Client DOM Translation (Nav, Headers, Badges, CTAs)
+ * 2. Full-Page Deep Neural Translation via Google Website Translator Engine
+ * 3. Persistence across page navigations & sessions via googtrans cookie & localStorage
  */
 (function () {
   'use strict';
 
-  var LABELS = { en: 'EN', ar: 'AR', es: 'ES', pt: 'PT', de: 'DE', fr: 'FR' };
+  var LABELS = {
+    en: 'EN',
+    ar: 'AR',
+    es: 'ES',
+    pt: 'PT',
+    de: 'DE',
+    fr: 'FR'
+  };
 
+  var FULL_NAMES = {
+    en: 'English',
+    ar: 'العربية',
+    es: 'Español',
+    pt: 'Português',
+    de: 'Deutsch',
+    fr: 'Français'
+  };
+
+  // Common UI Elements Instant Translation Map
+  var UI_STRINGS = {
+    ar: {
+      'Features': 'المميزات',
+      'Channels': 'القنوات',
+      'Solutions': 'الحلول',
+      'Business Leads': 'عملاء الأعمال',
+      'Pricing': 'الأسعار',
+      'Partners': 'الشركاء',
+      'Company': 'الشركة',
+      'Login': 'تسجيل الدخول',
+      'Start Free': 'ابدأ مجانًا',
+      'Book a Demo': 'احجز عرضًا',
+      'About': 'من نحن',
+      'Careers': 'الوظائف',
+      'Contact': 'اتصل بنا',
+      'Security': 'الأمان',
+      'Privacy': 'الخصوصية',
+      'Terms': 'الشروط والأحكام',
+      'Privacy policy': 'سياسة الخصوصية',
+      'Terms of service': 'شروط الخدمة',
+      'See InboxWa in Action': 'شاهد InboxWa قيد التشغيل',
+      'Start 7-Day Free Trial': 'ابدأ تجربة مجانية لمدة 7 أيام',
+      'Schedule 1-on-1 Call': 'احجز مكالمة فردية'
+    },
+    es: {
+      'Features': 'Funciones',
+      'Channels': 'Canales',
+      'Solutions': 'Soluciones',
+      'Business Leads': 'Leads de Negocios',
+      'Pricing': 'Precios',
+      'Partners': 'Socios',
+      'Company': 'Empresa',
+      'Login': 'Iniciar Sesión',
+      'Start Free': 'Empezar Gratis',
+      'Book a Demo': 'Reservar Demo',
+      'About': 'Sobre Nosotros',
+      'Careers': 'Empleo',
+      'Contact': 'Contacto',
+      'Security': 'Seguridad',
+      'Privacy': 'Privacidad',
+      'Terms': 'Términos',
+      'Privacy policy': 'Política de privacidad',
+      'Terms of service': 'Términos de servicio',
+      'See InboxWa in Action': 'Ver InboxWa en Acción',
+      'Start 7-Day Free Trial': 'Prueba Gratis de 7 Días',
+      'Schedule 1-on-1 Call': 'Agendar Llamada 1-a-1'
+    },
+    pt: {
+      'Features': 'Recursos',
+      'Channels': 'Canais',
+      'Solutions': 'Soluções',
+      'Business Leads': 'Leads Comerciais',
+      'Pricing': 'Preços',
+      'Partners': 'Parceiros',
+      'Company': 'Empresa',
+      'Login': 'Entrar',
+      'Start Free': 'Começar Grátis',
+      'Book a Demo': 'Agendar Demo',
+      'About': 'Sobre Nós',
+      'Careers': 'Carreiras',
+      'Contact': 'Contato',
+      'Security': 'Segurança',
+      'Privacy': 'Privacidade',
+      'Terms': 'Termos',
+      'Privacy policy': 'Política de privacidade',
+      'Terms of service': 'Termos de serviço',
+      'See InboxWa in Action': 'Veja o InboxWa em Ação',
+      'Start 7-Day Free Trial': 'Teste Grátis por 7 Dias',
+      'Schedule 1-on-1 Call': 'Agendar Chamada 1-a-1'
+    },
+    de: {
+      'Features': 'Funktionen',
+      'Channels': 'Kanäle',
+      'Solutions': 'Lösungen',
+      'Business Leads': 'Geschäfts-Leads',
+      'Pricing': 'Preise',
+      'Partners': 'Partner',
+      'Company': 'Unternehmen',
+      'Login': 'Anmelden',
+      'Start Free': 'Kostenlos starten',
+      'Book a Demo': 'Demo buchen',
+      'About': 'Über Uns',
+      'Careers': 'Karriere',
+      'Contact': 'Kontakt',
+      'Security': 'Sicherheit',
+      'Privacy': 'Datenschutz',
+      'Terms': 'AGB',
+      'Privacy policy': 'Datenschutzerklärung',
+      'Terms of service': 'Nutzungsbedingungen',
+      'See InboxWa in Action': 'InboxWa in Aktion sehen',
+      'Start 7-Day Free Trial': '7 Tage kostenlos testen',
+      'Schedule 1-on-1 Call': '1-zu-1 Anruf vereinbaren'
+    },
+    fr: {
+      'Features': 'Fonctionnalités',
+      'Channels': 'Canaux',
+      'Solutions': 'Solutions',
+      'Business Leads': 'Prospects Pro',
+      'Pricing': 'Tarifs',
+      'Partners': 'Partenaires',
+      'Company': 'Entreprise',
+      'Login': 'Connexion',
+      'Start Free': 'Commencer Gratuit',
+      'Book a Demo': 'Réserver une démo',
+      'About': 'À Propos',
+      'Careers': 'Carrières',
+      'Contact': 'Contact',
+      'Security': 'Sécurité',
+      'Privacy': 'Confidentialité',
+      'Terms': 'Conditions',
+      'Privacy policy': 'Politique de confidentialité',
+      'Terms of service': 'Conditions d’utilisation',
+      'See InboxWa in Action': 'Découvrir InboxWa en Action',
+      'Start 7-Day Free Trial': 'Essai gratuit de 7 jours',
+      'Schedule 1-on-1 Call': 'Planifier un appel 1-à-1'
+    }
+  };
+
+  // Detailed Key Dictionaries for [data-i18n]
   var T = {
     en: {
       hero_badge: 'Official WhatsApp Business API · Instagram · Facebook · Telegram',
@@ -262,69 +402,301 @@
     }
   };
 
-  function apply(lang) {
-    if (!T[lang]) lang = 'en';
-    var dict = T[lang];
+  // Helper to manage the googtrans cookie across root and domain
+  function setGoogleTransCookie(val) {
+    var host = window.location.hostname;
+    var domainParts = host.split('.');
+    var domains = ['', host];
+    if (domainParts.length > 1) {
+      domains.push('.' + host);
+      domains.push('.' + domainParts.slice(-2).join('.'));
+    }
+
+    domains.forEach(function (d) {
+      var dAttr = d ? '; domain=' + d : '';
+      // Delete old cookie first
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + dAttr;
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=""' + dAttr;
+
+      if (val) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() + (365 * 24 * 60 * 60 * 1000));
+        document.cookie = 'googtrans=' + val + '; expires=' + exp.toUTCString() + '; path=/' + dAttr;
+      }
+    });
+  }
+
+  // Instant UI translation for immediate responsiveness
+  function instantTranslate(lang) {
+    // 1. Dictionaries with data-i18n
+    var dict = T[lang] || T.en;
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (dict[key] != null) el.textContent = dict[key];
     });
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    var label = document.getElementById('lang-switch-label');
-    if (label) label.textContent = LABELS[lang] || lang.toUpperCase();
-    try { localStorage.setItem('hb_lang', lang); } catch (e) {}
-    try {
-      var u = new URL(window.location.href);
-      if (lang === 'en') u.searchParams.delete('lang');
-      else u.searchParams.set('lang', lang);
-      window.history.replaceState({}, '', u);
-    } catch (e2) {}
+
+    // 2. Common Navigation & CTA Texts
+    var strings = UI_STRINGS[lang];
+    if (strings) {
+      var candidates = document.querySelectorAll('.nav-link, .nav-item, .mega-link-title, .header-login span, .header-cta-start, .btn-demo-open, .mobile-nav-link, .mnav-login, .mnav-start, .mnav-demo, .cw-hero-anim-heading');
+      candidates.forEach(function (el) {
+        var txt = el.textContent.trim();
+        var orig = el.getAttribute('data-orig-text');
+        if (!orig) {
+          orig = txt;
+          el.setAttribute('data-orig-text', orig);
+        }
+        if (strings[orig]) {
+          if (el.children.length === 0) {
+            el.textContent = strings[orig];
+          } else {
+            for (var i = 0; i < el.childNodes.length; i++) {
+              var node = el.childNodes[i];
+              if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() === orig) {
+                node.nodeValue = ' ' + strings[orig] + ' ';
+                break;
+              }
+            }
+          }
+        }
+      });
+    } else if (lang === 'en') {
+      document.querySelectorAll('[data-orig-text]').forEach(function (el) {
+        var orig = el.getAttribute('data-orig-text');
+        if (el.children.length === 0) {
+          el.textContent = orig;
+        } else {
+          for (var i = 0; i < el.childNodes.length; i++) {
+            var node = el.childNodes[i];
+            if (node.nodeType === Node.TEXT_NODE) {
+              node.nodeValue = ' ' + orig + ' ';
+              break;
+            }
+          }
+        }
+      });
+    }
   }
 
+  // Trigger Google Translate engine
+  function triggerGoogle(lang, isInitial) {
+    if (lang === 'en') {
+      setGoogleTransCookie('');
+      try { localStorage.removeItem('hb_lang'); } catch (e) {}
+
+      var isTranslated = document.documentElement.classList.contains('translated-ltr') ||
+                         document.documentElement.classList.contains('translated-rtl') ||
+                         document.querySelector('.goog-te-banner-frame');
+
+      if (isTranslated && !isInitial) {
+        var combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = '';
+          combo.dispatchEvent(new Event('change'));
+          setTimeout(function () {
+            if (document.documentElement.classList.contains('translated-ltr') || document.documentElement.classList.contains('translated-rtl')) {
+              window.location.reload();
+            }
+          }, 300);
+        } else {
+          window.location.reload();
+        }
+      }
+      return;
+    }
+
+    setGoogleTransCookie('/en/' + lang);
+
+    function tryCombo() {
+      var combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        if (combo.value !== lang) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
+        }
+        return true;
+      }
+      return false;
+    }
+
+    if (!tryCombo()) {
+      var attempts = 0;
+      var timer = setInterval(function () {
+        attempts++;
+        if (tryCombo()) {
+          clearInterval(timer);
+        } else if (attempts > 30) {
+          clearInterval(timer);
+          if (!isInitial) {
+            window.location.reload();
+          }
+        }
+      }, 100);
+    }
+  }
+
+  // Main Apply Language Method
+  function apply(lang, isInitial) {
+    if (!LABELS[lang]) lang = 'en';
+
+    // 1. Update HTML dir and lang
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar' ? 'rtl' : 'ltr');
+    if (lang === 'ar') {
+      document.body.classList.add('is-rtl');
+    } else {
+      document.body.classList.remove('is-rtl');
+    }
+
+    // 2. Update Header Button Label
+    var label = document.getElementById('lang-switch-label');
+    if (label) {
+      label.textContent = LABELS[lang];
+    }
+
+    // 3. Update Dropdown Menu Active States
+    document.querySelectorAll('#lang-switch-menu [data-lang]').forEach(function (el) {
+      if (el.getAttribute('data-lang') === lang) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    });
+
+    // 4. Update Mobile Menu Active States
+    document.querySelectorAll('.mobile-lang-btn[data-lang]').forEach(function (el) {
+      if (el.getAttribute('data-lang') === lang) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    });
+
+    // 5. Save preference
+    try {
+      if (lang === 'en') {
+        localStorage.removeItem('hb_lang');
+      } else {
+        localStorage.setItem('hb_lang', lang);
+      }
+    } catch (e) {}
+
+    // 6. Update URL parameter cleanly without refresh
+    try {
+      var u = new URL(window.location.href);
+      if (lang === 'en') {
+        u.searchParams.delete('lang');
+      } else {
+        u.searchParams.set('lang', lang);
+      }
+      window.history.replaceState({}, '', u.toString());
+    } catch (e2) {}
+
+    // 7. Instant UI Translation (0ms fast feedback)
+    instantTranslate(lang);
+
+    // 8. Trigger Google Translate for full-page deep translation
+    triggerGoogle(lang, isInitial);
+  }
+
+  // Initialize Language Switcher
   function init() {
     var btn = document.getElementById('lang-switch-btn');
     var menu = document.getElementById('lang-switch-menu');
-    if (!btn || !menu) {
-      // still apply saved lang
-    } else {
-      function open() { menu.hidden = false; btn.setAttribute('aria-expanded', 'true'); }
-      function close() { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
+
+    if (btn && menu) {
+      function openMenu() {
+        menu.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
-        menu.hidden ? open() : close();
+        menu.hidden ? openMenu() : closeMenu();
       });
+
       menu.querySelectorAll('[data-lang]').forEach(function (li) {
-        li.addEventListener('click', function () {
-          menu.querySelectorAll('[data-lang]').forEach(function (x) { x.classList.remove('active'); });
-          li.classList.add('active');
-          apply(li.getAttribute('data-lang'));
-          close();
+        li.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var targetLang = li.getAttribute('data-lang');
+          closeMenu();
+          apply(targetLang, false);
         });
       });
-      document.addEventListener('click', close);
+
+      document.addEventListener('click', function (e) {
+        if (!menu.hidden && !menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menu.hidden) {
+          closeMenu();
+        }
+      });
     }
 
-    var start = 'en';
+    // Mobile Language Buttons in Drawer
+    document.querySelectorAll('.mobile-lang-btn[data-lang]').forEach(function (btnEl) {
+      btnEl.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var targetLang = btnEl.getAttribute('data-lang');
+        apply(targetLang, false);
+      });
+    });
+
+    // Detect initial language
+    var startLang = 'en';
     try {
       var q = new URLSearchParams(window.location.search).get('lang');
       var saved = localStorage.getItem('hb_lang');
-      if (q && T[q]) start = q;
-      else if (saved && T[saved]) start = saved;
+      var cMatch = document.cookie.match(/googtrans=\/en\/([a-z]{2})/i);
+      var cLang = cMatch ? cMatch[1].toLowerCase() : null;
+
+      if (q && LABELS[q]) {
+        startLang = q;
+      } else if (saved && LABELS[saved]) {
+        startLang = saved;
+      } else if (cLang && LABELS[cLang]) {
+        startLang = cLang;
+      }
     } catch (e) {}
-    apply(start);
-    if (menu) {
-      var active = menu.querySelector('[data-lang="' + start + '"]');
-      if (active) {
-        menu.querySelectorAll('[data-lang]').forEach(function (x) { x.classList.remove('active'); });
-        active.classList.add('active');
+
+    apply(startLang, true);
+  }
+
+  // Callback when Google Translate loads
+  function onGoogleInit() {
+    var savedLang = 'en';
+    try {
+      var q = new URLSearchParams(window.location.search).get('lang');
+      savedLang = q || localStorage.getItem('hb_lang') || 'en';
+    } catch (e) {}
+
+    if (savedLang && savedLang !== 'en') {
+      var combo = document.querySelector('.goog-te-combo');
+      if (combo && combo.value !== savedLang) {
+        combo.value = savedLang;
+        combo.dispatchEvent(new Event('change'));
       }
     }
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
-  // Export for future pages
-  window.InboxWaI18n = { apply: apply, dict: T };
+  // Export to window
+  window.InboxWaI18n = {
+    apply: apply,
+    dict: T,
+    onGoogleInit: onGoogleInit
+  };
 })();

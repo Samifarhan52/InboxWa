@@ -1353,7 +1353,15 @@ if (!function_exists('hb_seo_esc')) {
         padding: 0 0.85rem !important;
       }
       .lang-switch {
-        display: none !important;
+        display: inline-flex !important;
+      }
+      .lang-switch-btn {
+        padding: 0.28rem 0.5rem !important;
+      }
+      .lang-switch-menu {
+        top: calc(100% + 8px) !important;
+        right: -8px !important;
+        min-width: 140px !important;
       }
       .logo-img {
         height: 26px !important;
@@ -1369,6 +1377,117 @@ if (!function_exists('hb_seo_esc')) {
     @media (max-width: 991px) {
       .mega-channels-container { grid-template-columns: 1fr !important; }
       .mega-channels-promo { display: none !important; }
+    }
+
+    /* Google Website Translator Clean UI Suppression */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    iframe.goog-te-banner-frame {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    body {
+      top: 0px !important;
+      position: static !important;
+    }
+    #google_translate_element,
+    .skiptranslate:not(.lang-switch):not(.lang-switch-btn):not(.lang-switch-menu):not(.mobile-lang-box):not(.mobile-lang-grid):not(.mobile-lang-btn) {
+      display: none !important;
+    }
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    #goog-gt-tt,
+    .goog-te-balloon-frame {
+      display: none !important;
+    }
+    .goog-text-highlight {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    font[color] {
+      color: inherit !important;
+    }
+
+    /* Arabic RTL Layout Adaptations */
+    html[dir="rtl"],
+    html.translated-rtl {
+      direction: rtl !important;
+      text-align: right !important;
+    }
+    html[dir="rtl"] body,
+    body.is-rtl {
+      direction: rtl !important;
+      text-align: right !important;
+    }
+    html[dir="rtl"] .lang-switch-menu {
+      left: 0 !important;
+      right: auto !important;
+      text-align: right !important;
+    }
+    html[dir="rtl"] .header-actions {
+      flex-direction: row-reverse !important;
+    }
+    html[dir="rtl"] .cw-hero-content {
+      text-align: right !important;
+    }
+    html[dir="rtl"] .cw-trust-row {
+      justify-content: flex-start !important;
+    }
+    html[dir="rtl"] .cw-trust-item svg {
+      margin-left: 5px !important;
+      margin-right: 0 !important;
+    }
+
+    /* Mobile Drawer Language Selector Box */
+    .mobile-lang-box {
+      padding: 12px 14px 10px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 10px;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+    .mobile-lang-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #64748b;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mobile-lang-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .mobile-lang-btn {
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #334155;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .mobile-lang-btn:hover {
+      border-color: #6366f1;
+      color: #6366f1;
+    }
+    .mobile-lang-btn.active {
+      background: #6366f1;
+      border-color: #6366f1;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
     }
   </style>
   <script>
@@ -2028,6 +2147,20 @@ if (!function_exists('hb_seo_esc')) {
             <a href="/privacy/">Privacy</a>
             <a href="/terms/">Terms</a>
           </div></div>
+        </div>
+        <div class="mobile-lang-box">
+          <div class="mobile-lang-title">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            <span>Language / اللغة</span>
+          </div>
+          <div class="mobile-lang-grid">
+            <button type="button" class="mobile-lang-btn active" data-lang="en">English</button>
+            <button type="button" class="mobile-lang-btn" data-lang="ar">العربية</button>
+            <button type="button" class="mobile-lang-btn" data-lang="es">Español</button>
+            <button type="button" class="mobile-lang-btn" data-lang="pt">Português</button>
+            <button type="button" class="mobile-lang-btn" data-lang="de">Deutsch</button>
+            <button type="button" class="mobile-lang-btn" data-lang="fr">Français</button>
+          </div>
         </div>
         <div class="mobile-nav-actions">
           <a href="<?php echo $bp; ?>auth/login" class="mnav-login">Login</a>

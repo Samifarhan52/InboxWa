@@ -163,7 +163,24 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
   <?php include __DIR__ . '/demo-popup.php'; ?>
   <?php include __DIR__ . '/callback-popup.php'; ?>
   <?php include __DIR__ . '/offer-popup.php'; ?>
-  <script src="/i18n.js?v=22" defer></script>
+  <!-- Google Website Translator Integration -->
+  <div id="google_translate_element" style="display:none !important;" aria-hidden="true"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      if (window.google && window.google.translate) {
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,ar,es,pt,de,fr',
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+      if (window.InboxWaI18n && typeof window.InboxWaI18n.onGoogleInit === 'function') {
+        window.InboxWaI18n.onGoogleInit();
+      }
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+  <script src="/i18n.js?v=25" defer></script>
   <script src="/main.js?v=39" defer></script>
 
 <script src="/assets/js/mobile-menu.js?v=38"></script>
