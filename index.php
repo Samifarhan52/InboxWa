@@ -623,6 +623,597 @@ include __DIR__ . '/includes/header.php';
     flex-shrink: 0;
   }
 
+  /* ==========================================================================
+     INBOXWA INTERACTIVE ANIMATED FLOW BUILDER & SHOWCASE MODULES
+     ========================================================================== */
+  
+  /* Hero Animated Teaser Box */
+  .cw-hero-anim-box {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+    max-width: 540px;
+  }
+  .cw-hero-anim-box:hover {
+    transform: translateY(-2px);
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 14px 30px -4px rgba(16, 185, 129, 0.15), 0 6px 12px -2px rgba(15, 23, 42, 0.06);
+  }
+  .cw-hero-anim-thumb {
+    position: relative;
+    width: 90px;
+    height: 58px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #0f172a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  }
+  .cw-hero-anim-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cw-hero-anim-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .cw-hero-anim-box:hover .cw-hero-anim-overlay {
+    background: rgba(15, 23, 42, 0.1);
+  }
+  .cw-hero-anim-play-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #10b981;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2px;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.5);
+    transition: transform 0.25s ease;
+  }
+  .cw-hero-anim-box:hover .cw-hero-anim-play-icon {
+    transform: scale(1.12);
+  }
+  .cw-hero-anim-live-tag {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    letter-spacing: 0.02em;
+  }
+  .cw-hero-anim-details {
+    flex: 1;
+    min-width: 0;
+  }
+  .cw-hero-anim-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+  .cw-hero-anim-heading {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .cw-hero-anim-pill {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #059669;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 1px 7px;
+    border-radius: 10px;
+    letter-spacing: 0.02em;
+  }
+  .cw-hero-anim-sub {
+    font-size: 0.76rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.35;
+  }
+  .cw-hero-anim-action {
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+  }
+  .cw-hero-anim-expand-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    transition: all 0.2s ease;
+  }
+  .cw-hero-anim-box:hover .cw-hero-anim-expand-btn {
+    background: #ecfdf5;
+    color: #059669;
+  }
+
+  /* Platform Showcase Section */
+  .cw-platform-showcase-section {
+    padding: 4.5rem 1.5rem 5rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 60%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cw-showcase-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .cw-showcase-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+  }
+  .cw-showcase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .cw-showcase-title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+  .cw-showcase-subtitle {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .cw-showcase-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
+  }
+  .cw-showcase-tab {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  .cw-showcase-tab:hover {
+    border-color: #cbd5e1;
+    color: #0f172a;
+    transform: translateY(-1px);
+  }
+  .cw-showcase-tab.active {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+  }
+  .cw-showcase-window-wrap {
+    position: relative;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .cw-showcase-window {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  }
+  .cw-window-titlebar {
+    background: #0f172a;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .cw-window-dots {
+    display: flex;
+    gap: 7px;
+  }
+  .cw-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+  .cw-dot.red { background: #ef4444; }
+  .cw-dot.yellow { background: #f59e0b; }
+  .cw-dot.green { background: #10b981; }
+  .cw-window-url-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 5px 14px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 0.78rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    max-width: 480px;
+    width: 100%;
+    justify-content: center;
+  }
+  .cw-window-actions {
+    display: flex;
+    align-items: center;
+  }
+  .cw-window-expand {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #f1f5f9;
+    padding: 5px 12px;
+    border-radius: 7px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+  .cw-window-expand:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+  .cw-window-screen {
+    background: #0b0f19;
+    position: relative;
+    overflow: hidden;
+  }
+  .cw-tab-media {
+    display: none;
+    animation: cwFadeInMedia 0.35s ease;
+  }
+  .cw-tab-media.active {
+    display: block;
+  }
+  @keyframes cwFadeInMedia {
+    from { opacity: 0; transform: scale(0.995); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .cw-showcase-media-elem {
+    width: 100%;
+    height: auto;
+    max-height: 580px;
+    object-fit: contain;
+    display: block;
+    background: #0b0f19;
+    margin: 0 auto;
+  }
+  .cw-media-caption {
+    padding: 14px 22px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.88rem;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cw-caption-badge {
+    background: #10b981;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  /* Floating Proof Badges */
+  .cw-showcase-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    padding: 10px 16px;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .cw-sc-left {
+    bottom: 50px;
+    left: -28px;
+    animation: cwFloat 4s ease-in-out infinite alternate;
+  }
+  .cw-sc-right {
+    top: 70px;
+    right: -28px;
+    animation: cwFloat 4s ease-in-out infinite alternate -2s;
+  }
+  .cw-sc-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #ecfdf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+  .cw-sc-text strong {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+  }
+  .cw-sc-text span {
+    display: block;
+    font-size: 0.72rem;
+    color: #64748b;
+  }
+
+  /* Fullscreen Video Lightbox Modal */
+  .cw-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .cw-modal-overlay.open {
+    display: flex;
+  }
+  .cw-modal-box {
+    background: #0f172a;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 980px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: cwModalPop 0.25s ease;
+  }
+  @keyframes cwModalPop {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .cw-modal-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    background: #090d16;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .cw-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #f8fafc;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+  .cw-modal-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+  }
+  .cw-modal-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #cbd5e1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cw-modal-close:hover {
+    background: #ef4444;
+    color: #ffffff;
+  }
+  .cw-modal-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #131b2e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-x: auto;
+  }
+  .cw-m-tab {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    padding: 7px 15px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .cw-m-tab:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .cw-m-tab.active {
+    background: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+  }
+  .cw-modal-media-container {
+    position: relative;
+    background: #000000;
+    min-height: 360px;
+    max-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cw-modal-video, .cw-modal-img {
+    max-width: 100%;
+    max-height: 65vh;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  .cw-modal-footer {
+    padding: 16px 22px;
+    background: #090d16;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cw-modal-footnote {
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+  .cw-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cw-btn-modal-primary {
+    background: #10b981;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .cw-btn-modal-primary:hover {
+    background: #059669;
+    color: #ffffff;
+  }
+  .cw-btn-modal-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cw-btn-modal-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .cw-platform-showcase-section {
+      padding: 3rem 1rem 3.5rem;
+    }
+    .cw-showcase-title {
+      font-size: 1.65rem;
+    }
+    .cw-showcase-subtitle {
+      font-size: 0.92rem;
+    }
+    .cw-window-url-bar {
+      display: none;
+    }
+    .cw-showcase-card {
+      display: none !important;
+    }
+    .cw-hero-anim-box {
+      padding: 8px 10px;
+    }
+    .cw-hero-anim-thumb {
+      width: 76px;
+      height: 50px;
+    }
+    .cw-hero-anim-heading {
+      font-size: 0.82rem;
+    }
+    .cw-hero-anim-sub {
+      font-size: 0.7rem;
+    }
+    .cw-modal-footer {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+    .cw-modal-actions {
+      justify-content: center;
+    }
+  }
+
   /* Upgraded Floating Badges (Hidden to prevent covering phone mockup) */
   .cw-floating-card {
     display: none !important;
@@ -1715,6 +2306,37 @@ include __DIR__ . '/includes/header.php';
             <?php echo htmlspecialchars(cms_section('hero', 'float2_label', 'Zero Ban Risk')); ?>
           </span>
         </div>
+
+        <!-- Interactive Animated Flow Builder Demo Box -->
+        <div class="cw-hero-anim-box" onclick="openInboxwaVideoModal('flow')" role="button" tabindex="0" aria-label="Watch InboxWa Flow Builder Animation">
+          <div class="cw-hero-anim-thumb">
+            <video class="cw-hero-anim-video" autoplay loop muted playsinline poster="/assets/images/animations/interakt-hero.gif">
+              <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
+              <img src="/assets/images/animations/interakt-hero.gif" alt="InboxWa Flow Builder Animation" loading="lazy">
+            </video>
+            <div class="cw-hero-anim-overlay">
+              <span class="cw-hero-anim-play-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </span>
+            </div>
+            <span class="cw-hero-anim-live-tag">
+              <span class="cw-pulse-dot" style="width:6px;height:6px;background:#10b981;border-radius:50%;display:inline-block;"></span>
+              Live Flow
+            </span>
+          </div>
+          <div class="cw-hero-anim-details">
+            <div class="cw-hero-anim-title-row">
+              <span class="cw-hero-anim-heading">See InboxWa in Action</span>
+              <span class="cw-hero-anim-pill">Visual Builder</span>
+            </div>
+            <p class="cw-hero-anim-sub">Watch how drag-and-drop conversational bots qualify leads &amp; trigger sales 24/7 &rarr;</p>
+          </div>
+          <div class="cw-hero-anim-action">
+            <span class="cw-hero-anim-expand-btn" title="Expand Fullscreen Demo">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- Interactive 3D Phone Simulator Stage -->
@@ -1831,6 +2453,123 @@ include __DIR__ . '/includes/header.php';
 
             <!-- Bottom iOS Home Indicator -->
             <div class="cw-home-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ANIMATED PLATFORM SHOWCASE SECTION -->
+  <section class="cw-platform-showcase-section">
+    <div class="cw-showcase-container">
+      <div class="cw-showcase-header">
+        <div class="cw-showcase-pill">
+          <span class="cw-pulse-dot" style="width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;"></span>
+          LIVE PLATFORM WALKTHROUGH
+        </div>
+        <h2 class="cw-showcase-title">Visual Automation &amp; AI Bots, Built for WhatsApp Scale</h2>
+        <p class="cw-showcase-subtitle">No complicated coding. Build conversational customer journeys, automate broadcasts, and route high-value leads with zero friction.</p>
+      </div>
+
+      <!-- Feature Switcher Tabs -->
+      <div class="cw-showcase-tabs" role="tablist">
+        <button class="cw-showcase-tab active" data-target="flow" onclick="switchShowcaseTab('flow', this)">
+          <span class="cw-tab-icon">⚡</span>
+          <span class="cw-tab-label">Visual Flow Builder</span>
+        </button>
+        <button class="cw-showcase-tab" data-target="chat" onclick="switchShowcaseTab('chat', this)">
+          <span class="cw-tab-icon">💬</span>
+          <span class="cw-tab-label">Team Live Chat</span>
+        </button>
+        <button class="cw-showcase-tab" data-target="integrations" onclick="switchShowcaseTab('integrations', this)">
+          <span class="cw-tab-icon">🔌</span>
+          <span class="cw-tab-label">CRM &amp; Shopify Sync</span>
+        </button>
+        <button class="cw-showcase-tab" data-target="analytics" onclick="switchShowcaseTab('analytics', this)">
+          <span class="cw-tab-icon">📊</span>
+          <span class="cw-tab-label">Live Campaign Analytics</span>
+        </button>
+      </div>
+
+      <!-- Video / GIF Mac Window Frame -->
+      <div class="cw-showcase-window-wrap">
+        <div class="cw-showcase-window">
+          <!-- Window Titlebar with Mac Traffic Lights -->
+          <div class="cw-window-titlebar">
+            <div class="cw-window-dots">
+              <span class="cw-dot red"></span>
+              <span class="cw-dot yellow"></span>
+              <span class="cw-dot green"></span>
+            </div>
+            <div class="cw-window-url-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>app.inboxwa.com/flow-builder/lead-qualification-v3</span>
+            </div>
+            <div class="cw-window-actions">
+              <button class="cw-window-expand" onclick="openInboxwaVideoModal('flow')" title="View Fullscreen Demo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                <span>Fullscreen</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Media Display Viewport -->
+          <div class="cw-window-screen">
+            <!-- Flow Builder Media -->
+            <div class="cw-tab-media active" id="media-flow">
+              <video class="cw-showcase-media-elem" autoplay loop muted playsinline poster="/assets/images/animations/interakt-hero.gif">
+                <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
+                <img src="/assets/images/animations/interakt-hero.gif" alt="InboxWa Visual Flow Builder">
+              </video>
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Flow Builder</span>
+                <span>Drag &amp; drop conversational trigger nodes, rich interactive media cards, and custom logic without writing a single line of code.</span>
+              </div>
+            </div>
+
+            <!-- Team Live Chat Media -->
+            <div class="cw-tab-media" id="media-chat">
+              <img class="cw-showcase-media-elem" src="/assets/images/animations/live-chat.gif" alt="InboxWa Multi-Agent Team Live Chat Shared Inbox" loading="lazy">
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Multi-Agent Inbox</span>
+                <span>Shared team inbox on a single official WhatsApp Business number. Assign chats, use quick replies, and track agent response times.</span>
+              </div>
+            </div>
+
+            <!-- Integrations Media -->
+            <div class="cw-tab-media" id="media-integrations">
+              <img class="cw-showcase-media-elem" src="/assets/images/animations/integration-1.gif" alt="InboxWa CRM, Shopify and WooCommerce Integrations" loading="lazy">
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Seamless Integrations</span>
+                <span>Connect InboxWa natively with Shopify, WooCommerce, Zoho, HubSpot, Google Sheets, and webhook endpoints with 1 click.</span>
+              </div>
+            </div>
+
+            <!-- Analytics Media -->
+            <div class="cw-tab-media" id="media-analytics">
+              <img class="cw-showcase-media-elem" src="/assets/images/animations/analytics.gif" alt="InboxWa Live Campaign Delivery &amp; Conversion Analytics" loading="lazy">
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Real-Time Analytics</span>
+                <span>Measure read rates, link click-throughs, sales conversions, and customer engagement metrics with live broadcast reporting.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Proof Badges around window -->
+        <div class="cw-showcase-card cw-sc-left">
+          <div class="cw-sc-icon">⚡</div>
+          <div class="cw-sc-text">
+            <strong>3.8x Faster Reply Speed</strong>
+            <span>Instant AI agent auto-routing</span>
+          </div>
+        </div>
+
+        <div class="cw-showcase-card cw-sc-right">
+          <div class="cw-sc-icon">📈</div>
+          <div class="cw-sc-text">
+            <strong>98% Message Open Rate</strong>
+            <span>Direct WhatsApp Verified Delivery</span>
           </div>
         </div>
       </div>
@@ -2854,6 +3593,114 @@ include __DIR__ . '/includes/header.php';
     updateJourneyProgress();
   })();
 })();
+</script>
+
+<!-- INBOXWA INTERACTIVE PLATFORM DEMO MODAL -->
+<div id="inboxwa-video-modal" class="cw-modal-overlay" onclick="handleModalOverlayClick(event)">
+  <div class="cw-modal-box">
+    <div class="cw-modal-topbar">
+      <div class="cw-modal-title">
+        <span class="cw-modal-dot"></span>
+        <span>InboxWa Platform Demo &bull; Interactive Tour</span>
+      </div>
+      <button class="cw-modal-close" onclick="closeInboxwaVideoModal()" aria-label="Close demo modal">&times;</button>
+    </div>
+    <div class="cw-modal-body">
+      <div class="cw-modal-tabs">
+        <button class="cw-m-tab active" data-tab="flow" onclick="switchModalMedia('flow', this)">⚡ Flow Builder</button>
+        <button class="cw-m-tab" data-tab="chat" onclick="switchModalMedia('chat', this)">💬 Team Live Chat</button>
+        <button class="cw-m-tab" data-tab="integrations" onclick="switchModalMedia('integrations', this)">🔌 Integrations</button>
+        <button class="cw-m-tab" data-tab="analytics" onclick="switchModalMedia('analytics', this)">📊 Campaign Analytics</button>
+      </div>
+      <div class="cw-modal-media-container" id="inboxwa-modal-media">
+        <video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero.gif">
+          <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
+          <img src="/assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo">
+        </video>
+      </div>
+      <div class="cw-modal-footer">
+        <div class="cw-modal-footnote">Experience the full power of WhatsApp automation with zero ban risk.</div>
+        <div class="cw-modal-actions">
+          <a href="/contact" class="cw-btn-modal-primary">Start 7-Day Free Trial</a>
+          <button type="button" class="cw-btn-modal-secondary btn-demo-open" onclick="closeInboxwaVideoModal()">Schedule 1-on-1 Call</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* InboxWa Animated Showcase & Modal Handlers */
+function openInboxwaVideoModal(tab) {
+  var modal = document.getElementById('inboxwa-video-modal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (tab) {
+      var tabBtn = modal.querySelector('.cw-m-tab[data-tab="' + tab + '"]');
+      if (tabBtn) switchModalMedia(tab, tabBtn);
+    }
+  }
+}
+
+function closeInboxwaVideoModal() {
+  var modal = document.getElementById('inboxwa-video-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    var vid = modal.querySelector('video');
+    if (vid) vid.pause();
+  }
+}
+
+function handleModalOverlayClick(e) {
+  if (e.target && e.target.id === 'inboxwa-video-modal') {
+    closeInboxwaVideoModal();
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeInboxwaVideoModal();
+  }
+});
+
+function switchShowcaseTab(target, btn) {
+  var tabs = document.querySelectorAll('.cw-showcase-tab');
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  var medias = document.querySelectorAll('.cw-tab-media');
+  medias.forEach(function(m) { m.classList.remove('active'); });
+  var activeMedia = document.getElementById('media-' + target);
+  if (activeMedia) {
+    activeMedia.classList.add('active');
+    var vid = activeMedia.querySelector('video');
+    if (vid) {
+      vid.currentTime = 0;
+      vid.play().catch(function(){});
+    }
+  }
+}
+
+function switchModalMedia(type, btn) {
+  var container = document.getElementById('inboxwa-modal-media');
+  if (!container) return;
+
+  var tabs = document.querySelectorAll('.cw-m-tab');
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  if (type === 'flow') {
+    container.innerHTML = '<video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero.gif"><source src="/assets/images/animations/flow-builder.mp4" type="video/mp4"><img src="/assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo"></video>';
+  } else if (type === 'chat') {
+    container.innerHTML = '<img class="cw-modal-img" src="/assets/images/animations/live-chat.gif" alt="Multi-Agent Live Chat Inbox">';
+  } else if (type === 'integrations') {
+    container.innerHTML = '<img class="cw-modal-img" src="/assets/images/animations/integration-1.gif" alt="CRM & eCommerce Integrations">';
+  } else if (type === 'analytics') {
+    container.innerHTML = '<img class="cw-modal-img" src="/assets/images/animations/analytics.gif" alt="Campaign Analytics">';
+  }
+}
 </script>
 
 <?php
