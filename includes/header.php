@@ -113,7 +113,7 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/app.css?v=51">
-  <link rel="stylesheet" href="/assets/css/style.css?v=51">
+  <link rel="stylesheet" href="/assets/css/style.css?v=52">
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=51">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
@@ -564,9 +564,12 @@ if (!function_exists('hb_seo_esc')) {
     }
 
     /* ALL WIDE MEGA MENUS CENTERED UNDER .header-inner */
+    .mega-menu-features,
     .mega-menu-products,
     .mega-menu-solutions,
     .mega-menu-panel,
+    .mega-menu-features.align-left,
+    .mega-menu-features.align-right,
     .mega-menu-products.align-left,
     .mega-menu-products.align-right,
     .mega-menu-solutions.align-left,
@@ -583,12 +586,16 @@ if (!function_exists('hb_seo_esc')) {
       box-sizing: border-box !important;
       z-index: 100000 !important;
     }
+    .nav-item.open > .mega-menu-features,
+    .nav-item:hover > .mega-menu-features,
     .nav-item.open > .mega-menu-products,
     .nav-item:hover > .mega-menu-products,
     .nav-item.open > .mega-menu-solutions,
     .nav-item:hover > .mega-menu-solutions,
     .nav-item.open > .mega-menu-panel,
     .nav-item:hover > .mega-menu-panel,
+    .nav-item.open > .mega-menu-features.align-left,
+    .nav-item:hover > .mega-menu-features.align-left,
     .nav-item.open > .mega-menu-products.align-left,
     .nav-item:hover > .mega-menu-products.align-left,
     .nav-item.open > .mega-menu-solutions.align-left,
@@ -601,6 +608,8 @@ if (!function_exists('hb_seo_esc')) {
     /* CRITICAL OVERRIDE: Prevent any mega menu content from inheriting white-space: nowrap */
     .mega-menu,
     .mega-menu *,
+    .mega-menu-features,
+    .mega-menu-features *,
     .mega-menu-products,
     .mega-menu-products *,
     .mega-menu-solutions,
@@ -609,6 +618,132 @@ if (!function_exists('hb_seo_esc')) {
     .mega-menu-panel * {
       white-space: normal !important;
       box-sizing: border-box !important;
+    }
+
+    /* FEATURES MEGA MENU: Clean 2-Column Grid Matching InboxWa Theme */
+    .mega-menu-features {
+      width: min(840px, calc(100vw - 28px)) !important;
+      max-width: calc(100vw - 28px) !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
+      padding: 22px 26px !important;
+      box-sizing: border-box !important;
+    }
+
+    .mega-features-wrapper {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .mega-features-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 0 4px 10px !important;
+      margin-bottom: 8px !important;
+      border-bottom: 1px solid #f1f5f9 !important;
+    }
+
+    .mega-features-label {
+      font-size: 0.88rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.04em !important;
+      color: #7c3aed !important;
+      text-transform: capitalize !important;
+    }
+
+    .mega-features-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      column-gap: 20px !important;
+      row-gap: 6px !important;
+      width: 100% !important;
+    }
+
+    .mega-feature-link {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 13px !important;
+      padding: 10px 12px !important;
+      border-radius: 12px !important;
+      text-decoration: none !important;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      background: transparent !important;
+    }
+
+    .mega-feature-link:hover {
+      background: rgba(139, 92, 246, 0.06) !important;
+      transform: translateX(3px) !important;
+    }
+
+    .mega-feature-icon {
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 11px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease !important;
+    }
+
+    .mega-feature-link:hover .mega-feature-icon {
+      transform: scale(1.08) !important;
+    }
+
+    .mega-feature-icon svg {
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    .mega-feature-icon.icon-pink    { background: #FDF2F8 !important; color: #DB2777 !important; }
+    .mega-feature-icon.icon-purple  { background: #F5F3FF !important; color: #7C3AED !important; }
+    .mega-feature-icon.icon-blue    { background: #ECFEFF !important; color: #0891B2 !important; }
+    .mega-feature-icon.icon-indigo  { background: #EEF2FF !important; color: #4F46E5 !important; }
+    .mega-feature-icon.icon-green   { background: #F0FDF4 !important; color: #16A34A !important; }
+    .mega-feature-icon.icon-amber   { background: #FFFBEB !important; color: #D97706 !important; }
+    .mega-feature-icon.icon-emerald { background: #ECFDF5 !important; color: #059669 !important; }
+    .mega-feature-icon.icon-violet  { background: #FAF5FF !important; color: #9333EA !important; }
+
+    .mega-feature-text {
+      display: flex !important;
+      flex-direction: column !important;
+      min-width: 0 !important;
+    }
+
+    .mega-feature-title {
+      font-size: 0.92rem !important;
+      font-weight: 700 !important;
+      color: #0F172A !important;
+      line-height: 1.3 !important;
+      white-space: normal !important;
+      transition: color 0.18s ease !important;
+    }
+
+    .mega-feature-link:hover .mega-feature-title {
+      color: #7C3AED !important;
+    }
+
+    .mega-feature-desc {
+      font-size: 0.77rem !important;
+      color: #64748B !important;
+      line-height: 1.35 !important;
+      margin-top: 2px !important;
+      white-space: normal !important;
+    }
+
+    @media (max-width: 768px) {
+      .mega-menu-features {
+        width: calc(100vw - 20px) !important;
+        padding: 16px !important;
+      }
+      .mega-features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+      }
     }
 
     /* PRODUCTS MEGA MENU: Clean 4-Column Balanced Grid */
@@ -1230,86 +1365,102 @@ if (!function_exists('hb_seo_esc')) {
       </a>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
 
-        <div class="nav-item" data-mega>
-          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="mega-menu mega-menu-panel mega-menu-products" role="menu">
-            <div class="mega-products-grid">
-              <!-- Column 1: Core Platform -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">CORE PLATFORM</div>
-                <a href="<?php echo $bp; ?>products/whatsapp-business-platform/#whatsapp-api" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Official WhatsApp API</span><span class="mega-link-desc">Meta Business API & green-tick</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>products/whatsapp-business-platform/#team-inbox" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Shared Team Inbox</span><span class="mega-link-desc">Multi-agent routing, notes & SLAs</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>products/whatsapp-business-platform/#broadcasts" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Broadcast Campaigns</span><span class="mega-link-desc">High-volume template blasts</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>products/chatbot" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">AI Chatbot & Flow Builder</span><span class="mega-link-desc">Visual no-code customer journeys</span></span>
-                </a>
+        <!-- FEATURES MEGAMENU (InboxWa Suite) -->
+        <div class="nav-item nav-item-features" data-mega>
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Features <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="mega-menu mega-menu-panel mega-menu-features" role="menu">
+            <div class="mega-features-wrapper">
+              <div class="mega-features-header">
+                <span class="mega-features-label">Features</span>
               </div>
+              <div class="mega-features-grid">
+                <!-- 1. Bulk Broadcast -->
+                <a href="<?php echo $bp; ?>products/broadcast/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-pink">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">Bulk Broadcast</span>
+                    <span class="mega-feature-desc">Send campaigns to thousands instantly</span>
+                  </div>
+                </a>
 
-              <!-- Column 2: Automation & CRM -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">AUTOMATION & CRM</div>
-                <a href="<?php echo $bp; ?>products/automation" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">WhatsApp Automation</span><span class="mega-link-desc">Smart triggers & auto-workflows</span></span>
+                <!-- 2. Shared Team Inbox -->
+                <a href="<?php echo $bp; ?>products/shared-inbox/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-purple">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">Shared Team Inbox</span>
+                    <span class="mega-feature-desc">Collaborate on customer conversations</span>
+                  </div>
                 </a>
-                <a href="<?php echo $bp; ?>products/whatsapp-form/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h6"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">WhatsApp Forms</span><span class="mega-link-desc">In-chat lead capture & surveys</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>products/crm-analytics/#crm" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Built-in CRM</span><span class="mega-link-desc">Leads, pipelines & contact 360</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>products/crm-analytics/#analytics" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Analytics & Reports</span><span class="mega-link-desc">Campaign ROI & agent performance</span></span>
-                </a>
-              </div>
 
-              <!-- Column 3: Connected Channels -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">CHANNELS</div>
-                <a href="<?php echo $bp; ?>channel/whatsapp/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">WhatsApp</span><span class="mega-link-desc">Official Meta Cloud API</span></span>
+                <!-- 3. AI Chatbot Builder -->
+                <a href="<?php echo $bp; ?>products/chatbot/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">AI Chatbot Builder</span>
+                    <span class="mega-feature-desc">Visual no-code automation flows</span>
+                  </div>
                 </a>
-                <a href="<?php echo $bp; ?>channel/instagram/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Instagram</span><span class="mega-link-desc">DM & story automation</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>channel/telegram/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Telegram</span><span class="mega-link-desc">Bot messaging & groups</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>channel/facebook/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Facebook</span><span class="mega-link-desc">Messenger & page inbox</span></span>
-                </a>
-              </div>
 
-              <!-- Column 4: Platform Spotlight Card -->
-              <div class="mega-sol-col mega-products-cta">
-                <div class="mega-cta-top">
-                  <span class="mega-guide-badge">ALL-IN-ONE PLATFORM</span>
-                  <h4>WhatsApp API + Automation</h4>
-                  <p>Official Meta API, team inbox, broadcasts, AI flows and CRM — built for modern sales & support teams.</p>
-                  <ul class="mega-products-cta-perks">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Official Meta Cloud API</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 99.9% High Deliverability</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 14-Day Free Trial</li>
-                  </ul>
-                </div>
-                <a href="<?php echo $bp; ?>auth/register" class="btn btn-primary btn-sm mega-cta-btn">Start Free Trial <span style="margin-left:4px">&rarr;</span></a>
+                <!-- 4. AI Voice Calling -->
+                <a href="<?php echo $bp; ?>products/ai-voice/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-indigo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">AI Voice Calling</span>
+                    <span class="mega-feature-desc">AI agents for inbound &amp; outbound calls</span>
+                  </div>
+                </a>
+
+                <!-- 5. WhatsApp Catalog -->
+                <a href="<?php echo $bp; ?>products/catalog/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">WhatsApp Catalog</span>
+                    <span class="mega-feature-desc">Showcase products inside WhatsApp</span>
+                  </div>
+                </a>
+
+                <!-- 6. Appointment Booking -->
+                <a href="<?php echo $bp; ?>solutions/appointment/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">Appointment Booking</span>
+                    <span class="mega-feature-desc">Let customers self-book appointments</span>
+                  </div>
+                </a>
+
+                <!-- 7. WhatsApp Forms -->
+                <a href="<?php echo $bp; ?>products/whatsapp-form/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-emerald">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">WhatsApp Forms</span>
+                    <span class="mega-feature-desc">Collect responses via chat forms</span>
+                  </div>
+                </a>
+
+                <!-- 8. Click-to-WhatsApp Ads -->
+                <a href="<?php echo $bp; ?>facebook-ads/" class="mega-feature-link" role="menuitem">
+                  <div class="mega-feature-icon icon-violet">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+                  </div>
+                  <div class="mega-feature-text">
+                    <span class="mega-feature-title">Click-to-WhatsApp Ads</span>
+                    <span class="mega-feature-desc">Drive ad traffic to WhatsApp conversations</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -1709,20 +1860,16 @@ if (!function_exists('hb_seo_esc')) {
       </div>
       <div class="mobile-drawer-body">
         <div class="mobile-nav-item" data-accordion>
-          <button type="button" class="mobile-nav-link">Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <button type="button" class="mobile-nav-link">Features <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="/products/whatsapp-business-platform/#whatsapp-api">Official WhatsApp API</a>
-            <a href="/products/whatsapp-business-platform/#team-inbox">Shared Team Inbox</a>
-            <a href="/products/whatsapp-business-platform/#broadcasts">Broadcast Campaigns</a>
-            <a href="/products/automation/">Automation</a>
-            <a href="/products/crm-analytics/#crm">CRM</a>
-            <a href="/products/crm-analytics/#analytics">Analytics</a>
-            <a href="/products/whatsapp-form/">WhatsApp Form</a>
-            <a href="/products/chatbot/">AI Chatbot &amp; Flow Builder</a>
-            <a href="/products/channels/whatsapp/">WhatsApp</a>
-            <a href="/products/channels/facebook/">Facebook</a>
-            <a href="/products/channels/instagram/">Instagram</a>
-            <a href="/products/channels/telegram/">Telegram</a>
+            <a href="/products/broadcast/">Bulk Broadcast</a>
+            <a href="/products/shared-inbox/">Shared Team Inbox</a>
+            <a href="/products/chatbot/">AI Chatbot Builder</a>
+            <a href="/products/ai-voice/">AI Voice Calling</a>
+            <a href="/products/catalog/">WhatsApp Catalog</a>
+            <a href="/solutions/appointment/">Appointment Booking</a>
+            <a href="/products/whatsapp-form/">WhatsApp Forms</a>
+            <a href="/facebook-ads/">Click-to-WhatsApp Ads</a>
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>

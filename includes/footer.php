@@ -102,14 +102,16 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
           <button type="button" class="btn btn-primary btn-sm btn-callback-open">Request Callback</button>
         </div>
         <div class="footer-col">
-          <div class="footer-heading">Products</div>
+          <div class="footer-heading">Features</div>
           <ul>
-            <li><a href="<?php echo $bp; ?>products/whatsapp-api">WhatsApp Business API</a></li>
-            <li><a href="<?php echo $bp; ?>products/shared-inbox">Shared Team Inbox</a></li>
-            <li><a href="<?php echo $bp; ?>products/broadcast">Broadcast Campaigns</a></li>
-            <li><a href="<?php echo $bp; ?>products/flow-builder">Flow Builder</a></li>
-            <li><a href="<?php echo $bp; ?>products/chatbot">WhatsApp Chatbot</a></li>
-            <li><a href="<?php echo $bp; ?>products/crm">WhatsApp CRM</a></li>
+            <li><a href="<?php echo $bp; ?>products/broadcast/">Bulk Broadcast</a></li>
+            <li><a href="<?php echo $bp; ?>products/shared-inbox/">Shared Team Inbox</a></li>
+            <li><a href="<?php echo $bp; ?>products/chatbot/">AI Chatbot Builder</a></li>
+            <li><a href="<?php echo $bp; ?>products/ai-voice/">AI Voice Calling</a></li>
+            <li><a href="<?php echo $bp; ?>products/catalog/">WhatsApp Catalog</a></li>
+            <li><a href="<?php echo $bp; ?>solutions/appointment/">Appointment Booking</a></li>
+            <li><a href="<?php echo $bp; ?>products/whatsapp-form/">WhatsApp Forms</a></li>
+            <li><a href="<?php echo $bp; ?>facebook-ads/">Click-to-WhatsApp Ads</a></li>
           </ul>
         </div>
         <div class="footer-col">

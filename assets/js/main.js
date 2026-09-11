@@ -73,6 +73,7 @@
 
       // Wide mega menus are centered to header-inner container via CSS and should never be shifted
       if (menu.classList.contains('mega-menu-channels') || 
+          menu.classList.contains('mega-menu-features') || 
           menu.classList.contains('mega-menu-products') || 
           menu.classList.contains('mega-menu-solutions') || 
           menu.classList.contains('mega-menu-panel')) {
