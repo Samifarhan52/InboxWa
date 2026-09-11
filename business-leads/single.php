@@ -6,6 +6,11 @@ $HBContact = require __DIR__ . '/../config/contact.php';
 
 $categorySlug = trim($_GET['category'] ?? 'real-estate');
 
+if (strtolower($categorySlug) === 'education') {
+    require_once __DIR__ . '/../Industries/education/index.php';
+    exit;
+}
+
 $category = get_business_lead_category($categorySlug);
 
 if (!$category) {

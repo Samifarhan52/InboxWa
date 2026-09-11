@@ -2,7 +2,8 @@
 $basePath = '../../';
 $pageTitle = 'WhatsApp Business API for Education | InboxWa CRM Integration';
 $pageDescription = 'Power higher enrollments and better ROI with WhatsApp Business API. Scale student reach, reduce drop-offs, and convert faster with automated campaigns and counseling flows on InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/industries/education/';
+$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '/business-leads/education/', PHP_URL_PATH);
+$canonicalUrl = 'https://inboxwa.com' . ($reqPath ?: '/business-leads/education/');
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/education.css?v=53">
@@ -17,7 +18,7 @@ include __DIR__ . '/../../includes/header.php';
       <nav class="edu-crumb-nav" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="edu-crumb-sep">/</span>
-        <a href="/business-leads/">Solutions</a>
+        <a href="/business-leads/">Business Leads</a>
         <span class="edu-crumb-sep">/</span>
         <span>WhatsApp Business API for Education</span>
       </nav>

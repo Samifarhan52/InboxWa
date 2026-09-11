@@ -20,7 +20,7 @@ $parts = array_values(array_filter(explode('/', $cleanPath)));
 
 // Education shortcuts & aliases
 if ((count($parts) === 1 && strtolower($parts[0]) === 'education') ||
-    (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'industry', 'industries']) && strtolower($parts[1]) === 'education')) {
+    (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'industry', 'industries', 'business-leads', 'leads']) && strtolower($parts[1]) === 'education')) {
     require $rootDir . '/Industries/education/index.php';
     exit;
 }
@@ -119,7 +119,12 @@ if (isset($parts[0], $parts[1]) && strtolower($parts[0]) === 'locations') {
 // Dynamic Business Leads Route
 if (isset($parts[0]) && in_array(strtolower($parts[0]), ['business-leads', 'leads'])) {
     if (isset($parts[1])) {
-        $_GET['category'] = strtolower($parts[1]);
+        $cat = strtolower($parts[1]);
+        if ($cat === 'education') {
+            require $rootDir . '/Industries/education/index.php';
+            exit;
+        }
+        $_GET['category'] = $cat;
         require $rootDir . '/business-leads/single.php';
         exit;
     } else {
