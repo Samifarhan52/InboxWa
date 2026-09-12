@@ -6,6 +6,7 @@ RewriteEngine On
 RewriteBase /
 
 # Force lowercase for known capital folders
+RewriteRule ^assets/(.*)$ /public/assets/$1 [L]
 RewriteRule ^Products/(.*)$ /products/$1 [R=301,L]
 RewriteRule ^Solutions/(.*)$ /solutions/$1 [R=301,L]
 RewriteRule ^Industries/(.*)$ /industries/$1 [R=301,L]
