@@ -1,21 +1,11 @@
 {
-  "buildCommand": "node scripts/build.js || true",
+  "buildCommand": "python3 scripts/build.py",
   "outputDirectory": "public",
-  "routes": [
+  "cleanUrls": true,
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/api/lead.php",
-      "dest": "/api/lead.js"
-    },
-    {
-      "src": "/api/lead",
-      "dest": "/api/lead.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1/index.html"
+      "source": "/api/lead.php",
+      "destination": "/api/lead"
     }
   ]
 }
