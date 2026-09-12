@@ -3,6 +3,22 @@
  * Vercel Serverless PHP Entrypoint for InboxWa
  * Features case-insensitive routing & alias resolution for Linux environments
  */
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+register_shutdown_function(function () {
+    $err = error_get_last();
+    if ($err && in_array($err['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        http_response_code(500);
+        echo "<div style='font-family:sans-serif;padding:2rem;max-width:800px;margin:2rem auto;background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;'>";
+        echo "<h2 style='color:#be123c;margin-top:0;'>InboxWa Serverless Error</h2>";
+        echo "<p><strong>Message:</strong> " . htmlspecialchars($err['message']) . "</p>";
+        echo "<p><strong>File:</strong> " . htmlspecialchars($err['file']) . " (Line " . $err['line'] . ")</p>";
+        echo "</div>";
+    }
+});
+
 header('Content-Type: text/html; charset=UTF-8');
 
 $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
