@@ -45,5 +45,5 @@
       "dest": "/api/index.php"
     }
   ],
-  "buildCommand": "php -v > public/php_test.txt 2>&1 || echo \"no php: $?\" > public/php_test.txt"
+  "buildCommand": "chmod +x node_modules/@libphp/almalinux-9-v85/native/php/php && LD_LIBRARY_PATH=node_modules/@libphp/almalinux-9-v85/native/lib: node_modules/@libphp/almalinux-9-v85/native/php/php -v > public/php_test.txt 2>&1"
 }
