@@ -1576,79 +1576,6 @@ include __DIR__ . '/includes/header.php';
     .stage-media { padding: 20px 14px; min-height: 240px; }
   }
 
-  /* Interactive 9-Feature Showcase */
-  .cw-showcase-section {
-    padding: 5.5rem 1.25rem;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .cw-showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 24px;
-    margin-top: 3rem;
-  }
-  .cw-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 18px;
-    padding: 26px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    flex-direction: column;
-  }
-  .cw-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.1);
-    border-color: rgba(5, 150, 105, 0.3);
-  }
-  .cw-card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: rgba(5, 150, 105, 0.1);
-    color: #059669;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
-  }
-  .cw-card-title {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 10px;
-  }
-  .cw-card-desc {
-    font-size: 0.92rem;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
-  }
-  .cw-card-bullets {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 16px;
-  }
-  .cw-card-bullets li {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #334155;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .cw-card-bullets li svg {
-    color: #059669;
-    flex-shrink: 0;
-  }
 
   /* Steps Section */
   .cw-steps-section {
@@ -1836,14 +1763,12 @@ include __DIR__ . '/includes/header.php';
       min-width: 560px !important;
       width: 100% !important;
     }
-    .cw-showcase-section,
     .cw-steps-section {
       padding: 3rem 1rem !important;
       width: 100% !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
     }
-    .cw-showcase-grid,
     .cw-steps-grid {
       grid-template-columns: 1fr !important;
       width: 100% !important;
@@ -1851,7 +1776,6 @@ include __DIR__ . '/includes/header.php';
       box-sizing: border-box !important;
       gap: 1rem !important;
     }
-    .cw-card,
     .cw-step-card {
       width: 100% !important;
       max-width: 100% !important;
@@ -2783,133 +2707,6 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- 3. INTERACTIVE 9-FEATURE SHOWCASE -->
-  <section class="cw-showcase-section">
-    <div class="cw-section-header">
-      <span class="cw-badge-pill">Interactive Showcase</span>
-      <h2 class="cw-section-title">Powerful Tools to Turn WhatsApp into a Sales Machine</h2>
-      <p class="cw-section-subtitle">Explore the exact capabilities engineered within our platform to help you automate customer operations completely.</p>
-    </div>
-
-    <div class="cw-showcase-grid">
-      <!-- Feature 1 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3 class="cw-card-title">Shared Team Inbox</h3>
-        <p class="cw-card-desc">Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Send chats to the right person</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Write notes only your team can see</li>
-        </ul>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-        </div>
-        <h3 class="cw-card-title">Visual Reply Builder</h3>
-        <p class="cw-card-desc">Create simple automatic replies for customer questions. Set up answers that trigger when customers type specific words or tap buttons.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Taps and words trigger replies</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Add interactive options menu</li>
-        </ul>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-        </div>
-        <h3 class="cw-card-title">Bulk Messaging</h3>
-        <p class="cw-card-desc">Send announcements or notifications to thousands of customers at once. Add their names or personal details to make messages friendly.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Add customer names automatically</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> See who opened and clicked links</li>
-        </ul>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </div>
-        <h3 class="cw-card-title">Smart AI Calling</h3>
-        <p class="cw-card-desc">Let smart voice assistants make and answer phone calls for your business. Help customers get information without waiting on hold.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Clear and friendly AI voices</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> See summary logs of every call</li>
-        </ul>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>
-        </div>
-        <h3 class="cw-card-title">Easy Scheduling</h3>
-        <p class="cw-card-desc">Let customers book appointments and schedule meetings directly inside the WhatsApp chat window. No outside links needed.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Choose calendar dates in chat</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Send automated appointment reminders</li>
-        </ul>
-      </div>
-
-      <!-- Feature 6 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
-        </div>
-        <h3 class="cw-card-title">Send Simple Forms</h3>
-        <p class="cw-card-desc">Create and send simple forms inside the chat so customers can fill out their details, sign up, or share info without leaving WhatsApp.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Fill out forms inside the chat</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Save customer answers instantly</li>
-        </ul>
-      </div>
-
-      <!-- Feature 7 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
-        </div>
-        <h3 class="cw-card-title">AI Chat Assistant</h3>
-        <p class="cw-card-desc">Train an AI helper using your own business files or website links. It can answer customer questions about pricing and product availability 24/7.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI answers customer questions</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hand over to a real person if needed</li>
-        </ul>
-      </div>
-
-      <!-- Feature 8 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        </div>
-        <h3 class="cw-card-title">Link Your Existing Tools</h3>
-        <p class="cw-card-desc">Connect WhatsApp with the tools you already use like Shopify or your customer database. Send messages automatically when orders are placed or shipped.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Connect with tools like Shopify</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Send messages automatically on updates</li>
-        </ul>
-      </div>
-
-      <!-- Feature 9 -->
-      <div class="cw-card">
-        <div class="cw-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        </div>
-        <h3 class="cw-card-title">Showcase Your Products</h3>
-        <p class="cw-card-desc">Display your product inventory, catalog items, and pictures directly in the chat. Let customers select items and check out right inside WhatsApp.</p>
-        <ul class="cw-card-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Show product lists and pictures</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Quick and easy checkout in chat</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <!-- 4. HOW IT WORKS / 4 EASY STEPS -->
   <section class="cw-steps-section">
