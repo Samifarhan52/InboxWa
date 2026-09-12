@@ -1961,306 +1961,194 @@ include __DIR__ . '/includes/header.php';
   }
 
   /* ==========================================================================
-     JOURNEY FLOW SECTION (5-STEP INTERACTIVE CLONE)
+     AUTHENTIC HELLOBOTZ FEATURES SECTION (JOURNEY FLOW)
      ========================================================================== */
-  .jf-section {
-    position: relative;
-    padding: 6rem 1.5rem 7rem;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-
-  .jf-header {
-    text-align: center;
-    max-width: 820px;
-    margin: 0 auto 5rem;
-  }
-
-  .jf-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(139, 92, 246, 0.08);
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    color: var(--p, #8B5CF6);
-    font-size: 0.82rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.45rem 1.1rem;
-    border-radius: 999px;
-    margin-bottom: 1.25rem;
-  }
-
-  .jf-badge-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--p, #8B5CF6);
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
-    animation: jfPulseDot 2s infinite;
-  }
-
-  @keyframes jfPulseDot {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.6; }
-  }
-
-  .jf-title {
-    font-size: clamp(2rem, 3.8vw, 3.25rem);
-    font-weight: 800;
-    line-height: 1.2;
-    color: var(--t, #0F172A);
-    letter-spacing: -0.02em;
-    margin-bottom: 1.25rem;
-  }
-
-  .jf-title-gradient {
-    background: linear-gradient(135deg, var(--p, #8B5CF6) 0%, var(--a, #06B6D4) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .jf-subtitle {
-    font-size: 1.125rem;
-    color: var(--t2, #475569);
-    line-height: 1.65;
-  }
-
-  /* TIMELINE WRAPPER */
-  .jf-timeline {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-  }
-
-  /* VERTICAL CENTER LINE */
-  .jf-timeline::before {
-    content: "";
-    position: absolute;
-    top: 2rem;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
-    background: linear-gradient(180deg, 
-      rgba(139, 92, 246, 0.15) 0%, 
-      rgba(139, 92, 246, 0.6) 25%, 
-      rgba(6, 182, 212, 0.6) 75%, 
-      rgba(139, 92, 246, 0.15) 100%
-    );
-    border-radius: 999px;
-    z-index: 1;
-  }
-
-  /* PROGRESS FILL BAR */
-  .jf-timeline-progress {
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 0%;
-    background: linear-gradient(180deg, var(--p, #8B5CF6), var(--a, #06B6D4));
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
-    border-radius: 999px;
-    z-index: 2;
-    transition: height 0.25s ease-out;
-  }
-
-  /* STEP ROW */
-  .jf-row {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5.5rem;
-    align-items: center;
-    z-index: 3;
+  .reveal-item {
     opacity: 0;
-    transform: translateY(45px);
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(40px);
+    transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
   }
-
-  .jf-row.revealed {
+  .reveal-item.reveal-visible {
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* STEP NUMBER MARKER */
-  .jf-marker {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    border: 3px solid var(--p, #8B5CF6);
-    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.12), 0 10px 25px -5px rgba(139, 92, 246, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 0.95rem;
-    color: var(--p, #8B5CF6);
-    z-index: 4;
-    transition: all 0.4s ease;
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-48px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+  .reveal-left.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(48px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+  .reveal-right.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  .jf-row:hover .jf-marker {
-    background: var(--p, #8B5CF6);
-    color: #FFFFFF;
-    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0.22), 0 12px 30px rgba(139, 92, 246, 0.5);
-    transform: translate(-50%, -50%) scale(1.12);
-  }
-
-  /* TEXT / FEATURE CONTENT BOX */
-  .jf-content-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-    border-radius: 24px;
-    padding: 2.75rem 2.5rem;
-    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  .hb-features-section {
     position: relative;
+    padding: 4.5rem 1.5rem 5.5rem;
+    background: #ffffff;
+    overflow: hidden;
   }
-
-  .jf-content-card:hover {
-    border-color: rgba(139, 92, 246, 0.3);
-    box-shadow: 0 25px 50px -15px rgba(139, 92, 246, 0.16);
-    transform: translateY(-4px);
+  .hb-features-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
-
-  .jf-step-label {
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: var(--p, #8B5CF6);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1rem;
+  .hb-features-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 4.5rem;
+  }
+  .hb-features-badge {
     display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--p, #7C3AED);
+    background: rgba(124, 58, 237, 0.1);
+    padding: 6px 18px;
+    border-radius: 9999px;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hb-features-title {
+    font-size: clamp(22px, 3.2vw, 36px);
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+  }
+  .hb-features-subtitle {
+    font-size: clamp(15px, 1.25vw, 17px);
+    color: #475569;
+    line-height: 1.65;
   }
 
-  .jf-icon-pill {
-    width: 50px;
-    height: 50px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, var(--p, #8B5CF6) 0%, var(--p2, #7C3AED) 100%);
+  .hb-feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+    margin-bottom: clamp(32px, 4.5vw, 55px);
+  }
+  .hb-feature-text {
+    box-sizing: border-box;
+  }
+  .hb-feature-icon-box {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--p, #7C3AED);
+    color: #ffffff;
     margin-bottom: 1.25rem;
-    box-shadow: 0 8px 20px -4px rgba(139, 92, 246, 0.35);
+    box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.35);
   }
-
-  .jf-feature-title {
-    font-size: 1.7rem;
+  .hb-feature-icon-box svg {
+    width: 28px;
+    height: 28px;
+  }
+  .hb-feature-item-title {
+    font-size: clamp(22px, 2.4vw, 30px);
     font-weight: 800;
-    color: var(--t, #0F172A);
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
+    color: #0f172a;
+    margin-bottom: 0.95rem;
+    line-height: 1.22;
+    letter-spacing: -0.015em;
   }
-
-  .jf-feature-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.95rem;
-    margin-top: 1.25rem;
-    padding: 0;
+  .hb-feature-item-desc {
+    font-size: clamp(15px, 1.2vw, 17px);
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
   }
-
-  .jf-feature-bullets li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 1.02rem;
-    color: var(--t2, #475569);
-    line-height: 1.55;
-  }
-
-  .jf-feature-bullets li svg {
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-    color: #10B981;
-  }
-
-  /* VISUAL / GRAPHIC CONTAINER */
-  .jf-visual-card {
+  .hb-feature-media-wrap {
     position: relative;
-    border-radius: 24px;
-    background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-    overflow: hidden;
-    box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.08);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  .hb-feature-media-inner {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-
-  .jf-visual-card:hover {
-    box-shadow: 0 30px 65px -15px rgba(139, 92, 246, 0.22);
+  .hb-feature-media-inner:hover {
     transform: translateY(-6px);
   }
-
-  .jf-visual-img {
+  .hb-feature-img {
     width: 100%;
     height: auto;
-    max-height: 480px;
-    display: block;
-    border-radius: 16px;
     object-fit: contain;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .jf-visual-card:hover .jf-visual-img {
-    transform: scale(1.02);
-  }
-
-  /* FLOATING MASCOT EFFECT */
-  .jf-float-animation {
-    animation: jfFloat 4.5s ease-in-out infinite;
-  }
-
-  @keyframes jfFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-
-  /* RESPONSIVE DESIGN */
-  @media (max-width: 992px) {
-    .jf-timeline::before,
-    .jf-timeline-progress,
-    .jf-marker {
-      display: none;
-    }
-
-    .jf-row {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    /* Keep consistent order on mobile: visual first, then text */
-    .jf-row.reverse .jf-content-card {
+  /* Desktop Alternating Order: Odd features reverse order */
+  @media (min-width: 1025px) {
+    .hb-feature-row.is-odd .hb-feature-text {
       order: 2;
     }
-    .jf-row.reverse .jf-visual-card {
+    .hb-feature-row.is-odd .hb-feature-media-wrap {
       order: 1;
     }
+  }
 
-    .jf-content-card {
-      padding: 2rem 1.5rem;
+  /* Mobile Stack */
+  @media (max-width: 1024px) {
+    .hb-feature-row {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+      margin-bottom: 3.5rem;
     }
+    .hb-feature-media-wrap {
+      max-width: 480px;
+    }
+  }
 
-    .jf-feature-title {
-      font-size: 1.45rem;
-    }
+  /* Bottom CTA Button */
+  .hb-features-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: var(--p, #7C3AED);
+    color: #ffffff !important;
+    padding: 0.95rem 2.5rem;
+    height: 52px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.4);
+    transition: all 0.3s ease;
+  }
+  .hb-features-cta-btn:hover {
+    background: #6D28D9;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -5px rgba(124, 58, 237, 0.5);
+    color: #ffffff !important;
+  }
+  .hb-features-cta-btn svg {
+    transition: transform 0.3s ease;
+  }
+  .hb-features-cta-btn:hover svg {
+    transform: translateX(4px);
   }
 </style>
 
@@ -2743,191 +2631,155 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- 2.5 5-STEP JOURNEY FLOW (INBOXWA AUTOMATION) -->
-  <section class="jf-section" id="journey-flow">
-    <!-- SECTION HEADER -->
-    <div class="jf-header">
-      <div class="jf-badge">
-        <span class="jf-badge-dot"></span>
-        Platform Journey Flow
+  <!-- 2.5 AUTHENTIC FEATURES SECTION (HELLOBOTZ CLONE) -->
+  <section class="hb-features-section" id="features">
+    <div id="journey-flow" style="position: absolute; top: -80px; left: 0;"></div>
+    <div class="hb-features-container">
+      <!-- SECTION HEADER -->
+      <div class="hb-features-header reveal-item">
+        <span class="hb-features-badge">BUILT FOR GROWING BUSINESSES</span>
+        <h2 class="hb-features-title">Everything You Need to Automate Customer Conversations</h2>
+        <p class="hb-features-subtitle">InboxWa gives your team Everything you need to automate, sell, and support customers —all in ONE place.</p>
       </div>
-      <h2 class="jf-title">
-        The End-to-End <span class="jf-title-gradient">WhatsApp Growth Journey</span>
-      </h2>
-      <p class="jf-subtitle">
-        Everything your business needs to turn social clicks into conversations, automate workflows with AI, and scale multi-channel outreach.
-      </p>
-    </div>
 
-    <!-- TIMELINE WRAPPER -->
-    <div class="jf-timeline" id="jf-timeline-box">
-      <div class="jf-timeline-progress" id="jf-progress-bar"></div>
-
-      <!-- STEP 1: CTWA ADS & LEAD GEN -->
-      <div class="jf-row revealed" data-step="1">
-        <div class="jf-marker">01</div>
-        
-        <!-- Left: Text & Benefits -->
-        <div class="jf-content-card">
-          <span class="jf-step-label">Step 01 • Traffic Acquisition</span>
-          <div class="jf-icon-pill">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <!-- 8-FEATURE ALTERNATING LIST -->
+      <div class="hb-features-list">
+        <!-- Feature 0: Key Capabilities & Setup (Even -> Left Text, Right Media) -->
+        <div class="hb-feature-row is-even">
+          <div class="hb-feature-text reveal-left" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Key Capabilities &amp; Setup</h3>
+            <p class="hb-feature-item-desc">Official Meta WABA API integration in under 2 minutes 24/7 automated instant responses for all incoming leads Pre-approved message templates and interactive buttons.</p>
           </div>
-          <h3 class="jf-feature-title">Social Traffic Conversion</h3>
-          <ul class="jf-feature-bullets">
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Convert clicks to chats:</strong> Turn Facebook &amp; Instagram ad clicks directly into high-intent WhatsApp conversations.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Full Attribution:</strong> Track exact ad attribution, campaign performance, and ROI across every ad set.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Pre-filled templates:</strong> Allow instant customer response with pre-configured greeting prompts and buttons.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right: Visual Graphic Showcase -->
-        <div class="jf-visual-card jf-float-animation">
-          <img src="<?php echo $bp; ?>assets/images/journey-flow/step-1-ctwa-cropped.png" alt="Click-to-WhatsApp Ads &amp; Lead Generation" class="jf-visual-img" loading="lazy">
-        </div>
-      </div>
-
-      <!-- STEP 2: ANALYTICS DASHBOARD (REVERSED) -->
-      <div class="jf-row reverse" data-step="2">
-        <div class="jf-marker">02</div>
-
-        <!-- Left: Visual Graphic Showcase -->
-        <div class="jf-visual-card jf-float-animation" style="animation-delay: 0.5s;">
-          <img src="<?php echo $bp; ?>assets/images/journey-flow/step-2-analytics-cropped.png" alt="Real-Time WhatsApp Analytics Dashboard" class="jf-visual-img" loading="lazy">
-        </div>
-
-        <!-- Right: Text & Benefits -->
-        <div class="jf-content-card">
-          <span class="jf-step-label">Step 02 • Real-Time Intelligence</span>
-          <div class="jf-icon-pill">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-0-capabilities.png" alt="Key Capabilities &amp; Setup" class="hb-feature-img" loading="lazy">
+            </div>
           </div>
-          <h3 class="jf-feature-title">Growth Metrics &amp; Insights Dashboard</h3>
-          <ul class="jf-feature-bullets">
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Operational Dashboard:</strong> Real-time dashboard for messaging performance, delivery speeds, and volume trends.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Agent Performance:</strong> Monitor agent response speeds, first-contact resolution rates, and customer satisfaction.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Exportable Reports:</strong> Comprehensive campaign ROI tracking with one-click CSV and PDF exports.</span>
-            </li>
-          </ul>
         </div>
-      </div>
 
-      <!-- STEP 3: BULK BROADCAST CAMPAIGNS -->
-      <div class="jf-row" data-step="3">
-        <div class="jf-marker">03</div>
-
-        <!-- Left: Text & Benefits -->
-        <div class="jf-content-card">
-          <span class="jf-step-label">Step 03 • Mass Outreach</span>
-          <div class="jf-icon-pill">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <!-- Feature 1: Centralized Communication Hub (Odd -> Right Text, Left Media) -->
+        <div class="hb-feature-row is-odd">
+          <div class="hb-feature-text reveal-right" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Centralized Communication Hub</h3>
+            <p class="hb-feature-item-desc">Manage WhatsApp, Instagram DMs, Facebook, and Telegram in one screen Assign chats to team members with smart auto-routing Internal agent notes, SLA alerts, and real-time response tracking.</p>
           </div>
-          <h3 class="jf-feature-title">High-Deliverability Outreach</h3>
-          <ul class="jf-feature-bullets">
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Personalized broadcasts:</strong> Send rich broadcasts with images, videos, and dynamic attributes to thousands at once.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Smart Scheduling:</strong> Schedule campaigns by date, timezone, and custom customer segment tags.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Live Engagement Analytics:</strong> Real-time tracking of sent, delivered, read, and reply rates per recipient.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right: Visual Graphic Showcase -->
-        <div class="jf-visual-card jf-float-animation" style="animation-delay: 1s;">
-          <img src="<?php echo $bp; ?>assets/images/journey-flow/step-3-broadcast-cropped.png" alt="Bulk Broadcast Campaigns" class="jf-visual-img" loading="lazy">
-        </div>
-      </div>
-
-      <!-- STEP 4: AI CHATBOT BUILDER (REVERSED) -->
-      <div class="jf-row reverse" data-step="4">
-        <div class="jf-marker">04</div>
-
-        <!-- Left: Visual Graphic Showcase -->
-        <div class="jf-visual-card jf-float-animation" style="animation-delay: 1.5s;">
-          <img src="<?php echo $bp; ?>assets/images/journey-flow/step-4-chatbot-cropped.png" alt="AI-Powered Chatbot Builder" class="jf-visual-img" loading="lazy">
-        </div>
-
-        <!-- Right: Text & Benefits -->
-        <div class="jf-content-card">
-          <span class="jf-step-label">Step 04 • No-Code Automation</span>
-          <div class="jf-icon-pill">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-1-hub.png" alt="Centralized Communication Hub" class="hb-feature-img" loading="lazy">
+            </div>
           </div>
-          <h3 class="jf-feature-title">Drag-and-Drop Automation</h3>
-          <ul class="jf-feature-bullets">
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Visual Flow Canvas:</strong> Build multi-step conversational flows without writing a single line of code.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Rich Interactions:</strong> Set up keyword triggers, interactive buttons, list selectors, and media responses.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Automated Qualification:</strong> Automatically qualify inbound leads, answer FAQs, and collect customer details 24/7.</span>
-            </li>
-          </ul>
         </div>
-      </div>
 
-      <!-- STEP 5: AI VOICE CALL AGENTS -->
-      <div class="jf-row" data-step="5">
-        <div class="jf-marker">05</div>
-
-        <!-- Left: Text & Benefits -->
-        <div class="jf-content-card">
-          <span class="jf-step-label">Step 05 • Autonomous Voice</span>
-          <div class="jf-icon-pill">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <!-- Feature 2: Drag-and-Drop Automation (Even -> Left Text, Right Media) -->
+        <div class="hb-feature-row is-even">
+          <div class="hb-feature-text reveal-left" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Drag-and-Drop Automation</h3>
+            <p class="hb-feature-item-desc">Build multi-step conversational flows without writing code Set up keyword triggers, interactive buttons, and media replies Automatically qualify leads and capture customer details.</p>
           </div>
-          <h3 class="jf-feature-title">Autonomous Voice Intelligence</h3>
-          <ul class="jf-feature-bullets">
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Human-Sounding Voice:</strong> Natural, ultra-low latency AI handles inbound and outbound phone calls effortlessly.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Powered by Top LLMs:</strong> Integrated with DeepSeek, Google Gemini, xAI Grok, and OpenAI models.</span>
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span><strong>Full Transcripts &amp; Audio:</strong> Complete automated call summaries, audio recordings, and CRM sync.</span>
-            </li>
-          </ul>
+          <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-2-automation.png" alt="Drag-and-Drop Automation" class="hb-feature-img" loading="lazy">
+            </div>
+          </div>
         </div>
 
-        <!-- Right: Visual Graphic Showcase -->
-        <div class="jf-visual-card jf-float-animation" style="animation-delay: 2s;">
-          <img src="<?php echo $bp; ?>assets/images/journey-flow/step-5-voice-cropped.png" alt="AI Voice Call Agents" class="jf-visual-img" loading="lazy">
+        <!-- Feature 3: Autonomous Voice Intelligence (Odd -> Right Text, Left Media) -->
+        <div class="hb-feature-row is-odd">
+          <div class="hb-feature-text reveal-right" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Autonomous Voice Intelligence</h3>
+            <p class="hb-feature-item-desc">Human-sounding AI handles inbound and outbound phone calls Automated lead qualification and routine customer inquiries Complete call summaries, audio logs, and transcriptions.</p>
+          </div>
+          <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-3-voice.png" alt="Autonomous Voice Intelligence" class="hb-feature-img" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: High-Deliverability Outreach (Even -> Left Text, Right Media) -->
+        <div class="hb-feature-row is-even">
+          <div class="hb-feature-text reveal-left" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">High-Deliverability Outreach</h3>
+            <p class="hb-feature-item-desc">Send personalized broadcast campaigns to thousands at once Schedule campaigns by date, time, and customer tags Live analytics tracking delivery rates, opens, and replies.</p>
+          </div>
+          <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-4-outreach.png" alt="High-Deliverability Outreach" class="hb-feature-img" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 5: Automated Sales Engine (Odd -> Right Text, Left Media) -->
+        <div class="hb-feature-row is-odd">
+          <div class="hb-feature-text reveal-right" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Automated Sales Engine</h3>
+            <p class="hb-feature-item-desc">Instant order updates and shipping confirmation alerts Automated abandoned cart recovery messages that convert In-chat product catalog display and direct payment links.</p>
+          </div>
+          <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-5-sales.png" alt="Automated Sales Engine" class="hb-feature-img" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 6: Social Traffic Conversion (Even -> Left Text, Right Media) -->
+        <div class="hb-feature-row is-even">
+          <div class="hb-feature-text reveal-left" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Social Traffic Conversion</h3>
+            <p class="hb-feature-item-desc">Convert Facebook &amp; Instagram ad clicks directly into WhatsApp chats Track exact ad attribution and ROI for every campaign Pre-filled message templates allow instant customer response.</p>
+          </div>
+          <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-6-social.png" alt="Social Traffic Conversion" class="hb-feature-img" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 7: Growth Metrics & Insights Dashboard (Odd -> Right Text, Left Media) -->
+        <div class="hb-feature-row is-odd">
+          <div class="hb-feature-text reveal-right" style="transition-delay: 0ms;">
+            <div class="hb-feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="hb-feature-item-title">Growth Metrics &amp; Insights Dashboard</h3>
+            <p class="hb-feature-item-desc">Real-time operational dashboard for messaging performance Monitor agent response speeds and conversation resolution rates Comprehensive campaign ROI tracking with CSV/PDF exports.</p>
+          </div>
+          <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
+            <div class="hb-feature-media-inner">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-7-dashboard.png" alt="Growth Metrics &amp; Insights Dashboard" class="hb-feature-img" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- BOTTOM CTA BUTTON -->
+      <div class="reveal-item text-center" style="margin-top: 3.5rem; text-align: center;">
+        <a href="<?php echo $bp; ?>auth/register" class="hb-features-cta-btn">
+          Explore All Features
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -3549,48 +3401,30 @@ include __DIR__ . '/includes/header.php';
   }, 2500);
 
   // -------------------------------------------------------------------------
-  // Journey Flow Scroll Reveal & Timeline Fill
+  // Authentic Features Reveal Animations (Hellobotz Clone)
   // -------------------------------------------------------------------------
   (function() {
-    const rows = document.querySelectorAll('.jf-row');
-    if (rows.length && 'IntersectionObserver' in window) {
+    const revealElements = document.querySelectorAll('#features .reveal-left, #features .reveal-right, #features .reveal-item');
+    if (revealElements.length && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
+            setTimeout(function() {
+              entry.target.classList.add('reveal-visible');
+            }, 80);
+            observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.12 });
 
-      rows.forEach(function(row) {
-        observer.observe(row);
+      revealElements.forEach(function(el) {
+        observer.observe(el);
       });
-    } else if (rows.length) {
-      rows.forEach(function(row) {
-        row.classList.add('revealed');
+    } else if (revealElements.length) {
+      revealElements.forEach(function(el) {
+        el.classList.add('reveal-visible');
       });
     }
-
-    const timeline = document.getElementById('jf-timeline-box');
-    const progressBar = document.getElementById('jf-progress-bar');
-
-    function updateJourneyProgress() {
-      if (!timeline || !progressBar) return;
-      const rect = timeline.getBoundingClientRect();
-      const winHeight = window.innerHeight;
-      const totalHeight = rect.height;
-
-      if (rect.top <= winHeight * 0.7) {
-        const scrolledPast = (winHeight * 0.7) - rect.top;
-        const percent = Math.min(100, Math.max(0, (scrolledPast / totalHeight) * 100));
-        progressBar.style.height = percent + '%';
-      } else {
-        progressBar.style.height = '0%';
-      }
-    }
-
-    window.addEventListener('scroll', updateJourneyProgress, { passive: true });
-    updateJourneyProgress();
   })();
 })();
 </script>
