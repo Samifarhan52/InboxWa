@@ -1,10 +1,13 @@
 {
   "outputDirectory": "public",
   "cleanUrls": true,
-  "trailingSlash": true,
   "rewrites": [
     {
       "source": "/api/lead.php",
+      "destination": "/api/lead"
+    },
+    {
+      "source": "/api/lead/",
       "destination": "/api/lead"
     }
   ]
