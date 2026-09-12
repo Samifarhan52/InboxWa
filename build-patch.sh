@@ -1,17 +1,18 @@
 #!/bin/bash
 set -e
 
-echo "=== Searching for vercel-php dist/index.js to patch ==="
+echo "BUILD PATCH RUNNING" > public/patch_ran.txt
+echo "Date: $(date)" >> public/patch_ran.txt
 
-FILES=$(find / -name "index.js" -path "*vercel-php*" 2>/dev/null || true)
+# Find all index.js files in vercel-php builders
+PHP_FILES=$(find / -name "index.js" -path "*vercel-php*" 2>/dev/null || true)
+echo "Found PHP files: $PHP_FILES" >> public/patch_ran.txt
 
-for PHP_FILE in $FILES; do
-  if grep -q "launcher.launcher" "$PHP_FILE" 2>/dev/null; then
-    echo "Found unpatched file: $PHP_FILE"
-    sed -i "s/handler: 'launcher.launcher'/handler: 'launcher.js'/g" "$PHP_FILE" 2>/dev/null || true
-    sed -i 's/handler: "launcher.launcher"/handler: "launcher.js"/g' "$PHP_FILE" 2>/dev/null || true
-    echo "Successfully patched: $PHP_FILE"
+for f in $PHP_FILES; do
+  echo "Inspecting $f" >> public/patch_ran.txt
+  if grep -q "launcher.launcher" "$f" 2>/dev/null; then
+    sed -i "s/handler: 'launcher.launcher'/handler: 'launcher.js'/g" "$f" 2>/dev/null || true
+    sed -i 's/handler: "launcher.launcher"/handler: "launcher.js"/g' "$f" 2>/dev/null || true
+    echo "Patched $f" >> public/patch_ran.txt
   fi
 done
-
-echo "=== Patching complete ==="
