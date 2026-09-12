@@ -1,15 +1,10 @@
 {
-  "buildCommand": "bash build-patch.sh",
   "functions": {
     "api/**/*.php": {
-      "runtime": "vercel-php@0.9.0"
+      "runtime": "vercel-php@0.6.0"
     }
   },
   "routes": [
-    {
-      "src": "/patch_ran.txt",
-      "dest": "/public/patch_ran.txt"
-    },
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
