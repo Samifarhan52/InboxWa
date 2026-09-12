@@ -1,11 +1,15 @@
 {
-  "buildCommand": "python3 scripts/build.py",
   "outputDirectory": "public",
   "cleanUrls": true,
+  "trailingSlash": true,
   "rewrites": [
     {
       "source": "/api/lead.php",
-      "destination": "/api/lead"
+      "destination": "/api/lead.js"
+    },
+    {
+      "source": "/api/lead",
+      "destination": "/api/lead.js"
     }
   ]
 }

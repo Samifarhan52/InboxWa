@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Auth UI is public marketing shell; prefer external product auth
+Disallow: /auth/forgot-password
+
+Sitemap: https://inboxwa.com/sitemap.xml

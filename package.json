@@ -1,8 +1,5 @@
 {
   "name": "inboxwa",
   "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "@libphp/almalinux-9-v85": "0.0.3"
-  }
+  "private": true
 }
