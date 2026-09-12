@@ -91,11 +91,11 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="<?php echo $bp; ?>" class="logo" aria-label="InboxWa Home">
-            <img src="<?php echo $bp; ?>assets/images/logo-footer.svg" alt="InboxWa - WhatsApp API Platform" class="logo-img" width="140" height="36" onerror="this.src='<?php echo $bp; ?>assets/images/logo-footer.png'">
+          <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
+            <img src="<?php echo $bp; ?>assets/images/logo-footer.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="170" height="42" onerror="this.src='<?php echo $bp; ?>assets/images/logo.png'">
             <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-              <span class="logo-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-              <span style="font-weight:800;color:#fff">InboxWa</span>
+              <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
+              <span style="font-weight:800;color:#fff">Hellobotz</span>
             </span>
           </a>
           <p>AI Powered WhatsApp Business API &amp; Omnichannel Platform. Official Meta API, shared inbox, automation, broadcasts and integrations.</p>

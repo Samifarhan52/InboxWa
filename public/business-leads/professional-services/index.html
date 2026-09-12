@@ -196,6 +196,61 @@
       border-color: rgba(203, 213, 225, 0.95) !important;
     }
 
+    /* Brand Logo Pill & Responsive Sizing */
+    .site-header .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: #030712 !important;
+      padding: 4px 12px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(99, 102, 241, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08) !important;
+      max-width: none !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-decoration: none !important;
+      flex-shrink: 0 !important;
+    }
+    .site-header .logo:hover {
+      border-color: rgba(99, 102, 241, 0.75) !important;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.28) !important;
+      transform: translateY(-1px) scale(1.02) !important;
+    }
+    .site-header.scrolled .logo {
+      padding: 3px 10px !important;
+    }
+    .site-header .logo-img {
+      height: 32px !important;
+      width: auto !important;
+      max-width: 170px !important;
+      object-fit: contain !important;
+      display: block !important;
+      transition: height 0.25s ease !important;
+    }
+    .site-header.scrolled .logo-img {
+      height: 27px !important;
+    }
+    .mobile-drawer-header .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: #030712 !important;
+      padding: 4px 10px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(99, 102, 241, 0.35) !important;
+    }
+    .mobile-drawer-header .logo-img {
+      height: 26px !important;
+      width: auto !important;
+      max-width: 135px !important;
+      display: block !important;
+    }
+    .site-footer .logo-img {
+      height: 40px !important;
+      width: auto !important;
+      max-width: 195px !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
     /* Remove legacy underline from nav links */
     .nav-link::after {
       display: none !important;
@@ -1619,10 +1674,10 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="../../" class="logo" aria-label="InboxWa Home">
-        <img src="/assets/images/logo.svg" alt="InboxWa" class="logo-img" width="140" height="36" onerror="this.onerror=null;this.src='';this.style.display='none';var f=this.parentNode.querySelector('.logo-fallback');if(f)f.style.display='inline-flex'">
+        <img src="/assets/images/logo.png" alt="InboxWa" class="logo-img" width="168" height="42" onerror="this.onerror=null;this.src='../../assets/images/logo.png';">
         <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-          <span class="logo-icon" style="width:36px;height:36px;display:inline-flex;background:linear-gradient(135deg,#8B5CF6,#6366F1);border-radius:10px;color:#fff;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-          <span style="font-weight:800;font-size:1.15rem;color:#0F172A">InboxWa</span>
+          <img src="../../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="InboxWa">
+          <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
         </span>
       </a>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
@@ -1966,7 +2021,7 @@
     <div class="mobile-drawer">
       <div class="mobile-drawer-header">
         <a href="../../" class="logo" aria-label="InboxWa Home">
-          <img src="../../assets/images/logo.svg" alt="InboxWa" class="logo-img" width="120" height="32" onerror="this.src='../../assets/images/logo.png'">
+          <img src="../../assets/images/logo.png" alt="InboxWa" class="logo-img" width="135" height="34">
         </a>
         <button type="button" class="mobile-close btn btn-icon btn-ghost" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
       </div>
@@ -2177,7 +2232,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, I need legal consultation regarding cross-border corporate IP structuring.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:13 PM</span>
+                        <span class="time">04:53 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2191,13 +2246,13 @@ Please select your preferred slot:</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Friday, 04:00 PM" style="text-align:left;width:fit-content;">Friday, 04:00 PM &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:14 PM</span>
+                        <span class="time">04:54 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Thursday, 03:00 PM</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:15 PM</span>
+                        <span class="time">04:55 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2206,7 +2261,7 @@ Please select your preferred slot:</span>
 <br />
 Please upload any relevant incorporation documents here for preliminary partner review.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:16 PM</span>
+                        <span class="time">04:56 PM</span>
                                               </div>
                     </div>
                   
@@ -2420,10 +2475,10 @@ Please upload any relevant incorporation documents here for preliminary partner 
                                           <div class="ind-msg-btn">Mergers &amp; Acquisitions</div>
                                           <div class="ind-msg-btn">Regulatory Compliance</div>
                                       </div>
-                                <span class="msg-time">04:16 PM</span>
+                                <span class="msg-time">04:56 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Corporate Taxation                  <span class="msg-time">04:16 PM</span>
+                  Corporate Taxation                  <span class="msg-time">04:56 PM</span>
                 </div>
                           </div>
           </div>
@@ -2475,10 +2530,10 @@ Please upload any relevant incorporation documents here for preliminary partner 
                                           <div class="ind-msg-btn">Book Strategy Session</div>
                                           <div class="ind-msg-btn">View Consultant Bio</div>
                                       </div>
-                                <span class="msg-time">04:16 PM</span>
+                                <span class="msg-time">04:56 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Book Strategy Session                  <span class="msg-time">04:16 PM</span>
+                  Book Strategy Session                  <span class="msg-time">04:56 PM</span>
                 </div>
                           </div>
           </div>
@@ -2530,10 +2585,10 @@ Please upload any relevant incorporation documents here for preliminary partner 
                                           <div class="ind-msg-btn">Upload Signed NDA</div>
                                           <div class="ind-msg-btn">Download Blank NDA Template</div>
                                       </div>
-                                <span class="msg-time">04:16 PM</span>
+                                <span class="msg-time">04:56 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Upload Signed NDA                  <span class="msg-time">04:16 PM</span>
+                  Upload Signed NDA                  <span class="msg-time">04:56 PM</span>
                 </div>
                           </div>
           </div>
@@ -2586,10 +2641,10 @@ Amount: ₹75,000 + GST                                  <div class="ind-msg-but
                                           <div class="ind-msg-btn">Pay via UPI / Card</div>
                                           <div class="ind-msg-btn">Download PDF Invoice</div>
                                       </div>
-                                <span class="msg-time">04:16 PM</span>
+                                <span class="msg-time">04:56 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Pay via UPI / Card                  <span class="msg-time">04:16 PM</span>
+                  Pay via UPI / Card                  <span class="msg-time">04:56 PM</span>
                 </div>
                           </div>
           </div>
@@ -3773,10 +3828,10 @@ function handleIndSubmit(e) {
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../../" class="logo" aria-label="InboxWa Home">
-            <img src="../../assets/images/logo-footer.svg" alt="InboxWa - WhatsApp API Platform" class="logo-img" width="140" height="36" onerror="this.src='../../assets/images/logo-footer.png'">
+            <img src="../../assets/images/logo-footer.png" alt="InboxWa" class="logo-img" width="170" height="42" onerror="this.src='../../assets/images/logo.png'">
             <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-              <span class="logo-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-              <span style="font-weight:800;color:#fff">InboxWa</span>
+              <img src="../../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="InboxWa">
+              <span style="font-weight:800;color:#fff">Hellobotz</span>
             </span>
           </a>
           <p>AI Powered WhatsApp Business API &amp; Omnichannel Platform. Official Meta API, shared inbox, automation, broadcasts and integrations.</p>

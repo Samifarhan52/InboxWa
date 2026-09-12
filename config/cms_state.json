@@ -97,13 +97,13 @@
     },
     {
       "key": "logo_url",
-      "value": "/assets/images/logo.svg",
-      "updated_at": "2026-09-08 07:53:03"
+      "value": "/assets/images/logo.png",
+      "updated_at": "2026-09-12 22:20:00"
     },
     {
       "key": "logo_footer_url",
-      "value": "/assets/images/logo-footer.svg",
-      "updated_at": "2026-09-08 07:53:03"
+      "value": "/assets/images/logo-footer.png",
+      "updated_at": "2026-09-12 22:20:00"
     },
     {
       "key": "favicon_url",

@@ -17,7 +17,7 @@ $cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
 $cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
 $cmsSalesEmail = cms_setting('sales_email', 'mail@inboxwa.com');
 $cmsSupportEmail = cms_setting('support_email', 'support@inboxwa.com');
-$cmsLogo     = cms_setting('logo_url', '/assets/images/logo.svg');
+$cmsLogo     = cms_setting('logo_url', '/assets/images/logo.png');
 $announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
 $announcementText = cms_setting('announcement_text', '');
 $announcementLink = cms_setting('announcement_link', '/auth/register');
@@ -305,6 +305,61 @@ if (!function_exists('hb_seo_esc')) {
       background: rgba(255, 255, 255, 0.98) !important;
       box-shadow: 0 16px 40px -4px rgba(15, 23, 42, 0.16), 0 6px 18px rgba(15, 23, 42, 0.08) !important;
       border-color: rgba(203, 213, 225, 0.95) !important;
+    }
+
+    /* Brand Logo Pill & Responsive Sizing */
+    .site-header .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: #030712 !important;
+      padding: 4px 12px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(99, 102, 241, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08) !important;
+      max-width: none !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-decoration: none !important;
+      flex-shrink: 0 !important;
+    }
+    .site-header .logo:hover {
+      border-color: rgba(99, 102, 241, 0.75) !important;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.28) !important;
+      transform: translateY(-1px) scale(1.02) !important;
+    }
+    .site-header.scrolled .logo {
+      padding: 3px 10px !important;
+    }
+    .site-header .logo-img {
+      height: 32px !important;
+      width: auto !important;
+      max-width: 170px !important;
+      object-fit: contain !important;
+      display: block !important;
+      transition: height 0.25s ease !important;
+    }
+    .site-header.scrolled .logo-img {
+      height: 27px !important;
+    }
+    .mobile-drawer-header .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: #030712 !important;
+      padding: 4px 10px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(99, 102, 241, 0.35) !important;
+    }
+    .mobile-drawer-header .logo-img {
+      height: 26px !important;
+      width: auto !important;
+      max-width: 135px !important;
+      display: block !important;
+    }
+    .site-footer .logo-img {
+      height: 40px !important;
+      width: auto !important;
+      max-width: 195px !important;
+      object-fit: contain !important;
+      display: block !important;
     }
 
     /* Remove legacy underline from nav links */
@@ -1738,10 +1793,10 @@ if (!function_exists('hb_seo_esc')) {
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
-        <img src="<?php echo htmlspecialchars($cmsLogo); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="140" height="36" onerror="this.onerror=null;this.src='';this.style.display='none';var f=this.parentNode.querySelector('.logo-fallback');if(f)f.style.display='inline-flex'">
+        <img src="<?php echo htmlspecialchars($cmsLogo); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="168" height="42" onerror="this.onerror=null;this.src='<?php echo $bp; ?>assets/images/logo.png';">
         <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-          <span class="logo-icon" style="width:36px;height:36px;display:inline-flex;background:linear-gradient(135deg,#8B5CF6,#6366F1);border-radius:10px;color:#fff;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-          <span style="font-weight:800;font-size:1.15rem;color:#0F172A">InboxWa</span>
+          <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
+          <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
         </span>
       </a>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
@@ -2084,8 +2139,8 @@ if (!function_exists('hb_seo_esc')) {
     <div class="mobile-backdrop"></div>
     <div class="mobile-drawer">
       <div class="mobile-drawer-header">
-        <a href="<?php echo $bp; ?>" class="logo" aria-label="InboxWa Home">
-          <img src="<?php echo $bp; ?>assets/images/logo.svg" alt="InboxWa" class="logo-img" width="120" height="32" onerror="this.src='<?php echo $bp; ?>assets/images/logo.png'">
+        <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
+          <img src="<?php echo $bp; ?>assets/images/logo.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="135" height="34">
         </a>
         <button type="button" class="mobile-close btn btn-icon btn-ghost" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
       </div>
