@@ -44,5 +44,6 @@
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ]
+  ],
+  "buildCommand": "php -v > public/php_test.txt 2>&1 || echo \"no php: $?\" > public/php_test.txt"
 }
