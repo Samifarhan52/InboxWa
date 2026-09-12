@@ -761,8 +761,7 @@ if (!function_exists('hb_seo_esc')) {
       }
     }
 
-    /* SOLUTIONS & PRODUCTS MEGA MENU: Clean 5-Column Balanced Grid Matching InboxWa Theme */
-    .mega-menu-solutions,
+    /* PRODUCTS MEGA MENU: Clean 5-Column Balanced Grid Matching InboxWa Theme */
     .mega-menu-products {
       width: min(1180px, calc(100vw - 28px)) !important;
       max-width: calc(100vw - 28px) !important;
@@ -772,6 +771,227 @@ if (!function_exists('hb_seo_esc')) {
       box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
       padding: 22px 24px !important;
       box-sizing: border-box !important;
+    }
+
+    /* SOLUTIONS MEGA MENU: 12 Industries (3 cols x 4 rows) + Leads Directory Card (Image 3) */
+    .mega-menu-solutions {
+      width: min(1120px, calc(100vw - 24px)) !important;
+      max-width: calc(100vw - 24px) !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
+      border-radius: 22px !important;
+      box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+
+    .mega-solutions-wrap {
+      display: grid !important;
+      grid-template-columns: 1fr 310px !important;
+      align-items: stretch !important;
+      min-height: 410px !important;
+    }
+
+    .mega-sol-main {
+      padding: 26px 30px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+
+    .mega-sol-heading {
+      font-size: 1.15rem !important;
+      font-weight: 800 !important;
+      color: #3b4cb8 !important;
+      margin-bottom: 18px !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .mega-industry-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 12px 18px !important;
+      width: 100% !important;
+    }
+
+    .mega-ind-col {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+    }
+
+    .mega-ind-link {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      padding: 9px 12px !important;
+      border-radius: 12px !important;
+      text-decoration: none !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      background: transparent !important;
+    }
+
+    .mega-ind-link:hover {
+      background: #f8fafc !important;
+      transform: translateX(3px) !important;
+    }
+
+    .mega-ind-icon {
+      width: 38px !important;
+      height: 38px !important;
+      min-width: 38px !important;
+      border-radius: 50% !important;
+      background: #eff2fe !important;
+      color: #4f46e5 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+    }
+
+    .mega-ind-icon svg {
+      width: 19px !important;
+      height: 19px !important;
+      stroke: currentColor !important;
+      stroke-width: 2 !important;
+    }
+
+    .mega-ind-link:hover .mega-ind-icon {
+      transform: scale(1.08) !important;
+      background: #4f46e5 !important;
+      color: #ffffff !important;
+    }
+
+    .mega-ind-title {
+      font-size: 0.92rem !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
+      line-height: 1.3 !important;
+      transition: color 0.2s ease !important;
+    }
+
+    .mega-ind-link:hover .mega-ind-title {
+      color: #4338ca !important;
+    }
+
+    /* Aside Lead Directory Card (Image 3) */
+    .mega-sol-leads-aside {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      border-left: 1px solid #e2e8f0 !important;
+      padding: 34px 28px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      gap: 14px !important;
+      box-sizing: border-box !important;
+    }
+
+    .mega-leads-badge {
+      display: inline-block !important;
+      background: #e0e7ff !important;
+      color: #3730a3 !important;
+      border: 1px solid rgba(99, 102, 241, 0.25) !important;
+      font-size: 0.68rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase !important;
+      padding: 4px 12px !important;
+      border-radius: 999px !important;
+    }
+
+    .mega-leads-title {
+      font-size: 1.35rem !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      line-height: 1.25 !important;
+      margin: 0 !important;
+    }
+
+    .mega-leads-desc {
+      font-size: 0.88rem !important;
+      color: #475569 !important;
+      line-height: 1.5 !important;
+      margin: 0 0 6px 0 !important;
+    }
+
+    .btn-mega-leads-primary {
+      width: 100% !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 11px 18px !important;
+      background: linear-gradient(90deg, #6366f1 0%, #0ea5e9 100%) !important;
+      color: #ffffff !important;
+      font-size: 0.92rem !important;
+      font-weight: 700 !important;
+      border-radius: 999px !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35) !important;
+      transition: all 0.2s ease !important;
+      box-sizing: border-box !important;
+    }
+
+    .btn-mega-leads-primary:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45) !important;
+      color: #ffffff !important;
+    }
+
+    .btn-mega-leads-secondary {
+      width: 100% !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 10px 18px !important;
+      background: #ffffff !important;
+      color: #0f172a !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      border: 1.5px solid #cbd5e1 !important;
+      border-radius: 999px !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      box-sizing: border-box !important;
+    }
+
+    .btn-mega-leads-secondary:hover {
+      background: #f8fafc !important;
+      border-color: #94a3b8 !important;
+      color: #0f172a !important;
+      transform: translateY(-1px) !important;
+    }
+
+    @media (max-width: 1120px) {
+      .mega-menu-solutions {
+        width: min(960px, calc(100vw - 20px)) !important;
+      }
+      .mega-solutions-wrap {
+        grid-template-columns: 1fr 270px !important;
+      }
+      .mega-sol-main {
+        padding: 20px 20px !important;
+      }
+      .mega-sol-leads-aside {
+        padding: 24px 20px !important;
+      }
+      .mega-industry-grid {
+        gap: 8px 12px !important;
+      }
+      .mega-ind-link {
+        padding: 8px 8px !important;
+        gap: 10px !important;
+      }
+      .mega-ind-icon {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+      }
+      .mega-ind-title {
+        font-size: 0.86rem !important;
+      }
     }
 
     .mega-solutions-grid,
@@ -1689,263 +1909,80 @@ if (!function_exists('hb_seo_esc')) {
         <div class="nav-item nav-item-solutions" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-solutions" role="menu">
-            <div class="mega-solutions-grid">
-              <!-- Column 1: INTEGRATIONS -->
-              <div class="mega-sol-col mega-sol-col-integrations">
-                <div class="mega-col-title">INTEGRATIONS</div>
-                <a href="<?php echo $bp; ?>solutions/shopify/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Shopify</span><span class="mega-link-desc">Orders & abandoned cart</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>solutions/woocommerce/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">WooCommerce</span><span class="mega-link-desc">Store sync & alerts</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>solutions/google-forms-sheets/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Google Sheet</span><span class="mega-link-desc">Form → Sheet → WhatsApp</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>solutions/google-calendar-meet/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Google Calendar</span><span class="mega-link-desc">Book · Meet · Remind</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>facebook-ads/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Facebook Ads</span><span class="mega-link-desc">Click-to-WhatsApp</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>integrations/crm/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">CRM Integration</span><span class="mega-link-desc">HubSpot & more</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>integrations/api-webhooks/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Webhooks & API</span><span class="mega-link-desc">Real-time events</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>integrations/custom/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Custom Integration</span><span class="mega-link-desc">Your stack</span></span>
-                </a>
+            <div class="mega-solutions-wrap">
+              <!-- Left: By Industry (3 columns x 4 rows matching Image 2) -->
+              <div class="mega-sol-main">
+                <div class="mega-sol-heading">By Industry</div>
+                <div class="mega-industry-grid">
+                  <!-- Column 1 -->
+                  <div class="mega-ind-col">
+                    <a href="<?php echo $bp; ?>industry/bfsi/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/></svg></span>
+                      <span class="mega-ind-title">Banking &amp; Finance</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/healthcare/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                      <span class="mega-ind-title">Health &amp; Wellness</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/retail-and-ecommerce/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
+                      <span class="mega-ind-title">Retail &amp; E-commerce</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/travel-and-hospitality/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span>
+                      <span class="mega-ind-title">Travel &amp; Hospitality</span>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="mega-ind-col">
+                    <a href="<?php echo $bp; ?>industry/education-and-social-impacts/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                      <span class="mega-ind-title">Education &amp; Social Impacts</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/communication-and-it/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                      <span class="mega-ind-title">Communication &amp; IT</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/food-and-beverages/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                      <span class="mega-ind-title">Food &amp; Beverage</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/advertising-and-events/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+                      <span class="mega-ind-title">Advertising &amp; Events</span>
+                    </a>
+                  </div>
+
+                  <!-- Column 3 -->
+                  <div class="mega-ind-col">
+                    <a href="<?php echo $bp; ?>industry/construction-and-real-estate/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                      <span class="mega-ind-title">Construction &amp; Real Estate</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/automobiles-and-transport/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+                      <span class="mega-ind-title">Automobiles &amp; Transport</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/government-and-utilities/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16M4 2h16M6 6h12M6 10h12M6 14h12M6 18h12"/></svg></span>
+                      <span class="mega-ind-title">Government &amp; Utilities</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></span>
+                      <span class="mega-ind-title">Manufacturing &amp; Supply</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
-              <!-- Column 2: SUPPORT -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">SUPPORT</div>
-                <a href="<?php echo $bp; ?>resources/help-center/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Help Center</span><span class="mega-link-desc">Guides & FAQs</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>resources/help-center/#support-form" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Contact Support</span><span class="mega-link-desc">Raise a ticket</span></span>
-                </a>
-              </div>
-
-              <!-- Column 3: DEVELOPERS -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">DEVELOPERS</div>
-                <a href="<?php echo $bp; ?>integrations/api-webhooks/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">API Docs</span><span class="mega-link-desc">REST & webhooks</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>resources/documentation/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Documentation</span><span class="mega-link-desc">Product guides</span></span>
-                </a>
-              </div>
-
-              <!-- Column 4: LEARN -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">LEARN</div>
-                <a href="<?php echo $bp; ?>resources/blog/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Blog</span><span class="mega-link-desc">Tips & insights</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>resources/case-studies/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Case Studies</span><span class="mega-link-desc">Customer results</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>resources/templates/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Templates</span><span class="mega-link-desc">Message templates</span></span>
-                </a>
-              </div>
-
-              <!-- Column 5: DOWNLOADS -->
-              <div class="mega-sol-col">
-                <div class="mega-col-title">DOWNLOADS</div>
-                <a href="<?php echo $bp; ?>resources/download-app/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Download App</span><span class="mega-link-desc">Android & desktop</span></span>
-                </a>
-                <a href="<?php echo $bp; ?>resources/download-ios-app/" class="mega-link" role="menuitem">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-                  <span class="mega-link-text"><span class="mega-link-title">Download iOS App</span><span class="mega-link-desc">iPhone & iPad</span></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <?php $isLeadsActive = (strpos($_SERVER['REQUEST_URI'] ?? '', '/business-leads') !== false); ?>
-        <div class="nav-item nav-item-leads" data-mega>
-          <button type="button" class="nav-link nav-link-leads<?php echo $isLeadsActive ? ' active' : ''; ?>" aria-expanded="false" aria-haspopup="true">
-            <span>Business Leads</span>
-            <span class="nav-leads-pill">16</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="mega-menu mega-menu-panel mega-menu-leads" role="menu">
-            <div class="mega-panel mega-panel-leads">
-              <div class="mega-panel-links mega-panel-leads-grid">
-                <!-- 1. Real Estate -->
-                <a href="<?php echo $bp; ?>business-leads/real-estate/" class="mega-link" role="menuitem" title="Builders, developers, brokers, property consultants and real estate businesses.">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Real Estate</span>
-                    <span class="mega-link-desc">Builders, brokers &amp; property</span>
-                  </span>
-                </a>
-
-                <!-- 2. Education -->
-                <a href="<?php echo $bp; ?>business-leads/education/" class="mega-link" role="menuitem" title="Schools, colleges, coaching institutes, training centres and education businesses.">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Education</span>
-                    <span class="mega-link-desc">Schools, colleges &amp; coaching</span>
-                  </span>
-                </a>
-
-                <!-- 3. Healthcare -->
-                <a href="<?php echo $bp; ?>business-leads/healthcare/" class="mega-link" role="menuitem" title="Hospitals, clinics, diagnostic centres, wellness and healthcare businesses.">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Healthcare</span>
-                    <span class="mega-link-desc">Hospitals, clinics &amp; diagnostic</span>
-                  </span>
-                </a>
-
-                <!-- 4. E-commerce -->
-                <a href="<?php echo $bp; ?>business-leads/ecommerce/" class="mega-link" role="menuitem" title="Online stores, D2C brands, retailers and e-commerce businesses.">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">E-commerce</span>
-                    <span class="mega-link-desc">Online stores &amp; D2C brands</span>
-                  </span>
-                </a>
-
-                <!-- 5. Finance & Insurance -->
-                <a href="<?php echo $bp; ?>business-leads/finance-insurance/" class="mega-link" role="menuitem" title="Financial services, insurance agencies, consultants and related businesses.">
-                  <span class="mega-icon mega-icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="9" y1="11" x2="15" y2="11"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Finance &amp; Insurance</span>
-                    <span class="mega-link-desc">BFSI, insurance &amp; advisory</span>
-                  </span>
-                </a>
-
-                <!-- 6. Automotive -->
-                <a href="<?php echo $bp; ?>business-leads/automotive/" class="mega-link" role="menuitem" title="Dealers, service centres, automobile businesses and automotive professionals.">
-                  <span class="mega-icon mega-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-2z"/><path d="M5 17l-1-7h16l-1 7"/><path d="M7 10V7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3"/><circle cx="7.5" cy="14" r="1.5"/><circle cx="16.5" cy="14" r="1.5"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Automotive</span>
-                    <span class="mega-link-desc">Dealers, service &amp; auto pros</span>
-                  </span>
-                </a>
-
-                <!-- 7. Travel & Hospitality -->
-                <a href="<?php echo $bp; ?>business-leads/travel-hospitality/" class="mega-link" role="menuitem" title="Hotels, resorts, travel agencies, tour operators and hospitality businesses.">
-                  <span class="mega-icon mega-icon-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Travel &amp; Hospitality</span>
-                    <span class="mega-link-desc">Hotels, resorts &amp; tour agencies</span>
-                  </span>
-                </a>
-
-                <!-- 8. Restaurants & Food -->
-                <a href="<?php echo $bp; ?>business-leads/restaurants-food/" class="mega-link" role="menuitem" title="Restaurants, cafes, cloud kitchens, catering and food businesses.">
-                  <span class="mega-icon mega-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2v20M6 2v6a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V2M9 11v11"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Restaurants &amp; Food</span>
-                    <span class="mega-link-desc">Cafes, kitchens &amp; catering</span>
-                  </span>
-                </a>
-
-                <!-- 9. Beauty & Wellness -->
-                <a href="<?php echo $bp; ?>business-leads/beauty-wellness/" class="mega-link" role="menuitem" title="Salons, spas, beauty clinics, wellness centres and professionals.">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L21 12l-6.6 2.8L12 22l-2.4-7.2L3 12l6.6-2.8z"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Beauty &amp; Wellness</span>
-                    <span class="mega-link-desc">Salons, spas &amp; beauty clinics</span>
-                  </span>
-                </a>
-
-                <!-- 10. IT & Software -->
-                <a href="<?php echo $bp; ?>business-leads/it-software/" class="mega-link" role="menuitem" title="IT companies, software businesses, technology providers and SaaS companies.">
-                  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">IT &amp; Software</span>
-                    <span class="mega-link-desc">Tech providers, SaaS &amp; IT</span>
-                  </span>
-                </a>
-
-                <!-- 11. Digital Marketing -->
-                <a href="<?php echo $bp; ?>business-leads/digital-marketing/" class="mega-link" role="menuitem" title="Marketing agencies, advertising agencies, SEO businesses and consultants.">
-                  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Digital Marketing</span>
-                    <span class="mega-link-desc">Agencies, advertising &amp; SEO</span>
-                  </span>
-                </a>
-
-                <!-- 12. Professional Services -->
-                <a href="<?php echo $bp; ?>business-leads/professional-services/" class="mega-link" role="menuitem" title="Consultants, legal, accounting, HR, business and professional service providers.">
-                  <span class="mega-icon mega-icon-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Professional Services</span>
-                    <span class="mega-link-desc">Legal, accounting, HR &amp; advice</span>
-                  </span>
-                </a>
-
-                <!-- 13. Manufacturing -->
-                <a href="<?php echo $bp; ?>business-leads/manufacturing/" class="mega-link" role="menuitem" title="Manufacturers, factories, suppliers and industrial businesses.">
-                  <span class="mega-icon mega-icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l4 4V8l4 4V4l8 6v10"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Manufacturing</span>
-                    <span class="mega-link-desc">Factories, suppliers &amp; industrial</span>
-                  </span>
-                </a>
-
-                <!-- 14. Retail -->
-                <a href="<?php echo $bp; ?>business-leads/retail/" class="mega-link" role="menuitem" title="Local retailers, stores, distributors and consumer businesses.">
-                  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Retail</span>
-                    <span class="mega-link-desc">Local stores &amp; distributors</span>
-                  </span>
-                </a>
-
-                <!-- 15. B2B & Suppliers -->
-                <a href="<?php echo $bp; ?>business-leads/b2b-suppliers/" class="mega-link" role="menuitem" title="Wholesalers, distributors, suppliers, vendors and B2B businesses.">
-                  <span class="mega-icon mega-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">B2B &amp; Suppliers</span>
-                    <span class="mega-link-desc">Wholesalers, vendors &amp; supply</span>
-                  </span>
-                </a>
-
-                <!-- 16. Events & Wedding -->
-                <a href="<?php echo $bp; ?>business-leads/events-wedding/" class="mega-link" role="menuitem" title="Event planners, wedding businesses, photographers, venues and related services.">
-                  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-                  <span class="mega-link-text">
-                    <span class="mega-link-title">Events &amp; Wedding</span>
-                    <span class="mega-link-desc">Planners, venues &amp; photo</span>
-                  </span>
-                </a>
-              </div>
-              <div class="mega-panel-aside">
-                <span class="mega-aside-badge">16 Categories</span>
-                <strong>Business Leads Directory</strong>
-                <p>Explore all 16 category-wise verified business datasets &amp; WhatsApp workflows.</p>
-                <a href="<?php echo $bp; ?>business-leads/" class="btn btn-primary btn-sm">Browse All 16 Categories</a>
-                <a href="<?php echo $bp; ?>solutions/data-marketplace/#custom-request" class="btn btn-outline btn-sm" style="margin-top:2px;">+ Custom Data Request</a>
+              <!-- Right: Business Leads Directory Promo Card (Image 3) -->
+              <div class="mega-sol-leads-aside">
+                <span class="mega-leads-badge">16 CATEGORIES</span>
+                <h3 class="mega-leads-title">Business Leads Directory</h3>
+                <p class="mega-leads-desc">Explore all 16 category-wise verified business datasets &amp; WhatsApp workflows.</p>
+                <a href="<?php echo $bp; ?>business-leads/" class="btn-mega-leads-primary">Browse All 16 Categories</a>
+                <button type="button" class="btn-mega-leads-secondary btn-demo-open" onclick="if(window.openDemoModal) window.openDemoModal(); else window.location.href='/#contact-section';">+ Custom Data Request</button>
               </div>
             </div>
           </div>
@@ -1991,6 +2028,10 @@ if (!function_exists('hb_seo_esc')) {
                 <a href="/company/about/" class="mega-link" role="menuitem">
   <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
   <span class="mega-link-text"><span class="mega-link-title">About</span><span class="mega-link-desc">Our mission</span></span>
+</a>
+                <a href="<?php echo $bp; ?>resources/blog/" class="mega-link" role="menuitem">
+  <span class="mega-icon mega-icon-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+  <span class="mega-link-text"><span class="mega-link-title">Blog</span><span class="mega-link-desc">Tips, guides &amp; insights</span></span>
 </a>
                 <a href="/company/careers/" class="mega-link" role="menuitem">
   <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span>
@@ -2077,53 +2118,21 @@ if (!function_exists('hb_seo_esc')) {
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:6px 0 2px;border-bottom:1px solid #f1f5f9;">Integrations</div>
-            <a href="/solutions/shopify/">Shopify</a>
-            <a href="/solutions/woocommerce/">WooCommerce</a>
-            <a href="/solutions/google-forms-sheets/">Google Sheet</a>
-            <a href="/solutions/google-calendar-meet/">Google Calendar</a>
-            <a href="/facebook-ads/">Facebook Ads</a>
-            <a href="/integrations/crm/">CRM Integration</a>
-            <a href="/integrations/api-webhooks/">Webhooks &amp; API</a>
-            <a href="/integrations/custom/">Custom Integration</a>
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:8px 0 2px;border-bottom:1px solid #f1f5f9;">Support</div>
-            <a href="/resources/help-center/">Help Center</a>
-            <a href="/resources/help-center/#support-form">Contact Support</a>
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:8px 0 2px;border-bottom:1px solid #f1f5f9;">Developers</div>
-            <a href="/integrations/api-webhooks/">API Docs</a>
-            <a href="/resources/documentation/">Documentation</a>
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:8px 0 2px;border-bottom:1px solid #f1f5f9;">Learn</div>
-            <a href="/resources/blog/">Blog</a>
-            <a href="/resources/case-studies/">Case Studies</a>
-            <a href="/resources/templates/">Templates</a>
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:8px 0 2px;border-bottom:1px solid #f1f5f9;">Downloads</div>
-            <a href="/resources/download-app/">Download App</a>
-            <a href="/resources/download-ios-app/">Download iOS App</a>
-          </div></div>
-        </div>
-        <div class="mobile-nav-item" data-accordion>
-          <button type="button" class="mobile-nav-link" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-            <span>Business Leads <span class="badge-live-pill" style="margin-left:6px;background:rgba(99,102,241,0.14);color:#4338ca;font-weight:800;border:1px solid rgba(99,102,241,0.3);">16 Categories</span></span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="<?php echo $bp; ?>business-leads/"><strong>All 16 Categories &rarr;</strong></a>
-            <a href="<?php echo $bp; ?>business-leads/real-estate/">Real Estate</a>
-            <a href="<?php echo $bp; ?>business-leads/education/">Education</a>
-            <a href="<?php echo $bp; ?>business-leads/healthcare/">Healthcare</a>
-            <a href="<?php echo $bp; ?>business-leads/ecommerce/">E-commerce</a>
-            <a href="<?php echo $bp; ?>business-leads/finance-insurance/">Finance &amp; Insurance</a>
-            <a href="<?php echo $bp; ?>business-leads/automotive/">Automotive</a>
-            <a href="<?php echo $bp; ?>business-leads/travel-hospitality/">Travel &amp; Hospitality</a>
-            <a href="<?php echo $bp; ?>business-leads/restaurants-food/">Restaurants &amp; Food</a>
-            <a href="<?php echo $bp; ?>business-leads/beauty-wellness/">Beauty &amp; Wellness</a>
-            <a href="<?php echo $bp; ?>business-leads/it-software/">IT &amp; Software</a>
-            <a href="<?php echo $bp; ?>business-leads/digital-marketing/">Digital Marketing</a>
-            <a href="<?php echo $bp; ?>business-leads/professional-services/">Professional Services</a>
-            <a href="<?php echo $bp; ?>business-leads/manufacturing/">Manufacturing</a>
-            <a href="<?php echo $bp; ?>business-leads/retail/">Retail</a>
-            <a href="<?php echo $bp; ?>business-leads/b2b-suppliers/">B2B &amp; Suppliers</a>
-            <a href="<?php echo $bp; ?>business-leads/events-wedding/">Events &amp; Wedding</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:6px 0 2px;border-bottom:1px solid #f1f5f9;">By Industry</div>
+            <a href="<?php echo $bp; ?>industry/bfsi/">Banking &amp; Finance</a>
+            <a href="<?php echo $bp; ?>industry/healthcare/">Health &amp; Wellness</a>
+            <a href="<?php echo $bp; ?>industry/retail-and-ecommerce/">Retail &amp; E-commerce</a>
+            <a href="<?php echo $bp; ?>industry/travel-and-hospitality/">Travel &amp; Hospitality</a>
+            <a href="<?php echo $bp; ?>industry/education-and-social-impacts/">Education &amp; Social Impacts</a>
+            <a href="<?php echo $bp; ?>industry/communication-and-it/">Communication &amp; IT</a>
+            <a href="<?php echo $bp; ?>industry/food-and-beverages/">Food &amp; Beverage</a>
+            <a href="<?php echo $bp; ?>industry/advertising-and-events/">Advertising &amp; Events</a>
+            <a href="<?php echo $bp; ?>industry/construction-and-real-estate/">Construction &amp; Real Estate</a>
+            <a href="<?php echo $bp; ?>industry/automobiles-and-transport/">Automobiles &amp; Transport</a>
+            <a href="<?php echo $bp; ?>industry/government-and-utilities/">Government &amp; Utilities</a>
+            <a href="<?php echo $bp; ?>industry/manufacturing-and-supply/">Manufacturing &amp; Supply</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Business Leads</div>
+            <a href="<?php echo $bp; ?>business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 16 Leads Categories &rarr;</a>
             <a href="<?php echo $bp; ?>solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
           </div></div>
         </div>
@@ -2141,6 +2150,7 @@ if (!function_exists('hb_seo_esc')) {
           <button type="button" class="mobile-nav-link">Company <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <a href="/company/about/">About</a>
+            <a href="<?php echo $bp; ?>resources/blog/">Blog</a>
             <a href="/company/careers/">Careers</a>
             <a href="/contact/">Contact</a>
             <a href="/security/">Security</a>

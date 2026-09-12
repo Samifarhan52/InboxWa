@@ -18,6 +18,32 @@ if (empty($cleanPath)) {
 
 $parts = array_values(array_filter(explode('/', $cleanPath)));
 
+// Industry pages routing
+$industrySlugs = [
+    'bfsi',
+    'healthcare',
+    'retail-and-ecommerce',
+    'travel-and-hospitality',
+    'education-and-social-impacts',
+    'communication-and-it',
+    'food-and-beverages',
+    'advertising-and-events',
+    'construction-and-real-estate',
+    'automobiles-and-transport',
+    'government-and-utilities',
+    'manufacturing-and-supply'
+];
+if (count($parts) === 2 && in_array(strtolower($parts[0]), ['industry', 'solutions', 'industries'])) {
+    $indSlug = strtolower($parts[1]);
+    if (in_array($indSlug, $industrySlugs)) {
+        $indFile = $rootDir . '/industry/' . $indSlug . '/index.php';
+        if (file_exists($indFile)) {
+            require $indFile;
+            exit;
+        }
+    }
+}
+
 // Education shortcuts & aliases
 if ((count($parts) === 1 && strtolower($parts[0]) === 'education') ||
     (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'industry', 'industries', 'business-leads', 'leads']) && strtolower($parts[1]) === 'education')) {
@@ -27,7 +53,7 @@ if ((count($parts) === 1 && strtolower($parts[0]) === 'education') ||
 
 // BFSI / Finance & Insurance shortcuts & aliases
 if ((count($parts) === 1 && in_array(strtolower($parts[0]), ['bfsi', 'finance-insurance'])) ||
-    (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'industry', 'industries', 'business-leads', 'leads']) && in_array(strtolower($parts[1]), ['finance-insurance', 'bfsi', 'finance-bfsi']))) {
+    (count($parts) === 2 && in_array(strtolower($parts[0]), ['solutions', 'solution', 'business-leads', 'leads']) && in_array(strtolower($parts[1]), ['finance-insurance', 'finance-bfsi']))) {
     require $rootDir . '/business-leads/finance-insurance/index.php';
     exit;
 }
