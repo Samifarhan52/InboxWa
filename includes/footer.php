@@ -42,7 +42,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
             </div>
 
           <div class="footer-meta-partner">
-            <img src="/assets/images/partners/meta-tech-partner.png" alt="Meta Tech Partner" width="120" height="56"
+            <img src="<?php echo $bp; ?>assets/images/partners/meta-tech-partner.png" alt="Meta Tech Partner" width="120" height="60"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="meta-ph" style="display:none">Meta<br>Tech Partner</div>
             <div>
