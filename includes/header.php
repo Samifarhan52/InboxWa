@@ -398,7 +398,7 @@ if (!function_exists('hb_seo_esc')) {
       position: static !important;
     }
 
-    /* InboxWa Dark Mega Menu for Channels (100% Centered & Never Cut Off) */
+    /* InboxWa Light Mega Menu for Channels (100% Centered & Never Cut Off) */
     .mega-menu-channels,
     .mega-menu-channels.align-left,
     .mega-menu-channels.align-right {
@@ -410,10 +410,10 @@ if (!function_exists('hb_seo_esc')) {
       width: min(820px, calc(100vw - 32px)) !important;
       max-width: calc(100vw - 32px) !important;
       box-sizing: border-box !important;
-      background: #0d111c !important;
-      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
       border-radius: 20px !important;
-      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
       padding: 24px 26px !important;
       opacity: 0;
       visibility: hidden;
@@ -457,7 +457,7 @@ if (!function_exists('hb_seo_esc')) {
       font-size: 0.72rem !important;
       font-weight: 800 !important;
       letter-spacing: 0.08em !important;
-      color: #818cf8 !important;
+      color: #8b5cf6 !important;
       text-transform: uppercase !important;
       margin-bottom: 12px !important;
     }
@@ -477,8 +477,8 @@ if (!function_exists('hb_seo_esc')) {
       background: transparent !important;
     }
     .mega-channel-item:hover {
-      background: rgba(255, 255, 255, 0.06) !important;
-      transform: translateY(-2px) !important;
+      background: #f8fafc !important;
+      transform: translateX(3px) !important;
     }
     .channel-icon-wrap {
       width: 38px !important;
@@ -489,10 +489,10 @@ if (!function_exists('hb_seo_esc')) {
       justify-content: center !important;
       flex-shrink: 0 !important;
     }
-    .wa-icon-wrap { background: rgba(37, 211, 102, 0.15) !important; color: #25d366 !important; }
-    .ig-icon-wrap { background: rgba(236, 72, 153, 0.15) !important; color: #f43f5e !important; }
+    .wa-icon-wrap { background: rgba(37, 211, 102, 0.15) !important; color: #16a34a !important; }
+    .ig-icon-wrap { background: rgba(236, 72, 153, 0.15) !important; color: #db2777 !important; }
     .tg-icon-wrap { background: rgba(14, 165, 233, 0.15) !important; color: #0284c7 !important; }
-    .fb-icon-wrap { background: rgba(59, 130, 246, 0.15) !important; color: #3b82f6 !important; }
+    .fb-icon-wrap { background: rgba(59, 130, 246, 0.15) !important; color: #2563eb !important; }
 
     .channel-text {
       display: flex !important;
@@ -501,19 +501,19 @@ if (!function_exists('hb_seo_esc')) {
     .channel-name {
       font-size: 0.95rem !important;
       font-weight: 700 !important;
-      color: #ffffff !important;
+      color: #0f172a !important;
       line-height: 1.2 !important;
     }
     .channel-desc {
       font-size: 0.75rem !important;
-      color: #94a3b8 !important;
+      color: #64748b !important;
       line-height: 1.35 !important;
       margin-top: 3px !important;
     }
 
-    /* Right Promo Card */
+    /* Right Promo Card (Light Theme Matching InboxWa Style) */
     .mega-channels-promo {
-      background: linear-gradient(145deg, #161b2e 0%, #111524 100%) !important;
+      background: linear-gradient(145deg, #f5f3ff 0%, #ede9fe 100%) !important;
       border: 1px solid rgba(139, 92, 246, 0.25) !important;
       border-radius: 16px !important;
       padding: 20px 22px !important;
@@ -524,9 +524,9 @@ if (!function_exists('hb_seo_esc')) {
     .promo-offer-pill {
       display: inline-block !important;
       align-self: flex-start !important;
-      background: rgba(139, 92, 246, 0.22) !important;
-      color: #c084fc !important;
-      border: 1px solid rgba(168, 85, 247, 0.35) !important;
+      background: rgba(139, 92, 246, 0.15) !important;
+      color: #7c3aed !important;
+      border: 1px solid rgba(139, 92, 246, 0.3) !important;
       font-size: 0.68rem !important;
       font-weight: 700 !important;
       letter-spacing: 0.06em !important;
@@ -538,13 +538,13 @@ if (!function_exists('hb_seo_esc')) {
     .promo-offer-title {
       font-size: 1.15rem !important;
       font-weight: 800 !important;
-      color: #ffffff !important;
+      color: #0f172a !important;
       margin: 0 0 8px 0 !important;
       line-height: 1.3 !important;
     }
     .promo-offer-desc {
       font-size: 0.82rem !important;
-      color: #cbd5e1 !important;
+      color: #475569 !important;
       line-height: 1.5 !important;
       margin: 0 0 16px 0 !important;
     }
@@ -552,14 +552,14 @@ if (!function_exists('hb_seo_esc')) {
       display: inline-flex !important;
       align-items: center !important;
       gap: 6px !important;
-      color: #a78bfa !important;
+      color: #7c3aed !important;
       font-size: 0.9rem !important;
       font-weight: 700 !important;
       text-decoration: none !important;
       transition: all 0.15s ease !important;
     }
     .promo-offer-cta:hover {
-      color: #c4b5fd !important;
+      color: #6d28d9 !important;
       gap: 9px !important;
     }
 

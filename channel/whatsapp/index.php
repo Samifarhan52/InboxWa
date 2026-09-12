@@ -161,123 +161,76 @@ include __DIR__ . '/../../includes/header.php';
     gap: 0.4rem;
   }
 
-  /* Interactive Mockup Phone Stage */
-  .cw-phone-wrapper {
+  /* Hero Floating Visual */
+  .cw-hero-visual {
     position: relative;
-    max-width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cw-hero-img-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cw-hero-img-wrap:hover {
+    transform: translateY(-6px);
+  }
+  .cw-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 20px 35px rgba(5, 150, 105, 0.12));
+  }
+
+  /* Counters Section */
+  .cw-counters-section {
+    padding: 0 1.5rem 4rem;
+    max-width: 1200px;
     margin: 0 auto;
   }
-  .cw-phone-device {
-    background: #0b141a;
-    border-radius: 36px;
-    padding: 12px;
-    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border: 3px solid #1e293b;
-    position: relative;
-    z-index: 2;
-  }
-  .cw-phone-notch {
-    width: 90px;
-    height: 18px;
-    background: #1e293b;
-    border-radius: 0 0 12px 12px;
-    margin: 0 auto 8px;
-  }
-  .cw-phone-screen {
-    background: #0b141a;
-    border-radius: 26px;
-    height: 440px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  .cw-wa-header {
-    background: #1f2c34;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .cw-wa-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #059669, #10b981);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 0.85rem;
-  }
-  .cw-wa-header-info strong {
-    display: block;
-    color: #e9edef;
-    font-size: 0.85rem;
-    font-weight: 700;
-  }
-  .cw-wa-header-info span {
-    color: #8696a0;
-    font-size: 0.72rem;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .cw-wa-body {
-    flex: 1;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    justify-content: flex-end;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 16px 16px;
-  }
-  .cw-bubble {
-    max-width: 88%;
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    line-height: 1.45;
-  }
-  .cw-bubble.user {
-    align-self: flex-end;
-    background: #005c4b;
-    color: #e9edef;
-    border-bottom-right-radius: 2px;
-  }
-  .cw-bubble.bot {
-    align-self: flex-start;
-    background: #1f2c34;
-    color: #e9edef;
-    border-bottom-left-radius: 2px;
-  }
-  .cw-bubble .time {
-    display: block;
-    text-align: right;
-    font-size: 0.65rem;
-    color: #8696a0;
-    margin-top: 3px;
-  }
-  .cw-floating-card {
-    display: none !important;
-    position: absolute;
-    z-index: 3;
+  .cw-counters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 2.25rem 2.5rem;
     background: #ffffff;
-    padding: 10px 14px;
-    border-radius: 14px;
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.15);
+    border-radius: 20px;
     border: 1px solid #e2e8f0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: cwFloat 4s ease-in-out infinite alternate;
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
   }
-  .cw-fc-1 { top: 12%; left: -24px; }
-  .cw-fc-2 { bottom: 18%; right: -24px; animation-delay: -2s; }
-  @keyframes cwFloat {
-    from { transform: translateY(0); }
-    to { transform: translateY(-8px); }
+  .cw-counter-item {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-right: 1px solid #f1f5f9;
+  }
+  .cw-counter-item:last-child {
+    border-right: none;
+  }
+  .cw-counter-val {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #059669;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+  }
+  .cw-counter-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #64748b;
+  }
+  @media (max-width: 768px) {
+    .cw-counters-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 1rem;
+      padding: 1.5rem 1rem;
+    }
+    .cw-counter-item:nth-child(2) {
+      border-right: none;
+    }
   }
 
   /* Comparison Section */
@@ -460,21 +413,24 @@ include __DIR__ . '/../../includes/header.php';
     width: 100%;
     aspect-ratio: 16 / 9;
     max-height: 440px;
-    background: linear-gradient(135deg, #f8faff 0%, #f1f5f9 100%);
-    border: 1px solid #f1f5f9;
-    border-radius: 20px;
-    overflow: hidden;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
     position: relative;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .cw-cap-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 20px 35px rgba(15, 23, 42, 0.08));
     transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .cw-cap-img.animating {
@@ -523,200 +479,80 @@ include __DIR__ . '/../../includes/header.php';
     flex-shrink: 0;
   }
 
-  /* Visual Customer Journey & Steps Section */
+  /* Steps Section */
   .cw-steps-section {
-    background: #0b1329;
+    padding: 5.5rem 1.5rem;
+    background: #0f172a;
     color: #ffffff;
-    padding: 6rem 1.5rem;
-    position: relative;
-    overflow: hidden;
+  }
+  .cw-steps-container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .cw-steps-header {
     text-align: center;
-    max-width: 820px;
-    margin: 0 auto 4rem;
+    margin-bottom: 3.5rem;
   }
-  .cw-steps-header .cw-section-title {
-    color: #ffffff;
-    font-size: 2.2rem;
+  .cw-steps-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     font-weight: 800;
-    line-height: 1.25;
-    margin: 1rem 0 0.8rem;
+    color: #ffffff;
+    margin: 0.75rem 0 0.5rem;
+    letter-spacing: -0.02em;
   }
-  .cw-steps-header .cw-section-subtitle {
-    color: #94a3b8;
+  .cw-steps-subtitle {
     font-size: 1.05rem;
-    line-height: 1.6;
-    margin: 0;
-  }
-  .cw-journey-flow {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 1160px;
+    color: #94a3b8;
+    max-width: 600px;
     margin: 0 auto;
   }
-  .cw-journey-card {
-    background: #131d36;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 2.5rem;
+  .cw-steps-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
-  .cw-journey-card:hover {
-    border-color: rgba(5, 150, 105, 0.45);
-    box-shadow: 0 20px 45px -10px rgba(5, 150, 105, 0.2);
-    transform: translateY(-3px);
-  }
-  .cw-journey-card.reverse {
-    direction: rtl;
-  }
-  .cw-journey-card.reverse > * {
-    direction: ltr;
-  }
-  .cw-journey-media {
+  .cw-step-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.25rem 1.5rem;
+    transition: all 0.3s ease;
     position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #0f172a;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.55);
-    width: 100%;
-    box-sizing: border-box;
   }
-  .cw-journey-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 18px;
-    transition: transform 0.4s ease;
+  .cw-step-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(5, 150, 105, 0.4);
+    transform: translateY(-4px);
   }
-  .cw-journey-card:hover .cw-journey-img {
-    transform: scale(1.025);
+  .cw-step-number {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
   }
-  .cw-journey-badge-float {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: rgba(15, 23, 42, 0.88);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(52, 211, 153, 0.3);
-    color: #34d399;
-    font-size: 0.75rem;
+  .cw-step-heading {
+    font-size: 1.2rem;
     font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  .cw-journey-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .cw-journey-step-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  .cw-journey-step-pill {
-    background: rgba(5, 150, 105, 0.22);
-    color: #34d399;
-    border: 1px solid rgba(5, 150, 105, 0.4);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    padding: 4px 12px;
-    border-radius: 999px;
-    text-transform: uppercase;
-  }
-  .cw-journey-step-time {
-    color: #94a3b8;
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cw-journey-title {
-    font-size: 1.55rem;
-    font-weight: 800;
     color: #ffffff;
-    line-height: 1.3;
-    margin: 0;
+    margin: 0 0 0.65rem;
   }
-  .cw-journey-desc {
-    font-size: 0.95rem;
-    color: #cbd5e1;
+  .cw-step-text {
+    font-size: 0.92rem;
+    color: #94a3b8;
     line-height: 1.6;
     margin: 0;
   }
-  .cw-journey-guide-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
+  @media (max-width: 1024px) {
+    .cw-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-  .cw-journey-guide-box {
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 1.1rem 1.25rem;
-  }
-  .cw-journey-box-label {
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: #38bdf8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.55rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .cw-journey-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .cw-journey-list li {
-    font-size: 0.88rem;
-    color: #94a3b8;
-    line-height: 1.45;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-  .cw-journey-list li svg {
-    flex-shrink: 0;
-    color: #10b981;
-    margin-top: 3px;
-  }
-  .cw-journey-kpi-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #34d399;
-    background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    padding: 7px 14px;
-    border-radius: 10px;
-    align-self: flex-start;
+  @media (max-width: 640px) {
+    .cw-steps-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Sales CTA Section */
@@ -1113,38 +949,33 @@ include __DIR__ . '/../../includes/header.php';
         </div>
       </div>
 
-      <!-- Phone Simulator Stage -->
-      <div class="cw-phone-wrapper">
-        <div class="cw-phone-device">
-          <div class="cw-phone-notch"></div>
-          <div class="cw-phone-screen">
-            <div class="cw-wa-header">
-              <div class="cw-wa-avatar">IW</div>
-              <div class="cw-wa-header-info">
-                <strong>InboxWa Business AI</strong>
-                <span><i style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;"></i> Online</span>
-              </div>
-            </div>
-            <div class="cw-wa-body">
-              <div class="cw-bubble user">
-                Hi! How can InboxWa automate our customer sales on WhatsApp?
-                <span class="time">10:42 AM</span>
-              </div>
-              <div class="cw-bubble bot">
-                👋 Hello! With Official WhatsApp API, you can send broadcasts with 98% open rates, auto-qualify leads 24/7, and assign chats across your entire team from 1 single number!
-                <span class="time">10:42 AM</span>
-              </div>
-              <div class="cw-bubble user">
-                Can I connect my Shopify store & CRM?
-                <span class="time">10:43 AM</span>
-              </div>
-              <div class="cw-bubble bot">
-                ✅ Yes! Orders, abandoned cart recoveries, and contact sync happen automatically with zero code.
-                <span class="time">10:43 AM</span>
-              </div>
-            </div>
-          </div>
+      <!-- Floating Transparent PNG Illustration -->
+      <div class="cw-hero-visual">
+        <div class="cw-hero-img-wrap">
+          <img src="<?php echo $bp; ?>assets/images/channel/whatsapp/hero.png" alt="Official WhatsApp Connection & Automation" class="cw-hero-img" loading="eager" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Stat Counters Bar -->
+  <section class="cw-counters-section">
+    <div class="cw-counters-grid">
+      <div class="cw-counter-item">
+        <div class="cw-counter-val">+45%</div>
+        <div class="cw-counter-title">Broadcast Click Rate</div>
+      </div>
+      <div class="cw-counter-item">
+        <div class="cw-counter-val">3x</div>
+        <div class="cw-counter-title">Sales Conversion</div>
+      </div>
+      <div class="cw-counter-item">
+        <div class="cw-counter-val">99%</div>
+        <div class="cw-counter-title">Message Read Rate</div>
+      </div>
+      <div class="cw-counter-item">
+        <div class="cw-counter-val">24/7</div>
+        <div class="cw-counter-title">Auto-Response</div>
       </div>
     </div>
   </section>
@@ -1249,10 +1080,10 @@ include __DIR__ . '/../../includes/header.php';
         </div>
       </div>
 
-      <!-- Right Panel: Capability Showcase Display -->
+        <!-- Right Panel: Capability Showcase Display -->
       <div class="cw-cap-panel">
         <div class="cw-cap-preview">
-          <img id="cwCapImg" src="/assets/images/capabilities/shared-team-inbox.png" alt="Shared Team Inbox" class="cw-cap-img" loading="eager" />
+          <img id="cwCapImg" src="<?php echo $bp; ?>assets/images/channel/whatsapp/shared-team-inbox.png" alt="Shared Team Inbox" class="cw-cap-img" loading="eager" />
         </div>
         <div class="cw-cap-content">
           <h3 id="cwCapTitle" class="cw-cap-title">Shared Team Inbox</h3>
@@ -1272,156 +1103,38 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS / CUSTOMER JOURNEY -->
+  <!-- 4. HOW IT WORKS / 4 EASY STEPS -->
   <section class="cw-steps-section" id="how-it-works">
-    <div class="cw-steps-header">
-      <span class="cw-badge-pill" style="background:rgba(5, 150, 105, 0.2);color:#34d399;border-color:rgba(5,150,105,0.4);">Customer Journey &amp; Process</span>
-      <h2 class="cw-section-title">How It Works: 3 Steps to WhatsApp Automation</h2>
-      <p class="cw-section-subtitle">Visual, end-to-end journey showing how InboxWa connects your official number, automates chat workflows, and closes sales 24/7.</p>
-    </div>
-
-    <div class="cw-journey-flow">
-      <!-- Step 1 -->
-      <div class="cw-journey-card">
-        <div class="cw-journey-media">
-          <span class="cw-journey-badge-float">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Official Meta Cloud API
-          </span>
-          <img src="<?php echo $bp; ?>assets/images/journey/wa-step-1.jpg" alt="WhatsApp Step 1: Scan QR and Connect Meta Cloud API" class="cw-journey-img" loading="lazy" />
-        </div>
-        <div class="cw-journey-content">
-          <div class="cw-journey-step-header">
-            <span class="cw-journey-step-pill">Step 01 &bull; Connection</span>
-            <span class="cw-journey-step-time">⏱️ Under 2 Minutes</span>
-          </div>
-          <h3 class="cw-journey-title">Scan QR Code &amp; Link Official Meta Cloud API</h3>
-          <p class="cw-journey-desc">No complicated developer dashboards or server setups. Connect your phone number securely in seconds with official WhatsApp Cloud verification.</p>
-          
-          <div class="cw-journey-guide-grid">
-            <div class="cw-journey-guide-box">
-              <div class="cw-journey-box-label">👉 What You Do</div>
-              <ul class="cw-journey-list">
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Open WhatsApp on your phone &amp; scan the secure pairing QR code</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Confirm your company display name and business profile details</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Activate with instant Meta green checkmark verification</span>
-                </li>
-              </ul>
-            </div>
-            <div class="cw-journey-guide-box">
-              <div class="cw-journey-box-label">⚙️ How It Works Behind The Scenes</div>
-              <p style="font-size:0.86rem;color:#94a3b8;line-height:1.5;margin:0;">InboxWa automatically links your number to Meta's enterprise server cluster, establishing an encrypted token tunnel that guarantees 100% anti-ban safety and high throughput.</p>
-            </div>
-          </div>
-
-          <div class="cw-journey-kpi-badge">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Zero Ban Risk &bull; 100% Meta Official API Compliance
-          </div>
-        </div>
+    <div class="cw-steps-container">
+      <div class="cw-steps-header">
+        <span class="cw-badge-pill" style="background: rgba(5, 150, 105, 0.2); color: #34d399; border-color: rgba(5, 150, 105, 0.4);">How It Works</span>
+        <h2 class="cw-steps-title">Start in 4 Easy Steps</h2>
+        <p class="cw-steps-subtitle">Setting up your official WhatsApp assistant takes less than 10 minutes.</p>
       </div>
 
-      <!-- Step 2 -->
-      <div class="cw-journey-card reverse">
-        <div class="cw-journey-media">
-          <span class="cw-journey-badge-float">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Drag-and-Drop Builder
-          </span>
-          <img src="<?php echo $bp; ?>assets/images/journey/wa-step-2.jpg" alt="WhatsApp Step 2: Visual Chatbot Flow Builder" class="cw-journey-img" loading="lazy" />
+      <div class="cw-steps-grid">
+        <div class="cw-step-card">
+          <div class="cw-step-number">01</div>
+          <h3 class="cw-step-heading">Link Your Phone</h3>
+          <p class="cw-step-text">Connect your business phone number by scanning a simple QR code in 30 seconds.</p>
         </div>
-        <div class="cw-journey-content">
-          <div class="cw-journey-step-header">
-            <span class="cw-journey-step-pill">Step 02 &bull; Automation</span>
-            <span class="cw-journey-step-time">⚡ Zero Coding Needed</span>
-          </div>
-          <h3 class="cw-journey-title">Build Visual Chatbots &amp; Instant Reply Flows</h3>
-          <p class="cw-journey-desc">Design automated response trees that greet customers, qualify buyer intent, display product catalogs, and answer frequently asked questions 24 hours a day.</p>
-          
-          <div class="cw-journey-guide-grid">
-            <div class="cw-journey-guide-box">
-              <div class="cw-journey-box-label">👉 What You Do</div>
-              <ul class="cw-journey-list">
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Select from 50+ pre-built industry flow templates (Ecommerce, Clinics, Real Estate)</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Add interactive reply buttons, list pickers, PDF brochures, and media cards</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Set smart trigger keywords like "PRICE", "DEMO", "OFFER", or "SUPPORT"</span>
-                </li>
-              </ul>
-            </div>
-            <div class="cw-journey-guide-box">
-              <div class="cw-journey-box-label">⚙️ How It Works Behind The Scenes</div>
-              <p style="font-size:0.86rem;color:#94a3b8;line-height:1.5;margin:0;">Whenever a customer sends an inquiry, InboxWa evaluates intent in milliseconds and fires the exact programmed answer with interactive CTAs without human intervention.</p>
-            </div>
-          </div>
 
-          <div class="cw-journey-kpi-badge">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Instant 0.5s Response Speed &bull; 24/7/365 Always Active
-          </div>
+        <div class="cw-step-card">
+          <div class="cw-step-number">02</div>
+          <h3 class="cw-step-heading">Upload Contact List</h3>
+          <p class="cw-step-text">Upload your customer phone list or link directly with your existing Shopify or CRM tool.</p>
         </div>
-      </div>
 
-      <!-- Step 3 -->
-      <div class="cw-journey-card">
-        <div class="cw-journey-media">
-          <span class="cw-journey-badge-float">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Shared Team Dashboard
-          </span>
-          <img src="<?php echo $bp; ?>assets/images/journey/wa-step-3.jpg" alt="WhatsApp Step 3: Multi-Agent Inbox and Broadcast Campaigns" class="cw-journey-img" loading="lazy" />
+        <div class="cw-step-card">
+          <div class="cw-step-number">03</div>
+          <h3 class="cw-step-heading">Design Chat Flows</h3>
+          <p class="cw-step-text">Type out your answers or design automated reply menus using our visual builder.</p>
         </div>
-        <div class="cw-journey-content">
-          <div class="cw-journey-step-header">
-            <span class="cw-journey-step-pill">Step 03 &bull; Scale &amp; Sell</span>
-            <span class="cw-journey-step-time">📈 98% Open Rates</span>
-          </div>
-          <h3 class="cw-journey-title">Multi-Agent Team Inbox &amp; Bulk Broadcasts</h3>
-          <p class="cw-journey-desc">One phone number, unlimited human agents. Assign chats across your sales team while launching targeted promotional broadcasts to thousands of opted-in customers.</p>
-          
-          <div class="cw-journey-guide-grid">
-            <div class="cw-journey-guide-box">
-              <div class="cw-journey-box-label">👉 What You Do</div>
-              <ul class="cw-journey-list">
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Assign hot conversations to specific agents with internal private notes</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Broadcast promotional offers, discounts, and order updates in 1 click</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Track real-time delivery, read receipts, and agent resolution metrics</span>
-                </li>
-              </ul>
-            </div>
-            <div class="cw-journey-guide-box">
-              <div class="cw-journey-box-label">⚙️ How It Works Behind The Scenes</div>
-              <p style="font-size:0.86rem;color:#94a3b8;line-height:1.5;margin:0;">InboxWa's multi-tenant engine organizes all contacts into segments, handles rate limiting automatically, and delivers deep conversion attribution straight to your CRM.</p>
-            </div>
-          </div>
 
-          <div class="cw-journey-kpi-badge">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            98% Average Open Rate &bull; 45% Higher Sales Closing
-          </div>
+        <div class="cw-step-card">
+          <div class="cw-step-number">04</div>
+          <h3 class="cw-step-heading">Start Answering</h3>
+          <p class="cw-step-text">Turn on your assistant, send bulk messages, and watch conversations happen automatically.</p>
         </div>
       </div>
     </div>
@@ -1451,7 +1164,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <script>
 (function() {
-  var basePath = "/assets/images/capabilities/";
+  var basePath = "<?php echo $bp; ?>assets/images/channel/whatsapp/";
   var capabilities = [
     {
       title: "Shared Team Inbox",

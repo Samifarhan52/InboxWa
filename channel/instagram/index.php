@@ -175,17 +175,21 @@ include __DIR__ . '/../../includes/header.php';
   .cig-hero-img-wrap {
     position: relative;
     width: 100%;
-    max-width: 520px;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(236, 72, 153, 0.15);
-    background: #ffffff;
+    max-width: 550px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cig-hero-img-wrap:hover {
+    transform: translateY(-6px);
   }
   .cig-hero-img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    filter: drop-shadow(0 20px 35px rgba(236, 72, 153, 0.12));
   }
 
   /* Interactive Trigger Simulator Section */
@@ -600,20 +604,24 @@ include __DIR__ . '/../../includes/header.php';
   }
   .cig-sc-visual {
     position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.8);
-    background: #ffffff;
-    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .cig-sc-visual:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
   .cig-sc-img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    filter: drop-shadow(0 20px 35px rgba(15, 23, 42, 0.08));
   }
 
   /* 4 Steps How It Works Section */
@@ -1155,7 +1163,7 @@ include __DIR__ . '/../../includes/header.php';
             <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Deploy AI Chatbot</a>
           </div>
           <div class="cig-sc-visual">
-            <img src="<?php echo $bp; ?>assets/images/channel/instagram/smart-ai-bot.png?v=20260909" alt="24/7 Smart AI Chatbot" class="cig-sc-img" loading="lazy">
+            <img src="<?php echo $bp; ?>assets/images/channel/instagram/smart-ai-chatbot.png" alt="24/7 Smart AI Chatbot" class="cig-sc-img" loading="lazy">
           </div>
         </div>
       </div>

@@ -180,19 +180,21 @@ include __DIR__ . '/../../includes/header.php';
   .ctg-hero-img-wrap {
     position: relative;
     width: 100%;
-    max-width: 540px;
-    border-radius: 20px;
-    box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.2);
-    overflow: hidden;
-    background: #f8fafc;
-    border: 1px solid rgba(2, 132, 199, 0.15);
+    max-width: 550px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ctg-hero-img-wrap:hover {
+    transform: translateY(-6px);
   }
   .ctg-hero-img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
-    transform: translateZ(0);
+    filter: drop-shadow(0 20px 35px rgba(2, 132, 199, 0.15));
   }
 
   /* Section Containers */
@@ -298,22 +300,24 @@ include __DIR__ . '/../../includes/header.php';
   }
   .ctg-sc-visual {
     position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .ctg-sc-visual:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.18);
+    transform: translateY(-6px);
   }
   .ctg-sc-img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    filter: drop-shadow(0 20px 35px rgba(15, 23, 42, 0.08));
   }
 
   /* 4 Steps Section */

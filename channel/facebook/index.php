@@ -180,19 +180,21 @@ include __DIR__ . '/../../includes/header.php';
   .cfb-hero-img-wrap {
     position: relative;
     width: 100%;
-    max-width: 540px;
-    border-radius: 20px;
-    box-shadow: 0 25px 50px -12px rgba(24, 119, 242, 0.2);
-    overflow: hidden;
-    background: #f8fafc;
-    border: 1px solid rgba(24, 119, 242, 0.15);
+    max-width: 550px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cfb-hero-img-wrap:hover {
+    transform: translateY(-6px);
   }
   .cfb-hero-img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
-    transform: translateZ(0);
+    filter: drop-shadow(0 20px 35px rgba(24, 119, 242, 0.15));
   }
 
   /* Section Containers */
@@ -298,22 +300,24 @@ include __DIR__ . '/../../includes/header.php';
   }
   .cfb-sc-visual {
     position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .cfb-sc-visual:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 25px 50px -12px rgba(24, 119, 242, 0.18);
+    transform: translateY(-6px);
   }
   .cfb-sc-img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    filter: drop-shadow(0 20px 35px rgba(15, 23, 42, 0.08));
   }
 
   /* Built-In Tools Grid (6 tools) */
