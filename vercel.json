@@ -2,7 +2,33 @@
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.7.1",
-      "excludeFiles": "assets/**"
+      "includeFiles": [
+        "index.php",
+        "includes/**",
+        "config/**",
+        "business-leads/**",
+        "industry/**",
+        "Industries/**",
+        "channel/**",
+        "channels/**",
+        "products/**",
+        "product/**",
+        "solutions/**",
+        "company/**",
+        "contact/**",
+        "pricing/**",
+        "privacy/**",
+        "terms/**",
+        "security/**",
+        "facebook-ads/**",
+        "partners/**",
+        "resources/**",
+        "Locations/**",
+        "auth/**",
+        "admin/**",
+        "features/**",
+        "about/**"
+      ]
     }
   },
   "routes": [
