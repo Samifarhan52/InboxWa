@@ -34,6 +34,10 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/api/ping",
+      "dest": "/api/ping.js"
+    },
+    {
       "src": "/api/hello",
       "dest": "/api/hello.php"
     },
