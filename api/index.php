@@ -68,6 +68,9 @@ foreach ($parts as $part) {
     if ($partLower === 'channels') {
         $partLower = 'channel';
     }
+    if ($partLower === 'product') {
+        $partLower = 'products';
+    }
 
     foreach ($entries as $entry) {
         if ($entry === '.' || $entry === '..') continue;

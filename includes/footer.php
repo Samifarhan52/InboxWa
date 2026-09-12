@@ -102,7 +102,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
           <button type="button" class="btn btn-primary btn-sm btn-callback-open">Request Callback</button>
         </div>
         <div class="footer-col">
-          <div class="footer-heading">Features</div>
+          <div class="footer-heading">Products</div>
           <ul>
             <li><a href="<?php echo $bp; ?>products/broadcast/">Bulk Broadcast</a></li>
             <li><a href="<?php echo $bp; ?>products/shared-inbox/">Shared Team Inbox</a></li>

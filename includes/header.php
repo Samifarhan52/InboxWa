@@ -1526,13 +1526,13 @@ if (!function_exists('hb_seo_esc')) {
       </a>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
 
-        <!-- FEATURES MEGAMENU (InboxWa Suite) -->
-        <div class="nav-item nav-item-features" data-mega>
-          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Features <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <!-- PRODUCTS MEGAMENU (InboxWa Suite) -->
+        <div class="nav-item nav-item-features nav-item-products" data-mega>
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-panel mega-menu-features" role="menu">
             <div class="mega-features-wrapper">
               <div class="mega-features-header">
-                <span class="mega-features-label">Features</span>
+                <span class="mega-features-label">Products</span>
               </div>
               <div class="mega-features-grid">
                 <!-- 1. Bulk Broadcast -->
@@ -2050,7 +2050,7 @@ if (!function_exists('hb_seo_esc')) {
       </div>
       <div class="mobile-drawer-body">
         <div class="mobile-nav-item" data-accordion>
-          <button type="button" class="mobile-nav-link">Features <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <button type="button" class="mobile-nav-link">Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <a href="/products/broadcast/">Bulk Broadcast</a>
             <a href="/products/shared-inbox/">Shared Team Inbox</a>

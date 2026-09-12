@@ -30,6 +30,7 @@
   // Common UI Elements Instant Translation Map
   var UI_STRINGS = {
     ar: {
+      'Products': 'المنتجات',
       'Features': 'المميزات',
       'Channels': 'القنوات',
       'Solutions': 'الحلول',
@@ -53,6 +54,7 @@
       'Schedule 1-on-1 Call': 'احجز مكالمة فردية'
     },
     es: {
+      'Products': 'Productos',
       'Features': 'Funciones',
       'Channels': 'Canales',
       'Solutions': 'Soluciones',
@@ -76,6 +78,7 @@
       'Schedule 1-on-1 Call': 'Agendar Llamada 1-a-1'
     },
     pt: {
+      'Products': 'Produtos',
       'Features': 'Recursos',
       'Channels': 'Canais',
       'Solutions': 'Soluções',
@@ -99,6 +102,7 @@
       'Schedule 1-on-1 Call': 'Agendar Chamada 1-a-1'
     },
     de: {
+      'Products': 'Produkte',
       'Features': 'Funktionen',
       'Channels': 'Kanäle',
       'Solutions': 'Lösungen',
@@ -122,6 +126,7 @@
       'Schedule 1-on-1 Call': '1-zu-1 Anruf vereinbaren'
     },
     fr: {
+      'Products': 'Produits',
       'Features': 'Fonctionnalités',
       'Channels': 'Canaux',
       'Solutions': 'Solutions',
