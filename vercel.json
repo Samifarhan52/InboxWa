@@ -5,11 +5,7 @@
   "rewrites": [
     {
       "source": "/api/lead.php",
-      "destination": "/api/lead.js"
-    },
-    {
-      "source": "/api/lead",
-      "destination": "/api/lead.js"
+      "destination": "/api/lead"
     }
   ]
 }
