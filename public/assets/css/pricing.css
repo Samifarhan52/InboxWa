@@ -6,14 +6,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Breadcrumbs */
-.breadcrumb-nav a {
-  color: #64748b;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.breadcrumb-nav a:hover {
-  color: #0f766e;
+/* Breadcrumbs (Hidden as per design) */
+.breadcrumb-nav {
+  display: none !important;
 }
 
 /* Top Badge */

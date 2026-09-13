@@ -162,7 +162,7 @@
       }
     }
 
-    /* Universal Breadcrumbs Spacing Fix (eliminates excessive white gap on all pages) */
+    /* Universal Breadcrumbs Removal (eliminates extra top vertical gaps across all pages) */
     .breadcrumb-nav,
     .cw-breadcrumb,
     .cig-breadcrumb,
@@ -176,22 +176,7 @@
     nav[aria-label="Breadcrumb"],
     nav.breadcrumb,
     nav.breadcrumbs {
-      padding-top: 0.75rem !important;
-      padding-bottom: 0.35rem !important;
-      margin-top: 0 !important;
-    }
-
-    /* Remove excessive top padding when hero is right below a breadcrumb */
-    .breadcrumb-nav + .pricing-hero,
-    .breadcrumb-nav + .hero-section,
-    .breadcrumb-nav + section,
-    .cw-breadcrumb + .cw-hero-section,
-    .cig-breadcrumb + .cig-hero-section,
-    .cfb-breadcrumb + .cfb-hero-section,
-    .ctg-breadcrumb + .ctg-hero-section,
-    .ind-top-bar + .ind-hero,
-    .bl-breadcrumb + .bl-hero {
-      padding-top: 1rem !important;
+      display: none !important;
     }
 
     .site-header {
@@ -2296,15 +2281,6 @@
   </div>
   <main id="main">
 <link rel="stylesheet" href="/assets/css/pricing.css?v=4">
-
-<!-- Breadcrumbs -->
-<nav class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top:0.75rem; padding-bottom:0.25rem;">
-  <ol style="display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;padding:0;margin:0;font-size:.85rem;color:#64748b;">
-    <li><a href="/">Home</a></li>
-    <li aria-hidden="true">/</li>
-    <li style="color:#0f172a;font-weight:600;">Pricing</li>
-  </ol>
-</nav>
 
 <!-- HERO SECTION WITH LIVE CURRENCY CONVERTER -->
 <section class="hero-section small-hero pricing-hero">

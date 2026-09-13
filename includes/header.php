@@ -273,7 +273,7 @@ if (!function_exists('hb_seo_esc')) {
       }
     }
 
-    /* Universal Breadcrumbs Spacing Fix (eliminates excessive white gap on all pages) */
+    /* Universal Breadcrumbs Removal (eliminates extra top vertical gaps across all pages) */
     .breadcrumb-nav,
     .cw-breadcrumb,
     .cig-breadcrumb,
@@ -287,22 +287,7 @@ if (!function_exists('hb_seo_esc')) {
     nav[aria-label="Breadcrumb"],
     nav.breadcrumb,
     nav.breadcrumbs {
-      padding-top: 0.75rem !important;
-      padding-bottom: 0.35rem !important;
-      margin-top: 0 !important;
-    }
-
-    /* Remove excessive top padding when hero is right below a breadcrumb */
-    .breadcrumb-nav + .pricing-hero,
-    .breadcrumb-nav + .hero-section,
-    .breadcrumb-nav + section,
-    .cw-breadcrumb + .cw-hero-section,
-    .cig-breadcrumb + .cig-hero-section,
-    .cfb-breadcrumb + .cfb-hero-section,
-    .ctg-breadcrumb + .ctg-hero-section,
-    .ind-top-bar + .ind-hero,
-    .bl-breadcrumb + .bl-hero {
-      padding-top: 1rem !important;
+      display: none !important;
     }
 
     .site-header {

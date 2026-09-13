@@ -9,15 +9,6 @@ include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/pricing.css?v=4">
 
-<!-- Breadcrumbs -->
-<nav class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top:0.75rem; padding-bottom:0.25rem;">
-  <ol style="display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;padding:0;margin:0;font-size:.85rem;color:#64748b;">
-    <li><a href="/">Home</a></li>
-    <li aria-hidden="true">/</li>
-    <li style="color:#0f172a;font-weight:600;">Pricing</li>
-  </ol>
-</nav>
-
 <!-- HERO SECTION WITH LIVE CURRENCY CONVERTER -->
 <section class="hero-section small-hero pricing-hero">
   <div class="container pricing-hero-inner">
