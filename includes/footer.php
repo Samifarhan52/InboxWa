@@ -186,6 +186,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
 <script src="/assets/js/mobile-menu.js?v=38"></script>
 
   <script src="/forms.js?v=22" defer></script>
+  <script src="/assets/js/robot-chatbot.js?v=1" defer></script>
   <?php echo cms_setting('custom_footer_code', ''); ?>
 </body>
 </html>

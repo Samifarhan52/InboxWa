@@ -117,6 +117,7 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=51">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=1">
 
   <?php
   // Dynamic Website Color Palette from Admin Settings
