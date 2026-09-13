@@ -61,11 +61,56 @@ include __DIR__ . '/includes/header.php';
     letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
   }
+  /* Dual Color Gradient & Dynamic Text Rotator (Matches Image 2) */
+  .cw-hero-title .dual-color-gradient,
   .cw-hero-title .highlight-green {
-    color: #059669;
-    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, #0052ff 0%, #00b4ff 50%, #00e5ff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: #0052ff;
+    font-weight: 800;
+    display: inline-block;
+    filter: drop-shadow(0 2px 14px rgba(0, 150, 255, 0.22));
+    letter-spacing: -0.01em;
+  }
+
+  .cw-rotator-wrap {
+    display: inline-flex;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+    height: 1.25em;
+    line-height: 1.25;
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cw-rotator-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(110%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, filter 0.5s ease;
+    filter: blur(5px);
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+  }
+
+  .cw-rotator-item.active {
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    pointer-events: auto;
+  }
+
+  .cw-rotator-item.prev {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-110%);
+    filter: blur(5px);
+    pointer-events: none;
   }
   .cw-hero-desc {
     font-size: 1.15rem;
@@ -2456,7 +2501,7 @@ include __DIR__ . '/includes/header.php';
           <?php echo htmlspecialchars(cms_section('hero', 'badge', 'Official WhatsApp Connection')); ?>
         </span>
         <h1 class="cw-hero-title">
-          <?php echo htmlspecialchars(cms_section('hero', 'headline_prefix', 'Scale Your Sales and Support on ')); ?><span class="highlight-green"><?php echo htmlspecialchars(cms_section('hero', 'headline_gradient', 'WhatsApp')); ?></span><?php echo htmlspecialchars(cms_section('hero', 'headline_suffix', '')); ?>
+          <?php echo htmlspecialchars(cms_section('hero', 'headline_prefix', 'WhatsApp Automation Software & ')); ?><span class="cw-rotator-wrap" id="cwHeroRotator" aria-live="polite"><span class="cw-rotator-item dual-color-gradient active"><?php echo htmlspecialchars(cms_section('hero', 'headline_gradient', 'AI Chatbots')); ?></span><span class="cw-rotator-item dual-color-gradient">Lead Generation</span><span class="cw-rotator-item dual-color-gradient">Bulk Broadcasts</span><span class="cw-rotator-item dual-color-gradient">Sales Funnels</span><span class="cw-rotator-item dual-color-gradient">Shopify &amp; CRM Sync</span><span class="cw-rotator-item dual-color-gradient">Shared Team Inbox</span></span><?php echo htmlspecialchars(cms_section('hero', 'headline_suffix', ' for Business')); ?>
         </h1>
         <p class="cw-hero-desc">
           <?php echo htmlspecialchars(cms_section('hero', 'lead', 'Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.')); ?>
@@ -4222,6 +4267,69 @@ function switchModalMedia(type, btn) {
     container.innerHTML = '<img class="cw-modal-img" src="/assets/images/animations/analytics.gif" alt="Campaign Analytics">';
   }
 }
+
+// Dynamic Hero Headline Rotator (Dual-color animated cycling)
+(function initHeroRotator() {
+  function setup() {
+    var rotator = document.getElementById('cwHeroRotator');
+    if (!rotator) return;
+
+    var items = rotator.querySelectorAll('.cw-rotator-item');
+    if (items.length <= 1) return;
+
+    var currentIndex = 0;
+    var isPaused = false;
+
+    function adjustWidth(idx) {
+      if (items[idx]) {
+        rotator.style.width = items[idx].offsetWidth + 'px';
+      }
+    }
+
+    // Measure initial width
+    adjustWidth(0);
+    window.addEventListener('resize', function() { adjustWidth(currentIndex); });
+
+    function rotateNext() {
+      if (isPaused) return;
+
+      var current = items[currentIndex];
+      currentIndex = (currentIndex + 1) % items.length;
+      var next = items[currentIndex];
+
+      // Measure target width cleanly
+      next.style.visibility = 'hidden';
+      next.style.position = 'relative';
+      var targetWidth = next.offsetWidth;
+      next.style.position = '';
+      next.style.visibility = '';
+
+      rotator.style.width = targetWidth + 'px';
+
+      current.classList.remove('active');
+      current.classList.add('prev');
+
+      next.classList.remove('prev');
+      next.classList.add('active');
+
+      setTimeout(function() {
+        current.classList.remove('prev');
+      }, 550);
+    }
+
+    // Change frequently: every 2.6 seconds
+    setInterval(rotateNext, 2600);
+
+    rotator.addEventListener('mouseenter', function() { isPaused = true; });
+    rotator.addEventListener('mouseleave', function() { isPaused = false; });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+})();
 </script>
 
 <?php
