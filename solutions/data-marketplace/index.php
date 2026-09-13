@@ -100,7 +100,7 @@ include __DIR__ . '/../../includes/header.php';
         <p><?php echo htmlspecialchars($c[1]); ?></p>
         <span class="dm-cat-badge">Available Data</span>
         <div style="display:flex;gap:8px;align-items:center;margin-top:auto;">
-          <a href="/business-leads/<?php echo $catSlug; ?>/" class="btn btn-sm btn-primary">Explore Data</a>
+          <a href="https://panindiadata.com/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Explore Data</a>
           <button type="button" class="btn btn-sm btn-outline dm-open-form" data-industry="<?php echo htmlspecialchars($c[0]); ?>">Request Data</button>
         </div>
       </article>
