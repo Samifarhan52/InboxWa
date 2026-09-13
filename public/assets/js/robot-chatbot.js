@@ -1,12 +1,12 @@
 /**
- * InboxWa AI Robot Chatbot System (robot-chatbot.js)
- * Interactive, intelligent virtual assistant trained on all InboxWa website content.
+ * HELLOBOTZ - Interactive AI Robot Character & Website Knowledge Assistant (robot-chatbot.js)
+ * Features dynamic character emotion states (blinking, getting bored, excited on hover/click),
+ * signature HelloBotz greeting, and instant Q&A grounded on InboxWa with related page buttons.
  */
 
 (function () {
   'use strict';
 
-  // Global Config fallback
   var CONFIG = {
     whatsappNumber: (window.InboxWaData && window.InboxWaData.whatsapp) || '918050854445',
     phoneNumber: '+91 80508 54445',
@@ -15,24 +15,24 @@
     siteName: 'InboxWa'
   };
 
-  // Comprehensive Website Knowledge Base
+  // Comprehensive Website Knowledge Base Grounded on All InboxWa Pages
   var KNOWLEDGE_BASE = [
     {
       id: 'pricing',
       intent: 'pricing_plans',
       keywords: ['price', 'pricing', 'plan', 'cost', 'charge', 'rate', 'package', 'subscription', 'fee', 'how much', 'cheap', 'expensive', 'discount', 'yearly', 'monthly', 'dollar', 'rupee', 'currency', 'inr'],
-      title: 'InboxWa Pricing & Subscription Plans',
-      answer: `<strong>💰 InboxWa Transparent Pricing Plans:</strong>
+      title: 'InboxWa Pricing & Plans',
+      answer: `<strong>💰 InboxWa Transparent Subscription Plans:</strong>
 <ul>
   <li><strong>WhatsApp Bulk (₹1,999/mo):</strong> Unlimited Bulk Broadcasts, Official WhatsApp API, Basic CRM, 10 Tags & Contact Management.</li>
-  <li><strong>Automation Plan (₹2,999/mo) <span style="color:#8B5CF6;font-weight:700;">★ Popular</span>:</strong> Multi-Agent Shared Team Inbox, Visual No-Code Flow Builder, AI Auto-Replies, Shopify/WooCommerce/Sheets sync, 50 Tags.</li>
-  <li><strong>Biz Pro Omnichannel (₹4,999/mo):</strong> WhatsApp + Instagram DM + Telegram + Facebook Messenger all in one inbox, AI Voice Agent, Advanced CRM & Webhooks.</li>
+  <li><strong>Automation Plan (₹2,999/mo) <span style="color:#8B5CF6;font-weight:700;">★ Most Popular</span>:</strong> Multi-Agent Shared Team Inbox, Visual No-Code Flow Builder, AI Auto-Replies, Shopify/WooCommerce/Sheets sync, 50 Tags.</li>
+  <li><strong>Biz Pro Omnichannel (₹4,999/mo):</strong> WhatsApp + Instagram DM + Telegram + Facebook Messenger in one unified inbox, AI Voice Agent, Advanced CRM & Custom Webhooks.</li>
 </ul>
-<p><em>✨ Get <strong>20% OFF</strong> on Yearly Billing. All plans include 1,000 Free Meta Service Conversations every month!</em></p>`,
+<p><em>✨ Save <strong>20% OFF</strong> on Yearly Billing. All plans include 1,000 Free Meta Service Conversations every month!</em></p>`,
       actions: [
         { label: 'View Pricing & Live Currency', url: '/pricing/', type: 'primary' },
         { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20InboxWa%2C%20I%20want%20to%20know%20more%20about%20your%20pricing%20plans.', type: 'wa', target: '_blank' }
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20InboxWa%20pricing.', type: 'wa', target: '_blank' }
       ]
     },
     {
@@ -41,17 +41,17 @@
       keywords: ['whatsapp api', 'official api', 'business api', 'cloud api', 'green tick', 'meta verified', 'official whatsapp', 'meta partner', 'zero ban', 'anti ban', 'ban risk'],
       title: 'Official WhatsApp Business API Platform',
       answer: `<strong>🚀 Official Meta WhatsApp Business API:</strong>
-<p>InboxWa provides 100% official WhatsApp Business API built directly on Meta's Cloud infrastructure:</p>
+<p>InboxWa is built directly on Meta's Official Cloud API infrastructure:</p>
 <ul>
-  <li><strong>Zero Ban Risk:</strong> Complete compliance with Meta policies—never get your business number banned.</li>
-  <li><strong>Green Tick Verification:</strong> Full guided assistance to get the official verified green badge on WhatsApp.</li>
+  <li><strong>Zero Ban Risk:</strong> 100% compliant with Meta policies—never get your number banned.</li>
+  <li><strong>Green Tick Verification:</strong> Full assistance to get the official verified green badge on WhatsApp.</li>
   <li><strong>High Sending Limits:</strong> Scale from Tier-1 (1,000/day) to Tier-4 (Unlimited messages/day).</li>
-  <li><strong>Interactive Messaging:</strong> Buttons, Quick Replies, List Pickers, Carousel Cards, and Product Catalogs.</li>
+  <li><strong>Interactive Messaging:</strong> Buttons, Quick Replies, List Menus, and Product Catalogs.</li>
 </ul>`,
       actions: [
         { label: 'Explore WhatsApp API', url: '/channel/whatsapp/', type: 'primary' },
-        { label: 'Book a 1-on-1 Demo', action: 'openDemo', type: 'secondary' },
-        { label: 'WhatsApp Support', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%2C%20I%20need%20help%20setting%20up%20Official%20WhatsApp%20API.', type: 'wa', target: '_blank' }
+        { label: 'Book Live 1-on-1 Demo', action: 'openDemo', type: 'secondary' },
+        { label: 'WhatsApp Support', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20need%20help%20with%20Official%20WhatsApp%20API.', type: 'wa', target: '_blank' }
       ]
     },
     {
@@ -62,13 +62,13 @@
       answer: `<strong>📢 Unlimited Bulk Broadcasts with 98% Open Rate:</strong>
 <p>Reach thousands of targeted customers in seconds right on WhatsApp:</p>
 <ul>
-  <li><strong>Personalized Dynamic Fields:</strong> Auto-insert Name, Order ID, City, or custom attributes into messages.</li>
-  <li><strong>Rich Media Templates:</strong> Send images, PDF brochures, video teasers, and clickable CTA buttons.</li>
-  <li><strong>Live Delivery Analytics:</strong> Track real-time Sent, Delivered, Read, and Link Clicks.</li>
-  <li><strong>CSV Import & Segment Tags:</strong> Easily upload your customer lists and segment them with smart tags.</li>
+  <li><strong>Personalized Dynamic Tags:</strong> Automatically insert Customer Name, Order ID, City, or custom fields.</li>
+  <li><strong>Rich Media Templates:</strong> Send images, PDF catalogs, videos, and clickable CTA buttons.</li>
+  <li><strong>Real-time Analytics:</strong> Track Live Sent, Delivered, Read, and Link Clicks.</li>
+  <li><strong>Easy CSV Upload:</strong> Import contact lists with one click and organize with smart tags.</li>
 </ul>`,
       actions: [
-        { label: 'Bulk Broadcast Features', url: '/products/broadcast/', type: 'primary' },
+        { label: 'Bulk Broadcast Details', url: '/products/broadcast/', type: 'primary' },
         { label: 'Start Free Trial', url: '/auth/register', type: 'secondary' }
       ]
     },
@@ -78,15 +78,15 @@
       keywords: ['shared inbox', 'team inbox', 'multiple agents', 'support team', 'assign chat', 'agent collision', 'multi user', 'multiple login', 'internal notes', 'canned response'],
       title: 'Shared Team Inbox for Multi-Agent Support',
       answer: `<strong>👥 Multi-Agent Shared Team Inbox:</strong>
-<p>Empower your support and sales team on a single WhatsApp number:</p>
+<p>Manage all customer conversations collaboratively on a single WhatsApp number:</p>
 <ul>
-  <li><strong>Collaborate Together:</strong> Multiple agents can chat with customers simultaneously without confusion.</li>
-  <li><strong>Smart Auto-Assignment:</strong> Route incoming queries round-robin or based on agent departments (Sales, Billing, Tech).</li>
-  <li><strong>Collision Detection:</strong> See who is typing in real time to prevent duplicate responses.</li>
-  <li><strong>Internal Private Notes:</strong> Leave team notes inside chat threads invisible to the customer.</li>
+  <li><strong>Multiple Agents:</strong> Team members can handle chats simultaneously without logging each other out.</li>
+  <li><strong>Smart Auto-Assignment:</strong> Route queries round-robin or by department (Sales, Billing, Support).</li>
+  <li><strong>Collision Detection:</strong> See who is typing in real-time to avoid duplicate replies.</li>
+  <li><strong>Internal Private Notes:</strong> Leave team notes inside chat threads invisible to customers.</li>
 </ul>`,
       actions: [
-        { label: 'Shared Inbox Details', url: '/products/shared-inbox/', type: 'primary' },
+        { label: 'Shared Inbox Feature', url: '/products/shared-inbox/', type: 'primary' },
         { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     },
@@ -96,50 +96,50 @@
       keywords: ['chatbot', 'bot', 'flow builder', 'auto reply', 'automation', 'drag and drop', 'no code', 'automated chat', 'ai bot', 'faq bot', 'lead qualification'],
       title: 'No-Code AI Chatbot & Visual Flow Builder',
       answer: `<strong>🤖 Visual Flow Builder & 24/7 AI Chatbots:</strong>
-<p>Build powerful interactive automation without writing a single line of code:</p>
+<p>Create automated conversational flows without writing any code:</p>
 <ul>
-  <li><strong>Drag-and-Drop Canvas:</strong> Design intuitive decision trees, button menus, and branching workflows.</li>
-  <li><strong>Instant 24/7 Auto-Responses:</strong> Handle customer FAQs, greetings, out-of-office, and order inquiries instantly.</li>
-  <li><strong>Lead Qualification & Data Capture:</strong> Automatically collect Name, Email, Requirement, and save to CRM.</li>
-  <li><strong>Human Handoff:</strong> Smoothly transfer the conversation to a human agent when needed.</li>
+  <li><strong>Drag-and-Drop Canvas:</strong> Build button menus, interactive questionnaires, and branching logic.</li>
+  <li><strong>24/7 Automated Answers:</strong> Answer common FAQs, order inquiries, and greetings instantly.</li>
+  <li><strong>Automated Lead Capture:</strong> Collect Name, Email, Requirement, and sync directly to CRM.</li>
+  <li><strong>Human Handoff:</strong> Seamlessly transfer chats to human support agents whenever needed.</li>
 </ul>`,
       actions: [
         { label: 'AI Chatbot Builder', url: '/products/chatbot/', type: 'primary' },
-        { label: 'Flow Builder Feature', url: '/products/flow-builder/', type: 'secondary' }
+        { label: 'Visual Flow Builder', url: '/products/flow-builder/', type: 'secondary' }
       ]
     },
     {
       id: 'ai_voice',
       intent: 'ai_voice_calling',
       keywords: ['voice', 'ai voice', 'call bot', 'calling', 'automated call', 'phone call', 'telephony', 'speech', 'inbound call', 'outbound call', 'hindi voice'],
-      title: 'AI Voice Calling & Virtual Agents',
+      title: 'AI Voice Calling & Telephony Agents',
       answer: `<strong>📞 AI Voice Calling (Agentic Voice Telephony):</strong>
-<p>Transform customer communication with human-like AI voice agents:</p>
+<p>Transform sales and support with natural, human-sounding AI voice calls:</p>
 <ul>
-  <li><strong>Natural Multilingual Speech:</strong> Converses seamlessly in Hindi, English, and regional Indian languages.</li>
-  <li><strong>Automated Outbound Calling:</strong> Payment reminders, COD order confirmation, event reminders, and lead qualification.</li>
-  <li><strong>Inbound Virtual Receptionist:</strong> Answers incoming calls 24/7 and routes calls to human agents.</li>
+  <li><strong>Multilingual Speech:</strong> Natural conversation in Hindi, English, and regional Indian languages.</li>
+  <li><strong>Outbound Automated Calling:</strong> Payment reminders, COD order confirmations, and event reminders.</li>
+  <li><strong>Inbound Virtual Receptionist:</strong> Answers calls 24/7, handles inquiries, and routes callers.</li>
 </ul>`,
       actions: [
         { label: 'Explore AI Voice Calling', url: '/products/ai-voice/', type: 'primary' },
-        { label: 'Request Callback', action: 'openCallback', type: 'secondary' }
+        { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
       ]
     },
     {
       id: 'channels_omni',
       intent: 'omnichannel_channels',
       keywords: ['omnichannel', 'channels', 'instagram', 'telegram', 'facebook', 'messenger', 'dm automation', 'comment to dm', 'all channels', 'multi channel'],
-      title: 'Omnichannel Automation (WhatsApp, IG, Telegram, FB)',
+      title: 'Omnichannel Communication (WhatsApp, IG, Telegram, FB)',
       answer: `<strong>🌐 Unified Omnichannel Communication:</strong>
-<p>Manage all your customer conversations across major channels in one single screen:</p>
+<p>Connect and reply to customers across all major channels from a single unified inbox:</p>
 <ul>
-  <li><strong>WhatsApp Business API:</strong> Official broadcasts, CRM, and chatbots (<a href="/channel/whatsapp/" style="color:#059669;font-weight:600;">Explore</a>).</li>
-  <li><strong>Instagram DM Automation:</strong> Auto-reply to Story mentions, DMs, and Comments-to-DM (<a href="/channel/instagram/" style="color:#e1306c;font-weight:600;">Explore</a>).</li>
-  <li><strong>Telegram Bot Platform:</strong> Custom bots, group broadcasts, and support (<a href="/channel/telegram/" style="color:#0284c7;font-weight:600;">Explore</a>).</li>
-  <li><strong>Facebook Messenger:</strong> Integrated lead capture and instant auto-replies (<a href="/channel/facebook/" style="color:#2563eb;font-weight:600;">Explore</a>).</li>
+  <li><strong>WhatsApp Business API:</strong> Broadcasts, CRM, and chatbots (<a href="/channel/whatsapp/" style="color:#059669;font-weight:600;">Explore</a>).</li>
+  <li><strong>Instagram DM Automation:</strong> Story mentions, comment-to-DM, and auto-replies (<a href="/channel/instagram/" style="color:#e1306c;font-weight:600;">Explore</a>).</li>
+  <li><strong>Telegram Bot Platform:</strong> Custom bots and group broadcasts (<a href="/channel/telegram/" style="color:#0284c7;font-weight:600;">Explore</a>).</li>
+  <li><strong>Facebook Messenger:</strong> Integrated lead capture and nurturing (<a href="/channel/facebook/" style="color:#2563eb;font-weight:600;">Explore</a>).</li>
 </ul>`,
       actions: [
-        { label: 'Instagram Automation', url: '/channel/instagram/', type: 'primary' },
+        { label: 'Instagram DM Automation', url: '/channel/instagram/', type: 'primary' },
         { label: 'Telegram Bot Platform', url: '/channel/telegram/', type: 'secondary' },
         { label: 'Facebook Messenger', url: '/channel/facebook/', type: 'secondary' }
       ]
@@ -149,18 +149,18 @@
       intent: 'integrations_ecommerce',
       keywords: ['shopify', 'woocommerce', 'ecommerce', 'integration', 'connect', 'crm', 'zoho', 'hubspot', 'sheets', 'google sheet', 'google forms', 'calendar', 'webhook', 'api'],
       title: 'E-commerce, CRM & Webhook Integrations',
-      answer: `<strong>🔌 Powerful 1-Click Integrations:</strong>
-<p>Seamlessly connect InboxWa with the business tools you already use:</p>
+      answer: `<strong>🔌 1-Click E-Commerce & CRM Integrations:</strong>
+<p>Connect InboxWa directly to your existing store and workflow:</p>
 <ul>
-  <li><strong>Shopify & WooCommerce:</strong> Abandoned cart recovery, automated COD confirmation, shipping alerts.</li>
-  <li><strong>Google Sheets & Forms:</strong> Automatically trigger WhatsApp alerts when a new Google Form or Sheet row is added.</li>
-  <li><strong>CRMs:</strong> Native sync with Zoho, HubSpot, Salesforce, LeadSquared, and custom CRMs.</li>
-  <li><strong>Webhooks & REST APIs:</strong> Connect any custom website, ERP, or internal database with standard webhooks.</li>
+  <li><strong>Shopify & WooCommerce:</strong> Abandoned cart recovery, automated COD verification, order tracking.</li>
+  <li><strong>Google Sheets & Forms:</strong> Instant WhatsApp message whenever a form is submitted or row added.</li>
+  <li><strong>CRMs:</strong> Direct sync with Zoho, HubSpot, Salesforce, LeadSquared, and custom webhooks.</li>
+  <li><strong>REST APIs:</strong> Connect any custom website or database via developer webhooks.</li>
 </ul>`,
       actions: [
         { label: 'Shopify Integration', url: '/solutions/shopify/', type: 'primary' },
         { label: 'Google Sheets & Forms', url: '/solutions/google-forms-sheets/', type: 'secondary' },
-        { label: 'Developer API & Webhooks', url: '/integrations/api-webhooks/', type: 'secondary' }
+        { label: 'All Integrations', url: '/integrations/', type: 'secondary' }
       ]
     },
     {
@@ -169,70 +169,15 @@
       keywords: ['leads', 'business leads', 'pan india', 'database', 'panindiadata', 'data marketplace', 'b2b leads', 'customer data', 'buyers', 'verified data', 'lead generation'],
       title: 'Pan-India Business Leads Database (12 Categories)',
       answer: `<strong>📈 Pan-India Verified Business Leads:</strong>
-<p>Accelerate your sales pipeline with targeted, verified customer & business contact lists:</p>
+<p>Access high-converting verified customer and B2B contact lists:</p>
 <ul>
   <li><strong>12 High-Converting Categories:</strong> Real Estate, Automobiles, E-Commerce, Healthcare, BFSI, Education, IT/Software, Manufacturing, Food & Beverage, Travel, Advertising, and B2B Suppliers.</li>
-  <li><strong>Verified Contacts:</strong> Phone numbers, WhatsApp active status, city, company name, and key decision makers.</li>
-  <li><strong>Direct Integration:</strong> Easily broadcast your offers directly to verified leads via InboxWa.</li>
+  <li><strong>Verified Contacts:</strong> Active WhatsApp phone numbers, city, company, and key decision makers.</li>
+  <li><strong>Direct Integration:</strong> Broadcast offers directly to verified leads via InboxWa.</li>
 </ul>`,
       actions: [
         { label: 'Browse 12 Leads Categories', url: '/business-leads/', type: 'primary' },
         { label: 'Custom Data Request', url: '/solutions/data-marketplace/#custom-request', type: 'secondary' }
-      ]
-    },
-    {
-      id: 'ctwa_ads',
-      intent: 'click_to_whatsapp_ads',
-      keywords: ['ctwa', 'facebook ads', 'fb ads', 'instagram ads', 'click to whatsapp', 'ads', 'paid ads', 'ad campaigns'],
-      title: 'Click-to-WhatsApp (CTWA) Ads Automation',
-      answer: `<strong>🎯 Click-to-WhatsApp (CTWA) Ads:</strong>
-<p>Get 3x to 5x higher conversions from Meta Advertising:</p>
-<ul>
-  <li>Direct ad clicks on Facebook and Instagram straight into WhatsApp.</li>
-  <li>Instant bot engagement the second a lead sends the pre-filled prompt.</li>
-  <li>Zero drop-off from slow website landing pages.</li>
-  <li>Automated lead qualification and CRM capture in real time.</li>
-</ul>`,
-      actions: [
-        { label: 'Click-to-WhatsApp Ads', url: '/facebook-ads/', type: 'primary' },
-        { label: 'Talk to Ad Specialist', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%2C%20I%20want%20to%20run%20Click-to-WhatsApp%20Ads.', type: 'wa', target: '_blank' }
-      ]
-    },
-    {
-      id: 'free_trial_signup',
-      intent: 'free_trial_onboarding',
-      keywords: ['free trial', 'trial', 'sign up', 'register', 'create account', 'start', 'get started', 'demo', 'login', 'setup time', 'how to start'],
-      title: 'Get Started with 7-Day Free Trial',
-      answer: `<strong>✨ Start Free Today with InboxWa:</strong>
-<p>Get full access to the official WhatsApp Business API platform:</p>
-<ul>
-  <li><strong>7-Day Free Trial:</strong> Explore all features with zero risk.</li>
-  <li><strong>No Credit Card Required:</strong> Instant activation in less than 3 minutes.</li>
-  <li><strong>Dedicated Onboarding Specialist:</strong> We help you connect your number and get Meta verified.</li>
-</ul>`,
-      actions: [
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'primary' },
-        { label: 'Book Live Onboarding Demo', action: 'openDemo', type: 'secondary' }
-      ]
-    },
-    {
-      id: 'human_contact_sales',
-      intent: 'talk_to_human',
-      keywords: ['talk to human', 'human', 'agent', 'sales', 'speak', 'call', 'support', 'contact', 'phone number', 'email', 'office', 'bangalore', 'address', 'real person', 'customer care'],
-      title: 'Talk to Our Team & Human Support',
-      answer: `<strong>👨‍💼 Connect with Our Human Team:</strong>
-<p>Our experts in Bangalore are available to guide you:</p>
-<ul>
-  <li><strong>WhatsApp:</strong> +91 80508 54445 (Instant Replies)</li>
-  <li><strong>Phone:</strong> <a href="tel:+918050854445" style="color:#0369a1;font-weight:600;">+91 80508 54445</a></li>
-  <li><strong>Sales Email:</strong> <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a></li>
-  <li><strong>Support Email:</strong> <a href="mailto:support@inboxwa.com">support@inboxwa.com</a></li>
-  <li><strong>Office:</strong> Bangalore, Karnataka, India</li>
-</ul>`,
-      actions: [
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20InboxWa%2C%20I%20would%20like%20to%20talk%20to%20a%20human%20sales%20representative.', type: 'wa', target: '_blank' },
-        { label: 'Call Us Now', url: 'tel:' + CONFIG.whatsappNumber, type: 'secondary' },
-        { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
       ]
     },
     {
@@ -241,21 +186,57 @@
       keywords: ['green tick', 'tick', 'verification', 'badge', 'verified badge', 'green badge', 'official badge'],
       title: 'Meta Official Green Tick Verification',
       answer: `<strong>✅ WhatsApp Official Green Tick Verification:</strong>
-<p>A Green Tick badge next to your business name builds immediate trust and credibility:</p>
+<p>Build instant credibility with an official verified badge beside your brand name:</p>
 <ul>
-  <li>Shows your verified brand name instead of a phone number even if users haven't saved your contact.</li>
-  <li><strong>Eligibility:</strong> Meta Business Verification, working website, and brand notability.</li>
-  <li><strong>Free Assistance:</strong> InboxWa handles the official application directly with Meta on your behalf at zero extra service fee!</li>
+  <li>Displays your business brand name instead of a phone number even if the user hasn't saved your contact.</li>
+  <li><strong>Requirements:</strong> Meta Business Verification, working business website, and brand notability.</li>
+  <li><strong>Free Assistance:</strong> InboxWa handles your official application with Meta at zero extra service fee!</li>
 </ul>`,
       actions: [
-        { label: 'Green Tick Details', url: '/channel/whatsapp/', type: 'primary' },
-        { label: 'Apply via WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%2C%20I%20want%20to%20apply%20for%20WhatsApp%20Green%20Tick%20verification.', type: 'wa', target: '_blank' }
+        { label: 'Green Tick Guide', url: '/channel/whatsapp/', type: 'primary' },
+        { label: 'Apply via WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20apply%20for%20WhatsApp%20Green%20Tick%20verification.', type: 'wa', target: '_blank' }
+      ]
+    },
+    {
+      id: 'human_contact_sales',
+      intent: 'talk_to_human',
+      keywords: ['talk to human', 'human', 'agent', 'sales', 'speak', 'call', 'support', 'contact', 'phone number', 'email', 'office', 'bangalore', 'address', 'real person', 'customer care'],
+      title: 'Talk to Our Team & Human Support',
+      answer: `<strong>👨‍💼 Connect with Our Human Team in Bangalore:</strong>
+<p>Our sales and technical specialists are ready to help you:</p>
+<ul>
+  <li><strong>WhatsApp:</strong> +91 80508 54445 (Instant Replies)</li>
+  <li><strong>Phone:</strong> <a href="tel:+918050854445" style="color:#0369a1;font-weight:600;">+91 80508 54445</a></li>
+  <li><strong>Sales Email:</strong> <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a></li>
+  <li><strong>Support Email:</strong> <a href="mailto:support@inboxwa.com">support@inboxwa.com</a></li>
+  <li><strong>Office:</strong> Bangalore, Karnataka, India</li>
+</ul>`,
+      actions: [
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20InboxWa%20team%2C%20I%20would%20like%20to%20speak%20with%20a%20sales%20representative.', type: 'wa', target: '_blank' },
+        { label: 'Call Us Now', url: 'tel:' + CONFIG.whatsappNumber, type: 'secondary' },
+        { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
+      ]
+    },
+    {
+      id: 'free_trial_signup',
+      intent: 'free_trial_onboarding',
+      keywords: ['free trial', 'trial', 'sign up', 'register', 'create account', 'start', 'get started', 'demo', 'login', 'setup time', 'how to start'],
+      title: 'Get Started with 7-Day Free Trial',
+      answer: `<strong>✨ Start Free Today with InboxWa:</strong>
+<p>Get instant access to the official WhatsApp Business API platform:</p>
+<ul>
+  <li><strong>7-Day Free Trial:</strong> Explore all features with zero risk.</li>
+  <li><strong>No Credit Card Required:</strong> Instant activation in less than 3 minutes.</li>
+  <li><strong>Dedicated Onboarding:</strong> Full setup support from our engineers.</li>
+</ul>`,
+      actions: [
+        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'primary' },
+        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     }
   ];
 
-  // Default Greetings & Fallbacks
-  var GREETINGS = ['hi', 'hello', 'hey', 'start', 'good morning', 'good afternoon', 'good evening', 'namaste', 'halo', 'hola'];
+  var GREETINGS = ['hi', 'hello', 'hey', 'start', 'good morning', 'good afternoon', 'good evening', 'namaste', 'hola', 'hellobotz'];
   var THANKS = ['thanks', 'thank you', 'ok', 'okay', 'great', 'awesome', 'nice', 'cool', 'perfect', 'got it'];
 
   // Smart Intent Matcher
@@ -268,8 +249,8 @@
       if (clean === GREETINGS[i] || clean.indexOf(GREETINGS[i] + ' ') === 0) {
         return {
           type: 'greeting',
-          title: 'Welcome to InboxWa!',
-          answer: `👋 Hello! I'm the <strong>InboxWa Robot AI Assistant</strong>.<br><br>I can instantly answer any question about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Shared Team Inbox, Voice Calling, Pricing, and Business Leads</strong>.<br><br>What would you like to know today?`,
+          title: 'Hello from HelloBotz!',
+          answer: `👋 Hello there! I'm <strong>HelloBotz</strong>, your friendly AI assistant for InboxWa.<br><br>I can answer any question about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Shared Team Inbox, Voice Calling, Pricing, and Business Leads</strong>.<br><br>What would you like to explore today?`,
           suggestions: [
             'What are your pricing plans?',
             'How does WhatsApp API work?',
@@ -280,7 +261,7 @@
       }
     }
 
-    // Check Thanks / Goodbye
+    // Check Thanks
     for (var j = 0; j < THANKS.length; j++) {
       if (clean === THANKS[j] || clean.indexOf(THANKS[j] + ' ') === 0) {
         return {
@@ -295,7 +276,7 @@
       }
     }
 
-    // Scoring Match across Knowledge Base
+    // Knowledge Base Scoring
     var bestMatch = null;
     var highestScore = 0;
 
@@ -303,7 +284,7 @@
       var score = 0;
       entry.keywords.forEach(function (kw) {
         if (clean.indexOf(kw) !== -1) {
-          score += kw.length * 2; // Exact word match
+          score += kw.length * 2;
         }
       });
       if (score > highestScore) {
@@ -312,16 +293,15 @@
       }
     });
 
-    // If score is sufficient (match found)
     if (highestScore >= 4 && bestMatch) {
       return bestMatch;
     }
 
-    // Default Fallback
+    // Fallback response with related page links
     return {
       type: 'fallback',
-      title: 'How can I assist you?',
-      answer: `I want to make sure you get the exact information for: <em>"${escapeHtml(userQuery)}"</em>.<br><br>Here are the most popular topics I can help you with:`,
+      title: 'HelloBotz is here to help!',
+      answer: `I want to make sure you get the exact answer for: <em>"${escapeHtml(userQuery)}"</em>.<br><br>Here are the most popular topics I can guide you on:`,
       suggestions: [
         'What are the pricing plans?',
         'How does WhatsApp API work?',
@@ -332,7 +312,8 @@
         'I want to speak with a human agent'
       ],
       actions: [
-        { label: 'Chat with Human on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent('Hi InboxWa, I have a question: ' + userQuery), type: 'wa', target: '_blank' },
+        { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
+        { label: 'Chat on WhatsApp with Team', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent('Hi InboxWa, I have a question: ' + userQuery), type: 'wa', target: '_blank' },
         { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     };
@@ -356,15 +337,15 @@
     return h + ':' + m + ' ' + ampm;
   }
 
-  // Robot Chatbot Controller
-  function initRobotChatbot() {
+  // HelloBotz Controller & Character State Machine
+  function initHelloBotz() {
     var widget = document.getElementById('inboxwa-robot-widget');
     if (!widget) return;
 
-    var triggerBtn = widget.querySelector('.inboxwa-robot-trigger');
-    var badge = widget.querySelector('.inboxwa-robot-badge');
-    var badgeClose = widget.querySelector('.inboxwa-robot-badge-close');
-    var chatbox = widget.querySelector('.inboxwa-chatbox');
+    var triggerBtn = widget.querySelector('.hellobotz-trigger');
+    var character = widget.querySelector('.hellobotz-character');
+    var speechBubble = widget.querySelector('.hellobotz-speech-bubble');
+    var speechText = widget.querySelector('.hellobotz-speech-text');
     var closeBtn = widget.querySelector('.header-close-btn');
     var resetBtn = widget.querySelector('.header-reset-btn');
     var chatBody = widget.querySelector('.inboxwa-chat-body');
@@ -372,18 +353,96 @@
     var chatInput = widget.querySelector('.inboxwa-chat-input');
     var quickChannels = widget.querySelectorAll('.quick-channel-item');
 
-    // Toggle Open / Close
+    // -------------------------------------------------------------
+    // CHARACTER EMOTION STATES (Blinking, Bored, Excited)
+    // -------------------------------------------------------------
+    var idleTimer = null;
+    var blinkInterval = null;
+
+    function setEmotion(emotion) {
+      if (!character) return;
+      character.classList.remove('state-excited', 'state-bored', 'is-blinking');
+
+      if (emotion === 'excited') {
+        character.classList.add('state-excited');
+        if (speechText) speechText.textContent = "✨ Yay! Let's chat!";
+      } else if (emotion === 'bored') {
+        character.classList.add('state-bored');
+        if (speechText) speechText.textContent = "💤 So quiet... ask me something!";
+      } else {
+        // Normal
+        if (speechText) speechText.textContent = "👋 Hi! I'm HelloBotz";
+      }
+    }
+
+    function resetIdleTimer() {
+      clearTimeout(idleTimer);
+      // If currently bored, return to normal
+      if (character && character.classList.contains('state-bored')) {
+        setEmotion('normal');
+      }
+      // After 12 seconds of no mouse movement or interaction, become bored
+      idleTimer = setTimeout(function () {
+        if (!widget.classList.contains('is-open')) {
+          setEmotion('bored');
+        }
+      }, 12000);
+    }
+
+    // Blinking rhythm (every 3.5 seconds)
+    function startBlinking() {
+      blinkInterval = setInterval(function () {
+        if (!character || character.classList.contains('state-bored') || character.classList.contains('state-excited')) {
+          return;
+        }
+        character.classList.add('is-blinking');
+        setTimeout(function () {
+          if (character) character.classList.remove('is-blinking');
+        }, 180);
+      }, 3500);
+    }
+
+    // Trigger hover events -> Excited
+    if (triggerBtn) {
+      triggerBtn.addEventListener('mouseenter', function () {
+        setEmotion('excited');
+        clearTimeout(idleTimer);
+      });
+
+      triggerBtn.addEventListener('mouseleave', function () {
+        if (!widget.classList.contains('is-open')) {
+          setEmotion('normal');
+          resetIdleTimer();
+        }
+      });
+    }
+
+    // User activity resets idle timer
+    ['mousemove', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+      window.addEventListener(evt, resetIdleTimer, { passive: true });
+    });
+
+    startBlinking();
+    resetIdleTimer();
+
+    // -------------------------------------------------------------
+    // CHATBOX OPEN / CLOSE CONTROLS
+    // -------------------------------------------------------------
     function toggleWidget(force) {
       var shouldOpen = typeof force === 'boolean' ? force : (!widget.classList.contains('is-open') && !widget.classList.contains('open'));
       if (shouldOpen) {
+        setEmotion('excited');
         widget.classList.add('is-open');
         widget.classList.add('open');
-        if (badge) badge.style.display = 'none';
-        chatInput.focus();
-        scrollToBottom();
+        setTimeout(function () {
+          chatInput.focus();
+          scrollToBottom();
+        }, 100);
       } else {
         widget.classList.remove('is-open');
         widget.classList.remove('open');
+        setEmotion('normal');
+        resetIdleTimer();
       }
     }
 
@@ -394,17 +453,10 @@
       });
     }
 
-    if (badge) {
-      badge.addEventListener('click', function (e) {
+    if (speechBubble) {
+      speechBubble.addEventListener('click', function (e) {
         e.stopPropagation();
         toggleWidget(true);
-      });
-    }
-
-    if (badgeClose) {
-      badgeClose.addEventListener('click', function (e) {
-        e.stopPropagation();
-        badge.style.display = 'none';
       });
     }
 
@@ -415,38 +467,37 @@
       });
     }
 
-    // Outside click closes widget
+    // Outside click closes chatbox
     document.addEventListener('click', function (e) {
       if (widget.classList.contains('is-open') && !widget.contains(e.target)) {
         toggleWidget(false);
       }
     });
 
-    // ESC key closes widget
+    // ESC closes chatbox
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && widget.classList.contains('is-open')) {
         toggleWidget(false);
       }
     });
 
-    // Reset conversation
+    // Restart conversation button
     if (resetBtn) {
       resetBtn.addEventListener('click', function (e) {
         e.stopPropagation();
-        sessionStorage.removeItem('inboxwa_bot_chat');
+        sessionStorage.removeItem('hellobotz_chat_history');
         chatBody.innerHTML = '';
         renderWelcomeMessage();
       });
     }
 
-    // Scroll to bottom
     function scrollToBottom() {
       setTimeout(function () {
         chatBody.scrollTop = chatBody.scrollHeight;
       }, 50);
     }
 
-    // Add user message bubble
+    // User message bubble
     function addUserMessage(text) {
       var row = document.createElement('div');
       row.className = 'chat-bubble-row user-row';
@@ -460,14 +511,19 @@
       scrollToBottom();
     }
 
-    // Add bot typing indicator
+    // Typing Indicator
     function showTypingIndicator() {
       var typing = document.createElement('div');
       typing.id = 'bot-typing-box';
       typing.className = 'chat-bubble-row bot-row';
       typing.innerHTML = `
         <div class="bot-avatar-small">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><circle cx="12" cy="12" r="3"/><path d="M12 2a2 2 0 012 2v2a8 8 0 017.9 7H22a1 1 0 010 2h-.1A8 8 0 0114 21.9V23a1 1 0 01-2 0v-1.1A8 8 0 014.1 15H3a1 1 0 010-2h1.1A8 8 0 0112 6V4a2 2 0 01-2-2z"/></svg>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+            <circle cx="12" cy="12" r="9" fill="#8B5CF6"/>
+            <circle cx="9" cy="11" r="1.8" fill="#06B6D4"/>
+            <circle cx="15" cy="11" r="1.8" fill="#06B6D4"/>
+            <path d="M9 15c1 1 2 1.3 3 1.3s2-.3 3-1.3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </div>
         <div class="bot-typing-indicator">
           <div class="bot-typing-dot"></div>
@@ -485,7 +541,7 @@
       if (el) el.remove();
     }
 
-    // Add bot message bubble
+    // HelloBotz Response Bubble with Related Page Buttons
     function addBotResponse(data) {
       removeTypingIndicator();
 
@@ -511,7 +567,7 @@
 
       var suggestionsHtml = '';
       if (data.suggestions && data.suggestions.length > 0) {
-        suggestionsHtml = '<div class="bot-suggestions-wrap"><div class="bot-suggestions-title">Suggested questions:</div>';
+        suggestionsHtml = '<div class="bot-suggestions-wrap"><div class="bot-suggestions-title">Quick questions:</div>';
         data.suggestions.forEach(function (sug) {
           suggestionsHtml += `<button type="button" class="bot-chip-btn" data-query="${escapeHtml(sug)}">💬 ${escapeHtml(sug)}</button>`;
         });
@@ -520,7 +576,12 @@
 
       row.innerHTML = `
         <div class="bot-avatar-small">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a2 2 0 012 2v2a8 8 0 017.9 7H22a1 1 0 010 2h-.1A8 8 0 0114 21.9V23a1 1 0 01-2 0v-1.1A8 8 0 014.1 15H3a1 1 0 010-2h1.1A8 8 0 0112 6V4a2 2 0 01-2-2z"/><circle cx="9" cy="13" r="1.5" fill="#06B6D4"/><circle cx="15" cy="13" r="1.5" fill="#06B6D4"/></svg>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+            <circle cx="12" cy="12" r="10" fill="#8B5CF6"/>
+            <circle cx="8.5" cy="10.5" r="1.8" fill="#06B6D4"/>
+            <circle cx="15.5" cy="10.5" r="1.8" fill="#06B6D4"/>
+            <path d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </div>
         <div class="chat-bubble bot-bubble">
           <div>${data.answer}</div>
@@ -535,7 +596,7 @@
       saveChatState();
     }
 
-    // Handle User Question
+    // Handle Question
     function handleUserQuestion(question) {
       if (!question || !question.trim()) return;
       var q = question.trim();
@@ -546,10 +607,9 @@
       setTimeout(function () {
         var reply = matchIntent(q);
         addBotResponse(reply);
-      }, 550);
+      }, 500);
     }
 
-    // Form submission
     if (chatForm) {
       chatForm.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -557,7 +617,7 @@
       });
     }
 
-    // Click Delegation inside Chat Body (Chips, Demo popup, Callback popup)
+    // Delegate Click on Chips and Popup Actions
     chatBody.addEventListener('click', function (e) {
       var chip = e.target.closest('.bot-chip-btn');
       if (chip) {
@@ -568,28 +628,20 @@
 
       var demoBtn = e.target.closest('.bot-action-demo');
       if (demoBtn) {
-        if (typeof window.openDemoModal === 'function') {
-          window.openDemoModal();
-        } else {
-          var targetDemo = document.querySelector('.btn-demo-open');
-          if (targetDemo) targetDemo.click();
-        }
+        var d = document.querySelector('.btn-demo-open');
+        if (d) d.click();
         return;
       }
 
       var callbackBtn = e.target.closest('.bot-action-callback');
       if (callbackBtn) {
-        if (typeof window.openCallbackModal === 'function') {
-          window.openCallbackModal();
-        } else {
-          var targetCb = document.querySelector('.btn-callback-open');
-          if (targetCb) targetCb.click();
-        }
+        var c = document.querySelector('.btn-callback-open');
+        if (c) c.click();
         return;
       }
     });
 
-    // Quick Channels Actions
+    // Quick Channels Bar triggers
     quickChannels.forEach(function (btn) {
       btn.addEventListener('click', function () {
         if (btn.classList.contains('qc-demo')) {
@@ -602,10 +654,10 @@
       });
     });
 
-    // Welcome Message Renderer
+    // Welcome Greeting always starting from HelloBotz
     function renderWelcomeMessage() {
       addBotResponse({
-        answer: `👋 <strong>Hi! I'm InboxWa Robot AI</strong>, your 24/7 assistant.<br><br>Ask me anything about <strong>WhatsApp API, Bulk Broadcasts, AI Chatbot, Voice Calling, Pricing, or Business Leads</strong>!`,
+        answer: `👋 <strong>Hi there! I'm HelloBotz</strong>, your AI assistant for InboxWa.<br><br>Ask me anything about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Voice Calling, or Pricing</strong>! How can I help you grow today?`,
         suggestions: [
           'What are your pricing plans?',
           'How does WhatsApp API work?',
@@ -615,21 +667,21 @@
         ],
         actions: [
           { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
-          { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20InboxWa%2C%20I%20am%20exploring%20your%20services.', type: 'wa', target: '_blank' }
+          { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20am%20exploring%20InboxWa.', type: 'wa', target: '_blank' }
         ]
       });
     }
 
-    // Session Storage Persistence
+    // Save/Load state
     function saveChatState() {
       try {
-        sessionStorage.setItem('inboxwa_bot_chat', chatBody.innerHTML);
+        sessionStorage.setItem('hellobotz_chat_history', chatBody.innerHTML);
       } catch (e) {}
     }
 
     function loadChatState() {
       try {
-        var saved = sessionStorage.getItem('inboxwa_bot_chat');
+        var saved = sessionStorage.getItem('hellobotz_chat_history');
         if (saved) {
           chatBody.innerHTML = saved;
           scrollToBottom();
@@ -641,14 +693,12 @@
       }
     }
 
-    // Initialize state
     loadChatState();
   }
 
-  // DOM Ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initRobotChatbot);
+    document.addEventListener('DOMContentLoaded', initHelloBotz);
   } else {
-    initRobotChatbot();
+    initHelloBotz();
   }
 })();
