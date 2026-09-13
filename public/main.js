@@ -76,6 +76,7 @@
           menu.classList.contains('mega-menu-features') || 
           menu.classList.contains('mega-menu-products') || 
           menu.classList.contains('mega-menu-solutions') || 
+          menu.classList.contains('mega-menu-company') || 
           menu.classList.contains('mega-menu-panel')) {
         return;
       }
