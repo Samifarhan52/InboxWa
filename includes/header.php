@@ -675,6 +675,34 @@ if (!function_exists('hb_seo_esc')) {
       pointer-events: auto !important;
     }
 
+    /* Attention focus animations for "Explore All Features" navigation */
+    .nav-item-highlight > .nav-link {
+      background: rgba(124, 58, 237, 0.14) !important;
+      color: #7c3aed !important;
+      border-radius: 10px !important;
+      animation: navPulseGlow 1.6s ease-in-out 3 !important;
+    }
+    .mega-menu-highlight {
+      box-shadow: 0 25px 60px -15px rgba(124, 58, 237, 0.35), 0 0 0 2.5px rgba(124, 58, 237, 0.5) !important;
+      animation: megaPulseGlow 1.6s ease-in-out 3 !important;
+    }
+    @keyframes navPulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 0 8px rgba(124, 58, 237, 0);
+      }
+    }
+    @keyframes megaPulseGlow {
+      0%, 100% {
+        box-shadow: 0 25px 60px -15px rgba(124, 58, 237, 0.35), 0 0 0 2.5px rgba(124, 58, 237, 0.5);
+      }
+      50% {
+        box-shadow: 0 30px 70px -10px rgba(124, 58, 237, 0.5), 0 0 0 4.5px rgba(124, 58, 237, 0.7);
+      }
+    }
+
     /* CRITICAL OVERRIDE: Prevent any mega menu content from inheriting white-space: nowrap */
     .mega-menu,
     .mega-menu *,
@@ -1806,8 +1834,9 @@ if (!function_exists('hb_seo_esc')) {
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-panel mega-menu-features" role="menu">
             <div class="mega-features-wrapper">
-              <div class="mega-features-header">
-                <span class="mega-features-label">Products</span>
+              <div class="mega-features-header" style="display:flex;align-items:center;justify-content:space-between;">
+                <span class="mega-features-label">Platform Features &amp; Products</span>
+                <a href="<?php echo $bp; ?>features/" style="font-size:0.8rem;font-weight:700;color:#7c3aed;text-decoration:none;display:inline-flex;align-items:center;gap:3px;">All Features Directory &rarr;</a>
               </div>
               <div class="mega-features-grid">
                 <!-- 1. Bulk Broadcast -->
@@ -1896,6 +1925,12 @@ if (!function_exists('hb_seo_esc')) {
                     <span class="mega-feature-title">Click-to-WhatsApp Ads</span>
                     <span class="mega-feature-desc">Drive ad traffic to WhatsApp conversations</span>
                   </div>
+                </a>
+              </div>
+              <div class="mega-features-footer" style="margin-top:14px;padding-top:10px;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-size:0.82rem;color:#64748b;font-weight:500;">Want to explore every feature in detail?</span>
+                <a href="<?php echo $bp; ?>features/" style="font-size:0.82rem;font-weight:700;color:#7c3aed;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                  Explore All Features Guide &rarr;
                 </a>
               </div>
             </div>

@@ -564,6 +564,34 @@
       pointer-events: auto !important;
     }
 
+    /* Attention focus animations for "Explore All Features" navigation */
+    .nav-item-highlight > .nav-link {
+      background: rgba(124, 58, 237, 0.14) !important;
+      color: #7c3aed !important;
+      border-radius: 10px !important;
+      animation: navPulseGlow 1.6s ease-in-out 3 !important;
+    }
+    .mega-menu-highlight {
+      box-shadow: 0 25px 60px -15px rgba(124, 58, 237, 0.35), 0 0 0 2.5px rgba(124, 58, 237, 0.5) !important;
+      animation: megaPulseGlow 1.6s ease-in-out 3 !important;
+    }
+    @keyframes navPulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 0 8px rgba(124, 58, 237, 0);
+      }
+    }
+    @keyframes megaPulseGlow {
+      0%, 100% {
+        box-shadow: 0 25px 60px -15px rgba(124, 58, 237, 0.35), 0 0 0 2.5px rgba(124, 58, 237, 0.5);
+      }
+      50% {
+        box-shadow: 0 30px 70px -10px rgba(124, 58, 237, 0.5), 0 0 0 4.5px rgba(124, 58, 237, 0.7);
+      }
+    }
+
     /* CRITICAL OVERRIDE: Prevent any mega menu content from inheriting white-space: nowrap */
     .mega-menu,
     .mega-menu *,
@@ -1687,8 +1715,9 @@
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-panel mega-menu-features" role="menu">
             <div class="mega-features-wrapper">
-              <div class="mega-features-header">
-                <span class="mega-features-label">Products</span>
+              <div class="mega-features-header" style="display:flex;align-items:center;justify-content:space-between;">
+                <span class="mega-features-label">Platform Features &amp; Products</span>
+                <a href="../../features/" style="font-size:0.8rem;font-weight:700;color:#7c3aed;text-decoration:none;display:inline-flex;align-items:center;gap:3px;">All Features Directory &rarr;</a>
               </div>
               <div class="mega-features-grid">
                 <!-- 1. Bulk Broadcast -->
@@ -1777,6 +1806,12 @@
                     <span class="mega-feature-title">Click-to-WhatsApp Ads</span>
                     <span class="mega-feature-desc">Drive ad traffic to WhatsApp conversations</span>
                   </div>
+                </a>
+              </div>
+              <div class="mega-features-footer" style="margin-top:14px;padding-top:10px;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-size:0.82rem;color:#64748b;font-weight:500;">Want to explore every feature in detail?</span>
+                <a href="../../features/" style="font-size:0.82rem;font-weight:700;color:#7c3aed;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                  Explore All Features Guide &rarr;
                 </a>
               </div>
             </div>
@@ -2232,7 +2267,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, we want to reorder 200 boxes of A4 Copier Paper (75 GSM) for our office supplies store.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:02 PM</span>
+                        <span class="time">01:16 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2251,20 +2286,20 @@ Dispatch available tomorrow from our Bhiwandi Warehouse.</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Modify Quantity" style="text-align:left;width:fit-content;">Modify Quantity &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:03 PM</span>
+                        <span class="time">01:17 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Confirm Repeat Order</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:04 PM</span>
+                        <span class="time">01:18 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>✓ Order #WO-4819 confirmed! Invoiced to your account. Loading begins tomorrow morning at 09:00 AM.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:05 PM</span>
+                        <span class="time">01:19 PM</span>
                                               </div>
                     </div>
                   
@@ -2478,10 +2513,10 @@ Dispatch available tomorrow from our Bhiwandi Warehouse.</span>
                                           <div class="ind-msg-btn">Office Supplies</div>
                                           <div class="ind-msg-btn">Safety Equipment</div>
                                       </div>
-                                <span class="msg-time">01:05 PM</span>
+                                <span class="msg-time">01:19 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Packaging Materials                  <span class="msg-time">01:05 PM</span>
+                  Packaging Materials                  <span class="msg-time">01:19 PM</span>
                 </div>
                           </div>
           </div>
@@ -2533,10 +2568,10 @@ Dispatch available tomorrow from our Bhiwandi Warehouse.</span>
                                           <div class="ind-msg-btn">Reorder Last 100 Units</div>
                                           <div class="ind-msg-btn">Adjust Quantity</div>
                                       </div>
-                                <span class="msg-time">01:05 PM</span>
+                                <span class="msg-time">01:19 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Reorder Last 100 Units                  <span class="msg-time">01:05 PM</span>
+                  Reorder Last 100 Units                  <span class="msg-time">01:19 PM</span>
                 </div>
                           </div>
           </div>
@@ -2591,10 +2626,10 @@ Outstanding Due: ₹3,60,000 (Due: Sept 25)                                  <di
                                           <div class="ind-msg-btn">Download Ledger PDF</div>
                                           <div class="ind-msg-btn">Pay Dues via NEFT/UPI</div>
                                       </div>
-                                <span class="msg-time">01:05 PM</span>
+                                <span class="msg-time">01:19 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Download Ledger PDF                  <span class="msg-time">01:05 PM</span>
+                  Download Ledger PDF                  <span class="msg-time">01:19 PM</span>
                 </div>
                           </div>
           </div>
@@ -2646,10 +2681,10 @@ Outstanding Due: ₹3,60,000 (Due: Sept 25)                                  <di
                                           <div class="ind-msg-btn">Request Container Quote</div>
                                           <div class="ind-msg-btn">View Specs</div>
                                       </div>
-                                <span class="msg-time">01:05 PM</span>
+                                <span class="msg-time">01:19 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Request Container Quote                  <span class="msg-time">01:05 PM</span>
+                  Request Container Quote                  <span class="msg-time">01:19 PM</span>
                 </div>
                           </div>
           </div>

@@ -407,6 +407,67 @@
   /* ---------- Footer contact form → WhatsApp ---------- */
   function initFooterContact() { /* forms.js */ }
 
+  /* ---------- Explore All Features Button → Navbar Focus ---------- */
+  function initExploreFeaturesBtn() {
+    const btns = $$('.hb-features-cta-btn, [data-open-features], #btnExploreAllFeatures');
+    if (!btns.length) return;
+
+    btns.forEach((btn) => {
+      on(btn, 'click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+
+        const isMobile = window.innerWidth < 992;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (!isMobile) {
+          const navItem = $('.nav-item-products') || $('.nav-item-features');
+          const navBtn = navItem ? navItem.querySelector('.nav-link') : null;
+          const megaMenu = navItem ? navItem.querySelector('.mega-menu') : null;
+
+          setTimeout(() => {
+            if (navItem && navBtn) {
+              if (!navItem.classList.contains('open')) {
+                navBtn.click();
+              }
+
+              navItem.classList.remove('nav-item-highlight');
+              void navItem.offsetWidth;
+              navItem.classList.add('nav-item-highlight');
+
+              if (megaMenu) {
+                megaMenu.classList.remove('mega-menu-highlight');
+                void megaMenu.offsetWidth;
+                megaMenu.classList.add('mega-menu-highlight');
+              }
+
+              setTimeout(() => {
+                navItem.classList.remove('nav-item-highlight');
+                if (megaMenu) megaMenu.classList.remove('mega-menu-highlight');
+              }, 3500);
+            }
+          }, 320);
+        } else {
+          setTimeout(() => {
+            const toggle = $('.mobile-toggle');
+            const menu = $('#mobile-menu');
+            if (toggle && menu) {
+              if (!menu.classList.contains('is-open') && !menu.classList.contains('open')) {
+                toggle.click();
+              }
+              setTimeout(() => {
+                const prodAccordion = menu.querySelector('.mobile-nav-item[data-accordion]');
+                if (prodAccordion && !prodAccordion.classList.contains('is-open') && !prodAccordion.classList.contains('open')) {
+                  const accBtn = prodAccordion.querySelector('.mobile-nav-link');
+                  if (accBtn) accBtn.click();
+                }
+              }, 200);
+            }
+          }, 300);
+        }
+      });
+    });
+  }
 
   function init() {
     initHeader();
@@ -422,6 +483,7 @@
     initCallbackPopup();
     initDemoPopup();
     initFooterContact();
+    initExploreFeaturesBtn();
   }
 
   if (document.readyState === 'loading') {
