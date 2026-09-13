@@ -19,6 +19,10 @@ include __DIR__ . '/../includes/header.php';
         <p class="prt-lead">Refer, resell or launch your own branded WhatsApp automation business with powerful AI, CRM and WhatsApp solutions.</p>
         <div class="prt-ctas">
           <button type="button" class="btn btn-primary btn-lg btn-demo-open">Get Started</button>
+          <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Brochure
+          </a>
           <a href="#plans" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">View Partner Plans</a>
         </div>
       </div>
@@ -395,6 +399,10 @@ include __DIR__ . '/../includes/header.php';
       <p class="lead" style="color:rgba(255,255,255,.75)">Choose your partnership model and start building a new business opportunity with InboxWa.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <button type="button" class="btn btn-primary btn-lg btn-demo-open">Get Started</button>
+        <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download Brochure
+        </a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">Talk to Partner Team</button>
       </div>
     </div>

@@ -1632,8 +1632,8 @@ if (!function_exists('hb_seo_esc')) {
       position: absolute !important;
       top: calc(100% + 14px) !important;
       left: auto !important;
-      right: -80px !important;
-      width: 660px !important;
+      right: -60px !important;
+      width: 890px !important;
       max-width: calc(100vw - 32px) !important;
       background: #ffffff !important;
       border-radius: 20px !important;
@@ -1657,10 +1657,37 @@ if (!function_exists('hb_seo_esc')) {
     }
     .mega-company-grid {
       display: grid !important;
-      grid-template-columns: 1fr 1fr 1fr !important;
+      grid-template-columns: repeat(4, 1fr) !important;
       gap: 12px !important;
       padding: 18px 18px 14px !important;
       background: #ffffff !important;
+    }
+    @media (max-width: 1100px) and (min-width: 992px) {
+      .mega-menu-company {
+        width: 760px !important;
+        right: -20px !important;
+      }
+      .mega-company-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+      }
+    }
+    .mega-company-brochure-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      color: #6D28D9 !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      padding: 4px 10px !important;
+      border-radius: 8px !important;
+      background: #F3E8FF !important;
+      font-size: 11.5px !important;
+      transition: all 0.18s ease !important;
+    }
+    .mega-company-brochure-link:hover {
+      background: #6D28D9 !important;
+      color: #ffffff !important;
     }
     .mega-company-col {
       display: flex !important;
@@ -2332,38 +2359,7 @@ if (!function_exists('hb_seo_esc')) {
             </div>
           </div>
         </div>
-<div class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></div>
-
-        <div class="nav-item nav-item-secondary nav-item-sm" data-mega>
-          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Partners <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="mega-menu mega-menu-sm" role="menu">
-            <div class="mega-panel mega-panel-single">
-              <div class="mega-panel-links">
-                <a href="/partners/" class="mega-link" role="menuitem">
-  <span class="mega-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
-  <span class="mega-link-text"><span class="mega-link-title">Affiliate Partner</span><span class="mega-link-desc">Refer &amp; earn</span></span>
-</a>
-                <a href="/partners/" class="mega-link" role="menuitem">
-  <span class="mega-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
-  <span class="mega-link-text"><span class="mega-link-title">Agency Partner</span><span class="mega-link-desc">Serve your clients</span></span>
-</a>
-                <a href="/partners/" class="mega-link" role="menuitem">
-  <span class="mega-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/></svg></span>
-  <span class="mega-link-text"><span class="mega-link-title">White Label Partner</span><span class="mega-link-desc">Your brand, our platform</span></span>
-</a>
-                <a href="/partners/" class="mega-link" role="menuitem">
-  <span class="mega-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M8 8H4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2v-8a2 2 0 00-2-2h-4"/></svg></span>
-  <span class="mega-link-text"><span class="mega-link-title">Technology Partner</span><span class="mega-link-desc">Build integrations</span></span>
-</a>
-              </div>
-            
-                <div class="mega-cta-box">
-                  <p>Grow with InboxWa as a partner or reseller.</p>
-                  <a href="/partners/" class="btn btn-primary btn-sm">Join Our Partner Program</a>
-                </div>
-</div>
-          </div>
-        </div>
+        <div class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></div>
 
         <div class="nav-item nav-item-secondary nav-item-sm" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -2386,7 +2382,28 @@ if (!function_exists('hb_seo_esc')) {
                 </a>
               </div>
 
-              <!-- Column 2: Resources -->
+              <!-- Column 2: Partners (Moved into Company dropdown) -->
+              <div class="mega-company-col">
+                <div class="mega-company-category-title">Partners</div>
+                <a href="<?php echo $bp; ?>partners/affiliate/" class="mega-company-link" role="menuitem">
+                  <span class="mega-company-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                  <span class="mega-company-text"><span class="mega-company-title">Affiliate Partner</span><span class="mega-company-desc">Refer &amp; earn 20%</span></span>
+                </a>
+                <a href="<?php echo $bp; ?>partners/agency/" class="mega-company-link" role="menuitem">
+                  <span class="mega-company-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                  <span class="mega-company-text"><span class="mega-company-title">Agency Partner</span><span class="mega-company-desc">Serve your clients</span></span>
+                </a>
+                <a href="<?php echo $bp; ?>partners/white-label/" class="mega-company-link" role="menuitem">
+                  <span class="mega-company-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+                  <span class="mega-company-text"><span class="mega-company-title">White Label Partner</span><span class="mega-company-desc">Your brand, our platform</span></span>
+                </a>
+                <a href="<?php echo $bp; ?>partners/technology/" class="mega-company-link" role="menuitem">
+                  <span class="mega-company-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+                  <span class="mega-company-text"><span class="mega-company-title">Technology Partner</span><span class="mega-company-desc">Build integrations</span></span>
+                </a>
+              </div>
+
+              <!-- Column 3: Resources -->
               <div class="mega-company-col">
                 <div class="mega-company-category-title">Resources</div>
                 <a href="<?php echo $bp; ?>resources/blog/" class="mega-company-link" role="menuitem">
@@ -2403,7 +2420,7 @@ if (!function_exists('hb_seo_esc')) {
                 </a>
               </div>
 
-              <!-- Column 3: Trust & Legal -->
+              <!-- Column 4: Trust & Legal -->
               <div class="mega-company-col">
                 <div class="mega-company-category-title">Trust &amp; Legal</div>
                 <a href="<?php echo $bp; ?>security/" class="mega-company-link" role="menuitem">
@@ -2427,7 +2444,13 @@ if (!function_exists('hb_seo_esc')) {
             <!-- Trust Footer Strip -->
             <div class="mega-company-footer">
               <div class="mega-company-footer-left">🛡️ Official Meta Cloud API Partner &bull; ISO 27001 Certified &bull; GDPR Compliant</div>
-              <a href="<?php echo $bp; ?>contact/">Talk to Sales &rarr;</a>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" class="mega-company-brochure-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  Download Brochure
+                </a>
+                <a href="<?php echo $bp; ?>contact/">Talk to Sales &rarr;</a>
+              </div>
             </div>
           </div>
         </div>
@@ -2467,45 +2490,30 @@ if (!function_exists('hb_seo_esc')) {
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="/products/broadcast/">Bulk Broadcast</a>
-            <a href="/products/shared-inbox/">Shared Team Inbox</a>
-            <a href="/products/chatbot/">AI Chatbot Builder</a>
-            <a href="/products/ai-voice/">AI Voice Calling</a>
-            <a href="/products/catalog/">WhatsApp Catalog</a>
-            <a href="/solutions/appointment/">Appointment Booking</a>
-            <a href="/products/whatsapp-form/">WhatsApp Forms</a>
-            <a href="/facebook-ads/">Click-to-WhatsApp Ads</a>
+            <a href="<?php echo $bp; ?>products/whatsapp-shared-inbox/">Shared Inbox</a>
+            <a href="<?php echo $bp; ?>products/campaigns-and-broadcasts/">Bulk Broadcasts</a>
+            <a href="<?php echo $bp; ?>products/ai-agent-and-bot/">AI Agent &amp; Chatbot</a>
+            <a href="<?php echo $bp; ?>products/crm-and-lead-management/">CRM &amp; Lead Management</a>
+            <a href="<?php echo $bp; ?>products/chat-widget/">Website Chat Widget</a>
+            <a href="<?php echo $bp; ?>products/template-message-management/">Template Messages</a>
+            <a href="<?php echo $bp; ?>products/auto-replies/">Automated Replies</a>
+            <a href="<?php echo $bp; ?>products/apis-and-webhooks/">APIs &amp; Webhooks</a>
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>
-          <button type="button" class="mobile-nav-link" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-            <span>Channels <span class="badge-live-pill" style="margin-left:6px;">Live</span></span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
+          <button type="button" class="mobile-nav-link">Channels <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="/channel/whatsapp/" style="font-weight:700;color:#10b981;">WhatsApp Business API</a>
-            <a href="/channel/instagram/">Instagram DM Automation</a>
-            <a href="/channel/telegram/">Telegram Bot Platform</a>
-            <a href="/channel/facebook/">Facebook Messenger</a>
+            <a href="<?php echo $bp; ?>channels/whatsapp/">WhatsApp</a>
+            <a href="<?php echo $bp; ?>channels/instagram/">Instagram</a>
+            <a href="<?php echo $bp; ?>channels/facebook/">Facebook Messenger</a>
+            <a href="<?php echo $bp; ?>channels/telegram/">Telegram</a>
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:6px 0 2px;border-bottom:1px solid #f1f5f9;">Integrations</div>
-            <a href="<?php echo $bp; ?>solutions/shopify/">Shopify</a>
-            <a href="<?php echo $bp; ?>solutions/woocommerce/">WooCommerce</a>
-            <a href="<?php echo $bp; ?>solutions/google-forms-sheets/">Google Sheet</a>
-            <a href="<?php echo $bp; ?>solutions/google-calendar-meet/">Google Calendar</a>
-            <a href="<?php echo $bp; ?>facebook-ads/">Facebook Ads</a>
-            <a href="<?php echo $bp; ?>integrations/crm/">CRM Integration</a>
-            <a href="<?php echo $bp; ?>integrations/api-webhooks/">Webhooks &amp; API</a>
-            <a href="<?php echo $bp; ?>integrations/custom/">Custom Integration</a>
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">By Industry</div>
-            <a href="<?php echo $bp; ?>industry/bfsi/">Banking &amp; Finance</a>
-            <a href="<?php echo $bp; ?>industry/healthcare/">Health &amp; Wellness</a>
-            <a href="<?php echo $bp; ?>industry/retail-and-ecommerce/">Retail &amp; E-commerce</a>
-            <a href="<?php echo $bp; ?>industry/travel-and-hospitality/">Travel &amp; Hospitality</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 2px;border-bottom:1px solid #f1f5f9;">By Industry</div>
+            <a href="<?php echo $bp; ?>industry/ecommerce-and-retail/">Ecommerce &amp; Retail</a>
             <a href="<?php echo $bp; ?>industry/education-and-social-impacts/">Education &amp; Social Impacts</a>
             <a href="<?php echo $bp; ?>industry/communication-and-it/">Communication &amp; IT</a>
             <a href="<?php echo $bp; ?>industry/food-and-beverages/">Food &amp; Beverage</a>
@@ -2514,6 +2522,15 @@ if (!function_exists('hb_seo_esc')) {
             <a href="<?php echo $bp; ?>industry/automobiles-and-transport/">Automobiles &amp; Transport</a>
             <a href="<?php echo $bp; ?>industry/government-and-utilities/">Government &amp; Utilities</a>
             <a href="<?php echo $bp; ?>industry/manufacturing-and-supply/">Manufacturing &amp; Supply</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Integrations</div>
+            <a href="<?php echo $bp; ?>solutions/shopify/">Shopify</a>
+            <a href="<?php echo $bp; ?>solutions/woocommerce/">WooCommerce</a>
+            <a href="<?php echo $bp; ?>solutions/google-forms-sheets/">Google Sheet</a>
+            <a href="<?php echo $bp; ?>solutions/google-calendar-meet/">Google Calendar</a>
+            <a href="<?php echo $bp; ?>facebook-ads/">Facebook Ads</a>
+            <a href="<?php echo $bp; ?>integrations/crm/">CRM Integration</a>
+            <a href="<?php echo $bp; ?>integrations/api-webhooks/">Webhooks &amp; API</a>
+            <a href="<?php echo $bp; ?>integrations/custom/">Custom Integration</a>
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Business Leads</div>
             <a href="<?php echo $bp; ?>business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 12 Leads Categories &rarr;</a>
             <a href="<?php echo $bp; ?>solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
@@ -2521,25 +2538,25 @@ if (!function_exists('hb_seo_esc')) {
         </div>
         <div class="mobile-nav-item"><a href="/pricing/" class="mobile-nav-link">Pricing</a></div>
         <div class="mobile-nav-item" data-accordion>
-          <button type="button" class="mobile-nav-link">Partners <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="/partners/">Affiliate Partner</a>
-            <a href="/partners/">Agency Partner</a>
-            <a href="/partners/">White Label Partner</a>
-            <a href="/partners/">Technology Partner</a>
-          </div></div>
-        </div>
-        <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Company <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:8px 0 2px;border-bottom:1px solid #f1f5f9;">Company</div>
             <a href="/company/about/">About Us</a>
             <a href="/company/careers/">Careers <span style="font-size:9px;background:#EEF2FF;color:#4F46E5;padding:1px 5px;border-radius:999px;font-weight:700;border:1px solid #C7D2FE;margin-left:4px;">Hiring</span></a>
             <a href="/contact/">Contact Us</a>
+
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Partner Programs</div>
+            <a href="/partners/affiliate/">Affiliate Partner <span style="font-size:11px;color:#64748B;display:block;">Refer &amp; earn 20%</span></a>
+            <a href="/partners/agency/">Agency Partner <span style="font-size:11px;color:#64748B;display:block;">Serve your clients (40%)</span></a>
+            <a href="/partners/white-label/">White Label Partner <span style="font-size:11px;color:#64748B;display:block;">Your brand, our platform (50%)</span></a>
+            <a href="/partners/technology/">Technology Partner <span style="font-size:11px;color:#64748B;display:block;">Build integrations</span></a>
+            <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" style="font-weight:700;color:#6D28D9;display:flex;align-items:center;gap:6px;padding:6px 0;">📄 Download Partner Brochure</a>
+
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Resources</div>
             <a href="<?php echo $bp; ?>resources/blog/">Blog &amp; Insights</a>
             <a href="<?php echo $bp; ?>resources/case-studies/">Case Studies</a>
             <a href="<?php echo $bp; ?>resources/help-center/">Help Center</a>
+
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Trust &amp; Legal</div>
             <a href="/security/">Security &amp; ISO</a>
             <a href="/privacy/">Privacy Policy</a>

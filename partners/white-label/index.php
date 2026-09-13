@@ -18,6 +18,10 @@ include __DIR__ . '/../../includes/header.php';
     <p class="lead">Offer a white-label WhatsApp and omnichannel stack — custom branding, domain and login — while InboxWa powers the engine.</p>
     <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="#partner-form" class="btn btn-primary btn-lg">Start White Label Program</a>
+      <a href="/assets/downloads/inboxwa-whitelabel-brochure.pdf" download="InboxWa-White-Label-Brochure.pdf" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download Brochure
+      </a>
       <a href="#flow" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">See workflow</a>
     </div>
     <div class="hero-visual-float" style="max-width:760px;margin:2.5rem auto 0">
@@ -112,6 +116,12 @@ include __DIR__ . '/../../includes/header.php';
       <button type="submit" class="btn btn-primary btn-block">Start White Label Program</button>
       <p id="pf-status-white-label" style="display:none;margin-top:.75rem;color:#15803D"></p>
     </form>
+    <div style="text-align:center;margin-top:1.25rem">
+      <a href="/assets/downloads/inboxwa-whitelabel-brochure.pdf" download="InboxWa-White-Label-Brochure.pdf" style="font-size:13px;color:#6D28D9;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Or download the White Label Partner Brochure (PDF)
+      </a>
+    </div>
   </div>
 </section>
 
