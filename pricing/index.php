@@ -700,6 +700,10 @@ include __DIR__ . '/../includes/header.php';
       </div>
       <div class="cta-buttons">
         <a href="/auth/register" class="btn-cta-primary">Start Free Trial</a>
+        <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="margin-left:0.5rem;padding:0.75rem 1.4rem;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Data
+        </a>
         <a href="#addons" class="btn-cta-secondary">View Add-ons</a>
       </div>
     </div>

@@ -22,7 +22,11 @@ include __DIR__ . '/../../includes/header.php';
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/#contact-section" class="btn btn-primary btn-lg">Book Demo</a>
         <a href="#sim" class="btn btn-outline btn-lg">See workflow</a>
-      </div>
+              <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Data
+        </a>
+</div>
     </div>
     <div class="int-float hero-visual-float reveal" style="max-width:640px;margin:2rem auto 0">
       <img src="/assets/images/integrations/facebook-ads/hero.webp" alt="Facebook Ads + InboxWa + WhatsApp"

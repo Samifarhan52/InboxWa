@@ -100,6 +100,10 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
           </a>
           <p>AI Powered WhatsApp Business API &amp; Omnichannel Platform. Official Meta API, shared inbox, automation, broadcasts and integrations.</p>
           <button type="button" class="btn btn-primary btn-sm btn-callback-open">Request Callback</button>
+          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-download-data" style="margin-left:6px;display:inline-flex;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Data
+          </a>
         </div>
         <div class="footer-col">
           <div class="footer-heading">Products</div>
@@ -119,6 +123,7 @@ $fAddress = cms_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead
           <ul>
             <li><a href="<?php echo $bp; ?>business-leads/">Business Leads (16 Categories)</a></li>
             <li><a href="<?php echo $bp; ?>solutions/data-marketplace/">Data Marketplace</a></li>
+            <li><a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;font-weight:700">Download Data (PanIndiaData) ↗</a></li>
             <li><a href="<?php echo $bp; ?>solutions/sales">Sales on WhatsApp</a></li>
             <li><a href="<?php echo $bp; ?>solutions/customer-support">Customer Support</a></li>
             <li><a href="<?php echo $bp; ?>solutions/lead-generation">Lead Generation</a></li>

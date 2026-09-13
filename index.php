@@ -2507,13 +2507,17 @@ include __DIR__ . '/includes/header.php';
           <?php echo htmlspecialchars(cms_section('hero', 'lead', 'Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.')); ?>
         </p>
         <div class="cw-hero-actions">
-          <a href="<?php echo htmlspecialchars(cms_section('hero', 'cta1_link', 'https://panindiadata.com/')); ?>" target="_blank" rel="noopener noreferrer" class="cw-btn-primary">
+          <a href="<?php echo htmlspecialchars(cms_section('hero', 'cta1_link', '/auth/register')); ?>" class="cw-btn-primary">
             <?php echo htmlspecialchars(cms_section('hero', 'cta1_text', "Start Automating - It's Free")); ?>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <button type="button" class="cw-btn-secondary btn-demo-open">
             <?php echo htmlspecialchars(cms_section('hero', 'cta2_text', 'Book a Demo')); ?>
           </button>
+          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="cw-btn-data btn-download-data">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Data
+          </a>
         </div>
         <div class="cw-trust-row">
           <span class="cw-trust-item" id="cw-side-leads">
@@ -3519,8 +3523,12 @@ include __DIR__ . '/includes/header.php';
           <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with InboxWa.</p>
         </div>
         <div class="stories-bottom-actions">
-          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
+          <a href="/auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
             Start Free 7-Day Trial
+          </a>
+          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="cw-btn-data btn-download-data">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Data
           </a>
           <a href="#callback" onclick="if(window.openCallbackModal){openCallbackModal();return false;}" class="btn-ghost-dark">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>

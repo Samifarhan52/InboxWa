@@ -23,7 +23,11 @@ include __DIR__ . '/../../includes/header.php';
         Download Brochure
       </a>
       <a href="#flow" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">See How It Works</a>
-    </div>
+            <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Data
+        </a>
+</div>
     <div class="hero-visual-float" style="max-width:780px;margin:2.5rem auto 0">
       <div style="background:linear-gradient(135deg,rgba(109,40,217,0.95),rgba(79,70,229,0.92));padding:2.5rem 2rem;border-radius:22px;border:1px solid rgba(255,255,255,0.25);color:#ffffff;text-align:center;box-shadow:0 25px 50px -12px rgba(15,23,42,0.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
         <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;text-transform:uppercase;letter-spacing:0.09em;color:#E0E7FF;font-weight:700;background:rgba(255,255,255,0.12);padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);margin-bottom:0.75rem">

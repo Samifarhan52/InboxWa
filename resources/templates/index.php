@@ -285,7 +285,11 @@ $templates = [
             <li><strong>Transparent Opt-Out:</strong> Marketing broadcasts must include clear opt-out instructions (e.g., <em>"Reply STOP to unsubscribe"</em>).</li>
             <li><strong>Match Correct Category:</strong> Submitting a promotional discount as an "Authentication" or "Utility" template will result in an immediate rejection and quality score penalty.</li>
           </ul>
-          <div style="margin-top:1.25rem">
+          <div style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
+            <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-download-data">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Data
+            </a>
             <a href="/resources/documentation/#broadcasts" class="btn btn-sm btn-outline">Read Full Template Documentation &rarr;</a>
           </div>
         </div>

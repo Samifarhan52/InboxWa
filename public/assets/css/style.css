@@ -3378,4 +3378,94 @@ html, body {
   text-decoration: underline !important;
 }
 
+/* =========================================================
+   UNIVERSAL DOWNLOAD DATA CTA SYSTEM (PanIndiaData.com)
+   ========================================================= */
+.btn-download-data, .cw-btn-data, .ind-btn-data {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 0.82rem 1.65rem !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 22px -4px rgba(79, 70, 229, 0.45) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  cursor: pointer !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+.btn-download-data:hover, .cw-btn-data:hover, .ind-btn-data:hover {
+  background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 28px -4px rgba(79, 70, 229, 0.6) !important;
+  color: #ffffff !important;
+}
+.btn-download-data svg, .cw-btn-data svg, .ind-btn-data svg {
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease !important;
+}
+.btn-download-data:hover svg, .cw-btn-data:hover svg, .ind-btn-data:hover svg {
+  transform: translateY(1.5px) !important;
+}
+
+/* Header Navbar Download Data Button */
+.btn-header-data {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+  color: #ffffff !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+.btn-header-data:hover {
+  background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.5) !important;
+  color: #ffffff !important;
+}
+
+/* Mobile Nav Drawer Download Data Button */
+.mnav-data {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 11px 18px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  margin-top: 6px !important;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35) !important;
+  transition: all 0.2s ease !important;
+}
+.mnav-data:hover {
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5) !important;
+  color: #ffffff !important;
+}
+
+/* Quick channel button in HelloBotz widget */
+.qc-data {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED) !important;
+  color: #ffffff !important;
+}
+
+
 

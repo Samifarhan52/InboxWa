@@ -23,7 +23,11 @@ include __DIR__ . '/../../includes/header.php';
         <div class="dm-ctas">
           <a href="#categories" class="btn btn-primary btn-lg">Explore Business Data</a>
           <button type="button" class="btn btn-outline btn-lg dm-open-form" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Request Data</button>
-        </div>
+                  <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="padding:0.78rem 1.5rem;font-size:0.95rem;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Data
+          </a>
+</div>
       </div>
       <div class="dm-hero-visual" aria-hidden="true">
         <div class="dm-dash">

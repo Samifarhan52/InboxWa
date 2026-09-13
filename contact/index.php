@@ -789,7 +789,11 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         <div class="ct-hero-ctas">
           <a href="#contact-form" class="btn btn-primary btn-lg btn-demo-open">Book a Demo</a>
           <a href="#contact-form" class="btn btn-outline btn-lg">Contact Sales</a>
-        </div>
+                  <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="padding:0.78rem 1.5rem;font-size:0.95rem;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Data
+          </a>
+</div>
       </div>
       <div class="ct-network reveal" aria-hidden="true">
         <svg class="ct-net-svg" viewBox="0 0 400 400" fill="none">

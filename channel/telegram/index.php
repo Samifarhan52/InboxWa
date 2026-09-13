@@ -699,6 +699,10 @@ include __DIR__ . '/../../includes/header.php';
           <button type="button" class="ctg-btn-secondary btn-demo-open">
             Book Telegram Demo
           </button>
+          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="padding:0.8rem 1.6rem;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Data
+          </a>
         </div>
         <div class="ctg-trust-row">
           <span class="ctg-trust-item">
@@ -1082,6 +1086,10 @@ include __DIR__ . '/../../includes/header.php';
         <button type="button" class="ctg-btn-secondary btn-demo-open" style="background:rgba(255,255,255,0.15);color:#ffffff;border-color:rgba(255,255,255,0.3);">
           Book Telegram Demo
         </button>
+        <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="background:#ffffff !important;color:#0284c7 !important;border:none !important;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Data
+        </a>
       </div>
       <div class="ctg-cta-trust">
         Free 14-day trial &bull; No credit card required &bull; 2-minute setup
