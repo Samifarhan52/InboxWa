@@ -2462,8 +2462,8 @@ include __DIR__ . '/includes/header.php';
           <?php echo htmlspecialchars(cms_section('hero', 'lead', 'Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.')); ?>
         </p>
         <div class="cw-hero-actions">
-          <a href="<?php echo htmlspecialchars(cms_section('hero', 'cta1_link', '/auth/register')); ?>" class="cw-btn-primary">
-            <?php echo htmlspecialchars(cms_section('hero', 'cta1_text', 'Start Free Trial')); ?>
+          <a href="<?php echo htmlspecialchars(cms_section('hero', 'cta1_link', 'https://panindiadata.com/')); ?>" class="cw-btn-primary">
+            <?php echo htmlspecialchars(cms_section('hero', 'cta1_text', "Start Automating - It's Free")); ?>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <button type="button" class="cw-btn-secondary btn-demo-open">
@@ -3216,7 +3216,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="hiw-cta-wrap reveal-item">
-        <a href="<?php echo $bp; ?>auth/register" class="hiw-cta-btn">
+        <a href="https://panindiadata.com/" class="hiw-cta-btn">
           Get Started Now
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -3474,7 +3474,7 @@ include __DIR__ . '/includes/header.php';
           <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with InboxWa.</p>
         </div>
         <div class="stories-bottom-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
+          <a href="https://panindiadata.com/" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
             Start Free 7-Day Trial
           </a>
           <a href="#callback" onclick="if(window.openCallbackModal){openCallbackModal();return false;}" class="btn-ghost-dark">
@@ -3739,7 +3739,7 @@ include __DIR__ . '/includes/header.php';
       return {
         text: "📢 Send 10,000 to 1,000,000+ broadcasts in minutes with 98% average open rates! Powered by the Official Meta WhatsApp Cloud API with smart pacing so delivery is 100% reliable.",
         actionText: "Start Free Trial",
-        actionUrl: "/auth/register"
+        actionUrl: "https://panindiadata.com/"
       };
     }
     if (q.includes('ban') || q.includes('risk') || q.includes('meta') || q.includes('official') || q.includes('api') || q.includes('safe')) {
@@ -3760,7 +3760,7 @@ include __DIR__ . '/includes/header.php';
       return {
         text: "🤖 Build intelligent auto-reply flows in minutes with our visual drag-and-drop builder! Train your AI on website URLs or FAQs to qualify prospects and close deals 24/7.",
         actionText: "Try Flow Builder",
-        actionUrl: "/auth/register"
+        actionUrl: "https://panindiadata.com/"
       };
     }
     if (q.includes('demo') || q.includes('call') || q.includes('talk') || q.includes('sales') || q.includes('meeting') || q.includes('specialist')) {
@@ -3774,14 +3774,14 @@ include __DIR__ . '/includes/header.php';
       return {
         text: "👋 Hello! Welcome to InboxWa! Ask me about pricing, Shopify integration, bulk broadcasts, or click any chip above to test.",
         actionText: "Get Started Free",
-        actionUrl: "/auth/register"
+        actionUrl: "https://panindiadata.com/"
       };
     }
     if (q.includes('trial') || q.includes('free') || q.includes('sign') || q.includes('register') || q.includes('start')) {
       return {
         text: "🚀 You can start right now with our 14-day free trial! Zero credit card required and 5-minute setup.",
         actionText: "Start Free Trial",
-        actionUrl: "/auth/register"
+        actionUrl: "https://panindiadata.com/"
       };
     }
     if (q.includes('green tick') || q.includes('tick') || q.includes('badge') || q.includes('verify')) {
@@ -3795,7 +3795,7 @@ include __DIR__ . '/includes/header.php';
     return {
       text: "⚡ InboxWa empowers you to scale WhatsApp sales with official Meta Cloud API, automated AI chat funnels, 98% open-rate broadcasts, and 1-click CRM/Shopify sync!",
       actionText: "Start 14-Day Trial",
-      actionUrl: "/auth/register"
+      actionUrl: "https://panindiadata.com/"
     };
   }
 

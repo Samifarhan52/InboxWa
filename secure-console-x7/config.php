@@ -319,7 +319,7 @@ function hb_pdo(): PDO {
             ['hero', 'headline_suffix', ' for Business'],
             ['hero', 'lead', 'Boost engagement, qualify leads, and provide 24/7 support with seamless, AI-powered WhatsApp conversations. Integrate instantly and scale efficiently.'],
             ['hero', 'cta1_text', "Start Automating - It's Free"],
-            ['hero', 'cta1_link', '/auth/register'],
+            ['hero', 'cta1_link', 'https://panindiadata.com/'],
             ['hero', 'cta2_text', 'Book a Demo'],
             ['hero', 'cta2_link', '#demo'],
             ['hero', 'float1_val', '+128 Leads'],
