@@ -1975,7 +1975,7 @@ include __DIR__ . '/includes/header.php';
   }
 
   /* ==========================================================================
-     SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ANIMATED INFINITE SCROLLER)
+     SECTION 4: CUSTOMER STORIES / TESTIMONIALS (SINGLE ROW ANIMATED MARQUEE)
      ========================================================================== */
   .stories-section {
     position: relative;
@@ -2071,14 +2071,50 @@ include __DIR__ . '/includes/header.php';
     background: #cbd5e1;
   }
 
-  /* Interactive Marquee Controls */
+  /* Interactive Category Chips */
+  .stories-filter-chips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .story-chip-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 0.84rem;
+    font-weight: 700;
+    padding: 0.5rem 1.15rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .story-chip-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    border-color: #cbd5e1;
+  }
+  .story-chip-btn.active {
+    background: #7c3aed;
+    color: #ffffff;
+    border-color: #7c3aed;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+  }
+
+  /* Interactive Controls Bar */
   .stories-ctrl-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     padding: 0 1.5rem;
     max-width: 1280px;
     margin-left: auto;
@@ -2126,8 +2162,8 @@ include __DIR__ . '/includes/header.php';
     gap: 0.5rem;
   }
   .stories-nav-arrow {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -2136,96 +2172,95 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    transition: all 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.25s ease;
   }
   .stories-nav-arrow:hover {
     background: #7c3aed;
     color: #ffffff;
     border-color: #7c3aed;
     transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
   }
 
-  /* Marquee Tracks and Wrapping */
+  /* Single-Row Marquee Container & Track */
   .stories-marquee-container {
     width: 100%;
     position: relative;
     overflow: hidden;
-    padding: 0.75rem 0;
+    padding: 1.25rem 0 1.75rem;
     mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
   .stories-marquee-track {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.75rem;
     width: max-content;
     will-change: transform;
+    animation: singleRowMarquee 65s linear infinite;
   }
-  .track-left {
-    animation: marqueeScrollLeft 48s linear infinite;
-  }
-  .track-right {
-    animation: marqueeScrollRight 52s linear infinite;
-    margin-top: 1.5rem;
-  }
-
-  /* Pause on Hover */
   .stories-marquee-container:hover .stories-marquee-track,
   .stories-marquee-container.is-paused .stories-marquee-track {
     animation-play-state: paused !important;
   }
 
-  @keyframes marqueeScrollLeft {
+  @keyframes singleRowMarquee {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-50% - 0.75rem));
-    }
-  }
-  @keyframes marqueeScrollRight {
-    0% {
-      transform: translateX(calc(-50% - 0.75rem));
-    }
-    100% {
-      transform: translateX(0);
+      transform: translateX(calc(-50% - 0.875rem));
     }
   }
 
-  /* Story Card */
+  /* Single-Row Story Card */
   .story-scroller-card {
     width: 420px;
     max-width: 85vw;
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 1.85rem 1.65rem;
+    border-radius: 22px;
+    padding: 2rem 1.85rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
     cursor: default;
     user-select: none;
+    position: relative;
   }
   .story-scroller-card:hover {
-    transform: translateY(-7px) scale(1.02);
+    transform: translateY(-9px) scale(1.03);
     border-color: #8b5cf6;
-    box-shadow: 0 20px 45px rgba(124, 58, 237, 0.16);
+    box-shadow: 0 24px 50px rgba(124, 58, 237, 0.18);
     z-index: 10;
   }
+
+  /* Spotlight active state when filtering */
+  .story-scroller-card.is-spotlight {
+    border-color: #7c3aed !important;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25), 0 20px 45px rgba(124, 58, 237, 0.2) !important;
+    transform: translateY(-6px) scale(1.02);
+  }
+  .story-scroller-card.is-dimmed {
+    opacity: 0.45;
+    filter: grayscale(30%);
+  }
+
   .story-card-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
   .story-tag-group {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
+    flex-wrap: wrap;
   }
   .story-tag {
     font-size: 0.72rem;
@@ -2241,7 +2276,7 @@ include __DIR__ . '/includes/header.php';
     background: rgba(124, 58, 237, 0.1);
     color: #7c3aed;
     border: 1px solid rgba(124, 58, 237, 0.2);
-    padding: 0.22rem 0.6rem;
+    padding: 0.22rem 0.65rem;
     border-radius: 9999px;
   }
   .tag-bfsi { background: rgba(99, 102, 241, 0.12); color: #4338ca; }
@@ -2252,20 +2287,20 @@ include __DIR__ . '/includes/header.php';
 
   .story-stars {
     color: #f59e0b;
-    font-size: 0.95rem;
-    letter-spacing: 1.5px;
+    font-size: 1rem;
+    letter-spacing: 2px;
   }
   .story-headline {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.35;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.85rem;
     letter-spacing: -0.01em;
   }
   .story-quote {
-    font-size: 0.92rem;
-    line-height: 1.65;
+    font-size: 0.93rem;
+    line-height: 1.68;
     color: #475569;
     margin: 0 0 1.5rem;
     flex: 1;
@@ -2276,23 +2311,23 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     gap: 0.85rem;
     border-top: 1px solid #f1f5f9;
-    padding-top: 1rem;
+    padding-top: 1.15rem;
   }
   .story-avatar-img {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     object-fit: cover;
     flex-shrink: 0;
     border: 2px solid #e2e8f0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
   }
   .story-author-info {
     flex: 1;
     min-width: 0;
   }
   .story-author-name {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 800;
     color: #0f172a;
     white-space: nowrap;
@@ -2300,7 +2335,7 @@ include __DIR__ . '/includes/header.php';
     text-overflow: ellipsis;
   }
   .story-author-role {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     color: #64748b;
     white-space: nowrap;
     overflow: hidden;
@@ -2310,11 +2345,11 @@ include __DIR__ . '/includes/header.php';
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: #059669;
     background: rgba(16, 185, 129, 0.1);
-    padding: 2px 8px;
+    padding: 3px 9px;
     border-radius: 9999px;
   }
 
@@ -3228,6 +3263,16 @@ include __DIR__ . '/includes/header.php';
       </div>
     </div>
 
+    <!-- Category Filter Chips -->
+    <div class="stories-filter-chips">
+      <button type="button" class="story-chip-btn active" data-filter="all">All Stories (12)</button>
+      <button type="button" class="story-chip-btn" data-filter="ecommerce">E-Commerce &amp; Retail (3)</button>
+      <button type="button" class="story-chip-btn" data-filter="education">Education &amp; EdTech (4)</button>
+      <button type="button" class="story-chip-btn" data-filter="healthcare">Healthcare &amp; Clinics (1)</button>
+      <button type="button" class="story-chip-btn" data-filter="bfsi">BFSI &amp; Banking (2)</button>
+      <button type="button" class="story-chip-btn" data-filter="services">Logistics &amp; Services (2)</button>
+    </div>
+
     <!-- Interactive Controls Bar -->
     <div class="stories-ctrl-bar">
       <div class="stories-ctrl-left">
@@ -3235,7 +3280,7 @@ include __DIR__ . '/includes/header.php';
           <span class="stories-pulse-dot" id="marqueePulse"></span>
           <span id="marqueeBtnText">Pause Auto-Scroll</span>
         </button>
-        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 500;">Hover over any card to inspect</span>
+        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 500;">Hover card to inspect &bull; Click category to spotlight</span>
       </div>
       <div class="stories-nav-arrows">
         <button type="button" id="btnMarqueeLeft" class="stories-nav-arrow" aria-label="Nudge track left">
@@ -3247,15 +3292,15 @@ include __DIR__ . '/includes/header.php';
       </div>
     </div>
 
-    <!-- Scrolling Marquee Tracks -->
+    <!-- Single-Row Scrolling Marquee Track -->
     <div class="stories-marquee-container" id="storiesMarqueeContainer">
-      <!-- Track 1: Gliding Left -->
-      <div class="stories-marquee-track track-left" id="marqueeTrack1">
+      <div class="stories-marquee-track" id="marqueeSingleTrack">
         <?php
-        $stories_track1 = [
+        $stories = [
           [
             'company' => 'Trustline Insurance Advisors',
             'role' => 'Regional Sales Manager • Bangalore',
+            'category' => 'bfsi',
             'tag' => 'BFSI & Insurance',
             'tag_cls' => 'tag-bfsi',
             'metric' => '+42% Policy Renewals',
@@ -3266,6 +3311,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Urban Thread Apparel',
             'role' => 'E-commerce Manager • Dubai & UAE',
+            'category' => 'ecommerce',
             'tag' => 'Fashion Retail',
             'tag_cls' => 'tag-ecom',
             'metric' => '4.2x Campaign ROI',
@@ -3276,6 +3322,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Spice Route Foods',
             'role' => 'Founder • Chennai',
+            'category' => 'ecommerce',
             'tag' => 'D2C Food & Beverage',
             'tag_cls' => 'tag-ecom',
             'metric' => '-65% Support Calls',
@@ -3286,6 +3333,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Pinnacle Business School',
             'role' => 'Marketing Manager • Chennai',
+            'category' => 'education',
             'tag' => 'Higher Education',
             'tag_cls' => 'tag-edu',
             'metric' => '2x Lead Conversion',
@@ -3296,6 +3344,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'DPS International School',
             'role' => 'Director of Admissions • Chennai',
+            'category' => 'education',
             'tag' => 'K-12 Education',
             'tag_cls' => 'tag-edu',
             'metric' => '100% Parent Reach',
@@ -3306,56 +3355,18 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Greenfield International School',
             'role' => 'Principal • Bangalore',
+            'category' => 'education',
             'tag' => 'International School',
             'tag_cls' => 'tag-edu',
             'metric' => '< 3 Min Response',
             'headline' => 'One channel replaced scattered parent communication',
             'quote' => 'Parent-teacher communication across our Bangalore campus used to be scattered across calls and texts. Now it\'s one WhatsApp channel with templates for fee reminders, event updates, and attendance alerts.',
             'avatar' => 'avatar-6.png'
-          ]
-        ];
-
-        // Output twice for seamless infinite loop
-        for ($loop = 0; $loop < 2; $loop++) {
-          foreach ($stories_track1 as $idx => $st) {
-        ?>
-          <div class="story-scroller-card" data-index="<?php echo $idx; ?>">
-            <div>
-              <div class="story-card-top">
-                <div class="story-tag-group">
-                  <span class="story-tag <?php echo $st['tag_cls']; ?>"><?php echo $st['tag']; ?></span>
-                  <span class="story-metric-chip"><?php echo $st['metric']; ?></span>
-                </div>
-                <div class="story-stars">★★★★★</div>
-              </div>
-              <h3 class="story-headline"><?php echo htmlspecialchars($st['headline']); ?></h3>
-              <p class="story-quote">"<?php echo htmlspecialchars($st['quote']); ?>"</p>
-            </div>
-            <div class="story-author">
-              <img src="<?php echo $bp; ?>assets/images/testimonials/<?php echo $st['avatar']; ?>" alt="<?php echo htmlspecialchars($st['company']); ?>" class="story-avatar-img" loading="lazy">
-              <div class="story-author-info">
-                <div class="story-author-name"><?php echo htmlspecialchars($st['company']); ?></div>
-                <div class="story-author-role"><?php echo htmlspecialchars($st['role']); ?></div>
-              </div>
-              <span class="story-verified">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                Verified
-              </span>
-            </div>
-          </div>
-        <?php
-          }
-        }
-        ?>
-      </div>
-
-      <!-- Track 2: Gliding Right -->
-      <div class="stories-marquee-track track-right" id="marqueeTrack2">
-        <?php
-        $stories_track2 = [
+          ],
           [
             'company' => 'Wellness First Clinic',
             'role' => 'Clinic Manager • Hyderabad',
+            'category' => 'healthcare',
             'tag' => 'Clinics & Healthcare',
             'tag_cls' => 'tag-health',
             'metric' => '6% No-Show Rate',
@@ -3366,6 +3377,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Bloom & Co. Home Decor',
             'role' => 'D2C Growth Lead • Singapore',
+            'category' => 'ecommerce',
             'tag' => 'D2C Home Decor',
             'tag_cls' => 'tag-ecom',
             'metric' => '23% Cart Recovery',
@@ -3376,6 +3388,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Cornerstone Cooperative Bank',
             'role' => 'Head of Digital Banking • Visakhapatnam',
+            'category' => 'bfsi',
             'tag' => 'Banking & FinTech',
             'tag_cls' => 'tag-bfsi',
             'metric' => '24/7 Self-Service',
@@ -3386,6 +3399,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'Everest Logistics Solutions',
             'role' => 'Customer Experience Lead • London & UK',
+            'category' => 'services',
             'tag' => 'Supply Chain & Freight',
             'tag_cls' => 'tag-services',
             'metric' => 'Real-Time Tracking',
@@ -3396,6 +3410,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'WorkHub Coworking Spaces',
             'role' => 'Community Manager • Hyderabad',
+            'category' => 'services',
             'tag' => 'Commercial Real Estate',
             'tag_cls' => 'tag-services',
             'metric' => '3x Faster Check-In',
@@ -3406,6 +3421,7 @@ include __DIR__ . '/includes/header.php';
           [
             'company' => 'The Edu Consultant',
             'role' => 'Founder • Bangalore',
+            'category' => 'education',
             'tag' => 'Ed-Tech Consultancy',
             'tag_cls' => 'tag-edu',
             'metric' => '+35% Enrollments',
@@ -3417,9 +3433,9 @@ include __DIR__ . '/includes/header.php';
 
         // Output twice for seamless infinite loop
         for ($loop = 0; $loop < 2; $loop++) {
-          foreach ($stories_track2 as $idx => $st) {
+          foreach ($stories as $idx => $st) {
         ?>
-          <div class="story-scroller-card" data-index="<?php echo $idx + 6; ?>">
+          <div class="story-scroller-card" data-category="<?php echo $st['category']; ?>" data-index="<?php echo $idx + ($loop * 12); ?>">
             <div>
               <div class="story-card-top">
                 <div class="story-tag-group">
@@ -3987,59 +4003,115 @@ include __DIR__ . '/includes/header.php';
   })();
 
   // -------------------------------------------------------------------------
-  // Customer Stories Animated Marquee Controls
+  // Customer Stories Animated Single-Row Marquee & Interactive Category Chips
   // -------------------------------------------------------------------------
   (function() {
     var container = document.getElementById('storiesMarqueeContainer');
+    var track = document.getElementById('marqueeSingleTrack');
     var toggleBtn = document.getElementById('btnToggleMarquee');
     var pulseDot = document.getElementById('marqueePulse');
     var btnText = document.getElementById('marqueeBtnText');
     var btnLeft = document.getElementById('btnMarqueeLeft');
     var btnRight = document.getElementById('btnMarqueeRight');
-    var track1 = document.getElementById('marqueeTrack1');
-    var track2 = document.getElementById('marqueeTrack2');
+    var filterChips = document.querySelectorAll('.story-chip-btn');
 
-    if (!container) return;
+    if (!container || !track) return;
 
     var isPaused = false;
 
+    function setPaused(paused) {
+      isPaused = paused;
+      if (isPaused) {
+        container.classList.add('is-paused');
+        if (btnText) btnText.textContent = 'Resume Auto-Scroll';
+        if (pulseDot) pulseDot.style.background = '#f59e0b';
+      } else {
+        container.classList.remove('is-paused');
+        if (btnText) btnText.textContent = 'Pause Auto-Scroll';
+        if (pulseDot) pulseDot.style.background = '#10b981';
+      }
+    }
+
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function() {
-        isPaused = !isPaused;
-        if (isPaused) {
-          container.classList.add('is-paused');
-          if (btnText) btnText.textContent = 'Resume Auto-Scroll';
-          if (pulseDot) pulseDot.style.background = '#f59e0b';
-        } else {
-          container.classList.remove('is-paused');
-          if (btnText) btnText.textContent = 'Pause Auto-Scroll';
-          if (pulseDot) pulseDot.style.background = '#10b981';
+        if (track.style.animation === 'none') {
+          // Reset track animation and filter state
+          track.style.animation = '';
+          track.style.transform = '';
+          track.style.transition = '';
+          filterChips.forEach(function(c) {
+            if (c.getAttribute('data-filter') === 'all') c.classList.add('active');
+            else c.classList.remove('active');
+          });
+          var allCards = track.querySelectorAll('.story-scroller-card');
+          allCards.forEach(function(c) { c.classList.remove('is-spotlight', 'is-dimmed'); });
         }
+        setPaused(!isPaused);
       });
     }
 
     function nudgeTrack(delta) {
-      if (!track1 && !track2) return;
-      var tracks = [track1, track2];
-      tracks.forEach(function(tr) {
-        if (!tr) return;
-        var computedStyle = window.getComputedStyle(tr);
-        var matrix = new WebKitCSSMatrix(computedStyle.transform);
-        var currentX = matrix.m41;
-        tr.style.transform = 'translateX(' + (currentX + delta) + 'px)';
-      });
+      if (!track) return;
+      setPaused(true);
+      var computedStyle = window.getComputedStyle(track);
+      var matrix = new WebKitCSSMatrix(computedStyle.transform);
+      var currentX = matrix.m41;
+      track.style.animation = 'none';
+      track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      track.style.transform = 'translateX(' + (currentX + delta) + 'px)';
     }
 
     if (btnLeft) {
       btnLeft.addEventListener('click', function() {
-        nudgeTrack(120);
+        nudgeTrack(420);
       });
     }
     if (btnRight) {
       btnRight.addEventListener('click', function() {
-        nudgeTrack(-120);
+        nudgeTrack(-420);
       });
     }
+
+    // Category Filter Chips Interaction
+    filterChips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var cat = this.getAttribute('data-filter');
+        filterChips.forEach(function(c) { c.classList.remove('active'); });
+        this.classList.add('active');
+
+        var allCards = track.querySelectorAll('.story-scroller-card');
+
+        if (cat === 'all') {
+          allCards.forEach(function(c) {
+            c.classList.remove('is-spotlight', 'is-dimmed');
+          });
+          track.style.animation = '';
+          track.style.transform = '';
+          track.style.transition = '';
+          setPaused(false);
+        } else {
+          setPaused(true);
+          allCards.forEach(function(c) {
+            if (c.getAttribute('data-category') === cat) {
+              c.classList.add('is-spotlight');
+              c.classList.remove('is-dimmed');
+            } else {
+              c.classList.remove('is-spotlight');
+              c.classList.add('is-dimmed');
+            }
+          });
+
+          // Smoothly center or bring the first matching card into view
+          var firstMatch = track.querySelector('.story-scroller-card[data-category="' + cat + '"]');
+          if (firstMatch) {
+            var offset = firstMatch.offsetLeft;
+            track.style.animation = 'none';
+            track.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            track.style.transform = 'translateX(-' + Math.max(0, offset - 60) + 'px)';
+          }
+        }
+      });
+    });
   })();
 })();
 </script>
