@@ -1577,61 +1577,7 @@ include __DIR__ . '/includes/header.php';
   }
 
 
-  /* Steps Section */
-  .cw-steps-section {
-    background: #0f172a;
-    color: #ffffff;
-    padding: 5.5rem 1.25rem;
-  }
-  .cw-steps-header {
-    text-align: center;
-    max-width: 760px;
-    margin: 0 auto 4rem;
-  }
-  .cw-steps-header .cw-section-title {
-    color: #ffffff;
-  }
-  .cw-steps-header .cw-section-subtitle {
-    color: #94a3b8;
-  }
-  .cw-steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .cw-step-card {
-    background: #1e293b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 28px 24px;
-    position: relative;
-    transition: transform 0.2s ease;
-  }
-  .cw-step-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(5, 150, 105, 0.4);
-  }
-  .cw-step-num {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: rgba(5, 150, 105, 0.4);
-    line-height: 1;
-    margin-bottom: 14px;
-  }
-  .cw-step-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  .cw-step-desc {
-    font-size: 0.88rem;
-    color: #94a3b8;
-    line-height: 1.6;
-    margin: 0;
-  }
+
 
   /* =========================================
      COMPREHENSIVE MOBILE RESPONSIVE ENGINE
@@ -1763,56 +1709,7 @@ include __DIR__ . '/includes/header.php';
       min-width: 560px !important;
       width: 100% !important;
     }
-    .cw-steps-section {
-      padding: 3rem 1rem !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .cw-steps-grid {
-      grid-template-columns: 1fr !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      gap: 1rem !important;
-    }
-    .cw-step-card {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      padding: 1.5rem 1.25rem !important;
-    }
-    .cw-sales-inner {
-      padding: 2.5rem 1.25rem !important;
-      border-radius: 24px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .cw-sales-title {
-      font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
-    }
-    .cw-sales-desc {
-      font-size: 0.95rem !important;
-    }
-    .cw-sales-actions {
-      flex-direction: column !important;
-      width: 100% !important;
-      max-width: 300px !important;
-      margin: 0 auto 1.25rem !important;
-      gap: 0.65rem !important;
-    }
-    .cw-btn-white,
-    .cw-btn-transparent {
-      width: 100% !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-    }
-    .cw-sales-trust {
-      flex-direction: column !important;
-      gap: 0.4rem !important;
-      align-items: center !important;
-    }
+
   }
 
   @media (max-width: 768px) {
@@ -2708,40 +2605,6 @@ include __DIR__ . '/includes/header.php';
   </section>
 
 
-  <!-- 4. HOW IT WORKS / 4 EASY STEPS -->
-  <section class="cw-steps-section">
-    <div class="cw-steps-header">
-      <span class="cw-badge-pill" style="background:rgba(5, 150, 105, 0.2);color:#34d399;border-color:rgba(5,150,105,0.4);">How It Works</span>
-      <h2 class="cw-section-title">Start in 4 Easy Steps</h2>
-      <p class="cw-section-subtitle">Setting up your official WhatsApp assistant takes less than 10 minutes.</p>
-    </div>
-
-    <div class="cw-steps-grid">
-      <div class="cw-step-card">
-        <div class="cw-step-num">01</div>
-        <h3 class="cw-step-title">Link Your Phone</h3>
-        <p class="cw-step-desc">Connect your business phone number by scanning a simple QR code in 30 seconds.</p>
-      </div>
-
-      <div class="cw-step-card">
-        <div class="cw-step-num">02</div>
-        <h3 class="cw-step-title">Upload Contact List</h3>
-        <p class="cw-step-desc">Upload your customer phone list or link directly with your existing Shopify or CRM tool.</p>
-      </div>
-
-      <div class="cw-step-card">
-        <div class="cw-step-num">03</div>
-        <h3 class="cw-step-title">Design Chat Flows</h3>
-        <p class="cw-step-desc">Type out your answers or design automated reply menus using our visual builder.</p>
-      </div>
-
-      <div class="cw-step-card">
-        <div class="cw-step-num">04</div>
-        <h3 class="cw-step-title">Start Answering</h3>
-        <p class="cw-step-desc">Turn on your assistant, send bulk messages, and watch conversations happen automatically.</p>
-      </div>
-    </div>
-  </section>
 
 </div>
 

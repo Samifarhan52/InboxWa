@@ -1,6 +1,6 @@
 <?php
-$basePath = '../../';
-$bp = '../../';
+$basePath = isset($basePath) ? $basePath : '../../';
+$bp = isset($bp) ? $bp : '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'WhatsApp Business API & Automation Platform | InboxWa';
@@ -481,9 +481,10 @@ include __DIR__ . '/../../includes/header.php';
 
   /* Steps Section */
   .cw-steps-section {
-    padding: 5.5rem 1.5rem;
+    padding: 6rem 1.5rem;
     background: #0f172a;
     color: #ffffff;
+    position: relative;
   }
   .cw-steps-container {
     max-width: 1200px;
@@ -491,20 +492,36 @@ include __DIR__ . '/../../includes/header.php';
   }
   .cw-steps-header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+  }
+  .cw-steps-header .cw-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 150, 105, 0.2) !important;
+    color: #34d399 !important;
+    border: 1px solid rgba(5, 150, 105, 0.4) !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
   }
   .cw-steps-title {
     font-size: clamp(2rem, 3.5vw, 2.75rem);
     font-weight: 800;
     color: #ffffff;
-    margin: 0.75rem 0 0.5rem;
+    margin: 0 0 0.75rem;
     letter-spacing: -0.02em;
+    line-height: 1.2;
   }
   .cw-steps-subtitle {
     font-size: 1.05rem;
     color: #94a3b8;
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
+    line-height: 1.6;
   }
   .cw-steps-grid {
     display: grid;
@@ -512,20 +529,24 @@ include __DIR__ . '/../../includes/header.php';
     gap: 1.5rem;
   }
   .cw-step-card {
-    background: rgba(255, 255, 255, 0.04);
+    background: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
-    padding: 2.25rem 1.5rem;
-    transition: all 0.3s ease;
+    padding: 2.25rem 1.75rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
   }
   .cw-step-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(5, 150, 105, 0.4);
-    transform: translateY(-4px);
+    background: #24324a;
+    border-color: rgba(16, 185, 129, 0.45);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(16, 185, 129, 0.1);
   }
   .cw-step-number {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: #10b981;
     line-height: 1;
@@ -533,10 +554,11 @@ include __DIR__ . '/../../includes/header.php';
     letter-spacing: -0.03em;
   }
   .cw-step-heading {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #ffffff;
-    margin: 0 0 0.65rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
   }
   .cw-step-text {
     font-size: 0.92rem;
@@ -547,11 +569,22 @@ include __DIR__ . '/../../includes/header.php';
   @media (max-width: 1024px) {
     .cw-steps-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
     }
   }
   @media (max-width: 640px) {
+    .cw-steps-section {
+      padding: 4rem 1.25rem;
+    }
+    .cw-steps-header {
+      margin-bottom: 2.5rem;
+    }
     .cw-steps-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .cw-step-card {
+      padding: 1.75rem 1.5rem;
     }
   }
 
