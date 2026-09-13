@@ -1933,13 +1933,20 @@ body.menu-open { overflow: hidden !important; touch-action: none; }
   background-size:200% auto;-webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;animation:hbGradientShift 7s ease infinite, hbRevealUp .8s ease both;
 }
-.partner-hero .lead{color:rgba(255,255,255,.78);max-width:640px;margin:0 auto}
+.partner-hero .lead{color:#F1F5F9 !important;max-width:640px;margin:0 auto}
+.partner-hero p{color:#F8FAFC !important}
 .partner-hero .badge{background:rgba(139,92,246,.25);color:#E9D5FF;border:1px solid rgba(167,139,250,.35)}
 .partner-orb{
   position:absolute;border-radius:50%;filter:blur(40px);opacity:.45;pointer-events:none;animation:hbFloat 8s ease-in-out infinite;
 }
 .partner-orb-1{width:280px;height:280px;background:#8B5CF6;top:-60px;right:8%}
 .partner-orb-2{width:200px;height:200px;background:#06B6D4;bottom:10%;left:5%;animation-delay:-3s}
+
+/* Workflow Simulator Styling */
+.workflow-sim{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;align-items:center;margin:2rem auto;max-width:920px}
+.ws-step{padding:.75rem 1.25rem;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);font-size:.9rem;font-weight:600;transition:all .3s ease}
+.ws-step.on{background:linear-gradient(135deg,#8B5CF6,#06B6D4);border-color:rgba(255,255,255,.5);color:#ffffff !important;box-shadow:0 4px 20px rgba(139,92,246,.45);transform:translateY(-2px)}
+.ws-controls{display:flex;gap:.5rem;justify-content:center;margin-top:1rem}
 
 
 /* =========================================================

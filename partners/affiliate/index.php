@@ -24,16 +24,19 @@ include __DIR__ . '/../../includes/header.php';
       </a>
       <a href="#flow" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">See How It Works</a>
     </div>
-    <div class="hero-visual-float" style="max-width:760px;margin:2.5rem auto 0">
-      <div style="background:linear-gradient(135deg,rgba(109,40,217,0.85),rgba(79,70,229,0.85));padding:2.5rem 1.5rem;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#fff;text-align:center;box-shadow:0 25px 50px -12px rgba(15,23,42,0.35)">
-        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;opacity:0.9;font-weight:700">Predictable Monthly Income</div>
-        <div style="font-size: clamp(2rem, 5vw, 3.2rem);font-weight:800;margin:0.5rem 0;line-height:1.1">20% Recurring Payouts</div>
-        <p style="max-width:560px;margin:0 auto;opacity:0.9;font-size:15px">Every month your referred customer renews their WhatsApp automation subscription, you receive 20% revenue share deposited straight to your account.</p>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem;font-size:13px;font-weight:600">
-          <div>✓ 90-Day Cookie Window</div>
-          <div>✓ Real-time Tracking Portal</div>
-          <div>✓ Dedicated Partner Desk</div>
-          <div>✓ Monthly Wire / PayPal</div>
+    <div class="hero-visual-float" style="max-width:780px;margin:2.5rem auto 0">
+      <div style="background:linear-gradient(135deg,rgba(109,40,217,0.95),rgba(79,70,229,0.92));padding:2.5rem 2rem;border-radius:22px;border:1px solid rgba(255,255,255,0.25);color:#ffffff;text-align:center;box-shadow:0 25px 50px -12px rgba(15,23,42,0.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;text-transform:uppercase;letter-spacing:0.09em;color:#E0E7FF;font-weight:700;background:rgba(255,255,255,0.12);padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);margin-bottom:0.75rem">
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#38BDF8"></span>
+          Predictable Monthly Income
+        </div>
+        <div style="font-size:clamp(2.2rem, 5vw, 3.4rem);font-weight:800;margin:0.25rem 0 0.75rem;line-height:1.1;color:#ffffff;letter-spacing:-0.02em">20% Recurring Payouts</div>
+        <p style="max-width:600px;margin:0 auto;color:#FFFFFF !important;opacity:1 !important;font-size:16px;line-height:1.65;font-weight:400;text-shadow:0 1px 3px rgba(0,0,0,0.35)">Every month your referred customer renews their WhatsApp automation subscription, you receive 20% revenue share deposited straight to your account.</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem 1rem;margin-top:1.75rem;font-size:13.5px;font-weight:600">
+          <div style="color:#FFFFFF !important;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);display:inline-flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:800">✓</span> 90-Day Cookie Window</div>
+          <div style="color:#FFFFFF !important;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);display:inline-flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:800">✓</span> Real-time Tracking Portal</div>
+          <div style="color:#FFFFFF !important;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);display:inline-flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:800">✓</span> Dedicated Partner Desk</div>
+          <div style="color:#FFFFFF !important;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);display:inline-flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:800">✓</span> Monthly Wire / PayPal</div>
         </div>
       </div>
     </div>
