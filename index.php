@@ -1766,7 +1766,7 @@ include __DIR__ . '/includes/header.php';
   }
 
   /* ==========================================================================
-     SECTION 3: HOW IT WORKS (GO LIVE IN MINUTES, NOT MONTHS)
+     SECTION 3: HOW IT WORKS (GO LIVE IN MINUTES, NOT MONTHS - 6 CARDS)
      ========================================================================== */
   .hiw-section {
     position: relative;
@@ -1777,7 +1777,7 @@ include __DIR__ . '/includes/header.php';
     overflow: hidden;
   }
   .hiw-container {
-    max-width: 1240px;
+    max-width: 1280px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -1815,18 +1815,6 @@ include __DIR__ . '/includes/header.php';
     max-width: 720px;
     margin: 0 auto;
   }
-  .hiw-grid-wrap {
-    position: relative;
-  }
-  .hiw-connector-line {
-    position: absolute;
-    top: 4rem;
-    left: 15%;
-    right: 15%;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(124, 58, 237, 0.35) 0%, rgba(6, 182, 212, 0.35) 100%);
-    z-index: 1;
-  }
   .hiw-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1850,28 +1838,28 @@ include __DIR__ . '/includes/header.php';
     overflow: hidden;
   }
   .hiw-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     border-color: #8b5cf6;
-    box-shadow: 0 20px 45px rgba(139, 92, 246, 0.14);
+    box-shadow: 0 22px 48px rgba(124, 58, 237, 0.14);
   }
   .hiw-card-body {
-    padding: 2.25rem 2rem;
+    padding: 2.25rem 2rem 1.25rem;
     display: flex;
     flex-direction: column;
     flex: 1;
   }
   .hiw-step-num {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
     border-radius: 16px;
     background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
     color: #ffffff;
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     font-weight: 900;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.35rem;
     box-shadow: 0 10px 22px rgba(124, 58, 237, 0.3);
     letter-spacing: -0.02em;
   }
@@ -1885,7 +1873,7 @@ include __DIR__ . '/includes/header.php';
     display: block;
   }
   .hiw-card-title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 800;
     line-height: 1.3;
     color: #0f172a;
@@ -1893,10 +1881,10 @@ include __DIR__ . '/includes/header.php';
     margin: 0 0 0.85rem;
   }
   .hiw-card-desc {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     line-height: 1.65;
     color: #64748b;
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.35rem;
     flex: 1;
   }
   .hiw-bullets {
@@ -1905,7 +1893,7 @@ include __DIR__ . '/includes/header.php';
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.7rem;
     border-top: 1px solid #f1f5f9;
     padding-top: 1.25rem;
   }
@@ -1933,6 +1921,27 @@ include __DIR__ . '/includes/header.php';
   .hiw-check-icon svg {
     width: 11px;
     height: 11px;
+  }
+  .hiw-card-media {
+    width: 100%;
+    margin-top: 1.25rem;
+    border-top: 1px solid #f1f5f9;
+    background: #f8fafc;
+    border-radius: 0 0 19px 19px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hiw-card-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hiw-card:hover .hiw-card-media img {
+    transform: scale(1.03);
   }
   .hiw-cta-wrap {
     margin-top: 3.5rem;
@@ -1966,17 +1975,18 @@ include __DIR__ . '/includes/header.php';
   }
 
   /* ==========================================================================
-     SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ENHANCED UNIQUE FORMAT)
+     SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ANIMATED INFINITE SCROLLER)
      ========================================================================== */
   .stories-section {
     position: relative;
-    padding: 6rem 1.5rem 6.5rem;
+    padding: 5.5rem 0 6.5rem;
     background: #ffffff;
     overflow: hidden;
   }
   .stories-container {
-    max-width: 1240px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 1.5rem;
     position: relative;
     z-index: 2;
   }
@@ -2025,7 +2035,7 @@ include __DIR__ . '/includes/header.php';
     border: 1px solid #e2e8f0;
     border-radius: 20px;
     padding: 1.5rem 2rem;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2.5rem;
     max-width: 1040px;
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
   }
@@ -2061,69 +2071,161 @@ include __DIR__ . '/includes/header.php';
     background: #cbd5e1;
   }
 
-  /* Industry Filter Buttons */
-  .stories-filters {
+  /* Interactive Marquee Controls */
+  .stories-ctrl-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stories-ctrl-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .stories-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .stories-ctrl-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+  .stories-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+    animation: dotPulse 1.8s infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+  }
+  .stories-nav-arrows {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .stories-nav-arrow {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #334155;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2.75rem;
-  }
-  .story-filter-btn {
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    color: #475569;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 0.55rem 1.25rem;
-    border-radius: 9999px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
   }
-  .story-filter-btn:hover {
-    background: #e2e8f0;
-    color: #1e293b;
-    border-color: #cbd5e1;
-  }
-  .story-filter-btn.active {
+  .stories-nav-arrow:hover {
     background: #7c3aed;
     color: #ffffff;
     border-color: #7c3aed;
-    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    transform: scale(1.08);
   }
 
-  /* Testimonials Grid */
-  .stories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
+  /* Marquee Tracks and Wrapping */
+  .stories-marquee-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0.75rem 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
-  .story-card {
+  .stories-marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    will-change: transform;
+  }
+  .track-left {
+    animation: marqueeScrollLeft 48s linear infinite;
+  }
+  .track-right {
+    animation: marqueeScrollRight 52s linear infinite;
+    margin-top: 1.5rem;
+  }
+
+  /* Pause on Hover */
+  .stories-marquee-container:hover .stories-marquee-track,
+  .stories-marquee-container.is-paused .stories-marquee-track {
+    animation-play-state: paused !important;
+  }
+
+  @keyframes marqueeScrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 0.75rem));
+    }
+  }
+  @keyframes marqueeScrollRight {
+    0% {
+      transform: translateX(calc(-50% - 0.75rem));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Story Card */
+  .story-scroller-card {
+    width: 420px;
+    max-width: 85vw;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
-    padding: 2rem 1.75rem;
+    padding: 1.85rem 1.65rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    cursor: default;
+    user-select: none;
   }
-  .story-card.is-hidden {
-    display: none;
-  }
-  .story-card:hover {
-    transform: translateY(-5px);
-    border-color: #c4b5fd;
-    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.12);
+  .story-scroller-card:hover {
+    transform: translateY(-7px) scale(1.02);
+    border-color: #8b5cf6;
+    box-shadow: 0 20px 45px rgba(124, 58, 237, 0.16);
+    z-index: 10;
   }
   .story-card-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .story-tag-group {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
   .story-tag {
     font-size: 0.72rem;
@@ -2131,6 +2233,15 @@ include __DIR__ . '/includes/header.php';
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+  }
+  .story-metric-chip {
+    font-size: 0.72rem;
+    font-weight: 800;
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    padding: 0.22rem 0.6rem;
     border-radius: 9999px;
   }
   .tag-bfsi { background: rgba(99, 102, 241, 0.12); color: #4338ca; }
@@ -2142,14 +2253,14 @@ include __DIR__ . '/includes/header.php';
   .story-stars {
     color: #f59e0b;
     font-size: 0.95rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
   }
   .story-headline {
-    font-size: 1.12rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.35;
-    margin: 0 0 0.85rem;
+    margin: 0 0 0.75rem;
     letter-spacing: -0.01em;
   }
   .story-quote {
@@ -2158,34 +2269,24 @@ include __DIR__ . '/includes/header.php';
     color: #475569;
     margin: 0 0 1.5rem;
     flex: 1;
+    position: relative;
   }
   .story-author {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.85rem;
     border-top: 1px solid #f1f5f9;
     padding-top: 1rem;
   }
-  .story-avatar {
-    width: 44px;
-    height: 44px;
+  .story-avatar-img {
+    width: 46px;
+    height: 46px;
     border-radius: 12px;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
     flex-shrink: 0;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
-  .av-purple { background: linear-gradient(135deg, #7c3aed, #a855f7); }
-  .av-blue { background: linear-gradient(135deg, #2563eb, #38bdf8); }
-  .av-green { background: linear-gradient(135deg, #059669, #10b981); }
-  .av-amber { background: linear-gradient(135deg, #d97706, #f59e0b); }
-  .av-indigo { background: linear-gradient(135deg, #4338ca, #6366f1); }
-  .av-pink { background: linear-gradient(135deg, #db2777, #ec4899); }
-  .av-cyan { background: linear-gradient(135deg, #0891b2, #06b6d4); }
-
   .story-author-info {
     flex: 1;
     min-width: 0;
@@ -2209,11 +2310,11 @@ include __DIR__ . '/includes/header.php';
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #059669;
     background: rgba(16, 185, 129, 0.1);
-    padding: 2px 7px;
+    padding: 2px 8px;
     border-radius: 9999px;
   }
 
@@ -2267,12 +2368,8 @@ include __DIR__ . '/includes/header.php';
 
   /* Responsive Rules */
   @media (max-width: 1024px) {
-    .hiw-grid,
-    .stories-grid {
+    .hiw-grid {
       grid-template-columns: repeat(2, 1fr);
-    }
-    .hiw-connector-line {
-      display: none;
     }
     .stories-bottom-card {
       flex-direction: column;
@@ -2282,10 +2379,12 @@ include __DIR__ . '/includes/header.php';
     .stories-bottom-actions {
       justify-content: center;
     }
+    .story-scroller-card {
+      width: 360px;
+    }
   }
   @media (max-width: 640px) {
-    .hiw-grid,
-    .stories-grid {
+    .hiw-grid {
       grid-template-columns: 1fr;
     }
     .stories-stats-strip {
@@ -2304,6 +2403,10 @@ include __DIR__ . '/includes/header.php';
       width: 100%;
       text-align: center;
       justify-content: center;
+    }
+    .story-scroller-card {
+      width: 300px;
+      padding: 1.5rem 1.25rem;
     }
   }
 </style>
@@ -2819,130 +2922,259 @@ include __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ==========================================================================
-       SECTION 3: HOW IT WORKS (GO LIVE IN MINUTES, NOT MONTHS)
+       SECTION 3: HOW IT WORKS (GO LIVE IN MINUTES, NOT MONTHS - 6 CARDS)
        ========================================================================== -->
   <section class="hiw-section" id="how-it-works">
     <div class="hiw-container">
       <div class="hiw-header reveal-item">
         <span class="hiw-badge">⚡ How It Works</span>
         <h2 class="hiw-title">Go Live in Minutes, Not Months</h2>
-        <p class="hiw-subtitle">Connect your official WhatsApp Business number and launch your first automated customer workflow in 3 simple steps.</p>
+        <p class="hiw-subtitle">Connect your official WhatsApp Business number and launch your first automated customer workflow in simple, no-code steps.</p>
       </div>
 
-      <div class="hiw-grid-wrap">
-        <div class="hiw-connector-line"></div>
-        <div class="hiw-grid">
-          <!-- Step 1 -->
-          <div class="hiw-card-wrapper reveal-item">
-            <div class="hiw-card">
-              <div class="hiw-card-body">
-                <div class="hiw-step-num">01</div>
-                <span class="hiw-step-tagline">CONNECT YOUR NUMBER</span>
-                <h3 class="hiw-card-title">One-Click WhatsApp Business Onboarding</h3>
-                <p class="hiw-card-desc">Link your phone number directly through Meta's official Embedded Signup flow with zero technical setup.</p>
-                <ul class="hiw-bullets">
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Official Meta onboarding flow with instant approval</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Connect your business number in under 2 minutes</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Secure OAuth authentication &amp; zero ban risk</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Supports multiple WABA numbers, brands &amp; branches</span>
-                  </li>
-                </ul>
-              </div>
+      <div class="hiw-grid">
+        <!-- Card 1 -->
+        <div class="hiw-card-wrapper reveal-item">
+          <div class="hiw-card">
+            <div class="hiw-card-body">
+              <div class="hiw-step-num">01</div>
+              <span class="hiw-step-tagline">CONNECT YOUR NUMBER</span>
+              <h3 class="hiw-card-title">One-Click WhatsApp Business Onboarding</h3>
+              <p class="hiw-card-desc">Connect your WhatsApp Business number directly through the platform using official Meta embedded signup. No developer account needed — just a few clicks and you're live.</p>
+              <ul class="hiw-bullets">
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Official Meta onboarding flow with instant approval</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Connect number in under 2 minutes</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Secure OAuth authentication &amp; zero ban risk</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Supports multiple WABA numbers &amp; branches</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hiw-card-media">
+              <img src="<?php echo $bp; ?>assets/images/platform/step-1-onboarding.png" alt="One-Click WhatsApp Business Onboarding" loading="lazy">
             </div>
           </div>
+        </div>
 
-          <!-- Step 2 -->
-          <div class="hiw-card-wrapper reveal-item" style="transition-delay: 150ms;">
-            <div class="hiw-card">
-              <div class="hiw-card-body">
-                <div class="hiw-step-num">02</div>
-                <span class="hiw-step-tagline">BUILD YOUR BOT</span>
-                <h3 class="hiw-card-title">No-Code Chatbot &amp; Automation Builder</h3>
-                <p class="hiw-card-desc">Design conversational flows, instant lead qualification sequences, and round-the-clock FAQ responders visually.</p>
-                <ul class="hiw-bullets">
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Visual drag-and-drop conversational flow editor</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Keyword, interactive button &amp; QR code triggers</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>AI-powered smart reply suggestions &amp; fallback</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Multi-step conversation routing &amp; two-way CRM sync</span>
-                  </li>
-                </ul>
-              </div>
+        <!-- Card 2 -->
+        <div class="hiw-card-wrapper reveal-item" style="transition-delay: 100ms;">
+          <div class="hiw-card">
+            <div class="hiw-card-body">
+              <div class="hiw-step-num">02</div>
+              <span class="hiw-step-tagline">BUILD YOUR BOT</span>
+              <h3 class="hiw-card-title">No-Code Chatbot &amp; Automation Builder</h3>
+              <p class="hiw-card-desc">Design powerful WhatsApp automation flows with a visual drag-and-drop builder. Set up keyword triggers, button responses, lead capture forms, and multi-step conversation logic — no coding required.</p>
+              <ul class="hiw-bullets">
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Visual drag-and-drop flow editor</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Keyword, button &amp; QR code triggers</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>AI-powered smart reply suggestions &amp; fallback</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Multi-step conversation routing &amp; CRM sync</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hiw-card-media">
+              <img src="<?php echo $bp; ?>assets/images/platform/step-2-builder.png" alt="No-Code Chatbot &amp; Automation Builder" loading="lazy">
             </div>
           </div>
+        </div>
 
-          <!-- Step 3 -->
-          <div class="hiw-card-wrapper reveal-item" style="transition-delay: 300ms;">
-            <div class="hiw-card">
-              <div class="hiw-card-body">
-                <div class="hiw-step-num">03</div>
-                <span class="hiw-step-tagline">LAUNCH CAMPAIGNS</span>
-                <h3 class="hiw-card-title">Broadcast Campaigns That Actually Convert</h3>
-                <p class="hiw-card-desc">Reach thousands of opted-in customers with personalized broadcast templates, catalog offers, and delivery alerts.</p>
-                <ul class="hiw-bullets">
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Bulk WhatsApp broadcasts in seconds with high deliverability</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Granular audience segmentation by custom tags &amp; attributes</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Schedule campaigns ahead of time across multiple timezones</span>
-                  </li>
-                  <li>
-                    <span class="hiw-check-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    <span>Live campaign analytics, CTR tracking &amp; instant CSV export</span>
-                  </li>
-                </ul>
-              </div>
+        <!-- Card 3 -->
+        <div class="hiw-card-wrapper reveal-item" style="transition-delay: 200ms;">
+          <div class="hiw-card">
+            <div class="hiw-card-body">
+              <div class="hiw-step-num">03</div>
+              <span class="hiw-step-tagline">LAUNCH CAMPAIGNS</span>
+              <h3 class="hiw-card-title">Broadcast Campaigns That Actually Convert</h3>
+              <p class="hiw-card-desc">Send highly targeted WhatsApp campaigns to segmented audiences. Schedule messages, personalize with variables, and track real-time delivery, open, and reply rates from a single dashboard.</p>
+              <ul class="hiw-bullets">
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Bulk WhatsApp broadcasts in seconds</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Audience segmentation by tags &amp; filters</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Schedule campaigns by date and time</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Live campaign analytics &amp; instant CSV export</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hiw-card-media">
+              <img src="<?php echo $bp; ?>assets/images/platform/step-3-campaigns.png" alt="Broadcast Campaigns That Actually Convert" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="hiw-card-wrapper reveal-item" style="transition-delay: 300ms;">
+          <div class="hiw-card">
+            <div class="hiw-card-body">
+              <div class="hiw-step-num">04</div>
+              <span class="hiw-step-tagline">AUTOMATE SALES</span>
+              <h3 class="hiw-card-title">Automate Your Entire Ecommerce Flow</h3>
+              <p class="hiw-card-desc">Sync your online store and let InboxWa handle the entire post-purchase journey — from order confirmation to delivery tracking, abandoned cart recovery, and review collection.</p>
+              <ul class="hiw-bullets">
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Shopify &amp; WooCommerce integration</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Automatic order status notifications</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Abandoned cart recovery messages</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Payment link delivery via WhatsApp</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hiw-card-media">
+              <img src="<?php echo $bp; ?>assets/images/platform/step-4-ecommerce.png" alt="Automate Your Entire Ecommerce Flow" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="hiw-card-wrapper reveal-item" style="transition-delay: 400ms;">
+          <div class="hiw-card">
+            <div class="hiw-card-body">
+              <div class="hiw-step-num">05</div>
+              <span class="hiw-step-tagline">DEVELOPERS</span>
+              <h3 class="hiw-card-title">Powerful REST API for Custom Integrations</h3>
+              <p class="hiw-card-desc">Integrate WhatsApp messaging into your CRM, ERP, or custom application with a clean, well-documented REST API. Trigger messages, manage contacts, and build fully custom workflows.</p>
+              <ul class="hiw-bullets">
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Send messages &amp; templates via REST API</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Webhook support for real-time events</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Contact &amp; conversation management</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Easy integration with CRM, apps &amp; websites</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hiw-card-media">
+              <img src="<?php echo $bp; ?>assets/images/platform/step-5-api.png" alt="Powerful REST API for Custom Integrations" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="hiw-card-wrapper reveal-item" style="transition-delay: 500ms;">
+          <div class="hiw-card">
+            <div class="hiw-card-body">
+              <div class="hiw-step-num">06</div>
+              <span class="hiw-step-tagline">INSIGHTS</span>
+              <h3 class="hiw-card-title">Real-Time Analytics &amp; Performance Reports</h3>
+              <p class="hiw-card-desc">Track every message, campaign, and conversation with a powerful analytics dashboard. Monitor delivery rates, agent performance, campaign ROI, and customer engagement in real time.</p>
+              <ul class="hiw-bullets">
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Live campaign delivery &amp; open rates</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Agent performance leaderboards</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Contact growth &amp; engagement trends</span>
+                </li>
+                <li>
+                  <span class="hiw-check-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span>Export reports as CSV or PDF</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hiw-card-media">
+              <img src="<?php echo $bp; ?>assets/images/platform/step-6-analytics.png" alt="Real-Time Analytics &amp; Performance Reports" loading="lazy">
             </div>
           </div>
         </div>
@@ -2950,7 +3182,7 @@ include __DIR__ . '/includes/header.php';
 
       <div class="hiw-cta-wrap reveal-item">
         <a href="<?php echo $bp; ?>auth/register" class="hiw-cta-btn">
-          Start Your Free Setup
+          Get Started Now
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <p class="hiw-cta-subtext">No credit card required • 7-day free trial • Live support onboarding included</p>
@@ -2959,7 +3191,7 @@ include __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ==========================================================================
-       SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ENHANCED UNIQUE FORMAT)
+       SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ANIMATED INFINITE SCROLLER)
        ========================================================================== -->
   <section class="stories-section" id="testimonials">
     <div class="stories-container">
@@ -2994,297 +3226,232 @@ include __DIR__ . '/includes/header.php';
           <div class="stories-stat-lbl">Enterprise Uptime SLA</div>
         </div>
       </div>
+    </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="stories-filters reveal-item">
-        <button type="button" class="story-filter-btn active" data-filter="all">All Stories (12)</button>
-        <button type="button" class="story-filter-btn" data-filter="ecommerce">E-Commerce &amp; Retail (3)</button>
-        <button type="button" class="story-filter-btn" data-filter="education">Education &amp; EdTech (4)</button>
-        <button type="button" class="story-filter-btn" data-filter="healthcare">Healthcare &amp; Clinics (1)</button>
-        <button type="button" class="story-filter-btn" data-filter="bfsi">BFSI &amp; Banking (2)</button>
-        <button type="button" class="story-filter-btn" data-filter="services">Logistics &amp; Services (2)</button>
+    <!-- Interactive Controls Bar -->
+    <div class="stories-ctrl-bar">
+      <div class="stories-ctrl-left">
+        <button type="button" id="btnToggleMarquee" class="stories-ctrl-btn" aria-label="Pause or resume scrolling animation">
+          <span class="stories-pulse-dot" id="marqueePulse"></span>
+          <span id="marqueeBtnText">Pause Auto-Scroll</span>
+        </button>
+        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 500;">Hover over any card to inspect</span>
+      </div>
+      <div class="stories-nav-arrows">
+        <button type="button" id="btnMarqueeLeft" class="stories-nav-arrow" aria-label="Nudge track left">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button type="button" id="btnMarqueeRight" class="stories-nav-arrow" aria-label="Nudge track right">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scrolling Marquee Tracks -->
+    <div class="stories-marquee-container" id="storiesMarqueeContainer">
+      <!-- Track 1: Gliding Left -->
+      <div class="stories-marquee-track track-left" id="marqueeTrack1">
+        <?php
+        $stories_track1 = [
+          [
+            'company' => 'Trustline Insurance Advisors',
+            'role' => 'Regional Sales Manager • Bangalore',
+            'tag' => 'BFSI & Insurance',
+            'tag_cls' => 'tag-bfsi',
+            'metric' => '+42% Policy Renewals',
+            'headline' => 'Renewals handled before agents even get involved',
+            'quote' => 'AI calling agent handles our policy renewal reminders now across our Bangalore region. Agents only get looped in when a customer actually wants to talk terms.',
+            'avatar' => 'avatar-1.png'
+          ],
+          [
+            'company' => 'Urban Thread Apparel',
+            'role' => 'E-commerce Manager • Dubai & UAE',
+            'tag' => 'Fashion Retail',
+            'tag_cls' => 'tag-ecom',
+            'metric' => '4.2x Campaign ROI',
+            'headline' => 'WhatsApp became a real sales channel',
+            'quote' => 'Catalog sync with our Shopify store turned WhatsApp into a real sales channel for our customers across Dubai and the UAE. They browse and order without downloading anything new.',
+            'avatar' => 'avatar-2.png'
+          ],
+          [
+            'company' => 'Spice Route Foods',
+            'role' => 'Founder • Chennai',
+            'tag' => 'D2C Food & Beverage',
+            'tag_cls' => 'tag-ecom',
+            'metric' => '-65% Support Calls',
+            'headline' => 'Abandoned carts we never would have recovered',
+            'quote' => 'We recovered abandoned carts from customers across Chennai that we never would have followed up on manually. Automated WhatsApp nudges brought back real revenue in the first month.',
+            'avatar' => 'avatar-3.png'
+          ],
+          [
+            'company' => 'Pinnacle Business School',
+            'role' => 'Marketing Manager • Chennai',
+            'tag' => 'Higher Education',
+            'tag_cls' => 'tag-edu',
+            'metric' => '2x Lead Conversion',
+            'headline' => 'Enquiry-to-application conversion doubled',
+            'quote' => 'Lead generation forms inside WhatsApp doubled our enquiry-to-application conversion here in Chennai. Prospective students fill it out without ever leaving the chat.',
+            'avatar' => 'avatar-4.png'
+          ],
+          [
+            'company' => 'DPS International School',
+            'role' => 'Director of Admissions • Chennai',
+            'tag' => 'K-12 Education',
+            'tag_cls' => 'tag-edu',
+            'metric' => '100% Parent Reach',
+            'headline' => 'Auto-qualifying leads during peak enquiry season',
+            'quote' => 'Our admissions cycle in Chennai gets thousands of WhatsApp enquiries in weeks. InboxWa\'s auto-qualification flow tags serious applicants automatically, so counselors spend time only on real conversations.',
+            'avatar' => 'avatar-5.png'
+          ],
+          [
+            'company' => 'Greenfield International School',
+            'role' => 'Principal • Bangalore',
+            'tag' => 'International School',
+            'tag_cls' => 'tag-edu',
+            'metric' => '< 3 Min Response',
+            'headline' => 'One channel replaced scattered parent communication',
+            'quote' => 'Parent-teacher communication across our Bangalore campus used to be scattered across calls and texts. Now it\'s one WhatsApp channel with templates for fee reminders, event updates, and attendance alerts.',
+            'avatar' => 'avatar-6.png'
+          ]
+        ];
+
+        // Output twice for seamless infinite loop
+        for ($loop = 0; $loop < 2; $loop++) {
+          foreach ($stories_track1 as $idx => $st) {
+        ?>
+          <div class="story-scroller-card" data-index="<?php echo $idx; ?>">
+            <div>
+              <div class="story-card-top">
+                <div class="story-tag-group">
+                  <span class="story-tag <?php echo $st['tag_cls']; ?>"><?php echo $st['tag']; ?></span>
+                  <span class="story-metric-chip"><?php echo $st['metric']; ?></span>
+                </div>
+                <div class="story-stars">★★★★★</div>
+              </div>
+              <h3 class="story-headline"><?php echo htmlspecialchars($st['headline']); ?></h3>
+              <p class="story-quote">"<?php echo htmlspecialchars($st['quote']); ?>"</p>
+            </div>
+            <div class="story-author">
+              <img src="<?php echo $bp; ?>assets/images/testimonials/<?php echo $st['avatar']; ?>" alt="<?php echo htmlspecialchars($st['company']); ?>" class="story-avatar-img" loading="lazy">
+              <div class="story-author-info">
+                <div class="story-author-name"><?php echo htmlspecialchars($st['company']); ?></div>
+                <div class="story-author-role"><?php echo htmlspecialchars($st['role']); ?></div>
+              </div>
+              <span class="story-verified">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified
+              </span>
+            </div>
+          </div>
+        <?php
+          }
+        }
+        ?>
       </div>
 
-      <!-- Stories Grid -->
-      <div class="stories-grid" id="storiesGrid">
-        <!-- Story 1: Trustline (BFSI) -->
-        <div class="story-card reveal-item" data-category="bfsi">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-bfsi">BFSI &amp; Insurance</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">+42% Higher Policy Renewal Rates</h3>
-            <p class="story-quote">"Automated policy renewal reminders reduced our drop-offs by 42%. Customers love getting instant quotes on WhatsApp instead of waiting on endless phone queues."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-purple">TL</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Trustline Insurance Advisors</div>
-              <div class="story-author-role">Regional Sales Manager • Bangalore</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
+      <!-- Track 2: Gliding Right -->
+      <div class="stories-marquee-track track-right" id="marqueeTrack2">
+        <?php
+        $stories_track2 = [
+          [
+            'company' => 'Wellness First Clinic',
+            'role' => 'Clinic Manager • Hyderabad',
+            'tag' => 'Clinics & Healthcare',
+            'tag_cls' => 'tag-health',
+            'metric' => '6% No-Show Rate',
+            'headline' => 'Front-desk call volume cut in half',
+            'quote' => 'Appointment booking through WhatsApp cut our Hyderabad front-desk call volume in half. Patients book, get reminders, and reschedule without a single phone call.',
+            'avatar' => 'avatar-7.png'
+          ],
+          [
+            'company' => 'Bloom & Co. Home Decor',
+            'role' => 'D2C Growth Lead • Singapore',
+            'tag' => 'D2C Home Decor',
+            'tag_cls' => 'tag-ecom',
+            'metric' => '23% Cart Recovery',
+            'headline' => 'Segmented campaigns outperformed email',
+            'quote' => 'Segmented broadcast campaigns let us target repeat buyers separately from first-time visitors across our Singapore customer base. Open rates are nothing like email ever gave us.',
+            'avatar' => 'avatar-8.png'
+          ],
+          [
+            'company' => 'Cornerstone Cooperative Bank',
+            'role' => 'Head of Digital Banking • Visakhapatnam',
+            'tag' => 'Banking & FinTech',
+            'tag_cls' => 'tag-bfsi',
+            'metric' => '24/7 Self-Service',
+            'headline' => 'Lighter call center load, faster answers',
+            'quote' => 'Customer support queries on loan status and account queries dropped our Visakhapatnam call center\'s load noticeably once WhatsApp automation took over routine questions.',
+            'avatar' => 'avatar-9.png'
+          ],
+          [
+            'company' => 'Everest Logistics Solutions',
+            'role' => 'Customer Experience Lead • London & UK',
+            'tag' => 'Supply Chain & Freight',
+            'tag_cls' => 'tag-services',
+            'metric' => 'Real-Time Tracking',
+            'headline' => 'Where\'s my order tickets noticeably down',
+            'quote' => 'Shipment status updates go out automatically to hundreds of customers across London and the UK every day. Support tickets asking where\'s my order dropped noticeably.',
+            'avatar' => 'avatar-10.png'
+          ],
+          [
+            'company' => 'WorkHub Coworking Spaces',
+            'role' => 'Community Manager • Hyderabad',
+            'tag' => 'Commercial Real Estate',
+            'tag_cls' => 'tag-services',
+            'metric' => '3x Faster Check-In',
+            'headline' => 'Front desk freed up for actual community building',
+            'quote' => 'Member queries about bookings and day passes across our Hyderabad space are now handled instantly through automated WhatsApp replies, freeing up our front desk for actual community building.',
+            'avatar' => 'avatar-11.png'
+          ],
+          [
+            'company' => 'The Edu Consultant',
+            'role' => 'Founder • Bangalore',
+            'tag' => 'Ed-Tech Consultancy',
+            'tag_cls' => 'tag-edu',
+            'metric' => '+35% Enrollments',
+            'headline' => 'No-shows dropped after switching to WhatsApp booking',
+            'quote' => 'As an ed-tech consultancy based in Bangalore, we book 40+ counseling calls a week. The appointment booking feature inside WhatsApp cut our no-show rate significantly — students book and get reminded automatically.',
+            'avatar' => 'avatar-12.png'
+          ]
+        ];
 
-        <!-- Story 2: Urban Thread (E-commerce) -->
-        <div class="story-card reveal-item" data-category="ecommerce">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-ecom">Fashion Retail</span>
-              <div class="story-stars">★★★★★</div>
+        // Output twice for seamless infinite loop
+        for ($loop = 0; $loop < 2; $loop++) {
+          foreach ($stories_track2 as $idx => $st) {
+        ?>
+          <div class="story-scroller-card" data-index="<?php echo $idx + 6; ?>">
+            <div>
+              <div class="story-card-top">
+                <div class="story-tag-group">
+                  <span class="story-tag <?php echo $st['tag_cls']; ?>"><?php echo $st['tag']; ?></span>
+                  <span class="story-metric-chip"><?php echo $st['metric']; ?></span>
+                </div>
+                <div class="story-stars">★★★★★</div>
+              </div>
+              <h3 class="story-headline"><?php echo htmlspecialchars($st['headline']); ?></h3>
+              <p class="story-quote">"<?php echo htmlspecialchars($st['quote']); ?>"</p>
             </div>
-            <h3 class="story-headline">4.2x ROI on Broadcast Campaigns</h3>
-            <p class="story-quote">"Broadcast campaigns have completely replaced SMS for our seasonal drops. 87% read rates and 4.2x ROI compared to email make InboxWa an indispensable channel."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-pink">UT</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Urban Thread Apparel</div>
-              <div class="story-author-role">E-commerce Manager • Dubai &amp; UAE</div>
+            <div class="story-author">
+              <img src="<?php echo $bp; ?>assets/images/testimonials/<?php echo $st['avatar']; ?>" alt="<?php echo htmlspecialchars($st['company']); ?>" class="story-avatar-img" loading="lazy">
+              <div class="story-author-info">
+                <div class="story-author-name"><?php echo htmlspecialchars($st['company']); ?></div>
+                <div class="story-author-role"><?php echo htmlspecialchars($st['role']); ?></div>
+              </div>
+              <span class="story-verified">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified
+              </span>
             </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
           </div>
-        </div>
-
-        <!-- Story 3: Spice Route (E-commerce) -->
-        <div class="story-card reveal-item" data-category="ecommerce">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-ecom">D2C Food &amp; Beverage</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">65% Reduction in Support Call Volume</h3>
-            <p class="story-quote">"Order confirmation and live delivery tracking via WhatsApp cut our WISMO calls by 65%. Our customers are genuinely happier with proactive shipping alerts."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-amber">SR</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Spice Route Foods</div>
-              <div class="story-author-role">Founder • Chennai</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 4: Pinnacle Business School (Education) -->
-        <div class="story-card reveal-item" data-category="education">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-edu">Higher Education</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">70% Admissions Enquiries Auto-Resolved</h3>
-            <p class="story-quote">"Admissions queries doubled this year and InboxWa handled 70% automatically with chatbot flows. Our counselors only step in for qualified prospective students."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-blue">PB</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Pinnacle Business School</div>
-              <div class="story-author-role">Marketing Manager • Chennai</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 5: DPS International School (Education) -->
-        <div class="story-card reveal-item" data-category="education">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-edu">K-12 Education</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">100% Delivery on Urgent Parent Circulars</h3>
-            <p class="story-quote">"Parents prefer WhatsApp over email any day. Fee reminders, circulars, and attendance alerts reach 100% of our parents instantly without spam folder issues."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-indigo">DP</div>
-            <div class="story-author-info">
-              <div class="story-author-name">DPS International School</div>
-              <div class="story-author-role">Director of Admissions • Chennai</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 6: Greenfield International School (Education) -->
-        <div class="story-card reveal-item" data-category="education">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-edu">International School</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">Shared Team Inbox with Under 3-Min Response</h3>
-            <p class="story-quote">"The multi-agent inbox allows our 6 administrative staff to share one WhatsApp number without confusion. Response times dropped from hours to under 3 minutes."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-green">GF</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Greenfield International School</div>
-              <div class="story-author-role">Principal • Bangalore</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 7: Wellness First Clinic (Healthcare) -->
-        <div class="story-card reveal-item" data-category="healthcare">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-health">Clinics &amp; Healthcare</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">No-Show Rates Plunged from 28% to &lt;6%</h3>
-            <p class="story-quote">"Appointment reminders and rescheduling via WhatsApp dropped our no-show rate from 28% to under 6% in the first month. Doctor schedules are now fully utilized."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-cyan">WF</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Wellness First Clinic</div>
-              <div class="story-author-role">Clinic Manager • Hyderabad</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 8: Bloom & Co. (E-commerce) -->
-        <div class="story-card reveal-item" data-category="ecommerce">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-ecom">D2C Home Decor</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">23% Cart Recovery within 48 Hours</h3>
-            <p class="story-quote">"Abandoned cart recovery via WhatsApp converted 23% of dropped checkouts into paying customers. The automated ROI paid for InboxWa within the first 48 hours."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-purple">BC</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Bloom &amp; Co. Home Decor</div>
-              <div class="story-author-role">D2C Growth Lead • Singapore</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 9: Cornerstone Cooperative Bank (BFSI) -->
-        <div class="story-card reveal-item" data-category="bfsi">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-bfsi">Banking &amp; FinTech</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">24/7 Self-Service Banking via Chat</h3>
-            <p class="story-quote">"Instant balance checks and branch locator flows give our account holders 24/7 self-service without expanding support headcount. Extremely dependable platform."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-blue">CB</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Cornerstone Cooperative Bank</div>
-              <div class="story-author-role">Head of Digital Banking • Visakhapatnam</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 10: Everest Logistics (Services) -->
-        <div class="story-card reveal-item" data-category="services">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-services">Supply Chain &amp; Freight</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">Live Dispatcher Tracking on WhatsApp</h3>
-            <p class="story-quote">"Our dispatchers send automated consignment updates at every transit hub. Driver check-in via WhatsApp simplified our daily ops across 14 transit routes."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-amber">EL</div>
-            <div class="story-author-info">
-              <div class="story-author-name">Everest Logistics Solutions</div>
-              <div class="story-author-role">Customer Experience Lead • London &amp; UK</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 11: WorkHub Coworking (Services) -->
-        <div class="story-card reveal-item" data-category="services">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-services">Commercial Real Estate</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">3x Smoother Member Check-in &amp; Booking</h3>
-            <p class="story-quote">"Meeting room booking and visitor check-in flows run entirely on WhatsApp now. Our front desk operations are 3x smoother and members absolutely love the convenience."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-green">WH</div>
-            <div class="story-author-info">
-              <div class="story-author-name">WorkHub Coworking Spaces</div>
-              <div class="story-author-role">Community Manager • Hyderabad</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
-
-        <!-- Story 12: The Edu Consultant (Education) -->
-        <div class="story-card reveal-item" data-category="education">
-          <div>
-            <div class="story-card-top">
-              <span class="story-tag tag-edu">Overseas Admissions</span>
-              <div class="story-stars">★★★★★</div>
-            </div>
-            <h3 class="story-headline">+35% Conversion from Meta Ads to Enrolled</h3>
-            <p class="story-quote">"We capture study abroad leads from Meta ads directly into WhatsApp. Conversion from raw lead to enrolled student jumped 35% with instant automated counselor follow-ups."</p>
-          </div>
-          <div class="story-author">
-            <div class="story-avatar av-indigo">EC</div>
-            <div class="story-author-info">
-              <div class="story-author-name">The Edu Consultant</div>
-              <div class="story-author-role">Founder • Bangalore</div>
-            </div>
-            <span class="story-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified
-            </span>
-          </div>
-        </div>
+        <?php
+          }
+        }
+        ?>
       </div>
+    </div>
 
-      <!-- Bottom Trust Card -->
+    <!-- Bottom Trust Card -->
+    <div class="stories-container" style="margin-top: 3.5rem;">
       <div class="stories-bottom-card reveal-item">
         <div class="stories-bottom-content">
           <h3>Ready to Scale Your Customer Conversations?</h3>
@@ -3820,28 +3987,57 @@ include __DIR__ . '/includes/header.php';
   })();
 
   // -------------------------------------------------------------------------
-  // Customer Stories Industry Filter Tabs
+  // Customer Stories Animated Marquee Controls
   // -------------------------------------------------------------------------
   (function() {
-    const filterBtns = document.querySelectorAll('.story-filter-btn');
-    const storyCards = document.querySelectorAll('.story-card');
-    if (filterBtns.length && storyCards.length) {
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          const category = this.getAttribute('data-filter');
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
-          this.classList.add('active');
+    var container = document.getElementById('storiesMarqueeContainer');
+    var toggleBtn = document.getElementById('btnToggleMarquee');
+    var pulseDot = document.getElementById('marqueePulse');
+    var btnText = document.getElementById('marqueeBtnText');
+    var btnLeft = document.getElementById('btnMarqueeLeft');
+    var btnRight = document.getElementById('btnMarqueeRight');
+    var track1 = document.getElementById('marqueeTrack1');
+    var track2 = document.getElementById('marqueeTrack2');
 
-          storyCards.forEach(function(card) {
-            const cardCategory = card.getAttribute('data-category');
-            if (category === 'all' || cardCategory === category) {
-              card.classList.remove('is-hidden');
-              card.classList.add('reveal-visible');
-            } else {
-              card.classList.add('is-hidden');
-            }
-          });
-        });
+    if (!container) return;
+
+    var isPaused = false;
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        isPaused = !isPaused;
+        if (isPaused) {
+          container.classList.add('is-paused');
+          if (btnText) btnText.textContent = 'Resume Auto-Scroll';
+          if (pulseDot) pulseDot.style.background = '#f59e0b';
+        } else {
+          container.classList.remove('is-paused');
+          if (btnText) btnText.textContent = 'Pause Auto-Scroll';
+          if (pulseDot) pulseDot.style.background = '#10b981';
+        }
+      });
+    }
+
+    function nudgeTrack(delta) {
+      if (!track1 && !track2) return;
+      var tracks = [track1, track2];
+      tracks.forEach(function(tr) {
+        if (!tr) return;
+        var computedStyle = window.getComputedStyle(tr);
+        var matrix = new WebKitCSSMatrix(computedStyle.transform);
+        var currentX = matrix.m41;
+        tr.style.transform = 'translateX(' + (currentX + delta) + 'px)';
+      });
+    }
+
+    if (btnLeft) {
+      btnLeft.addEventListener('click', function() {
+        nudgeTrack(120);
+      });
+    }
+    if (btnRight) {
+      btnRight.addEventListener('click', function() {
+        nudgeTrack(-120);
       });
     }
   })();

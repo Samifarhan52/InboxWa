@@ -4,4 +4,4 @@
 node_modules/
 *.log
 .venv/
-assets
+/assets
