@@ -1,13 +1,13 @@
 <?php
 $basePath = '../';
-$pageTitle = 'InboxWa Pricing – Official WhatsApp API, CRM & Omnichannel Plans';
-$pageDescription = 'Transparent pricing for WhatsApp Business API, CRM, AI chatbot & omnichannel automation. WhatsApp Bulk ₹1,999, Automation ₹2,999, Biz Pro ₹4,999. Live currency converter.';
+$pageTitle = 'InboxWa Pricing – Simple & Transparent WhatsApp API & Omnichannel Plans';
+$pageDescription = 'Simple, transparent pricing for official WhatsApp Business API, CRM, AI chatbot & omnichannel automation. WhatsApp Bulk ₹1,999, Automation ₹2,999, Biz Pro ₹4,999. Live currency converter.';
 $pageKeywords = 'InboxWa pricing, WhatsApp API price, AI chatbot plans, omnichannel pricing India, WhatsApp CRM';
 $canonicalUrl = 'https://inboxwa.com/pricing/';
 
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/pricing.css?v=2">
+<link rel="stylesheet" href="/assets/css/pricing.css?v=3">
 
 <!-- Breadcrumbs -->
 <nav class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top:calc(var(--nav,72px) + 1.25rem); padding-bottom:0.5rem;">
@@ -19,11 +19,11 @@ include __DIR__ . '/../includes/header.php';
 </nav>
 
 <!-- HERO SECTION WITH LIVE CURRENCY CONVERTER -->
-<section class="hero-section pricing-hero">
+<section class="hero-section small-hero pricing-hero">
   <div class="container pricing-hero-inner">
     <div style="flex:1;">
-      <div class="badge badge-primary" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:#ecfdf3;border:1px solid #86efac;color:#15803d;font-size:12.5px;font-weight:700;">
-        <span class="live-pulse-dot"></span>
+      <div class="badge">
+        <span class="badge-dot"></span>
         InboxWa Pricing - Simple & Transparent
       </div>
       <h1>Powerful WhatsApp Automation <span class="gradient-text">That Scales With You</span></h1>
@@ -37,32 +37,29 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <!-- Currency Converter Dropdown -->
-    <div class="currency-selector-card">
-      <div class="currency-title-wrap">
-        <p class="currency-title">View Prices In</p>
-        <span class="live-badge"><span class="live-pulse-dot"></span>Live Rates</span>
-      </div>
-      <select id="currencySelector" aria-label="Select currency">
-        <option value="INR" selected>INR (₹) - Indian Rupee</option>
-        <option value="USD">USD ($) - US Dollar</option>
-        <option value="EUR">EUR (€) - Euro</option>
-        <option value="GBP">GBP (£) - British Pound</option>
-        <option value="AED">AED (د.إ) - UAE Dirham</option>
-        <option value="SAR">SAR (﷼) - Saudi Riyal</option>
-        <option value="KWD">KWD (د.ك) - Kuwaiti Dinar</option>
-        <option value="BHD">BHD (.د.ب) - Bahraini Dinar</option>
-        <option value="QAR">QAR (ر.ق) - Qatari Riyal</option>
-        <option value="OMR">OMR (ر.ع.) - Omani Rial</option>
-        <option value="SGD">SGD (S$) - Singapore Dollar</option>
-        <option value="AUD">AUD (A$) - Australian Dollar</option>
-        <option value="CAD">CAD (C$) - Canadian Dollar</option>
-        <option value="JPY">JPY (¥) - Japanese Yen</option>
-        <option value="MYR">MYR (RM) - Malaysian Ringgit</option>
-        <option value="PKR">PKR (Rs) - Pakistani Rupee</option>
-        <option value="BDT">BDT (৳) - Bangladeshi Taka</option>
+    <div class="currency-converter-card">
+      <p class="title">View Prices In</p>
+      <select id="currencySelector" aria-label="Select Currency">
+        <option value="INR" selected>INR (₹)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="AED">AED (د.إ)</option>
+        <option value="SAR">SAR (﷼)</option>
+        <option value="KWD">KWD (د.ك)</option>
+        <option value="BHD">BHD (.د.ب)</option>
+        <option value="QAR">QAR (ر.ق)</option>
+        <option value="OMR">OMR (ر.ع.)</option>
+        <option value="SGD">SGD (S$)</option>
+        <option value="AUD">AUD (A$)</option>
+        <option value="CAD">CAD (C$)</option>
+        <option value="JPY">JPY (¥)</option>
+        <option value="MYR">MYR (RM)</option>
+        <option value="PKR">PKR (Rs)</option>
+        <option value="BDT">BDT (৳)</option>
       </select>
-      <p class="currency-sync-text">
-        🟢 Live market rates active (Synced Today)<br>
+      <p class="currency-sub-note" id="currencySyncText">
+        🟢 Live Forex Rates Active<br>
         All plans support monthly & yearly billing
       </p>
     </div>
@@ -109,7 +106,7 @@ include __DIR__ . '/../includes/header.php';
         <div>
           <div class="plan-badge-wrap"><span class="plan-badge">Bulk Messaging</span></div>
           <div class="plan-header">
-            <div class="plan-icon">📨</div>
+            <div class="plan-icon" style="color:#4f46e5;">📨</div>
             <div>
               <h2>WhatsApp Bulk</h2>
               <p class="plan-short">High-volume broadcasting made easy</p>
@@ -135,7 +132,7 @@ include __DIR__ . '/../includes/header.php';
             <li>✔ Small businesses</li>
           </ul>
         </div>
-        <button type="button" class="btn-primary activate-plan-btn" data-plan-name="WhatsApp Bulk Plan">🚀 Start Now</button>
+        <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="WhatsApp Bulk Plan">🚀 Start Now</button>
       </div>
 
       <!-- 2. Automation (Highlight) -->
@@ -143,7 +140,7 @@ include __DIR__ . '/../includes/header.php';
         <div>
           <div class="plan-badge-wrap"><span class="plan-badge popular">Most Popular</span></div>
           <div class="plan-header">
-            <div class="plan-icon" style="background:#ecfdf3;border-color:#bbf7d0;">🤖</div>
+            <div class="plan-icon" style="color:#16a34a;background:#ecfdf3;border-color:#bbf7d0;">🤖</div>
             <div>
               <h2>WhatsApp Automation</h2>
               <p class="plan-short">Advanced automation with 100k contacts</p>
@@ -170,7 +167,7 @@ include __DIR__ . '/../includes/header.php';
             <li>✔ Marketing agencies</li>
           </ul>
         </div>
-        <button type="button" class="btn-primary activate-plan-btn" data-plan-name="WhatsApp Automation Plan">⭐ Get Started</button>
+        <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="WhatsApp Automation Plan">⭐ Get Started</button>
       </div>
 
       <!-- 3. Biz Pro -->
@@ -178,7 +175,7 @@ include __DIR__ . '/../includes/header.php';
         <div>
           <div class="plan-badge-wrap"><span class="plan-badge">AI-Powered</span></div>
           <div class="plan-header">
-            <div class="plan-icon">🏅</div>
+            <div class="plan-icon" style="color:#ea580c;">🏅</div>
             <div>
               <h2>WhatsApp Biz Pro</h2>
               <p class="plan-short">AI agent + 5 team members + 100k contacts</p>
@@ -206,17 +203,18 @@ include __DIR__ . '/../includes/header.php';
             <li>✔ AI-first businesses</li>
           </ul>
         </div>
-        <button type="button" class="btn-primary activate-plan-btn" data-plan-name="WhatsApp Biz Pro Plan">🚀 Contact Sales</button>
+        <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="WhatsApp Biz Pro Plan">🚀 Contact Sales</button>
       </div>
     </div>
 
     <!-- COMPARISON TOGGLE - WHATSAPP API -->
     <div id="regularComparisonToggle" class="comparison-toggle-wrap">
-      <button type="button" id="toggleRegularComparison" class="btn-toggle-comparison">
+      <button type="button" id="toggleRegularComparison" class="btn-outline">
         📊 Compare WhatsApp API Plans
       </button>
     </div>
     <div id="regularComparisonTable" class="comparison-table-wrap" style="display:none;">
+      <h3 style="font-size:22px;margin:20px 20px 10px;color:#0f172a;">WhatsApp API Plan Comparison</h3>
       <table class="comparison-table">
         <thead>
           <tr>
@@ -245,7 +243,7 @@ include __DIR__ . '/../includes/header.php';
         <div>
           <div class="plan-badge-wrap"><span class="plan-badge">Multi-Channel</span></div>
           <div class="plan-header">
-            <div class="plan-icon">📱</div>
+            <div class="plan-icon" style="color:#0284c7;">📱</div>
             <div>
               <h2>Omnichannel Starter</h2>
               <p class="plan-short">Connect WhatsApp, FB, Instagram, RCS</p>
@@ -271,7 +269,7 @@ include __DIR__ . '/../includes/header.php';
             <li>✔ Startups testing multi-channel</li>
           </ul>
         </div>
-        <button type="button" class="btn-primary activate-plan-btn" data-plan-name="Omnichannel Starter">🚀 Start Now</button>
+        <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="Omnichannel Starter">🚀 Start Now</button>
       </div>
 
       <!-- Pro (Highlight) -->
@@ -279,7 +277,7 @@ include __DIR__ . '/../includes/header.php';
         <div>
           <div class="plan-badge-wrap"><span class="plan-badge popular">Recommended</span></div>
           <div class="plan-header">
-            <div class="plan-icon" style="background:#ecfdf3;border-color:#bbf7d0;">🌟</div>
+            <div class="plan-icon" style="color:#eab308;background:#fefce8;border-color:#fef08a;">🌟</div>
             <div>
               <h2>Omnichannel Pro</h2>
               <p class="plan-short">Full-scale omnichannel with automation</p>
@@ -307,7 +305,7 @@ include __DIR__ . '/../includes/header.php';
             <li>✔ Customer support teams</li>
           </ul>
         </div>
-        <button type="button" class="btn-primary activate-plan-btn" data-plan-name="Omnichannel Pro">⭐ Get Started</button>
+        <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="Omnichannel Pro">⭐ Get Started</button>
       </div>
 
       <!-- Enterprise -->
@@ -315,7 +313,7 @@ include __DIR__ . '/../includes/header.php';
         <div>
           <div class="plan-badge-wrap"><span class="plan-badge">Enterprise</span></div>
           <div class="plan-header">
-            <div class="plan-icon">🏢</div>
+            <div class="plan-icon" style="color:#475569;">🏢</div>
             <div>
               <h2>Omnichannel Enterprise</h2>
               <p class="plan-short">Unlimited scale, dedicated success</p>
@@ -344,17 +342,18 @@ include __DIR__ . '/../includes/header.php';
             <li>✔ High-volume omnichannel teams</li>
           </ul>
         </div>
-        <button type="button" class="btn-primary activate-plan-btn" data-plan-name="Omnichannel Enterprise">🤝 Talk to Sales</button>
+        <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="Omnichannel Enterprise">🤝 Talk to Sales</button>
       </div>
     </div>
 
     <!-- COMPARISON TOGGLE - OMNICHANNEL -->
     <div id="omnichannelComparisonToggle" class="comparison-toggle-wrap" style="display:none;">
-      <button type="button" id="toggleOmnichannelComparison" class="btn-toggle-comparison">
+      <button type="button" id="toggleOmnichannelComparison" class="btn-outline">
         📊 Compare Omnichannel Plans
       </button>
     </div>
     <div id="omnichannelComparisonTable" class="comparison-table-wrap" style="display:none;">
+      <h3 style="font-size:22px;margin:20px 20px 10px;color:#0f172a;">Omnichannel Plan Comparison</h3>
       <table class="comparison-table">
         <thead>
           <tr>
@@ -409,7 +408,7 @@ include __DIR__ . '/../includes/header.php';
       </div>
       
       <div style="text-align:center;margin-top:24px;">
-        <a href="https://business.whatsapp.com/products/platform-pricing?country=India&currency=Indian%20Rupee%20(INR)&category=Marketing" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:12px;">
+        <a href="https://business.whatsapp.com/products/platform-pricing?country=India&currency=Indian%20Rupee%20(INR)&category=Marketing" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:12px;background:#0f766e;">
           📊 View Full Meta Pricing & Calculator
         </a>
       </div>
@@ -709,7 +708,7 @@ include __DIR__ . '/../includes/header.php';
         <p>Join 500+ businesses using InboxWa for WhatsApp automation. Start your free trial today!</p>
       </div>
       <div class="cta-buttons">
-        <a href="https://app.inboxwa.com/" class="btn-cta-primary">Start Free Trial</a>
+        <a href="/auth/register" class="btn-cta-primary">Start Free Trial</a>
         <a href="#addons" class="btn-cta-secondary">View Add-ons</a>
       </div>
     </div>
@@ -740,10 +739,33 @@ include __DIR__ . '/../includes/header.php';
         <label for="adReg">Registered InboxWa WhatsApp Number</label>
         <input type="text" id="adReg" placeholder="Your connected WhatsApp business number">
       </div>
-      <button type="submit" class="btn-submit">🚀 Send Activation Request on WhatsApp</button>
+      <button type="submit" class="btn-primary full" style="margin-top:12px;">🚀 Send Activation Request on WhatsApp</button>
     </form>
   </div>
 </div>
 
-<script src="/assets/js/pricing.js?v=2" defer></script>
+<!-- CALLBACK POPUP (WAAPIBOX CLONE) -->
+<div class="callback-popup" id="callbackPopup">
+  <button type="button" class="callback-close" id="callbackClose" aria-label="Close callback">&times;</button>
+  <div class="callback-header">
+    <div class="callback-icon"><span>📞</span></div>
+    <div>
+      <p class="callback-tagline">Not sure which plan to choose?</p>
+      <h3>Get a Call Back in 5 Minutes</h3>
+    </div>
+  </div>
+  <p style="font-size:12px;color:#64748b;margin-bottom:8px;">Available: <strong>10:00 AM – 7:00 PM (Mon – Sat)</strong></p>
+  <form id="callbackForm">
+    <div class="form-group" style="margin-bottom:8px;">
+      <input type="text" id="cbName" required placeholder="Enter your full name" style="padding:8px 12px;font-size:13px;border-radius:8px;border:1px solid #cbd5e1;width:100%;box-sizing:border-box;">
+    </div>
+    <div class="form-group" style="margin-bottom:10px;">
+      <input type="tel" id="cbMobile" required placeholder="Enter your WhatsApp number" style="padding:8px 12px;font-size:13px;border-radius:8px;border:1px solid #cbd5e1;width:100%;box-sizing:border-box;">
+    </div>
+    <button type="submit" class="btn-primary full" style="padding:9px 14px;font-size:13px;border-radius:8px;">Request Call Back on WhatsApp</button>
+  </form>
+  <p style="font-size:11px;color:#94a3b8;margin-top:8px;margin-bottom:0;text-align:center;">Our WhatsApp experts will call you & share live demo.</p>
+</div>
+
+<script src="/assets/js/pricing.js?v=4" defer></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

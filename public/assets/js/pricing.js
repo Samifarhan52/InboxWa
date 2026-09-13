@@ -1,130 +1,50 @@
-/**
- * INBOXWA PRICING ENGINE WITH LIVE REAL-TIME CURRENCY ADAPTATION
- * - Cloned from waapibox.com/pricing interaction suite
- * - Live Internet-connected Forex Exchange Rates via open.er-api.com
- * - Seamless Currency, Plan Category & Billing Toggles
- * - Interactive Comparison Tables & WhatsApp Activation Modal
- */
-
 (function() {
   'use strict';
 
-  // Base currency info and default fallback rates (INR base)
-  const currencyMeta = {
-    'INR': { symbol: '₹', label: 'INR (₹) - Indian Rupee', defaultRate: 1, decimals: 0 },
-    'USD': { symbol: '$', label: 'USD ($) - US Dollar', defaultRate: 0.012, decimals: 2 },
-    'EUR': { symbol: '€', label: 'EUR (€) - Euro', defaultRate: 0.011, decimals: 2 },
-    'GBP': { symbol: '£', label: 'GBP (£) - British Pound', defaultRate: 0.0095, decimals: 2 },
-    'AED': { symbol: 'د.إ', label: 'AED (د.إ) - UAE Dirham', defaultRate: 0.044, decimals: 2 },
-    'SAR': { symbol: '﷼', label: 'SAR (﷼) - Saudi Riyal', defaultRate: 0.045, decimals: 2 },
-    'KWD': { symbol: 'د.ك', label: 'KWD (د.ك) - Kuwaiti Dinar', defaultRate: 0.0037, decimals: 3 },
-    'BHD': { symbol: '.د.ب', label: 'BHD (.د.ب) - Bahraini Dinar', defaultRate: 0.0045, decimals: 3 },
-    'QAR': { symbol: 'ر.ق', label: 'QAR (ر.ق) - Qatari Riyal', defaultRate: 0.0437, decimals: 2 },
-    'OMR': { symbol: 'ر.ع.', label: 'OMR (ر.ع.) - Omani Rial', defaultRate: 0.0046, decimals: 3 },
-    'SGD': { symbol: 'S$', label: 'SGD (S$) - Singapore Dollar', defaultRate: 0.016, decimals: 2 },
-    'AUD': { symbol: 'A$', label: 'AUD (A$) - Australian Dollar', defaultRate: 0.018, decimals: 2 },
-    'CAD': { symbol: 'C$', label: 'CAD (C$) - Canadian Dollar', defaultRate: 0.0165, decimals: 2 },
-    'JPY': { symbol: '¥', label: 'JPY (¥) - Japanese Yen', defaultRate: 1.80, decimals: 0 },
-    'MYR': { symbol: 'RM', label: 'MYR (RM) - Malaysian Ringgit', defaultRate: 0.052, decimals: 2 },
-    'PKR': { symbol: 'Rs', label: 'PKR (Rs) - Pakistani Rupee', defaultRate: 3.32, decimals: 0 },
-    'BDT': { symbol: '৳', label: 'BDT (৳) - Bangladeshi Taka', defaultRate: 1.42, decimals: 0 }
+  if (typeof window !== 'undefined') {
+    if (window.__inboxwa_pricing_initialized) return;
+    window.__inboxwa_pricing_initialized = true;
+  }
+
+  var currencyRates = {
+    'INR': { rate: 1, symbol: '₹', decimals: 0 },
+    'USD': { rate: 0.012, symbol: '$', decimals: 2 },
+    'EUR': { rate: 0.011, symbol: '€', decimals: 2 },
+    'GBP': { rate: 0.0095, symbol: '£', decimals: 2 },
+    'AED': { rate: 0.044, symbol: 'د.إ', decimals: 2 },
+    'SAR': { rate: 0.045, symbol: '﷼', decimals: 2 },
+    'KWD': { rate: 0.0037, symbol: 'د.ك', decimals: 3 },
+    'BHD': { rate: 0.0045, symbol: '.د.ب', decimals: 3 },
+    'QAR': { rate: 0.0437, symbol: 'ر.ق', decimals: 2 },
+    'OMR': { rate: 0.0046, symbol: 'ر.ع.', decimals: 3 },
+    'SGD': { rate: 0.016, symbol: 'S$', decimals: 2 },
+    'AUD': { rate: 0.018, symbol: 'A$', decimals: 2 },
+    'CAD': { rate: 0.0165, symbol: 'C$', decimals: 2 },
+    'JPY': { rate: 1.80, symbol: '¥', decimals: 0 },
+    'MYR': { rate: 0.052, symbol: 'RM', decimals: 2 },
+    'PKR': { rate: 3.32, symbol: 'Rs', decimals: 0 },
+    'BDT': { rate: 1.42, symbol: '৳', decimals: 0 }
   };
 
-  // State
-  let currentCurrency = 'INR';
-  let currentBilling = 'monthly';
-  let activeRates = {};
+  var currentCurrency = 'INR';
+  var currentBilling = 'monthly';
+  var currentAddonOrPlan = '';
 
-  // Initialize active rates from default
-  for (const code in currencyMeta) {
-    activeRates[code] = currencyMeta[code].defaultRate;
-  }
+  function formatPrice(inrAmount, cur) {
+    var c = currencyRates[cur] || currencyRates['INR'];
+    var rate = c.rate;
+    var symbol = c.symbol;
 
-  // Load cached rates from localStorage if recent (< 1 hour)
-  try {
-    const cached = localStorage.getItem('inboxwa_fx_rates');
-    if (cached) {
-      const parsed = JSON.parse(cached);
-      if (parsed.timestamp && (Date.now() - parsed.timestamp < 3600000) && parsed.rates) {
-        Object.assign(activeRates, parsed.rates);
-        updateRateSyncBadge('Live cached: ' + new Date(parsed.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
-      }
-    }
-  } catch (e) {
-    console.warn('Could not read cached exchange rates', e);
-  }
-
-  // Fetch Live Internet Forex Rates
-  async function fetchLiveExchangeRates() {
-    try {
-      const response = await fetch('https://open.er-api.com/v6/latest/INR');
-      if (!response.ok) throw new Error('Network response not ok: ' + response.status);
-      const data = await response.json();
-      if (data && data.rates) {
-        for (const code in currencyMeta) {
-          if (data.rates[code]) {
-            activeRates[code] = data.rates[code];
-          }
-        }
-        activeRates['INR'] = 1;
-        try {
-          localStorage.setItem('inboxwa_fx_rates', JSON.stringify({
-            timestamp: Date.now(),
-            rates: activeRates
-          }));
-        } catch(err) {}
-
-        updateRateSyncBadge('Live market rates active (Synced Today)');
-        // Re-render prices with live rates
-        applyCurrency(currentCurrency);
-      }
-    } catch (err) {
-      console.log('Live rate fetch fallback active:', err);
-      try {
-        const fallbackResp = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
-        if (fallbackResp.ok) {
-          const fallbackData = await fallbackResp.json();
-          if (fallbackData && fallbackData.rates) {
-            for (const code in currencyMeta) {
-              if (fallbackData.rates[code]) {
-                activeRates[code] = fallbackData.rates[code];
-              }
-            }
-            applyCurrency(currentCurrency);
-            updateRateSyncBadge('Live market rates active (Synced Today)');
-          }
-        }
-      } catch (fallbackErr) {
-        console.log('Using default rates');
-      }
-    }
-  }
-
-  function updateRateSyncBadge(text) {
-    const syncText = document.querySelector('.currency-sync-text');
-    if (syncText) {
-      syncText.innerHTML = '🟢 ' + text + '<br>All plans support monthly & yearly billing';
-    }
-  }
-
-  // Format currency value with symbol, comma separators and decimal precision
-  function formatAmount(amountInINR, currencyCode) {
-    const meta = currencyMeta[currencyCode] || currencyMeta['INR'];
-    const rate = activeRates[currencyCode] || meta.defaultRate;
-    const symbol = meta.symbol;
-
-    if (currencyCode === 'INR') {
-      if (amountInINR < 1 && amountInINR > 0) {
-        return '₹' + amountInINR;
-      }
-      return '₹' + Math.round(amountInINR).toLocaleString('en-IN');
+    if (cur === 'INR') {
+      if (inrAmount < 1 && inrAmount > 0) return '₹' + inrAmount;
+      return '₹' + Math.round(inrAmount).toLocaleString('en-IN');
     }
 
-    const converted = amountInINR * rate;
-    let formatted;
-    if (meta.decimals === 0) {
+    var converted = inrAmount * rate;
+    var formatted;
+    if (c.decimals === 0) {
       formatted = Math.round(converted).toLocaleString('en-US');
-    } else if (meta.decimals === 3) {
+    } else if (c.decimals === 3) {
       formatted = converted.toFixed(3);
     } else {
       if (converted < 1 && converted > 0) {
@@ -133,267 +53,354 @@
         formatted = converted.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       }
     }
-
     return symbol + ' ' + formatted;
   }
 
-  // Apply currency across all page components
-  function applyCurrency(currency) {
-    currentCurrency = currency;
-    const currencyText = document.querySelector('.currency-text');
-    if (currencyText) currencyText.textContent = currency;
+  function applyCurrency(cur) {
+    currentCurrency = cur;
+    var curText = document.querySelector('.currency-text');
+    if (curText) curText.textContent = cur;
 
-    // 1. Update Plan Cards Prices (Monthly and Yearly)
-    document.querySelectorAll('.price').forEach(function(el) {
-      const inrVal = parseFloat(el.getAttribute('data-inr-val') || 0);
-      const suffix = el.getAttribute('data-suffix') || '';
-      if (inrVal > 0) {
-        el.innerHTML = formatAmount(inrVal, currency) + '<span>' + suffix + '</span>';
+    // Plan prices
+    var prices = document.querySelectorAll('.price');
+    for (var i = 0; i < prices.length; i++) {
+      var el = prices[i];
+      var inr = parseFloat(el.getAttribute('data-inr-val') || 0);
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (inr > 0) {
+        el.innerHTML = formatPrice(inr, cur) + '<span>' + suffix + '</span>';
       }
-    });
+    }
 
-    // 2. Update Plan Savings
-    document.querySelectorAll('.savings').forEach(function(el) {
-      const inrVal = parseFloat(el.getAttribute('data-inr-val') || 0);
-      if (inrVal > 0) {
-        el.textContent = formatAmount(inrVal, currency);
+    // Savings
+    var savings = document.querySelectorAll('.savings');
+    for (var j = 0; j < savings.length; j++) {
+      var s = savings[j];
+      var sInr = parseFloat(s.getAttribute('data-inr-val') || 0);
+      if (sInr > 0) {
+        s.textContent = formatPrice(sInr, cur);
       }
-    });
+    }
 
-    // 3. Update Comparison Table Headers
-    document.querySelectorAll('.price-col').forEach(function(el) {
-      const inrVal = parseFloat(el.getAttribute('data-inr-val') || 0);
-      const suffix = el.getAttribute('data-suffix') || '/mo';
-      if (inrVal > 0) {
-        el.textContent = formatAmount(inrVal, currency) + suffix;
+    // Comparison columns
+    var priceCols = document.querySelectorAll('.price-col');
+    for (var k = 0; k < priceCols.length; k++) {
+      var col = priceCols[k];
+      var cInr = parseFloat(col.getAttribute('data-inr-val') || 0);
+      var cSuffix = col.getAttribute('data-suffix') || '/mo';
+      if (cInr > 0) {
+        col.textContent = formatPrice(cInr, cur) + cSuffix;
       }
-    });
+    }
 
-    // 4. Update Meta Conversation Rates
-    document.querySelectorAll('.meta-price-val').forEach(function(el) {
-      const inrVal = parseFloat(el.getAttribute('data-inr-val') || 0);
-      if (inrVal > 0) {
-        el.textContent = formatAmount(inrVal, currency);
+    // Meta rates
+    var metaPrices = document.querySelectorAll('.meta-price-val');
+    for (var m = 0; m < metaPrices.length; m++) {
+      var mp = metaPrices[m];
+      var mInr = parseFloat(mp.getAttribute('data-inr-val') || 0);
+      if (mInr > 0) {
+        mp.textContent = formatPrice(mInr, cur);
       }
-    });
+    }
 
-    // 5. Update All 15 Add-ons
-    document.querySelectorAll('.addon-price-dynamic').forEach(function(el) {
-      const inrVal = parseFloat(el.getAttribute('data-inr-val') || 0);
-      const suffix = el.getAttribute('data-suffix') || '';
-      const prefix = el.getAttribute('data-prefix') || '';
-      if (inrVal > 0) {
-        el.textContent = (prefix ? prefix + ' ' : '') + formatAmount(inrVal, currency) + (suffix ? ' ' + suffix : '');
+    // Addons
+    var addonPrices = document.querySelectorAll('.addon-price-dynamic');
+    for (var n = 0; n < addonPrices.length; n++) {
+      var ap = addonPrices[n];
+      var aInr = parseFloat(ap.getAttribute('data-inr-val') || 0);
+      var aSuffix = ap.getAttribute('data-suffix') || '';
+      var aPrefix = ap.getAttribute('data-prefix') || '';
+      if (aInr > 0) {
+        ap.textContent = (aPrefix ? aPrefix + ' ' : '') + formatPrice(aInr, cur) + (aSuffix ? ' ' + aSuffix : '');
       }
-    });
-  }
-
-  // ========== PLAN CATEGORY TOGGLE (WhatsApp API vs Omnichannel) ==========
-  const regularContainer = document.getElementById('regularPlansContainer');
-  const omnichannelContainer = document.getElementById('omnichannelPlansContainer');
-  const catBtns = document.querySelectorAll('.plan-cat-btn');
-  const regCompToggle = document.getElementById('regularComparisonToggle');
-  const omniCompToggle = document.getElementById('omnichannelComparisonToggle');
-  const regCompTable = document.getElementById('regularComparisonTable');
-  const omniCompTable = document.getElementById('omnichannelComparisonTable');
-  const toggleRegBtn = document.getElementById('toggleRegularComparison');
-  const toggleOmniBtn = document.getElementById('toggleOmnichannelComparison');
-
-  function setPlanCategory(category) {
-    if (category === 'regular') {
-      if (regularContainer) regularContainer.style.display = 'grid';
-      if (omnichannelContainer) omnichannelContainer.style.display = 'none';
-      if (regCompToggle) regCompToggle.style.display = 'block';
-      if (omniCompToggle) omniCompToggle.style.display = 'none';
-      if (regCompTable) regCompTable.style.display = 'none';
-      if (omniCompTable) omniCompTable.style.display = 'none';
-      if (toggleRegBtn) toggleRegBtn.innerHTML = '📊 Compare WhatsApp API Plans';
-
-      catBtns.forEach(btn => {
-        const isTarget = btn.dataset.planCat === 'regular';
-        btn.classList.toggle('active', isTarget);
-      });
-    } else {
-      if (regularContainer) regularContainer.style.display = 'none';
-      if (omnichannelContainer) omnichannelContainer.style.display = 'grid';
-      if (regCompToggle) regCompToggle.style.display = 'none';
-      if (omniCompToggle) omniCompToggle.style.display = 'block';
-      if (regCompTable) regCompTable.style.display = 'none';
-      if (omniCompTable) omniCompTable.style.display = 'none';
-      if (toggleOmniBtn) toggleOmniBtn.innerHTML = '📊 Compare Omnichannel Plans';
-
-      catBtns.forEach(btn => {
-        const isTarget = btn.dataset.planCat === 'omnichannel';
-        btn.classList.toggle('active', isTarget);
-      });
     }
   }
 
-  catBtns.forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      setPlanCategory(this.dataset.planCat);
-    });
-  });
+  function setPlanCategory(cat) {
+    var regBox = document.getElementById('regularPlansContainer');
+    var omniBox = document.getElementById('omnichannelPlansContainer');
+    var regToggle = document.getElementById('regularComparisonToggle');
+    var omniToggle = document.getElementById('omnichannelComparisonToggle');
+    var regTable = document.getElementById('regularComparisonTable');
+    var omniTable = document.getElementById('omnichannelComparisonTable');
+    var regBtn = document.getElementById('toggleRegularComparison');
+    var omniBtn = document.getElementById('toggleOmnichannelComparison');
+    var btns = document.querySelectorAll('.plan-cat-btn');
 
-  // ========== BILLING TOGGLE (Monthly vs Yearly) ==========
-  const monthlyBtn = document.querySelector('.toggle-btn[data-billing="monthly"]');
-  const yearlyBtn = document.querySelector('.toggle-btn[data-billing="yearly"]');
+    if (cat === 'regular') {
+      if (regBox) regBox.style.display = 'grid';
+      if (omniBox) omniBox.style.display = 'none';
+      if (regToggle) regToggle.style.display = 'block';
+      if (omniToggle) omniToggle.style.display = 'none';
+      if (regTable) regTable.style.display = 'none';
+      if (omniTable) omniTable.style.display = 'none';
+      if (regBtn) regBtn.innerHTML = '📊 Compare WhatsApp API Plans';
 
-  function updateBilling(billing) {
-    currentBilling = billing;
-    document.querySelectorAll('.price.monthly').forEach(p => {
-      p.classList.toggle('active', billing === 'monthly');
-    });
-    document.querySelectorAll('.price.yearly').forEach(p => {
-      p.classList.toggle('active', billing === 'yearly');
-    });
-    document.querySelectorAll('.billing-mode-text').forEach(span => {
-      span.innerText = billing;
-    });
-    if (monthlyBtn && yearlyBtn) {
-      monthlyBtn.classList.toggle('active', billing === 'monthly');
-      yearlyBtn.classList.toggle('active', billing === 'yearly');
+      for (var b = 0; b < btns.length; b++) {
+        var isReg = btns[b].getAttribute('data-plan-cat') === 'regular';
+        btns[b].classList.toggle('active', isReg);
+        btns[b].style.background = isReg ? '#0f766e' : 'transparent';
+        btns[b].style.color = isReg ? '#ffffff' : '#475569';
+        btns[b].style.boxShadow = isReg ? '0 4px 12px rgba(15,118,110,0.3)' : 'none';
+      }
+    } else {
+      if (regBox) regBox.style.display = 'none';
+      if (omniBox) omniBox.style.display = 'grid';
+      if (regToggle) regToggle.style.display = 'none';
+      if (omniToggle) omniToggle.style.display = 'block';
+      if (regTable) regTable.style.display = 'none';
+      if (omniTable) omniTable.style.display = 'none';
+      if (omniBtn) omniBtn.innerHTML = '📊 Compare Omnichannel Plans';
+
+      for (var c = 0; c < btns.length; c++) {
+        var isOmni = btns[c].getAttribute('data-plan-cat') === 'omnichannel';
+        btns[c].classList.toggle('active', isOmni);
+        btns[c].style.background = isOmni ? '#0f766e' : 'transparent';
+        btns[c].style.color = isOmni ? '#ffffff' : '#475569';
+        btns[c].style.boxShadow = isOmni ? '0 4px 12px rgba(15,118,110,0.3)' : 'none';
+      }
+    }
+  }
+
+  function updateBilling(mode) {
+    currentBilling = mode;
+    var monthlyPrices = document.querySelectorAll('.price.monthly');
+    var yearlyPrices = document.querySelectorAll('.price.yearly');
+    var modeTexts = document.querySelectorAll('.billing-mode-text');
+    var mBtn = document.querySelector('.toggle-btn[data-billing="monthly"]');
+    var yBtn = document.querySelector('.toggle-btn[data-billing="yearly"]');
+
+    for (var i = 0; i < monthlyPrices.length; i++) {
+      monthlyPrices[i].classList.toggle('active', mode === 'monthly');
+      monthlyPrices[i].style.display = (mode === 'monthly') ? 'block' : 'none';
+    }
+    for (var j = 0; j < yearlyPrices.length; j++) {
+      yearlyPrices[j].classList.toggle('active', mode === 'yearly');
+      yearlyPrices[j].style.display = (mode === 'yearly') ? 'block' : 'none';
+    }
+    for (var k = 0; k < modeTexts.length; k++) {
+      modeTexts[k].textContent = mode;
+    }
+    if (mBtn && yBtn) {
+      mBtn.classList.toggle('active', mode === 'monthly');
+      yBtn.classList.toggle('active', mode === 'yearly');
     }
     applyCurrency(currentCurrency);
   }
 
-  if (monthlyBtn && yearlyBtn) {
-    monthlyBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      updateBilling('monthly');
-    });
-    yearlyBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      updateBilling('yearly');
-    });
-  }
-
-  // ========== CURRENCY SELECTOR EVENT ==========
-  const currencySelector = document.getElementById('currencySelector');
-  if (currencySelector) {
-    try {
-      const saved = localStorage.getItem('inboxwa_selected_currency');
-      if (saved && currencyMeta[saved]) {
-        currencySelector.value = saved;
-        currentCurrency = saved;
-      }
-    } catch(e) {}
-
-    currencySelector.addEventListener('change', function() {
-      const selected = this.value;
-      try {
-        localStorage.setItem('inboxwa_selected_currency', selected);
-      } catch(e) {}
-      applyCurrency(selected);
-    });
-  }
-
-  // ========== COMPARISON TABLE TOGGLES ==========
-  if (toggleRegBtn && regCompTable) {
-    toggleRegBtn.addEventListener('click', function() {
-      const isHidden = regCompTable.style.display === 'none' || regCompTable.style.display === '';
-      if (isHidden) {
-        regCompTable.style.display = 'block';
-        toggleRegBtn.innerHTML = '▲ Hide Plan Comparison';
-        regCompTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        regCompTable.style.display = 'none';
-        toggleRegBtn.innerHTML = '📊 Compare WhatsApp API Plans';
-      }
-    });
-  }
-
-  if (toggleOmniBtn && omniCompTable) {
-    toggleOmniBtn.addEventListener('click', function() {
-      const isHidden = omniCompTable.style.display === 'none' || omniCompTable.style.display === '';
-      if (isHidden) {
-        omniCompTable.style.display = 'block';
-        toggleOmniBtn.innerHTML = '▲ Hide Plan Comparison';
-        omniCompTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        omniCompTable.style.display = 'none';
-        toggleOmniBtn.innerHTML = '📊 Compare Omnichannel Plans';
-      }
-    });
-  }
-
-  // ========== MODAL & ACTIVATION ==========
-  const modalBackdrop = document.getElementById('addonModalBackdrop');
-  const addonNameSpan = document.getElementById('addonNameSpan');
-  const addonNameField = document.getElementById('addonNameField');
-  const closeModalBtn = document.getElementById('addonModalClose');
-  const addonForm = document.getElementById('addonForm');
-  let currentAddonOrPlan = '';
-
-  function openModal(itemName) {
-    currentAddonOrPlan = itemName;
-    if (addonNameSpan) addonNameSpan.innerText = itemName;
-    if (addonNameField) addonNameField.value = itemName;
-    if (modalBackdrop) modalBackdrop.classList.add('active');
+  function openModal(name) {
+    currentAddonOrPlan = name;
+    var span = document.getElementById('addonNameSpan');
+    var field = document.getElementById('addonNameField');
+    var backdrop = document.getElementById('addonModalBackdrop');
+    if (span) span.textContent = name;
+    if (field) field.value = name;
+    if (backdrop) {
+      backdrop.classList.add('active');
+      backdrop.style.display = 'flex';
+    }
   }
 
   function closeModal() {
-    if (modalBackdrop) modalBackdrop.classList.remove('active');
+    var backdrop = document.getElementById('addonModalBackdrop');
+    if (backdrop) {
+      backdrop.classList.remove('active');
+      backdrop.style.display = 'none';
+    }
   }
 
-  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', function(e) {
-      if (e.target === modalBackdrop) closeModal();
-    });
-  }
+  // GLOBAL DELEGATED CLICK LISTENER
+  document.addEventListener('click', function(e) {
+    var target = e.target;
 
-  document.querySelectorAll('.addon-activate-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      openModal(this.getAttribute('data-addon') || 'Add-on');
-    });
-  });
-
-  document.querySelectorAll('.activate-plan-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      openModal(this.getAttribute('data-plan-name') || 'Plan');
-    });
-  });
-
-  if (addonForm) {
-    addonForm.addEventListener('submit', function(e) {
+    // 1. Plan Category Toggle
+    var catBtn = target.closest('.plan-cat-btn');
+    if (catBtn) {
       e.preventDefault();
-      const name = document.getElementById('adName').value.trim();
-      const mobile = document.getElementById('adMobile').value.trim();
-      const email = document.getElementById('adEmail').value.trim();
-      const regNum = document.getElementById('adReg').value.trim();
-      if (!name || !mobile || !email) {
-        alert('Please fill all required fields');
+      var cat = catBtn.getAttribute('data-plan-cat');
+      if (cat) setPlanCategory(cat);
+      return;
+    }
+
+    // 2. Billing Toggle
+    var billBtn = target.closest('.toggle-btn[data-billing]');
+    if (billBtn) {
+      e.preventDefault();
+      var billing = billBtn.getAttribute('data-billing');
+      if (billing) updateBilling(billing);
+      return;
+    }
+
+    // 3. Plan Activate Button ("Start Now", "Get Started", "Contact Sales", "Talk to Sales")
+    var planBtn = target.closest('.activate-plan-btn');
+    if (planBtn) {
+      e.preventDefault();
+      var planName = planBtn.getAttribute('data-plan-name') || 'Plan';
+      openModal(planName);
+      return;
+    }
+
+    // 4. Addon Activate Button ("Activate", "Book Now", "Book Training", "Request Quote")
+    var addonBtn = target.closest('.addon-activate-btn');
+    if (addonBtn) {
+      e.preventDefault();
+      var addonName = addonBtn.getAttribute('data-addon') || 'Add-on';
+      openModal(addonName);
+      return;
+    }
+
+    // 5. Compare WhatsApp API Plans Toggle
+    var regCompBtn = target.closest('#toggleRegularComparison');
+    if (regCompBtn) {
+      e.preventDefault();
+      var regTable = document.getElementById('regularComparisonTable');
+      if (regTable) {
+        var isHidden = regTable.style.display === 'none' || regTable.style.display === '';
+        regTable.style.display = isHidden ? 'block' : 'none';
+        regCompBtn.innerHTML = isHidden ? '📊 Hide Comparison' : '📊 Compare WhatsApp API Plans';
+        if (isHidden && typeof regTable.scrollIntoView === 'function') {
+          regTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      return;
+    }
+
+    // 6. Compare Omnichannel Plans Toggle
+    var omniCompBtn = target.closest('#toggleOmnichannelComparison');
+    if (omniCompBtn) {
+      e.preventDefault();
+      var omniTable = document.getElementById('omnichannelComparisonTable');
+      if (omniTable) {
+        var isHiddenOmni = omniTable.style.display === 'none' || omniTable.style.display === '';
+        omniTable.style.display = isHiddenOmni ? 'block' : 'none';
+        omniCompBtn.innerHTML = isHiddenOmni ? '📊 Hide Comparison' : '📊 Compare Omnichannel Plans';
+        if (isHiddenOmni && typeof omniTable.scrollIntoView === 'function') {
+          omniTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      return;
+    }
+
+    // 7. Close Modal
+    if (target.closest('#addonModalClose') || target.id === 'addonModalBackdrop') {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+
+    // 8. Close Callback Popup
+    if (target.closest('#callbackClose')) {
+      e.preventDefault();
+      var cb = document.getElementById('callbackPopup');
+      if (cb) cb.style.display = 'none';
+      return;
+    }
+  });
+
+  // FORM SUBMISSIONS
+  document.addEventListener('submit', function(e) {
+    if (e.target && e.target.id === 'addonForm') {
+      e.preventDefault();
+      var name = (document.getElementById('adName') ? document.getElementById('adName').value : '').trim();
+      var mobile = (document.getElementById('adMobile') ? document.getElementById('adMobile').value : '').trim();
+      var email = (document.getElementById('adEmail') ? document.getElementById('adEmail').value : '').trim();
+      var reg = (document.getElementById('adReg') ? document.getElementById('adReg').value : '').trim();
+
+      if (!name || !mobile) {
+        alert('Please provide your name and WhatsApp mobile number.');
         return;
       }
-      const msg = encodeURIComponent(
-        'Hello InboxWa Team,
 
-I want to activate: ' + currentAddonOrPlan +
-        '
-Name: ' + name +
-        '
-Mobile: ' + mobile +
-        '
-Email: ' + email +
-        '
-Registered InboxWa No: ' + regNum +
-        '
-Selected Currency: ' + currentCurrency
-      );
-      window.open('https://wa.me/919638911838?text=' + msg, '_blank');
+      var text = 'Activation Request: ' + (currentAddonOrPlan || 'Plan') + '\n' +
+        'Name: ' + name + '\n' +
+        'Mobile: ' + mobile + '\n' +
+        'Email: ' + email + '\n' +
+        'Registered Number: ' + reg + '\n' +
+        'Currency: ' + currentCurrency;
+
+      window.open('https://wa.me/918050854445?text=' + encodeURIComponent(text), '_blank');
+      alert('Request sent! Our team will contact you on WhatsApp.');
       closeModal();
-      addonForm.reset();
-    });
+      e.target.reset();
+    }
+
+    if (e.target && e.target.id === 'callbackForm') {
+      e.preventDefault();
+      var cbName = (document.getElementById('cbName') ? document.getElementById('cbName').value : '').trim();
+      var cbMobile = (document.getElementById('cbMobile') ? document.getElementById('cbMobile').value : '').trim();
+      if (!cbMobile) {
+        alert('Please enter your WhatsApp number');
+        return;
+      }
+      var cbText = 'Callback Request:\nName: ' + cbName + '\nMobile: ' + cbMobile;
+      window.open('https://wa.me/918050854445?text=' + encodeURIComponent(cbText), '_blank');
+      var cb = document.getElementById('callbackPopup');
+      if (cb) cb.style.display = 'none';
+    }
+  });
+
+  // CURRENCY SELECTION
+  document.addEventListener('change', function(e) {
+    if (e.target && e.target.id === 'currencySelector') {
+      var selected = e.target.value;
+      try {
+        localStorage.setItem('inboxwa_selected_currency', selected);
+      } catch (err) {}
+      applyCurrency(selected);
+    }
+  });
+
+  // FETCH LIVE FOREX RATES
+  function fetchLiveRates() {
+    if (typeof fetch !== 'function') return;
+    fetch('https://open.er-api.com/v6/latest/INR')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data && data.rates) {
+          for (var k in currencyRates) {
+            if (data.rates[k]) {
+              currencyRates[k].rate = data.rates[k];
+            }
+          }
+          applyCurrency(currentCurrency);
+          var syncTag = document.getElementById('currencySyncText');
+          if (syncTag) {
+            syncTag.innerHTML = '🟢 Live market rates active (Synced Today)<br>All plans support monthly & yearly billing';
+          }
+        }
+      })
+      .catch(function(err) {
+        console.log('Forex API fallback active:', err);
+      });
   }
 
-  // Initial Boot
-  setPlanCategory('regular');
-  updateBilling('monthly');
-  applyCurrency(currentCurrency);
+  // INITIAL BOOT
+  function init() {
+    try {
+      var savedCur = localStorage.getItem('inboxwa_selected_currency');
+      var sel = document.getElementById('currencySelector');
+      if (savedCur && currencyRates[savedCur]) {
+        currentCurrency = savedCur;
+        if (sel) sel.value = savedCur;
+      }
+    } catch(e) {}
 
-  // Fetch live exchange rates from internet asynchronously
-  fetchLiveExchangeRates();
+    setPlanCategory('regular');
+    updateBilling('monthly');
+    applyCurrency(currentCurrency);
+    fetchLiveRates();
 
+    setTimeout(function() {
+      var cb = document.getElementById('callbackPopup');
+      if (cb && cb.style.display !== 'block') {
+        cb.style.display = 'block';
+      }
+    }, 8000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
