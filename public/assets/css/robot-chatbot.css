@@ -30,7 +30,8 @@
   position: relative;
   width: 76px;
   height: 76px;
-  cursor: pointer;
+  cursor: pointer !important;
+  pointer-events: auto !important;
   background: transparent;
   border: none;
   outline: none;
@@ -39,6 +40,11 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10001;
+}
+
+.hellobotz-trigger * {
+  pointer-events: none !important;
 }
 
 /* Floating Physics Animation */

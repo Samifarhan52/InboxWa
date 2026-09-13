@@ -11,7 +11,7 @@ $waWidgetSalesMail = cms_setting('sales_email', 'mail@inboxwa.com');
 $waWidgetSupportMail = cms_setting('support_email', 'support@inboxwa.com');
 ?>
 <!-- HELLOBOTZ INTERACTIVE ROBOT CHATBOT WIDGET -->
-<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=2">
+<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
 
 <div class="inboxwa-robot-widget wa-widget" id="inboxwa-robot-widget">
   
@@ -124,7 +124,7 @@ $waWidgetSupportMail = cms_setting('support_email', 'support@inboxwa.com');
   </div>
 
   <!-- HELLOBOTZ INTERACTIVE ROBOT MASCOT TRIGGER -->
-  <button class="hellobotz-trigger wa-widget-btn" aria-label="Chat with HelloBotz Robot AI" type="button">
+  <button class="hellobotz-trigger" id="hellobotz-trigger-btn" aria-label="Chat with HelloBotz Robot AI" type="button">
     
     <!-- Living Animated Character -->
     <div class="hellobotz-character">

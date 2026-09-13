@@ -448,13 +448,32 @@
 
     if (triggerBtn) {
       triggerBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         e.stopPropagation();
         toggleWidget();
       });
     }
 
+    if (character) {
+      character.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleWidget();
+      });
+    }
+
+    var closeCircle = widget.querySelector('.hellobotz-close-circle');
+    if (closeCircle) {
+      closeCircle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleWidget(false);
+      });
+    }
+
     if (speechBubble) {
       speechBubble.addEventListener('click', function (e) {
+        e.preventDefault();
         e.stopPropagation();
         toggleWidget(true);
       });

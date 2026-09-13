@@ -263,6 +263,8 @@
   function initWidget() {
     const widget = $('.wa-widget');
     if (!widget) return;
+    // HelloBotz Robot Chatbot has its own dedicated controller
+    if (widget.id === 'inboxwa-robot-widget') return;
 
     const btn = widget.querySelector('.wa-widget-btn');
     if (!btn) return;
