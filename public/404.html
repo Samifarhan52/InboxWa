@@ -3908,6 +3908,548 @@
   .hb-features-cta-btn:hover svg {
     transform: translateX(4px);
   }
+
+  /* ==========================================================================
+     SECTION 3: HOW IT WORKS (GO LIVE IN MINUTES, NOT MONTHS)
+     ========================================================================== */
+  .hiw-section {
+    position: relative;
+    padding: 5.5rem 1.5rem 6.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+  .hiw-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hiw-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3.5rem;
+  }
+  .hiw-badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7c3aed;
+    background: rgba(139, 92, 246, 0.12);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+  }
+  .hiw-title {
+    font-size: clamp(2.1rem, 3.8vw, 3rem);
+    font-weight: 900;
+    line-height: 1.18;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem;
+  }
+  .hiw-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #64748b;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .hiw-grid-wrap {
+    position: relative;
+  }
+  .hiw-connector-line {
+    position: absolute;
+    top: 4rem;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.35) 0%, rgba(6, 182, 212, 0.35) 100%);
+    z-index: 1;
+  }
+  .hiw-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hiw-card-wrapper {
+    height: 100%;
+  }
+  .hiw-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .hiw-card:hover {
+    transform: translateY(-6px);
+    border-color: #8b5cf6;
+    box-shadow: 0 20px 45px rgba(139, 92, 246, 0.14);
+  }
+  .hiw-card-body {
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .hiw-step-num {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 22px rgba(124, 58, 237, 0.3);
+    letter-spacing: -0.02em;
+  }
+  .hiw-step-tagline {
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #7c3aed;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .hiw-card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.85rem;
+  }
+  .hiw-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #64748b;
+    margin: 0 0 1.5rem;
+    flex: 1;
+  }
+  .hiw-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+  }
+  .hiw-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: #334155;
+    font-weight: 500;
+  }
+  .hiw-check-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.15);
+    color: #059669;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .hiw-check-icon svg {
+    width: 11px;
+    height: 11px;
+  }
+  .hiw-cta-wrap {
+    margin-top: 3.5rem;
+    text-align: center;
+  }
+  .hiw-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #06b6d4 100%);
+    color: #ffffff !important;
+    padding: 0.95rem 2.5rem;
+    height: 52px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
+    transition: all 0.3s ease;
+  }
+  .hiw-cta-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.45);
+    color: #ffffff !important;
+  }
+  .hiw-cta-subtext {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 0.85rem;
+    font-weight: 500;
+  }
+
+  /* ==========================================================================
+     SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ENHANCED UNIQUE FORMAT)
+     ========================================================================== */
+  .stories-section {
+    position: relative;
+    padding: 6rem 1.5rem 6.5rem;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .stories-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .stories-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 2.5rem;
+  }
+  .stories-badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7c3aed;
+    background: rgba(139, 92, 246, 0.1);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(139, 92, 246, 0.22);
+  }
+  .stories-title {
+    font-size: clamp(2.1rem, 3.8vw, 3rem);
+    font-weight: 900;
+    line-height: 1.18;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem;
+  }
+  .stories-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #64748b;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Trust Stats Strip */
+  .stories-stats-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    margin: 0 auto 3rem;
+    max-width: 1040px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  }
+  .stories-stat-item {
+    text-align: center;
+  }
+  .stories-stat-val {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+  .stories-star-rating {
+    color: #f59e0b;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  .stories-stat-lbl {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .stories-stat-sep {
+    width: 1px;
+    height: 38px;
+    background: #cbd5e1;
+  }
+
+  /* Industry Filter Buttons */
+  .stories-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.75rem;
+  }
+  .story-filter-btn {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.55rem 1.25rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .story-filter-btn:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    border-color: #cbd5e1;
+  }
+  .story-filter-btn.active {
+    background: #7c3aed;
+    color: #ffffff;
+    border-color: #7c3aed;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+  }
+
+  /* Testimonials Grid */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+  .story-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .story-card.is-hidden {
+    display: none;
+  }
+  .story-card:hover {
+    transform: translateY(-5px);
+    border-color: #c4b5fd;
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.12);
+  }
+  .story-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1.1rem;
+  }
+  .story-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+  }
+  .tag-bfsi { background: rgba(99, 102, 241, 0.12); color: #4338ca; }
+  .tag-ecom { background: rgba(16, 185, 129, 0.12); color: #047857; }
+  .tag-edu { background: rgba(245, 158, 11, 0.12); color: #b45309; }
+  .tag-health { background: rgba(6, 182, 212, 0.12); color: #0e7490; }
+  .tag-services { background: rgba(139, 92, 246, 0.12); color: #6d28d9; }
+
+  .story-stars {
+    color: #f59e0b;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+  .story-headline {
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.01em;
+  }
+  .story-quote {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 1.5rem;
+    flex: 1;
+  }
+  .story-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1rem;
+  }
+  .story-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .av-purple { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+  .av-blue { background: linear-gradient(135deg, #2563eb, #38bdf8); }
+  .av-green { background: linear-gradient(135deg, #059669, #10b981); }
+  .av-amber { background: linear-gradient(135deg, #d97706, #f59e0b); }
+  .av-indigo { background: linear-gradient(135deg, #4338ca, #6366f1); }
+  .av-pink { background: linear-gradient(135deg, #db2777, #ec4899); }
+  .av-cyan { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+
+  .story-author-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .story-author-name {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .story-author-role {
+    font-size: 0.76rem;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .story-verified {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #059669;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 7px;
+    border-radius: 9999px;
+  }
+
+  /* Bottom Trust Card */
+  .stories-bottom-card {
+    margin-top: 3.5rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    border-radius: 22px;
+    padding: 2.75rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+  }
+  .stories-bottom-content h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.5rem;
+  }
+  .stories-bottom-content p {
+    font-size: 1rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+  .stories-bottom-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+  .btn-ghost-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-ghost-dark:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 1024px) {
+    .hiw-grid,
+    .stories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .hiw-connector-line {
+      display: none;
+    }
+    .stories-bottom-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 2.25rem 2rem;
+    }
+    .stories-bottom-actions {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 640px) {
+    .hiw-grid,
+    .stories-grid {
+      grid-template-columns: 1fr;
+    }
+    .stories-stats-strip {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+    .stories-stat-sep {
+      display: none;
+    }
+    .stories-bottom-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .stories-bottom-actions a {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  }
 </style>
 
 <div class="cw-main-page">
@@ -4509,7 +5051,490 @@
     </div>
   </section>
 
+  <!-- ==========================================================================
+       SECTION 3: HOW IT WORKS (GO LIVE IN MINUTES, NOT MONTHS)
+       ========================================================================== -->
+  <section class="hiw-section" id="how-it-works">
+    <div class="hiw-container">
+      <div class="hiw-header reveal-item">
+        <span class="hiw-badge">⚡ How It Works</span>
+        <h2 class="hiw-title">Go Live in Minutes, Not Months</h2>
+        <p class="hiw-subtitle">Connect your official WhatsApp Business number and launch your first automated customer workflow in 3 simple steps.</p>
+      </div>
 
+      <div class="hiw-grid-wrap">
+        <div class="hiw-connector-line"></div>
+        <div class="hiw-grid">
+          <!-- Step 1 -->
+          <div class="hiw-card-wrapper reveal-item">
+            <div class="hiw-card">
+              <div class="hiw-card-body">
+                <div class="hiw-step-num">01</div>
+                <span class="hiw-step-tagline">CONNECT YOUR NUMBER</span>
+                <h3 class="hiw-card-title">One-Click WhatsApp Business Onboarding</h3>
+                <p class="hiw-card-desc">Link your phone number directly through Meta's official Embedded Signup flow with zero technical setup.</p>
+                <ul class="hiw-bullets">
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Official Meta onboarding flow with instant approval</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Connect your business number in under 2 minutes</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Secure OAuth authentication &amp; zero ban risk</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Supports multiple WABA numbers, brands &amp; branches</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="hiw-card-wrapper reveal-item" style="transition-delay: 150ms;">
+            <div class="hiw-card">
+              <div class="hiw-card-body">
+                <div class="hiw-step-num">02</div>
+                <span class="hiw-step-tagline">BUILD YOUR BOT</span>
+                <h3 class="hiw-card-title">No-Code Chatbot &amp; Automation Builder</h3>
+                <p class="hiw-card-desc">Design conversational flows, instant lead qualification sequences, and round-the-clock FAQ responders visually.</p>
+                <ul class="hiw-bullets">
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Visual drag-and-drop conversational flow editor</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Keyword, interactive button &amp; QR code triggers</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>AI-powered smart reply suggestions &amp; fallback</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Multi-step conversation routing &amp; two-way CRM sync</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="hiw-card-wrapper reveal-item" style="transition-delay: 300ms;">
+            <div class="hiw-card">
+              <div class="hiw-card-body">
+                <div class="hiw-step-num">03</div>
+                <span class="hiw-step-tagline">LAUNCH CAMPAIGNS</span>
+                <h3 class="hiw-card-title">Broadcast Campaigns That Actually Convert</h3>
+                <p class="hiw-card-desc">Reach thousands of opted-in customers with personalized broadcast templates, catalog offers, and delivery alerts.</p>
+                <ul class="hiw-bullets">
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Bulk WhatsApp broadcasts in seconds with high deliverability</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Granular audience segmentation by custom tags &amp; attributes</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Schedule campaigns ahead of time across multiple timezones</span>
+                  </li>
+                  <li>
+                    <span class="hiw-check-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Live campaign analytics, CTR tracking &amp; instant CSV export</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hiw-cta-wrap reveal-item">
+        <a href="auth/register" class="hiw-cta-btn">
+          Start Your Free Setup
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="hiw-cta-subtext">No credit card required • 7-day free trial • Live support onboarding included</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: CUSTOMER STORIES / TESTIMONIALS (ENHANCED UNIQUE FORMAT)
+       ========================================================================== -->
+  <section class="stories-section" id="testimonials">
+    <div class="stories-container">
+      <div class="stories-header reveal-item">
+        <span class="stories-badge">Customer Success Stories</span>
+        <h2 class="stories-title">Real Results from Teams Powered by InboxWa</h2>
+        <p class="stories-subtitle">See how fast-growing businesses across retail, education, healthcare, and finance achieve 98% open rates and 4x faster response times.</p>
+      </div>
+
+      <!-- Trust Stats Banner -->
+      <div class="stories-stats-strip reveal-item">
+        <div class="stories-stat-item">
+          <div class="stories-stat-val">
+            <span>4.9</span>
+            <span class="stories-star-rating">★★★★★</span>
+          </div>
+          <div class="stories-stat-lbl">Customer Rating (Meta Verified)</div>
+        </div>
+        <div class="stories-stat-sep"></div>
+        <div class="stories-stat-item">
+          <div class="stories-stat-val">98%</div>
+          <div class="stories-stat-lbl">Average Open Rate</div>
+        </div>
+        <div class="stories-stat-sep"></div>
+        <div class="stories-stat-item">
+          <div class="stories-stat-val">10M+</div>
+          <div class="stories-stat-lbl">Messages Delivered / Mo</div>
+        </div>
+        <div class="stories-stat-sep"></div>
+        <div class="stories-stat-item">
+          <div class="stories-stat-val">99.99%</div>
+          <div class="stories-stat-lbl">Enterprise Uptime SLA</div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="stories-filters reveal-item">
+        <button type="button" class="story-filter-btn active" data-filter="all">All Stories (12)</button>
+        <button type="button" class="story-filter-btn" data-filter="ecommerce">E-Commerce &amp; Retail (3)</button>
+        <button type="button" class="story-filter-btn" data-filter="education">Education &amp; EdTech (4)</button>
+        <button type="button" class="story-filter-btn" data-filter="healthcare">Healthcare &amp; Clinics (1)</button>
+        <button type="button" class="story-filter-btn" data-filter="bfsi">BFSI &amp; Banking (2)</button>
+        <button type="button" class="story-filter-btn" data-filter="services">Logistics &amp; Services (2)</button>
+      </div>
+
+      <!-- Stories Grid -->
+      <div class="stories-grid" id="storiesGrid">
+        <!-- Story 1: Trustline (BFSI) -->
+        <div class="story-card reveal-item" data-category="bfsi">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-bfsi">BFSI &amp; Insurance</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">+42% Higher Policy Renewal Rates</h3>
+            <p class="story-quote">"Automated policy renewal reminders reduced our drop-offs by 42%. Customers love getting instant quotes on WhatsApp instead of waiting on endless phone queues."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-purple">TL</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Trustline Insurance Advisors</div>
+              <div class="story-author-role">Regional Sales Manager • Bangalore</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 2: Urban Thread (E-commerce) -->
+        <div class="story-card reveal-item" data-category="ecommerce">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-ecom">Fashion Retail</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">4.2x ROI on Broadcast Campaigns</h3>
+            <p class="story-quote">"Broadcast campaigns have completely replaced SMS for our seasonal drops. 87% read rates and 4.2x ROI compared to email make InboxWa an indispensable channel."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-pink">UT</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Urban Thread Apparel</div>
+              <div class="story-author-role">E-commerce Manager • Dubai &amp; UAE</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 3: Spice Route (E-commerce) -->
+        <div class="story-card reveal-item" data-category="ecommerce">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-ecom">D2C Food &amp; Beverage</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">65% Reduction in Support Call Volume</h3>
+            <p class="story-quote">"Order confirmation and live delivery tracking via WhatsApp cut our WISMO calls by 65%. Our customers are genuinely happier with proactive shipping alerts."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-amber">SR</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Spice Route Foods</div>
+              <div class="story-author-role">Founder • Chennai</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 4: Pinnacle Business School (Education) -->
+        <div class="story-card reveal-item" data-category="education">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-edu">Higher Education</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">70% Admissions Enquiries Auto-Resolved</h3>
+            <p class="story-quote">"Admissions queries doubled this year and InboxWa handled 70% automatically with chatbot flows. Our counselors only step in for qualified prospective students."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-blue">PB</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Pinnacle Business School</div>
+              <div class="story-author-role">Marketing Manager • Chennai</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 5: DPS International School (Education) -->
+        <div class="story-card reveal-item" data-category="education">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-edu">K-12 Education</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">100% Delivery on Urgent Parent Circulars</h3>
+            <p class="story-quote">"Parents prefer WhatsApp over email any day. Fee reminders, circulars, and attendance alerts reach 100% of our parents instantly without spam folder issues."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-indigo">DP</div>
+            <div class="story-author-info">
+              <div class="story-author-name">DPS International School</div>
+              <div class="story-author-role">Director of Admissions • Chennai</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 6: Greenfield International School (Education) -->
+        <div class="story-card reveal-item" data-category="education">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-edu">International School</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">Shared Team Inbox with Under 3-Min Response</h3>
+            <p class="story-quote">"The multi-agent inbox allows our 6 administrative staff to share one WhatsApp number without confusion. Response times dropped from hours to under 3 minutes."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-green">GF</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Greenfield International School</div>
+              <div class="story-author-role">Principal • Bangalore</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 7: Wellness First Clinic (Healthcare) -->
+        <div class="story-card reveal-item" data-category="healthcare">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-health">Clinics &amp; Healthcare</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">No-Show Rates Plunged from 28% to &lt;6%</h3>
+            <p class="story-quote">"Appointment reminders and rescheduling via WhatsApp dropped our no-show rate from 28% to under 6% in the first month. Doctor schedules are now fully utilized."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-cyan">WF</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Wellness First Clinic</div>
+              <div class="story-author-role">Clinic Manager • Hyderabad</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 8: Bloom & Co. (E-commerce) -->
+        <div class="story-card reveal-item" data-category="ecommerce">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-ecom">D2C Home Decor</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">23% Cart Recovery within 48 Hours</h3>
+            <p class="story-quote">"Abandoned cart recovery via WhatsApp converted 23% of dropped checkouts into paying customers. The automated ROI paid for InboxWa within the first 48 hours."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-purple">BC</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Bloom &amp; Co. Home Decor</div>
+              <div class="story-author-role">D2C Growth Lead • Singapore</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 9: Cornerstone Cooperative Bank (BFSI) -->
+        <div class="story-card reveal-item" data-category="bfsi">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-bfsi">Banking &amp; FinTech</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">24/7 Self-Service Banking via Chat</h3>
+            <p class="story-quote">"Instant balance checks and branch locator flows give our account holders 24/7 self-service without expanding support headcount. Extremely dependable platform."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-blue">CB</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Cornerstone Cooperative Bank</div>
+              <div class="story-author-role">Head of Digital Banking • Visakhapatnam</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 10: Everest Logistics (Services) -->
+        <div class="story-card reveal-item" data-category="services">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-services">Supply Chain &amp; Freight</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">Live Dispatcher Tracking on WhatsApp</h3>
+            <p class="story-quote">"Our dispatchers send automated consignment updates at every transit hub. Driver check-in via WhatsApp simplified our daily ops across 14 transit routes."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-amber">EL</div>
+            <div class="story-author-info">
+              <div class="story-author-name">Everest Logistics Solutions</div>
+              <div class="story-author-role">Customer Experience Lead • London &amp; UK</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 11: WorkHub Coworking (Services) -->
+        <div class="story-card reveal-item" data-category="services">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-services">Commercial Real Estate</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">3x Smoother Member Check-in &amp; Booking</h3>
+            <p class="story-quote">"Meeting room booking and visitor check-in flows run entirely on WhatsApp now. Our front desk operations are 3x smoother and members absolutely love the convenience."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-green">WH</div>
+            <div class="story-author-info">
+              <div class="story-author-name">WorkHub Coworking Spaces</div>
+              <div class="story-author-role">Community Manager • Hyderabad</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Story 12: The Edu Consultant (Education) -->
+        <div class="story-card reveal-item" data-category="education">
+          <div>
+            <div class="story-card-top">
+              <span class="story-tag tag-edu">Overseas Admissions</span>
+              <div class="story-stars">★★★★★</div>
+            </div>
+            <h3 class="story-headline">+35% Conversion from Meta Ads to Enrolled</h3>
+            <p class="story-quote">"We capture study abroad leads from Meta ads directly into WhatsApp. Conversion from raw lead to enrolled student jumped 35% with instant automated counselor follow-ups."</p>
+          </div>
+          <div class="story-author">
+            <div class="story-avatar av-indigo">EC</div>
+            <div class="story-author-info">
+              <div class="story-author-name">The Edu Consultant</div>
+              <div class="story-author-role">Founder • Bangalore</div>
+            </div>
+            <span class="story-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Trust Card -->
+      <div class="stories-bottom-card reveal-item">
+        <div class="stories-bottom-content">
+          <h3>Ready to Scale Your Customer Conversations?</h3>
+          <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with InboxWa.</p>
+        </div>
+        <div class="stories-bottom-actions">
+          <a href="auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
+            Start Free 7-Day Trial
+          </a>
+          <a href="#callback" onclick="if(window.openCallbackModal){openCallbackModal();return false;}" class="btn-ghost-dark">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Talk to an Expert
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>
 
@@ -5001,10 +6026,10 @@
   }, 2500);
 
   // -------------------------------------------------------------------------
-  // Authentic Features Reveal Animations (Hellobotz Clone)
+  // Authentic Features & Sections Reveal Animations
   // -------------------------------------------------------------------------
   (function() {
-    const revealElements = document.querySelectorAll('#features .reveal-left, #features .reveal-right, #features .reveal-item');
+    const revealElements = document.querySelectorAll('#features .reveal-left, #features .reveal-right, #features .reveal-item, #how-it-works .reveal-item, #testimonials .reveal-item');
     if (revealElements.length && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -5023,6 +6048,33 @@
     } else if (revealElements.length) {
       revealElements.forEach(function(el) {
         el.classList.add('reveal-visible');
+      });
+    }
+  })();
+
+  // -------------------------------------------------------------------------
+  // Customer Stories Industry Filter Tabs
+  // -------------------------------------------------------------------------
+  (function() {
+    const filterBtns = document.querySelectorAll('.story-filter-btn');
+    const storyCards = document.querySelectorAll('.story-card');
+    if (filterBtns.length && storyCards.length) {
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const category = this.getAttribute('data-filter');
+          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          storyCards.forEach(function(card) {
+            const cardCategory = card.getAttribute('data-category');
+            if (category === 'all' || cardCategory === category) {
+              card.classList.remove('is-hidden');
+              card.classList.add('reveal-visible');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
       });
     }
   })();
