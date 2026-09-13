@@ -5,7 +5,7 @@ $pageDescription = 'Terms governing use of InboxWa.';
 $canonicalUrl = 'https://inboxwa.com/company/terms/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<nav class="container" style="padding-top:calc(var(--nav,72px) + 1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Company</nav>
+<nav class="container" aria-label="Breadcrumb" style="padding-top:0.75rem;padding-bottom:0.35rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Company</nav>
 <section class="section page-hero" style="padding-top:1.25rem">
   <div class="container">
     <div class="section-header reveal">

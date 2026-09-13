@@ -258,12 +258,53 @@ if (!function_exists('hb_seo_esc')) {
   </script>
   <style id="inboxwa-floating-pill-navbar-style">
     /* FLOATING PILL NAVBAR SYSTEM (100% Fixed, Centered & Always Visible on Scroll) */
+    :root {
+      --nav: 0px !important;
+    }
     html {
-      scroll-padding-top: 100px;
+      scroll-padding-top: 84px;
     }
     body {
-      padding-top: 86px !important;
+      padding-top: 76px !important;
     }
+    @media (max-width: 768px) {
+      body {
+        padding-top: 66px !important;
+      }
+    }
+
+    /* Universal Breadcrumbs Spacing Fix (eliminates excessive white gap on all pages) */
+    .breadcrumb-nav,
+    .cw-breadcrumb,
+    .cig-breadcrumb,
+    .cfb-breadcrumb,
+    .ctg-breadcrumb,
+    .ind-top-bar,
+    .loc-breadcrumb,
+    .res-breadcrumbs,
+    .res-breadcrumb,
+    .bl-breadcrumb,
+    nav[aria-label="Breadcrumb"],
+    nav.breadcrumb,
+    nav.breadcrumbs {
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.35rem !important;
+      margin-top: 0 !important;
+    }
+
+    /* Remove excessive top padding when hero is right below a breadcrumb */
+    .breadcrumb-nav + .pricing-hero,
+    .breadcrumb-nav + .hero-section,
+    .breadcrumb-nav + section,
+    .cw-breadcrumb + .cw-hero-section,
+    .cig-breadcrumb + .cig-hero-section,
+    .cfb-breadcrumb + .cfb-hero-section,
+    .ctg-breadcrumb + .ctg-hero-section,
+    .ind-top-bar + .ind-hero,
+    .bl-breadcrumb + .bl-hero {
+      padding-top: 1rem !important;
+    }
+
     .site-header {
       position: fixed !important;
       top: 12px !important;

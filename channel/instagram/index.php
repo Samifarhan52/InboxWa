@@ -32,7 +32,7 @@ include __DIR__ . '/../../includes/header.php';
 
   /* Breadcrumb */
   .cig-breadcrumb {
-    padding: calc(var(--nav, 72px) + 1.25rem) 1.5rem 0.5rem;
+    padding: 0.75rem 1.5rem 0.35rem;
     max-width: 1200px;
     margin: 0 auto;
     font-size: 0.85rem;
@@ -52,7 +52,7 @@ include __DIR__ . '/../../includes/header.php';
 
   /* Hero Section */
   .cig-hero-section {
-    padding: 2.5rem 1.5rem 4.5rem;
+    padding: 1.5rem 1.5rem 4.5rem;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;

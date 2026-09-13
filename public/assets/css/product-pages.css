@@ -44,7 +44,7 @@
 .prod-hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--nav, 72px) + 3rem) 1.5rem 4.5rem;
+  padding: 2rem 1.5rem 4.5rem;
   max-width: 1240px;
   margin: 0 auto;
 }

@@ -11,7 +11,7 @@
   --sh3:0 25px 50px -12px rgba(139,92,246,.25);
   --r:12px;--r2:16px;--r3:20px;--r4:999px;
   --font:'Inter',system-ui,-apple-system,sans-serif;
-  --max:1140px;--nav:72px;
+  --max:1140px;--nav:0px;
   --ease:cubic-bezier(.4,0,.2,1);
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -2776,7 +2776,7 @@ body.menu-open{overflow:hidden !important}
   --sh-card:0 4px 20px -4px rgba(15,23,42,.07),0 1px 3px rgba(15,23,42,.04);
   --sh-card-hover:0 14px 36px -8px rgba(139,92,246,.16),0 4px 12px rgba(15,23,42,.05);
   --sh-mega:0 24px 60px -12px rgba(15,23,42,.16),0 0 0 1px rgba(139,92,246,.06),0 1px 0 rgba(255,255,255,.8) inset;
-  --nav:72px;
+  --nav:0px;
   --ease-out:cubic-bezier(.22,1,.36,1);
   --header-radius:18px;
 }

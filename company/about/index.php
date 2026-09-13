@@ -19,7 +19,7 @@ include __DIR__ . '/../../includes/header.php';
 .ab-page .section-header{text-align:center;max-width:740px;margin:0 auto 2.75rem}
 .ab-page .section-header .lead{margin-top:.85rem;font-size:1.08rem;color:var(--t2);line-height:1.65}
 .ab-page .badge-ab{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;background:var(--p-l);color:var(--p2);border:1px solid var(--p-m)}
-.ab-hero{position:relative;padding:calc(var(--nav,72px) + 3rem) 0 4rem;overflow:hidden;background:radial-gradient(ellipse 70% 55% at 75% 15%,rgba(139,92,246,.14),transparent 55%),radial-gradient(ellipse 55% 45% at 15% 85%,rgba(6,182,212,.1),transparent 50%),linear-gradient(180deg,#F8FAFC 0%,#FFFFFF 100%)}
+.ab-hero{position:relative;padding:2rem 0 4rem;overflow:hidden;background:radial-gradient(ellipse 70% 55% at 75% 15%,rgba(139,92,246,.14),transparent 55%),radial-gradient(ellipse 55% 45% at 15% 85%,rgba(6,182,212,.1),transparent 50%),linear-gradient(180deg,#F8FAFC 0%,#FFFFFF 100%)}
 .ab-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.75rem;align-items:center}
 .ab-hero h1{font-size:clamp(2.05rem,4.4vw,3.25rem);letter-spacing:-.035em;line-height:1.12;margin:1rem 0 1.15rem;background:linear-gradient(135deg,#0F172A 0%,#4C1D95 55%,#0E7490 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .ab-hero .lead{font-size:1.12rem;color:var(--t2);max-width:34rem;line-height:1.7;margin-bottom:1.85rem}
@@ -227,7 +227,7 @@ include __DIR__ . '/../../includes/header.php';
 }
 @media (max-width:640px){
 .ab-page .section{padding:3.25rem 0}
-.ab-hero{padding:calc(var(--nav,72px) + 1.75rem) 0 2.5rem}
+.ab-hero{padding:1.5rem 0 2.5rem}
 .ab-hero h1{font-size:1.75rem}
 .ab-hero-visual{height:280px}
 .ab-node-label{font-size:.55rem}

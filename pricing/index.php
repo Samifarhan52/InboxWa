@@ -7,10 +7,10 @@ $canonicalUrl = 'https://inboxwa.com/pricing/';
 
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/pricing.css?v=3">
+<link rel="stylesheet" href="/assets/css/pricing.css?v=4">
 
 <!-- Breadcrumbs -->
-<nav class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top:calc(var(--nav,72px) + 1.25rem); padding-bottom:0.5rem;">
+<nav class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top:0.75rem; padding-bottom:0.25rem;">
   <ol style="display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;padding:0;margin:0;font-size:.85rem;color:#64748b;">
     <li><a href="/">Home</a></li>
     <li aria-hidden="true">/</li>

@@ -11,7 +11,7 @@ $canonicalUrl = 'https://inboxwa.com/locations/';
 include __DIR__ . '/../includes/header.php';
 ?>
 
-<div class="locations-directory-page" style="padding-top: calc(var(--nav, 72px) + 2rem); min-height: 80vh; background: var(--bg);">
+<div class="locations-directory-page" style="padding-top: 1.5rem; min-height: 80vh; background: var(--bg);">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.25rem 4rem;">
     <div style="text-align: center; max-width: 780px; margin: 0 auto 3rem;">
       <span class="badge badge-primary" style="display: inline-block; margin-bottom: 0.75rem; padding: 0.35rem 0.85rem; border-radius: 999px; background: rgba(37,211,102,0.12); color: #128c7e; font-weight: 600; font-size: 0.85rem;">Global Reach & Local Compliance</span>

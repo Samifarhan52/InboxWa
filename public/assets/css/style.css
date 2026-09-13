@@ -11,7 +11,7 @@
   --sh3:0 25px 50px -12px rgba(139,92,246,.25);
   --r:12px;--r2:16px;--r3:20px;--r4:999px;
   --font:'Inter',system-ui,-apple-system,sans-serif;
-  --max:1140px;--nav:72px;
+  --max:1140px;--nav:0px;
   --ease:cubic-bezier(.4,0,.2,1);
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}

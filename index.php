@@ -28,7 +28,7 @@ include __DIR__ . '/includes/header.php';
 
   /* Hero Section */
   .cw-hero-wrap {
-    padding: 2.5rem 1.25rem 4.5rem;
+    padding: 1.75rem 1.25rem 4.5rem;
     max-width: 1240px;
     width: 100%;
     margin: 0 auto;

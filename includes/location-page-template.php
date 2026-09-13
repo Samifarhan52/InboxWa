@@ -24,7 +24,7 @@ include __DIR__ . '/header.php';
 ?>
 
 <!-- Breadcrumb -->
-<nav class="loc-breadcrumb container" aria-label="Breadcrumb" style="padding-top:calc(var(--nav,72px) + 1.25rem)">
+<nav class="loc-breadcrumb container" aria-label="Breadcrumb" style="padding-top:0.75rem;padding-bottom:0.35rem;">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;font-size:.85rem;color:var(--t3)">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a itemprop="item" href="<?php echo $bp; ?>"><span itemprop="name">Home</span></a>
