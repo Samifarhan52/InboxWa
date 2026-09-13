@@ -871,16 +871,9 @@ if (!function_exists('hb_seo_esc')) {
 
     .mega-solutions-wrap {
       display: grid !important;
-      grid-template-columns: minmax(420px, 1.4fr) minmax(300px, 1fr) 275px !important;
+      grid-template-columns: minmax(300px, 1fr) minmax(420px, 1.4fr) 275px !important;
       align-items: stretch !important;
       min-height: 410px !important;
-    }
-
-    .mega-sol-main {
-      padding: 24px 22px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
     }
 
     .mega-sol-integrations {
@@ -888,8 +881,16 @@ if (!function_exists('hb_seo_esc')) {
       display: flex !important;
       flex-direction: column !important;
       justify-content: center !important;
-      border-left: 1px solid #f1f5f9 !important;
+      border-right: 1px solid #f1f5f9 !important;
       background: #fafbfc !important;
+    }
+
+    .mega-sol-main {
+      padding: 24px 22px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      background: #ffffff !important;
     }
 
     .mega-sol-heading {
@@ -1092,7 +1093,7 @@ if (!function_exists('hb_seo_esc')) {
         width: min(1080px, calc(100vw - 20px)) !important;
       }
       .mega-solutions-wrap {
-        grid-template-columns: 1.35fr 1fr 240px !important;
+        grid-template-columns: 1fr 1.35fr 240px !important;
       }
       .mega-sol-main,
       .mega-sol-integrations {
@@ -2046,7 +2047,53 @@ if (!function_exists('hb_seo_esc')) {
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-solutions" role="menu">
             <div class="mega-solutions-wrap">
-              <!-- Left: By Industry (3 columns x 4 rows) -->
+              <!-- Left: Integrations (2 columns x 4 rows = 8 items) -->
+              <div class="mega-sol-integrations">
+                <div class="mega-sol-heading">Integrations</div>
+                <div class="mega-integrations-grid">
+                  <!-- Col 1 -->
+                  <div class="mega-ind-col">
+                    <a href="<?php echo $bp; ?>solutions/shopify/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-shopify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></span>
+                      <span class="mega-ind-title">Shopify</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>solutions/woocommerce/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-woo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
+                      <span class="mega-ind-title">WooCommerce</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>solutions/google-forms-sheets/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-sheets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg></span>
+                      <span class="mega-ind-title">Google Sheet</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>solutions/google-calendar-meet/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span>
+                      <span class="mega-ind-title">Google Calendar</span>
+                    </a>
+                  </div>
+
+                  <!-- Col 2 -->
+                  <div class="mega-ind-col">
+                    <a href="<?php echo $bp; ?>facebook-ads/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
+                      <span class="mega-ind-title">Facebook Ads</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>integrations/crm/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-crm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
+                      <span class="mega-ind-title">CRM Integration</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>integrations/api-webhooks/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-api"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></span>
+                      <span class="mega-ind-title">Webhooks &amp; API</span>
+                    </a>
+                    <a href="<?php echo $bp; ?>integrations/custom/" class="mega-ind-link mega-integ-link" role="menuitem">
+                      <span class="mega-ind-icon mega-icon-custom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                      <span class="mega-ind-title">Custom Integration</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Middle: By Industry (3 columns x 4 rows) -->
               <div class="mega-sol-main">
                 <div class="mega-sol-heading">By Industry</div>
                 <div class="mega-industry-grid">
@@ -2107,52 +2154,6 @@ if (!function_exists('hb_seo_esc')) {
                     <a href="<?php echo $bp; ?>industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></span>
                       <span class="mega-ind-title">Manufacturing &amp; Supply</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Middle: Integrations (2 columns x 4 rows = 8 items) -->
-              <div class="mega-sol-integrations">
-                <div class="mega-sol-heading">Integrations</div>
-                <div class="mega-integrations-grid">
-                  <!-- Col 1 -->
-                  <div class="mega-ind-col">
-                    <a href="<?php echo $bp; ?>solutions/shopify/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-shopify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></span>
-                      <span class="mega-ind-title">Shopify</span>
-                    </a>
-                    <a href="<?php echo $bp; ?>solutions/woocommerce/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-woo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
-                      <span class="mega-ind-title">WooCommerce</span>
-                    </a>
-                    <a href="<?php echo $bp; ?>solutions/google-forms-sheets/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-sheets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg></span>
-                      <span class="mega-ind-title">Google Sheet</span>
-                    </a>
-                    <a href="<?php echo $bp; ?>solutions/google-calendar-meet/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span>
-                      <span class="mega-ind-title">Google Calendar</span>
-                    </a>
-                  </div>
-
-                  <!-- Col 2 -->
-                  <div class="mega-ind-col">
-                    <a href="<?php echo $bp; ?>facebook-ads/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
-                      <span class="mega-ind-title">Facebook Ads</span>
-                    </a>
-                    <a href="<?php echo $bp; ?>integrations/crm/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-crm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
-                      <span class="mega-ind-title">CRM Integration</span>
-                    </a>
-                    <a href="<?php echo $bp; ?>integrations/api-webhooks/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-api"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></span>
-                      <span class="mega-ind-title">Webhooks &amp; API</span>
-                    </a>
-                    <a href="<?php echo $bp; ?>integrations/custom/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-custom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-                      <span class="mega-ind-title">Custom Integration</span>
                     </a>
                   </div>
                 </div>
