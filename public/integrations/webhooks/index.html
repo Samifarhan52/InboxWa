@@ -49,6 +49,7 @@
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=51">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
 
     <style id="inboxwa-theme-palette">
     :root {
@@ -83,142 +84,6 @@
     .cta-band {
       background: linear-gradient(135deg, #7C3AED, #8B5CF6, #06B6D4) !important;
     }
-  
-    /* Professional Categorized Company Dropdown */
-    .mega-menu-company {
-      position: absolute !important;
-      top: calc(100% + 14px) !important;
-      left: auto !important;
-      right: -60px !important;
-      width: 890px !important;
-      max-width: calc(100vw - 32px) !important;
-      background: #ffffff !important;
-      border-radius: 20px !important;
-      box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
-      box-sizing: border-box !important;
-      z-index: 100000 !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-      transform: translateY(8px) !important;
-      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
-      overflow: hidden !important;
-    }
-    .nav-item:hover > .mega-menu-company,
-    .nav-item.open > .mega-menu-company,
-    .nav-item:focus-within > .mega-menu-company {
-      transform: translateY(0) !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      pointer-events: auto !important;
-    }
-    .mega-company-grid {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 12px !important;
-      padding: 18px 18px 14px !important;
-      background: #ffffff !important;
-    }
-    .mega-company-col {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 3px !important;
-    }
-    .mega-company-category-title {
-      font-size: 11px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.06em !important;
-      text-transform: uppercase !important;
-      color: #6D28D9 !important;
-      padding: 0 8px 6px 8px !important;
-      border-bottom: 1px solid #F1F5F9 !important;
-      margin-bottom: 4px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-    }
-    .mega-company-link {
-      display: flex !important;
-      align-items: center !important;
-      gap: 9px !important;
-      padding: 7px 8px !important;
-      border-radius: 10px !important;
-      text-decoration: none !important;
-      transition: background 0.18s ease, transform 0.18s ease !important;
-    }
-    .mega-company-link:hover {
-      background: #F8FAFC !important;
-      transform: translateX(2px) !important;
-    }
-    .mega-company-icon {
-      width: 32px !important;
-      height: 32px !important;
-      min-width: 32px !important;
-      border-radius: 8px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex-shrink: 0 !important;
-      transition: transform 0.18s ease !important;
-    }
-    .mega-company-link:hover .mega-company-icon {
-      transform: scale(1.08) !important;
-    }
-    .mega-company-icon svg {
-      width: 16px !important;
-      height: 16px !important;
-      stroke-width: 2 !important;
-      fill: none !important;
-      stroke: currentColor !important;
-    }
-    .mega-company-text {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1px !important;
-    }
-    .mega-company-title {
-      font-size: 12.5px !important;
-      font-weight: 700 !important;
-      color: #0F172A !important;
-      line-height: 1.25 !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 4px !important;
-    }
-    .mega-company-desc {
-      font-size: 10.5px !important;
-      color: #64748B !important;
-      line-height: 1.25 !important;
-    }
-    .mega-company-badge {
-      font-size: 8.5px !important;
-      background: #EEF2FF !important;
-      color: #4F46E5 !important;
-      padding: 1px 5px !important;
-      border-radius: 999px !important;
-      font-weight: 700 !important;
-      border: 1px solid #C7D2FE !important;
-      letter-spacing: 0.02em !important;
-    }
-    .mega-company-footer {
-      background: #F8FAFC !important;
-      border-top: 1px solid #F1F5F9 !important;
-      padding: 10px 18px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      font-size: 11px !important;
-      color: #64748B !important;
-    }
-    .mega-company-footer a {
-      color: #6D28D9 !important;
-      font-weight: 600 !important;
-      text-decoration: none !important;
-    }
-    .mega-company-footer a:hover {
-      text-decoration: underline !important;
-    }
-
   </style>
 
   <script type="application/ld+json">
@@ -281,7 +146,7 @@
       whatsapp: "918050854445",
       siteName: "InboxWa"    };
   </script>
-      <style id="inboxwa-floating-pill-navbar-style">
+  <style id="inboxwa-floating-pill-navbar-style">
     /* FLOATING PILL NAVBAR SYSTEM (100% Fixed, Centered & Always Visible on Scroll) */
     :root {
       --nav: 0px !important;
@@ -927,13 +792,6 @@
       min-height: 410px !important;
     }
 
-    .mega-sol-main {
-      padding: 24px 22px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-    }
-
     .mega-sol-integrations {
       padding: 24px 22px !important;
       display: flex !important;
@@ -941,6 +799,14 @@
       justify-content: center !important;
       border-right: 1px solid #f1f5f9 !important;
       background: #fafbfc !important;
+    }
+
+    .mega-sol-main {
+      padding: 24px 22px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      background: #ffffff !important;
     }
 
     .mega-sol-heading {
@@ -1143,28 +1009,34 @@
         width: min(1080px, calc(100vw - 20px)) !important;
       }
       .mega-solutions-wrap {
-        grid-template-columns: 1fr 270px !important;
+        grid-template-columns: 1fr 1.35fr 240px !important;
       }
-      .mega-sol-main {
-        padding: 20px 20px !important;
+      .mega-sol-main,
+      .mega-sol-integrations {
+        padding: 18px 14px !important;
       }
       .mega-sol-leads-aside {
-        padding: 24px 20px !important;
+        padding: 20px 16px !important;
       }
-      .mega-industry-grid {
-        gap: 8px 12px !important;
+      .mega-industry-grid,
+      .mega-integrations-grid {
+        gap: 6px 10px !important;
       }
       .mega-ind-link {
-        padding: 8px 8px !important;
-        gap: 10px !important;
+        padding: 6px 8px !important;
+        gap: 8px !important;
       }
       .mega-ind-icon {
-        width: 34px !important;
-        height: 34px !important;
-        min-width: 34px !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+      }
+      .mega-ind-icon svg {
+        width: 16px !important;
+        height: 16px !important;
       }
       .mega-ind-title {
-        font-size: 0.86rem !important;
+        font-size: 0.84rem !important;
       }
     }
 
@@ -1644,6 +1516,168 @@
       pointer-events: auto !important;
     }
 
+    /* Professional Categorized Company Dropdown */
+    .mega-menu-company {
+      position: absolute !important;
+      top: calc(100% + 14px) !important;
+      left: auto !important;
+      right: -60px !important;
+      width: 890px !important;
+      max-width: calc(100vw - 32px) !important;
+      background: #ffffff !important;
+      border-radius: 20px !important;
+      box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
+      box-sizing: border-box !important;
+      z-index: 100000 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(8px) !important;
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
+      overflow: hidden !important;
+    }
+    .nav-item:hover > .mega-menu-company,
+    .nav-item.open > .mega-menu-company,
+    .nav-item:focus-within > .mega-menu-company {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+    .mega-company-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 12px !important;
+      padding: 18px 18px 14px !important;
+      background: #ffffff !important;
+    }
+    @media (max-width: 1100px) and (min-width: 992px) {
+      .mega-menu-company {
+        width: 760px !important;
+        right: -20px !important;
+      }
+      .mega-company-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+      }
+    }
+    .mega-company-brochure-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      color: #6D28D9 !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      padding: 4px 10px !important;
+      border-radius: 8px !important;
+      background: #F3E8FF !important;
+      font-size: 11.5px !important;
+      transition: all 0.18s ease !important;
+    }
+    .mega-company-brochure-link:hover {
+      background: #6D28D9 !important;
+      color: #ffffff !important;
+    }
+    .mega-company-col {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 3px !important;
+    }
+    .mega-company-category-title {
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase !important;
+      color: #6D28D9 !important;
+      padding: 0 8px 6px 8px !important;
+      border-bottom: 1px solid #F1F5F9 !important;
+      margin-bottom: 4px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+    .mega-company-link {
+      display: flex !important;
+      align-items: center !important;
+      gap: 9px !important;
+      padding: 7px 8px !important;
+      border-radius: 10px !important;
+      text-decoration: none !important;
+      transition: background 0.18s ease, transform 0.18s ease !important;
+    }
+    .mega-company-link:hover {
+      background: #F8FAFC !important;
+      transform: translateX(2px) !important;
+    }
+    .mega-company-icon {
+      width: 32px !important;
+      height: 32px !important;
+      min-width: 32px !important;
+      border-radius: 8px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.18s ease !important;
+    }
+    .mega-company-link:hover .mega-company-icon {
+      transform: scale(1.08) !important;
+    }
+    .mega-company-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+      stroke-width: 2 !important;
+      fill: none !important;
+      stroke: currentColor !important;
+    }
+    .mega-company-text {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1px !important;
+    }
+    .mega-company-title {
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      color: #0F172A !important;
+      line-height: 1.25 !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+    }
+    .mega-company-desc {
+      font-size: 10.5px !important;
+      color: #64748B !important;
+      line-height: 1.25 !important;
+    }
+    .mega-company-badge {
+      font-size: 8.5px !important;
+      background: #EEF2FF !important;
+      color: #4F46E5 !important;
+      padding: 1px 5px !important;
+      border-radius: 999px !important;
+      font-weight: 700 !important;
+      border: 1px solid #C7D2FE !important;
+      letter-spacing: 0.02em !important;
+    }
+    .mega-company-footer {
+      background: #F8FAFC !important;
+      border-top: 1px solid #F1F5F9 !important;
+      padding: 10px 18px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      font-size: 11px !important;
+      color: #64748B !important;
+    }
+    .mega-company-footer a {
+      color: #6D28D9 !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+    }
+    .mega-company-footer a:hover {
+      text-decoration: underline !important;
+    }
+
     /* Action Buttons: Lang, Login, Start Free */
     .header-actions {
       display: flex !important;
@@ -1896,7 +1930,6 @@
       }
     }, { passive: true });
   </script>
-  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
 </head>
 <body>
 
@@ -2130,47 +2163,67 @@
                 </div>
               </div>
 
-              <!-- Middle: Integrations (2 columns x 4 rows = 8 items) -->
-              <div class="mega-sol-integrations">
-                <div class="mega-sol-heading">Integrations</div>
-                <div class="mega-integrations-grid">
-                  <!-- Col 1 -->
+              <!-- Middle: By Industry (3 columns x 4 rows) -->
+              <div class="mega-sol-main">
+                <div class="mega-sol-heading">By Industry</div>
+                <div class="mega-industry-grid">
+                  <!-- Column 1 -->
                   <div class="mega-ind-col">
-                    <a href="../../solutions/shopify/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-shopify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></span>
-                      <span class="mega-ind-title">Shopify</span>
+                    <a href="../../industry/bfsi/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/></svg></span>
+                      <span class="mega-ind-title">Banking &amp; Finance</span>
                     </a>
-                    <a href="../../solutions/woocommerce/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-woo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
-                      <span class="mega-ind-title">WooCommerce</span>
+                    <a href="../../industry/healthcare/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                      <span class="mega-ind-title">Health &amp; Wellness</span>
                     </a>
-                    <a href="../../solutions/google-forms-sheets/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-sheets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg></span>
-                      <span class="mega-ind-title">Google Sheet</span>
+                    <a href="../../industry/retail-and-ecommerce/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
+                      <span class="mega-ind-title">Retail &amp; E-commerce</span>
                     </a>
-                    <a href="../../solutions/google-calendar-meet/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span>
-                      <span class="mega-ind-title">Google Calendar</span>
+                    <a href="../../industry/travel-and-hospitality/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span>
+                      <span class="mega-ind-title">Travel &amp; Hospitality</span>
                     </a>
                   </div>
 
-                  <!-- Col 2 -->
+                  <!-- Column 2 -->
                   <div class="mega-ind-col">
-                    <a href="../../facebook-ads/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
-                      <span class="mega-ind-title">Facebook Ads</span>
+                    <a href="../../industry/education-and-social-impacts/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                      <span class="mega-ind-title">Education &amp; Social Impacts</span>
                     </a>
-                    <a href="../../integrations/crm/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-crm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
-                      <span class="mega-ind-title">CRM Integration</span>
+                    <a href="../../industry/communication-and-it/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                      <span class="mega-ind-title">Communication &amp; IT</span>
                     </a>
-                    <a href="../../integrations/api-webhooks/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-api"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></span>
-                      <span class="mega-ind-title">Webhooks &amp; API</span>
+                    <a href="../../industry/food-and-beverages/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                      <span class="mega-ind-title">Food &amp; Beverage</span>
                     </a>
-                    <a href="../../integrations/custom/" class="mega-ind-link mega-integ-link" role="menuitem">
-                      <span class="mega-ind-icon mega-icon-custom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-                      <span class="mega-ind-title">Custom Integration</span>
+                    <a href="../../industry/advertising-and-events/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+                      <span class="mega-ind-title">Advertising &amp; Events</span>
+                    </a>
+                  </div>
+
+                  <!-- Column 3 -->
+                  <div class="mega-ind-col">
+                    <a href="../../industry/construction-and-real-estate/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                      <span class="mega-ind-title">Construction &amp; Real Estate</span>
+                    </a>
+                    <a href="../../industry/automobiles-and-transport/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+                      <span class="mega-ind-title">Automobiles &amp; Transport</span>
+                    </a>
+                    <a href="../../industry/government-and-utilities/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16M4 2h16M6 6h12M6 10h12M6 14h12M6 18h12"/></svg></span>
+                      <span class="mega-ind-title">Government &amp; Utilities</span>
+                    </a>
+                    <a href="../../industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
+                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></span>
+                      <span class="mega-ind-title">Manufacturing &amp; Supply</span>
                     </a>
                   </div>
                 </div>
@@ -2187,26 +2240,24 @@
             </div>
           </div>
         </div>
-<div class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></div>
+        <div class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></div>
 
-        
-
-                        <div class="nav-item nav-item-secondary nav-item-sm" data-mega>
+        <div class="nav-item nav-item-secondary nav-item-sm" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-company" role="menu">
             <div class="mega-company-grid">
               <!-- Column 1: Company -->
               <div class="mega-company-col">
                 <div class="mega-company-category-title">Company</div>
-                <a href="/company/about/" class="mega-company-link" role="menuitem">
+                <a href="../../company/about/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">About Us</span><span class="mega-company-desc">Mission, vision &amp; leadership</span></span>
                 </a>
-                <a href="/company/careers/" class="mega-company-link" role="menuitem">
+                <a href="../../company/careers/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Careers <span class="mega-company-badge">Hiring</span></span><span class="mega-company-desc">Join our growing team</span></span>
                 </a>
-                <a href="/contact/" class="mega-company-link" role="menuitem">
+                <a href="../../contact/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Contact Us</span><span class="mega-company-desc">Sales &amp; 24/7 support</span></span>
                 </a>
@@ -2215,19 +2266,19 @@
               <!-- Column 2: Partners (Moved into Company dropdown) -->
               <div class="mega-company-col">
                 <div class="mega-company-category-title">Partners</div>
-                <a href="/partners/affiliate/" class="mega-company-link" role="menuitem">
+                <a href="../../partners/affiliate/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Affiliate Partner</span><span class="mega-company-desc">Refer &amp; earn 20%</span></span>
                 </a>
-                <a href="/partners/agency/" class="mega-company-link" role="menuitem">
-                  <span class="mega-company-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+                <a href="../../partners/agency/" class="mega-company-link" role="menuitem">
+                  <span class="mega-company-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Agency Partner</span><span class="mega-company-desc">Serve your clients</span></span>
                 </a>
-                <a href="/partners/white-label/" class="mega-company-link" role="menuitem">
+                <a href="../../partners/white-label/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">White Label Partner</span><span class="mega-company-desc">Your brand, our platform</span></span>
                 </a>
-                <a href="/partners/technology/" class="mega-company-link" role="menuitem">
+                <a href="../../partners/technology/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Technology Partner</span><span class="mega-company-desc">Build integrations</span></span>
                 </a>
@@ -2236,15 +2287,15 @@
               <!-- Column 3: Resources -->
               <div class="mega-company-col">
                 <div class="mega-company-category-title">Resources</div>
-                <a href="/resources/blog/" class="mega-company-link" role="menuitem">
+                <a href="../../resources/blog/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Blog &amp; Insights</span><span class="mega-company-desc">WhatsApp tips &amp; guides</span></span>
                 </a>
-                <a href="/resources/case-studies/" class="mega-company-link" role="menuitem">
+                <a href="../../resources/case-studies/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/><path d="M18 14.66V17c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2v12.66"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Case Studies</span><span class="mega-company-desc">Customer success stories</span></span>
                 </a>
-                <a href="/resources/help-center/" class="mega-company-link" role="menuitem">
+                <a href="../../resources/help-center/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Help Center</span><span class="mega-company-desc">Docs, FAQs &amp; onboarding</span></span>
                 </a>
@@ -2253,19 +2304,19 @@
               <!-- Column 4: Trust & Legal -->
               <div class="mega-company-col">
                 <div class="mega-company-category-title">Trust &amp; Legal</div>
-                <a href="/security/" class="mega-company-link" role="menuitem">
+                <a href="../../security/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Security &amp; ISO</span><span class="mega-company-desc">Enterprise data protection</span></span>
                 </a>
-                <a href="/privacy/" class="mega-company-link" role="menuitem">
+                <a href="../../privacy/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Privacy Policy</span><span class="mega-company-desc">GDPR &amp; privacy commitment</span></span>
                 </a>
-                <a href="/terms/" class="mega-company-link" role="menuitem">
+                <a href="../../terms/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Terms of Service</span><span class="mega-company-desc">Platform usage terms</span></span>
                 </a>
-                <a href="/cookie-policy/" class="mega-company-link" role="menuitem">
+                <a href="../../cookie-policy/" class="mega-company-link" role="menuitem">
                   <span class="mega-company-icon mega-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm4 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></span>
                   <span class="mega-company-text"><span class="mega-company-title">Cookie Policy</span><span class="mega-company-desc">Tracking &amp; transparency</span></span>
                 </a>
@@ -2279,13 +2330,145 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                   Download Brochure
                 </a>
-                <a href="/contact/">Talk to Sales &rarr;</a>
+                <a href="../../contact/">Talk to Sales &rarr;</a>
               </div>
             </div>
           </div>
         </div>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" id="lang-switch">
+          <button type="button" class="lang-switch-btn" id="lang-switch-btn" aria-haspopup="listbox" aria-expanded="false" title="Language">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            <span id="lang-switch-label">EN</span>
+          </button>
+          <ul class="lang-switch-menu" id="lang-switch-menu" role="listbox" hidden>
+            <li role="option" data-lang="en" class="active">English</li>
+            <li role="option" data-lang="ar">العربية</li>
+            <li role="option" data-lang="es">Español</li>
+            <li role="option" data-lang="pt">Português</li>
+            <li role="option" data-lang="de">Deutsch</li>
+            <li role="option" data-lang="fr">Français</li>
+          </ul>
+        </div>
+        <a href="../../auth/login" class="header-login"><span>Login</span></a>
+        <a href="../../auth/register" class="btn btn-primary btn-sm header-cta-start">Start Free</a>
+        <button type="button" class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" hidden aria-hidden="true">
+    <div class="mobile-backdrop"></div>
+    <div class="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <a href="../../" class="logo" aria-label="InboxWa Home">
+          <img src="../../assets/images/logo.png" alt="InboxWa" class="logo-img" width="135" height="34">
+        </a>
+        <button type="button" class="mobile-close btn btn-icon btn-ghost" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="mobile-drawer-body">
+        <div class="mobile-nav-item" data-accordion>
+          <button type="button" class="mobile-nav-link">Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="mobile-submenu"><div class="mobile-submenu-inner">
+            <a href="../../products/whatsapp-shared-inbox/">Shared Inbox</a>
+            <a href="../../products/campaigns-and-broadcasts/">Bulk Broadcasts</a>
+            <a href="../../products/ai-agent-and-bot/">AI Agent &amp; Chatbot</a>
+            <a href="../../products/crm-and-lead-management/">CRM &amp; Lead Management</a>
+            <a href="../../products/chat-widget/">Website Chat Widget</a>
+            <a href="../../products/template-message-management/">Template Messages</a>
+            <a href="../../products/auto-replies/">Automated Replies</a>
+            <a href="../../products/apis-and-webhooks/">APIs &amp; Webhooks</a>
+          </div></div>
+        </div>
+        <div class="mobile-nav-item" data-accordion>
+          <button type="button" class="mobile-nav-link">Channels <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="mobile-submenu"><div class="mobile-submenu-inner">
+            <a href="../../channels/whatsapp/">WhatsApp</a>
+            <a href="../../channels/instagram/">Instagram</a>
+            <a href="../../channels/facebook/">Facebook Messenger</a>
+            <a href="../../channels/telegram/">Telegram</a>
+          </div></div>
+        </div>
+        <div class="mobile-nav-item" data-accordion>
+          <button type="button" class="mobile-nav-link">Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="mobile-submenu"><div class="mobile-submenu-inner">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 2px;border-bottom:1px solid #f1f5f9;">By Industry</div>
+            <a href="../../industry/ecommerce-and-retail/">Ecommerce &amp; Retail</a>
+            <a href="../../industry/education-and-social-impacts/">Education &amp; Social Impacts</a>
+            <a href="../../industry/communication-and-it/">Communication &amp; IT</a>
+            <a href="../../industry/food-and-beverages/">Food &amp; Beverage</a>
+            <a href="../../industry/advertising-and-events/">Advertising &amp; Events</a>
+            <a href="../../industry/construction-and-real-estate/">Construction &amp; Real Estate</a>
+            <a href="../../industry/automobiles-and-transport/">Automobiles &amp; Transport</a>
+            <a href="../../industry/government-and-utilities/">Government &amp; Utilities</a>
+            <a href="../../industry/manufacturing-and-supply/">Manufacturing &amp; Supply</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Integrations</div>
+            <a href="../../solutions/shopify/">Shopify</a>
+            <a href="../../solutions/woocommerce/">WooCommerce</a>
+            <a href="../../solutions/google-forms-sheets/">Google Sheet</a>
+            <a href="../../solutions/google-calendar-meet/">Google Calendar</a>
+            <a href="../../facebook-ads/">Facebook Ads</a>
+            <a href="../../integrations/crm/">CRM Integration</a>
+            <a href="../../integrations/api-webhooks/">Webhooks &amp; API</a>
+            <a href="../../integrations/custom/">Custom Integration</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Business Leads</div>
+            <a href="../../business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 12 Leads Categories &rarr;</a>
+            <a href="../../solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
+          </div></div>
+        </div>
+        <div class="mobile-nav-item"><a href="/pricing/" class="mobile-nav-link">Pricing</a></div>
+        <div class="mobile-nav-item" data-accordion>
+          <button type="button" class="mobile-nav-link">Company <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="mobile-submenu"><div class="mobile-submenu-inner">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:8px 0 2px;border-bottom:1px solid #f1f5f9;">Company</div>
+            <a href="/company/about/">About Us</a>
+            <a href="/company/careers/">Careers <span style="font-size:9px;background:#EEF2FF;color:#4F46E5;padding:1px 5px;border-radius:999px;font-weight:700;border:1px solid #C7D2FE;margin-left:4px;">Hiring</span></a>
+            <a href="/contact/">Contact Us</a>
+
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Partner Programs</div>
+            <a href="/partners/affiliate/">Affiliate Partner <span style="font-size:11px;color:#64748B;display:block;">Refer &amp; earn 20%</span></a>
+            <a href="/partners/agency/">Agency Partner <span style="font-size:11px;color:#64748B;display:block;">Serve your clients (40%)</span></a>
+            <a href="/partners/white-label/">White Label Partner <span style="font-size:11px;color:#64748B;display:block;">Your brand, our platform (50%)</span></a>
+            <a href="/partners/technology/">Technology Partner <span style="font-size:11px;color:#64748B;display:block;">Build integrations</span></a>
+            <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" style="font-weight:700;color:#6D28D9;display:flex;align-items:center;gap:6px;padding:6px 0;">📄 Download Partner Brochure</a>
+
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Resources</div>
+            <a href="../../resources/blog/">Blog &amp; Insights</a>
+            <a href="../../resources/case-studies/">Case Studies</a>
+            <a href="../../resources/help-center/">Help Center</a>
+
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Trust &amp; Legal</div>
+            <a href="/security/">Security &amp; ISO</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="/cookie-policy/">Cookie Policy</a>
+          </div></div>
+        </div>
+        <div class="mobile-lang-box">
+          <div class="mobile-lang-title">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            <span>Language / اللغة</span>
+          </div>
+          <div class="mobile-lang-grid">
+            <button type="button" class="mobile-lang-btn active" data-lang="en">English</button>
+            <button type="button" class="mobile-lang-btn" data-lang="ar">العربية</button>
+            <button type="button" class="mobile-lang-btn" data-lang="es">Español</button>
+            <button type="button" class="mobile-lang-btn" data-lang="pt">Português</button>
+            <button type="button" class="mobile-lang-btn" data-lang="de">Deutsch</button>
+            <button type="button" class="mobile-lang-btn" data-lang="fr">Français</button>
+          </div>
+        </div>
+        <div class="mobile-nav-actions">
+          <a href="../../auth/login" class="mnav-login">Login</a>
+          <a href="../../auth/register" class="mnav-start">Start Free</a>
+          <a href="/#contact-section" class="mnav-demo btn-demo-open">Book a Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <main id="main">
-<nav class="container" style="padding-top:0.75rem;font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Integrations / Webhooks & API</nav>
+<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Integrations / Webhooks & API</nav>
 
 <section class="section page-hero hero-animated" style="padding-top:1.25rem">
   <div class="container">
@@ -2617,13 +2800,13 @@
     <!-- ALIGNED QUICK CHANNELS STRIP -->
     <div class="inboxwa-quick-channels" aria-label="Direct contact options">
       <!-- WhatsApp Direct -->
-      <a href="https://wa.me/<?php echo urlencode($waWidgetNum); ?>?text=Hi%20HelloBotz%2C%20I%20am%20interested%20in%20InboxWa%20WhatsApp%20Automation." target="_blank" rel="noopener" class="quick-channel-item qc-wa" title="Open WhatsApp Chat">
+      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20am%20interested%20in%20InboxWa%20WhatsApp%20Automation." target="_blank" rel="noopener" class="quick-channel-item qc-wa" title="Open WhatsApp Chat">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
 
       <!-- Call Now -->
-      <a href="tel:<?php echo htmlspecialchars($waWidgetPhone); ?>" class="quick-channel-item qc-call" title="Call Us Direct">
+      <a href="tel:+91 80508 54445" class="quick-channel-item qc-call" title="Call Us Direct">
         <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Call Us
       </a>
@@ -2647,7 +2830,7 @@
       </a>
 
       <!-- Support Email -->
-      <a href="mailto:<?php echo htmlspecialchars($waWidgetSupportMail); ?>" class="quick-channel-item" title="Email Support">
+      <a href="mailto:support@inboxwa.com" class="quick-channel-item" title="Email Support">
         <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
         Email
       </a>
