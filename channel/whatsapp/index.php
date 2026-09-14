@@ -3,9 +3,9 @@ $basePath = isset($basePath) ? $basePath : '../../';
 $bp = isset($bp) ? $bp : '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Business API & Automation Platform | InboxWa';
+$pageTitle = 'WhatsApp Business API & Automation Platform | HelloBotz';
 $pageDescription = 'Scale your sales and customer support with Official Meta WhatsApp Business API. Multi-agent shared inbox, automated AI reply builder, bulk broadcasts, and zero-ban compliance.';
-$canonicalUrl = 'https://inboxwa.com/channel/whatsapp/';
+$canonicalUrl = 'https://hellobotz.com/channel/whatsapp/';
 $ogImage = 'assets/images/og-image.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -1031,7 +1031,7 @@ include __DIR__ . '/../../includes/header.php';
           <tr>
             <th style="width:30%;">Platform Feature</th>
             <th style="width:35%;">WhatsApp App (Standard)</th>
-            <th style="width:35%;" class="col-api">Official API (InboxWa)</th>
+            <th style="width:35%;" class="col-api">Official API (HelloBotz)</th>
           </tr>
         </thead>
         <tbody>

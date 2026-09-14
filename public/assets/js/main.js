@@ -1,5 +1,5 @@
 /**
- * InboxWa – Main JavaScript
+ * HelloBotz – Main JavaScript
  * Single reusable module for all pages
  */
 

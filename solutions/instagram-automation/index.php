@@ -28,7 +28,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Capabilities</span>
-      <h2>How InboxWa helps</h2>
+      <h2>How HelloBotz helps</h2>
     </div>
     <div class="features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:2rem">
           <div class="card card-feature reveal">

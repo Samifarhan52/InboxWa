@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WooCommerce WhatsApp Automation | Cart Recovery, Orders & Support | InboxWa';
-$pageDescription = 'Connect WooCommerce with InboxWa: abandoned cart recovery, product search, order tracking, COD confirmation, campaigns and support on Official WhatsApp Business API.';
-$canonicalUrl = 'https://inboxwa.com/solutions/woocommerce/';
+$pageTitle = 'WooCommerce WhatsApp Automation | Cart Recovery, Orders & Support | HelloBotz';
+$pageDescription = 'Connect WooCommerce with HelloBotz: abandoned cart recovery, product search, order tracking, COD confirmation, campaigns and support on Official WhatsApp Business API.';
+$canonicalUrl = 'https://hellobotz.com/solutions/woocommerce/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/woocommerce.css?v=41">
@@ -15,7 +15,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="woo-hero-copy">
         <div class="woo-badge">WooCommerce · WhatsApp Commerce</div>
         <h1>Turn Your WooCommerce Store Into a <span class="grad">WhatsApp Sales Machine</span></h1>
-        <p class="woo-lead">Connect WooCommerce with InboxWa and automate product discovery, abandoned carts, orders, payments, marketing, delivery updates and customer support on WhatsApp.</p>
+        <p class="woo-lead">Connect WooCommerce with HelloBotz and automate product discovery, abandoned carts, orders, payments, marketing, delivery updates and customer support on WhatsApp.</p>
         <div class="woo-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn-ghost-light btn-demo-open">Book WooCommerce Demo</button>
@@ -44,7 +44,7 @@ include __DIR__ . '/../../includes/header.php';
             <div class="woo-head">
               <div class="woo-av">WC</div>
               <div>
-                <strong>InboxWa Store</strong>
+                <strong>HelloBotz Store</strong>
                 <small><span class="woo-dot"></span> Live Simulation</small>
               </div>
             </div>
@@ -61,11 +61,11 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>Connect WooCommerce With InboxWa</h2>
-      <p class="lead">WooCommerce → InboxWa → WhatsApp — product, order and customer automation on Official WhatsApp Business API.</p>
+    <div class="section-header reveal"><h2>Connect WooCommerce With HelloBotz</h2>
+      <p class="lead">WooCommerce → HelloBotz → WhatsApp — product, order and customer automation on Official WhatsApp Business API.</p>
     </div>
     <div class="woo-steps reveal">
-      <div class="woo-step"><div class="ico">1</div><h4>Install Plugin</h4><p>Add InboxWa connector</p></div>
+      <div class="woo-step"><div class="ico">1</div><h4>Install Plugin</h4><p>Add HelloBotz connector</p></div>
       <div class="woo-step"><div class="ico">2</div><h4>Connect Store</h4><p>Link your WooCommerce site</p></div>
       <div class="woo-step"><div class="ico">3</div><h4>Sync Products</h4><p>Catalogue ready for chat</p></div>
       <div class="woo-step"><div class="ico">4</div><h4>Connect WhatsApp</h4><p>Official Business API</p></div>
@@ -89,7 +89,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-alt">
   <div class="container">
     <div class="section-header reveal"><h2>Live integration simulation</h2>
-      <p class="lead">Select a WooCommerce event to see the WhatsApp message InboxWa can send.</p>
+      <p class="lead">Select a WooCommerce event to see the WhatsApp message HelloBotz can send.</p>
     </div>
     <div class="reveal" style="max-width:640px;margin:0 auto">
       <div class="woo-event-btns">
@@ -160,7 +160,7 @@ include __DIR__ . '/../../includes/header.php';
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;align-items:center">
       <div class="reveal">
         <h2>AI Shopping Assistant</h2>
-        <p class="lead">Customers ask for products in natural language. InboxWa can surface relevant catalogue items, answer questions and guide them toward purchase.</p>
+        <p class="lead">Customers ask for products in natural language. HelloBotz can surface relevant catalogue items, answer questions and guide them toward purchase.</p>
         <p style="font-size:.9rem;color:var(--t2)">Example: “I need a gift under ₹1,500” → product cards with View / Buy actions.</p>
       </div>
       <div class="reveal" style="border-radius:16px;min-height:220px;background:linear-gradient(135deg,#EDE9FE,#CFFAFE);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:#6B7280;font-weight:600;padding:1rem;text-align:center">
@@ -313,7 +313,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>Why InboxWa + WooCommerce</h2></div>
+    <div class="section-header reveal"><h2>Why HelloBotz + WooCommerce</h2></div>
     <div class="woo-uc-grid reveal" style="margin-top:1.25rem">
       <div class="woo-uc"><h3>Sell through WhatsApp</h3><p>Let customers discover and buy without leaving the chat.</p></div>
       <div class="woo-uc"><h3>Recover abandoned carts</h3><p>Remind shoppers about items left in cart.</p></div>
@@ -329,16 +329,16 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>Frequently asked questions</h2></div>
     <div class="faq-list" style="max-width:720px;margin:1.25rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa connect with WooCommerce?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — connect your WooCommerce store so product, order and customer events can drive WhatsApp automation.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz connect with WooCommerce?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — connect your WooCommerce store so product, order and customer events can drive WhatsApp automation.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How does the WooCommerce integration work?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Install the connector, link the store, sync catalogue and WhatsApp, then configure automations for carts, orders and support.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers search products on WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — customers can describe what they need and receive relevant product suggestions from your catalogue.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa recover abandoned carts?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — trigger reminder sequences when carts are abandoned, within WhatsApp policy.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz recover abandoned carts?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — trigger reminder sequences when carts are abandoned, within WhatsApp policy.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers receive order tracking updates?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — order and shipment status can be shared on WhatsApp as events occur.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can COD orders be confirmed through WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — confirm or cancel COD orders through chat buttons before fulfilment.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I run WooCommerce product campaigns?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — send approved template campaigns for launches, sales and offers to eligible audiences.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can AI answer product questions?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">AI can handle common product questions and hand off complex conversations to your team.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can my support team manage WhatsApp together?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Shared team inbox supports assignment, notes and multi-agent handling.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can WooCommerce events trigger InboxWa automations?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — order, payment, shipping and cart events can trigger the corresponding WhatsApp flows.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can WooCommerce events trigger HelloBotz automations?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — order, payment, shipping and cart events can trigger the corresponding WhatsApp flows.</div></div></div>
     </div>
   </div>
 </section>
@@ -346,7 +346,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
     <h2 style="color:#fff">Ready to Connect WooCommerce With WhatsApp?</h2>
-    <p class="lead" style="color:rgba(255,255,255,.75)">Automate shopping, marketing, orders and customer support with InboxWa.</p>
+    <p class="lead" style="color:rgba(255,255,255,.75)">Automate shopping, marketing, orders and customer support with HelloBotz.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
       <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">Book WooCommerce Demo</button>

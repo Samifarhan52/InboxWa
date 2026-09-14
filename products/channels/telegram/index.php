@@ -3,9 +3,9 @@ $basePath = '../../../';
 $bp = '../../../';
 require_once __DIR__ . '/../../../config/cms.php';
 
-$pageTitle = 'Telegram Bot Automation & Broadcast Platform | InboxWa';
-$pageDescription = 'Connect your business chat, create quick message templates with buttons, set up automatic replies for customer questions, and track all incoming messages easily with InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/channel/telegram/';
+$pageTitle = 'Telegram Bot Automation & Broadcast Platform | HelloBotz';
+$pageDescription = 'Connect your business chat, create quick message templates with buttons, set up automatic replies for customer questions, and track all incoming messages easily with HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/channel/telegram/';
 $ogImage = 'assets/images/channel/telegram/hero.png';
 
 include __DIR__ . '/../../../includes/header.php';
@@ -718,7 +718,7 @@ include __DIR__ . '/../../../includes/header.php';
 
       <div class="ctg-hero-visual">
         <div class="ctg-hero-img-wrap">
-          <img src="<?php echo $bp; ?>assets/images/channel/telegram/hero.png?v=20260909" alt="InboxWa Telegram Automation" class="ctg-hero-img" loading="eager">
+          <img src="<?php echo $bp; ?>assets/images/channel/telegram/hero.png?v=20260909" alt="HelloBotz Telegram Automation" class="ctg-hero-img" loading="eager">
         </div>
       </div>
     </div>
@@ -985,8 +985,8 @@ include __DIR__ . '/../../../includes/header.php';
 
         <div class="ctg-guide-card">
           <div class="ctg-guide-num">3</div>
-          <h3>Paste Token in InboxWa</h3>
-          <p>BotFather will reply with your HTTP API token. Copy this key, paste it into your InboxWa Channel Settings, and your bot is live!</p>
+          <h3>Paste Token in HelloBotz</h3>
+          <p>BotFather will reply with your HTTP API token. Copy this key, paste it into your HelloBotz Channel Settings, and your bot is live!</p>
           <div class="ctg-code-box">123456789:ABCdefGhIJKlmNoPQR...</div>
         </div>
       </div>
@@ -1000,20 +1000,20 @@ include __DIR__ . '/../../../includes/header.php';
         <span class="ctg-badge-pill">FAQ</span>
         <h2 class="ctg-section-title">Frequently Asked Questions</h2>
         <p class="ctg-section-subtitle">
-          Everything you need to know about Telegram automation with InboxWa.
+          Everything you need to know about Telegram automation with HelloBotz.
         </p>
       </div>
 
       <div class="ctg-faq-list">
         <div class="ctg-faq-item active">
           <button type="button" class="ctg-faq-trigger">
-            <span>How does InboxWa connect to my Telegram channel or bot?</span>
+            <span>How does HelloBotz connect to my Telegram channel or bot?</span>
             <span class="ctg-faq-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </button>
           <div class="ctg-faq-content">
-            InboxWa connects using the official Telegram Bot API. Simply generate a bot token from @BotFather in Telegram and paste it into InboxWa. The connection is established instantly via secure webhooks without requiring any hosting or server configuration.
+            HelloBotz connects using the official Telegram Bot API. Simply generate a bot token from @BotFather in Telegram and paste it into HelloBotz. The connection is established instantly via secure webhooks without requiring any hosting or server configuration.
           </div>
         </div>
 
@@ -1037,7 +1037,7 @@ include __DIR__ . '/../../../includes/header.php';
             </span>
           </button>
           <div class="ctg-faq-content">
-            Yes. With InboxWa's Multi-Agent Shared Inbox, your entire sales and support team can log into one unified dashboard, assign chats to specific agents, add internal collaboration notes, and respond concurrently.
+            Yes. With HelloBotz's Multi-Agent Shared Inbox, your entire sales and support team can log into one unified dashboard, assign chats to specific agents, add internal collaboration notes, and respond concurrently.
           </div>
         </div>
 
@@ -1049,13 +1049,13 @@ include __DIR__ . '/../../../includes/header.php';
             </span>
           </button>
           <div class="ctg-faq-content">
-            Yes! InboxWa provides an omnichannel workspace where you can connect WhatsApp, Instagram, Facebook Messenger, and Telegram under one shared dashboard. Your agents can switch between channels seamlessly.
+            Yes! HelloBotz provides an omnichannel workspace where you can connect WhatsApp, Instagram, Facebook Messenger, and Telegram under one shared dashboard. Your agents can switch between channels seamlessly.
           </div>
         </div>
 
         <div class="ctg-faq-item">
           <button type="button" class="ctg-faq-trigger">
-            <span>Does InboxWa support Telegram group moderation?</span>
+            <span>Does HelloBotz support Telegram group moderation?</span>
             <span class="ctg-faq-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </span>

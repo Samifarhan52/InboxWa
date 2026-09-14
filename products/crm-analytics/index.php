@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'CRM & Customer Analytics | Customer Intelligence | InboxWa';
-$pageDescription = 'Manage contacts, leads and customer journeys while turning conversation data into clear insights with InboxWa CRM and Analytics.';
-$canonicalUrl = 'https://inboxwa.com/products/crm-analytics/';
+$pageTitle = 'CRM & Customer Analytics | Customer Intelligence | HelloBotz';
+$pageDescription = 'Manage contacts, leads and customer journeys while turning conversation data into clear insights with HelloBotz CRM and Analytics.';
+$canonicalUrl = 'https://hellobotz.com/products/crm-analytics/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/crm-analytics.css?v=1">
@@ -64,7 +64,7 @@ include __DIR__ . '/../../includes/header.php';
 </section>
 
 <div class="edu-img-card-wrap reveal" style="margin: 2.5rem 0;">
-  <img src="/assets/images/edtech_shared_inbox.jpg" alt="InboxWa Unified CRM Customer Profile & Contact Details" loading="lazy">
+  <img src="/assets/images/edtech_shared_inbox.jpg" alt="HelloBotz Unified CRM Customer Profile & Contact Details" loading="lazy">
   <div class="edu-img-caption-badge">
     <strong><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Unified CRM Customer Profile &amp; Contact Activity</strong>
     <span>Contact History, Tags &amp; Lead Assignment</span>
@@ -85,7 +85,7 @@ include __DIR__ . '/../../includes/header.php';
 </section>
 
 <div class="edu-img-card-wrap reveal" style="margin: 2.5rem 0;">
-  <img src="/assets/images/facebook_ad_funnel_banner.jpg" alt="InboxWa Multi-Stage Lead Kanban Pipeline" loading="lazy">
+  <img src="/assets/images/facebook_ad_funnel_banner.jpg" alt="HelloBotz Multi-Stage Lead Kanban Pipeline" loading="lazy">
   <div class="edu-img-caption-badge">
     <strong><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Visual Lead Pipeline &amp; Conversion Analytics</strong>
     <span>New → Qualified → Proposal → Won</span>
@@ -175,7 +175,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section" id="why">
   <div class="container">
-    <div class="section-header reveal"><h2>Why InboxWa</h2></div>
+    <div class="section-header reveal"><h2>Why HelloBotz</h2></div>
     <div class="ca-why">
       <div class="card reveal">Centralized Customer Data</div>
       <div class="card reveal">Lead Management</div>
@@ -191,7 +191,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">What is InboxWa CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">A workspace to manage contacts, leads, assignments and customer activity connected to WhatsApp conversations.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">What is HelloBotz CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">A workspace to manage contacts, leads, assignments and customer activity connected to WhatsApp conversations.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I manage WhatsApp leads in CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — leads from WhatsApp can be stored, tagged and assigned where configured.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can multiple team members manage leads?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — assign agents and collaborate based on your team setup.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">What analytics are available?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Conversation, lead and campaign-style insights depending on your plan and connected data.</div></div></div>

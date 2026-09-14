@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Visual Automation & Chatbot Builder | No-Code WhatsApp Flows | InboxWa';
+$pageTitle = 'Visual Automation & Chatbot Builder | No-Code WhatsApp Flows | HelloBotz';
 $pageDescription = 'Build intelligent WhatsApp chatbots visually without code. Automate lead qualification, FAQs, order tracking, and human handover with 21 drag-and-drop conversational flow nodes.';
-$canonicalUrl = 'https://inboxwa.com/products/chatbot/';
+$canonicalUrl = 'https://hellobotz.com/products/chatbot/';
 $ogImage = 'assets/images/products/chatbot/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -67,7 +67,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="prod-hero-media">
         <div class="prod-hero-media-wrapper">
-          <img src="<?php echo $bp; ?>assets/images/products/chatbot/hero.png" alt="InboxWa Visual Automation Builder" class="prod-hero-media-img" width="1080" height="1080">
+          <img src="<?php echo $bp; ?>assets/images/products/chatbot/hero.png" alt="HelloBotz Visual Automation Builder" class="prod-hero-media-img" width="1080" height="1080">
         </div>
       </div>
     </div>

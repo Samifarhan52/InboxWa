@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Customer Onboarding';
 $pageDescription = 'Guide new customers through activation steps on WhatsApp.';
-$canonicalUrl = 'https://inboxwa.com/solutions/onboarding/';
+$canonicalUrl = 'https://hellobotz.com/solutions/onboarding/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Customer Onboarding</nav>

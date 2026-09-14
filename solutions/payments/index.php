@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Invoice & Payments on WhatsApp';
 $pageDescription = 'Share invoices, payment links and confirmations on WhatsApp — so collections move faster without endless follow-up calls.';
-$canonicalUrl = 'https://inboxwa.com/solutions/payments/';
+$canonicalUrl = 'https://hellobotz.com/solutions/payments/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / <a href="<?php echo $bp; ?>solutions/">Solutions</a> / Invoice & Payments on WhatsApp</nav>
@@ -55,7 +55,7 @@ include __DIR__ . '/../../includes/header.php';
 </div></section>
 <section class="section section-alt"><div class="container">
   <div class="section-header reveal"><span class="badge badge-primary">FAQ</span><h2>Common questions</h2></div>
-  <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0"><div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Do you process payments?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">InboxWa shares invoices and links; payment is handled by your PSP/gateway.</div></div></div><div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Official WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — utility templates for reminders where required.</div></div></div></div>
+  <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0"><div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Do you process payments?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">HelloBotz shares invoices and links; payment is handled by your PSP/gateway.</div></div></div><div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Official WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — utility templates for reminders where required.</div></div></div></div>
 </div></section>
 <section class="section section-dark"><div class="container"><div class="section-header reveal" style="text-align:center">
   <h2 style="color:#fff">Ready to run this on WhatsApp?</h2>

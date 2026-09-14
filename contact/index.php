@@ -1,14 +1,14 @@
 <?php
 /**
- * InboxWa — Premium Global Contact & Presence Page
+ * HelloBotz — Premium Global Contact & Presence Page
  * URL: /contact/index.php
  * Does not modify header, footer, mega menu, or global styles.
  */
 $basePath = '../';
-$pageTitle = 'Contact | InboxWa – Global Presence';
-$pageDescription = 'Talk to InboxWa sales, support, partnership or custom integration teams. Head Office Bangalore, Branch Office Surat. Book a demo or chat on WhatsApp.';
-$pageKeywords = 'InboxWa contact, InboxWa support, InboxWa sales, WhatsApp API demo, InboxWa Bangalore, InboxWa Surat, book demo';
-$canonicalUrl = 'https://inboxwa.com/contact/';
+$pageTitle = 'Contact | HelloBotz – Global Presence';
+$pageDescription = 'Talk to HelloBotz sales, support, partnership or custom integration teams. Head Office Bangalore, Branch Office Surat. Book a demo or chat on WhatsApp.';
+$pageKeywords = 'HelloBotz contact, HelloBotz support, HelloBotz sales, WhatsApp API demo, HelloBotz Bangalore, HelloBotz Surat, book demo';
+$canonicalUrl = 'https://hellobotz.com/contact/';
 include __DIR__ . '/../includes/header.php';
 
 require_once __DIR__ . '/../config/cms.php';
@@ -16,16 +16,16 @@ $contactConfig = @include __DIR__ . '/../config/contact.php';
 if (!is_array($contactConfig)) {
   $contactConfig = [
     'support_whatsapp' => '918050854445',
-    'sales_email' => 'mail@inboxwa.com',
-    'support_email' => 'support@inboxwa.com',
+    'sales_email' => 'mail@hellobotz.com',
+    'support_email' => 'support@hellobotz.com',
   ];
 }
 $waRaw = cms_setting('support_whatsapp', $contactConfig['support_whatsapp'] ?? '918050854445');
 $wa = preg_replace('/\D/', '', $waRaw);
 $waDisplay = cms_setting('phone_number', '+91 80508 54445');
-$email = cms_setting('sales_email', $contactConfig['sales_email'] ?? 'mail@inboxwa.com');
-$supportEmail = cms_setting('support_email', $contactConfig['support_email'] ?? 'support@inboxwa.com');
-$waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like to connect.");
+$email = cms_setting('sales_email', $contactConfig['sales_email'] ?? 'mail@hellobotz.com');
+$supportEmail = cms_setting('support_email', $contactConfig['support_email'] ?? 'support@hellobotz.com');
+$waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi HelloBotz, I'd like to connect.");
 ?>
 
 <style>
@@ -814,7 +814,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
           <span class="ct-node-label">Surat</span>
         </div>
         <div class="ct-net-center">
-          <div class="ct-net-logo">INBOXWA</div>
+          <div class="ct-net-logo">HELLOBOTZ</div>
           <div class="ct-net-sub">GLOBAL NETWORK</div>
         </div>
       </div>
@@ -839,7 +839,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
         </div>
         <h3>Support</h3>
-        <p>Get help with your InboxWa account.</p>
+        <p>Get help with your HelloBotz account.</p>
         <a href="<?php echo $bp; ?>resources/help-center/" class="btn btn-outline btn-sm">Get Support</a>
       </div>
       <div class="ct-quick-card reveal">
@@ -952,7 +952,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
     <div class="section-header reveal">
       <span class="badge badge-primary">OFFICES</span>
       <h2>Our Global Presence</h2>
-      <p class="lead">InboxWa AI Technologies Pvt Ltd — growing from India to a global technology presence.</p>
+      <p class="lead">HelloBotz AI Technologies Pvt Ltd — growing from India to a global technology presence.</p>
     </div>
     <div class="ct-offices">
       <div class="ct-office reveal">
@@ -971,7 +971,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
           <span><a href="mailto:<?php echo htmlspecialchars($email); ?>">Send Email</a></span>
         </div>
-        <a href="https://www.google.com/maps/search/InboxWa+Bangalore" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Get Directions</a>
+        <a href="https://www.google.com/maps/search/HelloBotz+Bangalore" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Get Directions</a>
       </div>
       <div class="ct-office reveal">
         <span class="ct-office-badge">BRANCH OFFICE</span>
@@ -989,7 +989,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
           <span><a href="mailto:<?php echo htmlspecialchars($email); ?>">Send Email</a></span>
         </div>
-        <a href="https://www.google.com/maps/search/InboxWa+Surat" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Get Directions</a>
+        <a href="https://www.google.com/maps/search/HelloBotz+Surat" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Get Directions</a>
       </div></div>
   </div>
 </section>
@@ -1153,8 +1153,8 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
 <section class="section section-alt">
   <div class="container">
     <div class="ct-demo-card reveal">
-      <h2>Want to See InboxWa in Action?</h2>
-      <p>Book a personalized demo and explore how InboxWa can fit your business workflow.</p>
+      <h2>Want to See HelloBotz in Action?</h2>
+      <p>Book a personalized demo and explore how HelloBotz can fit your business workflow.</p>
       <div class="ct-demo-tags">
         <span>WhatsApp</span>
         <span>Automation</span>
@@ -1173,7 +1173,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">SUPPORT</span>
-      <h2>Already Using InboxWa?</h2>
+      <h2>Already Using HelloBotz?</h2>
       <p class="lead">Our support team is here to help.</p>
     </div>
     <div class="ct-support">
@@ -1201,7 +1201,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
       <div class="ct-team-node ct-team-india">India</div>
       
       <div class="ct-team-node ct-team-global">Global Customers</div>
-      <div class="ct-team-center">INBOXWA</div>
+      <div class="ct-team-center">HELLOBOTZ</div>
       <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 400 250" fill="none">
         <line x1="90" y1="70" x2="200" y2="125" stroke="rgba(167,139,250,.35)" stroke-width="1.5"/>
         <line x1="320" y1="80" x2="200" y2="125" stroke="rgba(34,211,238,.35)" stroke-width="1.5"/>
@@ -1308,12 +1308,12 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
     </div>
     <div class="ct-faq reveal">
       <div class="ct-faq-item">
-        <button type="button" class="ct-faq-q" aria-expanded="false">Where is InboxWa headquartered? <span class="chev">▾</span></button>
-        <div class="ct-faq-a">InboxWa is headquartered in Bangalore, India (Head Office). We also have a Branch Office in Surat, India.</div>
+        <button type="button" class="ct-faq-q" aria-expanded="false">Where is HelloBotz headquartered? <span class="chev">▾</span></button>
+        <div class="ct-faq-a">HelloBotz is headquartered in Bangalore, India (Head Office). We also have a Branch Office in Surat, India.</div>
       </div>
       <div class="ct-faq-item">
-        <button type="button" class="ct-faq-q" aria-expanded="false">Does InboxWa have offices in India? <span class="chev">▾</span></button>
-        <div class="ct-faq-a">Yes. InboxWa has a Head Office in Bangalore and a Branch Office in Surat.</div>
+        <button type="button" class="ct-faq-q" aria-expanded="false">Does HelloBotz have offices in India? <span class="chev">▾</span></button>
+        <div class="ct-faq-a">Yes. HelloBotz has a Head Office in Bangalore and a Branch Office in Surat.</div>
       </div>
       <div class="ct-faq-item">
         <button type="button" class="ct-faq-q" aria-expanded="false">How can I book a product demo? <span class="chev">▾</span></button>
@@ -1332,7 +1332,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         <div class="ct-faq-a">Yes. Select “Custom API / Webhooks” or “Custom Integration” on the form, or use the “Talk to Developer” card. Our team will review your requirements for APIs, webhooks and third-party systems.</div>
       </div>
       <div class="ct-faq-item">
-        <button type="button" class="ct-faq-q" aria-expanded="false">How can I become a InboxWa partner? <span class="chev">▾</span></button>
+        <button type="button" class="ct-faq-q" aria-expanded="false">How can I become a HelloBotz partner? <span class="chev">▾</span></button>
         <div class="ct-faq-a">Visit our <a href="<?php echo $bp; ?>partners/">Partner Program</a> page for Affiliate, Agency and White Label options, or submit the form with interest “Partnership”.</div>
       </div>
     </div>
@@ -1408,7 +1408,7 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
         source_page: '/contact/'
       };
 
-      var msg = (isSupport ? '*InboxWa Technical Support Request*\n\n' : '*New Contact Enquiry - InboxWa*\n\n') +
+      var msg = (isSupport ? '*HelloBotz Technical Support Request*\n\n' : '*New Contact Enquiry - HelloBotz*\n\n') +
         'Name: ' + name + '\n' +
         (business ? 'Business: ' + business + '\n' : '') +
         (emailVal ? 'Email: ' + emailVal + '\n' : '') +
@@ -1468,14 +1468,14 @@ $waLink = 'https://wa.me/' . $wa . '?text=' . rawurlencode("Hi InboxWa, I'd like
       type: 'Head Office',
       city: 'Bangalore, India',
       contact: '<?php echo htmlspecialchars($waDisplay . ' · ' . $email); ?>',
-      dir: 'https://www.google.com/maps/search/InboxWa+Bangalore'
+      dir: 'https://www.google.com/maps/search/HelloBotz+Bangalore'
     },
     surat: {
       name: 'Surat',
       type: 'Branch Office',
       city: 'Surat, India',
       contact: '<?php echo htmlspecialchars($waDisplay . ' · ' . $email); ?>',
-      dir: 'https://www.google.com/maps/search/InboxWa+Surat'
+      dir: 'https://www.google.com/maps/search/HelloBotz+Surat'
     },
   };
   var popup = document.getElementById('ct-map-popup');

@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'API Documentation — InboxWa';
-$pageDescription = 'InboxWa REST API overview: authentication, messages, contacts, templates, broadcasts, webhooks and code examples.';
-$canonicalUrl = 'https://inboxwa.com/resources/api-docs/';
+$pageTitle = 'API Documentation — HelloBotz';
+$pageDescription = 'HelloBotz REST API overview: authentication, messages, contacts, templates, broadcasts, webhooks and code examples.';
+$canonicalUrl = 'https://hellobotz.com/resources/api-docs/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
@@ -10,7 +10,7 @@ include __DIR__ . '/../../includes/header.php';
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Resources / API Docs</nav>
 <section class="section page-hero" style="padding-top:1.25rem"><div class="container"><div class="section-header reveal">
 <span class="badge badge-primary">Developers</span>
-<h1>InboxWa API overview</h1>
+<h1>HelloBotz API overview</h1>
 <p class="lead">Authenticate, send messages, manage contacts and receive webhooks.</p>
 <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem">
   <a href="/auth/register" class="btn btn-primary">Start Free Trial</a>
@@ -51,18 +51,18 @@ include __DIR__ . '/../../includes/header.php';
 <button type="button" data-tab="js">JavaScript</button>
 <button type="button" data-tab="py">Python</button>
 </div>
-<pre class="code-block" data-tab-panel="curl"><code>curl -X POST https://api.inboxwa.com/v1/messages \
+<pre class="code-block" data-tab-panel="curl"><code>curl -X POST https://api.hellobotz.com/v1/messages \
   -H "Authorization: Bearer $KEY" \
   -H "Content-Type: application/json" \
   -d '{"to":"9198XXXXXXXX","type":"text","text":{"body":"Hello"}}'</code><button type="button" class="copy-btn">Copy</button></pre>
-<pre class="code-block" data-tab-panel="php" hidden><code>$ch = curl_init('https://api.inboxwa.com/v1/messages');
+<pre class="code-block" data-tab-panel="php" hidden><code>$ch = curl_init('https://api.hellobotz.com/v1/messages');
 curl_setopt_array($ch, [CURLOPT_POST=>true, CURLOPT_HTTPHEADER=>['Authorization: Bearer '.$key,'Content-Type: application/json'], CURLOPT_POSTFIELDS=>json_encode($payload)]);</code><button type="button" class="copy-btn">Copy</button></pre>
-<pre class="code-block" data-tab-panel="js" hidden><code>await fetch('https://api.inboxwa.com/v1/messages', {
+<pre class="code-block" data-tab-panel="js" hidden><code>await fetch('https://api.hellobotz.com/v1/messages', {
   method: 'POST',
   headers: { Authorization: 'Bearer '+key, 'Content-Type': 'application/json' },
   body: JSON.stringify({ to: '9198XXXXXXXX', type: 'text', text: { body: 'Hello' } })
 });</code><button type="button" class="copy-btn">Copy</button></pre>
-<pre class="code-block" data-tab-panel="py" hidden><code>requests.post('https://api.inboxwa.com/v1/messages', headers={'Authorization': f'Bearer {key}'}, json=payload)</code><button type="button" class="copy-btn">Copy</button></pre>
+<pre class="code-block" data-tab-panel="py" hidden><code>requests.post('https://api.hellobotz.com/v1/messages', headers={'Authorization': f'Bearer {key}'}, json=payload)</code><button type="button" class="copy-btn">Copy</button></pre>
 </section>
 </div></div></section>
 

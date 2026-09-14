@@ -1,8 +1,8 @@
 <?php
 /**
- * Industry-Specific Content Data for InboxWa Business Leads
+ * Industry-Specific Content Data for HelloBotz Business Leads
  * Cloned and enhanced from the 14 reference URLs
- * 100% InboxWa branded with realistic WhatsApp conversation flows
+ * 100% HelloBotz branded with realistic WhatsApp conversation flows
  */
 
 function getIndustryData($slug) {
@@ -16,12 +16,12 @@ function getIndustryData($slug) {
             'real-estate' => [
                 'slug' => 'real-estate',
                 'breadcrumb_label' => 'Real Estate',
-                'title' => 'WhatsApp Business API for Real Estate | InboxWa',
-                'meta_desc' => 'Showcase premium properties, automate site visit bookings, share virtual tour brochures, and close real estate deals faster with InboxWa WhatsApp Business API.',
+                'title' => 'WhatsApp Business API for Real Estate | HelloBotz',
+                'meta_desc' => 'Showcase premium properties, automate site visit bookings, share virtual tour brochures, and close real estate deals faster with HelloBotz WhatsApp Business API.',
                 'kicker' => 'REAL ESTATE MESSAGING SUITE',
                 'headline' => 'Showcase Properties &amp; Close Deals <br><span class="highlight-text">Faster on WhatsApp</span>',
                 'lead' => 'Empower builders, developers, and real estate brokers with automated WhatsApp property brochures, virtual tour dispatch, site visit scheduling, and 24/7 AI lead qualification.',
-                'chat_title' => 'InboxWa Real Estate AI',
+                'chat_title' => 'HelloBotz Real Estate AI',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -116,12 +116,12 @@ function getIndustryData($slug) {
                 'journey_steps' => [
                     [
                         'title' => 'Lead Ingestion',
-                        'desc' => 'Buyer clicks Facebook/Google Ad or scans site hoarding QR code, instantly opening an InboxWa WhatsApp conversation.',
+                        'desc' => 'Buyer clicks Facebook/Google Ad or scans site hoarding QR code, instantly opening an HelloBotz WhatsApp conversation.',
                         'tag' => 'Step 01 · Omnichannel Capture'
                     ],
                     [
                         'title' => 'AI Lead Qualification',
-                        'desc' => 'InboxWa AI bot asks budget, bedroom configuration, and buying timeline, automatically tagging high-intent buyers.',
+                        'desc' => 'HelloBotz AI bot asks budget, bedroom configuration, and buying timeline, automatically tagging high-intent buyers.',
                         'tag' => 'Step 02 · 24/7 AI Screening'
                     ],
                     [
@@ -173,24 +173,24 @@ function getIndustryData($slug) {
                         'a' => 'Yes! You can automate the delivery of high-resolution PDF brochures, floor plan images, and 360-degree video links immediately upon receiving an inquiry.'
                     ],
                     [
-                        'q' => 'Does InboxWa integrate with real estate CRMs like LeadSquared or Salesforce?',
+                        'q' => 'Does HelloBotz integrate with real estate CRMs like LeadSquared or Salesforce?',
                         'a' => 'Absolutely. We support two-way webhooks and native connectors with LeadSquared, Salesforce, Zoho, Sell.Do, and custom CRM platforms.'
                     ],
                     [
                         'q' => 'How does site visit scheduling work on WhatsApp?',
-                        'a' => 'Buyers tap interactive WhatsApp buttons to select their preferred date and time. InboxWa checks executive availability, creates the appointment, sends Google Calendar invites, and dispatches GPS directions.'
+                        'a' => 'Buyers tap interactive WhatsApp buttons to select their preferred date and time. HelloBotz checks executive availability, creates the appointment, sends Google Calendar invites, and dispatches GPS directions.'
                     ],
                     [
                         'q' => 'Can channel partners and brokers use the same WhatsApp Business number?',
-                        'a' => 'Yes. With InboxWa’s Shared Team Inbox, dozens of sales managers and channel partner coordinators can handle chats from one verified WhatsApp number with role-based permissions.'
+                        'a' => 'Yes. With HelloBotz’s Shared Team Inbox, dozens of sales managers and channel partner coordinators can handle chats from one verified WhatsApp number with role-based permissions.'
                     ],
                     [
                         'q' => 'How can we run Click-to-WhatsApp Facebook/Instagram ads for real estate?',
-                        'a' => 'InboxWa connects directly to Meta Ads Manager. When buyers click your Instagram/Facebook ads, their conversation opens in WhatsApp pre-filled with the project name for immediate qualification.'
+                        'a' => 'HelloBotz connects directly to Meta Ads Manager. When buyers click your Instagram/Facebook ads, their conversation opens in WhatsApp pre-filled with the project name for immediate qualification.'
                     ]
                 ],
                 'cta_heading' => 'Ready to Multiply Real Estate Site Visits &amp; Closures?',
-                'cta_desc' => 'Automate property inquiries, site visit bookings, and buyer follow-ups with InboxWa Official WhatsApp Business API.'
+                'cta_desc' => 'Automate property inquiries, site visit bookings, and buyer follow-ups with HelloBotz Official WhatsApp Business API.'
             ],
 
             // =========================================================================
@@ -199,12 +199,12 @@ function getIndustryData($slug) {
             'healthcare' => [
                 'slug' => 'healthcare',
                 'breadcrumb_label' => 'Healthcare',
-                'title' => 'WhatsApp Business API for Healthcare & Clinics | InboxWa',
-                'meta_desc' => 'Schedule doctor appointments, send diagnostic lab reports, deliver medication reminders, and enhance patient care with HIPAA-compliant WhatsApp automation from InboxWa.',
+                'title' => 'WhatsApp Business API for Healthcare & Clinics | HelloBotz',
+                'meta_desc' => 'Schedule doctor appointments, send diagnostic lab reports, deliver medication reminders, and enhance patient care with HIPAA-compliant WhatsApp automation from HelloBotz.',
                 'kicker' => 'HEALTHCARE MESSAGING SUITE',
                 'headline' => 'Elevate Patient Care &amp; Bookings <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'Empower hospitals, diagnostic clinics, and wellness providers with instant doctor appointment scheduling, secure lab report delivery, automated prescription reminders, and 24/7 patient support.',
-                'chat_title' => 'InboxWa Health Assistant',
+                'chat_title' => 'HelloBotz Health Assistant',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -352,8 +352,8 @@ function getIndustryData($slug) {
                 ],
                 'faqs' => [
                     [
-                        'q' => 'Is patient medical data safe on WhatsApp via InboxWa?',
-                        'a' => 'Yes. All communications are protected by WhatsApp’s native end-to-end encryption. InboxWa adheres strictly to HIPAA, GDPR, and DPDP guidelines with role-based access controls.'
+                        'q' => 'Is patient medical data safe on WhatsApp via HelloBotz?',
+                        'a' => 'Yes. All communications are protected by WhatsApp’s native end-to-end encryption. HelloBotz adheres strictly to HIPAA, GDPR, and DPDP guidelines with role-based access controls.'
                     ],
                     [
                         'q' => 'How are diagnostic reports sent to patients securely?',
@@ -365,7 +365,7 @@ function getIndustryData($slug) {
                     ],
                     [
                         'q' => 'Can we collect upfront consultation fees on WhatsApp?',
-                        'a' => 'Yes. InboxWa integrates with Razorpay, Cashfree, and UPI gateways to send secure payment links with instant receipt generation.'
+                        'a' => 'Yes. HelloBotz integrates with Razorpay, Cashfree, and UPI gateways to send secure payment links with instant receipt generation.'
                     ],
                     [
                         'q' => 'How does the triage bot handle medical emergencies?',
@@ -373,7 +373,7 @@ function getIndustryData($slug) {
                     ]
                 ],
                 'cta_heading' => 'Transform Your Hospital &amp; Clinic Experience Today',
-                'cta_desc' => 'Cut clinic no-shows by 80%, automate lab report dispatch, and deliver world-class patient satisfaction with InboxWa.'
+                'cta_desc' => 'Cut clinic no-shows by 80%, automate lab report dispatch, and deliver world-class patient satisfaction with HelloBotz.'
             ],
 
             // =========================================================================
@@ -382,12 +382,12 @@ function getIndustryData($slug) {
             'travel-hospitality' => [
                 'slug' => 'travel-hospitality',
                 'breadcrumb_label' => 'Travel & Hospitality',
-                'title' => 'WhatsApp Business API for Travel & Hospitality | InboxWa',
-                'meta_desc' => 'Automate flight & hotel booking confirmations, share digital itineraries, enable contactless guest check-ins, and boost tour package sales on WhatsApp with InboxWa.',
+                'title' => 'WhatsApp Business API for Travel & Hospitality | HelloBotz',
+                'meta_desc' => 'Automate flight & hotel booking confirmations, share digital itineraries, enable contactless guest check-ins, and boost tour package sales on WhatsApp with HelloBotz.',
                 'kicker' => 'TRAVEL & HOSPITALITY MESSAGING',
                 'headline' => 'Elevate Guest Experiences &amp; Bookings <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'Empower travel agencies, hotel chains, resorts, and tour operators with instant booking confirmations, interactive day-wise itineraries, contactless check-in, and 24/7 concierge assistance.',
-                'chat_title' => 'InboxWa Travel Concierge',
+                'chat_title' => 'HelloBotz Travel Concierge',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -487,7 +487,7 @@ function getIndustryData($slug) {
                     ],
                     [
                         'title' => 'Itinerary Customization',
-                        'desc' => 'InboxWa AI bot shares PDF itinerary, hotel ratings, and pricing options. Traveler selects flight and hotel class.',
+                        'desc' => 'HelloBotz AI bot shares PDF itinerary, hotel ratings, and pricing options. Traveler selects flight and hotel class.',
                         'tag' => 'Step 02 · Interactive Customization'
                     ],
                     [
@@ -536,7 +536,7 @@ function getIndustryData($slug) {
                 'faqs' => [
                     [
                         'q' => 'Can we send automated flight status and gate change alerts?',
-                        'a' => 'Yes. By connecting your GDS or flight tracking API to InboxWa webhooks, you can send automated flight delay alerts, gate updates, and boarding reminders.'
+                        'a' => 'Yes. By connecting your GDS or flight tracking API to HelloBotz webhooks, you can send automated flight delay alerts, gate updates, and boarding reminders.'
                     ],
                     [
                         'q' => 'How does contactless check-in work for hotels?',
@@ -548,15 +548,15 @@ function getIndustryData($slug) {
                     ],
                     [
                         'q' => 'Can we send bulk holiday offers without getting our number banned?',
-                        'a' => 'Yes! InboxWa provides the official Meta WhatsApp Business API with pre-approved marketing templates, high throughput, and zero risk of consumer number blocking.'
+                        'a' => 'Yes! HelloBotz provides the official Meta WhatsApp Business API with pre-approved marketing templates, high throughput, and zero risk of consumer number blocking.'
                     ],
                     [
-                        'q' => 'Does InboxWa support multiple agent inboxes for travel desk teams?',
+                        'q' => 'Does HelloBotz support multiple agent inboxes for travel desk teams?',
                         'a' => 'Yes. Multiple travel consultants and concierge staff can manage chats concurrently with conversation assignment, internal tags, and performance reports.'
                     ]
                 ],
                 'cta_heading' => 'Scale Your Travel &amp; Hospitality Business Today',
-                'cta_desc' => 'Boost direct bookings, deliver 5-star guest service, and automate inquiries 24/7 with InboxWa Official WhatsApp API.'
+                'cta_desc' => 'Boost direct bookings, deliver 5-star guest service, and automate inquiries 24/7 with HelloBotz Official WhatsApp API.'
             ],
 
             // =========================================================================
@@ -565,12 +565,12 @@ function getIndustryData($slug) {
             'beauty-wellness' => [
                 'slug' => 'beauty-wellness',
                 'breadcrumb_label' => 'Beauty & Wellness',
-                'title' => 'WhatsApp Business API for Salons, Spas & Wellness | InboxWa',
-                'meta_desc' => 'Automate salon & spa appointment bookings, share digital service menus, send automated slot reminders, and boost repeat visits with InboxWa WhatsApp API.',
+                'title' => 'WhatsApp Business API for Salons, Spas & Wellness | HelloBotz',
+                'meta_desc' => 'Automate salon & spa appointment bookings, share digital service menus, send automated slot reminders, and boost repeat visits with HelloBotz WhatsApp API.',
                 'kicker' => 'SALON & SPA AUTOMATION ENGINE',
                 'headline' => 'Fill Appointment Books &amp; Delight Clients <br><span class="highlight-text">on WhatsApp</span>',
                 'lead' => 'Empower hair salons, luxury spas, skincare clinics, and wellness centers with automated appointment scheduling, digital service menus, slot reminder notifications, and targeted festive promotions.',
-                'chat_title' => 'InboxWa Beauty Bot',
+                'chat_title' => 'HelloBotz Beauty Bot',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -719,15 +719,15 @@ function getIndustryData($slug) {
                 'faqs' => [
                     [
                         'q' => 'Can clients book appointments when the salon is closed?',
-                        'a' => 'Yes! The InboxWa AI booking bot operates 24/7. Clients can check stylist availability and reserve slots at midnight without waiting for morning receptionist hours.'
+                        'a' => 'Yes! The HelloBotz AI booking bot operates 24/7. Clients can check stylist availability and reserve slots at midnight without waiting for morning receptionist hours.'
                     ],
                     [
                         'q' => 'How does the reminder system reduce salon no-shows?',
-                        'a' => 'InboxWa automatically dispatches WhatsApp reminders 24 hours and 2 hours before the appointment with "Confirm" and "Reschedule" buttons, cutting no-shows by up to 78%.'
+                        'a' => 'HelloBotz automatically dispatches WhatsApp reminders 24 hours and 2 hours before the appointment with "Confirm" and "Reschedule" buttons, cutting no-shows by up to 78%.'
                     ],
                     [
                         'q' => 'Can we collect advance deposits for bridal packages?',
-                        'a' => 'Yes. InboxWa allows you to send automated UPI/card payment links to secure booking advances before reserving bridal makeup artists.'
+                        'a' => 'Yes. HelloBotz allows you to send automated UPI/card payment links to secure booking advances before reserving bridal makeup artists.'
                     ],
                     [
                         'q' => 'Does it integrate with salon POS systems like Zenoti or Fresha?',
@@ -738,7 +738,7 @@ function getIndustryData($slug) {
                         'a' => 'Yes! You can set automated 25-day or 30-day post-visit re-engagement triggers that invite clients back with one-tap booking.'
                     ]
                 ],
-                'cta_heading' => 'Keep Every Salon Chair Filled with InboxWa',
+                'cta_heading' => 'Keep Every Salon Chair Filled with HelloBotz',
                 'cta_desc' => 'Automate appointment bookings, cut no-shows to near zero, and drive repeat visits on WhatsApp.'
             ],
 
@@ -748,12 +748,12 @@ function getIndustryData($slug) {
             'ecommerce' => [
                 'slug' => 'ecommerce',
                 'breadcrumb_label' => 'E-Commerce',
-                'title' => 'WhatsApp Business API for E-Commerce & D2C | InboxWa',
-                'meta_desc' => 'Recover up to 45% abandoned carts, verify COD orders, automate shipping tracking, and broadcast personalized product offers with InboxWa E-Commerce WhatsApp API.',
+                'title' => 'WhatsApp Business API for E-Commerce & D2C | HelloBotz',
+                'meta_desc' => 'Recover up to 45% abandoned carts, verify COD orders, automate shipping tracking, and broadcast personalized product offers with HelloBotz E-Commerce WhatsApp API.',
                 'kicker' => 'E-COMMERCE & D2C GROWTH ENGINE',
                 'headline' => 'Recover Abandoned Carts &amp; Skyrocket Sales <br><span class="highlight-text">on WhatsApp</span>',
                 'lead' => 'Empower D2C brands, Shopify stores, and WooCommerce merchants with automated abandoned cart recovery, instant COD confirmation, live parcel tracking alerts, and personalized broadcast campaigns.',
-                'chat_title' => 'InboxWa Ecom Bot',
+                'chat_title' => 'HelloBotz Ecom Bot',
                 'chat_messages' => [
                     [
                         'type' => 'bot',
@@ -844,7 +844,7 @@ function getIndustryData($slug) {
                 'journey_steps' => [
                     [
                         'title' => 'Cart Abandonment',
-                        'desc' => 'Shopper leaves store with items in cart. InboxWa detects checkout abandonment via Shopify webhook.',
+                        'desc' => 'Shopper leaves store with items in cart. HelloBotz detects checkout abandonment via Shopify webhook.',
                         'tag' => 'Step 01 · Trigger Event'
                     ],
                     [
@@ -897,12 +897,12 @@ function getIndustryData($slug) {
                 ],
                 'faqs' => [
                     [
-                        'q' => 'How does abandoned cart recovery work on WhatsApp with InboxWa?',
-                        'a' => 'When a shopper leaves items in their cart, your Shopify or WooCommerce store triggers a webhook to InboxWa. We automatically send a personalized WhatsApp message with product photos, cart summary, and a 1-click checkout link.'
+                        'q' => 'How does abandoned cart recovery work on WhatsApp with HelloBotz?',
+                        'a' => 'When a shopper leaves items in their cart, your Shopify or WooCommerce store triggers a webhook to HelloBotz. We automatically send a personalized WhatsApp message with product photos, cart summary, and a 1-click checkout link.'
                     ],
                     [
                         'q' => 'Can we reduce Cash on Delivery (COD) returns and fake orders?',
-                        'a' => 'Yes! InboxWa sends an instant COD verification message asking the buyer to confirm or cancel. You can also offer an instant 5% or ₹100 discount if they convert to online UPI payment on the spot.'
+                        'a' => 'Yes! HelloBotz sends an instant COD verification message asking the buyer to confirm or cancel. You can also offer an instant 5% or ₹100 discount if they convert to online UPI payment on the spot.'
                     ],
                     [
                         'q' => 'Can customers track their orders inside WhatsApp?',
@@ -910,15 +910,15 @@ function getIndustryData($slug) {
                     ],
                     [
                         'q' => 'Can we showcase our complete product catalog on WhatsApp?',
-                        'a' => 'Yes. InboxWa integrates with WhatsApp native product catalogs. Customers can browse collections, select sizes/colors, and add items to a WhatsApp cart.'
+                        'a' => 'Yes. HelloBotz integrates with WhatsApp native product catalogs. Customers can browse collections, select sizes/colors, and add items to a WhatsApp cart.'
                     ],
                     [
                         'q' => 'Is there any risk of our WhatsApp number getting banned when sending broadcasts?',
-                        'a' => 'Zero risk! InboxWa uses the Official Meta WhatsApp Business API with pre-approved HSM templates and tier-based throughput, safeguarding your business number.'
+                        'a' => 'Zero risk! HelloBotz uses the Official Meta WhatsApp Business API with pre-approved HSM templates and tier-based throughput, safeguarding your business number.'
                     ]
                 ],
                 'cta_heading' => 'Scale Your E-Commerce Revenue on WhatsApp Today',
-                'cta_desc' => 'Recover abandoned carts, slash RTO rates, and automate post-purchase notifications with InboxWa.'
+                'cta_desc' => 'Recover abandoned carts, slash RTO rates, and automate post-purchase notifications with HelloBotz.'
             ],
 
             // =========================================================================
@@ -927,12 +927,12 @@ function getIndustryData($slug) {
             'automotive' => [
                 'slug' => 'automotive',
                 'breadcrumb_label' => 'Automotive',
-                'title' => 'WhatsApp Business API for Automotive & Dealerships | InboxWa',
-                'meta_desc' => 'Schedule vehicle test drives, automate periodic service reminders, dispatch insurance renewal notices, and streamline dealership sales on WhatsApp with InboxWa.',
+                'title' => 'WhatsApp Business API for Automotive & Dealerships | HelloBotz',
+                'meta_desc' => 'Schedule vehicle test drives, automate periodic service reminders, dispatch insurance renewal notices, and streamline dealership sales on WhatsApp with HelloBotz.',
                 'kicker' => 'AUTOMOTIVE DEALERSHIP ENGINE',
                 'headline' => 'Drive Test Drives &amp; Service Bookings <br><span class="highlight-text">on WhatsApp</span>',
                 'lead' => 'Empower auto dealerships, service centers, OEM distributors, and vehicle rental companies with automated test drive booking, scheduled service reminders, digital brochures, and insurance renewal alerts.',
-                'chat_title' => 'InboxWa Auto Bot',
+                'chat_title' => 'HelloBotz Auto Bot',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -1085,7 +1085,7 @@ function getIndustryData($slug) {
                     ],
                     [
                         'q' => 'How do automated service reminders work with our existing DMS?',
-                        'a' => 'InboxWa connects to your Dealer Management System via API or automated CSV sync. When a vehicle hits its 6-month service milestone, a personalized WhatsApp alert is dispatched.'
+                        'a' => 'HelloBotz connects to your Dealer Management System via API or automated CSV sync. When a vehicle hits its 6-month service milestone, a personalized WhatsApp alert is dispatched.'
                     ],
                     [
                         'q' => 'Can dealerships send on-road price sheets and brochures?',
@@ -1093,15 +1093,15 @@ function getIndustryData($slug) {
                     ],
                     [
                         'q' => 'Can we route test drive inquiries to specific showroom sales managers?',
-                        'a' => 'Yes. InboxWa supports pincode-based routing, round-robin assignments, and territory management across unlimited branches and dealer locations.'
+                        'a' => 'Yes. HelloBotz supports pincode-based routing, round-robin assignments, and territory management across unlimited branches and dealer locations.'
                     ],
                     [
                         'q' => 'Can customers pay their service bills or booking deposits via WhatsApp?',
-                        'a' => 'Yes. InboxWa integrates with UPI and payment gateways to send instant payment links with PDF invoice receipts upon completion.'
+                        'a' => 'Yes. HelloBotz integrates with UPI and payment gateways to send instant payment links with PDF invoice receipts upon completion.'
                     ]
                 ],
                 'cta_heading' => 'Accelerate Automotive Sales &amp; Service Retention',
-                'cta_desc' => 'Book more test drives, boost workshop occupancy, and automate renewals with InboxWa Official WhatsApp API.'
+                'cta_desc' => 'Book more test drives, boost workshop occupancy, and automate renewals with HelloBotz Official WhatsApp API.'
             ],
 
             // =========================================================================
@@ -1110,12 +1110,12 @@ function getIndustryData($slug) {
             'restaurants-food' => [
                 'slug' => 'restaurants-food',
                 'breadcrumb_label' => 'Restaurants & Food',
-                'title' => 'WhatsApp Business API for Restaurants & Cloud Kitchens | InboxWa',
-                'meta_desc' => 'Automate table reservations, digital food ordering, live delivery updates, and dining loyalty campaigns on WhatsApp with InboxWa.',
+                'title' => 'WhatsApp Business API for Restaurants & Cloud Kitchens | HelloBotz',
+                'meta_desc' => 'Automate table reservations, digital food ordering, live delivery updates, and dining loyalty campaigns on WhatsApp with HelloBotz.',
                 'kicker' => 'RESTAURANT & FOOD AUTOMATION',
                 'headline' => 'Take Table Bookings &amp; Food Orders <br><span class="highlight-text">Directly on WhatsApp</span>',
                 'lead' => 'Empower fine-dining restaurants, cafes, cloud kitchens, and food chains with automated table reservations, digital WhatsApp food menus, real-time delivery tracking, and zero-commission direct ordering.',
-                'chat_title' => 'InboxWa DineBot',
+                'chat_title' => 'HelloBotz DineBot',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -1268,11 +1268,11 @@ function getIndustryData($slug) {
                     ],
                     [
                         'q' => 'Do we have to pay commissions on WhatsApp food orders?',
-                        'a' => 'No! Unlike third-party aggregators who take 25-30% per order, InboxWa charges zero commission on your orders. You retain 100% of your food revenue.'
+                        'a' => 'No! Unlike third-party aggregators who take 25-30% per order, HelloBotz charges zero commission on your orders. You retain 100% of your food revenue.'
                     ],
                     [
-                        'q' => 'Does InboxWa integrate with restaurant POS systems like Petpooja or Posist?',
-                        'a' => 'Yes. InboxWa integrates with leading POS systems including Petpooja, Posist, and UrbanPiper so WhatsApp orders print directly to your kitchen KDS.'
+                        'q' => 'Does HelloBotz integrate with restaurant POS systems like Petpooja or Posist?',
+                        'a' => 'Yes. HelloBotz integrates with leading POS systems including Petpooja, Posist, and UrbanPiper so WhatsApp orders print directly to your kitchen KDS.'
                     ],
                     [
                         'q' => 'How does table reservation work on WhatsApp?',
@@ -1284,7 +1284,7 @@ function getIndustryData($slug) {
                     ]
                 ],
                 'cta_heading' => 'Start Taking Direct Orders &amp; Reservations on WhatsApp',
-                'cta_desc' => 'Save on third-party commissions, eliminate phone booking chaos, and boost repeat visits with InboxWa.'
+                'cta_desc' => 'Save on third-party commissions, eliminate phone booking chaos, and boost repeat visits with HelloBotz.'
             ]
 
         ];
@@ -1309,12 +1309,12 @@ function getExtendedIndustryData($slug) {
             'manufacturing' => [
                 'slug' => 'manufacturing',
                 'breadcrumb_label' => 'Manufacturing',
-                'title' => 'WhatsApp Business API for Manufacturing & Industry | InboxWa',
-                'meta_desc' => 'Automate supply chain alerts, dealer inquiries, RFQ processing, and dispatch notifications on WhatsApp with InboxWa.',
+                'title' => 'WhatsApp Business API for Manufacturing & Industry | HelloBotz',
+                'meta_desc' => 'Automate supply chain alerts, dealer inquiries, RFQ processing, and dispatch notifications on WhatsApp with HelloBotz.',
                 'kicker' => 'MANUFACTURING & INDUSTRIAL SUITE',
                 'headline' => 'Streamline Supply Chain &amp; Dealer Networks <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'Empower manufacturing plants, industrial suppliers, B2B exporters, and machinery producers with automated Request for Quotation (RFQ) processing, dealer communication, and dispatch tracking.',
-                'chat_title' => 'InboxWa Industry Bot',
+                'chat_title' => 'HelloBotz Industry Bot',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -1447,10 +1447,10 @@ function getExtendedIndustryData($slug) {
                 'faqs' => [
                     [
                         'q' => 'Can we send technical drawings and PDF catalogs on WhatsApp?',
-                        'a' => 'Yes. InboxWa handles PDFs, CAD files, spec sheets, and high-resolution machinery diagrams up to 100MB directly in chat.'
+                        'a' => 'Yes. HelloBotz handles PDFs, CAD files, spec sheets, and high-resolution machinery diagrams up to 100MB directly in chat.'
                     ],
                     [
-                        'q' => 'Does InboxWa integrate with ERP systems like SAP, Oracle, and Tally?',
+                        'q' => 'Does HelloBotz integrate with ERP systems like SAP, Oracle, and Tally?',
                         'a' => 'Yes. We support direct REST APIs, webhook triggers, and automated database sync to trigger notifications when POs or dispatch bills are created.'
                     ],
                     [
@@ -1463,7 +1463,7 @@ function getExtendedIndustryData($slug) {
                     ]
                 ],
                 'cta_heading' => 'Upgrade Your Industrial &amp; Manufacturing Operations',
-                'cta_desc' => 'Automate RFQ quotes, speed up dealer dispatches, and scale your supply chain with InboxWa.'
+                'cta_desc' => 'Automate RFQ quotes, speed up dealer dispatches, and scale your supply chain with HelloBotz.'
             ],
 
             // =========================================================================
@@ -1472,12 +1472,12 @@ function getExtendedIndustryData($slug) {
             'events-wedding' => [
                 'slug' => 'events-wedding',
                 'breadcrumb_label' => 'Events & Wedding',
-                'title' => 'WhatsApp Business API for Events, Conferences & Weddings | InboxWa',
-                'meta_desc' => 'Automate RSVP management, dispatch digital QR entry passes, share live event schedules, and engage attendees on WhatsApp with InboxWa.',
+                'title' => 'WhatsApp Business API for Events, Conferences & Weddings | HelloBotz',
+                'meta_desc' => 'Automate RSVP management, dispatch digital QR entry passes, share live event schedules, and engage attendees on WhatsApp with HelloBotz.',
                 'kicker' => 'EVENT & WEDDING AUTOMATION',
                 'headline' => 'Manage RSVPs &amp; Digital QR Entry <br><span class="highlight-text">Seamlessly on WhatsApp</span>',
                 'lead' => 'Empower event organizers, conference producers, wedding planners, and exhibition venues with automated RSVP tracking, QR code check-in passes, live speaker updates, and attendee engagement.',
-                'chat_title' => 'InboxWa Event Pass',
+                'chat_title' => 'HelloBotz Event Pass',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -1610,7 +1610,7 @@ function getExtendedIndustryData($slug) {
                 'faqs' => [
                     [
                         'q' => 'Can we send scannable QR tickets to attendees via WhatsApp?',
-                        'a' => 'Yes! InboxWa dynamically generates unique QR codes for every attendee and delivers them inside WhatsApp for fast gate entry.'
+                        'a' => 'Yes! HelloBotz dynamically generates unique QR codes for every attendee and delivers them inside WhatsApp for fast gate entry.'
                     ],
                     [
                         'q' => 'How does automated wedding RSVP tracking work?',
@@ -1625,7 +1625,7 @@ function getExtendedIndustryData($slug) {
                         'a' => 'Yes. Post-event workflows automatically dispatch personalized participation certificates (PDF) upon survey completion.'
                     ]
                 ],
-                'cta_heading' => 'Elevate Your Events &amp; Weddings with InboxWa',
+                'cta_heading' => 'Elevate Your Events &amp; Weddings with HelloBotz',
                 'cta_desc' => 'Streamline RSVPs, eliminate paper tickets with QR passes, and engage attendees 24/7 on WhatsApp.'
             ],
 
@@ -1635,12 +1635,12 @@ function getExtendedIndustryData($slug) {
             'digital-marketing' => [
                 'slug' => 'digital-marketing',
                 'breadcrumb_label' => 'Digital Marketing',
-                'title' => 'WhatsApp Business API for Marketing Agencies | InboxWa',
-                'meta_desc' => 'Empower marketing agencies with white-label WhatsApp API, multi-client management, click-to-WhatsApp ad tracking, and broadcast analytics with InboxWa.',
+                'title' => 'WhatsApp Business API for Marketing Agencies | HelloBotz',
+                'meta_desc' => 'Empower marketing agencies with white-label WhatsApp API, multi-client management, click-to-WhatsApp ad tracking, and broadcast analytics with HelloBotz.',
                 'kicker' => 'AGENCY & PERFORMANCE MARKETING',
                 'headline' => 'Scale Agency Client Campaigns &amp; ROI <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'The ultimate WhatsApp marketing platform engineered for performance agencies, media buyers, and marketing consultants. Manage multiple client workspaces, track Click-to-WhatsApp ad ROAS, and drive broadcast conversions.',
-                'chat_title' => 'InboxWa Agency Console',
+                'chat_title' => 'HelloBotz Agency Console',
                 'chat_messages' => [
                     [
                         'type' => 'bot',
@@ -1720,7 +1720,7 @@ function getExtendedIndustryData($slug) {
                     ],
                     [
                         'title' => 'AI Chat Qualification',
-                        'desc' => 'InboxWa conversational bot qualifies the lead and sends dynamic coupon code or product recommendation.',
+                        'desc' => 'HelloBotz conversational bot qualifies the lead and sends dynamic coupon code or product recommendation.',
                         'tag' => 'Step 02 · Lead Qualification'
                     ],
                     [
@@ -1768,12 +1768,12 @@ function getExtendedIndustryData($slug) {
                 ],
                 'faqs' => [
                     [
-                        'q' => 'Can agencies white-label the InboxWa platform for their clients?',
+                        'q' => 'Can agencies white-label the HelloBotz platform for their clients?',
                         'a' => 'Yes! You can rebrand the platform with your agency logo, favicon, color scheme, and host it on your own custom domain with segregated client workspaces.'
                     ],
                     [
                         'q' => 'How does Click-to-WhatsApp (CTWA) ad tracking work?',
-                        'a' => 'InboxWa tracks the exact Facebook/Instagram ad campaign, ad set, and creative ID that generated the conversation. When a lead buys, our Conversions API syncs the revenue back to Meta.'
+                        'a' => 'HelloBotz tracks the exact Facebook/Instagram ad campaign, ad set, and creative ID that generated the conversation. When a lead buys, our Conversions API syncs the revenue back to Meta.'
                     ],
                     [
                         'q' => 'Can we manage multiple clients from one agency account?',
@@ -1781,11 +1781,11 @@ function getExtendedIndustryData($slug) {
                     ],
                     [
                         'q' => 'How quickly do message templates get approved?',
-                        'a' => 'As an official Meta Tech Partner, templates submitted through InboxWa are typically approved within minutes by Meta’s automated review engine.'
+                        'a' => 'As an official Meta Tech Partner, templates submitted through HelloBotz are typically approved within minutes by Meta’s automated review engine.'
                     ]
                 ],
                 'cta_heading' => 'Become an Official WhatsApp Marketing Partner',
-                'cta_desc' => 'Deliver unmatched ROI to your agency clients with white-label WhatsApp automation from InboxWa.'
+                'cta_desc' => 'Deliver unmatched ROI to your agency clients with white-label WhatsApp automation from HelloBotz.'
             ],
 
             // =========================================================================
@@ -1794,12 +1794,12 @@ function getExtendedIndustryData($slug) {
             'it-software' => [
                 'slug' => 'it-software',
                 'breadcrumb_label' => 'IT & Software',
-                'title' => 'WhatsApp Business API for IT Companies & SaaS | InboxWa',
-                'meta_desc' => 'Developer-friendly WhatsApp Business API for IT companies and SaaS: fast REST APIs, real-time webhooks, 2FA OTPs, and automated product onboarding with InboxWa.',
+                'title' => 'WhatsApp Business API for IT Companies & SaaS | HelloBotz',
+                'meta_desc' => 'Developer-friendly WhatsApp Business API for IT companies and SaaS: fast REST APIs, real-time webhooks, 2FA OTPs, and automated product onboarding with HelloBotz.',
                 'kicker' => 'DEVELOPER & SAAS PLATFORM',
                 'headline' => 'Supercharge Your Software &amp; SaaS <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'Engineered for CTOs, product managers, and developers. Integrate enterprise WhatsApp messaging into your SaaS product, mobile app, or internal tooling with lightning-fast REST APIs, robust webhooks, and 99.99% uptime SLA.',
-                'chat_title' => 'InboxWa Dev Gateway',
+                'chat_title' => 'HelloBotz Dev Gateway',
                 'chat_messages' => [
                     [
                         'type' => 'bot',
@@ -1874,7 +1874,7 @@ function getExtendedIndustryData($slug) {
                 'journey_steps' => [
                     [
                         'title' => 'API Integration',
-                        'desc' => 'Developer generates API keys in InboxWa console and integrates REST endpoints in minutes.',
+                        'desc' => 'Developer generates API keys in HelloBotz console and integrates REST endpoints in minutes.',
                         'tag' => 'Step 01 · Developer Setup'
                     ],
                     [
@@ -1927,7 +1927,7 @@ function getExtendedIndustryData($slug) {
                 ],
                 'faqs' => [
                     [
-                        'q' => 'How easy is it to integrate InboxWa into our tech stack?',
+                        'q' => 'How easy is it to integrate HelloBotz into our tech stack?',
                         'a' => 'Very easy. We provide simple RESTful JSON endpoints and ready SDKs in Python, Node.js, PHP, and Go. Most developers complete basic messaging setup in less than 30 minutes.'
                     ],
                     [
@@ -1943,7 +1943,7 @@ function getExtendedIndustryData($slug) {
                         'a' => 'Yes! We provide a free developer sandbox where you can test API calls, payload structures, and webhook event listeners before going live.'
                     ]
                 ],
-                'cta_heading' => 'Start Building on the InboxWa WhatsApp API Today',
+                'cta_heading' => 'Start Building on the HelloBotz WhatsApp API Today',
                 'cta_desc' => 'Deliver mission-critical OTPs, automate SaaS user engagement, and scale with 99.99% uptime.'
             ],
 
@@ -1953,12 +1953,12 @@ function getExtendedIndustryData($slug) {
             'retail' => [
                 'slug' => 'retail',
                 'breadcrumb_label' => 'Retail',
-                'title' => 'WhatsApp Business API for Retail & Store Chains | InboxWa',
-                'meta_desc' => 'Connect physical retail stores with digital WhatsApp commerce. In-store QR scans, member loyalty cards, flash sale broadcasts, and O2O sales with InboxWa.',
+                'title' => 'WhatsApp Business API for Retail & Store Chains | HelloBotz',
+                'meta_desc' => 'Connect physical retail stores with digital WhatsApp commerce. In-store QR scans, member loyalty cards, flash sale broadcasts, and O2O sales with HelloBotz.',
                 'kicker' => 'OMNICHANNEL RETAIL PLATFORM',
                 'headline' => 'Bridge In-Store &amp; Online Retail Sales <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'Empower retail stores, apparel chains, electronics outlets, and department stores with Online-to-Offline (O2O) customer journeys, in-store QR loyalty registration, flash sale broadcasts, and personal shopper assistance.',
-                'chat_title' => 'InboxWa Retail Concierge',
+                'chat_title' => 'HelloBotz Retail Concierge',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -2095,18 +2095,18 @@ function getExtendedIndustryData($slug) {
                     ],
                     [
                         'q' => 'How does the digital e-receipt feature work?',
-                        'a' => 'At checkout, the cashier enters the customer’s phone number. Your POS triggers an API call to InboxWa, delivering a compliant digital tax invoice on WhatsApp instantly.'
+                        'a' => 'At checkout, the cashier enters the customer’s phone number. Your POS triggers an API call to HelloBotz, delivering a compliant digital tax invoice on WhatsApp instantly.'
                     ],
                     [
                         'q' => 'Can store associates chat with customers from one verified business number?',
-                        'a' => 'Yes. With InboxWa’s Shared Team Inbox, store managers across all branch locations can chat with customers, share product photos, and process orders collaboratively.'
+                        'a' => 'Yes. With HelloBotz’s Shared Team Inbox, store managers across all branch locations can chat with customers, share product photos, and process orders collaboratively.'
                     ],
                     [
                         'q' => 'How can we replace physical plastic loyalty cards with WhatsApp?',
                         'a' => 'Customers simply scan a QR code at your checkout counter. Their profile is instantly created, and their loyalty points balance is accessible anytime via WhatsApp.'
                     ]
                 ],
-                'cta_heading' => 'Revolutionize Your Retail Chain with InboxWa',
+                'cta_heading' => 'Revolutionize Your Retail Chain with HelloBotz',
                 'cta_desc' => 'Drive footfalls, automate digital e-receipts, and connect store associates with VIP shoppers on WhatsApp.'
             ],
 
@@ -2116,12 +2116,12 @@ function getExtendedIndustryData($slug) {
             'professional-services' => [
                 'slug' => 'professional-services',
                 'breadcrumb_label' => 'Professional Services',
-                'title' => 'WhatsApp Business API for Professional Services & Consultants | InboxWa',
-                'meta_desc' => 'Automate client intake, consultation scheduling, document collection, and retainer invoicing on WhatsApp with InboxWa.',
+                'title' => 'WhatsApp Business API for Professional Services & Consultants | HelloBotz',
+                'meta_desc' => 'Automate client intake, consultation scheduling, document collection, and retainer invoicing on WhatsApp with HelloBotz.',
                 'kicker' => 'CONSULTING & LEGAL AUTOMATION',
                 'headline' => 'Automate Client Intake &amp; Retainers <br><span class="highlight-text">with WhatsApp API</span>',
                 'lead' => 'Empower management consulting firms, law offices, accounting agencies, tax advisors, and architecture practices with automated client intake, consultation booking, document sharing, and retainer invoice management.',
-                'chat_title' => 'InboxWa Advisory Bot',
+                'chat_title' => 'HelloBotz Advisory Bot',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -2205,7 +2205,7 @@ function getExtendedIndustryData($slug) {
                     ],
                     [
                         'title' => 'Intake & NDA',
-                        'desc' => 'InboxWa bot screens legal/consulting scope, shares blank NDA, and collects signed agreement.',
+                        'desc' => 'HelloBotz bot screens legal/consulting scope, shares blank NDA, and collects signed agreement.',
                         'tag' => 'Step 02 · Qualification & Intake'
                     ],
                     [
@@ -2254,14 +2254,14 @@ function getExtendedIndustryData($slug) {
                 'faqs' => [
                     [
                         'q' => 'Can we collect upfront consultation fees before booking appointments?',
-                        'a' => 'Yes. InboxWa integrates with payment gateways to send payment links. The calendar slot is only confirmed after successful fee payment.'
+                        'a' => 'Yes. HelloBotz integrates with payment gateways to send payment links. The calendar slot is only confirmed after successful fee payment.'
                     ],
                     [
                         'q' => 'Can clients upload confidential PDF documents safely?',
                         'a' => 'Yes. WhatsApp conversations are protected by end-to-end encryption, ensuring full confidentiality for legal, tax, and accounting documents.'
                     ],
                     [
-                        'q' => 'Does InboxWa sync with our Outlook and Google Calendar schedules?',
+                        'q' => 'Does HelloBotz sync with our Outlook and Google Calendar schedules?',
                         'a' => 'Yes. Two-way synchronization checks consultant busy slots in real time to prevent calendar conflicts.'
                     ],
                     [
@@ -2270,7 +2270,7 @@ function getExtendedIndustryData($slug) {
                     ]
                 ],
                 'cta_heading' => 'Upgrade Your Consulting &amp; Advisory Practice',
-                'cta_desc' => 'Automate client onboarding, streamline consultation bookings, and accelerate retainer payments with InboxWa.'
+                'cta_desc' => 'Automate client onboarding, streamline consultation bookings, and accelerate retainer payments with HelloBotz.'
             ],
 
             // =========================================================================
@@ -2279,12 +2279,12 @@ function getExtendedIndustryData($slug) {
             'b2b-suppliers' => [
                 'slug' => 'b2b-suppliers',
                 'breadcrumb_label' => 'B2B & Suppliers',
-                'title' => 'WhatsApp Business API for B2B Suppliers & Wholesalers | InboxWa',
-                'meta_desc' => 'Automate wholesale catalogs, tiered bulk pricing quotes, purchase order reorders, and distributor credit alerts with InboxWa B2B WhatsApp API.',
+                'title' => 'WhatsApp Business API for B2B Suppliers & Wholesalers | HelloBotz',
+                'meta_desc' => 'Automate wholesale catalogs, tiered bulk pricing quotes, purchase order reorders, and distributor credit alerts with HelloBotz B2B WhatsApp API.',
                 'kicker' => 'B2B WHOLESALE & DISTRIBUTION',
                 'headline' => 'Automate Wholesale Orders &amp; B2B Sales <br><span class="highlight-text">on WhatsApp</span>',
                 'lead' => 'Empower wholesale distributors, B2B vendors, bulk traders, and merchant suppliers with digital product catalogs, tier-based price calculators, automated reorder triggers, and distributor credit management.',
-                'chat_title' => 'InboxWa Wholesale Bot',
+                'chat_title' => 'HelloBotz Wholesale Bot',
                 'chat_messages' => [
                     [
                         'type' => 'user',
@@ -2417,7 +2417,7 @@ function getExtendedIndustryData($slug) {
                 'faqs' => [
                     [
                         'q' => 'Can we show different wholesale prices to different dealer tiers?',
-                        'a' => 'Yes! InboxWa can identify verified dealers by their phone number and present their specific wholesale tier pricing and discount structure.'
+                        'a' => 'Yes! HelloBotz can identify verified dealers by their phone number and present their specific wholesale tier pricing and discount structure.'
                     ],
                     [
                         'q' => 'How does 1-click reordering work for retail stockists?',
@@ -2428,12 +2428,12 @@ function getExtendedIndustryData($slug) {
                         'a' => 'Yes. By connecting with your accounting system (e.g. Tally or Zoho Books), dealers can request their running ledger PDF anytime.'
                     ],
                     [
-                        'q' => 'Does InboxWa support bulk container load inquiries?',
+                        'q' => 'Does HelloBotz support bulk container load inquiries?',
                         'a' => 'Yes. You can broadcast incoming container inventories and receive quote requests with custom MOQs.'
                     ]
                 ],
                 'cta_heading' => 'Scale Your B2B Wholesale &amp; Distribution Today',
-                'cta_desc' => 'Automate bulk reorders, speed up dealer quote turnaround, and manage credit lines on WhatsApp with InboxWa.'
+                'cta_desc' => 'Automate bulk reorders, speed up dealer quote turnaround, and manage credit lines on WhatsApp with HelloBotz.'
             ]
 
         ];
@@ -2442,12 +2442,12 @@ function getExtendedIndustryData($slug) {
     return $extended[$slug] ?? [
         'slug' => $slug,
         'breadcrumb_label' => ucwords(str_replace('-', ' ', $slug)),
-        'title' => ucwords(str_replace('-', ' ', $slug)) . ' WhatsApp Automation | InboxWa',
-        'meta_desc' => 'Supercharge your business with official WhatsApp Business API from InboxWa.',
+        'title' => ucwords(str_replace('-', ' ', $slug)) . ' WhatsApp Automation | HelloBotz',
+        'meta_desc' => 'Supercharge your business with official WhatsApp Business API from HelloBotz.',
         'kicker' => 'INDUSTRY MESSAGING ENGINE',
         'headline' => 'Scale Your Business <br><span class="highlight-text">on WhatsApp</span>',
-        'lead' => 'Automate conversations, capture leads, and delight customers 24/7 with InboxWa Official WhatsApp Business API.',
-        'chat_title' => 'InboxWa Assistant',
+        'lead' => 'Automate conversations, capture leads, and delight customers 24/7 with HelloBotz Official WhatsApp Business API.',
+        'chat_title' => 'HelloBotz Assistant',
         'chat_messages' => [],
         'floating_metric' => ['value' => '3x Faster', 'label' => 'Lead Conversions'],
         'stats' => [],
@@ -2455,7 +2455,7 @@ function getExtendedIndustryData($slug) {
         'journey_steps' => [],
         'solutions' => [],
         'faqs' => [],
-        'cta_heading' => 'Ready to Scale with InboxWa?',
+        'cta_heading' => 'Ready to Scale with HelloBotz?',
         'cta_desc' => 'Get started with official WhatsApp Business API today.'
     ];
 }

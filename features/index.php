@@ -1,8 +1,8 @@
 <?php
 $basePath = '../';
-$pageTitle = 'Features | Official WhatsApp Business API & Omnichannel Platform | InboxWa';
-$pageDescription = 'Explore all InboxWa features: Bulk Broadcast, Shared Team Inbox, AI Chatbot Builder, AI Voice Calling, WhatsApp Catalog, Appointment Booking, WhatsApp Forms, and Click-to-WhatsApp Ads.';
-$canonicalUrl = 'https://inboxwa.com/features/';
+$pageTitle = 'Features | Official WhatsApp Business API & Omnichannel Platform | HelloBotz';
+$pageDescription = 'Explore all HelloBotz features: Bulk Broadcast, Shared Team Inbox, AI Chatbot Builder, AI Voice Calling, WhatsApp Catalog, Appointment Booking, WhatsApp Forms, and Click-to-WhatsApp Ads.';
+$canonicalUrl = 'https://hellobotz.com/features/';
 include __DIR__ . '/../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px) + 1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Features</nav>

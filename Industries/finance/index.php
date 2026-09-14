@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Finance Lead & Application Automation | WhatsApp | InboxWa';
+$pageTitle = 'Finance Lead & Application Automation | WhatsApp | HelloBotz';
 $pageDescription = 'Capture finance enquiries, assist applications, request information, schedule follow-ups and connect customers with your finance team via WhatsApp — not a lending decision system.';
-$canonicalUrl = 'https://inboxwa.com/industries/finance/';
+$canonicalUrl = 'https://hellobotz.com/industries/finance/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/finance.css?v=1">
@@ -36,7 +36,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-alt" id="notice">
   <div class="container" style="max-width:720px;text-align:center">
-    <p class="fn-notice reveal">InboxWa automates <strong>communication and workflow</strong>. Financial eligibility, approval, investment or lending decisions remain subject to your business, regulatory and compliance processes.</p>
+    <p class="fn-notice reveal">HelloBotz automates <strong>communication and workflow</strong>. Financial eligibility, approval, investment or lending decisions remain subject to your business, regulatory and compliance processes.</p>
   </div>
 </section>
 
@@ -185,7 +185,7 @@ include __DIR__ . '/../../includes/header.php';
 </div>
 
 <div class="edu-img-card-wrap reveal" style="margin: 2.5rem 0;">
-  <img src="/assets/images/edtech_shared_inbox.jpg" alt="InboxWa BFSI Finance Lead Pipeline & Shared Team Workspace" loading="lazy">
+  <img src="/assets/images/edtech_shared_inbox.jpg" alt="HelloBotz BFSI Finance Lead Pipeline & Shared Team Workspace" loading="lazy">
   <div class="edu-img-caption-badge">
     <strong><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Finance Team Dashboard &amp; Lead Workspace</strong>
     <span>Enquiry → Verification → Discrepancy Tracking</span>
@@ -212,8 +212,8 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can InboxWa help finance businesses?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Capture enquiries, guide application conversations, request information, schedule callbacks and notify your team — within your compliance rules.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Is InboxWa a lending or approval system?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">No. It is a communication and workflow platform. Eligibility and approval decisions stay with your regulated processes.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can HelloBotz help finance businesses?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Capture enquiries, guide application conversations, request information, schedule callbacks and notify your team — within your compliance rules.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Is HelloBotz a lending or approval system?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">No. It is a communication and workflow platform. Eligibility and approval decisions stay with your regulated processes.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers request a callback?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — capture preferred times and notify your finance team where configured.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can a human agent take over?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — hand over conversations to your team when needed.</div></div></div>
     </div>
@@ -224,7 +224,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <div class="section-header reveal">
       <h2 style="color:#fff">Build a Smarter Finance Customer Journey</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Capture enquiries, automate communication, simplify follow-ups and connect your finance team with customers through InboxWa.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Capture enquiries, automate communication, simplify follow-ups and connect your finance team with customers through HelloBotz.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book Finance Demo</button>

@@ -1,8 +1,8 @@
 <?php
 $basePath = '../';
-$pageTitle = 'Resources — InboxWa';
+$pageTitle = 'Resources — HelloBotz';
 $pageDescription = 'Help center, API docs, blog, case studies, templates and app downloads.';
-$canonicalUrl = 'https://inboxwa.com/resources/';
+$canonicalUrl = 'https://hellobotz.com/resources/';
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">

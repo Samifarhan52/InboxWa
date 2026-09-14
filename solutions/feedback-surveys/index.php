@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Feedback & Surveys on WhatsApp';
 $pageDescription = 'Collect CSAT/NPS style feedback where customers already reply.';
-$canonicalUrl = 'https://inboxwa.com/solutions/feedback-surveys/';
+$canonicalUrl = 'https://hellobotz.com/solutions/feedback-surveys/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Feedback & Surveys on WhatsApp</nav>

@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Google Calendar + Google Meet + WhatsApp | Appointment Automation | InboxWa';
-$pageDescription = 'Connect Google Calendar and Google Meet with InboxWa. Book appointments, create meetings, send WhatsApp confirmations and reminders automatically.';
-$canonicalUrl = 'https://inboxwa.com/solutions/google-calendar-meet/';
+$pageTitle = 'Google Calendar + Google Meet + WhatsApp | Appointment Automation | HelloBotz';
+$pageDescription = 'Connect Google Calendar and Google Meet with HelloBotz. Book appointments, create meetings, send WhatsApp confirmations and reminders automatically.';
+$canonicalUrl = 'https://hellobotz.com/solutions/google-calendar-meet/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/google-calendar-meet.css?v=1">
@@ -16,7 +16,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="gcm-hero-copy">
         <span class="badge gcm-badge">GOOGLE CALENDAR + GOOGLE MEET INTEGRATION</span>
         <h1>Book Meetings. Automate Reminders. <span class="grad">Close More Deals.</span></h1>
-        <p class="gcm-lead">Connect Google Calendar and Google Meet with InboxWa to let customers book appointments, automatically create meetings and receive confirmations and reminders on WhatsApp.</p>
+        <p class="gcm-lead">Connect Google Calendar and Google Meet with HelloBotz to let customers book appointments, automatically create meetings and receive confirmations and reminders on WhatsApp.</p>
         <div class="gcm-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Get Started</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
@@ -40,7 +40,7 @@ include __DIR__ . '/../../includes/header.php';
           <div class="gcm-screen">
             <div class="gcm-wa-head">
               <div class="gcm-av">HB</div>
-              <div><strong>InboxWa</strong><small>Appointment Assistant</small></div>
+              <div><strong>HelloBotz</strong><small>Appointment Assistant</small></div>
             </div>
             <div class="gcm-wa-body" id="gcm-wa-body">
               <div class="gcm-typing" id="gcm-typing"><i></i><i></i><i></i></div>
@@ -56,7 +56,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal">
       <h2>From Booking to Meeting — Automatically</h2>
-      <p class="lead">Customer → InboxWa → Google Calendar → Google Meet → WhatsApp</p>
+      <p class="lead">Customer → HelloBotz → Google Calendar → Google Meet → WhatsApp</p>
     </div>
     <div class="gcm-steps reveal">
       <div class="gcm-step"><div class="num">01</div><h3>Customer Chooses a Time</h3><p>Customer selects an available appointment slot.</p></div>
@@ -317,7 +317,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I use it for education counselling?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — counselling and admission-related slots can be scheduled.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I use it for real estate consultations?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — property consultation slots can be booked and confirmed on WhatsApp.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can multiple team members use the system?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Team calendars and assignment depend on your connected Google Calendar setup and product configuration.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect Google Forms with the booking workflow?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — Google Forms can feed leads into InboxWa, which can then drive booking and calendar flows where configured.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect Google Forms with the booking workflow?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — Google Forms can feed leads into HelloBotz, which can then drive booking and calendar flows where configured.</div></div></div>
     </div>
   </div>
 </section>
@@ -326,7 +326,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <div class="section-header reveal">
       <h2 style="color:#fff">Make Every Appointment Automatic</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Connect Google Calendar and Google Meet with InboxWa and turn bookings into seamless WhatsApp-powered meeting experiences.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Connect Google Calendar and Google Meet with HelloBotz and turn bookings into seamless WhatsApp-powered meeting experiences.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/auth/register" class="btn btn-primary btn-lg">Get Started</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>

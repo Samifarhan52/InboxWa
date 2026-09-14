@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Inventory, Subscriptions & Invoices | InboxWa';
-$pageDescription = 'Manage stock alerts, subscription renewals and invoice payments on WhatsApp with InboxWa automation.';
-$canonicalUrl = 'https://inboxwa.com/solutions/inventory-subscriptions-invoices/';
+$pageTitle = 'Inventory, Subscriptions & Invoices | HelloBotz';
+$pageDescription = 'Manage stock alerts, subscription renewals and invoice payments on WhatsApp with HelloBotz automation.';
+$canonicalUrl = 'https://hellobotz.com/solutions/inventory-subscriptions-invoices/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/isi.css?v=1">
@@ -15,7 +15,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="isi-hero-copy">
         <span class="badge isi-badge">OPERATIONS ON WHATSAPP</span>
         <h1>Inventory, Subscriptions &amp; Invoices — <span class="grad">One Connected Flow</span></h1>
-        <p class="isi-lead">Send stock alerts, manage renewals and collect invoice payments through WhatsApp workflows with InboxWa.</p>
+        <p class="isi-lead">Send stock alerts, manage renewals and collect invoice payments through WhatsApp workflows with HelloBotz.</p>
         <div class="isi-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
@@ -23,7 +23,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="isi-journey">
         <span>Stock / Plan / Invoice</span><span class="arr">↓</span>
-        <span>InboxWa</span><span class="arr">↓</span>
+        <span>HelloBotz</span><span class="arr">↓</span>
         <span>WhatsApp</span><span class="arr">↓</span>
         <span>Customer Action</span>
       </div>
@@ -44,7 +44,7 @@ include __DIR__ . '/../../includes/header.php';
       <p class="isi-desc">Notify customers when products are low, back in stock or ready to order — using approved messaging practices.</p>
       <div class="isi-flow">
         <span>Inventory Event</span><span class="arr">→</span>
-        <span>InboxWa</span><span class="arr">→</span>
+        <span>HelloBotz</span><span class="arr">→</span>
         <span>WhatsApp Template</span><span class="arr">→</span>
         <span>Customer</span>
       </div>
@@ -66,7 +66,7 @@ include __DIR__ . '/../../includes/header.php';
       <p class="isi-desc">Remind customers about plan renewals and guide them through the next step on WhatsApp.</p>
       <div class="isi-flow">
         <span>Plan Due</span><span class="arr">→</span>
-        <span>InboxWa</span><span class="arr">→</span>
+        <span>HelloBotz</span><span class="arr">→</span>
         <span>Reminder</span><span class="arr">→</span>
         <span>Customer Reply</span>
       </div>
@@ -88,7 +88,7 @@ include __DIR__ . '/../../includes/header.php';
       <p class="isi-desc">Share invoice details and payment links on WhatsApp where your payment setup supports it.</p>
       <div class="isi-flow">
         <span>Invoice Created</span><span class="arr">→</span>
-        <span>InboxWa</span><span class="arr">→</span>
+        <span>HelloBotz</span><span class="arr">→</span>
         <span>WhatsApp</span><span class="arr">→</span>
         <span>Pay / Confirm</span>
       </div>
@@ -112,7 +112,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal"><h2 style="color:#fff">Operations Journey</h2></div>
     <div class="isi-flow reveal">
       <span>Business Event</span><span class="arr">↓</span>
-      <span>InboxWa</span><span class="arr">↓</span>
+      <span>HelloBotz</span><span class="arr">↓</span>
       <span>WhatsApp Message</span><span class="arr">↓</span>
       <span>Customer Action</span><span class="arr">↓</span>
       <span>Team / CRM Update</span>

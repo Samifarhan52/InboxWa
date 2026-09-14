@@ -6,7 +6,7 @@ $HBContact = require __DIR__ . '/../config/contact.php';
 
 $pageTitle = 'Browse by Business Category – 12 Business Leads Datasets';
 $pageDescription = '12 major categories of business data to explore and request. Get verified leads, automated WhatsApp qualification, and targeted datasets for your industry.';
-$canonicalUrl = 'https://inboxwa.com/business-leads/';
+$canonicalUrl = 'https://hellobotz.com/business-leads/';
 $ogImage = 'assets/images/og-image.png';
 
 $allCategories = [
@@ -172,7 +172,7 @@ include __DIR__ . '/../includes/header.php';
         <h2>Looking for a Custom Business Audience?</h2>
         <p>Tell us your target geography, industry vertical, job titles, or company size. We source, scrub, and verify targeted leads tailored to your exact campaign goals.</p>
         <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa team, I would like to make a custom business data request. Please connect me with a data specialist.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:1rem 2rem;">
+          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz team, I would like to make a custom business data request. Please connect me with a data specialist.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:1rem 2rem;">
             <span>Submit Custom Data Request</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>

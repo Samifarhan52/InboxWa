@@ -1,9 +1,9 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Banking Messaging & BFSI Solutions | InboxWa';
-$pageDescription = 'Secure Banking Messaging Solutions by InboxWa. We provide WhatsApp API and Bulk SMS for OTPs, transaction alerts, KYC verification, and insurance updates. Get a demo!';
+$pageTitle = 'Banking Messaging & BFSI Solutions | HelloBotz';
+$pageDescription = 'Secure Banking Messaging Solutions by HelloBotz. We provide WhatsApp API and Bulk SMS for OTPs, transaction alerts, KYC verification, and insurance updates. Get a demo!';
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '/business-leads/finance-insurance/', PHP_URL_PATH);
-$canonicalUrl = 'https://inboxwa.com' . ($reqPath ?: '/business-leads/finance-insurance/');
+$canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: '/business-leads/finance-insurance/');
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/bfsi.css?v=2">
@@ -35,7 +35,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="bfsi-hero-content">
           <span class="bfsi-kicker">TECHNOLOGY SOLUTION</span>
           <h1>Transform Banking with <br><span class="highlight-text">Cutting-Edge Solutions</span></h1>
-          <p class="bfsi-hero-lead">At InboxWa, we deliver tailored Digital Transformation Solutions for banking and finance, enhancing efficiency, streamlining customer experiences, and ensuring secure, compliant operations with advanced personalization.</p>
+          <p class="bfsi-hero-lead">At HelloBotz, we deliver tailored Digital Transformation Solutions for banking and finance, enhancing efficiency, streamlining customer experiences, and ensuring secure, compliant operations with advanced personalization.</p>
           
           <div class="bfsi-ctas">
             <button type="button" class="bfsi-btn-primary" onclick="openBfsiModal('Try it for free')">
@@ -45,7 +45,7 @@ include __DIR__ . '/../../includes/header.php';
             <button type="button" class="bfsi-btn-outline" onclick="openBfsiModal('Schedule Banking Demo')">
               Explore Now
             </button>
-            <a href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20want%20to%20know%20more%20about%20WhatsApp%20Banking%20and%20BFSI%20messaging%20solutions" target="_blank" rel="noopener" class="bfsi-btn-wa">
+            <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20WhatsApp%20Banking%20and%20BFSI%20messaging%20solutions" target="_blank" rel="noopener" class="bfsi-btn-wa">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Chat on WhatsApp
             </a>
@@ -73,14 +73,14 @@ include __DIR__ . '/../../includes/header.php';
 
         <div class="bfsi-hero-visual">
           <div class="bfsi-hero-img-wrap">
-            <img src="/assets/images/bfsi/bfsi-hero-branded.png" alt="InboxWa BFSI Banking Solutions Hero Graphic" width="1024" height="842" loading="eager">
+            <img src="/assets/images/bfsi/bfsi-hero-branded.png" alt="HelloBotz BFSI Banking Solutions Hero Graphic" width="1024" height="842" loading="eager">
           </div>
           <div class="bfsi-hero-floating-badge">
             <div class="bfsi-floating-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="bfsi-floating-text">
-              <strong>InboxWa Banking Engine</strong>
+              <strong>HelloBotz Banking Engine</strong>
               <span>Sub-3s Real-Time Financial Alerts</span>
             </div>
           </div>
@@ -131,7 +131,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Feature 1: Customer Support and Query Resolution -->
       <div class="bfsi-feature-row">
         <div class="bfsi-feature-visual">
-          <img src="/assets/images/bfsi/feature-1-branded.png" alt="InboxWa Customer Support and Query Resolution" width="1024" height="842" loading="lazy">
+          <img src="/assets/images/bfsi/feature-1-branded.png" alt="HelloBotz Customer Support and Query Resolution" width="1024" height="842" loading="lazy">
         </div>
         <div class="bfsi-feature-content">
           <h3>Customer Support and Query Resolution</h3>
@@ -155,7 +155,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Feature 2: Transaction Notifications and Alerts -->
       <div class="bfsi-feature-row reverse">
         <div class="bfsi-feature-visual">
-          <img src="/assets/images/bfsi/feature-2-branded.png" alt="InboxWa Transaction Notifications and Alerts" width="1024" height="842" loading="lazy">
+          <img src="/assets/images/bfsi/feature-2-branded.png" alt="HelloBotz Transaction Notifications and Alerts" width="1024" height="842" loading="lazy">
         </div>
         <div class="bfsi-feature-content">
           <h3>Transaction Notifications and Alerts</h3>
@@ -179,7 +179,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Feature 3: 2-Way Conveyance for Transactions -->
       <div class="bfsi-feature-row">
         <div class="bfsi-feature-visual">
-          <img src="/assets/images/bfsi/feature-3-branded.png" alt="InboxWa 2-Way Conveyance for Transactions" width="1024" height="842" loading="lazy">
+          <img src="/assets/images/bfsi/feature-3-branded.png" alt="HelloBotz 2-Way Conveyance for Transactions" width="1024" height="842" loading="lazy">
         </div>
         <div class="bfsi-feature-content">
           <h3>2-Way Conveyance for Transactions</h3>
@@ -203,7 +203,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Feature 4: Personalized Marketing and Promotions -->
       <div class="bfsi-feature-row reverse">
         <div class="bfsi-feature-visual">
-          <img src="/assets/images/bfsi/feature-4-branded.png" alt="InboxWa Personalized Marketing and Promotions" width="1024" height="842" loading="lazy">
+          <img src="/assets/images/bfsi/feature-4-branded.png" alt="HelloBotz Personalized Marketing and Promotions" width="1024" height="842" loading="lazy">
         </div>
         <div class="bfsi-feature-content">
           <h3>Personalized Marketing and Promotions</h3>
@@ -227,7 +227,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Feature 5: Document Submission and Verification -->
       <div class="bfsi-feature-row">
         <div class="bfsi-feature-visual">
-          <img src="/assets/images/bfsi/feature-5-branded.png" alt="InboxWa Document Submission and Verification" width="1024" height="842" loading="lazy">
+          <img src="/assets/images/bfsi/feature-5-branded.png" alt="HelloBotz Document Submission and Verification" width="1024" height="842" loading="lazy">
         </div>
         <div class="bfsi-feature-content">
           <h3>Document Submission and Verification</h3>
@@ -251,7 +251,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Feature 6: Interactive Educational Content -->
       <div class="bfsi-feature-row reverse">
         <div class="bfsi-feature-visual">
-          <img src="/assets/images/bfsi/feature-6-branded.png" alt="InboxWa Interactive Educational Content" width="1024" height="842" loading="lazy">
+          <img src="/assets/images/bfsi/feature-6-branded.png" alt="HelloBotz Interactive Educational Content" width="1024" height="842" loading="lazy">
         </div>
         <div class="bfsi-feature-content">
           <h3>Interactive Educational Content</h3>
@@ -275,14 +275,14 @@ include __DIR__ . '/../../includes/header.php';
   </section>
 
   <!-- =========================================================================
-       4. INBOXWA CONVERSATIONAL BANKING JOURNEY FLOW
+       4. HELLOBOTZ CONVERSATIONAL BANKING JOURNEY FLOW
        ========================================================================= -->
   <section class="bfsi-journey-section">
     <div class="container">
       <div class="bfsi-section-header">
         <span class="bfsi-kicker">AUTOMATION JOURNEY FLOW</span>
-        <h2>InboxWa End-to-End Conversational Banking Architecture</h2>
-        <p>From omnichannel discovery to instant identity authentication and core banking settlement, discover how InboxWa orchestrates every touchpoint with precision.</p>
+        <h2>HelloBotz End-to-End Conversational Banking Architecture</h2>
+        <p>From omnichannel discovery to instant identity authentication and core banking settlement, discover how HelloBotz orchestrates every touchpoint with precision.</p>
       </div>
 
       <div class="bfsi-journey-grid">
@@ -298,7 +298,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="bfsi-journey-step">
           <div class="bfsi-step-badge">2</div>
           <h4>Secure Identity &amp; KYC</h4>
-          <p>InboxWa AI verifies identity via encrypted WhatsApp OTP. User shares PAN/Aadhaar photos parsed in real-time by computer vision.</p>
+          <p>HelloBotz AI verifies identity via encrypted WhatsApp OTP. User shares PAN/Aadhaar photos parsed in real-time by computer vision.</p>
           <span class="bfsi-step-tag">Step 02 · 100% Encrypted &amp; Compliant</span>
         </div>
 
@@ -398,7 +398,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="bfsi-section-header">
         <span class="bfsi-kicker">FAQS</span>
         <h2>Got Questions? We’ve Got Answers!</h2>
-        <p>Find straightforward answers to common questions about InboxWa’s BFSI messaging solutions, security certifications, and setup process.</p>
+        <p>Find straightforward answers to common questions about HelloBotz’s BFSI messaging solutions, security certifications, and setup process.</p>
       </div>
 
       <div class="bfsi-faq-list">
@@ -497,7 +497,7 @@ include __DIR__ . '/../../includes/header.php';
               Get Started Now!
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
-            <a href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20am%20ready%20to%20revolutionize%20our%20banking%20services" target="_blank" rel="noopener" class="bfsi-btn-wa">
+            <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20am%20ready%20to%20revolutionize%20our%20banking%20services" target="_blank" rel="noopener" class="bfsi-btn-wa">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Chat on WhatsApp
             </a>
@@ -528,7 +528,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="bfsi-modal-header">
       <button type="button" class="bfsi-modal-close" onclick="closeBfsiModal()">&times;</button>
       <h3 id="bfsiModalTitle">Schedule Banking Solutions Demo</h3>
-      <p>Talk with an InboxWa BFSI Enterprise Solution Architect today.</p>
+      <p>Talk with an HelloBotz BFSI Enterprise Solution Architect today.</p>
     </div>
     <div class="bfsi-modal-body">
       <form id="bfsiDemoForm" onsubmit="handleBfsiSubmit(event)">
@@ -625,7 +625,7 @@ function handleBfsiSubmit(e) {
       btn.disabled = false;
       btn.style.background = '';
       form.reset();
-      alert('Thank you! An InboxWa BFSI Specialist will contact you within 15 minutes.');
+      alert('Thank you! An HelloBotz BFSI Specialist will contact you within 15 minutes.');
     }, 1200);
   })
   .catch(err => {
@@ -637,7 +637,7 @@ function handleBfsiSubmit(e) {
       btn.disabled = false;
       btn.style.background = '';
       form.reset();
-      alert('Thank you! An InboxWa BFSI Specialist will contact you shortly.');
+      alert('Thank you! An HelloBotz BFSI Specialist will contact you shortly.');
     }, 1200);
   });
 }

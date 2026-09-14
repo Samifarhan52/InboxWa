@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Official WhatsApp Business API | InboxWa';
+$pageTitle = 'Official WhatsApp Business API | HelloBotz';
 $pageDescription = 'Connect your WhatsApp Business Account, send compliant templates, and run support and sales chats with full delivery visibility.';
-$canonicalUrl = 'https://inboxwa.com/products/whatsapp-api/';
+$canonicalUrl = 'https://hellobotz.com/products/whatsapp-api/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <section class="page-hero-premium">
@@ -36,7 +36,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark" id="flow">
   <div class="container">
     <div class="section-header reveal"><h2 style="color:#fff">How it works</h2></div>
-    <div class="workflow-sim" id="ws-pr-whatsapp-api"><div class="ws-step">WABA linked</div><div class="ws-step">Templates approved</div><div class="ws-step">InboxWa connected</div><div class="ws-step">Send & receive</div><div class="ws-step">Inbox + reports</div></div>
+    <div class="workflow-sim" id="ws-pr-whatsapp-api"><div class="ws-step">WABA linked</div><div class="ws-step">Templates approved</div><div class="ws-step">HelloBotz connected</div><div class="ws-step">Send & receive</div><div class="ws-step">Inbox + reports</div></div>
     <div class="ws-controls">
       <button type="button" class="btn btn-sm btn-primary ws-next" data-sim="ws-pr-whatsapp-api">Next step</button>
       <button type="button" class="btn btn-sm btn-outline ws-auto" style="color:#fff;border-color:rgba(255,255,255,.35)" data-sim="ws-pr-whatsapp-api">Auto-play</button>
@@ -47,11 +47,11 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container" style="max-width:720px;text-align:center">
     <div class="hero-visual-float reveal">
-      <img src="/assets/images/products/whatsapp-api/hero.webp" alt="Official WhatsApp Business API | InboxWa" width="1000" height="560" loading="lazy"
+      <img src="/assets/images/products/whatsapp-api/hero.webp" alt="Official WhatsApp Business API | HelloBotz" width="1000" height="560" loading="lazy"
         style="width:100%;border-radius:16px;border:1px solid var(--bd);min-height:180px;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
         onerror="this.style.minHeight='180px'">
     </div>
-    <p class="lead reveal" style="margin-top:1.5rem">Same InboxWa platform — this product page focuses on whatsapp api outcomes only.</p>
+    <p class="lead reveal" style="margin-top:1.5rem">Same HelloBotz platform — this product page focuses on whatsapp api outcomes only.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/pricing/" class="btn btn-outline">View pricing</a>
       <a href="/#contact-section" class="btn btn-primary">Talk to sales</a>

@@ -30,9 +30,9 @@
   });
 
   var sims={
-    lead:'Website / Facebook → InboxWa → CRM → WhatsApp → Sales Team',
-    order:'Shopify / WooCommerce → InboxWa → WhatsApp → Customer',
-    booking:'Google Calendar → InboxWa → WhatsApp → Customer'
+    lead:'Website / Facebook → HelloBotz → CRM → WhatsApp → Sales Team',
+    order:'Shopify / WooCommerce → HelloBotz → WhatsApp → Customer',
+    booking:'Google Calendar → HelloBotz → WhatsApp → Customer'
   };
   var out=document.getElementById('ic-sim-out');
   document.querySelectorAll('#ic-sim-tabs button').forEach(function(b){

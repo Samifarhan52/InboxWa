@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'AI Voice Calling & WhatsApp Voice Agents | InboxWa';
+$pageTitle = 'AI Voice Calling & WhatsApp Voice Agents | HelloBotz';
 $pageDescription = 'Automate voice calls with intelligent AI call agents on WhatsApp. Configure speech recognition, natural voice synthesis, real-time API triggers, and human call transfers.';
-$canonicalUrl = 'https://inboxwa.com/products/ai-voice/';
+$canonicalUrl = 'https://hellobotz.com/products/ai-voice/';
 $ogImage = 'assets/images/products/ai-voice/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -67,7 +67,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="prod-hero-media">
         <div class="prod-hero-media-wrapper">
-          <img src="<?php echo $bp; ?>assets/images/products/ai-voice/hero.png" alt="InboxWa AI Voice Agent" class="prod-hero-media-img" width="1080" height="1080">
+          <img src="<?php echo $bp; ?>assets/images/products/ai-voice/hero.png" alt="HelloBotz AI Voice Agent" class="prod-hero-media-img" width="1080" height="1080">
         </div>
       </div>
     </div>

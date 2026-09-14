@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'API & Webhooks — Developer Documentation | InboxWa';
-$pageDescription = 'Connect your website, CRM, ERP or custom applications to InboxWa using official WhatsApp Business Cloud REST APIs and real-time event webhooks.';
-$canonicalUrl = 'https://inboxwa.com/integrations/api-webhooks/';
+$pageTitle = 'API & Webhooks — Developer Documentation | HelloBotz';
+$pageDescription = 'Connect your website, CRM, ERP or custom applications to HelloBotz using official WhatsApp Business Cloud REST APIs and real-time event webhooks.';
+$canonicalUrl = 'https://hellobotz.com/integrations/api-webhooks/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/api-webhooks.css?v=3">
@@ -14,8 +14,8 @@ include __DIR__ . '/../../includes/header.php';
     <div class="api-hero-grid">
       <div class="api-hero-copy">
         <span class="badge api-badge">DEVELOPER PLATFORM</span>
-        <h1>Connect InboxWa With <span class="grad">Any Application</span></h1>
-        <p class="api-lead">Build mission-critical integrations between InboxWa and your website, CRM, ERP, mobile app or custom backend using lightning-fast REST APIs and real-time webhook events.</p>
+        <h1>Connect HelloBotz With <span class="grad">Any Application</span></h1>
+        <p class="api-lead">Build mission-critical integrations between HelloBotz and your website, CRM, ERP, mobile app or custom backend using lightning-fast REST APIs and real-time webhook events.</p>
         <div class="api-ctas">
           <a href="#code" class="btn btn-primary btn-lg">Explore Endpoints &rarr;</a>
           <a href="#webhook" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Webhook Events</a>
@@ -25,7 +25,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="api-arch">
         <span>Your Application</span><span class="arr">&rarr;</span>
         <span>REST API / Webhook</span><span class="arr">&rarr;</span>
-        <span class="core">InboxWa Core</span><span class="arr">&rarr;</span>
+        <span class="core">HelloBotz Core</span><span class="arr">&rarr;</span>
         <span>WhatsApp Cloud</span><span class="arr">&rarr;</span>
         <span>Customer</span>
       </div>
@@ -39,7 +39,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal">
       <span class="badge badge-primary">Integration Models</span>
       <h2>API &amp; Webhooks: Two-Way Synchronization</h2>
-      <p class="lead">Whether pushing data from your backend or reacting to customer replies in real time, InboxWa gives developers complete bidirectional control.</p>
+      <p class="lead">Whether pushing data from your backend or reacting to customer replies in real time, HelloBotz gives developers complete bidirectional control.</p>
     </div>
     
     <div class="api-diff">
@@ -48,8 +48,8 @@ include __DIR__ . '/../../includes/header.php';
           <span class="badge badge-primary" style="font-size:0.8rem">Outbound &amp; Actions</span>
           <h3 style="margin:0;font-size:1.35rem">REST API</h3>
         </div>
-        <p style="color:#4B5563;line-height:1.6">Your server requests InboxWa to perform an immediate action such as dispatching a template message, importing contacts, or triggering a chatbot flow.</p>
-        <div class="api-flow-mini" style="background:#F3F4F6;padding:0.75rem 1rem;border-radius:10px;font-family:monospace;font-size:0.85rem">Your App &rarr; HTTP POST &rarr; InboxWa API &rarr; WhatsApp Message</div>
+        <p style="color:#4B5563;line-height:1.6">Your server requests HelloBotz to perform an immediate action such as dispatching a template message, importing contacts, or triggering a chatbot flow.</p>
+        <div class="api-flow-mini" style="background:#F3F4F6;padding:0.75rem 1rem;border-radius:10px;font-family:monospace;font-size:0.85rem">Your App &rarr; HTTP POST &rarr; HelloBotz API &rarr; WhatsApp Message</div>
         <p class="api-ex"><strong>Key Endpoints:</strong> Send Message &middot; Trigger Flow &middot; Create Contact &middot; Query Conversations &middot; Retrieve Reports</p>
         <div style="margin-top:1rem"><strong style="color:var(--p2)">Model: Pull / Push on-demand</strong></div>
       </div>
@@ -59,8 +59,8 @@ include __DIR__ . '/../../includes/header.php';
           <span class="badge badge-primary" style="font-size:0.8rem;background:rgba(6,182,212,0.15);color:#0891B2">Inbound &amp; Real-time</span>
           <h3 style="margin:0;font-size:1.35rem">Event Webhooks</h3>
         </div>
-        <p style="color:#4B5563;line-height:1.6">InboxWa notifies your server instantaneously the exact millisecond an event occurs—such as a customer replying, reading a message, or opting in.</p>
-        <div class="api-flow-mini" style="background:#F3F4F6;padding:0.75rem 1rem;border-radius:10px;font-family:monospace;font-size:0.85rem">WhatsApp Event &rarr; InboxWa &rarr; HTTP POST &rarr; Your Webhook Listener</div>
+        <p style="color:#4B5563;line-height:1.6">HelloBotz notifies your server instantaneously the exact millisecond an event occurs—such as a customer replying, reading a message, or opting in.</p>
+        <div class="api-flow-mini" style="background:#F3F4F6;padding:0.75rem 1rem;border-radius:10px;font-family:monospace;font-size:0.85rem">WhatsApp Event &rarr; HelloBotz &rarr; HTTP POST &rarr; Your Webhook Listener</div>
         <p class="api-ex"><strong>Key Events:</strong> message.received &middot; message.delivered &middot; message.read &middot; template.approved &middot; flow.completed</p>
         <div style="margin-top:1rem"><strong style="color:#0891B2">Model: Real-time event streaming (&lt; 250ms)</strong></div>
       </div>
@@ -74,7 +74,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal">
       <span class="badge" style="background:rgba(6,182,212,0.2);color:#67E8F9;border:1px solid rgba(34,211,238,0.3)">Interactive Sandbox</span>
       <h2 style="color:#fff">Simulate an API Request</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Experience the sub-second execution cycle of InboxWa’s cloud messaging infrastructure.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Experience the sub-second execution cycle of HelloBotz’s cloud messaging infrastructure.</p>
     </div>
     <button type="button" class="btn btn-primary btn-lg" id="api-test" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:1.25rem">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -121,13 +121,13 @@ include __DIR__ . '/../../includes/header.php';
           <span class="api-code-dot api-code-dot--red"></span>
           <span class="api-code-dot api-code-dot--yellow"></span>
           <span class="api-code-dot api-code-dot--green"></span>
-          <span class="api-code-label" style="margin-left:8px">POST https://api.inboxwa.com/v1/messages</span>
+          <span class="api-code-label" style="margin-left:8px">POST https://api.hellobotz.com/v1/messages</span>
         </div>
         <button type="button" class="api-copy-btn" id="copy-code-btn">
           📋 Copy Code
         </button>
       </div>
-      <pre class="api-code" id="api-code-block"><code>curl -X POST "https://api.inboxwa.com/v1/messages" \
+      <pre class="api-code" id="api-code-block"><code>curl -X POST "https://api.hellobotz.com/v1/messages" \
   -H "Authorization: Bearer inb_live_sec_918050854445" \
   -H "Content-Type: application/json" \
   -d '{
@@ -192,7 +192,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="api-flow reveal">
       <span>1. Customer Sends Message</span><span class="arr">&rarr;</span>
       <span>2. Meta WhatsApp Cloud</span><span class="arr">&rarr;</span>
-      <span>3. InboxWa Ingestion</span><span class="arr">&rarr;</span>
+      <span>3. HelloBotz Ingestion</span><span class="arr">&rarr;</span>
       <span>4. Webhook HTTP POST</span><span class="arr">&rarr;</span>
       <span>5. Your Backend CRM / DB</span>
     </div>
@@ -206,7 +206,7 @@ include __DIR__ . '/../../includes/header.php';
         <div><span style="color:#A78BFA">EVENT:</span> message.received</div>
         <div><span style="color:#A78BFA">SENDER:</span> +91 98765 43210 (Karan Patel)</div>
         <div><span style="color:#A78BFA">PAYLOAD:</span> "Hi, I would like to book a consultation tomorrow at 3 PM"</div>
-        <div><span style="color:#A78BFA">DESTINATION:</span> https://crm.yourcompany.com/webhooks/inboxwa</div>
+        <div><span style="color:#A78BFA">DESTINATION:</span> https://crm.yourcompany.com/webhooks/hellobotz</div>
         <div><span style="color:#A78BFA">STATUS:</span> <strong style="color:#34D399">200 OK (Processed in 118ms)</strong></div>
       </div>
     </div>
@@ -218,7 +218,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Developer Solutions</span>
-      <h2>What Can You Build with InboxWa APIs?</h2>
+      <h2>What Can You Build with HelloBotz APIs?</h2>
       <p class="lead">From automated transactional alerts to two-way CRM sync, create tailored WhatsApp workflows.</p>
     </div>
 
@@ -268,7 +268,7 @@ include __DIR__ . '/../../includes/header.php';
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg>
         </div>
         <h3>AI Agent Custom Workflows</h3>
-        <p>Integrate your own LLM / LangChain / OpenAI agent with InboxWa’s messaging pipe for tailored conversational intelligence.</p>
+        <p>Integrate your own LLM / LangChain / OpenAI agent with HelloBotz’s messaging pipe for tailored conversational intelligence.</p>
       </div>
     </div>
   </div>
@@ -310,7 +310,7 @@ include __DIR__ . '/../../includes/header.php';
             <td style="padding:14px 18px;font-weight:700;color:#DC2626;font-family:monospace">401 Unauthorized</td>
             <td style="padding:14px 18px;">Auth Error</td>
             <td style="padding:14px 18px;">Invalid, expired, or missing Bearer API token.</td>
-            <td style="padding:14px 18px;color:#6B7280">Generate new API key in InboxWa Developer Dashboard.</td>
+            <td style="padding:14px 18px;color:#6B7280">Generate new API key in HelloBotz Developer Dashboard.</td>
           </tr>
           <tr style="border-bottom:1px solid #F3F4F6">
             <td style="padding:14px 18px;font-weight:700;color:#D97706;font-family:monospace">429 Rate Limit</td>
@@ -322,7 +322,7 @@ include __DIR__ . '/../../includes/header.php';
             <td style="padding:14px 18px;font-weight:700;color:#7C3AED;font-family:monospace">500 Server Error</td>
             <td style="padding:14px 18px;">Meta / Server</td>
             <td style="padding:14px 18px;">Meta WhatsApp Cloud downtime or upstream timeout.</td>
-            <td style="padding:14px 18px;color:#6B7280">InboxWa retries automatically with 5 retry intervals.</td>
+            <td style="padding:14px 18px;color:#6B7280">HelloBotz retries automatically with 5 retry intervals.</td>
           </tr>
         </tbody>
       </table>
@@ -375,7 +375,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark api-final">
   <div class="container" style="text-align:center">
     <div class="reveal">
-      <h2 style="color:#fff;margin-bottom:0.75rem;">Ready to Build with InboxWa APIs?</h2>
+      <h2 style="color:#fff;margin-bottom:0.75rem;">Ready to Build with HelloBotz APIs?</h2>
       <p class="lead" style="color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 1.75rem;">Get API credentials in minutes, explore comprehensive postman collections, and integrate enterprise WhatsApp automation.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="<?php echo $bp; ?>auth/register" class="btn btn-primary btn-lg">Generate Free API Keys &rarr;</a>

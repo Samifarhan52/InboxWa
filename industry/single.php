@@ -1,6 +1,6 @@
 <?php
 /**
- * Unified Industry Page Controller for InboxWa
+ * Unified Industry Page Controller for HelloBotz
  * High-conversion template for all 12 industries
  */
 $allIndustries = require __DIR__ . '/industry_data.php';
@@ -13,10 +13,10 @@ if (!isset($currentSlug) || !isset($allIndustries[$currentSlug])) {
 
 $ind = $allIndustries[$currentSlug];
 $basePath = '../../';
-$pageTitle = htmlspecialchars($ind['name']) . ' Communication Solutions | InboxWa';
+$pageTitle = htmlspecialchars($ind['name']) . ' Communication Solutions | HelloBotz';
 $pageDescription = htmlspecialchars($ind['meta_desc']);
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? ('/industry/' . $currentSlug . '/'), PHP_URL_PATH);
-$canonicalUrl = 'https://inboxwa.com' . ($reqPath ?: ('/industry/' . $currentSlug . '/'));
+$canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentSlug . '/'));
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -74,7 +74,7 @@ include __DIR__ . '/../includes/header.php';
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download Data
             </a>
-            <a href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20want%20to%20know%20more%20about%20WhatsApp%20messaging%20solutions%20for%20<?php echo urlencode($ind['name']); ?>" target="_blank" rel="noopener" class="industry-btn-wa">
+            <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20WhatsApp%20messaging%20solutions%20for%20<?php echo urlencode($ind['name']); ?>" target="_blank" rel="noopener" class="industry-btn-wa">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Chat on WhatsApp
             </a>
@@ -98,14 +98,14 @@ include __DIR__ . '/../includes/header.php';
 
         <div class="industry-hero-visual">
           <div class="industry-hero-img-wrap">
-            <img src="<?php echo htmlspecialchars($ind['hero_image']); ?>" alt="InboxWa <?php echo htmlspecialchars($ind['name']); ?> Solutions" width="1024" height="842" loading="eager">
+            <img src="<?php echo htmlspecialchars($ind['hero_image']); ?>" alt="HelloBotz <?php echo htmlspecialchars($ind['name']); ?> Solutions" width="1024" height="842" loading="eager">
           </div>
           <div class="industry-hero-floating-badge">
             <div class="industry-floating-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="industry-floating-text">
-              <strong>InboxWa <?php echo htmlspecialchars($ind['nav_name']); ?></strong>
+              <strong>HelloBotz <?php echo htmlspecialchars($ind['nav_name']); ?></strong>
               <span>Real-Time Omnichannel Automation</span>
             </div>
           </div>
@@ -171,7 +171,7 @@ include __DIR__ . '/../includes/header.php';
       <div class="stage-heading">
         <span class="stage-kicker">One Connected Growth &amp; Enrollment System</span>
         <h2 class="stage-display-title">Run every stage of enrollment on one connected system</h2>
-        <p class="stage-subtitle">Bring marketing, admissions, applications, payments and student engagement together on one purpose-built InboxWa platform.</p>
+        <p class="stage-subtitle">Bring marketing, admissions, applications, payments and student engagement together on one purpose-built HelloBotz platform.</p>
       </div>
 
       <!-- 5 TABS -->
@@ -190,7 +190,7 @@ include __DIR__ . '/../includes/header.php';
           <div class="stage-copy">
             <div class="stage-demo-label">Attract &amp; Capture</div>
             <h3>Every enquiry <br>captured, attributed, <br>and owned.</h3>
-            <p>Online, offline, partner and campaign demand lands in one connected pipeline, with source, attribution and ownership preserved from the moment an enquiry enters InboxWa.</p>
+            <p>Online, offline, partner and campaign demand lands in one connected pipeline, with source, attribution and ownership preserved from the moment an enquiry enters HelloBotz.</p>
             <div class="stage-features">
               <div class="stage-feature-item"><i>✓</i><span>Enquiries centralised across every channel and campaign.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Primary, secondary and tertiary source attribution.</span></div>
@@ -201,7 +201,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="InboxWa Attract and Capture Dashboard" src="/assets/images/home-meritto/attract-and-capture.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Attract and Capture Dashboard" src="/assets/images/home-meritto/attract-and-capture.png" loading="lazy">
           </div>
         </article>
 
@@ -215,13 +215,13 @@ include __DIR__ . '/../includes/header.php';
               <div class="stage-feature-item"><i>✓</i><span>Personalised marketing journeys triggered by intent and stage.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Lead scoring and prediction that ranks the pipeline.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Omnichannel nurture across WhatsApp, email, SMS and voice.</span></div>
-              <div class="stage-feature-item"><i>✓</i><span>InboxWa Live Chat for live counselling; InboxWa AI for always-on qualification.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>HelloBotz Live Chat for live counselling; HelloBotz AI for always-on qualification.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Smart lead distribution by programme, campus, language or performance.</span></div>
-              <div class="stage-feature-item"><i>✓</i><span>InboxWa AI Guide and Voice for autonomous engagement at scale.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>HelloBotz AI Guide and Voice for autonomous engagement at scale.</span></div>
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="InboxWa Engage and Nurture Dashboard" src="/assets/images/home-meritto/engage-and-nurture.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Engage and Nurture Dashboard" src="/assets/images/home-meritto/engage-and-nurture.png" loading="lazy">
           </div>
         </article>
 
@@ -241,7 +241,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="InboxWa Apply and Enroll Dashboard" src="/assets/images/home-meritto/apply-and-enroll.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Apply and Enroll Dashboard" src="/assets/images/home-meritto/apply-and-enroll.png" loading="lazy">
           </div>
         </article>
 
@@ -250,18 +250,18 @@ include __DIR__ . '/../includes/header.php';
           <div class="stage-copy">
             <div class="stage-demo-label">Collect &amp; Reconcile</div>
             <h3>Payment is part of enrollment, not a separate chase.</h3>
-            <p>InboxWa Pay connects fee collection to the student record, so reconciliation stops being a month-end reconstruction across disconnected systems and teams.</p>
+            <p>HelloBotz Pay connects fee collection to the student record, so reconciliation stops being a month-end reconstruction across disconnected systems and teams.</p>
             <div class="stage-features">
               <div class="stage-feature-item"><i>✓</i><span>Application, tuition, hostel, transport and event fees.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>One-time, partial, recurring and financed structures.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Payment links from CRM, portal and campaigns.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Real-time reconciliation against the student record.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Failure analytics and default tracking for finance.</span></div>
-              <div class="stage-feature-item"><i>✓</i><span>InboxWa Smart ID for identity, access and payments.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>HelloBotz Smart ID for identity, access and payments.</span></div>
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="InboxWa Collect and Reconcile Dashboard" src="/assets/images/home-meritto/collect-and-reconcile.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Collect and Reconcile Dashboard" src="/assets/images/home-meritto/collect-and-reconcile.png" loading="lazy">
           </div>
         </article>
 
@@ -270,18 +270,18 @@ include __DIR__ . '/../includes/header.php';
           <div class="stage-copy">
             <div class="stage-demo-label">Unlock Intelligence</div>
             <h3>One view of the funnel, and the context that makes AI useful.</h3>
-            <p>Enquiries, conversations, applications and payments in one system means leadership sees the whole picture, and InboxWa AI reasons over real institutional context.</p>
+            <p>Enquiries, conversations, applications and payments in one system means leadership sees the whole picture, and HelloBotz AI reasons over real institutional context.</p>
             <div class="stage-features">
               <div class="stage-feature-item"><i>✓</i><span>Live dashboards from enquiry quality to fee realisation.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Marketing ROI by source, publisher and campaign.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Turnaround time, stage conversion and drop-off analysis.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Programme, campus and vertical performance in one builder.</span></div>
-              <div class="stage-feature-item"><i>✓</i><span>InboxWa AI Coach surfacing next-best actions for counsellors.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>HelloBotz AI Coach surfacing next-best actions for counsellors.</span></div>
               <div class="stage-feature-item"><i>✓</i><span>Every module deepens the context intelligence works from.</span></div>
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="InboxWa Reports and Analysis Dashboard" src="/assets/images/home-meritto/reports-and-analysis.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Reports and Analysis Dashboard" src="/assets/images/home-meritto/reports-and-analysis.png" loading="lazy">
           </div>
         </article>
       </div>
@@ -296,7 +296,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
       <div class="industry-section-header">
         <h2>Enterprise-Grade WhatsApp Solutions for <br><?php echo htmlspecialchars($ind['name']); ?></h2>
-        <p>Built for scale, speed, and continuous customer satisfaction. Discover how InboxWa streamlines your operations.</p>
+        <p>Built for scale, speed, and continuous customer satisfaction. Discover how HelloBotz streamlines your operations.</p>
       </div>
 
       <?php foreach ($ind['features'] as $fIdx => $feat): ?>
@@ -376,7 +376,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
       <div class="industry-section-header">
         <h2>Got Questions? We’ve Got Answers!</h2>
-        <p>Everything you need to know about implementing InboxWa in <?php echo htmlspecialchars($ind['name']); ?>.</p>
+        <p>Everything you need to know about implementing HelloBotz in <?php echo htmlspecialchars($ind['name']); ?>.</p>
       </div>
 
       <div class="industry-faq-list">
@@ -402,7 +402,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
       <div class="industry-cta-banner">
         <h2>Transform Your <?php echo htmlspecialchars($ind['name']); ?> Communication</h2>
-        <p>Join hundreds of high-growth businesses using InboxWa to automate customer engagement, scale conversions, and build lasting loyalty.</p>
+        <p>Join hundreds of high-growth businesses using HelloBotz to automate customer engagement, scale conversions, and build lasting loyalty.</p>
         <div class="industry-cta-actions">
           <button type="button" class="industry-btn-white" onclick="openIndustryModal('CTA Banner - <?php echo addslashes($ind['name']); ?>')">
             Get Started Free
@@ -411,7 +411,7 @@ include __DIR__ . '/../includes/header.php';
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Data
           </a>
-          <a href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20want%20to%20schedule%20a%20demo%20for%20<?php echo urlencode($ind['name']); ?>" target="_blank" rel="noopener" class="industry-btn-ghost">
+          <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20want%20to%20schedule%20a%20demo%20for%20<?php echo urlencode($ind['name']); ?>" target="_blank" rel="noopener" class="industry-btn-ghost">
             Chat with an Expert
           </a>
         </div>

@@ -2,7 +2,7 @@
 $basePath = '../';
 $robots = 'noindex, nofollow';
 $pageTitle = 'Create Account';
-$pageDescription = 'Create your InboxWa account and start with Official WhatsApp Business API, inbox and automation.';
+$pageDescription = 'Create your HelloBotz account and start with Official WhatsApp Business API, inbox and automation.';
 $canonicalUrl = '/auth/register';
 include __DIR__ . '/../includes/header.php';
 ?>

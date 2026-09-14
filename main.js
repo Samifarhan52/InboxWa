@@ -1,5 +1,5 @@
 /**
- * InboxWa – Main JavaScript
+ * HelloBotz – Main JavaScript
  * Single reusable module for all pages
  */
 
@@ -265,7 +265,7 @@
     const widget = $('.wa-widget');
     if (!widget) return;
     // HelloBotz Robot Chatbot has its own dedicated controller
-    if (widget.id === 'inboxwa-robot-widget') return;
+    if (widget.id === 'hellobotz-robot-widget') return;
 
     const btn = widget.querySelector('.wa-widget-btn');
     if (!btn) return;

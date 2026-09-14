@@ -4,9 +4,9 @@ require_once __DIR__ . '/../config/cms.php';
 
 $locations = cms_locations();
 
-$pageTitle = 'WhatsApp Business API Locations & Global Coverage | InboxWa';
+$pageTitle = 'WhatsApp Business API Locations & Global Coverage | HelloBotz';
 $pageDescription = 'Official WhatsApp Business API, AI chatbots, and multi-agent CRM available across India, Middle East, Europe, North America, and globally.';
-$canonicalUrl = 'https://inboxwa.com/locations/';
+$canonicalUrl = 'https://hellobotz.com/locations/';
 
 include __DIR__ . '/../includes/header.php';
 ?>

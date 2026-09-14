@@ -1,6 +1,6 @@
 <?php
 /**
- * InboxWa Secure Console & Full CMS Database Engine
+ * HelloBotz Secure Console & Full CMS Database Engine
  * Compatible with local SQLite and serverless /tmp storage
  */
 declare(strict_types=1);
@@ -27,13 +27,13 @@ function hb_get_db_path(): string {
     return $tmpFile;
 }
 
-if (!defined('INBOXWA_AUTH_SALT')) {
-    define('INBOXWA_AUTH_SALT', 'inboxwa_vault_salt_sec_918050854445_elavatex');
+if (!defined('HELLOBOTZ_AUTH_SALT')) {
+    define('HELLOBOTZ_AUTH_SALT', 'inboxwa_vault_salt_sec_918050854445_elavatex');
 }
 
 function hb_pack_vault(array $data): string {
     $json = json_encode($data);
-    $sig = hash_hmac('sha256', $json, INBOXWA_AUTH_SALT);
+    $sig = hash_hmac('sha256', $json, HELLOBOTZ_AUTH_SALT);
     return base64_encode($json . '::' . $sig);
 }
 
@@ -43,7 +43,7 @@ function hb_unpack_vault(?string $raw): ?array {
     $decoded = base64_decode($raw);
     if (!$decoded || !str_contains($decoded, '::')) return null;
     [$json, $sig] = explode('::', $decoded, 2);
-    $expected = hash_hmac('sha256', $json, INBOXWA_AUTH_SALT);
+    $expected = hash_hmac('sha256', $json, HELLOBOTZ_AUTH_SALT);
     if (!hash_equals($expected, $sig)) return null;
     $arr = json_decode($json, true);
     return is_array($arr) ? $arr : null;
@@ -127,7 +127,7 @@ function hb_pdo(): PDO {
             excerpt TEXT,
             content TEXT,
             image TEXT,
-            author TEXT DEFAULT 'InboxWa Team',
+            author TEXT DEFAULT 'HelloBotz Team',
             status TEXT DEFAULT 'published',
             views INTEGER DEFAULT 0,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -208,7 +208,7 @@ function hb_pdo(): PDO {
             name TEXT NOT NULL,
             description TEXT,
             version TEXT DEFAULT '1.0.0',
-            author TEXT DEFAULT 'InboxWa Core',
+            author TEXT DEFAULT 'HelloBotz Core',
             status TEXT DEFAULT 'active',
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
         );
@@ -277,14 +277,14 @@ function hb_pdo(): PDO {
         $defaultSettings = [
             'admin_user' => 'admin',
             'admin_pass' => 'admin123',
-            'site_title' => 'InboxWa',
+            'site_title' => 'HelloBotz',
             'site_tagline' => 'WhatsApp Marketing & Automation Platform',
             'support_whatsapp' => '918050854445',
             'phone_number' => '+91 80508 54445',
-            'notification_email' => 'mail@inboxwa.com',
-            'sales_email' => 'mail@inboxwa.com',
-            'support_email' => 'support@inboxwa.com',
-            'office_address' => 'InboxWa AI Technologies Pvt Ltd, Bangalore, India',
+            'notification_email' => 'mail@hellobotz.com',
+            'sales_email' => 'mail@hellobotz.com',
+            'support_email' => 'support@hellobotz.com',
+            'office_address' => 'HelloBotz AI Technologies Pvt Ltd, Bangalore, India',
             'webhook_url' => '',
             'ga_id' => '',
             'meta_pixel_id' => '',
@@ -297,9 +297,9 @@ function hb_pdo(): PDO {
             'logo_footer_url' => '/assets/images/logo-footer.png',
             'favicon_url' => '/assets/images/favicon-32x32.png',
             'social_whatsapp' => 'https://wa.me/918050854445',
-            'social_facebook' => 'https://facebook.com/inboxwa',
-            'social_instagram' => 'https://instagram.com/inboxwa',
-            'social_linkedin' => 'https://linkedin.com/company/inboxwa',
+            'social_facebook' => 'https://facebook.com/hellobotz',
+            'social_instagram' => 'https://instagram.com/hellobotz',
+            'social_linkedin' => 'https://linkedin.com/company/hellobotz',
             'social_youtube' => '',
             'social_twitter' => ''
         ];
@@ -336,13 +336,13 @@ function hb_pdo(): PDO {
             ['stats', 'stat3_label', 'Bot coverage'],
             ['stats', 'stat4_val', '1 inbox'],
             ['stats', 'stat4_label', 'All channels'],
-            ['simulator', 'bot_greeting', "👋 Hello! Welcome to InboxWa. How can we help automate your business today?"],
+            ['simulator', 'bot_greeting', "👋 Hello! Welcome to HelloBotz. How can we help automate your business today?"],
             ['simulator', 'btn1', "🤖 AI Chatbot for Leads"],
             ['simulator', 'btn2', "📢 Broadcast Campaigns"],
             ['simulator', 'btn3', "👥 Shared Team Inbox"],
-            ['simulator', 'bot_response', "Great choice! InboxWa equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification."],
+            ['simulator', 'bot_response', "Great choice! HelloBotz equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification."],
             ['cta_banner', 'title', 'Ready to turn customer conversations into revenue?'],
-            ['cta_banner', 'lead', 'Join fast-growing companies using InboxWa for WhatsApp marketing, AI automation, and omnichannel support.'],
+            ['cta_banner', 'lead', 'Join fast-growing companies using HelloBotz for WhatsApp marketing, AI automation, and omnichannel support.'],
             ['cta_banner', 'btn_text', 'Start Free 14-Day Trial'],
             ['cta_banner', 'btn_link', '/auth/register']
         ];
@@ -425,9 +425,9 @@ function hb_pdo(): PDO {
                 'whatsapp-api-guide',
                 'Guide',
                 'How businesses use Official WhatsApp Business API for support, marketing and sales at scale.',
-                "<h2>Introduction to WhatsApp Business API</h2>\n<p>Official WhatsApp Business API enables companies to connect their communication stack directly to over 2.7 billion active WhatsApp users worldwide. Unlike standard personal apps or unofficial web wrappers, the Official Cloud API guarantees high deliverability, verified green-tick branding, and seamless multi-agent team inboxes.</p>\n<h2>Key Advantages for Businesses</h2>\n<ul>\n<li><strong>Shared Team Inboxes:</strong> Multiple agents can answer chats simultaneously from a single company phone number.</li>\n<li><strong>Automated Workflows:</strong> Build interactive chatbot journeys, auto-replies, and customer lead qualification without manual intervention.</li>\n<li><strong>Broadcasts & Notifications:</strong> Send order updates, payment confirmations, and promotional templates with 98% open rates.</li>\n</ul>\n<h2>How InboxWa Helps You Get Started</h2>\n<p>InboxWa provides instant onboarding with official Meta Tech Partner verification, intuitive flow builders, and native CRM integrations so you can start engaging leads in minutes.</p>",
+                "<h2>Introduction to WhatsApp Business API</h2>\n<p>Official WhatsApp Business API enables companies to connect their communication stack directly to over 2.7 billion active WhatsApp users worldwide. Unlike standard personal apps or unofficial web wrappers, the Official Cloud API guarantees high deliverability, verified green-tick branding, and seamless multi-agent team inboxes.</p>\n<h2>Key Advantages for Businesses</h2>\n<ul>\n<li><strong>Shared Team Inboxes:</strong> Multiple agents can answer chats simultaneously from a single company phone number.</li>\n<li><strong>Automated Workflows:</strong> Build interactive chatbot journeys, auto-replies, and customer lead qualification without manual intervention.</li>\n<li><strong>Broadcasts & Notifications:</strong> Send order updates, payment confirmations, and promotional templates with 98% open rates.</li>\n</ul>\n<h2>How HelloBotz Helps You Get Started</h2>\n<p>HelloBotz provides instant onboarding with official Meta Tech Partner verification, intuitive flow builders, and native CRM integrations so you can start engaging leads in minutes.</p>",
                 '/assets/images/home/whatsapp-api.webp',
-                'InboxWa Team',
+                'HelloBotz Team',
                 'published',
                 420,
                 date('Y-m-d H:i:s', strtotime('-10 days'))
@@ -439,7 +439,7 @@ function hb_pdo(): PDO {
                 'Practical architectures for 24/7 customer service and conversational sales without coding.',
                 "<h2>The Power of Conversational Automation</h2>\n<p>Customers today expect immediate replies. Waiting hours for an email or agent response results in abandoned purchases and cold leads. Automated chatbots bridge this gap by qualifying requirements instantly 24 hours a day.</p>\n<h2>Designing Your First Flow</h2>\n<p>Start with common queries: product catalog requests, appointment scheduling, and order status tracking. Ensure you always offer an instant hand-off to a live human representative.</p>",
                 '/assets/images/home/workflow-ui.webp',
-                'InboxWa Team',
+                'HelloBotz Team',
                 'published',
                 380,
                 date('Y-m-d H:i:s', strtotime('-8 days'))
@@ -449,9 +449,9 @@ function hb_pdo(): PDO {
                 'whatsapp-crm-leads',
                 'CRM',
                 'Organize contacts, track sales pipelines, and prevent prospect leakage inside WhatsApp.',
-                "<h2>Why Traditional CRMs Fall Short for Chat</h2>\n<p>Traditional CRMs are built around emails and phone calls. Modern sales cycles happen in fast, interactive WhatsApp threads. InboxWa embeds a full Kanban sales pipeline directly inside your chat workspace.</p>",
+                "<h2>Why Traditional CRMs Fall Short for Chat</h2>\n<p>Traditional CRMs are built around emails and phone calls. Modern sales cycles happen in fast, interactive WhatsApp threads. HelloBotz embeds a full Kanban sales pipeline directly inside your chat workspace.</p>",
                 '/assets/images/home/crm-ui.webp',
-                'InboxWa Team',
+                'HelloBotz Team',
                 'published',
                 290,
                 date('Y-m-d H:i:s', strtotime('-6 days'))
@@ -463,7 +463,7 @@ function hb_pdo(): PDO {
                 'Why WhatsApp broadcast campaigns achieve 4x to 8x higher open rates than email marketing.',
                 "<h2>Email Fatigue vs WhatsApp Immediacy</h2>\n<p>With average marketing email open rates lingering below 20%, businesses need more direct communication. WhatsApp messages achieve an astonishing 98% open rate, with the vast majority read within the first 5 minutes of delivery.</p>",
                 '/assets/images/home/broadcast-ui.webp',
-                'InboxWa Team',
+                'HelloBotz Team',
                 'published',
                 310,
                 date('Y-m-d H:i:s', strtotime('-5 days'))
@@ -475,7 +475,7 @@ function hb_pdo(): PDO {
                 'Recover abandoned carts, send automated dispatch tracking, and drive repeat purchases.',
                 "<h2>Recovering Abandoned Carts</h2>\n<p>Automated WhatsApp notifications with 1-click checkout recovery links recover up to 35% of abandoned carts in Shopify and WooCommerce stores.</p>",
                 '/assets/images/ecom_cart_recovery_banner.jpg',
-                'InboxWa Team',
+                'HelloBotz Team',
                 'published',
                 275,
                 date('Y-m-d H:i:s', strtotime('-4 days'))
@@ -491,7 +491,7 @@ function hb_pdo(): PDO {
     if ($tCount === 0) {
         $tStmt = $pdo->prepare("INSERT INTO testimonials (name, role, company, avatar, rating, quote, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $seedTestimonials = [
-            ['Aditya Singhania', 'Head of Growth', 'Zenith Retail Brands', '', 5, 'Switching to InboxWa increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered ₹18 Lakhs in the first quarter.', 1],
+            ['Aditya Singhania', 'Head of Growth', 'Zenith Retail Brands', '', 5, 'Switching to HelloBotz increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered ₹18 Lakhs in the first quarter.', 1],
             ['Priya Natarajan', 'Customer Experience Director', 'CarePulse Health', '', 5, 'Our clinic appointment no-shows dropped from 28% to less than 4% once we automated calendar confirmations and pre-visit reminders over WhatsApp.', 2],
             ['Farhan Al-Zaidi', 'Operations VP', 'Apex Gulf Properties', '', 5, 'Official Meta API verification was seamless. Our sales agents manage over 4,000 property buyer conversations per week smoothly inside one centralized dashboard.', 3]
         ];
@@ -540,11 +540,11 @@ function hb_pdo(): PDO {
     if ($pluginCount === 0) {
         $pIns = $pdo->prepare("INSERT INTO plugins (slug, name, description, version, author, status) VALUES (?, ?, ?, ?, ?, ?)");
         $seedPlugins = [
-            ['whatsapp-cloud-api', 'WhatsApp Cloud API Gateway', 'Official Meta Graph API gateway handling high-throughput webhooks, verified templates, and interactive button messages.', '3.2.0', 'InboxWa Core', 'active'],
-            ['ai-flow-builder', 'Conversational AI Flow Builder', 'Visual drag-and-drop conversational designer with intent recognition, entity capture, and OpenAI GPT integration.', '2.8.4', 'InboxWa AI', 'active'],
-            ['lead-capture', 'Omnichannel Lead Capture & CRM Sync', 'Embeds interactive inquiry forms, smart appointment scheduling, and CRM pipeline tracking in WhatsApp chats.', '2.1.0', 'InboxWa Automations', 'active'],
-            ['woocommerce-sync', 'WooCommerce & Shopify Cart Recovery', 'Syncs orders, triggers automatic abandoned cart recovery WhatsApp messages, and provides dispatch updates.', '1.9.5', 'InboxWa Commerce', 'active'],
-            ['sheets-connector', 'Google Sheets Live Connector', 'Automatically appends newly captured leads, demo bookings, and marketing responses to connected Google Spreadsheets.', '1.5.0', 'InboxWa Integrations', 'inactive'],
+            ['whatsapp-cloud-api', 'WhatsApp Cloud API Gateway', 'Official Meta Graph API gateway handling high-throughput webhooks, verified templates, and interactive button messages.', '3.2.0', 'HelloBotz Core', 'active'],
+            ['ai-flow-builder', 'Conversational AI Flow Builder', 'Visual drag-and-drop conversational designer with intent recognition, entity capture, and OpenAI GPT integration.', '2.8.4', 'HelloBotz AI', 'active'],
+            ['lead-capture', 'Omnichannel Lead Capture & CRM Sync', 'Embeds interactive inquiry forms, smart appointment scheduling, and CRM pipeline tracking in WhatsApp chats.', '2.1.0', 'HelloBotz Automations', 'active'],
+            ['woocommerce-sync', 'WooCommerce & Shopify Cart Recovery', 'Syncs orders, triggers automatic abandoned cart recovery WhatsApp messages, and provides dispatch updates.', '1.9.5', 'HelloBotz Commerce', 'active'],
+            ['sheets-connector', 'Google Sheets Live Connector', 'Automatically appends newly captured leads, demo bookings, and marketing responses to connected Google Spreadsheets.', '1.5.0', 'HelloBotz Integrations', 'inactive'],
         ];
         foreach ($seedPlugins as $sp) {
             $pIns->execute($sp);
@@ -576,7 +576,7 @@ function hb_pdo(): PDO {
                 1,
                 'Hello world!',
                 'An ElavateX User',
-                'support@inboxwa.com',
+                'support@hellobotz.com',
                 'https://elavatex.com',
                 '127.0.0.1',
                 'Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from Gravatar.',
@@ -650,15 +650,15 @@ function hb_pdo(): PDO {
     if ($pgCount === 0) {
         $pgIns = $pdo->prepare("INSERT INTO pages (title, slug, content, template, meta_title, meta_description, status, author) VALUES (?, ?, ?, ?, ?, ?, 'published', 'admin')");
         $seedPages = [
-            ['Home', '/', 'Official WhatsApp Business API, AI Chatbot & Omnichannel Marketing Platform.', 'home', 'InboxWa – WhatsApp Automation & AI Chatbots', 'Scale customer engagement with verified Meta WhatsApp API and AI chatbots.'],
-            ['Solutions – WhatsApp API', '/solutions/whatsapp-api/', 'Complete enterprise WhatsApp API solutions with shared inbox and broadcasts.', 'default', 'WhatsApp API Solutions | InboxWa', 'Official Meta WhatsApp Business API for high-growth enterprises.'],
-            ['Pricing & Plans', '/pricing/', 'Transparent pricing for WhatsApp API, AI bots and multi-agent seats.', 'default', 'InboxWa Pricing – Plans & Addons', 'Simple transparent pricing starting at ₹1,999/month.'],
-            ['Blog & Insights', '/resources/blog/', 'Latest articles, strategies and updates for WhatsApp marketing.', 'default', 'Blog & Industry Insights | InboxWa', 'Actionable guides and strategies for conversational sales.'],
-            ['Business Leads Directory', '/business-leads/', 'Verified B2B business leads directory across 16 major categories.', 'default', 'Business Leads Directory | InboxWa', 'Find verified high-intent business leads in India and UAE.'],
-            ['Contact Sales & Support', '/contact/', 'Talk to our product specialists and technical support engineers.', 'default', 'Contact Us | InboxWa', 'Get in touch with InboxWa sales and technical support.'],
-            ['Instagram Channel', '/channel/instagram/', 'Automate Instagram DMs and comment-to-DM flows seamlessly.', 'channel', 'Instagram DM Automation | InboxWa', 'Turn Instagram comments and story mentions into automated sales.'],
-            ['Telegram Channel', '/channel/telegram/', 'Broadcast to unlimited Telegram subscribers with rich bots.', 'channel', 'Telegram Bot Automation | InboxWa', 'Build high-volume Telegram automation and customer support bots.'],
-            ['Facebook Channel', '/channel/facebook/', 'Connect Messenger to unified shared team inboxes.', 'channel', 'Facebook Messenger Automation | InboxWa', 'Omnichannel Facebook Messenger customer support and auto-replies.']
+            ['Home', '/', 'Official WhatsApp Business API, AI Chatbot & Omnichannel Marketing Platform.', 'home', 'HelloBotz – WhatsApp Automation & AI Chatbots', 'Scale customer engagement with verified Meta WhatsApp API and AI chatbots.'],
+            ['Solutions – WhatsApp API', '/solutions/whatsapp-api/', 'Complete enterprise WhatsApp API solutions with shared inbox and broadcasts.', 'default', 'WhatsApp API Solutions | HelloBotz', 'Official Meta WhatsApp Business API for high-growth enterprises.'],
+            ['Pricing & Plans', '/pricing/', 'Transparent pricing for WhatsApp API, AI bots and multi-agent seats.', 'default', 'HelloBotz Pricing – Plans & Addons', 'Simple transparent pricing starting at ₹1,999/month.'],
+            ['Blog & Insights', '/resources/blog/', 'Latest articles, strategies and updates for WhatsApp marketing.', 'default', 'Blog & Industry Insights | HelloBotz', 'Actionable guides and strategies for conversational sales.'],
+            ['Business Leads Directory', '/business-leads/', 'Verified B2B business leads directory across 16 major categories.', 'default', 'Business Leads Directory | HelloBotz', 'Find verified high-intent business leads in India and UAE.'],
+            ['Contact Sales & Support', '/contact/', 'Talk to our product specialists and technical support engineers.', 'default', 'Contact Us | HelloBotz', 'Get in touch with HelloBotz sales and technical support.'],
+            ['Instagram Channel', '/channel/instagram/', 'Automate Instagram DMs and comment-to-DM flows seamlessly.', 'channel', 'Instagram DM Automation | HelloBotz', 'Turn Instagram comments and story mentions into automated sales.'],
+            ['Telegram Channel', '/channel/telegram/', 'Broadcast to unlimited Telegram subscribers with rich bots.', 'channel', 'Telegram Bot Automation | HelloBotz', 'Build high-volume Telegram automation and customer support bots.'],
+            ['Facebook Channel', '/channel/facebook/', 'Connect Messenger to unified shared team inboxes.', 'channel', 'Facebook Messenger Automation | HelloBotz', 'Omnichannel Facebook Messenger customer support and auto-replies.']
         ];
         foreach ($seedPages as $sp) {
             $pgIns->execute($sp);
@@ -720,7 +720,7 @@ function hb_pdo(): PDO {
 function hb_get_active_credentials(): array {
     $user = hb_get_setting('admin_user', 'admin');
     $pass = hb_get_setting('admin_pass', 'admin123');
-    $email = hb_get_setting('admin_email', hb_get_setting('notification_email', 'mail@inboxwa.com'));
+    $email = hb_get_setting('admin_email', hb_get_setting('notification_email', 'mail@hellobotz.com'));
     $isChanged = hb_get_setting('admin_pass_changed', '0') === '1';
 
     // 1. Check signed cookie vault
@@ -1135,7 +1135,7 @@ function hb_save_page(array $data): int {
     }
     $content = $data['content'] ?? '';
     $template = $data['template'] ?? 'default';
-    $metaTitle = $data['meta_title'] ?? ($title . ' | InboxWa');
+    $metaTitle = $data['meta_title'] ?? ($title . ' | HelloBotz');
     $metaDesc = $data['meta_description'] ?? '';
     $status = $data['status'] ?? 'published';
     $author = $data['author'] ?? 'admin';
@@ -1447,7 +1447,7 @@ function hb_github_sync_push(string $commitMsg = 'CMS update via Admin'): array 
     if (empty($token)) {
         return ['ok' => false, 'error' => 'No GitHub token configured. Please enter your GitHub Personal Access Token in Settings > Cloud Sync.'];
     }
-    $repo = trim((string)hb_get_setting('github_repo', 'Samifarhan52/InboxWa'));
+    $repo = trim((string)hb_get_setting('github_repo', 'Samifarhan52/HelloBotz'));
     $path = 'config/cms_state.json';
     $state = hb_export_cms_state();
     $content = json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
@@ -1461,7 +1461,7 @@ function hb_github_sync_push(string $commitMsg = 'CMS update via Admin'): array 
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTPHEADER => [
             "Authorization: Bearer {$token}",
-            "User-Agent: InboxWa-CMS-Vercel-Sync",
+            "User-Agent: HelloBotz-CMS-Vercel-Sync",
             "Accept: application/vnd.github.v3+json"
         ],
         CURLOPT_TIMEOUT => 8
@@ -1493,7 +1493,7 @@ function hb_github_sync_push(string $commitMsg = 'CMS update via Admin'): array 
         CURLOPT_POSTFIELDS => json_encode($payload),
         CURLOPT_HTTPHEADER => [
             "Authorization: Bearer {$token}",
-            "User-Agent: InboxWa-CMS-Vercel-Sync",
+            "User-Agent: HelloBotz-CMS-Vercel-Sync",
             "Accept: application/vnd.github.v3+json",
             "Content-Type: application/json"
         ],

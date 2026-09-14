@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Security';
 $pageDescription = 'How we approach data protection and access control for messaging platforms.';
-$canonicalUrl = 'https://inboxwa.com/company/security/';
+$canonicalUrl = 'https://hellobotz.com/company/security/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" aria-label="Breadcrumb" style="padding-top:0.75rem;padding-bottom:0.35rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Company</nav>

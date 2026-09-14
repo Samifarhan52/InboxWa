@@ -3,9 +3,9 @@ $basePath = '../../../';
 $bp = '../../../';
 require_once __DIR__ . '/../../../config/cms.php';
 
-$pageTitle = 'Instagram DM Automation & Comment-to-DM Platform | InboxWa';
+$pageTitle = 'Instagram DM Automation & Comment-to-DM Platform | HelloBotz';
 $pageDescription = 'Automate Instagram Direct Messages, auto-reply to Post & Reel comments, capture leads, and scale customer support with official Meta API compliance.';
-$canonicalUrl = 'https://inboxwa.com/channel/instagram/';
+$canonicalUrl = 'https://hellobotz.com/channel/instagram/';
 $ogImage = 'assets/images/channel/instagram/hero.png';
 
 include __DIR__ . '/../../../includes/header.php';
@@ -931,7 +931,7 @@ include __DIR__ . '/../../../includes/header.php';
 
       <div class="cig-hero-visual">
         <div class="cig-hero-img-wrap">
-          <img src="<?php echo $bp; ?>assets/images/channel/instagram/hero.png?v=20260909" alt="InboxWa Instagram DM Automation" class="cig-hero-img" loading="eager">
+          <img src="<?php echo $bp; ?>assets/images/channel/instagram/hero.png?v=20260909" alt="HelloBotz Instagram DM Automation" class="cig-hero-img" loading="eager">
         </div>
       </div>
     </div>
@@ -1250,7 +1250,7 @@ include __DIR__ . '/../../../includes/header.php';
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3>CRM & Contact Segmentation</h3>
-          <p>Automatically extract commenter phone numbers and emails directly into your InboxWa CRM database.</p>
+          <p>Automatically extract commenter phone numbers and emails directly into your HelloBotz CRM database.</p>
         </div>
 
         <div class="cig-cap-card">
@@ -1269,7 +1269,7 @@ include __DIR__ . '/../../../includes/header.php';
     <div class="cig-section-header">
       <span class="cig-badge-pill">Got Questions?</span>
       <h2 class="cig-section-title">Frequently Asked Questions</h2>
-      <p class="cig-section-subtitle">Everything you need to know about Instagram DM automation with InboxWa.</p>
+      <p class="cig-section-subtitle">Everything you need to know about Instagram DM automation with HelloBotz.</p>
     </div>
 
     <div class="cig-faq-item active">
@@ -1278,7 +1278,7 @@ include __DIR__ . '/../../../includes/header.php';
         <span class="cig-faq-icon">+</span>
       </button>
       <div class="cig-faq-content">
-        Yes, 100%. InboxWa connects directly to the official Meta Graph API for Instagram Business and Creator accounts. There is zero scraping or unapproved browser automation, ensuring your account is completely safe from shadowbans.
+        Yes, 100%. HelloBotz connects directly to the official Meta Graph API for Instagram Business and Creator accounts. There is zero scraping or unapproved browser automation, ensuring your account is completely safe from shadowbans.
       </div>
     </div>
 
@@ -1288,7 +1288,7 @@ include __DIR__ . '/../../../includes/header.php';
         <span class="cig-faq-icon">+</span>
       </button>
       <div class="cig-faq-content">
-        Yes! InboxWa supports comment-to-DM triggers for Instagram Reels, standard Feed posts, Carousel posts, and Live broadcasts.
+        Yes! HelloBotz supports comment-to-DM triggers for Instagram Reels, standard Feed posts, Carousel posts, and Live broadcasts.
       </div>
     </div>
 
@@ -1298,7 +1298,7 @@ include __DIR__ . '/../../../includes/header.php';
         <span class="cig-faq-icon">+</span>
       </button>
       <div class="cig-faq-content">
-        InboxWa includes smart frequency capping and anti-spam filters so users only receive one automated DM per campaign, preventing repetitive messaging.
+        HelloBotz includes smart frequency capping and anti-spam filters so users only receive one automated DM per campaign, preventing repetitive messaging.
       </div>
     </div>
 
@@ -1308,7 +1308,7 @@ include __DIR__ . '/../../../includes/header.php';
         <span class="cig-faq-icon">+</span>
       </button>
       <div class="cig-faq-content">
-        Yes! Whenever a customer asks for a human or has a question outside the bot flow, InboxWa seamlessly pauses the bot and notifies your team in the Unified Live Chat Inbox.
+        Yes! Whenever a customer asks for a human or has a question outside the bot flow, HelloBotz seamlessly pauses the bot and notifies your team in the Unified Live Chat Inbox.
       </div>
     </div>
   </section>
@@ -1377,14 +1377,14 @@ document.addEventListener('DOMContentLoaded', function() {
       bot: 'Hi! 🛍️ Here is our latest Spring/Summer Product Catalog featuring 150+ bestselling items with instant checkout links!<a href="#" class="cig-sim-btn">Browse Product Catalog ↗</a>'
     },
     'PRICE': {
-      user: 'Can I get the "<strong>PRICE</strong>" breakdown for InboxWa plans?',
+      user: 'Can I get the "<strong>PRICE</strong>" breakdown for HelloBotz plans?',
       publicReply: '💬 Public Reply: @user Sent full pricing details to your DM! 🏷️',
       bot: 'Hello! 🏷️ Our plans start at ₹999/month with unlimited DM automation, official Meta API connection, and 24/7 priority support.<a href="#" class="cig-sim-btn">View All Pricing Plans ↗</a>'
     },
     'INFO': {
       user: 'Need more "<strong>INFO</strong>" about how comment automation works.',
       publicReply: '💬 Public Reply: @user Sent complete onboarding guide! 📖',
-      bot: 'Hey! ℹ️ InboxWa helps you automate comment replies, auto-like interactions, send private DMs, and capture leads seamlessly with 1-click setup.<a href="#" class="cig-sim-btn">Read Integration Guide ↗</a>'
+      bot: 'Hey! ℹ️ HelloBotz helps you automate comment replies, auto-like interactions, send private DMs, and capture leads seamlessly with 1-click setup.<a href="#" class="cig-sim-btn">Read Integration Guide ↗</a>'
     }
   };
 

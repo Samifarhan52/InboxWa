@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Facebook Messenger Automation & Lead Ads Sync | InboxWa';
-$pageDescription = 'Connect your Facebook business pages, automatically save customer form details from your ads, chat in a single inbox, and send easy automated messages with InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/channel/facebook/';
+$pageTitle = 'Facebook Messenger Automation & Lead Ads Sync | HelloBotz';
+$pageDescription = 'Connect your Facebook business pages, automatically save customer form details from your ads, chat in a single inbox, and send easy automated messages with HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/channel/facebook/';
 $ogImage = 'assets/images/channel/facebook/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -723,7 +723,7 @@ include __DIR__ . '/../../includes/header.php';
 
       <div class="cfb-hero-visual">
         <div class="cfb-hero-img-wrap">
-          <img src="<?php echo $bp; ?>assets/images/channel/facebook/hero.png?v=20260909" alt="InboxWa Facebook Automation" class="cfb-hero-img" loading="eager">
+          <img src="<?php echo $bp; ?>assets/images/channel/facebook/hero.png?v=20260909" alt="HelloBotz Facebook Automation" class="cfb-hero-img" loading="eager">
         </div>
       </div>
     </div>
@@ -944,7 +944,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="cfb-step-card">
           <div class="cfb-step-number">02</div>
           <h4>Select Pages &amp; Ads</h4>
-          <p>Pick the Facebook pages and active ad campaigns you want to connect to InboxWa.</p>
+          <p>Pick the Facebook pages and active ad campaigns you want to connect to HelloBotz.</p>
         </div>
 
         <div class="cfb-step-card">
@@ -1032,20 +1032,20 @@ include __DIR__ . '/../../includes/header.php';
         <span class="cfb-badge-pill">FAQ</span>
         <h2 class="cfb-section-title">Frequently Asked Questions</h2>
         <p class="cfb-section-subtitle">
-          Everything you need to know about Facebook automation and lead syncing with InboxWa.
+          Everything you need to know about Facebook automation and lead syncing with HelloBotz.
         </p>
       </div>
 
       <div class="cfb-faq-list">
         <div class="cfb-faq-item active">
           <button type="button" class="cfb-faq-trigger">
-            <span>How does InboxWa connect to my Facebook Pages and Lead Ads?</span>
+            <span>How does HelloBotz connect to my Facebook Pages and Lead Ads?</span>
             <span class="cfb-faq-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </button>
           <div class="cfb-faq-content">
-            InboxWa connects using official Meta OAuth. You simply log in with your Facebook account, grant page and ad management permissions, and select the pages you want to automate. No technical knowledge or server setup is required.
+            HelloBotz connects using official Meta OAuth. You simply log in with your Facebook account, grant page and ad management permissions, and select the pages you want to automate. No technical knowledge or server setup is required.
           </div>
         </div>
 
@@ -1057,7 +1057,7 @@ include __DIR__ . '/../../includes/header.php';
             </span>
           </button>
           <div class="cfb-faq-content">
-            Submissions are received in real-time via Meta webhooks—typically within 1 to 2 seconds of a user submitting the instant form. InboxWa immediately triggers your configured auto-reply or sends the lead to your CRM.
+            Submissions are received in real-time via Meta webhooks—typically within 1 to 2 seconds of a user submitting the instant form. HelloBotz immediately triggers your configured auto-reply or sends the lead to your CRM.
           </div>
         </div>
 
@@ -1069,7 +1069,7 @@ include __DIR__ . '/../../includes/header.php';
             </span>
           </button>
           <div class="cfb-faq-content">
-            Yes! InboxWa can automatically like comments, post a public reply to boost post engagement, and send a private Messenger message or WhatsApp follow-up containing brochures, pricing, or checkout links.
+            Yes! HelloBotz can automatically like comments, post a public reply to boost post engagement, and send a private Messenger message or WhatsApp follow-up containing brochures, pricing, or checkout links.
           </div>
         </div>
 
@@ -1081,7 +1081,7 @@ include __DIR__ . '/../../includes/header.php';
             </span>
           </button>
           <div class="cfb-faq-content">
-            Absolutely. InboxWa operates exclusively via official Meta Graph API v20.0 endpoints. We never scrape, use unofficial browser extensions, or bypass platform rules, guaranteeing 100% compliance with Meta platform terms.
+            Absolutely. HelloBotz operates exclusively via official Meta Graph API v20.0 endpoints. We never scrape, use unofficial browser extensions, or bypass platform rules, guaranteeing 100% compliance with Meta platform terms.
           </div>
         </div>
 

@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Careers';
 $pageDescription = 'Join a team building omnichannel customer engagement for growing businesses.';
-$canonicalUrl = 'https://inboxwa.com/company/careers/';
+$canonicalUrl = 'https://hellobotz.com/company/careers/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" aria-label="Breadcrumb" style="padding-top:0.75rem;padding-bottom:0.35rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Company</nav>
@@ -23,7 +23,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </div>
 </section>
-<section class="section"><div class="container"><div class="card" style="max-width:640px;margin:0 auto"><p>We hire for product, engineering, success and sales. Email <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a> with your role interest.</p></div></div></section>
+<section class="section"><div class="container"><div class="card" style="max-width:640px;margin:0 auto"><p>We hire for product, engineering, success and sales. Email <a href="mailto:mail@hellobotz.com">mail@hellobotz.com</a> with your role interest.</p></div></div></section>
 <section class="section section-dark">
   <div class="container">
     <div class="section-header reveal" style="text-align:center">

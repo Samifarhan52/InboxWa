@@ -1,8 +1,8 @@
 <?php
 $basePath = "../../";
-$pageTitle = "Blog & Insights — InboxWa | WhatsApp API, AI Automation & Growth";
+$pageTitle = "Blog & Insights — HelloBotz | WhatsApp API, AI Automation & Growth";
 $pageDescription = "Actionable playbooks, architectural guides, and benchmarks on WhatsApp Cloud API, AI chatbots, CRM automation, and high-conversion broadcasts.";
-$canonicalUrl = "https://inboxwa.com/resources/blog/";
+$canonicalUrl = "https://hellobotz.com/resources/blog/";
 include __DIR__ . "/../../includes/header.php";
 
 $articles = [
@@ -121,7 +121,7 @@ $articles = [
     "tag" => "Comparison",
     "read_time" => "11 min read",
     "date" => "May 2026",
-    "title" => "InboxWa vs Legacy WhatsApp Tools: The 2026 Feature & Pricing Breakdown",
+    "title" => "HelloBotz vs Legacy WhatsApp Tools: The 2026 Feature & Pricing Breakdown",
     "excerpt" => "An honest architectural analysis of conversation markup fees, webhook latency, API uptime SLAs, AI bot capabilities, and team seat flexibility.",
     "icon" => "⚖️",
     "color" => "blue"
@@ -142,7 +142,7 @@ $articles = [
 <section class="res-hero">
   <div class="container">
     <span class="res-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Engineering & Growth Journal</span>
-    <h1>InboxWa Insights & Playbooks</h1>
+    <h1>HelloBotz Insights & Playbooks</h1>
     <p>Actionable guides, WhatsApp API architecture, conversational commerce strategies, and automation playbooks for scale-stage businesses.</p>
 
     <!-- Search Input -->
@@ -185,13 +185,13 @@ $articles = [
           <a href="/resources/blog/whatsapp-api-guide/" style="text-decoration:none;color:inherit">WhatsApp API for Business: Complete Architecture & Scale Guide</a>
         </h2>
         <p style="color:var(--t2);line-height:1.65;font-size:0.95rem;margin-bottom:1.5rem">
-          A comprehensive technical breakdown of Meta Cloud API registration, webhook verification, 24-hour customer service window mechanics, rate limits, and enterprise multi-agent ticket routing with InboxWa.
+          A comprehensive technical breakdown of Meta Cloud API registration, webhook verification, 24-hour customer service window mechanics, rate limits, and enterprise multi-agent ticket routing with HelloBotz.
         </p>
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid #F3F4F6;padding-top:1.25rem;">
           <div style="display:flex;align-items:center;gap:10px">
             <div style="width:36px;height:36px;border-radius:50%;background:#8B5CF622;color:#7C3AED;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.82rem">IW</div>
             <div>
-              <strong style="display:block;font-size:0.85rem;color:#111827">InboxWa Engineering</strong>
+              <strong style="display:block;font-size:0.85rem;color:#111827">HelloBotz Engineering</strong>
               <span style="font-size:0.75rem;color:var(--t3)">Cloud Infrastructure Team</span>
             </div>
           </div>
@@ -254,7 +254,7 @@ $articles = [
     <h2 style="font-size:1.85rem;font-weight:800;color:#0F172A;margin:0 0 0.75rem">Get WhatsApp API updates & growth benchmarks</h2>
     <p style="color:#64748B;font-size:0.98rem;max-width:560px;margin:0 auto 1.75rem;line-height:1.6">Join 2,500+ developers, growth marketers, and customer support directors receiving bi-weekly architectural breakdowns and Meta policy updates.</p>
     <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn-primary btn-lg" href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20want%20to%20subscribe%20to%20the%20growth%20newsletter" target="_blank" rel="noopener">
+      <a class="btn btn-primary btn-lg" href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20want%20to%20subscribe%20to%20the%20growth%20newsletter" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
         Subscribe via WhatsApp
       </a>

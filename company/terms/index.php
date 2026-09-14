@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
 $pageTitle = 'Terms of Service';
-$pageDescription = 'Terms governing use of InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/company/terms/';
+$pageDescription = 'Terms governing use of HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/company/terms/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" aria-label="Breadcrumb" style="padding-top:0.75rem;padding-bottom:0.35rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Company</nav>
@@ -11,7 +11,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal">
       <span class="badge badge-primary">Company</span>
       <h1>Terms of Service</h1>
-      <p class="lead">Terms governing use of InboxWa.</p>
+      <p class="lead">Terms governing use of HelloBotz.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Book Demo</a>
         <a href="/auth/register" class="btn btn-outline btn-lg">Start Free</a>
@@ -23,7 +23,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </div>
 </section>
-<section class="section"><div class="container" style="max-width:720px"><div class="card"><p>By using InboxWa you agree to lawful use of messaging channels, Meta policies, and accurate account information. Replace with counsel-approved terms before production.</p></div></div></section>
+<section class="section"><div class="container" style="max-width:720px"><div class="card"><p>By using HelloBotz you agree to lawful use of messaging channels, Meta policies, and accurate account information. Replace with counsel-approved terms before production.</p></div></div></section>
 <section class="section section-dark">
   <div class="container">
     <div class="section-header reveal" style="text-align:center">

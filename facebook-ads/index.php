@@ -3,9 +3,9 @@ if (!isset($basePath)) { $basePath = '../'; }
 if (!isset($bp)) { $bp = $basePath; }
 require_once __DIR__ . '/../config/cms.php';
 
-$pageTitle = 'Click to WhatsApp Ads (CTWA) | Facebook & Instagram Ads | InboxWa';
+$pageTitle = 'Click to WhatsApp Ads (CTWA) | Facebook & Instagram Ads | HelloBotz';
 $pageDescription = 'Turn Facebook & Instagram Ads into live WhatsApp conversations. Launch CTWA campaigns with a 3-step wizard, targeted ad sets, automated welcome messages, and real-time ROAS analytics.';
-$canonicalUrl = 'https://inboxwa.com/facebook-ads/';
+$canonicalUrl = 'https://hellobotz.com/facebook-ads/';
 $ogImage = 'assets/images/products/ctwa/hero.png';
 
 include __DIR__ . '/../includes/header.php';

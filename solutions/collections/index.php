@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Collections & Reminders';
 $pageDescription = 'Polite payment and document reminders on Official WhatsApp API.';
-$canonicalUrl = 'https://inboxwa.com/solutions/collections/';
+$canonicalUrl = 'https://hellobotz.com/solutions/collections/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Collections & Reminders</nav>

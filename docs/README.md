@@ -1,4 +1,4 @@
-# InboxWa
+# HelloBotz
 
 Premium omnichannel WhatsApp API platform site.
 

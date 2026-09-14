@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Message Templates Library — InboxWa';
+$pageTitle = 'WhatsApp Message Templates Library — HelloBotz';
 $pageDescription = 'High-converting, Meta-approved WhatsApp template designs for marketing broadcasts, utility order tracking, authentication OTPs, and customer support.';
-$canonicalUrl = 'https://inboxwa.com/resources/templates/';
+$canonicalUrl = 'https://hellobotz.com/resources/templates/';
 include __DIR__ . '/../../includes/header.php';
 
 $templates = [
@@ -32,7 +32,7 @@ $templates = [
     'meta_status' => 'Approved · High Quality',
     'has_media' => false,
     'body' => "Hi {{1}}! 🎉 Thank you for shopping with {{2}}.\n\nYour order *#{{3}}* has been confirmed and is being packed. Total Amount: *₹{{4}}*.\n\nYou can track the live courier progress below.",
-    'footer' => 'InboxWa Automated Delivery Alert',
+    'footer' => 'HelloBotz Automated Delivery Alert',
     'buttons' => [
       ['icon' => '📦', 'text' => 'Track Live Shipment'],
       ['icon' => '📄', 'text' => 'Download Invoice']
@@ -48,7 +48,7 @@ $templates = [
     'meta_status' => 'Approved · Zero Markup',
     'has_media' => false,
     'body' => "*{{1}}* is your verification code for {{2}}.\n\nFor security reasons, do not share this code with anyone. This code expires in *10 minutes*.",
-    'footer' => 'Security Notice: InboxWa Auth',
+    'footer' => 'Security Notice: HelloBotz Auth',
     'buttons' => [
       ['icon' => '🔐', 'text' => 'Copy Code ({{1}})']
     ],
@@ -132,7 +132,7 @@ $templates = [
     'has_media' => true,
     'media_text' => '🎙️ Speaker Session Artwork',
     'body' => "Starting in 15 minutes, {{1}}! 🚨\n\nWe are going live with *\"{{2}}\"* featuring {{3}}.\n\nGet your questions ready and click below to join the private stream room.",
-    'footer' => 'InboxWa Masterclass Series',
+    'footer' => 'HelloBotz Masterclass Series',
     'buttons' => [
       ['icon' => '🎥', 'text' => 'Join Live Zoom Room'],
       ['icon' => '📄', 'text' => 'Download Slide Deck']
@@ -172,7 +172,7 @@ $templates = [
   <div class="container">
     <span class="res-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> Meta-Approved Templates</span>
     <h1>WhatsApp Message Template Library</h1>
-    <p>Pre-approved, battle-tested WhatsApp templates for abandoned carts, transactional updates, OTP verification, and customer support. Ready to deploy into InboxWa.</p>
+    <p>Pre-approved, battle-tested WhatsApp templates for abandoned carts, transactional updates, OTP verification, and customer support. Ready to deploy into HelloBotz.</p>
 
     <!-- Search Input -->
     <div class="res-search-box" style="max-width:520px;margin:2rem auto 0">
@@ -258,7 +258,7 @@ $templates = [
             📋 Copy Template
           </button>
           <a class="btn btn-sm btn-primary" href="/auth/register" style="flex:1;text-align:center">
-            Use in InboxWa &rarr;
+            Use in HelloBotz &rarr;
           </a>
         </div>
       </div>

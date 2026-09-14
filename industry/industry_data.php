@@ -1,7 +1,7 @@
 <?php
 /**
  * Master Data Dictionary for the 12 Industries
- * Auto-generated with pure InboxWa branding
+ * Auto-generated with pure HelloBotz branding
  */
 
 return [
@@ -10,7 +10,7 @@ return [
     'name' => 'Banking & Finance',
     'nav_name' => 'Banking & Finance',
     'tagline' => 'Scale Trust & Secure Financial Communication with WhatsApp',
-    'meta_desc' => 'Secure Banking Messaging Solutions by InboxWA. We provide WhatsApp API and Bulk SMS for OTPs, transaction alerts, and insurance updates. Get a demo!',
+    'meta_desc' => 'Secure Banking Messaging Solutions by HelloBotz. We provide WhatsApp API and Bulk SMS for OTPs, transaction alerts, and insurance updates. Get a demo!',
     'hero_title' => 'Transform Banking with Cutting-Edge Solutions',
     'hero_lead' => 'We understand the banking and finance sector\'s unique compliance, security, and customer engagement requirements.',
     'hero_image' => '/assets/images/bfsi/bfsi-hero-branded.png',
@@ -116,7 +116,7 @@ return [
     'name' => 'Health & Wellness',
     'nav_name' => 'Health & Wellness',
     'tagline' => 'Empower Patient Care & Health Alerts with WhatsApp',
-    'meta_desc' => 'Enhance patient care with Healthcare Communication Solutions. InboxWA offers WhatsApp API and Bulk SMS for appointments, reports, and health alerts.',
+    'meta_desc' => 'Enhance patient care with Healthcare Communication Solutions. HelloBotz offers WhatsApp API and Bulk SMS for appointments, reports, and health alerts.',
     'hero_title' => 'Putting the Power of Mobile to Work in Health & Wellness',
     'hero_lead' => 'Enable real-time communication across multiple channels like email, SMS, and chat to keep patients informed and engaged throughout their healthcare journey.',
     'hero_image' => '/assets/images/industry/healthcare/hero.png',
@@ -192,7 +192,7 @@ return [
     ],
     'faqs' => [
       [
-        'q' => 'What types of health services can benefit from InboxWA solutions?',
+        'q' => 'What types of health services can benefit from HelloBotz solutions?',
         'a' => 'Our solutions are tailored to various health services, including hospitals, wellness centers, fitness programs, and insurance providers. We help streamline patient communication, improve engagement, and simplify document management through secure healthcare communication platforms.',
       ],
       [
@@ -204,11 +204,11 @@ return [
         'a' => 'Yes, our platform allows you to tailor messages based on patient profiles, preferences, and health conditions, ensuring relevant and personalized communication.',
       ],
       [
-        'q' => 'How quickly can I implement InboxWA solutions for my healthcare organization?',
+        'q' => 'How quickly can I implement HelloBotz solutions for my healthcare organization?',
         'a' => 'Our solutions are designed for quick deployment and integration. We offer seamless onboarding, and most features can be implemented within weeks to swiftly improve communication and patient engagement.',
       ],
       [
-        'q' => 'Can InboxWA help with telemedicine services?',
+        'q' => 'Can HelloBotz help with telemedicine services?',
         'a' => 'Yes, our solutions support telemedicine initiatives by enabling secure communication between healthcare providers and patients, allowing for appointment scheduling, virtual consultations, and follow-up reminders.',
       ],
     ],
@@ -218,7 +218,7 @@ return [
     'name' => 'Retail & E-commerce',
     'nav_name' => 'Retail & E-commerce',
     'tagline' => 'Drive Conversions & Repeat Orders with Automated Commerce Messaging',
-    'meta_desc' => 'Boost sales with E-commerce Messaging Solutions. InboxWA offers WhatsApp API and Bulk SMS for order alerts, cart recovery, and loyalty marketing.',
+    'meta_desc' => 'Boost sales with E-commerce Messaging Solutions. HelloBotz offers WhatsApp API and Bulk SMS for order alerts, cart recovery, and loyalty marketing.',
     'hero_title' => 'Empowering Retail with Seamless Engagement & Secure Transactions',
     'hero_lead' => 'Easily integrate with platforms like Shopify, WooCommerce, and Magento for a unified customer experience.',
     'hero_image' => '/assets/images/industry/retail-and-ecommerce/hero.png',
@@ -294,7 +294,7 @@ return [
     ],
     'faqs' => [
       [
-        'q' => 'How can InboxWA solutions enhance customer engagement?',
+        'q' => 'How can HelloBotz solutions enhance customer engagement?',
         'a' => 'Our solutions use personalized communication, real-time updates, and secure payment processing to improve customer satisfaction and retention.',
       ],
       [
@@ -310,7 +310,7 @@ return [
         'a' => 'We comply with PCI DSS standards and use advanced encryption to ensure secure payment transactions and protect sensitive data.',
       ],
       [
-        'q' => 'Can InboxWA help with telemedicine services?',
+        'q' => 'Can HelloBotz help with telemedicine services?',
         'a' => 'Yes, our solutions support telemedicine initiatives by enabling secure communication between healthcare providers and patients, allowing for appointment scheduling, virtual consultations, and follow-up reminders.',
       ],
     ],
@@ -320,7 +320,7 @@ return [
     'name' => 'Travel & Hospitality',
     'nav_name' => 'Travel & Hospitality',
     'tagline' => 'Seamless Guest Booking, Itinerary Updates & Concierge Support',
-    'meta_desc' => 'Enhance guest experiences with Travel Industry Messaging Solutions. InboxWA offers WhatsApp API and Bulk SMS for booking alerts and travel updates.',
+    'meta_desc' => 'Enhance guest experiences with Travel Industry Messaging Solutions. HelloBotz offers WhatsApp API and Bulk SMS for booking alerts and travel updates.',
     'hero_title' => 'Enhance Guest Experiences with Seamless Digital Solutions',
     'hero_lead' => 'Integrate multiple communication channels—SMS, email, WhatsApp, voice, and in-app messaging—for a seamless guest experience.',
     'hero_image' => '/assets/images/industry/travel-and-hospitality/hero.png',
@@ -422,7 +422,7 @@ return [
     'name' => 'Education & Social Impacts',
     'nav_name' => 'Education & Social Impacts',
     'tagline' => 'Connect Students, Parents & Communities with Real-Time Learning Alerts',
-    'meta_desc' => 'Empower learning with Education Messaging Solutions. InboxWA provides WhatsApp API, Bulk SMS, and AI chatbots for admissions, alerts, and social impact.',
+    'meta_desc' => 'Empower learning with Education Messaging Solutions. HelloBotz provides WhatsApp API, Bulk SMS, and AI chatbots for admissions, alerts, and social impact.',
     'hero_title' => 'Boost Learning & Social Engagement with Real-Time Communication',
     'hero_lead' => 'We provide secure, efficient, and scalable communication solutions designed to enhance learning, collaboration, and community engagement.',
     'hero_image' => '/assets/images/industry/education-and-social-impacts/hero.png',
@@ -520,7 +520,7 @@ return [
     'name' => 'Communication & IT',
     'nav_name' => 'Communication & IT',
     'tagline' => 'Automate IT Support, Developer Alerts & Enterprise Collaboration',
-    'meta_desc' => 'Scalable IT Communication Solutions for tech firms. InboxWA offers robust WhatsApp APIs, Bulk SMS, and AI chatbots for seamless SaaS integration.',
+    'meta_desc' => 'Scalable IT Communication Solutions for tech firms. HelloBotz offers robust WhatsApp APIs, Bulk SMS, and AI chatbots for seamless SaaS integration.',
     'hero_title' => 'Empowering Seamless Communication and Collaboration',
     'hero_lead' => 'Consolidate all communication channels in one platform, allowing real-time engagement across various platforms like WhatsApp, email, and chat.',
     'hero_image' => '/assets/images/industry/communication-and-it/hero.png',
@@ -596,7 +596,7 @@ return [
     ],
     'faqs' => [
       [
-        'q' => 'How does InboxWA enhance communication for IT teams?',
+        'q' => 'How does HelloBotz enhance communication for IT teams?',
         'a' => 'Our platform provides real-time messaging, secure file sharing, and instant alerts, improving collaboration and operational efficiency for IT teams.',
       ],
       [
@@ -608,7 +608,7 @@ return [
         'a' => 'Yes, our platform seamlessly integrates with existing CRMs, project management tools, and IT systems, ensuring a smooth workflow and communication process.',
       ],
       [
-        'q' => 'How quickly can I implement InboxWA solutions for my business?',
+        'q' => 'How quickly can I implement HelloBotz solutions for my business?',
         'a' => 'Our solutions are designed for quick deployment. Most features can be implemented within weeks, ensuring minimal disruption and faster benefits.',
       ],
       [
@@ -622,7 +622,7 @@ return [
     'name' => 'Food & Beverage',
     'nav_name' => 'Food & Beverage',
     'tagline' => 'Boost Dining Orders, Loyalty Rewards & Instant Table Reservations',
-    'meta_desc' => 'Boost orders with Food Industry Messaging Solutions. InboxWA offers WhatsApp API and Bulk SMS for order tracking, reservations, and loyalty marketing.',
+    'meta_desc' => 'Boost orders with Food Industry Messaging Solutions. HelloBotz offers WhatsApp API and Bulk SMS for order tracking, reservations, and loyalty marketing.',
     'hero_title' => 'Enhancing Engagement & Efficiency with Innovative Communication Tools',
     'hero_lead' => 'Enable communication through various channels such as WhatsApp, SMS, and email to ensure a cohesive brand experience.',
     'hero_image' => '/assets/images/industry/food-and-beverages/hero.png',
@@ -724,7 +724,7 @@ return [
     'name' => 'Advertising & Events',
     'nav_name' => 'Advertising & Events',
     'tagline' => 'Maximize Campaign Reach, Ticket Sales & Live Attendee Engagement',
-    'meta_desc' => 'Scale your events with InboxWA. We provide WhatsApp API and Bulk SMS solutions for advertising and event management. Automate RSVPs and engagement!',
+    'meta_desc' => 'Scale your events with HelloBotz. We provide WhatsApp API and Bulk SMS solutions for advertising and event management. Automate RSVPs and engagement!',
     'hero_title' => 'Transforming Advertising & Events with Seamless Engagement',
     'hero_lead' => 'Our end-to-end omnichannel communication solutions integrate multiple platforms, ensuring consistent messaging across all customer touchpoints.',
     'hero_image' => '/assets/images/industry/advertising-and-events/hero.png',
@@ -826,8 +826,8 @@ return [
     'name' => 'Construction & Real Estate',
     'nav_name' => 'Construction & Real Estate',
     'tagline' => 'Accelerate Property Inquiries, Site Visits & Buyer Conversations',
-    'meta_desc' => 'Construction & Real Estate Transform Client Engagement with InboxWA InboxWA provides advanced tools to revolutionize client communication and marketing in the construction and real estate sectors. Simplify processes, enhance interactions, and increase conversions effortlessly. Try it for free Explore Now Trusted by the world’s most ambitious teams. KEY FEATURES Client Communication and Scale property sales with Real Estate Messaging Solutions. InboxWA offers WhatsApp API, Bulk SMS, and AI chatbots for lead tracking and site visit alerts.',
-    'hero_title' => 'Transform Client Engagement with InboxWA',
+    'meta_desc' => 'Construction & Real Estate Transform Client Engagement with HelloBotz HelloBotz provides advanced tools to revolutionize client communication and marketing in the construction and real estate sectors. Simplify processes, enhance interactions, and increase conversions effortlessly. Try it for free Explore Now Trusted by the world’s most ambitious teams. KEY FEATURES Client Communication and Scale property sales with Real Estate Messaging Solutions. HelloBotz offers WhatsApp API, Bulk SMS, and AI chatbots for lead tracking and site visit alerts.',
+    'hero_title' => 'Transform Client Engagement with HelloBotz',
     'hero_lead' => 'We understand the unique challenges of the construction and real estate sectors, ensuring that our solutions are tailored to meet your specific needs.',
     'hero_image' => '/assets/images/industry/construction-and-real-estate/hero.png',
     'features' => [
@@ -928,7 +928,7 @@ return [
     'name' => 'Automobiles & Transport',
     'nav_name' => 'Automobiles & Transport',
     'tagline' => 'Streamline Service Bookings, Test Drives & Fleet Transit Updates',
-    'meta_desc' => 'Streamline transport and auto business with InboxWA. We offer WhatsApp API and Bulk SMS for service alerts, logistics tracking, and lead management.',
+    'meta_desc' => 'Streamline transport and auto business with HelloBotz. We offer WhatsApp API and Bulk SMS for service alerts, logistics tracking, and lead management.',
     'hero_title' => 'Drive Efficiency in Automobiles & Transport with Tailored Technology Solutions',
     'hero_lead' => 'We understand the unique demands of the automobile and transport sector, delivering solutions that enhance operations and customer interactions.',
     'hero_image' => '/assets/images/industry/automobiles-and-transport/hero.png',
@@ -1030,7 +1030,7 @@ return [
     'name' => 'Government & Utilities',
     'nav_name' => 'Government & Utilities',
     'tagline' => 'Citizen Services, Public Utility Alerts & Grievance Redressal at Scale',
-    'meta_desc' => 'Improve citizen engagement with Government Messaging Solutions. InboxWA offers WhatsApp API and Bulk SMS for utility alerts, tax reminders, and FAQs.',
+    'meta_desc' => 'Improve citizen engagement with Government Messaging Solutions. HelloBotz offers WhatsApp API and Bulk SMS for utility alerts, tax reminders, and FAQs.',
     'hero_title' => 'Transforming Citizen Services and Support for Government & Utilities',
     'hero_lead' => 'Our omnichannel communication solution ensures a consistent, unified experience across all platforms (phone, email, chat, social media), improving citizen engagement and accessibility.',
     'hero_image' => '/assets/images/industry/government-and-utilities/hero.png',
@@ -1136,9 +1136,9 @@ return [
     'name' => 'Manufacturing & Supply',
     'nav_name' => 'Manufacturing & Supply',
     'tagline' => 'Optimize Factory Logistics, Vendor Coordination & Supply Chain Visibility',
-    'meta_desc' => 'Optimize logistics with Manufacturing Communication Solutions. InboxWA offers WhatsApp API and Bulk SMS for order tracking and inventory alerts.',
+    'meta_desc' => 'Optimize logistics with Manufacturing Communication Solutions. HelloBotz offers WhatsApp API and Bulk SMS for order tracking and inventory alerts.',
     'hero_title' => 'Optimizing Manufacturing & Supply Chains for Seamless Operations',
-    'hero_lead' => 'InboxWA provides a comprehensive suite of solutions designed to optimize the manufacturing and supply chain processes. By focusing on efficiency, customer satisfaction, and data-driven insights, we help businesses drive growth and improve operational performance. Here’s why our solutions stand out:',
+    'hero_lead' => 'HelloBotz provides a comprehensive suite of solutions designed to optimize the manufacturing and supply chain processes. By focusing on efficiency, customer satisfaction, and data-driven insights, we help businesses drive growth and improve operational performance. Here’s why our solutions stand out:',
     'hero_image' => '/assets/images/industry/manufacturing-and-supply/hero.png',
     'features' => [
       [
@@ -1212,11 +1212,11 @@ return [
     ],
     'faqs' => [
       [
-        'q' => 'How do InboxWA solutions benefit manufacturing and supply chain businesses?',
+        'q' => 'How do HelloBotz solutions benefit manufacturing and supply chain businesses?',
         'a' => 'Our solutions streamline real-time communication, improve tracking and updates, and provide secure payment processing. We help businesses reduce costs, enhance supply chain efficiency, and improve customer engagement.',
       ],
       [
-        'q' => 'What types of systems can integrate with InboxWA solutions?',
+        'q' => 'What types of systems can integrate with HelloBotz solutions?',
         'a' => 'Our solutions integrate seamlessly with ERP platforms, CRM tools, payment gateways, and communication systems like WhatsApp Business.',
       ],
       [
@@ -1228,7 +1228,7 @@ return [
         'a' => 'Our solutions adhere to PCI DSS standards, ensuring encrypted transactions that protect customer data.',
       ],
       [
-        'q' => 'What types of businesses benefit from InboxWA solutions?',
+        'q' => 'What types of businesses benefit from HelloBotz solutions?',
         'a' => 'Our solutions cater to manufacturers, suppliers, wholesalers, distributors, and businesses in the supply chain sector, whether small or large enterprises.',
       ],
       [

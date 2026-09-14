@@ -1,12 +1,12 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'InboxWa for iPhone & iPad — Official iOS WhatsApp Business App';
-$pageDescription = 'Experience InboxWa on iOS. Real-time Apple push notifications, Face ID protection, lock screen widgets, and multi-agent shared inbox for iPhone & iPad.';
-$canonicalUrl = 'https://inboxwa.com/resources/download-ios-app/';
+$pageTitle = 'HelloBotz for iPhone & iPad — Official iOS WhatsApp Business App';
+$pageDescription = 'Experience HelloBotz on iOS. Real-time Apple push notifications, Face ID protection, lock screen widgets, and multi-agent shared inbox for iPhone & iPad.';
+$canonicalUrl = 'https://hellobotz.com/resources/download-ios-app/';
 $appLinks = require __DIR__ . '/../../config/app-links.php';
 include __DIR__ . '/../../includes/header.php';
 
-$iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-business';
+$iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/hellobotz-business';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
@@ -25,7 +25,7 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-bu
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.61 1.34-.55.63-1.03 1.68-.9 2.69 1 .08 2.01-.51 2.59-1.18z"/></svg>
       Designed for Apple Silicon &amp; iOS 17/18
     </span>
-    <h1 style="font-size:clamp(2.2rem, 4vw, 3.25rem);letter-spacing:-0.03em;color:#0F172A">InboxWa for iPhone &amp; iPad</h1>
+    <h1 style="font-size:clamp(2.2rem, 4vw, 3.25rem);letter-spacing:-0.03em;color:#0F172A">HelloBotz for iPhone &amp; iPad</h1>
     <p style="max-width:640px;margin:0 auto 1.75rem;font-size:1.1rem;color:#475569;line-height:1.6">
       The fastest, most elegant mobile experience for WhatsApp Business teams. Respond to inquiries, view customer purchase histories, and assign tickets with native iOS responsiveness.
     </p>
@@ -70,7 +70,7 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-bu
           <div style="display:flex;align-items:center;gap:10px">
             <div style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#8B5CF6,#06B6D4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem">IW</div>
             <div>
-              <strong style="display:block;font-size:0.95rem;color:#0F172A">InboxWa</strong>
+              <strong style="display:block;font-size:0.95rem;color:#0F172A">HelloBotz</strong>
               <span style="font-size:0.7rem;color:#10B981;font-weight:600">● Cloud Connected</span>
             </div>
           </div>
@@ -169,7 +169,7 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-bu
         <div style="width:48px;height:48px;border-radius:12px;background:#ECFDF5;color:#059669;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem">📱</div>
         <h3 style="font-size:1.2rem;font-weight:800;color:#0F172A;margin:0 0 0.5rem">iPad Split View &amp; Multitasking</h3>
         <p style="color:#64748B;font-size:0.92rem;line-height:1.6;margin:0">
-          Full iPadOS optimization with Stage Manager, Split View, and Slide Over. Run InboxWa side-by-side with your CRM, inventory spreadsheets, or notes.
+          Full iPadOS optimization with Stage Manager, Split View, and Slide Over. Run HelloBotz side-by-side with your CRM, inventory spreadsheets, or notes.
         </p>
       </div>
 
@@ -182,7 +182,7 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-bu
   <div class="container" style="max-width:860px">
     <div style="text-align:center;margin-bottom:2.5rem">
       <span class="badge badge-primary">FAST SETUP</span>
-      <h2 style="font-size:1.85rem;font-weight:800;color:#0F172A;margin:0.5rem 0 0.5rem">How to install InboxWa on iOS in 30 seconds</h2>
+      <h2 style="font-size:1.85rem;font-weight:800;color:#0F172A;margin:0.5rem 0 0.5rem">How to install HelloBotz on iOS in 30 seconds</h2>
       <p style="color:#64748B;font-size:0.95rem">Get full-screen, native app speed without waiting for store reviews.</p>
     </div>
 
@@ -191,7 +191,7 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-bu
       <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
         <div style="width:36px;height:36px;border-radius:50%;background:#8B5CF6;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">1</div>
         <strong style="display:block;font-size:1rem;color:#0F172A;margin-bottom:0.4rem">Open in Safari</strong>
-        <p style="font-size:0.86rem;color:#64748B;line-height:1.5;margin:0">Visit <strong>inboxwa.com/auth/login</strong> on your iPhone or iPad using Apple Safari.</p>
+        <p style="font-size:0.86rem;color:#64748B;line-height:1.5;margin:0">Visit <strong>hellobotz.com/auth/login</strong> on your iPhone or iPad using Apple Safari.</p>
       </div>
 
       <!-- Step 2 -->
@@ -205,12 +205,12 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/inboxwa-bu
       <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.03)">
         <div style="width:36px;height:36px;border-radius:50%;background:#8B5CF6;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">3</div>
         <strong style="display:block;font-size:1rem;color:#0F172A;margin-bottom:0.4rem">Add to Home Screen</strong>
-        <p style="font-size:0.86rem;color:#64748B;line-height:1.5;margin:0">Select <strong>"Add to Home Screen"</strong>. The InboxWa app icon will appear alongside your native apps!</p>
+        <p style="font-size:0.86rem;color:#64748B;line-height:1.5;margin:0">Select <strong>"Add to Home Screen"</strong>. The HelloBotz app icon will appear alongside your native apps!</p>
       </div>
     </div>
 
     <div style="text-align:center;margin-top:2.5rem">
-      <a href="/auth/login" class="btn btn-primary btn-lg">Launch InboxWa Web App</a>
+      <a href="/auth/login" class="btn btn-primary btn-lg">Launch HelloBotz Web App</a>
     </div>
   </div>
 </section>

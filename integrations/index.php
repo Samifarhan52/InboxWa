@@ -1,8 +1,8 @@
 <?php
 $basePath = '../';
 $pageTitle = 'Integrations';
-$pageDescription = 'Connect InboxWa to your stack.';
-$canonicalUrl = 'https://inboxwa.com/integrations/';
+$pageDescription = 'Connect HelloBotz to your stack.';
+$canonicalUrl = 'https://hellobotz.com/integrations/';
 include __DIR__ . '/../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px) + 1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Integrations</nav>

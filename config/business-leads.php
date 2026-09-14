@@ -24,7 +24,7 @@ function get_all_business_leads_categories() {
                 ['0.8s', 'AI Trigger Response']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa Realty AI',
+                'bot_name' => 'HelloBotz Realty AI',
                 'bot_status' => 'Verified Property Assistant Active',
                 'avatar' => '🏠',
                 'messages' => [
@@ -68,7 +68,7 @@ function get_all_business_leads_categories() {
                     'phase' => 'Discovery & Lead Extraction',
                     'time' => '⏱️ Instant Access',
                     'title' => 'Select Target Micro-Markets & Filter Verified Property Leads',
-                    'desc' => 'Filter by state, city, ticket size, or buyer intent. Instantly download or stream high-intent property leads directly into your InboxWa CRM pipeline.',
+                    'desc' => 'Filter by state, city, ticket size, or buyer intent. Instantly download or stream high-intent property leads directly into your HelloBotz CRM pipeline.',
                     'you_do' => [
                         'Choose preferred cities (e.g. Bangalore, Mumbai, Gurgaon)',
                         'Select dataset category: Builders, Channel Partners, or Active Buyers',
@@ -150,7 +150,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Course Fee & Syllabus Delivery']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa EduDesk',
+                'bot_name' => 'HelloBotz EduDesk',
                 'bot_status' => 'Admissions Counselor Active',
                 'avatar' => '🎓',
                 'messages' => [
@@ -276,7 +276,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Lab Report Dispatch']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa HealthDesk',
+                'bot_name' => 'HelloBotz HealthDesk',
                 'bot_status' => 'Clinic Appointment Assistant',
                 'avatar' => '🏥',
                 'messages' => [
@@ -402,7 +402,7 @@ function get_all_business_leads_categories() {
                 ['98%', 'Order Update Read Rate']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa D2C Store',
+                'bot_name' => 'HelloBotz D2C Store',
                 'bot_status' => 'AI Shopping Assistant',
                 'avatar' => '🛍️',
                 'messages' => [
@@ -528,7 +528,7 @@ function get_all_business_leads_categories() {
                 ['Bank-Grade', '256-bit Encrypted Workflows']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa FinDesk',
+                'bot_name' => 'HelloBotz FinDesk',
                 'bot_status' => 'Verified BFSI Assistant',
                 'avatar' => '💰',
                 'messages' => [
@@ -654,7 +654,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Brochure & Quotation Sharing']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa AutoDrive',
+                'bot_name' => 'HelloBotz AutoDrive',
                 'bot_status' => 'Dealership Assistant Active',
                 'avatar' => '🚗',
                 'messages' => [
@@ -780,7 +780,7 @@ function get_all_business_leads_categories() {
                 ['24/7', 'Guest Concierge Bot']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa TravelConcierge',
+                'bot_name' => 'HelloBotz TravelConcierge',
                 'bot_status' => 'Resort Booking Assistant',
                 'avatar' => '✈️',
                 'messages' => [
@@ -906,7 +906,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Digital Menu & Table Booking']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa FoodBot',
+                'bot_name' => 'HelloBotz FoodBot',
                 'bot_status' => 'Restaurant Ordering Active',
                 'avatar' => '🍽️',
                 'messages' => [
@@ -1032,7 +1032,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Stylist & Service Booking']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa GlamDesk',
+                'bot_name' => 'HelloBotz GlamDesk',
                 'bot_status' => 'Spa & Salon Assistant',
                 'avatar' => '💅',
                 'messages' => [
@@ -1158,7 +1158,7 @@ function get_all_business_leads_categories() {
                 ['60s', 'API Webhook Integration']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa TechAI',
+                'bot_name' => 'HelloBotz TechAI',
                 'bot_status' => 'Enterprise Solutions Desk',
                 'avatar' => '💻',
                 'messages' => [
@@ -1284,12 +1284,12 @@ function get_all_business_leads_categories() {
                 ['0.8s', 'Ad Lead Instant Notification']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa AgencyBot',
+                'bot_name' => 'HelloBotz AgencyBot',
                 'bot_status' => 'Marketing Solutions Desk',
                 'avatar' => '📣',
                 'messages' => [
                     ['type' => 'user', 'text' => 'Hi, we run Meta Ads for e-commerce brands and want to connect Click-to-WhatsApp funnels.'],
-                    ['type' => 'bot', 'text' => 'Welcome! InboxWa integrates directly with Meta Ads Manager (CTWA). When users click your ad, an automated WhatsApp sequence triggers in 0.8s, cutting your CPL by 40%. Would you like our agency white-label partner deck?'],
+                    ['type' => 'bot', 'text' => 'Welcome! HelloBotz integrates directly with Meta Ads Manager (CTWA). When users click your ad, an automated WhatsApp sequence triggers in 0.8s, cutting your CPL by 40%. Would you like our agency white-label partner deck?'],
                     ['type' => 'user', 'text' => 'Yes please, send the white-label deck.'],
                     ['type' => 'bot', 'text' => '📄 Sent! Here is our Agency Partner Deck. You can rebrand the platform under your own domain and earn 40% recurring monthly margins. Would you like a partner demo?']
                 ],
@@ -1410,7 +1410,7 @@ function get_all_business_leads_categories() {
                 ['256-bit', 'Confidential File Encryption']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa LegalDesk',
+                'bot_name' => 'HelloBotz LegalDesk',
                 'bot_status' => 'Advisory Assistant Active',
                 'avatar' => '💼',
                 'messages' => [
@@ -1536,7 +1536,7 @@ function get_all_business_leads_categories() {
                 ['24/7', 'B2B Catalog & Spec Sheet Bot']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa IndustryDesk',
+                'bot_name' => 'HelloBotz IndustryDesk',
                 'bot_status' => 'Manufacturing Solutions Active',
                 'avatar' => '🏭',
                 'messages' => [
@@ -1662,7 +1662,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'QR Code WhatsApp Ordering']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa RetailMart',
+                'bot_name' => 'HelloBotz RetailMart',
                 'bot_status' => 'Store Assistant Active',
                 'avatar' => '🏪',
                 'messages' => [
@@ -1788,7 +1788,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Bulk Price List Dispatch']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa B2B Wholesale',
+                'bot_name' => 'HelloBotz B2B Wholesale',
                 'bot_status' => 'Distributor Solutions Active',
                 'avatar' => '📦',
                 'messages' => [
@@ -1914,7 +1914,7 @@ function get_all_business_leads_categories() {
                 ['Instant', 'Portfolio & Price Deck Delivery']
             ],
             'chat_sim' => [
-                'bot_name' => 'InboxWa EventDesk',
+                'bot_name' => 'HelloBotz EventDesk',
                 'bot_status' => 'Wedding Concierge Active',
                 'avatar' => '🎉',
                 'messages' => [

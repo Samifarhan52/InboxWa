@@ -1,14 +1,14 @@
 <?php
 /**
- * InboxWa — Premium About Us Page
+ * HelloBotz — Premium About Us Page
  * URL: /company/about/
  * Does not modify header, footer, mega menu, or global styles.
  */
 $basePath = '../../';
-$pageTitle = 'About InboxWa | Building Smarter Conversations for Modern Businesses';
-$pageDescription = 'InboxWa AI Technologies Pvt Ltd brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together on one powerful platform. Discover our vision, mission, global presence and why businesses choose InboxWa.';
-$pageKeywords = 'About InboxWa, InboxWa company, WhatsApp automation platform, AI chatbot company, InboxWa Bangalore, InboxWa vision, business communication platform';
-$canonicalUrl = 'https://inboxwa.com/company/about/';
+$pageTitle = 'About HelloBotz | Building Smarter Conversations for Modern Businesses';
+$pageDescription = 'HelloBotz AI Technologies Pvt Ltd brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together on one powerful platform. Discover our vision, mission, global presence and why businesses choose HelloBotz.';
+$pageKeywords = 'About HelloBotz, HelloBotz company, WhatsApp automation platform, AI chatbot company, HelloBotz Bangalore, HelloBotz vision, business communication platform';
+$canonicalUrl = 'https://hellobotz.com/company/about/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -259,9 +259,9 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="ab-hero-grid">
       <div class="ab-reveal">
-        <span class="badge-ab">ABOUT INBOXWA</span>
+        <span class="badge-ab">ABOUT HELLOBOTZ</span>
         <h1>Building Smarter Conversations for Modern Businesses</h1>
-        <p class="lead">InboxWa brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together on one powerful platform.</p>
+        <p class="lead">HelloBotz brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together on one powerful platform.</p>
         <div class="ab-hero-ctas">
           <a href="/products/" class="btn btn-primary btn-lg">Explore Platform</a>
           <a href="/contact/" class="btn btn-outline btn-lg">Talk to Our Team</a>
@@ -269,7 +269,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="ab-hero-visual ab-reveal" aria-hidden="true">
         <svg class="ab-net-svg" viewBox="0 0 400 420" fill="none"><line x1="200" y1="210" x2="80" y2="60" stroke="rgba(139,92,246,.25)" stroke-width="1.5"/><line x1="200" y1="210" x2="320" y2="55" stroke="rgba(6,182,212,.25)" stroke-width="1.5"/><line x1="200" y1="210" x2="40" y2="175" stroke="rgba(52,211,153,.2)" stroke-width="1.5"/><line x1="200" y1="210" x2="360" y2="165" stroke="rgba(244,114,182,.2)" stroke-width="1.5"/><line x1="200" y1="210" x2="70" y2="310" stroke="rgba(251,191,36,.2)" stroke-width="1.5"/><line x1="200" y1="210" x2="340" y2="300" stroke="rgba(96,165,250,.2)" stroke-width="1.5"/><line x1="200" y1="210" x2="140" y2="380" stroke="rgba(167,139,250,.2)" stroke-width="1.5"/><line x1="200" y1="210" x2="270" y2="375" stroke="rgba(34,211,238,.2)" stroke-width="1.5"/></svg>
-        <div class="ab-net-center"><div class="ab-net-logo">INBOXWA</div><div class="ab-net-sub">PLATFORM</div></div>
+        <div class="ab-net-center"><div class="ab-net-logo">HELLOBOTZ</div><div class="ab-net-sub">PLATFORM</div></div>
         <div class="ab-node ab-n-whatsapp"><div class="ab-node-dot"></div><span class="ab-node-label">WhatsApp</span></div>
         <div class="ab-node ab-n-ai"><div class="ab-node-dot"></div><span class="ab-node-label">AI</span></div>
         <div class="ab-node ab-n-auto"><div class="ab-node-dot"></div><span class="ab-node-label">Automation</span></div>
@@ -294,9 +294,9 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="ab-story-content ab-reveal">
         <span class="badge-ab">OUR STORY</span>
-        <h2 style="margin-top:1rem">Why InboxWa Exists</h2>
+        <h2 style="margin-top:1rem">Why HelloBotz Exists</h2>
         <p>Businesses today communicate across multiple channels, manage different tools and handle repetitive workflows every day. Conversations live in one place, campaigns in another, CRM somewhere else — and teams spend more time switching tools than building relationships.</p>
-        <p>InboxWa brings these conversations and automation workflows into one connected platform. From WhatsApp and social channels to AI chatbots, campaigns, CRM and custom integrations — everything works together so teams can focus on customers, not complexity.</p>
+        <p>HelloBotz brings these conversations and automation workflows into one connected platform. From WhatsApp and social channels to AI chatbots, campaigns, CRM and custom integrations — everything works together so teams can focus on customers, not complexity.</p>
       </div>
     </div>
   </div>
@@ -341,7 +341,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="ab-eco-node" style="top:70%;left:18%">Webhooks</div>
       <div class="ab-eco-node" style="top:70%;right:16%">E-commerce</div>
       <div class="ab-eco-node" style="top:72%;left:42%">Automation</div>
-      <div class="ab-eco-platform"><span>INBOXWA PLATFORM</span></div>
+      <div class="ab-eco-platform"><span>HELLOBOTZ PLATFORM</span></div>
     </div>
     <div class="ab-eco-flow ab-reveal">
       <div class="ab-eco-flow-item"><span>Customer</span></div><span class="ab-eco-arrow">→</span>
@@ -376,7 +376,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-alt">
   <div class="container">
-    <div class="section-header ab-reveal"><span class="badge-ab">OUR JOURNEY</span><h2 style="margin-top:1rem">The InboxWa Journey</h2><p class="lead">How the platform has evolved — from idea to a connected communication system.</p></div>
+    <div class="section-header ab-reveal"><span class="badge-ab">OUR JOURNEY</span><h2 style="margin-top:1rem">The HelloBotz Journey</h2><p class="lead">How the platform has evolved — from idea to a connected communication system.</p></div>
     <div class="ab-timeline ab-reveal">
       <div class="ab-tl-item"><div class="ab-tl-dot"></div><h3>Idea</h3><p>Recognizing that businesses needed a simpler way to manage WhatsApp and multi-channel conversations without juggling multiple tools.</p></div>
       <div class="ab-tl-item"><div class="ab-tl-dot"></div><h3>Product</h3><p>Building a core platform around Official WhatsApp Business API, shared inbox and campaign tools.</p></div>
@@ -390,7 +390,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header ab-reveal"><span class="badge-ab">GLOBAL PRESENCE</span><h2 style="margin-top:1rem">Growing From India to a Global Presence</h2><p class="lead">InboxWa AI Technologies Pvt Ltd — teams and offices supporting businesses across regions.</p></div>
+    <div class="section-header ab-reveal"><span class="badge-ab">GLOBAL PRESENCE</span><h2 style="margin-top:1rem">Growing From India to a Global Presence</h2><p class="lead">HelloBotz AI Technologies Pvt Ltd — teams and offices supporting businesses across regions.</p></div>
     <div class="ab-offices">
       <div class="ab-office-card ab-reveal"><div class="ab-office-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Bangalore</h3><div class="ab-office-type">Head Office</div><p>India</p></div>
       <div class="ab-office-card ab-reveal"><div class="ab-office-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Surat</h3><div class="ab-office-type">Branch Office</div><p>India</p></div>
@@ -430,13 +430,13 @@ include __DIR__ . '/../../includes/header.php';
       <div class="ab-step ab-reveal"><div class="ab-step-num">04</div><h3>Integrate</h3><p>Connect CRM, tools and systems.</p></div>
       <div class="ab-step ab-reveal"><div class="ab-step-num">05</div><h3>Grow</h3><p>Build scalable customer journeys.</p></div>
     </div>
-    <div class="ab-flow-banner ab-reveal"><span>CUSTOMER</span><span class="arrow">→</span><span>INBOXWA</span><span class="arrow">→</span><span>BUSINESS</span></div>
+    <div class="ab-flow-banner ab-reveal"><span>CUSTOMER</span><span class="arrow">→</span><span>HELLOBOTZ</span><span class="arrow">→</span><span>BUSINESS</span></div>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
-    <div class="section-header ab-reveal"><span class="badge-ab">WHY INBOXWA</span><h2 style="margin-top:1rem">Built Around Real Business Workflows</h2><p class="lead">Practical capabilities designed for teams that need results, not complexity.</p></div>
+    <div class="section-header ab-reveal"><span class="badge-ab">WHY HELLOBOTZ</span><h2 style="margin-top:1rem">Built Around Real Business Workflows</h2><p class="lead">Practical capabilities designed for teams that need results, not complexity.</p></div>
     <div class="ab-why-grid">
       <div class="ab-why-card ab-reveal"><h3>Unified Communication</h3><p>Manage customer conversations from connected channels in one place.</p></div>
       <div class="ab-why-card ab-reveal"><h3>Automation</h3><p>Automate repetitive communication so teams work faster and more consistently.</p></div>
@@ -465,13 +465,13 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header ab-reveal"><span class="badge-ab">PLATFORM</span><h2 style="margin-top:1rem">See the Platform in Action</h2><p class="lead">A unified workspace for conversations, campaigns, automation and insights.</p></div>
     <div class="ab-dash ab-reveal" data-editable-image="dashboard-mockup">
-      <div class="ab-dash-side"><div class="logo">INBOXWA</div><ul class="ab-dash-nav"><li class="active">Inbox</li><li>Contacts</li><li>Campaigns</li><li>Chatbot</li><li>Automation</li><li>Analytics</li><li>Integrations</li></ul></div>
+      <div class="ab-dash-side"><div class="logo">HELLOBOTZ</div><ul class="ab-dash-nav"><li class="active">Inbox</li><li>Contacts</li><li>Campaigns</li><li>Chatbot</li><li>Automation</li><li>Analytics</li><li>Integrations</li></ul></div>
       <div class="ab-dash-main"><div class="ab-dash-row">
         <div class="ab-dash-card"><h4>WhatsApp Conversation</h4><div class="ab-chat-bubble">Hi! I'd like to know more about your product.</div><div class="ab-chat-bubble out">Thanks for reaching out! Here's a quick overview…</div><div class="ab-chat-bubble">Can I book a demo?</div><div class="ab-chat-bubble out">Absolutely — pick a slot that works for you.</div></div>
         <div class="ab-dash-card"><h4>Campaign &amp; Automation</h4><div class="ab-dash-stat"><span>Active campaign</span><span>Welcome Series</span></div><div class="ab-dash-stat"><span>Automation</span><span>Lead follow-up</span></div><div class="ab-dash-stat"><span>Status</span><span style="color:#34D399">Running</span></div></div>
       </div></div>
     </div>
-    <p class="ab-dash-note ab-reveal">Dashboard mockup — replace with actual InboxWa product screenshots when available.</p>
+    <p class="ab-dash-note ab-reveal">Dashboard mockup — replace with actual HelloBotz product screenshots when available.</p>
   </div>
 </section>
 
@@ -501,7 +501,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header ab-reveal"><span class="badge-ab">PARTNERS</span><h2 style="margin-top:1rem">Built to Grow With an Ecosystem</h2><p class="lead">Partner programs designed for agencies, affiliates, technology and integration partners.</p></div>
     <div class="ab-partner-grid">
       <div class="ab-partner-card ab-reveal"><h3>Agency Partners</h3><p>Build and manage client communication systems.</p></div>
-      <div class="ab-partner-card ab-reveal"><h3>Affiliate Partners</h3><p>Refer businesses and grow with InboxWa.</p></div>
+      <div class="ab-partner-card ab-reveal"><h3>Affiliate Partners</h3><p>Refer businesses and grow with HelloBotz.</p></div>
       <div class="ab-partner-card ab-reveal"><h3>Whitelabel Partners</h3><p>Offer the platform under your brand.</p></div>
       <div class="ab-partner-card ab-reveal"><h3>Technology Partners</h3><p>Integrate and co-build solutions.</p></div>
       <div class="ab-partner-card ab-reveal"><h3>Integration Partners</h3><p>Connect tools and expand the ecosystem.</p></div>
@@ -526,9 +526,9 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-alt">
   <div class="container">
-    <div class="section-header ab-reveal"><span class="badge-ab">TESTIMONIALS</span><h2 style="margin-top:1rem">What Businesses Say About InboxWa</h2><p class="lead">Editable testimonial placeholders — replace with real customer feedback.</p></div>
+    <div class="section-header ab-reveal"><span class="badge-ab">TESTIMONIALS</span><h2 style="margin-top:1rem">What Businesses Say About HelloBotz</h2><p class="lead">Editable testimonial placeholders — replace with real customer feedback.</p></div>
     <div class="ab-testimonials">
-      <div class="ab-testi-card ab-reveal"><div class="ab-testi-stars"><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"InboxWa helped us bring WhatsApp conversations and follow-ups into one place. Our team responds faster and campaigns are easier to run."</blockquote><div class="ab-testi-author"><div class="ab-testi-avatar">A</div><div class="ab-testi-meta"><strong>Customer Name</strong><span>Company · Designation</span></div></div></div>
+      <div class="ab-testi-card ab-reveal"><div class="ab-testi-stars"><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"HelloBotz helped us bring WhatsApp conversations and follow-ups into one place. Our team responds faster and campaigns are easier to run."</blockquote><div class="ab-testi-author"><div class="ab-testi-avatar">A</div><div class="ab-testi-meta"><strong>Customer Name</strong><span>Company · Designation</span></div></div></div>
       <div class="ab-testi-card ab-reveal"><div class="ab-testi-stars"><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"The automation and chatbot features reduced a lot of repetitive work. We can focus more on complex customer conversations."</blockquote><div class="ab-testi-author"><div class="ab-testi-avatar">B</div><div class="ab-testi-meta"><strong>Customer Name</strong><span>Company · Designation</span></div></div></div>
       <div class="ab-testi-card ab-reveal"><div class="ab-testi-stars"><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="hb-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="#ffc107" stroke="#ffc107" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"Integrations with our CRM and tools made the platform fit into our existing workflow without major changes."</blockquote><div class="ab-testi-author"><div class="ab-testi-avatar">C</div><div class="ab-testi-meta"><strong>Customer Name</strong><span>Company · Designation</span></div></div></div>
     </div>
@@ -562,7 +562,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container">
     <div class="ab-sim ab-reveal">
-      <h2>What Happens When a Business Connects With InboxWa?</h2>
+      <h2>What Happens When a Business Connects With HelloBotz?</h2>
       <p class="lead">Play the journey to see how a connected customer experience comes together.</p>
       <button type="button" class="ab-sim-play" id="ab-sim-play" aria-label="Play journey"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Play Journey</button>
       <div class="ab-sim-steps" id="ab-sim-steps">
@@ -581,18 +581,18 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-alt">
   <div class="container">
-    <div class="section-header ab-reveal"><span class="badge-ab">FAQ</span><h2 style="margin-top:1rem">Frequently Asked Questions</h2><p class="lead">Quick answers about InboxWa, capabilities and how to get started.</p></div>
+    <div class="section-header ab-reveal"><span class="badge-ab">FAQ</span><h2 style="margin-top:1rem">Frequently Asked Questions</h2><p class="lead">Quick answers about HelloBotz, capabilities and how to get started.</p></div>
     <div class="ab-faq ab-reveal">
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">What is InboxWa? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">InboxWa is a platform that brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together. It helps businesses manage conversations and automate repetitive tasks from one place.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">What businesses can use InboxWa? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">InboxWa is designed for businesses across industries — including e-commerce, education, healthcare, real estate, finance, automotive, retail, professional services, marketing, travel, technology and customer support teams.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">What channels can InboxWa connect? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">InboxWa supports WhatsApp (via Official WhatsApp Business API), Facebook, Instagram, Telegram and related communication channels so teams can manage conversations in a unified way.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Can InboxWa integrate with CRM and business tools? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. InboxWa can connect with CRM systems and business tools such as Zoho, HubSpot, Salesforce, Shopify, WooCommerce, Google Sheets, Google Forms, Google Calendar and more. Custom connections are also possible via API and webhooks.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">What is HelloBotz? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">HelloBotz is a platform that brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together. It helps businesses manage conversations and automate repetitive tasks from one place.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">What businesses can use HelloBotz? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">HelloBotz is designed for businesses across industries — including e-commerce, education, healthcare, real estate, finance, automotive, retail, professional services, marketing, travel, technology and customer support teams.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">What channels can HelloBotz connect? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">HelloBotz supports WhatsApp (via Official WhatsApp Business API), Facebook, Instagram, Telegram and related communication channels so teams can manage conversations in a unified way.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Can HelloBotz integrate with CRM and business tools? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. HelloBotz can connect with CRM systems and business tools such as Zoho, HubSpot, Salesforce, Shopify, WooCommerce, Google Sheets, Google Forms, Google Calendar and more. Custom connections are also possible via API and webhooks.</div></div>
       <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Can I build custom workflows? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. You can design automation flows, sequences and workflows tailored to your sales, marketing and support processes so repetitive steps run automatically.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Can I use APIs and Webhooks? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. InboxWa supports APIs and webhooks so you can connect custom systems, trigger actions and build integrations that fit your existing stack.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Does InboxWa support AI chatbots? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. InboxWa includes AI chatbot capabilities to handle FAQs, qualify leads and guide customers through conversations, while keeping the option for human takeover when needed.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Where is InboxWa based? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">InboxWa has its Head Office in Bangalore (India) and a Branch Office in Surat (India). You can find contact and location details on the Contact page.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Can I use APIs and Webhooks? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. HelloBotz supports APIs and webhooks so you can connect custom systems, trigger actions and build integrations that fit your existing stack.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Does HelloBotz support AI chatbots? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Yes. HelloBotz includes AI chatbot capabilities to handle FAQs, qualify leads and guide customers through conversations, while keeping the option for human takeover when needed.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">Where is HelloBotz based? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">HelloBotz has its Head Office in Bangalore (India) and a Branch Office in Surat (India). You can find contact and location details on the Contact page.</div></div>
       <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">How can I book a demo? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Click “Book a Demo” on this page or the Contact page, or reach out via WhatsApp or email. Our team will schedule a personalized walkthrough of the platform.</div></div>
-      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">How can I become a InboxWa partner? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Visit the Partners page to explore Agency, Affiliate, Whitelabel, Technology and Integration partner options, and get in touch with the team to apply.</div></div>
+      <div class="ab-faq-item"><button type="button" class="ab-faq-q" aria-expanded="false">How can I become a HelloBotz partner? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ab-faq-a">Visit the Partners page to explore Agency, Affiliate, Whitelabel, Technology and Integration partner options, and get in touch with the team to apply.</div></div>
     </div>
   </div>
 </section>
@@ -600,7 +600,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="ab-final-cta">
   <div class="container ab-reveal">
     <h2>Ready to Build Smarter Customer Journeys?</h2>
-    <p>Explore what InboxWa can do for your business.</p>
+    <p>Explore what HelloBotz can do for your business.</p>
     <div class="ab-final-ctas">
       <a href="/products/" class="btn btn-white btn-lg">Explore Platform</a>
       <button type="button" class="btn btn-primary btn-lg btn-demo-open">Book a Demo</button>

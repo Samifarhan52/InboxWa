@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'InboxWa Affiliate Partner Program | Refer & Earn 20% Recurring Revenue';
-$pageDescription = 'Join the InboxWa Affiliate Partner Program. Refer businesses to official WhatsApp Business API, AI chatbots & CRM. Earn 20% lifetime recurring revenue with real-time tracking.';
-$canonicalUrl = 'https://inboxwa.com/partners/affiliate/';
+$pageTitle = 'HelloBotz Affiliate Partner Program | Refer & Earn 20% Recurring Revenue';
+$pageDescription = 'Join the HelloBotz Affiliate Partner Program. Refer businesses to official WhatsApp Business API, AI chatbots & CRM. Earn 20% lifetime recurring revenue with real-time tracking.';
+$canonicalUrl = 'https://hellobotz.com/partners/affiliate/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -15,10 +15,10 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <span class="badge">Affiliate Partner</span>
     <h1>Refer Businesses. Earn 20% Lifetime Revenue.</h1>
-    <p class="lead">Recommend InboxWa to your network, clients, and audience. Earn 20% recurring revenue share on every eligible customer subscription with zero technical setup.</p>
+    <p class="lead">Recommend HelloBotz to your network, clients, and audience. Earn 20% recurring revenue share on every eligible customer subscription with zero technical setup.</p>
     <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="#partner-form" class="btn btn-primary btn-lg">Apply as Affiliate</a>
-      <a href="/assets/downloads/inboxwa-affiliate-brochure.pdf" download="InboxWa-Affiliate-Brochure.pdf" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px">
+      <a href="/assets/downloads/hellobotz-affiliate-brochure.pdf" download="HelloBotz-Affiliate-Brochure.pdf" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Download Brochure
       </a>
@@ -57,11 +57,11 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-gradient-1">
   <div class="container">
     <div class="section-header reveal"><h2>Affiliate Program Advantages</h2></div>
-    <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">InboxWa provides everything you need to recommend with confidence and convert your audience into recurring earnings.</p>
+    <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">HelloBotz provides everything you need to recommend with confidence and convert your audience into recurring earnings.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
       <div class="card card-feature reveal"><h3>20% Lifetime Share</h3><p>Earn on every renewal, upgrade, and add-on for the entire lifetime of the customer.</p></div>
       <div class="card card-feature reveal"><h3>Unique Referral Links</h3><p>Custom tracking URLs with robust attribution and 90-day cookie longevity.</p></div>
-      <div class="card card-feature reveal"><h3>Zero Support Burden</h3><p>InboxWa handles 100% of customer onboarding, compliance, API billing, and tech support.</p></div>
+      <div class="card card-feature reveal"><h3>Zero Support Burden</h3><p>HelloBotz handles 100% of customer onboarding, compliance, API billing, and tech support.</p></div>
       <div class="card card-feature reveal"><h3>Partner Dashboard</h3><p>Live visibility on link clicks, trial signups, conversions, and accrued commission.</p></div>
       <div class="card card-feature reveal"><h3>Marketing Toolkit</h3><p>High-converting banners, email copy, demo videos, and product spec sheets.</p></div>
       <div class="card card-feature reveal"><h3>Official Meta Partner</h3><p>Promote a verified Meta Cloud API platform with ISO 27001 security and 99.9% uptime.</p></div>
@@ -98,7 +98,7 @@ include __DIR__ . '/../../includes/header.php';
         <h3 style="margin:0.25rem 0 0.5rem;font-size:1.4rem;color:#0F172A">Download Affiliate Partner Brochure</h3>
         <p style="margin:0;color:#64748B;font-size:14px">Get the complete breakdown of revenue sharing tiers, marketing materials, payout terms, and referral rules in a clean PDF.</p>
       </div>
-      <a href="/assets/downloads/inboxwa-affiliate-brochure.pdf" download="InboxWa-Affiliate-Brochure.pdf" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px">
+      <a href="/assets/downloads/hellobotz-affiliate-brochure.pdf" download="HelloBotz-Affiliate-Brochure.pdf" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Download Brochure
       </a>
@@ -124,7 +124,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
       <div class="faq-item reveal">
         <button type="button" class="faq-question" aria-expanded="false">How much does it cost to join as an affiliate?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-answer"><div class="faq-answer-inner">It is 100% free to join the InboxWa Affiliate Partner Program. There are no registration fees, monthly minimums, or hidden costs.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">It is 100% free to join the HelloBotz Affiliate Partner Program. There are no registration fees, monthly minimums, or hidden costs.</div></div>
       </div>
       <div class="faq-item reveal">
         <button type="button" class="faq-question" aria-expanded="false">How does the 20% recurring revenue share work?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -162,7 +162,7 @@ include __DIR__ . '/../../includes/header.php';
       <label>WhatsApp Number *</label>
       <input type="tel" name="whatsapp" required placeholder="+91 98765 43210" style="width:100%;margin-bottom:.75rem;padding:.65rem;border-radius:8px;border:1px solid var(--bd)">
       
-      <label>How do you plan to promote InboxWa?</label>
+      <label>How do you plan to promote HelloBotz?</label>
       <textarea name="message" rows="3" style="width:100%;margin-bottom:1rem;padding:.65rem;border-radius:8px;border:1px solid var(--bd)" placeholder="Tell us about your audience, clients, or traffic channels"></textarea>
       
       <button type="submit" class="btn btn-primary btn-block">Submit Affiliate Application</button>
@@ -170,7 +170,7 @@ include __DIR__ . '/../../includes/header.php';
     </form>
     
     <div style="text-align:center;margin-top:1.25rem">
-      <a href="/assets/downloads/inboxwa-affiliate-brochure.pdf" download="InboxWa-Affiliate-Brochure.pdf" style="font-size:13px;color:#6D28D9;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px">
+      <a href="/assets/downloads/hellobotz-affiliate-brochure.pdf" download="HelloBotz-Affiliate-Brochure.pdf" style="font-size:13px;color:#6D28D9;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Or download the Affiliate Partner Brochure (PDF)
       </a>
@@ -192,7 +192,7 @@ include __DIR__ . '/../../includes/header.php';
   var f=document.getElementById('partner-form-affiliate');
   if(f){f.addEventListener('submit',function(){
     var fd=new FormData(f);
-    var msg='*InboxWa Partner — Affiliate Application*
+    var msg='*HelloBotz Partner — Affiliate Application*
 Name: '+fd.get('name')+'
 Platform: '+fd.get('company')+'
 Email: '+fd.get('email')+'

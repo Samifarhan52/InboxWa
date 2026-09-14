@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../../';
-$pageTitle = 'How to Automate E-commerce Customer Support — InboxWa Blog';
+$pageTitle = 'How to Automate E-commerce Customer Support — HelloBotz Blog';
 $pageDescription = 'Orders, returns and cart recovery patterns.';
-$canonicalUrl = 'https://inboxwa.com/resources/blog/ecommerce-support/';
+$canonicalUrl = 'https://hellobotz.com/resources/blog/ecommerce-support/';
 include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
@@ -11,12 +11,12 @@ include __DIR__ . '/../../../includes/header.php';
 <article class="section" style="padding-top:1.25rem"><div class="container" style="max-width:800px">
 <span class="badge badge-primary">E-commerce</span>
 <h1 style="margin:.75rem 0">How to Automate E-commerce Customer Support</h1>
-<p style="color:var(--t3);font-size:.9rem">InboxWa Team · 2026 · 11 min read</p>
+<p style="color:var(--t3);font-size:.9rem">HelloBotz Team · 2026 · 11 min read</p>
 <div class="blog-img-ph blog-img-ph--lg" role="img" aria-label="How to Automate E-commerce Customer Support"></div>
 <div class="article-body reveal">
 <p>Orders, returns and cart recovery patterns.</p>
 <h2>Overview</h2>
-<p>This guide explains practical patterns teams use with Official WhatsApp Business API and InboxWa — without unsupported claims about Meta pricing or guarantees.</p>
+<p>This guide explains practical patterns teams use with Official WhatsApp Business API and HelloBotz — without unsupported claims about Meta pricing or guarantees.</p>
 <h2>Key takeaways</h2>
 <ul><li>Start with a clear use case and template strategy.</li><li>Route complex chats to humans quickly.</li><li>Measure replies and pipeline impact, not only sends.</li></ul>
 <h2>Next steps</h2>

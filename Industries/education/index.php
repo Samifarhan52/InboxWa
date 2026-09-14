@@ -1,15 +1,15 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Business API for Education | InboxWa CRM Integration';
-$pageDescription = 'Power higher enrollments and better ROI with WhatsApp Business API. Scale student reach, reduce drop-offs, and convert faster with automated campaigns and counseling flows on InboxWa.';
+$pageTitle = 'WhatsApp Business API for Education | HelloBotz CRM Integration';
+$pageDescription = 'Power higher enrollments and better ROI with WhatsApp Business API. Scale student reach, reduce drop-offs, and convert faster with automated campaigns and counseling flows on HelloBotz.';
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '/business-leads/education/', PHP_URL_PATH);
-$canonicalUrl = 'https://inboxwa.com' . ($reqPath ?: '/business-leads/education/');
+$canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: '/business-leads/education/');
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/education.css?v=53">
 
 <!-- =========================================================================
-     1. HERO SECTION (Meritto Match + Superior InboxWa Experience)
+     1. HERO SECTION (Meritto Match + Superior HelloBotz Experience)
      ========================================================================= -->
 <section class="edu-hero" aria-label="WhatsApp Business API for Education hero">
   <div class="container">
@@ -32,12 +32,12 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Left Column: Copy & Value Proposition -->
       <div class="edu-hero-copy">
         <h1>Power higher enrollments <br> and better ROI with <br><span class="highlightText">WhatsApp Business API</span></h1>
-        <p class="edu-lead">Scale your student reach, reduce drop-offs, and convert faster with WhatsApp campaigns, automated admission flows, and multi-counselor live chat, seamlessly powered by InboxWa Education CRM.</p>
+        <p class="edu-lead">Scale your student reach, reduce drop-offs, and convert faster with WhatsApp campaigns, automated admission flows, and multi-counselor live chat, seamlessly powered by HelloBotz Education CRM.</p>
         
         <div class="edu-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Start 14-Day Free Trial</a>
           <button type="button" class="btn-ghost-light" onclick="openEduModal()">Book Education Demo</button>
-          <a href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20want%20to%20learn%20more%20about%20WhatsApp%20API%20for%20our%20educational%20institution" target="_blank" rel="noopener" class="btn-ghost-light" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20want%20to%20learn%20more%20about%20WhatsApp%20API%20for%20our%20educational%20institution" target="_blank" rel="noopener" class="btn-ghost-light" style="display:inline-flex;align-items:center;gap:0.4rem;">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Chat with Specialist
           </a>
@@ -71,7 +71,7 @@ include __DIR__ . '/../../includes/header.php';
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
               Schedule an Education Demo
             </h3>
-            <p>See how InboxWa automates student admissions and boosts your enrollment ROI.</p>
+            <p>See how HelloBotz automates student admissions and boosts your enrollment ROI.</p>
           </div>
 
           <form id="edu-hero-lead-form" onsubmit="handleEduFormSubmit(event)">
@@ -127,7 +127,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="edu-overview-inner">
       <h2>How WhatsApp Business API boosts enrollments &amp; ROI for educational organizations</h2>
       <p class="lead">With 98% open rates, rich-media messaging, and broadcast capabilities, WhatsApp Business API connects you with students instantly and personally.</p>
-      <p class="subtext">And when powered by <strong>InboxWa</strong>, it becomes an enrollment engine, because in one unified platform, it lets you capture qualified leads, automate engagement, and enable counselors to nurture one-on-one conversations that boost productivity, improve student experience, and deliver measurable ROI.</p>
+      <p class="subtext">And when powered by <strong>HelloBotz</strong>, it becomes an enrollment engine, because in one unified platform, it lets you capture qualified leads, automate engagement, and enable counselors to nurture one-on-one conversations that boost productivity, improve student experience, and deliver measurable ROI.</p>
     </div>
 
     <!-- 4 Impact Metric Cards -->
@@ -160,7 +160,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="stage-heading">
       <span class="stage-kicker">One Connected Growth &amp; Enrollment System</span>
       <h2 class="stage-display-title">Run every stage of enrollment on one connected system</h2>
-      <p class="stage-subtitle">Bring marketing, admissions, applications, payments and student engagement together on one purpose-built InboxWa platform.</p>
+      <p class="stage-subtitle">Bring marketing, admissions, applications, payments and student engagement together on one purpose-built HelloBotz platform.</p>
     </div>
 
     <!-- 5 TABS -->
@@ -179,7 +179,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="stage-copy">
           <div class="stage-demo-label">Attract &amp; Capture</div>
           <h3>Every enquiry <br>captured, attributed, <br>and owned.</h3>
-          <p>Online, offline, partner and campaign demand lands in one connected pipeline, with source, attribution and ownership preserved from the moment an enquiry enters InboxWa.</p>
+          <p>Online, offline, partner and campaign demand lands in one connected pipeline, with source, attribution and ownership preserved from the moment an enquiry enters HelloBotz.</p>
           <div class="stage-features">
             <div class="stage-feature-item"><i>✓</i><span>Enquiries centralised across every channel and campaign.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Primary, secondary and tertiary source attribution.</span></div>
@@ -190,7 +190,7 @@ include __DIR__ . '/../../includes/header.php';
           </div>
         </div>
         <div class="stage-media">
-          <img decoding="async" alt="InboxWa Attract and Capture Dashboard" src="/assets/images/home-meritto/attract-and-capture.png" loading="lazy">
+          <img decoding="async" alt="HelloBotz Attract and Capture Dashboard" src="/assets/images/home-meritto/attract-and-capture.png" loading="lazy">
         </div>
       </article>
 
@@ -204,13 +204,13 @@ include __DIR__ . '/../../includes/header.php';
             <div class="stage-feature-item"><i>✓</i><span>Personalised marketing journeys triggered by intent and stage.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Lead scoring and prediction that ranks the pipeline.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Omnichannel nurture across WhatsApp, email, SMS and voice.</span></div>
-            <div class="stage-feature-item"><i>✓</i><span>InboxWa Live Chat for live counselling; InboxWa AI for always-on qualification.</span></div>
+            <div class="stage-feature-item"><i>✓</i><span>HelloBotz Live Chat for live counselling; HelloBotz AI for always-on qualification.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Smart lead distribution by programme, campus, language or performance.</span></div>
-            <div class="stage-feature-item"><i>✓</i><span>InboxWa AI Guide and Voice for autonomous engagement at scale.</span></div>
+            <div class="stage-feature-item"><i>✓</i><span>HelloBotz AI Guide and Voice for autonomous engagement at scale.</span></div>
           </div>
         </div>
         <div class="stage-media">
-          <img decoding="async" alt="InboxWa Engage and Nurture Dashboard" src="/assets/images/home-meritto/engage-and-nurture.png" loading="lazy">
+          <img decoding="async" alt="HelloBotz Engage and Nurture Dashboard" src="/assets/images/home-meritto/engage-and-nurture.png" loading="lazy">
         </div>
       </article>
 
@@ -230,7 +230,7 @@ include __DIR__ . '/../../includes/header.php';
           </div>
         </div>
         <div class="stage-media">
-          <img decoding="async" alt="InboxWa Apply and Enroll Dashboard" src="/assets/images/home-meritto/apply-and-enroll.png" loading="lazy">
+          <img decoding="async" alt="HelloBotz Apply and Enroll Dashboard" src="/assets/images/home-meritto/apply-and-enroll.png" loading="lazy">
         </div>
       </article>
 
@@ -239,18 +239,18 @@ include __DIR__ . '/../../includes/header.php';
         <div class="stage-copy">
           <div class="stage-demo-label">Collect &amp; Reconcile</div>
           <h3>Payment is part of enrollment, not a separate chase.</h3>
-          <p>InboxWa Pay connects fee collection to the student record, so reconciliation stops being a month-end reconstruction across disconnected systems and teams.</p>
+          <p>HelloBotz Pay connects fee collection to the student record, so reconciliation stops being a month-end reconstruction across disconnected systems and teams.</p>
           <div class="stage-features">
             <div class="stage-feature-item"><i>✓</i><span>Application, tuition, hostel, transport and event fees.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>One-time, partial, recurring and financed structures.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Payment links from CRM, portal and campaigns.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Real-time reconciliation against the student record.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Failure analytics and default tracking for finance.</span></div>
-            <div class="stage-feature-item"><i>✓</i><span>InboxWa Smart ID for identity, access and payments.</span></div>
+            <div class="stage-feature-item"><i>✓</i><span>HelloBotz Smart ID for identity, access and payments.</span></div>
           </div>
         </div>
         <div class="stage-media">
-          <img decoding="async" alt="InboxWa Collect and Reconcile Dashboard" src="/assets/images/home-meritto/collect-and-reconcile.png" loading="lazy">
+          <img decoding="async" alt="HelloBotz Collect and Reconcile Dashboard" src="/assets/images/home-meritto/collect-and-reconcile.png" loading="lazy">
         </div>
       </article>
 
@@ -259,18 +259,18 @@ include __DIR__ . '/../../includes/header.php';
         <div class="stage-copy">
           <div class="stage-demo-label">Unlock Intelligence</div>
           <h3>One view of the funnel, and the context that makes AI useful.</h3>
-          <p>Enquiries, conversations, applications and payments in one system means leadership sees the whole picture, and InboxWa AI reasons over real institutional context.</p>
+          <p>Enquiries, conversations, applications and payments in one system means leadership sees the whole picture, and HelloBotz AI reasons over real institutional context.</p>
           <div class="stage-features">
             <div class="stage-feature-item"><i>✓</i><span>Live dashboards from enquiry quality to fee realisation.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Marketing ROI by source, publisher and campaign.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Turnaround time, stage conversion and drop-off analysis.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Programme, campus and vertical performance in one builder.</span></div>
-            <div class="stage-feature-item"><i>✓</i><span>InboxWa AI Coach surfacing next-best actions for counsellors.</span></div>
+            <div class="stage-feature-item"><i>✓</i><span>HelloBotz AI Coach surfacing next-best actions for counsellors.</span></div>
             <div class="stage-feature-item"><i>✓</i><span>Every module deepens the context intelligence works from.</span></div>
           </div>
         </div>
         <div class="stage-media">
-          <img decoding="async" alt="InboxWa Reports and Analysis Dashboard" src="/assets/images/home-meritto/reports-and-analysis.png" loading="lazy">
+          <img decoding="async" alt="HelloBotz Reports and Analysis Dashboard" src="/assets/images/home-meritto/reports-and-analysis.png" loading="lazy">
         </div>
       </article>
     </div>
@@ -286,7 +286,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="edu-feature-content">
         <span class="edu-feature-pill green">Feature 01 · High-Reach Broadcasts</span>
         <h2>Broadcast campaigns with confidence that drives action</h2>
-        <p>Reach the right students at scale with program launches, scholarship updates, event invites, and webinar promotions, all sent directly from InboxWa CRM. Every reply creates or enriches a lead record, keeping your funnel accurate and alive.</p>
+        <p>Reach the right students at scale with program launches, scholarship updates, event invites, and webinar promotions, all sent directly from HelloBotz CRM. Every reply creates or enriches a lead record, keeping your funnel accurate and alive.</p>
         
         <ul class="edu-feature-list">
           <li>
@@ -295,7 +295,7 @@ include __DIR__ . '/../../includes/header.php';
           </li>
           <li>
             <span class="edu-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span>Automatically capture replies as leads in InboxWa CRM with department tagging.</span>
+            <span>Automatically capture replies as leads in HelloBotz CRM with department tagging.</span>
           </li>
           <li>
             <span class="edu-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -304,7 +304,7 @@ include __DIR__ . '/../../includes/header.php';
         </ul>
 
         <a href="/auth/register" class="btn-feature-cta">
-          <span>Start Broadcasting with InboxWa</span>
+          <span>Start Broadcasting with HelloBotz</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -315,12 +315,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/></svg>
-              InboxWa Education CRM · Broadcast Manager
+              HelloBotz Education CRM · Broadcast Manager
             </span>
             <span class="edu-media-topbar-badge">● Campaign Live</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-broadcast.png" alt="Broadcast campaigns with confidence that drives action" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-broadcast.png" alt="Broadcast campaigns with confidence that drives action" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -347,7 +347,7 @@ include __DIR__ . '/../../includes/header.php';
           </li>
           <li>
             <span class="edu-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span>Monitor Meta approvals and quality health ratings directly within InboxWa.</span>
+            <span>Monitor Meta approvals and quality health ratings directly within HelloBotz.</span>
           </li>
           <li>
             <span class="edu-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -367,12 +367,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
-              InboxWa Template Hub · Meta Cloud API
+              HelloBotz Template Hub · Meta Cloud API
             </span>
             <span class="edu-media-topbar-badge blue">✔ Meta Approved</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-templates.png" alt="Manage custom templates for instant communication and better delivery" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-templates.png" alt="Manage custom templates for instant communication and better delivery" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -419,12 +419,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              InboxWa Journey FlowBuilder · Student Lifecycle
+              HelloBotz Journey FlowBuilder · Student Lifecycle
             </span>
             <span class="edu-media-topbar-badge amber">⚡ Smart Reminders</span>
           </div>
           <div class="edu-media-content">
-            <video class="edu-feature-video" autoplay loop muted playsinline poster="/assets/images/education-meritto/inboxwa-journey-flow.png">
+            <video class="edu-feature-video" autoplay loop muted playsinline poster="/assets/images/education-meritto/hellobotz-journey-flow.png">
               <source src="/assets/images/education-meritto/smart-reminders.webm" type="video/webm">
             </video>
           </div>
@@ -453,7 +453,7 @@ include __DIR__ . '/../../includes/header.php';
           </li>
           <li>
             <span class="edu-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span>Auto-sync details into InboxWa CRM for context-rich counselor follow-ups.</span>
+            <span>Auto-sync details into HelloBotz CRM for context-rich counselor follow-ups.</span>
           </li>
           <li>
             <span class="edu-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -473,12 +473,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-              InboxWa WhatsApp Native Flows · Form Preview
+              HelloBotz WhatsApp Native Flows · Form Preview
             </span>
             <span class="edu-media-topbar-badge blue">🔒 Encrypted Lead Sync</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-forms.png" alt="Capture details with customizable forms inside every chat" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-forms.png" alt="Capture details with customizable forms inside every chat" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -496,7 +496,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="edu-feature-content">
         <span class="edu-feature-pill green">Feature 05 · Multi-Counselor Inbox</span>
         <h2>Build instant &amp; two-way conversations with a live chat platform</h2>
-        <p>Do more with <strong>InboxWa Live Chat</strong>, our multi-counselor team inbox that allows you to reply naturally beyond static templates, while keeping every exchange tracked. From first inquiry to final admit, every chat is contextually nurtured, right where students feel most comfortable.</p>
+        <p>Do more with <strong>HelloBotz Live Chat</strong>, our multi-counselor team inbox that allows you to reply naturally beyond static templates, while keeping every exchange tracked. From first inquiry to final admit, every chat is contextually nurtured, right where students feel most comfortable.</p>
         
         <ul class="edu-feature-list">
           <li>
@@ -525,7 +525,7 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              InboxWa Shared Team Inbox · Admissions Desk
+              HelloBotz Shared Team Inbox · Admissions Desk
             </span>
             <span class="edu-media-topbar-badge">● Multi-Counselor Live</span>
           </div>
@@ -550,7 +550,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="edu-feature-content">
         <span class="edu-feature-pill blue">Feature 06 · AI Education Chatbot</span>
         <h2>Automate replies for instant, 24/7 engagement</h2>
-        <p>Coupled with <strong>InboxWa AI Education Chatbot</strong>, you'll never leave a student waiting. Automated responses on WhatsApp handle FAQs, share details, and keep conversations active even outside working hours.</p>
+        <p>Coupled with <strong>HelloBotz AI Education Chatbot</strong>, you'll never leave a student waiting. Automated responses on WhatsApp handle FAQs, share details, and keep conversations active even outside working hours.</p>
         
         <ul class="edu-feature-list">
           <li>
@@ -579,12 +579,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/></svg>
-              InboxWa AI Education Assistant · 24/7 Virtual Desk
+              HelloBotz AI Education Assistant · 24/7 Virtual Desk
             </span>
             <span class="edu-media-topbar-badge purple">🤖 AI Active</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-automate-replies.png" alt="Automate replies for instant 24/7 engagement with InboxWa AI" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-automate-replies.png" alt="Automate replies for instant 24/7 engagement with HelloBotz AI" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -602,7 +602,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="edu-feature-content">
         <span class="edu-feature-pill amber">Feature 07 · Intelligent Auto-Retry</span>
         <h2>Retry undelivered messages automatically for better reach</h2>
-        <p>When sender limits or temporary network outages hold a message back, InboxWa automatically retries it at the count and intervals you define. This helps more students receive your critical admission communication without adding manual effort to every campaign.</p>
+        <p>When sender limits or temporary network outages hold a message back, HelloBotz automatically retries it at the count and intervals you define. This helps more students receive your critical admission communication without adding manual effort to every campaign.</p>
         
         <ul class="edu-feature-list">
           <li>
@@ -631,12 +631,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-              InboxWa Deliverability Engine · Auto-Retry Queue
+              HelloBotz Deliverability Engine · Auto-Retry Queue
             </span>
             <span class="edu-media-topbar-badge amber">⚙️ Engine Active</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-retry.png" alt="Retry undelivered messages automatically for better reach" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-retry.png" alt="Retry undelivered messages automatically for better reach" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -654,7 +654,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="edu-feature-content">
         <span class="edu-feature-pill blue">Feature 08 · Funnel &amp; ROI Attribution</span>
         <h2>Track and measure ROI from campaigns and conversations</h2>
-        <p>Move beyond vanity metrics, see how every WhatsApp campaign contributes to applications and enrollments. With InboxWa CRM as the backbone, you can tie conversations directly to outcomes and know exactly what’s driving results.</p>
+        <p>Move beyond vanity metrics, see how every WhatsApp campaign contributes to applications and enrollments. With HelloBotz CRM as the backbone, you can tie conversations directly to outcomes and know exactly what’s driving results.</p>
         
         <ul class="edu-feature-list">
           <li>
@@ -683,12 +683,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-              InboxWa Analytics · Admission Funnel Yield
+              HelloBotz Analytics · Admission Funnel Yield
             </span>
             <span class="edu-media-topbar-badge">📈 +43% Conversion</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-roi.png" alt="Track and measure ROI from campaigns and conversations" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-roi.png" alt="Track and measure ROI from campaigns and conversations" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -704,7 +704,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="edu-journey-header">
       <span class="edu-feature-pill green">Full Student & Parent Lifecycle</span>
       <h2>Automate every touchpoint from initial inquiry to convocation</h2>
-      <p>Explore how InboxWa’s integrated WhatsApp Business API drives seamless student transitions through 4 automated admission stages—delivering personalized guidance, automated verification, and higher enrollment yields.</p>
+      <p>Explore how HelloBotz’s integrated WhatsApp Business API drives seamless student transitions through 4 automated admission stages—delivering personalized guidance, automated verification, and higher enrollment yields.</p>
     </div>
 
     <div class="edu-journey-image-card">
@@ -722,7 +722,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
 
       <div class="edu-journey-img-scroll" onclick="openFlowModal()" title="Click to zoom full screen">
-        <img src="/assets/images/education-meritto/inboxwa-journey-flow.png" alt="InboxWa 4-Stage Student and Parent Admission Lifecycle Journey Flow" class="edu-journey-img" loading="lazy">
+        <img src="/assets/images/education-meritto/hellobotz-journey-flow.png" alt="HelloBotz 4-Stage Student and Parent Admission Lifecycle Journey Flow" class="edu-journey-img" loading="lazy">
       </div>
 
       <div class="edu-journey-caption">
@@ -737,7 +737,7 @@ include __DIR__ . '/../../includes/header.php';
 <div class="flow-lightbox-overlay" id="flowLightboxModal" onclick="closeFlowModal(event)">
   <button type="button" class="flow-lightbox-close" onclick="closeFlowModal()" aria-label="Close modal">&times;</button>
   <div class="flow-lightbox-content" onclick="event.stopPropagation()">
-    <img src="/assets/images/education-meritto/inboxwa-journey-flow.png" alt="InboxWa Admission Lifecycle Journey Map Full View">
+    <img src="/assets/images/education-meritto/hellobotz-journey-flow.png" alt="HelloBotz Admission Lifecycle Journey Map Full View">
   </div>
 </div>
 
@@ -749,11 +749,11 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="edu-bsp-box">
       <div class="edu-bsp-content">
-        <h2>Getting started is quick and easy with InboxWa, an official Meta Tech Partner.</h2>
+        <h2>Getting started is quick and easy with HelloBotz, an official Meta Tech Partner.</h2>
         <ul class="edu-bsp-list">
           <li>
             <svg class="edu-green-tick" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Faster onboarding directly through InboxWa CRM: get started in under 24 hours and secure your official Green Tick verified badge.</span>
+            <span>Faster onboarding directly through HelloBotz CRM: get started in under 24 hours and secure your official Green Tick verified badge.</span>
           </li>
           <li>
             <svg class="edu-green-tick" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -771,12 +771,12 @@ include __DIR__ . '/../../includes/header.php';
           <div class="edu-media-topbar">
             <span class="edu-media-topbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              InboxWa · WhatsApp Business Manager
+              HelloBotz · WhatsApp Business Manager
             </span>
             <span class="edu-media-topbar-badge blue">✔ Meta Tech Partner</span>
           </div>
           <div class="edu-media-content">
-            <img src="/assets/images/education-meritto/inboxwa-getting-started.png" alt="InboxWa Meta WhatsApp Business Manager Onboarding" class="edu-feature-img" loading="lazy">
+            <img src="/assets/images/education-meritto/hellobotz-getting-started.png" alt="HelloBotz Meta WhatsApp Business Manager Onboarding" class="edu-feature-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -786,16 +786,16 @@ include __DIR__ . '/../../includes/header.php';
 
 
 <!-- =========================================================================
-     12. COMPARISON TABLE: The InboxWa Difference (Section 10 from Meritto)
+     12. COMPARISON TABLE: The HelloBotz Difference (Section 10 from Meritto)
      ========================================================================= -->
 <section class="edu-difference-section">
   <div class="container">
     <div style="text-align:center; max-width:850px; margin:0 auto;">
       <span class="edu-feature-pill green">Competitive Benchmark</span>
       <h2 style="font-size:clamp(1.85rem, 3vw, 2.5rem); font-weight:800; color:#0F172A; margin-bottom:0.75rem;">
-        <span class="highlightText">WhatsApp Business API</span> for educational organizations: The InboxWa difference
+        <span class="highlightText">WhatsApp Business API</span> for educational organizations: The HelloBotz difference
       </h2>
-      <p style="font-size:1.05rem; color:#64748B;">Compare how InboxWa’s integrated education engine outperforms generic standalone tools.</p>
+      <p style="font-size:1.05rem; color:#64748B;">Compare how HelloBotz’s integrated education engine outperforms generic standalone tools.</p>
     </div>
 
     <div class="edu-diff-table-wrap">
@@ -803,34 +803,34 @@ include __DIR__ . '/../../includes/header.php';
         <thead>
           <tr>
             <th class="col-aspect">Aspect</th>
-            <th class="col-inboxwa">WhatsApp Business API integrated with InboxWa</th>
+            <th class="col-hellobotz">WhatsApp Business API integrated with HelloBotz</th>
             <th class="col-standalone">WhatsApp Business API standalone tool</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="aspect-name">Lead data &amp; context</td>
-            <td class="inboxwa-cell">✔ Conversations auto-linked to CRM leads, inquiries, marksheets &amp; applications with complete interaction timeline.</td>
+            <td class="hellobotz-cell">✔ Conversations auto-linked to CRM leads, inquiries, marksheets &amp; applications with complete interaction timeline.</td>
             <td class="standalone-cell">✖ Manual exports; no real-time CRM sync; fragmented student records across multiple spreadsheets.</td>
           </tr>
           <tr>
             <td class="aspect-name">Personalization &amp; automation</td>
-            <td class="inboxwa-cell">✔ CRM fields + AI drive contextual campaigns, auto-reminders, document verification flows &amp; counselor follow-ups.</td>
+            <td class="hellobotz-cell">✔ CRM fields + AI drive contextual campaigns, auto-reminders, document verification flows &amp; counselor follow-ups.</td>
             <td class="standalone-cell">✖ Static templates only; manual scheduling; zero adaptive journey branch logic.</td>
           </tr>
           <tr>
             <td class="aspect-name">Engagement visibility</td>
-            <td class="inboxwa-cell">✔ Unified timeline across WhatsApp, phone calls, emails, fees &amp; application statuses in a single unified view.</td>
+            <td class="hellobotz-cell">✔ Unified timeline across WhatsApp, phone calls, emails, fees &amp; application statuses in a single unified view.</td>
             <td class="standalone-cell">✖ WhatsApp is completely isolated, creating team communication blindspots and lost prospective leads.</td>
           </tr>
           <tr>
             <td class="aspect-name">Insights &amp; ROI</td>
-            <td class="inboxwa-cell">✔ End-to-end funnel tracking + AI shows exactly which ad campaigns and counselors drive paid enrollments.</td>
+            <td class="hellobotz-cell">✔ End-to-end funnel tracking + AI shows exactly which ad campaigns and counselors drive paid enrollments.</td>
             <td class="standalone-cell">✖ Standard message counts only; no admission yield or tuition revenue attribution.</td>
           </tr>
           <tr>
             <td class="aspect-name">Compliance &amp; Scale</td>
-            <td class="inboxwa-cell">✔ Secure, role-based access with team routing &amp; scaling built in on official Meta Cloud API (zero ban risk).</td>
+            <td class="hellobotz-cell">✔ Secure, role-based access with team routing &amp; scaling built in on official Meta Cloud API (zero ban risk).</td>
             <td class="standalone-cell">✖ Customer data exported to external tools leads to compliance risks and high vulnerability to number bans.</td>
           </tr>
         </tbody>
@@ -848,7 +848,7 @@ include __DIR__ . '/../../includes/header.php';
     <div style="text-align:center; max-width:800px; margin:0 auto 2.5rem;">
       <span class="edu-feature-pill amber">Interactive ROI Estimator</span>
       <h2 style="font-size:clamp(1.75rem, 2.8vw, 2.35rem); font-weight:800; color:#0F172A;">Estimate Your Admission Growth &amp; Admin Time Savings</h2>
-      <p style="font-size:1.02rem; color:#64748B;">Calculate how many more students your institution can enroll each year with InboxWa.</p>
+      <p style="font-size:1.02rem; color:#64748B;">Calculate how many more students your institution can enroll each year with HelloBotz.</p>
     </div>
 
     <div class="edu-roi-card" style="max-width:820px; margin:0 auto; background:#fff; border:1px solid #E2E8F0; border-radius:18px; padding:2rem; box-shadow:0 8px 30px rgba(0,0,0,0.04);">
@@ -894,11 +894,11 @@ include __DIR__ . '/../../includes/header.php';
       <!-- FAQ 1 -->
       <div class="edu-faq-box active">
         <button type="button" class="edu-faq-q-btn" onclick="toggleEduFaq(this)">
-          <span class="q-title"><span>✅</span> How does InboxWa's AI-powered WhatsApp Business API help improve lead engagement?</span>
+          <span class="q-title"><span>✅</span> How does HelloBotz's AI-powered WhatsApp Business API help improve lead engagement?</span>
           <svg class="edu-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="edu-faq-a-pane">
-          InboxWa’s AI-powered WhatsApp Business API automates personalized messaging to engage students at various stages of the enrollment process. By analyzing student intent and inquiry details, our AI tailors each message to the prospect's needs, ensuring timely, relevant, and contextual communication that maximizes engagement and conversion rates while reducing counselor response delays.
+          HelloBotz’s AI-powered WhatsApp Business API automates personalized messaging to engage students at various stages of the enrollment process. By analyzing student intent and inquiry details, our AI tailors each message to the prospect's needs, ensuring timely, relevant, and contextual communication that maximizes engagement and conversion rates while reducing counselor response delays.
         </div>
       </div>
 
@@ -910,7 +910,7 @@ include __DIR__ . '/../../includes/header.php';
         </button>
         <div class="edu-faq-a-pane">
           The regular WhatsApp Business app is a standalone mobile application designed for single users or small businesses with limited message volume.<br><br>
-          The <b>WhatsApp Business API (provided by InboxWa)</b> is an enterprise interface designed for educational institutions that need to broadcast to thousands of students, manage multi-counselor team inboxes, build automated admission flows, verify official Green Tick profiles, and integrate seamlessly with CRMs and ERP systems.
+          The <b>WhatsApp Business API (provided by HelloBotz)</b> is an enterprise interface designed for educational institutions that need to broadcast to thousands of students, manage multi-counselor team inboxes, build automated admission flows, verify official Green Tick profiles, and integrate seamlessly with CRMs and ERP systems.
         </div>
       </div>
 
@@ -928,22 +928,22 @@ include __DIR__ . '/../../includes/header.php';
       <!-- FAQ 4 -->
       <div class="edu-faq-box">
         <button type="button" class="edu-faq-q-btn" onclick="toggleEduFaq(this)">
-          <span class="q-title"><span>✅</span> How does InboxWa help institutions in enabling and using WhatsApp Business API?</span>
+          <span class="q-title"><span>✅</span> How does HelloBotz help institutions in enabling and using WhatsApp Business API?</span>
           <svg class="edu-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="edu-faq-a-pane">
-          As an official Meta Tech Partner, InboxWa fast-tracks your Meta Business Manager verification, secures your official Green Tick, and sets up your phone numbers within 24 hours. We provide pre-built education templates, counseling journey workflows, and CRM integrations so your teams can start communicating immediately with zero technical overhead.
+          As an official Meta Tech Partner, HelloBotz fast-tracks your Meta Business Manager verification, secures your official Green Tick, and sets up your phone numbers within 24 hours. We provide pre-built education templates, counseling journey workflows, and CRM integrations so your teams can start communicating immediately with zero technical overhead.
         </div>
       </div>
 
       <!-- FAQ 5 -->
       <div class="edu-faq-box">
         <button type="button" class="edu-faq-q-btn" onclick="toggleEduFaq(this)">
-          <span class="q-title"><span>✅</span> Can InboxWa integrate with our existing Education CRM or LMS?</span>
+          <span class="q-title"><span>✅</span> Can HelloBotz integrate with our existing Education CRM or LMS?</span>
           <svg class="edu-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="edu-faq-a-pane">
-          Yes! InboxWa features bidirectional API and Webhook integrations with leading education CRMs including LeadSquared, Salesforce Education Cloud, Zoho CRM, HubSpot, ERPNext, and custom university databases. Lead records, chat transcripts, and status updates sync automatically in real time.
+          Yes! HelloBotz features bidirectional API and Webhook integrations with leading education CRMs including LeadSquared, Salesforce Education Cloud, Zoho CRM, HubSpot, ERPNext, and custom university databases. Lead records, chat transcripts, and status updates sync automatically in real time.
         </div>
       </div>
 
@@ -961,8 +961,8 @@ include __DIR__ . '/../../includes/header.php';
 
     <div class="edu-faq-support-strip">
       <strong>Still Have questions?</strong>
-      <a href="mailto:support@inboxwa.com" class="btn btn-outline" style="border-color:#CBD5E1; color:#0F172A; font-weight:700;">Email Us (support@inboxwa.com)</a>
-      <a href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20have%20questions%20regarding%20WhatsApp%20API%20for%20our%20institution" target="_blank" rel="noopener" class="btn btn-primary" style="font-weight:700;">WhatsApp Us (+91 80508 54445)</a>
+      <a href="mailto:support@hellobotz.com" class="btn btn-outline" style="border-color:#CBD5E1; color:#0F172A; font-weight:700;">Email Us (support@hellobotz.com)</a>
+      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20have%20questions%20regarding%20WhatsApp%20API%20for%20our%20institution" target="_blank" rel="noopener" class="btn btn-primary" style="font-weight:700;">WhatsApp Us (+91 80508 54445)</a>
     </div>
   </div>
 </section>
@@ -976,7 +976,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="edu-bottom-cta-inner">
       <div class="edu-bottom-cta-copy">
         <h2>Ready to experience the power of <span class="highlightText">WhatsApp Business API</span> to boost your conversions and ROI?</h2>
-        <p>Join hundreds of forward-thinking universities, colleges, coaching academies, and EdTech platforms growing enrollments with InboxWa.</p>
+        <p>Join hundreds of forward-thinking universities, colleges, coaching academies, and EdTech platforms growing enrollments with HelloBotz.</p>
       </div>
 
       <div class="edu-bottom-cta-actions">
@@ -1028,7 +1028,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
     </form>
     <div id="modal-success-msg" style="display:none; margin-top:1rem; padding:0.85rem; border-radius:10px; background:#065F46; color:#D1FAE5; font-size:0.88rem; text-align:center;">
-      ✓ Demo request received! An InboxWa education specialist will contact you on WhatsApp within 15 minutes.
+      ✓ Demo request received! An HelloBotz education specialist will contact you on WhatsApp within 15 minutes.
     </div>
   </div>
 </div>
@@ -1083,13 +1083,13 @@ function handleEduFormSubmit(e) {
   const phone = document.getElementById('edu-user-phone').value;
   const type = document.getElementById('edu-inst-type').value;
 
-  btn.innerHTML = '<span>Connecting to InboxWa CRM...</span>';
+  btn.innerHTML = '<span>Connecting to HelloBotz CRM...</span>';
   btn.disabled = true;
 
   setTimeout(function() {
     btn.innerHTML = '<span>✓ Demo Booked! Opening WhatsApp...</span>';
     btn.style.background = '#059669';
-    const text = encodeURIComponent('Hi InboxWa, I requested an Education Demo for ' + inst + ' (' + name + ', ' + type + '). Please share details.');
+    const text = encodeURIComponent('Hi HelloBotz, I requested an Education Demo for ' + inst + ' (' + name + ', ' + type + '). Please share details.');
     window.open('https://wa.me/918050854445?text=' + text, '_blank');
   }, 1000);
 }

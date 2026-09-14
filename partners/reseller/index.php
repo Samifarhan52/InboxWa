@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Sell InboxWa. Grow recurring revenue' . ' | InboxWa Partners';
-$pageDescription = 'Resell InboxWa plans with partner pricing, sales support and a clear path from customer acquisition to activation.';
-$canonicalUrl = 'https://inboxwa.com/partners/reseller/';
+$pageTitle = 'Sell HelloBotz. Grow recurring revenue' . ' | HelloBotz Partners';
+$pageDescription = 'Resell HelloBotz plans with partner pricing, sales support and a clear path from customer acquisition to activation.';
+$canonicalUrl = 'https://hellobotz.com/partners/reseller/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -14,8 +14,8 @@ include __DIR__ . '/../../includes/header.php';
   <div class="partner-orb partner-orb-2" aria-hidden="true"></div>
   <div class="container" style="text-align:center">
     <span class="badge">Reseller</span>
-    <h1>Sell InboxWa. Grow recurring revenue</h1>
-    <p class="lead">Resell InboxWa plans with partner pricing, sales support and a clear path from customer acquisition to activation.</p>
+    <h1>Sell HelloBotz. Grow recurring revenue</h1>
+    <p class="lead">Resell HelloBotz plans with partner pricing, sales support and a clear path from customer acquisition to activation.</p>
     <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="#partner-form" class="btn btn-primary btn-lg">Become a Reseller</a>
       <a href="#flow" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">See workflow</a>
@@ -25,7 +25,7 @@ include __DIR__ . '/../../includes/header.php';
         </a>
 </div>
     <div class="hero-visual-float" style="max-width:760px;margin:2.5rem auto 0">
-      <img src="/assets/images/partners/reseller/hero.webp" alt="Reseller — InboxWa"
+      <img src="/assets/images/partners/reseller/hero.webp" alt="Reseller — HelloBotz"
         width="1200" height="630" loading="eager"
         style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.12);min-height:200px;object-fit:cover;background:linear-gradient(135deg,rgba(139,92,246,.35),rgba(6,182,212,.25))"
         onerror="this.style.minHeight='200px'">
@@ -42,8 +42,8 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-gradient-1">
   <div class="container">
-    <div class="section-header reveal"><h2>How InboxWa helps</h2></div>
-    <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">As a reseller you sell Growth, Pro and Business plans, onboard customers, and earn recurring revenue while InboxWa delivers the platform.</p>
+    <div class="section-header reveal"><h2>How HelloBotz helps</h2></div>
+    <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">As a reseller you sell Growth, Pro and Business plans, onboard customers, and earn recurring revenue while HelloBotz delivers the platform.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem"><div class="card card-feature reveal"><h3>Resell plans</h3><p>Growth, Pro, Business and add-ons.</p></div><div class="card card-feature reveal"><h3>Partner pricing</h3><p>Margin-friendly commercial terms.</p></div><div class="card card-feature reveal"><h3>Customer onboarding</h3><p>Guided go-live.</p></div><div class="card card-feature reveal"><h3>Customer management</h3><p>Visibility into accounts.</p></div><div class="card card-feature reveal"><h3>WhatsApp API</h3><p>Core product customers need.</p></div><div class="card card-feature reveal"><h3>AI automation</h3><p>Differentiation in deals.</p></div><div class="card card-feature reveal"><h3>Sales support</h3><p>Collateral and demos.</p></div><div class="card card-feature reveal"><h3>Marketing support</h3><p>Co-branded assets where available.</p></div></div>
   </div>
 </section>
@@ -51,7 +51,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark" id="flow">
   <div class="container">
     <div class="section-header reveal"><span class="badge badge-primary">Workflow</span><h2 style="color:#fff">Partner journey</h2></div>
-    <div class="workflow-sim" id="ws-p-reseller"><div class="ws-step">Become partner</div><div class="ws-step">Get partner access</div><div class="ws-step">Find customers</div><div class="ws-step">Sell InboxWa</div><div class="ws-step">Customer activation</div><div class="ws-step">Recurring revenue</div></div>
+    <div class="workflow-sim" id="ws-p-reseller"><div class="ws-step">Become partner</div><div class="ws-step">Get partner access</div><div class="ws-step">Find customers</div><div class="ws-step">Sell HelloBotz</div><div class="ws-step">Customer activation</div><div class="ws-step">Recurring revenue</div></div>
     <div class="ws-controls">
       <button type="button" class="btn btn-sm btn-outline ws-prev" style="color:#fff;border-color:rgba(255,255,255,.35)" data-sim="ws-p-reseller">Previous</button>
       <button type="button" class="btn btn-sm btn-primary ws-next" data-sim="ws-p-reseller">Next</button>
@@ -63,7 +63,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container" style="max-width:720px">
     <div class="section-header reveal"><h2>Benefits</h2></div>
-    <ul class="feature-list" style="display:flex;flex-direction:column;gap:.65rem;margin-top:1rem"><li class="feature-list-item reveal"><span class="check"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Predictable recurring income</strong> — </span></li><li class="feature-list-item reveal"><span class="check"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Faster deals with a ready product</strong> — </span></li><li class="feature-list-item reveal"><span class="check"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Support from InboxWa team</strong> — </span></li></ul>
+    <ul class="feature-list" style="display:flex;flex-direction:column;gap:.65rem;margin-top:1rem"><li class="feature-list-item reveal"><span class="check"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Predictable recurring income</strong> — </span></li><li class="feature-list-item reveal"><span class="check"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Faster deals with a ready product</strong> — </span></li><li class="feature-list-item reveal"><span class="check"><svg class="hb-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Support from HelloBotz team</strong> — </span></li></ul>
   </div>
 </section>
 
@@ -121,7 +121,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
-    <h2 style="color:#fff">Partner with InboxWa</h2>
+    <h2 style="color:#fff">Partner with HelloBotz</h2>
     <p class="lead" style="color:rgba(255,255,255,.75)">WhatsApp Business API, AI automation and omnichannel — built for partners who scale clients.</p>
     <a href="/#contact-section" class="btn btn-primary btn-lg" style="margin-top:1rem">Contact sales</a>
   </div></div>
@@ -140,7 +140,7 @@ include __DIR__ . '/../../includes/header.php';
   var f=document.getElementById('partner-form-reseller');
   if(f){f.addEventListener('submit',function(){
     var fd=new FormData(f);
-    var msg='*InboxWa Partner — Reseller*\n'+fd.get('name')+' | '+fd.get('company')+'\n'+fd.get('email')+' | '+fd.get('whatsapp')+'\n'+(fd.get('message')||'');
+    var msg='*HelloBotz Partner — Reseller*\n'+fd.get('name')+' | '+fd.get('company')+'\n'+fd.get('email')+' | '+fd.get('whatsapp')+'\n'+(fd.get('message')||'');
     fetch('/api/lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'partner',source_page:'/partners/reseller/',name:fd.get('name'),email:fd.get('email'),phone:fd.get('whatsapp'),company:fd.get('company'),message:fd.get('message')}),credentials:'same-origin'}).catch(function(){});
     window.open('https://wa.me/918050854445?text='+encodeURIComponent(msg),'_blank','noopener');
     var st=document.getElementById('pf-status-reseller'); if(st){st.style.display='block';st.textContent='Thanks — WhatsApp opened for your partner request.';}

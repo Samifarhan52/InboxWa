@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Class Bookings on WhatsApp';
 $pageDescription = 'Fill seats faster — let students and members browse batches, book seats and get reminders on WhatsApp.';
-$canonicalUrl = 'https://inboxwa.com/solutions/class-bookings/';
+$canonicalUrl = 'https://hellobotz.com/solutions/class-bookings/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / <a href="<?php echo $bp; ?>solutions/">Solutions</a> / Class Bookings on WhatsApp</nav>

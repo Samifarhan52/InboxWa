@@ -1,12 +1,12 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Download InboxWa Apps — Android, iOS, Desktop & Web Console';
-$pageDescription = 'Download InboxWa for Android, iOS iPhone/iPad, macOS, Windows, or use the high-speed Web App. Access your WhatsApp shared inbox from anywhere.';
-$canonicalUrl = 'https://inboxwa.com/resources/download-app/';
+$pageTitle = 'Download HelloBotz Apps — Android, iOS, Desktop & Web Console';
+$pageDescription = 'Download HelloBotz for Android, iOS iPhone/iPad, macOS, Windows, or use the high-speed Web App. Access your WhatsApp shared inbox from anywhere.';
+$canonicalUrl = 'https://hellobotz.com/resources/download-app/';
 $appLinks = require __DIR__ . '/../../config/app-links.php';
 include __DIR__ . '/../../includes/header.php';
 
-$androidUrl = trim($appLinks['android'] ?? '') ?: 'https://play.google.com/store/apps/details?id=com.inboxwa.app';
+$androidUrl = trim($appLinks['android'] ?? '') ?: 'https://play.google.com/store/apps/details?id=com.hellobotz.app';
 $iosUrl = trim($appLinks['ios'] ?? '') ?: '/resources/download-ios-app/';
 $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
 ?>
@@ -24,7 +24,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
 <section class="res-hero">
   <div class="container">
     <span class="res-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> Unified Multi-Platform Ecosystem</span>
-    <h1>InboxWa Across All Your Devices</h1>
+    <h1>HelloBotz Across All Your Devices</h1>
     <p>Manage high-volume WhatsApp conversations, assign agent tickets on the go, monitor live AI chatbot sequences, and receive instant push notifications wherever you work.</p>
     
     <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
@@ -58,7 +58,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
           <a class="btn btn-primary" href="<?php echo htmlspecialchars($androidUrl); ?>" target="_blank" rel="noopener">
             Get it on Google Play
           </a>
-          <a class="btn btn-sm btn-outline" href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20please%20send%20me%20the%20direct%20Android%20APK%20download%20link" target="_blank" rel="noopener">
+          <a class="btn btn-sm btn-outline" href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20please%20send%20me%20the%20direct%20Android%20APK%20download%20link" target="_blank" rel="noopener">
             Request Direct APK (.apk)
           </a>
         </div>
@@ -167,7 +167,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
         <span class="badge badge-primary" style="margin-bottom:0.75rem">INSTANT MOBILE SYNC</span>
         <h2 style="font-size:1.65rem;font-weight:800;color:#111827;margin:0 0 0.75rem">Scan to open on your phone</h2>
         <p style="color:#4B5563;font-size:0.95rem;line-height:1.6;margin:0 0 1.5rem">
-          Point your iPhone or Android camera at this QR code to instantly launch the InboxWa mobile portal or save it directly to your home screen as a high-performance web app.
+          Point your iPhone or Android camera at this QR code to instantly launch the HelloBotz mobile portal or save it directly to your home screen as a high-performance web app.
         </p>
         <div style="display:flex;gap:0.75rem;align-items:center">
           <div style="width:10px;height:10px;border-radius:50%;background:#10B981"></div>
@@ -230,7 +230,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
     <span class="badge badge-primary" style="margin-bottom:0.75rem">ENTERPRISE CLOUD FOUNDATION</span>
     <h2 style="font-size:1.85rem;font-weight:800;color:#111827;margin:0 0 1rem">Zero-disconnect reliability, guaranteed</h2>
     <p style="color:#4B5563;font-size:0.95rem;line-height:1.6;margin:0 0 2rem">
-      Unlike unofficial WhatsApp tools that rely on fragile QR-linked web sessions that disconnect whenever your phone drops offline, InboxWa is connected directly to the <strong>Official Meta WhatsApp Cloud API</strong>. Your incoming messages, automated replies, and team assignments run 24/7 in our cloud datacenter.
+      Unlike unofficial WhatsApp tools that rely on fragile QR-linked web sessions that disconnect whenever your phone drops offline, HelloBotz is connected directly to the <strong>Official Meta WhatsApp Cloud API</strong>. Your incoming messages, automated replies, and team assignments run 24/7 in our cloud datacenter.
     </p>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1.5rem;text-align:left">

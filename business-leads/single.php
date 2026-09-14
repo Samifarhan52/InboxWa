@@ -19,13 +19,13 @@ if (!$category) {
     $category = get_business_lead_category('real-estate');
 }
 
-$pageTitle = $category['name'] . ' Business Leads & WhatsApp Automation | InboxWa';
-$pageDescription = $category['subtitle'] . ' Get verified mobile contacts, automated WhatsApp qualification, and high-converting workflows with InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/business-leads/' . urlencode($category['slug']) . '/';
+$pageTitle = $category['name'] . ' Business Leads & WhatsApp Automation | HelloBotz';
+$pageDescription = $category['subtitle'] . ' Get verified mobile contacts, automated WhatsApp qualification, and high-converting workflows with HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/business-leads/' . urlencode($category['slug']) . '/';
 $ogImage = '/assets/images/og-image.png';
 
 $waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918050854445';
-$defaultWaMsg = urlencode("Hi InboxWa team, I would like to request verified business leads and datasets for {$category['name']}. Please share available counts and sample preview.");
+$defaultWaMsg = urlencode("Hi HelloBotz team, I would like to request verified business leads and datasets for {$category['name']}. Please share available counts and sample preview.");
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -151,7 +151,7 @@ include __DIR__ . '/../includes/header.php';
 
       <div class="bl-datasets-grid">
         <?php foreach ($category['datasets'] as $dset): 
-          $dsetWaMsg = urlencode("Hi InboxWa, I want to explore and request the verified dataset: '{$dset['title']}' under {$category['name']}. Please share sample records and commercial details.");
+          $dsetWaMsg = urlencode("Hi HelloBotz, I want to explore and request the verified dataset: '{$dset['title']}' under {$category['name']}. Please share sample records and commercial details.");
         ?>
         <article class="bl-dataset-card">
           <div>
@@ -263,7 +263,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="bl-container">
       <div class="bl-section-header">
         <span class="bl-badge-pill" style="background:#fee2e2;color:#b91c1c;border-color:#fecaca;">Bottlenecks vs Solutions</span>
-        <h2>Why <?php echo htmlspecialchars($category['name']); ?> Businesses Choose InboxWa</h2>
+        <h2>Why <?php echo htmlspecialchars($category['name']); ?> Businesses Choose HelloBotz</h2>
         <p>Eliminate manual calling fatigue, stop cold leads from going silent, and automate your entire customer acquisition funnel.</p>
       </div>
 
@@ -288,7 +288,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="bl-prob-sol-col" style="border-top:4px solid #10b981;">
           <h3 style="color:#059669;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>The InboxWa Advantage</span>
+            <span>The HelloBotz Advantage</span>
           </h3>
           <div class="bl-cards-list">
             <?php foreach ($category['solutions'] as $sol): ?>
@@ -335,7 +335,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Notify students and parents in real time about enrollment application status</span></li>
               </ul>
             </div>
-            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to enquire about WhatsApp Take Admission & Enrollment automation.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
+            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to enquire about WhatsApp Take Admission & Enrollment automation.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
               <span>Enquire Now</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -363,7 +363,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Alert students about fee due dates, re-enrollment windows, and test dates</span></li>
               </ul>
             </div>
-            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to enquire about Automated Class & Deadline Reminders on WhatsApp.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
+            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to enquire about Automated Class & Deadline Reminders on WhatsApp.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
               <span>Enquire Now</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -391,7 +391,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Provide performance feedback, re-evaluation dates, and study resources</span></li>
               </ul>
             </div>
-            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to enquire about Exam & Results Notifications on WhatsApp.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
+            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to enquire about Exam & Results Notifications on WhatsApp.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
               <span>Enquire Now</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -419,7 +419,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Send tuition fee receipts, bus route updates, and emergency school alerts</span></li>
               </ul>
             </div>
-            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to enquire about Parental WhatsApp Communication.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
+            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to enquire about Parental WhatsApp Communication.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
               <span>Enquire Now</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -447,7 +447,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Resolve 85%+ inquiries without needing staff intervention</span></li>
               </ul>
             </div>
-            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to enquire about 24/7 Student WhatsApp Chatbots.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
+            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to enquire about 24/7 Student WhatsApp Chatbots.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
               <span>Enquire Now</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -458,7 +458,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="bl-journey-card reverse">
           <div class="bl-journey-media">
             <span class="bl-journey-badge-float">06 &bull; Team Inbox</span>
-            <img src="/assets/images/edtech_shared_inbox.jpg" alt="InboxWa WhatsApp Shared Team Inbox for Admissions" class="bl-journey-img" loading="lazy">
+            <img src="/assets/images/edtech_shared_inbox.jpg" alt="HelloBotz WhatsApp Shared Team Inbox for Admissions" class="bl-journey-img" loading="lazy">
           </div>
           <div class="bl-journey-content">
             <div class="bl-journey-step-header">
@@ -475,7 +475,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Track counselor response times, resolution rates, and student satisfaction</span></li>
               </ul>
             </div>
-            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to enquire about Shared Team Inbox for Admissions.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
+            <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to enquire about Shared Team Inbox for Admissions.'); ?>" target="_blank" rel="noopener" class="bl-btn-primary" style="padding:0.75rem 1.6rem;font-size:0.92rem;">
               <span>Enquire Now</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -578,13 +578,13 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
 
-  <!-- HOW INBOXWA IS DIFFERENT FROM OTHER BSPS -->
-  <section class="bl-section" id="why-inboxwa">
+  <!-- HOW HELLOBOTZ IS DIFFERENT FROM OTHER BSPS -->
+  <section class="bl-section" id="why-hellobotz">
     <div class="bl-container">
       <div class="bl-section-header">
         <span class="bl-badge-pill" style="background:rgba(16,185,129,0.1);color:#059669;border-color:rgba(16,185,129,0.25);">Transparent &amp; Superior</span>
-        <h2>How InboxWa is Different from Other Business Solution Providers (BSPs)?</h2>
-        <p>InboxWa delivers an affordable, secure, and feature-packed WhatsApp Business solution built specifically for educational institutions and high-volume student outreach.</p>
+        <h2>How HelloBotz is Different from Other Business Solution Providers (BSPs)?</h2>
+        <p>HelloBotz delivers an affordable, secure, and feature-packed WhatsApp Business solution built specifically for educational institutions and high-volume student outreach.</p>
       </div>
 
       <div class="bl-bsp-grid">
@@ -661,7 +661,7 @@ include __DIR__ . '/../includes/header.php';
       <div class="bl-section-header">
         <span class="bl-badge-pill" style="background:rgba(37,99,235,0.1);color:#2563eb;border-color:rgba(37,99,235,0.25);">Institutional Efficiency</span>
         <h2>Department Wise Uses of WhatsApp Business Platform</h2>
-        <p>See how InboxWa helps institutions boost student marketing, streamline admissions, and elevate student services.</p>
+        <p>See how HelloBotz helps institutions boost student marketing, streamline admissions, and elevate student services.</p>
       </div>
 
       <div class="bl-dept-grid">
@@ -677,7 +677,7 @@ include __DIR__ . '/../includes/header.php';
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Automated event &amp; webinar alerts</span></li>
             </ul>
           </div>
-          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to discuss WhatsApp for Education Marketing.'); ?>" target="_blank" rel="noopener" class="bl-dataset-btn">
+          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to discuss WhatsApp for Education Marketing.'); ?>" target="_blank" rel="noopener" class="bl-dataset-btn">
             <span>Learn More &amp; Setup</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -695,7 +695,7 @@ include __DIR__ . '/../includes/header.php';
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Document upload &amp; fee collection</span></li>
             </ul>
           </div>
-          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to discuss WhatsApp for Admissions & Counseling.'); ?>" target="_blank" rel="noopener" class="bl-dataset-btn">
+          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to discuss WhatsApp for Admissions & Counseling.'); ?>" target="_blank" rel="noopener" class="bl-dataset-btn">
             <span>Learn More &amp; Setup</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -713,7 +713,7 @@ include __DIR__ . '/../includes/header.php';
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Alumni networking &amp; placement alerts</span></li>
             </ul>
           </div>
-          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi InboxWa, I want to discuss WhatsApp for Student Support & Services.'); ?>" target="_blank" rel="noopener" class="bl-dataset-btn">
+          <a href="https://wa.me/<?php echo $waNumber; ?>?text=<?php echo urlencode('Hi HelloBotz, I want to discuss WhatsApp for Student Support & Services.'); ?>" target="_blank" rel="noopener" class="bl-dataset-btn">
             <span>Learn More &amp; Setup</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -744,21 +744,21 @@ include __DIR__ . '/../includes/header.php';
 
         <div class="bl-faq-item">
           <button type="button" class="bl-faq-question" aria-expanded="false">
-            <span>2. Can InboxWa integrate with our existing Student Information System (SIS) or CRM?</span>
+            <span>2. Can HelloBotz integrate with our existing Student Information System (SIS) or CRM?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="bl-faq-answer">
-            Yes! InboxWa provides two-way REST APIs and Webhooks that integrate seamlessly with LeadSquared, Salesforce Education Cloud, Zoho CRM, HubSpot, Moodle, Canvas, and custom institutional ERP databases.
+            Yes! HelloBotz provides two-way REST APIs and Webhooks that integrate seamlessly with LeadSquared, Salesforce Education Cloud, Zoho CRM, HubSpot, Moodle, Canvas, and custom institutional ERP databases.
           </div>
         </div>
 
         <div class="bl-faq-item">
           <button type="button" class="bl-faq-question" aria-expanded="false">
-            <span>3. How secure is student and parent data on InboxWa?</span>
+            <span>3. How secure is student and parent data on HelloBotz?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="bl-faq-answer">
-            InboxWa operates directly on Meta's official Cloud API with end-to-end encryption in transit. Student data is strictly isolated, role-permissioned, and fully compliant with international privacy and education guidelines.
+            HelloBotz operates directly on Meta's official Cloud API with end-to-end encryption in transit. Student data is strictly isolated, role-permissioned, and fully compliant with international privacy and education guidelines.
           </div>
         </div>
 
@@ -768,7 +768,7 @@ include __DIR__ . '/../includes/header.php';
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="bl-faq-answer">
-            Yes. InboxWa supports in-chat native payment flows via WhatsApp Pay (UPI, RuPay, debit/credit cards) as well as automated Razorpay/Stripe payment links that auto-generate and dispatch payment receipts instantly upon successful transaction.
+            Yes. HelloBotz supports in-chat native payment flows via WhatsApp Pay (UPI, RuPay, debit/credit cards) as well as automated Razorpay/Stripe payment links that auto-generate and dispatch payment receipts instantly upon successful transaction.
           </div>
         </div>
 
@@ -801,18 +801,18 @@ include __DIR__ . '/../includes/header.php';
       },
       {
         "@type": "Question",
-        "name": "Can InboxWa integrate with our existing Student Information System (SIS) or CRM?",
+        "name": "Can HelloBotz integrate with our existing Student Information System (SIS) or CRM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! InboxWa provides two-way REST APIs and Webhooks that integrate seamlessly with LeadSquared, Salesforce Education Cloud, Zoho CRM, HubSpot, Moodle, Canvas, and custom institutional ERP databases."
+          "text": "Yes! HelloBotz provides two-way REST APIs and Webhooks that integrate seamlessly with LeadSquared, Salesforce Education Cloud, Zoho CRM, HubSpot, Moodle, Canvas, and custom institutional ERP databases."
         }
       },
       {
         "@type": "Question",
-        "name": "How secure is student and parent data on InboxWa?",
+        "name": "How secure is student and parent data on HelloBotz?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "InboxWa operates directly on Meta's official Cloud API with end-to-end encryption in transit. Student data is strictly isolated, role-permissioned, and fully compliant with international privacy and education guidelines."
+          "text": "HelloBotz operates directly on Meta's official Cloud API with end-to-end encryption in transit. Student data is strictly isolated, role-permissioned, and fully compliant with international privacy and education guidelines."
         }
       },
       {
@@ -820,7 +820,7 @@ include __DIR__ . '/../includes/header.php';
         "name": "Can we send fee payment links and collect tuition directly on WhatsApp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. InboxWa supports in-chat native payment flows via WhatsApp Pay as well as automated Razorpay/Stripe payment links that auto-generate and dispatch payment receipts instantly upon successful transaction."
+          "text": "Yes. HelloBotz supports in-chat native payment flows via WhatsApp Pay as well as automated Razorpay/Stripe payment links that auto-generate and dispatch payment receipts instantly upon successful transaction."
         }
       },
       {

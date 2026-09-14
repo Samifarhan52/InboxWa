@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Data Marketplace | Business Leads & Industry Datasets | InboxWa';
+$pageTitle = 'Data Marketplace | Business Leads & Industry Datasets | HelloBotz';
 $pageDescription = 'Discover business leads and industry-specific datasets for targeted marketing and sales. Explore 16 categories, filter by location and request data via WhatsApp.';
-$canonicalUrl = 'https://inboxwa.com/solutions/data-marketplace/';
+$canonicalUrl = 'https://hellobotz.com/solutions/data-marketplace/';
 $HBContact = require __DIR__ . '/../../config/contact.php';
 $waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918884058241';
 include __DIR__ . '/../../includes/header.php';

@@ -2,8 +2,8 @@
 $basePath = '../';
 $robots = 'noindex, nofollow';
 $pageTitle = 'Forgot Password';
-$pageDescription = 'Reset your InboxWa account password.';
-$canonicalUrl = 'https://inboxwa.com/auth/forgot-password';
+$pageDescription = 'Reset your HelloBotz account password.';
+$canonicalUrl = 'https://hellobotz.com/auth/forgot-password';
 include __DIR__ . '/../includes/header.php';
 ?>
 <section class="section" style="padding-top:calc(var(--nav,72px) + 2.5rem);padding-bottom:4rem">

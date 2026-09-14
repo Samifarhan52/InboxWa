@@ -1,28 +1,28 @@
 /**
  * HELLOBOTZ - Interactive AI Robot Character & Website Knowledge Assistant (robot-chatbot.js)
  * Features dynamic character emotion states (blinking, getting bored, excited on hover/click),
- * signature HelloBotz greeting, and instant Q&A grounded on InboxWa with related page buttons.
+ * signature HelloBotz greeting, and instant Q&A grounded on HelloBotz with related page buttons.
  */
 
 (function () {
   'use strict';
 
   var CONFIG = {
-    whatsappNumber: (window.InboxWaData && window.InboxWaData.whatsapp) || '918050854445',
+    whatsappNumber: (window.HelloBotzData && window.HelloBotzData.whatsapp) || '918050854445',
     phoneNumber: '+91 80508 54445',
-    salesEmail: 'mail@inboxwa.com',
-    supportEmail: 'support@inboxwa.com',
-    siteName: 'InboxWa'
+    salesEmail: 'mail@hellobotz.com',
+    supportEmail: 'support@hellobotz.com',
+    siteName: 'HelloBotz'
   };
 
-  // Comprehensive Website Knowledge Base Grounded on All InboxWa Pages
+  // Comprehensive Website Knowledge Base Grounded on All HelloBotz Pages
   var KNOWLEDGE_BASE = [
     {
       id: 'pricing',
       intent: 'pricing_plans',
       keywords: ['price', 'pricing', 'plan', 'cost', 'charge', 'rate', 'package', 'subscription', 'fee', 'how much', 'cheap', 'expensive', 'discount', 'yearly', 'monthly', 'dollar', 'rupee', 'currency', 'inr'],
-      title: 'InboxWa Pricing & Plans',
-      answer: `<strong>💰 InboxWa Transparent Subscription Plans:</strong>
+      title: 'HelloBotz Pricing & Plans',
+      answer: `<strong>💰 HelloBotz Transparent Subscription Plans:</strong>
 <ul>
   <li><strong>WhatsApp Bulk (₹1,999/mo):</strong> Unlimited Bulk Broadcasts, Official WhatsApp API, Basic CRM, 10 Tags & Contact Management.</li>
   <li><strong>Automation Plan (₹2,999/mo) <span style="color:#8B5CF6;font-weight:700;">★ Most Popular</span>:</strong> Multi-Agent Shared Team Inbox, Visual No-Code Flow Builder, AI Auto-Replies, Shopify/WooCommerce/Sheets sync, 50 Tags.</li>
@@ -32,7 +32,7 @@
       actions: [
         { label: 'View Pricing & Live Currency', url: '/pricing/', type: 'primary' },
         { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20InboxWa%20pricing.', type: 'wa', target: '_blank' }
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20HelloBotz%20pricing.', type: 'wa', target: '_blank' }
       ]
     },
     {
@@ -41,7 +41,7 @@
       keywords: ['whatsapp api', 'official api', 'business api', 'cloud api', 'green tick', 'meta verified', 'official whatsapp', 'meta partner', 'zero ban', 'anti ban', 'ban risk'],
       title: 'Official WhatsApp Business API Platform',
       answer: `<strong>🚀 Official Meta WhatsApp Business API:</strong>
-<p>InboxWa is built directly on Meta's Official Cloud API infrastructure:</p>
+<p>HelloBotz is built directly on Meta's Official Cloud API infrastructure:</p>
 <ul>
   <li><strong>Zero Ban Risk:</strong> 100% compliant with Meta policies—never get your number banned.</li>
   <li><strong>Green Tick Verification:</strong> Full assistance to get the official verified green badge on WhatsApp.</li>
@@ -150,7 +150,7 @@
       keywords: ['shopify', 'woocommerce', 'ecommerce', 'integration', 'connect', 'crm', 'zoho', 'hubspot', 'sheets', 'google sheet', 'google forms', 'calendar', 'webhook', 'api'],
       title: 'E-commerce, CRM & Webhook Integrations',
       answer: `<strong>🔌 1-Click E-Commerce & CRM Integrations:</strong>
-<p>Connect InboxWa directly to your existing store and workflow:</p>
+<p>Connect HelloBotz directly to your existing store and workflow:</p>
 <ul>
   <li><strong>Shopify & WooCommerce:</strong> Abandoned cart recovery, automated COD verification, order tracking.</li>
   <li><strong>Google Sheets & Forms:</strong> Instant WhatsApp message whenever a form is submitted or row added.</li>
@@ -173,7 +173,7 @@
 <ul>
   <li><strong>12 High-Converting Categories:</strong> Real Estate, Automobiles, E-Commerce, Healthcare, BFSI, Education, IT/Software, Manufacturing, Food & Beverage, Travel, Advertising, and B2B Suppliers.</li>
   <li><strong>Verified Contacts:</strong> Active WhatsApp phone numbers, city, company, and key decision makers.</li>
-  <li><strong>Direct Integration:</strong> Broadcast offers directly to verified leads via InboxWa.</li>
+  <li><strong>Direct Integration:</strong> Broadcast offers directly to verified leads via HelloBotz.</li>
 </ul>`,
       actions: [
         { label: 'Browse 12 Leads Categories', url: '/business-leads/', type: 'primary' },
@@ -190,7 +190,7 @@
 <ul>
   <li>Displays your business brand name instead of a phone number even if the user hasn't saved your contact.</li>
   <li><strong>Requirements:</strong> Meta Business Verification, working business website, and brand notability.</li>
-  <li><strong>Free Assistance:</strong> InboxWa handles your official application with Meta at zero extra service fee!</li>
+  <li><strong>Free Assistance:</strong> HelloBotz handles your official application with Meta at zero extra service fee!</li>
 </ul>`,
       actions: [
         { label: 'Green Tick Guide', url: '/channel/whatsapp/', type: 'primary' },
@@ -207,12 +207,12 @@
 <ul>
   <li><strong>WhatsApp:</strong> +91 80508 54445 (Instant Replies)</li>
   <li><strong>Phone:</strong> <a href="tel:+918050854445" style="color:#0369a1;font-weight:600;">+91 80508 54445</a></li>
-  <li><strong>Sales Email:</strong> <a href="mailto:mail@inboxwa.com">mail@inboxwa.com</a></li>
-  <li><strong>Support Email:</strong> <a href="mailto:support@inboxwa.com">support@inboxwa.com</a></li>
+  <li><strong>Sales Email:</strong> <a href="mailto:mail@hellobotz.com">mail@hellobotz.com</a></li>
+  <li><strong>Support Email:</strong> <a href="mailto:support@hellobotz.com">support@hellobotz.com</a></li>
   <li><strong>Office:</strong> Bangalore, Karnataka, India</li>
 </ul>`,
       actions: [
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20InboxWa%20team%2C%20I%20would%20like%20to%20speak%20with%20a%20sales%20representative.', type: 'wa', target: '_blank' },
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%20team%2C%20I%20would%20like%20to%20speak%20with%20a%20sales%20representative.', type: 'wa', target: '_blank' },
         { label: 'Call Us Now', url: 'tel:' + CONFIG.whatsappNumber, type: 'secondary' },
         { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
       ]
@@ -222,7 +222,7 @@
       intent: 'free_trial_onboarding',
       keywords: ['free trial', 'trial', 'sign up', 'register', 'create account', 'start', 'get started', 'demo', 'login', 'setup time', 'how to start'],
       title: 'Get Started with 7-Day Free Trial',
-      answer: `<strong>✨ Start Free Today with InboxWa:</strong>
+      answer: `<strong>✨ Start Free Today with HelloBotz:</strong>
 <p>Get instant access to the official WhatsApp Business API platform:</p>
 <ul>
   <li><strong>7-Day Free Trial:</strong> Explore all features with zero risk.</li>
@@ -250,7 +250,7 @@
         return {
           type: 'greeting',
           title: 'Hello from HelloBotz!',
-          answer: `👋 Hello there! I'm <strong>HelloBotz</strong>, your friendly AI assistant for InboxWa.<br><br>I can answer any question about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Shared Team Inbox, Voice Calling, Pricing, and Business Leads</strong>.<br><br>What would you like to explore today?`,
+          answer: `👋 Hello there! I'm <strong>HelloBotz</strong>, your friendly AI assistant for HelloBotz.<br><br>I can answer any question about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Shared Team Inbox, Voice Calling, Pricing, and Business Leads</strong>.<br><br>What would you like to explore today?`,
           suggestions: [
             'What are your pricing plans?',
             'How does WhatsApp API work?',
@@ -313,7 +313,7 @@
       ],
       actions: [
         { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
-        { label: 'Chat on WhatsApp with Team', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent('Hi InboxWa, I have a question: ' + userQuery), type: 'wa', target: '_blank' },
+        { label: 'Chat on WhatsApp with Team', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent('Hi HelloBotz, I have a question: ' + userQuery), type: 'wa', target: '_blank' },
         { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     };
@@ -339,7 +339,7 @@
 
   // HelloBotz Controller & Character State Machine
   function initHelloBotz() {
-    var widget = document.getElementById('inboxwa-robot-widget');
+    var widget = document.getElementById('hellobotz-robot-widget') || document.getElementById('inboxwa-robot-widget');
     if (!widget) return;
 
     var triggerBtn = widget.querySelector('.hellobotz-trigger');
@@ -348,9 +348,9 @@
     var speechText = widget.querySelector('.hellobotz-speech-text');
     var closeBtn = widget.querySelector('.header-close-btn');
     var resetBtn = widget.querySelector('.header-reset-btn');
-    var chatBody = widget.querySelector('.inboxwa-chat-body');
-    var chatForm = widget.querySelector('.inboxwa-chat-form');
-    var chatInput = widget.querySelector('.inboxwa-chat-input');
+    var chatBody = widget.querySelector('.hellobotz-chat-body, .inboxwa-chat-body');
+    var chatForm = widget.querySelector('.hellobotz-chat-form, .inboxwa-chat-form');
+    var chatInput = widget.querySelector('.hellobotz-chat-input, .inboxwa-chat-input');
     var quickChannels = widget.querySelectorAll('.quick-channel-item');
 
     // -------------------------------------------------------------
@@ -676,7 +676,7 @@
     // Welcome Greeting always starting from HelloBotz
     function renderWelcomeMessage() {
       addBotResponse({
-        answer: `👋 <strong>Hi there! I'm HelloBotz</strong>, your AI assistant for InboxWa.<br><br>Ask me anything about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Voice Calling, or Pricing</strong>! How can I help you grow today?`,
+        answer: `👋 <strong>Hi there! I'm HelloBotz</strong>, your AI assistant for HelloBotz.<br><br>Ask me anything about our <strong>Official WhatsApp Business API, Bulk Broadcasts, AI Chatbots, Voice Calling, or Pricing</strong>! How can I help you grow today?`,
         suggestions: [
           'What are your pricing plans?',
           'How does WhatsApp API work?',
@@ -686,7 +686,7 @@
         ],
         actions: [
           { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
-          { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20am%20exploring%20InboxWa.', type: 'wa', target: '_blank' }
+          { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20am%20exploring%20HelloBotz.', type: 'wa', target: '_blank' }
         ]
       });
     }

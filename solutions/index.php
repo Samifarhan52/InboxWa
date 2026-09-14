@@ -2,7 +2,7 @@
 $basePath = '../';
 $pageTitle = 'Solutions';
 $pageDescription = 'WhatsApp and omnichannel solutions for support, sales and growth.';
-$canonicalUrl = 'https://inboxwa.com/solutions/';
+$canonicalUrl = 'https://hellobotz.com/solutions/';
 include __DIR__ . '/../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px) + 1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions</nav>

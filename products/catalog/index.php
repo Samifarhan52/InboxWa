@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Product Catalog & WhatsApp Storefront Commerce | InboxWa';
+$pageTitle = 'Product Catalog & WhatsApp Storefront Commerce | HelloBotz';
 $pageDescription = 'Turn WhatsApp into a direct storefront with native product catalogs, multi-item carts, inventory sync, and instant payment checkout links.';
-$canonicalUrl = 'https://inboxwa.com/products/catalog/';
+$canonicalUrl = 'https://hellobotz.com/products/catalog/';
 $ogImage = 'assets/images/products/catalog/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -1659,7 +1659,7 @@ include __DIR__ . '/../../includes/header.php';
             <div class="cat-phone-brand">
               <div class="cat-phone-avatar">CS</div>
               <div class="cat-phone-info">
-                <h4>InboxWa Live Shop</h4>
+                <h4>HelloBotz Live Shop</h4>
                 <p>Online storefront catalog</p>
               </div>
             </div>

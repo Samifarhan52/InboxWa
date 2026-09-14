@@ -1,8 +1,8 @@
 <?php
 $basePath = '../';
 $pageTitle = 'Products';
-$pageDescription = 'InboxWa products — WhatsApp API, chatbot, inbox, flows, CRM and more.';
-$canonicalUrl = 'https://inboxwa.com/products/';
+$pageDescription = 'HelloBotz products — WhatsApp API, chatbot, inbox, flows, CRM and more.';
+$canonicalUrl = 'https://hellobotz.com/products/';
 include __DIR__ . '/../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px) + 1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Products</nav>
@@ -10,7 +10,7 @@ include __DIR__ . '/../includes/header.php';
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Products</span>
-      <h1>Everything in one InboxWa account</h1>
+      <h1>Everything in one HelloBotz account</h1>
       <p class="lead">Official WhatsApp API, AI chatbot, shared inbox, flow builder, broadcasts and CRM — built to work together.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Book Demo</a>

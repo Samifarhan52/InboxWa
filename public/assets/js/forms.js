@@ -1,31 +1,31 @@
 /**
- * InboxWa Forms → WhatsApp
+ * HelloBotz Forms → WhatsApp
  * Number: 918050854445
  * Later: FORM_MODE = 'api' + FORM_ENDPOINT for Google Sheets
  */
 (function () {
   'use strict';
 
-  var WA_NUMBER = (window.INBOXWA_CONFIG && window.INBOXWA_CONFIG.whatsapp) || '918050854445';
+  var WA_NUMBER = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || '918050854445';
   var FORM_MODE = 'both';
   var FORM_ENDPOINT = '/api/lead.php';
 
   function openWhatsApp(text) {
-    var num = (window.INBOXWA_CONFIG && window.INBOXWA_CONFIG.whatsapp) || WA_NUMBER;
+    var num = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || WA_NUMBER;
     var url = 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 
   function formatText(type, d) {
     if (type === 'callback') {
-      return '*Callback Request - InboxWa*\n\n' +
+      return '*Callback Request - HelloBotz*\n\n' +
         'Name: ' + (d.name || '') + '\n' +
         'Mobile: ' + (d.mobile || '') + '\n' +
         'Company: ' + (d.company || '') + '\n' +
         'Requirement: ' + (d.requirement || '');
     }
     if (type === 'demo') {
-      return '*Demo Booking - InboxWa*\n\n' +
+      return '*Demo Booking - HelloBotz*\n\n' +
         'Name: ' + (d.name || '') + '\n' +
         'Mobile: ' + (d.mobile || '') + '\n' +
         'Product: ' + (d.product || '') + '\n' +
@@ -34,7 +34,7 @@
         'Company: ' + (d.company || '');
     }
     if (type === 'contact') {
-      return '*Contact Form - InboxWa*\n\n' +
+      return '*Contact Form - HelloBotz*\n\n' +
         'Name: ' + (d.name || '') + '\n' +
         'Mobile: ' + (d.mobile || '') + '\n' +
         'Regarding: ' + (d.regarding || '') + '\n' +

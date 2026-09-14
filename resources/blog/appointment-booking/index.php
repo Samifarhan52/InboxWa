@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../../';
-$pageTitle = 'WhatsApp Appointment Booking Automation — InboxWa Blog';
+$pageTitle = 'WhatsApp Appointment Booking Automation — HelloBotz Blog';
 $pageDescription = 'Slots, reminders and reschedules in chat.';
-$canonicalUrl = 'https://inboxwa.com/resources/blog/appointment-booking/';
+$canonicalUrl = 'https://hellobotz.com/resources/blog/appointment-booking/';
 include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
@@ -11,12 +11,12 @@ include __DIR__ . '/../../../includes/header.php';
 <article class="section" style="padding-top:1.25rem"><div class="container" style="max-width:800px">
 <span class="badge badge-primary">Operations</span>
 <h1 style="margin:.75rem 0">WhatsApp Appointment Booking Automation</h1>
-<p style="color:var(--t3);font-size:.9rem">InboxWa Team · 2026 · 6 min read</p>
+<p style="color:var(--t3);font-size:.9rem">HelloBotz Team · 2026 · 6 min read</p>
 <div class="blog-img-ph blog-img-ph--lg" role="img" aria-label="WhatsApp Appointment Booking Automation"></div>
 <div class="article-body reveal">
 <p>Slots, reminders and reschedules in chat.</p>
 <h2>Overview</h2>
-<p>This guide explains practical patterns teams use with Official WhatsApp Business API and InboxWa — without unsupported claims about Meta pricing or guarantees.</p>
+<p>This guide explains practical patterns teams use with Official WhatsApp Business API and HelloBotz — without unsupported claims about Meta pricing or guarantees.</p>
 <h2>Key takeaways</h2>
 <ul><li>Start with a clear use case and template strategy.</li><li>Route complex chats to humans quickly.</li><li>Measure replies and pipeline impact, not only sends.</li></ul>
 <h2>Next steps</h2>

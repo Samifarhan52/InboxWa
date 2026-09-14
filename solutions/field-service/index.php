@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Field Service Updates';
 $pageDescription = 'Dispatch, ETA and completion updates for field teams and customers.';
-$canonicalUrl = 'https://inboxwa.com/solutions/field-service/';
+$canonicalUrl = 'https://hellobotz.com/solutions/field-service/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Field Service Updates</nav>

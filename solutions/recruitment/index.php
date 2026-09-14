@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Recruitment on WhatsApp';
 $pageDescription = 'Screen candidates, schedule interviews and share updates on WhatsApp.';
-$canonicalUrl = 'https://inboxwa.com/solutions/recruitment/';
+$canonicalUrl = 'https://hellobotz.com/solutions/recruitment/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Recruitment on WhatsApp</nav>

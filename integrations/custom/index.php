@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Custom Integrations & Integration Marketplace | InboxWa';
-$pageDescription = 'Connect InboxWa with CRM, e-commerce, marketing, Google tools, social channels, APIs and webhooks for unified WhatsApp workflows.';
-$canonicalUrl = 'https://inboxwa.com/integrations/custom/';
+$pageTitle = 'Custom Integrations & Integration Marketplace | HelloBotz';
+$pageDescription = 'Connect HelloBotz with CRM, e-commerce, marketing, Google tools, social channels, APIs and webhooks for unified WhatsApp workflows.';
+$canonicalUrl = 'https://hellobotz.com/integrations/custom/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/integrations-custom.css?v=1">
@@ -14,7 +14,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="ic-hero-grid">
       <div class="ic-hero-copy">
         <span class="badge ic-badge">CUSTOM INTEGRATIONS</span>
-        <h1>Connect InboxWa With Your <span class="grad">Entire Business Stack</span></h1>
+        <h1>Connect HelloBotz With Your <span class="grad">Entire Business Stack</span></h1>
         <p class="ic-lead">Connect WhatsApp, CRM, e-commerce, marketing, productivity and custom business systems with powerful integrations, APIs, webhooks and automation workflows.</p>
         <div class="ic-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
@@ -22,13 +22,13 @@ include __DIR__ . '/../../includes/header.php';
         </div>
       </div>
       <div class="ic-eco-stage" aria-hidden="true">
-        <div class="ic-eco-center">INBOXWA</div>
+        <div class="ic-eco-center">HELLOBOTZ</div>
         <div class="ic-eco-ring">
           <span>WhatsApp</span><span>Shopify</span><span>HubSpot</span><span>Zoho CRM</span>
           <span>Salesforce</span><span>Sheets</span><span>Calendar</span><span>Facebook</span>
           <span>Instagram</span><span>Telegram</span><span>WooCommerce</span><span>API</span>
         </div>
-        <p style="position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:.75rem;color:rgba(255,255,255,.55);margin:0">Shopify → InboxWa → WhatsApp · CRM ↔ Conversations</p>
+        <p style="position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:.75rem;color:rgba(255,255,255,.55);margin:0">Shopify → HelloBotz → WhatsApp · CRM ↔ Conversations</p>
       </div>
     </div>
   </div>
@@ -117,7 +117,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal"><h2>Connect WhatsApp With Your Business Tools</h2></div>
     <div class="ic-flow reveal">
       <span>WhatsApp Business API</span><span class="arr">↓</span>
-      <span>InboxWa</span><span class="arr">↓</span>
+      <span>HelloBotz</span><span class="arr">↓</span>
       <span>CRM / Store / Marketing / Support</span>
     </div>
   </div>
@@ -128,7 +128,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal"><h2>Connect WhatsApp With Your CRM</h2></div>
     <div class="ic-flow reveal">
       <span>New WhatsApp Lead</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>Contact Created</span><span class="arr">→</span>
       <span>Lead Assigned</span><span class="arr">→</span>
       <span>CRM Updated</span><span class="arr">→</span>
@@ -143,7 +143,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="ic-flow reveal">
       <span>New Order</span><span class="arr">→</span>
       <span>Store</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>WhatsApp</span><span class="arr">→</span>
       <span>Customer</span>
     </div>
@@ -155,7 +155,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal"><h2>Connect Forms, Sheets &amp; Calendar</h2></div>
     <div class="ic-flow reveal">
       <span>Google Form</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>WhatsApp</span>
     </div>
     <div class="ic-flow reveal">
@@ -186,13 +186,13 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-dark" id="api">
   <div class="container">
-    <div class="section-header reveal"><h2 style="color:#fff">Have Your Own Software? Connect It With InboxWa.</h2>
+    <div class="section-header reveal"><h2 style="color:#fff">Have Your Own Software? Connect It With HelloBotz.</h2>
       <p class="lead" style="color:rgba(255,255,255,.75)">Build a custom connection using APIs, webhooks or your existing business system.</p>
     </div>
     <div class="ic-flow reveal">
       <span>Your Software</span><span class="arr">→</span>
       <span>API / Webhook</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>WhatsApp</span><span class="arr">→</span>
       <span>Customer</span>
     </div>
@@ -225,7 +225,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
     <div class="ic-flow reveal" id="ic-sim-out">
       <span>Website / Facebook</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>CRM</span><span class="arr">→</span>
       <span>WhatsApp</span><span class="arr">→</span>
       <span>Sales Team</span>
@@ -234,7 +234,7 @@ include __DIR__ . '/../../includes/header.php';
 </section>
 
 <div class="hb-img-slot" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Integration Ecosystem</strong><span>InboxWa connected to business tools.</span></div>
+  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Integration Ecosystem</strong><span>HelloBotz connected to business tools.</span></div>
 </div>
 <div class="hb-img-slot hb-img-slot--dark" data-hb-img-slot>
   <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>WhatsApp + CRM</strong><span>Lead sync and conversation workflows.</span></div>
@@ -246,7 +246,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Google Workflows</strong><span>Forms, Sheets and Calendar connected.</span></div>
 </div>
 <div class="hb-img-slot" data-hb-img-slot>
-  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Custom API / Webhook</strong><span>Your software to InboxWa to WhatsApp.</span></div>
+  <div class="hb-img-fallback"><div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div><strong>Custom API / Webhook</strong><span>Your software to HelloBotz to WhatsApp.</span></div>
 </div>
 
 <section class="section" id="usecases">
@@ -286,7 +286,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">What is a custom integration?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">A connection built for your specific software using APIs, webhooks or a supported connector so InboxWa can exchange data with your systems.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">What is a custom integration?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">A connection built for your specific software using APIs, webhooks or a supported connector so HelloBotz can exchange data with your systems.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect my CRM with WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes where CRM integration is available or configured via API/webhooks for your account.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect Shopify or WooCommerce?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — see the Shopify and WooCommerce solution pages for store-connected WhatsApp workflows.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect my own software?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — use APIs, webhooks or a custom integration project based on your system’s capabilities.</div></div></div>

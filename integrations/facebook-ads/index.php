@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Facebook Lead Ads to WhatsApp | InboxWa';
-$pageDescription = 'Click-to-WhatsApp and lead ads into InboxWa inbox, qualification bots and CRM.';
-$canonicalUrl = 'https://inboxwa.com/integrations/facebook-ads/';
+$pageTitle = 'Facebook Lead Ads to WhatsApp | HelloBotz';
+$pageDescription = 'Click-to-WhatsApp and lead ads into HelloBotz inbox, qualification bots and CRM.';
+$canonicalUrl = 'https://hellobotz.com/integrations/facebook-ads/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Integrations / Facebook Ads</nav>
@@ -29,7 +29,7 @@ include __DIR__ . '/../../includes/header.php';
 </div>
     </div>
     <div class="int-float hero-visual-float reveal" style="max-width:640px;margin:2rem auto 0">
-      <img src="/assets/images/integrations/facebook-ads/hero.webp" alt="Facebook Ads + InboxWa + WhatsApp"
+      <img src="/assets/images/integrations/facebook-ads/hero.webp" alt="Facebook Ads + HelloBotz + WhatsApp"
         width="1200" height="630" loading="eager"
         style="width:100%;height:auto;border-radius:16px;border:1px solid var(--bd);min-height:180px;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
         onerror="this.onerror=null;this.src='';this.style.background='linear-gradient(135deg,#EDE9FE,#CFFAFE)';this.style.minHeight='200px'">
@@ -39,8 +39,8 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-gradient-1">
   <div class="container">
-    <div class="section-header reveal"><h2>How InboxWa works with Facebook Ads</h2></div>
-    <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">CTWA and lead flows land in InboxWa; bots qualify; sales gets pipeline-ready chats.</p>
+    <div class="section-header reveal"><h2>How HelloBotz works with Facebook Ads</h2></div>
+    <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">CTWA and lead flows land in HelloBotz; bots qualify; sales gets pipeline-ready chats.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem"><div class="card reveal"><h3>CTWA campaigns</h3><p>Chat starts from ads.</p></div><div class="card reveal"><h3>Lead forms</h3><p>Push to WhatsApp nurture.</p></div><div class="card reveal"><h3>Regional routing</h3><p>City-based assignment.</p></div><div class="card reveal"><h3>Retargeting lists</h3><p>Opt-in follow-ups.</p></div></div>
   </div>
 </section>
@@ -53,7 +53,7 @@ include __DIR__ . '/../../includes/header.php';
       <p class="lead" style="color:rgba(255,255,255,.7)">Frontend demo — not connected to a live store or API.</p>
     </div>
     <div class="workflow-sim" id="ws-facebook-ads">
-      <div class="ws-step" style="color:#111">User clicks Facebook/Instagram ad</div><div class="ws-step" style="color:#111">WhatsApp opens</div><div class="ws-step" style="color:#111">InboxWa inbox thread</div><div class="ws-step" style="color:#111">Qualification bot</div><div class="ws-step" style="color:#111">Sales assignment</div><div class="ws-step" style="color:#111">CRM pipeline</div>
+      <div class="ws-step" style="color:#111">User clicks Facebook/Instagram ad</div><div class="ws-step" style="color:#111">WhatsApp opens</div><div class="ws-step" style="color:#111">HelloBotz inbox thread</div><div class="ws-step" style="color:#111">Qualification bot</div><div class="ws-step" style="color:#111">Sales assignment</div><div class="ws-step" style="color:#111">CRM pipeline</div>
     </div>
     <div class="ws-controls">
       <button type="button" class="btn btn-sm btn-outline ws-prev" style="color:#fff;border-color:rgba(255,255,255,.35)" data-sim="ws-facebook-ads">Previous</button>
@@ -85,10 +85,10 @@ include __DIR__ . '/../../includes/header.php';
         <img src="/assets/images/integrations/facebook-ads/workflow.webp" alt="Facebook Ads workflow" width="600" height="360" loading="lazy"
           style="width:100%;aspect-ratio:16/10;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
           onerror="this.style.minHeight='160px'">
-        <div style="padding:1rem"><strong>Workflow</strong><p style="margin:.35rem 0 0;font-size:.9rem;color:var(--t2)">Event → InboxWa → WhatsApp</p></div>
+        <div style="padding:1rem"><strong>Workflow</strong><p style="margin:.35rem 0 0;font-size:.9rem;color:var(--t2)">Event → HelloBotz → WhatsApp</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden">
-        <img src="/assets/images/integrations/facebook-ads/dashboard.webp" alt="InboxWa dashboard" width="600" height="360" loading="lazy"
+        <img src="/assets/images/integrations/facebook-ads/dashboard.webp" alt="HelloBotz dashboard" width="600" height="360" loading="lazy"
           style="width:100%;aspect-ratio:16/10;object-fit:cover;background:linear-gradient(135deg,#CFFAFE,#EDE9FE)"
           onerror="this.style.minHeight='160px'">
         <div style="padding:1rem"><strong>Inbox &amp; CRM</strong><p style="margin:.35rem 0 0;font-size:.9rem;color:var(--t2)">Replies land in shared inbox</p></div>
@@ -106,7 +106,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
-    <h2 style="color:#fff">Connect Facebook Ads to InboxWa</h2>
+    <h2 style="color:#fff">Connect Facebook Ads to HelloBotz</h2>
     <p class="lead" style="color:rgba(255,255,255,.75)">Official WhatsApp Business API + automation for your stack.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/#contact-section" class="btn btn-primary btn-lg">Talk to sales</a>

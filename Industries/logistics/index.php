@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Logistics WhatsApp & Instagram Automation | InboxWa';
-$pageDescription = 'WhatsApp Business API and Instagram automation for logistics: booking, support, campaigns and shared inbox with InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/industries/logistics/';
+$pageTitle = 'Logistics WhatsApp & Instagram Automation | HelloBotz';
+$pageDescription = 'WhatsApp Business API and Instagram automation for logistics: booking, support, campaigns and shared inbox with HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/industries/logistics/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / <a href="/industries/">Industries</a> / Logistics</nav>
@@ -42,7 +42,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark" id="flow">
   <div class="container">
     <div class="section-header reveal"><h2 style="color:#fff">Automation flow</h2></div>
-    <div class="workflow-sim" id="ws-ind-logistics"><div class="ws-step">Customer reaches you (WhatsApp / Instagram)</div><div class="ws-step">Logistics workflow triggers in InboxWa</div><div class="ws-step">Bot qualifies or shares updates</div><div class="ws-step">Human agent in shared inbox when needed</div><div class="ws-step">CRM stage + analytics updated</div></div>
+    <div class="workflow-sim" id="ws-ind-logistics"><div class="ws-step">Customer reaches you (WhatsApp / Instagram)</div><div class="ws-step">Logistics workflow triggers in HelloBotz</div><div class="ws-step">Bot qualifies or shares updates</div><div class="ws-step">Human agent in shared inbox when needed</div><div class="ws-step">CRM stage + analytics updated</div></div>
     <div class="ws-controls">
       <button type="button" class="btn btn-sm btn-outline ws-prev" style="color:#fff;border-color:rgba(255,255,255,.45);background:transparent" data-sim="ws-ind-logistics">Previous</button>
       <button type="button" class="btn btn-sm btn-primary ws-next" data-sim="ws-ind-logistics">Next</button>
@@ -54,7 +54,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container" style="max-width:800px;text-align:center">
     <h2 class="reveal">Channels that matter for Logistics</h2>
-    <p class="lead reveal">WhatsApp for high-intent conversations. Instagram for discovery and DMs. One InboxWa inbox for both.</p>
+    <p class="lead reveal">WhatsApp for high-intent conversations. Instagram for discovery and DMs. One HelloBotz inbox for both.</p>
     <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.25rem">
       <a href="/products/whatsapp-api/" class="btn btn-outline">WhatsApp API</a>
       <a href="/products/chatbot/" class="btn btn-outline">Chatbot</a>
@@ -66,7 +66,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
-    <h2 style="color:#fff">Run Logistics conversations on InboxWa</h2>
+    <h2 style="color:#fff">Run Logistics conversations on HelloBotz</h2>
     <a href="/#contact-section" class="btn btn-primary btn-lg" style="margin-top:1rem">Talk to us</a>
   </div></div>
 </section>

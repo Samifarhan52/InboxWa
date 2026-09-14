@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Loyalty & Rewards Messaging';
 $pageDescription = 'Notify members about points, tiers and offers on WhatsApp.';
-$canonicalUrl = 'https://inboxwa.com/solutions/loyalty-rewards/';
+$canonicalUrl = 'https://hellobotz.com/solutions/loyalty-rewards/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Loyalty & Rewards Messaging</nav>

@@ -11,7 +11,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal">
       <span class="badge badge-primary">Facebook Messenger</span>
       <h1>Messenger, managed with WhatsApp</h1>
-      <p class="lead">Chatbots, ads and team inbox for Facebook Messenger — in the same InboxWa workspace as WhatsApp and Instagram.</p>
+      <p class="lead">Chatbots, ads and team inbox for Facebook Messenger — in the same HelloBotz workspace as WhatsApp and Instagram.</p>
       <div class="hero-actions" style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Start Free Trial</a>
         <a href="<?php echo $bp; ?>Pricing" class="btn btn-outline btn-lg">View Pricing</a>
@@ -28,7 +28,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Capabilities</span>
-      <h2>How InboxWa helps</h2>
+      <h2>How HelloBotz helps</h2>
     </div>
     <div class="features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:2rem">
           <div class="card card-feature reveal">
@@ -106,7 +106,7 @@ include __DIR__ . '/../../includes/header.php';
         </div>
         <div class="faq-item reveal">
           <button type="button" class="faq-question" aria-expanded="false">Are Click-to-Messenger ads supported?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Yes. Conversations from ads can land directly in InboxWa.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. Conversations from ads can land directly in HelloBotz.</div></div>
         </div>
     </div>
   </div>

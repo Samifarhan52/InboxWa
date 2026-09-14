@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Real Estate WhatsApp Automation | Lead Qualification, Site Visits & CRM | InboxWa';
-$pageDescription = 'Capture real estate leads, qualify buyers, recommend properties, book site visits and automate follow-ups on Official WhatsApp Business API with InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/industries/real-estate/';
+$pageTitle = 'Real Estate WhatsApp Automation | Lead Qualification, Site Visits & CRM | HelloBotz';
+$pageDescription = 'Capture real estate leads, qualify buyers, recommend properties, book site visits and automate follow-ups on Official WhatsApp Business API with HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/industries/real-estate/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/real-estate.css?v=3">
@@ -43,7 +43,7 @@ include __DIR__ . '/../../includes/header.php';
             <div class="re-wa-head">
               <div class="re-wa-av">RE</div>
               <div>
-                <strong>InboxWa Realty</strong>
+                <strong>HelloBotz Realty</strong>
                 <small><span class="re-live-dot"></span> AI Property Assistant Active</small>
               </div>
             </div>
@@ -83,7 +83,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="card reveal"><h3>Unqualified Leads</h3><p>Sales teams waste time on leads without proper requirements.</p></div>
       <div class="card reveal"><h3>Scattered Conversations</h3><p>Leads are spread across WhatsApp, calls and different team members.</p></div>
     </div>
-    <p class="re-transition reveal">InboxWa brings your entire property sales journey into one workflow.</p>
+    <p class="re-transition reveal">HelloBotz brings your entire property sales journey into one workflow.</p>
   </div>
 </section>
 
@@ -290,7 +290,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 <div class="edu-img-card-wrap reveal" style="margin: 2.5rem 0;">
-  <img src="/assets/images/edtech_shared_inbox.jpg" alt="InboxWa Real Estate Agent Lead Pipeline & Multi-Agent CRM Inbox" loading="lazy">
+  <img src="/assets/images/edtech_shared_inbox.jpg" alt="HelloBotz Real Estate Agent Lead Pipeline & Multi-Agent CRM Inbox" loading="lazy">
   <div class="edu-img-caption-badge">
     <strong><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Real Estate Lead Pipeline &amp; Multi-Agent Workspace</strong>
     <span>Enquiry → Site Visit → Booking Conversion</span>
@@ -370,8 +370,8 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section" id="integrations">
   <div class="container">
     <div class="section-header reveal">
-      <h2>Connect InboxWa With Your Real Estate Workflow</h2>
-      <p class="lead">Lead Source → InboxWa → AI → CRM → Agent → Customer</p>
+      <h2>Connect HelloBotz With Your Real Estate Workflow</h2>
+      <p class="lead">Lead Source → HelloBotz → AI → CRM → Agent → Customer</p>
     </div>
     <div class="re-integrations">
       <div class="card reveal">Facebook Lead Ads</div>
@@ -388,7 +388,7 @@ include __DIR__ . '/../../includes/header.php';
 <!-- WHY -->
 <section class="section section-alt" id="why">
   <div class="container">
-    <div class="section-header reveal"><h2>Why InboxWa for Real Estate</h2></div>
+    <div class="section-header reveal"><h2>Why HelloBotz for Real Estate</h2></div>
     <div class="re-why">
       <div class="card reveal"><h3>Respond Faster</h3><p>Engage enquiries as they arrive on WhatsApp.</p></div>
       <div class="card reveal"><h3>Qualify Better</h3><p>Collect location, type, budget and timeline automatically.</p></div>
@@ -405,16 +405,16 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa generate real estate leads?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">InboxWa helps capture and manage enquiries from website, WhatsApp, Facebook and Instagram so your team can respond faster and qualify better.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz generate real estate leads?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">HelloBotz helps capture and manage enquiries from website, WhatsApp, Facebook and Instagram so your team can respond faster and qualify better.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can AI qualify property buyers?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — flows collect property type, location, budget and timeline, then hand off hot leads to agents.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers search properties on WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">You can guide discovery with AI/flows and property cards linked to your inventory or catalogue.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can buyers book site visits through WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — date and time selection with confirmation and reminders can be automated in chat.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can we automate follow-ups?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — sequences for property details, reminders and counsellor hand-off within WhatsApp policy.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can we promote multiple projects?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — approved template campaigns for launches, open houses and offers to eligible audiences.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can agents manage leads together?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Shared inbox supports assignment, notes and multi-agent handling.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa work for builders and brokers?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — workflows suit builders, developers, agencies, brokers and consultants.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz work for builders and brokers?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — workflows suit builders, developers, agencies, brokers and consultants.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can sellers submit property requirements?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — a seller/rent flow can collect type, location, expected price and details for agent follow-up.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa connect with our CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Integrations and webhooks support connecting lead sources and CRM workflows where available.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz connect with our CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Integrations and webhooks support connecting lead sources and CRM workflows where available.</div></div></div>
     </div>
   </div>
 </section>
@@ -424,7 +424,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <div class="section-header reveal">
       <h2 style="color:#fff">Turn Every Property Enquiry Into a Sales Opportunity</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Capture leads, recommend properties, automate follow-ups and book more site visits with InboxWa.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Capture leads, recommend properties, automate follow-ups and book more site visits with HelloBotz.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">Book Real Estate Demo</button>

@@ -17,7 +17,7 @@
     },
     {
       "key": "site_title",
-      "value": "InboxWa",
+      "value": "HelloBotz",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -37,22 +37,22 @@
     },
     {
       "key": "notification_email",
-      "value": "mail@inboxwa.com",
+      "value": "mail@hellobotz.com",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "key": "sales_email",
-      "value": "mail@inboxwa.com",
+      "value": "mail@hellobotz.com",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "key": "support_email",
-      "value": "support@inboxwa.com",
+      "value": "support@hellobotz.com",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "key": "office_address",
-      "value": "InboxWa AI Technologies Pvt Ltd, Bangalore, India",
+      "value": "HelloBotz AI Technologies Pvt Ltd, Bangalore, India",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -117,17 +117,17 @@
     },
     {
       "key": "social_facebook",
-      "value": "https://facebook.com/inboxwa",
+      "value": "https://facebook.com/hellobotz",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "key": "social_instagram",
-      "value": "https://instagram.com/inboxwa",
+      "value": "https://instagram.com/hellobotz",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "key": "social_linkedin",
-      "value": "https://linkedin.com/company/inboxwa",
+      "value": "https://linkedin.com/company/hellobotz",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -283,7 +283,7 @@
     {
       "section": "simulator",
       "field": "bot_greeting",
-      "value": "👋 Hello! Welcome to InboxWa. How can we help automate your business today?",
+      "value": "👋 Hello! Welcome to HelloBotz. How can we help automate your business today?",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -307,7 +307,7 @@
     {
       "section": "simulator",
       "field": "bot_response",
-      "value": "Great choice! InboxWa equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification.",
+      "value": "Great choice! HelloBotz equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification.",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -319,7 +319,7 @@
     {
       "section": "cta_banner",
       "field": "lead",
-      "value": "Join fast-growing companies using InboxWa for WhatsApp marketing, AI automation, and omnichannel support.",
+      "value": "Join fast-growing companies using HelloBotz for WhatsApp marketing, AI automation, and omnichannel support.",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -396,7 +396,7 @@
       "company": "Zenith Retail Brands",
       "avatar": "",
       "rating": 5,
-      "quote": "Switching to InboxWa increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered ₹18 Lakhs in the first quarter.",
+      "quote": "Switching to HelloBotz increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered ₹18 Lakhs in the first quarter.",
       "sort_order": 1
     },
     {
@@ -431,8 +431,8 @@
     {
       "id": 2,
       "category": "general",
-      "question": "How does InboxWa connect to my WhatsApp number?",
-      "answer": "InboxWa connects directly to Meta's Official Cloud API. You can register a new phone number or migrate your existing business number in a few simple verification steps.",
+      "question": "How does HelloBotz connect to my WhatsApp number?",
+      "answer": "HelloBotz connects directly to Meta's Official Cloud API. You can register a new phone number or migrate your existing business number in a few simple verification steps.",
       "sort_order": 2
     },
     {
@@ -446,7 +446,7 @@
       "id": 4,
       "category": "pricing",
       "question": "Are WhatsApp conversation charges included?",
-      "answer": "InboxWa subscription covers platform features, flow builders, team seats, and shared inbox. Meta API conversation markup charges (if applicable) are billed at transparent Meta rates.",
+      "answer": "HelloBotz subscription covers platform features, flow builders, team seats, and shared inbox. Meta API conversation markup charges (if applicable) are billed at transparent Meta rates.",
       "sort_order": 2
     }
   ],
@@ -551,7 +551,7 @@
       "slug": "/",
       "content": "Official WhatsApp Business API, AI Chatbot & Omnichannel Marketing Platform.",
       "template": "home",
-      "meta_title": "InboxWa – WhatsApp Automation & AI Chatbots",
+      "meta_title": "HelloBotz – WhatsApp Automation & AI Chatbots",
       "meta_description": "Scale customer engagement with verified Meta WhatsApp API and AI chatbots.",
       "status": "published",
       "author": "admin",
@@ -564,7 +564,7 @@
       "slug": "/solutions/whatsapp-api/",
       "content": "Complete enterprise WhatsApp API solutions with shared inbox and broadcasts.",
       "template": "default",
-      "meta_title": "WhatsApp API Solutions | InboxWa",
+      "meta_title": "WhatsApp API Solutions | HelloBotz",
       "meta_description": "Official Meta WhatsApp Business API for high-growth enterprises.",
       "status": "published",
       "author": "admin",
@@ -577,7 +577,7 @@
       "slug": "/pricing/",
       "content": "Transparent pricing for WhatsApp API, AI bots and multi-agent seats.",
       "template": "default",
-      "meta_title": "InboxWa Pricing – Plans & Addons",
+      "meta_title": "HelloBotz Pricing – Plans & Addons",
       "meta_description": "Simple transparent pricing starting at ₹1,999/month.",
       "status": "published",
       "author": "admin",
@@ -590,7 +590,7 @@
       "slug": "/resources/blog/",
       "content": "Latest articles, strategies and updates for WhatsApp marketing.",
       "template": "default",
-      "meta_title": "Blog & Industry Insights | InboxWa",
+      "meta_title": "Blog & Industry Insights | HelloBotz",
       "meta_description": "Actionable guides and strategies for conversational sales.",
       "status": "published",
       "author": "admin",
@@ -603,7 +603,7 @@
       "slug": "/business-leads/",
       "content": "Verified B2B business leads directory across 16 major categories.",
       "template": "default",
-      "meta_title": "Business Leads Directory | InboxWa",
+      "meta_title": "Business Leads Directory | HelloBotz",
       "meta_description": "Find verified high-intent business leads in India and UAE.",
       "status": "published",
       "author": "admin",
@@ -616,8 +616,8 @@
       "slug": "/contact/",
       "content": "Talk to our product specialists and technical support engineers.",
       "template": "default",
-      "meta_title": "Contact Us | InboxWa",
-      "meta_description": "Get in touch with InboxWa sales and technical support.",
+      "meta_title": "Contact Us | HelloBotz",
+      "meta_description": "Get in touch with HelloBotz sales and technical support.",
       "status": "published",
       "author": "admin",
       "created_at": "2026-09-09 09:00:12",
@@ -629,7 +629,7 @@
       "slug": "/channel/instagram/",
       "content": "Automate Instagram DMs and comment-to-DM flows seamlessly.",
       "template": "channel",
-      "meta_title": "Instagram DM Automation | InboxWa",
+      "meta_title": "Instagram DM Automation | HelloBotz",
       "meta_description": "Turn Instagram comments and story mentions into automated sales.",
       "status": "published",
       "author": "admin",
@@ -642,7 +642,7 @@
       "slug": "/channel/telegram/",
       "content": "Broadcast to unlimited Telegram subscribers with rich bots.",
       "template": "channel",
-      "meta_title": "Telegram Bot Automation | InboxWa",
+      "meta_title": "Telegram Bot Automation | HelloBotz",
       "meta_description": "Build high-volume Telegram automation and customer support bots.",
       "status": "published",
       "author": "admin",
@@ -655,7 +655,7 @@
       "slug": "/channel/facebook/",
       "content": "Connect Messenger to unified shared team inboxes.",
       "template": "channel",
-      "meta_title": "Facebook Messenger Automation | InboxWa",
+      "meta_title": "Facebook Messenger Automation | HelloBotz",
       "meta_description": "Omnichannel Facebook Messenger customer support and auto-replies.",
       "status": "published",
       "author": "admin",

@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp CRM & Pipelines | InboxWa';
+$pageTitle = 'WhatsApp CRM & Pipelines | HelloBotz';
 $pageDescription = 'Turn chats into contacts and deals — stages that match how your sales team actually sells.';
-$canonicalUrl = 'https://inboxwa.com/products/crm/';
+$canonicalUrl = 'https://hellobotz.com/products/crm/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <section class="page-hero-premium">
@@ -47,11 +47,11 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container" style="max-width:720px;text-align:center">
     <div class="hero-visual-float reveal">
-      <img src="/assets/images/products/crm/hero.webp" alt="WhatsApp CRM & Pipelines | InboxWa" width="1000" height="560" loading="lazy"
+      <img src="/assets/images/products/crm/hero.webp" alt="WhatsApp CRM & Pipelines | HelloBotz" width="1000" height="560" loading="lazy"
         style="width:100%;border-radius:16px;border:1px solid var(--bd);min-height:180px;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
         onerror="this.style.minHeight='180px'">
     </div>
-    <p class="lead reveal" style="margin-top:1.5rem">Same InboxWa platform — this product page focuses on crm outcomes only.</p>
+    <p class="lead reveal" style="margin-top:1.5rem">Same HelloBotz platform — this product page focuses on crm outcomes only.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/pricing/" class="btn btn-outline">View pricing</a>
       <a href="/#contact-section" class="btn btn-primary">Talk to sales</a>

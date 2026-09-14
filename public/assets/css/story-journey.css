@@ -1,5 +1,5 @@
 /* ==========================================================================
-   INBOXWA STORY JOURNEY & GLOBAL DESIGN SYSTEM (v47)
+   HELLOBOTZ STORY JOURNEY & GLOBAL DESIGN SYSTEM (v47)
    ========================================================================== */
 
 /* 1. Global SVG Constraints & Icon Safety (prevents any SVG blowup) */
@@ -622,7 +622,7 @@ body {
   line-height: 1.6;
 }
 
-/* 5. Story Chapter 1: Old Way vs InboxWa AI Comparison Grid */
+/* 5. Story Chapter 1: Old Way vs HelloBotz AI Comparison Grid */
 .hb-comparison-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

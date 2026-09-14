@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Shared Team Inbox | Multi-Agent WhatsApp & Omnichannel Chat | InboxWa';
+$pageTitle = 'Shared Team Inbox | Multi-Agent WhatsApp & Omnichannel Chat | HelloBotz';
 $pageDescription = 'One unified shared team inbox for WhatsApp, Instagram, Facebook, and Telegram. Collaborate with multi-agent routing, contact masking, internal notes, and collision detection.';
-$canonicalUrl = 'https://inboxwa.com/products/shared-inbox/';
+$canonicalUrl = 'https://hellobotz.com/products/shared-inbox/';
 $ogImage = 'assets/images/products/shared-inbox/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -67,7 +67,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="prod-hero-media">
         <div class="prod-hero-media-wrapper">
-          <img src="<?php echo $bp; ?>assets/images/products/shared-inbox/hero.png" alt="InboxWa Shared Team Inbox" class="prod-hero-media-img" width="1480" height="814">
+          <img src="<?php echo $bp; ?>assets/images/products/shared-inbox/hero.png" alt="HelloBotz Shared Team Inbox" class="prod-hero-media-img" width="1480" height="814">
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="prod-hero-media" style="max-width: 1040px; margin: 0 auto;">
         <div class="prod-hero-media-wrapper">
-          <img src="<?php echo $bp; ?>assets/images/products/shared-inbox/sandbox.png" alt="InboxWa Live Team Sandbox" class="prod-hero-media-img" width="1080" height="1080">
+          <img src="<?php echo $bp; ?>assets/images/products/shared-inbox/sandbox.png" alt="HelloBotz Live Team Sandbox" class="prod-hero-media-img" width="1080" height="1080">
         </div>
       </div>
     </div>
@@ -213,7 +213,7 @@ include __DIR__ . '/../../includes/header.php';
         <span class="prod-section-badge">FAQs</span>
         <h2 class="prod-section-title">Got Questions about the Shared Inbox?</h2>
         <p class="prod-section-desc">
-          Learn how multi-agent login, permissions, and internal privacy work in InboxWa.
+          Learn how multi-agent login, permissions, and internal privacy work in HelloBotz.
         </p>
       </div>
       <div class="prod-faq-container">

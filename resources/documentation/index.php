@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Product Documentation & User Guides — InboxWa';
-$pageDescription = 'Complete step-by-step guides, API references, and walkthroughs to configure WhatsApp Business API, chatbots, broadcasts, CRM, and integrations in InboxWa.';
-$canonicalUrl = 'https://inboxwa.com/resources/documentation/';
+$pageTitle = 'Product Documentation & User Guides — HelloBotz';
+$pageDescription = 'Complete step-by-step guides, API references, and walkthroughs to configure WhatsApp Business API, chatbots, broadcasts, CRM, and integrations in HelloBotz.';
+$canonicalUrl = 'https://hellobotz.com/resources/documentation/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
@@ -21,7 +21,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="reveal">
       <span class="badge badge-primary">Developer &amp; User Manual</span>
-      <h1>InboxWa Product Documentation</h1>
+      <h1>HelloBotz Product Documentation</h1>
       <p class="lead">Complete step-by-step guides, configuration checklists, and best practices to launch and scale your WhatsApp communication infrastructure.</p>
       <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem">
         <a href="/auth/register" class="btn btn-primary">Start Free Trial</a>
@@ -66,8 +66,8 @@ include __DIR__ . '/../../includes/header.php';
       <!-- 0. Quickstart -->
       <article id="0" class="docs-section reveal">
         <span class="badge badge-primary" style="margin-bottom:0.75rem">Chapter 1</span>
-        <h2>Quickstart: Launching InboxWa in 3 Steps</h2>
-        <p>Welcome to InboxWa! This guide walks you through setting up your workspace, connecting an official WhatsApp Business API account, and sending your first automated message.</p>
+        <h2>Quickstart: Launching HelloBotz in 3 Steps</h2>
+        <p>Welcome to HelloBotz! This guide walks you through setting up your workspace, connecting an official WhatsApp Business API account, and sending your first automated message.</p>
         
         <div class="docs-callout docs-callout-info">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -76,8 +76,8 @@ include __DIR__ . '/../../includes/header.php';
 
         <h3>Quickstart Checklist:</h3>
         <ol class="docs-steps">
-          <li><strong>Create Your InboxWa Account:</strong> Sign up at <a href="/auth/register" style="color:var(--p2);font-weight:700">InboxWa Registration</a>. Choose your organization name and preferred workspace subdomain.</li>
-          <li><strong>Complete Meta Embedded Signup:</strong> From the InboxWa Dashboard, click <em>"Connect WhatsApp"</em>. A secure Meta pop-up window will guide you through selecting or creating your Meta Business Manager and WABA (WhatsApp Business Account).</li>
+          <li><strong>Create Your HelloBotz Account:</strong> Sign up at <a href="/auth/register" style="color:var(--p2);font-weight:700">HelloBotz Registration</a>. Choose your organization name and preferred workspace subdomain.</li>
+          <li><strong>Complete Meta Embedded Signup:</strong> From the HelloBotz Dashboard, click <em>"Connect WhatsApp"</em>. A secure Meta pop-up window will guide you through selecting or creating your Meta Business Manager and WABA (WhatsApp Business Account).</li>
           <li><strong>Verify Your Phone Number:</strong> Enter the 6-digit one-time code (OTP) sent via SMS or voice call to link your phone number to the WhatsApp Cloud API infrastructure.</li>
           <li><strong>Send a Test Message:</strong> Open the Shared Inbox, select your verified test contact, and dispatch an approved template message to confirm bidirectional connectivity.</li>
         </ol>
@@ -112,7 +112,7 @@ include __DIR__ . '/../../includes/header.php';
 
         <div class="docs-callout docs-callout-tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          <div><strong>Approval Timeline:</strong> Meta typically reviews and approves verification submissions within 24 to 72 business hours. If Meta requests additional info, our support team at <a href="mailto:support@inboxwa.com" style="color:#059669;font-weight:700">support@inboxwa.com</a> can review your submission files.</div>
+          <div><strong>Approval Timeline:</strong> Meta typically reviews and approves verification submissions within 24 to 72 business hours. If Meta requests additional info, our support team at <a href="mailto:support@hellobotz.com" style="color:#059669;font-weight:700">support@hellobotz.com</a> can review your submission files.</div>
         </div>
       </article>
 
@@ -125,16 +125,16 @@ include __DIR__ . '/../../includes/header.php';
         <h3>Number Migration Considerations:</h3>
         <ul style="color:#4B5563;line-height:1.7;margin-bottom:1.25rem;">
           <li>If your phone number is currently active on the consumer WhatsApp or standard WhatsApp Business app, you must first navigate to <strong>Settings &rarr; Account &rarr; Delete Account</strong> within the mobile app before registering on the Cloud API.</li>
-          <li>Once registered on the Cloud API, all chats are managed through InboxWa’s web console, Android app, and iOS app.</li>
+          <li>Once registered on the Cloud API, all chats are managed through HelloBotz’s web console, Android app, and iOS app.</li>
         </ul>
 
         <h3>Official Business Account (Green Tick) Application:</h3>
         <p>The Green Tick badge displays your verified business name in the chat header instead of a phone number, even if the user has not saved your contact.</p>
         <ol class="docs-steps">
           <li>Ensure your Meta Business Manager is fully verified and 2FA is enforced on all admin accounts.</li>
-          <li>Maintain a <strong>High</strong> phone number quality rating in InboxWa for at least 7 consecutive days.</li>
+          <li>Maintain a <strong>High</strong> phone number quality rating in HelloBotz for at least 7 consecutive days.</li>
           <li>Compile 3 to 5 organic news articles or press releases from notable publications mentioning your brand.</li>
-          <li>In your InboxWa Settings &rarr; WhatsApp Profile, click <strong>"Apply for Official Business Account"</strong> and submit your references.</li>
+          <li>In your HelloBotz Settings &rarr; WhatsApp Profile, click <strong>"Apply for Official Business Account"</strong> and submit your references.</li>
         </ol>
       </article>
 
@@ -142,7 +142,7 @@ include __DIR__ . '/../../includes/header.php';
       <article id="3" class="docs-section reveal">
         <span class="badge badge-primary" style="margin-bottom:0.75rem">Chapter 4</span>
         <h2>Visual Flow Builder &amp; Chatbot Logic</h2>
-        <p>InboxWa’s drag-and-drop Visual Flow Builder lets you create sophisticated automated conversation journeys without writing code.</p>
+        <p>HelloBotz’s drag-and-drop Visual Flow Builder lets you create sophisticated automated conversation journeys without writing code.</p>
 
         <h3>Core Node Types:</h3>
         <ul style="color:#4B5563;line-height:1.7;margin-bottom:1.25rem;">
@@ -168,7 +168,7 @@ include __DIR__ . '/../../includes/header.php';
 
         <h3>Configuring Your AI Knowledge Base:</h3>
         <ol class="docs-steps">
-          <li>Navigate to <strong>Chatbots &rarr; AI Assistant</strong> in your InboxWa workspace.</li>
+          <li>Navigate to <strong>Chatbots &rarr; AI Assistant</strong> in your HelloBotz workspace.</li>
           <li>Upload your product catalogs, warranty policies, service menus, and PDF documentation into the Knowledge Base store.</li>
           <li>Configure your agent’s persona and system prompt (e.g. <em>"You are an empathetic customer support assistant for a premium fashion brand. Always provide helpful sizing guidance."</em>).</li>
           <li>Set confidence thresholds: If the AI confidence score falls below 75%, configure it to gracefully transfer to an on-duty human agent.</li>
@@ -226,17 +226,17 @@ include __DIR__ . '/../../includes/header.php';
       <article id="8" class="docs-section reveal">
         <span class="badge badge-primary" style="margin-bottom:0.75rem">Chapter 9</span>
         <h2>REST API &amp; Webhooks Integration</h2>
-        <p>Integrate InboxWa programmatically into your software stack. Complete API references and live interactive code samples are available at <a href="/integrations/api-webhooks/" style="color:var(--p2);font-weight:700">InboxWa API &amp; Webhooks Documentation</a>.</p>
+        <p>Integrate HelloBotz programmatically into your software stack. Complete API references and live interactive code samples are available at <a href="/integrations/api-webhooks/" style="color:var(--p2);font-weight:700">HelloBotz API &amp; Webhooks Documentation</a>.</p>
 
         <div class="code-block">
           <pre><code># Dispatch WhatsApp message via cURL
-curl -X POST https://api.inboxwa.com/v1/messages \
+curl -X POST https://api.hellobotz.com/v1/messages \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "to": "+919876543210",
     "type": "text",
-    "text": { "body": "Hello from InboxWa API!" }
+    "text": { "body": "Hello from HelloBotz API!" }
   }'</code></pre>
           <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button>
         </div>
@@ -248,7 +248,7 @@ curl -X POST https://api.inboxwa.com/v1/messages \
         <h2>E-Commerce &amp; Native Integrations</h2>
         <p>Connect your storefront and business tools with zero code.</p>
         <ul style="color:#4B5563;line-height:1.7;margin-bottom:1.25rem;">
-          <li><strong>Shopify:</strong> Install the InboxWa app to automate abandoned cart recovery, order dispatch alerts, and COD confirmations.</li>
+          <li><strong>Shopify:</strong> Install the HelloBotz app to automate abandoned cart recovery, order dispatch alerts, and COD confirmations.</li>
           <li><strong>WooCommerce:</strong> Instant store sync via our native WordPress plugin.</li>
           <li><strong>Google Sheets:</strong> Append incoming form leads to Google Sheets and dispatch WhatsApp notifications automatically.</li>
           <li><strong>Google Calendar:</strong> Automatically sync booked appointments and send WhatsApp reminders with Meet links.</li>
@@ -272,7 +272,7 @@ curl -X POST https://api.inboxwa.com/v1/messages \
         <span class="badge badge-primary" style="margin-bottom:0.75rem">Chapter 12</span>
         <h2>Billing, Plans &amp; Conversation Credits</h2>
         <p>Understand plan allowances, add-on credits, and invoice management.</p>
-        <p style="color:#4B5563;line-height:1.65">InboxWa separates subscription platform fees from official Meta conversation fees. You pay the transparent flat platform tier plus exact official Meta rates without markup. Top up your conversation wallet anytime with instant GST-compliant tax invoices.</p>
+        <p style="color:#4B5563;line-height:1.65">HelloBotz separates subscription platform fees from official Meta conversation fees. You pay the transparent flat platform tier plus exact official Meta rates without markup. Top up your conversation wallet anytime with instant GST-compliant tax invoices.</p>
       </article>
     </div>
   </div>

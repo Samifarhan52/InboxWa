@@ -1,6 +1,6 @@
 <?php
 /**
- * Unified Template Renderer for InboxWa Industry Solution Pages
+ * Unified Template Renderer for HelloBotz Industry Solution Pages
  * Renders complete, accessible, responsive, high-converting industry landing pages
  */
 
@@ -9,10 +9,10 @@ if (!isset($indData)) {
 }
 
 $basePath = $basePath ?? '../../';
-$pageTitle = $indData['title'] ?? 'Industry Messaging Solutions | InboxWa';
-$pageDescription = $indData['meta_desc'] ?? 'Transform your industry communication with InboxWa Official WhatsApp Business API.';
+$pageTitle = $indData['title'] ?? 'Industry Messaging Solutions | HelloBotz';
+$pageDescription = $indData['meta_desc'] ?? 'Transform your industry communication with HelloBotz Official WhatsApp Business API.';
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? ('/business-leads/' . ($indData['slug'] ?? '') . '/'), PHP_URL_PATH);
-$canonicalUrl = 'https://inboxwa.com' . ($reqPath ?: ('/business-leads/' . ($indData['slug'] ?? '') . '/'));
+$canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/business-leads/' . ($indData['slug'] ?? '') . '/'));
 
 include __DIR__ . '/header.php';
 ?>
@@ -59,7 +59,7 @@ include __DIR__ . '/header.php';
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download Data
             </a>
-            <a href="https://wa.me/918050854445?text=<?php echo urlencode('Hi InboxWa, I want to learn more about WhatsApp solutions for ' . ($indData['breadcrumb_label'] ?? 'our business')); ?>" target="_blank" rel="noopener" class="ind-btn-wa">
+            <a href="https://wa.me/918050854445?text=<?php echo urlencode('Hi HelloBotz, I want to learn more about WhatsApp solutions for ' . ($indData['breadcrumb_label'] ?? 'our business')); ?>" target="_blank" rel="noopener" class="ind-btn-wa">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Chat on WhatsApp
             </a>
@@ -116,7 +116,7 @@ include __DIR__ . '/header.php';
                   </div>
                   <div class="cw-wa-header-info">
                     <div class="cw-wa-title-row">
-                      <strong id="cw-header-title"><?php echo htmlspecialchars($indData['chat_title'] ?? ('InboxWa ' . ($indData['breadcrumb_label'] ?? 'Business') . ' AI')); ?></strong>
+                      <strong id="cw-header-title"><?php echo htmlspecialchars($indData['chat_title'] ?? ('HelloBotz ' . ($indData['breadcrumb_label'] ?? 'Business') . ' AI')); ?></strong>
                       <svg class="cw-verified-check" width="13" height="13" viewBox="0 0 24 24" fill="#10b981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     </div>
                     <span class="cw-wa-subtitle"><i class="cw-live-dot"></i> Online • Official Meta Partner</span>
@@ -135,7 +135,7 @@ include __DIR__ . '/header.php';
                 <div class="cw-wa-body" id="cw-live-body">
                   <?php 
                   $initialMsgs = $indData['chat_messages'] ?? [
-                    ['type' => 'user', 'text' => "Hi! How does InboxWa help our business scale on WhatsApp?"],
+                    ['type' => 'user', 'text' => "Hi! How does HelloBotz help our business scale on WhatsApp?"],
                     ['type' => 'bot', 'text' => "👋 Hello! With Official WhatsApp API, you can automate customer funnels, send 98% open-rate broadcasts, and close deals 24/7 with zero ban risk."]
                   ];
                   foreach ($initialMsgs as $idx => $m):
@@ -164,7 +164,7 @@ include __DIR__ . '/header.php';
                     <div class="cw-typing-dots">
                       <span></span><span></span><span></span>
                     </div>
-                    <span class="cw-typing-label"><?php echo htmlspecialchars($indData['chat_title'] ?? 'InboxWa AI'); ?> is typing...</span>
+                    <span class="cw-typing-label"><?php echo htmlspecialchars($indData['chat_title'] ?? 'HelloBotz AI'); ?> is typing...</span>
                   </div>
                 </div>
 
@@ -235,7 +235,7 @@ include __DIR__ . '/header.php';
           for ($r = 0; $r < 5; $r++):
             foreach ($logos as $lg): ?>
               <div class="ind-logo-slide">
-                <img src="<?php echo $lg; ?>" alt="<?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'Industry'); ?> Client Partner - InboxWa" loading="lazy">
+                <img src="<?php echo $lg; ?>" alt="<?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'Industry'); ?> Client Partner - HelloBotz" loading="lazy">
               </div>
           <?php endforeach; endfor; ?>
         </div>
@@ -274,7 +274,7 @@ include __DIR__ . '/header.php';
       </div>
       <div class="ind-hero-media-card">
         <img src="/assets/images/industries/<?php echo $indData['slug']; ?>/hero-branded.png" 
-             alt="<?php echo htmlspecialchars($indData['title']); ?> Architecture Overview - InboxWa" 
+             alt="<?php echo htmlspecialchars($indData['title']); ?> Architecture Overview - HelloBotz" 
              class="ind-hero-media-img" 
              loading="lazy">
       </div>
@@ -297,19 +297,19 @@ include __DIR__ . '/header.php';
           <div class="ind-usecase-visual">
             <div class="ind-usecase-media-box">
               <img src="/assets/images/industries/<?php echo $indData['slug']; ?>/usecase-<?php echo ($index + 1); ?>.webp" 
-                   alt="<?php echo htmlspecialchars($uc['title']); ?> - InboxWa" 
+                   alt="<?php echo htmlspecialchars($uc['title']); ?> - HelloBotz" 
                    class="ind-usecase-img" 
                    loading="lazy">
               <div class="ind-usecase-media-pill">
                 <span class="ind-badge-dot"></span>
-                InboxWa · <?php echo htmlspecialchars($uc['tag'] ?? 'Core Solution'); ?>
+                HelloBotz · <?php echo htmlspecialchars($uc['tag'] ?? 'Core Solution'); ?>
               </div>
             </div>
 
             <div class="ind-interactive-chat">
               <div class="ind-chat-header-mini">
                 <span class="status-dot"></span>
-                <strong>InboxWa AI Engine · <?php echo htmlspecialchars($uc['title']); ?></strong>
+                <strong>HelloBotz AI Engine · <?php echo htmlspecialchars($uc['title']); ?></strong>
               </div>
               <div class="ind-msg bot">
                 <?php echo $uc['chat_sample']['bot']; ?>
@@ -351,14 +351,14 @@ include __DIR__ . '/header.php';
   </section>
 
   <!-- =========================================================================
-       4. INBOXWA CONVERSATIONAL JOURNEY FLOW
+       4. HELLOBOTZ CONVERSATIONAL JOURNEY FLOW
        ========================================================================= -->
   <section class="ind-journey-section">
     <div class="container">
       <div class="ind-section-header">
-        <span class="ind-kicker">INBOXWA JOURNEY FLOW</span>
+        <span class="ind-kicker">HELLOBOTZ JOURNEY FLOW</span>
         <h2>End-to-End WhatsApp Automation Pipeline</h2>
-        <p>From omnichannel discovery to instant qualification and long-term retention, see how InboxWa powers the complete lifecycle.</p>
+        <p>From omnichannel discovery to instant qualification and long-term retention, see how HelloBotz powers the complete lifecycle.</p>
       </div>
 
       <div class="ind-journey-grid">
@@ -380,7 +380,7 @@ include __DIR__ . '/header.php';
   <section class="ind-why-section">
     <div class="container">
       <div class="ind-section-header">
-        <span class="ind-kicker">WHY CHOOSE INBOXWA</span>
+        <span class="ind-kicker">WHY CHOOSE HELLOBOTZ</span>
         <h2>Tailored Solutions for Your Business Needs</h2>
         <p>Enterprise-grade infrastructure, native multi-channel integrations, and purpose-built tools to maximize ROI.</p>
       </div>
@@ -435,14 +435,14 @@ include __DIR__ . '/header.php';
     <div class="container">
       <div class="ind-cta-card">
         <div class="ind-cta-content">
-          <h2><?php echo $indData['cta_heading'] ?? ('Ready to Scale Your ' . ($indData['breadcrumb_label'] ?? 'Business') . ' with InboxWa?'); ?></h2>
+          <h2><?php echo $indData['cta_heading'] ?? ('Ready to Scale Your ' . ($indData['breadcrumb_label'] ?? 'Business') . ' with HelloBotz?'); ?></h2>
           <p><?php echo htmlspecialchars($indData['cta_desc'] ?? 'Join thousands of fast-growing businesses automating conversations, bookings, and sales on WhatsApp.'); ?></p>
           <div class="ind-cta-actions">
             <button type="button" class="ind-btn-primary" onclick="openIndModal('<?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'Get Started'); ?>')">
               Get Started Now!
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
-            <a href="https://wa.me/918050854445?text=<?php echo urlencode('Hi InboxWa, I want to get started with ' . ($indData['breadcrumb_label'] ?? 'our business')); ?>" target="_blank" rel="noopener" class="ind-btn-wa">
+            <a href="https://wa.me/918050854445?text=<?php echo urlencode('Hi HelloBotz, I want to get started with ' . ($indData['breadcrumb_label'] ?? 'our business')); ?>" target="_blank" rel="noopener" class="ind-btn-wa">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Chat on WhatsApp
             </a>
@@ -469,7 +469,7 @@ include __DIR__ . '/header.php';
     <div class="ind-modal-header">
       <button type="button" class="ind-modal-close" onclick="closeIndModal()">&times;</button>
       <h3 id="indModalTitle">Schedule <?php echo htmlspecialchars($indData['breadcrumb_label'] ?? 'Industry'); ?> Demo</h3>
-      <p>Connect with an InboxWa Solution Specialist within 15 minutes.</p>
+      <p>Connect with an HelloBotz Solution Specialist within 15 minutes.</p>
     </div>
     <div class="ind-modal-body">
       <form id="indDemoForm" onsubmit="handleIndSubmit(event)">
@@ -556,7 +556,7 @@ function handleIndSubmit(e) {
       btn.disabled = false;
       btn.style.background = '';
       form.reset();
-      alert('Thank you! An InboxWa Industry Specialist will contact you within 15 minutes.');
+      alert('Thank you! An HelloBotz Industry Specialist will contact you within 15 minutes.');
     }, 1200);
   })
   .catch(err => {
@@ -568,7 +568,7 @@ function handleIndSubmit(e) {
       btn.disabled = false;
       btn.style.background = '';
       form.reset();
-      alert('Thank you! An InboxWa Industry Specialist will contact you shortly.');
+      alert('Thank you! An HelloBotz Industry Specialist will contact you shortly.');
     }, 1200);
   });
 }
@@ -995,14 +995,14 @@ function handleIndSubmit(e) {
     if (slug === 'digital-marketing') {
       if (q.includes('agency') || q.includes('white') || q.includes('reseller') || q.includes('client') || q.includes('partner')) {
         return {
-          text: "💼 InboxWa White-Label Agency Console gives you 100% custom branding, client sub-accounts, and custom domain setup.",
+          text: "💼 HelloBotz White-Label Agency Console gives you 100% custom branding, client sub-accounts, and custom domain setup.",
           actionText: "Explore Agency Plan",
           actionUrl: "/pricing"
         };
       }
       if (q.includes('ctw') || q.includes('ads') || q.includes('meta') || q.includes('lead') || q.includes('campaign')) {
         return {
-          text: "🎯 Click-to-WhatsApp (CTWA) ads sync leads directly into InboxWa bots with 0-second latency, boosting ROAS by 3.8x!",
+          text: "🎯 Click-to-WhatsApp (CTWA) ads sync leads directly into HelloBotz bots with 0-second latency, boosting ROAS by 3.8x!",
           actionText: "See Ad Funnel Setup",
           actionUrl: "#indModal"
         };
@@ -1115,7 +1115,7 @@ function handleIndSubmit(e) {
     }
     if (q.includes('demo') || q.includes('call') || q.includes('talk') || q.includes('sales') || q.includes('meeting') || q.includes('specialist')) {
       return {
-        text: `📞 We'd love to show you how InboxWa transforms ${currentIndustryName} workflows! Schedule a personalized 15-minute walkthrough with our automation architects.`,
+        text: `📞 We'd love to show you how HelloBotz transforms ${currentIndustryName} workflows! Schedule a personalized 15-minute walkthrough with our automation architects.`,
         actionText: "Schedule Live Demo",
         actionUrl: "#indModal"
       };
@@ -1136,7 +1136,7 @@ function handleIndSubmit(e) {
     }
     if (q.includes('ban') || q.includes('risk') || q.includes('safe') || q.includes('meta') || q.includes('official') || q.includes('api')) {
       return {
-        text: "🛡️ Zero Ban Risk! Unlike unofficial QR-scraping extensions that get phone numbers permanently banned, InboxWa connects directly through the official Meta Business Cloud API with 100% compliance guarantee.",
+        text: "🛡️ Zero Ban Risk! Unlike unofficial QR-scraping extensions that get phone numbers permanently banned, HelloBotz connects directly through the official Meta Business Cloud API with 100% compliance guarantee.",
         actionText: "Verify Meta Partner Status",
         actionUrl: "/channel/whatsapp/"
       };
@@ -1150,7 +1150,7 @@ function handleIndSubmit(e) {
     }
     if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('good')) {
       return {
-        text: `👋 Hello! Welcome to InboxWa ${currentIndustryName} AI! Tap any topic chip above or type any question to test live WhatsApp automation.`,
+        text: `👋 Hello! Welcome to HelloBotz ${currentIndustryName} AI! Tap any topic chip above or type any question to test live WhatsApp automation.`,
         actionText: "Get Started Free",
         actionUrl: "/auth/register"
       };
@@ -1165,7 +1165,7 @@ function handleIndSubmit(e) {
 
     // Default intelligent fallback
     return {
-      text: `⚡ InboxWa powers ${currentIndustryName} with official Meta Cloud API, automated AI chat funnels, 98% open-rate broadcasts, and seamless CRM integrations!`,
+      text: `⚡ HelloBotz powers ${currentIndustryName} with official Meta Cloud API, automated AI chat funnels, 98% open-rate broadcasts, and seamless CRM integrations!`,
       actionText: "Request Free Demo",
       actionUrl: "#indModal"
     };

@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Automation | InboxWa';
+$pageTitle = 'WhatsApp Automation | HelloBotz';
 $pageDescription = 'Trigger sequences from tags, keywords, webhooks and campaign events — keep conversations moving without manual busywork.';
-$canonicalUrl = 'https://inboxwa.com/products/automation/';
+$canonicalUrl = 'https://hellobotz.com/products/automation/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <section class="page-hero-premium">
@@ -47,11 +47,11 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container" style="max-width:720px;text-align:center">
     <div class="hero-visual-float reveal">
-      <img src="/assets/images/products/automation/hero.webp" alt="WhatsApp Automation | InboxWa" width="1000" height="560" loading="lazy"
+      <img src="/assets/images/products/automation/hero.webp" alt="WhatsApp Automation | HelloBotz" width="1000" height="560" loading="lazy"
         style="width:100%;border-radius:16px;border:1px solid var(--bd);min-height:180px;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
         onerror="this.style.minHeight='180px'">
     </div>
-    <p class="lead reveal" style="margin-top:1.5rem">Same InboxWa platform — this product page focuses on automation outcomes only.</p>
+    <p class="lead reveal" style="margin-top:1.5rem">Same HelloBotz platform — this product page focuses on automation outcomes only.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/pricing/" class="btn btn-outline">View pricing</a>
       <a href="/#contact-section" class="btn btn-primary">Talk to sales</a>

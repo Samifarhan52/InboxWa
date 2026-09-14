@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Healthcare & Pharma Automation | MR, Doctors & Clinics | InboxWa';
+$pageTitle = 'Healthcare & Pharma Automation | MR, Doctors & Clinics | HelloBotz';
 $pageDescription = 'Connect pharma teams, medical representatives and doctors with WhatsApp automation for engagement, follow-ups, appointments and reporting — not medical diagnosis.';
-$canonicalUrl = 'https://inboxwa.com/industries/healthcare/';
+$canonicalUrl = 'https://hellobotz.com/industries/healthcare/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/healthcare.css?v=1">
@@ -41,7 +41,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-alt" id="notice">
   <div class="container" style="max-width:720px;text-align:center">
-    <p class="hc-notice reveal">InboxWa focuses on <strong>communication, approved information sharing, MR workflows, appointments and support</strong> — not medical diagnosis, prescription or clinical decision-making. Regulated content should follow company, regulatory and consent requirements.</p>
+    <p class="hc-notice reveal">HelloBotz focuses on <strong>communication, approved information sharing, MR workflows, appointments and support</strong> — not medical diagnosis, prescription or clinical decision-making. Regulated content should follow company, regulatory and consent requirements.</p>
   </div>
 </section>
 
@@ -175,7 +175,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="hc-flow reveal">
       <span>Distributor</span><span class="arr">→</span>
       <span>Order Enquiry</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>Team</span><span class="arr">→</span>
       <span>Order / Follow-up</span>
     </div>
@@ -197,7 +197,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="hc-flow reveal" style="margin-top:1.5rem">
       <span>Patient / Customer</span><span class="arr">↓</span>
       <span>WhatsApp</span><span class="arr">↓</span>
-      <span>InboxWa</span><span class="arr">↓</span>
+      <span>HelloBotz</span><span class="arr">↓</span>
       <span>Clinic / Hospital</span><span class="arr">↓</span>
       <span>Appointment / Support</span>
     </div>
@@ -274,11 +274,11 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can InboxWa help pharma companies?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Organize MR–doctor communication, share approved information, track follow-ups and connect teams — within your compliance policies.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can medical representatives use InboxWa?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Engage doctors on WhatsApp, log interactions, schedule follow-ups and receive reminders for next steps.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can HelloBotz help pharma companies?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Organize MR–doctor communication, share approved information, track follow-ups and connect teams — within your compliance policies.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can medical representatives use HelloBotz?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Engage doctors on WhatsApp, log interactions, schedule follow-ups and receive reminders for next steps.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can product information be shared through WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — share company-approved materials only, following regulatory and consent requirements.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can hospitals automate appointment communication?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — administrative appointment enquiries, confirmations and reminders — not medical diagnosis.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Does InboxWa provide medical diagnosis?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">No. InboxWa is a communication and workflow platform, not a clinical decision system.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Does HelloBotz provide medical diagnosis?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">No. HelloBotz is a communication and workflow platform, not a clinical decision system.</div></div></div>
     </div>
   </div>
 </section>
@@ -287,7 +287,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <div class="section-header reveal">
       <h2 style="color:#fff">Build a Smarter Healthcare Communication Workflow</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Connect your pharma teams, medical representatives, doctors and healthcare operations with InboxWa automation.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Connect your pharma teams, medical representatives, doctors and healthcare operations with HelloBotz automation.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book Healthcare Demo</button>

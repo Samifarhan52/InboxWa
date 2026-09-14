@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Appointment Booking on WhatsApp Flows | Calendar Sync | InboxWa';
+$pageTitle = 'Appointment Booking on WhatsApp Flows | Calendar Sync | HelloBotz';
 $pageDescription = 'Automate appointments and bookings natively inside WhatsApp. Bi-directional Google & Outlook calendar sync, automated deposit collection, and 80% lower no-shows.';
-$canonicalUrl = 'https://inboxwa.com/solutions/appointment/';
+$canonicalUrl = 'https://hellobotz.com/solutions/appointment/';
 $ogImage = 'assets/images/products/appointment/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -216,7 +216,7 @@ include __DIR__ . '/../../includes/header.php';
               <svg class="prod-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="prod-faq-answer">
-              InboxWa operates with real-time API integrations. Whenever a customer opens the WhatsApp Flow scheduler form, InboxWa queries your Google/Outlook calendar to block out slots that contain existing events.
+              HelloBotz operates with real-time API integrations. Whenever a customer opens the WhatsApp Flow scheduler form, HelloBotz queries your Google/Outlook calendar to block out slots that contain existing events.
             </div>
           </div>
           <div class="prod-faq-item">

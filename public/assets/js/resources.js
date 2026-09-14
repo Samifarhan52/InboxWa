@@ -44,7 +44,7 @@
         message: fd.get('message'),
         source_page: '/resources/help-center/'
       };
-      var msg = '*InboxWa Support Ticket*\n\n' +
+      var msg = '*HelloBotz Support Ticket*\n\n' +
         'Name: ' + (payload.name || '') + '\n' +
         'Email: ' + (payload.email || '') + '\n' +
         'WhatsApp: ' + (payload.phone || '') + '\n' +
@@ -57,7 +57,7 @@
       var st = document.getElementById('support-status');
       if(st){
         st.style.display='block';
-        st.innerHTML = '⏳ Submitting ticket to support@inboxwa.com...';
+        st.innerHTML = '⏳ Submitting ticket to support@hellobotz.com...';
       }
 
       fetch('/api/lead.php',{
@@ -70,13 +70,13 @@
           if(st){
             st.style.display='block';
             st.style.color='#15803D';
-            st.innerHTML = '✅ Support request dispatched to <strong>support@inboxwa.com</strong> (Ticket #' + (res.id || '') + ') and WhatsApp. <a href="' + (res.whatsapp_url || waUrl) + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
+            st.innerHTML = '✅ Support request dispatched to <strong>support@hellobotz.com</strong> (Ticket #' + (res.id || '') + ') and WhatsApp. <a href="' + (res.whatsapp_url || waUrl) + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
           }
         }).catch(function(){
           if(st){
             st.style.display='block';
             st.style.color='#15803D';
-            st.innerHTML = '✅ Support request submitted to <strong>support@inboxwa.com</strong> and WhatsApp. <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
+            st.innerHTML = '✅ Support request submitted to <strong>support@hellobotz.com</strong> and WhatsApp. <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
           }
         });
 

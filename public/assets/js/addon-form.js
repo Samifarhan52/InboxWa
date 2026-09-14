@@ -2,7 +2,7 @@
   var modal = document.getElementById('addon-modal');
   var form = document.getElementById('addon-form');
   if(!modal||!form) return;
-  var wa = (window.INBOXWA_CONFIG && window.INBOXWA_CONFIG.whatsapp) || (window.HB_PRICING && window.HB_PRICING.wa) || '918050854445';
+  var wa = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || (window.HB_PRICING && window.HB_PRICING.wa) || '918050854445';
 
   function openModal(card){
     var id = card.getAttribute('data-addon-id')||'';
@@ -36,7 +36,7 @@
     var status = document.getElementById('af-status');
     btn.disabled = true; btn.textContent = 'Submitting...';
     var fd = new FormData(form);
-    var msg = '*InboxWa Add-on Request*\n\n'+
+    var msg = '*HelloBotz Add-on Request*\n\n'+
       'Name: '+fd.get('name')+'\n'+
       'Business: '+fd.get('business')+'\n'+
       'Email: '+fd.get('email')+'\n'+

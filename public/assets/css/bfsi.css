@@ -1,5 +1,5 @@
 /**
- * BFSI (Banking, Financial Services & Insurance) Stylesheet for InboxWa
+ * BFSI (Banking, Financial Services & Insurance) Stylesheet for HelloBotz
  * Cloned and enhanced from technocorelogic.com/industry/bfsi/
  * Namespaced under .bfsi-page to prevent style pollution
  */
@@ -531,7 +531,7 @@
 }
 
 /* =========================================================================
-   INBOXWA CONVERSATIONAL BANKING JOURNEY FLOW
+   HELLOBOTZ CONVERSATIONAL BANKING JOURNEY FLOW
    ========================================================================= */
 .bfsi-journey-section {
   padding: 5.5rem 0;

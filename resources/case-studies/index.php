@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Case Studies & Customer Stories — InboxWa';
-$pageDescription = 'Discover how leading e-commerce brands, real estate firms, clinics, and edtech companies use InboxWa WhatsApp API to accelerate sales and scale support.';
-$canonicalUrl = 'https://inboxwa.com/resources/case-studies/';
+$pageTitle = 'Case Studies & Customer Stories — HelloBotz';
+$pageDescription = 'Discover how leading e-commerce brands, real estate firms, clinics, and edtech companies use HelloBotz WhatsApp API to accelerate sales and scale support.';
+$canonicalUrl = 'https://hellobotz.com/resources/case-studies/';
 include __DIR__ . '/../../includes/header.php';
 
 $caseStudies = [
@@ -13,13 +13,13 @@ $caseStudies = [
     'color' => 'pink',
     'metric_headline' => '+28% Cart Recovery & ₹18.4L GMV Recovered',
     'challenge' => 'High checkout drop-off on high-ticket apparel. Email recovery reminders suffered from a low 14% open rate and arrived too late to stop purchase hesitation.',
-    'solution' => 'Integrated InboxWa with Shopify webhooks to fire automated 30-minute WhatsApp cart recovery sequences with 1-click discount buttons and direct agent checkout support.',
+    'solution' => 'Integrated HelloBotz with Shopify webhooks to fire automated 30-minute WhatsApp cart recovery sequences with 1-click discount buttons and direct agent checkout support.',
     'kpis' => [
       ['val' => '98.2%', 'lbl' => 'Message Open Rate'],
       ['val' => '+28%', 'lbl' => 'Cart Recovery Rate'],
       ['val' => '₹18.4L', 'lbl' => 'Recovered in 60 Days']
     ],
-    'quote' => '“InboxWa turned WhatsApp from a simple chat channel into our highest-ROI revenue engine. Abandoned cart recovery alone pays for our annual subscription multiple times over.”',
+    'quote' => '“HelloBotz turned WhatsApp from a simple chat channel into our highest-ROI revenue engine. Abandoned cart recovery alone pays for our annual subscription multiple times over.”',
     'author' => 'Siddharth Roy',
     'role' => 'Head of Growth, UrbanKart'
   ],
@@ -70,7 +70,7 @@ $caseStudies = [
       ['val' => '89%', 'lbl' => 'On-Time Fee Payment'],
       ['val' => '12,000+', 'lbl' => 'Students Onboarded']
     ],
-    'quote' => '“InboxWa enabled our 12 counselors to handle over 1,500 daily student queries during peak admission season without dropping a single conversation.”',
+    'quote' => '“HelloBotz enabled our 12 counselors to handle over 1,500 daily student queries during peak admission season without dropping a single conversation.”',
     'author' => 'Pooja Verma',
     'role' => 'Admissions Dean, BrightPath'
   ],
@@ -87,7 +87,7 @@ $caseStudies = [
       ['val' => '99.9%', 'lbl' => 'API Delivery Rate'],
       ['val' => '+32%', 'lbl' => 'Early EMI Settlements']
     ],
-    'quote' => '“The reliability and bank-grade encryption of InboxWa allowed us to deploy WhatsApp-native KYC and payment reminders with absolute confidence.”',
+    'quote' => '“The reliability and bank-grade encryption of HelloBotz allowed us to deploy WhatsApp-native KYC and payment reminders with absolute confidence.”',
     'author' => 'Vikram Singhania',
     'role' => 'Chief Risk Officer, NovaPay'
   ],
@@ -98,7 +98,7 @@ $caseStudies = [
     'color' => 'blue',
     'metric_headline' => '24/7 Global Guest Concierge with AI Bot',
     'challenge' => 'Travelers in different time zones required instantaneous flight updates, hotel vouchers, and itinerary adjustments outside of standard office hours.',
-    'solution' => 'Trained an InboxWa AI assistant to parse booking references, dispatch PDF itineraries on demand, and seamlessly escalate complex issues to on-call travel agents.',
+    'solution' => 'Trained an HelloBotz AI assistant to parse booking references, dispatch PDF itineraries on demand, and seamlessly escalate complex issues to on-call travel agents.',
     'kpis' => [
       ['val' => '24/7', 'lbl' => 'Concierge Availability'],
       ['val' => '< 30s', 'lbl' => 'Voucher Dispatch Time'],
@@ -125,7 +125,7 @@ $caseStudies = [
   <div class="container">
     <span class="res-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Real Impact & Proven ROI</span>
     <h1>Customer Success Stories</h1>
-    <p>Discover how high-growth businesses leverage InboxWa WhatsApp API, AI chatbots, and omnichannel automation to drive 3x faster response times and 98% open rates.</p>
+    <p>Discover how high-growth businesses leverage HelloBotz WhatsApp API, AI chatbots, and omnichannel automation to drive 3x faster response times and 98% open rates.</p>
 
     <!-- Stat Highlights Bar -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1.25rem;max-width:880px;margin:2.5rem auto 0;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:18px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
@@ -220,7 +220,7 @@ $caseStudies = [
         <!-- Card Footer CTA -->
         <div style="margin-top:auto;padding-top:1rem;border-top:1px solid #F3F4F6;display:flex;align-items:center;justify-content:space-between">
           <a class="btn btn-sm btn-outline" href="/#contact-section">Book Similar Demo</a>
-          <a class="btn btn-sm btn-primary" href="https://wa.me/918050854445?text=Hi%20InboxWa%2C%20I%20am%20interested%20in%20a%20solution%20similar%20to%20<?php echo urlencode($cs['company']); ?>" target="_blank" rel="noopener">Talk to Expert &rarr;</a>
+          <a class="btn btn-sm btn-primary" href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20am%20interested%20in%20a%20solution%20similar%20to%20<?php echo urlencode($cs['company']); ?>" target="_blank" rel="noopener">Talk to Expert &rarr;</a>
         </div>
       </article>
       <?php endforeach; ?>

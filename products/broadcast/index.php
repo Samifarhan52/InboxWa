@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Broadcast & Bulk Messages | Official WhatsApp Marketing | InboxWa';
+$pageTitle = 'Broadcast & Bulk Messages | Official WhatsApp Marketing | HelloBotz';
 $pageDescription = 'Scale your customer reach across WhatsApp, Instagram, Facebook, and Telegram. Launch targeted bulk campaigns, personalize messages with dynamic variables, and track CTR in real time.';
-$canonicalUrl = 'https://inboxwa.com/products/broadcast/';
+$canonicalUrl = 'https://hellobotz.com/products/broadcast/';
 $ogImage = 'assets/images/products/broadcast/hero.png';
 
 include __DIR__ . '/../../includes/header.php';
@@ -68,7 +68,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="prod-hero-media">
         <div class="prod-hero-media-wrapper">
-          <img src="<?php echo $bp; ?>assets/images/products/broadcast/hero.png" alt="InboxWa Broadcast Campaigns Platform" class="prod-hero-media-img" width="1080" height="1080">
+          <img src="<?php echo $bp; ?>assets/images/products/broadcast/hero.png" alt="HelloBotz Broadcast Campaigns Platform" class="prod-hero-media-img" width="1080" height="1080">
         </div>
       </div>
     </div>

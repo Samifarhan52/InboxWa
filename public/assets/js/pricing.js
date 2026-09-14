@@ -2,8 +2,8 @@
   'use strict';
 
   if (typeof window !== 'undefined') {
-    if (window.__inboxwa_pricing_initialized) return;
-    window.__inboxwa_pricing_initialized = true;
+    if (window.__hellobotz_pricing_initialized) return;
+    window.__hellobotz_pricing_initialized = true;
   }
 
   var currencyRates = {
@@ -344,7 +344,7 @@
     if (e.target && e.target.id === 'currencySelector') {
       var selected = e.target.value;
       try {
-        localStorage.setItem('inboxwa_selected_currency', selected);
+        localStorage.setItem('hellobotz_selected_currency', selected);
       } catch (err) {}
       applyCurrency(selected);
     }
@@ -377,7 +377,7 @@
   // INITIAL BOOT
   function init() {
     try {
-      var savedCur = localStorage.getItem('inboxwa_selected_currency');
+      var savedCur = localStorage.getItem('hellobotz_selected_currency');
       var sel = document.getElementById('currencySelector');
       if (savedCur && currencyRates[savedCur]) {
         currentCurrency = savedCur;

@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Facebook Messenger Automation';
 $pageDescription = 'Messenger bots, ads and shared inbox with WhatsApp.';
-$canonicalUrl = 'https://inboxwa.com/products/Facebook-Automation/';
+$canonicalUrl = 'https://hellobotz.com/products/Facebook-Automation/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <section class="section page-hero" style="padding-top:calc(var(--nav,72px) + 3rem)">
@@ -24,7 +24,7 @@ include __DIR__ . '/../../includes/header.php';
 </section>
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>Built into InboxWa</h2>
+    <div class="section-header reveal"><h2>Built into HelloBotz</h2>
     <p class="lead">Official WhatsApp API, shared inbox, automation and CRM — one platform.</p></div>
     <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1rem" class="reveal">
       <a class="pill" href="<?php echo $bp; ?>products/WhatsApp-API/">WhatsApp API</a>

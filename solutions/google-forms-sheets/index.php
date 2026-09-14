@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Google Forms & Google Sheets + WhatsApp API | InboxWa';
-$pageDescription = 'Connect Google Forms and Google Sheets with InboxWa WhatsApp API. Capture leads, automate messages, follow-ups and reminders.';
-$canonicalUrl = 'https://inboxwa.com/solutions/google-forms-sheets/';
+$pageTitle = 'Google Forms & Google Sheets + WhatsApp API | HelloBotz';
+$pageDescription = 'Connect Google Forms and Google Sheets with HelloBotz WhatsApp API. Capture leads, automate messages, follow-ups and reminders.';
+$canonicalUrl = 'https://hellobotz.com/solutions/google-forms-sheets/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/google-forms-sheets.css?v=1">
@@ -16,7 +16,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="gfs-hero-copy">
         <span class="badge gfs-badge">GOOGLE FORMS + GOOGLE SHEETS INTEGRATION</span>
         <h1>Turn Google Forms &amp; Sheets Into a <span class="grad">WhatsApp Automation System</span></h1>
-        <p class="gfs-lead">Capture leads with Google Forms, manage them in Google Sheets and automatically send WhatsApp messages through InboxWa.</p>
+        <p class="gfs-lead">Capture leads with Google Forms, manage them in Google Sheets and automatically send WhatsApp messages through HelloBotz.</p>
         <div class="gfs-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Get Started</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
@@ -28,7 +28,7 @@ include __DIR__ . '/../../includes/header.php';
           <div class="gfs-arrow">↓</div>
           <div class="gfs-node gfs-node-sheet">Google Sheet</div>
           <div class="gfs-arrow">↓</div>
-          <div class="gfs-node gfs-node-hb">InboxWa</div>
+          <div class="gfs-node gfs-node-hb">HelloBotz</div>
           <div class="gfs-arrow">↓</div>
           <div class="gfs-wa-bubble">
             <strong>Hello {{Name}} </strong>
@@ -74,11 +74,11 @@ include __DIR__ . '/../../includes/header.php';
     <div class="gfs-steps reveal">
       <div class="gfs-step"><div class="gfs-step-num">01</div><h3>Create Form</h3><p>Create a Google Form for leads, enquiries, registrations or bookings.</p></div>
       <div class="gfs-step"><div class="gfs-step-num">02</div><h3>Collect Data</h3><p>Every submission automatically enters Google Sheets.</p></div>
-      <div class="gfs-step"><div class="gfs-step-num">03</div><h3>Trigger Automation</h3><p>InboxWa receives the data through the configured integration/webhook.</p></div>
+      <div class="gfs-step"><div class="gfs-step-num">03</div><h3>Trigger Automation</h3><p>HelloBotz receives the data through the configured integration/webhook.</p></div>
       <div class="gfs-step"><div class="gfs-step-num">04</div><h3>Send WhatsApp</h3><p>WhatsApp API sends the appropriate approved template/message.</p></div>
-      <div class="gfs-step"><div class="gfs-step-num">05</div><h3>Track &amp; Manage</h3><p>Use Sheets and InboxWa to manage status, follow-ups and communication.</p></div>
+      <div class="gfs-step"><div class="gfs-step-num">05</div><h3>Track &amp; Manage</h3><p>Use Sheets and HelloBotz to manage status, follow-ups and communication.</p></div>
     </div>
-    <p class="gfs-flow-line reveal">Form → Sheet → InboxWa → WhatsApp → Customer</p>
+    <p class="gfs-flow-line reveal">Form → Sheet → HelloBotz → WhatsApp → Customer</p>
   </div>
 </section>
 <div class="hb-img-slot" data-hb-img-slot>
@@ -86,7 +86,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="hb-img-fallback">
     <div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div>
     <strong>Google Form → Sheet → WhatsApp</strong>
-    <span>Form submission creates a sheet row, InboxWa triggers WhatsApp, then CRM/follow-up.</span>
+    <span>Form submission creates a sheet row, HelloBotz triggers WhatsApp, then CRM/follow-up.</span>
   </div>
 </div>
 
@@ -248,7 +248,7 @@ include __DIR__ . '/../../includes/header.php';
       <span>Converted</span><span class="arr">→</span>
       <span>Lost</span>
     </div>
-    <p class="gfs-note reveal">Google Sheets can work as a lightweight lead-management layer while InboxWa handles WhatsApp communication.</p>
+    <p class="gfs-note reveal">Google Sheets can work as a lightweight lead-management layer while HelloBotz handles WhatsApp communication.</p>
   </div>
 </section>
 
@@ -270,14 +270,14 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal">
       <h2>Connect the Tools You Already Use</h2>
-      <p class="lead">Customer → Google Form → Google Sheet → InboxWa → WhatsApp → Customer</p>
+      <p class="lead">Customer → Google Form → Google Sheet → HelloBotz → WhatsApp → Customer</p>
     </div>
     <div class="gfs-connect reveal">
       <div class="gfs-connect-node">Google Forms</div>
       <span class="arr">→</span>
       <div class="gfs-connect-node">Google Sheets</div>
       <span class="arr">→</span>
-      <div class="gfs-connect-node gfs-connect-hb">InboxWa</div>
+      <div class="gfs-connect-node gfs-connect-hb">HelloBotz</div>
       <span class="arr">→</span>
       <div class="gfs-connect-node">WhatsApp API</div>
     </div>
@@ -335,7 +335,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="card reveal"><h3>Controlled access</h3><p>Manage who can view and edit Sheets and automations.</p></div>
       <div class="card reveal"><h3>Structured data</h3><p>Keep submissions organized in clear columns.</p></div>
       <div class="card reveal"><h3>Clear permissions</h3><p>Configure access appropriate to your team.</p></div>
-      <div class="card reveal"><h3>Secure API configuration</h3><p>Connect InboxWa with responsible credential handling.</p></div>
+      <div class="card reveal"><h3>Secure API configuration</h3><p>Connect HelloBotz with responsible credential handling.</p></div>
       <div class="card reveal"><h3>Responsible handling</h3><p>Handle customer information according to applicable policies.</p></div>
     </div>
   </div>
@@ -345,16 +345,16 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect Google Forms with WhatsApp API?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — form submissions can flow into Google Sheets and then trigger InboxWa WhatsApp messages via the configured integration.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can Google Sheets trigger WhatsApp messages?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — with the right setup, row data and status changes can drive WhatsApp templates through InboxWa.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect Google Forms with WhatsApp API?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — form submissions can flow into Google Sheets and then trigger HelloBotz WhatsApp messages via the configured integration.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can Google Sheets trigger WhatsApp messages?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — with the right setup, row data and status changes can drive WhatsApp templates through HelloBotz.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I use Sheet columns as WhatsApp variables?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — map columns such as Name, Plan, Status and Date to template variables where the integration supports it.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I send automatic follow-ups?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — use status and date fields to drive follow-up and reminder messages within WhatsApp policy.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I use this as a simple CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Google Sheets can act as a lightweight lead layer while InboxWa handles WhatsApp communication.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I use this as a simple CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Google Sheets can act as a lightweight lead layer while HelloBotz handles WhatsApp communication.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I send messages after a form submission?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — that is the core Form → Sheet → WhatsApp flow.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I manage multiple forms?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — multiple forms can feed different sheets or ranges as configured.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I use approved WhatsApp templates?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — outbound business-initiated messages should use approved templates under Meta policy.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I track message status?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Message status can be reflected in InboxWa and optionally written back to Sheets depending on setup.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Do I need technical knowledge?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Basic form and sheet setup is straightforward; our team can help with the InboxWa connection.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I track message status?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Message status can be reflected in HelloBotz and optionally written back to Sheets depending on setup.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Do I need technical knowledge?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Basic form and sheet setup is straightforward; our team can help with the HelloBotz connection.</div></div></div>
     </div>
   </div>
 </section>
@@ -363,7 +363,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <div class="section-header reveal">
       <h2 style="color:#fff">Turn Every Form Submission Into a WhatsApp Conversation</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Connect Google Forms, Google Sheets and InboxWa to automate your customer communication.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Connect Google Forms, Google Sheets and HelloBotz to automate your customer communication.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/auth/register" class="btn btn-primary btn-lg">Get Started</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>

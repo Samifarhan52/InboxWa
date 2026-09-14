@@ -1,4 +1,4 @@
-# InboxWa URL inventory (production)
+# HelloBotz URL inventory (production)
 
 ## Auth
 /auth/login

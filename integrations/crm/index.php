@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'CRM Integration with WhatsApp | Lead Capture, AI & Automation | InboxWa';
-$pageDescription = 'Connect your CRM with InboxWa WhatsApp and AI to capture leads, automate follow-ups, assign sales agents and keep conversations in sync.';
-$canonicalUrl = 'https://inboxwa.com/integrations/crm/';
+$pageTitle = 'CRM Integration with WhatsApp | Lead Capture, AI & Automation | HelloBotz';
+$pageDescription = 'Connect your CRM with HelloBotz WhatsApp and AI to capture leads, automate follow-ups, assign sales agents and keep conversations in sync.';
+$canonicalUrl = 'https://hellobotz.com/integrations/crm/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/crm.css?v=1">
@@ -41,7 +41,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="crm-phone">
           <div class="crm-notch"></div>
           <div class="crm-screen">
-            <div class="crm-wa-head"><div class="crm-av">HB</div><div><strong>InboxWa</strong><small>Sales Assistant</small></div></div>
+            <div class="crm-wa-head"><div class="crm-av">HB</div><div><strong>HelloBotz</strong><small>Sales Assistant</small></div></div>
             <div class="crm-wa-body" id="crm-wa-body"><div class="crm-typing" id="crm-typing"><i></i><i></i><i></i></div></div>
           </div>
         </div>
@@ -52,7 +52,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section" id="ecosystem">
   <div class="container">
-    <div class="section-header reveal"><h2>Connect InboxWa With Your Existing CRM</h2></div>
+    <div class="section-header reveal"><h2>Connect HelloBotz With Your Existing CRM</h2></div>
     <div class="crm-ecosystem reveal">
       <div class="card">HubSpot</div>
       <div class="card">Zoho CRM</div>
@@ -81,7 +81,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="crm-flow reveal">
       <span>CRM Event</span><span class="arr">→</span>
       <span>New Lead</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>WhatsApp Template</span><span class="arr">→</span>
       <span>Customer</span>
     </div>
@@ -148,9 +148,9 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>Keep CRM &amp; WhatsApp Data Connected</h2></div>
     <div class="crm-twoway reveal">
-      <div class="card"><h3>CRM → InboxWa</h3><p>Lead details, status, assigned agent, customer data</p></div>
+      <div class="card"><h3>CRM → HelloBotz</h3><p>Lead details, status, assigned agent, customer data</p></div>
       <div class="arr">↔</div>
-      <div class="card"><h3>InboxWa → CRM</h3><p>Conversation status, follow-up, customer response</p></div>
+      <div class="card"><h3>HelloBotz → CRM</h3><p>Conversation status, follow-up, customer response</p></div>
     </div>
   </div>
 </section>
@@ -158,7 +158,7 @@ include __DIR__ . '/../../includes/header.php';
   
   <div class="hb-img-fallback">
     <div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div>
-    <strong>CRM → InboxWa → WhatsApp</strong>
+    <strong>CRM → HelloBotz → WhatsApp</strong>
     <span>Two-way automation flow visual.</span>
   </div>
 </div>
@@ -196,11 +196,11 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Which CRMs can I connect with InboxWa?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Supported connectors and API/webhooks depend on your plan. Unavailable native CRMs may show as Coming Soon.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Which CRMs can I connect with HelloBotz?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Supported connectors and API/webhooks depend on your plan. Unavailable native CRMs may show as Coming Soon.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can CRM leads automatically receive WhatsApp messages?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — when automation is configured, new leads and status changes can trigger WhatsApp templates.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can CRM fields be used as WhatsApp variables?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes where field mapping is configured for your integration and template.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I automate lead follow-ups?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — sequences based on status and timing within WhatsApp policy.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I assign leads to sales agents?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Assignment depends on your CRM and InboxWa routing configuration.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I assign leads to sales agents?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Assignment depends on your CRM and HelloBotz routing configuration.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I connect through API or Webhooks?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — API/webhooks support custom CRM connections where available.</div></div></div>
     </div>
   </div>
@@ -210,7 +210,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="text-align:center">
     <div class="section-header reveal">
       <h2 style="color:#fff">Connect Your CRM With WhatsApp Automation</h2>
-      <p class="lead" style="color:rgba(255,255,255,.75)">Bring your customer data, sales team and WhatsApp conversations together with InboxWa.</p>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Bring your customer data, sales team and WhatsApp conversations together with HelloBotz.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="/auth/register" class="btn btn-primary btn-lg">Get Started</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book CRM Demo</button>

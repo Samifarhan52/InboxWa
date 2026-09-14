@@ -1,6 +1,6 @@
 <?php
 /**
- * Dynamic Single Blog Post Template for InboxWa CMS
+ * Dynamic Single Blog Post Template for HelloBotz CMS
  */
 $basePath = "../../../";
 require_once dirname(__DIR__, 2) . "/config/cms.php";
@@ -22,9 +22,9 @@ if (!$post) {
     exit;
 }
 
-$pageTitle = htmlspecialchars($post["title"]) . " — InboxWa Blog";
+$pageTitle = htmlspecialchars($post["title"]) . " — HelloBotz Blog";
 $pageDescription = htmlspecialchars($post["excerpt"] ?: substr(strip_tags($post["content"]), 0, 160));
-$canonicalUrl = "https://inboxwa.com/resources/blog/" . urlencode($post["slug"]) . "/";
+$canonicalUrl = "https://hellobotz.com/resources/blog/" . urlencode($post["slug"]) . "/";
 include dirname(__DIR__, 2) . "/includes/header.php";
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
@@ -39,7 +39,7 @@ include dirname(__DIR__, 2) . "/includes/header.php";
       <span class="badge badge-primary"><?php echo htmlspecialchars($post["category"] ?: "Insights"); ?></span>
       <h1 style="margin:.75rem 0 .5rem;font-size:2.25rem;line-height:1.25;font-weight:800;color:var(--t1, #0f172a);"><?php echo htmlspecialchars($post["title"]); ?></h1>
       <div style="color:var(--t3);font-size:.9rem;display:flex;align-items:center;gap:1rem;">
-        <span>By <strong><?php echo htmlspecialchars($post["author"] ?: "InboxWa Team"); ?></strong></span>
+        <span>By <strong><?php echo htmlspecialchars($post["author"] ?: "HelloBotz Team"); ?></strong></span>
         <span>&bull;</span>
         <span><?php echo date("F j, Y", strtotime($post["created_at"])); ?></span>
       </div>

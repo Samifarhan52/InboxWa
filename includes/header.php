@@ -1,6 +1,6 @@
 <?php
 /**
- * InboxWa global header + SEO meta engine
+ * HelloBotz global header + SEO meta engine
  * Set before include: $pageTitle, $pageDescription, $pageKeywords,
  * $canonicalUrl, $ogImage, $ogType, $robots, $basePath
  */
@@ -9,14 +9,14 @@ $bp = $basePath;
 
 require_once dirname(__DIR__) . '/config/cms.php';
 
-$SITE_NAME   = cms_setting('site_title', 'InboxWa');
+$SITE_NAME   = cms_setting('site_title', 'HelloBotz');
 $SITE_TAGLINE = cms_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
-$SITE_DOMAIN = 'https://inboxwa.com';
+$SITE_DOMAIN = 'https://hellobotz.com';
 $DEFAULT_OG  = $SITE_DOMAIN . '/assets/images/og-image.png';
 $cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
 $cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
-$cmsSalesEmail = cms_setting('sales_email', 'mail@inboxwa.com');
-$cmsSupportEmail = cms_setting('support_email', 'support@inboxwa.com');
+$cmsSalesEmail = cms_setting('sales_email', 'mail@hellobotz.com');
+$cmsSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
 $cmsLogo     = cms_setting('logo_url', '/assets/images/logo.png');
 $announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
 $announcementText = cms_setting('announcement_text', '');
@@ -38,10 +38,10 @@ if ($pageTitle === '') {
   $pageTitle = 'WhatsApp Marketing & Automation Platform';
 }
 if ($pageDescription === '') {
-  $pageDescription = 'Automate WhatsApp marketing with official WhatsApp Business API, chatbots, broadcasts, shared inbox & CRM. Start free with InboxWa today.';
+  $pageDescription = 'Automate WhatsApp marketing with official WhatsApp Business API, chatbots, broadcasts, shared inbox & CRM. Start free with HelloBotz today.';
 }
 if ($pageKeywords === '') {
-  $pageKeywords = 'WhatsApp marketing software, WhatsApp Business API, WhatsApp automation tool, AI chatbot for business, WhatsApp CRM software, lead generation chatbot, shared inbox, broadcast campaigns, InboxWa';
+  $pageKeywords = 'WhatsApp marketing software, WhatsApp Business API, WhatsApp automation tool, AI chatbot for business, WhatsApp CRM software, lead generation chatbot, shared inbox, broadcast campaigns, HelloBotz';
 }
 if ($canonicalUrl === '') {
   $reqUri = isset($_SERVER['REQUEST_URI']) ? strtok($_SERVER['REQUEST_URI'], '?') : '/';
@@ -51,7 +51,7 @@ if (!preg_match('/\.[a-z0-9]+$/i', $canonicalUrl) && substr($canonicalUrl, -1) !
   $canonicalUrl .= '/';
 }
 
-$fullTitle = (stripos($pageTitle, 'InboxWa') !== false)
+$fullTitle = (stripos($pageTitle, 'HelloBotz') !== false)
   ? $pageTitle
   : ($pageTitle . ' | ' . $SITE_NAME);
 
@@ -76,11 +76,11 @@ if (!function_exists('hb_seo_esc')) {
   <title><?php echo hb_seo_esc($fullTitle); ?></title>
   <meta name="description" content="<?php echo hb_seo_esc($pageDescription); ?>">
   <meta name="keywords" content="<?php echo hb_seo_esc($pageKeywords); ?>">
-  <meta name="author" content="InboxWa">
+  <meta name="author" content="HelloBotz">
   <meta name="robots" content="<?php echo hb_seo_esc($robots); ?>">
   <meta name="googlebot" content="<?php echo (strpos($robots, 'noindex') !== false) ? 'noindex, nofollow' : 'index, follow'; ?>">
   <meta name="theme-color" content="#8B5CF6">
-  <meta name="application-name" content="InboxWa">
+  <meta name="application-name" content="HelloBotz">
   <meta name="format-detection" content="telephone=no">
   <meta name="geo.region" content="IN">
   <meta name="language" content="en">
@@ -90,7 +90,7 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="alternate" hreflang="x-default" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
 
   <meta property="og:type" content="<?php echo hb_seo_esc($ogType); ?>">
-  <meta property="og:site_name" content="InboxWa">
+  <meta property="og:site_name" content="HelloBotz">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="<?php echo hb_seo_esc($ogTitle); ?>">
   <meta property="og:description" content="<?php echo hb_seo_esc($ogDescription); ?>">
@@ -128,7 +128,7 @@ if (!function_exists('hb_seo_esc')) {
   $themeBg = cms_setting('theme_bg_color', '#FFFFFF');
   $themeText = cms_setting('theme_text_color', '#0F172A');
   ?>
-  <style id="inboxwa-theme-palette">
+  <style id="hellobotz-theme-palette">
     :root {
       --p: <?php echo htmlspecialchars($themePrimary); ?> !important;
       --p2: <?php echo htmlspecialchars($themePrimaryHover); ?> !important;
@@ -173,9 +173,9 @@ if (!function_exists('hb_seo_esc')) {
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "InboxWa AI Technologies Pvt Ltd",
-    "url": "https://inboxwa.com/",
-    "logo": "https://inboxwa.com/assets/images/logo.png",
+    "name": "HelloBotz AI Technologies Pvt Ltd",
+    "url": "https://hellobotz.com/",
+    "logo": "https://hellobotz.com/assets/images/logo.png",
     "description": "Official WhatsApp Business API and Omnichannel automation platform for WhatsApp, Instagram, Facebook and Telegram.",
     "email": "<?php echo htmlspecialchars($cmsSalesEmail); ?>",
     "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
@@ -193,9 +193,9 @@ if (!function_exists('hb_seo_esc')) {
       "email": "<?php echo htmlspecialchars($cmsSupportEmail); ?>"
     }],
     "sameAs": [
-      "https://facebook.com/inboxwa",
-      "https://instagram.com/inboxwa",
-      "https://linkedin.com/company/inboxwa"
+      "https://facebook.com/hellobotz",
+      "https://instagram.com/hellobotz",
+      "https://linkedin.com/company/hellobotz"
     ]
   }
   </script>
@@ -203,11 +203,11 @@ if (!function_exists('hb_seo_esc')) {
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "InboxWa",
-    "url": "https://inboxwa.com/",
+    "name": "HelloBotz",
+    "url": "https://hellobotz.com/",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://inboxwa.com/resources/search?q={search_term_string}",
+      "target": "https://hellobotz.com/resources/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -216,10 +216,10 @@ if (!function_exists('hb_seo_esc')) {
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "InboxWa",
+    "name": "HelloBotz",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "url": "https://inboxwa.com/",
+    "url": "https://hellobotz.com/",
     "description": "WhatsApp Business API platform with shared inbox, broadcasts, flow builder, chatbots, CRM and omnichannel automation.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free trial available" }
   }
@@ -252,12 +252,13 @@ if (!function_exists('hb_seo_esc')) {
   <?php if (!empty($customHead)) echo $customHead; ?>
   <?php if (!empty($extraHead)) echo $extraHead; ?>
   <script>
-    window.INBOXWA_CONFIG = {
+    window.HELLOBOTZ_CONFIG = {
       whatsapp: <?php echo json_encode($cmsWhatsapp); ?>,
       siteName: <?php echo json_encode($SITE_NAME); ?>
     };
+    window.INBOXWA_CONFIG = window.HELLOBOTZ_CONFIG;
   </script>
-  <style id="inboxwa-floating-pill-navbar-style">
+  <style id="hellobotz-floating-pill-navbar-style">
     /* FLOATING PILL NAVBAR SYSTEM (100% Fixed, Centered & Always Visible on Scroll) */
     :root {
       --nav: 0px !important;
@@ -480,7 +481,7 @@ if (!function_exists('hb_seo_esc')) {
       position: static !important;
     }
 
-    /* InboxWa Light Mega Menu for Channels (100% Centered & Never Cut Off) */
+    /* HelloBotz Light Mega Menu for Channels (100% Centered & Never Cut Off) */
     .mega-menu-channels,
     .mega-menu-channels.align-left,
     .mega-menu-channels.align-right {
@@ -593,7 +594,7 @@ if (!function_exists('hb_seo_esc')) {
       margin-top: 3px !important;
     }
 
-    /* Right Promo Card (Light Theme Matching InboxWa Style) */
+    /* Right Promo Card (Light Theme Matching HelloBotz Style) */
     .mega-channels-promo {
       background: linear-gradient(145deg, #f5f3ff 0%, #ede9fe 100%) !important;
       border: 1px solid rgba(139, 92, 246, 0.25) !important;
@@ -745,7 +746,7 @@ if (!function_exists('hb_seo_esc')) {
       box-sizing: border-box !important;
     }
 
-    /* FEATURES MEGA MENU: Clean 2-Column Grid Matching InboxWa Theme */
+    /* FEATURES MEGA MENU: Clean 2-Column Grid Matching HelloBotz Theme */
     .mega-menu-features {
       width: min(840px, calc(100vw - 28px)) !important;
       max-width: calc(100vw - 28px) !important;
@@ -871,7 +872,7 @@ if (!function_exists('hb_seo_esc')) {
       }
     }
 
-    /* PRODUCTS MEGA MENU: Clean 5-Column Balanced Grid Matching InboxWa Theme */
+    /* PRODUCTS MEGA MENU: Clean 5-Column Balanced Grid Matching HelloBotz Theme */
     .mega-menu-products {
       width: min(1180px, calc(100vw - 28px)) !important;
       max-width: calc(100vw - 28px) !important;
@@ -2065,7 +2066,7 @@ if (!function_exists('hb_seo_esc')) {
       </a>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
 
-        <!-- PRODUCTS MEGAMENU (InboxWa Suite) -->
+        <!-- PRODUCTS MEGAMENU (HelloBotz Suite) -->
         <div class="nav-item nav-item-features nav-item-products" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mega-menu mega-menu-panel mega-menu-features" role="menu">
@@ -2173,7 +2174,7 @@ if (!function_exists('hb_seo_esc')) {
           </div>
         </div>
 
-        <!-- CHANNELS [LIVE] MEGAMENU (InboxWa Suite) -->
+        <!-- CHANNELS [LIVE] MEGAMENU (HelloBotz Suite) -->
         <div class="nav-item nav-item-channels" data-mega>
           <button type="button" class="nav-link nav-link-channels" aria-expanded="false" aria-haspopup="true">
             Channels <span class="badge-live-pill">Live</span>
@@ -2445,7 +2446,7 @@ if (!function_exists('hb_seo_esc')) {
             <div class="mega-company-footer">
               <div class="mega-company-footer-left">🛡️ Official Meta Cloud API Partner &bull; ISO 27001 Certified &bull; GDPR Compliant</div>
               <div style="display:flex;align-items:center;gap:10px;">
-                <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" class="mega-company-brochure-link">
+                <a href="/assets/downloads/hellobotz-partner-brochure.pdf" download="HelloBotz-Partner-Brochure.pdf" class="mega-company-brochure-link">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                   Download Brochure
                 </a>
@@ -2554,7 +2555,7 @@ if (!function_exists('hb_seo_esc')) {
             <a href="/partners/agency/">Agency Partner <span style="font-size:11px;color:#64748B;display:block;">Serve your clients (40%)</span></a>
             <a href="/partners/white-label/">White Label Partner <span style="font-size:11px;color:#64748B;display:block;">Your brand, our platform (50%)</span></a>
             <a href="/partners/technology/">Technology Partner <span style="font-size:11px;color:#64748B;display:block;">Build integrations</span></a>
-            <a href="/assets/downloads/inboxwa-partner-brochure.pdf" download="InboxWa-Partner-Brochure.pdf" style="font-weight:700;color:#6D28D9;display:flex;align-items:center;gap:6px;padding:6px 0;">📄 Download Partner Brochure</a>
+            <a href="/assets/downloads/hellobotz-partner-brochure.pdf" download="HelloBotz-Partner-Brochure.pdf" style="font-weight:700;color:#6D28D9;display:flex;align-items:center;gap:6px;padding:6px 0;">📄 Download Partner Brochure</a>
 
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Resources</div>
             <a href="<?php echo $bp; ?>resources/blog/">Blog &amp; Insights</a>

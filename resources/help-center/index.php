@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Help Center & Support — InboxWa';
-$pageDescription = 'Official InboxWa Help Center. Explore guides, setup tutorials, FAQs and documentation for WhatsApp Business API, chatbots, broadcasts, CRM and integrations.';
-$canonicalUrl = 'https://inboxwa.com/resources/help-center/';
+$pageTitle = 'Help Center & Support — HelloBotz';
+$pageDescription = 'Official HelloBotz Help Center. Explore guides, setup tutorials, FAQs and documentation for WhatsApp Business API, chatbots, broadcasts, CRM and integrations.';
+$canonicalUrl = 'https://hellobotz.com/resources/help-center/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
@@ -21,7 +21,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section res-hero">
   <div class="container">
     <div class="reveal">
-      <span class="badge badge-primary">InboxWa Help Center</span>
+      <span class="badge badge-primary">HelloBotz Help Center</span>
       <h1>How Can We Help You Today?</h1>
       <p class="lead">Search guides, tutorials, and setup instructions for WhatsApp Business API, chatbots, team inbox, campaigns, and integrations.</p>
       
@@ -237,7 +237,7 @@ include __DIR__ . '/../../includes/header.php';
       <article class="res-card reveal">
         <span class="badge badge-primary" style="align-self:flex-start;margin-bottom:0.75rem;">Billing</span>
         <h3>Understanding WhatsApp Business API Conversation Charges</h3>
-        <p>Learn how Meta charges for Service, Marketing, Utility, and Authentication conversations with InboxWa’s zero-markup model.</p>
+        <p>Learn how Meta charges for Service, Marketing, Utility, and Authentication conversations with HelloBotz’s zero-markup model.</p>
         <div class="res-card-footer">
           <span>4 min read</span>
           <a href="/pricing/" class="btn btn-sm btn-outline">Read Guide &rarr;</a>
@@ -263,13 +263,13 @@ include __DIR__ . '/../../includes/header.php';
           <svg class="res-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="res-faq-answer">
-          With InboxWa, your WhatsApp Business API number is typically activated within 10 to 30 minutes via Meta Embedded Signup. If your Meta Business Manager is already verified, you can immediately begin sending messages up to Tier 1 limits (1,000 unique business-initiated conversations per 24 hours).
+          With HelloBotz, your WhatsApp Business API number is typically activated within 10 to 30 minutes via Meta Embedded Signup. If your Meta Business Manager is already verified, you can immediately begin sending messages up to Tier 1 limits (1,000 unique business-initiated conversations per 24 hours).
         </div>
       </div>
 
       <div class="res-faq-item reveal">
         <button type="button" class="res-faq-question" aria-expanded="false">
-          <span>Can I use my existing WhatsApp number with InboxWa?</span>
+          <span>Can I use my existing WhatsApp number with HelloBotz?</span>
           <svg class="res-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="res-faq-answer">
@@ -283,7 +283,7 @@ include __DIR__ . '/../../includes/header.php';
           <svg class="res-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="res-faq-answer">
-          To qualify for the official Meta Official Business Account (Green Tick) badge, your business must have a verified Meta Business Manager, 2-factor authentication enabled, and demonstrable brand notability (organic press mentions in credible publications). InboxWa’s support team assists all Growth &amp; Enterprise tier clients with Green Tick applications at no extra fee.
+          To qualify for the official Meta Official Business Account (Green Tick) badge, your business must have a verified Meta Business Manager, 2-factor authentication enabled, and demonstrable brand notability (organic press mentions in credible publications). HelloBotz’s support team assists all Growth &amp; Enterprise tier clients with Green Tick applications at no extra fee.
         </div>
       </div>
 
@@ -303,17 +303,17 @@ include __DIR__ . '/../../includes/header.php';
           <svg class="res-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="res-faq-answer">
-          Yes! InboxWa’s Shared Team Inbox allows unlimited agents to respond to incoming customer messages simultaneously from our web console, Android app, or iOS app. You can assign conversations manually, use round-robin auto-assignment, add internal notes, and tag conversations with priority flags.
+          Yes! HelloBotz’s Shared Team Inbox allows unlimited agents to respond to incoming customer messages simultaneously from our web console, Android app, or iOS app. You can assign conversations manually, use round-robin auto-assignment, add internal notes, and tag conversations with priority flags.
         </div>
       </div>
 
       <div class="res-faq-item reveal">
         <button type="button" class="res-faq-question" aria-expanded="false">
-          <span>Does InboxWa charge per message or take commission on WhatsApp charges?</span>
+          <span>Does HelloBotz charge per message or take commission on WhatsApp charges?</span>
           <svg class="res-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="res-faq-answer">
-          InboxWa maintains 100% transparent pricing with zero markup on Meta conversation fees. You pay the standard transparent platform subscription plus the exact official Meta conversation cost as published by Meta for your country.
+          HelloBotz maintains 100% transparent pricing with zero markup on Meta conversation fees. You pay the standard transparent platform subscription plus the exact official Meta conversation cost as published by Meta for your country.
         </div>
       </div>
     </div>
@@ -325,7 +325,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container" style="max-width:720px">
     <div class="section-header reveal" style="margin-bottom:1.75rem">
       <span class="badge badge-primary">Priority Assistance</span>
-      <h2>Contact InboxWa Technical Support</h2>
+      <h2>Contact HelloBotz Technical Support</h2>
       <p class="lead">Have an issue or need assistance? Open a support ticket below or message our engineers directly on WhatsApp.</p>
     </div>
 
@@ -381,7 +381,7 @@ include __DIR__ . '/../../includes/header.php';
           <button type="submit" class="btn btn-primary btn-lg" style="flex:1;min-width:200px">
             Submit Support Request &rarr;
           </button>
-          <a class="btn btn-outline btn-lg" href="https://wa.me/918050854445?text=Hi%20InboxWa%20Support%2C%20I%20need%20assistance%20with%20my%20account" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px">
+          <a class="btn btn-outline btn-lg" href="https://wa.me/918050854445?text=Hi%20HelloBotz%20Support%2C%20I%20need%20assistance%20with%20my%20account" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
             Chat Live on WhatsApp
           </a>
@@ -391,7 +391,7 @@ include __DIR__ . '/../../includes/header.php';
       </form>
 
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #F3F4F6;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:0.85rem;color:#6B7280;">
-        <div><strong>Email Technical Support:</strong> <a href="mailto:support@inboxwa.com" style="color:var(--p2);text-decoration:none">support@inboxwa.com</a></div>
+        <div><strong>Email Technical Support:</strong> <a href="mailto:support@hellobotz.com" style="color:var(--p2);text-decoration:none">support@hellobotz.com</a></div>
         <div><strong>Direct Support Hotline:</strong> <a href="tel:+918050854445" style="color:var(--p2);text-decoration:none">+91 80508 54445</a></div>
       </div>
     </div>
@@ -402,7 +402,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark">
   <div class="container" style="text-align:center">
     <div class="reveal">
-      <h2 style="color:#FFFFFF;margin-bottom:0.75rem;">Scale Your Conversations with InboxWa</h2>
+      <h2 style="color:#FFFFFF;margin-bottom:0.75rem;">Scale Your Conversations with HelloBotz</h2>
       <p class="lead" style="color:rgba(255,255,255,0.75);max-width:580px;margin:0 auto 1.5rem;">Join thousands of businesses automating sales, support, and marketing on official WhatsApp Business API.</p>
       <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center">
         <a href="<?php echo $bp; ?>auth/register" class="btn btn-primary btn-lg">Start Free 14-Day Trial &rarr;</a>

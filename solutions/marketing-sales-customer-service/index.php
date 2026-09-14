@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Marketing, Sales & Customer Service | InboxWa';
-$pageDescription = 'Capture leads, convert conversations into customers and deliver faster support with InboxWa — marketing, sales and customer service connected.';
-$canonicalUrl = 'https://inboxwa.com/solutions/marketing-sales-customer-service/';
+$pageTitle = 'Marketing, Sales & Customer Service | HelloBotz';
+$pageDescription = 'Capture leads, convert conversations into customers and deliver faster support with HelloBotz — marketing, sales and customer service connected.';
+$canonicalUrl = 'https://hellobotz.com/solutions/marketing-sales-customer-service/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/mscs.css?v=1">
@@ -15,7 +15,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="mscs-hero-copy">
         <span class="badge mscs-badge">BUSINESS GROWTH SOLUTIONS</span>
         <h1>Marketing, Sales &amp; Customer Service — <span class="grad">Connected in One Platform</span></h1>
-        <p class="mscs-lead">Capture more leads, convert conversations into customers and deliver faster customer support with InboxWa automation.</p>
+        <p class="mscs-lead">Capture more leads, convert conversations into customers and deliver faster customer support with HelloBotz automation.</p>
         <div class="mscs-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
@@ -46,7 +46,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="mscs-flow">
         <span>Facebook / Instagram / Website</span><span class="arr">→</span>
         <span>Lead Captured</span><span class="arr">→</span>
-        <span>InboxWa</span><span class="arr">→</span>
+        <span>HelloBotz</span><span class="arr">→</span>
         <span>WhatsApp</span><span class="arr">→</span>
         <span>Follow-up</span>
       </div>
@@ -146,7 +146,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="section-header reveal"><h2>Everything Connected Behind the Conversation</h2></div>
     <div class="mscs-flow reveal">
       <span>Customer</span><span class="arr">→</span>
-      <span>InboxWa</span><span class="arr">→</span>
+      <span>HelloBotz</span><span class="arr">→</span>
       <span>CRM</span><span class="arr">→</span>
       <span>Automation</span><span class="arr">→</span>
       <span>Sales / Support</span>
@@ -195,9 +195,9 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can InboxWa help with marketing?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Turn campaign interest into conversations, capture leads and start follow-ups on WhatsApp and connected channels.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can InboxWa help sales teams?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Qualify interest, assign agents, sync CRM where configured and keep follow-ups organized.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa automate customer support?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — FAQs, common requests and human handover for complex cases.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can HelloBotz help with marketing?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Turn campaign interest into conversations, capture leads and start follow-ups on WhatsApp and connected channels.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">How can HelloBotz help sales teams?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Qualify interest, assign agents, sync CRM where configured and keep follow-ups organized.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz automate customer support?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — FAQs, common requests and human handover for complex cases.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can Marketing, Sales and Support work together?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — one conversation stack can feed leads, sales activity and support resolution.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can leads be sent to CRM?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Where CRM integration is configured, leads and activity can sync to your CRM.</div></div></div>
     </div>

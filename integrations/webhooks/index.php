@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Webhooks & API | InboxWa';
-$pageDescription = 'Connect your app to InboxWa with webhooks and REST API for WhatsApp automation and CRM events.';
-$canonicalUrl = 'https://inboxwa.com/integrations/webhooks/';
+$pageTitle = 'Webhooks & API | HelloBotz';
+$pageDescription = 'Connect your app to HelloBotz with webhooks and REST API for WhatsApp automation and CRM events.';
+$canonicalUrl = 'https://hellobotz.com/integrations/webhooks/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Integrations / Webhooks & API</nav>
@@ -29,7 +29,7 @@ include __DIR__ . '/../../includes/header.php';
 </div>
     </div>
     <div class="int-float hero-visual-float reveal" style="max-width:640px;margin:2rem auto 0">
-      <img src="/assets/images/integrations/webhooks/hero.webp" alt="Webhooks & API + InboxWa + WhatsApp"
+      <img src="/assets/images/integrations/webhooks/hero.webp" alt="Webhooks & API + HelloBotz + WhatsApp"
         width="1200" height="630" loading="eager"
         style="width:100%;height:auto;border-radius:16px;border:1px solid var(--bd);min-height:180px;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
         onerror="this.onerror=null;this.src='';this.style.background='linear-gradient(135deg,#EDE9FE,#CFFAFE)';this.style.minHeight='200px'">
@@ -39,7 +39,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-gradient-1">
   <div class="container">
-    <div class="section-header reveal"><h2>How InboxWa works with Webhooks & API</h2></div>
+    <div class="section-header reveal"><h2>How HelloBotz works with Webhooks & API</h2></div>
     <p class="lead reveal" style="max-width:720px;margin:0 auto 1.5rem;text-align:center">HTTPS webhooks and API tokens let your backend trigger flows and read results.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem"><div class="card reveal"><h3>Custom apps</h3><p>Trigger messages from your UI.</p></div><div class="card reveal"><h3>ERP/OMS</h3><p>Order events in.</p></div><div class="card reveal"><h3>Status sync</h3><p>Delivery receipts out.</p></div><div class="card reveal"><h3>Data pipes</h3><p>CRM and warehouse.</p></div></div>
   </div>
@@ -53,7 +53,7 @@ include __DIR__ . '/../../includes/header.php';
       <p class="lead" style="color:rgba(255,255,255,.7)">Frontend demo — not connected to a live store or API.</p>
     </div>
     <div class="workflow-sim" id="ws-webhooks">
-      <div class="ws-step" style="color:#111">Your app sends HTTPS event</div><div class="ws-step" style="color:#111">InboxWa validates token</div><div class="ws-step" style="color:#111">Automation runs</div><div class="ws-step" style="color:#111">WhatsApp/API action</div><div class="ws-step" style="color:#111">Webhook callback to you</div><div class="ws-step" style="color:#111">Logs stored</div>
+      <div class="ws-step" style="color:#111">Your app sends HTTPS event</div><div class="ws-step" style="color:#111">HelloBotz validates token</div><div class="ws-step" style="color:#111">Automation runs</div><div class="ws-step" style="color:#111">WhatsApp/API action</div><div class="ws-step" style="color:#111">Webhook callback to you</div><div class="ws-step" style="color:#111">Logs stored</div>
     </div>
     <div class="ws-controls">
       <button type="button" class="btn btn-sm btn-outline ws-prev" style="color:#fff;border-color:rgba(255,255,255,.35)" data-sim="ws-webhooks">Previous</button>
@@ -85,10 +85,10 @@ include __DIR__ . '/../../includes/header.php';
         <img src="/assets/images/integrations/webhooks/workflow.webp" alt="Webhooks & API workflow" width="600" height="360" loading="lazy"
           style="width:100%;aspect-ratio:16/10;object-fit:cover;background:linear-gradient(135deg,#EDE9FE,#CFFAFE)"
           onerror="this.style.minHeight='160px'">
-        <div style="padding:1rem"><strong>Workflow</strong><p style="margin:.35rem 0 0;font-size:.9rem;color:var(--t2)">Event → InboxWa → WhatsApp</p></div>
+        <div style="padding:1rem"><strong>Workflow</strong><p style="margin:.35rem 0 0;font-size:.9rem;color:var(--t2)">Event → HelloBotz → WhatsApp</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden">
-        <img src="/assets/images/integrations/webhooks/dashboard.webp" alt="InboxWa dashboard" width="600" height="360" loading="lazy"
+        <img src="/assets/images/integrations/webhooks/dashboard.webp" alt="HelloBotz dashboard" width="600" height="360" loading="lazy"
           style="width:100%;aspect-ratio:16/10;object-fit:cover;background:linear-gradient(135deg,#CFFAFE,#EDE9FE)"
           onerror="this.style.minHeight='160px'">
         <div style="padding:1rem"><strong>Inbox &amp; CRM</strong><p style="margin:.35rem 0 0;font-size:.9rem;color:var(--t2)">Replies land in shared inbox</p></div>
@@ -106,7 +106,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
-    <h2 style="color:#fff">Connect Webhooks & API to InboxWa</h2>
+    <h2 style="color:#fff">Connect Webhooks & API to HelloBotz</h2>
     <p class="lead" style="color:rgba(255,255,255,.75)">Official WhatsApp Business API + automation for your stack.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/#contact-section" class="btn btn-primary btn-lg">Talk to sales</a>

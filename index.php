@@ -2,9 +2,9 @@
 $basePath = "";
 require_once __DIR__ . '/config/cms.php';
 
-$pageTitle = cms_setting('site_title', 'InboxWa') . ' – ' . cms_setting('site_tagline', 'Scale Your Sales and Support on WhatsApp');
+$pageTitle = cms_setting('site_title', 'HelloBotz') . ' – ' . cms_setting('site_tagline', 'Scale Your Sales and Support on WhatsApp');
 $pageDescription = 'Official WhatsApp Business API platform with shared inbox, AI chatbots, visual flow builder, bulk broadcasts, and CRM integrations.';
-$canonicalUrl = 'https://inboxwa.com/';
+$canonicalUrl = 'https://hellobotz.com/';
 
 include __DIR__ . '/includes/header.php';
 ?>
@@ -309,26 +309,47 @@ include __DIR__ . '/includes/header.php';
 
   /* WhatsApp Header */
   .cw-wa-header {
-    background: #1f2c34;
-    padding: 9px 12px;
+    background: #202c33;
+    padding: 8px 10px;
     display: flex;
     align-items: center;
-    gap: 9px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     flex-shrink: 0;
+  }
+  .cw-wa-back {
+    background: transparent;
+    border: none;
+    color: #aebac1;
+    padding: 3px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: color 0.15s;
+  }
+  .cw-wa-back:hover {
+    color: #ffffff;
   }
   .cw-wa-avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #059669, #10b981);
+    background: #111b21;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
     position: relative;
     flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  }
+  .cw-wa-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #2a3942;
+    display: block;
   }
   .cw-wa-avatar-badge {
     position: absolute;
@@ -337,12 +358,13 @@ include __DIR__ . '/includes/header.php';
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #10b981;
-    border: 2px solid #1f2c34;
+    background: #00a884;
+    border: 2px solid #202c33;
   }
   .cw-wa-header-info {
     flex: 1;
     min-width: 0;
+    margin-left: 2px;
   }
   .cw-wa-title-row {
     display: flex;
@@ -352,41 +374,43 @@ include __DIR__ . '/includes/header.php';
   .cw-wa-title-row strong {
     color: #e9edef;
     font-size: 0.83rem;
-    font-weight: 700;
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   .cw-verified-check {
     flex-shrink: 0;
   }
   .cw-wa-subtitle {
     color: #8696a0;
-    font-size: 0.68rem;
+    font-size: 0.67rem;
     display: flex;
     align-items: center;
     gap: 4px;
     margin-top: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   .cw-live-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #10b981;
+    background: #00a884;
     display: inline-block;
-    box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+    box-shadow: 0 0 6px rgba(0, 168, 132, 0.8);
   }
   .cw-wa-header-tools {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
   }
   .cw-tool-btn {
     background: transparent;
     border: none;
-    color: #8696a0;
+    color: #aebac1;
     cursor: pointer;
-    padding: 6px;
+    padding: 5px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -398,7 +422,7 @@ include __DIR__ . '/includes/header.php';
     background: rgba(255, 255, 255, 0.08);
   }
 
-  /* WhatsApp Messages Scroll Area */
+  /* WhatsApp Messages Scroll Area with Authentic WhatsApp Doodle Wallpaper */
   .cw-wa-body {
     flex: 1;
     padding: 10px 12px;
@@ -408,8 +432,8 @@ include __DIR__ . '/includes/header.php';
     overflow-y: auto;
     scroll-behavior: smooth;
     background-color: #0b141a;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 16px 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-opacity='0.055' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M25 35h18a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-10l-6 5v-5h-2a4 4 0 0 1-4-4V39a4 4 0 0 1 4-4z'/%3E%3Ccircle cx='120' cy='45' r='10'/%3E%3Cpath d='M117 45h6m-3-3v6'/%3E%3Cpath d='M165 30l12 12-12 12'/%3E%3Cpath d='M30 115c0-6 5-11 11-11h14v14a11 11 0 0 1-11 11 11 11 0 0 1-14-14z'/%3E%3Cpath d='M110 110l15-8 15 8-4-17 13-11-17-2-7-16-7 16-17 2 13 11z'/%3E%3Cpath d='M160 120a10 10 0 1 0 20 0 10 10 0 1 0-20 0z'/%3E%3Cpath d='M165 120l3 3 7-6'/%3E%3Cpath d='M40 170h16v12a4 4 0 0 1-4 4H44a4 4 0 0 1-4-4z'/%3E%3Cpath d='M36 170h24'/%3E%3Cpath d='M115 170c-5-8 6-16 12-10 6-6 17 2 12 10l-12 12z'/%3E%3Cpath d='M168 165l14 14m0-14l-14 14'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 240px 240px;
   }
   .cw-wa-body::-webkit-scrollbar {
     width: 4px;
@@ -419,34 +443,53 @@ include __DIR__ . '/includes/header.php';
     border-radius: 4px;
   }
 
-  /* Chat Bubbles */
+  /* Authentic WhatsApp Chat Bubbles */
   .cw-bubble {
-    max-width: 86%;
-    padding: 8px 11px;
-    border-radius: 12px;
-    font-size: 0.78rem;
-    line-height: 1.42;
+    max-width: 85%;
+    padding: 6px 9px 5px 10px;
+    font-size: 0.81rem;
+    line-height: 1.38;
     position: relative;
     word-break: break-word;
-    animation: cwBubblePop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    animation: cwBubblePop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
   @keyframes cwBubblePop {
-    from { opacity: 0; transform: translateY(8px) scale(0.96); }
+    from { opacity: 0; transform: translateY(6px) scale(0.97); }
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
   .cw-bubble.user {
     align-self: flex-end;
     background: #005c4b;
     color: #e9edef;
-    border-bottom-right-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 8px 8px 0 8px;
+  }
+  .cw-bubble.user::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -7px;
+    width: 8px;
+    height: 12px;
+    background: #005c4b;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
   }
   .cw-bubble.bot {
     align-self: flex-start;
-    background: #1f2c34;
+    background: #202c33;
     color: #e9edef;
-    border-bottom-left-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 8px 8px 8px 0;
+  }
+  .cw-bubble.bot::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -7px;
+    width: 8px;
+    height: 12px;
+    background: #202c33;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
   .cw-bubble-meta {
     display: flex;
@@ -458,8 +501,8 @@ include __DIR__ . '/includes/header.php';
     color: #8696a0;
   }
   .cw-ticks {
-    font-size: 0.7rem;
-    letter-spacing: -2px;
+    font-size: 0.72rem;
+    letter-spacing: -1.5px;
     font-weight: 700;
   }
   .cw-ticks.double-blue {
@@ -474,9 +517,9 @@ include __DIR__ . '/includes/header.php';
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.35);
-    color: #34d399;
+    background: rgba(0, 168, 132, 0.15);
+    border: 1px solid rgba(0, 168, 132, 0.35);
+    color: #25d366;
     border-radius: 8px;
     padding: 5px 9px;
     font-size: 0.72rem;
@@ -487,9 +530,9 @@ include __DIR__ . '/includes/header.php';
     transition: all 0.2s;
   }
   .cw-bot-action-btn:hover {
-    background: #059669;
+    background: #00a884;
     color: #ffffff;
-    border-color: #10b981;
+    border-color: #25d366;
     transform: translateY(-1px);
   }
 
@@ -509,7 +552,7 @@ include __DIR__ . '/includes/header.php';
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #10b981;
+    background: #00a884;
     display: inline-block;
     animation: cwBounceDot 1.4s infinite ease-in-out;
   }
@@ -528,7 +571,7 @@ include __DIR__ . '/includes/header.php';
   /* Quick Suggestion Chips Carousel */
   .cw-chips-wrap {
     background: rgba(11, 20, 26, 0.98);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 6px 10px 4px;
     flex-shrink: 0;
     position: relative;
@@ -556,8 +599,8 @@ include __DIR__ . '/includes/header.php';
     display: none;
   }
   .cw-chip {
-    background: rgba(16, 185, 129, 0.14);
-    border: 1px solid rgba(16, 185, 129, 0.35);
+    background: rgba(32, 44, 51, 0.9);
+    border: 1px solid rgba(0, 168, 132, 0.35);
     color: #e9edef;
     border-radius: 14px;
     font-size: 0.72rem;
@@ -571,11 +614,11 @@ include __DIR__ . '/includes/header.php';
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   .cw-chip:hover {
-    background: #059669;
-    border-color: #10b981;
+    background: #00a884;
+    border-color: #00a884;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 168, 132, 0.4);
   }
   .cw-chip:active {
     transform: scale(0.96);
@@ -585,10 +628,10 @@ include __DIR__ . '/includes/header.php';
   .cw-chat-footer {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 7px 10px 9px;
-    background: #1f2c34;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 5px;
+    padding: 6px 8px 8px;
+    background: #202c33;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     flex-shrink: 0;
     position: relative;
     z-index: 20;
@@ -596,9 +639,9 @@ include __DIR__ . '/includes/header.php';
   .cw-chat-btn-emoji {
     background: transparent;
     border: none;
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     cursor: pointer;
-    padding: 3px;
+    padding: 4px;
     line-height: 1;
     opacity: 0.85;
     transition: opacity 0.2s, transform 0.2s;
@@ -607,16 +650,33 @@ include __DIR__ . '/includes/header.php';
   }
   .cw-chat-btn-emoji:hover {
     opacity: 1;
-    transform: scale(1.15);
+    transform: scale(1.12);
+  }
+  .cw-chat-btn-clip {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8696a0;
+    transition: color 0.2s, transform 0.2s;
+    position: relative;
+    z-index: 25;
+  }
+  .cw-chat-btn-clip:hover {
+    color: #e9edef;
+    transform: scale(1.12);
   }
   .cw-chat-input {
     flex: 1;
     background: #2a3942;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: none;
     border-radius: 20px;
-    padding: 8px 14px;
+    padding: 7px 12px;
     color: #ffffff;
-    font-size: 0.8rem;
+    font-size: 0.81rem;
     outline: none;
     transition: all 0.2s ease;
     cursor: text;
@@ -624,18 +684,18 @@ include __DIR__ . '/includes/header.php';
     -webkit-user-select: text;
     position: relative;
     z-index: 25;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   .cw-chat-input:focus {
-    border-color: #00a884;
     background: #32434d;
-    box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.3);
+    box-shadow: 0 0 0 1.5px rgba(0, 168, 132, 0.4);
   }
   .cw-chat-input::placeholder {
     color: #8696a0;
   }
   .cw-chat-send {
-    width: 34px;
-    height: 34px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: #00a884;
     border: none;
@@ -651,8 +711,8 @@ include __DIR__ . '/includes/header.php';
     z-index: 25;
   }
   .cw-chat-send:hover {
-    background: #10b981;
-    transform: scale(1.1);
+    background: #008f6f;
+    transform: scale(1.08);
   }
   .cw-chat-send:active {
     transform: scale(0.94);
@@ -669,7 +729,7 @@ include __DIR__ . '/includes/header.php';
   }
 
   /* ==========================================================================
-     INBOXWA INTERACTIVE ANIMATED FLOW BUILDER & SHOWCASE MODULES
+     HELLOBOTZ INTERACTIVE ANIMATED FLOW BUILDER & SHOWCASE MODULES
      ========================================================================== */
   
   /* Hero Animated Teaser Box */
@@ -2539,11 +2599,11 @@ include __DIR__ . '/includes/header.php';
         </div>
 
         <!-- Interactive Animated Flow Builder Demo Box -->
-        <div class="cw-hero-anim-box" onclick="openInboxwaVideoModal('flow')" role="button" tabindex="0" aria-label="Watch InboxWa Flow Builder Animation">
+        <div class="cw-hero-anim-box" onclick="openHelloBotzVideoModal('flow')" role="button" tabindex="0" aria-label="Watch HelloBotz Flow Builder Animation">
           <div class="cw-hero-anim-thumb">
             <video class="cw-hero-anim-video" autoplay loop muted playsinline poster="/assets/images/animations/interakt-hero.gif">
               <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
-              <img src="/assets/images/animations/interakt-hero.gif" alt="InboxWa Flow Builder Animation" loading="lazy">
+              <img src="/assets/images/animations/interakt-hero.gif" alt="HelloBotz Flow Builder Animation" loading="lazy">
             </video>
             <div class="cw-hero-anim-overlay">
               <span class="cw-hero-anim-play-icon">
@@ -2557,7 +2617,7 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="cw-hero-anim-details">
             <div class="cw-hero-anim-title-row">
-              <span class="cw-hero-anim-heading">See InboxWa in Action</span>
+              <span class="cw-hero-anim-heading">See HelloBotz in Action</span>
               <span class="cw-hero-anim-pill">Visual Builder</span>
             </div>
             <p class="cw-hero-anim-sub">Watch how drag-and-drop conversational bots qualify leads &amp; trigger sales 24/7 &rarr;</p>
@@ -2598,18 +2658,27 @@ include __DIR__ . '/includes/header.php';
           <div class="cw-phone-screen">
             <!-- WhatsApp Chat Header -->
             <div class="cw-wa-header">
+              <button type="button" class="cw-wa-back" aria-label="Back to chats">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              </button>
               <div class="cw-wa-avatar">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <img src="/assets/images/logo-icon.png" alt="HelloBotz" class="cw-wa-avatar-img">
                 <span class="cw-wa-avatar-badge"></span>
               </div>
               <div class="cw-wa-header-info">
                 <div class="cw-wa-title-row">
-                  <strong>InboxWa Business AI</strong>
+                  <strong>HelloBotz Business AI</strong>
                   <svg class="cw-verified-check" width="13" height="13" viewBox="0 0 24 24" fill="#10b981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
                 <span class="cw-wa-subtitle"><i class="cw-live-dot"></i> Online • Official Meta Partner</span>
               </div>
               <div class="cw-wa-header-tools">
+                <button type="button" class="cw-tool-btn" title="Video Call">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 10.48V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4.48l4 3.98v-11l-4 3.5z"/></svg>
+                </button>
+                <button type="button" class="cw-tool-btn" title="Voice Call">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.057 15.057 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.36 11.36 0 0 1 8.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z"/></svg>
+                </button>
                 <button type="button" class="cw-tool-btn" id="cw-audio-toggle" title="Toggle audio sound (Click to mute/unmute)">
                   <svg id="cw-audio-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                 </button>
@@ -2622,7 +2691,7 @@ include __DIR__ . '/includes/header.php';
             <!-- WhatsApp Chat Messages Body -->
             <div class="cw-wa-body" id="cw-live-body">
               <div class="cw-bubble user">
-                <span>Hi! How can InboxWa automate our customer sales on WhatsApp?</span>
+                <span>Hi! How can HelloBotz automate our customer sales on WhatsApp?</span>
                 <div class="cw-bubble-meta">
                   <span class="time">10:42 AM</span>
                   <span class="cw-ticks double-blue">✓✓</span>
@@ -2653,14 +2722,14 @@ include __DIR__ . '/includes/header.php';
                 <div class="cw-typing-dots">
                   <span></span><span></span><span></span>
                 </div>
-                <span class="cw-typing-label">InboxWa AI is typing...</span>
+                <span class="cw-typing-label">HelloBotz AI is typing...</span>
               </div>
             </div>
 
             <!-- Quick Suggestion Chips Carousel -->
             <div class="cw-chips-wrap">
               <div class="cw-chips-hint">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00a884" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 <span>Tap a topic or type below:</span>
               </div>
               <div class="cw-chips-scroll" id="cw-chips-container">
@@ -2676,7 +2745,10 @@ include __DIR__ . '/includes/header.php';
             <!-- WhatsApp Chat Composer Footer -->
             <div class="cw-chat-footer" id="cw-chat-footer">
               <button type="button" class="cw-chat-btn-emoji" id="cw-emoji-btn" title="Add emoji">😊</button>
-              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message or ask anything..." autocomplete="off" maxlength="150">
+              <button type="button" class="cw-chat-btn-clip" id="cw-clip-btn" title="Attach media">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+              </button>
+              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Message" autocomplete="off" maxlength="150">
               <button type="button" id="cw-chat-send" class="cw-chat-send" aria-label="Send message" title="Send message">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
               </button>
@@ -2734,10 +2806,10 @@ include __DIR__ . '/includes/header.php';
             </div>
             <div class="cw-window-url-bar">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span>app.inboxwa.com/flow-builder/lead-qualification-v3</span>
+              <span>app.hellobotz.com/flow-builder/lead-qualification-v3</span>
             </div>
             <div class="cw-window-actions">
-              <button class="cw-window-expand" onclick="openInboxwaVideoModal('flow')" title="View Fullscreen Demo">
+              <button class="cw-window-expand" onclick="openHelloBotzVideoModal('flow')" title="View Fullscreen Demo">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
                 <span>Fullscreen</span>
               </button>
@@ -2750,7 +2822,7 @@ include __DIR__ . '/includes/header.php';
             <div class="cw-tab-media active" id="media-flow">
               <video class="cw-showcase-media-elem" autoplay loop muted playsinline poster="/assets/images/animations/interakt-hero.gif">
                 <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
-                <img src="/assets/images/animations/interakt-hero.gif" alt="InboxWa Visual Flow Builder">
+                <img src="/assets/images/animations/interakt-hero.gif" alt="HelloBotz Visual Flow Builder">
               </video>
               <div class="cw-media-caption">
                 <span class="cw-caption-badge">Flow Builder</span>
@@ -2760,7 +2832,7 @@ include __DIR__ . '/includes/header.php';
 
             <!-- Team Live Chat Media -->
             <div class="cw-tab-media" id="media-chat">
-              <img class="cw-showcase-media-elem" src="/assets/images/animations/live-chat.gif" alt="InboxWa Multi-Agent Team Live Chat Shared Inbox" loading="lazy">
+              <img class="cw-showcase-media-elem" src="/assets/images/animations/live-chat.gif" alt="HelloBotz Multi-Agent Team Live Chat Shared Inbox" loading="lazy">
               <div class="cw-media-caption">
                 <span class="cw-caption-badge">Multi-Agent Inbox</span>
                 <span>Shared team inbox on a single official WhatsApp Business number. Assign chats, use quick replies, and track agent response times.</span>
@@ -2769,16 +2841,16 @@ include __DIR__ . '/includes/header.php';
 
             <!-- Integrations Media -->
             <div class="cw-tab-media" id="media-integrations">
-              <img class="cw-showcase-media-elem" src="/assets/images/animations/integration-1.gif" alt="InboxWa CRM, Shopify and WooCommerce Integrations" loading="lazy">
+              <img class="cw-showcase-media-elem" src="/assets/images/animations/integration-1.gif" alt="HelloBotz CRM, Shopify and WooCommerce Integrations" loading="lazy">
               <div class="cw-media-caption">
                 <span class="cw-caption-badge">Seamless Integrations</span>
-                <span>Connect InboxWa natively with Shopify, WooCommerce, Zoho, HubSpot, Google Sheets, and webhook endpoints with 1 click.</span>
+                <span>Connect HelloBotz natively with Shopify, WooCommerce, Zoho, HubSpot, Google Sheets, and webhook endpoints with 1 click.</span>
               </div>
             </div>
 
             <!-- Analytics Media -->
             <div class="cw-tab-media" id="media-analytics">
-              <img class="cw-showcase-media-elem" src="/assets/images/animations/analytics.gif" alt="InboxWa Live Campaign Delivery &amp; Conversion Analytics" loading="lazy">
+              <img class="cw-showcase-media-elem" src="/assets/images/animations/analytics.gif" alt="HelloBotz Live Campaign Delivery &amp; Conversion Analytics" loading="lazy">
               <div class="cw-media-caption">
                 <span class="cw-caption-badge">Real-Time Analytics</span>
                 <span>Measure read rates, link click-throughs, sales conversions, and customer engagement metrics with live broadcast reporting.</span>
@@ -2809,8 +2881,8 @@ include __DIR__ . '/includes/header.php';
 
   <!-- 2. CLIENT LOGO MARQUEE SCROLLER (MERITTO CLONE) -->
   <div class="logo-band customer-proof-strip">
-    <div class="label"><b>1,000+ educational institutions &amp; fast-growing enterprises</b> trust InboxWa</div>
-    <div aria-label="Institutions using InboxWa" class="customer-logo-marquee">
+    <div class="label"><b>1,000+ educational institutions &amp; fast-growing enterprises</b> trust HelloBotz</div>
+    <div aria-label="Institutions using HelloBotz" class="customer-logo-marquee">
       <div class="customer-logo-track">
         <?php
         $meritto_logos = [
@@ -2861,7 +2933,7 @@ include __DIR__ . '/includes/header.php';
       <div class="hb-features-header reveal-item">
         <span class="hb-features-badge">BUILT FOR GROWING BUSINESSES</span>
         <h2 class="hb-features-title">Everything You Need to Automate Customer Conversations</h2>
-        <p class="hb-features-subtitle">InboxWa gives your team Everything you need to automate, sell, and support customers —all in ONE place.</p>
+        <p class="hb-features-subtitle">HelloBotz gives your team Everything you need to automate, sell, and support customers —all in ONE place.</p>
       </div>
 
       <!-- 8-FEATURE ALTERNATING LIST -->
@@ -3147,7 +3219,7 @@ include __DIR__ . '/includes/header.php';
               <div class="hiw-step-num">04</div>
               <span class="hiw-step-tagline">AUTOMATE SALES</span>
               <h3 class="hiw-card-title">Automate Your Entire Ecommerce Flow</h3>
-              <p class="hiw-card-desc">Sync your online store and let InboxWa handle the entire post-purchase journey — from order confirmation to delivery tracking, abandoned cart recovery, and review collection.</p>
+              <p class="hiw-card-desc">Sync your online store and let HelloBotz handle the entire post-purchase journey — from order confirmation to delivery tracking, abandoned cart recovery, and review collection.</p>
               <ul class="hiw-bullets">
                 <li>
                   <span class="hiw-check-icon">
@@ -3281,7 +3353,7 @@ include __DIR__ . '/includes/header.php';
     <div class="stories-container">
       <div class="stories-header reveal-item">
         <span class="stories-badge">Customer Success Stories</span>
-        <h2 class="stories-title">Real Results from Teams Powered by InboxWa</h2>
+        <h2 class="stories-title">Real Results from Teams Powered by HelloBotz</h2>
         <p class="stories-subtitle">See how fast-growing businesses across retail, education, healthcare, and finance achieve 98% open rates and 4x faster response times.</p>
       </div>
 
@@ -3398,7 +3470,7 @@ include __DIR__ . '/includes/header.php';
             'tag_cls' => 'tag-edu',
             'metric' => '100% Parent Reach',
             'headline' => 'Auto-qualifying leads during peak enquiry season',
-            'quote' => 'Our admissions cycle in Chennai gets thousands of WhatsApp enquiries in weeks. InboxWa\'s auto-qualification flow tags serious applicants automatically, so counselors spend time only on real conversations.',
+            'quote' => 'Our admissions cycle in Chennai gets thousands of WhatsApp enquiries in weeks. HelloBotz\'s auto-qualification flow tags serious applicants automatically, so counselors spend time only on real conversations.',
             'avatar' => 'avatar-5.png'
           ],
           [
@@ -3520,7 +3592,7 @@ include __DIR__ . '/includes/header.php';
       <div class="stories-bottom-card reveal-item">
         <div class="stories-bottom-content">
           <h3>Ready to Scale Your Customer Conversations?</h3>
-          <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with InboxWa.</p>
+          <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with HelloBotz.</p>
         </div>
         <div class="stories-bottom-actions">
           <a href="/auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
@@ -3717,7 +3789,7 @@ include __DIR__ . '/includes/header.php';
   // Default initial message markup for reset
   const defaultChatHtml = `
     <div class="cw-bubble user">
-      <span>Hi! How can InboxWa automate our customer sales on WhatsApp?</span>
+      <span>Hi! How can HelloBotz automate our customer sales on WhatsApp?</span>
       <div class="cw-bubble-meta">
         <span class="time">10:42 AM</span>
         <span class="cw-ticks double-blue">✓✓</span>
@@ -3746,7 +3818,7 @@ include __DIR__ . '/includes/header.php';
       <div class="cw-typing-dots">
         <span></span><span></span><span></span>
       </div>
-      <span class="cw-typing-label">InboxWa AI is typing...</span>
+      <span class="cw-typing-label">HelloBotz AI is typing...</span>
     </div>
   `;
 
@@ -3797,7 +3869,7 @@ include __DIR__ . '/includes/header.php';
     }
     if (q.includes('ban') || q.includes('risk') || q.includes('meta') || q.includes('official') || q.includes('api') || q.includes('safe')) {
       return {
-        text: "🛡️ Zero Ban Risk! Unlike unofficial QR-scraping extensions that get accounts banned, InboxWa connects directly through the official Meta Business Cloud API with 100% compliance guarantee.",
+        text: "🛡️ Zero Ban Risk! Unlike unofficial QR-scraping extensions that get accounts banned, HelloBotz connects directly through the official Meta Business Cloud API with 100% compliance guarantee.",
         actionText: "Verify API Status",
         actionUrl: "/channel/whatsapp/"
       };
@@ -3818,14 +3890,14 @@ include __DIR__ . '/includes/header.php';
     }
     if (q.includes('demo') || q.includes('call') || q.includes('talk') || q.includes('sales') || q.includes('meeting') || q.includes('specialist')) {
       return {
-        text: "📞 We'd love to show you InboxWa in action! Schedule a personalized 15-minute walkthrough with our automation architects.",
+        text: "📞 We'd love to show you HelloBotz in action! Schedule a personalized 15-minute walkthrough with our automation architects.",
         actionText: "Book Live Demo",
         actionUrl: "#demo"
       };
     }
     if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('hola') || q.includes('good')) {
       return {
-        text: "👋 Hello! Welcome to InboxWa! Ask me about pricing, Shopify integration, bulk broadcasts, or click any chip above to test.",
+        text: "👋 Hello! Welcome to HelloBotz! Ask me about pricing, Shopify integration, bulk broadcasts, or click any chip above to test.",
         actionText: "Get Started Free",
         actionUrl: "https://panindiadata.com/"
       };
@@ -3846,7 +3918,7 @@ include __DIR__ . '/includes/header.php';
     }
 
     return {
-      text: "⚡ InboxWa empowers you to scale WhatsApp sales with official Meta Cloud API, automated AI chat funnels, 98% open-rate broadcasts, and 1-click CRM/Shopify sync!",
+      text: "⚡ HelloBotz empowers you to scale WhatsApp sales with official Meta Cloud API, automated AI chat funnels, 98% open-rate broadcasts, and 1-click CRM/Shopify sync!",
       actionText: "Start 14-Day Trial",
       actionUrl: "https://panindiadata.com/"
     };
@@ -4169,15 +4241,15 @@ include __DIR__ . '/includes/header.php';
 })();
 </script>
 
-<!-- INBOXWA INTERACTIVE PLATFORM DEMO MODAL -->
-<div id="inboxwa-video-modal" class="cw-modal-overlay" onclick="handleModalOverlayClick(event)">
+<!-- HELLOBOTZ INTERACTIVE PLATFORM DEMO MODAL -->
+<div id="hellobotz-video-modal" class="cw-modal-overlay" onclick="handleModalOverlayClick(event)">
   <div class="cw-modal-box">
     <div class="cw-modal-topbar">
       <div class="cw-modal-title">
         <span class="cw-modal-dot"></span>
-        <span>InboxWa Platform Demo &bull; Interactive Tour</span>
+        <span>HelloBotz Platform Demo &bull; Interactive Tour</span>
       </div>
-      <button class="cw-modal-close" onclick="closeInboxwaVideoModal()" aria-label="Close demo modal">&times;</button>
+      <button class="cw-modal-close" onclick="closeHelloBotzVideoModal()" aria-label="Close demo modal">&times;</button>
     </div>
     <div class="cw-modal-body">
       <div class="cw-modal-tabs">
@@ -4186,7 +4258,7 @@ include __DIR__ . '/includes/header.php';
         <button class="cw-m-tab" data-tab="integrations" onclick="switchModalMedia('integrations', this)">🔌 Integrations</button>
         <button class="cw-m-tab" data-tab="analytics" onclick="switchModalMedia('analytics', this)">📊 Campaign Analytics</button>
       </div>
-      <div class="cw-modal-media-container" id="inboxwa-modal-media">
+      <div class="cw-modal-media-container" id="hellobotz-modal-media">
         <video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero.gif">
           <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
           <img src="/assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo">
@@ -4196,7 +4268,7 @@ include __DIR__ . '/includes/header.php';
         <div class="cw-modal-footnote">Experience the full power of WhatsApp automation with zero ban risk.</div>
         <div class="cw-modal-actions">
           <a href="/contact" class="cw-btn-modal-primary">Start 7-Day Free Trial</a>
-          <button type="button" class="cw-btn-modal-secondary btn-demo-open" onclick="closeInboxwaVideoModal()">Schedule 1-on-1 Call</button>
+          <button type="button" class="cw-btn-modal-secondary btn-demo-open" onclick="closeHelloBotzVideoModal()">Schedule 1-on-1 Call</button>
         </div>
       </div>
     </div>
@@ -4204,9 +4276,9 @@ include __DIR__ . '/includes/header.php';
 </div>
 
 <script>
-/* InboxWa Animated Showcase & Modal Handlers */
-function openInboxwaVideoModal(tab) {
-  var modal = document.getElementById('inboxwa-video-modal');
+/* HelloBotz Animated Showcase & Modal Handlers */
+function openHelloBotzVideoModal(tab) {
+  var modal = document.getElementById('hellobotz-video-modal');
   if (modal) {
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -4217,8 +4289,8 @@ function openInboxwaVideoModal(tab) {
   }
 }
 
-function closeInboxwaVideoModal() {
-  var modal = document.getElementById('inboxwa-video-modal');
+function closeHelloBotzVideoModal() {
+  var modal = document.getElementById('hellobotz-video-modal');
   if (modal) {
     modal.classList.remove('open');
     document.body.style.overflow = '';
@@ -4228,14 +4300,14 @@ function closeInboxwaVideoModal() {
 }
 
 function handleModalOverlayClick(e) {
-  if (e.target && e.target.id === 'inboxwa-video-modal') {
-    closeInboxwaVideoModal();
+  if (e.target && e.target.id === 'hellobotz-video-modal') {
+    closeHelloBotzVideoModal();
   }
 }
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    closeInboxwaVideoModal();
+    closeHelloBotzVideoModal();
   }
 });
 
@@ -4258,7 +4330,7 @@ function switchShowcaseTab(target, btn) {
 }
 
 function switchModalMedia(type, btn) {
-  var container = document.getElementById('inboxwa-modal-media');
+  var container = document.getElementById('hellobotz-modal-media');
   if (!container) return;
 
   var tabs = document.querySelectorAll('.cw-m-tab');

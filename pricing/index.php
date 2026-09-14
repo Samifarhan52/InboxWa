@@ -1,9 +1,9 @@
 <?php
 $basePath = '../';
-$pageTitle = 'InboxWa Pricing – Simple & Transparent WhatsApp API & Omnichannel Plans';
+$pageTitle = 'HelloBotz Pricing – Simple & Transparent WhatsApp API & Omnichannel Plans';
 $pageDescription = 'Simple, transparent pricing for official WhatsApp Business API, CRM, AI chatbot & omnichannel automation. WhatsApp Bulk ₹1,999, Automation ₹2,999, Biz Pro ₹4,999. Live currency converter.';
-$pageKeywords = 'InboxWa pricing, WhatsApp API price, AI chatbot plans, omnichannel pricing India, WhatsApp CRM';
-$canonicalUrl = 'https://inboxwa.com/pricing/';
+$pageKeywords = 'HelloBotz pricing, WhatsApp API price, AI chatbot plans, omnichannel pricing India, WhatsApp CRM';
+$canonicalUrl = 'https://hellobotz.com/pricing/';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -15,7 +15,7 @@ include __DIR__ . '/../includes/header.php';
     <div style="flex:1;">
       <div class="badge">
         <span class="badge-dot"></span>
-        InboxWa Pricing - Simple & Transparent
+        HelloBotz Pricing - Simple & Transparent
       </div>
       <h1>Powerful WhatsApp Automation <span class="gradient-text">That Scales With You</span></h1>
       <p class="hero-subtitle">
@@ -658,13 +658,13 @@ include __DIR__ . '/../includes/header.php';
   <div class="container">
     <div style="text-align:center;">
       <h2 style="font-size:28px;font-weight:800;color:#0f172a;margin:0 0 8px;">Frequently Asked Questions</h2>
-      <p style="font-size:15px;color:#64748b;margin:0;">Everything you need to know about InboxWa pricing and plans</p>
+      <p style="font-size:15px;color:#64748b;margin:0;">Everything you need to know about HelloBotz pricing and plans</p>
     </div>
 
     <div class="card-grid-2">
       <div class="faq-card">
         <h3>What&apos;s included in the platform fee?</h3>
-        <p>The platform fee covers access to InboxWa dashboard, CRM, automation builder, team inbox, and all core features. WhatsApp conversation charges are separate and billed based on usage through prepaid wallet.</p>
+        <p>The platform fee covers access to HelloBotz dashboard, CRM, automation builder, team inbox, and all core features. WhatsApp conversation charges are separate and billed based on usage through prepaid wallet.</p>
       </div>
       <div class="faq-card">
         <h3>Can I upgrade or downgrade my plan?</h3>
@@ -696,7 +696,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="cta-inner">
       <div>
         <h2>Ready to get started?</h2>
-        <p>Join 500+ businesses using InboxWa for WhatsApp automation. Start your free trial today!</p>
+        <p>Join 500+ businesses using HelloBotz for WhatsApp automation. Start your free trial today!</p>
       </div>
       <div class="cta-buttons">
         <a href="/auth/register" class="btn-cta-primary">Start Free Trial</a>
@@ -715,7 +715,7 @@ include __DIR__ . '/../includes/header.php';
   <div class="addon-modal">
     <button type="button" id="addonModalClose" class="addon-modal-close" aria-label="Close modal">&times;</button>
     <h3>Activate <span id="addonNameSpan">Add-on</span></h3>
-    <p class="modal-subtext">Share your details and our team will activate this for your InboxWa account and send your setup details on WhatsApp.</p>
+    <p class="modal-subtext">Share your details and our team will activate this for your HelloBotz account and send your setup details on WhatsApp.</p>
     <form id="addonForm">
       <input type="hidden" id="addonNameField" value="">
       <div class="form-group">
@@ -731,7 +731,7 @@ include __DIR__ . '/../includes/header.php';
         <input type="email" id="adEmail" required placeholder="e.g. rahul@business.com">
       </div>
       <div class="form-group">
-        <label for="adReg">Registered InboxWa WhatsApp Number</label>
+        <label for="adReg">Registered HelloBotz WhatsApp Number</label>
         <input type="text" id="adReg" placeholder="Your connected WhatsApp business number">
       </div>
       <button type="submit" class="btn-primary full" style="margin-top:12px;">🚀 Send Activation Request on WhatsApp</button>

@@ -2,7 +2,7 @@
 $basePath = '../../';
 $pageTitle = 'Subscriptions on WhatsApp';
 $pageDescription = 'Onboard members, send renewal reminders and manage plan changes through WhatsApp automation and shared inbox.';
-$canonicalUrl = 'https://inboxwa.com/solutions/subscriptions/';
+$canonicalUrl = 'https://hellobotz.com/solutions/subscriptions/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / <a href="<?php echo $bp; ?>solutions/">Solutions</a> / Subscriptions on WhatsApp</nav>

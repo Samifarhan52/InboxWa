@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Business Platform | API, Shared Inbox & Broadcasts | InboxWa';
+$pageTitle = 'WhatsApp Business Platform | API, Shared Inbox & Broadcasts | HelloBotz';
 $pageDescription = 'Official WhatsApp Business API, shared team inbox and broadcast campaigns in one platform for conversations, teams and growth.';
-$canonicalUrl = 'https://inboxwa.com/products/whatsapp-business-platform/';
+$canonicalUrl = 'https://hellobotz.com/products/whatsapp-business-platform/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/wa-platform.css?v=1">
@@ -30,7 +30,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="wbp-phone">
           <div class="wbp-notch"></div>
           <div class="wbp-screen">
-            <div class="wbp-wa-head"><div class="wbp-av">HB</div><div><strong>InboxWa Platform</strong><small>API · Inbox · Broadcast</small></div></div>
+            <div class="wbp-wa-head"><div class="wbp-av">HB</div><div><strong>HelloBotz Platform</strong><small>API · Inbox · Broadcast</small></div></div>
             <div class="wbp-wa-body" id="wbp-wa-body"><div class="wbp-typing" id="wbp-typing"><i></i><i></i><i></i></div></div>
           </div>
         </div>
@@ -140,7 +140,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section" id="why">
   <div class="container">
-    <div class="section-header reveal"><h2>Why InboxWa</h2></div>
+    <div class="section-header reveal"><h2>Why HelloBotz</h2></div>
     <div class="wbp-why">
       <div class="card reveal">Official WhatsApp API</div>
       <div class="card reveal">Shared Team Inbox</div>

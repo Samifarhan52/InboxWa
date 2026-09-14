@@ -2,7 +2,7 @@
 $basePath = '../';
 $robots = 'noindex, nofollow';
 $pageTitle = 'Login';
-$pageDescription = 'Sign in to your InboxWa account — WhatsApp API, shared inbox, automation and CRM.';
+$pageDescription = 'Sign in to your HelloBotz account — WhatsApp API, shared inbox, automation and CRM.';
 $canonicalUrl = '/auth/login';
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -12,7 +12,7 @@ include __DIR__ . '/../includes/header.php';
       <div style="text-align:center;margin-bottom:1.5rem">
         <span class="badge badge-primary">Account</span>
         <h1 style="font-size:1.5rem;margin:.75rem 0 .35rem">Welcome back</h1>
-        <p style="margin:0;color:var(--t2);font-size:.95rem">Sign in to InboxWa</p>
+        <p style="margin:0;color:var(--t2);font-size:.95rem">Sign in to HelloBotz</p>
       </div>
       <form id="auth-login-form" method="post" action="#" novalidate>
         <label class="form-label" for="login-email">Work email</label>
@@ -26,7 +26,7 @@ include __DIR__ . '/../includes/header.php';
         <button type="submit" class="btn btn-primary btn-block btn-lg" style="width:100%">Sign in</button>
       </form>
       <p style="text-align:center;margin-top:1.25rem;font-size:.9rem;color:var(--t2)">
-        New to InboxWa? <a href="/auth/register"><strong>Create an account</strong></a>
+        New to HelloBotz? <a href="/auth/register"><strong>Create an account</strong></a>
       </p>
       <p style="text-align:center;margin-top:.75rem;font-size:.8rem;color:var(--t3)">
         Or <a href="<?php echo $bp; ?>#contact-section">book a demo</a> with sales
@@ -37,7 +37,7 @@ include __DIR__ . '/../includes/header.php';
 <script>
 document.getElementById('auth-login-form').addEventListener('submit', function(e){
   e.preventDefault();
-  alert('Connect this form to your InboxWa auth backend (SSO / email login). UI is production-ready.');
+  alert('Connect this form to your HelloBotz auth backend (SSO / email login). UI is production-ready.');
 });
 </script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

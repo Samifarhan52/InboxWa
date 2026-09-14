@@ -1,6 +1,6 @@
 <?php
 /**
- * InboxWa – Reusable location page template.
+ * HelloBotz – Reusable location page template.
  * Expects $loc array from locations-data.php and $basePath / $bp set by the page.
  */
 if (!isset($loc) || !is_array($loc)) {
@@ -12,8 +12,8 @@ if (!isset($loc) || !is_array($loc)) {
 $pageTitle = $loc['meta_title'];
 $pageDescription = $loc['meta_description'];
 $pageKeywords = implode(', ', array_merge([$loc['primary_keyword']], $loc['secondary_keywords'] ?? []));
-$canonicalUrl = 'https://inboxwa.com/locations/' . $loc['slug'] . '/';
-$ogImage = 'https://inboxwa.com/' . ltrim($loc['image'] ?? 'assets/images/og-image.png', '/');
+$canonicalUrl = 'https://hellobotz.com/locations/' . $loc['slug'] . '/';
+$ogImage = 'https://hellobotz.com/' . ltrim($loc['image'] ?? 'assets/images/og-image.png', '/');
 
 $allLocations = require __DIR__ . '/locations-data.php';
 $isCountry = ($loc['type'] ?? 'city') === 'country';
@@ -119,7 +119,7 @@ include __DIR__ . '/header.php';
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Use cases</span>
-      <h2>How businesses in <?php echo htmlspecialchars($displayName); ?> use InboxWa</h2>
+      <h2>How businesses in <?php echo htmlspecialchars($displayName); ?> use HelloBotz</h2>
     </div>
     <div class="features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:2rem">
       <?php foreach (($loc['use_cases'] ?? [
@@ -127,7 +127,7 @@ include __DIR__ . '/header.php';
       ['name' => 'Sales qualification', 'text' => 'Capture intent before your team joins.'],
       ['name' => 'Broadcast updates', 'text' => 'Send approved templates to opted-in contacts.'],
       ['name' => 'Reminders', 'text' => 'Reduce no-shows with WhatsApp nudges.'],
-    ]) as $i => $uc): if (is_string($uc)) { $uc = ['name' => $uc, 'text' => 'Automate this journey on WhatsApp with InboxWa.']; } ?>
+    ]) as $i => $uc): if (is_string($uc)) { $uc = ['name' => $uc, 'text' => 'Automate this journey on WhatsApp with HelloBotz.']; } ?>
       <div class="card card-feature reveal">
         <div class="icon-box icon-box-accent">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -164,7 +164,7 @@ include __DIR__ . '/header.php';
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Platform</span>
-      <h2>InboxWa capabilities for <?php echo htmlspecialchars($displayName); ?></h2>
+      <h2>HelloBotz capabilities for <?php echo htmlspecialchars($displayName); ?></h2>
       <p class="lead">Explore products and solutions your team can launch on the same account.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;margin-top:1.25rem" class="reveal">
@@ -218,7 +218,7 @@ include __DIR__ . '/header.php';
     <div class="section-header reveal">
       <span class="badge badge-primary">Locations</span>
       <h2>Explore WhatsApp API locations</h2>
-      <p class="lead">Related InboxWa location resources.</p>
+      <p class="lead">Related HelloBotz location resources.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem">
       <?php foreach ($loc['nearby'] as $nearSlug):
@@ -331,8 +331,8 @@ echo json_encode($faqSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | J
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://inboxwa.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://inboxwa.com/locations/"},
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hellobotz.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://hellobotz.com/locations/"},
     {"@type": "ListItem", "position": 3, "name": <?php echo json_encode('WhatsApp API ' . $displayName); ?>, "item": <?php echo json_encode($canonicalUrl); ?>}
   ]
 }

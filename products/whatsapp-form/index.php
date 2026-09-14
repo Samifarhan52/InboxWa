@@ -3,9 +3,9 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Forms & Native Meta Flows | In-Chat Lead Forms | InboxWa';
+$pageTitle = 'WhatsApp Forms & Native Meta Flows | In-Chat Lead Forms | HelloBotz';
 $pageDescription = 'Build interactive data collection forms that live inside WhatsApp chats. Powered by native Meta Flows with zero redirects, drag & drop builder, and instant CRM sync.';
-$canonicalUrl = 'https://inboxwa.com/products/whatsapp-form/';
+$canonicalUrl = 'https://hellobotz.com/products/whatsapp-form/';
 $ogImage = 'assets/images/products/whatsapp-form/hero.png';
 
 include __DIR__ . '/../../includes/header.php';

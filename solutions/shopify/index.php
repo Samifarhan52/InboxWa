@@ -1,8 +1,8 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'Shopify WhatsApp Automation | Cart Recovery, Orders & Support | InboxWa';
-$pageDescription = 'Connect Shopify with InboxWa: abandoned cart recovery, product search, order tracking, COD confirmation, campaigns and support on Official WhatsApp Business API.';
-$canonicalUrl = 'https://inboxwa.com/solutions/shopify/';
+$pageTitle = 'Shopify WhatsApp Automation | Cart Recovery, Orders & Support | HelloBotz';
+$pageDescription = 'Connect Shopify with HelloBotz: abandoned cart recovery, product search, order tracking, COD confirmation, campaigns and support on Official WhatsApp Business API.';
+$canonicalUrl = 'https://hellobotz.com/solutions/shopify/';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/shopify.css?v=41">
@@ -15,7 +15,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="shy-hero-copy">
         <div class="shy-badge">Shopify · WhatsApp Commerce</div>
         <h1>Turn your Shopify store into a <span class="grad">WhatsApp sales machine</span></h1>
-        <p class="shy-lead">Recover abandoned carts, recommend products, automate orders, run WhatsApp campaigns and support customers with InboxWa.</p>
+        <p class="shy-lead">Recover abandoned carts, recommend products, automate orders, run WhatsApp campaigns and support customers with HelloBotz.</p>
         <div class="shy-ctas">
           <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn-ghost-light btn-demo-open">Book Shopify Demo</button>
@@ -43,7 +43,7 @@ include __DIR__ . '/../../includes/header.php';
             <div class="shy-head">
               <div class="shy-av">SH</div>
               <div>
-                <strong>InboxWa Store</strong>
+                <strong>HelloBotz Store</strong>
                 <small><span class="shy-dot"></span> Live Simulation</small>
               </div>
             </div>
@@ -60,19 +60,19 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>Shopify + InboxWa</h2>
+    <div class="section-header reveal"><h2>Shopify + HelloBotz</h2>
       <p class="lead">Connect store events to WhatsApp automation — replace this visual with your integration screenshot anytime.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:1.25rem auto 0;border-radius:16px;border:1px solid var(--bd);min-height:200px;background:linear-gradient(135deg,#EDE9FE,#CFFAFE);display:flex;align-items:center;justify-content:center;color:#6B7280;font-weight:600">
-      <img src="/assets/images/solutions/shopify/integration.webp" alt="Shopify InboxWa integration" width="1200" height="600" style="width:100%;border-radius:16px;object-fit:cover;min-height:200px" onerror="this.style.display='none';this.parentElement.querySelector('span').style.display='block'">
-      <span style="display:none;padding:2rem">Shopify ↔ InboxWa integration image</span>
+      <img src="/assets/images/solutions/shopify/integration.webp" alt="Shopify HelloBotz integration" width="1200" height="600" style="width:100%;border-radius:16px;object-fit:cover;min-height:200px" onerror="this.style.display='none';this.parentElement.querySelector('span').style.display='block'">
+      <span style="display:none;padding:2rem">Shopify ↔ HelloBotz integration image</span>
     </div>
   </div>
 </section>
 <div class="hb-img-slot" data-hb-img-slot>
   <div class="hb-img-fallback">
     <div class="ico"><svg class="hb-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>️</div>
-    <strong>Shopify + InboxWa + WhatsApp</strong>
+    <strong>Shopify + HelloBotz + WhatsApp</strong>
     <span>Store connected to WhatsApp customer journeys.</span>
   </div>
 </div>
@@ -100,7 +100,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>See how InboxWa automates your Shopify store</h2></div>
+    <div class="section-header reveal"><h2>See how HelloBotz automates your Shopify store</h2></div>
     <div class="shy-journey reveal" style="margin-top:1.25rem">
       <span>Ad</span><span class="arr">→</span><span>WhatsApp</span><span class="arr">→</span><span>Product</span><span class="arr">→</span>
       <span>Cart</span><span class="arr">→</span><span>Order</span><span class="arr">→</span><span>Payment</span><span class="arr">→</span>
@@ -169,7 +169,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section">
   <div class="container">
     <div class="section-header reveal"><h2>AI shopping assistant</h2>
-      <p class="lead">Customers describe what they need; InboxWa recommends Shopify products in chat — discover, answer questions, guide to purchase.</p>
+      <p class="lead">Customers describe what they need; HelloBotz recommends Shopify products in chat — discover, answer questions, guide to purchase.</p>
     </div>
     <div class="card reveal" style="max-width:480px;margin:1.25rem auto;padding:1.25rem">
       <p><strong>Customer:</strong> I need a gift under ₹1,500.</p>
@@ -198,7 +198,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>Shopify + InboxWa features</h2></div>
+    <div class="section-header reveal"><h2>Shopify + HelloBotz features</h2></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem;margin-top:1.25rem">
       <div class="card reveal" style="padding:1rem;font-size:.9rem">Shopify Integration</div>
       <div class="card reveal" style="padding:1rem;font-size:.9rem">WhatsApp Business API</div>
@@ -241,7 +241,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="section">
   <div class="container">
-    <div class="section-header reveal"><h2>Why Shopify brands choose InboxWa</h2></div>
+    <div class="section-header reveal"><h2>Why Shopify brands choose HelloBotz</h2></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.25rem">
       <div class="card reveal" style="padding:1.15rem"><strong>Sell where customers chat</strong><p>Meet buyers on WhatsApp.</p></div>
       <div class="card reveal" style="padding:1.15rem"><strong>Respond instantly</strong><p>Bots + team inbox together.</p></div>
@@ -256,9 +256,9 @@ include __DIR__ . '/../../includes/header.php';
   <div class="container">
     <div class="section-header reveal"><h2>FAQ</h2></div>
     <div class="faq-list" style="max-width:760px;margin:1.5rem auto 0">
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa connect with Shopify?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — connect store events and automation workflows to Official WhatsApp Business API via InboxWa.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz connect with Shopify?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — connect store events and automation workflows to Official WhatsApp Business API via HelloBotz.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can customers search products on WhatsApp?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">You can guide discovery with AI/flows and product cards linked to your Shopify catalogue.</div></div></div>
-      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can InboxWa recover abandoned carts?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — trigger reminder sequences when carts are abandoned, within WhatsApp policy.</div></div></div>
+      <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can HelloBotz recover abandoned carts?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — trigger reminder sequences when carts are abandoned, within WhatsApp policy.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can I automate COD confirmation?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — confirm or cancel COD orders through chat buttons before fulfilment.</div></div></div>
       <div class="faq-item reveal"><button type="button" class="faq-question" aria-expanded="false">Can support teams share one inbox?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Shared team inbox supports assignment, notes and multi-agent handling.</div></div></div>
     </div>
@@ -268,7 +268,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
     <h2 style="color:#fff">Ready to turn your Shopify store into a WhatsApp sales channel?</h2>
-    <p class="lead" style="color:rgba(255,255,255,.75)">Connect Shopify with InboxWa and automate product discovery, marketing, orders, support and engagement.</p>
+    <p class="lead" style="color:rgba(255,255,255,.75)">Connect Shopify with HelloBotz and automate product discovery, marketing, orders, support and engagement.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
       <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">Book Shopify Demo</button>

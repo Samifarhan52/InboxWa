@@ -1,6 +1,6 @@
 <?php
 /**
- * InboxWa Universal CMS API & Global Bridge
+ * HelloBotz Universal CMS API & Global Bridge
  * Connects live website pages to SQLite CMS settings, sections, and posts
  */
 declare(strict_types=1);
@@ -114,7 +114,7 @@ function cms_locations(): array {
                 "city" => $c["city"],
                 "country" => $c["country"],
                 "primary_keyword" => $c["primary_keyword"] ?: ($c["city"] . " WhatsApp API"),
-                "meta_title" => $c["meta_title"] ?: ($c["city"] . " WhatsApp Business API | InboxWa"),
+                "meta_title" => $c["meta_title"] ?: ($c["city"] . " WhatsApp Business API | HelloBotz"),
                 "meta_description" => $c["meta_description"] ?: ("WhatsApp Business API provider in " . $c["city"]),
                 "hero_title" => $c["hero_title"] ?: ("WhatsApp API in " . $c["city"]),
                 "hero_description" => $c["hero_description"] ?: ("Empower your " . $c["city"] . " business with Official WhatsApp Business API."),

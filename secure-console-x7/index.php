@@ -1,6 +1,6 @@
 <?php
 /**
- * InboxWa Authentic WordPress 6.x Admin Dashboard & Full CMS
+ * HelloBotz Authentic WordPress 6.x Admin Dashboard & Full CMS
  * Visually identical to classic WP-Admin with 100% working real-world features.
  */
 declare(strict_types=1);
@@ -94,7 +94,7 @@ if (!hb_is_admin_logged_in()) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $isLostPassword ? 'Lost Password' : 'Log In'; ?> &lsaquo; InboxWa &mdash; ElavateX</title>
+        <title><?php echo $isLostPassword ? 'Lost Password' : 'Log In'; ?> &lsaquo; HelloBotz &mdash; ElavateX</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>
             * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -119,9 +119,9 @@ if (!hb_is_admin_logged_in()) {
     <body>
         <div class="login-brand">
             <div class="login-wp-logo" style="background:transparent;box-shadow:none;margin-bottom:8px;">
-                <img src="/assets/images/favicon-32x32.png" width="56" height="56" style="border-radius:12px;display:inline-block;" alt="InboxWa" onerror="this.outerHTML='<svg width=\'56\' height=\'56\' viewBox=\'0 0 32 32\'><rect width=\'32\' height=\'32\' rx=\'8\' fill=\'#7C3AED\'/><rect x=\'11\' y=\'11\' width=\'10\' height=\'10\' rx=\'2.5\' fill=\'#FFFFFF\'/></svg>'">
+                <img src="/assets/images/favicon-32x32.png" width="56" height="56" style="border-radius:12px;display:inline-block;" alt="HelloBotz" onerror="this.outerHTML='<svg width=\'56\' height=\'56\' viewBox=\'0 0 32 32\'><rect width=\'32\' height=\'32\' rx=\'8\' fill=\'#7C3AED\'/><rect x=\'11\' y=\'11\' width=\'10\' height=\'10\' rx=\'2.5\' fill=\'#FFFFFF\'/></svg>'">
             </div>
-            <a href="/"><span>InboxWa Admin</span></a>
+            <a href="/"><span>HelloBotz Admin</span></a>
         </div>
 
         <?php if ($loginError): ?>
@@ -171,7 +171,7 @@ if (!hb_is_admin_logged_in()) {
             <?php endif; ?>
         </div>
         <div class="login-footer">
-            <a href="/">&larr; Go to InboxWa live website</a>
+            <a href="/">&larr; Go to HelloBotz live website</a>
         </div>
         <script>
             (function() {
@@ -698,7 +698,7 @@ if (isset($_GET['action'])) {
     // Purge Cache
     if ($act === 'purge' || $act === 'purge_cache') {
         hb_purge_all_caches();
-        $noticeSuccess = 'InboxWa Page Cache, OpCache, and Edge CDN purged successfully. All static assets and dynamic endpoints refreshed.';
+        $noticeSuccess = 'HelloBotz Page Cache, OpCache, and Edge CDN purged successfully. All static assets and dynamic endpoints refreshed.';
     }
 
     // Delete Category
@@ -874,7 +874,7 @@ if (isset($_GET['action'])) {
         hb_set_setting('theme_text_color', '#0F172A');
         hb_set_setting('theme_palette_preset', 'modern-violet');
 
-        $noticeSuccess = 'Color palette reset to default InboxWa styling.';
+        $noticeSuccess = 'Color palette reset to default HelloBotz styling.';
     }
 }
 
@@ -902,7 +902,7 @@ $locationsList = hb_get_locations();
 
 $activeCreds = hb_get_active_credentials();
 $currentAdminUser = $activeCreds['user'];
-$siteTitle = hb_get_setting('site_title', 'InboxWa');
+$siteTitle = hb_get_setting('site_title', 'HelloBotz');
 $siteTagline = hb_get_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
 $siteIcon = hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png');
 $themePrimary = hb_get_setting('theme_primary_color', '#8B5CF6');
@@ -1590,7 +1590,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
             <li class="menupop wp-logo elavatex-logo">
                 <a class="ab-item" href="https://elavatex.com" target="_blank" rel="noopener" title="About ElavateX">
                     <span class="ab-icon" style="display:inline-flex;align-items:center;justify-content:center;line-height:1;">
-                        <img src="/assets/images/favicon-32x32.png" alt="InboxWa" style="width:20px;height:20px;border-radius:4px;vertical-align:middle;display:inline-block;" onerror="this.outerHTML='<svg width=\'20\' height=\'20\' viewBox=\'0 0 32 32\' style=\'border-radius:5px;display:block;\'><rect width=\'32\' height=\'32\' rx=\'7\' fill=\'#7C3AED\'/><rect x=\'11\' y=\'11\' width=\'10\' height=\'10\' rx=\'2\' fill=\'#FFFFFF\'/></svg>'">
+                        <img src="/assets/images/favicon-32x32.png" alt="HelloBotz" style="width:20px;height:20px;border-radius:4px;vertical-align:middle;display:inline-block;" onerror="this.outerHTML='<svg width=\'20\' height=\'20\' viewBox=\'0 0 32 32\' style=\'border-radius:5px;display:block;\'><rect width=\'32\' height=\'32\' rx=\'7\' fill=\'#7C3AED\'/><rect x=\'11\' y=\'11\' width=\'10\' height=\'10\' rx=\'2\' fill=\'#FFFFFF\'/></svg>'">
                     </span>
                 </a>
                 <div class="ab-sub-wrapper">
@@ -1636,7 +1636,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
             <li class="menupop my-account">
                 <a class="ab-item" href="<?php echo $adminBase; ?>?page=profile">
                     <span>Howdy, <strong><?php echo htmlspecialchars($currentAdminUser); ?></strong></span>
-                    <img class="avatar-top" src="https://secure.gravatar.com/avatar/<?php echo md5(strtolower(trim($currentAdminUser . '@inboxwa.com'))); ?>?s=26&d=mm&r=g" alt="Avatar">
+                    <img class="avatar-top" src="https://secure.gravatar.com/avatar/<?php echo md5(strtolower(trim($currentAdminUser . '@hellobotz.com'))); ?>?s=26&d=mm&r=g" alt="Avatar">
                 </a>
                 <div class="ab-sub-wrapper">
                     <a href="<?php echo $adminBase; ?>?page=profile">Edit Profile</a>
@@ -1664,11 +1664,11 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     </ul>
                 </li>
 
-                <!-- 2. InboxWa Cache (Matches Kinsta Cache from screenshot) -->
+                <!-- 2. HelloBotz Cache (Matches Kinsta Cache from screenshot) -->
                 <li class="menu-top <?php echo $page === 'cache' ? 'current' : ''; ?>">
-                    <a href="<?php echo $adminBase; ?>?page=cache" class="menu-link" title="InboxWa Cache & Performance">
+                    <a href="<?php echo $adminBase; ?>?page=cache" class="menu-link" title="HelloBotz Cache & Performance">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16V4H4v2zm0 5h16V9H4v2zm0 5h16v-2H4v2zm0 4h16v-2H4v2z"/></svg></span>
-                        <span class="wp-menu-name">InboxWa Cache</span>
+                        <span class="wp-menu-name">HelloBotz Cache</span>
                     </a>
                 </li>
 
@@ -1908,7 +1908,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                                 </li>
                                             </ul>
                                              <p id="wp-version-message">
-                                                 ElavateX 6.5.4 running <a href="<?php echo $adminBase; ?>?page=editor">InboxWa Modern</a>.
+                                                 ElavateX 6.5.4 running <a href="<?php echo $adminBase; ?>?page=editor">HelloBotz Modern</a>.
                                              </p>
                                         </div>
                                     </div>
@@ -2037,7 +2037,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                             Scale your business messaging. Visit <a href="https://elavatex.com" target="_blank" rel="noopener">ElavateX</a> for tailored automation suites.
                                         </div>
                                         <ul class="rss-news-list">
-                                            <li><a href="https://elavatex.com" target="_blank" rel="noopener">The Month in ElavateX &amp; InboxWa: March 2026</a></li>
+                                            <li><a href="https://elavatex.com" target="_blank" rel="noopener">The Month in ElavateX &amp; HelloBotz: March 2026</a></li>
                                             <li><a href="https://elavatex.com/#services-overview" target="_blank" rel="noopener">ElavateX: WhatsApp Cloud API &amp; Multi-Agent Automation Suite</a></li>
                                             <li><a href="https://elavatex.com/#about" target="_blank" rel="noopener">About ElavateX Digital Ecosystem &amp; Next-Gen Tech</a></li>
                                         </ul>
@@ -2074,10 +2074,10 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
-                // 2B. INBOXWA CACHE & PERFORMANCE SCREEN
+                // 2B. HELLOBOTZ CACHE & PERFORMANCE SCREEN
                 // =============================================================
                 elseif ($page === 'cache'): ?>
-                    <h1 class="wp-heading-inline">InboxWa Cache &amp; Performance</h1>
+                    <h1 class="wp-heading-inline">HelloBotz Cache &amp; Performance</h1>
                     <a href="<?php echo $adminBase; ?>?page=cache&action=purge" class="page-title-action" style="background:#2271b1; color:#fff; border-color:#2271b1;">Clear All Cache</a>
 
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin:20px 0;">
@@ -2505,7 +2505,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
                                     <div>
                                         <label style="font-weight:600; display:block; margin-bottom:4px;">SEO Meta Title</label>
-                                        <input type="text" name="meta_title" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['meta_title'] ?? ''); ?>" placeholder="InboxWa Page Title">
+                                        <input type="text" name="meta_title" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['meta_title'] ?? ''); ?>" placeholder="HelloBotz Page Title">
                                     </div>
                                     <div>
                                         <label style="font-weight:600; display:block; margin-bottom:4px;">SEO Meta Description</label>
@@ -2656,7 +2656,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     <h1 class="wp-heading-inline">Website Color Palette &amp; Appearance</h1>
                     <a href="/" target="_blank" class="page-title-action" style="margin-left:10px;">View Live Site &nearr;</a>
                     <p class="description" style="margin:8px 0 20px; font-size:13px; color:#50575e;">
-                        Customize global branding colors across InboxWa. Choose from curated design presets or pick custom colors for primary buttons, gradients, accents, and backgrounds. All adjustments apply in real time.
+                        Customize global branding colors across HelloBotz. Choose from curated design presets or pick custom colors for primary buttons, gradients, accents, and backgrounds. All adjustments apply in real time.
                     </p>
 
                     <!-- Presets Section -->
@@ -3148,7 +3148,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         <div class="inside" style="padding:16px;">
                             <p style="color:#646970; margin-bottom:12px;">If you have a custom WhatsApp plugin or integration in a .zip format, you may install or update it by uploading it here.</p>
                             <input type="file" accept=".zip" style="margin-right:12px;">
-                            <button type="button" class="button" onclick="alert('Plugin package verified. InboxWa Cloud architecture automatically keeps all 5 core modules synchronized.')">Install Now</button>
+                            <button type="button" class="button" onclick="alert('Plugin package verified. HelloBotz Cloud architecture automatically keeps all 5 core modules synchronized.')">Install Now</button>
                         </div>
                     </div>
 
@@ -3156,14 +3156,14 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:18px;">
                         <?php
                         $storePlugins = [
-                            ['name' => 'WhatsApp Cloud API Gateway', 'slug' => 'whatsapp-cloud-api', 'desc' => 'Official Meta Graph API gateway handling high-throughput webhooks, verified templates, and interactive button messages.', 'author' => 'InboxWa Core', 'ver' => '3.2.0', 'installed' => true, 'active' => true],
-                            ['name' => 'Conversational AI Flow Builder', 'slug' => 'ai-flow-builder', 'desc' => 'Visual drag-and-drop conversational designer with intent recognition, entity capture, and OpenAI GPT integration.', 'author' => 'InboxWa AI', 'ver' => '2.8.4', 'installed' => true, 'active' => true],
-                            ['name' => 'Lead Capture & CRM Sync', 'slug' => 'lead-capture', 'desc' => 'Embeds interactive inquiry forms, smart appointment scheduling, and CRM pipeline tracking in WhatsApp chats.', 'author' => 'InboxWa Automations', 'ver' => '2.1.0', 'installed' => true, 'active' => true],
-                            ['name' => 'Shopify & WooCommerce Cart Recovery', 'slug' => 'woocommerce-sync', 'desc' => 'Syncs orders, triggers automatic abandoned cart recovery WhatsApp messages, and provides dispatch updates.', 'author' => 'InboxWa Commerce', 'ver' => '1.9.5', 'installed' => true, 'active' => true],
-                            ['name' => 'Google Sheets Live Connector', 'slug' => 'sheets-connector', 'desc' => 'Automatically appends newly captured leads, demo bookings, and marketing responses to connected Google Spreadsheets.', 'author' => 'InboxWa Integrations', 'ver' => '1.5.0', 'installed' => true, 'active' => false],
-                            ['name' => 'Razorpay & Stripe WhatsApp Payments', 'slug' => 'payments-gateway', 'desc' => 'Collect UPI, card, and net banking payments natively inside WhatsApp chats with instant webhook confirmation.', 'author' => 'InboxWa Fintech', 'ver' => '2.0.1', 'installed' => false, 'active' => false],
-                            ['name' => 'HubSpot & Zoho CRM Automated Sync', 'slug' => 'crm-webhooks', 'desc' => 'Bi-directional synchronization of contacts, pipeline deals, and agent assignments with enterprise CRMs.', 'author' => 'InboxWa Cloud', 'ver' => '1.4.2', 'installed' => false, 'active' => false],
-                            ['name' => 'AI Voice Calling & IVR Agent', 'slug' => 'ai-voice-agent', 'desc' => 'Instant outbound voice follow-ups for high-intent WhatsApp leads with natural conversational speech.', 'author' => 'InboxWa Voice', 'ver' => '1.1.0', 'installed' => false, 'active' => false],
+                            ['name' => 'WhatsApp Cloud API Gateway', 'slug' => 'whatsapp-cloud-api', 'desc' => 'Official Meta Graph API gateway handling high-throughput webhooks, verified templates, and interactive button messages.', 'author' => 'HelloBotz Core', 'ver' => '3.2.0', 'installed' => true, 'active' => true],
+                            ['name' => 'Conversational AI Flow Builder', 'slug' => 'ai-flow-builder', 'desc' => 'Visual drag-and-drop conversational designer with intent recognition, entity capture, and OpenAI GPT integration.', 'author' => 'HelloBotz AI', 'ver' => '2.8.4', 'installed' => true, 'active' => true],
+                            ['name' => 'Lead Capture & CRM Sync', 'slug' => 'lead-capture', 'desc' => 'Embeds interactive inquiry forms, smart appointment scheduling, and CRM pipeline tracking in WhatsApp chats.', 'author' => 'HelloBotz Automations', 'ver' => '2.1.0', 'installed' => true, 'active' => true],
+                            ['name' => 'Shopify & WooCommerce Cart Recovery', 'slug' => 'woocommerce-sync', 'desc' => 'Syncs orders, triggers automatic abandoned cart recovery WhatsApp messages, and provides dispatch updates.', 'author' => 'HelloBotz Commerce', 'ver' => '1.9.5', 'installed' => true, 'active' => true],
+                            ['name' => 'Google Sheets Live Connector', 'slug' => 'sheets-connector', 'desc' => 'Automatically appends newly captured leads, demo bookings, and marketing responses to connected Google Spreadsheets.', 'author' => 'HelloBotz Integrations', 'ver' => '1.5.0', 'installed' => true, 'active' => false],
+                            ['name' => 'Razorpay & Stripe WhatsApp Payments', 'slug' => 'payments-gateway', 'desc' => 'Collect UPI, card, and net banking payments natively inside WhatsApp chats with instant webhook confirmation.', 'author' => 'HelloBotz Fintech', 'ver' => '2.0.1', 'installed' => false, 'active' => false],
+                            ['name' => 'HubSpot & Zoho CRM Automated Sync', 'slug' => 'crm-webhooks', 'desc' => 'Bi-directional synchronization of contacts, pipeline deals, and agent assignments with enterprise CRMs.', 'author' => 'HelloBotz Cloud', 'ver' => '1.4.2', 'installed' => false, 'active' => false],
+                            ['name' => 'AI Voice Calling & IVR Agent', 'slug' => 'ai-voice-agent', 'desc' => 'Instant outbound voice follow-ups for high-intent WhatsApp leads with natural conversational speech.', 'author' => 'HelloBotz Voice', 'ver' => '1.1.0', 'installed' => false, 'active' => false],
                         ];
                         foreach ($storePlugins as $sp):
                         ?>
@@ -3187,7 +3187,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <?php elseif ($sp['installed']): ?>
                                             <a href="<?php echo $adminBase; ?>?action=toggle_plugin&slug=<?php echo $sp['slug']; ?>" class="button button-primary button-small">Activate</a>
                                         <?php else: ?>
-                                            <button type="button" class="button button-primary button-small" onclick="alert('Plugin integrated directly into your InboxWa instance.')">Install Now</button>
+                                            <button type="button" class="button button-primary button-small" onclick="alert('Plugin integrated directly into your HelloBotz instance.')">Install Now</button>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -3266,7 +3266,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </tr>
                                         <tr>
                                             <th>Email Address</th>
-                                            <td><input type="email" name="admin_email" class="regular-text" value="<?php echo htmlspecialchars($activeCreds['email'] ?? hb_get_setting('notification_email', 'mail@inboxwa.com')); ?>"></td>
+                                            <td><input type="email" name="admin_email" class="regular-text" value="<?php echo htmlspecialchars($activeCreds['email'] ?? hb_get_setting('notification_email', 'mail@hellobotz.com')); ?>"></td>
                                         </tr>
                                         <tr>
                                             <th>New Password</th>
@@ -3304,7 +3304,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <td><input type="checkbox" disabled></td>
                                         <td>
                                             <div style="display:flex; align-items:center; gap:8px;">
-                                                <img src="https://secure.gravatar.com/avatar/<?php echo md5($currentAdminUser . '@inboxwa.com'); ?>?s=32&d=retro" width="32" height="32" style="border-radius:50%;">
+                                                <img src="https://secure.gravatar.com/avatar/<?php echo md5($currentAdminUser . '@hellobotz.com'); ?>?s=32&d=retro" width="32" height="32" style="border-radius:50%;">
                                                 <div>
                                                     <strong><a href="<?php echo $adminBase; ?>?page=profile"><?php echo htmlspecialchars($currentAdminUser); ?></a></strong>
                                                     <div class="row-actions"><a href="<?php echo $adminBase; ?>?page=profile">Edit</a></div>
@@ -3312,7 +3312,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                             </div>
                                         </td>
                                         <td>Administrator</td>
-                                        <td><a href="mailto:admin@inboxwa.com"><?php echo htmlspecialchars(hb_get_setting('notification_email', 'admin@inboxwa.com')); ?></a></td>
+                                        <td><a href="mailto:admin@hellobotz.com"><?php echo htmlspecialchars(hb_get_setting('notification_email', 'admin@hellobotz.com')); ?></a></td>
                                         <td>Administrator</td>
                                         <td><a href="<?php echo $adminBase; ?>?page=posts"><?php echo $totalPosts; ?></a></td>
                                     </tr>
@@ -3437,7 +3437,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="siteurl">WordPress Address (URL)</label></th>
                                         <td>
-                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'inboxwa.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
                                         </td>
                                     </tr>
 
@@ -3445,7 +3445,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="home">Site Address (URL)</label></th>
                                         <td>
-                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'inboxwa.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
                                         </td>
                                     </tr>
 
@@ -3453,7 +3453,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="admin_email">Administration Email Address</label></th>
                                         <td>
-                                            <input name="admin_email" type="email" id="admin_email" value="<?php echo htmlspecialchars(hb_get_setting('admin_email', hb_get_setting('sales_email', 'admin@inboxwa.com'))); ?>" class="regular-text ltr">
+                                            <input name="admin_email" type="email" id="admin_email" value="<?php echo htmlspecialchars(hb_get_setting('admin_email', hb_get_setting('sales_email', 'admin@hellobotz.com'))); ?>" class="regular-text ltr">
                                             <p class="description">This address is used for admin purposes. If you change this, an email will be sent to your new address to confirm it. <strong>The new address will not become active until confirmed.</strong></p>
                                         </td>
                                     </tr>
@@ -3462,7 +3462,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="sales_email">Sales &amp; Enquiry Email</label></th>
                                         <td>
-                                            <input name="sales_email" type="email" id="sales_email" value="<?php echo htmlspecialchars(hb_get_setting('sales_email', 'mail@inboxwa.com')); ?>" class="regular-text ltr">
+                                            <input name="sales_email" type="email" id="sales_email" value="<?php echo htmlspecialchars(hb_get_setting('sales_email', 'mail@hellobotz.com')); ?>" class="regular-text ltr">
                                             <p class="description">Public sales enquiry recipient (used across contact forms, footer, and emails).</p>
                                         </td>
                                     </tr>
@@ -3471,7 +3471,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="support_email">Technical Support Email</label></th>
                                         <td>
-                                            <input name="support_email" type="email" id="support_email" value="<?php echo htmlspecialchars(hb_get_setting('support_email', 'support@inboxwa.com')); ?>" class="regular-text ltr">
+                                            <input name="support_email" type="email" id="support_email" value="<?php echo htmlspecialchars(hb_get_setting('support_email', 'support@hellobotz.com')); ?>" class="regular-text ltr">
                                             <p class="description">Technical support inquiries and bug reports are routed to this inbox.</p>
                                         </td>
                                     </tr>
@@ -3498,7 +3498,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="office_address">Office Address</label></th>
                                         <td>
-                                            <textarea name="office_address" id="office_address" rows="3" class="large-text"><?php echo htmlspecialchars(hb_get_setting('office_address', "InboxWa AI Technologies Pvt Ltd\nHead Office — Bangalore, India")); ?></textarea>
+                                            <textarea name="office_address" id="office_address" rows="3" class="large-text"><?php echo htmlspecialchars(hb_get_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nHead Office — Bangalore, India")); ?></textarea>
                                             <p class="description">Company physical office address shown in site footer.</p>
                                         </td>
                                     </tr>
@@ -3838,7 +3838,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                 <div class="postbox-header"><h2>GitHub Auto-Deploy to Vercel</h2></div>
                                 <div class="inside" style="padding:16px;">
                                     <p style="color:#50575e; font-size:13px; line-height:1.5; margin-bottom:14px;">
-                                        When you save changes or click <strong>Deploy Globally to Vercel</strong>, InboxWa commits <code>config/cms_state.json</code> directly to your GitHub repository (<code><?php echo htmlspecialchars(hb_get_setting('github_repo', 'Samifarhan52/InboxWa')); ?></code>). Vercel detects the commit and immediately rebuilds &amp; deploys the website globally to every edge datacenter worldwide.
+                                        When you save changes or click <strong>Deploy Globally to Vercel</strong>, HelloBotz commits <code>config/cms_state.json</code> directly to your GitHub repository (<code><?php echo htmlspecialchars(hb_get_setting('github_repo', 'Samifarhan52/HelloBotz')); ?></code>). Vercel detects the commit and immediately rebuilds &amp; deploys the website globally to every edge datacenter worldwide.
                                     </p>
                                     <form method="post" action="">
                                         <input type="hidden" name="form_action" value="save_settings">
@@ -3854,7 +3854,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                             <tr>
                                                 <th>Repository</th>
                                                 <td>
-                                                    <input type="text" name="github_repo" class="regular-text" value="<?php echo htmlspecialchars(hb_get_setting('github_repo', 'Samifarhan52/InboxWa')); ?>">
+                                                    <input type="text" name="github_repo" class="regular-text" value="<?php echo htmlspecialchars(hb_get_setting('github_repo', 'Samifarhan52/HelloBotz')); ?>">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -4015,7 +4015,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <table class="form-table">
                                         <tr>
                                             <th>Bot Greeting Message</th>
-                                            <td><textarea name="bot_greeting" class="large-text" rows="2"><?php echo htmlspecialchars(hb_get_section('simulator', 'bot_greeting', "👋 Hello! Welcome to InboxWa. How can we help automate your business today?")); ?></textarea></td>
+                                            <td><textarea name="bot_greeting" class="large-text" rows="2"><?php echo htmlspecialchars(hb_get_section('simulator', 'bot_greeting', "👋 Hello! Welcome to HelloBotz. How can we help automate your business today?")); ?></textarea></td>
                                         </tr>
                                         <tr>
                                             <th>Interactive Quick Buttons</th>
@@ -4027,7 +4027,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </tr>
                                         <tr>
                                             <th>Bot Automated Response</th>
-                                            <td><textarea name="bot_response" class="large-text" rows="3"><?php echo htmlspecialchars(hb_get_section('simulator', 'bot_response', "Great choice! InboxWa equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification.")); ?></textarea></td>
+                                            <td><textarea name="bot_response" class="large-text" rows="3"><?php echo htmlspecialchars(hb_get_section('simulator', 'bot_response', "Great choice! HelloBotz equips your team with Official Meta WhatsApp API, visual drag-and-drop flow builder, CRM pipelines, and 24/7 automated qualification.")); ?></textarea></td>
                                         </tr>
                                     </table>
                                     <p class="submit"><button type="submit" class="button button-primary">Save Simulator Script</button></p>
@@ -4076,7 +4076,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </tr>
                                         <tr>
                                             <th>Lead Text</th>
-                                            <td><textarea name="lead" class="large-text" rows="2"><?php echo htmlspecialchars(hb_get_section('cta_banner', 'lead', 'Join fast-growing companies using InboxWa for WhatsApp marketing, AI automation, and omnichannel support.')); ?></textarea></td>
+                                            <td><textarea name="lead" class="large-text" rows="2"><?php echo htmlspecialchars(hb_get_section('cta_banner', 'lead', 'Join fast-growing companies using HelloBotz for WhatsApp marketing, AI automation, and omnichannel support.')); ?></textarea></td>
                                         </tr>
                                         <tr>
                                             <th>Button Text &amp; Link</th>
@@ -4331,7 +4331,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                                         <div style="margin-bottom:16px;">
                                             <label style="font-weight:600; display:block; margin-bottom:4px;">Review Quote</label>
-                                            <textarea name="quote" rows="4" style="width:100%;" required placeholder="What the client said about InboxWa..."><?php echo htmlspecialchars($testimonialToEdit['quote'] ?? ''); ?></textarea>
+                                            <textarea name="quote" rows="4" style="width:100%;" required placeholder="What the client said about HelloBotz..."><?php echo htmlspecialchars($testimonialToEdit['quote'] ?? ''); ?></textarea>
                                         </div>
 
                                         <button type="submit" class="button button-primary"><?php echo $testimonialToEdit ? 'Update Testimonial' : 'Add Testimonial'; ?></button>

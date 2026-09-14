@@ -14,7 +14,7 @@
         <div><label>Mobile number *</label><input type="tel" name="mobile" id="af-mobile" required placeholder="+91 ..."></div>
         <div class="af-full"><label>WhatsApp registered number *</label>
           <input type="tel" name="whatsapp_number" id="af-wa" required placeholder="+91 ...">
-          <small>Enter the WhatsApp number currently connected or intended for InboxWa.</small>
+          <small>Enter the WhatsApp number currently connected or intended for HelloBotz.</small>
         </div>
         <div><label>Country *</label><input name="country" id="af-country" required value="India"></div>
         <div><label>Current plan</label>

@@ -1,6 +1,6 @@
 <?php
 /**
- * InboxWa – Centralized pricing configuration (source of truth)
+ * HelloBotz – Centralized pricing configuration (source of truth)
  * All plan prices in INR. USD derived via INR_TO_USD_RATE.
  */
 require_once __DIR__ . '/cms.php';
@@ -168,7 +168,7 @@ return [
     'campaign_agent' => [
       'name' => 'Managed Campaign Agent',
       'price' => 3500,
-      'description' => 'A dedicated InboxWa agent can help set up and run campaigns. Share requirements at least 6 hours before launch.',
+      'description' => 'A dedicated HelloBotz agent can help set up and run campaigns. Share requirements at least 6 hours before launch.',
     ],
     'data_marketplace' => [
       'name' => 'Data Marketplace – Industry Contact Databases',
