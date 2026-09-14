@@ -339,7 +339,7 @@
 
   // HelloBotz Controller & Character State Machine
   function initHelloBotz() {
-    var widget = document.getElementById('hellobotz-robot-widget') || document.getElementById('inboxwa-robot-widget');
+    var widget = document.getElementById('hellobotz-robot-widget');
     if (!widget) return;
 
     var triggerBtn = widget.querySelector('.hellobotz-trigger');
@@ -348,9 +348,9 @@
     var speechText = widget.querySelector('.hellobotz-speech-text');
     var closeBtn = widget.querySelector('.header-close-btn');
     var resetBtn = widget.querySelector('.header-reset-btn');
-    var chatBody = widget.querySelector('.hellobotz-chat-body, .inboxwa-chat-body');
-    var chatForm = widget.querySelector('.hellobotz-chat-form, .inboxwa-chat-form');
-    var chatInput = widget.querySelector('.hellobotz-chat-input, .inboxwa-chat-input');
+    var chatBody = widget.querySelector('.hellobotz-chat-body');
+    var chatForm = widget.querySelector('.hellobotz-chat-form');
+    var chatInput = widget.querySelector('.hellobotz-chat-input');
     var quickChannels = widget.querySelectorAll('.quick-channel-item');
 
     // -------------------------------------------------------------

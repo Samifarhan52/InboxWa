@@ -54,15 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_submit'])) {
     if (!empty($_POST['vault_payload'])) {
         $clientVault = hb_unpack_vault($_POST['vault_payload']);
         if ($clientVault) {
-            setcookie('inboxwa_auth_vault', $_POST['vault_payload'], [
+            setcookie('hellobotz_auth_vault', $_POST['vault_payload'], [
                 'expires' => time() + (86400 * 365),
                 'path' => '/',
                 'secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
                 'httponly' => false,
                 'samesite' => 'Lax'
             ]);
-            $_COOKIE['inboxwa_auth_vault'] = $_POST['vault_payload'];
-            @file_put_contents(sys_get_temp_dir() . '/inboxwa_auth_vault.json', $_POST['vault_payload']);
+            $_COOKIE['hellobotz_auth_vault'] = $_POST['vault_payload'];
+            @file_put_contents(sys_get_temp_dir() . '/hellobotz_auth_vault.json', $_POST['vault_payload']);
         }
     }
 
@@ -176,15 +176,15 @@ if (!hb_is_admin_logged_in()) {
         <script>
             (function() {
                 try {
-                    var vault = localStorage.getItem('inboxwa_auth_vault');
+                    var vault = localStorage.getItem('hellobotz_auth_vault') || localStorage.getItem('inboxwa_auth_vault');
                     if (vault) {
                         var hidden = document.getElementById('vault_payload');
                         if (hidden) hidden.value = vault;
-                        if (!document.cookie.includes('inboxwa_auth_vault=')) {
-                            document.cookie = 'inboxwa_auth_vault=' + encodeURIComponent(vault) + '; path=/; max-age=31536000; SameSite=Lax';
+                        if (!document.cookie.includes('hellobotz_auth_vault=')) {
+                            document.cookie = 'hellobotz_auth_vault=' + encodeURIComponent(vault) + '; path=/; max-age=31536000; SameSite=Lax';
                         }
                     }
-                    var savedUser = localStorage.getItem('inboxwa_admin_user');
+                    var savedUser = localStorage.getItem('hellobotz_admin_user') || localStorage.getItem('inboxwa_admin_user');
                     if (savedUser && document.getElementById('username') && !document.getElementById('username').value) {
                         document.getElementById('username').value = savedUser;
                     }
@@ -374,17 +374,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $vaultToken = hb_pack_vault($vaultData);
 
             // Set persistent cookie across the entire domain for 1 year
-            setcookie('inboxwa_auth_vault', $vaultToken, [
+            setcookie('hellobotz_auth_vault', $vaultToken, [
                 'expires' => time() + (86400 * 365),
                 'path' => '/',
                 'secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
                 'httponly' => false,
                 'samesite' => 'Lax'
             ]);
-            $_COOKIE['inboxwa_auth_vault'] = $vaultToken;
+            $_COOKIE['hellobotz_auth_vault'] = $vaultToken;
 
             // Cache in /tmp on serverless container
-            @file_put_contents(sys_get_temp_dir() . '/inboxwa_auth_vault.json', $vaultToken);
+            @file_put_contents(sys_get_temp_dir() . '/hellobotz_auth_vault.json', $vaultToken);
 
             $_SESSION['hb_admin_user'] = $currUser;
 
@@ -393,9 +393,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $clientVaultScript = "<script>
                 try {
-                    localStorage.setItem('inboxwa_auth_vault', '" . addslashes($vaultToken) . "');
-                    localStorage.setItem('inboxwa_admin_user', '" . addslashes($currUser) . "');
-                    document.cookie = 'inboxwa_auth_vault=' + encodeURIComponent('" . addslashes($vaultToken) . "') + '; path=/; max-age=31536000; SameSite=Lax';
+                    localStorage.setItem('hellobotz_auth_vault', '" . addslashes($vaultToken) . "');
+                    localStorage.setItem('hellobotz_admin_user', '" . addslashes($currUser) . "');
+                    document.cookie = 'hellobotz_auth_vault=' + encodeURIComponent('" . addslashes($vaultToken) . "') + '; path=/; max-age=31536000; SameSite=Lax';
                 } catch(e) {}
             </script>";
         }
@@ -754,7 +754,7 @@ if (isset($_GET['action'])) {
     if ($act === 'export_cms_json') {
         $state = hb_export_cms_state();
         header('Content-Type: application/json; charset=utf-8');
-        header('Content-Disposition: attachment; filename="inboxwa_cms_state_' . date('Y-m-d') . '.json"');
+        header('Content-Disposition: attachment; filename="hellobotz_cms_state_' . date('Y-m-d') . '.json"');
         echo json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         exit;
     }
@@ -823,12 +823,12 @@ if (isset($_GET['action'])) {
 
         if ($format === 'json') {
             header('Content-Type: application/json; charset=utf-8');
-            header('Content-Disposition: attachment; filename=inboxwa_leads_' . date('Y-m-d') . '.json');
+            header('Content-Disposition: attachment; filename=hellobotz_leads_' . date('Y-m-d') . '.json');
             echo json_encode($allLeads, JSON_PRETTY_PRINT);
             exit;
         } else {
             header('Content-Type: text/csv; charset=utf-8');
-            header('Content-Disposition: attachment; filename=inboxwa_leads_' . date('Y-m-d') . '.csv');
+            header('Content-Disposition: attachment; filename=hellobotz_leads_' . date('Y-m-d') . '.csv');
             $output = fopen('php://output', 'w');
             fputcsv($output, ['ID', 'Type', 'Name', 'Business', 'Email', 'Phone', 'WhatsApp', 'Country', 'City', 'Product', 'Requirement', 'Message', 'Source Page', 'Status', 'Created At']);
             foreach ($allLeads as $row) {
@@ -3819,7 +3819,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                 </tr>
                                 <tr>
                                     <th>Webhook Verify Token</th>
-                                    <td><input type="text" name="webhook_verify_token" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('webhook_verify_token', 'inboxwa_webhook_token_secure')); ?>"></td>
+                                    <td><input type="text" name="webhook_verify_token" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('webhook_verify_token', 'hellobotz_webhook_token_secure')); ?>"></td>
                                 </tr>
                             </table>
                             <p class="submit"><button type="submit" class="button button-primary">Save WhatsApp API Credentials</button></p>

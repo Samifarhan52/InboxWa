@@ -256,7 +256,6 @@ if (!function_exists('hb_seo_esc')) {
       whatsapp: <?php echo json_encode($cmsWhatsapp); ?>,
       siteName: <?php echo json_encode($SITE_NAME); ?>
     };
-    window.INBOXWA_CONFIG = window.HELLOBOTZ_CONFIG;
   </script>
   <style id="hellobotz-floating-pill-navbar-style">
     /* FLOATING PILL NAVBAR SYSTEM (100% Fixed, Centered & Always Visible on Scroll) */

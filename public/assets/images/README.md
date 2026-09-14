@@ -1,4 +1,4 @@
-# InboxWa Images — Upload Guide
+# HelloBotz Images — Upload Guide
 
 Place your images here. Recommended sizes:
 

@@ -20,7 +20,7 @@ function hb_get_db_path(): string {
 
     // Fallback to system /tmp directory for serverless environments
     $tmpDir = sys_get_temp_dir();
-    $tmpFile = rtrim($tmpDir, "/\\") . "/inboxwa_cms.sqlite";
+    $tmpFile = rtrim($tmpDir, "/\\") . "/hellobotz_cms.sqlite";
     if (!file_exists($tmpFile) && file_exists(__DIR__ . "/data/leads.sqlite")) {
         @copy(__DIR__ . "/data/leads.sqlite", $tmpFile);
     }
@@ -28,7 +28,7 @@ function hb_get_db_path(): string {
 }
 
 if (!defined('HELLOBOTZ_AUTH_SALT')) {
-    define('HELLOBOTZ_AUTH_SALT', 'inboxwa_vault_salt_sec_918050854445_elavatex');
+    define('HELLOBOTZ_AUTH_SALT', 'hellobotz_vault_salt_sec_918050854445_elavatex');
 }
 
 function hb_pack_vault(array $data): string {
@@ -682,12 +682,15 @@ function hb_pdo(): PDO {
     }
 
     // Automatically enforce active vault credentials across all containers
-    $vault = hb_unpack_vault($_COOKIE['inboxwa_auth_vault'] ?? null);
+    $vault = hb_unpack_vault($_COOKIE['hellobotz_auth_vault'] ?? $_COOKIE['inboxwa_auth_vault'] ?? null);
     if (!$vault && !empty($_POST['vault_payload'])) {
         $vault = hb_unpack_vault((string)$_POST['vault_payload']);
     }
     if (!$vault) {
-        $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
+        $tmpVaultFile = sys_get_temp_dir() . '/hellobotz_auth_vault.json';
+        if (!file_exists($tmpVaultFile)) {
+            $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
+        }
         if (file_exists($tmpVaultFile)) {
             $rawTmp = @file_get_contents($tmpVaultFile);
             if ($rawTmp) $vault = hb_unpack_vault($rawTmp);
@@ -724,12 +727,15 @@ function hb_get_active_credentials(): array {
     $isChanged = hb_get_setting('admin_pass_changed', '0') === '1';
 
     // 1. Check signed cookie vault
-    $vault = hb_unpack_vault($_COOKIE['inboxwa_auth_vault'] ?? null);
+    $vault = hb_unpack_vault($_COOKIE['hellobotz_auth_vault'] ?? $_COOKIE['inboxwa_auth_vault'] ?? null);
     if (!$vault && !empty($_POST['vault_payload'])) {
         $vault = hb_unpack_vault((string)$_POST['vault_payload']);
     }
     if (!$vault) {
-        $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
+        $tmpVaultFile = sys_get_temp_dir() . '/hellobotz_auth_vault.json';
+        if (!file_exists($tmpVaultFile)) {
+            $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
+        }
         if (file_exists($tmpVaultFile)) {
             $rawTmp = @file_get_contents($tmpVaultFile);
             if ($rawTmp) $vault = hb_unpack_vault($rawTmp);
@@ -1517,7 +1523,7 @@ function hb_sync_cloud(): void {
     if (!empty($kvUrl) && !empty($kvToken)) {
         try {
             $state = hb_export_cms_state();
-            $ch = curl_init(rtrim($kvUrl, '/') . '/set/inboxwa_cms_state');
+            $ch = curl_init(rtrim($kvUrl, '/') . '/set/hellobotz_cms_state');
             curl_setopt_array($ch, [
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_POST => true,

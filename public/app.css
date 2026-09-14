@@ -1,4 +1,4 @@
-/* InboxWa Design System — app.css */
+/* HelloBotz Design System — app.css */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --p:#8B5CF6;--p2:#7C3AED;--p3:#6D28D9;--p-l:#F5F3FF;--p-m:#EDE9FE;
@@ -257,7 +257,7 @@ textarea.form-input{min-height:100px;resize:vertical}
 .popup-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--t3);line-height:1}
 .popup-close:hover{background:var(--bg2);color:var(--t)}
 
-/* WhatsApp & InboxWa AI floating widget */
+/* WhatsApp & HelloBotz AI floating widget */
 .wa-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:9900}
 .wa-widget-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8B5CF6 0%,#6366F1 50%,#06B6D4 100%);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(139,92,246,0.45);cursor:pointer;border:none;transition:all .3s cubic-bezier(0.4,0,0.2,1)}
 .wa-widget-btn:hover{transform:scale(1.08);box-shadow:0 14px 30px rgba(139,92,246,0.55)}
@@ -1602,7 +1602,7 @@ html[dir="rtl"] .hero-cta{direction:rtl}
 
 
 /* =========================================================
-   INBOXWA MOBILE MENU — HARD OVERRIDE v27
+   HELLOBOTZ MOBILE MENU — HARD OVERRIDE v27
    Desktop: never show menu or its CTAs
    Mobile closed: never show
    Mobile open: full-screen drawer only
@@ -1916,7 +1916,7 @@ body.menu-open { overflow: hidden !important; touch-action: none; }
 
 
 /* =========================================================
-   INBOXWA PREMIUM HERO SYSTEM v29
+   HELLOBOTZ PREMIUM HERO SYSTEM v29
    ========================================================= */
 .hero-premium{
   position:relative;
@@ -2760,7 +2760,7 @@ body.menu-open{overflow:hidden !important}
 
 
 /* =========================================================
-   INBOXWA PREMIUM UI/UX v41
+   HELLOBOTZ PREMIUM UI/UX v41
    Floating SaaS header + global polish
    Content/structure/functionality UNCHANGED
    ========================================================= */
