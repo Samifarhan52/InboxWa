@@ -334,28 +334,94 @@ if (!function_exists('hb_seo_esc')) {
       border-color: rgba(203, 213, 225, 0.95) !important;
     }
 
-    /* Brand Logo Pill & Responsive Sizing */
-    .site-header .logo {
+    /* Logo Docking Container */
+    .logo-dock-wrapper {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+      position: relative !important;
+      overflow: visible !important;
+      transition: width 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+                  margin-right 0.48s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .site-header.scrolled .logo-dock-wrapper {
+      width: 176px !important;
+      max-width: 190px !important;
+      margin-right: 12px !important;
+    }
+    .site-header:not(.scrolled) .logo-dock-wrapper {
+      width: 0px !important;
+      max-width: 0px !important;
+      margin-right: 0px !important;
+    }
+    @media (max-width: 991px) {
+      .site-header.scrolled .logo-dock-wrapper {
+        width: 145px !important;
+        margin-right: 8px !important;
+      }
+      .site-header:not(.scrolled) .logo-dock-wrapper {
+        width: 0px !important;
+        margin-right: 0px !important;
+      }
+    }
+
+    /* Brand Logo Pill & Dynamic Flying Animation */
+    .site-header .logo,
+    .site-header .site-main-logo {
       display: inline-flex !important;
       align-items: center !important;
       background: #030712 !important;
-      padding: 4px 12px !important;
       border-radius: 999px !important;
-      border: 1px solid rgba(99, 102, 241, 0.35) !important;
-      box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08) !important;
-      max-width: none !important;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
       text-decoration: none !important;
       flex-shrink: 0 !important;
+      position: relative !important;
+      z-index: 100000 !important;
+      pointer-events: auto !important;
+      cursor: pointer !important;
+      transform-origin: top left !important;
+      will-change: transform, box-shadow, border-color !important;
+      transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.45s ease,
+                  border-color 0.45s ease,
+                  padding 0.35s ease,
+                  background 0.35s ease !important;
     }
-    .site-header .logo:hover {
+
+    /* 1. TOP STATE: Left side above corner, larger size, glowing aura */
+    .site-header:not(.scrolled) .logo,
+    .site-header:not(.scrolled) .site-main-logo {
+      --logo-fly-x: calc(28px - (max(20px, (100vw - min(1280px, calc(100vw - 28px))) / 2) + 20px));
+      --logo-fly-y: -6px;
+      --logo-fly-scale: 1.38;
+      transform: translate3d(var(--logo-fly-x, 0px), var(--logo-fly-y, 0px), 0) scale(var(--logo-fly-scale, 1.38)) !important;
+      padding: 6px 16px !important;
+      border: 1px solid rgba(139, 92, 246, 0.6) !important;
+      box-shadow: 0 12px 36px -4px rgba(139, 92, 246, 0.38), 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+      background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.22), transparent 70%), #030712 !important;
+    }
+    .site-header:not(.scrolled) .logo:hover,
+    .site-header:not(.scrolled) .site-main-logo:hover {
+      transform: translate3d(var(--logo-fly-x, 0px), var(--logo-fly-y, 0px), 0) scale(calc(var(--logo-fly-scale, 1.38) * 1.03)) !important;
+      border-color: rgba(167, 139, 250, 0.9) !important;
+      box-shadow: 0 16px 44px -4px rgba(139, 92, 246, 0.52), 0 6px 20px rgba(0, 0, 0, 0.55) !important;
+    }
+
+    /* 2. DOCKED STATE: Come to navbar, whatever size is there */
+    .site-header.scrolled .logo,
+    .site-header.scrolled .site-main-logo {
+      transform: translate3d(0, 0, 0) scale(1) !important;
+      padding: 4px 12px !important;
+      border: 1px solid rgba(99, 102, 241, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08) !important;
+      background: #030712 !important;
+    }
+    .site-header.scrolled .logo:hover,
+    .site-header.scrolled .site-main-logo:hover {
       border-color: rgba(99, 102, 241, 0.75) !important;
       box-shadow: 0 4px 16px rgba(99, 102, 241, 0.28) !important;
-      transform: translateY(-1px) scale(1.02) !important;
+      transform: translate3d(0, 0, 0) scale(1.02) !important;
     }
-    .site-header.scrolled .logo {
-      padding: 3px 10px !important;
-    }
+
     .site-header .logo-img {
       height: 32px !important;
       width: auto !important;
@@ -365,7 +431,23 @@ if (!function_exists('hb_seo_esc')) {
       transition: height 0.25s ease !important;
     }
     .site-header.scrolled .logo-img {
-      height: 27px !important;
+      height: 30px !important;
+    }
+    @media (max-width: 768px) {
+      .site-header:not(.scrolled) .logo,
+      .site-header:not(.scrolled) .site-main-logo {
+        --logo-fly-x: -12px;
+        --logo-fly-y: -8px;
+        --logo-fly-scale: 1.25;
+        padding: 5px 12px !important;
+      }
+      .site-header.scrolled .logo-img {
+        height: 26px !important;
+      }
+      .site-header.scrolled .logo,
+      .site-header.scrolled .site-main-logo {
+        padding: 3px 9px !important;
+      }
     }
     .mobile-drawer-header .logo {
       display: inline-flex !important;
@@ -2030,16 +2112,62 @@ if (!function_exists('hb_seo_esc')) {
     }
   </style>
   <script>
-    window.addEventListener('scroll', function() {
-      var header = document.querySelector('.site-header');
-      if (header) {
-        if (window.scrollY > 20) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
+    (function() {
+      function updateLogoCoords() {
+        var header = document.querySelector('.site-header');
+        var logo = document.getElementById('site-logo');
+        if (!header || !logo) return;
+        var inner = header.querySelector('.header-inner');
+        if (!inner) return;
+
+        var isMobile = window.innerWidth <= 768;
+        var targetLeft = isMobile ? 16 : 28;
+        var ann = document.querySelector('.announcement-banner');
+        var annOffset = (ann && window.scrollY < ann.offsetHeight) ? (ann.offsetHeight - window.scrollY) : 0;
+        var targetTop = (isMobile ? 14 : 16) + annOffset;
+        var targetScale = isMobile ? 1.25 : 1.38;
+
+        var innerRect = inner.getBoundingClientRect();
+        var innerPaddingLeft = isMobile ? 14 : 20;
+        var dockX = innerRect.left + innerPaddingLeft;
+        var dockY = innerRect.top + ((innerRect.height - 40) / 2);
+
+        var deltaX = targetLeft - dockX;
+        var deltaY = targetTop - dockY;
+
+        logo.style.setProperty('--logo-fly-x', deltaX + 'px');
+        logo.style.setProperty('--logo-fly-y', deltaY + 'px');
+        logo.style.setProperty('--logo-fly-scale', targetScale);
+      }
+
+      function handleScroll() {
+        var header = document.querySelector('.site-header');
+        if (header) {
+          if (window.scrollY > 25) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
         }
       }
-    }, { passive: true });
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', function() {
+        updateLogoCoords();
+        handleScroll();
+      }, { passive: true });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          updateLogoCoords();
+          handleScroll();
+        });
+      } else {
+        updateLogoCoords();
+        handleScroll();
+      }
+      window.addEventListener('load', updateLogoCoords);
+    })();
   </script>
 </head>
 <body>
@@ -2056,13 +2184,15 @@ if (!function_exists('hb_seo_esc')) {
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
-        <img src="<?php echo htmlspecialchars($cmsLogo); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="168" height="42" onerror="this.onerror=null;this.src='<?php echo $bp; ?>assets/images/logo.png';">
-        <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-          <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
-          <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
-        </span>
-      </a>
+      <div class="logo-dock-wrapper" id="logo-dock-wrapper">
+        <a href="<?php echo $bp; ?>" class="logo site-main-logo" id="site-logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
+          <img src="<?php echo htmlspecialchars($cmsLogo); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="168" height="42" onerror="this.onerror=null;this.src='<?php echo $bp; ?>assets/images/logo.png';">
+          <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
+            <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
+            <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
+          </span>
+        </a>
+      </div>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
 
         <!-- PRODUCTS MEGAMENU (HelloBotz Suite) -->

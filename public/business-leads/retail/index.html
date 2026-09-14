@@ -223,28 +223,94 @@
       border-color: rgba(203, 213, 225, 0.95) !important;
     }
 
-    /* Brand Logo Pill & Responsive Sizing */
-    .site-header .logo {
+    /* Logo Docking Container */
+    .logo-dock-wrapper {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+      position: relative !important;
+      overflow: visible !important;
+      transition: width 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+                  margin-right 0.48s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .site-header.scrolled .logo-dock-wrapper {
+      width: 176px !important;
+      max-width: 190px !important;
+      margin-right: 12px !important;
+    }
+    .site-header:not(.scrolled) .logo-dock-wrapper {
+      width: 0px !important;
+      max-width: 0px !important;
+      margin-right: 0px !important;
+    }
+    @media (max-width: 991px) {
+      .site-header.scrolled .logo-dock-wrapper {
+        width: 145px !important;
+        margin-right: 8px !important;
+      }
+      .site-header:not(.scrolled) .logo-dock-wrapper {
+        width: 0px !important;
+        margin-right: 0px !important;
+      }
+    }
+
+    /* Brand Logo Pill & Dynamic Flying Animation */
+    .site-header .logo,
+    .site-header .site-main-logo {
       display: inline-flex !important;
       align-items: center !important;
       background: #030712 !important;
-      padding: 4px 12px !important;
       border-radius: 999px !important;
-      border: 1px solid rgba(99, 102, 241, 0.35) !important;
-      box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08) !important;
-      max-width: none !important;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
       text-decoration: none !important;
       flex-shrink: 0 !important;
+      position: relative !important;
+      z-index: 100000 !important;
+      pointer-events: auto !important;
+      cursor: pointer !important;
+      transform-origin: top left !important;
+      will-change: transform, box-shadow, border-color !important;
+      transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.45s ease,
+                  border-color 0.45s ease,
+                  padding 0.35s ease,
+                  background 0.35s ease !important;
     }
-    .site-header .logo:hover {
+
+    /* 1. TOP STATE: Left side above corner, larger size, glowing aura */
+    .site-header:not(.scrolled) .logo,
+    .site-header:not(.scrolled) .site-main-logo {
+      --logo-fly-x: calc(28px - (max(20px, (100vw - min(1280px, calc(100vw - 28px))) / 2) + 20px));
+      --logo-fly-y: -6px;
+      --logo-fly-scale: 1.38;
+      transform: translate3d(var(--logo-fly-x, 0px), var(--logo-fly-y, 0px), 0) scale(var(--logo-fly-scale, 1.38)) !important;
+      padding: 6px 16px !important;
+      border: 1px solid rgba(139, 92, 246, 0.6) !important;
+      box-shadow: 0 12px 36px -4px rgba(139, 92, 246, 0.38), 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+      background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.22), transparent 70%), #030712 !important;
+    }
+    .site-header:not(.scrolled) .logo:hover,
+    .site-header:not(.scrolled) .site-main-logo:hover {
+      transform: translate3d(var(--logo-fly-x, 0px), var(--logo-fly-y, 0px), 0) scale(calc(var(--logo-fly-scale, 1.38) * 1.03)) !important;
+      border-color: rgba(167, 139, 250, 0.9) !important;
+      box-shadow: 0 16px 44px -4px rgba(139, 92, 246, 0.52), 0 6px 20px rgba(0, 0, 0, 0.55) !important;
+    }
+
+    /* 2. DOCKED STATE: Come to navbar, whatever size is there */
+    .site-header.scrolled .logo,
+    .site-header.scrolled .site-main-logo {
+      transform: translate3d(0, 0, 0) scale(1) !important;
+      padding: 4px 12px !important;
+      border: 1px solid rgba(99, 102, 241, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08) !important;
+      background: #030712 !important;
+    }
+    .site-header.scrolled .logo:hover,
+    .site-header.scrolled .site-main-logo:hover {
       border-color: rgba(99, 102, 241, 0.75) !important;
       box-shadow: 0 4px 16px rgba(99, 102, 241, 0.28) !important;
-      transform: translateY(-1px) scale(1.02) !important;
+      transform: translate3d(0, 0, 0) scale(1.02) !important;
     }
-    .site-header.scrolled .logo {
-      padding: 3px 10px !important;
-    }
+
     .site-header .logo-img {
       height: 32px !important;
       width: auto !important;
@@ -254,7 +320,23 @@
       transition: height 0.25s ease !important;
     }
     .site-header.scrolled .logo-img {
-      height: 27px !important;
+      height: 30px !important;
+    }
+    @media (max-width: 768px) {
+      .site-header:not(.scrolled) .logo,
+      .site-header:not(.scrolled) .site-main-logo {
+        --logo-fly-x: -12px;
+        --logo-fly-y: -8px;
+        --logo-fly-scale: 1.25;
+        padding: 5px 12px !important;
+      }
+      .site-header.scrolled .logo-img {
+        height: 26px !important;
+      }
+      .site-header.scrolled .logo,
+      .site-header.scrolled .site-main-logo {
+        padding: 3px 9px !important;
+      }
     }
     .mobile-drawer-header .logo {
       display: inline-flex !important;
@@ -1919,16 +2001,62 @@
     }
   </style>
   <script>
-    window.addEventListener('scroll', function() {
-      var header = document.querySelector('.site-header');
-      if (header) {
-        if (window.scrollY > 20) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
+    (function() {
+      function updateLogoCoords() {
+        var header = document.querySelector('.site-header');
+        var logo = document.getElementById('site-logo');
+        if (!header || !logo) return;
+        var inner = header.querySelector('.header-inner');
+        if (!inner) return;
+
+        var isMobile = window.innerWidth <= 768;
+        var targetLeft = isMobile ? 16 : 28;
+        var ann = document.querySelector('.announcement-banner');
+        var annOffset = (ann && window.scrollY < ann.offsetHeight) ? (ann.offsetHeight - window.scrollY) : 0;
+        var targetTop = (isMobile ? 14 : 16) + annOffset;
+        var targetScale = isMobile ? 1.25 : 1.38;
+
+        var innerRect = inner.getBoundingClientRect();
+        var innerPaddingLeft = isMobile ? 14 : 20;
+        var dockX = innerRect.left + innerPaddingLeft;
+        var dockY = innerRect.top + ((innerRect.height - 40) / 2);
+
+        var deltaX = targetLeft - dockX;
+        var deltaY = targetTop - dockY;
+
+        logo.style.setProperty('--logo-fly-x', deltaX + 'px');
+        logo.style.setProperty('--logo-fly-y', deltaY + 'px');
+        logo.style.setProperty('--logo-fly-scale', targetScale);
+      }
+
+      function handleScroll() {
+        var header = document.querySelector('.site-header');
+        if (header) {
+          if (window.scrollY > 25) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
         }
       }
-    }, { passive: true });
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', function() {
+        updateLogoCoords();
+        handleScroll();
+      }, { passive: true });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          updateLogoCoords();
+          handleScroll();
+        });
+      } else {
+        updateLogoCoords();
+        handleScroll();
+      }
+      window.addEventListener('load', updateLogoCoords);
+    })();
   </script>
 </head>
 <body>
@@ -1937,13 +2065,15 @@
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a href="../../" class="logo" aria-label="HelloBotz Home">
-        <img src="/assets/images/logo.png" alt="HelloBotz" class="logo-img" width="168" height="42" onerror="this.onerror=null;this.src='../../assets/images/logo.png';">
-        <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-          <img src="../../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="HelloBotz">
-          <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
-        </span>
-      </a>
+      <div class="logo-dock-wrapper" id="logo-dock-wrapper">
+        <a href="../../" class="logo site-main-logo" id="site-logo" aria-label="HelloBotz Home">
+          <img src="/assets/images/logo.png" alt="HelloBotz" class="logo-img" width="168" height="42" onerror="this.onerror=null;this.src='../../assets/images/logo.png';">
+          <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
+            <img src="../../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="HelloBotz">
+            <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
+          </span>
+        </a>
+      </div>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
 
         <!-- PRODUCTS MEGAMENU (HelloBotz Suite) -->
@@ -2595,7 +2725,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, is the Classic Leather Jacket in size M available at your Phoenix Mall store?</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:32 PM</span>
+                        <span class="time">01:56 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2608,20 +2738,20 @@ Would you like us to reserve it, or have it delivered to your home today?</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Deliver to Home Now" style="text-align:left;width:fit-content;">Deliver to Home Now &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:33 PM</span>
+                        <span class="time">01:57 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Hold at Store (24 Hours)</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:34 PM</span>
+                        <span class="time">01:58 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>✓ Reserved! Your reservation pass #PHX-482 is active until tomorrow 8 PM. Store associate Meena will assist you at the billing desk.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:35 PM</span>
+                        <span class="time">01:59 PM</span>
                                               </div>
                     </div>
                   
@@ -2834,10 +2964,10 @@ Would you like us to reserve it, or have it delivered to your home today?</span>
                                           <div class="ind-msg-btn">Reserve Size M</div>
                                           <div class="ind-msg-btn">Check Nearby Stores</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">01:59 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Reserve Size M                  <span class="msg-time">01:35 PM</span>
+                  Reserve Size M                  <span class="msg-time">01:59 PM</span>
                 </div>
                           </div>
           </div>
@@ -2889,10 +3019,10 @@ Would you like us to reserve it, or have it delivered to your home today?</span>
                                           <div class="ind-msg-btn">Redeem ₹850 Now</div>
                                           <div class="ind-msg-btn">Save for Later</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">01:59 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Redeem ₹850 Now                  <span class="msg-time">01:35 PM</span>
+                  Redeem ₹850 Now                  <span class="msg-time">01:59 PM</span>
                 </div>
                           </div>
           </div>
@@ -2944,10 +3074,10 @@ Would you like us to reserve it, or have it delivered to your home today?</span>
                                           <div class="ind-msg-btn">View Styling Video</div>
                                           <div class="ind-msg-btn">Order for Home Trial</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">01:59 PM</span>
               </div>
                               <div class="ind-msg user">
-                  View Styling Video                  <span class="msg-time">01:35 PM</span>
+                  View Styling Video                  <span class="msg-time">01:59 PM</span>
                 </div>
                           </div>
           </div>
@@ -2999,10 +3129,10 @@ Would you like us to reserve it, or have it delivered to your home today?</span>
                                           <div class="ind-msg-btn">View Nearest Store</div>
                                           <div class="ind-msg-btn">Shop Online Instead</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">01:59 PM</span>
               </div>
                               <div class="ind-msg user">
-                  View Nearest Store                  <span class="msg-time">01:35 PM</span>
+                  View Nearest Store                  <span class="msg-time">01:59 PM</span>
                 </div>
                           </div>
           </div>

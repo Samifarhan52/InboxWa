@@ -32,20 +32,50 @@
     };
   }
 
-  /* ---------- Sticky Header ---------- */
+  /* ---------- Sticky Header & Dynamic Flying Logo ---------- */
   function initHeader() {
     const header = $('.site-header');
     if (!header) return;
+    const logo = $('#site-logo');
+    const inner = header.querySelector('.header-inner');
+
+    function updateLogoCoords() {
+      if (!logo || !inner) return;
+      const isMobile = window.innerWidth <= 768;
+      const targetLeft = isMobile ? 16 : 28;
+      const ann = document.querySelector('.announcement-banner');
+      const annOffset = (ann && window.scrollY < ann.offsetHeight) ? (ann.offsetHeight - window.scrollY) : 0;
+      const targetTop = (isMobile ? 14 : 16) + annOffset;
+      const targetScale = isMobile ? 1.25 : 1.38;
+
+      const innerRect = inner.getBoundingClientRect();
+      const innerPaddingLeft = isMobile ? 14 : 20;
+      const dockX = innerRect.left + innerPaddingLeft;
+      const dockY = innerRect.top + ((innerRect.height - 40) / 2);
+
+      const deltaX = targetLeft - dockX;
+      const deltaY = targetTop - dockY;
+
+      logo.style.setProperty('--logo-fly-x', deltaX + 'px');
+      logo.style.setProperty('--logo-fly-y', deltaY + 'px');
+      logo.style.setProperty('--logo-fly-scale', targetScale);
+    }
 
     const onScroll = throttle(() => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 25) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-    }, 50);
+    }, 30);
 
     on(window, 'scroll', onScroll, { passive: true });
+    on(window, 'resize', () => {
+      updateLogoCoords();
+      onScroll();
+    }, { passive: true });
+
+    updateLogoCoords();
     onScroll();
   }
 
