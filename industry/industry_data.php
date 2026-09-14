@@ -826,7 +826,7 @@ return [
     'name' => 'Construction & Real Estate',
     'nav_name' => 'Construction & Real Estate',
     'tagline' => 'Accelerate Property Inquiries, Site Visits & Buyer Conversations',
-    'meta_desc' => 'Construction & Real Estate Transform Client Engagement with HelloBotz HelloBotz provides advanced tools to revolutionize client communication and marketing in the construction and real estate sectors. Simplify processes, enhance interactions, and increase conversions effortlessly. Try it for free Explore Now Trusted by the world’s most ambitious teams. KEY FEATURES Client Communication and Scale property sales with Real Estate Messaging Solutions. HelloBotz offers WhatsApp API, Bulk SMS, and AI chatbots for lead tracking and site visit alerts.',
+    'meta_desc' => 'Construction & Real Estate Transform Client Engagement with HelloBotz. HelloBotz provides advanced tools to revolutionize client communication and marketing in the construction and real estate sectors. Simplify processes, enhance interactions, and increase conversions effortlessly. Scale property sales with Real Estate Messaging Solutions, WhatsApp API, Bulk SMS, and AI chatbots for lead tracking and site visit alerts.',
     'hero_title' => 'Transform Client Engagement with HelloBotz',
     'hero_lead' => 'We understand the unique challenges of the construction and real estate sectors, ensuring that our solutions are tailored to meet your specific needs.',
     'hero_image' => '/assets/images/industry/construction-and-real-estate/hero.png',
