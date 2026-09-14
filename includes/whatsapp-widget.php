@@ -11,7 +11,7 @@ $waWidgetSalesMail = cms_setting('sales_email', 'mail@hellobotz.com');
 $waWidgetSupportMail = cms_setting('support_email', 'support@hellobotz.com');
 ?>
 <!-- HELLOBOTZ INTERACTIVE ROBOT CHATBOT WIDGET -->
-<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
+<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=5">
 
 <div class="hellobotz-robot-widget wa-widget" id="hellobotz-robot-widget">
   

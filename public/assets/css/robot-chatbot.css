@@ -179,13 +179,16 @@
 }
 
 /* When Widget is OPEN */
-.hellobotz-robot-widget .hellobotz-character {
+.hellobotz-robot-widget.is-open .hellobotz-character,
+.hellobotz-robot-widget.open .hellobotz-character {
   display: none !important;
 }
-.hellobotz-robot-widget .hellobotz-close-circle {
+.hellobotz-robot-widget.is-open .hellobotz-close-circle,
+.hellobotz-robot-widget.open .hellobotz-close-circle {
   display: flex !important;
 }
-.hellobotz-robot-widget .hellobotz-speech-bubble {
+.hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
+.hellobotz-robot-widget.open .hellobotz-speech-bubble {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
@@ -249,19 +252,21 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
   transform: translateY(16px) scale(0.95);
   transform-origin: bottom right;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 10000;
 }
 
-.hellobotz-robot-widget .hellobotz-chatbox,
-.hellobotz-robot-widget .hellobotz-chatbox {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
+.hellobotz-robot-widget.is-open .hellobotz-chatbox,
+.hellobotz-robot-widget.open .hellobotz-chatbox {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
 }
 
 /* Header */

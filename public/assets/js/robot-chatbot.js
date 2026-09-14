@@ -425,17 +425,21 @@
     startBlinking();
     resetIdleTimer();
 
+    // Ensure widget is closed on initial load
+    widget.classList.remove('is-open', 'open');
+
     // -------------------------------------------------------------
     // CHATBOX OPEN / CLOSE CONTROLS
     // -------------------------------------------------------------
     function toggleWidget(force) {
-      var shouldOpen = typeof force === 'boolean' ? force : (!widget.classList.contains('is-open') && !widget.classList.contains('open'));
+      var isOpen = widget.classList.contains('is-open') || widget.classList.contains('open');
+      var shouldOpen = typeof force === 'boolean' ? force : !isOpen;
       if (shouldOpen) {
         setEmotion('excited');
         widget.classList.add('is-open');
         widget.classList.add('open');
         setTimeout(function () {
-          chatInput.focus();
+          if (chatInput) chatInput.focus();
           scrollToBottom();
         }, 100);
       } else {
@@ -462,15 +466,6 @@
       });
     }
 
-    var closeCircle = widget.querySelector('.hellobotz-close-circle');
-    if (closeCircle) {
-      closeCircle.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleWidget(false);
-      });
-    }
-
     if (speechBubble) {
       speechBubble.addEventListener('click', function (e) {
         e.preventDefault();
@@ -479,23 +474,26 @@
       });
     }
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function (e) {
+    // All close buttons (header X and floating close circle)
+    var closeButtons = widget.querySelectorAll('.header-close-btn, .hellobotz-close-circle');
+    closeButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
         e.stopPropagation();
         toggleWidget(false);
       });
-    }
+    });
 
     // Outside click closes chatbox
     document.addEventListener('click', function (e) {
-      if (widget.classList.contains('is-open') && !widget.contains(e.target)) {
+      if ((widget.classList.contains('is-open') || widget.classList.contains('open')) && !widget.contains(e.target)) {
         toggleWidget(false);
       }
     });
 
     // ESC closes chatbox
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && widget.classList.contains('is-open')) {
+      if (e.key === 'Escape' && (widget.classList.contains('is-open') || widget.classList.contains('open'))) {
         toggleWidget(false);
       }
     });
