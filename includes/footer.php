@@ -168,6 +168,7 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nHe
   <?php include __DIR__ . '/demo-popup.php'; ?>
   <?php include __DIR__ . '/callback-popup.php'; ?>
   <?php include __DIR__ . '/offer-popup.php'; ?>
+  <?php include __DIR__ . '/trial-popup.php'; ?>
   <!-- Google Website Translator Integration -->
   <div id="google_translate_element" style="display:none !important;" aria-hidden="true"></div>
   <script type="text/javascript">
