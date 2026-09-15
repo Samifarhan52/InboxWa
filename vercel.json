@@ -10,5 +10,17 @@
       "source": "/api/lead/",
       "destination": "/api/lead"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/partners/reseller",
+      "destination": "/partners/white-label/",
+      "permanent": true
+    },
+    {
+      "source": "/partners/reseller/",
+      "destination": "/partners/white-label/",
+      "permanent": true
+    }
   ]
 }

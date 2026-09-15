@@ -213,7 +213,7 @@
 /* 3. PARTNERSHIP MODELS */
 .prt-plans {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
   align-items: stretch;
@@ -796,3 +796,173 @@
   }
 }
 
+/* SUB-NAV PILL BAR */
+.prt-subnav-bar {
+  background: #0B1120;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 0;
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.prt-subnav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.2rem 0.5rem;
+}
+.prt-subnav-inner::-webkit-scrollbar { display: none; }
+.prt-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94A3B8;
+  text-decoration: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.prt-subnav-link:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+.prt-subnav-link.active {
+  color: #FFFFFF;
+  background: rgba(139, 92, 246, 0.25);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+/* CALCULATOR CARD */
+.prt-calc-card {
+  background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  color: #FFFFFF;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.4);
+  margin: 2rem auto;
+  max-width: 860px;
+}
+.prt-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.prt-calc-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.prt-calc-box .num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #38BDF8;
+  margin: 0.25rem 0;
+}
+.prt-calc-box .label {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* CODE PREVIEW CARD */
+.prt-code-card {
+  background: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #E2E8F0;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* ON-PAGE LEAD FORM */
+.prt-form-wrap {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  max-width: 680px;
+  margin: 2.5rem auto 0;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08);
+}
+.prt-form-wrap h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.prt-form-wrap p {
+  color: #64748B;
+  font-size: 0.92rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+.prt-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.prt-form-grid .full {
+  grid-column: 1 / -1;
+}
+.prt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+.prt-field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+}
+.prt-field input,
+.prt-field select,
+.prt-field textarea {
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.92rem;
+  color: #0F172A;
+  background: #F8FAFC;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.prt-field input:focus,
+.prt-field select:focus,
+.prt-field textarea:focus {
+  border-color: #7C3AED;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+@media (max-width: 640px) {
+  .prt-calc-grid {
+    grid-template-columns: 1fr;
+  }
+  .prt-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .prt-subnav-bar {
+    top: 58px;
+  }
+}

@@ -88,7 +88,10 @@ include __DIR__ . '/../includes/header.php';
           <li>Sales &amp; marketing resources</li>
           <li>Agency support</li>
         </ul>
-        <button type="button" class="btn btn-primary prt-plan-cta btn-demo-open">Become an Agency Partner</button>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto">
+          <a href="/partners/agency/" class="btn btn-primary prt-plan-cta" style="text-align:center">Explore Agency &rarr;</a>
+          <button type="button" class="btn btn-outline prt-plan-cta btn-demo-open" style="text-align:center;border-color:#8B5CF6;color:#8B5CF6">Become an Agency Partner</button>
+        </div>
       </article>
       <article class="prt-plan prt-plan-featured reveal" data-plan="whitelabel">
         <div class="prt-plan-badge prt-badge-premium">Best for SaaS Businesses</div>
@@ -438,6 +441,35 @@ include __DIR__ . '/../includes/header.php';
 }
 </script>
 
+
+<!-- PARTNER SUB-NAVIGATION -->
+<nav class="prt-subnav-bar" aria-label="Partner Program Sub-navigation">
+  <div class="container">
+    <div class="prt-subnav-inner">
+      <a href="/partners/" class="prt-subnav-link active">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        All Programs
+      </a>
+      <a href="/partners/affiliate/" class="prt-subnav-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Affiliate Partner (20%)
+      </a>
+      <a href="/partners/agency/" class="prt-subnav-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Agency Partner (40%)
+      </a>
+      <a href="/partners/white-label/" class="prt-subnav-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        White Label Partner (50%)
+      </a>
+      <a href="/partners/technology/" class="prt-subnav-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+        Technology Partner
+      </a>
+    </div>
+  </div>
+</nav>
+
 <!-- 1. HERO SECTION -->
 <section class="prt-hero" aria-label="Partner Program Hero">
   <div class="prt-hero-bg" aria-hidden="true"></div>
@@ -543,7 +575,10 @@ include __DIR__ . '/../includes/header.php';
           <li>Prompt monthly payouts via Bank Transfer / Stripe</li>
           <li>Zero setup fee &amp; no technical skills needed</li>
         </ul>
-        <button type="button" class="btn btn-primary prt-plan-cta btn-demo-open">Become an Affiliate</button>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto">
+          <a href="/partners/affiliate/" class="btn btn-primary prt-plan-cta" style="text-align:center">Explore Affiliate &rarr;</a>
+          <button type="button" class="btn btn-outline prt-plan-cta btn-demo-open" style="text-align:center;border-color:#8B5CF6;color:#8B5CF6">Become an Affiliate</button>
+        </div>
       </article>
 
       <!-- 2. Agency Partner -->
@@ -561,7 +596,10 @@ include __DIR__ . '/../includes/header.php';
           <li>Broadcast campaign &amp; template manager</li>
           <li>Dedicated agency account manager &amp; training</li>
         </ul>
-        <button type="button" class="btn btn-primary prt-plan-cta btn-demo-open">Become an Agency Partner</button>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto">
+          <a href="/partners/agency/" class="btn btn-primary prt-plan-cta" style="text-align:center">Explore Agency &rarr;</a>
+          <button type="button" class="btn btn-outline prt-plan-cta btn-demo-open" style="text-align:center;border-color:#8B5CF6;color:#8B5CF6">Become an Agency Partner</button>
+        </div>
       </article>
 
       <!-- 3. White Label Reseller (Featured) -->
@@ -580,7 +618,31 @@ include __DIR__ . '/../includes/header.php';
           <li>White-label developer APIs &amp; webhook documentation</li>
           <li>Priority 24/7 technical support &amp; SLA guarantee</li>
         </ul>
-        <button type="button" class="btn btn-primary prt-plan-cta btn-demo-open">Launch White Label Panel</button>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto">
+          <a href="/partners/white-label/" class="btn btn-primary prt-plan-cta" style="text-align:center">Explore White Label &rarr;</a>
+          <button type="button" class="btn btn-outline prt-plan-cta btn-demo-open" style="text-align:center;border-color:#8B5CF6;color:#8B5CF6">Launch White Label Panel</button>
+        </div>
+      </article>
+
+      <!-- 4. Technology & ISV Partner -->
+      <article class="prt-plan reveal" data-plan="technology">
+        <div class="prt-plan-badge" style="background:#FCE7F3;color:#BE185D;border-color:#FBCFE8">ISVs &amp; Developers</div>
+        <h3>Technology Partner</h3>
+        <p class="prt-plan-tagline">Build Integrations on HelloBotz APIs</p>
+        <div class="prt-plan-commission">API <span>&amp; App Marketplace Co-Sell</span></div>
+        <p class="prt-plan-desc">Connect your CRM, e-commerce, or SaaS platform with official WhatsApp Business API via high-throughput REST APIs and webhooks.</p>
+        <ul class="prt-plan-features">
+          <li>Developer sandbox with simulated test events</li>
+          <li>High-throughput REST API (1,000+ msg/sec)</li>
+          <li>Real-time bidirectional webhook listeners</li>
+          <li>Two-way CRM, ERP &amp; E-commerce sync</li>
+          <li>Listed in HelloBotz App Marketplace</li>
+          <li>Dedicated developer support on Slack / Discord</li>
+        </ul>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto">
+          <a href="/partners/technology/" class="btn btn-primary prt-plan-cta" style="text-align:center">Explore Tech Program &rarr;</a>
+          <button type="button" class="btn btn-outline prt-plan-cta btn-demo-open" style="text-align:center;border-color:#8B5CF6;color:#8B5CF6">Request Sandbox Access</button>
+        </div>
       </article>
     </div>
   </div>
