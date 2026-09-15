@@ -36,6 +36,43 @@ module.exports = async (req, res) => {
       date: new Date().toISOString()
     }));
 
+    // Forward to Google Sheet Webhook if configured
+    let sheetWebhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || '';
+    if (!sheetWebhookUrl) {
+      try {
+        const fs = require('fs');
+        const path = require('path');
+        const cfgPath = path.join(process.cwd(), 'config', 'leads-webhook.json');
+        if (fs.existsSync(cfgPath)) {
+          const cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf8'));
+          sheetWebhookUrl = cfg.google_sheet_webhook_url || '';
+        }
+      } catch (e) {}
+    }
+
+    if (sheetWebhookUrl && sheetWebhookUrl.startsWith('http')) {
+      try {
+        const payload = {
+          timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          type: data.type || 'General Lead',
+          name: name,
+          phone: phone,
+          email: email,
+          business: data.business || data.company || '',
+          product: data.product || data.use_case || '',
+          requirement: data.requirement || data.message || '',
+          source_page: data.source_page || ''
+        };
+        await fetch(sheetWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (sheetErr) {
+        console.error('Google Sheet Webhook Forwarding Error:', sheetErr);
+      }
+    }
+
     res.status(200).json({ ok: true, id: Date.now(), message: 'Lead recorded successfully' });
   } catch (err) {
     console.error('Lead error:', err);
