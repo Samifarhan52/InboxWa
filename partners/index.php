@@ -7,6 +7,33 @@ include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/partners.css?v=2">
 
+
+<!-- PARTNER PROGRAM NAVIGATION TABS -->
+<div class="container" style="padding-top:1.5rem;">
+  <nav class="prt-tabs-nav" aria-label="Partner Programs Navigation">
+    <a href="/partners/" class="prt-tab-btn active">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      All Programs
+    </a>
+    <a href="/partners/affiliate/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Affiliate Partner (20%)
+    </a>
+    <a href="/partners/agency/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Agency Partner (40%)
+    </a>
+    <a href="/partners/white-label/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      White Label Partner (50%)
+    </a>
+    <a href="/partners/technology/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+      Technology Partner
+    </a>
+  </nav>
+</div>
+
 <section class="prt-hero" aria-label="Partner Program Hero">
   <div class="prt-hero-bg" aria-hidden="true"></div>
   <div class="prt-orb prt-orb-1" aria-hidden="true"></div>
@@ -23,7 +50,7 @@ include __DIR__ . '/../includes/header.php';
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             Download Brochure
           </a>
-          <a href="#plans" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">View Partner Plans</a>
+          <a href="#plans" class="btn btn-outline btn-lg" >View Partner Plans</a>
         </div>
       </div>
       <div class="prt-hero-visual" aria-hidden="true">
@@ -442,35 +469,34 @@ include __DIR__ . '/../includes/header.php';
 </script>
 
 
-<!-- PARTNER SUB-NAVIGATION -->
-<nav class="prt-subnav-bar" aria-label="Partner Program Sub-navigation">
-  <div class="container">
-    <div class="prt-subnav-inner">
-      <a href="/partners/" class="prt-subnav-link active">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        All Programs
-      </a>
-      <a href="/partners/affiliate/" class="prt-subnav-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Affiliate Partner (20%)
-      </a>
-      <a href="/partners/agency/" class="prt-subnav-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Agency Partner (40%)
-      </a>
-      <a href="/partners/white-label/" class="prt-subnav-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        White Label Partner (50%)
-      </a>
-      <a href="/partners/technology/" class="prt-subnav-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-        Technology Partner
-      </a>
-    </div>
-  </div>
-</nav>
-
 <!-- 1. HERO SECTION -->
+
+<!-- PARTNER PROGRAM NAVIGATION TABS -->
+<div class="container" style="padding-top:1.5rem;">
+  <nav class="prt-tabs-nav" aria-label="Partner Programs Navigation">
+    <a href="/partners/" class="prt-tab-btn active">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      All Programs
+    </a>
+    <a href="/partners/affiliate/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Affiliate Partner (20%)
+    </a>
+    <a href="/partners/agency/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Agency Partner (40%)
+    </a>
+    <a href="/partners/white-label/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      White Label Partner (50%)
+    </a>
+    <a href="/partners/technology/" class="prt-tab-btn ">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+      Technology Partner
+    </a>
+  </nav>
+</div>
+
 <section class="prt-hero" aria-label="Partner Program Hero">
   <div class="prt-hero-bg" aria-hidden="true"></div>
   <div class="prt-orb prt-orb-1" aria-hidden="true"></div>
@@ -490,7 +516,7 @@ include __DIR__ . '/../includes/header.php';
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             Download Brochure
           </a>
-          <a href="#plans" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.45);color:#fff;background:transparent">View Partner Plans</a>
+          <a href="#plans" class="btn btn-outline btn-lg" >View Partner Plans</a>
         </div>
         <div class="prt-hero-trust">
           <span class="prt-hero-trust-item">
