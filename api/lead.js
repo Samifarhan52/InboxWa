@@ -66,7 +66,8 @@ module.exports = async (req, res) => {
         await fetch(sheetWebhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          redirect: 'follow'
         });
       } catch (sheetErr) {
         console.error('Google Sheet Webhook Forwarding Error:', sheetErr);
