@@ -1525,6 +1525,11 @@ include __DIR__ . '/includes/header.php';
       box-sizing: border-box !important;
       margin-bottom: 1rem !important;
     }
+    .cw-rotator-wrap {
+      max-width: 100% !important;
+      overflow: hidden !important;
+      vertical-align: bottom !important;
+    }
     .cw-hero-desc {
       font-size: 0.95rem !important;
       line-height: 1.55 !important;

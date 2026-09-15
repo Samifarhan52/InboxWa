@@ -20,6 +20,10 @@ $isCountry = ($loc['type'] ?? 'city') === 'country';
 $displayName = $loc['city'];
 $label = $isCountry ? $displayName : $displayName;
 
+// Dynamic Geo SEO for this specific location
+$geoRegion = $loc['country_code'] ?? ($loc['country'] === 'India' ? 'IN' : ($loc['country'] === 'United Arab Emirates' ? 'AE' : 'GLOBAL'));
+$geoPlacename = ($isCountry ? $loc['country'] : ($loc['city'] . ', ' . $loc['country']));
+
 include __DIR__ . '/header.php';
 ?>
 

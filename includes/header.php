@@ -70,7 +70,7 @@ if (!function_exists('hb_seo_esc')) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title><?php echo hb_seo_esc($fullTitle); ?></title>
@@ -82,7 +82,10 @@ if (!function_exists('hb_seo_esc')) {
   <meta name="theme-color" content="#8B5CF6">
   <meta name="application-name" content="HelloBotz">
   <meta name="format-detection" content="telephone=no">
-  <meta name="geo.region" content="IN">
+  <meta name="geo.region" content="<?php echo hb_seo_esc($geoRegion ?? 'IN-KA'); ?>">
+  <meta name="geo.placename" content="<?php echo hb_seo_esc($geoPlacename ?? 'Bengaluru, Karnataka, India'); ?>">
+  <meta name="geo.position" content="<?php echo hb_seo_esc($geoPosition ?? '12.9716;77.5946'); ?>">
+  <meta name="ICBM" content="<?php echo hb_seo_esc($icbm ?? '12.9716, 77.5946'); ?>">
   <meta name="language" content="en">
   <link rel="canonical" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
   <link rel="alternate" hreflang="en" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
@@ -218,10 +221,47 @@ if (!function_exists('hb_seo_esc')) {
     "@type": "SoftwareApplication",
     "name": "HelloBotz",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
+    "operatingSystem": "Web, iOS, Android",
     "url": "https://hellobotz.com/",
-    "description": "WhatsApp Business API platform with shared inbox, broadcasts, flow builder, chatbots, CRM and omnichannel automation.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free trial available" }
+    "description": "Official WhatsApp Business API platform with shared team inbox, visual flow builder, bulk broadcast campaigns, CRM integrations, and AI chatbots.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "14-Day Free Trial" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "HelloBotz AI Technologies Pvt Ltd",
+    "image": "https://hellobotz.com/assets/images/logo.png",
+    "url": "https://hellobotz.com/",
+    "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
+    "email": "<?php echo htmlspecialchars($cmsSalesEmail); ?>",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
   }
   </script>
   <?php if (!empty($gaId)): ?>

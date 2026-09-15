@@ -218,12 +218,30 @@
   max-width: 420px;
   margin: 0 auto;
 }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .trial-popup-card {
-    padding: 1.4rem 1.1rem !important;
+    padding: 1.25rem 1rem !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 96% !important;
+    max-width: min(480px, calc(100vw - 1.25rem)) !important;
+    margin: auto !important;
+    border-radius: 16px !important;
+  }
+  .trial-popup-card .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+  .trial-heading {
+    font-size: 1.35rem !important;
+  }
+  .trial-lead {
+    font-size: 0.82rem !important;
   }
   .trial-trust-footer {
-    gap: 10px;
+    gap: 8px !important;
+    font-size: 0.72rem !important;
   }
 }
 </style>

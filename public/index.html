@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>HelloBotz – WhatsApp Marketing &amp; Automation Platform</title>
@@ -14,7 +14,10 @@
   <meta name="theme-color" content="#8B5CF6">
   <meta name="application-name" content="HelloBotz">
   <meta name="format-detection" content="telephone=no">
-  <meta name="geo.region" content="IN">
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Bengaluru, Karnataka, India">
+  <meta name="geo.position" content="12.9716;77.5946">
+  <meta name="ICBM" content="12.9716, 77.5946">
   <meta name="language" content="en">
   <link rel="canonical" href="https://hellobotz.com/">
   <link rel="alternate" hreflang="en" href="https://hellobotz.com/">
@@ -8226,12 +8229,30 @@ function switchModalMedia(type, btn) {
   max-width: 420px;
   margin: 0 auto;
 }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .trial-popup-card {
-    padding: 1.4rem 1.1rem !important;
+    padding: 1.25rem 1rem !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 96% !important;
+    max-width: min(480px, calc(100vw - 1.25rem)) !important;
+    margin: auto !important;
+    border-radius: 16px !important;
+  }
+  .trial-popup-card .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+  .trial-heading {
+    font-size: 1.35rem !important;
+  }
+  .trial-lead {
+    font-size: 0.82rem !important;
   }
   .trial-trust-footer {
-    gap: 10px;
+    gap: 8px !important;
+    font-size: 0.72rem !important;
   }
 }
 </style>
