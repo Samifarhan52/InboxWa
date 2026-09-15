@@ -742,23 +742,26 @@
 }
 
 /* Mobile responsive */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .hellobotz-speech-bubble {
+    display: none !important;
+  }
   .hellobotz-robot-widget {
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 1rem !important;
+    right: 0.85rem !important;
   }
   .hellobotz-trigger {
-    width: 68px;
-    height: 68px;
+    width: 56px !important;
+    height: 56px !important;
   }
   .hellobotz-svg {
-    width: 64px;
-    height: 64px;
+    width: 52px !important;
+    height: 52px !important;
   }
   .hellobotz-chatbox {
-    bottom: 74px;
-    right: -4px;
-    width: calc(100vw - 1.5rem);
-    height: 480px;
+    bottom: 68px !important;
+    right: -4px !important;
+    width: calc(100vw - 1.5rem) !important;
+    max-height: calc(100vh - 85px) !important;
   }
 }

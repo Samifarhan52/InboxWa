@@ -41,15 +41,21 @@
 
     function updateLogoCoords() {
       if (!logo || !inner) return;
-      const isMobile = window.innerWidth <= 768;
-      const targetLeft = isMobile ? 16 : 28;
+      const isMobile = window.innerWidth <= 1024;
+      if (isMobile) {
+        logo.style.setProperty('--logo-fly-x', '0px');
+        logo.style.setProperty('--logo-fly-y', '0px');
+        logo.style.setProperty('--logo-fly-scale', '1');
+        return;
+      }
+      const targetLeft = 28;
       const ann = document.querySelector('.announcement-banner');
       const annOffset = (ann && window.scrollY < ann.offsetHeight) ? (ann.offsetHeight - window.scrollY) : 0;
-      const targetTop = (isMobile ? 14 : 16) + annOffset;
-      const targetScale = isMobile ? 1.25 : 1.38;
+      const targetTop = 16 + annOffset;
+      const targetScale = 1.38;
 
       const innerRect = inner.getBoundingClientRect();
-      const innerPaddingLeft = isMobile ? 14 : 20;
+      const innerPaddingLeft = 20;
       const dockX = innerRect.left + innerPaddingLeft;
       const dockY = innerRect.top + ((innerRect.height - 40) / 2);
 

@@ -32,20 +32,56 @@
     };
   }
 
-  /* ---------- Sticky Header ---------- */
+  /* ---------- Sticky Header & Dynamic Flying Logo ---------- */
   function initHeader() {
     const header = $('.site-header');
     if (!header) return;
+    const logo = $('#site-logo');
+    const inner = header.querySelector('.header-inner');
+
+    function updateLogoCoords() {
+      if (!logo || !inner) return;
+      const isMobile = window.innerWidth <= 1024;
+      if (isMobile) {
+        logo.style.setProperty('--logo-fly-x', '0px');
+        logo.style.setProperty('--logo-fly-y', '0px');
+        logo.style.setProperty('--logo-fly-scale', '1');
+        return;
+      }
+      const targetLeft = 28;
+      const ann = document.querySelector('.announcement-banner');
+      const annOffset = (ann && window.scrollY < ann.offsetHeight) ? (ann.offsetHeight - window.scrollY) : 0;
+      const targetTop = 16 + annOffset;
+      const targetScale = 1.38;
+
+      const innerRect = inner.getBoundingClientRect();
+      const innerPaddingLeft = 20;
+      const dockX = innerRect.left + innerPaddingLeft;
+      const dockY = innerRect.top + ((innerRect.height - 40) / 2);
+
+      const deltaX = targetLeft - dockX;
+      const deltaY = targetTop - dockY;
+
+      logo.style.setProperty('--logo-fly-x', deltaX + 'px');
+      logo.style.setProperty('--logo-fly-y', deltaY + 'px');
+      logo.style.setProperty('--logo-fly-scale', targetScale);
+    }
 
     const onScroll = throttle(() => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 25) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-    }, 50);
+    }, 30);
 
     on(window, 'scroll', onScroll, { passive: true });
+    on(window, 'resize', () => {
+      updateLogoCoords();
+      onScroll();
+    }, { passive: true });
+
+    updateLogoCoords();
     onScroll();
   }
 
@@ -76,6 +112,7 @@
           menu.classList.contains('mega-menu-features') || 
           menu.classList.contains('mega-menu-products') || 
           menu.classList.contains('mega-menu-solutions') || 
+          menu.classList.contains('mega-menu-company') || 
           menu.classList.contains('mega-menu-panel')) {
         return;
       }
@@ -263,6 +300,8 @@
   function initWidget() {
     const widget = $('.wa-widget');
     if (!widget) return;
+    // HelloBotz Robot Chatbot has its own dedicated controller
+    if (widget.id === 'hellobotz-robot-widget') return;
 
     const btn = widget.querySelector('.wa-widget-btn');
     if (!btn) return;
@@ -407,6 +446,67 @@
   /* ---------- Footer contact form → WhatsApp ---------- */
   function initFooterContact() { /* forms.js */ }
 
+  /* ---------- Explore All Features Button → Navbar Focus ---------- */
+  function initExploreFeaturesBtn() {
+    const btns = $$('.hb-features-cta-btn, [data-open-features], #btnExploreAllFeatures');
+    if (!btns.length) return;
+
+    btns.forEach((btn) => {
+      on(btn, 'click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+
+        const isMobile = window.innerWidth < 992;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (!isMobile) {
+          const navItem = $('.nav-item-products') || $('.nav-item-features');
+          const navBtn = navItem ? navItem.querySelector('.nav-link') : null;
+          const megaMenu = navItem ? navItem.querySelector('.mega-menu') : null;
+
+          setTimeout(() => {
+            if (navItem && navBtn) {
+              if (!navItem.classList.contains('open')) {
+                navBtn.click();
+              }
+
+              navItem.classList.remove('nav-item-highlight');
+              void navItem.offsetWidth;
+              navItem.classList.add('nav-item-highlight');
+
+              if (megaMenu) {
+                megaMenu.classList.remove('mega-menu-highlight');
+                void megaMenu.offsetWidth;
+                megaMenu.classList.add('mega-menu-highlight');
+              }
+
+              setTimeout(() => {
+                navItem.classList.remove('nav-item-highlight');
+                if (megaMenu) megaMenu.classList.remove('mega-menu-highlight');
+              }, 3500);
+            }
+          }, 320);
+        } else {
+          setTimeout(() => {
+            const toggle = $('.mobile-toggle');
+            const menu = $('#mobile-menu');
+            if (toggle && menu) {
+              if (!menu.classList.contains('is-open') && !menu.classList.contains('open')) {
+                toggle.click();
+              }
+              setTimeout(() => {
+                const prodAccordion = menu.querySelector('.mobile-nav-item[data-accordion]');
+                if (prodAccordion && !prodAccordion.classList.contains('is-open') && !prodAccordion.classList.contains('open')) {
+                  const accBtn = prodAccordion.querySelector('.mobile-nav-link');
+                  if (accBtn) accBtn.click();
+                }
+              }, 200);
+            }
+          }, 300);
+        }
+      });
+    });
+  }
 
   function init() {
     initHeader();
@@ -422,6 +522,7 @@
     initCallbackPopup();
     initDemoPopup();
     initFooterContact();
+    initExploreFeaturesBtn();
   }
 
   if (document.readyState === 'loading') {

@@ -138,10 +138,47 @@
     "@type": "SoftwareApplication",
     "name": "HelloBotz",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
+    "operatingSystem": "Web, iOS, Android",
     "url": "https://hellobotz.com/",
-    "description": "WhatsApp Business API platform with shared inbox, broadcasts, flow builder, chatbots, CRM and omnichannel automation.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free trial available" }
+    "description": "Official WhatsApp Business API platform with shared team inbox, visual flow builder, bulk broadcast campaigns, CRM integrations, and AI chatbots.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "14-Day Free Trial" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "HelloBotz AI Technologies Pvt Ltd",
+    "image": "https://hellobotz.com/assets/images/logo.png",
+    "url": "https://hellobotz.com/",
+    "telephone": "+91 80508 54445",
+    "email": "mail@hellobotz.com",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
   }
   </script>
           <script>
@@ -246,14 +283,16 @@
       max-width: 0px !important;
       margin-right: 0px !important;
     }
-    @media (max-width: 991px) {
-      .site-header.scrolled .logo-dock-wrapper {
-        width: 145px !important;
-        margin-right: 8px !important;
-      }
+    @media (max-width: 1024px) {
+      .logo-dock-wrapper,
+      .site-header.scrolled .logo-dock-wrapper,
       .site-header:not(.scrolled) .logo-dock-wrapper {
-        width: 0px !important;
-        margin-right: 0px !important;
+        width: auto !important;
+        max-width: none !important;
+        margin-right: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
       }
     }
 
@@ -325,20 +364,29 @@
     .site-header.scrolled .logo-img {
       height: 30px !important;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .site-header:not(.scrolled) .logo,
-      .site-header:not(.scrolled) .site-main-logo {
-        --logo-fly-x: -12px;
-        --logo-fly-y: -8px;
-        --logo-fly-scale: 1.25;
-        padding: 5px 12px !important;
-      }
-      .site-header.scrolled .logo-img {
-        height: 26px !important;
-      }
+      .site-header:not(.scrolled) .site-main-logo,
       .site-header.scrolled .logo,
-      .site-header.scrolled .site-main-logo {
-        padding: 3px 9px !important;
+      .site-header.scrolled .site-main-logo,
+      .site-header .logo,
+      .site-header .site-main-logo {
+        transform: none !important;
+        position: static !important;
+        padding: 4px 10px !important;
+        height: 32px !important;
+        margin: 0 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        --logo-fly-x: 0px !important;
+        --logo-fly-y: 0px !important;
+        --logo-fly-scale: 1 !important;
+      }
+      .site-header .logo-img,
+      .site-header.scrolled .logo-img,
+      .site-header:not(.scrolled) .logo-img {
+        height: 22px !important;
+        max-width: 110px !important;
+        width: auto !important;
       }
     }
     .mobile-drawer-header .logo {
@@ -1855,7 +1903,7 @@
         display: none !important;
       }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .site-header {
         top: 8px !important;
         padding: 0 10px !important;
@@ -1863,7 +1911,27 @@
       .header-inner {
         height: 52px !important;
         border-radius: 999px !important;
-        padding: 0 0.85rem !important;
+        padding: 0 0.75rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .btn-header-data {
+        display: none !important;
+      }
+      .header-actions .header-login {
+        display: none !important;
+      }
+      .header-cta-start {
+        display: none !important;
+      }
+      .header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+      }
+      .mobile-toggle {
+        display: flex !important;
       }
       .lang-switch {
         display: inline-flex !important;
@@ -1875,16 +1943,6 @@
         top: calc(100% + 8px) !important;
         right: -8px !important;
         min-width: 140px !important;
-      }
-      .logo-img {
-        height: 26px !important;
-        max-width: 120px !important;
-      }
-    }
-    @media (max-width: 480px) {
-      .header-login {
-        padding: 0.28rem 0.7rem !important;
-        font-size: 0.76rem !important;
       }
     }
     @media (max-width: 991px) {
@@ -2682,6 +2740,7 @@
     overflow: hidden;
     height: 1.25em;
     line-height: 1.25;
+    margin: 0 0.28em;
     transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -4126,6 +4185,11 @@
       box-sizing: border-box !important;
       margin-bottom: 1rem !important;
     }
+    .cw-rotator-wrap {
+      max-width: 100% !important;
+      overflow: hidden !important;
+      vertical-align: bottom !important;
+    }
     .cw-hero-desc {
       font-size: 0.95rem !important;
       line-height: 1.55 !important;
@@ -4156,13 +4220,23 @@
       font-size: 0.95rem !important;
     }
     .cw-trust-row {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 0.5rem 0.6rem !important;
       width: 100% !important;
-      max-width: 100% !important;
+      max-width: 360px !important;
+      margin: 0 auto 1.5rem !important;
+      font-size: 0.76rem !important;
+      align-items: center !important;
+      justify-items: center !important;
+    }
+    .cw-trust-item {
+      display: inline-flex !important;
+      align-items: center !important;
       justify-content: center !important;
-      flex-wrap: wrap !important;
-      gap: 0.65rem 1.25rem !important;
-      font-size: 0.8rem !important;
-      margin: 0 auto !important;
+      gap: 4px !important;
+      white-space: nowrap !important;
+      font-size: 0.76rem !important;
     }
     .cw-phone-wrapper {
       width: min(315px, calc(100vw - 32px)) !important;
@@ -5161,7 +5235,8 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           Official WhatsApp Business API · Meta Tech Partner        </span>
         <h1 class="cw-hero-title">
-          WhatsApp Automation Software &amp; <span class="cw-rotator-wrap" id="cwHeroRotator" aria-live="polite"><span class="cw-rotator-item dual-color-gradient active">AI Chatbot</span><span class="cw-rotator-item dual-color-gradient">Lead Generation</span><span class="cw-rotator-item dual-color-gradient">Bulk Broadcasts</span><span class="cw-rotator-item dual-color-gradient">Sales Funnels</span><span class="cw-rotator-item dual-color-gradient">Shopify &amp; CRM Sync</span><span class="cw-rotator-item dual-color-gradient">Shared Team Inbox</span></span> for Business        </h1>
+          WhatsApp Automation Software &amp; <span class="cw-rotator-wrap" id="cwHeroRotator" aria-live="polite"><span class="cw-rotator-item dual-color-gradient active">AI Chatbot</span><span class="cw-rotator-item dual-color-gradient">Lead Generation</span><span class="cw-rotator-item dual-color-gradient">Bulk Broadcasts</span><span class="cw-rotator-item dual-color-gradient">Sales Funnels</span><span class="cw-rotator-item dual-color-gradient">Shopify &amp; CRM Sync</span><span class="cw-rotator-item dual-color-gradient">Shared Team Inbox</span></span>&nbsp;<span>for Business</span>
+        </h1>
         <p class="cw-hero-desc">
           Boost engagement, qualify leads, and provide 24/7 support with seamless, AI-powered WhatsApp conversations. Integrate instantly and scale efficiently.        </p>
         <div class="cw-hero-actions">

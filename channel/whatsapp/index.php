@@ -738,13 +738,23 @@ include __DIR__ . '/../../includes/header.php';
       font-size: 0.95rem !important;
     }
     .cw-trust-row {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 0.5rem 0.6rem !important;
       width: 100% !important;
-      max-width: 100% !important;
+      max-width: 360px !important;
+      margin: 0 auto 1.5rem !important;
+      font-size: 0.76rem !important;
+      align-items: center !important;
+      justify-items: center !important;
+    }
+    .cw-trust-item {
+      display: inline-flex !important;
+      align-items: center !important;
       justify-content: center !important;
-      flex-wrap: wrap !important;
-      gap: 0.65rem 1.25rem !important;
-      font-size: 0.8rem !important;
-      margin: 0 auto !important;
+      gap: 4px !important;
+      white-space: nowrap !important;
+      font-size: 0.76rem !important;
     }
     .cw-phone-wrapper {
       width: min(315px, calc(100vw - 32px)) !important;
