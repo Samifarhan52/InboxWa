@@ -7,7 +7,7 @@ This project is 100% prepared and optimized for deployment on **Hostinger** (Sha
 ## Architecture Overview on Hostinger
 - **Web Server**: LiteSpeed / Apache (Supported out-of-the-box).
 - **Backend**: Native PHP 8.1+ with  rewrite rules.
-- **Lead Capture**: Forms post to `/api/lead`, routed seamlessly to `api/lead.php`.
+- **Lead Capture**: Forms post to `/api/lead`, routed seamlessly to `php-api/lead.php` via `.htaccess`.
 - **Google Sheets Sync**: Real-time server-side cURL forwarding directly to your Google Sheet webhook.
 - **Offline Redundancy**: Leads and CMS settings persist to local SQLite in `secure-console-x7/data/leads.sqlite`.
 

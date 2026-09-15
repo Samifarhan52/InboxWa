@@ -6,7 +6,8 @@ RewriteEngine On
 RewriteBase /
 
 # Route API leads to native PHP handler on Apache / LiteSpeed (Hostinger)
-RewriteRule ^api/lead/?$ /api/lead.php [L,QSA]
+RewriteRule ^api/lead/?$ /php-api/lead.php [L,QSA]
+RewriteRule ^api/lead\.php/?$ /php-api/lead.php [L,QSA]
 
 # Force lowercase for known capital folders
 RewriteRule ^assets/(.*)$ /public/assets/$1 [L]
