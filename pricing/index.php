@@ -17,7 +17,7 @@ include __DIR__ . '/../includes/header.php';
         <span class="badge-dot"></span>
         HelloBotz Pricing - Simple & Transparent
       </div>
-      <h1>Powerful WhatsApp Automation <span class="gradient-text">That Scales With You</span></h1>
+      <h1>Plans Built for Every Business — <span class="gradient-text">WhatsApp Marketing Automation for All Sizes</span></h1>
       <p class="hero-subtitle">
         Start with what you need, grow as you scale. All plans include core features with no hidden charges.
         Switch between monthly or yearly billing anytime.

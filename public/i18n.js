@@ -704,4 +704,5 @@
     dict: T,
     onGoogleInit: onGoogleInit
   };
+  window.HelloBotzI18n = window.HelloBotzI18n;
 })();

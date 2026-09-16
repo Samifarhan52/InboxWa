@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>HelloBotz – WhatsApp Marketing &amp; Automation Platform</title>
@@ -14,7 +14,10 @@
   <meta name="theme-color" content="#8B5CF6">
   <meta name="application-name" content="HelloBotz">
   <meta name="format-detection" content="telephone=no">
-  <meta name="geo.region" content="IN">
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Bengaluru, Karnataka, India">
+  <meta name="geo.position" content="12.9716;77.5946">
+  <meta name="ICBM" content="12.9716, 77.5946">
   <meta name="language" content="en">
   <link rel="canonical" href="https://hellobotz.com/">
   <link rel="alternate" hreflang="en" href="https://hellobotz.com/">
@@ -49,7 +52,7 @@
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=51">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
-  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=5">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
 
     <style id="hellobotz-theme-palette">
     :root {
@@ -135,10 +138,47 @@
     "@type": "SoftwareApplication",
     "name": "HelloBotz",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
+    "operatingSystem": "Web, iOS, Android",
     "url": "https://hellobotz.com/",
-    "description": "WhatsApp Business API platform with shared inbox, broadcasts, flow builder, chatbots, CRM and omnichannel automation.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free trial available" }
+    "description": "Official WhatsApp Business API platform with shared team inbox, visual flow builder, bulk broadcast campaigns, CRM integrations, and AI chatbots.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "14-Day Free Trial" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "HelloBotz AI Technologies Pvt Ltd",
+    "image": "https://hellobotz.com/assets/images/logo.png",
+    "url": "https://hellobotz.com/",
+    "telephone": "+91 80508 54445",
+    "email": "mail@hellobotz.com",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
   }
   </script>
           <script>
@@ -243,14 +283,16 @@
       max-width: 0px !important;
       margin-right: 0px !important;
     }
-    @media (max-width: 991px) {
-      .site-header.scrolled .logo-dock-wrapper {
-        width: 145px !important;
-        margin-right: 8px !important;
-      }
+    @media (max-width: 1024px) {
+      .logo-dock-wrapper,
+      .site-header.scrolled .logo-dock-wrapper,
       .site-header:not(.scrolled) .logo-dock-wrapper {
-        width: 0px !important;
-        margin-right: 0px !important;
+        width: auto !important;
+        max-width: none !important;
+        margin-right: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
       }
     }
 
@@ -322,20 +364,29 @@
     .site-header.scrolled .logo-img {
       height: 30px !important;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .site-header:not(.scrolled) .logo,
-      .site-header:not(.scrolled) .site-main-logo {
-        --logo-fly-x: -12px;
-        --logo-fly-y: -8px;
-        --logo-fly-scale: 1.25;
-        padding: 5px 12px !important;
-      }
-      .site-header.scrolled .logo-img {
-        height: 26px !important;
-      }
+      .site-header:not(.scrolled) .site-main-logo,
       .site-header.scrolled .logo,
-      .site-header.scrolled .site-main-logo {
-        padding: 3px 9px !important;
+      .site-header.scrolled .site-main-logo,
+      .site-header .logo,
+      .site-header .site-main-logo {
+        transform: none !important;
+        position: static !important;
+        padding: 4px 10px !important;
+        height: 32px !important;
+        margin: 0 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        --logo-fly-x: 0px !important;
+        --logo-fly-y: 0px !important;
+        --logo-fly-scale: 1 !important;
+      }
+      .site-header .logo-img,
+      .site-header.scrolled .logo-img,
+      .site-header:not(.scrolled) .logo-img {
+        height: 22px !important;
+        max-width: 110px !important;
+        width: auto !important;
       }
     }
     .mobile-drawer-header .logo {
@@ -1852,7 +1903,7 @@
         display: none !important;
       }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .site-header {
         top: 8px !important;
         padding: 0 10px !important;
@@ -1860,7 +1911,27 @@
       .header-inner {
         height: 52px !important;
         border-radius: 999px !important;
-        padding: 0 0.85rem !important;
+        padding: 0 0.75rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .btn-header-data {
+        display: none !important;
+      }
+      .header-actions .header-login {
+        display: none !important;
+      }
+      .header-cta-start {
+        display: none !important;
+      }
+      .header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+      }
+      .mobile-toggle {
+        display: flex !important;
       }
       .lang-switch {
         display: inline-flex !important;
@@ -1872,16 +1943,6 @@
         top: calc(100% + 8px) !important;
         right: -8px !important;
         min-width: 140px !important;
-      }
-      .logo-img {
-        height: 26px !important;
-        max-width: 120px !important;
-      }
-    }
-    @media (max-width: 480px) {
-      .header-login {
-        padding: 0.28rem 0.7rem !important;
-        font-size: 0.76rem !important;
       }
     }
     @media (max-width: 991px) {
@@ -2658,6 +2719,7 @@
     color: #0f172a;
     letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
+    text-wrap: balance;
   }
   /* Dual Color Gradient & Dynamic Text Rotator (Matches Image 2) */
   .cw-hero-title .dual-color-gradient,
@@ -2679,6 +2741,7 @@
     overflow: hidden;
     height: 1.25em;
     line-height: 1.25;
+    margin: 0 0.28em;
     transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -4123,6 +4186,11 @@
       box-sizing: border-box !important;
       margin-bottom: 1rem !important;
     }
+    .cw-rotator-wrap {
+      max-width: 100% !important;
+      overflow: hidden !important;
+      vertical-align: bottom !important;
+    }
     .cw-hero-desc {
       font-size: 0.95rem !important;
       line-height: 1.55 !important;
@@ -4153,13 +4221,23 @@
       font-size: 0.95rem !important;
     }
     .cw-trust-row {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 0.5rem 0.6rem !important;
       width: 100% !important;
-      max-width: 100% !important;
+      max-width: 360px !important;
+      margin: 0 auto 1.5rem !important;
+      font-size: 0.76rem !important;
+      align-items: center !important;
+      justify-items: center !important;
+    }
+    .cw-trust-item {
+      display: inline-flex !important;
+      align-items: center !important;
       justify-content: center !important;
-      flex-wrap: wrap !important;
-      gap: 0.65rem 1.25rem !important;
-      font-size: 0.8rem !important;
-      margin: 0 auto !important;
+      gap: 4px !important;
+      white-space: nowrap !important;
+      font-size: 0.76rem !important;
     }
     .cw-phone-wrapper {
       width: min(315px, calc(100vw - 32px)) !important;
@@ -5158,9 +5236,11 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           Official WhatsApp Business API · Meta Tech Partner        </span>
         <h1 class="cw-hero-title">
-          WhatsApp Automation Software &amp; <span class="cw-rotator-wrap" id="cwHeroRotator" aria-live="polite"><span class="cw-rotator-item dual-color-gradient active">AI Chatbot</span><span class="cw-rotator-item dual-color-gradient">Lead Generation</span><span class="cw-rotator-item dual-color-gradient">Bulk Broadcasts</span><span class="cw-rotator-item dual-color-gradient">Sales Funnels</span><span class="cw-rotator-item dual-color-gradient">Shopify &amp; CRM Sync</span><span class="cw-rotator-item dual-color-gradient">Shared Team Inbox</span></span> for Business        </h1>
+          HelloBotz — WhatsApp Automation Software &amp; <span class="dual-color-gradient" style="white-space:nowrap;">AI Chatbot for Business</span>
+        </h1>
         <p class="cw-hero-desc">
-          Boost engagement, qualify leads, and provide 24/7 support with seamless, AI-powered WhatsApp conversations. Integrate instantly and scale efficiently.        </p>
+          A complete WhatsApp automation software and WhatsApp marketing tool with AI chatbot for business, shared inbox, and omnichannel customer engagement platform — across WhatsApp, Instagram, Facebook &amp; Telegram.
+        </p>
         <div class="cw-hero-actions">
           <a href="/auth/register" class="cw-btn-primary">
             Start Automating - It&#039;s Free            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -5360,7 +5440,7 @@
           <span class="cw-pulse-dot" style="width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;"></span>
           LIVE PLATFORM WALKTHROUGH
         </div>
-        <h2 class="cw-showcase-title">Visual Automation &amp; AI Bots, Built for WhatsApp Scale</h2>
+        <h2 class="cw-showcase-title">WhatsApp Automation Software in Action — Visual Automation &amp; AI Bots Built for Scale</h2>
         <p class="cw-showcase-subtitle">No complicated coding. Build conversational customer journeys, automate broadcasts, and route high-value leads with zero friction.</p>
       </div>
 
@@ -5619,7 +5699,7 @@
       <!-- SECTION HEADER -->
       <div class="hb-features-header reveal-item">
         <span class="hb-features-badge">BUILT FOR GROWING BUSINESSES</span>
-        <h2 class="hb-features-title">Everything You Need to Automate Customer Conversations</h2>
+        <h2 class="hb-features-title">Everything You Need — WhatsApp Automation Software with AI Chatbot for Business</h2>
         <p class="hb-features-subtitle">HelloBotz gives your team Everything you need to automate, sell, and support customers —all in ONE place.</p>
       </div>
 
@@ -5772,7 +5852,7 @@
       <div class="hiw-header reveal-item">
         <span class="hiw-badge">⚡ How It Works</span>
         <h2 class="hiw-title">Go Live in Minutes, Not Months</h2>
-        <p class="hiw-subtitle">Connect your official WhatsApp Business number and launch your first automated customer workflow in simple, no-code steps.</p>
+        <p class="hiw-subtitle">Set up your WhatsApp automation software and WhatsApp CRM software in minutes — no developer required.</p>
       </div>
 
       <div class="hiw-grid">
@@ -5823,7 +5903,7 @@
             <div class="hiw-card-body">
               <div class="hiw-step-num">02</div>
               <span class="hiw-step-tagline">BUILD YOUR BOT</span>
-              <h3 class="hiw-card-title">No-Code Chatbot &amp; Automation Builder</h3>
+              <h3 class="hiw-card-title">No-Code AI Chatbot for Business — Automation Builder</h3>
               <p class="hiw-card-desc">Design powerful WhatsApp automation flows with a visual drag-and-drop builder. Set up keyword triggers, button responses, lead capture forms, and multi-step conversation logic — no coding required.</p>
               <ul class="hiw-bullets">
                 <li>
@@ -5864,7 +5944,7 @@
             <div class="hiw-card-body">
               <div class="hiw-step-num">03</div>
               <span class="hiw-step-tagline">LAUNCH CAMPAIGNS</span>
-              <h3 class="hiw-card-title">Broadcast Campaigns That Actually Convert</h3>
+              <h3 class="hiw-card-title">WhatsApp Broadcast Campaign Tool — Campaigns That Actually Convert</h3>
               <p class="hiw-card-desc">Send highly targeted WhatsApp campaigns to segmented audiences. Schedule messages, personalize with variables, and track real-time delivery, open, and reply rates from a single dashboard.</p>
               <ul class="hiw-bullets">
                 <li>
@@ -5946,7 +6026,7 @@
             <div class="hiw-card-body">
               <div class="hiw-step-num">05</div>
               <span class="hiw-step-tagline">DEVELOPERS</span>
-              <h3 class="hiw-card-title">Powerful REST API for Custom Integrations</h3>
+              <h3 class="hiw-card-title">Powerful WhatsApp Business API for Custom Integrations</h3>
               <p class="hiw-card-desc">Integrate WhatsApp messaging into your CRM, ERP, or custom application with a clean, well-documented REST API. Trigger messages, manage contacts, and build fully custom workflows.</p>
               <ul class="hiw-bullets">
                 <li>
@@ -6686,8 +6766,8 @@
     <div class="stories-container" style="margin-top: 3.5rem;">
       <div class="stories-bottom-card reveal-item">
         <div class="stories-bottom-content">
-          <h3>Ready to Scale Your Customer Conversations?</h3>
-          <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with HelloBotz.</p>
+          <h3>Start Growing Your Business with Hellobotz's WhatsApp, Instagram, Facebook &amp; Telegram Automation</h3>
+          <p>Join 500+ businesses delivering standout customer experiences across WhatsApp, Instagram, Facebook &amp; Telegram with HelloBotz.</p>
         </div>
         <div class="stories-bottom-actions">
           <a href="/auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
@@ -7565,7 +7645,7 @@ function switchModalMedia(type, btn) {
       <div class="footer-contact-grid">
         <div>
           <div class="footer-contact-heading" data-i18n="contact_title">Get in touch</div>
-          <p style="margin:0 0 1rem;max-width:28rem">Talk to our team about Official WhatsApp Business API, automation and omnichannel setup for your business.</p>
+                    <p style="margin:0 0 1rem;max-width:28rem">Talk to our team about HelloBotz&#039;s WhatsApp, Instagram, Facebook &amp; Telegram automation, and omnichannel setup for your business.</p>
           <div class="footer-address">
             <div class="footer-address-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -8006,6 +8086,349 @@ function switchModalMedia(type, btn) {
     </div>
   </div>
 </div>
+  <!-- =========================================================================
+     FREE TRIAL LEAD GENERATION POPUP MODAL (Triggered by "Start Free" buttons)
+     ========================================================================= -->
+<div class="popup-overlay" id="trial-popup" role="dialog" aria-modal="true" aria-labelledby="trial-title" hidden>
+  <div class="popup-backdrop" data-close-trial onclick="closeTrialModal()"></div>
+  <div class="popup-card trial-popup-card">
+    <button type="button" class="popup-close" data-close-trial onclick="closeTrialModal()" aria-label="Close">&times;</button>
+    
+    <div class="trial-modal-header">
+      <div class="trial-badge">
+        <span class="trial-sparkle">✨</span>
+        <span>14-DAY FREE TRIAL • NO CARD REQUIRED</span>
+      </div>
+      <div id="trial-title" class="modal-title trial-heading">Start Your Free Trial</div>
+      <p class="popup-lead trial-lead">
+        Get instant access to Official WhatsApp Business API, visual flow builder &amp; shared team inbox in under 2 minutes.
+      </p>
+    </div>
+
+    <form id="trial-form" action="javascript:void(0)" method="post" novalidate onsubmit="handleTrialSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="trial-name">Full Name *</label>
+          <input type="text" class="form-input" id="trial-name" name="name" required autocomplete="name" placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="trial-company">Business Name *</label>
+          <input type="text" class="form-input" id="trial-company" name="company" required autocomplete="organization" placeholder="e.g. Acme Retail">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="trial-email">Work Email *</label>
+          <input type="email" class="form-input" id="trial-email" name="email" required autocomplete="email" placeholder="rahul@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="trial-phone">WhatsApp Number *</label>
+          <input type="tel" class="form-input" id="trial-phone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="trial-usecase">Primary Need</label>
+          <select class="form-input" id="trial-usecase" name="use_case">
+            <option value="WhatsApp Business API & Broadcasts">WhatsApp API &amp; Bulk Broadcasts</option>
+            <option value="AI Chatbots & Visual Flow Builder">AI Chatbots &amp; Visual Flow Builder</option>
+            <option value="Shared Team Inbox & CRM">Shared Team Inbox &amp; CRM</option>
+            <option value="Ecommerce & Cart Recovery (Shopify/Woo)">E-commerce &amp; Cart Recovery (Shopify/Woo)</option>
+            <option value="Instagram & Omnichannel Automation">Instagram &amp; Omnichannel Automation</option>
+            <option value="Verified Business Data Marketplace">Verified Business Data &amp; Leads</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="trial-volume">Expected Contacts / Vol.</label>
+          <select class="form-input" id="trial-volume" name="volume">
+            <option value="Under 5,000 / month">Under 5,000 / month</option>
+            <option value="5,000 - 25,000 / month">5,000 - 25,000 / month</option>
+            <option value="25,000 - 100,000 / month">25,000 - 100,000 / month</option>
+            <option value="100,000+ (Enterprise)">100,000+ (Enterprise)</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-trial-submit" id="trialSubmitBtn">
+        <span>Claim Free Trial &amp; Get Started &rarr;</span>
+      </button>
+      
+      <div class="trial-trust-footer">
+        <div class="trial-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Meta Cloud API Partner</span>
+        </div>
+        <div class="trial-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Instant Setup</span>
+        </div>
+        <div class="trial-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Cancel Anytime</span>
+        </div>
+      </div>
+    </form>
+    
+    <div id="trial-success-box" class="trial-success-box" style="display:none;">
+      <div class="trial-success-icon">✓</div>
+      <h3>Welcome to HelloBotz!</h3>
+      <p>Your 14-day free trial request has been registered. Our onboarding specialist will connect with your WhatsApp credentials and setup guide in under 10 minutes.</p>
+      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20just%20signed%20up%20for%20a%20Free%20Trial.%20Please%20help%20me%20activate%20my%20WhatsApp%20API%20workspace." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;display:inline-flex;align-items:center;gap:8px;">
+        <span>Chat with Onboarding on WhatsApp &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Trial Modal Styles */
+.trial-popup-card {
+  max-width: 540px !important;
+  width: 92% !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  background: #ffffff !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25) !important;
+  border: 1px solid rgba(109, 40, 217, 0.15) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.trial-popup-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #6D28D9 0%, #8B5CF6 50%, #25D366 100%);
+}
+.trial-modal-header {
+  margin-bottom: 1.25rem;
+}
+.trial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(109, 40, 217, 0.08);
+  color: #6D28D9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 0.65rem;
+  border: 1px solid rgba(109, 40, 217, 0.15);
+}
+.trial-heading {
+  font-size: 1.65rem !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  margin: 0 0 0.4rem 0 !important;
+  line-height: 1.2 !important;
+}
+.trial-lead {
+  font-size: 0.88rem !important;
+  color: #64748B !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+.btn-trial-submit {
+  width: 100% !important;
+  padding: 0.85rem !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #6D28D9 0%, #7C3AED 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 20px -4px rgba(109, 40, 217, 0.4) !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 0.5rem !important;
+}
+.btn-trial-submit:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 12px 24px -4px rgba(109, 40, 217, 0.5) !important;
+  background: linear-gradient(135deg, #5B21B6 0%, #6D28D9 100%) !important;
+}
+.trial-trust-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #F1F5F9;
+  flex-wrap: wrap;
+}
+.trial-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+}
+.trial-success-box {
+  text-align: center;
+  padding: 1.5rem 0.5rem;
+}
+.trial-success-icon {
+  width: 56px;
+  height: 56px;
+  background: #DCFCE7;
+  color: #16A34A;
+  font-size: 1.75rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 20px -4px rgba(22, 163, 74, 0.3);
+}
+.trial-success-box h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.5rem 0;
+}
+.trial-success-box p {
+  font-size: 0.92rem;
+  color: #64748B;
+  line-height: 1.5;
+  max-width: 420px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .trial-popup-card {
+    padding: 1.25rem 1rem !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 96% !important;
+    max-width: min(480px, calc(100vw - 1.25rem)) !important;
+    margin: auto !important;
+    border-radius: 16px !important;
+  }
+  .trial-popup-card .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+  .trial-heading {
+    font-size: 1.35rem !important;
+  }
+  .trial-lead {
+    font-size: 0.82rem !important;
+  }
+  .trial-trust-footer {
+    gap: 8px !important;
+    font-size: 0.72rem !important;
+  }
+}
+</style>
+
+<script>
+function openTrialModal() {
+  var el = document.getElementById('trial-popup');
+  if (!el) return;
+  el.hidden = false;
+  requestAnimationFrame(function() {
+    el.classList.add('open');
+  });
+  document.body.classList.add('menu-open');
+}
+
+function closeTrialModal() {
+  var el = document.getElementById('trial-popup');
+  if (!el) return;
+  el.classList.remove('open');
+  setTimeout(function() {
+    el.hidden = true;
+    document.body.classList.remove('menu-open');
+  }, 280);
+}
+
+function handleTrialSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById('trialSubmitBtn');
+  var origText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span>Activating Trial...</span>';
+
+  var name = form.name ? form.name.value.trim() : '';
+  var company = form.company ? form.company.value.trim() : '';
+  var email = form.email ? form.email.value.trim() : '';
+  var phone = form.phone ? form.phone.value.trim() : '';
+  var useCase = form.use_case ? form.use_case.value : '';
+  var volume = form.volume ? form.volume.value : '';
+
+  if (!name || !email || !phone) {
+    alert('Please fill out all required fields.');
+    btn.disabled = false;
+    btn.innerHTML = origText;
+    return;
+  }
+
+  var payload = {
+    type: 'free_trial',
+    name: name,
+    email: email,
+    phone: phone,
+    business: company,
+    product: useCase,
+    requirement: 'Free Trial Request - Vol: ' + volume,
+    source_page: location.pathname
+  };
+
+  fetch('/api/lead.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res) { return res.json().catch(function() { return { ok: true }; }); })
+  .then(function(data) {
+    form.style.display = 'none';
+    var header = form.previousElementSibling;
+    if (header) header.style.display = 'none';
+    var successBox = document.getElementById('trial-success-box');
+    if (successBox) successBox.style.display = 'block';
+  })
+  .catch(function() {
+    // Graceful fallback
+    form.style.display = 'none';
+    var header = form.previousElementSibling;
+    if (header) header.style.display = 'none';
+    var successBox = document.getElementById('trial-success-box');
+    if (successBox) successBox.style.display = 'block';
+  });
+}
+
+// Global click listener for any Start Free buttons sitewide
+document.addEventListener('click', function(e) {
+  var t = e.target.closest('.header-cta-start, .mnav-start, .btn-start-free, [data-open-trial], a[href*="auth/register"]');
+  if (t) {
+    // If on auth login/register page, let it flip to signup instead
+    if (window.location.pathname.indexOf('/auth/login') !== -1 || window.location.pathname.indexOf('/auth/register') !== -1) {
+      if (typeof window.flipTo === 'function') {
+        e.preventDefault();
+        window.flipTo('signup');
+        return;
+      }
+      return;
+    }
+    e.preventDefault();
+    openTrialModal();
+  }
+});
+</script>
   <!-- Google Website Translator Integration -->
   <div id="google_translate_element" style="display:none !important;" aria-hidden="true"></div>
   <script type="text/javascript">

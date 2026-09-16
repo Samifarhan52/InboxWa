@@ -687,10 +687,10 @@ include __DIR__ . '/../../includes/header.php';
           TELEGRAM BOT AUTOMATION
         </span>
         <h1 class="ctg-hero-title">
-          Automate Your Telegram <span class="highlight-tg">Customer Chats</span>
+          HelloBotz Telegram Bot Automation — <span class="highlight-tg">Automate Your Telegram Customer Chats</span>
         </h1>
         <p class="ctg-hero-desc">
-          Connect your business chat, create quick message templates with buttons, set up automatic replies for customer questions, and track all incoming messages easily.
+          Connect your Telegram bot for business, create quick message templates with buttons, set up a Telegram chatbot for automatic replies, and track every broadcast with our Telegram automation platform.
         </p>
         <div class="ctg-hero-actions">
           <a href="<?php echo $bp; ?>auth/register" class="ctg-btn-primary">
@@ -733,7 +733,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="ctg-container">
       <div class="ctg-section-header">
         <span class="ctg-badge-pill">Features</span>
-        <h2 class="ctg-section-title">Powerful Features Made Simple</h2>
+        <h2 class="ctg-section-title">Powerful Telegram Bot Automation Features Made Simple</h2>
         <p class="ctg-section-subtitle">
           Here is everything you can set up to manage your customer conversations in real-time.
         </p>
@@ -746,7 +746,7 @@ include __DIR__ . '/../../includes/header.php';
             <span class="ctg-sc-tag">Instant Setup</span>
             <h3 class="ctg-sc-title">Easy Account Setup</h3>
             <p class="ctg-sc-desc">
-              Connect your Telegram business account instantly with just a single copy-paste step.
+              Connect your Telegram business account instantly with just a single copy-paste step. No coding needed — connect your Telegram automation platform and go live in minutes.
             </p>
             <ul class="ctg-sc-bullets">
               <li class="ctg-sc-bullet">
@@ -903,7 +903,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="ctg-container">
       <div class="ctg-section-header">
         <span class="ctg-badge-pill">Enterprise Infrastructure</span>
-        <h2 class="ctg-section-title">Built for High-Volume Telegram Channels &amp; Groups</h2>
+        <h2 class="ctg-section-title">Built for High-Volume Telegram Broadcast Platform — Channels &amp; Groups</h2>
         <p class="ctg-section-subtitle">
           Scale broadcasts to hundreds of thousands of subscribers with zero per-message fees.
         </p>
@@ -954,7 +954,7 @@ include __DIR__ . '/../../includes/header.php';
           <div class="ctg-cap-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
-          <h3>CRM &amp; Webhook Integration</h3>
+          <h3>Telegram CRM Integration &amp; Webhooks</h3>
           <p>Stream Telegram leads and customer profiles into HubSpot, Zoho, Google Sheets, or custom backend endpoints via instant webhooks.</p>
         </div>
       </div>
@@ -1075,7 +1075,7 @@ include __DIR__ . '/../../includes/header.php';
   <!-- 7. SALES CTA BANNER -->
   <section class="ctg-sales-section">
     <div class="ctg-cta-banner">
-      <h2 class="ctg-cta-title">Automate Your Telegram Chat Today</h2>
+      <h2 class="ctg-cta-title">Automate Your Telegram Chat Today with HelloBotz's Telegram Bot Automation Platform</h2>
       <p class="ctg-cta-subtitle">
         Connect your account in seconds, write easy reply buttons, set up key word detection, and view all chats in real-time.
       </p>
@@ -1114,6 +1114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <?php
+$footerContactText = "Talk to our team about Telegram bot automation, broadcast setup, and omnichannel automation for your business.";
 include __DIR__ . '/../../includes/offer-popup.php';
 include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';

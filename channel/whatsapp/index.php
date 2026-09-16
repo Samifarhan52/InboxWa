@@ -958,10 +958,10 @@ include __DIR__ . '/../../includes/header.php';
           Official WhatsApp Connection
         </span>
         <h1 class="cw-hero-title">
-          Scale Your Sales and Support on <span class="highlight-green">WhatsApp</span>
+          HelloBotz WhatsApp Business API — <span class="highlight-green">Scale Your Sales and Support on WhatsApp</span>
         </h1>
         <p class="cw-hero-desc">
-          Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.
+          Manage customer chats with a shared team inbox, run a complete WhatsApp automation software with automatic reply flows, and broadcast safely using the official WhatsApp Business API and WhatsApp CRM software.
         </p>
         <div class="cw-hero-actions">
           <a href="<?php echo $bp; ?>auth/register" class="cw-btn-primary">
@@ -1032,7 +1032,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="cw-section-header">
       <span class="cw-badge-pill">Comparison Grid</span>
       <h2 class="cw-section-title">Standard WhatsApp vs WhatsApp Business API</h2>
-      <p class="cw-section-subtitle">Discover why scaling on WhatsApp requires switching from the generic app to an official API-powered workflow built for teams.</p>
+      <p class="cw-section-subtitle">Discover why scaling on WhatsApp requires switching from the generic app to an official API-powered workflow built for teams. See why switching to the WhatsApp Business API — with WhatsApp automation software and WhatsApp CRM software — beats the standard WhatsApp app for growing teams.</p>
     </div>
 
     <div class="cw-table-container">
@@ -1079,7 +1079,7 @@ include __DIR__ . '/../../includes/header.php';
   <section class="cw-showcase-section">
     <div class="cw-section-header">
       <span class="cw-badge-pill">Interactive Showcase</span>
-      <h2 class="cw-section-title">Powerful Tools to Turn WhatsApp into a Sales Machine</h2>
+      <h2 class="cw-section-title">Powerful WhatsApp Automation Software Features to Turn WhatsApp into a Sales Machine</h2>
       <p class="cw-section-subtitle">Explore the exact capabilities engineered within our platform to help you automate customer operations completely.</p>
     </div>
 
@@ -1090,7 +1090,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="cw-cap-tabs" id="cwCapTabs" role="tablist">
           <button type="button" class="cw-cap-tab active" data-index="0" role="tab" aria-selected="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            <span>Shared Team Inbox</span>
+            <span>WhatsApp Shared Team Inbox</span>
           </button>
           <button type="button" class="cw-cap-tab" data-index="1" role="tab" aria-selected="false">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
@@ -1133,7 +1133,7 @@ include __DIR__ . '/../../includes/header.php';
           <img id="cwCapImg" src="<?php echo $bp; ?>assets/images/channel/whatsapp/shared-team-inbox.png" alt="Shared Team Inbox" class="cw-cap-img" loading="eager" />
         </div>
         <div class="cw-cap-content">
-          <h3 id="cwCapTitle" class="cw-cap-title">Shared Team Inbox</h3>
+          <h3 id="cwCapTitle" class="cw-cap-title">WhatsApp Shared Team Inbox</h3>
           <p id="cwCapDesc" class="cw-cap-desc">Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.</p>
           <ul id="cwCapBullets" class="cw-cap-bullets">
             <li class="cw-cap-bullet-item">
@@ -1156,7 +1156,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="cw-steps-header">
         <span class="cw-badge-pill" style="background: rgba(5, 150, 105, 0.2); color: #34d399; border-color: rgba(5, 150, 105, 0.4);">How It Works</span>
         <h2 class="cw-steps-title">Start in 4 Easy Steps</h2>
-        <p class="cw-steps-subtitle">Setting up your official WhatsApp assistant takes less than 10 minutes.</p>
+        <p class="cw-steps-subtitle">Setting up your official WhatsApp assistant takes less than 10 minutes. Get your WhatsApp Business API connected and your WhatsApp CRM software live in under 10 minutes.</p>
       </div>
 
       <div class="cw-steps-grid">
@@ -1190,7 +1190,7 @@ include __DIR__ . '/../../includes/header.php';
   <!-- 5. FINAL SALES CTA BANNER -->
   <section class="cw-sales-section">
     <div class="cw-sales-inner">
-      <h2 class="cw-sales-title">Turn Your WhatsApp Into A Sales Engine Today</h2>
+      <h2 class="cw-sales-title">Turn Your WhatsApp Into a Sales Engine with HelloBotz's WhatsApp Business API &amp; WhatsApp Automation Software</h2>
       <p class="cw-sales-desc">Start sending announcements, managing team chats, and answering customer questions automatically right now.</p>
       <div class="cw-sales-actions">
         <a href="<?php echo $bp; ?>auth/register" class="cw-btn-white">
@@ -1218,7 +1218,7 @@ include __DIR__ . '/../../includes/header.php';
   var basePath = "<?php echo $bp; ?>assets/images/channel/whatsapp/";
   var capabilities = [
     {
-      title: "Shared Team Inbox",
+      title: "WhatsApp Shared Team Inbox",
       desc: "Let your entire sales and customer service team chat with customers using a single WhatsApp number. Direct customer messages to the right team member automatically.",
       img: basePath + "shared-team-inbox.png",
       bullets: [
@@ -1365,6 +1365,7 @@ include __DIR__ . '/../../includes/header.php';
 </script>
 
 <?php
+$footerContactText = "Talk to our team about Official WhatsApp Business API, automation and omnichannel setup for your business.";
 include __DIR__ . '/../../includes/offer-popup.php';
 include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';

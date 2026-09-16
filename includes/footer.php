@@ -15,7 +15,11 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nHe
       <div class="footer-contact-grid">
         <div>
           <div class="footer-contact-heading" data-i18n="contact_title">Get in touch</div>
-          <p style="margin:0 0 1rem;max-width:28rem">Talk to our team about Official WhatsApp Business API, automation and omnichannel setup for your business.</p>
+          <?php
+          $defaultContactText = "Talk to our team about HelloBotz's WhatsApp, Instagram, Facebook & Telegram automation, and omnichannel setup for your business.";
+          $activeContactText = isset($footerContactText) && !empty($footerContactText) ? $footerContactText : $defaultContactText;
+          ?>
+          <p style="margin:0 0 1rem;max-width:28rem"><?php echo htmlspecialchars($activeContactText); ?></p>
           <div class="footer-address">
             <div class="footer-address-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>

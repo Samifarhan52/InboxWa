@@ -11,7 +11,7 @@
   --sh3:0 25px 50px -12px rgba(139,92,246,.25);
   --r:12px;--r2:16px;--r3:20px;--r4:999px;
   --font:'Inter',system-ui,-apple-system,sans-serif;
-  --max:1140px;--nav:0px;
+  --max:1140px;--nav:72px;
   --ease:cubic-bezier(.4,0,.2,1);
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -2776,7 +2776,7 @@ body.menu-open{overflow:hidden !important}
   --sh-card:0 4px 20px -4px rgba(15,23,42,.07),0 1px 3px rgba(15,23,42,.04);
   --sh-card-hover:0 14px 36px -8px rgba(139,92,246,.16),0 4px 12px rgba(15,23,42,.05);
   --sh-mega:0 24px 60px -12px rgba(15,23,42,.16),0 0 0 1px rgba(139,92,246,.06),0 1px 0 rgba(255,255,255,.8) inset;
-  --nav:0px;
+  --nav:72px;
   --ease-out:cubic-bezier(.22,1,.36,1);
   --header-radius:18px;
 }
@@ -3669,4 +3669,125 @@ html, body {
     box-sizing: border-box !important;
   }
 }
+
+
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS & TOUCH TARGET POLISH
+   ========================================================================== */
+
+/* Universal Scroll & Overflow-X Containment */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* iOS Safari: Prevent automatic zoom on focus when font-size < 16px */
+@media (max-width: 768px) {
+  input, select, textarea, .form-input, .auth-input {
+    font-size: 16px !important;
+  }
+}
+
+/* Header Navbar on Mobile (< 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 8px !important;
+  }
+  .header-inner {
+    padding: 0 0.65rem 0 0.85rem !important;
+  }
+  .btn-header-data {
+    display: none !important;
+  }
+  .header-actions .lang-switch {
+    display: none !important;
+  }
+  .header-actions .header-login {
+    display: none !important;
+  }
+  .header-actions {
+    gap: 0.4rem !important;
+  }
+  .header-cta-start {
+    padding: 0.38rem 0.85rem !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
+  .mobile-toggle {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-cta-start {
+    display: none !important;
+  }
+  .logo-img {
+    max-width: 110px !important;
+    height: auto !important;
+  }
+}
+
+/* Popups & Modals on Mobile */
+@media (max-width: 640px) {
+  .popup-card,
+  .offer-popup-card,
+  .popup-card-compact,
+  .trial-popup-card {
+    max-width: min(480px, calc(100vw - 1.25rem)) !important;
+    width: 96% !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 1.35rem 1.1rem !important;
+    margin: auto !important;
+    border-radius: 16px !important;
+  }
+  .popup-close {
+    width: 36px !important;
+    height: 36px !important;
+    top: 10px !important;
+    right: 10px !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Prevent animation spill on mobile */
+@media (max-width: 768px) {
+  .reveal-left, .reveal-right {
+    transform: translateY(20px) !important;
+  }
+  .reveal-left.reveal-visible,
+  .reveal-right.reveal-visible {
+    transform: translateY(0) !important;
+  }
+}
+
+/* Universal Table & Pre Scrolling on Mobile */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  pre, code {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    word-break: break-word;
+  }
+}
+
+
+
 

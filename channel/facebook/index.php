@@ -688,10 +688,10 @@ include __DIR__ . '/../../includes/header.php';
           FACEBOOK MESSENGER &amp; LEAD ADS
         </span>
         <h1 class="cfb-hero-title">
-          Automate Your Facebook <span class="highlight-fb">Pages &amp; Lead Ads</span>
+          HelloBotz Facebook Messenger Automation — <span class="highlight-fb">Automate Your Facebook Pages &amp; Lead Ads</span>
         </h1>
         <p class="cfb-hero-desc">
-          Connect your Facebook business pages, automatically save customer form details from your ads, chat in a single inbox, and send easy automated messages.
+          Connect your Facebook business pages, run Facebook lead ads automation to save customer form details instantly, chat in a single inbox, and send automated Messenger auto-responder replies.
         </p>
         <div class="cfb-hero-actions">
           <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">
@@ -734,7 +734,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="cfb-container">
       <div class="cfb-section-header">
         <span class="cfb-badge-pill">Features</span>
-        <h2 class="cfb-section-title">Grow Your Facebook Page Automatically</h2>
+        <h2 class="cfb-section-title">Grow Your Facebook Page with HelloBotz's Facebook Messenger Automation Tool</h2>
         <p class="cfb-section-subtitle">
           Here is everything you can set up to manage your customer conversations and ads in one place.
         </p>
@@ -774,7 +774,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="cfb-showcase-row reversed">
           <div class="cfb-sc-text">
             <span class="cfb-sc-tag">Instant Lead Ads Sync</span>
-            <h3 class="cfb-sc-title">Save Customer Form Details</h3>
+            <h3 class="cfb-sc-title">Facebook Lead Ads Automation — Save Customer Form Details Instantly</h3>
             <p class="cfb-sc-desc">
               Instantly save details when customers fill out forms on your Facebook ads. Save their info directly to your contact list and reply to them automatically.
             </p>
@@ -785,14 +785,14 @@ include __DIR__ . '/../../includes/header.php';
               </li>
               <li class="cfb-sc-bullet">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Instantly fire automated WhatsApp or Messenger welcome sequences
+                Auto-sync leads straight into Google Sheets, CRM, or email
               </li>
               <li class="cfb-sc-bullet">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                10x lead response speed to close deals while intent is hot
+                Instant Messenger auto-reply sent the second they submit
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Automate Lead Forms &rarr;</a>
+            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Connect Lead Ads Free &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/facebook/save-leads.png?v=20260909" alt="Save Customer Form Details" class="cfb-sc-img" loading="lazy">
@@ -865,7 +865,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="cfb-container">
       <div class="cfb-section-header">
         <span class="cfb-badge-pill">Built-In Tools</span>
-        <h2 class="cfb-section-title">Built-In Page &amp; Message Tools</h2>
+        <h2 class="cfb-section-title">Built-In Facebook Messenger Automation Tools</h2>
         <p class="cfb-section-subtitle">
           Every tool you need to track delivery, send replies, and manage customer chats.
         </p>
@@ -969,7 +969,7 @@ include __DIR__ . '/../../includes/header.php';
         <span class="cfb-badge-pill">Enterprise Infrastructure</span>
         <h2 class="cfb-section-title">Enterprise Facebook Marketing &amp; Lead Automation</h2>
         <p class="cfb-section-subtitle">
-          Bridge the gap between Facebook Lead Ads and real-time sales conversions.
+          Bridge the gap between Facebook Lead Ads and real-time sales conversions. Powered by Meta API automation and CRM and webhook integration, built for enterprise teams.
         </p>
       </div>
 
@@ -1103,7 +1103,7 @@ include __DIR__ . '/../../includes/header.php';
   <!-- 7. SALES CTA BANNER -->
   <section class="cfb-sales-section">
     <div class="cfb-cta-banner">
-      <h2 class="cfb-cta-title">Automate Your Facebook Ads &amp; Leads Today</h2>
+      <h2 class="cfb-cta-title">Automate Your Facebook Ads &amp; Leads Today with HelloBotz's Facebook Messenger Automation</h2>
       <p class="cfb-cta-subtitle">
         Link your pages, track active ad campaigns, save lead form answers, and reply to customers automatically.
       </p>
@@ -1142,6 +1142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <?php
+$footerContactText = "Talk to our team about Facebook Messenger automation, lead ads sync, and omnichannel automation for your business.";
 include __DIR__ . '/../../includes/offer-popup.php';
 include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';

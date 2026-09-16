@@ -2073,7 +2073,7 @@ include __DIR__ . '/../../includes/header.php';
               msg += "• " + cart[id] + "x " + item.name + " (" + item.emoji + ") - $" + (item.price * cart[id]).toFixed(2) + "\n";
             }
           });
-          msg += "----------------------------------------\n*Grand Total:* $" + getGrandTotal() + "\n\nPayment link generated dynamically via WAPI:\n🔗 https://checkout.stripe.com/pay/wapi_inv_" + Math.floor(Math.random() * 900000 + 100000);
+          msg += "----------------------------------------\n*Grand Total:* $" + getGrandTotal() + "\n\nPayment link generated dynamically via HelloBotz:\n🔗 https://checkout.stripe.com/pay/hellobotz_inv_" + Math.floor(Math.random() * 900000 + 100000);
           checkoutText = msg;
           isCartView = false;
           renderPhone();

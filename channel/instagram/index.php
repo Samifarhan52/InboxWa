@@ -903,10 +903,10 @@ include __DIR__ . '/../../includes/header.php';
           Official Instagram Connection
         </span>
         <h1 class="cig-hero-title">
-          Turn <span class="highlight-ig">Instagram</span> Comments into Direct DM Sales
+          HelloBotz Instagram Automation Tool — <span class="highlight-ig">Turn Instagram Comments into Direct DM Sales</span>
         </h1>
         <p class="cig-hero-desc">
-          Send automated discount codes, product catalogs, or instant replies to customer messages the second they comment on your posts or reels.
+          Our Instagram automation tool sends automated discount codes, product catalogs, and instant Instagram DM automation replies the moment someone comments on your posts or reels — powered by Meta-approved Instagram automation.
         </p>
         <div class="cig-hero-actions">
           <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">
@@ -950,7 +950,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="cig-container">
       <div class="cig-section-header">
         <span class="cig-badge-pill">Interactive Trigger Demo</span>
-        <h2 class="cig-section-title">Test Our Comment-to-DM Flow Live</h2>
+        <h2 class="cig-section-title">Test Our Instagram Comment-to-DM Automation Flow Live</h2>
         <p class="cig-section-subtitle">
           Type your custom trigger word below, press simulate, and watch the mock Instagram direct message interface respond instantly on the phone screen!
         </p>
@@ -1048,7 +1048,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="cig-container">
       <div class="cig-section-header">
         <span class="cig-badge-pill">Features</span>
-        <h2 class="cig-section-title">Grow Your Brand on Instagram Automatically</h2>
+        <h2 class="cig-section-title">Grow Your Brand with HelloBotz's Instagram Automation Tool</h2>
         <p class="cig-section-subtitle">
           Here is everything you can set up to manage your customer conversations and ads in one place.
         </p>
@@ -1146,7 +1146,7 @@ include __DIR__ . '/../../includes/header.php';
         <div class="cig-showcase-row reversed">
           <div class="cig-sc-text">
             <span class="cig-sc-tag">AI Support</span>
-            <h3 class="cig-sc-title">24/7 Smart AI Chatbot</h3>
+            <h3 class="cig-sc-title">24/7 Smart AI Chatbot for Business</h3>
             <p class="cig-sc-desc">
               Train an AI helper on your website links or business details. It will answer customer questions about pricing and product availability around the clock.
             </p>
@@ -1216,7 +1216,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="cig-container">
       <div class="cig-section-header">
         <span class="cig-badge-pill">Enterprise Capabilities</span>
-        <h2 class="cig-section-title">Complete Instagram Growth Suite</h2>
+        <h2 class="cig-section-title">Complete Instagram Growth Suite — Instagram Lead Generation Automation &amp; Customer Engagement</h2>
         <p class="cig-section-subtitle">Everything you need to convert followers into revenue with official Meta API compliance.</p>
       </div>
 
@@ -1324,7 +1324,7 @@ include __DIR__ . '/../../includes/header.php';
   <!-- Final Sales CTA Banner -->
   <section class="cig-cta-banner">
     <div class="cig-container" style="position: relative; z-index: 2;">
-      <h2 class="cig-cta-title">Scale Your Instagram DM Automation Today</h2>
+      <h2 class="cig-cta-title">Scale Your Instagram DM Automation &amp; Lead Generation Chatbot with HelloBotz</h2>
       <p class="cig-cta-subtitle">
         Turn comments into customers, automate customer service, and boost sales 24/7.
       </p>
@@ -1451,6 +1451,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <?php
+$footerContactText = "Talk to our team about Instagram automation, comment-to-DM setup, and omnichannel automation for your business.";
 include __DIR__ . '/../../includes/offer-popup.php';
 include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';

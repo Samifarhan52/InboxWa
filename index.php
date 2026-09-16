@@ -60,6 +60,7 @@ include __DIR__ . '/includes/header.php';
     color: #0f172a;
     letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
+    text-wrap: balance;
   }
   /* Dual Color Gradient & Dynamic Text Rotator (Matches Image 2) */
   .cw-hero-title .dual-color-gradient,
@@ -2577,10 +2578,10 @@ include __DIR__ . '/includes/header.php';
           <?php echo htmlspecialchars(cms_section('hero', 'badge', 'Official WhatsApp Connection')); ?>
         </span>
         <h1 class="cw-hero-title">
-          <?php echo htmlspecialchars(cms_section('hero', 'headline_prefix', 'WhatsApp Automation Software & ')); ?><span class="cw-rotator-wrap" id="cwHeroRotator" aria-live="polite"><span class="cw-rotator-item dual-color-gradient active"><?php echo htmlspecialchars(cms_section('hero', 'headline_gradient', 'AI Chatbots')); ?></span><span class="cw-rotator-item dual-color-gradient">Lead Generation</span><span class="cw-rotator-item dual-color-gradient">Bulk Broadcasts</span><span class="cw-rotator-item dual-color-gradient">Sales Funnels</span><span class="cw-rotator-item dual-color-gradient">Shopify &amp; CRM Sync</span><span class="cw-rotator-item dual-color-gradient">Shared Team Inbox</span></span>&nbsp;<span><?php echo htmlspecialchars(ltrim(cms_section('hero', 'headline_suffix', 'for Business'))); ?></span>
+          HelloBotz — WhatsApp Automation Software &amp; <span class="dual-color-gradient" style="white-space:nowrap;">AI Chatbot for Business</span>
         </h1>
         <p class="cw-hero-desc">
-          <?php echo htmlspecialchars(cms_section('hero', 'lead', 'Manage customer chats together with a shared inbox, build smart automatic reply flows, and run broadcasts safely using the official WhatsApp Business API.')); ?>
+          A complete WhatsApp automation software and WhatsApp marketing tool with AI chatbot for business, shared inbox, and omnichannel customer engagement platform — across WhatsApp, Instagram, Facebook &amp; Telegram.
         </p>
         <div class="cw-hero-actions">
           <a href="<?php echo htmlspecialchars(cms_section('hero', 'cta1_link', '/auth/register')); ?>" class="cw-btn-primary">
@@ -2786,7 +2787,7 @@ include __DIR__ . '/includes/header.php';
           <span class="cw-pulse-dot" style="width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;"></span>
           LIVE PLATFORM WALKTHROUGH
         </div>
-        <h2 class="cw-showcase-title">Visual Automation &amp; AI Bots, Built for WhatsApp Scale</h2>
+        <h2 class="cw-showcase-title">WhatsApp Automation Software in Action — Visual Automation &amp; AI Bots Built for Scale</h2>
         <p class="cw-showcase-subtitle">No complicated coding. Build conversational customer journeys, automate broadcasts, and route high-value leads with zero friction.</p>
       </div>
 
@@ -2948,7 +2949,7 @@ include __DIR__ . '/includes/header.php';
       <!-- SECTION HEADER -->
       <div class="hb-features-header reveal-item">
         <span class="hb-features-badge">BUILT FOR GROWING BUSINESSES</span>
-        <h2 class="hb-features-title">Everything You Need to Automate Customer Conversations</h2>
+        <h2 class="hb-features-title">Everything You Need — WhatsApp Automation Software with AI Chatbot for Business</h2>
         <p class="hb-features-subtitle">HelloBotz gives your team Everything you need to automate, sell, and support customers —all in ONE place.</p>
       </div>
 
@@ -3101,7 +3102,7 @@ include __DIR__ . '/includes/header.php';
       <div class="hiw-header reveal-item">
         <span class="hiw-badge">⚡ How It Works</span>
         <h2 class="hiw-title">Go Live in Minutes, Not Months</h2>
-        <p class="hiw-subtitle">Connect your official WhatsApp Business number and launch your first automated customer workflow in simple, no-code steps.</p>
+        <p class="hiw-subtitle">Set up your WhatsApp automation software and WhatsApp CRM software in minutes — no developer required.</p>
       </div>
 
       <div class="hiw-grid">
@@ -3152,7 +3153,7 @@ include __DIR__ . '/includes/header.php';
             <div class="hiw-card-body">
               <div class="hiw-step-num">02</div>
               <span class="hiw-step-tagline">BUILD YOUR BOT</span>
-              <h3 class="hiw-card-title">No-Code Chatbot &amp; Automation Builder</h3>
+              <h3 class="hiw-card-title">No-Code AI Chatbot for Business — Automation Builder</h3>
               <p class="hiw-card-desc">Design powerful WhatsApp automation flows with a visual drag-and-drop builder. Set up keyword triggers, button responses, lead capture forms, and multi-step conversation logic — no coding required.</p>
               <ul class="hiw-bullets">
                 <li>
@@ -3193,7 +3194,7 @@ include __DIR__ . '/includes/header.php';
             <div class="hiw-card-body">
               <div class="hiw-step-num">03</div>
               <span class="hiw-step-tagline">LAUNCH CAMPAIGNS</span>
-              <h3 class="hiw-card-title">Broadcast Campaigns That Actually Convert</h3>
+              <h3 class="hiw-card-title">WhatsApp Broadcast Campaign Tool — Campaigns That Actually Convert</h3>
               <p class="hiw-card-desc">Send highly targeted WhatsApp campaigns to segmented audiences. Schedule messages, personalize with variables, and track real-time delivery, open, and reply rates from a single dashboard.</p>
               <ul class="hiw-bullets">
                 <li>
@@ -3275,7 +3276,7 @@ include __DIR__ . '/includes/header.php';
             <div class="hiw-card-body">
               <div class="hiw-step-num">05</div>
               <span class="hiw-step-tagline">DEVELOPERS</span>
-              <h3 class="hiw-card-title">Powerful REST API for Custom Integrations</h3>
+              <h3 class="hiw-card-title">Powerful WhatsApp Business API for Custom Integrations</h3>
               <p class="hiw-card-desc">Integrate WhatsApp messaging into your CRM, ERP, or custom application with a clean, well-documented REST API. Trigger messages, manage contacts, and build fully custom workflows.</p>
               <ul class="hiw-bullets">
                 <li>
@@ -3607,8 +3608,8 @@ include __DIR__ . '/includes/header.php';
     <div class="stories-container" style="margin-top: 3.5rem;">
       <div class="stories-bottom-card reveal-item">
         <div class="stories-bottom-content">
-          <h3>Ready to Scale Your Customer Conversations?</h3>
-          <p>Join 500+ businesses delivering standout customer experiences on WhatsApp with HelloBotz.</p>
+          <h3>Start Growing Your Business with Hellobotz's WhatsApp, Instagram, Facebook &amp; Telegram Automation</h3>
+          <p>Join 500+ businesses delivering standout customer experiences across WhatsApp, Instagram, Facebook &amp; Telegram with HelloBotz.</p>
         </div>
         <div class="stories-bottom-actions">
           <a href="/auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
