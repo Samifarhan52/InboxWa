@@ -3414,6 +3414,20 @@ html, body {
   transform: translateY(1.5px) !important;
 }
 
+/* Hero Actions Single-Line Match */
+.cw-hero-actions .btn-download-data,
+.cw-hero-actions .cw-btn-data,
+.cig-hero-actions .btn-download-data,
+.ctg-hero-actions .btn-download-data,
+.cfb-hero-actions .btn-download-data {
+  height: 46px !important;
+  line-height: 46px !important;
+  padding: 0 1.25rem !important;
+  font-size: 0.92rem !important;
+  border-radius: 9999px !important;
+  vertical-align: middle !important;
+}
+
 /* Header Navbar Download Data Button */
 .btn-header-data {
   display: inline-flex !important;

@@ -482,13 +482,19 @@ html, body, main#main, #main, .site-main,
   .cw-btn-primary, .cw-btn-secondary,
   .cig-btn-primary, .cig-btn-secondary,
   .ctg-btn-primary, .ctg-btn-secondary,
-  .cfb-btn-primary, .cfb-btn-secondary {
+  .cfb-btn-primary, .cfb-btn-secondary,
+  .cw-hero-actions .btn-download-data, .cw-hero-actions .cw-btn-data,
+  .cig-hero-actions .btn-download-data,
+  .ctg-hero-actions .btn-download-data,
+  .cfb-hero-actions .btn-download-data {
     width: 100% !important;
     box-sizing: border-box !important;
     justify-content: center !important;
     text-align: center !important;
-    padding: 0.85rem 1.25rem !important;
-    font-size: 0.95rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.25rem !important;
+    font-size: 0.92rem !important;
   }
 
   /* Trust Badges */
@@ -713,6 +719,79 @@ html, body, main#main, #main, .site-main,
     width: 30px !important;
     height: 30px !important;
     min-width: 30px !important;
+}
+
+/* =========================================================
+   GLOBAL HERO CTA ACTIONS - PERFECT SINGLE-LINE ALIGNMENT
+   Ensures all 3 buttons stay on a single line on desktop
+   with identical heights (46px), identical pill curvature,
+   and harmonious vertical/horizontal alignment.
+   ========================================================= */
+@media (min-width: 901px) {
+  .cw-hero-actions,
+  .cig-hero-actions,
+  .ctg-hero-actions,
+  .cfb-hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+    margin-bottom: 2rem !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  .cw-btn-primary,
+  .cw-btn-secondary,
+  .cig-btn-primary,
+  .cig-btn-secondary,
+  .ctg-btn-primary,
+  .ctg-btn-secondary,
+  .cfb-btn-primary,
+  .cfb-btn-secondary,
+  .cw-hero-actions .btn-download-data,
+  .cw-hero-actions .cw-btn-data,
+  .cig-hero-actions .btn-download-data,
+  .ctg-hero-actions .btn-download-data,
+  .cfb-hero-actions .btn-download-data {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    box-sizing: border-box !important;
+    border-radius: 9999px !important;
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+  }
+
+  .cw-btn-primary,
+  .cig-btn-primary,
+  .ctg-btn-primary,
+  .cfb-btn-primary {
+    padding: 0 1.3rem !important;
+    font-weight: 700 !important;
+  }
+
+  .cw-btn-secondary,
+  .cig-btn-secondary,
+  .ctg-btn-secondary,
+  .cfb-btn-secondary {
+    padding: 0 1.3rem !important;
+    font-weight: 600 !important;
+  }
+
+  .cw-hero-actions .btn-download-data,
+  .cw-hero-actions .cw-btn-data,
+  .cig-hero-actions .btn-download-data,
+  .ctg-hero-actions .btn-download-data,
+  .cfb-hero-actions .btn-download-data {
+    padding: 0 1.25rem !important;
+    font-weight: 700 !important;
   }
 }
 

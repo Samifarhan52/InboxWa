@@ -2760,55 +2760,115 @@
     margin: 0 0 2rem;
     max-width: 520px;
   }
+  /* Master Hero CTA Action Row - Perfectly Aligned Single-Line Layout */
   .ctg-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+    margin-bottom: 2rem !important;
+    width: max-content !important;
+    max-width: 100% !important;
   }
   .ctg-btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--tg-gradient);
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    background: var(--tg-gradient) !important;
     color: #ffffff !important;
-    font-weight: 700;
-    font-size: 0.98rem;
-    padding: 0.875rem 1.85rem;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.38);
-    transition: all 0.2s ease;
-    border: none;
-    cursor: pointer;
+    font-family: inherit !important;
+    font-weight: 700 !important;
+    font-size: 0.92rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.3rem !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 18px -3px rgba(2, 132, 199, 0.38) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    border: none !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
   }
   .ctg-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.5);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 24px -3px rgba(2, 132, 199, 0.5) !important;
     color: #ffffff !important;
   }
   .ctg-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: #f8fafc;
-    color: #334155;
-    font-weight: 600;
-    font-size: 0.98rem;
-    padding: 0.875rem 1.65rem;
-    border-radius: 12px;
-    text-decoration: none;
-    border: 1px solid #e2e8f0;
-    transition: all 0.2s ease;
-    cursor: pointer;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-family: inherit !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.3rem !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    border: 1.5px solid #cbd5e1 !important;
+    box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
   }
   .ctg-btn-secondary:hover {
-    background: #f1f5f9;
-    color: #0f172a;
-    border-color: #cbd5e1;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.12) !important;
+  }
+  .ctg-hero-actions .btn-download-data {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-weight: 700 !important;
+    font-size: 0.92rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.25rem !important;
+    border-radius: 9999px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 18px -3px rgba(79, 70, 229, 0.42) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+  }
+  .ctg-hero-actions .btn-download-data:hover {
+    background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 24px -3px rgba(79, 70, 229, 0.58) !important;
+    color: #ffffff !important;
+  }
+  .ctg-hero-actions .btn-download-data svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
+  }
+  .ctg-hero-actions .btn-download-data:hover svg {
+    transform: translateY(1.5px) !important;
   }
   .ctg-trust-row {
     display: flex;

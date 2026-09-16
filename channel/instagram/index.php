@@ -101,53 +101,124 @@ include __DIR__ . '/../../includes/header.php';
     margin-bottom: 2rem;
     max-width: 540px;
   }
+  /* Master Hero CTA Action Row - Perfectly Aligned Single-Line Layout */
   .cig-hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+    margin-bottom: 2rem !important;
+    width: max-content !important;
+    max-width: 100% !important;
   }
   .cig-btn-primary {
-    background: var(--ig-gradient);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 0.85rem 1.85rem;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.4);
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: none;
-    cursor: pointer;
+    background: var(--ig-gradient) !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-weight: 700 !important;
+    font-size: 0.92rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.3rem !important;
+    border-radius: 9999px !important;
+    border: none !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 18px -3px rgba(236, 72, 153, 0.4) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
   }
   .cig-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgba(236, 72, 153, 0.55);
-    color: #ffffff;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 24px -3px rgba(236, 72, 153, 0.55) !important;
+    color: #ffffff !important;
+  }
+  .cig-btn-primary svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
+  }
+  .cig-btn-primary:hover svg {
+    transform: translateX(3px) !important;
   }
   .cig-btn-secondary {
-    background: #ffffff;
-    color: #0f172a;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.85rem 1.75rem;
-    border-radius: 999px;
-    border: 1px solid #cbd5e1;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-family: inherit !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.3rem !important;
+    border-radius: 9999px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
   }
   .cig-btn-secondary:hover {
-    background: #f8fafc;
-    border-color: #94a3b8;
-    color: #0f172a;
-    transform: translateY(-2px);
+    background: #f8fafc !important;
+    border-color: #94a3b8 !important;
+    color: #0f172a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.12) !important;
+  }
+  .cig-hero-actions .btn-download-data {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-weight: 700 !important;
+    font-size: 0.92rem !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 1.25rem !important;
+    border-radius: 9999px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 18px -3px rgba(79, 70, 229, 0.42) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+  }
+  .cig-hero-actions .btn-download-data:hover {
+    background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 24px -3px rgba(79, 70, 229, 0.58) !important;
+    color: #ffffff !important;
+  }
+  .cig-hero-actions .btn-download-data svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
+  }
+  .cig-hero-actions .btn-download-data:hover svg {
+    transform: translateY(1.5px) !important;
   }
   .cig-trust-row {
     display: flex;
