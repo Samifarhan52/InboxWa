@@ -3080,88 +3080,80 @@
   .footer-social-wa {
     background: #25D366 !important;
   }
-  .footer-map-card {
-    margin-top: 2rem;
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  /* Professional 3-Column Footer with Embedded Map */
+  .footer-pro-layout {
+    display: grid !important;
+    grid-template-columns: 1.35fr 0.95fr 1.45fr !important;
+    gap: 3rem !important;
+    align-items: start !important;
+    padding-bottom: 2.5rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
-  .footer-map-header {
-    padding: 1rem 1.25rem;
-    background: #F8FAFC;
-    border-bottom: 1px solid #E2E8F0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+  .footer-brand-desc {
+    font-size: 0.88rem;
+    color: #94A3B8;
+    line-height: 1.55;
+    margin: 0.85rem 0 0;
+    max-width: 24rem;
   }
-  .footer-map-header-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .footer-map-header-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: rgba(37, 211, 102, 0.12);
-    color: #10B981;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .footer-map-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0F172A;
+  .footer-nav-col ul {
+    list-style: none;
     margin: 0;
-    line-height: 1.3;
+    padding: 0;
   }
-  .footer-map-addr {
-    font-size: 0.83rem;
-    color: #64748B;
-    margin: 0;
+  .footer-nav-col li {
+    margin-bottom: 0.75rem;
   }
-  .footer-map-btn {
+  .footer-nav-col a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+  }
+  .footer-nav-col a:hover {
+    color: #FFFFFF;
+    padding-left: 4px;
+  }
+  .footer-map-pill {
+    font-size: 0.75rem;
+    color: #22D3EE !important;
+    text-decoration: none;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #0F172A;
-    background: #ffffff;
-    border: 1px solid #CBD5E1;
-    padding: 0.45rem 0.9rem;
-    border-radius: 8px;
-    text-decoration: none;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.25);
     transition: all 0.2s ease;
   }
-  .footer-map-btn:hover {
-    background: #0F172A;
-    color: #ffffff;
-    border-color: #0F172A;
+  .footer-map-pill:hover {
+    background: #22D3EE;
+    color: #0F172A !important;
   }
-  .footer-map-frame {
-    width: 100%;
-    height: 280px;
-    border: 0;
-    display: block;
+  .footer-map-frame-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: #1E293B;
+  }
+  @media (max-width: 1024px) {
+    .footer-pro-layout {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 2rem !important;
+    }
+    .footer-map-col {
+      grid-column: 1 / -1 !important;
+    }
   }
   @media (max-width: 640px) {
-    .footer-map-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .footer-map-btn {
-      width: 100%;
-      justify-content: center;
-    }
-    .footer-map-frame {
-      height: 220px;
+    .footer-pro-layout {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
     }
   }
   </style>
@@ -3242,39 +3234,14 @@
         </div>
       </div>
 
-      <!-- Office Location Map Card -->
-      <div class="footer-map-card">
-        <div class="footer-map-header">
-          <div class="footer-map-header-info">
-            <div class="footer-map-header-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h3 class="footer-map-title">HelloBotz Head Office — Bengaluru</h3>
-              <p class="footer-map-addr">Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</p>
-            </div>
-          </div>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025" target="_blank" rel="noopener noreferrer" class="footer-map-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Open in Google Maps
-          </a>
-        </div>
-        <iframe
-          class="footer-map-frame"
-          title="HelloBotz Office Location Map"
-          src="https://maps.google.com/maps?q=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
     </div>
   </section>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
+      <div class="footer-pro-layout">
+        <!-- Column 1: Brand, Request Callback & Permanent Social Logos -->
+        <div class="footer-brand-col">
           <a href="../../" class="logo" aria-label="HelloBotz Home">
             <img src="../../assets/images/logo-footer.png" alt="HelloBotz" class="logo-img" width="170" height="42" onerror="this.src='../../assets/images/logo.png'">
             <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
@@ -3282,7 +3249,7 @@
               <span style="font-weight:800;color:#fff">Hellobotz</span>
             </span>
           </a>
-          <p>AI Powered WhatsApp Business API &amp; Omnichannel Platform. Official Meta API, shared inbox, automation, broadcasts and integrations.</p>
+          <p class="footer-brand-desc">AI-Powered WhatsApp Business API &amp; Omnichannel Customer Automation Platform. Official Meta Tech Partner.</p>
           <div style="margin-top:1.15rem;display:flex;align-items:center;gap:0.75rem;">
             <button type="button" class="btn btn-primary btn-sm btn-callback-open">Request Callback</button>
           </div>
@@ -3307,48 +3274,47 @@
             </div>
           </div>
         </div>
-        <div class="footer-col">
-          <div class="footer-heading">Products</div>
+
+        <!-- Column 2: Important Links (Only 6 Core Links) -->
+        <div class="footer-nav-col">
+          <div class="footer-heading">Important Links</div>
           <ul>
-            <li><a href="../../products/broadcast/">Bulk Broadcast</a></li>
-            <li><a href="../../products/shared-inbox/">Shared Team Inbox</a></li>
-            <li><a href="../../products/chatbot/">AI Chatbot Builder</a></li>
-            <li><a href="../../products/ai-voice/">AI Voice Calling</a></li>
-            <li><a href="../../products/catalog/">WhatsApp Catalog</a></li>
-            <li><a href="../../facebook-ads/">Click-to-WhatsApp Ads</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <div class="footer-heading">Solutions</div>
-          <ul>
-            <li><a href="../../solutions/marketing/">Omnichannel Marketing</a></li>
-            <li><a href="../../solutions/sales">Sales on WhatsApp</a></li>
-            <li><a href="../../solutions/customer-support">Customer Support</a></li>
-            <li><a href="../../solutions/lead-generation">Lead Generation</a></li>
-            <li><a href="../../industries/ecommerce">E-commerce Solutions</a></li>
-            <li><a href="/pricing/">Pricing Plans</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <div class="footer-heading">Integrations</div>
-          <ul>
-            <li><a href="../../integrations/shopify">Shopify Integration</a></li>
-            <li><a href="../../integrations/woocommerce">WooCommerce Integration</a></li>
-            <li><a href="../../integrations/google-calendar">Google Workspace</a></li>
-            <li><a href="../../integrations/api-webhooks/">Webhooks &amp; API</a></li>
-            <li><a href="../../integrations/crm/">CRM Integrations</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <div class="footer-heading">Company</div>
-          <ul>
+            <li><a href="../../channel/whatsapp/">WhatsApp Business API</a></li>
+            <li><a href="../../products/chatbot/">AI Chatbot &amp; Automation</a></li>
+            <li><a href="../../pricing/">Pricing Plans</a></li>
+            <li><a href="../../partners/">Partner Program</a></li>
             <li><a href="../../company/about/">About HelloBotz</a></li>
-            <li><a href="/contact/">Contact Us</a></li>
-            <li><a href="/partners/">Partner Program</a></li>
-            <li><a href="/resources/blog/">Blog &amp; Resources</a></li>
-            <li><a href="/resources/help-center/">Help Center</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:4px;color:#A78BFA;font-weight:600">📍 Office Map ↗</a></li>
+            <li><a href="../../contact/">Contact Us</a></li>
           </ul>
+        </div>
+
+        <!-- Column 3: Head Office Map Directly In Footer -->
+        <div class="footer-map-col">
+          <div class="footer-heading" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+            <span style="display:inline-flex;align-items:center;gap:6px;color:#FFFFFF;font-weight:700;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Head Office
+            </span>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025" target="_blank" rel="noopener noreferrer" class="footer-map-pill">
+              Google Maps ↗
+            </a>
+          </div>
+          <p style="font-size:0.83rem;color:#94A3B8;margin:0 0 0.85rem;line-height:1.5;">
+            <strong style="color:#FFFFFF;">HelloBotz AI Technologies Pvt Ltd</strong><br>
+            Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025
+          </p>
+          <div class="footer-map-frame-wrap">
+            <iframe
+              title="HelloBotz Head Office Map"
+              src="https://maps.google.com/maps?q=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              width="100%"
+              height="190"
+              style="border:0;display:block;"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </div>
 
