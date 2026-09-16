@@ -893,7 +893,7 @@
       }
     }
 
-    /* PRODUCTS MEGA MENU: Clean 5-Column Balanced Grid Matching HelloBotz Theme */
+    /* PRODUCTS MEGA MENU: Clean 5-Column SaaS Mega Menu Matching Reference */
     .mega-menu-products {
       width: min(1180px, calc(100vw - 28px)) !important;
       max-width: calc(100vw - 28px) !important;
@@ -903,6 +903,322 @@
       box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
       padding: 22px 24px !important;
       box-sizing: border-box !important;
+    }
+
+    .prodocu-mega-layout {
+      display: grid !important;
+      grid-template-columns: 160px 1fr 220px !important;
+      gap: 20px !important;
+      align-items: stretch !important;
+      width: 100% !important;
+    }
+
+    /* Column 1: Channels */
+    .prodocu-col-channels {
+      display: flex !important;
+      flex-direction: column !important;
+      border-right: 1px solid #f1f5f9 !important;
+      padding-right: 16px !important;
+    }
+
+    .prodocu-col-heading {
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      color: #64748b !important;
+      text-transform: capitalize !important;
+      letter-spacing: 0.02em !important;
+      margin-bottom: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      height: 26px !important;
+    }
+
+    .prodocu-channel-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+
+    .prodocu-channel-btn {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      width: 100% !important;
+      padding: 8px 10px !important;
+      border-radius: 10px !important;
+      font-size: 0.92rem !important;
+      font-weight: 600 !important;
+      color: #334155 !important;
+      border: 1px solid transparent !important;
+      background: transparent !important;
+      cursor: pointer !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-align: left !important;
+      font-family: inherit !important;
+      outline: none !important;
+    }
+
+    .prodocu-channel-btn:hover {
+      background: #f8fafc !important;
+      color: #0f172a !important;
+    }
+
+    .prodocu-channel-btn.active[data-channel="whatsapp"] {
+      background: #ecfdf5 !important;
+      border-color: #a7f3d0 !important;
+      color: #047857 !important;
+      font-weight: 700 !important;
+    }
+
+    .prodocu-channel-btn.active[data-channel="instagram"] {
+      background: #fdf2f8 !important;
+      border-color: #fbcfe8 !important;
+      color: #be185d !important;
+      font-weight: 700 !important;
+    }
+
+    .prodocu-chan-icon {
+      width: 26px !important;
+      height: 26px !important;
+      border-radius: 7px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    .prodocu-chan-icon.wa {
+      background: #25d366 !important;
+      color: #ffffff !important;
+    }
+
+    .prodocu-chan-icon.ig {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+      color: #ffffff !important;
+    }
+
+    .prodocu-partner-badge {
+      margin-top: auto !important;
+      padding-top: 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .prodocu-partner-badge img {
+      width: 100% !important;
+      max-width: 145px !important;
+      height: auto !important;
+      display: block !important;
+      border-radius: 8px !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+    }
+
+    /* Middle 3 Columns: Marketing, Sales, Support */
+    .prodocu-features-container {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
+      gap: 16px !important;
+      width: 100% !important;
+    }
+
+    .prodocu-feature-col {
+      display: flex !important;
+      flex-direction: column !important;
+      border-right: 1px solid #f1f5f9 !important;
+      padding-right: 14px !important;
+    }
+
+    .prodocu-feature-col.no-border {
+      border-right: none !important;
+      padding-right: 0 !important;
+    }
+
+    .prodocu-section-title {
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 8px !important;
+      border-bottom: 1.5px solid #f1f5f9 !important;
+      letter-spacing: -0.01em !important;
+      height: 26px !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .prodocu-items-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+
+    .prodocu-item {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 9px !important;
+      padding: 6px 8px !important;
+      border-radius: 8px !important;
+      text-decoration: none !important;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      background: transparent !important;
+    }
+
+    .prodocu-item:hover {
+      background: #f8fafc !important;
+      transform: translateX(2px) !important;
+    }
+
+    .prodocu-item-icon {
+      width: 30px !important;
+      height: 30px !important;
+      border-radius: 7px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      background: #f1f5f9 !important;
+      color: #475569 !important;
+      margin-top: 1px !important;
+      transition: all 0.18s ease !important;
+    }
+
+    .prodocu-item:hover .prodocu-item-icon {
+      background: #ede9fe !important;
+      color: #7c3aed !important;
+    }
+
+    .prodocu-item-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+
+    .prodocu-item-content {
+      display: flex !important;
+      flex-direction: column !important;
+      min-width: 0 !important;
+    }
+
+    .prodocu-item-title {
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      line-height: 1.25 !important;
+      transition: color 0.18s ease !important;
+    }
+
+    .prodocu-item:hover .prodocu-item-title {
+      color: #7c3aed !important;
+    }
+
+    .prodocu-item-desc {
+      font-size: 0.73rem !important;
+      color: #64748b !important;
+      line-height: 1.3 !important;
+      margin-top: 1px !important;
+      white-space: normal !important;
+    }
+
+    /* Column 5: Integrate With Card */
+    .prodocu-col-integrate {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .prodocu-integrate-card {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 14px !important;
+      padding: 14px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .prodocu-integrate-title {
+      font-size: 0.92rem !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      margin-bottom: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    .prodocu-integrate-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 8px !important;
+    }
+
+    .prodocu-int-tile {
+      aspect-ratio: 1 !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 6px !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03) !important;
+      transition: all 0.2s ease !important;
+      text-decoration: none !important;
+    }
+
+    .prodocu-int-tile:hover {
+      transform: translateY(-2px) !important;
+      border-color: #cbd5e1 !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06) !important;
+    }
+
+    .prodocu-int-tile img {
+      max-width: 100% !important;
+      max-height: 26px !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    .prodocu-int-arrow {
+      background: #22c55e !important;
+      border-color: #22c55e !important;
+      border-radius: 50% !important;
+      color: #ffffff !important;
+    }
+
+    .prodocu-int-arrow:hover {
+      background: #16a34a !important;
+      border-color: #16a34a !important;
+      transform: translateY(-2px) scale(1.08) !important;
+    }
+
+    .prodocu-int-arrow svg {
+      width: 18px !important;
+      height: 18px !important;
+      stroke: #ffffff !important;
+      stroke-width: 2.4 !important;
+    }
+
+    .prodocu-integrate-more {
+      margin-top: auto !important;
+      padding-top: 10px !important;
+      text-align: center !important;
+    }
+
+    .prodocu-integrate-more a {
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      color: #2563eb !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .prodocu-integrate-more a:hover {
+      text-decoration: underline !important;
     }
 
     /* SOLUTIONS MEGA MENU: 12 Industries (3 cols x 4 rows) + Leads Directory Card (Image 3) */
@@ -2137,112 +2453,414 @@
       </div>
       <nav class="nav-desktop" role="navigation" aria-label="Main">
 
-        <!-- PRODUCTS MEGAMENU (HelloBotz Suite) -->
+        <!-- PRODUCTS MEGAMENU (HelloBotz Suite - 5-Column SaaS Mega Menu) -->
         <div class="nav-item nav-item-features nav-item-products" data-mega>
           <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="mega-menu mega-menu-panel mega-menu-features" role="menu">
-            <div class="mega-features-wrapper">
-              <div class="mega-features-header" style="display:flex;align-items:center;justify-content:space-between;">
-                <span class="mega-features-label">Platform Features &amp; Products</span>
-                <a href="../../features/" style="font-size:0.8rem;font-weight:700;color:#7c3aed;text-decoration:none;display:inline-flex;align-items:center;gap:3px;">All Features Directory &rarr;</a>
+          <div class="mega-menu mega-menu-panel mega-menu-products" role="menu">
+            <div class="prodocu-mega-layout">
+              <!-- Column 1: Channels -->
+              <div class="prodocu-col-channels">
+                <div class="prodocu-col-heading">Channels</div>
+                <div class="prodocu-channel-list">
+                  <button type="button" class="prodocu-channel-btn active" data-channel="whatsapp" title="WhatsApp Products">
+                    <span class="prodocu-chan-icon wa">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </span>
+                    <span>WhatsApp</span>
+                  </button>
+                  <button type="button" class="prodocu-channel-btn" data-channel="instagram" title="Instagram Products">
+                    <span class="prodocu-chan-icon ig">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </span>
+                    <span>Instagram</span>
+                  </button>
+                </div>
+                <div class="prodocu-partner-badge">
+                  <img src="../../assets/images/integrations/official-meta-partner.png" alt="Meta Official Partner" width="145" height="23">
+                </div>
               </div>
-              <div class="mega-features-grid">
-                <!-- 1. Bulk Broadcast -->
-                <a href="../../products/broadcast/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-pink">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                  </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">Bulk Broadcast</span>
-                    <span class="mega-feature-desc">Send campaigns to thousands instantly</span>
-                  </div>
-                </a>
 
-                <!-- 2. Shared Team Inbox -->
-                <a href="../../products/shared-inbox/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-purple">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+              <!-- Columns 2, 3, 4: WHATSAPP Features Panel (Active by default) -->
+              <div class="prodocu-features-container prodocu-panel-wa" id="prodocu-panel-whatsapp">
+                <!-- Column 2: Marketing -->
+                <div class="prodocu-feature-col">
+                  <div class="prodocu-section-title">Marketing</div>
+                  <div class="prodocu-items-list">
+                    <a href="../../products/broadcast/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Broadcast</span>
+                        <span class="prodocu-item-desc">Send bulk messages</span>
+                      </div>
+                    </a>
+                    <a href="../../products/ctwa/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><polygon points="12 8 16 12 12 12 12 16 12 8"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">CTWA</span>
+                        <span class="prodocu-item-desc">Click to WhatsApp ads</span>
+                      </div>
+                    </a>
+                    <a href="../../products/automation/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Drip Campaign</span>
+                        <span class="prodocu-item-desc">Automated sequences</span>
+                      </div>
+                    </a>
+                    <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Catalog</span>
+                        <span class="prodocu-item-desc">Showcase products</span>
+                      </div>
+                    </a>
+                    <a href="../../products/whatsapp-form/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">WhatsApp Form/Flow</span>
+                        <span class="prodocu-item-desc">Interactive forms</span>
+                      </div>
+                    </a>
+                    <a href="../../channel/whatsapp/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.26 4.41.49 1.15 4.3 3.35 2.95-1.95 4.02.6 4.45-4.22 1.45-2.43 3.73L12 21.35l-4 1.3-2.43-3.73-4.22-1.45.6-4.45-1.95-4.02 3.35-2.95 1.15-4.3 4.41-.49L12 2z"/><polyline points="9 12 11 14 15 10"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Blue Tick</span>
+                        <span class="prodocu-item-desc">Verified business</span>
+                      </div>
+                    </a>
                   </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">Shared Team Inbox</span>
-                    <span class="mega-feature-desc">Collaborate on customer conversations</span>
-                  </div>
-                </a>
+                </div>
 
-                <!-- 3. AI Chatbot Builder -->
-                <a href="../../products/chatbot/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+                <!-- Column 3: Sales -->
+                <div class="prodocu-feature-col">
+                  <div class="prodocu-section-title">Sales</div>
+                  <div class="prodocu-items-list">
+                    <a href="../../products/chatbot/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">AI Chatbot</span>
+                        <span class="prodocu-item-desc">Automate conversations</span>
+                      </div>
+                    </a>
+                    <a href="../../solutions/payments/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">WhatsApp Payment</span>
+                        <span class="prodocu-item-desc">Accept payments</span>
+                      </div>
+                    </a>
+                    <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Catalog</span>
+                        <span class="prodocu-item-desc">Display products</span>
+                      </div>
+                    </a>
+                    <a href="../../products/flow-builder/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Interactive Message</span>
+                        <span class="prodocu-item-desc">Order updates</span>
+                      </div>
+                    </a>
                   </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">AI Chatbot Builder</span>
-                    <span class="mega-feature-desc">Visual no-code automation flows</span>
-                  </div>
-                </a>
+                </div>
 
-                <!-- 4. AI Voice Calling -->
-                <a href="../../products/ai-voice/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-indigo">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <!-- Column 4: Support -->
+                <div class="prodocu-feature-col no-border">
+                  <div class="prodocu-section-title">Support</div>
+                  <div class="prodocu-items-list">
+                    <a href="../../products/shared-inbox/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Team Inbox</span>
+                        <span class="prodocu-item-desc">Unified conversations</span>
+                      </div>
+                    </a>
+                    <a href="../../products/ai-agent/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.9 6.9 2.4-6.9 2.4L12 20.6l-2.4-6.9-6.9-2.4 6.9-2.4L12 2z"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">AI Assistant</span>
+                        <span class="prodocu-item-desc">Smart responses</span>
+                      </div>
+                    </a>
+                    <a href="../../solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Feedback Collection</span>
+                        <span class="prodocu-item-desc">Gather insights</span>
+                      </div>
+                    </a>
+                    <a href="../../products/analytics/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Analytics Dashboard</span>
+                        <span class="prodocu-item-desc">Track performance</span>
+                      </div>
+                    </a>
                   </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">AI Voice Calling</span>
-                    <span class="mega-feature-desc">AI agents for inbound &amp; outbound calls</span>
-                  </div>
-                </a>
-
-                <!-- 5. WhatsApp Catalog -->
-                <a href="../../products/catalog/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-green">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                  </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">WhatsApp Catalog</span>
-                    <span class="mega-feature-desc">Showcase products inside WhatsApp</span>
-                  </div>
-                </a>
-
-                <!-- 6. Appointment Booking -->
-                <a href="../../solutions/appointment/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-amber">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">Appointment Booking</span>
-                    <span class="mega-feature-desc">Let customers self-book appointments</span>
-                  </div>
-                </a>
-
-                <!-- 7. WhatsApp Forms -->
-                <a href="../../products/whatsapp-form/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-emerald">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                  </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">WhatsApp Forms</span>
-                    <span class="mega-feature-desc">Collect responses via chat forms</span>
-                  </div>
-                </a>
-
-                <!-- 8. Click-to-WhatsApp Ads -->
-                <a href="../../facebook-ads/" class="mega-feature-link" role="menuitem">
-                  <div class="mega-feature-icon icon-violet">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
-                  </div>
-                  <div class="mega-feature-text">
-                    <span class="mega-feature-title">Click-to-WhatsApp Ads</span>
-                    <span class="mega-feature-desc">Drive ad traffic to WhatsApp conversations</span>
-                  </div>
-                </a>
+                </div>
               </div>
-              <div class="mega-features-footer" style="margin-top:14px;padding-top:10px;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;">
-                <span style="font-size:0.82rem;color:#64748b;font-weight:500;">Want to explore every feature in detail?</span>
-                <a href="../../features/" style="font-size:0.82rem;font-weight:700;color:#7c3aed;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
-                  Explore All Features Guide &rarr;
-                </a>
+
+              <!-- Columns 2, 3, 4: INSTAGRAM Features Panel (Toggleable) -->
+              <div class="prodocu-features-container prodocu-panel-ig" id="prodocu-panel-instagram" style="display:none;">
+                <!-- Column 2: Marketing (Instagram) -->
+                <div class="prodocu-feature-col">
+                  <div class="prodocu-section-title">Marketing</div>
+                  <div class="prodocu-items-list">
+                    <a href="../../channel/instagram/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Broadcast</span>
+                        <span class="prodocu-item-desc">Direct messaging to followers</span>
+                      </div>
+                    </a>
+                    <a href="../../channel/instagram/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Comment to DM</span>
+                        <span class="prodocu-item-desc">Automate comment replies</span>
+                      </div>
+                    </a>
+                    <a href="../../channel/instagram/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Story Mention</span>
+                        <span class="prodocu-item-desc">Reply to story mentions</span>
+                      </div>
+                    </a>
+                    <a href="../../channel/instagram/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Instagram Ads</span>
+                        <span class="prodocu-item-desc">Click-to-Instagram Direct</span>
+                      </div>
+                    </a>
+                    <a href="../../products/flow-builder/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">DM Flows</span>
+                        <span class="prodocu-item-desc">Guided conversational flows</span>
+                      </div>
+                    </a>
+                    <a href="../../channel/instagram/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.26 4.41.49 1.15 4.3 3.35 2.95-1.95 4.02.6 4.45-4.22 1.45-2.43 3.73L12 21.35l-4 1.3-2.43-3.73-4.22-1.45.6-4.45-1.95-4.02 3.35-2.95 1.15-4.3 4.41-.49L12 2z"/><polyline points="9 12 11 14 15 10"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Blue Badge</span>
+                        <span class="prodocu-item-desc">Verified Instagram profile</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Column 3: Sales (Instagram) -->
+                <div class="prodocu-feature-col">
+                  <div class="prodocu-section-title">Sales</div>
+                  <div class="prodocu-items-list">
+                    <a href="../../products/chatbot/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">AI Chatbot</span>
+                        <span class="prodocu-item-desc">Automate sales conversations</span>
+                      </div>
+                    </a>
+                    <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">DM Catalog</span>
+                        <span class="prodocu-item-desc">Showcase products in DM</span>
+                      </div>
+                    </a>
+                    <a href="../../solutions/payments/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Payments</span>
+                        <span class="prodocu-item-desc">Collect orders &amp; payments</span>
+                      </div>
+                    </a>
+                    <a href="../../channel/instagram/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Story Leads</span>
+                        <span class="prodocu-item-desc">Convert stories to sales</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Column 4: Support (Instagram) -->
+                <div class="prodocu-feature-col no-border">
+                  <div class="prodocu-section-title">Support</div>
+                  <div class="prodocu-items-list">
+                    <a href="../../products/shared-inbox/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Team Inbox</span>
+                        <span class="prodocu-item-desc">Unified Instagram DMs</span>
+                      </div>
+                    </a>
+                    <a href="../../products/ai-agent/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.9 6.9 2.4-6.9 2.4L12 20.6l-2.4-6.9-6.9-2.4 6.9-2.4L12 2z"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">AI Assistant</span>
+                        <span class="prodocu-item-desc">Instant smart replies</span>
+                      </div>
+                    </a>
+                    <a href="../../solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Feedback Collection</span>
+                        <span class="prodocu-item-desc">Gather DM reviews</span>
+                      </div>
+                    </a>
+                    <a href="../../products/analytics/" class="prodocu-item" role="menuitem">
+                      <div class="prodocu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                      </div>
+                      <div class="prodocu-item-content">
+                        <span class="prodocu-item-title">Analytics Dashboard</span>
+                        <span class="prodocu-item-desc">DM engagement metrics</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 5: Integrate With Card -->
+              <div class="prodocu-col-integrate">
+                <div class="prodocu-integrate-card">
+                  <div class="prodocu-integrate-title">
+                    <span>Integrate With</span>
+                  </div>
+                  <div class="prodocu-integrate-grid">
+                    <a href="../../integrations/crm/" class="prodocu-int-tile" title="Zoho CRM">
+                      <img src="../../assets/images/integrations/zoho.png" alt="Zoho" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/google-sheets/" class="prodocu-int-tile" title="Google Sheets">
+                      <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/shopify/" class="prodocu-int-tile" title="Shopify">
+                      <img src="../../assets/images/integrations/shopify.png" alt="Shopify" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/woocommerce/" class="prodocu-int-tile" title="WooCommerce">
+                      <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/" class="prodocu-int-tile" title="Shiprocket">
+                      <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/" class="prodocu-int-tile" title="GoTab">
+                      <img src="../../assets/images/integrations/gotab.png" alt="GoTab" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/" class="prodocu-int-tile" title="Wortal">
+                      <img src="../../assets/images/integrations/wortal.png" alt="Wortal" width="34" height="26">
+                    </a>
+                    <a href="../../integrations/" class="prodocu-int-tile prodocu-int-arrow" title="View All Integrations">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                  </div>
+                  <div class="prodocu-integrate-more">
+                    <a href="../../integrations/">All 50+ Apps &rarr;</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <script>
+            (function() {
+              function setupProdocuMega() {
+                var buttons = document.querySelectorAll('.prodocu-channel-btn');
+                var waPanel = document.getElementById('prodocu-panel-whatsapp');
+                var igPanel = document.getElementById('prodocu-panel-instagram');
+                if (!buttons.length || !waPanel || !igPanel) return;
+
+                function switchChannel(channel) {
+                  buttons.forEach(function(btn) {
+                    if (btn.getAttribute('data-channel') === channel) {
+                      btn.classList.add('active');
+                    } else {
+                      btn.classList.remove('active');
+                    }
+                  });
+                  if (channel === 'instagram') {
+                    waPanel.style.display = 'none';
+                    igPanel.style.display = 'grid';
+                  } else {
+                    waPanel.style.display = 'grid';
+                    igPanel.style.display = 'none';
+                  }
+                }
+
+                buttons.forEach(function(btn) {
+                  btn.addEventListener('mouseenter', function() {
+                    switchChannel(this.getAttribute('data-channel'));
+                  });
+                  btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchChannel(this.getAttribute('data-channel'));
+                  });
+                });
+              }
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupProdocuMega);
+              } else {
+                setupProdocuMega();
+              }
+            })();
+          </script>
         </div>
 
         <!-- CHANNELS [LIVE] MEGAMENU (HelloBotz Suite) -->
@@ -2566,14 +3184,16 @@
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <a href="../../products/whatsapp-shared-inbox/">Shared Inbox</a>
-            <a href="../../products/campaigns-and-broadcasts/">Bulk Broadcasts</a>
-            <a href="../../products/ai-agent-and-bot/">AI Agent &amp; Chatbot</a>
-            <a href="../../products/crm-and-lead-management/">CRM &amp; Lead Management</a>
-            <a href="../../products/chat-widget/">Website Chat Widget</a>
-            <a href="../../products/template-message-management/">Template Messages</a>
-            <a href="../../products/auto-replies/">Automated Replies</a>
-            <a href="../../products/apis-and-webhooks/">APIs &amp; Webhooks</a>
+            <a href="../../products/broadcast/">Broadcast (Bulk Messaging)</a>
+            <a href="../../products/ctwa/">Click-to-WhatsApp Ads (CTWA)</a>
+            <a href="../../products/automation/">Drip Campaigns &amp; Flows</a>
+            <a href="../../products/catalog/">Catalog Showcase</a>
+            <a href="../../products/whatsapp-form/">WhatsApp Forms &amp; Flows</a>
+            <a href="../../products/chatbot/">AI Chatbot &amp; Sales Bot</a>
+            <a href="../../solutions/payments/">WhatsApp Payments</a>
+            <a href="../../products/shared-inbox/">Shared Team Inbox</a>
+            <a href="../../products/analytics/">Analytics Dashboard</a>
+            <a href="../../integrations/">Integrations (Zoho, Shopify, Sheets)</a>
           </div></div>
         </div>
         <div class="mobile-nav-item" data-accordion>
@@ -2786,7 +3406,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, I want to book a Hair Spa and Manicure for tomorrow afternoon.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:52 PM</span>
+                        <span class="time">07:37 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2798,13 +3418,13 @@
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="06:00 PM" style="text-align:left;width:fit-content;">06:00 PM &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:53 PM</span>
+                        <span class="time">07:38 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>04:30 PM</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:54 PM</span>
+                        <span class="time">07:39 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2816,7 +3436,7 @@
 <br />
 See you tomorrow! Tap below if you need to reschedule.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:55 PM</span>
+                        <span class="time">07:40 PM</span>
                                               </div>
                     </div>
                   
@@ -3030,10 +3650,10 @@ See you tomorrow! Tap below if you need to reschedule.</span>
                                           <div class="ind-msg-btn">Aromatherapy Massage</div>
                                           <div class="ind-msg-btn">Skin Brightening Facial</div>
                                       </div>
-                                <span class="msg-time">06:55 PM</span>
+                                <span class="msg-time">07:40 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Hair Styling &amp; Color                  <span class="msg-time">06:55 PM</span>
+                  Hair Styling &amp; Color                  <span class="msg-time">07:40 PM</span>
                 </div>
                           </div>
           </div>
@@ -3085,10 +3705,10 @@ See you tomorrow! Tap below if you need to reschedule.</span>
                                           <div class="ind-msg-btn">Book Glow Package</div>
                                           <div class="ind-msg-btn">View Complete Menu</div>
                                       </div>
-                                <span class="msg-time">06:55 PM</span>
+                                <span class="msg-time">07:40 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Book Glow Package                  <span class="msg-time">06:55 PM</span>
+                  Book Glow Package                  <span class="msg-time">07:40 PM</span>
                 </div>
                           </div>
           </div>
@@ -3140,10 +3760,10 @@ See you tomorrow! Tap below if you need to reschedule.</span>
                                           <div class="ind-msg-btn">Book with Imran (Saturday)</div>
                                           <div class="ind-msg-btn">Choose Another Time</div>
                                       </div>
-                                <span class="msg-time">06:55 PM</span>
+                                <span class="msg-time">07:40 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Book with Imran (Saturday)                  <span class="msg-time">06:55 PM</span>
+                  Book with Imran (Saturday)                  <span class="msg-time">07:40 PM</span>
                 </div>
                           </div>
           </div>
@@ -3196,10 +3816,10 @@ See you tomorrow! Tap below if you need to reschedule.</span>
                                           <div class="ind-msg-btn">⭐⭐⭐ Average</div>
                                           <div class="ind-msg-btn">Need Assistance</div>
                                       </div>
-                                <span class="msg-time">06:55 PM</span>
+                                <span class="msg-time">07:40 PM</span>
               </div>
                               <div class="ind-msg user">
-                  ⭐⭐⭐⭐⭐ Loved it!                  <span class="msg-time">06:55 PM</span>
+                  ⭐⭐⭐⭐⭐ Loved it!                  <span class="msg-time">07:40 PM</span>
                 </div>
                           </div>
           </div>

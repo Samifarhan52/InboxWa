@@ -173,6 +173,32 @@
     on(window, 'resize', debounce(() => {
       if (activeItem) positionMenu(activeItem);
     }, 150));
+
+    // Channels tab switching inside Products mega menu
+    const prodocuTabs = $$('.prodocu-channel-btn');
+    const waPanel = $('#prodocu-panel-whatsapp');
+    const igPanel = $('#prodocu-panel-instagram');
+    if (prodocuTabs.length && waPanel && igPanel) {
+      function switchProdocu(chan) {
+        prodocuTabs.forEach((btn) => {
+          btn.classList.toggle('active', btn.getAttribute('data-channel') === chan);
+        });
+        if (chan === 'instagram') {
+          waPanel.style.display = 'none';
+          igPanel.style.display = 'grid';
+        } else {
+          waPanel.style.display = 'grid';
+          igPanel.style.display = 'none';
+        }
+      }
+      prodocuTabs.forEach((btn) => {
+        on(btn, 'mouseenter', () => switchProdocu(btn.getAttribute('data-channel')));
+        on(btn, 'click', (e) => {
+          e.preventDefault();
+          switchProdocu(btn.getAttribute('data-channel'));
+        });
+      });
+    }
   }
 
   /* ---------- Mobile Menu ---------- */
