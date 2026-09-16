@@ -994,42 +994,42 @@
 
     /* MOBILE PRODUCTS ACCORDION (Matching getgabs / media_1789588745503.png) */
     .prodocu-mob-container {
-      padding: 10px 4px 16px !important;
+      padding: 12px 6px 18px !important;
       display: flex !important;
       flex-direction: column !important;
-      gap: 10px !important;
+      gap: 12px !important;
     }
     .prodocu-mob-section-title {
-      font-size: 11.5px !important;
+      font-size: 13px !important;
       font-weight: 700 !important;
       color: #6b7280 !important;
-      letter-spacing: 0.06em !important;
+      letter-spacing: 0.05em !important;
       text-transform: uppercase !important;
-      margin-bottom: 4px !important;
+      margin-bottom: 6px !important;
       padding-left: 2px !important;
     }
     .prodocu-mob-channel-btn {
       width: 100% !important;
-      background: #f3f4f6 !important;
+      background: #f4f4f5 !important;
       border: 1px solid #e5e7eb !important;
-      border-radius: 12px !important;
-      padding: 12px 16px !important;
+      border-radius: 14px !important;
+      padding: 16px 20px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: space-between !important;
-      font-size: 15px !important;
+      font-size: 16px !important;
       font-weight: 600 !important;
       color: #111827 !important;
       cursor: pointer !important;
       transition: all 0.2s ease !important;
       text-align: left !important;
       outline: none !important;
-      margin-bottom: 6px !important;
+      margin-bottom: 8px !important;
       font-family: inherit !important;
     }
     .prodocu-mob-channel-btn:hover,
     .prodocu-mob-channel-btn.active {
-      background: #e5e7eb !important;
+      background: #ebecee !important;
     }
     .prodocu-mob-channel-btn .mob-chan-left {
       display: flex !important;
@@ -1037,17 +1037,19 @@
       gap: 12px !important;
     }
     .prodocu-mob-channel-btn svg.mob-chevron {
-      color: #6b7280 !important;
-      transition: transform 0.2s ease !important;
+      color: #4b5563 !important;
+      transition: transform 0.25s ease !important;
     }
     .prodocu-mob-channel-btn.active svg.mob-chevron {
       transform: rotate(90deg) !important;
     }
     .prodocu-mob-channel-panel {
-      padding: 6px 12px 14px 18px !important;
+      padding: 8px 14px 14px 18px !important;
       margin-bottom: 8px !important;
-      border-left: 2px solid #e5e7eb !important;
+      border-left: 2.5px solid #10b981 !important;
       margin-left: 14px !important;
+      background: #fafafa !important;
+      border-radius: 10px !important;
       display: none;
       flex-direction: column !important;
       gap: 10px !important;
@@ -1056,7 +1058,7 @@
       display: flex !important;
     }
     .prodocu-mob-group-title {
-      font-size: 11px !important;
+      font-size: 11.5px !important;
       font-weight: 700 !important;
       color: #9ca3af !important;
       text-transform: uppercase !important;
@@ -1068,7 +1070,7 @@
       display: flex !important;
       align-items: center !important;
       gap: 10px !important;
-      padding: 6px 0 !important;
+      padding: 7px 0 !important;
       color: #374151 !important;
       font-size: 14px !important;
       font-weight: 500 !important;
@@ -1085,43 +1087,68 @@
     .prodocu-mob-divider {
       border: none !important;
       border-top: 1px solid #e5e7eb !important;
-      margin: 12px 0 14px 0 !important;
+      margin: 16px 0 !important;
     }
     .prodocu-mob-integrate-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
-      gap: 10px !important;
+      gap: 14px !important;
       margin-top: 6px !important;
     }
     .prodocu-mob-int-tile {
-      background: #f9fafb !important;
-      border: 1px solid #e5e7eb !important;
-      border-radius: 12px !important;
-      height: 60px !important;
+      background: #f4f4f5 !important;
+      border-radius: 16px !important;
+      aspect-ratio: 1 / 1 !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 8px !important;
+      padding: 10px !important;
       box-sizing: border-box !important;
-      transition: all 0.15s ease !important;
+      transition: transform 0.15s ease, box-shadow 0.15s ease !important;
       text-decoration: none !important;
     }
-    .prodocu-mob-int-tile img {
+    .prodocu-mob-int-tile:hover {
+      transform: translateY(-2px) !important;
+    }
+    .prodocu-mob-int-tile .int-inner-card {
+      background: #ffffff !important;
+      border-radius: 12px !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+      padding: 6px !important;
+      box-sizing: border-box !important;
+    }
+    .prodocu-mob-int-tile .int-inner-card img {
       max-height: 28px !important;
-      max-width: 44px !important;
+      max-width: 80% !important;
       width: auto !important;
       height: auto !important;
       object-fit: contain !important;
+      display: block !important;
     }
     .prodocu-mob-int-tile.tile-arrow {
-      background: #064e3b !important;
-      border-color: #064e3b !important;
+      background: #034737 !important;
       color: #ffffff !important;
     }
-    .prodocu-mob-int-tile.tile-arrow svg {
-      width: 24px !important;
-      height: 24px !important;
-      stroke: #ffffff !important;
+    .prodocu-mob-int-tile.tile-arrow .arrow-circle {
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 50% !important;
+      background: #ffffff !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+    }
+    .prodocu-mob-int-tile.tile-arrow .arrow-circle svg {
+      width: 20px !important;
+      height: 20px !important;
+      stroke: #034737 !important;
+      stroke-width: 2.5 !important;
     }
 
     .prodocu-chan-icon {
@@ -3261,10 +3288,40 @@
                   });
                 });
               }
-              if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", setupProdocuMega);
-              } else {
+              function setupProdocuMob() {
+                var mobChanBtns = document.querySelectorAll(".prodocu-mob-channel-btn");
+                if (!mobChanBtns.length) return;
+                mobChanBtns.forEach(function(btn) {
+                  btn.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var chan = this.getAttribute("data-mob-chan");
+                    var panelId = "prodocu-mob-" + (chan === "whatsapp" ? "wa" : chan === "instagram" ? "ig" : chan === "telegram" ? "tg" : "fb");
+                    var panel = document.getElementById(panelId);
+                    var isOpen = this.classList.contains("active");
+
+                    mobChanBtns.forEach(function(b) {
+                      b.classList.remove("active");
+                      var c = b.getAttribute("data-mob-chan");
+                      var p = document.getElementById("prodocu-mob-" + (c === "whatsapp" ? "wa" : c === "instagram" ? "ig" : c === "telegram" ? "tg" : "fb"));
+                      if (p) p.classList.remove("active");
+                    });
+
+                    if (!isOpen && panel) {
+                      this.classList.add("active");
+                      panel.classList.add("active");
+                    }
+                  });
+                });
+              }
+              function initAllProdocu() {
                 setupProdocuMega();
+                setupProdocuMob();
+              }
+              if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initAllProdocu);
+              } else {
+                initAllProdocu();
               }
             })();
           </script>
@@ -3626,28 +3683,44 @@
               <div class="prodocu-mob-section-title">INTEGRATE WITH</div>
               <div class="prodocu-mob-integrate-grid">
                 <a href="../../integrations/crm/" class="prodocu-mob-int-tile" title="Zoho">
-                  <img src="../../assets/images/integrations/zoho.png" alt="Zoho">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/zoho.png" alt="Zoho">
+                  </div>
                 </a>
                 <a href="../../integrations/google-sheets/" class="prodocu-mob-int-tile" title="Google Sheets">
-                  <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets">
+                  </div>
                 </a>
                 <a href="../../integrations/shopify/" class="prodocu-mob-int-tile" title="Shopify">
-                  <img src="../../assets/images/integrations/shopify.png" alt="Shopify">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/shopify.png" alt="Shopify">
+                  </div>
                 </a>
                 <a href="../../integrations/woocommerce/" class="prodocu-mob-int-tile" title="WooCommerce">
-                  <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce">
+                  </div>
                 </a>
                 <a href="../../integrations/" class="prodocu-mob-int-tile" title="Wortal">
-                  <img src="../../assets/images/integrations/wortal.png" alt="Wortal">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/wortal.png" alt="Wortal">
+                  </div>
                 </a>
                 <a href="../../integrations/" class="prodocu-mob-int-tile" title="GoTab">
-                  <img src="../../assets/images/integrations/gotab.png" alt="GoTab">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/gotab.png" alt="GoTab">
+                  </div>
                 </a>
                 <a href="../../integrations/" class="prodocu-mob-int-tile" title="Shiprocket">
-                  <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket">
+                  <div class="int-inner-card">
+                    <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket">
+                  </div>
                 </a>
                 <a href="../../integrations/" class="prodocu-mob-int-tile tile-arrow" title="View All Integrations">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <div class="arrow-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </div>
                 </a>
               </div>
 
@@ -3855,7 +3928,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, we want to reorder 200 boxes of A4 Copier Paper (75 GSM) for our office supplies store.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:08 PM</span>
+                        <span class="time">08:28 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -3874,20 +3947,20 @@ Dispatch available tomorrow from our Bhiwandi Warehouse.</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Modify Quantity" style="text-align:left;width:fit-content;">Modify Quantity &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:09 PM</span>
+                        <span class="time">08:29 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Confirm Repeat Order</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:10 PM</span>
+                        <span class="time">08:30 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>✓ Order #WO-4819 confirmed! Invoiced to your account. Loading begins tomorrow morning at 09:00 AM.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:11 PM</span>
+                        <span class="time">08:31 PM</span>
                                               </div>
                     </div>
                   
@@ -4101,10 +4174,10 @@ Dispatch available tomorrow from our Bhiwandi Warehouse.</span>
                                           <div class="ind-msg-btn">Office Supplies</div>
                                           <div class="ind-msg-btn">Safety Equipment</div>
                                       </div>
-                                <span class="msg-time">08:11 PM</span>
+                                <span class="msg-time">08:31 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Packaging Materials                  <span class="msg-time">08:11 PM</span>
+                  Packaging Materials                  <span class="msg-time">08:31 PM</span>
                 </div>
                           </div>
           </div>
@@ -4156,10 +4229,10 @@ Dispatch available tomorrow from our Bhiwandi Warehouse.</span>
                                           <div class="ind-msg-btn">Reorder Last 100 Units</div>
                                           <div class="ind-msg-btn">Adjust Quantity</div>
                                       </div>
-                                <span class="msg-time">08:11 PM</span>
+                                <span class="msg-time">08:31 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Reorder Last 100 Units                  <span class="msg-time">08:11 PM</span>
+                  Reorder Last 100 Units                  <span class="msg-time">08:31 PM</span>
                 </div>
                           </div>
           </div>
@@ -4214,10 +4287,10 @@ Outstanding Due: ₹3,60,000 (Due: Sept 25)                                  <di
                                           <div class="ind-msg-btn">Download Ledger PDF</div>
                                           <div class="ind-msg-btn">Pay Dues via NEFT/UPI</div>
                                       </div>
-                                <span class="msg-time">08:11 PM</span>
+                                <span class="msg-time">08:31 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Download Ledger PDF                  <span class="msg-time">08:11 PM</span>
+                  Download Ledger PDF                  <span class="msg-time">08:31 PM</span>
                 </div>
                           </div>
           </div>
@@ -4269,10 +4342,10 @@ Outstanding Due: ₹3,60,000 (Due: Sept 25)                                  <di
                                           <div class="ind-msg-btn">Request Container Quote</div>
                                           <div class="ind-msg-btn">View Specs</div>
                                       </div>
-                                <span class="msg-time">08:11 PM</span>
+                                <span class="msg-time">08:31 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Request Container Quote                  <span class="msg-time">08:11 PM</span>
+                  Request Container Quote                  <span class="msg-time">08:31 PM</span>
                 </div>
                           </div>
           </div>
