@@ -2786,7 +2786,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, I saw your luxury 3BHK project in Whitefield. Can you share the brochure?</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">05:29 PM</span>
+                        <span class="time">05:48 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -2802,20 +2802,20 @@ Would you like to schedule a site visit or view a 360° virtual tour?</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Speak to Property Advisor" style="text-align:left;width:fit-content;">Speak to Property Advisor &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">05:30 PM</span>
+                        <span class="time">05:49 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Book Site Visit for this Saturday 11 AM</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">05:31 PM</span>
+                        <span class="time">05:50 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>✓ Confirmed! Site visit booked for Saturday at 11:00 AM. Our relationship manager Raghav will greet you at the Palm Heights Clubhouse. Location pin has been shared.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">05:32 PM</span>
+                        <span class="time">05:51 PM</span>
                                               </div>
                     </div>
                   
@@ -3029,10 +3029,10 @@ Would you like to schedule a site visit or view a 360° virtual tour?</span>
                                           <div class="ind-msg-btn">3 BHK (₹1.2Cr - ₹1.6Cr)</div>
                                           <div class="ind-msg-btn">Luxury Penthouses</div>
                                       </div>
-                                <span class="msg-time">05:32 PM</span>
+                                <span class="msg-time">05:51 PM</span>
               </div>
                               <div class="ind-msg user">
-                  3 BHK (₹1.2Cr - ₹1.6Cr)                  <span class="msg-time">05:32 PM</span>
+                  3 BHK (₹1.2Cr - ₹1.6Cr)                  <span class="msg-time">05:51 PM</span>
                 </div>
                           </div>
           </div>
@@ -3085,10 +3085,10 @@ Would you like to schedule a site visit or view a 360° virtual tour?</span>
                                           <div class="ind-msg-btn">Saturday, 3:00 PM</div>
                                           <div class="ind-msg-btn">Sunday, 11:00 AM</div>
                                       </div>
-                                <span class="msg-time">05:32 PM</span>
+                                <span class="msg-time">05:51 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Saturday, 11:00 AM                  <span class="msg-time">05:32 PM</span>
+                  Saturday, 11:00 AM                  <span class="msg-time">05:51 PM</span>
                 </div>
                           </div>
           </div>
@@ -3140,10 +3140,10 @@ Would you like to schedule a site visit or view a 360° virtual tour?</span>
                                           <div class="ind-msg-btn">Claim Pre-Launch Offer</div>
                                           <div class="ind-msg-btn">View Payment Plan</div>
                                       </div>
-                                <span class="msg-time">05:32 PM</span>
+                                <span class="msg-time">05:51 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Claim Pre-Launch Offer                  <span class="msg-time">05:32 PM</span>
+                  Claim Pre-Launch Offer                  <span class="msg-time">05:51 PM</span>
                 </div>
                           </div>
           </div>
@@ -3195,10 +3195,10 @@ Would you like to schedule a site visit or view a 360° virtual tour?</span>
                                           <div class="ind-msg-btn">Call Agent Raghav</div>
                                           <div class="ind-msg-btn">Request Callback</div>
                                       </div>
-                                <span class="msg-time">05:32 PM</span>
+                                <span class="msg-time">05:51 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Call Agent Raghav                  <span class="msg-time">05:32 PM</span>
+                  Call Agent Raghav                  <span class="msg-time">05:51 PM</span>
                 </div>
                           </div>
           </div>
@@ -4314,8 +4314,8 @@ function handleIndSubmit(e) {
   .footer-social-row {
     display: flex;
     align-items: center;
-    gap: 0.65rem;
-    margin-top: 1.25rem;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
     flex-wrap: wrap;
   }
   .footer-social-btn {
@@ -4325,49 +4325,38 @@ function handleIndSubmit(e) {
     width: 38px;
     height: 38px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: #CBD5E1;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, filter 0.2s ease;
     text-decoration: none;
+    cursor: pointer;
   }
   .footer-social-btn svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    transition: transform 0.2s ease;
+    width: 20px;
+    height: 20px;
+    fill: #ffffff !important;
+    display: block;
   }
   .footer-social-btn:hover {
-    transform: translateY(-3px);
-    color: #ffffff;
+    transform: translateY(-2px);
+    filter: brightness(1.12);
   }
-  .footer-social-btn:hover svg {
-    transform: scale(1.1);
+  /* Original Brand Colors Always Active (No hover transition needed) */
+  .footer-social-ig {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
   }
-  .footer-social-ig:hover {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    border-color: transparent;
-    box-shadow: 0 6px 18px rgba(214, 36, 159, 0.45);
+  .footer-social-fb {
+    background: #1877F2 !important;
   }
-  .footer-social-fb:hover {
-    background: #1877F2;
-    border-color: #1877F2;
-    box-shadow: 0 6px 18px rgba(24, 119, 242, 0.45);
+  .footer-social-tg {
+    background: #229ED9 !important;
   }
-  .footer-social-tg:hover {
-    background: #229ED9;
-    border-color: #229ED9;
-    box-shadow: 0 6px 18px rgba(34, 158, 217, 0.45);
+  .footer-social-li {
+    background: #0A66C2 !important;
   }
-  .footer-social-li:hover {
-    background: #0A66C2;
-    border-color: #0A66C2;
-    box-shadow: 0 6px 18px rgba(10, 102, 194, 0.45);
-  }
-  .footer-social-wa:hover {
-    background: #25D366;
-    border-color: #25D366;
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+  .footer-social-wa {
+    background: #25D366 !important;
   }
   .footer-map-card {
     margin-top: 2rem;
@@ -4604,8 +4593,6 @@ function handleIndSubmit(e) {
             <li><a href="../../products/chatbot/">AI Chatbot Builder</a></li>
             <li><a href="../../products/ai-voice/">AI Voice Calling</a></li>
             <li><a href="../../products/catalog/">WhatsApp Catalog</a></li>
-            <li><a href="../../solutions/appointment/">Appointment Booking</a></li>
-            <li><a href="../../products/whatsapp-form/">WhatsApp Forms</a></li>
             <li><a href="../../facebook-ads/">Click-to-WhatsApp Ads</a></li>
           </ul>
         </div>
@@ -4613,11 +4600,9 @@ function handleIndSubmit(e) {
           <div class="footer-heading">Solutions</div>
           <ul>
             <li><a href="../../solutions/marketing/">Omnichannel Marketing</a></li>
-            <li><a href="../../solutions/bulk-messaging/">Bulk Messaging</a></li>
             <li><a href="../../solutions/sales">Sales on WhatsApp</a></li>
             <li><a href="../../solutions/customer-support">Customer Support</a></li>
             <li><a href="../../solutions/lead-generation">Lead Generation</a></li>
-            <li><a href="../../solutions/appointment/">Appointment Booking</a></li>
             <li><a href="../../industries/ecommerce">E-commerce Solutions</a></li>
             <li><a href="/pricing/">Pricing Plans</a></li>
           </ul>
@@ -4629,6 +4614,7 @@ function handleIndSubmit(e) {
             <li><a href="../../integrations/woocommerce">WooCommerce Integration</a></li>
             <li><a href="../../integrations/google-calendar">Google Workspace</a></li>
             <li><a href="../../integrations/api-webhooks/">Webhooks &amp; API</a></li>
+            <li><a href="../../integrations/crm/">CRM Integrations</a></li>
           </ul>
         </div>
         <div class="footer-col">
