@@ -3,9 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'HelloBots WhatsApp API Google Sheets Integration - Send Messages | HelloBots';
-$pageDescription = 'Trigger WhatsApp messages automatically from Google Sheets rows and capture responses back in real time with HelloBots.';
+$pageTitle = 'Google Sheets WhatsApp Integration | Auto-Send Messages | HelloBots';
+$pageDescription = 'Dispatch automated WhatsApp campaigns directly from Google Sheets rows and log incoming chat responses in real time.';
 $canonicalUrl = 'https://hellobotz.com/integrations/google-sheets/';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-google-sheets/WhatsApp-Google-Sheets-Integration.png';
+$ogTitle = 'Google Sheets WhatsApp Integration | Auto-Send Messages | HelloBots';
+$ogDescription = 'Dispatch automated WhatsApp campaigns directly from Google Sheets rows and log incoming chat responses in real time.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -312,7 +315,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/WhatsApp-Google-Sheets-Integration.png" loading="lazy"
+          <img width="100%" src="/assets/images/hellobots/integrations-google-sheets/WhatsApp-Google-Sheets-Integration.png" loading="lazy"
             alt="WhatsApp Google Sheets Integration">
         </div>
       </div>
@@ -325,19 +328,19 @@ include __DIR__ . '/../../includes/header.php';
     <div class="swiper partners-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/Footer_Logo.png" alt="Looks Salon">
+          <img src="/assets/images/hellobots/integrations-google-sheets/Footer_Logo.png" alt="Looks Salon">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/Mahindra-Logo-2000.png" alt="Mahindra">
+          <img src="/assets/images/hellobots/integrations-google-sheets/Mahindra-Logo-2000.png" alt="Mahindra">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/SkodaLogoNew.png" alt="Skoda">
+          <img src="/assets/images/hellobots/integrations-google-sheets/SkodaLogoNew.png" alt="Skoda">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/Vegtration_Logo.png" alt="Vegetarian Brand">
+          <img src="/assets/images/hellobots/integrations-google-sheets/Vegtration_Logo.png" alt="Vegetarian Brand">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/zee-business.png" alt="Zee Business">
+          <img src="/assets/images/hellobots/integrations-google-sheets/zee-business.png" alt="Zee Business">
         </div>
       </div>
       <!-- Pagination and Navigation Buttons -->
@@ -872,78 +875,78 @@ font-size:20px;
       <!-- Row 1: Left Scroll -->
       <div class="marquee-row marquee-scroll-left">
       <div class="integration-card" data-key="shopify">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
+          <img src="/assets/images/hellobots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
           <span class="int-name">Shopify</span>
         </div>
         
         <div class="integration-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/woocommerce.png" class="int-icon-box" alt="WooCommerce">
+          <img src="/assets/images/hellobots/integrations-google-sheets/woocommerce.png" class="int-icon-box" alt="WooCommerce">
           <span class="int-name">WooCommerce</span>
         </div>
         <div class="integration-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/gotab.png" class="int-icon-box" alt="Gotab">
+          <img src="/assets/images/hellobots/integrations-google-sheets/gotab.png" class="int-icon-box" alt="Gotab">
           <span class="int-name">Gotab</span>
         </div>
      
             <div class="integration-card" data-key="wortal">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
           <span class="int-name">Wortal</span>
         </div>
         
        <div class="integration-card" data-key="shiprocket">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
           <span class="int-name">Shiprocket</span>
         </div>
         <div class="integration-card" data-key="zoho">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
           <span class="int-name">Zoho</span>
         </div>
         
         <div class="integration-card" data-key="google-sheets">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
           <span class="int-name">Google Sheet</span>
         </div>
     
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
           <span class="int-name">n8n</span>
         </div>
 
         <!-- Duplicate Set 1 -->
              <div class="integration-card" data-key="shopify">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
+          <img src="/assets/images/hellobots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
           <span class="int-name">Shopify</span>
         </div>
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/woocommerce.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="WooCommerce">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/woocommerce.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="WooCommerce">
           <span class="int-name">WooCommerce</span>
         </div>
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/gotab.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Gotab">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/gotab.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Gotab">
           <span class="int-name">Gotab</span>
         </div>
        
             <div class="integration-card" data-key="wortal">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
           <span class="int-name">Wortal</span>
         </div>
         
         <div class="integration-card" data-key="shiprocket">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
           <span class="int-name">Shiprocket</span>
         </div>
         <div class="integration-card" data-key="zoho">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
           <span class="int-name">Zoho</span>
         </div>
          
         <div class="integration-card" data-key="google-sheets">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
           <span class="int-name">Google Sheet</span>
         </div>
         
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
           <span class="int-name">n8n</span>
         </div>
       </div>
@@ -952,39 +955,39 @@ font-size:20px;
       <div class="marquee-row marquee-scroll-right">
 
           <div class="integration-card" data-key="shopify">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
+          <img src="/assets/images/hellobots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
           <span class="int-name">Shopify</span>
         </div>
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/woocommerce.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="WooCommerce">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/woocommerce.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="WooCommerce">
           <span class="int-name">WooCommerce</span>
         </div>
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/gotab.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Gotab">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/gotab.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Gotab">
           <span class="int-name">Gotab</span>
         </div>
         
             <div class="integration-card" data-key="wortal">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
           <span class="int-name">Wortal</span>
         </div>
         
        <div class="integration-card" data-key="shiprocket">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
           <span class="int-name">Shiprocket</span>
         </div>
         <div class="integration-card" data-key="zoho">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
           <span class="int-name">Zoho</span>
         </div>
          
         <div class="integration-card" data-key="google-sheets">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
           <span class="int-name">Google Sheet</span>
         </div>
 
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
           <span class="int-name">n8n</span>
         </div>
 
@@ -992,39 +995,39 @@ font-size:20px;
         
            
          <div class="integration-card" data-key="shopify">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
+          <img src="/assets/images/hellobots/integrations-google-sheets/shopify.png" class="int-icon-box" alt="Shopify">
           <span class="int-name">Shopify</span>
         </div>
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/woocommerce.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="WooCommerce">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/woocommerce.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="WooCommerce">
           <span class="int-name">WooCommerce</span>
         </div>
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/gotab.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Gotab">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/gotab.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Gotab">
           <span class="int-name">Gotab</span>
         </div>
         
             <div class="integration-card" data-key="wortal">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/wortal.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="Wortal">
           <span class="int-name">Wortal</span>
         </div>
         
         <div class="integration-card" data-key="shiprocket">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/shiprocket.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="shiprocket.com">
           <span class="int-name">Shiprocket</span>
         </div>
         <div class="integration-card" data-key="zoho">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/zoho.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="zoho">
           <span class="int-name">Zoho</span>
         </div>
         
         <div class="integration-card" data-key="google-sheets">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/google-sheet.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="googlesheet">
           <span class="int-name">Google Sheet</span>
         </div>
         
         <div class="integration-card">
-          <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
+          <img loading="lazy" src="/assets/images/hellobots/integrations-google-sheets/n8n.png" class="int-icon-box" width="50" height="50" loading="lazy" alt="n8n">
           <span class="int-name">n8n</span>
         </div>
       </div>

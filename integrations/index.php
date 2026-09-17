@@ -3,9 +3,12 @@ $basePath = '../';
 $bp = '../';
 require_once __DIR__ . '/../config/cms.php';
 
-$pageTitle = 'WhatsApp Business API Integration for Automation | HelloBots';
-$pageDescription = 'Connect HelloBots WhatsApp Business API with CRMs, e-commerce platforms, Google Workspace, payment gateways, and tools.';
+$pageTitle = 'WhatsApp Business API Integrations Directory | HelloBots';
+$pageDescription = 'Connect HelloBots WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 $canonicalUrl = 'https://hellobotz.com/integrations/';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-main/WhatsApp-Business-API-Integration.png';
+$ogTitle = 'WhatsApp Business API Integrations Directory | HelloBots';
+$ogDescription = 'Connect HelloBots WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -635,7 +638,7 @@ include __DIR__ . '/../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/WhatsApp-Business-API-Integration.png"
+          <img width="100%" src="/assets/images/hellobots/integrations-main/WhatsApp-Business-API-Integration.png"
             loading="lazy" alt=" WhatsApp Business API Integration">
         </div>
       </div>
@@ -648,19 +651,19 @@ include __DIR__ . '/../includes/header.php';
     <div class="swiper partners-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/Footer_Logo.png" alt="Looks Salon">
+          <img src="/assets/images/hellobots/integrations-main/Footer_Logo.png" alt="Looks Salon">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/Mahindra-Logo-2000.png" alt="Mahindra">
+          <img src="/assets/images/hellobots/integrations-main/Mahindra-Logo-2000.png" alt="Mahindra">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/SkodaLogoNew.png" alt="Skoda">
+          <img src="/assets/images/hellobots/integrations-main/SkodaLogoNew.png" alt="Skoda">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/Vegtration_Logo.png" alt="Vegetarian Brand">
+          <img src="/assets/images/hellobots/integrations-main/Vegtration_Logo.png" alt="Vegetarian Brand">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/zee-business.png" alt="Zee Business">
+          <img src="/assets/images/hellobots/integrations-main/zee-business.png" alt="Zee Business">
         </div>
       </div>
       <!-- Pagination and Navigation Buttons -->
@@ -798,7 +801,7 @@ include __DIR__ . '/../includes/header.php';
       <!-- Card 1 -->
       <a href="https://HelloBots.com/integrations/shopify/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card shopify-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/shopify.png" alt="Shopify Logo" class="integration-logo" />
+          <img src="/assets/images/hellobots/integrations-main/shopify.png" alt="Shopify Logo" class="integration-logo" />
           <h3>Shopify</h3>
           <p>E-commerce</p>
         </div>
@@ -806,14 +809,14 @@ include __DIR__ . '/../includes/header.php';
       <!-- Card 2 -->
       <a href="https://HelloBots.com/integrations/shiprocket/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card shiprocket-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/shiprocket.png" alt="shiprocket" class="integration-logo" />
+          <img src="/assets/images/hellobots/integrations-main/shiprocket.png" alt="shiprocket" class="integration-logo" />
           <h3>Shiprocket</h3>
           <p>E-commerce</p>
         </div>
       </a>
       <a href="https://HelloBots.com/integrations/wortal/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card wortal-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/wortal.png" alt="Wortal" class="integration-logo" />
+          <img src="/assets/images/hellobots/integrations-main/wortal.png" alt="Wortal" class="integration-logo" />
           <h3>Wortal</h3>
           <p>E-commerce</p>
         </div>
@@ -821,7 +824,7 @@ include __DIR__ . '/../includes/header.php';
       <a href="https://HelloBots.com/integrations/google-sheets/" style="text-decoration:none;" target="_blank"
         rel="noopener noreferrer">
         <div class="integration-card google-sheet-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/google-sheet.png" alt="Google Sheets Logo"
+          <img src="/assets/images/hellobots/integrations-main/google-sheet.png" alt="Google Sheets Logo"
             class="integration-logo" />
           <h3>Google Sheets</h3>
           <p>Business Management</p>
@@ -830,7 +833,7 @@ include __DIR__ . '/../includes/header.php';
 
       <a href="https://HelloBots.com/integrations/zoho/" target="_blank" rel="noopener noreferrer">
         <div class="integration-card zoho-card">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/zoho.png" alt="zoho" class="integration-logo" />
+          <img src="/assets/images/hellobots/integrations-main/zoho.png" alt="zoho" class="integration-logo" />
           <h3>Zoho</h3>
           <p>Data Management</p>
         </div>
@@ -849,7 +852,7 @@ include __DIR__ . '/../includes/header.php';
     <a href="<?php echo $bp; ?>#contact-section"
       target="_blank" rel="noopener noreferrer" class="top_heading_button"
       style="text-decoration:none;color: #fff;font-weight: 500; padding: 15px 20px; transition: .3s ease-in-out; animation: 2s infinite pulse; background: linear-gradient(180deg, #024815 0, #000801 100%); border-radius: 12px; font-size: 16px;">
-      <img src="<?php echo $bp; ?>assets/images/HelloBots/integrations-main/WhatsApp.png" alt="WhatsApp Icon" width="24"
+      <img src="/assets/images/hellobots/integrations-main/WhatsApp.png" alt="WhatsApp Icon" width="24"
         height="24">
       Enquiry Now
     </a>

@@ -3,9 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Click to WhatsApp Ads: Run Facebook & Instagram Ads to WhatsApp | HelloBots';
-$pageDescription = 'Drive targeted leads from Facebook and Instagram directly into WhatsApp chats. Automate lead qualification with HelloBots.';
+$pageTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBots';
+$pageDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBots.';
 $canonicalUrl = 'https://hellobotz.com/products/ctwa/';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/click-to-whatsapp-ads/Ads-that-Click-to-WhatsApp.png';
+$ogTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBots';
+$ogDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBots.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -249,7 +252,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Ads-that-Click-to-WhatsApp.png"
+          <img width="100%" src="/assets/images/hellobots/click-to-whatsapp-ads/Ads-that-Click-to-WhatsApp.png"
             loading="lazy" alt="Click to WhatsApp Ads">
         </div>
       </div>
@@ -266,19 +269,19 @@ include __DIR__ . '/../../includes/header.php';
     <div class="swiper partners-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Footer_Logo.png" alt="Looks Salon">
+          <img src="/assets/images/hellobots/click-to-whatsapp-ads/Footer_Logo.png" alt="Looks Salon">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Mahindra-Logo-2000.png" alt="Mahindra">
+          <img src="/assets/images/hellobots/click-to-whatsapp-ads/Mahindra-Logo-2000.png" alt="Mahindra">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/SkodaLogoNew.png" alt="Skoda">
+          <img src="/assets/images/hellobots/click-to-whatsapp-ads/SkodaLogoNew.png" alt="Skoda">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Vegtration_Logo.png" alt="Vegetarian Brand">
+          <img src="/assets/images/hellobots/click-to-whatsapp-ads/Vegtration_Logo.png" alt="Vegetarian Brand">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/zee-business.png" alt="Zee Business">
+          <img src="/assets/images/hellobots/click-to-whatsapp-ads/zee-business.png" alt="Zee Business">
         </div>
       </div>
       <!-- Pagination and Navigation Buttons -->
@@ -350,7 +353,7 @@ include __DIR__ . '/../../includes/header.php';
   <!-- Image -->
   <div class="col-lg-6 order-2 order-lg-1 text-center">
     <div class="api-image-box">
-      <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Capture-Qualified-Leads-in-Real-Time.png" 
+      <img src="/assets/images/hellobots/click-to-whatsapp-ads/Capture-Qualified-Leads-in-Real-Time.png" 
            alt="Capture Qualified Leads in Real Time
 " 
            class="api-image img-fluid rounded">
@@ -397,7 +400,7 @@ include __DIR__ . '/../../includes/header.php';
   <!-- Image -->
   <div class="col-lg-6 order-1 order-lg-2 text-center">
     <div class="api-image-box">
-      <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Convert-Faster-Without-Spending-More.png" 
+      <img src="/assets/images/hellobots/click-to-whatsapp-ads/Convert-Faster-Without-Spending-More.png" 
            alt="Convert Faster Without Spending More" 
            class="api-image img-fluid rounded">
     </div>
@@ -907,19 +910,19 @@ document.addEventListener("DOMContentLoaded", function() {
           <p class="review-section-heading">Awarded for excellence</p>
           <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:38px;">
             <img
-              src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/CommunicationPlatformasaService_UsersMos.png"
+              src="/assets/images/hellobots/click-to-whatsapp-ads/CommunicationPlatformasaService_UsersMos.png"
               alt="Best Est. ROI - Enterprise" class="award-image" width="100" height="100">
-            <img src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/CommunicationPlatformasaService_BestEsti.png"
+            <img src="/assets/images/hellobots/click-to-whatsapp-ads/CommunicationPlatformasaService_BestEsti.png"
               alt="Best Support - Enterprise" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Chatbots_HighPerformer_HighPerformer.png"
+            <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/Chatbots_HighPerformer_HighPerformer.png"
               alt="Best Usability - Small Business" class="award-image" width="100" height="100">
           </div>
           <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:38px;">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/easiest_Admin.png"
+            <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/easiest_Admin.png"
               alt="Easiest To Do Business With - Mid-Market" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Chatbots_BestSupport_QualityOfSupport.png"
+            <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/Chatbots_BestSupport_QualityOfSupport.png"
               alt="Fastest Implementation - Enterprise" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Chatbots_HighPerformer_AsiaPacific_HighP.png"
+            <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/Chatbots_HighPerformer_AsiaPacific_HighP.png"
               alt="Momentum Leader" class="award-image" width="100" height="100">
 
           </div>
@@ -933,7 +936,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <ul class="reviews-list">
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/g2.png" alt="G2 Logo"
+              <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/g2.png" alt="G2 Logo"
                 class="review-logo-img" width="50" height="50">
 
               <div class="review-content">
@@ -981,7 +984,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/shopify.png" alt="Shopify Logo"
+              <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/shopify.png" alt="Shopify Logo"
                 class="review-logo-img" width="50" height="50">
 
               <div class="review-content">
@@ -1029,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/click-to-whatsapp-ads/Trust-Pilot.png" alt="Trust Pilot Logo"
+              <img loading="lazy" src="/assets/images/hellobots/click-to-whatsapp-ads/Trust-Pilot.png" alt="Trust Pilot Logo"
                 class="review-logo-img" width="60" height="60">
 
               <div class="review-content">

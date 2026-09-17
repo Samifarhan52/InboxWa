@@ -5,6 +5,9 @@ require_once __DIR__ . '/config/cms.php';
 $pageTitle = cms_setting('site_title', 'HelloBotz') . ' – ' . cms_setting('site_tagline', 'Scale Your Sales and Support on WhatsApp');
 $pageDescription = 'Official WhatsApp Business API platform with shared inbox, AI chatbots, visual flow builder, bulk broadcasts, and CRM integrations.';
 $canonicalUrl = 'https://hellobotz.com/';
+$ogImage = 'https://hellobotz.com/assets/images/og-image.png';
+$ogTitle = 'HelloBotz – WhatsApp Marketing & Automation Platform';
+$ogDescription = 'Official WhatsApp Business API platform with shared inbox, AI chatbots, visual flow builder, bulk broadcasts, and CRM integrations.';
 
 include __DIR__ . '/includes/header.php';
 ?>

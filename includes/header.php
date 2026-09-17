@@ -28,8 +28,10 @@ $customHead  = cms_setting('custom_header_code', '');
 $pageTitle       = isset($pageTitle) ? trim((string)$pageTitle) : '';
 $pageDescription = isset($pageDescription) ? trim((string)$pageDescription) : '';
 $pageKeywords    = isset($pageKeywords) ? trim((string)$pageKeywords) : '';
-$canonicalUrl    = isset($canonicalUrl) ? trim((string)$canonicalUrl) : '';
 $ogImage         = isset($ogImage) && $ogImage !== '' ? trim((string)$ogImage) : $DEFAULT_OG;
+if (!preg_match('~^https?://~i', $ogImage)) {
+  $ogImage = $SITE_DOMAIN . '/' . ltrim($ogImage, '/');
+}
 $ogType          = isset($ogType) ? $ogType : 'website';
 $robots          = isset($robots) ? $robots : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 $twitterCard     = isset($twitterCard) ? $twitterCard : 'summary_large_image';
@@ -99,6 +101,8 @@ if (!function_exists('hb_seo_esc')) {
   <meta property="og:description" content="<?php echo hb_seo_esc($ogDescription); ?>">
   <meta property="og:url" content="<?php echo hb_seo_esc($canonicalUrl); ?>">
   <meta property="og:image" content="<?php echo hb_seo_esc($ogImage); ?>">
+  <meta property="og:image:secure_url" content="<?php echo hb_seo_esc($ogImage); ?>">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="<?php echo hb_seo_esc($ogTitle); ?>">

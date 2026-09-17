@@ -3,9 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Get Green Tick / Blue Tick Verification on WhatsApp | HelloBots';
-$pageDescription = 'Apply for official WhatsApp Business verification badge and build instant trust with your customers through HelloBots.';
+$pageTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBots';
+$pageDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBots.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-blue-tick/';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png';
+$ogTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBots';
+$ogDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBots.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -1026,7 +1029,7 @@ body.wv-modal-open .wv-modal-overlay {
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png" loading="lazy"
+          <img width="100%" src="/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png" loading="lazy"
             alt="WhatsApp Blue Tick
 ">
 
@@ -1040,19 +1043,19 @@ body.wv-modal-open .wv-modal-overlay {
     <div class="swiper partners-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Footer_Logo.png" alt="Looks Salon">
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/Footer_Logo.png" alt="Looks Salon">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Mahindra-Logo-2000.png" alt="Mahindra">
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/Mahindra-Logo-2000.png" alt="Mahindra">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/SkodaLogoNew.png" alt="Skoda">
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/SkodaLogoNew.png" alt="Skoda">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Vegtration_Logo.png" alt="Vegetarian Brand">
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/Vegtration_Logo.png" alt="Vegetarian Brand">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/zee-business.png" alt="Zee Business">
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/zee-business.png" alt="Zee Business">
         </div>
       </div>
       <!-- Pagination and Navigation Buttons -->
@@ -1116,7 +1119,7 @@ body.wv-modal-open .wv-modal-overlay {
       </div>
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Why-WhatsApp-Blue-Tick-Matters.png"
+        <img src="/assets/images/hellobots/whatsapp-blue-tick/Why-WhatsApp-Blue-Tick-Matters.png"
           alt="Why WhatsApp Blue Tick" class="img-fluid" />
       </div>
     </div>
@@ -1192,7 +1195,7 @@ body.wv-modal-open .wv-modal-overlay {
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Go-to-the-HelloBots-Dashboard.png"
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/Go-to-the-HelloBots-Dashboard.png"
             alt="HelloBots Dashboard" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -1214,7 +1217,7 @@ body.wv-modal-open .wv-modal-overlay {
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Click-on-the-Apply-Button.png"
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/Click-on-the-Apply-Button.png"
             alt="Click on Apply Button" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -1236,7 +1239,7 @@ body.wv-modal-open .wv-modal-overlay {
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Fill-the-Full-Form.png"
+          <img src="/assets/images/hellobots/whatsapp-blue-tick/Fill-the-Full-Form.png"
             alt="Fill the Full Form" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -1266,7 +1269,7 @@ body.wv-modal-open .wv-modal-overlay {
           trust and recognition by customers.
         </p>
         <div class="mid-img">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/WhatsApp-Green-Tick-Now-Blue-Tick.png"
+          <img width="100%" src="/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Green-Tick-Now-Blue-Tick.png"
             loading="lazy" alt="Green Tick Now Blue Tick">
         </div>
       </div>
@@ -1728,19 +1731,19 @@ document.addEventListener("DOMContentLoaded", function() {
           <p class="review-section-heading">Awarded for excellence</p>
           <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:38px;">
             <img
-              src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/CommunicationPlatformasaService_UsersMos.png"
+              src="/assets/images/hellobots/whatsapp-blue-tick/CommunicationPlatformasaService_UsersMos.png"
               alt="Best Est. ROI - Enterprise" class="award-image" width="100" height="100">
-            <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/CommunicationPlatformasaService_BestEsti.png"
+            <img src="/assets/images/hellobots/whatsapp-blue-tick/CommunicationPlatformasaService_BestEsti.png"
               alt="Best Support - Enterprise" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Chatbots_HighPerformer_HighPerformer.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/Chatbots_HighPerformer_HighPerformer.png"
               alt="Best Usability - Small Business" class="award-image" width="100" height="100">
           </div>
           <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:38px;">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/easiest_Admin.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/easiest_Admin.png"
               alt="Easiest To Do Business With - Mid-Market" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Chatbots_BestSupport_QualityOfSupport.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/Chatbots_BestSupport_QualityOfSupport.png"
               alt="Fastest Implementation - Enterprise" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Chatbots_HighPerformer_AsiaPacific_HighP.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/Chatbots_HighPerformer_AsiaPacific_HighP.png"
               alt="Momentum Leader" class="award-image" width="100" height="100">
 
           </div>
@@ -1754,7 +1757,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <ul class="reviews-list">
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/g2.png" alt="G2 Logo"
+              <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/g2.png" alt="G2 Logo"
                 class="review-logo-img" width="50" height="50">
 
               <div class="review-content">
@@ -1802,7 +1805,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/shopify.png" alt="Shopify Logo"
+              <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/shopify.png" alt="Shopify Logo"
                 class="review-logo-img" width="50" height="50">
 
               <div class="review-content">
@@ -1850,7 +1853,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-blue-tick/Trust-Pilot.png" alt="Trust Pilot Logo"
+              <img loading="lazy" src="/assets/images/hellobots/whatsapp-blue-tick/Trust-Pilot.png" alt="Trust Pilot Logo"
                 class="review-logo-img" width="60" height="60">
 
               <div class="review-content">

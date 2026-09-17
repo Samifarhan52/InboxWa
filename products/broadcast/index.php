@@ -3,9 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Send Bulk Broadcast on WhatsApp via Official Business API | HelloBots';
-$pageDescription = 'Broadcast offers, updates, and messages in bulk to your customers instantly via the Official WhatsApp Business API with HelloBots.';
+$pageTitle = 'Send Bulk WhatsApp Broadcasts | Official Meta API | HelloBots';
+$pageDescription = 'Broadcast personalized offers, updates, and announcements in bulk to unlimited contacts on WhatsApp with zero ban risk using HelloBots.';
 $canonicalUrl = 'https://hellobotz.com/products/broadcast/';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-broadcasting/whatsapp-broadcasting.png';
+$ogTitle = 'Send Bulk WhatsApp Broadcasts | Official Meta API | HelloBots';
+$ogDescription = 'Broadcast personalized offers, updates, and announcements in bulk to unlimited contacts on WhatsApp with zero ban risk using HelloBots.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -258,7 +261,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/whatsapp-broadcasting.png"
+          <img width="100%" src="/assets/images/hellobots/whatsapp-broadcasting/whatsapp-broadcasting.png"
             loading="lazy" alt="WhatsApp Broadcasting">
         </div>
       </div>
@@ -275,19 +278,19 @@ include __DIR__ . '/../../includes/header.php';
     <div class="swiper partners-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Footer_Logo.png" alt="Looks Salon">
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Footer_Logo.png" alt="Looks Salon">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Mahindra-Logo-2000.png" alt="Mahindra">
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Mahindra-Logo-2000.png" alt="Mahindra">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/SkodaLogoNew.png" alt="Skoda">
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/SkodaLogoNew.png" alt="Skoda">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Vegtration_Logo.png" alt="Vegetarian Brand">
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Vegtration_Logo.png" alt="Vegetarian Brand">
         </div>
         <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/zee-business.png" alt="Zee Business">
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/zee-business.png" alt="Zee Business">
         </div>
       </div>
       <!-- Pagination and Navigation Buttons -->
@@ -343,7 +346,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/unlimited-contacts.png" alt="Unlimited Contacts"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/unlimited-contacts.png" alt="Unlimited Contacts"
             class="api-image img-fluid rounded">
         </div>
       </div>
@@ -369,7 +372,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Pre-Approved-Message-Template.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Pre-Approved-Message-Template.png"
             alt="Pre-Approved Message Template" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -395,7 +398,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Message-Personalization.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Message-Personalization.png"
             alt="Message Personalization" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -420,7 +423,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Interactive-Message.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Interactive-Message.png"
             alt="Interactive Messages" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -446,7 +449,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Schedule--Messages.png" alt="Campaign Scheduling"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Schedule--Messages.png" alt="Campaign Scheduling"
             class="api-image img-fluid rounded">
         </div>
       </div>
@@ -473,7 +476,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/retargeting-messages.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/retargeting-messages.png"
             alt="Retargeting Campaigns" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -497,7 +500,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Auto-Retry-for-Failed-Messages.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Auto-Retry-for-Failed-Messages.png"
             alt="Retargeting Campaigns" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -524,7 +527,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/real-time-analytics.png" alt="Real Time Analytics"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/real-time-analytics.png" alt="Real Time Analytics"
             class="api-image img-fluid rounded">
         </div>
       </div>
@@ -559,7 +562,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Create-Your-Target-Audience-1.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Create-Your-Target-Audience-1.png"
             alt="Create Your Target Audience" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -583,7 +586,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Create-or-Use-Pre-Approved-Template-1.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Create-or-Use-Pre-Approved-Template-1.png"
             alt="Create or Use Pre-Approved Template" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -606,7 +609,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Schedule-or-Publish-Broadcast.png"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Schedule-or-Publish-Broadcast.png"
             alt="Schedule or Publish Your Broadcast" class="api-image img-fluid rounded">
         </div>
       </div>
@@ -629,7 +632,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-2 text-center">
         <div class="api-image-box mt-3">
-          <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Monitor-Performance-1.png" alt="Monitor Performance"
+          <img src="/assets/images/hellobots/whatsapp-broadcasting/Monitor-Performance-1.png" alt="Monitor Performance"
             class="api-image img-fluid rounded">
         </div>
       </div>
@@ -1154,19 +1157,19 @@ document.addEventListener("DOMContentLoaded", function() {
           <p class="review-section-heading">Awarded for excellence</p>
           <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:38px;">
             <img
-              src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/CommunicationPlatformasaService_UsersMos.png"
+              src="/assets/images/hellobots/whatsapp-broadcasting/CommunicationPlatformasaService_UsersMos.png"
               alt="Best Est. ROI - Enterprise" class="award-image" width="100" height="100">
-            <img src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/CommunicationPlatformasaService_BestEsti.png"
+            <img src="/assets/images/hellobots/whatsapp-broadcasting/CommunicationPlatformasaService_BestEsti.png"
               alt="Best Support - Enterprise" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Chatbots_HighPerformer_HighPerformer.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/Chatbots_HighPerformer_HighPerformer.png"
               alt="Best Usability - Small Business" class="award-image" width="100" height="100">
           </div>
           <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:38px;">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/easiest_Admin.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/easiest_Admin.png"
               alt="Easiest To Do Business With - Mid-Market" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Chatbots_BestSupport_QualityOfSupport.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/Chatbots_BestSupport_QualityOfSupport.png"
               alt="Fastest Implementation - Enterprise" class="award-image" width="100" height="100">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Chatbots_HighPerformer_AsiaPacific_HighP.png"
+            <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/Chatbots_HighPerformer_AsiaPacific_HighP.png"
               alt="Momentum Leader" class="award-image" width="100" height="100">
 
           </div>
@@ -1180,7 +1183,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <ul class="reviews-list">
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/g2.png" alt="G2 Logo"
+              <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/g2.png" alt="G2 Logo"
                 class="review-logo-img" width="50" height="50">
 
               <div class="review-content">
@@ -1228,7 +1231,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/shopify.png" alt="Shopify Logo"
+              <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/shopify.png" alt="Shopify Logo"
                 class="review-logo-img" width="50" height="50">
 
               <div class="review-content">
@@ -1276,7 +1279,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <li class="review-item">
 
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/HelloBots/whatsapp-broadcasting/Trust-Pilot.png" alt="Trust Pilot Logo"
+              <img loading="lazy" src="/assets/images/hellobots/whatsapp-broadcasting/Trust-Pilot.png" alt="Trust Pilot Logo"
                 class="review-logo-img" width="60" height="60">
 
               <div class="review-content">
