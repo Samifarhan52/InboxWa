@@ -52,13 +52,51 @@ module.exports = async (req, res) => {
 
     if (sheetWebhookUrl && sheetWebhookUrl.startsWith('http')) {
       try {
+        // Multi-Sheet Routing: Sheet 1 (Leads), Sheet 2 (Partners), Sheet 3 (Careers)
+        let targetSheet = 'Sheet1';
+        let category = 'General Leads';
+
+        if (
+          (data.type && data.type.includes('Job Application')) ||
+          (data.source_page && data.source_page.includes('/careers')) ||
+          data.target_sheet === 'Sheet3' ||
+          (data.category && data.category.toLowerCase() === 'careers')
+        ) {
+          targetSheet = 'Sheet3';
+          category = 'Careers';
+        } else if (
+          (data.type && data.type.toLowerCase().includes('partner')) ||
+          (data.source_page && data.source_page.includes('/partners')) ||
+          data.partner_type ||
+          data.target_sheet === 'Sheet2' ||
+          (data.category && data.category.toLowerCase() === 'partners')
+        ) {
+          targetSheet = 'Sheet2';
+          category = 'Partners';
+        }
+
         const payload = {
           timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          target_sheet: targetSheet,
+          sheet_name: category,
+          category: category,
           type: data.type || 'General Lead',
           name: name,
           phone: phone,
           email: email,
           business: data.business || data.company || '',
+          company: data.company || data.business || '',
+          partner_type: data.partner_type || '',
+          role: data.role_category || data.role || '',
+          target_title: data.target_title || '',
+          experience: data.experience || '',
+          employment_type: data.employment_type || '',
+          skills: data.selected_skills || data.skills || '',
+          portfolio: data.portfolio || '',
+          resume_link: data.resume_link || '',
+          about: data.about_projects || data.about || '',
+          why: data.why_hellobotz || data.why || '',
+          location: data.location || '',
           product: data.product || data.use_case || '',
           requirement: data.requirement || data.message || '',
           source_page: data.source_page || ''

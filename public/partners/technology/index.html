@@ -3969,11 +3969,16 @@ function handleTechSubmit(e) {
     body: JSON.stringify({
       type: 'partner',
       partner_type: 'technology',
+      target_sheet: 'Sheet2',
+      sheet_name: 'Partners',
+      category: 'Partners',
       source_page: '/partners/technology/',
       name: fd.get('name'),
       email: fd.get('email'),
       phone: fd.get('whatsapp'),
       company: fd.get('company'),
+      business: fd.get('company'),
+      requirement: 'Category: ' + fd.get('product_category') + ' | Stack: ' + fd.get('tech_stack') + ' | Goals: ' + fd.get('message'),
       message: 'Category: ' + fd.get('product_category') + ' | Stack: ' + fd.get('tech_stack') + ' | Goals: ' + fd.get('message')
     }),
     credentials: 'same-origin'

@@ -55,6 +55,32 @@ try {
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('d/m/Y, h:i:s A');
 
+    // Intelligent Multi-Sheet Routing & Segregation:
+    // Sheet 1: General Leads (Contact, Demo, Inquiries, Pricing)
+    // Sheet 2: Partners (Affiliate, Agency, White Label, Technology)
+    // Sheet 3: Careers (Job Applications, Internships, Freshers)
+    $targetSheet = 'Sheet1';
+    $category = 'General Leads';
+
+    if (
+        stripos($type, 'Job Application') !== false ||
+        stripos($sourcePage, '/careers') !== false ||
+        ($data['target_sheet'] ?? '') === 'Sheet3' ||
+        strtolower((string)($data['category'] ?? '')) === 'careers'
+    ) {
+        $targetSheet = 'Sheet3';
+        $category = 'Careers';
+    } elseif (
+        stripos($type, 'partner') !== false ||
+        stripos($sourcePage, '/partners') !== false ||
+        !empty($data['partner_type']) ||
+        ($data['target_sheet'] ?? '') === 'Sheet2' ||
+        strtolower((string)($data['category'] ?? '')) === 'partners'
+    ) {
+        $targetSheet = 'Sheet2';
+        $category = 'Partners';
+    }
+
     // 1. Forward to Google Sheet Webhook if configured
     $webhookUrl = getenv('GOOGLE_SHEET_WEBHOOK_URL') ?: '';
     if (empty($webhookUrl)) {
@@ -68,15 +94,30 @@ try {
     $forwardSuccess = false;
     if (!empty($webhookUrl) && filter_var($webhookUrl, FILTER_VALIDATE_URL)) {
         $leadPayload = [
-            'timestamp'   => $timestamp,
-            'type'        => $type,
-            'name'        => $name,
-            'phone'       => $phone,
-            'email'       => $email,
-            'business'    => $business,
-            'product'     => $product,
-            'requirement' => $requirement,
-            'source_page' => $sourcePage
+            'timestamp'       => $timestamp,
+            'target_sheet'    => $targetSheet,
+            'sheet_name'      => $category,
+            'category'        => $category,
+            'type'            => $type,
+            'name'            => $name,
+            'phone'           => $phone,
+            'email'           => $email,
+            'business'        => $business,
+            'company'         => $business,
+            'partner_type'    => $data['partner_type'] ?? '',
+            'role'            => $data['role_category'] ?? $data['role'] ?? '',
+            'target_title'    => $data['target_title'] ?? '',
+            'experience'      => $data['experience'] ?? '',
+            'employment_type' => $data['employment_type'] ?? '',
+            'skills'          => $data['selected_skills'] ?? $data['skills'] ?? '',
+            'portfolio'       => $data['portfolio'] ?? '',
+            'resume_link'     => $data['resume_link'] ?? '',
+            'about'           => $data['about_projects'] ?? $data['about'] ?? '',
+            'why'             => $data['why_hellobotz'] ?? $data['why'] ?? '',
+            'location'        => $data['location'] ?? '',
+            'product'         => $product,
+            'requirement'     => $requirement,
+            'source_page'     => $sourcePage
         ];
 
         $ch = curl_init();

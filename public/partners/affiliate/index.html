@@ -4054,11 +4054,16 @@ function handleAffiliateSubmit(e) {
     body: JSON.stringify({
       type: 'partner',
       partner_type: 'affiliate',
+      target_sheet: 'Sheet2',
+      sheet_name: 'Partners',
+      category: 'Partners',
       source_page: '/partners/affiliate/',
       name: fd.get('name'),
       email: fd.get('email'),
       phone: fd.get('whatsapp'),
       company: fd.get('channel_url'),
+      business: fd.get('channel_url'),
+      requirement: 'Channel: ' + fd.get('channel_url') + ' | Strategy: ' + fd.get('message'),
       message: 'Channel: ' + fd.get('channel_url') + ' | Strategy: ' + fd.get('message')
     }),
     credentials: 'same-origin'

@@ -4022,11 +4022,16 @@ function handleWhiteLabelSubmit(e) {
     body: JSON.stringify({
       type: 'partner',
       partner_type: 'white-label',
+      target_sheet: 'Sheet2',
+      sheet_name: 'Partners',
+      category: 'Partners',
       source_page: '/partners/white-label/',
       name: fd.get('name'),
       email: fd.get('email'),
       phone: fd.get('whatsapp'),
       company: fd.get('company'),
+      business: fd.get('company'),
+      requirement: 'Domain: ' + fd.get('custom_domain') + ' | Target Scale: ' + fd.get('target_scale') + ' | Notes: ' + fd.get('message'),
       message: 'Domain: ' + fd.get('custom_domain') + ' | Target Scale: ' + fd.get('target_scale') + ' | Notes: ' + fd.get('message')
     }),
     credentials: 'same-origin'

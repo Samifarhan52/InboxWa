@@ -465,11 +465,16 @@ function handleAgencySubmit(e) {
     body: JSON.stringify({
       type: 'partner',
       partner_type: 'agency',
+      target_sheet: 'Sheet2',
+      sheet_name: 'Partners',
+      category: 'Partners',
       source_page: '/partners/agency/',
       name: fd.get('name'),
       email: fd.get('email'),
       phone: fd.get('whatsapp'),
       company: fd.get('company'),
+      business: fd.get('company'),
+      requirement: 'Clients: ' + fd.get('client_count') + ' | Service: ' + fd.get('service_type') + ' | Notes: ' + fd.get('message'),
       message: 'Clients: ' + fd.get('client_count') + ' | Service: ' + fd.get('service_type') + ' | Notes: ' + fd.get('message')
     }),
     credentials: 'same-origin'
