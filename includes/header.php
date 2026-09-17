@@ -3326,6 +3326,16 @@ if (!function_exists('hb_seo_esc')) {
                       <span class="part-desc">Build native CRM, POS &amp; eCommerce apps</span>
                     </div>
                   </a>
+
+                  <a href="<?php echo $bp; ?>company/careers/" class="mega-part-link mega-part-link-careers" role="menuitem" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(16,185,129,0.06));border:1px dashed rgba(99,102,241,0.3);">
+                    <div class="part-icon-wrap" style="background:rgba(99,102,241,0.14);color:#4F46E5;">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                    </div>
+                    <div class="part-text">
+                      <span class="part-title">Careers <span class="part-badge-pill" style="background:#EEF2FF;color:#4F46E5;border:1px solid rgba(99,102,241,0.25);">We're Hiring</span></span>
+                      <span class="part-desc">Build the future with HelloBotz &bull; AI, Automation &amp; Digital Solutions</span>
+                    </div>
+                  </a>
                 </div>
               </div>
 
@@ -3659,6 +3669,7 @@ if (!function_exists('hb_seo_esc')) {
             <a href="<?php echo $bp; ?>partners/agency/">Agency Partner <span style="font-size:11px;color:#64748B;display:block;">Serve your clients (40% margin)</span></a>
             <a href="<?php echo $bp; ?>partners/white-label/">White Label Partner <span style="font-size:11px;color:#64748B;display:block;">Your brand &amp; domain (50% rev-share)</span></a>
             <a href="<?php echo $bp; ?>partners/technology/">Technology Partner <span style="font-size:11px;color:#64748B;display:block;">Build integrations</span></a>
+            <a href="<?php echo $bp; ?>company/careers/" style="font-weight:700;color:#4F46E5;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 10px;margin-top:6px;background:rgba(99,102,241,0.08);border-radius:8px;border:1px solid rgba(99,102,241,0.2);"><span>🚀 Careers</span> <span style="font-size:10px;font-weight:700;background:#4F46E5;color:#fff;padding:2px 8px;border-radius:12px;letter-spacing:.02em;">We're Hiring</span></a>
             <a href="/assets/downloads/hellobotz-partner-brochure.pdf" download="HelloBotz-Partner-Brochure.pdf" style="font-weight:700;color:#6D28D9;display:flex;align-items:center;gap:6px;padding:6px 0;">📄 Download Partner Brochure</a>
             <a href="<?php echo $bp; ?>partners/" style="font-weight:700;color:#034737;display:flex;align-items:center;gap:4px;padding:6px 0;">Join Partner Program &rarr;</a>
           </div></div>
