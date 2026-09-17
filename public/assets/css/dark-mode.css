@@ -1,0 +1,525 @@
+/* ==========================================================================
+   HelloBotz Professional Dark / Light Mode System
+   assets/css/dark-mode.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Theme Toggle Button (Desktop Navbar)
+   -------------------------------------------------------------------------- */
+.theme-toggle-btn {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+  overflow: hidden !important;
+}
+
+.theme-toggle-btn:hover {
+  border-color: #8b5cf6 !important;
+  color: #8b5cf6 !important;
+  background: #fbfbfe !important;
+  transform: translateY(-1px) scale(1.05) !important;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.22) !important;
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95) !important;
+}
+
+.theme-toggle-btn .theme-icon-sun,
+.theme-toggle-btn .theme-icon-moon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  pointer-events: none !important;
+}
+
+/* Light Mode state: show Moon icon to switch to dark */
+html:not([data-theme="dark"]) .theme-toggle-btn .theme-icon-sun {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) rotate(90deg) scale(0.4) !important;
+}
+
+html:not([data-theme="dark"]) .theme-toggle-btn .theme-icon-moon {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1) !important;
+  color: #475569 !important;
+}
+
+/* Dark Mode state: show Sun icon to switch to light */
+html[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(30, 41, 59, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.22) !important;
+}
+
+html[data-theme="dark"] .theme-toggle-btn:hover {
+  background: #1e293b !important;
+  border-color: #fbbf24 !important;
+  color: #fef08a !important;
+  transform: translateY(-1px) scale(1.08) !important;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.4) !important;
+}
+
+html[data-theme="dark"] .theme-toggle-btn .theme-icon-sun {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1) !important;
+  color: #fbbf24 !important;
+}
+
+html[data-theme="dark"] .theme-toggle-btn .theme-icon-moon {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Mobile Drawer Theme Switcher (Segmented Pill)
+   -------------------------------------------------------------------------- */
+.mobile-theme-section {
+  padding: 12px 0 16px !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  margin-bottom: 12px !important;
+}
+
+html[data-theme="dark"] .mobile-theme-section {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.mobile-theme-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #64748b !important;
+  margin-bottom: 10px !important;
+}
+
+html[data-theme="dark"] .mobile-theme-title {
+  color: #94a3b8 !important;
+}
+
+.mobile-theme-toggle-box {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 6px !important;
+  background: #f1f5f9 !important;
+  padding: 4px !important;
+  border-radius: 999px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .mobile-theme-toggle-box {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.mobile-theme-option {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-theme-option svg {
+  width: 15px !important;
+  height: 15px !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-theme-option.active {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="dark"] .mobile-theme-option {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .mobile-theme-option.active {
+  background: #334155 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Dark Theme Core Tokens & Backgrounds
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] {
+  --bg: #0b0f19 !important;
+  --bg2: #111827 !important;
+  --bg3: #1e293b !important;
+  --t: #f8fafc !important;
+  --t2: #cbd5e1 !important;
+  --t3: #94a3b8 !important;
+  --t4: #64748b !important;
+  --bd: #1e293b !important;
+  --bd2: #334155 !important;
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] p {
+  color: #cbd5e1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Site Header & Floating Dock in Dark Mode
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .site-header .header-inner {
+  background: rgba(15, 23, 42, 0.88) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .site-header.scrolled .header-inner {
+  background: rgba(11, 15, 25, 0.94) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Nav links in header */
+html[data-theme="dark"] .nav-link {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .nav-link:hover,
+html[data-theme="dark"] .nav-item:hover > .nav-link,
+html[data-theme="dark"] .nav-item.open > .nav-link {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .nav-link-channels {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .nav-item-channels:hover > .nav-link-channels,
+html[data-theme="dark"] .nav-item-channels.open > .nav-link-channels {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+/* Header Login button */
+html[data-theme="dark"] .header-login {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .header-login:hover {
+  background: #283548 !important;
+  border-color: #8b5cf6 !important;
+  color: #a78bfa !important;
+}
+
+/* Language switch button & dropdown */
+html[data-theme="dark"] .lang-switch-btn {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .lang-switch-menu {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+html[data-theme="dark"] .lang-switch-menu li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .lang-switch-menu li:hover,
+html[data-theme="dark"] .lang-switch-menu li.active {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+/* Mobile Toggle Hamburger */
+html[data-theme="dark"] .mobile-toggle span {
+  background: #f8fafc !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Mega Menus (Channels, Products, Solutions, Resources, Partners)
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .mega-menu-channels,
+html[data-theme="dark"] .mega-menu-products,
+html[data-theme="dark"] .mega-menu-solutions,
+html[data-theme="dark"] .mega-menu-resources,
+html[data-theme="dark"] .mega-menu-partners,
+html[data-theme="dark"] .mega-menu-panel,
+html[data-theme="dark"] .mega-menu-sm {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  color: #f8fafc !important;
+}
+
+/* Headings and Titles inside Mega Menus */
+html[data-theme="dark"] .mega-channels-heading,
+html[data-theme="dark"] .mega-prod-heading,
+html[data-theme="dark"] .mega-sol-heading,
+html[data-theme="dark"] .mega-res-heading,
+html[data-theme="dark"] .mega-part-heading {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .mega-channels-item-name,
+html[data-theme="dark"] .mega-prod-card-title,
+html[data-theme="dark"] .mega-sol-card-title,
+html[data-theme="dark"] .part-title,
+html[data-theme="dark"] .mega-res-title,
+html[data-theme="dark"] .mega-col-title {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .mega-channels-item-sub,
+html[data-theme="dark"] .mega-prod-card-desc,
+html[data-theme="dark"] .mega-sol-card-desc,
+html[data-theme="dark"] .part-desc,
+html[data-theme="dark"] .mega-res-desc {
+  color: #94a3b8 !important;
+}
+
+/* Mega Menu Cards & Hover States */
+html[data-theme="dark"] .mega-channels-item,
+html[data-theme="dark"] .mega-prod-card,
+html[data-theme="dark"] .mega-sol-card,
+html[data-theme="dark"] .mega-part-link,
+html[data-theme="dark"] .mega-res-link,
+html[data-theme="dark"] .mega-sub-link {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .mega-channels-item:hover,
+html[data-theme="dark"] .mega-prod-card:hover,
+html[data-theme="dark"] .mega-sol-card:hover,
+html[data-theme="dark"] .mega-part-link:hover,
+html[data-theme="dark"] .mega-res-link:hover,
+html[data-theme="dark"] .mega-sub-link:hover {
+  background: #253349 !important;
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  color: #ffffff !important;
+}
+
+/* Mega Aside Panels */
+html[data-theme="dark"] .mega-channels-aside,
+html[data-theme="dark"] .mega-partners-aside,
+html[data-theme="dark"] .mega-products-aside,
+html[data-theme="dark"] .mega-solutions-aside,
+html[data-theme="dark"] .mega-resources-aside {
+  background: linear-gradient(145deg, #111827 0%, #1e293b 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .mega-part-title,
+html[data-theme="dark"] .mega-sol-aside-title,
+html[data-theme="dark"] .mega-channels-aside-title {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .mega-part-desc,
+html[data-theme="dark"] .mega-sol-aside-desc,
+html[data-theme="dark"] .mega-channels-aside-desc {
+  color: #cbd5e1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Mobile Drawer in Dark Mode
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .mobile-drawer {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .mobile-drawer-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .mobile-nav-trigger {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .mobile-nav-item {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .mobile-accordion-content {
+  background: #111827 !important;
+}
+
+html[data-theme="dark"] .mobile-sub-link {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .mobile-sub-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .mnav-login {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .mobile-lang-btn {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .mobile-lang-btn.active {
+  background: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Site-Wide Components in Dark Mode
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .section-alt {
+  background: #0e1320 !important;
+}
+
+html[data-theme="dark"] .cloned-hellobots-page {
+  background: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .pricing-card {
+  background: #111827 !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .what-is-api {
+  background-color: #111827 !important;
+}
+
+html[data-theme="dark"] .whatsapp-section {
+  background-color: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .whatsapp-feature-box {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .whatsapp-feature-box p {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .whatsapp-feature-box strong {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .usecase-section {
+  background: #0e1320 !important;
+}
+
+html[data-theme="dark"] .grid-item {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .grid-item p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .faq-item,
+html[data-theme="dark"] .faq-itemm {
+  background: #111827 !important;
+  border-color: #1e293b !important;
+}
+
+html[data-theme="dark"] .faq-question,
+html[data-theme="dark"] .faq-questionn {
+  background: #111827 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .faq-text,
+html[data-theme="dark"] .faq-title h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .faq-answer {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="email"],
+html[data-theme="dark"] input[type="tel"],
+html[data-theme="dark"] input[type="password"],
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+  background-color: #111827 !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: #64748b !important;
+}
+
+html[data-theme="dark"] .site-footer {
+  background: #060911 !important;
+  border-top: 1px solid #1e293b !important;
+}
