@@ -55,7 +55,7 @@
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=51">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=1">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=52">
   <script>
     (function() {
       try {
@@ -3671,6 +3671,39 @@
         var current = getPreferredTheme();
         applyTheme(current, false);
 
+        function onDesktopToggle(e) {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          toggleTheme();
+        }
+
+        function onMobileToggle(e) {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          var targetTheme = this.getAttribute('data-theme-val');
+          if (targetTheme) applyTheme(targetTheme, true);
+        }
+
+        function attachDirectListeners() {
+          var desktopBtns = document.querySelectorAll('.theme-toggle-btn');
+          desktopBtns.forEach(function(btn) {
+            btn.removeEventListener('click', onDesktopToggle);
+            btn.addEventListener('click', onDesktopToggle);
+          });
+          var mobileOptions = document.querySelectorAll('.mobile-theme-option');
+          mobileOptions.forEach(function(opt) {
+            opt.removeEventListener('click', onMobileToggle);
+            opt.addEventListener('click', onMobileToggle);
+          });
+        }
+
+        attachDirectListeners();
+
+        // Delegated backup listener
         document.addEventListener('click', function(e) {
           var toggleBtn = e.target.closest('.theme-toggle-btn');
           if (toggleBtn) {
@@ -3837,20 +3870,20 @@
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Launch Retargeting Flow" style="text-align:left;width:fit-content;">Launch Retargeting Flow &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:00 PM</span>
+                        <span class="time">04:18 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Launch Retargeting Flow</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:01 PM</span>
+                        <span class="time">04:19 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>✓ Retargeting sequence activated for 3,420 users who clicked the catalog link but didn’t complete checkout. Auto-incentive: 10% flash voucher.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">04:02 PM</span>
+                        <span class="time">04:20 PM</span>
                                               </div>
                     </div>
                   
@@ -4063,10 +4096,10 @@
                                           <div class="ind-msg-btn">Optimize Ad Spend</div>
                                           <div class="ind-msg-btn">View Lead Conversions</div>
                                       </div>
-                                <span class="msg-time">04:03 PM</span>
+                                <span class="msg-time">04:21 PM</span>
               </div>
                               <div class="ind-msg user">
-                  View Lead Conversions                  <span class="msg-time">04:03 PM</span>
+                  View Lead Conversions                  <span class="msg-time">04:21 PM</span>
                 </div>
                           </div>
           </div>
@@ -4118,10 +4151,10 @@
                                           <div class="ind-msg-btn">Open Broadcast Console</div>
                                           <div class="ind-msg-btn">View Billing Usage</div>
                                       </div>
-                                <span class="msg-time">04:03 PM</span>
+                                <span class="msg-time">04:21 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Open Broadcast Console                  <span class="msg-time">04:03 PM</span>
+                  Open Broadcast Console                  <span class="msg-time">04:21 PM</span>
                 </div>
                           </div>
           </div>
@@ -4173,10 +4206,10 @@
                                           <div class="ind-msg-btn">Confirm Broadcast</div>
                                           <div class="ind-msg-btn">Schedule for 7 PM</div>
                                       </div>
-                                <span class="msg-time">04:03 PM</span>
+                                <span class="msg-time">04:21 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Schedule for 7 PM                  <span class="msg-time">04:03 PM</span>
+                  Schedule for 7 PM                  <span class="msg-time">04:21 PM</span>
                 </div>
                           </div>
           </div>
@@ -4228,10 +4261,10 @@
                                           <div class="ind-msg-btn">View Quiz Analytics</div>
                                           <div class="ind-msg-btn">Export Qualified Leads</div>
                                       </div>
-                                <span class="msg-time">04:03 PM</span>
+                                <span class="msg-time">04:21 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Export Qualified Leads                  <span class="msg-time">04:03 PM</span>
+                  Export Qualified Leads                  <span class="msg-time">04:21 PM</span>
                 </div>
                           </div>
           </div>

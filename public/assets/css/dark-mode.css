@@ -1,5 +1,5 @@
 /* ==========================================================================
-   HelloBotz Professional Dark / Light Mode System
+   HelloBotz Professional Dark / Light Mode Master System
    assets/css/dark-mode.css
    ========================================================================== */
 
@@ -14,7 +14,7 @@
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(241, 245, 249, 0.9) !important;
   border: 1.5px solid #cbd5e1 !important;
   color: #334155 !important;
   cursor: pointer !important;
@@ -22,21 +22,26 @@
   margin: 0 !important;
   outline: none !important;
   flex-shrink: 0 !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06) !important;
   overflow: hidden !important;
+  z-index: 10 !important;
+}
+
+.theme-toggle-btn * {
+  pointer-events: none !important;
 }
 
 .theme-toggle-btn:hover {
   border-color: #8b5cf6 !important;
   color: #8b5cf6 !important;
-  background: #fbfbfe !important;
-  transform: translateY(-1px) scale(1.05) !important;
-  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.22) !important;
+  background: #ffffff !important;
+  transform: translateY(-1px) scale(1.08) !important;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25) !important;
 }
 
 .theme-toggle-btn:active {
-  transform: scale(0.95) !important;
+  transform: scale(0.94) !important;
 }
 
 .theme-toggle-btn .theme-icon-sun,
@@ -51,14 +56,13 @@
   width: 18px !important;
   height: 18px !important;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  pointer-events: none !important;
+              transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 /* Light Mode state: show Moon icon to switch to dark */
 html:not([data-theme="dark"]) .theme-toggle-btn .theme-icon-sun {
   opacity: 0 !important;
-  transform: translate(-50%, -50%) rotate(90deg) scale(0.4) !important;
+  transform: translate(-50%, -50%) rotate(90deg) scale(0.2) !important;
 }
 
 html:not([data-theme="dark"]) .theme-toggle-btn .theme-icon-moon {
@@ -67,20 +71,20 @@ html:not([data-theme="dark"]) .theme-toggle-btn .theme-icon-moon {
   color: #475569 !important;
 }
 
-/* Dark Mode state: show Sun icon to switch to light */
+/* Dark Mode state: show glowing Sun icon to switch to light */
 html[data-theme="dark"] .theme-toggle-btn {
-  background: rgba(30, 41, 59, 0.95) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
+  background: rgba(30, 41, 59, 0.9) !important;
+  border-color: rgba(251, 191, 36, 0.4) !important;
   color: #fbbf24 !important;
-  box-shadow: 0 0 14px rgba(251, 191, 36, 0.22) !important;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.25) !important;
 }
 
 html[data-theme="dark"] .theme-toggle-btn:hover {
   background: #1e293b !important;
   border-color: #fbbf24 !important;
   color: #fef08a !important;
-  transform: translateY(-1px) scale(1.08) !important;
-  box-shadow: 0 0 18px rgba(251, 191, 36, 0.4) !important;
+  transform: translateY(-1px) scale(1.1) !important;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.45) !important;
 }
 
 html[data-theme="dark"] .theme-toggle-btn .theme-icon-sun {
@@ -91,7 +95,7 @@ html[data-theme="dark"] .theme-toggle-btn .theme-icon-sun {
 
 html[data-theme="dark"] .theme-toggle-btn .theme-icon-moon {
   opacity: 0 !important;
-  transform: translate(-50%, -50%) rotate(-90deg) scale(0.4) !important;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.2) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -158,6 +162,11 @@ html[data-theme="dark"] .mobile-theme-toggle-box {
   width: 15px !important;
   height: 15px !important;
   flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+.mobile-theme-option span {
+  pointer-events: none !important;
 }
 
 .mobile-theme-option.active {
@@ -177,37 +186,30 @@ html[data-theme="dark"] .mobile-theme-option.active {
 }
 
 /* --------------------------------------------------------------------------
-   3. Dark Theme Core Tokens & Backgrounds
+   3. Core Dark Mode Tokens & Root Styles
    -------------------------------------------------------------------------- */
 html[data-theme="dark"] {
-  --bg: #0b0f19 !important;
-  --bg2: #111827 !important;
-  --bg3: #1e293b !important;
+  --bg: #080c14 !important;
+  --bg2: #0f172a !important;
+  --bg3: #141d30 !important;
   --t: #f8fafc !important;
   --t2: #cbd5e1 !important;
   --t3: #94a3b8 !important;
   --t4: #64748b !important;
   --bd: #1e293b !important;
   --bd2: #334155 !important;
+  --ind-text: #e2e8f0 !important;
+  --ind-text-light: #94a3b8 !important;
+  --ind-border: #1e293b !important;
+  --ind-bg-soft: #0f172a !important;
+  --wa-dark: #f8fafc !important;
+  --wa-slate: #cbd5e1 !important;
   color-scheme: dark;
 }
 
 html[data-theme="dark"] body {
-  background-color: #0b0f19 !important;
+  background-color: #080c14 !important;
   color: #f8fafc !important;
-}
-
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h5,
-html[data-theme="dark"] h6 {
-  color: #f8fafc !important;
-}
-
-html[data-theme="dark"] p {
-  color: #cbd5e1;
 }
 
 /* --------------------------------------------------------------------------
@@ -216,16 +218,15 @@ html[data-theme="dark"] p {
 html[data-theme="dark"] .site-header .header-inner {
   background: rgba(15, 23, 42, 0.88) !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
 }
 
 html[data-theme="dark"] .site-header.scrolled .header-inner {
   background: rgba(11, 15, 25, 0.94) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.75) !important;
 }
 
-/* Nav links in header */
 html[data-theme="dark"] .nav-link {
   color: #cbd5e1 !important;
 }
@@ -247,7 +248,6 @@ html[data-theme="dark"] .nav-item-channels.open > .nav-link-channels {
   color: #ffffff !important;
 }
 
-/* Header Login button */
 html[data-theme="dark"] .header-login {
   background: #1e293b !important;
   border-color: rgba(255, 255, 255, 0.16) !important;
@@ -260,7 +260,6 @@ html[data-theme="dark"] .header-login:hover {
   color: #a78bfa !important;
 }
 
-/* Language switch button & dropdown */
 html[data-theme="dark"] .lang-switch-btn {
   background: #1e293b !important;
   border-color: rgba(255, 255, 255, 0.16) !important;
@@ -283,14 +282,11 @@ html[data-theme="dark"] .lang-switch-menu li.active {
   color: #ffffff !important;
 }
 
-/* Mobile Toggle Hamburger */
 html[data-theme="dark"] .mobile-toggle span {
   background: #f8fafc !important;
 }
 
-/* --------------------------------------------------------------------------
-   5. Mega Menus (Channels, Products, Solutions, Resources, Partners)
-   -------------------------------------------------------------------------- */
+/* Mega Menus */
 html[data-theme="dark"] .mega-menu-channels,
 html[data-theme="dark"] .mega-menu-products,
 html[data-theme="dark"] .mega-menu-solutions,
@@ -304,7 +300,6 @@ html[data-theme="dark"] .mega-menu-sm {
   color: #f8fafc !important;
 }
 
-/* Headings and Titles inside Mega Menus */
 html[data-theme="dark"] .mega-channels-heading,
 html[data-theme="dark"] .mega-prod-heading,
 html[data-theme="dark"] .mega-sol-heading,
@@ -318,7 +313,10 @@ html[data-theme="dark"] .mega-prod-card-title,
 html[data-theme="dark"] .mega-sol-card-title,
 html[data-theme="dark"] .part-title,
 html[data-theme="dark"] .mega-res-title,
-html[data-theme="dark"] .mega-col-title {
+html[data-theme="dark"] .mega-col-title,
+html[data-theme="dark"] .prodocu-col-heading,
+html[data-theme="dark"] .prodocu-section-title,
+html[data-theme="dark"] .prodocu-item-title {
   color: #ffffff !important;
 }
 
@@ -326,19 +324,21 @@ html[data-theme="dark"] .mega-channels-item-sub,
 html[data-theme="dark"] .mega-prod-card-desc,
 html[data-theme="dark"] .mega-sol-card-desc,
 html[data-theme="dark"] .part-desc,
-html[data-theme="dark"] .mega-res-desc {
+html[data-theme="dark"] .mega-res-desc,
+html[data-theme="dark"] .prodocu-item-desc {
   color: #94a3b8 !important;
 }
 
-/* Mega Menu Cards & Hover States */
 html[data-theme="dark"] .mega-channels-item,
 html[data-theme="dark"] .mega-prod-card,
 html[data-theme="dark"] .mega-sol-card,
 html[data-theme="dark"] .mega-part-link,
 html[data-theme="dark"] .mega-res-link,
-html[data-theme="dark"] .mega-sub-link {
-  background: #1e293b !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+html[data-theme="dark"] .mega-sub-link,
+html[data-theme="dark"] .prodocu-item,
+html[data-theme="dark"] .prodocu-channel-item {
+  background: #141d30 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
   color: #f8fafc !important;
 }
 
@@ -347,19 +347,20 @@ html[data-theme="dark"] .mega-prod-card:hover,
 html[data-theme="dark"] .mega-sol-card:hover,
 html[data-theme="dark"] .mega-part-link:hover,
 html[data-theme="dark"] .mega-res-link:hover,
-html[data-theme="dark"] .mega-sub-link:hover {
-  background: #253349 !important;
+html[data-theme="dark"] .mega-sub-link:hover,
+html[data-theme="dark"] .prodocu-item:hover,
+html[data-theme="dark"] .prodocu-channel-item:hover {
+  background: #1c2842 !important;
   border-color: rgba(139, 92, 246, 0.5) !important;
   color: #ffffff !important;
 }
 
-/* Mega Aside Panels */
 html[data-theme="dark"] .mega-channels-aside,
 html[data-theme="dark"] .mega-partners-aside,
 html[data-theme="dark"] .mega-products-aside,
 html[data-theme="dark"] .mega-solutions-aside,
 html[data-theme="dark"] .mega-resources-aside {
-  background: linear-gradient(145deg, #111827 0%, #1e293b 100%) !important;
+  background: linear-gradient(145deg, #111827 0%, #1a2333 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -375,9 +376,7 @@ html[data-theme="dark"] .mega-channels-aside-desc {
   color: #cbd5e1 !important;
 }
 
-/* --------------------------------------------------------------------------
-   6. Mobile Drawer in Dark Mode
-   -------------------------------------------------------------------------- */
+/* Mobile Drawer */
 html[data-theme="dark"] .mobile-drawer {
   background: #0f172a !important;
   color: #f8fafc !important;
@@ -427,91 +426,238 @@ html[data-theme="dark"] .mobile-lang-btn.active {
 }
 
 /* --------------------------------------------------------------------------
-   7. Site-Wide Components in Dark Mode
+   5. Page Containers (Homepage, Channels, Products, Industry, Careers, etc.)
    -------------------------------------------------------------------------- */
-html[data-theme="dark"] .section-alt {
-  background: #0e1320 !important;
-}
-
-html[data-theme="dark"] .cloned-hellobots-page {
-  background: #0b0f19 !important;
+html[data-theme="dark"] .cw-main-page,
+html[data-theme="dark"] .cw-page,
+html[data-theme="dark"] .cloned-hellobots-page,
+html[data-theme="dark"] .industry-page,
+html[data-theme="dark"] .careers-page,
+html[data-theme="dark"] .partners-page,
+html[data-theme="dark"] .pricing-page,
+html[data-theme="dark"] .business-leads-page,
+html[data-theme="dark"] main,
+html[data-theme="dark"] #main {
+  background: #080c14 !important;
   color: #f8fafc !important;
 }
 
-html[data-theme="dark"] .card,
-html[data-theme="dark"] .feature-card,
-html[data-theme="dark"] .pricing-card {
-  background: #111827 !important;
-  border-color: #1e293b !important;
-  color: #f8fafc !important;
-}
-
-html[data-theme="dark"] .what-is-api {
-  background-color: #111827 !important;
-}
-
+/* Sections */
+html[data-theme="dark"] .section,
+html[data-theme="dark"] .cw-hero-wrap,
+html[data-theme="dark"] .cw-hero-section,
+html[data-theme="dark"] .cw-platform-showcase-section,
+html[data-theme="dark"] .hb-features-section,
+html[data-theme="dark"] .hiw-section,
+html[data-theme="dark"] .stories-section,
+html[data-theme="dark"] .hero-section,
+html[data-theme="dark"] .industry-hero,
+html[data-theme="dark"] .brands-section,
 html[data-theme="dark"] .whatsapp-section {
-  background-color: #0b0f19 !important;
+  background: transparent !important;
 }
 
-html[data-theme="dark"] .whatsapp-feature-box {
-  background: #111827 !important;
-  border: 1px solid #1e293b !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+html[data-theme="dark"] .section-alt,
+html[data-theme="dark"] .what-is-api,
+html[data-theme="dark"] .whatsapp-usecase,
+html[data-theme="dark"] .usecase-section,
+html[data-theme="dark"] .industry-section,
+html[data-theme="dark"] .steps-section,
+html[data-theme="dark"] .how-it-works,
+html[data-theme="dark"] .chatbot-can-do,
+html[data-theme="dark"] .ai-engines {
+  background-color: #0d121f !important;
+  border-color: #1e293b !important;
 }
 
-html[data-theme="dark"] .whatsapp-feature-box p {
-  color: #cbd5e1 !important;
+html[data-theme="dark"] .section-gradient-1 {
+  background: linear-gradient(180deg, #0d121f 0%, #080c14 100%) !important;
 }
 
-html[data-theme="dark"] .whatsapp-feature-box strong {
+/* Force override on any inline background styles */
+html[data-theme="dark"] section[style*="background"],
+html[data-theme="dark"] div[style*="background: #fff"],
+html[data-theme="dark"] div[style*="background:#fff"],
+html[data-theme="dark"] div[style*="background: #ffffff"],
+html[data-theme="dark"] div[style*="background:#ffffff"],
+html[data-theme="dark"] div[style*="background-color: #f9f9f9"],
+html[data-theme="dark"] div[style*="background:#f4f7fd"],
+html[data-theme="dark"] div[style*="background: #fffaeb"],
+html[data-theme="dark"] div[style*="background:#fffaeb"] {
+  background-color: #0d121f !important;
+  background-image: none !important;
+  border-color: #1e293b !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Typography Across All Pages
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .cw-hero-title,
+html[data-theme="dark"] .cw-section-title,
+html[data-theme="dark"] .whatsapp-heading,
+html[data-theme="dark"] .card-title,
+html[data-theme="dark"] .section-header h2,
+html[data-theme="dark"] .prodocu-col-heading,
+html[data-theme="dark"] .hiw-title,
+html[data-theme="dark"] .hb-feature-title {
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .usecase-section {
-  background: #0e1320 !important;
-}
-
-html[data-theme="dark"] .grid-item {
-  background: #111827 !important;
-  border: 1px solid #1e293b !important;
-  color: #f8fafc !important;
-}
-
-html[data-theme="dark"] .grid-item p {
+html[data-theme="dark"] p,
+html[data-theme="dark"] .cw-hero-desc,
+html[data-theme="dark"] .cw-section-subtitle,
+html[data-theme="dark"] .api-subtext,
+html[data-theme="dark"] .section-lead,
+html[data-theme="dark"] .lead,
+html[data-theme="dark"] .numera-small,
+html[data-theme="dark"] .hero-text,
+html[data-theme="dark"] .grid-item p,
+html[data-theme="dark"] .whatsapp-feature-box p,
+html[data-theme="dark"] .industry-hero-lead,
+html[data-theme="dark"] .hiw-desc,
+html[data-theme="dark"] .hb-feature-desc {
   color: #94a3b8 !important;
 }
 
-html[data-theme="dark"] .faq-item,
-html[data-theme="dark"] .faq-itemm {
-  background: #111827 !important;
+html[data-theme="dark"] strong,
+html[data-theme="dark"] b,
+html[data-theme="dark"] .whatsapp-feature-box strong,
+html[data-theme="dark"] .grid-item h3 {
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Cards, Feature Boxes & Grids Across All Pages
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .cw-card,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .pricing-card,
+html[data-theme="dark"] .testimonial-card,
+html[data-theme="dark"] .whatsapp-feature-box,
+html[data-theme="dark"] .grid-item,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .ind-card,
+html[data-theme="dark"] .hiw-step-card,
+html[data-theme="dark"] .hb-feature-card,
+html[data-theme="dark"] .stories-card,
+html[data-theme="dark"] .cw-step-card,
+html[data-theme="dark"] .cw-counter-item,
+html[data-theme="dark"] .cw-trust-item,
+html[data-theme="dark"] .cw-showcase-card,
+html[data-theme="dark"] .prt-card,
+html[data-theme="dark"] .prt-tier-card,
+html[data-theme="dark"] .careers-role-card,
+html[data-theme="dark"] .usecase-item,
+html[data-theme="dark"] .platform-feature-card {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .card:hover,
+html[data-theme="dark"] .cw-card:hover,
+html[data-theme="dark"] .feature-card:hover,
+html[data-theme="dark"] .whatsapp-feature-box:hover,
+html[data-theme="dark"] .grid-item:hover,
+html[data-theme="dark"] .stat-card:hover,
+html[data-theme="dark"] .careers-role-card:hover {
+  background: #141d30 !important;
+  border-color: rgba(139, 92, 246, 0.45) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables & Comparison Grids
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] table,
+html[data-theme="dark"] .cw-comp-table,
+html[data-theme="dark"] .comparison-table {
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] th {
+  background: #131b2e !important;
+  color: #ffffff !important;
   border-color: #1e293b !important;
 }
 
+html[data-theme="dark"] td {
+  border-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] tr:hover td {
+  background: #162036 !important;
+}
+
+html[data-theme="dark"] .cw-comp-standard {
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #fca5a5 !important;
+}
+
+html[data-theme="dark"] .cw-comp-api {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #6ee7b7 !important;
+}
+
+html[data-theme="dark"] .cw-comp-feature {
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. FAQ Accordions
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .faq-item,
+html[data-theme="dark"] .faq-itemm,
+html[data-theme="dark"] .cw-faq-item {
+  background: #0f172a !important;
+  border: 1px solid #1e293b !important;
+  box-shadow: none !important;
+}
+
 html[data-theme="dark"] .faq-question,
-html[data-theme="dark"] .faq-questionn {
-  background: #111827 !important;
-  color: #f8fafc !important;
+html[data-theme="dark"] .faq-questionn,
+html[data-theme="dark"] .cw-faq-btn {
+  background: #0f172a !important;
+  color: #ffffff !important;
 }
 
 html[data-theme="dark"] .faq-text,
-html[data-theme="dark"] .faq-title h3 {
-  color: #f8fafc !important;
+html[data-theme="dark"] .faq-title h3,
+html[data-theme="dark"] .cw-faq-q {
+  color: #ffffff !important;
 }
 
-html[data-theme="dark"] .faq-answer {
+html[data-theme="dark"] .faq-answer,
+html[data-theme="dark"] .faq-answerr,
+html[data-theme="dark"] .cw-faq-answer {
+  background: #0f172a !important;
   color: #94a3b8 !important;
+  border-top: 1px solid #1e293b !important;
 }
 
+/* --------------------------------------------------------------------------
+   10. Form Inputs, Modals & Interactive Elements
+   -------------------------------------------------------------------------- */
 html[data-theme="dark"] input[type="text"],
 html[data-theme="dark"] input[type="email"],
 html[data-theme="dark"] input[type="tel"],
 html[data-theme="dark"] input[type="password"],
 html[data-theme="dark"] textarea,
 html[data-theme="dark"] select {
-  background-color: #111827 !important;
-  border-color: #334155 !important;
-  color: #f8fafc !important;
+  background-color: #0f172a !important;
+  border: 1.5px solid #334155 !important;
+  color: #ffffff !important;
 }
 
 html[data-theme="dark"] input::placeholder,
@@ -519,7 +665,55 @@ html[data-theme="dark"] textarea::placeholder {
   color: #64748b !important;
 }
 
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] textarea:focus,
+html[data-theme="dark"] select:focus {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3) !important;
+}
+
+html[data-theme="dark"] .btn-outline,
+html[data-theme="dark"] .btn-white {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] .btn-outline:hover,
+html[data-theme="dark"] .btn-white:hover {
+  background: #283548 !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .cw-modal,
+html[data-theme="dark"] .demo-modal-dialog {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   -------------------------------------------------------------------------- */
 html[data-theme="dark"] .site-footer {
-  background: #060911 !important;
+  background: #04060a !important;
   border-top: 1px solid #1e293b !important;
+}
+
+html[data-theme="dark"] .footer-heading,
+html[data-theme="dark"] .footer-contact-heading {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .footer-link,
+html[data-theme="dark"] .footer-text,
+html[data-theme="dark"] .footer-legal-copy {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .footer-link:hover {
+  color: #ffffff !important;
 }
