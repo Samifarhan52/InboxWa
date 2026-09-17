@@ -322,31 +322,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </div>
 </section>
-<section class="partners-section">
-  <div class="container">
-    <h2 class="partners-title whatsapp-heading">Our Trusted Clients</h2>
-    <div class="swiper partners-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="/assets/images/hellobots/integrations-zoho/Footer_Logo.png" alt="Looks Salon">
-        </div>
-        <div class="swiper-slide">
-          <img src="/assets/images/hellobots/integrations-zoho/Mahindra-Logo-2000.png" alt="Mahindra">
-        </div>
-        <div class="swiper-slide">
-          <img src="/assets/images/hellobots/integrations-zoho/SkodaLogoNew.png" alt="Skoda">
-        </div>
-        <div class="swiper-slide">
-          <img src="/assets/images/hellobots/integrations-zoho/Vegtration_Logo.png" alt="Vegetarian Brand">
-        </div>
-        <div class="swiper-slide">
-          <img src="/assets/images/hellobots/integrations-zoho/zee-business.png" alt="Zee Business">
-        </div>
-      </div>
-      <!-- Pagination and Navigation Buttons -->
-    </div>
-  </div>
-</section>
+
 <section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;">
   <div class="container">
     <div class="row">
@@ -1417,7 +1393,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Init Swiper if present
   if (typeof Swiper !== 'undefined') {
-    new Swiper('.partners-slider', {
+    document.querySelector(".partners-slider") && new Swiper(".partners-slider", {
       slidesPerView: 2,
       spaceBetween: 20,
       loop: true,
