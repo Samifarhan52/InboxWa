@@ -505,7 +505,9 @@ html[data-theme="dark"] .card-title,
 html[data-theme="dark"] .section-header h2,
 html[data-theme="dark"] .prodocu-col-heading,
 html[data-theme="dark"] .hiw-title,
-html[data-theme="dark"] .hb-feature-title {
+html[data-theme="dark"] .hiw-card-title,
+html[data-theme="dark"] .hb-feature-title,
+html[data-theme="dark"] .hb-feature-item-title {
   color: #ffffff !important;
 }
 
@@ -521,7 +523,9 @@ html[data-theme="dark"] .grid-item p,
 html[data-theme="dark"] .whatsapp-feature-box p,
 html[data-theme="dark"] .industry-hero-lead,
 html[data-theme="dark"] .hiw-desc,
-html[data-theme="dark"] .hb-feature-desc {
+html[data-theme="dark"] .hiw-card-desc,
+html[data-theme="dark"] .hb-feature-desc,
+html[data-theme="dark"] .hb-feature-item-desc {
   color: #94a3b8 !important;
 }
 
@@ -717,3 +721,1625 @@ html[data-theme="dark"] .footer-legal-copy {
 html[data-theme="dark"] .footer-link:hover {
   color: #ffffff !important;
 }
+
+/* ==========================================================================
+   12. Journey Flow Section & High-Contrast Dark Images
+   ========================================================================== */
+.hb-feature-img-dark {
+  display: none !important;
+}
+.hb-feature-img-light {
+  display: block !important;
+}
+
+html[data-theme="dark"] .hb-feature-img-dark {
+  display: block !important;
+}
+html[data-theme="dark"] .hb-feature-img-light {
+  display: none !important;
+}
+
+html[data-theme="dark"] .hb-features-section {
+  background: transparent !important;
+}
+html[data-theme="dark"] .hb-feature-item-badge {
+  background: rgba(139, 92, 246, 0.2) !important;
+  color: #c4b5fd !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+html[data-theme="dark"] .hb-feature-item-link {
+  color: #a78bfa !important;
+}
+html[data-theme="dark"] .hb-feature-item-link:hover {
+  color: #c4b5fd !important;
+}
+
+/* ==========================================================================
+   13. Brands Section & Client Ticker
+   ========================================================================== */
+html[data-theme="dark"] .brands-section {
+  background: #080c14 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .brands-inner::before {
+  background: linear-gradient(to right, #080c14 0%, rgba(8, 12, 20, 0) 100%) !important;
+}
+html[data-theme="dark"] .brands-inner::after {
+  background: linear-gradient(to left, #080c14 0%, rgba(8, 12, 20, 0) 100%) !important;
+}
+html[data-theme="dark"] .brand-badge {
+  background: #111827 !important;
+  border: 1px solid #1f293d !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+html[data-theme="dark"] .brand-badge:hover {
+  background: #1f293d !important;
+  border-color: #374151 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] .brand-badge span {
+  color: #f8fafc !important;
+}
+
+/* ==========================================================================
+   14. Platform Showcase Section
+   ========================================================================== */
+html[data-theme="dark"] .cw-showcase-pill {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #34d399 !important;
+}
+html[data-theme="dark"] .cw-showcase-title {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-showcase-subtitle {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cw-showcase-tab {
+  background: #111827 !important;
+  border-color: #1f293d !important;
+  color: #94a3b8 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .cw-showcase-tab:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #334155 !important;
+}
+html[data-theme="dark"] .cw-showcase-tab.active {
+  background: #8b5cf6 !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35) !important;
+}
+html[data-theme="dark"] .cw-showcase-window {
+  background: #0f172a !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] .cw-showcase-card {
+  background: #111827 !important;
+  border: 1px solid #1f293d !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================================================
+   15. How It Works Section
+   ========================================================================== */
+html[data-theme="dark"] .hiw-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .hiw-card:hover {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 22px 48px rgba(139, 92, 246, 0.25) !important;
+}
+html[data-theme="dark"] .hiw-badge {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #c4b5fd !important;
+}
+html[data-theme="dark"] .hiw-bullets {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .hiw-bullets li {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .hiw-check-icon {
+  background: rgba(16, 185, 129, 0.25) !important;
+  color: #34d399 !important;
+}
+html[data-theme="dark"] .hiw-step-tagline {
+  color: #a78bfa !important;
+}
+
+/* ==========================================================================
+   16. Customer Stories Section
+   ========================================================================== */
+html[data-theme="dark"] .story-scroller-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .story-scroller-card:hover {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 24px 50px rgba(139, 92, 246, 0.25) !important;
+}
+html[data-theme="dark"] .story-headline {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .story-quote {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .story-author {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .story-author-name {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .story-author-role {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .stories-filter-pill,
+html[data-theme="dark"] .stories-filter-btn {
+  background: #111827 !important;
+  border-color: #1f293d !important;
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .stories-filter-pill.active,
+html[data-theme="dark"] .stories-filter-btn.active {
+  background: #8b5cf6 !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   17. Pricing System Dark Mode
+   ========================================================================== */
+html[data-theme="dark"] .pricing-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(15, 118, 110, 0.15) 0%, rgba(8, 12, 20, 0) 70%) !important;
+}
+html[data-theme="dark"] .pricing-hero-inner h1 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .hero-subtitle {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .currency-converter-card {
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .currency-converter-card p.title {
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] #currencySelector {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .currency-sub-note {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .plan-category-toggle {
+  background: #111827 !important;
+}
+html[data-theme="dark"] .plan-cat-btn {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .plan-cat-btn.active {
+  background: #0f766e !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .pricing-billing-pill {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .pill-label {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .billing-toggle {
+  background: #0a0f1d !important;
+  border-color: #1e293b !important;
+}
+html[data-theme="dark"] .billing-toggle .toggle-btn {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .billing-toggle .toggle-btn.active {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .billing-subtext {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .pricing-card {
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35) !important;
+}
+html[data-theme="dark"] .pricing-card.highlight {
+  border-color: #0f766e !important;
+  box-shadow: 0 22px 60px rgba(15, 118, 110, 0.25) !important;
+}
+html[data-theme="dark"] .pricing-card h2 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .plan-short {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .price {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .price span {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .price-subtext {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .plan-features {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .plan-features li {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .plan-divider {
+  background: #1e293b !important;
+}
+html[data-theme="dark"] .sub-heading {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .plan-limitations {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .plan-limitations li {
+  color: #64748b !important;
+}
+html[data-theme="dark"] .plan-icon {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+html[data-theme="dark"] .comparison-table {
+  background: #0f172a !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .comparison-table th {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border-color: #1e293b !important;
+}
+html[data-theme="dark"] .comparison-table td {
+  border-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .faq-section {
+  background: transparent !important;
+}
+html[data-theme="dark"] .faq-item {
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+}
+html[data-theme="dark"] .faq-question {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .faq-answer {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   18. Platform Showcase Captions & Badges
+   ========================================================================== */
+html[data-theme="dark"] .cw-media-caption {
+  background: #0d121f !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cw-sc-text strong {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-sc-text span {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   19. Customer Stories Trust Stats & Interactive Controls
+   ========================================================================== */
+html[data-theme="dark"] .stories-stats-strip {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+html[data-theme="dark"] .stories-stat-val {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .stories-stat-lbl {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .stories-stat-sep {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] .story-chip-btn {
+  background: #111827 !important;
+  border-color: #1f293d !important;
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .story-chip-btn:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .story-chip-btn.active {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .stories-ctrl-btn {
+  background: #111827 !important;
+  border-color: #1f293d !important;
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .stories-ctrl-btn:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .stories-nav-arrow {
+  background: #111827 !important;
+  border-color: #1f293d !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .stories-nav-arrow:hover {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   20. Channel Pages Dark Mode (WhatsApp, Facebook, Instagram, Telegram)
+   ========================================================================== */
+
+/* Outer Channel Page Containers */
+html[data-theme="dark"] .cfb-page,
+html[data-theme="dark"] .ctg-page,
+html[data-theme="dark"] .cig-page,
+html[data-theme="dark"] .cw-channel-page {
+  background: #080c14 !important;
+  color: #f8fafc !important;
+}
+
+/* WhatsApp Channel Specifics */
+html[data-theme="dark"] .cw-counters-grid {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .cw-counter-item {
+  border-right-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-counter-title {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cw-comparison-section,
+html[data-theme="dark"] .cw-usecases-section {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-table-container,
+html[data-theme="dark"] .cw-cap-container,
+html[data-theme="dark"] .cw-cap-sidebar,
+html[data-theme="dark"] .cw-usecase-card,
+html[data-theme="dark"] .cw-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cw-comp-table th {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-comp-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cw-comp-feature {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-cap-sidebar-title {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-cap-tab {
+  background: #141d30 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cw-cap-tab.active {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-faq-question {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-faq-answer {
+  color: #94a3b8 !important;
+}
+
+/* Facebook Channel Specifics */
+html[data-theme="dark"] .cfb-showcases-section,
+html[data-theme="dark"] .cfb-tools-section,
+html[data-theme="dark"] .cfb-steps-section,
+html[data-theme="dark"] .cfb-capabilities-section,
+html[data-theme="dark"] .cfb-faq-section,
+html[data-theme="dark"] .cfb-sales-section {
+  background: transparent !important;
+}
+html[data-theme="dark"] .cfb-section-title,
+html[data-theme="dark"] .cfb-sc-title,
+html[data-theme="dark"] .cfb-tool-title,
+html[data-theme="dark"] .cfb-step-title,
+html[data-theme="dark"] .cfb-cap-title,
+html[data-theme="dark"] .cfb-cap-sidebar-title,
+html[data-theme="dark"] .cfb-faq-question {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cfb-section-subtitle,
+html[data-theme="dark"] .cfb-sc-desc,
+html[data-theme="dark"] .cfb-sc-bullet,
+html[data-theme="dark"] .cfb-tool-desc,
+html[data-theme="dark"] .cfb-step-desc,
+html[data-theme="dark"] .cfb-cap-desc,
+html[data-theme="dark"] .cfb-faq-answer {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cfb-tool-card,
+html[data-theme="dark"] .cfb-step-card,
+html[data-theme="dark"] .cfb-cap-container,
+html[data-theme="dark"] .cfb-cap-sidebar,
+html[data-theme="dark"] .cfb-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cfb-cap-tab {
+  background: #141d30 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cfb-cap-tab.active {
+  background: rgba(24, 119, 242, 0.15) !important;
+  border-color: #1877f2 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cfb-btn-secondary {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Instagram Channel Specifics */
+html[data-theme="dark"] .cig-simulator-section,
+html[data-theme="dark"] .cig-showcases-section,
+html[data-theme="dark"] .cig-steps-section,
+html[data-theme="dark"] .cig-capabilities-section,
+html[data-theme="dark"] .cig-faq-section,
+html[data-theme="dark"] .cig-cta-banner {
+  background: transparent !important;
+}
+html[data-theme="dark"] .cig-section-title,
+html[data-theme="dark"] .cig-sc-title,
+html[data-theme="dark"] .cig-step-title,
+html[data-theme="dark"] .cig-cap-title,
+html[data-theme="dark"] .cig-cap-sidebar-title,
+html[data-theme="dark"] .cig-faq-question,
+html[data-theme="dark"] .cig-sim-title {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cig-section-subtitle,
+html[data-theme="dark"] .cig-sc-desc,
+html[data-theme="dark"] .cig-sc-bullet,
+html[data-theme="dark"] .cig-step-desc,
+html[data-theme="dark"] .cig-cap-desc,
+html[data-theme="dark"] .cig-faq-answer,
+html[data-theme="dark"] .cig-sim-desc {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cig-step-card,
+html[data-theme="dark"] .cig-cap-container,
+html[data-theme="dark"] .cig-cap-sidebar,
+html[data-theme="dark"] .cig-faq-item,
+html[data-theme="dark"] .cig-sim-card,
+html[data-theme="dark"] .cig-feature-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cig-cap-tab {
+  background: #141d30 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cig-cap-tab.active {
+  background: rgba(225, 48, 108, 0.15) !important;
+  border-color: #e1306c !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cig-btn-secondary {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Telegram Channel Specifics */
+html[data-theme="dark"] .ctg-showcases-section,
+html[data-theme="dark"] .ctg-steps-section,
+html[data-theme="dark"] .ctg-capabilities-section,
+html[data-theme="dark"] .ctg-guide-section,
+html[data-theme="dark"] .ctg-faq-section,
+html[data-theme="dark"] .ctg-sales-section {
+  background: transparent !important;
+}
+html[data-theme="dark"] .ctg-section-title,
+html[data-theme="dark"] .ctg-sc-title,
+html[data-theme="dark"] .ctg-step-title,
+html[data-theme="dark"] .ctg-cap-title,
+html[data-theme="dark"] .ctg-cap-sidebar-title,
+html[data-theme="dark"] .ctg-guide-title,
+html[data-theme="dark"] .ctg-faq-question {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .ctg-section-subtitle,
+html[data-theme="dark"] .ctg-sc-desc,
+html[data-theme="dark"] .ctg-sc-bullet,
+html[data-theme="dark"] .ctg-step-desc,
+html[data-theme="dark"] .ctg-cap-desc,
+html[data-theme="dark"] .ctg-guide-desc,
+html[data-theme="dark"] .ctg-faq-answer {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .ctg-step-card,
+html[data-theme="dark"] .ctg-cap-container,
+html[data-theme="dark"] .ctg-cap-sidebar,
+html[data-theme="dark"] .ctg-cap-card,
+html[data-theme="dark"] .ctg-guide-card,
+html[data-theme="dark"] .ctg-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .ctg-cap-tab {
+  background: #141d30 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .ctg-cap-tab.active {
+  background: rgba(0, 136, 204, 0.15) !important;
+  border-color: #0088cc !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .ctg-btn-secondary {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+
+
+
+/* ==========================================================================
+   ABOUT PAGE DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .ab-page,
+html[data-theme="dark"] .ab-hero,
+html[data-theme="dark"] .ab-page .section,
+html[data-theme="dark"] .ab-page .section-alt {
+  background: transparent !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .ab-hero h1,
+html[data-theme="dark"] .ab-story-content h2,
+html[data-theme="dark"] .ab-build-card h3,
+html[data-theme="dark"] .ab-mission-card h3,
+html[data-theme="dark"] .ab-tl-item h3,
+html[data-theme="dark"] .ab-office-card h3,
+html[data-theme="dark"] .ab-why-card h3,
+html[data-theme="dark"] .ab-partner-card h3,
+html[data-theme="dark"] .ab-value-card h3,
+html[data-theme="dark"] .ab-trust-card h3,
+html[data-theme="dark"] .ab-faq-q,
+html[data-theme="dark"] .ab-step h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ab-hero .lead,
+html[data-theme="dark"] .ab-story-content p,
+html[data-theme="dark"] .ab-build-card p,
+html[data-theme="dark"] .ab-mission-card p,
+html[data-theme="dark"] .ab-tl-item p,
+html[data-theme="dark"] .ab-office-card p,
+html[data-theme="dark"] .ab-why-card p,
+html[data-theme="dark"] .ab-partner-card p,
+html[data-theme="dark"] .ab-value-card p,
+html[data-theme="dark"] .ab-trust-card p,
+html[data-theme="dark"] .ab-step p,
+html[data-theme="dark"] .ab-testi-card blockquote,
+html[data-theme="dark"] .ab-faq-a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .ab-vision-quote {
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #67e8f9 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+html[data-theme="dark"] .ab-build-card,
+html[data-theme="dark"] .ab-mission-card,
+html[data-theme="dark"] .ab-office-card,
+html[data-theme="dark"] .ab-ind-card,
+html[data-theme="dark"] .ab-step,
+html[data-theme="dark"] .ab-why-card,
+html[data-theme="dark"] .ab-tech-item,
+html[data-theme="dark"] .ab-partner-card,
+html[data-theme="dark"] .ab-testi-card,
+html[data-theme="dark"] .ab-value-card,
+html[data-theme="dark"] .ab-trust-card,
+html[data-theme="dark"] .ab-faq-item,
+html[data-theme="dark"] .ab-story-placeholder,
+html[data-theme="dark"] .ab-logo-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .ab-map-flow {
+  background: #0b0f19 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .ab-map-flow span {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .badge-ab {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #c4b5fd !important;
+}
+
+/* ==========================================================================
+   CONTACT PAGE DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .ct-page,
+html[data-theme="dark"] .ct-hero,
+html[data-theme="dark"] .ct-page .section,
+html[data-theme="dark"] .ct-page .section-alt {
+  background: transparent !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .ct-hero h1,
+html[data-theme="dark"] .ct-quick-card h3,
+html[data-theme="dark"] .ct-form-card h2,
+html[data-theme="dark"] .ct-office h3,
+html[data-theme="dark"] .ct-step h3,
+html[data-theme="dark"] .ct-help-card span,
+html[data-theme="dark"] .ct-support-card h4,
+html[data-theme="dark"] .ct-reach-card h4,
+html[data-theme="dark"] .ct-map-popup h4,
+html[data-theme="dark"] .ct-faq-q {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-hero .lead,
+html[data-theme="dark"] .ct-quick-card p,
+html[data-theme="dark"] .ct-form-card .form-lead,
+html[data-theme="dark"] .ct-office .city,
+html[data-theme="dark"] .ct-office-detail,
+html[data-theme="dark"] .ct-step p,
+html[data-theme="dark"] .ct-support-card p,
+html[data-theme="dark"] .ct-reach-card p,
+html[data-theme="dark"] .ct-reach-card a,
+html[data-theme="dark"] .ct-map-popup p,
+html[data-theme="dark"] .ct-faq-a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .ct-quick-card,
+html[data-theme="dark"] .ct-form-card,
+html[data-theme="dark"] .ct-office,
+html[data-theme="dark"] .ct-map-popup,
+html[data-theme="dark"] .ct-help-card,
+html[data-theme="dark"] .ct-support-card,
+html[data-theme="dark"] .ct-reach-card,
+html[data-theme="dark"] .ct-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .ct-field label {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .ct-field input,
+html[data-theme="dark"] .ct-field select,
+html[data-theme="dark"] .ct-field textarea {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-field input:focus,
+html[data-theme="dark"] .ct-field select:focus,
+html[data-theme="dark"] .ct-field textarea:focus {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25) !important;
+}
+
+html[data-theme="dark"] .ct-journey {
+  background: linear-gradient(160deg, #111827 0%, #1e1b4b 100%) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+html[data-theme="dark"] .ct-journey-screen h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-journey-btn {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-journey-btn:hover {
+  background: #334155 !important;
+  border-color: #8b5cf6 !important;
+}
+
+html[data-theme="dark"] .ct-logo-slot {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #64748b !important;
+}
+
+/* ==========================================================================
+   PARTNERS & WHITE-LABEL DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .prt-hero {
+  background: linear-gradient(180deg, #090e1a 0%, #0d1322 60%, #0f172a 100%) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .prt-hero-copy h1,
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn,
+html[data-theme="dark"] .prt-pillar-content h3,
+html[data-theme="dark"] .prt-why-card h3,
+html[data-theme="dark"] .prt-offering-card h3,
+html[data-theme="dark"] .prt-audience-card h3,
+html[data-theme="dark"] .prt-calc-card h3,
+html[data-theme="dark"] .prt-plan h3,
+html[data-theme="dark"] .prt-form-wrap h3,
+html[data-theme="dark"] .prt-roadmap-step h4,
+html[data-theme="dark"] .faq-question {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-lead,
+html[data-theme="dark"] .prt-pillar-content p,
+html[data-theme="dark"] .prt-why-card p,
+html[data-theme="dark"] .prt-offering-card p,
+html[data-theme="dark"] .prt-audience-card p,
+html[data-theme="dark"] .prt-calc-card p,
+html[data-theme="dark"] .prt-plan-desc,
+html[data-theme="dark"] .prt-roadmap-step p,
+html[data-theme="dark"] .faq-answer {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn.active,
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn:hover {
+  background: #1e293b !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-badge {
+  background: rgba(124, 58, 237, 0.15) !important;
+  border-color: rgba(124, 58, 237, 0.35) !important;
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .prt-pillar-card,
+html[data-theme="dark"] .prt-why-card,
+html[data-theme="dark"] .prt-offering-card,
+html[data-theme="dark"] .prt-audience-card,
+html[data-theme="dark"] .prt-calc-card,
+html[data-theme="dark"] .prt-calc-box,
+html[data-theme="dark"] .prt-plan,
+html[data-theme="dark"] .prt-form-wrap,
+html[data-theme="dark"] .prt-roadmap-step,
+html[data-theme="dark"] .faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-plan-featured {
+  border-color: #8b5cf6 !important;
+  background: #131c31 !important;
+}
+
+html[data-theme="dark"] .prt-field input,
+html[data-theme="dark"] .prt-field select,
+html[data-theme="dark"] .prt-field textarea {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-field label {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-brand-logo,
+html[data-theme="dark"] .prt-logos-grid {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* ==========================================================================
+   CAREERS PAGE DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .careers-hero {
+  background: linear-gradient(180deg, #090e1a 0%, #0d1322 60%, #0f172a 100%) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .careers-hero h1,
+html[data-theme="dark"] .phil-card h3,
+html[data-theme="dark"] .why-card h3,
+html[data-theme="dark"] .domain-card h3,
+html[data-theme="dark"] .role-item-name,
+html[data-theme="dark"] .apply-card h3,
+html[data-theme="dark"] .direct-email-card h3,
+html[data-theme="dark"] .careers-head h2,
+html[data-theme="dark"] .role-cat-head h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .careers-hero .lead-text,
+html[data-theme="dark"] .phil-card p,
+html[data-theme="dark"] .why-card p,
+html[data-theme="dark"] .domain-card p,
+html[data-theme="dark"] .role-item p,
+html[data-theme="dark"] .careers-section p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .careers-hero-badge {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .stat-pill,
+html[data-theme="dark"] .phil-card,
+html[data-theme="dark"] .why-card,
+html[data-theme="dark"] .domain-card,
+html[data-theme="dark"] .role-category-card,
+html[data-theme="dark"] .role-item,
+html[data-theme="dark"] .apply-card,
+html[data-theme="dark"] .direct-email-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .role-filter-btn {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .role-filter-btn.active {
+  background: #1e293b !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .careers-input,
+html[data-theme="dark"] .careers-select,
+html[data-theme="dark"] .careers-textarea {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .careers-form-label {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .careers-section {
+  background: transparent !important;
+}
+
+html[data-theme="dark"] .careers-section.bg-light {
+  background: #080c14 !important;
+}
+
+/* ==========================================================================
+   INDUSTRY PAGES DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .industry-page {
+  background: #080c14 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .industry-hero {
+  background: radial-gradient(1000px 500px at 50% -50px, rgba(99, 102, 241, 0.15), transparent 70%), #080c14 !important;
+}
+
+html[data-theme="dark"] .industry-hero-content h1,
+html[data-theme="dark"] .industry-marquee-title,
+html[data-theme="dark"] .industry-feature-title,
+html[data-theme="dark"] .industry-sol-card h3,
+html[data-theme="dark"] .stage-display-title,
+html[data-theme="dark"] .industry-faq-header {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .industry-hero-lead,
+html[data-theme="dark"] .industry-marquee-sub,
+html[data-theme="dark"] .industry-feature-desc,
+html[data-theme="dark"] .industry-sol-card p,
+html[data-theme="dark"] .stage-subtitle,
+html[data-theme="dark"] .stage-features li,
+html[data-theme="dark"] .industry-faq-body {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .industry-crumb-nav a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .industry-crumb-nav span {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .industry-partner-badge {
+  background: rgba(99, 102, 241, 0.15) !important;
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .industry-marquee-section {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .industry-features-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .industry-feature-bullets li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .industry-solutions-section {
+  background: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .industry-sol-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .stage-tab {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .stage-tab.active {
+  background: #1e293b !important;
+  border-color: #6366f1 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .stage-pane {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .industry-faq-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .industry-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .industry-hero-floating-badge {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .industry-btn-ghost {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .industry-btn-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+
+
+/* ==========================================================================
+   ABOUT PAGE DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .ab-page,
+html[data-theme="dark"] .ab-hero,
+html[data-theme="dark"] .ab-page .section,
+html[data-theme="dark"] .ab-page .section-alt {
+  background: transparent !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .ab-hero h1,
+html[data-theme="dark"] .ab-story-content h2,
+html[data-theme="dark"] .ab-build-card h3,
+html[data-theme="dark"] .ab-mission-card h3,
+html[data-theme="dark"] .ab-tl-item h3,
+html[data-theme="dark"] .ab-office-card h3,
+html[data-theme="dark"] .ab-why-card h3,
+html[data-theme="dark"] .ab-partner-card h3,
+html[data-theme="dark"] .ab-value-card h3,
+html[data-theme="dark"] .ab-trust-card h3,
+html[data-theme="dark"] .ab-faq-q,
+html[data-theme="dark"] .ab-step h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ab-hero .lead,
+html[data-theme="dark"] .ab-story-content p,
+html[data-theme="dark"] .ab-build-card p,
+html[data-theme="dark"] .ab-mission-card p,
+html[data-theme="dark"] .ab-tl-item p,
+html[data-theme="dark"] .ab-office-card p,
+html[data-theme="dark"] .ab-why-card p,
+html[data-theme="dark"] .ab-partner-card p,
+html[data-theme="dark"] .ab-value-card p,
+html[data-theme="dark"] .ab-trust-card p,
+html[data-theme="dark"] .ab-step p,
+html[data-theme="dark"] .ab-testi-card blockquote,
+html[data-theme="dark"] .ab-faq-a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .ab-vision-quote {
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #67e8f9 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+html[data-theme="dark"] .ab-build-card,
+html[data-theme="dark"] .ab-mission-card,
+html[data-theme="dark"] .ab-office-card,
+html[data-theme="dark"] .ab-ind-card,
+html[data-theme="dark"] .ab-step,
+html[data-theme="dark"] .ab-why-card,
+html[data-theme="dark"] .ab-tech-item,
+html[data-theme="dark"] .ab-partner-card,
+html[data-theme="dark"] .ab-testi-card,
+html[data-theme="dark"] .ab-value-card,
+html[data-theme="dark"] .ab-trust-card,
+html[data-theme="dark"] .ab-faq-item,
+html[data-theme="dark"] .ab-story-placeholder,
+html[data-theme="dark"] .ab-logo-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .ab-map-flow {
+  background: #0b0f19 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .ab-map-flow span {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .badge-ab {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #c4b5fd !important;
+}
+
+/* ==========================================================================
+   CONTACT PAGE DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .ct-page,
+html[data-theme="dark"] .ct-hero,
+html[data-theme="dark"] .ct-page .section,
+html[data-theme="dark"] .ct-page .section-alt {
+  background: transparent !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .ct-hero h1,
+html[data-theme="dark"] .ct-quick-card h3,
+html[data-theme="dark"] .ct-form-card h2,
+html[data-theme="dark"] .ct-office h3,
+html[data-theme="dark"] .ct-step h3,
+html[data-theme="dark"] .ct-help-card span,
+html[data-theme="dark"] .ct-support-card h4,
+html[data-theme="dark"] .ct-reach-card h4,
+html[data-theme="dark"] .ct-map-popup h4,
+html[data-theme="dark"] .ct-faq-q {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-hero .lead,
+html[data-theme="dark"] .ct-quick-card p,
+html[data-theme="dark"] .ct-form-card .form-lead,
+html[data-theme="dark"] .ct-office .city,
+html[data-theme="dark"] .ct-office-detail,
+html[data-theme="dark"] .ct-step p,
+html[data-theme="dark"] .ct-support-card p,
+html[data-theme="dark"] .ct-reach-card p,
+html[data-theme="dark"] .ct-reach-card a,
+html[data-theme="dark"] .ct-map-popup p,
+html[data-theme="dark"] .ct-faq-a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .ct-quick-card,
+html[data-theme="dark"] .ct-form-card,
+html[data-theme="dark"] .ct-office,
+html[data-theme="dark"] .ct-map-popup,
+html[data-theme="dark"] .ct-help-card,
+html[data-theme="dark"] .ct-support-card,
+html[data-theme="dark"] .ct-reach-card,
+html[data-theme="dark"] .ct-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .ct-field label {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .ct-field input,
+html[data-theme="dark"] .ct-field select,
+html[data-theme="dark"] .ct-field textarea {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-field input:focus,
+html[data-theme="dark"] .ct-field select:focus,
+html[data-theme="dark"] .ct-field textarea:focus {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25) !important;
+}
+
+html[data-theme="dark"] .ct-journey {
+  background: linear-gradient(160deg, #111827 0%, #1e1b4b 100%) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+html[data-theme="dark"] .ct-journey-screen h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-journey-btn {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ct-journey-btn:hover {
+  background: #334155 !important;
+  border-color: #8b5cf6 !important;
+}
+
+html[data-theme="dark"] .ct-logo-slot {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #64748b !important;
+}
+
+/* ==========================================================================
+   PARTNERS & WHITE-LABEL DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .prt-hero {
+  background: linear-gradient(180deg, #090e1a 0%, #0d1322 60%, #0f172a 100%) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .prt-hero-copy h1,
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn,
+html[data-theme="dark"] .prt-pillar-content h3,
+html[data-theme="dark"] .prt-why-card h3,
+html[data-theme="dark"] .prt-offering-card h3,
+html[data-theme="dark"] .prt-audience-card h3,
+html[data-theme="dark"] .prt-calc-card h3,
+html[data-theme="dark"] .prt-plan h3,
+html[data-theme="dark"] .prt-form-wrap h3,
+html[data-theme="dark"] .prt-roadmap-step h4,
+html[data-theme="dark"] .faq-question {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-lead,
+html[data-theme="dark"] .prt-pillar-content p,
+html[data-theme="dark"] .prt-why-card p,
+html[data-theme="dark"] .prt-offering-card p,
+html[data-theme="dark"] .prt-audience-card p,
+html[data-theme="dark"] .prt-calc-card p,
+html[data-theme="dark"] .prt-plan-desc,
+html[data-theme="dark"] .prt-roadmap-step p,
+html[data-theme="dark"] .faq-answer {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn.active,
+html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn:hover {
+  background: #1e293b !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-badge {
+  background: rgba(124, 58, 237, 0.15) !important;
+  border-color: rgba(124, 58, 237, 0.35) !important;
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .prt-pillar-card,
+html[data-theme="dark"] .prt-why-card,
+html[data-theme="dark"] .prt-offering-card,
+html[data-theme="dark"] .prt-audience-card,
+html[data-theme="dark"] .prt-calc-card,
+html[data-theme="dark"] .prt-calc-box,
+html[data-theme="dark"] .prt-plan,
+html[data-theme="dark"] .prt-form-wrap,
+html[data-theme="dark"] .prt-roadmap-step,
+html[data-theme="dark"] .faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-plan-featured {
+  border-color: #8b5cf6 !important;
+  background: #131c31 !important;
+}
+
+html[data-theme="dark"] .prt-field input,
+html[data-theme="dark"] .prt-field select,
+html[data-theme="dark"] .prt-field textarea {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-field label {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-brand-logo,
+html[data-theme="dark"] .prt-logos-grid {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* ==========================================================================
+   CAREERS PAGE DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .careers-hero {
+  background: linear-gradient(180deg, #090e1a 0%, #0d1322 60%, #0f172a 100%) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .careers-hero h1,
+html[data-theme="dark"] .phil-card h3,
+html[data-theme="dark"] .why-card h3,
+html[data-theme="dark"] .domain-card h3,
+html[data-theme="dark"] .role-item-name,
+html[data-theme="dark"] .apply-card h3,
+html[data-theme="dark"] .direct-email-card h3,
+html[data-theme="dark"] .careers-head h2,
+html[data-theme="dark"] .role-cat-head h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .careers-hero .lead-text,
+html[data-theme="dark"] .phil-card p,
+html[data-theme="dark"] .why-card p,
+html[data-theme="dark"] .domain-card p,
+html[data-theme="dark"] .role-item p,
+html[data-theme="dark"] .careers-section p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .careers-hero-badge {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .stat-pill,
+html[data-theme="dark"] .phil-card,
+html[data-theme="dark"] .why-card,
+html[data-theme="dark"] .domain-card,
+html[data-theme="dark"] .role-category-card,
+html[data-theme="dark"] .role-item,
+html[data-theme="dark"] .apply-card,
+html[data-theme="dark"] .direct-email-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .role-filter-btn {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .role-filter-btn.active {
+  background: #1e293b !important;
+  border-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .careers-input,
+html[data-theme="dark"] .careers-select,
+html[data-theme="dark"] .careers-textarea {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .careers-form-label {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .careers-section {
+  background: transparent !important;
+}
+
+html[data-theme="dark"] .careers-section.bg-light {
+  background: #080c14 !important;
+}
+
+/* ==========================================================================
+   INDUSTRY PAGES DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .industry-page {
+  background: #080c14 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .industry-hero {
+  background: radial-gradient(1000px 500px at 50% -50px, rgba(99, 102, 241, 0.15), transparent 70%), #080c14 !important;
+}
+
+html[data-theme="dark"] .industry-hero-content h1,
+html[data-theme="dark"] .industry-marquee-title,
+html[data-theme="dark"] .industry-feature-title,
+html[data-theme="dark"] .industry-sol-card h3,
+html[data-theme="dark"] .stage-display-title,
+html[data-theme="dark"] .industry-faq-header {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .industry-hero-lead,
+html[data-theme="dark"] .industry-marquee-sub,
+html[data-theme="dark"] .industry-feature-desc,
+html[data-theme="dark"] .industry-sol-card p,
+html[data-theme="dark"] .stage-subtitle,
+html[data-theme="dark"] .stage-features li,
+html[data-theme="dark"] .industry-faq-body {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .industry-crumb-nav a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .industry-crumb-nav span {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .industry-partner-badge {
+  background: rgba(99, 102, 241, 0.15) !important;
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .industry-marquee-section {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .industry-features-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .industry-feature-bullets li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .industry-solutions-section {
+  background: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .industry-sol-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .stage-tab {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .stage-tab.active {
+  background: #1e293b !important;
+  border-color: #6366f1 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .stage-pane {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .industry-faq-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .industry-faq-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .industry-hero-floating-badge {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .industry-btn-ghost {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .industry-btn-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+
+
+html[data-theme="dark"] .prt-trust-strip,
+html[data-theme="dark"] .prt-pillar-img-box {
+  background: #0b0f19 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .prt-trust-label {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prt-cert-badge {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-plan-badge {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-plan-commission {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-plan-commission span {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prt-plan-features li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-why-icon-box,
+html[data-theme="dark"] .prt-offering-badge {
+  background: rgba(124, 58, 237, 0.15) !important;
+  color: #c4b5fd !important;
+}
+
+
+
+html[data-theme="dark"] .prt-trust-strip,
+html[data-theme="dark"] .prt-pillar-img-box {
+  background: #0b0f19 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .prt-trust-label {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prt-cert-badge {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-plan-badge {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-plan-commission {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prt-plan-commission span {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prt-plan-features li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .prt-why-icon-box,
+html[data-theme="dark"] .prt-offering-badge {
+  background: rgba(124, 58, 237, 0.15) !important;
+  color: #c4b5fd !important;
+}
+

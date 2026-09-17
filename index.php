@@ -4466,7 +4466,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-0-capabilities.png" alt="Key Capabilities &amp; Setup" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-0-capabilities.png" alt="Key Capabilities &amp; Setup" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-0-capabilities-dark.png" alt="Key Capabilities &amp; Setup" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4482,7 +4483,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-1-hub.png" alt="Centralized Communication Hub" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-1-hub.png" alt="Centralized Communication Hub" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-1-hub-dark.png" alt="Centralized Communication Hub" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4498,7 +4500,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-2-automation.png" alt="Drag-and-Drop Automation" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-2-automation.png" alt="Drag-and-Drop Automation" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-2-automation-dark.png" alt="Drag-and-Drop Automation" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4514,7 +4517,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-3-voice.png" alt="Autonomous Voice Intelligence" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-3-voice.png" alt="Autonomous Voice Intelligence" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-3-voice-dark.png" alt="Autonomous Voice Intelligence" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4530,7 +4534,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-4-outreach.png" alt="High-Deliverability Outreach" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-4-outreach.png" alt="High-Deliverability Outreach" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-4-outreach-dark.png" alt="High-Deliverability Outreach" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4546,7 +4551,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-5-sales.png" alt="Automated Sales Engine" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-5-sales.png" alt="Automated Sales Engine" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-5-sales-dark.png" alt="Automated Sales Engine" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4562,7 +4568,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-right" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-6-social.png" alt="Social Traffic Conversion" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-6-social.png" alt="Social Traffic Conversion" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-6-social-dark.png" alt="Social Traffic Conversion" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>
@@ -4578,7 +4585,8 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="hb-feature-media-wrap reveal-left" style="transition-delay: 120ms;">
             <div class="hb-feature-media-inner">
-              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-7-dashboard.png" alt="Growth Metrics &amp; Insights Dashboard" class="hb-feature-img" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-7-dashboard.png" alt="Growth Metrics &amp; Insights Dashboard" class="hb-feature-img hb-feature-img-light" loading="lazy">
+              <img src="<?php echo $bp; ?>assets/images/journey-flow/feature-7-dashboard-dark.png" alt="Growth Metrics &amp; Insights Dashboard" class="hb-feature-img hb-feature-img-dark" loading="lazy">
             </div>
           </div>
         </div>

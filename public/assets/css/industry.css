@@ -4,6 +4,17 @@
  */
 
 :root {
+
+html[data-theme="dark"],
+body.dark-theme,
+[data-theme="dark"] {
+  --ind-dark: #FFFFFF;
+  --ind-text: #E2E8F0;
+  --ind-text-light: #94A3B8;
+  --ind-border: rgba(255, 255, 255, 0.08);
+  --ind-bg: #080C14;
+}
+
   --ind-primary: #6366f1;
   --ind-primary-dark: #4f46e5;
   --ind-primary-deep: #1e1b4b;

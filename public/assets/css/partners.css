@@ -4,6 +4,19 @@
    ========================================================================== */
 
 :root {
+
+html[data-theme="dark"],
+body.dark-theme,
+[data-theme="dark"] {
+  --prt-ink: #FFFFFF;
+  --prt-muted: #94A3B8;
+  --prt-subtle: #CBD5E1;
+  --prt-border: rgba(255, 255, 255, 0.08);
+  --prt-bg-card: #0F172A;
+  --prt-bg-soft: #080C14;
+  --prt-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
   --prt-purple: #7C3AED;
   --prt-purple-dark: #6D28D9;
   --prt-purple-light: #F5F3FF;
