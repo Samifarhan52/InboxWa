@@ -118,7 +118,8 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin: 10px;
     text-align: left;
-    height: 100px;
+    min-height: 90px;
+    height: auto;
   }
 
   .whatsapp-feature-box i {
