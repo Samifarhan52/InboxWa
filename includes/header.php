@@ -170,6 +170,28 @@ if (!function_exists('hb_seo_esc')) {
     .cta-band {
       background: linear-gradient(135deg, <?php echo htmlspecialchars($themePrimaryHover); ?>, <?php echo htmlspecialchars($themePrimary); ?>, <?php echo htmlspecialchars($themeAccent); ?>) !important;
     }
+
+    /* MASTER SITE-WIDE CENTERED CONTAINER (Matches Homepage 1240px Layout) */
+    .container {
+      width: 100% !important;
+      max-width: 1240px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 1280px) {
+      .container {
+        max-width: 100% !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
   </style>
 
   <script type="application/ld+json">

@@ -1475,81 +1475,6 @@ include __DIR__ . '/includes/header.php';
     to { transform: translateY(-9px); }
   }
 
-  /* ==========================================================================
-     CLIENT LOGO SCROLLER (MERITTO CLONE)
-     ========================================================================== */
-  .customer-proof-strip {
-    position: relative;
-    padding: 3rem 1.5rem 3.5rem;
-    background: #ffffff;
-    border-bottom: 1px solid #f1f5f9;
-    text-align: center;
-    overflow: hidden;
-  }
-  .customer-proof-strip .label {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #64748b;
-    margin-bottom: 1.75rem;
-    letter-spacing: -0.01em;
-  }
-  .customer-proof-strip .label b {
-    color: #0f172a;
-    font-weight: 700;
-  }
-  .customer-logo-marquee {
-    position: relative;
-    overflow: hidden;
-    padding: 10px 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  }
-  .customer-logo-track {
-    display: flex;
-    align-items: center;
-    gap: 56px;
-    width: max-content;
-    animation: customerLogoScroll 42s linear infinite;
-    will-change: transform;
-  }
-  .customer-logo-marquee:hover .customer-logo-track {
-    animation-play-state: paused;
-  }
-  .customer-logo-item {
-    height: 52px;
-    min-width: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-  }
-  .customer-logo-item img {
-    display: block;
-    max-height: 44px;
-    max-width: 140px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    filter: grayscale(15%);
-    opacity: 0.88;
-    mix-blend-mode: multiply;
-    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-  }
-  .customer-logo-item:hover img {
-    filter: none;
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  @keyframes customerLogoScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @media (max-width: 768px) {
-    .customer-proof-strip { padding: 2rem 1rem 2.5rem; }
-    .customer-logo-track { gap: 32px; }
-    .customer-logo-item { min-width: 90px; height: 42px; }
-    .customer-logo-item img { max-width: 110px; max-height: 36px; }
-  }
 
 
 
@@ -4513,52 +4438,6 @@ include __DIR__ . '/includes/header.php';
       </div>
     </div>
   </section>
-
-  <!-- 2. CLIENT LOGO MARQUEE SCROLLER (MERITTO CLONE) -->
-  <div class="logo-band customer-proof-strip">
-    <div class="label"><b>1,000+ educational institutions &amp; fast-growing enterprises</b> trust HelloBotz</div>
-    <div aria-label="Institutions using HelloBotz" class="customer-logo-marquee">
-      <div class="customer-logo-track">
-        <?php
-        $meritto_logos = [
-          ['name' => 'Physics Wallah', 'file' => 'physics-wallah.png'],
-          ['name' => 'Asia Pacific University', 'file' => 'apu.png'],
-          ['name' => 'BITS Pilani Digital', 'file' => 'bits.jpg'],
-          ['name' => 'Dibber', 'file' => 'dibber.jpg'],
-          ['name' => 'IIM Bangalore', 'file' => 'iimb.jpg'],
-          ['name' => 'American University in the Emirates', 'file' => 'aue.png'],
-          ['name' => 'Kalinga Institute', 'file' => 'kiit.jpg'],
-          ['name' => 'Coursera', 'file' => 'coursera.png'],
-          ['name' => 'SRM', 'file' => 'srm.jpg'],
-          ['name' => 'MIT World Peace University', 'file' => 'mit.jpg'],
-          ['name' => 'GMAC NMAT', 'file' => 'gmac.jpg'],
-          ['name' => 'XLRI', 'file' => 'xlri.png'],
-          ['name' => 'Ashoka University', 'file' => 'ashoka.jpg'],
-          ['name' => 'Lovely Professional University', 'file' => 'lpu.jpg'],
-          ['name' => 'SPJIMR', 'file' => 'spjimr.jpg'],
-          ['name' => 'MDI', 'file' => 'mdi.jpg'],
-          ['name' => 'IMI', 'file' => 'imi.jpg'],
-          ['name' => 'Shiv Nadar University', 'file' => 'shiv-nadar.jpg'],
-          ['name' => 'SLIIT', 'file' => 'sliit.jpg'],
-          ['name' => 'Plaksha University', 'file' => 'plaksha.jpg'],
-          ['name' => 'Woxsen University', 'file' => 'woxsen.jpg'],
-          ['name' => 'Thapar Institute', 'file' => 'thapar.png']
-        ];
-        for ($loop = 0; $loop < 2; $loop++):
-          foreach ($meritto_logos as $logo):
-        ?>
-          <div class="customer-logo-item">
-            <img decoding="async" alt="<?php echo htmlspecialchars($logo['name']); ?>" src="<?php echo $bp; ?>assets/images/home-meritto/logos/<?php echo $logo['file']; ?>" loading="lazy">
-          </div>
-        <?php
-          endforeach;
-        endfor;
-        ?>
-      </div>
-    </div>
-  </div>
-
-
 
   <!-- 2.5 AUTHENTIC FEATURES SECTION (HELLOBOTZ CLONE) -->
   <section class="hb-features-section" id="features">

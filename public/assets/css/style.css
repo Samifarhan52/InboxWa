@@ -11,7 +11,7 @@
   --sh3:0 25px 50px -12px rgba(139,92,246,.25);
   --r:12px;--r2:16px;--r3:20px;--r4:999px;
   --font:'Inter',system-ui,-apple-system,sans-serif;
-  --max:1140px;--nav:0px;
+  --max:1240px;--nav:0px;
   --ease:cubic-bezier(.4,0,.2,1);
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -3002,8 +3002,23 @@ html, body {
   width: 100% !important;
 }
 
-.container, .site-header .container, .header-inner, .page-wrapper {
-  max-width: 100% !important;
+.container {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+.page-wrapper {
   box-sizing: border-box !important;
 }
 

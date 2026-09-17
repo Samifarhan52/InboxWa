@@ -1006,10 +1006,27 @@ html, body {
 .hb-story-wrapper,
 .container {
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   box-sizing: border-box !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+@media (max-width: 1240px) {
+  .hb-story-wrapper,
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hb-story-wrapper,
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 /* Tablet & Mobile Layout Adaptations (<= 1024px) */

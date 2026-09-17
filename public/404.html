@@ -87,6 +87,28 @@
     .cta-band {
       background: linear-gradient(135deg, #7C3AED, #8B5CF6, #06B6D4) !important;
     }
+
+    /* MASTER SITE-WIDE CENTERED CONTAINER (Matches Homepage 1240px Layout) */
+    .container {
+      width: 100% !important;
+      max-width: 1240px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 1280px) {
+      .container {
+        max-width: 100% !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -5019,81 +5041,6 @@
     to { transform: translateY(-9px); }
   }
 
-  /* ==========================================================================
-     CLIENT LOGO SCROLLER (MERITTO CLONE)
-     ========================================================================== */
-  .customer-proof-strip {
-    position: relative;
-    padding: 3rem 1.5rem 3.5rem;
-    background: #ffffff;
-    border-bottom: 1px solid #f1f5f9;
-    text-align: center;
-    overflow: hidden;
-  }
-  .customer-proof-strip .label {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #64748b;
-    margin-bottom: 1.75rem;
-    letter-spacing: -0.01em;
-  }
-  .customer-proof-strip .label b {
-    color: #0f172a;
-    font-weight: 700;
-  }
-  .customer-logo-marquee {
-    position: relative;
-    overflow: hidden;
-    padding: 10px 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  }
-  .customer-logo-track {
-    display: flex;
-    align-items: center;
-    gap: 56px;
-    width: max-content;
-    animation: customerLogoScroll 42s linear infinite;
-    will-change: transform;
-  }
-  .customer-logo-marquee:hover .customer-logo-track {
-    animation-play-state: paused;
-  }
-  .customer-logo-item {
-    height: 52px;
-    min-width: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-  }
-  .customer-logo-item img {
-    display: block;
-    max-height: 44px;
-    max-width: 140px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    filter: grayscale(15%);
-    opacity: 0.88;
-    mix-blend-mode: multiply;
-    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-  }
-  .customer-logo-item:hover img {
-    filter: none;
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  @keyframes customerLogoScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @media (max-width: 768px) {
-    .customer-proof-strip { padding: 2rem 1rem 2.5rem; }
-    .customer-logo-track { gap: 32px; }
-    .customer-logo-item { min-width: 90px; height: 42px; }
-    .customer-logo-item img { max-width: 110px; max-height: 36px; }
-  }
 
 
 
@@ -8051,149 +7998,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 2. CLIENT LOGO MARQUEE SCROLLER (MERITTO CLONE) -->
-  <div class="logo-band customer-proof-strip">
-    <div class="label"><b>1,000+ educational institutions &amp; fast-growing enterprises</b> trust HelloBotz</div>
-    <div aria-label="Institutions using HelloBotz" class="customer-logo-marquee">
-      <div class="customer-logo-track">
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Physics Wallah" src="assets/images/home-meritto/logos/physics-wallah.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Asia Pacific University" src="assets/images/home-meritto/logos/apu.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="BITS Pilani Digital" src="assets/images/home-meritto/logos/bits.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Dibber" src="assets/images/home-meritto/logos/dibber.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="IIM Bangalore" src="assets/images/home-meritto/logos/iimb.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="American University in the Emirates" src="assets/images/home-meritto/logos/aue.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Kalinga Institute" src="assets/images/home-meritto/logos/kiit.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Coursera" src="assets/images/home-meritto/logos/coursera.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="SRM" src="assets/images/home-meritto/logos/srm.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="MIT World Peace University" src="assets/images/home-meritto/logos/mit.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="GMAC NMAT" src="assets/images/home-meritto/logos/gmac.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="XLRI" src="assets/images/home-meritto/logos/xlri.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Ashoka University" src="assets/images/home-meritto/logos/ashoka.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Lovely Professional University" src="assets/images/home-meritto/logos/lpu.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="SPJIMR" src="assets/images/home-meritto/logos/spjimr.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="MDI" src="assets/images/home-meritto/logos/mdi.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="IMI" src="assets/images/home-meritto/logos/imi.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Shiv Nadar University" src="assets/images/home-meritto/logos/shiv-nadar.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="SLIIT" src="assets/images/home-meritto/logos/sliit.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Plaksha University" src="assets/images/home-meritto/logos/plaksha.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Woxsen University" src="assets/images/home-meritto/logos/woxsen.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Thapar Institute" src="assets/images/home-meritto/logos/thapar.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Physics Wallah" src="assets/images/home-meritto/logos/physics-wallah.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Asia Pacific University" src="assets/images/home-meritto/logos/apu.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="BITS Pilani Digital" src="assets/images/home-meritto/logos/bits.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Dibber" src="assets/images/home-meritto/logos/dibber.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="IIM Bangalore" src="assets/images/home-meritto/logos/iimb.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="American University in the Emirates" src="assets/images/home-meritto/logos/aue.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Kalinga Institute" src="assets/images/home-meritto/logos/kiit.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Coursera" src="assets/images/home-meritto/logos/coursera.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="SRM" src="assets/images/home-meritto/logos/srm.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="MIT World Peace University" src="assets/images/home-meritto/logos/mit.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="GMAC NMAT" src="assets/images/home-meritto/logos/gmac.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="XLRI" src="assets/images/home-meritto/logos/xlri.png" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Ashoka University" src="assets/images/home-meritto/logos/ashoka.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Lovely Professional University" src="assets/images/home-meritto/logos/lpu.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="SPJIMR" src="assets/images/home-meritto/logos/spjimr.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="MDI" src="assets/images/home-meritto/logos/mdi.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="IMI" src="assets/images/home-meritto/logos/imi.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Shiv Nadar University" src="assets/images/home-meritto/logos/shiv-nadar.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="SLIIT" src="assets/images/home-meritto/logos/sliit.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Plaksha University" src="assets/images/home-meritto/logos/plaksha.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Woxsen University" src="assets/images/home-meritto/logos/woxsen.jpg" loading="lazy">
-          </div>
-                  <div class="customer-logo-item">
-            <img decoding="async" alt="Thapar Institute" src="assets/images/home-meritto/logos/thapar.png" loading="lazy">
-          </div>
-              </div>
-    </div>
-  </div>
-
-
 
   <!-- 2.5 AUTHENTIC FEATURES SECTION (HELLOBOTZ CLONE) -->
   <section class="hb-features-section" id="features">

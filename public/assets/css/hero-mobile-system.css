@@ -272,9 +272,20 @@ html, body {
   box-sizing: border-box;
 }
 
-.container, .site-header .container, .header-inner {
-  max-width: 100% !important;
+.container {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
   box-sizing: border-box !important;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    max-width: 100% !important;
+  }
 }
 
 @media (max-width: 768px) {
