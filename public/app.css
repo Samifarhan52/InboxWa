@@ -3709,9 +3709,6 @@ html, body {
   .header-inner {
     padding: 0 0.65rem 0 0.85rem !important;
   }
-  .btn-header-data {
-    display: none !important;
-  }
   .header-actions .lang-switch {
     display: none !important;
   }
