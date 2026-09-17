@@ -3074,7 +3074,7 @@ if (!function_exists('hb_seo_esc')) {
                 <div class="prodocu-integrate-card">
                   <div class="prodocu-integrate-title">Integrate With</div>
                   <div class="prodocu-integrate-grid">
-                    <a href="<?php echo $bp; ?>integrations/crm/" class="prodocu-int-tile" title="Zoho">
+                    <a href="<?php echo $bp; ?>integrations/zoho/" class="prodocu-int-tile" title="Zoho">
                       <img src="<?php echo $bp; ?>assets/images/integrations/zoho.png" alt="Zoho" width="38" height="20">
                     </a>
                     <a href="<?php echo $bp; ?>integrations/google-sheets/" class="prodocu-int-tile" title="Google Sheets">
@@ -3086,13 +3086,13 @@ if (!function_exists('hb_seo_esc')) {
                     <a href="<?php echo $bp; ?>integrations/woocommerce/" class="prodocu-int-tile" title="WooCommerce">
                       <img src="<?php echo $bp; ?>assets/images/integrations/woocommerce.png" alt="WooCommerce" width="38" height="24">
                     </a>
-                    <a href="<?php echo $bp; ?>integrations/" class="prodocu-int-tile" title="Wortal">
+                    <a href="<?php echo $bp; ?>integrations/wortal/" class="prodocu-int-tile" title="Wortal">
                       <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" alt="Wortal" width="32" height="32">
                     </a>
                     <a href="<?php echo $bp; ?>integrations/" class="prodocu-int-tile" title="GoTab">
                       <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" alt="GoTab" width="38" height="20">
                     </a>
-                    <a href="<?php echo $bp; ?>integrations/" class="prodocu-int-tile" title="Shiprocket">
+                    <a href="<?php echo $bp; ?>integrations/shiprocket/" class="prodocu-int-tile" title="Shiprocket">
                       <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" alt="Shiprocket" width="30" height="30">
                     </a>
                     <div class="prodocu-int-arrow-tile">
@@ -3564,7 +3564,7 @@ if (!function_exists('hb_seo_esc')) {
               <!-- Integrate With Section -->
               <div class="prodocu-mob-section-title">INTEGRATE WITH</div>
               <div class="prodocu-mob-integrate-grid">
-                <a href="<?php echo $bp; ?>integrations/crm/" class="prodocu-mob-int-tile" title="Zoho">
+                <a href="<?php echo $bp; ?>integrations/zoho/" class="prodocu-mob-int-tile" title="Zoho">
                   <div class="int-inner-card">
                     <img src="<?php echo $bp; ?>assets/images/integrations/zoho.png" alt="Zoho">
                   </div>
@@ -3584,7 +3584,7 @@ if (!function_exists('hb_seo_esc')) {
                     <img src="<?php echo $bp; ?>assets/images/integrations/woocommerce.png" alt="WooCommerce">
                   </div>
                 </a>
-                <a href="<?php echo $bp; ?>integrations/" class="prodocu-mob-int-tile" title="Wortal">
+                <a href="<?php echo $bp; ?>integrations/wortal/" class="prodocu-mob-int-tile" title="Wortal">
                   <div class="int-inner-card">
                     <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" alt="Wortal">
                   </div>
@@ -3594,7 +3594,7 @@ if (!function_exists('hb_seo_esc')) {
                     <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" alt="GoTab">
                   </div>
                 </a>
-                <a href="<?php echo $bp; ?>integrations/" class="prodocu-mob-int-tile" title="Shiprocket">
+                <a href="<?php echo $bp; ?>integrations/shiprocket/" class="prodocu-mob-int-tile" title="Shiprocket">
                   <div class="int-inner-card">
                     <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" alt="Shiprocket">
                   </div>

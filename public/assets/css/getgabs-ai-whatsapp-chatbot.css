@@ -1,0 +1,1534 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+ .keydesign-container.e-con {
+    display: block;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.keydesign-container .entry-title {
+    margin: 0 auto;
+}
+
+.page-header.title-bar-text-center {
+    text-align: center;
+    display: none;
+}
+.whatsapp-heading{
+    font-size:32px;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.75;
+    font-size: 18px;
+    color: #202123!important;
+   
+}
+ol, ul {
+    padding-left: 0rem!important;
+}
+.hero-title {
+    
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.hero-section {
+    padding: 60px 0;
+    /* background-image: linear-gradient(180deg, #f4f7f3 25%, var(--e-global-color-primary) 75%); */
+    background-color:  #f4f7f3;
+}
+    
+
+.hero-text {
+    font-size: clamp(16px, 2vw, 18px);
+    color: #23291fcc;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+
+.btn-group {
+    margin-top: 20px;
+    display: flex;
+    gap:10px!important;
+}
+
+.btn-call, .btn-book {
+    background: linear-gradient(180deg, #024815 0%, #000801 100%);
+    border-style: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    animation: 2s infinite pulse;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 168, 107, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 168, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 168, 107, 0);
+  }
+}
+
+.btn-call i, .btn-book i {
+    margin-right: 8px;
+}
+
+.video-container img {
+    border-radius: 10px;
+}
+
+/* ul.clients-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+.client-logo-image {
+    filter: grayscale(1);
+}
+.client-logo-image:hover {
+    filter: grayscale(0);
+    scale: 1.1;
+} */
+.why_section p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #23291fcc;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.75;
+}
+.why_api-section {
+    padding: 60px 0;
+    background-color: #f4f7f3;
+    
+}
+.api-content {
+    margin-top: 15px;
+}
+.api-list {
+    list-style: none;
+    padding-left: 2rem!important;
+    
+}
+.api-list li {
+    font-size: 14px;
+    font-weight: 500;
+    color: #23291fcc;
+    font-weight: 400;
+    font-style: normal;
+    line-height:1.75;
+    list-style-type: disc;
+
+}
+/* .api-list li::before {
+    content: "✔";
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 10px;
+} */
+.api-image {
+    max-width: 100%;
+    border-radius: 32px;
+}
+
+.solution-section {
+    padding: 60px 0;
+    text-align: center;
+}
+.solution-title {
+    
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+li{
+    list-style:none;
+}
+.solution-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.solution-card:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+.solution-icon {
+    font-size: 24px;
+    color: #034737;
+    margin-right: 10px;
+}
+.solution-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.solution-card p {
+    font-size: 18px;
+    
+    color: #23291fcc;
+    font-weight: 400;
+    font-style: normal;
+   
+}
+.solution-card a {
+    font-weight: bold;
+    color: #034737;
+    text-decoration: none;
+}
+.solution-card a:hover {
+    text-decoration: underline;
+}
+
+
+.api-wrapper {
+    padding: 60px 0;
+    background-color: #f4f7f3;
+}
+
+.api-title{
+    text-align: start;
+    margin:6px 0px;
+}
+.api-description {
+    font-size: 18px;
+    font-weight: 500;
+    color: #23291fcc;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.75;
+    margin-bottom: 10px;
+}
+.api-features {
+    list-style: none;
+    padding: 0;
+}
+.api-features li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #444;
+}
+.api-features li i {
+    color: #034737;
+    margin-right: 8px;
+}
+.btn-cta {
+    background: linear-gradient(180deg, #024815 0%, #000801 100%);
+    color: white;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s ease-in-out;
+    animation: 2s infinite pulse;
+}
+.api-image-box img {
+    max-width: 100%;
+    border-radius: 32px;
+}
+.whatsapp-comparison {
+    background: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.whatsapp-comparison p {
+   
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.comparison-wrapper {
+    max-width: 100%;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .comparison-wrapper {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+}
+
+/* Header Design */
+.comparison-header {
+    display: flex;
+    background: #034737;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+}
+.comparison-header .feature-title {
+    flex: 1.2;
+    font-size: 18px;
+    text-align: start!important;
+    margin-left: 12px;
+}
+.comparison-header .option {
+    flex: 1;
+    text-align: center;
+}
+
+/* Table Columns */
+.comparison-row {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+.comparison-row:last-child {
+    border-bottom: none;
+}
+.comparison-row .feature-title {
+    flex: 1.5;
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+}
+.comparison-row .api,
+.comparison-row .app {
+    flex: 1;
+    text-align:start;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+}
+.comparison-row i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+/* API & App Styling */
+.api {
+   
+    padding: 8px;
+    border-radius: 5px;
+}
+.app {
+
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Buttons Section */
+.comparison-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f1f1f1;
+}
+.btn-apply, .btn-get-started {
+    background: #034737;
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    display: inline-block;
+}
+ 
+    .whatsapp-section {
+    background-color: #f4f7f3;
+    padding: 60px 0;
+    text-align: center;
+}
+
+    .whatsapp-feature-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: left;
+    height:100px;
+}
+   .whatsapp-feature-box i {
+    font-size: 24px;
+    color: #034737;
+}
+.whatsapp-btn {
+    background: linear-gradient(180deg, #024815 0%, #000801 100%);
+    color: #fff;
+    font-size: 15px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+    animation: 2s infinite pulse;
+}
+
+
+.wa-api-requirements {
+    padding: 60px 0;
+    background-color: #f4f7f3;
+}
+/* .api-header {
+    font-size: 28px;
+    font-weight: 700;
+    color: #034737;
+    text-align: center;
+} */
+.api-subtext {
+    font-size: clamp(16px, 2vw, 18px);
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Content & List Styling */
+.api-checklist li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.75;
+}
+.api-checklist i {
+    font-size: 18px;
+    color: #034737;
+}
+
+/* CTA Button */
+.btn-api-apply {
+    background-color: #034737;
+    color: white;
+    font-size: 15px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+.btn:hover{
+    transform: scale(1.087);
+    background-color: #034737;
+    color: white;
+}
+.button1:hover{
+    transform: scale(1.087);
+    background-color: #034737;
+    color: white;
+}
+.faq-section {
+    background-color: #ffffff;
+    padding: 60px 20px;
+}
+
+.faq-subtitle {
+    text-align: center;
+    
+    margin-bottom: 30px;
+}
+
+/* FAQ Items */
+
+.partners-section {
+    padding: 20px 0px 0px 0px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.partner-logo img {
+    max-width:90px;
+    height: auto;
+    filter: grayscale(100%); /* Make logos black & white */
+   
+}
+.partner-logo img:hover {
+    filter: grayscale(0%); /* Color logo on hover */
+    scale: 1.1;
+}
+.apply-free{
+    
+        color: #034737!important;
+        border-radius: 12px;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 700;
+        border: 1px solid #034737;
+    
+}
+.apply-free:hover{
+    color: white!important;
+    
+}
+.book-demo{
+    
+        color: white;
+        border-radius: 12px;
+        background-color: #034737;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 700;
+        border:1px solid white;
+    
+}
+/* .cta-container {
+    background: linear-gradient(193.19deg,rgba(234,226,255,.35) 3.09%,hsla(0,0%,100%,.35) 83.65%)!important;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 14px #dce3ff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    color: black!important;
+} */
+
+
+.comparison-toggle {
+    display: flex!important;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 73px;
+    margin-bottom: 0px;
+    padding: 0px 14px;
+    background-color: transparent;
+}
+button.toggle-btn {
+    padding: 20px;
+    border: 2px solid #034737;
+    /* background: white; */
+    /* border: 12px; */
+    /* border-radius: 12px; */
+    border: none;
+    text-decoration: underline;
+    background: transparent;
+}
+.comparison-toggle{
+    display: none;
+ }
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-text {
+        font-size: 1rem;
+    }
+      .btn-call{
+        margin-right:0px!important;
+        justify-content: center;
+        width:50%!important;
+    }
+     .btn-book{
+        padding: 15px 20px;
+        justify-content: center;
+        align-items: center;
+        width:57%!important;
+    }
+    .btn-group {
+        margin-top: 20px;
+         display: flex!important; 
+        gap: 15px!important;
+        flex-direction: column;
+                
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        display: flex;
+        
+        text-align: center;
+    }
+    .comparison-row .feature-title {
+        font-weight: bold;
+        padding: 10px;
+        background: #f9f9f9;
+        width: 100%;
+        font-size: 12px;
+    }
+    .comparison-row .api, .comparison-row .app {
+        width: 100%;
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+    
+    .comparison-footer {
+        flex-direction: column!important;
+        text-align: center;
+    }
+
+    .api-content {
+        text-align: start;
+        margin-bottom: 30px;
+    }
+    .api-columns {
+        flex-direction: column;
+    }
+    .api-list li{
+        text-align: start;
+        font-size: 14px !important;
+
+    }
+    .solution-card h3 {
+        font-size: 18px!important;
+    }
+    .api{
+        font-size:14px;
+    }
+    .app{
+        font-size:14px;
+    }
+   button.toggle-btn {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #034737;
+}
+    .comparison-row i {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    .comparison-header .feature-title {
+       
+        font-size: 14px!important;
+    }
+    p {
+        font-size: 14px!important; /* Smaller font size for mobile */
+       
+    }
+    .api-checklist li{
+           font-size: 14px!important;
+    }
+    .faq-answer{
+        font-size: 14px!important;
+     }
+     .faq-item{
+        font-size: 14px!important;
+     }
+      .cta-btn {
+        /* margin-top: 0px!important; */
+        margin-left: 18px!important;
+      
+        justify-content: center;
+     
+    }
+
+    .btn-api-apply {
+          /* margin-top: 0px!important; */
+          margin-left: 18px!important;
+      
+          justify-content: center;
+          
+    }
+    p{
+        text-align: center!important;
+    }
+    .api-contents{
+        padding: 0px 35px;
+    }
+    .api-description-box{
+        padding: 0px 35px!important;
+    }
+ 
+    .whatsapp-heading{
+        text-align:center!important;
+        font-size:26px!important;
+    }
+    
+    .api-subtext{
+            text-align: center !important;
+    }
+    .cta-heading{
+        text-align:left!important;
+        
+    }
+    .cta-para{
+        text-align:left!important;
+    }
+    .cta-buttons.mt-4.order-3.order-lg-3 {
+    display: flex;
+   
+}
+.apply-free{
+    font-size:14px!important;
+}
+.book-demo{
+    font-size:14px!important;
+}
+.cta-btnn{
+    text-align:start!important;
+}
+.cta-btnnn{
+    margin-bottom:43px;
+}
+.api-contents {
+    margin-bottom: 6px!important;
+}
+.smart-cards{
+    text-align: center!important;
+}
+.whatsapp-feature-box p{
+    text-align: start!important;
+}
+.hero-text{
+    text-align: start !important;
+}
+
+ .running-line{
+      width:100%!important; 
+}
+
+}
+@media (min-width: 992px) {
+    .comparison-toggle {
+        display: none!important; /* Hide toggle buttons on large screens */
+    }
+}
+@media(max-width:991px){
+    .api-image-box img {
+        max-width: 100%;
+        border-radius: 8px;
+        
+    }
+    .api-wrapper{
+        padding: 0px!important;
+    }
+    
+    .api-content {
+        text-align: start;
+        margin-bottom: 43px;
+        
+    }
+    .api-content-box {
+        margin-bottom: 40px;
+    }
+    .comparison-toggle{
+        display: block;
+    }
+    .comparison-row .app{
+        display: none;
+    }
+     .app{
+        display: none;
+    }
+    .comparison-footer{
+        flex-direction: row;
+    }
+    h2 {
+        font-size: 26px!important; /* Adjust font size for tablets */
+    }
+    p {
+        font-size: 16px!important; /* Adjust font size for tablets */
+        
+    }
+    .api-checklist li{
+        font-size: 16px!important;
+ }
+ .faq-answer{
+    font-size: 16px!important;
+ }
+ .faq-item{
+    font-size: 16px!important;
+ }
+ .container.rounded.text-white.text-center.cta-container {
+    padding: 26px!important;
+}
+}
+
+.partners-section {
+    text-align: center;
+   
+}
+.partners-slider {
+    padding: 10px;
+}
+.swiper-slide img {
+    width: 100%!important;
+    max-width: 100px; /* Adjust logo size */
+    height: auto;
+    margin: 0 auto;
+    filter: grayscale(1);
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%!important;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+    box-sizing: content-box;
+    justify-content: space-between;
+    align-items: center;
+}
+.swiper-slide img:hover{
+    filter: grayscale(0);
+    scale: 1.1;
+}
+.swiper-slide {
+    flex-shrink: 1 !important;
+}
+.cta-btn{
+    margin-top: 0px!important;
+    margin-left: 30px;
+}
+.cta-btn2{
+    margin-left: 0px!important;
+}
+   .api-description li{
+            font-size: 14px!important;
+    }
+
+    small {
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.75;
+        font-size: 14px;
+        color: #23291fcc;
+    }
+    h3.card-title{
+        font-size: 20px!important;
+    }
+    .intergrate-icons{
+        align-items: center;
+    }
+    
+    
+    .wa-result-card .wa-icon {
+  line-height: 1;
+}
+.numera-p {
+    color: #000000!important;
+    font-weight: 500!important;
+    font-size:18px;
+}
+.numera-small {
+    font-size: 16px;
+    color: #5d6570!important;
+    line-height:1.5;
+}
+.numera-number{
+    color:#4b4949!important;
+    font-size:18px;
+    font-weight:500;
+}
+.running-text.mt-3 {
+    display: flex;
+    justify-content: center;
+    gap:6px;
+}
+/* ============ What Your AI Chatbot Can Do — 6 box grid ============ */
+.chatbot-can-do {
+    padding: 60px 0;
+}
+
+.chatbot-can-do .ccd-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.chatbot-can-do .ccd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.chatbot-can-do .ccd-card {
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.chatbot-can-do .ccd-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(3, 71, 55, .12);
+}
+
+.chatbot-can-do .ccd-media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.chatbot-can-do .ccd-media img {
+   
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.chatbot-can-do .ccd-card:hover .ccd-media img {
+    transform: scale(1.04);
+}
+
+.chatbot-can-do .ccd-body {
+    padding: 24px 22px 28px;
+    text-align: start;
+    flex-grow: 1;
+}
+
+.chatbot-can-do .ccd-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 10px;
+}
+
+.chatbot-can-do .ccd-body p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #23291fcc;
+    margin: 0;
+    text-align: start !important;
+}
+
+@media (max-width: 991px) {
+    .chatbot-can-do .ccd-grid {
+        gap: 20px;
+    }
+
+    .chatbot-can-do .ccd-title {
+        font-size: 26px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .chatbot-can-do {
+        padding: 40px 0;
+    }
+
+    .chatbot-can-do .ccd-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============ AI Chatbot vs Human Agent vs Traditional Chatbot — comparison table ============ */
+.chatbot-comparison {
+    background: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.chatbot-comparison .table-scroll {
+    max-height: 70vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: relative;
+    display: block;
+}
+
+.chatbot-comparison .new-comparison-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(3, 71, 51, 0.10);
+    font-family: inherit;
+    position: relative;
+}
+
+.chatbot-comparison .new-comparison-table thead tr {
+    background: #034733;
+}
+
+.chatbot-comparison .new-comparison-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #034733;
+    padding: 16px 14px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #023d2a;
+}
+
+.chatbot-comparison .new-comparison-table thead th:first-child {
+    text-align: left;
+    width: 28%;
+}
+
+.chatbot-comparison .new-comparison-table tbody tr:nth-child(even) {
+    background: #f5faf7;
+}
+
+.chatbot-comparison .new-comparison-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.chatbot-comparison .new-comparison-table tbody tr:hover {
+    background: #eaf4ef;
+    transition: background .15s;
+}
+
+.chatbot-comparison .new-comparison-table td {
+    padding: 13px 14px;
+    border: 1px solid #e0ebe5;
+    color: #1a2e25;
+    vertical-align: middle;
+    line-height: 1.5;
+    font-size: 13.5px;
+}
+
+.chatbot-comparison .new-comparison-table td:first-child {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.chatbot-comparison .new-comparison-table td:not(:first-child) {
+    text-align: center;
+}
+
+/* status indicators */
+.chatbot-comparison .cmp-yes {
+    color: #166534;
+    font-weight: 600;
+}
+
+.chatbot-comparison .cmp-no {
+    color: #991b1b;
+    font-weight: 600;
+}
+
+.chatbot-comparison .cmp-partial {
+    color: #854f0b;
+    font-weight: 600;
+}
+
+.chatbot-comparison .cmp-yes::before {
+    content: "\2713  ";
+}
+
+.chatbot-comparison .cmp-no::before {
+    content: "\2717  ";
+}
+
+.chatbot-comparison .cmp-partial::before {
+    content: "~ ";
+}
+
+/* mobile cards */
+.chatbot-comparison .wa-mobile-cards {
+    display: none;
+}
+
+.chatbot-comparison .wa-feature-card {
+    background: #fff;
+    border: 1px solid #dceee6;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 12px;
+}
+
+.chatbot-comparison .wa-feature-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #034733;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #d0e5da;
+}
+
+.chatbot-comparison .wa-col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.chatbot-comparison .wa-col-item {
+    background: #f5faf7;
+    border-radius: 8px;
+    padding: 8px 4px;
+    text-align: center;
+}
+
+.chatbot-comparison .wa-col-header {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #5a7a6a;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 5px;
+    line-height: 1.25;
+}
+
+.chatbot-comparison .wa-col-value {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+@media (max-width: 700px) {
+    .chatbot-comparison .table-scroll {
+        display: none;
+    }
+
+    .chatbot-comparison .wa-mobile-cards {
+        display: block;
+    }
+}
+
+@media (max-width: 360px) {
+    .chatbot-comparison .wa-col-grid {
+        gap: 6px;
+    }
+
+    .chatbot-comparison .wa-col-header {
+        font-size: 9.5px;
+    }
+
+    .chatbot-comparison .wa-col-value {
+        font-size: 11px;
+    }
+}
+
+/* ============ How It Works — steps ============ */
+.steps-section {
+    padding: 60px 0;
+    background: #fdfbfb;
+}
+
+.steps-section .left-content {
+    position: sticky;
+    top: 130px;
+}
+
+.steps-section .left-content h2 {
+    margin-bottom: 20px;
+}
+
+.steps-section .left-content p {
+    margin-bottom: 20px;
+}
+
+.steps-section .left-content .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.step-numberr {
+    width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0;
+    background: #034737;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.step-desc {
+    font-size: 14px!important;
+    color: #202123!important;
+    line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+    .steps-section .left-content {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .step-desc {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .chatbot-can-do .ccd-body h3,
+    .step-title {
+        font-size: 18px;
+    }
+
+    .step-desc {
+        font-size: 14px;
+    }
+}
+
+/* ============ Choose the AI Engine Behind Your Chatbot ============ */
+.ai-engines {
+    padding: 60px 0;
+    background-color: #f8fafc;
+    background-image:
+        linear-gradient(to right, rgba(3, 71, 55, .05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(3, 71, 55, .05) 1px, transparent 1px);
+    background-size: 148px 148px;
+}
+
+.ai-engines .engine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.ai-engines .engine-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 28px 32px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.ai-engines .engine-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(3, 71, 55, .12);
+}
+
+.ai-engines .engine-logo {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.ai-engines .engine-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.ai-engines .engine-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 12px;
+}
+
+.ai-engines .engine-card p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #23291fcc;
+    margin: 0 0 20px;
+    flex-grow: 1;
+}
+
+.ai-engines .engine-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: #034737;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ai-engines .engine-link:hover {
+    color: #034737;
+    text-decoration: underline;
+}
+
+/* arrow nudges forward on hover — same behaviour as the site's buttons */
+.arrow-icon {
+    flex-shrink: 0;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.engine-link:hover .arrow-icon,
+.btn-cta:hover .arrow-icon {
+    transform: translateX(3px);
+}
+
+@media (max-width: 991px) {
+    .ai-engines .engine-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ai-engines .engine-card h3 {
+        font-size: 18px;
+    }
+
+    .ai-engines .engine-card p {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .ai-engines {
+        padding: 40px 0;
+    }
+
+    .ai-engines .engine-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============ Why Businesses Choose HelloBots — hover reveal cards ============ */
+.why-hellobots {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.why-hellobots .wg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.why-hellobots .wg-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 420px;
+    padding: 32px 28px;
+    color: #fff;
+    outline: none;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.why-hellobots .wg-card--1 {
+    background: #034737;
+}
+
+.why-hellobots .wg-card--2 {
+    background: #0b6b52;
+}
+
+.why-hellobots .wg-card--3 {
+    background: #14342b;
+}
+
+.why-hellobots .wg-card:hover,
+.why-hellobots .wg-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(3, 71, 55, .25);
+}
+
+/* front / back stack */
+.why-hellobots .wg-front,
+.why-hellobots .wg-back {
+    position: absolute;
+    inset: 0;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.why-hellobots .wg-front {
+    justify-content: space-between;
+    opacity: 1;
+}
+
+.why-hellobots .wg-back {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+}
+
+.why-hellobots .wg-card:hover .wg-front,
+.why-hellobots .wg-card:focus-within .wg-front {
+    opacity: 0;
+    transform: translateY(-12px);
+}
+
+.why-hellobots .wg-card:hover .wg-back,
+.why-hellobots .wg-card:focus-within .wg-back {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.why-hellobots .wg-front h3 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #fff;
+    margin: 0;
+}
+
+.why-hellobots .wg-brand img {
+    max-width: 150px;
+    height: auto;
+}
+
+.why-hellobots .wg-back-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: rgba(255, 255, 255, .75);
+    margin-bottom: 14px;
+}
+
+.why-hellobots .wg-back .wg-brand {
+    margin-bottom: 22px;
+}
+
+.why-hellobots .wg-points {
+    list-style: none;
+    margin: 0;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.why-hellobots .wg-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #fff;
+    list-style: none;
+}
+
+.why-hellobots .wg-check {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: rgba(255, 255, 255, .85);
+}
+
+@media (max-width: 991px) {
+    .why-hellobots .wg-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .why-hellobots .wg-front h3 {
+        font-size: 24px;
+    }
+}
+
+/* touch screens have no hover — show both halves stacked instead */
+@media (max-width: 767px) {
+    .why-hellobots .wg-card {
+        min-height: 0;
+        padding: 0;
+    }
+
+    .why-hellobots .wg-front,
+    .why-hellobots .wg-back {
+        position: static;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        padding: 28px 24px;
+    }
+
+    .why-hellobots .wg-front {
+        padding-bottom: 0;
+    }
+
+    .why-hellobots .wg-front .wg-brand {
+        display: none;
+    }
+
+    .why-hellobots .wg-back-label {
+        display: none;
+    }
+
+    .why-hellobots .wg-front h3 {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .why-hellobots .wg-back .wg-brand {
+        margin: 22px 0 0;
+        order: 2;
+    }
+
+    .why-hellobots .wg-card:hover,
+    .why-hellobots .wg-card:focus-within {
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .why-hellobots {
+        padding: 40px 0;
+    }
+
+    .why-hellobots .wg-grid {
+        grid-template-columns: 1fr;
+    }
+}

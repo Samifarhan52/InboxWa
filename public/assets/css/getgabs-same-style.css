@@ -1,0 +1,112 @@
+/* ============================================================
+   Global Typography + Button styles — same to same on every page.
+   Include this file once (sitewide), never redefine h1/h2/h3/p or
+   button styling on individual pages again.
+   ============================================================ */
+
+:root {
+    --gg-green: #05603a;
+    --gg-green-dark: #034737;
+    --gg-ink: #101827;
+    --gg-muted: #5b6472;
+}
+
+/* ---------- Headings & paragraph ---------- */
+h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: var(--gg-ink);
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    color: var(--gg-ink);
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--gg-ink);
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gg-muted);
+    margin: 0 0 16px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+/* ---------- Buttons ---------- */
+/* Tag pe force nahi kiya (isse saare <a>/<button> — nav, footer — bigad jaate).
+   Jahan bhi button chahiye, class="btn btn-primary" ya class="btn btn-outline" laga do. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--gg-green-dark);
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--gg-green);
+}
+
+.btn-outline {
+    background: #fff;
+    color: #0a0a0a;
+    border: 1px solid #0a0a0a;
+}
+
+.btn-outline:hover {
+    background: #f5f5f5;
+}
+
+.btn .arrow-icon {
+    flex-shrink: 0;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover .arrow-icon {
+    transform: translateX(3px);
+}
