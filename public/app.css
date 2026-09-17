@@ -241,11 +241,8 @@ textarea.form-input{min-height:100px;resize:vertical}
 .footer-brand p{font-size:.875rem;margin:1rem 0;max-width:280px}
 .footer-col h4{color:#fff;font-size:.85rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.04em}
 .footer-col a{display:block;padding:.3rem 0;font-size:.875rem;color:rgba(255,255,255,.65);transition:color .15s}
-.footer-col a:hover{color:#fff}
-.footer-contact-section{padding:2.5rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.footer-contact-section .form-input{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff}
-.footer-contact-section .form-label{color:rgba(255,255,255,.6)}
+.footer-contact-section{padding:5rem 0 5.5rem;border-bottom:1px solid rgba(15,23,42,.1)}
+.footer-contact-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:2.5rem}
 .footer-bottom{padding:1.25rem 0;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;font-size:.8rem}
 
 /* Popups */
@@ -541,22 +538,22 @@ textarea.form-input{min-height:100px;resize:vertical}
 
 /* Footer contact form on dark/light */
 .footer-contact-section{
-  padding:2.5rem 0;
-  border-bottom:1px solid rgba(255,255,255,.1);
-  background:var(--bg2);
+  padding:5rem 0 5.5rem;
+  border-bottom:1px solid rgba(15,23,42,.1);
+  background:linear-gradient(180deg,#F8FAFC 0%,#EEF2F6 40%,#E2E8F0 100%);
   color:var(--t);
 }
-.footer-contact-section h3{color:var(--t);margin-bottom:.5rem}
-.footer-contact-section p{color:var(--t2);font-size:.9rem}
-.footer-contact-section .form-label{color:var(--t2)}
+.footer-contact-section h3{color:#0F172A;margin-bottom:.5rem}
+.footer-contact-section p{color:#475569;font-size:.92rem}
+.footer-contact-section .form-label{color:#1E293B}
 .footer-contact-section .form-input{
   background:#fff;
-  border:1px solid var(--bd);
-  color:var(--t);
+  border:1.5px solid #CBD5E1;
+  color:#0F172A;
 }
 .footer-contact-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1.08fr;
   gap:2.5rem;
   align-items:start;
 }
@@ -565,7 +562,7 @@ textarea.form-input{min-height:100px;resize:vertical}
   height:18px!important;
   color:var(--p);
 }
-.footer-address-item a{color:var(--t);font-weight:500}
+.footer-address-item a{color:#0F172A;font-weight:600}
 .footer-address-item a:hover{color:var(--p)}
 
 /* GDPR legal row */

@@ -3705,84 +3705,851 @@
       gap: 2rem !important;
     }
   }
+
+  /* =========================================================
+     ENTERPRISE TECH CONTACT SECTION (HELLOBOTZ AUTHENTIC DESIGN)
+     Unique, high-tech, responsive ambient background & glassmorphism
+     ========================================================= */
+  .footer-contact-section {
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 0 6rem;
+    background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 40%, #E2E8F0 100%);
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  }
+
+  /* Dynamic Glowing Radial Auras */
+  .contact-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(80px);
+    opacity: 0.65;
+    will-change: transform, opacity;
+  }
+  .contact-bg-orb-emerald {
+    top: -60px;
+    left: -80px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.28) 0%, rgba(5, 150, 105, 0.12) 50%, transparent 75%);
+    animation: contactOrbPulse1 12s ease-in-out infinite alternate;
+  }
+  .contact-bg-orb-indigo {
+    top: 30px;
+    right: -100px;
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.26) 0%, rgba(139, 92, 246, 0.12) 50%, transparent 75%);
+    animation: contactOrbPulse2 14s ease-in-out infinite alternate;
+  }
+  .contact-bg-orb-cyan {
+    bottom: -80px;
+    left: 35%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.22) 0%, rgba(14, 165, 233, 0.08) 50%, transparent 75%);
+    animation: contactOrbPulse3 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes contactOrbPulse1 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+    50% { transform: translate(40px, 30px) scale(1.1); opacity: 0.75; }
+    100% { transform: translate(20px, -20px) scale(0.95); opacity: 0.6; }
+  }
+  @keyframes contactOrbPulse2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+    50% { transform: translate(-45px, 25px) scale(1.12); opacity: 0.8; }
+    100% { transform: translate(-20px, 40px) scale(0.98); opacity: 0.65; }
+  }
+  @keyframes contactOrbPulse3 {
+    0% { transform: scale(0.95) translate(0, 0); opacity: 0.5; }
+    100% { transform: scale(1.15) translate(30px, -20px); opacity: 0.7; }
+  }
+
+  /* High-Tech Dotted Mesh Overlay */
+  .contact-bg-mesh {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: radial-gradient(rgba(99, 102, 241, 0.16) 1.2px, transparent 1.2px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
+  }
+
+  /* Vector SVG Communication Stream Paths */
+  .contact-bg-streams {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.55;
+  }
+
+  /* Floating SaaS Status Chips */
+  .contact-float-chip {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(99, 102, 241, 0.06);
+    animation: contactChipFloat 6s ease-in-out infinite alternate;
+  }
+  .contact-float-chip-left {
+    top: 48px;
+    left: 3%;
+  }
+  .contact-float-chip-right {
+    bottom: 56px;
+    right: 3%;
+    animation-delay: -3s;
+  }
+  @keyframes contactChipFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px); }
+  }
+  .contact-chip-icon-wa {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-chip-icon-wa svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+  .contact-chip-icon-ai {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-chip-icon-ai svg {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+  }
+  .contact-chip-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0F172A;
+    display: block;
+    line-height: 1.2;
+  }
+  .contact-chip-sub {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #059669;
+    display: block;
+  }
+  .contact-chip-sub.ai-sub {
+    color: #6366F1;
+  }
+
+  /* Section Header Badge & Titles */
+  .contact-section-head {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+    position: relative;
+    z-index: 3;
+  }
+  .contact-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.1);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #065F46;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+  .contact-pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: contactDotBlink 2s ease-in-out infinite;
+  }
+  @keyframes contactDotBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+  }
+  .contact-section-head h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.22;
+    color: #0F172A;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.025em;
+  }
+  .contact-section-head p {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Two-Column Frosted Glass Layout */
+  .footer-contact-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.08fr !important;
+    gap: 2.5rem !important;
+    align-items: stretch !important;
+    position: relative;
+    z-index: 3;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Master Glassmorphic Card Architecture */
+  .contact-glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(99, 102, 241, 0.08);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .contact-glass-card:hover {
+    box-shadow: 0 26px 55px -16px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(99, 102, 241, 0.15);
+  }
+
+  /* Top accent strip on right form card */
+  .contact-card-glow-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #10B981 0%, #6366F1 50%, #06B6D4 100%);
+  }
+
+  /* Card Headings */
+  .contact-card-title-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .contact-card-icon-pill {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-card-icon-pill.pill-green {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.25));
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+  .contact-card-icon-pill.pill-purple {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.25));
+    color: #4F46E5;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+  }
+  .contact-card-icon-pill svg {
+    width: 22px;
+    height: 22px;
+  }
+  .contact-card-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 0.35rem;
+    letter-spacing: -0.015em;
+  }
+  .contact-card-desc {
+    font-size: 0.92rem;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Contact Details Interactive List */
+  .contact-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .contact-item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.95rem;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    background: rgba(248, 250, 252, 0.8);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  a.contact-item-row:hover {
+    background: #ffffff;
+    border-color: rgba(99, 102, 241, 0.35);
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px -4px rgba(15, 23, 42, 0.06);
+  }
+  .contact-item-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-loc {
+    background: #F1F5F9;
+    color: #475569;
+  }
+  .icon-phone {
+    background: rgba(37, 211, 102, 0.12);
+    color: #059669;
+  }
+  .icon-sales {
+    background: rgba(99, 102, 241, 0.12);
+    color: #4F46E5;
+  }
+  .icon-support {
+    background: rgba(6, 182, 212, 0.12);
+    color: #0891B2;
+  }
+  .contact-item-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .contact-item-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .contact-item-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748B;
+    margin-bottom: 2px;
+  }
+  .contact-item-val {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #0F172A;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  .contact-item-val.highlight-green {
+    color: #059669;
+    font-weight: 700;
+  }
+  .contact-item-arrow {
+    align-self: center;
+    color: #94A3B8;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  a.contact-item-row:hover .contact-item-arrow {
+    transform: translateX(3px);
+    color: #4F46E5;
+  }
+
+  /* App Download Section */
+  .contact-app-block {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    margin-bottom: 1.5rem;
+  }
+  .contact-app-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #475569;
+    margin-bottom: 0.75rem;
+  }
+  .contact-app-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .contact-app-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 12px;
+    background: #0F172A;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  }
+  .contact-app-link:hover {
+    background: #1E293B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+  }
+  .contact-app-link svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  /* Meta Tech Partner Card Inside Glass */
+  .contact-meta-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.95rem 1.15rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(240, 249, 255, 0.9), rgba(245, 243, 255, 0.9));
+    border: 1px solid rgba(207, 222, 247, 0.8);
+  }
+  .contact-meta-card img {
+    width: 110px;
+    height: auto;
+    max-height: 52px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+  }
+  .meta-title-flex {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .meta-blue-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #0081FB;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 900;
+  }
+
+  /* Modern Glassmorphic Form Styling */
+  .footer-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .contact-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .contact-field-label {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .contact-field-label .required-star {
+    color: #EF4444;
+  }
+  .contact-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .contact-input-icon {
+    position: absolute;
+    left: 1rem;
+    width: 18px;
+    height: 18px;
+    color: #94A3B8;
+    pointer-events: none;
+    transition: color 0.2s ease;
+  }
+  .contact-glass-card .form-input {
+    width: 100%;
+    background: #ffffff !important;
+    border: 1.5px solid #CBD5E1 !important;
+    color: #0F172A !important;
+    border-radius: 12px !important;
+    font-size: 0.92rem !important;
+    font-family: inherit !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+  .contact-input-wrap .form-input {
+    padding-left: 2.75rem !important;
+  }
+  .contact-glass-card .form-input:focus {
+    outline: none !important;
+    border-color: #6366F1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.16), 0 2px 8px rgba(99, 102, 241, 0.08) !important;
+  }
+  .contact-input-wrap:focus-within .contact-input-icon {
+    color: #6366F1;
+  }
+  .contact-glass-card textarea.form-input {
+    padding: 0.85rem 1rem !important;
+    min-height: 98px;
+    resize: vertical;
+  }
+
+  /* Submit Button & Security Assurance */
+  .contact-form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  .btn-contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.42);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-contact-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -4px rgba(16, 185, 129, 0.52);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  }
+  .btn-contact-submit:active {
+    transform: translateY(0);
+  }
+  .btn-contact-submit svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+  .btn-contact-submit:hover svg {
+    transform: translateX(4px);
+  }
+  .contact-security-guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    color: #64748B;
+  }
+  .contact-security-guarantee svg {
+    width: 15px;
+    height: 15px;
+    color: #10B981;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .footer-contact-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    .contact-float-chip {
+      display: none !important;
+    }
+    .footer-contact-section {
+      padding: 4rem 0 4.5rem;
+    }
+  }
+  @media (max-width: 640px) {
+    .contact-form-row {
+      grid-template-columns: 1fr !important;
+    }
+    .contact-glass-card {
+      padding: 1.5rem !important;
+      border-radius: 18px !important;
+    }
+    .contact-section-head h2 {
+      font-size: 1.75rem !important;
+    }
+  }
   </style>
 
   <!-- Contact band before footer -->
   <section class="footer-contact-section" id="contact-section">
-    <div class="container">
+    <!-- Dynamic Glowing Radial Auras -->
+    <div class="contact-bg-orb contact-bg-orb-emerald" aria-hidden="true"></div>
+    <div class="contact-bg-orb contact-bg-orb-indigo" aria-hidden="true"></div>
+    <div class="contact-bg-orb contact-bg-orb-cyan" aria-hidden="true"></div>
+
+    <!-- High-Tech Dotted Mesh Overlay -->
+    <div class="contact-bg-mesh" aria-hidden="true"></div>
+
+    <!-- Vector SVG Communication Stream Paths -->
+    <svg class="contact-bg-streams" viewBox="0 0 1440 650" fill="none" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-100 180 C 250 80, 500 420, 850 200 C 1150 40, 1380 320, 1600 160" stroke="url(#cStreamGrad1)" stroke-width="2" stroke-dasharray="6 6" opacity="0.45" />
+      <path d="M-100 380 C 200 480, 550 160, 950 360 C 1250 500, 1420 200, 1600 320" stroke="url(#cStreamGrad2)" stroke-width="2" stroke-dasharray="8 8" opacity="0.35" />
+      <circle cx="380" cy="240" r="4" fill="#10B981" opacity="0.6"/>
+      <circle cx="950" cy="360" r="5" fill="#6366F1" opacity="0.6"/>
+      <circle cx="1250" cy="180" r="4" fill="#06B6D4" opacity="0.6"/>
+      <defs>
+        <linearGradient id="cStreamGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#10B981" stop-opacity="0.3"/>
+          <stop offset="50%" stop-color="#6366F1" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.3"/>
+        </linearGradient>
+        <linearGradient id="cStreamGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3"/>
+          <stop offset="50%" stop-color="#10B981" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.3"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- Floating SaaS Status Chips -->
+    <div class="contact-float-chip contact-float-chip-left" aria-hidden="true">
+      <div class="contact-chip-icon-wa">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.07 16.3C4.24 14.98 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.04 3.67C16.58 3.67 20.28 7.37 20.28 11.91C20.28 16.45 16.58 20.15 12.04 20.15Z"/></svg>
+      </div>
+      <div>
+        <span class="contact-chip-title">WhatsApp API</span>
+        <span class="contact-chip-sub">⚡ 99.9% Delivery Rate</span>
+      </div>
+    </div>
+
+    <div class="contact-float-chip contact-float-chip-right" aria-hidden="true">
+      <div class="contact-chip-icon-ai">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><rect x="4" y="8" width="16" height="12" rx="4"/><circle cx="9" cy="13" r="1.5" fill="currentColor"/><circle cx="15" cy="13" r="1.5" fill="currentColor"/><path d="M9 17h6"/></svg>
+      </div>
+      <div>
+        <span class="contact-chip-title">AI Automation</span>
+        <span class="contact-chip-sub ai-sub">✦ &lt;1s Response Time</span>
+      </div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:3;">
+      <!-- Section Header -->
+      <div class="contact-section-head">
+        <div class="contact-pill-badge">
+          <span class="contact-pill-dot"></span>
+          <span>Official Meta Tech Partner • Instant 24/7 Response</span>
+        </div>
+        <h2>Let's Power Your Business Communication</h2>
+        <p>Talk to our specialists about WhatsApp Business API, AI Chatbot automation, and omnichannel setup tailored to your scale.</p>
+      </div>
+
+      <!-- Two-Column Cards Grid -->
       <div class="footer-contact-grid">
-        <div>
-          <div class="footer-contact-heading" data-i18n="contact_title">Get in touch</div>
-                    <p style="margin:0 0 1rem;max-width:28rem">Talk to our team about HelloBotz&#039;s WhatsApp, Instagram, Facebook &amp; Telegram automation, and omnichannel setup for your business.</p>
-          <div class="footer-address">
-            <div class="footer-address-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>HelloBotz AI Technologies Pvt Ltd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</span>
-            </div>
-            <div class="footer-address-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <span><a href="https://wa.me/918050854445" target="_blank" rel="noopener"><strong>Call / WhatsApp Us: +91 80508 54445</strong></a></span>
-            </div>
-            <div class="footer-address-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-              <span><a href="mailto:mail@hellobotz.com"><strong>Send Enquiry Email: mail@hellobotz.com</strong></a></span>
-            </div>
-            <div class="footer-address-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-              <span><a href="mailto:support@hellobotz.com"><strong>Email Technical Support: support@hellobotz.com</strong></a></span>
-            </div>
-          </div>
-          <div class="footer-app-download" style="margin-top:1.25rem">
-            <strong style="display:block;margin-bottom:.65rem">Download HelloBotz App</strong>
-            <div style="display:flex;flex-wrap:wrap;gap:.65rem">
-              <a class="btn btn-sm btn-outline" href="/resources/download-ios-app/"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:-2px;margin-right:4px"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.12-1.96.99-3.1-.97.04-2.14.65-2.83 1.45-.62.72-1.16 1.88-1.01 3 1.08.08 2.18-.53 2.85-1.35z"/></svg> App Store</a>
-              <a class="btn btn-sm btn-outline" href="/resources/download-app/"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:-2px;margin-right:4px"><path d="M3 20.5v-17c0-.55.45-1 1-1 .18 0 .35.05.5.14l14 8.5c.31.19.5.53.5.86s-.19.67-.5.86l-14 8.5c-.15.09-.32.14-.5.14-.55 0-1-.45-1-1z"/></svg> Google Play</a>
+        <!-- Left Glass Card: Contact Info -->
+        <div class="contact-glass-card contact-info-card">
+          <div>
+            <div class="contact-card-title-group">
+              <div class="contact-card-icon-pill pill-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title" data-i18n="contact_title">Get in touch</div>
+                                <p class="contact-card-desc">Talk to our team about HelloBotz&#039;s WhatsApp, Instagram, Facebook &amp; Telegram automation, and omnichannel setup for your business.</p>
+              </div>
             </div>
 
-          <div class="footer-meta-partner">
+            <div class="contact-details-list">
+              <div class="contact-item-row">
+                <div class="contact-item-icon icon-loc">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="contact-item-body">
+                  <div class="contact-item-label">Global Headquarters</div>
+                  <div class="contact-item-val">HelloBotz AI Technologies Pvt Ltd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</div>
+                </div>
+              </div>
+
+              <a href="https://wa.me/918050854445" target="_blank" rel="noopener" class="contact-item-row">
+                <div class="contact-item-icon icon-phone">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM17.47 14.38C17.17 14.23 15.69 13.5 15.41 13.4C15.14 13.3 14.94 13.25 14.74 13.55C14.54 13.85 13.96 14.53 13.78 14.73C13.61 14.93 13.43 14.96 13.13 14.81C12.83 14.66 11.86 14.34 10.71 13.32C9.81 12.52 9.21 11.53 9.03 11.23C8.86 10.93 9.01 10.77 9.16 10.62C9.3 10.49 9.46 10.27 9.61 10.1C9.76 9.92 9.81 9.8 9.91 9.6C10.01 9.4 9.96 9.22 9.89 9.07C9.81 8.92 9.21 7.44 8.96 6.83C8.71 6.24 8.46 6.32 8.28 6.31C8.1 6.3 7.9 6.3 7.7 6.3C7.5 6.3 7.17 6.38 6.9 6.68C6.62 6.98 5.85 7.71 5.85 9.19C5.85 10.67 6.93 12.1 7.08 12.3C7.23 12.5 9.2 15.54 12.22 16.84C14.73 17.93 15.41 17.72 16.03 17.65C16.75 17.56 18.25 16.74 18.55 15.89C18.85 15.04 18.85 14.32 18.78 14.19C18.7 14.07 18.5 13.99 18.2 13.84L17.47 14.38Z"/></svg>
+                </div>
+                <div class="contact-item-body">
+                  <div class="contact-item-label">Direct WhatsApp / Call (24/7 Available)</div>
+                  <div class="contact-item-val highlight-green">+91 80508 54445</div>
+                </div>
+                <div class="contact-item-arrow">→</div>
+              </a>
+
+              <a href="mailto:mail@hellobotz.com" class="contact-item-row">
+                <div class="contact-item-icon icon-sales">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                </div>
+                <div class="contact-item-body">
+                  <div class="contact-item-label">Sales &amp; Enterprise Enquiries</div>
+                  <div class="contact-item-val">mail@hellobotz.com</div>
+                </div>
+                <div class="contact-item-arrow">→</div>
+              </a>
+
+              <a href="mailto:support@hellobotz.com" class="contact-item-row">
+                <div class="contact-item-icon icon-support">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="contact-item-body">
+                  <div class="contact-item-label">Technical &amp; Developer Support</div>
+                  <div class="contact-item-val">support@hellobotz.com</div>
+                </div>
+                <div class="contact-item-arrow">→</div>
+              </a>
+            </div>
+
+            <!-- Download Apps -->
+            <div class="contact-app-block">
+              <span class="contact-app-label">Download HelloBotz Mobile App</span>
+              <div class="contact-app-btns">
+                <a class="contact-app-link" href="/resources/download-ios-app/">
+                  <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.12-1.96.99-3.1-.97.04-2.14.65-2.83 1.45-.62.72-1.16 1.88-1.01 3 1.08.08 2.18-.53 2.85-1.35z"/></svg>
+                  <span>App Store</span>
+                </a>
+                <a class="contact-app-link" href="/resources/download-app/">
+                  <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.55.45-1 1-1 .18 0 .35.05.5.14l14 8.5c.31.19.5.53.5.86s-.19.67-.5.86l-14 8.5c-.15.09-.32.14-.5.14-.55 0-1-.45-1-1z"/></svg>
+                  <span>Google Play</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta Tech Partner Badge -->
+          <div class="contact-meta-card">
             <img src="../assets/images/partners/meta-tech-partner.png" alt="Meta Tech Partner" width="120" height="60"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="meta-ph" style="display:none">Meta<br>Tech Partner</div>
             <div>
-              <strong style="display:block;font-size:.9rem;color:#111">Meta Tech Partner</strong>
-              <span style="font-size:.8rem;color:#6B7280">Official WhatsApp Business API solutions</span>
+              <div class="meta-title-flex">
+                <strong style="font-size:0.95rem;color:#0F172A">Meta Tech Partner</strong>
+                <span class="meta-blue-check" title="Official WhatsApp Partner">✓</span>
+              </div>
+              <span style="font-size:0.8rem;color:#64748B;display:block;margin-top:2px">Official WhatsApp Business API Solutions</span>
             </div>
-          </div>
           </div>
         </div>
-        <div>
-          <div class="footer-contact-heading" data-i18n="contact_form_title">Send a message</div>
-          <form class="footer-contact-form" action="javascript:void(0)" method="post" id="footer-contact-form" novalidate>
-            <div class="form-group">
-              <label class="form-label" for="fc-name">Name</label>
-              <input type="text" class="form-input" id="fc-name" name="name" required placeholder="Your name">
+
+        <!-- Right Glass Card: Contact Form -->
+        <div class="contact-glass-card contact-form-card">
+          <div class="contact-card-glow-bar"></div>
+          <div>
+            <div class="contact-card-title-group">
+              <div class="contact-card-icon-pill pill-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title" data-i18n="contact_form_title">Send a message</div>
+                <p class="contact-card-desc">Fill out the quick form below and an omnichannel specialist will get back to you within 15 minutes.</p>
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="fc-mobile">Mobile</label>
-              <input type="tel" class="form-input" id="fc-mobile" name="mobile" required placeholder="+91 98765 43210">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fc-regarding">Regarding</label>
-              <select class="form-input" id="fc-regarding" name="regarding" required>
-                <option value="">Select topic</option>
-                <option value="WhatsApp Business API">WhatsApp Business API</option>
-                <option value="Omnichannel Platform">Omnichannel Platform</option>
-                <option value="Pricing / Plans">Pricing / Plans</option>
-                <option value="Affiliate / Partner">Affiliate / Partner</option>
-                <option value="Technical Support">Technical Support</option>
-                <option value="Demo Request">Demo Request</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fc-message">Message</label>
-              <textarea class="form-input" id="fc-message" name="message" rows="3" required placeholder="How can we help?"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+
+            <form class="footer-contact-form" action="javascript:void(0)" method="post" id="footer-contact-form" novalidate>
+              <div class="contact-form-row">
+                <div class="contact-field-group">
+                  <label class="contact-field-label" for="fc-name">Your Name <span class="required-star">*</span></label>
+                  <div class="contact-input-wrap">
+                    <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <input type="text" class="form-input" id="fc-name" name="name" required placeholder="Your name">
+                  </div>
+                </div>
+                <div class="contact-field-group">
+                  <label class="contact-field-label" for="fc-mobile">WhatsApp / Mobile <span class="required-star">*</span></label>
+                  <div class="contact-input-wrap">
+                    <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <input type="tel" class="form-input" id="fc-mobile" name="mobile" required placeholder="+91 98765 43210">
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-field-group">
+                <label class="contact-field-label" for="fc-regarding">Regarding / Interest <span class="required-star">*</span></label>
+                <div class="contact-input-wrap">
+                  <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  <select class="form-input" id="fc-regarding" name="regarding" required>
+                    <option value="">Select topic</option>
+                    <option value="WhatsApp Business API">WhatsApp Business API &amp; Green Tick</option>
+                    <option value="Omnichannel Platform">AI WhatsApp &amp; Omnichannel Chatbots</option>
+                    <option value="Pricing / Plans">Enterprise Pricing &amp; High-Volume Broadcasts</option>
+                    <option value="Affiliate / Partner">Affiliate &amp; White-Label Partner Programs</option>
+                    <option value="Technical Support">Technical Support &amp; Integrations</option>
+                    <option value="Demo Request">Live Interactive Product Demo</option>
+                    <option value="Other">Other Query</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="contact-field-group">
+                <label class="contact-field-label" for="fc-message">Message / Requirements <span class="required-star">*</span></label>
+                <textarea class="form-input" id="fc-message" name="message" rows="3" required placeholder="Tell us about your team size, expected monthly message volume, or specific use cases..."></textarea>
+              </div>
+
+              <div class="contact-form-actions">
+                <button type="submit" class="btn-contact-submit">
+                  <span>Send Message</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <div class="contact-security-guarantee">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>100% Privacy Protected • Zero Spam Guarantee</span>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
