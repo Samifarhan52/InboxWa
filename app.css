@@ -536,12 +536,18 @@ textarea.form-input{min-height:100px;resize:vertical}
   max-height:18px!important;
 }
 
-/* Footer contact form on dark/light */
 .footer-contact-section{
-  padding:5rem 0 5.5rem;
-  border-bottom:1px solid rgba(15,23,42,.1);
-  background:linear-gradient(180deg,#F8FAFC 0%,#EEF2F6 40%,#E2E8F0 100%);
-  color:var(--t);
+  position:relative;
+  overflow:hidden;
+  padding:6rem 0 6.5rem;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background-color:#080D1A;
+  background-image:linear-gradient(180deg,rgba(8,13,26,.78) 0%,rgba(11,18,36,.68) 50%,rgba(8,13,26,.94) 100%),url('/assets/images/contact-bg.jpg');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  color:#fff;
 }
 .footer-contact-section h3{color:#0F172A;margin-bottom:.5rem}
 .footer-contact-section p{color:#475569;font-size:.92rem}
