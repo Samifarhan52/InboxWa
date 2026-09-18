@@ -265,21 +265,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Payment?
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-         WhatsApp Payments is an in-chat payment feature that lets both businesses and users send and receive money without exiting WhatsApp. <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">WhatsApp Business API</a> enables sending of even dynamic payment requests, including order details, payment links, or UPI options, all in a single chat.         </p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <section class="trust-section py-5" style="background:#fff!important">

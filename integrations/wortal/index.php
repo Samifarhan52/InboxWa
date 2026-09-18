@@ -323,22 +323,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Wortal Integration
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-            WhatsApp Wortal Integration is the process of connecting the <a href="https://HelloBots.com/whatsapp-business-api/" target="_blank" rel="noopener noreferrer">WhatsApp Business API</a> with Wortal CRM. This integration connects your CRM platform directly to WhatsApp, allowing your sales and support teams to communicate with customers.
-         </p>
-      </div>
-    </div>
-  </div>
-</section>
+
 <style>
 .ws-section{
     padding:60px 0px;

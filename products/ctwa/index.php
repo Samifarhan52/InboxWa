@@ -188,61 +188,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="partners-section">
-  <div class="container">
-    <h2 class="partners-title whatsapp-heading mb-4">Our Trusted Clients</h2>
-    <div class="swiper partners-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Footer_Logo.png" alt="Looks Salon">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Mahindra-Logo-2000.png" alt="Mahindra">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/SkodaLogoNew.png" alt="Skoda">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Vegtration_Logo.png" alt="Vegetarian Brand">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/zee-business.png" alt="Zee Business">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/partners/logo-capgemini.png" alt="Capgemini">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/partners/logo-dreamcast.png" alt="Dreamcast">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/partners/logo-giva.png" alt="Giva">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/partners/logo-tie.png" alt="TiE">
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo $bp; ?>assets/images/partners/logo-tumbledry.png" alt="Tumbledry">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-         What are Click to WhatsApp Ads
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-          Click-to-WhatsApp ads (CTWAs) are digital ads that run on platforms like Facebook, Instagram, and Google. It's a key feature of <a href="<?php echo $bp; ?>products/whatsapp-business-platform/">WhatsApp Business API</a>, and allows the customer to directly initiate a WhatsApp communication with a business by tapping the ‘Send Message’ WhatsApp button on the ad. Such ads are often shown on channels like Instagram, Facebook, or Google. It consists of a ‘Click to Chat’ button that opens a chat window on WhatsApp when clicked.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
@@ -885,69 +831,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-<section class="reviews-section">
-  <div class="container">
-    <h2 class="whatsApp-headings mb-3">What Our Customers Say on G2 Platform</h2>
 
-    <div class="row g-4 align-items-stretch mt-4">
-      <!-- Awards Section -->
-      <div class="col-lg-6 col-12 d-flex">
-        <div class="awards-column rounded-top-start-4 h-100">
-          <p class="review-section-heading">Awarded for excellence</p>
-          <div class="d-flex flex-wrap justify-content-center g2-reviews-tags" style="gap:28px;">
-            <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/CommunicationPlatformasaService_UsersMos.png" alt="Best Est. ROI - Enterprise" class="award-image" width="90" height="90">
-            <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/CommunicationPlatformasaService_BestEsti.png" alt="Best Support - Enterprise" class="award-image" width="90" height="90">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Chatbots_HighPerformer_HighPerformer.png" alt="Best Usability - Small Business" class="award-image" width="90" height="90">
-          </div>
-          <div class="d-flex flex-wrap justify-content-center g2-reviews-tags mt-3" style="gap:28px;">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/easiest_Admin.png" alt="Easiest To Do Business With - Mid-Market" class="award-image" width="90" height="90">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Chatbots_BestSupport_QualityOfSupport.png" alt="Fastest Implementation - Enterprise" class="award-image" width="90" height="90">
-            <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Chatbots_HighPerformer_AsiaPacific_HighP.png" alt="Momentum Leader" class="award-image" width="90" height="90">
-          </div>
-        </div>
-      </div>
-
-      <!-- Reviews Section -->
-      <div class="col-lg-6 col-12 d-flex">
-        <div class="reviews-wrapper rounded-bottom-end-4 h-100">
-          <p class="review-section-heading">Loved by users everywhere</p>
-          <ul class="reviews-list">
-            <li class="review-item">
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/g2.png" alt="G2 Logo" class="review-logo-img" width="50" height="50">
-              <div class="review-content">
-                <span class="review-count">100+ Verified Reviews</span>
-                <div class="stars-container d-flex align-items-center gap-1 my-1">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <span class="ms-2 fw-bold text-dark dark-invert" style="font-size: 0.95rem;">4.9 / 5.0</span>
-                </div>
-                <p class="text-muted small mb-0">Ranked High Performer in WhatsApp Business Platform &amp; Conversational Marketing.</p>
-              </div>
-            </li>
-            <li class="review-item">
-              <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Trust-Pilot.png" alt="Trustpilot Logo" class="review-logo-img" width="50" height="50">
-              <div class="review-content">
-                <span class="review-count">Top-Rated Tech Solution</span>
-                <div class="stars-container d-flex align-items-center gap-1 my-1">
-                  <i class="fas fa-star text-success"></i>
-                  <i class="fas fa-star text-success"></i>
-                  <i class="fas fa-star text-success"></i>
-                  <i class="fas fa-star text-success"></i>
-                  <i class="fas fa-star text-success"></i>
-                  <span class="ms-2 fw-bold text-dark dark-invert" style="font-size: 0.95rem;">4.8 / 5.0</span>
-                </div>
-                <p class="text-muted small mb-0">Trusted by fast-growing brands for real-time lead qualification and Meta ad conversion.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
     <div class="container">

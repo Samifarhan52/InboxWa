@@ -2547,4 +2547,112 @@ html[data-theme="dark"] .custom-faq-accordion .faq-arrow {
   border-bottom-color: #34d399 !important;
 }
 
+/* Universal FAQ Accordion (.faq-itemm, .faq-questionn, .faq-answerr) across all product & integration pages */
+html[data-theme="dark"] .faq-itemm,
+body.dark-theme .faq-itemm {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .faq-questionn,
+body.dark-theme .faq-questionn {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .faq-text,
+body.dark-theme .faq-text {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .faq-answerr,
+body.dark-theme .faq-answerr {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .faq-answerr p,
+body.dark-theme .faq-answerr p,
+html[data-theme="dark"] .faq-answerr li,
+body.dark-theme .faq-answerr li,
+html[data-theme="dark"] .faq-answerr span,
+body.dark-theme .faq-answerr span {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .faq-arrow,
+body.dark-theme .faq-arrow {
+  color: #34d399 !important;
+}
+html[data-theme="dark"] .faq-arrow::after,
+body.dark-theme .faq-arrow::after {
+  border-color: #34d399 !important;
+}
 
+/* Ported Cloned Pages Dark Mode Containers */
+html[data-theme="dark"] .cloned-hellobots-page,
+body.dark-theme .cloned-hellobots-page {
+  background-color: #080c14 !important;
+  color: #f1f5f9 !important;
+}
+html[data-theme="dark"] .trust-section,
+body.dark-theme .trust-section {
+  background: #0b0f19 !important;
+}
+html[data-theme="dark"] .trust-section h2,
+body.dark-theme .trust-section h2,
+html[data-theme="dark"] .trust-section h3,
+body.dark-theme .trust-section h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .trust-section p,
+body.dark-theme .trust-section p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .trust-point,
+body.dark-theme .trust-point {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .ws-section,
+body.dark-theme .ws-section {
+  background: #080c14 !important;
+  color: #f1f5f9 !important;
+}
+html[data-theme="dark"] .ws-section h2,
+body.dark-theme .ws-section h2,
+html[data-theme="dark"] .ws-section h3,
+body.dark-theme .ws-section h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .ws-section p,
+body.dark-theme .ws-section p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .ws-section .feature-box,
+body.dark-theme .ws-section .feature-box,
+html[data-theme="dark"] .ws-section .step-card,
+body.dark-theme .ws-section .step-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* WhatsApp Simulated Chat Bubbles & Mockup UI */
+html[data-theme="dark"] .sh-wa-bubble,
+body.dark-theme .sh-wa-bubble,
+html[data-theme="dark"] .sh-wa-bubble *,
+body.dark-theme .sh-wa-bubble *,
+html[data-theme="dark"] .sh-wa-bubble strong,
+body.dark-theme .sh-wa-bubble strong,
+html[data-theme="dark"] .sh-wa-bubble b,
+body.dark-theme .sh-wa-bubble b,
+html[data-theme="dark"] .sh-wa-bubble p,
+body.dark-theme .sh-wa-bubble p,
+html[data-theme="dark"] .sh-wa-bubble span,
+body.dark-theme .sh-wa-bubble span,
+html[data-theme="dark"] .sh-wa-bubble div,
+body.dark-theme .sh-wa-bubble div {
+  color: #111827 !important;
+}
+html[data-theme="dark"] .sh-wa-bubble .badge,
+body.dark-theme .sh-wa-bubble .badge {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .sh-wa-bubble .sh-wa-btn,
+body.dark-theme .sh-wa-bubble .sh-wa-btn {
+  color: #00a884 !important;
+}

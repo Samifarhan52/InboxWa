@@ -323,22 +323,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is Shiprocket WhatsApp Integration
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-            Shiprocket WhatsApp Integration is the process of connecting the <a href="https://HelloBots.com/whatsapp-business-api/" target="_blank" rel="noopener noreferrer">WhatsApp Business API</a>  with your Shiprocket shipping platform so you can automatically send updates to customers about their orders via WhatsApp messages.
-         </p>
-      </div>
-    </div>
-  </div>
-</section>
+
 <style>
 .ws-section{
     padding:60px 0px;

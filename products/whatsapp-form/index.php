@@ -275,22 +275,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Form
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-            WhatsApp form is a digital form designed to collect information from customers directly within the chat interface. It’s a key feature of the <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">official WhatsApp API</a>, used for various purposes such as collecting feedback, generating quality leads, scheduling appointments, and registering for events.
-         </p>
-      </div>
-    </div>
-  </div>
-</section>
+
 <section class="trust-section py-5" style="background:#fff!important">
   <div class="container">
     <h2 class="text-center mb-4">Why WhatsApp Forms</h2>

@@ -268,23 +268,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Broadcasting?
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-          WhatsApp broadcasting is a key feature of <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">Meta's official business API</a> through which you can send bulk messages at
-          once. Each recipient receives messages in their own chat, without seeing others. It is an easy and effective
-          way to share updates, offers, or alerts.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 

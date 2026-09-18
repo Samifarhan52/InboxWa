@@ -267,22 +267,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Catalog?
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-         A WhatsApp Catalog is a digital showcase of a business's products or services. It’s a key feature of <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">WhatsApp Business API</a> that allows customers to browse, select, and add items to the cart, and buy orders without leaving the app.
 
-      </div>
-    </div>
-  </div>
-</section>
 <section class="trust-section py-5" style="background:#fff!important">
   <div class="container">
     <h2 class="text-center mb-4">Why WhatsApp Catalog for Businesses</h2>

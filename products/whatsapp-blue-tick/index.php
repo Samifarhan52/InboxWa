@@ -1037,23 +1037,7 @@ body.wv-modal-open .wv-modal-overlay {
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Blue Tick?
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-          WhatsApp blue tick (earlier as green tick) is an official verified badge issued by Meta, shown next to the
-          business name in WhatsApp. It's a Key feature of <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">WhatsApp API</a>, and assures the customers that they’re engaging with a verified business and
-          not an impostor.
-      </div>
-    </div>
-  </div>
-</section>
+
 <section class="trust-section py-5">
   <div class="container">
     <h2 class="text-center mb-4">Why Verified Badge on WhatsApp Matters for Your Brand</h2>

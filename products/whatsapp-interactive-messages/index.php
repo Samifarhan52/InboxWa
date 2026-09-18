@@ -270,21 +270,7 @@ include __DIR__ . '/../../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Interactive Message
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-         A WhatsApp interactive message is a type of message that includes clickable buttons. It’s a <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">WhatsApp Business API </a>feature allowing users to take immediate actions with a single tap instead of typing directly within the message.         </p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <section class="whatsapp-usecase py-5">

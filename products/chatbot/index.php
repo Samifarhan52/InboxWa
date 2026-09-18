@@ -265,26 +265,6 @@ include __DIR__ . '/../../includes/header.php';
 
 </section>
 
-
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">Understand WhatsApp AI Chatbot</h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-          An AI WhatsApp chatbot is a virtual agent that runs on the <a
-            href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">WhatsApp
-            Business API</a> and uses natural language
-          understanding to engage in real conversations, instead of just matching keywords. It understands intent,
-          retains context within a chat, and improves the more it’s used.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ AI Chatbot vs Human Agent vs Traditional Chatbot ============ -->
 <section class="whatsapp-comparison chatbot-comparison">
   <div class="container">

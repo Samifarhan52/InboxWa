@@ -646,24 +646,7 @@ include __DIR__ . '/../includes/header.php';
   </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          What is WhatsApp Business API Integration
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-          WhatsApp Business API Integration is the process of connecting the <a
-            href="https://HelloBots.com/whatsapp-business-api/" target="_blank" rel="noopener noreferrer">official Meta
-            API</a> to your existing business software (CRMs, ERP, e-commerce, helpdesk, payment gateways, or logistics
-          software) to automate and manage customer communication at scale.
-      </div>
-    </div>
-  </div>
-</section>
+
 <section class="wa-process-section" style="padding: 60px 0px;background: #fcfbfc;">
   <div class="container">
     <h2 class="wa-process-title text-center mb-5">How WhatsApp Integrations Work with HelloBots</h2>

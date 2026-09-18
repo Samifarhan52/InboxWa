@@ -253,22 +253,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
 </section>
 
-<section class="what-is-api" style="padding: 60px 0px; background-color: #f9f9f9;;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="mb-4 whatsapp-heading">
-                    What is WhatsApp Team Inbox?
-                </h2>
-            </div>
-            <div class="col-12">
-                <p class="text-center">
-                    WhatsApp Team Inbox is a shared dashboard that lets multiple employees manage customer messages from one WhatsApp number. It's a key feature of <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">Meta WhatsApp API</a>, and it eliminates the need for individual accounts.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="whatsapp-usecase py-5">
     <div class="container">
         <h2 class="whatsapp-heading mb-5">Key Features of WhatsApp Team Inbox
