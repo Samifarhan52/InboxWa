@@ -21,6 +21,151 @@
       "source": "/partners/reseller/",
       "destination": "/partners/white-label/",
       "permanent": true
+    },
+    {
+      "source": "/industries/edtech",
+      "destination": "/industry/education-and-social-impacts/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/edtech/",
+      "destination": "/industry/education-and-social-impacts/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/banking-and-fintech",
+      "destination": "/industry/bfsi/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/banking-and-fintech/",
+      "destination": "/industry/bfsi/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/healthcare",
+      "destination": "/industry/healthcare/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/healthcare/",
+      "destination": "/industry/healthcare/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/travel-and-tourism",
+      "destination": "/industry/travel-and-hospitality/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/travel-and-tourism/",
+      "destination": "/industry/travel-and-hospitality/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/automotive",
+      "destination": "/industry/automobiles-and-transport/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/automotive/",
+      "destination": "/industry/automobiles-and-transport/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/e-commerce",
+      "destination": "/industry/retail-and-ecommerce/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/e-commerce/",
+      "destination": "/industry/retail-and-ecommerce/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/retail-and-ecommerce",
+      "destination": "/industry/retail-and-ecommerce/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/retail-and-ecommerce/",
+      "destination": "/industry/retail-and-ecommerce/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/real-estate",
+      "destination": "/industry/construction-and-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/real-estate/",
+      "destination": "/industry/construction-and-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurant-and-food-business",
+      "destination": "/industry/food-and-beverages/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurant-and-food-business/",
+      "destination": "/industry/food-and-beverages/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/spas-and-salons",
+      "destination": "/business-leads/beauty-wellness/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/spas-and-salons/",
+      "destination": "/business-leads/beauty-wellness/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/events-and-webinars",
+      "destination": "/industry/advertising-and-events/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/events-and-webinars/",
+      "destination": "/industry/advertising-and-events/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/small-medium-business",
+      "destination": "/business-leads/b2b-suppliers/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/small-medium-business/",
+      "destination": "/business-leads/b2b-suppliers/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/enterprise",
+      "destination": "/industry/communication-and-it/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/enterprise/",
+      "destination": "/industry/communication-and-it/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/jewellers",
+      "destination": "/business-leads/retail/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/jewellers/",
+      "destination": "/business-leads/retail/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/:match*",
+      "destination": "/industry/",
+      "permanent": true
     }
   ]
 }

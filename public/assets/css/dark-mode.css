@@ -2343,3 +2343,208 @@ html[data-theme="dark"] .prt-offering-badge {
   color: #c4b5fd !important;
 }
 
+/* ==========================================================================
+   13. Cloned Product Pages (CTWA, Chatbot, Broadcast, etc.) & Use Cases
+   ========================================================================== */
+html[data-theme="dark"] .cloned-hellobots-page {
+  background: #080c14 !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .hero-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .hero-title,
+html[data-theme="dark"] .whatsapp-heading,
+html[data-theme="dark"] .whatsApp-headings,
+html[data-theme="dark"] .partners-title {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .hero-text,
+html[data-theme="dark"] .section-subtitle,
+html[data-theme="dark"] .api-subtext {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .meta-partner {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .partners-section {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .partners-section .swiper-slide img {
+  filter: grayscale(1) invert(0.85) !important;
+}
+
+html[data-theme="dark"] .what-is-api {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .what-is-api p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .whatsapp-usecase {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .whatsapp-usecase .api-content h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .whatsapp-usecase .api-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .whatsapp-usecase .api-content li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .how-it-works {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .step-card {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .step-card h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .step-card p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .usecase-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .grid-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .grid-item h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .grid-item p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .grid-item .learn-more {
+  color: #38bdf8 !important;
+}
+
+/* Industry Use Cases Grid (User's Screenshot) */
+html[data-theme="dark"] #usecases-explore,
+html[data-theme="dark"] .usecase-section#usecases-explore {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] #usecases-explore .use-case-card {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] #usecases-explore .use-case-card:hover {
+  background: #1e293b !important;
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] #usecases-explore .use-case-card h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .reviews-section {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .awards-column,
+html[data-theme="dark"] .reviews-wrapper {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .review-section-heading {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .review-count {
+  color: #34d399 !important;
+}
+
+html[data-theme="dark"] .dark-invert {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .cards .card {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .cards .card h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .cards .card p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .cards .card .learn-more {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .faq-section {
+  background: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .custom-faq-accordion .faq-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .custom-faq-accordion .faq-question {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .custom-faq-accordion .faq-title h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .custom-faq-accordion .faq-answer {
+  background: #0f172a !important;
+  color: #cbd5e1 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .custom-faq-accordion .faq-arrow {
+  border-right-color: #34d399 !important;
+  border-bottom-color: #34d399 !important;
+}
+
+

@@ -133,10 +133,9 @@ include __DIR__ . '/../../includes/header.php';
 <div class="cloned-hellobots-page">
 
 
-  <script data-cookieconsent="ignore"
-    src="https://HelloBots.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://HelloBots.com/wp-content/themes/sierra/assets/css/whatsapp-blue-tick.css" class="css">
-<link rel="stylesheet" href="https://HelloBots.com/wp-content/themes/sierra/assets/css/template-industry.css" class="css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -221,7 +220,7 @@ include __DIR__ . '/../../includes/header.php';
     <div aria-label="breadcrumb" class="custom-breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="https://HelloBots.com/">Home</a>
+          <a href="<?php echo $bp; ?>">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           WhatsApp Payments        </li>
@@ -276,7 +275,7 @@ include __DIR__ . '/../../includes/header.php';
       </div>
       <div class="col-12">
         <p class="text-center">
-         WhatsApp Payments is an in-chat payment feature that lets both businesses and users send and receive money without exiting WhatsApp. <a href="https://HelloBots.com/whatsapp-business-api/" target="_blank" rel="noopener noreferrer">WhatsApp Business API</a> enables sending of even dynamic payment requests, including order details, payment links, or UPI options, all in a single chat.         </p>
+         WhatsApp Payments is an in-chat payment feature that lets both businesses and users send and receive money without exiting WhatsApp. <a href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">WhatsApp Business API</a> enables sending of even dynamic payment requests, including order details, payment links, or UPI options, all in a single chat.         </p>
       </div>
     </div>
   </div>
@@ -380,7 +379,7 @@ include __DIR__ . '/../../includes/header.php';
                       <!-- Enquiry Now Button -->
                     
                          <!--<i class="fa-solid fa-link"></i> -->
-                         <a href="https://app.HelloBots.com/register" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: white;"class="btn-apply cta-button cta-buttonn">Get Started</a> 
+                         <a href="<?php echo $bp; ?>auth/register" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: white;"class="btn-apply cta-button cta-buttonn">Get Started</a> 
                       
                   
                       <!-- Book A Free Demo Button -->
@@ -568,14 +567,14 @@ include __DIR__ . '/../../includes/header.php';
         <p>Send bulk tailored messages to unlimited contacts instantly with guaranteed better reach and improved
           customer engagement without spamming. </p>
 
-      <a class="learn-more" href="https://HelloBots.com/whatsapp-broadcasting/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+      <a class="learn-more" href="<?php echo $bp; ?>products/broadcast/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
 
       <div class="grid-item">
         <h3><i class="fas fa-robot"></i> WhatsApp AI Chatbot</h3>
         <p>Use a Chatbot to automate customer queries, manage FAQs, and offer 24/7 instant support to increase
           efficiency and reduce manual workload.</p>
         
-        <a class="learn-more" href="https://HelloBots.com/ai-whatsapp-chatbot/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="learn-more" href="<?php echo $bp; ?>products/chatbot/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
       <div class="grid-item">
@@ -584,7 +583,7 @@ include __DIR__ . '/../../includes/header.php';
           easy-to-fill forms.
         </p>
         
-        <a class="learn-more" href="https://HelloBots.com/whatsapp-forms/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="learn-more" href="<?php echo $bp; ?>products/whatsapp-form/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
       <div class="grid-item">
@@ -592,7 +591,7 @@ include __DIR__ . '/../../includes/header.php';
         <p>Verified your brand with the official blue tick to improve credibility, trust, and customer confidence.
         </p>
 
-        <a class="learn-more" href="https://HelloBots.com/whatsapp-blue-tick/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="learn-more" href="<?php echo $bp; ?>products/whatsapp-blue-tick/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
         
       </div>
 
@@ -601,7 +600,7 @@ include __DIR__ . '/../../includes/header.php';
         <p>Convert your ads into a quick WhatsApp chat to enhance lead generation, customer engagement, and sales
           conversion.</p>
       
-        <a class="learn-more" href="https://HelloBots.com/click-to-whatsapp-ads/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="learn-more" href="<?php echo $bp; ?>products/ctwa/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
       <div class="grid-item">
@@ -610,7 +609,7 @@ include __DIR__ . '/../../includes/header.php';
           payments.
         </p>
       
-        <a class="learn-more" href="https://HelloBots.com/whatsapp-payments/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="learn-more" href="<?php echo $bp; ?>products/whatsapp-payments/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
       <div class="grid-item">
@@ -626,20 +625,20 @@ include __DIR__ . '/../../includes/header.php';
         <p>Collaborate with your team by handling all customer conversations in a single dashboard using WhatsApp
           shared-team inbox.
         </p>
-        <a class="learn-more" href="https://HelloBots.com/whatsapp-team-inbox/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="learn-more" href="<?php echo $bp; ?>products/shared-inbox/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
 
       </div>
     <div class="grid-item">
         <h3><i class="fas fa-database"></i> WhatsApp Interactive</h3>
         <p>Engage customers with interactive buttons, lists and reply options that make conversations faster, easier, and actionable.</p>
                
-<a class="learn-more" href="https://HelloBots.com/whatsapp-interactive-messages/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+<a class="learn-more" href="<?php echo $bp; ?>products/whatsapp-interactive-messages/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="grid-item">
         <h3><i class="fas fa-lock"></i> WhatsApp Authentication</h3>
         <p>Send OTPs with 99% reliability and secure logins using WhatsApp’s end-to-end encrypted, one-tap authentication.</p>
                
-<a class="learn-more" href="https://HelloBots.com/whatsapp-authentication/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+<a class="learn-more" href="<?php echo $bp; ?>products/whatsapp-business-platform/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="grid-item">
         <h3><i class="fas fa-th-list"></i> WhatsApp Catalog</h3>
@@ -647,7 +646,7 @@ include __DIR__ . '/../../includes/header.php';
           orders.
         </p>
                
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-catalog/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="learn-more" href="<?php echo $bp; ?>products/catalog/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
 
       </div>
 
@@ -657,7 +656,7 @@ include __DIR__ . '/../../includes/header.php';
 Enable real-time voice calls for instant customer connection.
 Boost trust, support, and conversions with faster interactions.</p>
                
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-business-calling-api/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="learn-more" href="<?php echo $bp; ?>channels/whatsapp/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
 
       </div>
     </div>
@@ -694,81 +693,80 @@ document.addEventListener("DOMContentLoaded", function() {
         </p>
         <div class="usecase-grid">
 
-            <a href="https://HelloBots.com/industries/edtech/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/education-and-social-impacts/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background:#fff4d6;color:#c98a02;"><i
                         class="bi bi-mortarboard-fill"></i></div>
                 <h3>Education & EdTech</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/banking-and-fintech/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/bfsi/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background: #e5f2ff; color: #0288d1;"><i class="bi bi-bank"></i></div>
                 <h3>Banking & Fintech</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/healthcare/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/healthcare/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background: #ffe5e9; color: #e91e63;"><i
                         class="bi bi-heart-pulse-fill"></i></div>
                 <h3>Healthcare</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/travel-and-tourism/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/travel-and-hospitality/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background: #f0e6ff; color: #7b1fa2;"><i
                         class="bi bi-airplane-fill"></i></div>
                 <h3>Travel & Tourism</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/automotive/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/automobiles-and-transport/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background: #e5f4ff; color: #1565c0;"><i
                         class="bi bi-car-front-fill"></i></div>
                 <h3>Automotive</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/e-commerce/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/retail-and-ecommerce/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background: #e6f8ee; color: #2e7d32;"><i class="bi bi-bag-fill"></i>
                 </div>
                 <h3>Retail & E-commerce</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/real-estate/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/construction-and-real-estate/" 
                 class="use-case-card">
                 <div class="icon-circle" style="color:#23398f; background: #c6cde9"><i class="fas fa-building"></i>
                 </div>
                 <h3>Real Estate</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/restaurant-and-food-business/" target="_blank"
-                rel="noopener noreferrer" class="use-case-card">
+            <a href="<?php echo $bp; ?>industry/food-and-beverages/"  class="use-case-card">
                 <div class="icon-circle" style="background: #e9dec9; color: #6f5627;"><i class="fas fa-utensils"></i>
                 </div>
                 <h3>Restaurant & Food Business</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/spas-and-salons/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>business-leads/beauty-wellness/" 
                 class="use-case-card">
                 <div class="icon-circle" style="color: #a55a67; background: #f7e2e6;"><i class="fas fa-spa"></i></div>
                 <h3>Spas & Salons</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/events-and-webinars/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/advertising-and-events/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background:#fdeaea;color:#d9534f;"><i class="fas fa-microphone-alt"></i>
                 </div>
                 <h3>Events & Webinars</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/small-medium-business/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>business-leads/b2b-suppliers/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background:#ffe7d9;color:#d35f16;"><i class="fas fa-store"></i></div>
                 <h3>Small & Medium Business</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/enterprise/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>industry/communication-and-it/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #1e3a8a;">
                     <i class="fas fa-briefcase"></i>
@@ -776,7 +774,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h3>Enterprises</h3>
             </a>
 
-            <a href="https://HelloBots.com/industries/jewellers/" target="_blank" rel="noopener noreferrer"
+            <a href="<?php echo $bp; ?>business-leads/retail/" 
                 class="use-case-card">
                 <div class="icon-circle" style="background:#fdf0d5;color:#b8860b;"><i class="fas fa-gem"></i></div>
                 <h3>Jewellers</h3>
@@ -1025,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="iconn"><i class="fas fa-bullhorn"></i></div>
                 <h3>WhatsApp for Marketing</h3>
                 <p>Reach customers instantly with high-engagement broadcasts and personalized offers.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-marketing/" target="_blank"
+                <a class="learn-more" href="<?php echo $bp; ?>solutions/bulk-messaging/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1034,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="iconn"><i class="fas fa-handshake"></i></div>
                 <h3>WhatsApp for Sales</h3>
                 <p>Convert chats into sales with automated workflows, lead management, and fast follow-ups.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-sales-crm/" target="_blank"
+                <a class="learn-more" href="<?php echo $bp; ?>products/shared-inbox/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1044,7 +1042,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h3>WhatsApp for Support</h3>
                 <p class="">Provide fast, reliable customer support with instant replies and automated ticket
                     management.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-customer-support/" target="_blank"
+                <a class="learn-more" href="<?php echo $bp; ?>solutions/customer-support/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
@@ -1273,9 +1271,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </section>
 <!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
         assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
-<link rel="stylesheet"
-    href="https://HelloBots.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
-    media="all">
+
 
 
 </div>
