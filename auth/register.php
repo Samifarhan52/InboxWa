@@ -1,10 +1,13 @@
 <?php
-$basePath = '../';
+if (!isset($basePath)) {
+    $basePath = '../../';
+}
 $robots = 'noindex, nofollow';
 $pageTitle = 'Create Free Account | HelloBotz';
 $pageDescription = 'Create your HelloBotz account and start your 14-day free trial with Official WhatsApp Business API, inbox and automation.';
 $canonicalUrl = '/auth/register';
 $initialMode = 'signup'; // 'login' or 'signup'
+$extraCss = ['/assets/css/auth-flip.css'];
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="<?php echo $bp; ?>assets/css/auth-flip.css">

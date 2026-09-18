@@ -56,7 +56,7 @@
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
   <link rel="stylesheet" href="/assets/css/dark-mode.css?v=52">
-  <script>
+    <script>
     (function() {
       try {
         var s = localStorage.getItem('hb_theme');
@@ -328,7 +328,7 @@
       max-width: 1360px !important;
       width: 100% !important;
       margin: 0 auto !important;
-      height: 74px !important;
+      height: 80px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: space-between !important;
@@ -396,9 +396,9 @@
 
     /* Logo Image Sizing & Resizing on Scroll */
     .site-header .logo-img {
-      height: 44px !important;
+      height: 52px !important;
       width: auto !important;
-      max-width: 195px !important;
+      max-width: 230px !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast;
       display: block !important;
@@ -2737,15 +2737,36 @@
       margin-left: 1rem !important;
     }
 
+    /* Contact Sales Link */
+    .header-sales-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.88rem !important;
+      font-weight: 550 !important;
+      color: #374151 !important;
+      text-decoration: none !important;
+      padding: 0.45rem 0.75rem !important;
+      border-radius: 8px !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+    .header-sales-link:hover {
+      color: #044738 !important;
+      background: rgba(4, 71, 56, 0.06) !important;
+    }
+
     /* Secondary CTA - GetGabs Outline Pill Button */
     .header-btn-outline,
     .header-login {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 7px !important;
-      padding: 0.5rem 1.25rem !important;
-      font-size: 0.88rem !important;
+      gap: 6px !important;
+      padding: 0.46rem 1.2rem !important;
+      font-size: 0.86rem !important;
       font-weight: 600 !important;
       color: #111827 !important;
       background: transparent !important;
@@ -2780,9 +2801,9 @@
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 7px !important;
-      padding: 0.5rem 1.35rem !important;
-      font-size: 0.88rem !important;
+      gap: 6px !important;
+      padding: 0.48rem 1.3rem !important;
+      font-size: 0.86rem !important;
       font-weight: 600 !important;
       color: #ffffff !important;
       background: #044738 !important;
@@ -2813,6 +2834,15 @@
     }
 
     /* Dark Mode Action Button Variations */
+    html[data-theme="dark"] .header-sales-link,
+    body.dark-theme .header-sales-link {
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="dark"] .header-sales-link:hover,
+    body.dark-theme .header-sales-link:hover {
+      color: #ffffff !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
     html[data-theme="dark"] .header-btn-outline,
     html[data-theme="dark"] .header-login,
     body.dark-theme .header-btn-outline,
@@ -2887,14 +2917,17 @@
         padding: 0.4rem 0.5rem !important;
         font-size: 0.88rem !important;
       }
+      .header-sales-link {
+        display: none !important;
+      }
       .header-btn-outline,
       .header-login {
-        padding: 0.45rem 1rem !important;
+        padding: 0.42rem 0.95rem !important;
         font-size: 0.82rem !important;
       }
       .header-btn-primary,
       .header-cta-start {
-        padding: 0.45rem 1.1rem !important;
+        padding: 0.42rem 1.05rem !important;
         font-size: 0.82rem !important;
       }
     }
@@ -2904,6 +2937,9 @@
       }
       .mobile-toggle {
         display: flex !important;
+      }
+      .header-sales-link {
+        display: none !important;
       }
       .header-btn-outline,
       .header-login {
@@ -3643,12 +3679,14 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="../../contact/" class="header-login header-btn-outline" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
+        <a href="../../contact/" class="header-sales-link" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
           <span>Contact Sales</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="../../auth/login" class="header-login header-btn-outline">
+          <span>Login</span>
         </a>
         <a href="../../auth/register" class="header-cta-start header-btn-primary">
-          <span>Log in / Sign up</span>
+          <span>Sign Up</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
         <button type="button" class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -4018,8 +4056,9 @@
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="../../contact/" class="mnav-login" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
-          <a href="../../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Log in / Sign up &rarr;</a>
+          <a href="../../contact/" class="mnav-demo btn-demo-open" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
+          <a href="../../auth/login" class="mnav-login">Login &rarr;</a>
+          <a href="../../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>
       </div>
     </div>
@@ -4269,13 +4308,13 @@
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Chat with Product Support" style="text-align:left;width:fit-content;">Chat with Product Support &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">07:02 PM</span>
+                        <span class="time">07:42 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Checkout with 10% OFF</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">07:03 PM</span>
+                        <span class="time">07:43 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -4285,7 +4324,7 @@ Total: ₹3,149 (Saved ₹350)<br />
 <br />
 Tap below to complete instant UPI / Card payment:</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">07:04 PM</span>
+                        <span class="time">07:44 PM</span>
                                               </div>
                     </div>
                   
@@ -4498,10 +4537,10 @@ Tap below to complete instant UPI / Card payment:</span>
                                           <div class="ind-msg-btn">Complete Order Now</div>
                                           <div class="ind-msg-btn">Apply 15% Discount Code</div>
                                       </div>
-                                <span class="msg-time">07:05 PM</span>
+                                <span class="msg-time">07:45 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Apply 15% Discount Code                  <span class="msg-time">07:05 PM</span>
+                  Apply 15% Discount Code                  <span class="msg-time">07:45 PM</span>
                 </div>
                           </div>
           </div>
@@ -4554,10 +4593,10 @@ Tap below to complete instant UPI / Card payment:</span>
                                           <div class="ind-msg-btn">Confirm COD Order</div>
                                           <div class="ind-msg-btn">Cancel Order</div>
                                       </div>
-                                <span class="msg-time">07:05 PM</span>
+                                <span class="msg-time">07:45 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Pay via UPI (Save ₹100)                  <span class="msg-time">07:05 PM</span>
+                  Pay via UPI (Save ₹100)                  <span class="msg-time">07:45 PM</span>
                 </div>
                           </div>
           </div>
@@ -4609,10 +4648,10 @@ Tap below to complete instant UPI / Card payment:</span>
                                           <div class="ind-msg-btn">Track Courier Live</div>
                                           <div class="ind-msg-btn">Reschedule Delivery</div>
                                       </div>
-                                <span class="msg-time">07:05 PM</span>
+                                <span class="msg-time">07:45 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Track Courier Live                  <span class="msg-time">07:05 PM</span>
+                  Track Courier Live                  <span class="msg-time">07:45 PM</span>
                 </div>
                           </div>
           </div>
@@ -4664,10 +4703,10 @@ Tap below to complete instant UPI / Card payment:</span>
                                           <div class="ind-msg-btn">View WhatsApp Catalog</div>
                                           <div class="ind-msg-btn">Chat with Stylist</div>
                                       </div>
-                                <span class="msg-time">07:05 PM</span>
+                                <span class="msg-time">07:45 PM</span>
               </div>
                               <div class="ind-msg user">
-                  View WhatsApp Catalog                  <span class="msg-time">07:05 PM</span>
+                  View WhatsApp Catalog                  <span class="msg-time">07:45 PM</span>
                 </div>
                           </div>
           </div>

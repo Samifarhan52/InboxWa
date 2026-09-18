@@ -56,7 +56,8 @@
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=3">
   <link rel="stylesheet" href="/assets/css/dark-mode.css?v=52">
-  <script>
+    <link rel="stylesheet" href="/assets/css/auth-flip.css">
+    <script>
     (function() {
       try {
         var s = localStorage.getItem('hb_theme');
@@ -328,7 +329,7 @@
       max-width: 1360px !important;
       width: 100% !important;
       margin: 0 auto !important;
-      height: 74px !important;
+      height: 80px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: space-between !important;
@@ -396,9 +397,9 @@
 
     /* Logo Image Sizing & Resizing on Scroll */
     .site-header .logo-img {
-      height: 44px !important;
+      height: 52px !important;
       width: auto !important;
-      max-width: 195px !important;
+      max-width: 230px !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast;
       display: block !important;
@@ -2737,15 +2738,36 @@
       margin-left: 1rem !important;
     }
 
+    /* Contact Sales Link */
+    .header-sales-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.88rem !important;
+      font-weight: 550 !important;
+      color: #374151 !important;
+      text-decoration: none !important;
+      padding: 0.45rem 0.75rem !important;
+      border-radius: 8px !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+    .header-sales-link:hover {
+      color: #044738 !important;
+      background: rgba(4, 71, 56, 0.06) !important;
+    }
+
     /* Secondary CTA - GetGabs Outline Pill Button */
     .header-btn-outline,
     .header-login {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 7px !important;
-      padding: 0.5rem 1.25rem !important;
-      font-size: 0.88rem !important;
+      gap: 6px !important;
+      padding: 0.46rem 1.2rem !important;
+      font-size: 0.86rem !important;
       font-weight: 600 !important;
       color: #111827 !important;
       background: transparent !important;
@@ -2780,9 +2802,9 @@
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 7px !important;
-      padding: 0.5rem 1.35rem !important;
-      font-size: 0.88rem !important;
+      gap: 6px !important;
+      padding: 0.48rem 1.3rem !important;
+      font-size: 0.86rem !important;
       font-weight: 600 !important;
       color: #ffffff !important;
       background: #044738 !important;
@@ -2813,6 +2835,15 @@
     }
 
     /* Dark Mode Action Button Variations */
+    html[data-theme="dark"] .header-sales-link,
+    body.dark-theme .header-sales-link {
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="dark"] .header-sales-link:hover,
+    body.dark-theme .header-sales-link:hover {
+      color: #ffffff !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
     html[data-theme="dark"] .header-btn-outline,
     html[data-theme="dark"] .header-login,
     body.dark-theme .header-btn-outline,
@@ -2887,14 +2918,17 @@
         padding: 0.4rem 0.5rem !important;
         font-size: 0.88rem !important;
       }
+      .header-sales-link {
+        display: none !important;
+      }
       .header-btn-outline,
       .header-login {
-        padding: 0.45rem 1rem !important;
+        padding: 0.42rem 0.95rem !important;
         font-size: 0.82rem !important;
       }
       .header-btn-primary,
       .header-cta-start {
-        padding: 0.45rem 1.1rem !important;
+        padding: 0.42rem 1.05rem !important;
         font-size: 0.82rem !important;
       }
     }
@@ -2904,6 +2938,9 @@
       }
       .mobile-toggle {
         display: flex !important;
+      }
+      .header-sales-link {
+        display: none !important;
       }
       .header-btn-outline,
       .header-login {
@@ -3085,11 +3122,11 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <div class="logo-dock-wrapper" id="logo-dock-wrapper">
-        <a href="../" class="logo site-main-logo" id="site-logo" aria-label="HelloBotz Home">
-          <img src="../assets/images/logo-light.png" alt="HelloBotz" class="logo-img logo-img-light" width="160" height="52">
-          <img src="../assets/images/logo-dark.png" alt="HelloBotz" class="logo-img logo-img-dark" width="160" height="52">
+        <a href="../../" class="logo site-main-logo" id="site-logo" aria-label="HelloBotz Home">
+          <img src="../../assets/images/logo-light.png" alt="HelloBotz" class="logo-img logo-img-light" width="160" height="52">
+          <img src="../../assets/images/logo-dark.png" alt="HelloBotz" class="logo-img logo-img-dark" width="160" height="52">
           <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-            <img src="../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="HelloBotz">
+            <img src="../../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="HelloBotz">
             <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
           </span>
         </a>
@@ -3106,7 +3143,7 @@
               <div class="prodocu-col-channels">
                 <div class="prodocu-col-heading">Channels</div>
                 <div class="prodocu-channel-list">
-                  <a href="../channel/whatsapp/" class="prodocu-channel-item active" title="WhatsApp Channel">
+                  <a href="../../channel/whatsapp/" class="prodocu-channel-item active" title="WhatsApp Channel">
                     <span class="prodocu-chan-icon">
                       <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                         <circle cx="12" cy="12" r="12" fill="#25D366"/>
@@ -3115,7 +3152,7 @@
                     </span>
                     <span>WhatsApp</span>
                   </a>
-                  <a href="../channel/instagram/" class="prodocu-channel-item" title="Instagram Channel">
+                  <a href="../../channel/instagram/" class="prodocu-channel-item" title="Instagram Channel">
                     <span class="prodocu-chan-icon">
                       <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                         <defs>
@@ -3135,7 +3172,7 @@
                     </span>
                     <span>Instagram</span>
                   </a>
-                  <a href="../channel/facebook/" class="prodocu-channel-item" title="Facebook Channel">
+                  <a href="../../channel/facebook/" class="prodocu-channel-item" title="Facebook Channel">
                     <span class="prodocu-chan-icon">
                       <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                         <circle cx="12" cy="12" r="12" fill="#1877F2"/>
@@ -3144,7 +3181,7 @@
                     </span>
                     <span>Facebook</span>
                   </a>
-                  <a href="../channel/telegram/" class="prodocu-channel-item" title="Telegram Channel">
+                  <a href="../../channel/telegram/" class="prodocu-channel-item" title="Telegram Channel">
                     <span class="prodocu-chan-icon">
                       <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                         <defs>
@@ -3162,7 +3199,7 @@
                 </div>
                 <div class="prodocu-partner-badge">
                   <div class="prodocu-partner-pill">
-                    <img src="../assets/images/integrations/official-meta-partner.png" alt="Meta Official Partner" width="145" height="21">
+                    <img src="../../assets/images/integrations/official-meta-partner.png" alt="Meta Official Partner" width="145" height="21">
                   </div>
                 </div>
               </div>
@@ -3171,7 +3208,7 @@
               <div class="prodocu-col">
                 <div class="prodocu-section-title">Marketing</div>
                 <div class="prodocu-items-list">
-                  <a href="../products/broadcast/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/broadcast/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-broadcast">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
                     </div>
@@ -3180,7 +3217,7 @@
                       <span class="prodocu-item-desc">Send bulk messages</span>
                     </div>
                   </a>
-                  <a href="../products/ctwa/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/ctwa/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-ctwa">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M10 8l4 4-2 1 1 3-4-4 2-1-1-3z" fill="currentColor"/></svg>
                     </div>
@@ -3189,7 +3226,7 @@
                       <span class="prodocu-item-desc">Click to WhatsApp ads</span>
                     </div>
                   </a>
-                  <a href="../products/automation/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/automation/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-drip">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                     </div>
@@ -3198,7 +3235,7 @@
                       <span class="prodocu-item-desc">Automated sequences</span>
                     </div>
                   </a>
-                  <a href="../products/catalog/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-catalog">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                     </div>
@@ -3207,7 +3244,7 @@
                       <span class="prodocu-item-desc">Showcase products</span>
                     </div>
                   </a>
-                  <a href="../products/whatsapp-form/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/whatsapp-form/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-form">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h6"/></svg>
                     </div>
@@ -3216,7 +3253,7 @@
                       <span class="prodocu-item-desc">Interactive forms</span>
                     </div>
                   </a>
-                  <a href="../products/whatsapp-blue-tick/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/whatsapp-blue-tick/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-bluetick">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 2.6 3.5-.4 1.2 3.3 3.3 1.2-.4 3.5 2.6 2.4-2.6 2.4.4 3.5-3.3 1.2-1.2 3.3-3.5-.4L12 22l-2.4-2.6-3.5.4-1.2-3.3-3.3-1.2.4-3.5L2 12l2.6-2.4-.4-3.5 3.3-1.2 1.2-3.3 3.5.4z" fill="currentColor" fill-opacity="0.15"/><polyline points="9 12 11 14 15 10"/></svg>
                     </div>
@@ -3232,7 +3269,7 @@
               <div class="prodocu-col">
                 <div class="prodocu-section-title">Sales</div>
                 <div class="prodocu-items-list">
-                  <a href="../products/chatbot/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/chatbot/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-chatbot">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="4"/><path d="M12 2v6"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
                     </div>
@@ -3241,7 +3278,7 @@
                       <span class="prodocu-item-desc">Automate conversations</span>
                     </div>
                   </a>
-                  <a href="../products/whatsapp-payments/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/whatsapp-payments/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-payment">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
                     </div>
@@ -3250,7 +3287,7 @@
                       <span class="prodocu-item-desc">Accept payments</span>
                     </div>
                   </a>
-                  <a href="../products/catalog/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-catalog-sales">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
                     </div>
@@ -3259,7 +3296,7 @@
                       <span class="prodocu-item-desc">Display products</span>
                     </div>
                   </a>
-                  <a href="../products/whatsapp-interactive-messages/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/whatsapp-interactive-messages/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-interactive">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="18" cy="5" r="2.5" fill="currentColor"/></svg>
                     </div>
@@ -3275,7 +3312,7 @@
               <div class="prodocu-col">
                 <div class="prodocu-section-title">Support</div>
                 <div class="prodocu-items-list">
-                  <a href="../products/shared-inbox/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/shared-inbox/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-inbox">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h4"/></svg>
                     </div>
@@ -3284,7 +3321,7 @@
                       <span class="prodocu-item-desc">Unified conversations</span>
                     </div>
                   </a>
-                  <a href="../products/ai-agent/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/ai-agent/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-ai-agent">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9a2 2 0 0 0 1.2 1.2L20 11l-4.9 1.9a2 2 0 0 0-1.2 1.2L12 19l-1.9-4.9a2 2 0 0 0-1.2-1.2L4 11l4.9-1.9a2 2 0 0 0 1.2-1.2L12 3z"/><path d="M19 3l.6 1.4a1 1 0 0 0 .6.6L21.6 5.6l-1.4.6a1 1 0 0 0-.6.6L19 8.2l-.6-1.4a1 1 0 0 0-.6-.6L16.4 5.6l1.4-.6a1 1 0 0 0 .6-.6L19 3z"/></svg>
                     </div>
@@ -3293,7 +3330,7 @@
                       <span class="prodocu-item-desc">Smart responses</span>
                     </div>
                   </a>
-                  <a href="../solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
+                  <a href="../../solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-feedback">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
@@ -3302,7 +3339,7 @@
                       <span class="prodocu-item-desc">Gather insights</span>
                     </div>
                   </a>
-                  <a href="../products/analytics/" class="prodocu-item" role="menuitem">
+                  <a href="../../products/analytics/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-analytics">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                     </div>
@@ -3319,29 +3356,29 @@
                 <div class="prodocu-integrate-card">
                   <div class="prodocu-integrate-title">Integrate With</div>
                   <div class="prodocu-integrate-grid">
-                    <a href="../integrations/zoho/" class="prodocu-int-tile" title="Zoho">
-                      <img src="../assets/images/integrations/zoho.png" alt="Zoho" width="38" height="20">
+                    <a href="../../integrations/zoho/" class="prodocu-int-tile" title="Zoho">
+                      <img src="../../assets/images/integrations/zoho.png" alt="Zoho" width="38" height="20">
                     </a>
-                    <a href="../integrations/google-sheets/" class="prodocu-int-tile" title="Google Sheets">
-                      <img src="../assets/images/integrations/google-sheet.png" alt="Google Sheets" width="28" height="32">
+                    <a href="../../integrations/google-sheets/" class="prodocu-int-tile" title="Google Sheets">
+                      <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets" width="28" height="32">
                     </a>
-                    <a href="../integrations/shopify/" class="prodocu-int-tile" title="Shopify">
-                      <img src="../assets/images/integrations/shopify.png" alt="Shopify" width="32" height="32">
+                    <a href="../../integrations/shopify/" class="prodocu-int-tile" title="Shopify">
+                      <img src="../../assets/images/integrations/shopify.png" alt="Shopify" width="32" height="32">
                     </a>
-                    <a href="../integrations/woocommerce/" class="prodocu-int-tile" title="WooCommerce">
-                      <img src="../assets/images/integrations/woocommerce.png" alt="WooCommerce" width="38" height="24">
+                    <a href="../../integrations/woocommerce/" class="prodocu-int-tile" title="WooCommerce">
+                      <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce" width="38" height="24">
                     </a>
-                    <a href="../integrations/wortal/" class="prodocu-int-tile" title="Wortal">
-                      <img src="../assets/images/integrations/wortal.png" alt="Wortal" width="32" height="32">
+                    <a href="../../integrations/wortal/" class="prodocu-int-tile" title="Wortal">
+                      <img src="../../assets/images/integrations/wortal.png" alt="Wortal" width="32" height="32">
                     </a>
-                    <a href="../integrations/" class="prodocu-int-tile" title="GoTab">
-                      <img src="../assets/images/integrations/gotab.png" alt="GoTab" width="38" height="20">
+                    <a href="../../integrations/" class="prodocu-int-tile" title="GoTab">
+                      <img src="../../assets/images/integrations/gotab.png" alt="GoTab" width="38" height="20">
                     </a>
-                    <a href="../integrations/shiprocket/" class="prodocu-int-tile" title="Shiprocket">
-                      <img src="../assets/images/integrations/shiprocket.png" alt="Shiprocket" width="30" height="30">
+                    <a href="../../integrations/shiprocket/" class="prodocu-int-tile" title="Shiprocket">
+                      <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket" width="30" height="30">
                     </a>
                     <div class="prodocu-int-arrow-tile">
-                      <a href="../integrations/" class="prodocu-int-arrow" title="View All Integrations">
+                      <a href="../../integrations/" class="prodocu-int-arrow" title="View All Integrations">
                         <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/></svg>
                       </a>
                     </div>
@@ -3364,25 +3401,25 @@
                 <div class="mega-industry-grid">
                   <!-- Column 1 -->
                   <div class="mega-ind-col">
-                    <a href="../industry/bfsi/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/bfsi/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-bfsi">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg>
                       </span>
                       <span class="mega-ind-title">Banking &amp; Finance</span>
                     </a>
-                    <a href="../industry/healthcare/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/healthcare/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-healthcare">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg>
                       </span>
                       <span class="mega-ind-title">Health &amp; Wellness</span>
                     </a>
-                    <a href="../industry/retail-and-ecommerce/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/retail-and-ecommerce/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-retail">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg>
                       </span>
                       <span class="mega-ind-title">Retail &amp; E-commerce</span>
                     </a>
-                    <a href="../industry/travel-and-hospitality/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/travel-and-hospitality/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-travel">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg>
                       </span>
@@ -3392,25 +3429,25 @@
 
                   <!-- Column 2 -->
                   <div class="mega-ind-col">
-                    <a href="../industry/education-and-social-impacts/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/education-and-social-impacts/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-education">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
                       </span>
                       <span class="mega-ind-title">Education &amp; Social Impacts</span>
                     </a>
-                    <a href="../industry/communication-and-it/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/communication-and-it/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-it">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg>
                       </span>
                       <span class="mega-ind-title">Communication &amp; IT</span>
                     </a>
-                    <a href="../industry/food-and-beverages/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/food-and-beverages/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-food">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
                       </span>
                       <span class="mega-ind-title">Food &amp; Beverage</span>
                     </a>
-                    <a href="../industry/advertising-and-events/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/advertising-and-events/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-events">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
                       </span>
@@ -3420,25 +3457,25 @@
 
                   <!-- Column 3 -->
                   <div class="mega-ind-col">
-                    <a href="../industry/construction-and-real-estate/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/construction-and-real-estate/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-realestate">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg>
                       </span>
                       <span class="mega-ind-title">Construction &amp; Real Estate</span>
                     </a>
-                    <a href="../industry/automobiles-and-transport/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/automobiles-and-transport/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-auto">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
                       </span>
                       <span class="mega-ind-title">Automobiles &amp; Transport</span>
                     </a>
-                    <a href="../industry/government-and-utilities/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/government-and-utilities/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-gov">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg>
                       </span>
                       <span class="mega-ind-title">Government &amp; Utilities</span>
                     </a>
-                    <a href="../industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
+                    <a href="../../industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
                       <span class="mega-ind-icon sol-icon-manufacturing">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg>
                       </span>
@@ -3453,7 +3490,7 @@
                 <span class="mega-leads-badge">12 CATEGORIES</span>
                 <h3 class="mega-leads-title">Business Leads Directory</h3>
                 <p class="mega-leads-desc">Explore all 12 category-wise verified business datasets &amp; WhatsApp workflows.</p>
-                <a href="../business-leads/" class="btn-mega-leads-primary">Browse All 12 Categories</a>
+                <a href="../../business-leads/" class="btn-mega-leads-primary">Browse All 12 Categories</a>
                 <button type="button" class="btn-mega-leads-secondary btn-demo-open" onclick="if(window.openDemoModal) window.openDemoModal(); else window.location.href='/#contact-section';">+ Custom Data Request</button>
               </div>
             </div>
@@ -3467,7 +3504,7 @@
               <div class="mega-resources-main">
                 <div class="mega-resources-heading">Knowledge &amp; Developer Hub</div>
                 <div class="mega-resources-grid">
-                  <a href="../resources/blog/" class="mega-res-link" role="menuitem">
+                  <a href="../../resources/blog/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-indigo">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                     </div>
@@ -3477,7 +3514,7 @@
                     </div>
                   </a>
 
-                  <a href="../resources/help-center/" class="mega-res-link" role="menuitem">
+                  <a href="../../resources/help-center/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-purple">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
                     </div>
@@ -3487,7 +3524,7 @@
                     </div>
                   </a>
 
-                  <a href="../resources/case-studies/" class="mega-res-link" role="menuitem">
+                  <a href="../../resources/case-studies/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-amber">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/><path d="M18 14.66V17c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2v12.66"/></svg>
                     </div>
@@ -3497,7 +3534,7 @@
                     </div>
                   </a>
 
-                  <a href="../resources/documentation/" class="mega-res-link" role="menuitem">
+                  <a href="../../resources/documentation/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-blue">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                     </div>
@@ -3507,7 +3544,7 @@
                     </div>
                   </a>
 
-                  <a href="../resources/templates/" class="mega-res-link" role="menuitem">
+                  <a href="../../resources/templates/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-green">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                     </div>
@@ -3517,7 +3554,7 @@
                     </div>
                   </a>
 
-                  <a href="../integrations/api-webhooks/" class="mega-res-link" role="menuitem">
+                  <a href="../../integrations/api-webhooks/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-cyan">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
@@ -3534,7 +3571,7 @@
                 <span class="mega-res-badge">SUPPORT &amp; ONBOARDING</span>
                 <h4 class="mega-res-title">Need 1-on-1 Help?</h4>
                 <p class="mega-res-desc">Our WhatsApp API architects help you setup flows, Meta Cloud API verification, and CRM integrations.</p>
-                <a href="../contact/" class="btn-mega-res-primary">Talk to Support &rarr;</a>
+                <a href="../../contact/" class="btn-mega-res-primary">Talk to Support &rarr;</a>
                 <button type="button" class="btn-mega-res-secondary" onclick="if(window.openDemoModal) window.openDemoModal(); else window.location.href='/#contact-section';">Schedule Free Demo</button>
               </div>
             </div>
@@ -3552,7 +3589,7 @@
               <div class="mega-partners-main">
                 <div class="mega-partners-heading">Partner Programs</div>
                 <div class="mega-partners-grid">
-                  <a href="../partners/affiliate/" class="mega-part-link" role="menuitem">
+                  <a href="../../partners/affiliate/" class="mega-part-link" role="menuitem">
                     <div class="part-icon-wrap part-icon-purple">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </div>
@@ -3562,7 +3599,7 @@
                     </div>
                   </a>
 
-                  <a href="../partners/agency/" class="mega-part-link" role="menuitem">
+                  <a href="../../partners/agency/" class="mega-part-link" role="menuitem">
                     <div class="part-icon-wrap part-icon-blue">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
@@ -3572,7 +3609,7 @@
                     </div>
                   </a>
 
-                  <a href="../partners/white-label/" class="mega-part-link" role="menuitem">
+                  <a href="../../partners/white-label/" class="mega-part-link" role="menuitem">
                     <div class="part-icon-wrap part-icon-green">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
                     </div>
@@ -3582,7 +3619,7 @@
                     </div>
                   </a>
 
-                  <a href="../partners/technology/" class="mega-part-link" role="menuitem">
+                  <a href="../../partners/technology/" class="mega-part-link" role="menuitem">
                     <div class="part-icon-wrap part-icon-pink">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
                     </div>
@@ -3592,7 +3629,7 @@
                     </div>
                   </a>
 
-                  <a href="../company/careers/" class="mega-part-link mega-part-link-careers" role="menuitem" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(16,185,129,0.06));border:1px dashed rgba(99,102,241,0.3);">
+                  <a href="../../company/careers/" class="mega-part-link mega-part-link-careers" role="menuitem" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(16,185,129,0.06));border:1px dashed rgba(99,102,241,0.3);">
                     <div class="part-icon-wrap" style="background:rgba(99,102,241,0.14);color:#4F46E5;">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
                     </div>
@@ -3609,7 +3646,7 @@
                 <span class="mega-part-badge">GLOBAL ECOSYSTEM</span>
                 <h4 class="mega-part-title">Partner With HelloBotz</h4>
                 <p class="mega-part-desc">Join 150+ global agencies &amp; tech partners driving millions of WhatsApp messages monthly.</p>
-                <a href="../partners/" class="btn-mega-part-primary">Explore Partner Program &rarr;</a>
+                <a href="../../partners/" class="btn-mega-part-primary">Explore Partner Program &rarr;</a>
                 <a href="/assets/downloads/hellobotz-partner-brochure.pdf" download="HelloBotz-Partner-Brochure.pdf" class="mega-part-brochure-link">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                   Partner Brochure (PDF)
@@ -3643,12 +3680,14 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="../contact/" class="header-login header-btn-outline" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
+        <a href="../../contact/" class="header-sales-link" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
           <span>Contact Sales</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
-        <a href="../auth/register" class="header-cta-start header-btn-primary">
-          <span>Log in / Sign up</span>
+        <a href="../../auth/login" class="header-login header-btn-outline">
+          <span>Login</span>
+        </a>
+        <a href="../../auth/register" class="header-cta-start header-btn-primary">
+          <span>Sign Up</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
         <button type="button" class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -3660,9 +3699,9 @@
     <div class="mobile-backdrop"></div>
     <div class="mobile-drawer">
       <div class="mobile-drawer-header">
-        <a href="../" class="logo" aria-label="HelloBotz Home">
-          <img src="../assets/images/logo-light.png" alt="HelloBotz" class="logo-img logo-img-light" width="150" height="48">
-          <img src="../assets/images/logo-dark.png" alt="HelloBotz" class="logo-img logo-img-dark" width="150" height="48">
+        <a href="../../" class="logo" aria-label="HelloBotz Home">
+          <img src="../../assets/images/logo-light.png" alt="HelloBotz" class="logo-img logo-img-light" width="150" height="48">
+          <img src="../../assets/images/logo-dark.png" alt="HelloBotz" class="logo-img logo-img-dark" width="150" height="48">
         </a>
         <button type="button" class="mobile-close btn btn-icon btn-ghost" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
       </div>
@@ -3676,7 +3715,7 @@
               <!-- Channels Section -->
               <div class="prodocu-mob-section-title">CHANNELS</div>
               <div class="prodocu-mob-chan-grid">
-                <a href="../channel/whatsapp/" class="prodocu-mob-chan-card" title="WhatsApp Channel">
+                <a href="../../channel/whatsapp/" class="prodocu-mob-chan-card" title="WhatsApp Channel">
                   <span class="chan-icon-wrap chan-wa">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                       <circle cx="12" cy="12" r="12" fill="#25D366"/>
@@ -3685,7 +3724,7 @@
                   </span>
                   <span>WhatsApp</span>
                 </a>
-                <a href="../channel/instagram/" class="prodocu-mob-chan-card" title="Instagram Channel">
+                <a href="../../channel/instagram/" class="prodocu-mob-chan-card" title="Instagram Channel">
                   <span class="chan-icon-wrap chan-ig">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                       <defs>
@@ -3705,7 +3744,7 @@
                   </span>
                   <span>Instagram</span>
                 </a>
-                <a href="../channel/facebook/" class="prodocu-mob-chan-card" title="Facebook Channel">
+                <a href="../../channel/facebook/" class="prodocu-mob-chan-card" title="Facebook Channel">
                   <span class="chan-icon-wrap chan-fb">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                       <circle cx="12" cy="12" r="12" fill="#1877F2"/>
@@ -3714,7 +3753,7 @@
                   </span>
                   <span>Facebook</span>
                 </a>
-                <a href="../channel/telegram/" class="prodocu-mob-chan-card" title="Telegram Channel">
+                <a href="../../channel/telegram/" class="prodocu-mob-chan-card" title="Telegram Channel">
                   <span class="chan-icon-wrap chan-tg">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
                       <defs>
@@ -3732,7 +3771,7 @@
               </div>
               <div class="prodocu-mob-partner-wrap">
                 <div class="prodocu-partner-pill">
-                  <img src="../assets/images/integrations/official-meta-partner.png" alt="Meta Official Partner" width="145" height="21">
+                  <img src="../../assets/images/integrations/official-meta-partner.png" alt="Meta Official Partner" width="145" height="21">
                 </div>
               </div>
 
@@ -3741,7 +3780,7 @@
               <!-- Marketing Section -->
               <div class="prodocu-mob-section-title">MARKETING</div>
               <div class="prodocu-mob-items-col">
-                <a href="../products/broadcast/" class="prodocu-mob-item">
+                <a href="../../products/broadcast/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-broadcast">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
                   </div>
@@ -3750,7 +3789,7 @@
                     <span class="prodocu-item-desc">Send bulk messages</span>
                   </div>
                 </a>
-                <a href="../products/ctwa/" class="prodocu-mob-item">
+                <a href="../../products/ctwa/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-ctwa">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M10 8l4 4-2 1 1 3-4-4 2-1-1-3z" fill="currentColor"/></svg>
                   </div>
@@ -3759,7 +3798,7 @@
                     <span class="prodocu-item-desc">Click to WhatsApp ads</span>
                   </div>
                 </a>
-                <a href="../products/automation/" class="prodocu-mob-item">
+                <a href="../../products/automation/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-drip">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                   </div>
@@ -3768,7 +3807,7 @@
                     <span class="prodocu-item-desc">Automated sequences</span>
                   </div>
                 </a>
-                <a href="../products/catalog/" class="prodocu-mob-item">
+                <a href="../../products/catalog/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-catalog">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                   </div>
@@ -3777,7 +3816,7 @@
                     <span class="prodocu-item-desc">Showcase products</span>
                   </div>
                 </a>
-                <a href="../products/whatsapp-form/" class="prodocu-mob-item">
+                <a href="../../products/whatsapp-form/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-form">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h6"/></svg>
                   </div>
@@ -3786,7 +3825,7 @@
                     <span class="prodocu-item-desc">Interactive forms</span>
                   </div>
                 </a>
-                <a href="../products/whatsapp-blue-tick/" class="prodocu-mob-item">
+                <a href="../../products/whatsapp-blue-tick/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-bluetick">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 2.6 3.5-.4 1.2 3.3 3.3 1.2-.4 3.5 2.6 2.4-2.6 2.4.4 3.5-3.3 1.2-1.2 3.3-3.5-.4L12 22l-2.4-2.6-3.5.4-1.2-3.3-3.3-1.2.4-3.5L2 12l2.6-2.4-.4-3.5 3.3-1.2 1.2-3.3 3.5.4z" fill="currentColor" fill-opacity="0.15"/><polyline points="9 12 11 14 15 10"/></svg>
                   </div>
@@ -3802,7 +3841,7 @@
               <!-- Sales Section -->
               <div class="prodocu-mob-section-title">SALES</div>
               <div class="prodocu-mob-items-col">
-                <a href="../products/chatbot/" class="prodocu-mob-item">
+                <a href="../../products/chatbot/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-chatbot">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="4"/><path d="M12 2v6"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
                   </div>
@@ -3811,7 +3850,7 @@
                     <span class="prodocu-item-desc">Automate conversations</span>
                   </div>
                 </a>
-                <a href="../products/whatsapp-payments/" class="prodocu-mob-item">
+                <a href="../../products/whatsapp-payments/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-payment">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
                   </div>
@@ -3820,7 +3859,7 @@
                     <span class="prodocu-item-desc">Accept payments</span>
                   </div>
                 </a>
-                <a href="../products/catalog/" class="prodocu-mob-item">
+                <a href="../../products/catalog/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-catalog-sales">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
                   </div>
@@ -3829,7 +3868,7 @@
                     <span class="prodocu-item-desc">Display products</span>
                   </div>
                 </a>
-                <a href="../products/whatsapp-interactive-messages/" class="prodocu-mob-item">
+                <a href="../../products/whatsapp-interactive-messages/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-interactive">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="18" cy="5" r="2.5" fill="currentColor"/></svg>
                   </div>
@@ -3845,7 +3884,7 @@
               <!-- Support Section -->
               <div class="prodocu-mob-section-title">SUPPORT</div>
               <div class="prodocu-mob-items-col">
-                <a href="../products/shared-inbox/" class="prodocu-mob-item">
+                <a href="../../products/shared-inbox/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-inbox">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h4"/></svg>
                   </div>
@@ -3854,7 +3893,7 @@
                     <span class="prodocu-item-desc">Unified conversations</span>
                   </div>
                 </a>
-                <a href="../products/ai-agent/" class="prodocu-mob-item">
+                <a href="../../products/ai-agent/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-ai-agent">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9a2 2 0 0 0 1.2 1.2L20 11l-4.9 1.9a2 2 0 0 0-1.2 1.2L12 19l-1.9-4.9a2 2 0 0 0-1.2-1.2L4 11l4.9-1.9a2 2 0 0 0 1.2-1.2L12 3z"/><path d="M19 3l.6 1.4a1 1 0 0 0 .6.6L21.6 5.6l-1.4.6a1 1 0 0 0-.6.6L19 8.2l-.6-1.4a1 1 0 0 0-.6-.6L16.4 5.6l1.4-.6a1 1 0 0 0 .6-.6L19 3z"/></svg>
                   </div>
@@ -3863,7 +3902,7 @@
                     <span class="prodocu-item-desc">Smart responses</span>
                   </div>
                 </a>
-                <a href="../solutions/feedback-surveys/" class="prodocu-mob-item">
+                <a href="../../solutions/feedback-surveys/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-feedback">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   </div>
@@ -3872,7 +3911,7 @@
                     <span class="prodocu-item-desc">Gather insights</span>
                   </div>
                 </a>
-                <a href="../products/analytics/" class="prodocu-mob-item">
+                <a href="../../products/analytics/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-analytics">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                   </div>
@@ -3888,42 +3927,42 @@
               <!-- Integrate With Section -->
               <div class="prodocu-mob-section-title">INTEGRATE WITH</div>
               <div class="prodocu-mob-integrate-grid">
-                <a href="../integrations/zoho/" class="prodocu-mob-int-tile" title="Zoho">
+                <a href="../../integrations/zoho/" class="prodocu-mob-int-tile" title="Zoho">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/zoho.png" alt="Zoho">
+                    <img src="../../assets/images/integrations/zoho.png" alt="Zoho">
                   </div>
                 </a>
-                <a href="../integrations/google-sheets/" class="prodocu-mob-int-tile" title="Google Sheets">
+                <a href="../../integrations/google-sheets/" class="prodocu-mob-int-tile" title="Google Sheets">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/google-sheet.png" alt="Google Sheets">
+                    <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets">
                   </div>
                 </a>
-                <a href="../integrations/shopify/" class="prodocu-mob-int-tile" title="Shopify">
+                <a href="../../integrations/shopify/" class="prodocu-mob-int-tile" title="Shopify">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/shopify.png" alt="Shopify">
+                    <img src="../../assets/images/integrations/shopify.png" alt="Shopify">
                   </div>
                 </a>
-                <a href="../integrations/woocommerce/" class="prodocu-mob-int-tile" title="WooCommerce">
+                <a href="../../integrations/woocommerce/" class="prodocu-mob-int-tile" title="WooCommerce">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/woocommerce.png" alt="WooCommerce">
+                    <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce">
                   </div>
                 </a>
-                <a href="../integrations/wortal/" class="prodocu-mob-int-tile" title="Wortal">
+                <a href="../../integrations/wortal/" class="prodocu-mob-int-tile" title="Wortal">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/wortal.png" alt="Wortal">
+                    <img src="../../assets/images/integrations/wortal.png" alt="Wortal">
                   </div>
                 </a>
-                <a href="../integrations/" class="prodocu-mob-int-tile" title="GoTab">
+                <a href="../../integrations/" class="prodocu-mob-int-tile" title="GoTab">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/gotab.png" alt="GoTab">
+                    <img src="../../assets/images/integrations/gotab.png" alt="GoTab">
                   </div>
                 </a>
-                <a href="../integrations/shiprocket/" class="prodocu-mob-int-tile" title="Shiprocket">
+                <a href="../../integrations/shiprocket/" class="prodocu-mob-int-tile" title="Shiprocket">
                   <div class="int-inner-card">
-                    <img src="../assets/images/integrations/shiprocket.png" alt="Shiprocket">
+                    <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket">
                   </div>
                 </a>
-                <a href="../integrations/" class="prodocu-mob-int-tile tile-arrow" title="View All Integrations">
+                <a href="../../integrations/" class="prodocu-mob-int-tile tile-arrow" title="View All Integrations">
                   <div class="arrow-circle">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </div>
@@ -3937,21 +3976,21 @@
           <button type="button" class="mobile-nav-link">Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 6px;border-bottom:1px solid #f1f5f9;margin-bottom:6px;">By Industry</div>
-            <a href="../industry/bfsi/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-bfsi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg></span> Banking &amp; Finance</a>
-            <a href="../industry/healthcare/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-healthcare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg></span> Health &amp; Wellness</a>
-            <a href="../industry/retail-and-ecommerce/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-retail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg></span> Retail &amp; E-commerce</a>
-            <a href="../industry/travel-and-hospitality/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-travel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg></span> Travel &amp; Hospitality</a>
-            <a href="../industry/education-and-social-impacts/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span> Education &amp; Social Impacts</a>
-            <a href="../industry/communication-and-it/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg></span> Communication &amp; IT</a>
-            <a href="../industry/food-and-beverages/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span> Food &amp; Beverage</a>
-            <a href="../industry/advertising-and-events/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg></span> Advertising &amp; Events</a>
-            <a href="../industry/construction-and-real-estate/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-realestate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg></span> Construction &amp; Real Estate</a>
-            <a href="../industry/automobiles-and-transport/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span> Automobiles &amp; Transport</a>
-            <a href="../industry/government-and-utilities/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg></span> Government &amp; Utilities</a>
-            <a href="../industry/manufacturing-and-supply/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-manufacturing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg></span> Manufacturing &amp; Supply</a>
+            <a href="../../industry/bfsi/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-bfsi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg></span> Banking &amp; Finance</a>
+            <a href="../../industry/healthcare/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-healthcare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg></span> Health &amp; Wellness</a>
+            <a href="../../industry/retail-and-ecommerce/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-retail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg></span> Retail &amp; E-commerce</a>
+            <a href="../../industry/travel-and-hospitality/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-travel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg></span> Travel &amp; Hospitality</a>
+            <a href="../../industry/education-and-social-impacts/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span> Education &amp; Social Impacts</a>
+            <a href="../../industry/communication-and-it/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg></span> Communication &amp; IT</a>
+            <a href="../../industry/food-and-beverages/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span> Food &amp; Beverage</a>
+            <a href="../../industry/advertising-and-events/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg></span> Advertising &amp; Events</a>
+            <a href="../../industry/construction-and-real-estate/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-realestate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg></span> Construction &amp; Real Estate</a>
+            <a href="../../industry/automobiles-and-transport/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span> Automobiles &amp; Transport</a>
+            <a href="../../industry/government-and-utilities/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg></span> Government &amp; Utilities</a>
+            <a href="../../industry/manufacturing-and-supply/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-manufacturing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg></span> Manufacturing &amp; Supply</a>
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Business Leads</div>
-            <a href="../business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 12 Leads Categories &rarr;</a>
-            <a href="../solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
+            <a href="../../business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 12 Leads Categories &rarr;</a>
+            <a href="../../solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
           </div></div>
         </div>
         <!-- 3. RESOURCES ACCORDION -->
@@ -3959,14 +3998,14 @@
           <button type="button" class="mobile-nav-link">Resources <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:6px 0 2px;border-bottom:1px solid #f1f5f9;">Knowledge &amp; Guides</div>
-            <a href="../resources/blog/">Blog &amp; Insights <span style="font-size:11px;color:#64748B;display:block;">WhatsApp tips &amp; guides</span></a>
-            <a href="../resources/case-studies/">Case Studies <span style="font-size:11px;color:#64748B;display:block;">Customer results &amp; ROI</span></a>
-            <a href="../resources/templates/">Message Templates <span style="font-size:11px;color:#64748B;display:block;">Pre-approved broadcast copies</span></a>
+            <a href="../../resources/blog/">Blog &amp; Insights <span style="font-size:11px;color:#64748B;display:block;">WhatsApp tips &amp; guides</span></a>
+            <a href="../../resources/case-studies/">Case Studies <span style="font-size:11px;color:#64748B;display:block;">Customer results &amp; ROI</span></a>
+            <a href="../../resources/templates/">Message Templates <span style="font-size:11px;color:#64748B;display:block;">Pre-approved broadcast copies</span></a>
 
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Developers &amp; Support</div>
-            <a href="../resources/help-center/">Help Center <span style="font-size:11px;color:#64748B;display:block;">FAQs, onboarding &amp; guides</span></a>
-            <a href="../resources/documentation/">Documentation <span style="font-size:11px;color:#64748B;display:block;">Platform manuals &amp; tutorials</span></a>
-            <a href="../integrations/api-webhooks/">API Docs &amp; Webhooks <span style="font-size:11px;color:#64748B;display:block;">Developer REST &amp; webhooks</span></a>
+            <a href="../../resources/help-center/">Help Center <span style="font-size:11px;color:#64748B;display:block;">FAQs, onboarding &amp; guides</span></a>
+            <a href="../../resources/documentation/">Documentation <span style="font-size:11px;color:#64748B;display:block;">Platform manuals &amp; tutorials</span></a>
+            <a href="../../integrations/api-webhooks/">API Docs &amp; Webhooks <span style="font-size:11px;color:#64748B;display:block;">Developer REST &amp; webhooks</span></a>
           </div></div>
         </div>
 
@@ -3978,13 +4017,13 @@
           <button type="button" class="mobile-nav-link">Partners <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:6px 0 2px;border-bottom:1px solid #f1f5f9;">Partner Programs</div>
-            <a href="../partners/affiliate/">Affiliate Partner <span style="font-size:11px;color:#64748B;display:block;">Refer &amp; earn 20% recurring</span></a>
-            <a href="../partners/agency/">Agency Partner <span style="font-size:11px;color:#64748B;display:block;">Serve your clients (40% margin)</span></a>
-            <a href="../partners/white-label/">White Label Partner <span style="font-size:11px;color:#64748B;display:block;">Your brand &amp; domain (50% rev-share)</span></a>
-            <a href="../partners/technology/">Technology Partner <span style="font-size:11px;color:#64748B;display:block;">Build integrations</span></a>
-            <a href="../company/careers/" style="font-weight:700;color:#4F46E5;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 10px;margin-top:6px;background:rgba(99,102,241,0.08);border-radius:8px;border:1px solid rgba(99,102,241,0.2);"><span>🚀 Careers</span> <span style="font-size:10px;font-weight:700;background:#4F46E5;color:#fff;padding:2px 8px;border-radius:12px;letter-spacing:.02em;">We're Hiring</span></a>
+            <a href="../../partners/affiliate/">Affiliate Partner <span style="font-size:11px;color:#64748B;display:block;">Refer &amp; earn 20% recurring</span></a>
+            <a href="../../partners/agency/">Agency Partner <span style="font-size:11px;color:#64748B;display:block;">Serve your clients (40% margin)</span></a>
+            <a href="../../partners/white-label/">White Label Partner <span style="font-size:11px;color:#64748B;display:block;">Your brand &amp; domain (50% rev-share)</span></a>
+            <a href="../../partners/technology/">Technology Partner <span style="font-size:11px;color:#64748B;display:block;">Build integrations</span></a>
+            <a href="../../company/careers/" style="font-weight:700;color:#4F46E5;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 10px;margin-top:6px;background:rgba(99,102,241,0.08);border-radius:8px;border:1px solid rgba(99,102,241,0.2);"><span>🚀 Careers</span> <span style="font-size:10px;font-weight:700;background:#4F46E5;color:#fff;padding:2px 8px;border-radius:12px;letter-spacing:.02em;">We're Hiring</span></a>
             <a href="/assets/downloads/hellobotz-partner-brochure.pdf" download="HelloBotz-Partner-Brochure.pdf" style="font-weight:700;color:#6D28D9;display:flex;align-items:center;gap:6px;padding:6px 0;">📄 Download Partner Brochure</a>
-            <a href="../partners/" style="font-weight:700;color:#034737;display:flex;align-items:center;gap:4px;padding:6px 0;">Join Partner Program &rarr;</a>
+            <a href="../../partners/" style="font-weight:700;color:#034737;display:flex;align-items:center;gap:4px;padding:6px 0;">Join Partner Program &rarr;</a>
           </div></div>
         </div>
         <div class="mobile-theme-section">
@@ -4018,8 +4057,9 @@
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="../contact/" class="mnav-login" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
-          <a href="../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Log in / Sign up &rarr;</a>
+          <a href="../../contact/" class="mnav-demo btn-demo-open" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
+          <a href="../../auth/login" class="mnav-login">Login &rarr;</a>
+          <a href="../../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>
       </div>
     </div>
@@ -4144,7 +4184,7 @@
     })();
   </script>
   <main id="main">
-<link rel="stylesheet" href="../assets/css/auth-flip.css">
+<link rel="stylesheet" href="../../assets/css/auth-flip.css">
 
 <section class="auth-flip-section">
   <!-- Ambient background glow elements -->
@@ -4199,7 +4239,7 @@
             <div class="auth-form-group">
               <div class="auth-label-row">
                 <label class="auth-label" for="login-pass">Password</label>
-                <a href="../auth/forgot-password" class="auth-forgot-link">Forgot password?</a>
+                <a href="../../auth/forgot-password" class="auth-forgot-link">Forgot password?</a>
               </div>
               <div class="auth-input-wrap">
                 <span class="auth-input-icon">
@@ -4318,7 +4358,7 @@
             <div class="auth-form-group">
               <label class="auth-checkbox-wrap">
                 <input type="checkbox" name="terms" required checked>
-                <span>I agree to the <a href="../terms/" target="_blank">Terms</a> &amp; <a href="../privacy/" target="_blank">Privacy Policy</a></span>
+                <span>I agree to the <a href="../../terms/" target="_blank">Terms</a> &amp; <a href="../../privacy/" target="_blank">Privacy Policy</a></span>
               </label>
             </div>
 
@@ -4653,7 +4693,7 @@ function handleSignupSubmit(e) {
     overflow: hidden;
     padding: 6rem 0 6.5rem;
     background-color: #080D1A;
-    background-image: linear-gradient(180deg, rgba(8, 13, 26, 0.78) 0%, rgba(11, 18, 36, 0.68) 50%, rgba(8, 13, 26, 0.94) 100%), url('../assets/images/contact-bg.jpg');
+    background-image: linear-gradient(180deg, rgba(8, 13, 26, 0.78) 0%, rgba(11, 18, 36, 0.68) 50%, rgba(8, 13, 26, 0.94) 100%), url('../../assets/images/contact-bg.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -5311,7 +5351,7 @@ function handleSignupSubmit(e) {
   <section class="footer-contact-section" id="contact-section">
     <!-- High-Resolution Tech Background Visual with Kinetic Motion -->
     <div class="contact-bg-media-wrap" aria-hidden="true">
-      <div class="contact-bg-image-layer" style="background-image: url('../assets/images/contact-bg.jpg');"></div>
+      <div class="contact-bg-image-layer" style="background-image: url('../../assets/images/contact-bg.jpg');"></div>
       <div class="contact-bg-overlay-grad"></div>
     </div>
 
@@ -5454,7 +5494,7 @@ function handleSignupSubmit(e) {
 
           <!-- Meta Tech Partner Badge -->
           <div class="contact-meta-card">
-            <img src="../assets/images/partners/meta-tech-partner.png" alt="Meta Tech Partner" width="120" height="60"
+            <img src="../../assets/images/partners/meta-tech-partner.png" alt="Meta Tech Partner" width="120" height="60"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="meta-ph" style="display:none">Meta<br>Tech Partner</div>
             <div>
@@ -5543,10 +5583,10 @@ function handleSignupSubmit(e) {
       <div class="footer-pro-layout">
         <!-- Column 1: Brand, Request Callback & Permanent Social Logos -->
         <div class="footer-brand-col">
-          <a href="../" class="logo" aria-label="HelloBotz Home">
-            <img src="../assets/images/logo-dark.png" alt="HelloBotz" class="logo-img" width="130" height="40" onerror="this.src='../assets/images/logo-footer.png'">
+          <a href="../../" class="logo" aria-label="HelloBotz Home">
+            <img src="../../assets/images/logo-dark.png" alt="HelloBotz" class="logo-img" width="130" height="40" onerror="this.src='../../assets/images/logo-footer.png'">
             <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
-              <img src="../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="HelloBotz">
+              <img src="../../assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="HelloBotz">
               <span style="font-weight:800;color:#fff">Hellobotz</span>
             </span>
           </a>
@@ -5580,12 +5620,12 @@ function handleSignupSubmit(e) {
         <div class="footer-nav-col">
           <div class="footer-heading">Important Links</div>
           <ul>
-            <li><a href="../channel/whatsapp/">WhatsApp Business API</a></li>
-            <li><a href="../products/chatbot/">AI Chatbot &amp; Automation</a></li>
-            <li><a href="../pricing/">Pricing Plans</a></li>
-            <li><a href="../partners/">Partner Program</a></li>
-            <li><a href="../company/about/">About HelloBotz</a></li>
-            <li><a href="../contact/">Contact Us</a></li>
+            <li><a href="../../channel/whatsapp/">WhatsApp Business API</a></li>
+            <li><a href="../../products/chatbot/">AI Chatbot &amp; Automation</a></li>
+            <li><a href="../../pricing/">Pricing Plans</a></li>
+            <li><a href="../../partners/">Partner Program</a></li>
+            <li><a href="../../company/about/">About HelloBotz</a></li>
+            <li><a href="../../contact/">Contact Us</a></li>
           </ul>
         </div>
 

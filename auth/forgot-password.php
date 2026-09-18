@@ -1,5 +1,7 @@
 <?php
-$basePath = '../';
+if (!isset($basePath)) {
+    $basePath = '../../';
+}
 $robots = 'noindex, nofollow';
 $pageTitle = 'Forgot Password';
 $pageDescription = 'Reset your HelloBotz account password.';
