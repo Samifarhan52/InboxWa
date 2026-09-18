@@ -1012,22 +1012,20 @@
       color: #034737 !important;
       font-weight: 600 !important;
     }
-    .prodocu-channel-item.active .prodocu-chan-icon {
-      color: #034737 !important;
-    }
     .prodocu-chan-icon {
-      width: 17px !important;
-      height: 17px !important;
+      width: 22px !important;
+      height: 22px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
-      color: #4b5563 !important;
+      border-radius: 5px !important;
     }
     .prodocu-chan-icon svg {
-      width: 16px !important;
-      height: 16px !important;
+      width: 22px !important;
+      height: 22px !important;
       display: block !important;
+      border-radius: 5px !important;
     }
 
     .prodocu-partner-badge {
@@ -1088,9 +1086,9 @@
 
     .prodocu-item {
       display: flex !important;
-      align-items: flex-start !important;
+      align-items: center !important;
       gap: 10px !important;
-      padding: 2px 0 !important;
+      padding: 3px 0 !important;
       text-decoration: none !important;
       background: transparent !important;
       border: none !important;
@@ -1101,28 +1099,110 @@
     }
 
     .prodocu-item-icon {
-      width: 18px !important;
-      height: 18px !important;
+      width: 28px !important;
+      height: 28px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
-      margin-top: 1px !important;
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      color: #4b5563 !important;
-      transition: color 0.15s ease !important;
+      border-radius: 7px !important;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease !important;
     }
 
-    .prodocu-item:hover .prodocu-item-icon {
-      color: #034737 !important;
+    .prodocu-item:hover .prodocu-item-icon,
+    .prodocu-mob-item:hover .prodocu-item-icon {
+      transform: scale(1.12) translateY(-1px) !important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
     }
 
     .prodocu-item-icon svg {
-      width: 17px !important;
-      height: 17px !important;
+      width: 16px !important;
+      height: 16px !important;
       flex-shrink: 0 !important;
+      display: block !important;
+    }
+
+    /* Vibrant SaaS feature icon badges */
+    .pro-icon-broadcast { background: #F3E8FF !important; color: #7C3AED !important; }
+    .pro-icon-ctwa { background: #DCFCE7 !important; color: #16A34A !important; }
+    .pro-icon-drip { background: #DBEAFE !important; color: #2563EB !important; }
+    .pro-icon-catalog { background: #FFEDD5 !important; color: #EA580C !important; }
+    .pro-icon-form { background: #CCFBF1 !important; color: #0D9488 !important; }
+    .pro-icon-bluetick { background: #E0F2FE !important; color: #0284C7 !important; }
+
+    .pro-icon-chatbot { background: #EEF2FF !important; color: #6366F1 !important; }
+    .pro-icon-payment { background: #D1FAE5 !important; color: #059669 !important; }
+    .pro-icon-catalog-sales { background: #FEF3C7 !important; color: #D97706 !important; }
+    .pro-icon-interactive { background: #FFE4E6 !important; color: #E11D48 !important; }
+
+    .pro-icon-inbox { background: #E0E7FF !important; color: #3730A3 !important; }
+    .pro-icon-ai-agent { background: #F5F3FF !important; color: #9333EA !important; }
+    .pro-icon-feedback { background: #FEF3C7 !important; color: #D97706 !important; }
+    .pro-icon-analytics { background: #CFFAFE !important; color: #0891B2 !important; }
+
+    html[data-theme="dark"] .pro-icon-broadcast { background: rgba(124, 58, 237, 0.22) !important; color: #C4B5FD !important; }
+    html[data-theme="dark"] .pro-icon-ctwa { background: rgba(22, 163, 74, 0.22) !important; color: #86EFAC !important; }
+    html[data-theme="dark"] .pro-icon-drip { background: rgba(37, 99, 235, 0.22) !important; color: #93C5FD !important; }
+    html[data-theme="dark"] .pro-icon-catalog { background: rgba(234, 88, 12, 0.22) !important; color: #FDBA74 !important; }
+    html[data-theme="dark"] .pro-icon-form { background: rgba(13, 148, 136, 0.22) !important; color: #5EEAD4 !important; }
+    html[data-theme="dark"] .pro-icon-bluetick { background: rgba(2, 132, 199, 0.22) !important; color: #7DD3FC !important; }
+    html[data-theme="dark"] .pro-icon-chatbot { background: rgba(99, 102, 241, 0.22) !important; color: #A5B4FC !important; }
+    html[data-theme="dark"] .pro-icon-payment { background: rgba(5, 150, 105, 0.22) !important; color: #6EE7B7 !important; }
+    html[data-theme="dark"] .pro-icon-catalog-sales { background: rgba(217, 119, 6, 0.22) !important; color: #FCD34D !important; }
+    html[data-theme="dark"] .pro-icon-interactive { background: rgba(225, 29, 72, 0.22) !important; color: #FDA4AF !important; }
+    html[data-theme="dark"] .pro-icon-inbox { background: rgba(55, 48, 163, 0.28) !important; color: #C7D2FE !important; }
+    html[data-theme="dark"] .pro-icon-ai-agent { background: rgba(147, 51, 234, 0.22) !important; color: #D8B4FE !important; }
+    html[data-theme="dark"] .pro-icon-feedback { background: rgba(217, 119, 6, 0.22) !important; color: #FDE68A !important; }
+    html[data-theme="dark"] .pro-icon-analytics { background: rgba(8, 145, 178, 0.22) !important; color: #67E8F9 !important; }
+
+    /* Dark theme text contrast for products mega menu */
+    html[data-theme="dark"] .prodocu-item-title,
+    body.dark-theme .prodocu-item-title {
+      color: #f1f5f9 !important;
+    }
+    html[data-theme="dark"] .prodocu-item:hover .prodocu-item-title,
+    body.dark-theme .prodocu-item:hover .prodocu-item-title,
+    html[data-theme="dark"] .prodocu-mob-item:hover .prodocu-item-title,
+    body.dark-theme .prodocu-mob-item:hover .prodocu-item-title {
+      color: #38ef7d !important;
+    }
+    html[data-theme="dark"] .prodocu-item-desc,
+    body.dark-theme .prodocu-item-desc {
+      color: #94a3b8 !important;
+    }
+    html[data-theme="dark"] .prodocu-section-title,
+    body.dark-theme .prodocu-section-title,
+    html[data-theme="dark"] .prodocu-col-heading,
+    body.dark-theme .prodocu-col-heading {
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="dark"] .prodocu-channel-item,
+    body.dark-theme .prodocu-channel-item {
+      color: #e2e8f0 !important;
+    }
+    html[data-theme="dark"] .prodocu-channel-item:hover,
+    body.dark-theme .prodocu-channel-item:hover {
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #ffffff !important;
+    }
+    html[data-theme="dark"] .prodocu-channel-item.active,
+    body.dark-theme .prodocu-channel-item.active {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: #ffffff !important;
+    }
+    html[data-theme="dark"] .prodocu-integrate-card,
+    body.dark-theme .prodocu-integrate-card {
+      background: rgba(255, 255, 255, 0.04) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    html[data-theme="dark"] .prodocu-integrate-title,
+    body.dark-theme .prodocu-integrate-title {
+      color: #e2e8f0 !important;
+    }
+    html[data-theme="dark"] .prodocu-int-tile,
+    body.dark-theme .prodocu-int-tile {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
     }
 
     .prodocu-item-content {
@@ -1291,17 +1371,20 @@
       color: #034737 !important;
     }
     .prodocu-mob-chan-card .chan-icon-wrap {
-      width: 18px !important;
-      height: 18px !important;
+      width: 22px !important;
+      height: 22px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
+      border-radius: 5px !important;
     }
-    .prodocu-mob-chan-card .chan-icon-wrap.chan-wa { color: #25d366 !important; }
-    .prodocu-mob-chan-card .chan-icon-wrap.chan-ig { color: #e1306c !important; }
-    .prodocu-mob-chan-card .chan-icon-wrap.chan-fb { color: #1877f2 !important; }
-    .prodocu-mob-chan-card .chan-icon-wrap.chan-tg { color: #0088cc !important; }
+    .prodocu-mob-chan-card .chan-icon-wrap svg {
+      width: 22px !important;
+      height: 22px !important;
+      display: block !important;
+      border-radius: 5px !important;
+    }
     .prodocu-mob-partner-wrap {
       display: flex !important;
       justify-content: flex-start !important;
@@ -2789,27 +2872,56 @@
               <div class="prodocu-col-channels">
                 <div class="prodocu-col-heading">Channels</div>
                 <div class="prodocu-channel-list">
-                  <a href="../../channel/whatsapp/" class="prodocu-channel-item active">
-                    <span class="prodocu-chan-icon" style="color:#25d366;">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.704 1.916.802 2.049c.098.133 1.39 2.1 3.43 2.972.48.207.854.33 1.145.424.481.152.92.13 1.267.079.387-.058 1.17-.478 1.336-.94.166-.462.166-.857.116-.94-.05-.083-.183-.133-.38-.233"/></svg>
+                  <a href="../../channel/whatsapp/" class="prodocu-channel-item active" title="WhatsApp Channel">
+                    <span class="prodocu-chan-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                        <circle cx="12" cy="12" r="12" fill="#25D366"/>
+                        <path d="M12.04 4C7.6 4 4 7.6 4 12.04c0 1.54.44 2.99 1.2 4.23L4 20l3.86-1.18c1.19.7 2.58 1.1 4.18 1.1 4.44 0 8.04-3.6 8.04-8.04 0-4.44-3.6-7.88-8.04-7.88zm4.73 11.23c-.2.56-1.17 1.07-1.63 1.14-.42.06-.97.09-2.77-.66-2.31-.96-3.8-3.32-3.91-3.48-.12-.15-.93-1.24-.93-2.36 0-1.12.59-1.67.8-1.9.21-.23.46-.29.62-.29.15 0 .31 0 .44.01.14.01.33-.05.51.39.19.45.65 1.58.71 1.7.06.11.1.25.02.4-.07.14-.11.24-.22.37-.12.13-.24.3-.35.4-.12.11-.24.23-.1.47.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.53-.06.14-.17.6-.7.76-.94.16-.24.32-.2.53-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.6-.14 1.15z" fill="#FFFFFF"/>
+                      </svg>
                     </span>
                     <span>WhatsApp</span>
                   </a>
-                  <a href="../../channel/instagram/" class="prodocu-channel-item">
+                  <a href="../../channel/instagram/" class="prodocu-channel-item" title="Instagram Channel">
                     <span class="prodocu-chan-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                        <defs>
+                          <radialGradient id="igGradDesk" cx="20%" cy="105%" r="125%">
+                            <stop offset="0%" stop-color="#FFD600"/>
+                            <stop offset="15%" stop-color="#FF7A00"/>
+                            <stop offset="50%" stop-color="#FF0069"/>
+                            <stop offset="85%" stop-color="#D300C5"/>
+                            <stop offset="100%" stop-color="#7638FA"/>
+                          </radialGradient>
+                        </defs>
+                        <rect width="24" height="24" rx="5.5" fill="url(#igGradDesk)"/>
+                        <rect x="5" y="5" width="14" height="14" rx="3.8" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
+                        <circle cx="12" cy="12" r="3.4" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
+                        <circle cx="16" cy="8" r="1.1" fill="#FFFFFF"/>
+                      </svg>
                     </span>
                     <span>Instagram</span>
                   </a>
-                  <a href="../../channel/facebook/" class="prodocu-channel-item">
+                  <a href="../../channel/facebook/" class="prodocu-channel-item" title="Facebook Channel">
                     <span class="prodocu-chan-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                        <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+                        <path d="M15.1 12.5h-2.3v7.4h-3.1v-7.4H7.9V9.9h1.8V8.1c0-2.4 1.4-3.8 3.7-3.8 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.5h2.8l-.5 2.6z" fill="#FFFFFF"/>
+                      </svg>
                     </span>
                     <span>Facebook</span>
                   </a>
-                  <a href="../../channel/telegram/" class="prodocu-channel-item">
+                  <a href="../../channel/telegram/" class="prodocu-channel-item" title="Telegram Channel">
                     <span class="prodocu-chan-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/></svg>
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                        <defs>
+                          <linearGradient id="tgGradDesk" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" stop-color="#2AABEE"/>
+                            <stop offset="100%" stop-color="#229ED9"/>
+                          </linearGradient>
+                        </defs>
+                        <circle cx="12" cy="12" r="12" fill="url(#tgGradDesk)"/>
+                        <path d="M5.4 11.9l12.4-4.8c.6-.2 1.1.1.9.8l-2.1 10c-.2.7-.6.9-1.2.5l-3.2-2.4-1.5 1.5c-.2.2-.3.3-.6.3l.2-3.3 6-5.4c.3-.2-.1-.4-.4-.2l-7.4 4.7-3.2-1c-.7-.2-.7-.7.1-1z" fill="#FFFFFF"/>
+                      </svg>
                     </span>
                     <span>Telegram</span>
                   </a>
@@ -2826,8 +2938,8 @@
                 <div class="prodocu-section-title">Marketing</div>
                 <div class="prodocu-items-list">
                   <a href="../../products/broadcast/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68 68 0 0 1-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 1 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.03v4.24c2.731.177 5.513.784 7.799 1.95l.201.107V3.85zM5.003 14.004l-.37-2.48a43 43 0 0 0-2.633.094l1.583 2.986a.5.5 0 0 0 .42.274zM1 7v2a1 1 0 0 0 1 1h.016c.328 0 .684.006 1.068.016l.084-.001V5.986l-.084.001A25 25 0 0 0 2 6a1 1 0 0 0-1 1"/></svg>
+                    <div class="prodocu-item-icon pro-icon-broadcast">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Broadcast</span>
@@ -2835,8 +2947,8 @@
                     </div>
                   </a>
                   <a href="../../products/ctwa/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/><path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.52 1.903l-.01.037.037.01c.214.06.666.177 1.22.177.567 0 1.05-.116 1.468-.327"/></svg>
+                    <div class="prodocu-item-icon pro-icon-ctwa">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M10 8l4 4-2 1 1 3-4-4 2-1-1-3z" fill="currentColor"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">CTWA</span>
@@ -2844,8 +2956,8 @@
                     </div>
                   </a>
                   <a href="../../products/automation/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/></svg>
+                    <div class="prodocu-item-icon pro-icon-drip">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Drip Campaign</span>
@@ -2853,8 +2965,8 @@
                     </div>
                   </a>
                   <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-.5h-.5v.5a.5.5 0 0 1-1 0z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-catalog">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Catalog</span>
@@ -2862,8 +2974,8 @@
                     </div>
                   </a>
                   <a href="../../products/whatsapp-form/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-form">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h6"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">WhatsApp Form/Flow</span>
@@ -2871,8 +2983,8 @@
                     </div>
                   </a>
                   <a href="../../products/whatsapp-blue-tick/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/><path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-bluetick">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 2.6 3.5-.4 1.2 3.3 3.3 1.2-.4 3.5 2.6 2.4-2.6 2.4.4 3.5-3.3 1.2-1.2 3.3-3.5-.4L12 22l-2.4-2.6-3.5.4-1.2-3.3-3.3-1.2.4-3.5L2 12l2.6-2.4-.4-3.5 3.3-1.2 1.2-3.3 3.5.4z" fill="currentColor" fill-opacity="0.15"/><polyline points="9 12 11 14 15 10"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Blue Tick</span>
@@ -2887,8 +2999,8 @@
                 <div class="prodocu-section-title">Sales</div>
                 <div class="prodocu-items-list">
                   <a href="../../products/chatbot/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.7 5.865 5.7c.368 0 .72.054 1.045.152a4 4 0 0 1 1.09-.152c1.63 0 2.865 1.06 2.865 2.362 0 .894-.582 1.666-1.437 2.052v.006c-.006.184-.02.36-.043.528A3.5 3.5 0 0 1 6.5 13.5c-.886 0-1.68-.328-2.28-.871a3.7 3.7 0 0 1-.22-.629C3.42 11.59 3 10.748 3 9.77zM4.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m6.5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1M5 4h6a1 1 0 0 1 1 1v1h-8V5a1 1 0 0 1 1-1"/></svg>
+                    <div class="prodocu-item-icon pro-icon-chatbot">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="4"/><path d="M12 2v6"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">AI Chatbot</span>
@@ -2896,8 +3008,8 @@
                     </div>
                   </a>
                   <a href="../../products/whatsapp-payments/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-payment">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">WhatsApp Payment</span>
@@ -2905,8 +3017,8 @@
                     </div>
                   </a>
                   <a href="../../products/catalog/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-.5h-.5v.5a.5.5 0 0 1-1 0z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-catalog-sales">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Catalog</span>
@@ -2914,8 +3026,8 @@
                     </div>
                   </a>
                   <a href="../../products/whatsapp-interactive-messages/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/></svg>
+                    <div class="prodocu-item-icon pro-icon-interactive">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="18" cy="5" r="2.5" fill="currentColor"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Interactive Message</span>
@@ -2930,8 +3042,8 @@
                 <div class="prodocu-section-title">Support</div>
                 <div class="prodocu-items-list">
                   <a href="../../products/shared-inbox/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/></svg>
+                    <div class="prodocu-item-icon pro-icon-inbox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h4"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Team Inbox</span>
@@ -2939,8 +3051,8 @@
                     </div>
                   </a>
                   <a href="../../products/ai-agent/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794.11a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 4.65l-.387 1.162a.217.217 0 0 1-.412 0L3.407 4.65A1.73 1.73 0 0 0 2.31 3.553L1.148 3.166a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 1.27zm6.758 1.88a.217.217 0 0 1 .412 0l.248.744a1.73 1.73 0 0 0 1.097 1.097l.744.248a.217.217 0 0 1 0 .412l-.744.248a1.73 1.73 0 0 0-1.097 1.097l-.248.744a.217.217 0 0 1-.412 0l-.248-.744A1.73 1.73 0 0 0 9.455 5.5l-.744-.248a.217.217 0 0 1 0-.412l.744-.248A1.73 1.73 0 0 0 10.552 3.5z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-ai-agent">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9a2 2 0 0 0 1.2 1.2L20 11l-4.9 1.9a2 2 0 0 0-1.2 1.2L12 19l-1.9-4.9a2 2 0 0 0-1.2-1.2L4 11l4.9-1.9a2 2 0 0 0 1.2-1.2L12 3z"/><path d="M19 3l.6 1.4a1 1 0 0 0 .6.6L21.6 5.6l-1.4.6a1 1 0 0 0-.6.6L19 8.2l-.6-1.4a1 1 0 0 0-.6-.6L16.4 5.6l1.4-.6a1 1 0 0 0 .6-.6L19 3z"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">AI Assistant</span>
@@ -2948,8 +3060,8 @@
                     </div>
                   </a>
                   <a href="../../solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg>
+                    <div class="prodocu-item-icon pro-icon-feedback">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Feedback Collection</span>
@@ -2957,8 +3069,8 @@
                     </div>
                   </a>
                   <a href="../../products/analytics/" class="prodocu-item" role="menuitem">
-                    <div class="prodocu-item-icon">
-                      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0V7.5h6.482A7 7 0 0 0 8.5 1.018M14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/></svg>
+                    <div class="prodocu-item-icon pro-icon-analytics">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                     </div>
                     <div class="prodocu-item-content">
                       <span class="prodocu-item-title">Analytics Dashboard</span>
@@ -3299,27 +3411,56 @@
               <!-- Channels Section -->
               <div class="prodocu-mob-section-title">CHANNELS</div>
               <div class="prodocu-mob-chan-grid">
-                <a href="../../channel/whatsapp/" class="prodocu-mob-chan-card">
+                <a href="../../channel/whatsapp/" class="prodocu-mob-chan-card" title="WhatsApp Channel">
                   <span class="chan-icon-wrap chan-wa">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.704 1.916.802 2.049c.098.133 1.39 2.1 3.43 2.972.48.207.854.33 1.145.424.481.152.92.13 1.267.079.387-.058 1.17-.478 1.336-.94.166-.462.166-.857.116-.94-.05-.083-.183-.133-.38-.233"/></svg>
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                      <circle cx="12" cy="12" r="12" fill="#25D366"/>
+                      <path d="M12.04 4C7.6 4 4 7.6 4 12.04c0 1.54.44 2.99 1.2 4.23L4 20l3.86-1.18c1.19.7 2.58 1.1 4.18 1.1 4.44 0 8.04-3.6 8.04-8.04 0-4.44-3.6-7.88-8.04-7.88zm4.73 11.23c-.2.56-1.17 1.07-1.63 1.14-.42.06-.97.09-2.77-.66-2.31-.96-3.8-3.32-3.91-3.48-.12-.15-.93-1.24-.93-2.36 0-1.12.59-1.67.8-1.9.21-.23.46-.29.62-.29.15 0 .31 0 .44.01.14.01.33-.05.51.39.19.45.65 1.58.71 1.7.06.11.1.25.02.4-.07.14-.11.24-.22.37-.12.13-.24.3-.35.4-.12.11-.24.23-.1.47.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.53-.06.14-.17.6-.7.76-.94.16-.24.32-.2.53-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.6-.14 1.15z" fill="#FFFFFF"/>
+                    </svg>
                   </span>
                   <span>WhatsApp</span>
                 </a>
-                <a href="../../channel/instagram/" class="prodocu-mob-chan-card">
+                <a href="../../channel/instagram/" class="prodocu-mob-chan-card" title="Instagram Channel">
                   <span class="chan-icon-wrap chan-ig">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                      <defs>
+                        <radialGradient id="igGradMob" cx="20%" cy="105%" r="125%">
+                          <stop offset="0%" stop-color="#FFD600"/>
+                          <stop offset="15%" stop-color="#FF7A00"/>
+                          <stop offset="50%" stop-color="#FF0069"/>
+                          <stop offset="85%" stop-color="#D300C5"/>
+                          <stop offset="100%" stop-color="#7638FA"/>
+                        </radialGradient>
+                      </defs>
+                      <rect width="24" height="24" rx="5.5" fill="url(#igGradMob)"/>
+                      <rect x="5" y="5" width="14" height="14" rx="3.8" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
+                      <circle cx="12" cy="12" r="3.4" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
+                      <circle cx="16" cy="8" r="1.1" fill="#FFFFFF"/>
+                    </svg>
                   </span>
                   <span>Instagram</span>
                 </a>
-                <a href="../../channel/facebook/" class="prodocu-mob-chan-card">
+                <a href="../../channel/facebook/" class="prodocu-mob-chan-card" title="Facebook Channel">
                   <span class="chan-icon-wrap chan-fb">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                      <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+                      <path d="M15.1 12.5h-2.3v7.4h-3.1v-7.4H7.9V9.9h1.8V8.1c0-2.4 1.4-3.8 3.7-3.8 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.5h2.8l-.5 2.6z" fill="#FFFFFF"/>
+                    </svg>
                   </span>
                   <span>Facebook</span>
                 </a>
-                <a href="../../channel/telegram/" class="prodocu-mob-chan-card">
+                <a href="../../channel/telegram/" class="prodocu-mob-chan-card" title="Telegram Channel">
                   <span class="chan-icon-wrap chan-tg">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/></svg>
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                      <defs>
+                        <linearGradient id="tgGradMob" x1="50%" y1="0%" x2="50%" y2="100%">
+                          <stop offset="0%" stop-color="#2AABEE"/>
+                          <stop offset="100%" stop-color="#229ED9"/>
+                        </linearGradient>
+                      </defs>
+                      <circle cx="12" cy="12" r="12" fill="url(#tgGradMob)"/>
+                      <path d="M5.4 11.9l12.4-4.8c.6-.2 1.1.1.9.8l-2.1 10c-.2.7-.6.9-1.2.5l-3.2-2.4-1.5 1.5c-.2.2-.3.3-.6.3l.2-3.3 6-5.4c.3-.2-.1-.4-.4-.2l-7.4 4.7-3.2-1c-.7-.2-.7-.7.1-1z" fill="#FFFFFF"/>
+                    </svg>
                   </span>
                   <span>Telegram</span>
                 </a>
@@ -3336,8 +3477,8 @@
               <div class="prodocu-mob-section-title">MARKETING</div>
               <div class="prodocu-mob-items-col">
                 <a href="../../products/broadcast/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68 68 0 0 1-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 1 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.03v4.24c2.731.177 5.513.784 7.799 1.95l.201.107V3.85zM5.003 14.004l-.37-2.48a43 43 0 0 0-2.633.094l1.583 2.986a.5.5 0 0 0 .42.274zM1 7v2a1 1 0 0 0 1 1h.016c.328 0 .684.006 1.068.016l.084-.001V5.986l-.084.001A25 25 0 0 0 2 6a1 1 0 0 0-1 1"/></svg>
+                  <div class="prodocu-item-icon pro-icon-broadcast">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Broadcast</span>
@@ -3345,8 +3486,8 @@
                   </div>
                 </a>
                 <a href="../../products/ctwa/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/><path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.52 1.903l-.01.037.037.01c.214.06.666.177 1.22.177.567 0 1.05-.116 1.468-.327"/></svg>
+                  <div class="prodocu-item-icon pro-icon-ctwa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M10 8l4 4-2 1 1 3-4-4 2-1-1-3z" fill="currentColor"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">CTWA</span>
@@ -3354,8 +3495,8 @@
                   </div>
                 </a>
                 <a href="../../products/automation/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/></svg>
+                  <div class="prodocu-item-icon pro-icon-drip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Drip Campaign</span>
@@ -3363,8 +3504,8 @@
                   </div>
                 </a>
                 <a href="../../products/catalog/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-.5h-.5v.5a.5.5 0 0 1-1 0z"/></svg>
+                  <div class="prodocu-item-icon pro-icon-catalog">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Catalog</span>
@@ -3372,8 +3513,8 @@
                   </div>
                 </a>
                 <a href="../../products/whatsapp-form/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"/></svg>
+                  <div class="prodocu-item-icon pro-icon-form">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h6"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">WhatsApp Form/Flow</span>
@@ -3381,8 +3522,8 @@
                   </div>
                 </a>
                 <a href="../../products/whatsapp-blue-tick/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/><path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"/></svg>
+                  <div class="prodocu-item-icon pro-icon-bluetick">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 2.6 3.5-.4 1.2 3.3 3.3 1.2-.4 3.5 2.6 2.4-2.6 2.4.4 3.5-3.3 1.2-1.2 3.3-3.5-.4L12 22l-2.4-2.6-3.5.4-1.2-3.3-3.3-1.2.4-3.5L2 12l2.6-2.4-.4-3.5 3.3-1.2 1.2-3.3 3.5.4z" fill="currentColor" fill-opacity="0.15"/><polyline points="9 12 11 14 15 10"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Blue Tick</span>
@@ -3397,8 +3538,8 @@
               <div class="prodocu-mob-section-title">SALES</div>
               <div class="prodocu-mob-items-col">
                 <a href="../../products/chatbot/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.7 5.865 5.7c.368 0 .72.054 1.045.152a4 4 0 0 1 1.09-.152c1.63 0 2.865 1.06 2.865 2.362 0 .894-.582 1.666-1.437 2.052v.006c-.006.184-.02.36-.043.528A3.5 3.5 0 0 1 6.5 13.5c-.886 0-1.68-.328-2.28-.871a3.7 3.7 0 0 1-.22-.629C3.42 11.59 3 10.748 3 9.77zM4.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m6.5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1M5 4h6a1 1 0 0 1 1 1v1h-8V5a1 1 0 0 1 1-1"/></svg>
+                  <div class="prodocu-item-icon pro-icon-chatbot">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="4"/><path d="M12 2v6"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">AI Chatbot</span>
@@ -3406,8 +3547,8 @@
                   </div>
                 </a>
                 <a href="../../products/whatsapp-payments/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></svg>
+                  <div class="prodocu-item-icon pro-icon-payment">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">WhatsApp Payment</span>
@@ -3415,8 +3556,8 @@
                   </div>
                 </a>
                 <a href="../../products/catalog/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-.5h-.5v.5a.5.5 0 0 1-1 0z"/></svg>
+                  <div class="prodocu-item-icon pro-icon-catalog-sales">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Catalog</span>
@@ -3424,8 +3565,8 @@
                   </div>
                 </a>
                 <a href="../../products/whatsapp-interactive-messages/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/></svg>
+                  <div class="prodocu-item-icon pro-icon-interactive">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="18" cy="5" r="2.5" fill="currentColor"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Interactive Message</span>
@@ -3440,8 +3581,8 @@
               <div class="prodocu-mob-section-title">SUPPORT</div>
               <div class="prodocu-mob-items-col">
                 <a href="../../products/shared-inbox/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/></svg>
+                  <div class="prodocu-item-icon pro-icon-inbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h4"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Team Inbox</span>
@@ -3449,26 +3590,26 @@
                   </div>
                 </a>
                 <a href="../../products/ai-agent/" class="prodocu-mob-item">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794.11a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 4.65l-.387 1.162a.217.217 0 0 1-.412 0L3.407 4.65A1.73 1.73 0 0 0 2.31 3.553L1.148 3.166a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 1.27zm6.758 1.88a.217.217 0 0 1 .412 0l.248.744a1.73 1.73 0 0 0 1.097 1.097l.744.248a.217.217 0 0 1 0 .412l-.744.248a1.73 1.73 0 0 0-1.097 1.097l-.248.744a.217.217 0 0 1-.412 0l-.248-.744A1.73 1.73 0 0 0 9.455 5.5l-.744-.248a.217.217 0 0 1 0-.412l.744-.248A1.73 1.73 0 0 0 10.552 3.5z"/></svg>
+                  <div class="prodocu-item-icon pro-icon-ai-agent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9a2 2 0 0 0 1.2 1.2L20 11l-4.9 1.9a2 2 0 0 0-1.2 1.2L12 19l-1.9-4.9a2 2 0 0 0-1.2-1.2L4 11l4.9-1.9a2 2 0 0 0 1.2-1.2L12 3z"/><path d="M19 3l.6 1.4a1 1 0 0 0 .6.6L21.6 5.6l-1.4.6a1 1 0 0 0-.6.6L19 8.2l-.6-1.4a1 1 0 0 0-.6-.6L16.4 5.6l1.4-.6a1 1 0 0 0 .6-.6L19 3z"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">AI Assistant</span>
                     <span class="prodocu-item-desc">Smart responses</span>
                   </div>
                 </a>
-                <a href="../../solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg>
+                <a href="../../solutions/feedback-surveys/" class="prodocu-mob-item">
+                  <div class="prodocu-item-icon pro-icon-feedback">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Feedback Collection</span>
                     <span class="prodocu-item-desc">Gather insights</span>
                   </div>
                 </a>
-                <a href="../../products/analytics/" class="prodocu-item" role="menuitem">
-                  <div class="prodocu-item-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0V7.5h6.482A7 7 0 0 0 8.5 1.018M14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/></svg>
+                <a href="../../products/analytics/" class="prodocu-mob-item">
+                  <div class="prodocu-item-icon pro-icon-analytics">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                   </div>
                   <div class="prodocu-item-content">
                     <span class="prodocu-item-title">Analytics Dashboard</span>
@@ -3860,7 +4001,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, I registered for TechSummit 2026. Where can I find my entry pass?</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:32 PM</span>
+                        <span class="time">02:22 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -3879,20 +4020,20 @@ Show this QR at Registration Gate 2 for instant badge printing!</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Venue Directions" style="text-align:left;width:fit-content;">Venue Directions &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:33 PM</span>
+                        <span class="time">02:23 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>View Conference Schedule</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:34 PM</span>
+                        <span class="time">02:24 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>📅 Keynote: &#039;The Future of Agentic AI&#039; starts at 10:00 AM in Hall A. Would you like a reminder alert 15 minutes before?</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">01:35 PM</span>
+                        <span class="time">02:25 PM</span>
                                               </div>
                     </div>
                   
@@ -4106,10 +4247,10 @@ Show this QR at Registration Gate 2 for instant badge printing!</span>
                                           <div class="ind-msg-btn">Attending Solo</div>
                                           <div class="ind-msg-btn">Regretfully Decline</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">02:25 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Attending with Family                  <span class="msg-time">01:35 PM</span>
+                  Attending with Family                  <span class="msg-time">02:25 PM</span>
                 </div>
                           </div>
           </div>
@@ -4161,10 +4302,10 @@ Show this QR at Registration Gate 2 for instant badge printing!</span>
                                           <div class="ind-msg-btn">Save to Photos</div>
                                           <div class="ind-msg-btn">View Venue Map</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">02:25 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Save to Photos                  <span class="msg-time">01:35 PM</span>
+                  Save to Photos                  <span class="msg-time">02:25 PM</span>
                 </div>
                           </div>
           </div>
@@ -4216,10 +4357,10 @@ Show this QR at Registration Gate 2 for instant badge printing!</span>
                                           <div class="ind-msg-btn">View Stage 2 Map</div>
                                           <div class="ind-msg-btn">Submit Question to Panel</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">02:25 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Submit Question to Panel                  <span class="msg-time">01:35 PM</span>
+                  Submit Question to Panel                  <span class="msg-time">02:25 PM</span>
                 </div>
                           </div>
           </div>
@@ -4271,10 +4412,10 @@ Show this QR at Registration Gate 2 for instant badge printing!</span>
                                           <div class="ind-msg-btn">Download Certificate</div>
                                           <div class="ind-msg-btn">Rate TechSummit 2026</div>
                                       </div>
-                                <span class="msg-time">01:35 PM</span>
+                                <span class="msg-time">02:25 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Download Certificate                  <span class="msg-time">01:35 PM</span>
+                  Download Certificate                  <span class="msg-time">02:25 PM</span>
                 </div>
                           </div>
           </div>
