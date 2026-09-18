@@ -60,13 +60,14 @@
     (function() {
       try {
         var s = localStorage.getItem('hb_theme');
-        var p = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var t = s ? s : (p ? 'dark' : 'light');
+        var t = s ? s : 'light';
         document.documentElement.setAttribute('data-theme', t);
         if (t === 'dark') {
           document.documentElement.classList.add('dark-theme');
+          document.documentElement.classList.remove('light-theme');
         } else {
           document.documentElement.classList.remove('dark-theme');
+          document.documentElement.classList.add('light-theme');
         }
       } catch (e) {}
     })();
@@ -226,24 +227,30 @@
       whatsapp: "918050854445",
       siteName: "HelloBotz"    };
   </script>
-  <style id="hellobotz-floating-pill-navbar-style">
-    /* FLOATING PILL NAVBAR SYSTEM (100% Fixed, Centered & Always Visible on Scroll) */
+  <style id="hellobotz-navbar-style">
+    /* ==========================================================================
+       HelloBotz Global Header Navigation System (Matching GetGabs Master Reference)
+       Edge-to-edge full width sticky bar, HD brand logo, clean typography & pill CTAs
+       ========================================================================== */
     :root {
-      --nav: 0px !important;
+      --nav: 74px !important;
     }
     html {
       scroll-padding-top: 84px;
     }
     body {
-      padding-top: 76px !important;
+      padding-top: 74px !important;
     }
     @media (max-width: 768px) {
+      :root {
+        --nav: 60px !important;
+      }
       body {
-        padding-top: 66px !important;
+        padding-top: 60px !important;
       }
     }
 
-    /* Universal Breadcrumbs Removal (eliminates extra top vertical gaps across all pages) */
+    /* Universal Breadcrumbs Removal */
     .breadcrumb-nav,
     .cw-breadcrumb,
     .cig-breadcrumb,
@@ -260,95 +267,111 @@
       display: none !important;
     }
 
+    /* Edge-to-Edge Sticky Header Bar */
     .site-header {
       position: fixed !important;
-      top: 12px !important;
+      top: 0 !important;
       left: 0 !important;
       right: 0 !important;
       width: 100% !important;
       max-width: 100vw !important;
       z-index: 99999 !important;
-      padding: 0 16px !important;
-      box-sizing: border-box !important;
-      pointer-events: none !important;
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
+      padding: 0 !important;
       margin: 0 !important;
-      transition: top 0.25s ease !important;
-    }
-    .header-inner {
-      position: relative !important; /* Critical anchor for all centered mega menus */
+      box-sizing: border-box !important;
       pointer-events: auto !important;
-      max-width: min(1280px, calc(100vw - 28px)) !important;
+      background: #ffffff !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85) !important;
+      box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.02) !important;
+      transition: background 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease !important;
+    }
+    /* Header Bar: Light Mode Default & Explicit */
+    .site-header,
+    html[data-theme="light"] .site-header,
+    body.light-theme .site-header {
+      background: #ffffff !important;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85) !important;
+      box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.02) !important;
+    }
+    .site-header.scrolled,
+    html[data-theme="light"] .site-header.scrolled,
+    body.light-theme .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.98) !important;
+      border-bottom-color: rgba(203, 213, 225, 0.85) !important;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    /* Dark Mode Header Bar */
+    html[data-theme="dark"] .site-header,
+    body.dark-theme .site-header {
+      background: #0b0f19 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4) !important;
+    }
+    html[data-theme="dark"] .site-header.scrolled,
+    body.dark-theme .site-header.scrolled {
+      background: rgba(11, 15, 25, 0.98) !important;
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    /* Inner Container */
+    .header-inner {
+      position: relative !important;
+      max-width: 1360px !important;
       width: 100% !important;
       margin: 0 auto !important;
-      height: 64px !important;
+      height: 74px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: space-between !important;
-      padding: 0 1.25rem 0 1.5rem !important;
-      background: rgba(255, 255, 255, 0.96) !important;
-      backdrop-filter: blur(20px) !important;
-      -webkit-backdrop-filter: blur(20px) !important;
-      border-radius: 999px !important;
-      border: 1px solid rgba(226, 232, 240, 0.9) !important;
-      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+      padding: 0 2rem !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
       box-sizing: border-box !important;
-      transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                  padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                  background 0.25s ease,
-                  border-color 0.25s ease,
-                  box-shadow 0.25s ease !important;
+      transition: height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  padding 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .site-header.scrolled .header-inner {
-      height: 52px !important;
-      padding: 0 1rem 0 1.25rem !important;
-      background: rgba(255, 255, 255, 0.98) !important;
-      box-shadow: 0 14px 36px -4px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.06) !important;
-      border-color: rgba(203, 213, 225, 0.95) !important;
+      height: 60px !important;
     }
     html[data-theme="dark"] .site-header .header-inner,
-    body.dark-theme .site-header .header-inner {
-      background: rgba(15, 23, 42, 0.88) !important;
-      border-color: rgba(255, 255, 255, 0.12) !important;
-      box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
-    }
+    body.dark-theme .site-header .header-inner,
     html[data-theme="dark"] .site-header.scrolled .header-inner,
     body.dark-theme .site-header.scrolled .header-inner {
-      background: rgba(11, 15, 25, 0.94) !important;
-      border-color: rgba(255, 255, 255, 0.18) !important;
-      box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.75) !important;
-    }
-    @media (prefers-color-scheme: dark) {
-      html:not([data-theme="light"]):not(.light-theme) .site-header .header-inner {
-        background: rgba(15, 23, 42, 0.88) !important;
-        border-color: rgba(255, 255, 255, 0.12) !important;
-        box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
-      }
-      html:not([data-theme="light"]):not(.light-theme) .site-header.scrolled .header-inner {
-        background: rgba(11, 15, 25, 0.94) !important;
-        border-color: rgba(255, 255, 255, 0.18) !important;
-        box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.75) !important;
-      }
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
     }
 
-    /* Logo Container - Integrated in Same Bar */
+    /* Logo Container & Logo Link */
     .logo-dock-wrapper {
       display: inline-flex !important;
       align-items: center !important;
       flex-shrink: 0 !important;
       position: relative !important;
-      margin-right: 18px !important;
+      margin-right: 24px !important;
     }
-
-    /* Brand Logo Link */
     .site-header .logo,
-    .site-header .site-main-logo {
+    .site-header .site-main-logo,
+    .site-header:not(.scrolled) .logo,
+    .site-header.scrolled .logo {
       display: inline-flex !important;
       align-items: center !important;
       background: transparent !important;
+      background-color: transparent !important;
       border: none !important;
+      border-radius: 0 !important;
       box-shadow: none !important;
       padding: 0 !important;
       margin: 0 !important;
@@ -356,38 +379,52 @@
       flex-shrink: 0 !important;
       cursor: pointer !important;
       transform: none !important;
+      outline: none !important;
       transition: opacity 0.2s ease !important;
     }
     .site-header .logo:hover,
-    .site-header .site-main-logo:hover {
-      opacity: 0.88 !important;
+    .site-header .site-main-logo:hover,
+    .site-header:not(.scrolled) .logo:hover,
+    .site-header.scrolled .logo:hover {
+      opacity: 0.86 !important;
       background: transparent !important;
+      background-color: transparent !important;
       border: none !important;
       box-shadow: none !important;
       transform: none !important;
     }
 
-    /* Logo Image Sizing & Smooth Resizing on Scroll */
+    /* Logo Image Sizing & Resizing on Scroll */
     .site-header .logo-img {
       height: 44px !important;
       width: auto !important;
-      max-width: 190px !important;
+      max-width: 195px !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast;
-      transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                  max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      display: block !important;
+      transition: height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .site-header.scrolled .logo-img {
-      height: 32px !important;
+      height: 33px !important;
       max-width: 145px !important;
     }
 
+    /* Theme Logo Switcher */
     .site-header .logo-img-light,
-    .mobile-drawer-header .logo-img-light {
+    .mobile-drawer-header .logo-img-light,
+    html[data-theme="light"] .site-header .logo-img-light,
+    html[data-theme="light"] .mobile-drawer-header .logo-img-light,
+    body.light-theme .site-header .logo-img-light,
+    body.light-theme .mobile-drawer-header .logo-img-light {
       display: block !important;
     }
     .site-header .logo-img-dark,
-    .mobile-drawer-header .logo-img-dark {
+    .mobile-drawer-header .logo-img-dark,
+    html[data-theme="light"] .site-header .logo-img-dark,
+    html[data-theme="light"] .mobile-drawer-header .logo-img-dark,
+    body.light-theme .site-header .logo-img-dark,
+    body.light-theme .mobile-drawer-header .logo-img-dark {
       display: none !important;
     }
     html[data-theme="dark"] .site-header .logo-img-light,
@@ -402,27 +439,17 @@
     body.dark-theme .mobile-drawer-header .logo-img-dark {
       display: block !important;
     }
-    @media (prefers-color-scheme: dark) {
-      html:not([data-theme="light"]):not(.light-theme) .site-header .logo-img-light,
-      html:not([data-theme="light"]):not(.light-theme) .mobile-drawer-header .logo-img-light {
-        display: none !important;
-      }
-      html:not([data-theme="light"]):not(.light-theme) .site-header .logo-img-dark,
-      html:not([data-theme="light"]):not(.light-theme) .mobile-drawer-header .logo-img-dark {
-        display: block !important;
-      }
-    }
 
     @media (max-width: 1024px) {
       .logo-dock-wrapper {
         margin-right: 8px !important;
       }
       .site-header .header-inner {
-        height: 56px !important;
-        padding: 0 0.85rem !important;
+        height: 58px !important;
+        padding: 0 1rem !important;
       }
       .site-header.scrolled .header-inner {
-        height: 50px !important;
+        height: 52px !important;
       }
       .site-header .logo-img {
         height: 34px !important;
@@ -464,51 +491,71 @@
     .nav-desktop {
       display: flex !important;
       align-items: center !important;
-      gap: 3px !important;
+      gap: 1.15rem !important;
       flex: 1 !important;
       justify-content: center !important;
     }
-    .nav-link {
+    .nav-link,
+    html[data-theme="light"] .nav-link,
+    body.light-theme .nav-link {
       display: inline-flex !important;
       align-items: center !important;
-      gap: 4px !important;
-      padding: 0.38rem 0.55rem !important;
-      font-size: 0.82rem !important;
+      gap: 6px !important;
+      padding: 0.45rem 0.65rem !important;
+      font-size: 0.92rem !important;
       font-weight: 550 !important;
-      color: #334155 !important;
-      border-radius: 999px !important;
+      color: #1e293b !important;
+      border-radius: 8px !important;
       white-space: nowrap !important;
-      transition: all 0.18s ease !important;
+      transition: color 0.18s ease, background 0.18s ease !important;
       background: transparent !important;
       border: none !important;
       cursor: pointer !important;
+      text-decoration: none !important;
     }
     .nav-link:hover,
     .nav-item:hover > .nav-link,
-    .nav-item.open > .nav-link {
-      background: rgba(15, 23, 42, 0.05) !important;
-      color: #0f172a !important;
+    .nav-item.open > .nav-link,
+    html[data-theme="light"] .nav-link:hover,
+    html[data-theme="light"] .nav-item:hover > .nav-link,
+    html[data-theme="light"] .nav-item.open > .nav-link,
+    body.light-theme .nav-link:hover,
+    body.light-theme .nav-item:hover > .nav-link,
+    body.light-theme .nav-item.open > .nav-link {
+      background: rgba(15, 23, 42, 0.04) !important;
+      color: #044738 !important;
     }
     .nav-link svg {
       width: 12px !important;
       height: 12px !important;
-      opacity: 0.6 !important;
+      opacity: 0.65 !important;
       flex-shrink: 0 !important;
-      transition: transform 0.2s ease !important;
+      transition: transform 0.2s ease, opacity 0.2s ease !important;
     }
     .nav-item:hover > .nav-link svg,
-    .nav-item.open > .nav-link svg {
+    .nav-item.open > .nav-link svg,
+    html[data-theme="light"] .nav-item:hover > .nav-link svg,
+    html[data-theme="light"] .nav-item.open > .nav-link svg,
+    body.light-theme .nav-item:hover > .nav-link svg,
+    body.light-theme .nav-item.open > .nav-link svg {
       transform: rotate(180deg) !important;
-      opacity: 0.9 !important;
+      opacity: 1 !important;
+      color: #044738 !important;
     }
 
     /* Channels Live Button */
-    .nav-link-channels {
+    .nav-link-channels,
+    html[data-theme="light"] .nav-link-channels,
+    body.light-theme .nav-link-channels {
       font-weight: 650 !important;
       color: #0f172a !important;
     }
     .nav-item-channels:hover > .nav-link-channels,
-    .nav-item-channels.open > .nav-link-channels {
+    .nav-item-channels.open > .nav-link-channels,
+    html[data-theme="light"] .nav-item-channels:hover > .nav-link-channels,
+    html[data-theme="light"] .nav-item-channels.open > .nav-link-channels,
+    body.light-theme .nav-item-channels:hover > .nav-link-channels,
+    body.light-theme .nav-item-channels.open > .nav-link-channels {
       background: #0d111c !important;
       color: #ffffff !important;
     }
@@ -539,25 +586,6 @@
     body.dark-theme .nav-item-channels.open > .nav-link-channels {
       background: rgba(255, 255, 255, 0.12) !important;
       color: #ffffff !important;
-    }
-    @media (prefers-color-scheme: dark) {
-      html:not([data-theme="light"]):not(.light-theme) .nav-link {
-        color: #cbd5e1 !important;
-      }
-      html:not([data-theme="light"]):not(.light-theme) .nav-link:hover,
-      html:not([data-theme="light"]):not(.light-theme) .nav-item:hover > .nav-link,
-      html:not([data-theme="light"]):not(.light-theme) .nav-item.open > .nav-link {
-        background: rgba(255, 255, 255, 0.08) !important;
-        color: #ffffff !important;
-      }
-      html:not([data-theme="light"]):not(.light-theme) .nav-link-channels {
-        color: #f8fafc !important;
-      }
-      html:not([data-theme="light"]):not(.light-theme) .nav-item-channels:hover > .nav-link-channels,
-      html:not([data-theme="light"]):not(.light-theme) .nav-item-channels.open > .nav-link-channels {
-        background: rgba(255, 255, 255, 0.12) !important;
-        color: #ffffff !important;
-      }
     }
 
     /* Red Live Badge */
@@ -2700,130 +2728,211 @@
       text-decoration: underline !important;
     }
 
-    /* Action Buttons: Lang, Login, Start Free */
+    /* Action Buttons: Lang, Theme, Contact Sales, Log in / Sign up */
     .header-actions {
       display: flex !important;
       align-items: center !important;
-      gap: 0.45rem !important;
+      gap: 0.75rem !important;
       flex-shrink: 0 !important;
-      margin-left: 0.5rem !important;
+      margin-left: 1rem !important;
     }
+
+    /* Secondary CTA - GetGabs Outline Pill Button */
+    .header-btn-outline,
     .header-login {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 0.38rem 0.95rem !important;
-      font-size: 0.82rem !important;
+      gap: 7px !important;
+      padding: 0.5rem 1.25rem !important;
+      font-size: 0.88rem !important;
       font-weight: 600 !important;
-      color: #334155 !important;
-      background: #ffffff !important;
-      border: 1.5px solid #cbd5e1 !important;
-      border-radius: 999px !important;
+      color: #111827 !important;
+      background: transparent !important;
+      border: 1.5px solid #111827 !important;
+      border-radius: 9999px !important;
       text-decoration: none !important;
       white-space: nowrap !important;
       flex-shrink: 0 !important;
-      transition: all 0.2s ease !important;
+      cursor: pointer !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+    .header-btn-outline:hover,
     .header-login:hover {
-      border-color: #8b5cf6 !important;
-      color: #8b5cf6 !important;
-      background: #fbfbfe !important;
+      background: #f8fafc !important;
+      border-color: #000000 !important;
+      color: #000000 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
     }
+    .header-btn-outline svg,
+    .header-login svg {
+      transition: transform 0.2s ease !important;
+    }
+    .header-btn-outline:hover svg,
+    .header-login:hover svg {
+      transform: translateX(2px) !important;
+    }
+
+    /* Primary CTA - GetGabs Deep Green Solid Pill Button */
+    .header-btn-primary,
     .header-cta-start {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 0.42rem 1.15rem !important;
-      font-size: 0.82rem !important;
-      font-weight: 700 !important;
+      gap: 7px !important;
+      padding: 0.5rem 1.35rem !important;
+      font-size: 0.88rem !important;
+      font-weight: 600 !important;
       color: #ffffff !important;
-      background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%) !important;
-      border-radius: 999px !important;
-      border: none !important;
+      background: #044738 !important;
+      border: 1.5px solid #044738 !important;
+      border-radius: 9999px !important;
       text-decoration: none !important;
       white-space: nowrap !important;
       flex-shrink: 0 !important;
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35) !important;
-      transition: all 0.2s ease !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 14px rgba(4, 71, 56, 0.25) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+    .header-btn-primary:hover,
     .header-cta-start:hover {
+      background: #03362a !important;
+      border-color: #03362a !important;
+      color: #ffffff !important;
       transform: translateY(-1px) !important;
-      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.45) !important;
+      box-shadow: 0 6px 20px rgba(4, 71, 56, 0.38) !important;
+    }
+    .header-btn-primary svg,
+    .header-cta-start svg {
+      transition: transform 0.2s ease !important;
+    }
+    .header-btn-primary:hover svg,
+    .header-cta-start:hover svg {
+      transform: translateX(2px) !important;
+    }
+
+    /* Dark Mode Action Button Variations */
+    html[data-theme="dark"] .header-btn-outline,
+    html[data-theme="dark"] .header-login,
+    body.dark-theme .header-btn-outline,
+    body.dark-theme .header-login {
+      color: #f8fafc !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+      background: transparent !important;
+    }
+    html[data-theme="dark"] .header-btn-outline:hover,
+    html[data-theme="dark"] .header-login:hover,
+    body.dark-theme .header-btn-outline:hover,
+    body.dark-theme .header-login:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-color: #ffffff !important;
       color: #ffffff !important;
     }
+    html[data-theme="dark"] .header-btn-primary,
+    html[data-theme="dark"] .header-cta-start,
+    body.dark-theme .header-btn-primary,
+    body.dark-theme .header-cta-start {
+      background: #059669 !important;
+      border-color: #059669 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 16px rgba(5, 150, 105, 0.35) !important;
+    }
+    html[data-theme="dark"] .header-btn-primary:hover,
+    html[data-theme="dark"] .header-cta-start:hover,
+    body.dark-theme .header-btn-primary:hover,
+    body.dark-theme .header-cta-start:hover {
+      background: #047857 !important;
+      border-color: #047857 !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(5, 150, 105, 0.45) !important;
+    }
+
     .lang-switch-btn {
       display: inline-flex !important;
       align-items: center !important;
-      gap: 0.3rem !important;
-      padding: 0.32rem 0.65rem !important;
+      gap: 0.32rem !important;
+      padding: 0.38rem 0.65rem !important;
       border-radius: 999px !important;
-      border: 1.5px solid #e2e8f0 !important;
+      border: 1.5px solid #cbd5e1 !important;
       background: #ffffff !important;
-      font-size: 0.76rem !important;
+      font-size: 0.78rem !important;
       font-weight: 700 !important;
       color: #334155 !important;
       cursor: pointer !important;
       white-space: nowrap !important;
       flex-shrink: 0 !important;
+      transition: all 0.2s ease !important;
+    }
+    .lang-switch-btn:hover {
+      border-color: #044738 !important;
+      color: #044738 !important;
+    }
+    html[data-theme="dark"] .lang-switch-btn,
+    body.dark-theme .lang-switch-btn {
+      background: rgba(30, 41, 59, 0.8) !important;
+      border-color: rgba(255, 255, 255, 0.16) !important;
+      color: #f1f5f9 !important;
     }
 
-    /* Screen Adaptability - NEVER clip or overflow on any device */
-    @media (max-width: 1320px) {
-      .nav-item-secondary {
-        display: none !important;
+    /* Screen Adaptability - Responsive Breakpoints */
+    @media (max-width: 1240px) {
+      .header-inner {
+        padding: 0 1.25rem !important;
+      }
+      .nav-desktop {
+        gap: 0.75rem !important;
       }
       .nav-link {
-        padding: 0.32rem 0.42rem !important;
-        font-size: 0.79rem !important;
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.88rem !important;
       }
-      .nav-link-leads {
-        padding: 0.32rem 0.55rem !important;
-        font-size: 0.79rem !important;
+      .header-btn-outline,
+      .header-login {
+        padding: 0.45rem 1rem !important;
+        font-size: 0.82rem !important;
+      }
+      .header-btn-primary,
+      .header-cta-start {
+        padding: 0.45rem 1.1rem !important;
+        font-size: 0.82rem !important;
       }
     }
-    @media (max-width: 1140px) {
+    @media (max-width: 1080px) {
       .nav-desktop {
         display: none !important;
       }
       .mobile-toggle {
         display: flex !important;
       }
-      .header-cta-start {
+      .header-btn-outline,
+      .header-login {
         display: none !important;
       }
-    }
-    @media (max-width: 1024px) {
-      .site-header {
-        top: 8px !important;
-        padding: 0 10px !important;
+      .header-btn-primary,
+      .header-cta-start {
+        padding: 0.42rem 0.95rem !important;
+        font-size: 0.8rem !important;
       }
       .header-inner {
+        height: 60px !important;
+        padding: 0 1rem !important;
+      }
+      .site-header.scrolled .header-inner {
         height: 52px !important;
-        border-radius: 999px !important;
-        padding: 0 0.75rem !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
       }
-      .header-actions .header-login {
-        display: none !important;
-      }
+    }
+    @media (max-width: 600px) {
+      .header-btn-primary,
       .header-cta-start {
         display: none !important;
       }
       .header-actions {
-        display: flex !important;
-        align-items: center !important;
         gap: 6px !important;
-      }
-      .mobile-toggle {
-        display: flex !important;
-      }
-      .lang-switch {
-        display: inline-flex !important;
+        margin-left: 0.25rem !important;
       }
       .lang-switch-btn {
-        padding: 0.28rem 0.5rem !important;
+        padding: 0.28rem 0.48rem !important;
       }
       .lang-switch-menu {
         top: calc(100% + 8px) !important;
@@ -3534,8 +3643,14 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="../../auth/login" class="header-login"><span>Login</span></a>
-        <a href="../../auth/register" class="btn btn-primary btn-sm header-cta-start">Start Free</a>
+        <a href="../../contact/" class="header-login header-btn-outline" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
+          <span>Contact Sales</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="../../auth/register" class="header-cta-start header-btn-primary">
+          <span>Log in / Sign up</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
         <button type="button" class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -3903,9 +4018,8 @@
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="../../auth/login" class="mnav-login">Login</a>
-          <a href="../../auth/register" class="mnav-start">Start Free</a>
-          <a href="/#contact-section" class="mnav-demo btn-demo-open">Book a Demo</a>
+          <a href="../../contact/" class="mnav-login" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
+          <a href="../../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Log in / Sign up &rarr;</a>
         </div>
       </div>
     </div>
@@ -3918,7 +4032,7 @@
           var saved = localStorage.getItem('hb_theme');
           if (saved === 'dark' || saved === 'light') return saved;
         } catch (e) {}
-        return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        return 'light';
       }
 
       function updateButtons(theme) {
@@ -3944,10 +4058,18 @@
         document.documentElement.setAttribute('data-theme', theme);
         if (theme === 'dark') {
           document.documentElement.classList.add('dark-theme');
-          if (document.body) document.body.classList.add('dark-theme');
+          document.documentElement.classList.remove('light-theme');
+          if (document.body) {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
+          }
         } else {
           document.documentElement.classList.remove('dark-theme');
-          if (document.body) document.body.classList.remove('dark-theme');
+          document.documentElement.classList.add('light-theme');
+          if (document.body) {
+            document.body.classList.remove('dark-theme');
+            document.body.classList.add('light-theme');
+          }
         }
         if (persist) {
           try { localStorage.setItem('hb_theme', theme); } catch (e) {}
@@ -4011,20 +4133,7 @@
             e.preventDefault();
             var targetTheme = mobileOpt.getAttribute('data-theme-val');
             if (targetTheme) applyTheme(targetTheme, true);
-          }
         });
-
-        if (window.matchMedia) {
-          try {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-              try {
-                if (!localStorage.getItem('hb_theme')) {
-                  applyTheme(e.matches ? 'dark' : 'light', false);
-                }
-              } catch (err) {}
-            });
-          } catch (err) {}
-        }
       }
 
       if (document.readyState === 'loading') {
@@ -4154,7 +4263,7 @@
                                       <div class="cw-bubble user">
                       <span>Hi, looking for a 5-day Bali vacation package for 2 adults in November.</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:22 PM</span>
+                        <span class="time">07:02 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -4171,13 +4280,13 @@ Which package would you like to explore?</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Talk to Travel Expert" style="text-align:left;width:fit-content;">Talk to Travel Expert &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:23 PM</span>
+                        <span class="time">07:03 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>View Ubud Package PDF</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:24 PM</span>
+                        <span class="time">07:04 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
@@ -4186,7 +4295,7 @@ Which package would you like to explore?</span>
 <br />
 Includes 4-star resort, daily breakfast, private airport transfers, and Nusa Penida speedboat tour. Would you like to lock in the early bird fare?</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">06:25 PM</span>
+                        <span class="time">07:05 PM</span>
                                               </div>
                     </div>
                   
@@ -4400,10 +4509,10 @@ Includes 4-star resort, daily breakfast, private airport transfers, and Nusa Pen
                                           <div class="ind-msg-btn">Customize Hotels</div>
                                           <div class="ind-msg-btn">Book Early Bird Rate</div>
                                       </div>
-                                <span class="msg-time">06:25 PM</span>
+                                <span class="msg-time">07:05 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Book Early Bird Rate                  <span class="msg-time">06:25 PM</span>
+                  Book Early Bird Rate                  <span class="msg-time">07:05 PM</span>
                 </div>
                           </div>
           </div>
@@ -4455,10 +4564,10 @@ Includes 4-star resort, daily breakfast, private airport transfers, and Nusa Pen
                                           <div class="ind-msg-btn">Complete Fast Check-In</div>
                                           <div class="ind-msg-btn">Request Airport Cab</div>
                                       </div>
-                                <span class="msg-time">06:25 PM</span>
+                                <span class="msg-time">07:05 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Complete Fast Check-In                  <span class="msg-time">06:25 PM</span>
+                  Complete Fast Check-In                  <span class="msg-time">07:05 PM</span>
                 </div>
                           </div>
           </div>
@@ -4511,10 +4620,10 @@ Includes 4-star resort, daily breakfast, private airport transfers, and Nusa Pen
                                           <div class="ind-msg-btn">Book Ayurveda Spa</div>
                                           <div class="ind-msg-btn">Housekeeping Request</div>
                                       </div>
-                                <span class="msg-time">06:25 PM</span>
+                                <span class="msg-time">07:05 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Book Ayurveda Spa                  <span class="msg-time">06:25 PM</span>
+                  Book Ayurveda Spa                  <span class="msg-time">07:05 PM</span>
                 </div>
                           </div>
           </div>
@@ -4566,10 +4675,10 @@ Includes 4-star resort, daily breakfast, private airport transfers, and Nusa Pen
                                           <div class="ind-msg-btn">⭐⭐⭐⭐⭐ Excellent</div>
                                           <div class="ind-msg-btn">Leave Feedback</div>
                                       </div>
-                                <span class="msg-time">06:25 PM</span>
+                                <span class="msg-time">07:05 PM</span>
               </div>
                               <div class="ind-msg user">
-                  ⭐⭐⭐⭐⭐ Excellent                  <span class="msg-time">06:25 PM</span>
+                  ⭐⭐⭐⭐⭐ Excellent                  <span class="msg-time">07:05 PM</span>
                 </div>
                           </div>
           </div>
