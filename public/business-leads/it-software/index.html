@@ -228,10 +228,10 @@
       siteName: "HelloBotz"    };
   </script>
   <style id="hellobotz-navbar-style">
-    /* ==========================================================================
-       HelloBotz Global Header Navigation System (Matching GetGabs Master Reference)
-       Edge-to-edge full width sticky bar, HD brand logo, clean typography & pill CTAs
-       ========================================================================== */
+     /* ==========================================================================
+        HelloBotz Global Header Navigation System
+        Edge-to-edge full width sticky bar, HD brand logo, clean typography & pill CTAs
+        ========================================================================== */
     :root {
       --nav: 74px !important;
     }
@@ -1018,9 +1018,9 @@
       }
     }
 
-    /* PRODUCTS MEGA MENU: EXACT 1:1 CLONE OF GetGabs (media_1789591778093.png) */
+    /* PRODUCTS MEGA MENU: DESKTOP LAYOUT */
     .mega-menu-products {
-      width: 1120px !important;
+      width: 1160px !important;
       max-width: calc(100vw - 32px) !important;
       background: #ffffff !important;
       border: 1px solid #e5e7eb !important;
@@ -1032,7 +1032,7 @@
 
     .prodocu-mega-layout {
       display: grid !important;
-      grid-template-columns: 185px 1.15fr 1.05fr 1.05fr 250px !important;
+      grid-template-columns: 185px 1.15fr 1.05fr 1.05fr 275px !important;
       gap: 20px !important;
       align-items: stretch !important;
       width: 100% !important;
@@ -1161,27 +1161,28 @@
 
     .prodocu-item {
       display: flex !important;
-      align-items: center !important;
+      align-items: flex-start !important;
       gap: 10px !important;
-      padding: 3px 0 !important;
+      padding: 6px 8px !important;
+      border-radius: 8px !important;
       text-decoration: none !important;
+      transition: all 0.15s ease !important;
       background: transparent !important;
-      border: none !important;
     }
 
     .prodocu-item:hover {
-      background: transparent !important;
+      background-color: #f8fafc !important;
     }
 
     .prodocu-item-icon {
-      width: 28px !important;
-      height: 28px !important;
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 8px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
-      border-radius: 7px !important;
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease !important;
+      margin-top: 1px !important;
     }
 
     .prodocu-item:hover .prodocu-item-icon,
@@ -1230,7 +1231,17 @@
     html[data-theme="dark"] .pro-icon-feedback { background: rgba(217, 119, 6, 0.22) !important; color: #FDE68A !important; }
     html[data-theme="dark"] .pro-icon-analytics { background: rgba(8, 145, 178, 0.22) !important; color: #67E8F9 !important; }
 
-    /* Dark theme text contrast for products mega menu */
+    /* Dark theme container and text contrast for products mega menu */
+    html[data-theme="dark"] .mega-menu-products,
+    body.dark-theme .mega-menu-products {
+      background: #0f172a !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+    }
+    html[data-theme="dark"] .prodocu-col-channels,
+    body.dark-theme .prodocu-col-channels {
+      border-right-color: rgba(255, 255, 255, 0.1) !important;
+    }
     html[data-theme="dark"] .prodocu-item-title,
     body.dark-theme .prodocu-item-title {
       color: #f1f5f9 !important;
@@ -1296,7 +1307,7 @@
     .prodocu-item-title {
       font-size: 13.5px !important;
       font-weight: 600 !important;
-      color: #1f2937 !important;
+      color: #111827 !important;
       line-height: 1.25 !important;
       letter-spacing: -0.01em !important;
       transition: color 0.15s ease !important;
@@ -1307,10 +1318,9 @@
     }
 
     .prodocu-item-desc {
-      font-size: 11.5px !important;
-      font-weight: 400 !important;
+      font-size: 12px !important;
       color: #6b7280 !important;
-      line-height: 1.25 !important;
+      line-height: 1.3 !important;
       margin: 0 !important;
       white-space: normal !important;
     }
@@ -1324,8 +1334,8 @@
     .prodocu-integrate-card {
       background: #F8FAFC !important;
       border: 1px solid #E2E8F0 !important;
-      border-radius: 14px !important;
-      padding: 16px 14px !important;
+      border-radius: 16px !important;
+      padding: 18px 14px !important;
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
@@ -1335,11 +1345,11 @@
     }
 
     .prodocu-integrate-title {
-      font-size: 15px !important;
-      font-weight: 600 !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
       color: #0f172a !important;
       text-align: center !important;
-      margin-bottom: 14px !important;
+      margin-bottom: 16px !important;
       width: 100% !important;
       line-height: 1.2 !important;
       letter-spacing: -0.01em !important;
@@ -1347,37 +1357,37 @@
 
     .prodocu-integrate-grid {
       display: grid !important;
-      grid-template-columns: repeat(3, 62px) !important;
-      gap: 10px !important;
+      grid-template-columns: repeat(3, 72px) !important;
+      gap: 12px !important;
       justify-content: center !important;
       align-items: center !important;
     }
 
     .prodocu-int-tile {
-      width: 62px !important;
-      height: 62px !important;
+      width: 72px !important;
+      height: 72px !important;
       background: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-      border-radius: 12px !important;
+      border: 1.5px solid #e2e8f0 !important;
+      border-radius: 14px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 7px !important;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+      padding: 8px !important;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04) !important;
       transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease !important;
       text-decoration: none !important;
       box-sizing: border-box !important;
     }
 
     .prodocu-int-tile:hover {
-      transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+      transform: translateY(-2px) scale(1.04) !important;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important;
       border-color: #cbd5e1 !important;
     }
 
     .prodocu-int-tile img {
       max-width: 100% !important;
-      max-height: 36px !important;
+      max-height: 48px !important;
       width: auto !important;
       height: auto !important;
       object-fit: contain !important;
@@ -1385,8 +1395,8 @@
     }
 
     .prodocu-int-arrow-tile {
-      width: 62px !important;
-      height: 62px !important;
+      width: 72px !important;
+      height: 72px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -1395,8 +1405,8 @@
     }
 
     .prodocu-int-arrow {
-      width: 44px !important;
-      height: 44px !important;
+      width: 50px !important;
+      height: 50px !important;
       background: #034737 !important;
       border-radius: 50% !important;
       display: flex !important;
@@ -1405,7 +1415,7 @@
       color: #ffffff !important;
       text-decoration: none !important;
       transition: transform 0.2s ease, background-color 0.2s ease !important;
-      box-shadow: 0 2px 6px rgba(3, 71, 55, 0.25) !important;
+      box-shadow: 0 3px 8px rgba(3, 71, 55, 0.28) !important;
     }
 
     .prodocu-int-arrow:hover {
@@ -2753,7 +2763,7 @@
     }
 
 
-    /* Secondary CTA - GetGabs Outline Pill Button */
+    /* Secondary CTA - Outline Pill Button */
     .header-btn-outline,
     .header-login {
       display: inline-flex !important;
@@ -2790,7 +2800,7 @@
       transform: translateX(2px) !important;
     }
 
-    /* Primary CTA - GetGabs Deep Green Solid Pill Button */
+    /* Primary CTA - Deep Green Solid Pill Button */
     .header-btn-primary,
     .header-cta-start {
       display: inline-flex !important;
@@ -3336,25 +3346,25 @@
                   <div class="prodocu-integrate-title">Integrate With</div>
                   <div class="prodocu-integrate-grid">
                     <a href="../../integrations/zoho/" class="prodocu-int-tile" title="Zoho">
-                      <img src="../../assets/images/integrations/zoho.png" alt="Zoho" width="38" height="20">
+                      <img src="../../assets/images/integrations/zoho.png" alt="Zoho" width="48" height="48" loading="lazy">
                     </a>
                     <a href="../../integrations/google-sheets/" class="prodocu-int-tile" title="Google Sheets">
-                      <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets" width="28" height="32">
+                      <img src="../../assets/images/integrations/google-sheet.png" alt="Google Sheets" width="48" height="48" loading="lazy">
                     </a>
                     <a href="../../integrations/shopify/" class="prodocu-int-tile" title="Shopify">
-                      <img src="../../assets/images/integrations/shopify.png" alt="Shopify" width="32" height="32">
+                      <img src="../../assets/images/integrations/shopify.png" alt="Shopify" width="48" height="48" loading="lazy">
                     </a>
                     <a href="../../integrations/woocommerce/" class="prodocu-int-tile" title="WooCommerce">
-                      <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce" width="38" height="24">
+                      <img src="../../assets/images/integrations/woocommerce.png" alt="WooCommerce" width="48" height="48" loading="lazy">
                     </a>
                     <a href="../../integrations/wortal/" class="prodocu-int-tile" title="Wortal">
-                      <img src="../../assets/images/integrations/wortal.png" alt="Wortal" width="32" height="32">
+                      <img src="../../assets/images/integrations/wortal.png" alt="Wortal" width="48" height="48" loading="lazy">
                     </a>
                     <a href="../../integrations/" class="prodocu-int-tile" title="GoTab">
-                      <img src="../../assets/images/integrations/gotab.png" alt="GoTab" width="38" height="20">
+                      <img src="../../assets/images/integrations/gotab.png" alt="GoTab" width="48" height="48" loading="lazy">
                     </a>
                     <a href="../../integrations/shiprocket/" class="prodocu-int-tile" title="Shiprocket">
-                      <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket" width="30" height="30">
+                      <img src="../../assets/images/integrations/shiprocket.png" alt="Shiprocket" width="48" height="48" loading="lazy">
                     </a>
                     <div class="prodocu-int-arrow-tile">
                       <a href="../../integrations/" class="prodocu-int-arrow" title="View All Integrations">
@@ -3682,7 +3692,7 @@
         <button type="button" class="mobile-close btn btn-icon btn-ghost" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
       </div>
       <div class="mobile-drawer-body">
-        <!-- PRODUCTS ACCORDION (Matching getgabs / media_1789588745503.png) -->
+        <!-- PRODUCTS ACCORDION -->
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu">
@@ -4284,20 +4294,20 @@ Valid for 5 minutes. Never share this code with anyone.</span>
                                                       <button type="button" class="cw-bot-action-btn cw-sim-action-btn" data-query="Report Suspicious Activity" style="text-align:left;width:fit-content;">Report Suspicious Activity &rarr;</button>
                                                   </div>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:33 PM</span>
+                        <span class="time">10:09 PM</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble user">
                       <span>Approve Login</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:34 PM</span>
+                        <span class="time">10:10 PM</span>
                                                   <span class="cw-ticks double-blue">✓✓</span>
                                               </div>
                     </div>
                                       <div class="cw-bubble bot">
                       <span>✓ Two-Factor Authentication successful. Session active on macOS (Chrome · Mumbai, India).</span>
                                             <div class="cw-bubble-meta">
-                        <span class="time">08:35 PM</span>
+                        <span class="time">10:11 PM</span>
                                               </div>
                     </div>
                   
@@ -4509,10 +4519,10 @@ Valid for 5 minutes. Never share this code with anyone.</span>
                 Your single-use login code for DevOpsCloud is 719402.                                  <div class="ind-msg-buttons">
                                           <div class="ind-msg-btn">Copy Code 719402</div>
                                       </div>
-                                <span class="msg-time">08:36 PM</span>
+                                <span class="msg-time">10:12 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Copy Code 719402                  <span class="msg-time">08:36 PM</span>
+                  Copy Code 719402                  <span class="msg-time">10:12 PM</span>
                 </div>
                           </div>
           </div>
@@ -4565,10 +4575,10 @@ Valid for 5 minutes. Never share this code with anyone.</span>
                                           <div class="ind-msg-btn">Trigger Auto-Failover</div>
                                           <div class="ind-msg-btn">Page On-Call Lead</div>
                                       </div>
-                                <span class="msg-time">08:36 PM</span>
+                                <span class="msg-time">10:12 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Trigger Auto-Failover                  <span class="msg-time">08:36 PM</span>
+                  Trigger Auto-Failover                  <span class="msg-time">10:12 PM</span>
                 </div>
                           </div>
           </div>
@@ -4620,10 +4630,10 @@ Valid for 5 minutes. Never share this code with anyone.</span>
                                           <div class="ind-msg-btn">Watch 2-Min Setup Video</div>
                                           <div class="ind-msg-btn">Book 1-on-1 Onboarding Call</div>
                                       </div>
-                                <span class="msg-time">08:36 PM</span>
+                                <span class="msg-time">10:12 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Watch 2-Min Setup Video                  <span class="msg-time">08:36 PM</span>
+                  Watch 2-Min Setup Video                  <span class="msg-time">10:12 PM</span>
                 </div>
                           </div>
           </div>
@@ -4675,10 +4685,10 @@ Valid for 5 minutes. Never share this code with anyone.</span>
                                           <div class="ind-msg-btn">Update Payment Card</div>
                                           <div class="ind-msg-btn">Download Last Invoice</div>
                                       </div>
-                                <span class="msg-time">08:36 PM</span>
+                                <span class="msg-time">10:12 PM</span>
               </div>
                               <div class="ind-msg user">
-                  Update Payment Card                  <span class="msg-time">08:36 PM</span>
+                  Update Payment Card                  <span class="msg-time">10:12 PM</span>
                 </div>
                           </div>
           </div>

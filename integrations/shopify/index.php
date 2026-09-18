@@ -323,7 +323,7 @@ include __DIR__ . '/../../includes/header.php';
     margin: 0;
   }
 
-  /* TurboDev Core: After The Ad Click Section */
+  /* HelloBotz E-commerce Funnel: After The Ad Click Section */
   .sh-leak-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -377,6 +377,28 @@ include __DIR__ . '/../../includes/header.php';
     color: #065F46;
     font-weight: 500;
     line-height: 1.45;
+  }
+
+  .sh-leak-img-wrap {
+    margin: 14px 0 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    text-align: center;
+    padding: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .sh-leak-img-wrap img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+  }
+  .sh-leak-card:hover .sh-leak-img-wrap img {
+    transform: scale(1.02);
   }
 
   .sh-callout-strip {
@@ -477,16 +499,40 @@ include __DIR__ . '/../../includes/header.php';
     box-shadow: 0 10px 24px rgba(3, 71, 55, 0.08);
   }
   .sh-moment-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    background: #DCFCE7;
-    color: #16A34A;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #f1f5f9;
+    color: #034737;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
     margin-bottom: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .sh-moment-icon img {
+    width: 38px;
+    height: 38px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .sh-stage-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #e2e8f0;
+    color: #475569;
+    margin-bottom: 12px;
+    align-self: flex-start;
   }
   .sh-moment-card h4 {
     font-size: 1.2rem;
@@ -498,6 +544,8 @@ include __DIR__ . '/../../includes/header.php';
     font-size: 0.92rem;
     color: #64748B;
     line-height: 1.55;
+    margin-bottom: 0;
+  }
     margin: 0;
   }
 
@@ -716,6 +764,10 @@ include __DIR__ . '/../../includes/header.php';
     background: #0b0f19 !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
   }
+  html[data-theme="dark"] .sh-section,
+  body.dark-theme .sh-section {
+    background: #080d1a !important;
+  }
   html[data-theme="dark"] .sh-section.bg-alt,
   body.dark-theme .sh-section.bg-alt {
     background: #0b0f19 !important;
@@ -740,6 +792,22 @@ include __DIR__ . '/../../includes/header.php';
     background: rgba(16, 185, 129, 0.15) !important;
     color: #6ee7b7 !important;
     border-left-color: #10b981 !important;
+  }
+  html[data-theme="dark"] .sh-leak-img-wrap,
+  body.dark-theme .sh-leak-img-wrap {
+    background: #1e293b !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  html[data-theme="dark"] .sh-moment-icon,
+  body.dark-theme .sh-moment-icon {
+    background: #1e293b !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  html[data-theme="dark"] .sh-stage-badge,
+  body.dark-theme .sh-stage-badge {
+    background: #1e293b !important;
+    color: #94a3b8 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
   html[data-theme="dark"] .sh-compare-table th,
   body.dark-theme .sh-compare-table th {
@@ -905,6 +973,9 @@ include __DIR__ . '/../../includes/header.php';
         </div>
 
         <div class="col-lg-6">
+          <div class="text-center mb-4">
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/shopify_hero.png" alt="Shopify WhatsApp Revenue Engine" class="img-fluid" style="max-height:240px;object-fit:contain;" loading="eager">
+          </div>
           <!-- Interactive Mockup Visual -->
           <div class="sh-hero-mockup">
             <div class="sh-live-convo">
@@ -1000,7 +1071,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </section>
 
-  <!-- 4. TURBODEV CORE: AFTER THE AD CLICK WHERE YOUR REVENUE GOES -->
+  <!-- 4. E-COMMERCE FUNNEL: AFTER THE AD CLICK WHERE YOUR REVENUE GOES -->
   <section class="sh-section bg-alt" id="sh-leaks">
     <div class="container">
       <div class="sh-sec-head text-center">
@@ -1025,6 +1096,9 @@ include __DIR__ . '/../../includes/header.php';
             <div class="sh-leak-problem">
               Over 70% of shoppers drop off at checkout. Generic emails go straight to the promotions tab or spam folders, causing thousands in lost orders.
             </div>
+            <div class="sh-leak-img-wrap">
+              <img src="<?php echo $bp; ?>assets/images/shopify-funnel/abandoned_carts.png" alt="Lost Sales from Abandoned Carts" class="img-fluid" loading="lazy">
+            </div>
           </div>
           <div class="sh-leak-fix">
             <strong>HelloBotz Fix:</strong> Automated multi-stage WhatsApp recovery sent within 15 minutes with dynamic images, discount codes, and 1-click buy links.
@@ -1040,6 +1114,9 @@ include __DIR__ . '/../../includes/header.php';
             <div class="sh-leak-title">Lost Revenue from High COD Failure Rates</div>
             <div class="sh-leak-problem">
               Unverified Cash on Delivery orders lead to fake addresses, impulsive buyer regret, and expensive Return-to-Origin (RTO) courier penalties.
+            </div>
+            <div class="sh-leak-img-wrap">
+              <img src="<?php echo $bp; ?>assets/images/shopify-funnel/high_cod_failure_rates.png" alt="High COD Failure Rates" class="img-fluid" loading="lazy">
             </div>
           </div>
           <div class="sh-leak-fix">
@@ -1057,6 +1134,9 @@ include __DIR__ . '/../../includes/header.php';
             <div class="sh-leak-problem">
               Most customers buy once and forget your brand. Without timely follow-ups, your customer acquisition cost (CAC) eats all profit margin.
             </div>
+            <div class="sh-leak-img-wrap">
+              <img src="<?php echo $bp; ?>assets/images/shopify-funnel/no_repeat_orders.png" alt="Repeat Orders Lost" class="img-fluid" loading="lazy">
+            </div>
           </div>
           <div class="sh-leak-fix">
             <strong>HelloBotz Fix:</strong> Automated replenishment nudges and win-back flows triggered based on exact product lifecycle and reorder intervals.
@@ -1073,6 +1153,9 @@ include __DIR__ . '/../../includes/header.php';
             <div class="sh-leak-problem">
               The moment after a purchase is your customer's peak excitement window. If you don't offer relevant add-ons, you lose high-margin sales.
             </div>
+            <div class="sh-leak-img-wrap">
+              <img src="<?php echo $bp; ?>assets/images/shopify-funnel/missed_cross_sells.png" alt="Revenue Lost from Missed Cross-sells" class="img-fluid" loading="lazy">
+            </div>
           </div>
           <div class="sh-leak-fix">
             <strong>HelloBotz Fix:</strong> Smart post-purchase WhatsApp product recommendations and bundle offers sent right upon order dispatch or delivery.
@@ -1088,6 +1171,9 @@ include __DIR__ . '/../../includes/header.php';
             <div class="sh-leak-title">Sales Lost to Unanswered Product Questions</div>
             <div class="sh-leak-problem">
               Hesitation around sizing, fabrics, shipping times, or warranty causes instant tab abandonment when nobody is there to answer 24/7.
+            </div>
+            <div class="sh-leak-img-wrap">
+              <img src="<?php echo $bp; ?>assets/images/shopify-funnel/sales_lost_to_unanswered_questions.png" alt="Sales Lost to Unanswered Questions" class="img-fluid" loading="lazy">
             </div>
           </div>
           <div class="sh-leak-fix">
@@ -1146,15 +1232,8 @@ include __DIR__ . '/../../includes/header.php';
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="p-4 rounded-4 bg-light border text-center">
-            <img src="<?php echo $bp; ?>assets/images/integrations/shopify.png" alt="Shopify WhatsApp Automations" class="img-fluid" style="max-height:180px;object-fit:contain;">
-            <div class="mt-3 p-3 bg-white rounded-3 shadow-sm text-start border">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="fw-bold small text-dark"><i class="fa-brands fa-whatsapp text-success me-1"></i> Live Cart Recovery</span>
-                <span class="badge bg-success">38% Recovered</span>
-              </div>
-              <p class="small text-muted mb-0">"Hi Ananya, your cart is waiting! Click below to finish your order with free express delivery."</p>
-            </div>
+          <div class="p-3 rounded-4 bg-light border text-center shadow-sm">
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/recover_lost_sales.png" alt="Recover Lost Sales & Slashes COD RTO Engine" class="img-fluid rounded-3" loading="lazy">
           </div>
         </div>
       </div>
@@ -1183,23 +1262,8 @@ include __DIR__ . '/../../includes/header.php';
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="p-4 rounded-4 bg-light border text-center">
-            <div class="p-4 bg-white rounded-3 shadow-sm text-start border">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="fw-bold text-dark"><i class="fa-solid fa-rotate text-primary me-2"></i> Replenishment Flow</span>
-                <span class="badge bg-primary">Automated</span>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-2">
-                <div class="p-2 rounded bg-light border"><i class="fa-solid fa-bottle-water fs-3 text-primary"></i></div>
-                <div>
-                  <div class="fw-bold small">Replenishment Reminder</div>
-                  <div class="small text-muted">Sent 28 days post-delivery</div>
-                </div>
-              </div>
-              <div class="p-2 rounded bg-success-subtle small text-success fw-bold">
-                ✓ 24% of customers reordered within 2 hours
-              </div>
-            </div>
+          <div class="p-3 rounded-4 bg-light border text-center shadow-sm">
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/win_more_repeat_oders.png" alt="Win More Repeat Orders Autopilot Engine" class="img-fluid rounded-3" loading="lazy">
           </div>
         </div>
       </div>
@@ -1228,26 +1292,15 @@ include __DIR__ . '/../../includes/header.php';
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="p-4 rounded-4 bg-light border text-center">
-            <div class="p-3 bg-white rounded-3 shadow-sm text-start border">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="fw-bold small text-dark"><i class="fa-solid fa-inbox text-success me-1"></i> HelloBotz Unified Inbox</span>
-                <span class="badge bg-success">Shopify Synced</span>
-              </div>
-              <div class="p-2 rounded bg-light border mb-2 small">
-                <strong>Customer:</strong> "Do you have this linen shirt in Navy Blue, Size L?"
-              </div>
-              <div class="p-2 rounded bg-success-subtle border border-success-subtle small text-dark">
-                <strong>HelloBotz AI:</strong> "Yes! In stock (only 3 left). Click below to order now."
-              </div>
-            </div>
+          <div class="p-3 rounded-4 bg-light border text-center shadow-sm">
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/coversation_into_sales.png" alt="Turn Customer Conversations into Sales" class="img-fluid rounded-3" loading="lazy">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. TURBODEV CORE: EVERY REVENUE MOMENT, COVERED (TILL LTV EXPANSION) -->
+  <!-- 6. FULL REVENUE LIFECYCLE: EVERY REVENUE MOMENT, COVERED (TILL LTV EXPANSION) -->
   <section class="sh-section bg-alt" id="sh-lifecycle">
     <div class="container">
       <div class="sh-sec-head text-center">
@@ -1263,9 +1316,9 @@ include __DIR__ . '/../../includes/header.php';
         <!-- 1. Pre-sales -->
         <div class="sh-moment-card">
           <div class="sh-moment-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/pre_sales_icon.png" alt="Pre-Sales Icon" width="38" height="38" loading="lazy">
           </div>
-          <span class="badge bg-light text-muted border mb-2 align-self-start">STAGE 01</span>
+          <span class="sh-stage-badge">STAGE 01</span>
           <h4>Pre-Sales Product Discovery</h4>
           <p>Deliver personalized product recommendations via WhatsApp AI whenever shoppers browse but hesitate to add to cart.</p>
         </div>
@@ -1273,9 +1326,9 @@ include __DIR__ . '/../../includes/header.php';
         <!-- 2. Abandoned Checkout -->
         <div class="sh-moment-card">
           <div class="sh-moment-icon">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/conversion_icon.png" alt="Conversion Icon" width="38" height="38" loading="lazy">
           </div>
-          <span class="badge bg-light text-muted border mb-2 align-self-start">STAGE 02</span>
+          <span class="sh-stage-badge">STAGE 02</span>
           <h4>Cart &amp; Checkout Recovery</h4>
           <p>Recover 35–45% of abandoned carts with hyper-personalized WhatsApp messages sent at optimal 15m, 2h, and 24h intervals.</p>
         </div>
@@ -1283,9 +1336,9 @@ include __DIR__ . '/../../includes/header.php';
         <!-- 3. COD Verification -->
         <div class="sh-moment-card">
           <div class="sh-moment-icon">
-            <i class="fa-solid fa-shield-halved"></i>
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/post_purchase_icon.png" alt="Post Purchase Icon" width="38" height="38" loading="lazy">
           </div>
-          <span class="badge bg-light text-muted border mb-2 align-self-start">STAGE 03</span>
+          <span class="sh-stage-badge">STAGE 03</span>
           <h4>COD Order Confirmation</h4>
           <p>Verify phone numbers and delivery addresses instantly via interactive buttons. Slash bogus RTO orders by up to 65%.</p>
         </div>
@@ -1293,9 +1346,9 @@ include __DIR__ . '/../../includes/header.php';
         <!-- 4. Post-Purchase Tracking -->
         <div class="sh-moment-card">
           <div class="sh-moment-icon">
-            <i class="fa-solid fa-truck-fast"></i>
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/support_icon.png" alt="Support Icon" width="38" height="38" loading="lazy">
           </div>
-          <span class="badge bg-light text-muted border mb-2 align-self-start">STAGE 04</span>
+          <span class="sh-stage-badge">STAGE 04</span>
           <h4>Real-Time Order Tracking</h4>
           <p>Provide automated WhatsApp notifications for dispatch, out-for-delivery, and successful delivery to crush WISMO queries.</p>
         </div>
@@ -1303,9 +1356,9 @@ include __DIR__ . '/../../includes/header.php';
         <!-- 5. Review & Cross-sell -->
         <div class="sh-moment-card">
           <div class="sh-moment-icon">
-            <i class="fa-solid fa-star"></i>
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/retention_icon.png" alt="Retention Icon" width="38" height="38" loading="lazy">
           </div>
-          <span class="badge bg-light text-muted border mb-2 align-self-start">STAGE 05</span>
+          <span class="sh-stage-badge">STAGE 05</span>
           <h4>Reviews &amp; Instant Cross-sells</h4>
           <p>Collect authentic photo reviews and offer smart upsell recommendations directly inside WhatsApp right after unboxing.</p>
         </div>
@@ -1313,9 +1366,9 @@ include __DIR__ . '/../../includes/header.php';
         <!-- 6. LTV Expansion -->
         <div class="sh-moment-card">
           <div class="sh-moment-icon">
-            <i class="fa-solid fa-chart-line"></i>
+            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/ltv_expansion_icon.png" alt="LTV Expansion Icon" width="38" height="38" loading="lazy">
           </div>
-          <span class="badge bg-light text-muted border mb-2 align-self-start">STAGE 06</span>
+          <span class="sh-stage-badge">STAGE 06</span>
           <h4>LTV Expansion &amp; Win-back</h4>
           <p>Drive predictable repeat orders with automated consumable replenishment alerts and tiered loyalty reward drops.</p>
         </div>

@@ -1135,27 +1135,7 @@ body.wv-modal-open .wv-modal-overlay {
 
 
 
-<section class="what-is-api" style="padding: 60px 0px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="mb-4 whatsapp-heading">
-          WhatsApp Green Tick is Now the Blue Tick
-        </h2>
-      </div>
-      <div class="col-12">
-        <p class="text-center">
-          WhatsApp has changed the Green Tick to a Blue Tick to clarify verified business accounts, allowing for greater
-          trust and recognition by customers.
-        </p>
-        <div class="mid-img">
-          <img width="100%" src="/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Green-Tick-Now-Blue-Tick.png"
-            loading="lazy" alt="Green Tick Now Blue Tick">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <style>
     .usecase-section {
     background: #fffaeb;
