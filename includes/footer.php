@@ -1040,7 +1040,7 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
         <!-- Column 1: Brand, Request Callback & Permanent Social Logos -->
         <div class="footer-brand-col">
           <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
-            <img src="<?php echo $bp; ?>assets/images/logo-footer.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="170" height="42" onerror="this.src='<?php echo $bp; ?>assets/images/logo.png'">
+            <img src="<?php echo $bp; ?>assets/images/logo-dark.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img" width="130" height="40" onerror="this.src='<?php echo $bp; ?>assets/images/logo-footer.png'">
             <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
               <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
               <span style="font-weight:800;color:#fff">Hellobotz</span>
