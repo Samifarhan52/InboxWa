@@ -1534,7 +1534,7 @@
     }
 
     .mega-ind-link:hover {
-      background: #f1f5f9 !important;
+      background: #f8fafc !important;
       transform: translateX(3px) !important;
     }
 
@@ -1542,29 +1542,133 @@
       width: 38px !important;
       height: 38px !important;
       min-width: 38px !important;
-      border-radius: 50% !important;
-      background: #eff2fe !important;
-      color: #4f46e5 !important;
+      border-radius: 11px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
-      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease !important;
     }
 
     .mega-ind-icon svg {
-      width: 19px !important;
-      height: 19px !important;
+      width: 20px !important;
+      height: 20px !important;
       stroke: currentColor !important;
       stroke-width: 2 !important;
+      transition: transform 0.2s ease !important;
     }
 
     .mega-ind-link:hover .mega-ind-icon {
-      transform: scale(1.08) !important;
-      background: #4f46e5 !important;
+      transform: scale(1.12) !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09) !important;
+    }
+
+    /* 12 Industry SaaS Badges */
+    .sol-icon-bfsi { background: #DCFCE7 !important; color: #16A34A !important; }
+    .sol-icon-healthcare { background: #FFE4E6 !important; color: #E11D48 !important; }
+    .sol-icon-retail { background: #FFEDD5 !important; color: #EA580C !important; }
+    .sol-icon-travel { background: #E0F2FE !important; color: #0284C7 !important; }
+    .sol-icon-education { background: #F3E8FF !important; color: #7C3AED !important; }
+    .sol-icon-it { background: #EEF2FF !important; color: #4F46E5 !important; }
+    .sol-icon-food { background: #FEF3C7 !important; color: #D97706 !important; }
+    .sol-icon-events { background: #FDF4FF !important; color: #C026D3 !important; }
+    .sol-icon-realestate { background: #FFF7ED !important; color: #C2410C !important; }
+    .sol-icon-auto { background: #EFF6FF !important; color: #2563EB !important; }
+    .sol-icon-gov { background: #CCFBF1 !important; color: #0D9488 !important; }
+    .sol-icon-manufacturing { background: #F1F5F9 !important; color: #475569 !important; }
+
+    /* Dark Mode Industry Badges */
+    html[data-theme="dark"] .sol-icon-bfsi { background: rgba(22, 163, 74, 0.22) !important; color: #86EFAC !important; }
+    html[data-theme="dark"] .sol-icon-healthcare { background: rgba(225, 29, 72, 0.22) !important; color: #FDA4AF !important; }
+    html[data-theme="dark"] .sol-icon-retail { background: rgba(234, 88, 12, 0.22) !important; color: #FDBA74 !important; }
+    html[data-theme="dark"] .sol-icon-travel { background: rgba(2, 132, 199, 0.22) !important; color: #7DD3FC !important; }
+    html[data-theme="dark"] .sol-icon-education { background: rgba(124, 58, 237, 0.22) !important; color: #C4B5FD !important; }
+    html[data-theme="dark"] .sol-icon-it { background: rgba(79, 70, 229, 0.22) !important; color: #A5B4FC !important; }
+    html[data-theme="dark"] .sol-icon-food { background: rgba(217, 119, 6, 0.22) !important; color: #FCD34D !important; }
+    html[data-theme="dark"] .sol-icon-events { background: rgba(192, 38, 211, 0.22) !important; color: #F0ABFC !important; }
+    html[data-theme="dark"] .sol-icon-realestate { background: rgba(194, 65, 12, 0.22) !important; color: #FDBA74 !important; }
+    html[data-theme="dark"] .sol-icon-auto { background: rgba(37, 99, 235, 0.22) !important; color: #93C5FD !important; }
+    html[data-theme="dark"] .sol-icon-gov { background: rgba(13, 148, 136, 0.22) !important; color: #5EEAD4 !important; }
+    html[data-theme="dark"] .sol-icon-manufacturing { background: rgba(100, 116, 139, 0.22) !important; color: #CBD5E1 !important; }
+
+    /* Dark Mode Solutions Mega Menu Overrides */
+    html[data-theme="dark"] .mega-sol-main,
+    body.dark-theme .mega-sol-main {
+      background: #0f172a !important;
+    }
+    html[data-theme="dark"] .mega-sol-heading,
+    body.dark-theme .mega-sol-heading {
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="dark"] .mega-ind-title,
+    body.dark-theme .mega-ind-title {
+      color: #f1f5f9 !important;
+    }
+    html[data-theme="dark"] .mega-ind-link:hover,
+    body.dark-theme .mega-ind-link:hover {
+      background: rgba(255, 255, 255, 0.06) !important;
+    }
+    html[data-theme="dark"] .mega-ind-link:hover .mega-ind-title,
+    body.dark-theme .mega-ind-link:hover .mega-ind-title {
+      color: #38ef7d !important;
+    }
+    html[data-theme="dark"] .mega-sol-leads-aside,
+    body.dark-theme .mega-sol-leads-aside {
+      background: linear-gradient(180deg, #111827 0%, #1e293b 100%) !important;
+      border-left-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    html[data-theme="dark"] .mega-leads-title,
+    body.dark-theme .mega-leads-title {
+      color: #ffffff !important;
+    }
+    html[data-theme="dark"] .mega-leads-desc,
+    body.dark-theme .mega-leads-desc {
+      color: #94a3b8 !important;
+    }
+    html[data-theme="dark"] .btn-mega-leads-secondary,
+    body.dark-theme .btn-mega-leads-secondary {
+      background: rgba(255, 255, 255, 0.06) !important;
+      color: #f1f5f9 !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    html[data-theme="dark"] .btn-mega-leads-secondary:hover,
+    body.dark-theme .btn-mega-leads-secondary:hover {
+      background: rgba(255, 255, 255, 0.12) !important;
       color: #ffffff !important;
     }
 
+    /* Mobile drawer industry icons */
+    .mob-ind-link {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 6px 0 !important;
+      text-decoration: none !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: #1e293b !important;
+      transition: color 0.15s ease !important;
+    }
+    .mob-ind-icon {
+      width: 26px !important;
+      height: 26px !important;
+      min-width: 26px !important;
+      border-radius: 7px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+    .mob-ind-icon svg {
+      width: 15px !important;
+      height: 15px !important;
+      stroke: currentColor !important;
+      stroke-width: 2 !important;
+    }
+    html[data-theme="dark"] .mob-ind-link,
+    body.dark-theme .mob-ind-link {
+      color: #f1f5f9 !important;
+    }
 
     .mega-ind-title {
       font-size: 0.92rem !important;
@@ -1576,6 +1680,16 @@
 
     .mega-ind-link:hover .mega-ind-title {
       color: #4338ca !important;
+    }
+
+    html[data-theme="dark"] .mega-ind-title,
+    body.dark-theme .mega-ind-title {
+      color: #f1f5f9 !important;
+    }
+
+    html[data-theme="dark"] .mega-ind-link:hover .mega-ind-title,
+    body.dark-theme .mega-ind-link:hover .mega-ind-title {
+      color: #38ef7d !important;
     }
 
     /* Aside Lead Directory Card (Image 3) */
@@ -3131,19 +3245,27 @@
                   <!-- Column 1 -->
                   <div class="mega-ind-col">
                     <a href="../industry/bfsi/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-bfsi">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg>
+                      </span>
                       <span class="mega-ind-title">Banking &amp; Finance</span>
                     </a>
                     <a href="../industry/healthcare/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-healthcare">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg>
+                      </span>
                       <span class="mega-ind-title">Health &amp; Wellness</span>
                     </a>
                     <a href="../industry/retail-and-ecommerce/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-retail">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg>
+                      </span>
                       <span class="mega-ind-title">Retail &amp; E-commerce</span>
                     </a>
                     <a href="../industry/travel-and-hospitality/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-travel">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg>
+                      </span>
                       <span class="mega-ind-title">Travel &amp; Hospitality</span>
                     </a>
                   </div>
@@ -3151,19 +3273,27 @@
                   <!-- Column 2 -->
                   <div class="mega-ind-col">
                     <a href="../industry/education-and-social-impacts/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-education">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+                      </span>
                       <span class="mega-ind-title">Education &amp; Social Impacts</span>
                     </a>
                     <a href="../industry/communication-and-it/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-it">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg>
+                      </span>
                       <span class="mega-ind-title">Communication &amp; IT</span>
                     </a>
                     <a href="../industry/food-and-beverages/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-food">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                      </span>
                       <span class="mega-ind-title">Food &amp; Beverage</span>
                     </a>
                     <a href="../industry/advertising-and-events/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-events">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
+                      </span>
                       <span class="mega-ind-title">Advertising &amp; Events</span>
                     </a>
                   </div>
@@ -3171,19 +3301,27 @@
                   <!-- Column 3 -->
                   <div class="mega-ind-col">
                     <a href="../industry/construction-and-real-estate/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-realestate">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg>
+                      </span>
                       <span class="mega-ind-title">Construction &amp; Real Estate</span>
                     </a>
                     <a href="../industry/automobiles-and-transport/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-auto">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                      </span>
                       <span class="mega-ind-title">Automobiles &amp; Transport</span>
                     </a>
                     <a href="../industry/government-and-utilities/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16M4 2h16M6 6h12M6 10h12M6 14h12M6 18h12"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-gov">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg>
+                      </span>
                       <span class="mega-ind-title">Government &amp; Utilities</span>
                     </a>
                     <a href="../industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-manufacturing">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg>
+                      </span>
                       <span class="mega-ind-title">Manufacturing &amp; Supply</span>
                     </a>
                   </div>
@@ -3671,16 +3809,19 @@
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 2px;border-bottom:1px solid #f1f5f9;">By Industry</div>
-            <a href="../industry/ecommerce-and-retail/">Ecommerce &amp; Retail</a>
-            <a href="../industry/education-and-social-impacts/">Education &amp; Social Impacts</a>
-            <a href="../industry/communication-and-it/">Communication &amp; IT</a>
-            <a href="../industry/food-and-beverages/">Food &amp; Beverage</a>
-            <a href="../industry/advertising-and-events/">Advertising &amp; Events</a>
-            <a href="../industry/construction-and-real-estate/">Construction &amp; Real Estate</a>
-            <a href="../industry/automobiles-and-transport/">Automobiles &amp; Transport</a>
-            <a href="../industry/government-and-utilities/">Government &amp; Utilities</a>
-            <a href="../industry/manufacturing-and-supply/">Manufacturing &amp; Supply</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 6px;border-bottom:1px solid #f1f5f9;margin-bottom:6px;">By Industry</div>
+            <a href="../industry/bfsi/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-bfsi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg></span> Banking &amp; Finance</a>
+            <a href="../industry/healthcare/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-healthcare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg></span> Health &amp; Wellness</a>
+            <a href="../industry/retail-and-ecommerce/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-retail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg></span> Retail &amp; E-commerce</a>
+            <a href="../industry/travel-and-hospitality/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-travel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg></span> Travel &amp; Hospitality</a>
+            <a href="../industry/education-and-social-impacts/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span> Education &amp; Social Impacts</a>
+            <a href="../industry/communication-and-it/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg></span> Communication &amp; IT</a>
+            <a href="../industry/food-and-beverages/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span> Food &amp; Beverage</a>
+            <a href="../industry/advertising-and-events/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg></span> Advertising &amp; Events</a>
+            <a href="../industry/construction-and-real-estate/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-realestate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg></span> Construction &amp; Real Estate</a>
+            <a href="../industry/automobiles-and-transport/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span> Automobiles &amp; Transport</a>
+            <a href="../industry/government-and-utilities/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg></span> Government &amp; Utilities</a>
+            <a href="../industry/manufacturing-and-supply/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-manufacturing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg></span> Manufacturing &amp; Supply</a>
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Business Leads</div>
             <a href="../business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 12 Leads Categories &rarr;</a>
             <a href="../solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
@@ -5814,7 +5955,7 @@
     }
 
     .mega-ind-link:hover {
-      background: #f1f5f9 !important;
+      background: #f8fafc !important;
       transform: translateX(3px) !important;
     }
 
@@ -5822,29 +5963,133 @@
       width: 38px !important;
       height: 38px !important;
       min-width: 38px !important;
-      border-radius: 50% !important;
-      background: #eff2fe !important;
-      color: #4f46e5 !important;
+      border-radius: 11px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       flex-shrink: 0 !important;
-      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease !important;
     }
 
     .mega-ind-icon svg {
-      width: 19px !important;
-      height: 19px !important;
+      width: 20px !important;
+      height: 20px !important;
       stroke: currentColor !important;
       stroke-width: 2 !important;
+      transition: transform 0.2s ease !important;
     }
 
     .mega-ind-link:hover .mega-ind-icon {
-      transform: scale(1.08) !important;
-      background: #4f46e5 !important;
+      transform: scale(1.12) !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09) !important;
+    }
+
+    /* 12 Industry SaaS Badges */
+    .sol-icon-bfsi { background: #DCFCE7 !important; color: #16A34A !important; }
+    .sol-icon-healthcare { background: #FFE4E6 !important; color: #E11D48 !important; }
+    .sol-icon-retail { background: #FFEDD5 !important; color: #EA580C !important; }
+    .sol-icon-travel { background: #E0F2FE !important; color: #0284C7 !important; }
+    .sol-icon-education { background: #F3E8FF !important; color: #7C3AED !important; }
+    .sol-icon-it { background: #EEF2FF !important; color: #4F46E5 !important; }
+    .sol-icon-food { background: #FEF3C7 !important; color: #D97706 !important; }
+    .sol-icon-events { background: #FDF4FF !important; color: #C026D3 !important; }
+    .sol-icon-realestate { background: #FFF7ED !important; color: #C2410C !important; }
+    .sol-icon-auto { background: #EFF6FF !important; color: #2563EB !important; }
+    .sol-icon-gov { background: #CCFBF1 !important; color: #0D9488 !important; }
+    .sol-icon-manufacturing { background: #F1F5F9 !important; color: #475569 !important; }
+
+    /* Dark Mode Industry Badges */
+    html[data-theme="dark"] .sol-icon-bfsi { background: rgba(22, 163, 74, 0.22) !important; color: #86EFAC !important; }
+    html[data-theme="dark"] .sol-icon-healthcare { background: rgba(225, 29, 72, 0.22) !important; color: #FDA4AF !important; }
+    html[data-theme="dark"] .sol-icon-retail { background: rgba(234, 88, 12, 0.22) !important; color: #FDBA74 !important; }
+    html[data-theme="dark"] .sol-icon-travel { background: rgba(2, 132, 199, 0.22) !important; color: #7DD3FC !important; }
+    html[data-theme="dark"] .sol-icon-education { background: rgba(124, 58, 237, 0.22) !important; color: #C4B5FD !important; }
+    html[data-theme="dark"] .sol-icon-it { background: rgba(79, 70, 229, 0.22) !important; color: #A5B4FC !important; }
+    html[data-theme="dark"] .sol-icon-food { background: rgba(217, 119, 6, 0.22) !important; color: #FCD34D !important; }
+    html[data-theme="dark"] .sol-icon-events { background: rgba(192, 38, 211, 0.22) !important; color: #F0ABFC !important; }
+    html[data-theme="dark"] .sol-icon-realestate { background: rgba(194, 65, 12, 0.22) !important; color: #FDBA74 !important; }
+    html[data-theme="dark"] .sol-icon-auto { background: rgba(37, 99, 235, 0.22) !important; color: #93C5FD !important; }
+    html[data-theme="dark"] .sol-icon-gov { background: rgba(13, 148, 136, 0.22) !important; color: #5EEAD4 !important; }
+    html[data-theme="dark"] .sol-icon-manufacturing { background: rgba(100, 116, 139, 0.22) !important; color: #CBD5E1 !important; }
+
+    /* Dark Mode Solutions Mega Menu Overrides */
+    html[data-theme="dark"] .mega-sol-main,
+    body.dark-theme .mega-sol-main {
+      background: #0f172a !important;
+    }
+    html[data-theme="dark"] .mega-sol-heading,
+    body.dark-theme .mega-sol-heading {
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="dark"] .mega-ind-title,
+    body.dark-theme .mega-ind-title {
+      color: #f1f5f9 !important;
+    }
+    html[data-theme="dark"] .mega-ind-link:hover,
+    body.dark-theme .mega-ind-link:hover {
+      background: rgba(255, 255, 255, 0.06) !important;
+    }
+    html[data-theme="dark"] .mega-ind-link:hover .mega-ind-title,
+    body.dark-theme .mega-ind-link:hover .mega-ind-title {
+      color: #38ef7d !important;
+    }
+    html[data-theme="dark"] .mega-sol-leads-aside,
+    body.dark-theme .mega-sol-leads-aside {
+      background: linear-gradient(180deg, #111827 0%, #1e293b 100%) !important;
+      border-left-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    html[data-theme="dark"] .mega-leads-title,
+    body.dark-theme .mega-leads-title {
+      color: #ffffff !important;
+    }
+    html[data-theme="dark"] .mega-leads-desc,
+    body.dark-theme .mega-leads-desc {
+      color: #94a3b8 !important;
+    }
+    html[data-theme="dark"] .btn-mega-leads-secondary,
+    body.dark-theme .btn-mega-leads-secondary {
+      background: rgba(255, 255, 255, 0.06) !important;
+      color: #f1f5f9 !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    html[data-theme="dark"] .btn-mega-leads-secondary:hover,
+    body.dark-theme .btn-mega-leads-secondary:hover {
+      background: rgba(255, 255, 255, 0.12) !important;
       color: #ffffff !important;
     }
 
+    /* Mobile drawer industry icons */
+    .mob-ind-link {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 6px 0 !important;
+      text-decoration: none !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: #1e293b !important;
+      transition: color 0.15s ease !important;
+    }
+    .mob-ind-icon {
+      width: 26px !important;
+      height: 26px !important;
+      min-width: 26px !important;
+      border-radius: 7px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+    .mob-ind-icon svg {
+      width: 15px !important;
+      height: 15px !important;
+      stroke: currentColor !important;
+      stroke-width: 2 !important;
+    }
+    html[data-theme="dark"] .mob-ind-link,
+    body.dark-theme .mob-ind-link {
+      color: #f1f5f9 !important;
+    }
 
     .mega-ind-title {
       font-size: 0.92rem !important;
@@ -5856,6 +6101,16 @@
 
     .mega-ind-link:hover .mega-ind-title {
       color: #4338ca !important;
+    }
+
+    html[data-theme="dark"] .mega-ind-title,
+    body.dark-theme .mega-ind-title {
+      color: #f1f5f9 !important;
+    }
+
+    html[data-theme="dark"] .mega-ind-link:hover .mega-ind-title,
+    body.dark-theme .mega-ind-link:hover .mega-ind-title {
+      color: #38ef7d !important;
     }
 
     /* Aside Lead Directory Card (Image 3) */
@@ -7411,19 +7666,27 @@
                   <!-- Column 1 -->
                   <div class="mega-ind-col">
                     <a href="../industry/bfsi/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-bfsi">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg>
+                      </span>
                       <span class="mega-ind-title">Banking &amp; Finance</span>
                     </a>
                     <a href="../industry/healthcare/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-healthcare">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg>
+                      </span>
                       <span class="mega-ind-title">Health &amp; Wellness</span>
                     </a>
                     <a href="../industry/retail-and-ecommerce/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-retail">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg>
+                      </span>
                       <span class="mega-ind-title">Retail &amp; E-commerce</span>
                     </a>
                     <a href="../industry/travel-and-hospitality/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-travel">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg>
+                      </span>
                       <span class="mega-ind-title">Travel &amp; Hospitality</span>
                     </a>
                   </div>
@@ -7431,19 +7694,27 @@
                   <!-- Column 2 -->
                   <div class="mega-ind-col">
                     <a href="../industry/education-and-social-impacts/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-education">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+                      </span>
                       <span class="mega-ind-title">Education &amp; Social Impacts</span>
                     </a>
                     <a href="../industry/communication-and-it/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-it">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg>
+                      </span>
                       <span class="mega-ind-title">Communication &amp; IT</span>
                     </a>
                     <a href="../industry/food-and-beverages/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-food">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                      </span>
                       <span class="mega-ind-title">Food &amp; Beverage</span>
                     </a>
                     <a href="../industry/advertising-and-events/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-events">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg>
+                      </span>
                       <span class="mega-ind-title">Advertising &amp; Events</span>
                     </a>
                   </div>
@@ -7451,19 +7722,27 @@
                   <!-- Column 3 -->
                   <div class="mega-ind-col">
                     <a href="../industry/construction-and-real-estate/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-realestate">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg>
+                      </span>
                       <span class="mega-ind-title">Construction &amp; Real Estate</span>
                     </a>
                     <a href="../industry/automobiles-and-transport/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-auto">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                      </span>
                       <span class="mega-ind-title">Automobiles &amp; Transport</span>
                     </a>
                     <a href="../industry/government-and-utilities/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16M4 2h16M6 6h12M6 10h12M6 14h12M6 18h12"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-gov">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg>
+                      </span>
                       <span class="mega-ind-title">Government &amp; Utilities</span>
                     </a>
                     <a href="../industry/manufacturing-and-supply/" class="mega-ind-link" role="menuitem">
-                      <span class="mega-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></span>
+                      <span class="mega-ind-icon sol-icon-manufacturing">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg>
+                      </span>
                       <span class="mega-ind-title">Manufacturing &amp; Supply</span>
                     </a>
                   </div>
@@ -7951,16 +8230,19 @@
         <div class="mobile-nav-item" data-accordion>
           <button type="button" class="mobile-nav-link">Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
-            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 2px;border-bottom:1px solid #f1f5f9;">By Industry</div>
-            <a href="../industry/ecommerce-and-retail/">Ecommerce &amp; Retail</a>
-            <a href="../industry/education-and-social-impacts/">Education &amp; Social Impacts</a>
-            <a href="../industry/communication-and-it/">Communication &amp; IT</a>
-            <a href="../industry/food-and-beverages/">Food &amp; Beverage</a>
-            <a href="../industry/advertising-and-events/">Advertising &amp; Events</a>
-            <a href="../industry/construction-and-real-estate/">Construction &amp; Real Estate</a>
-            <a href="../industry/automobiles-and-transport/">Automobiles &amp; Transport</a>
-            <a href="../industry/government-and-utilities/">Government &amp; Utilities</a>
-            <a href="../industry/manufacturing-and-supply/">Manufacturing &amp; Supply</a>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:4px 0 6px;border-bottom:1px solid #f1f5f9;margin-bottom:6px;">By Industry</div>
+            <a href="../industry/bfsi/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-bfsi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3L2 10h20L12 3z"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg></span> Banking &amp; Finance</a>
+            <a href="../industry/healthcare/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-healthcare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg></span> Health &amp; Wellness</a>
+            <a href="../industry/retail-and-ecommerce/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-retail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><path d="M12 9l2 2 4-4"/></svg></span> Retail &amp; E-commerce</a>
+            <a href="../industry/travel-and-hospitality/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-travel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m14 8 4 4-4 4"/></svg></span> Travel &amp; Hospitality</a>
+            <a href="../industry/education-and-social-impacts/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span> Education &amp; Social Impacts</a>
+            <a href="../industry/communication-and-it/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 10.5 7 13"/><line x1="12" y1="13" x2="16" y2="13"/></svg></span> Communication &amp; IT</a>
+            <a href="../industry/food-and-beverages/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span> Food &amp; Beverage</a>
+            <a href="../industry/advertising-and-events/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13v-2z"/><path d="M11.6 16.8l1.4 4.2a1 1 0 0 0 1.2.6l1.8-.6a1 1 0 0 0 .6-1.2l-1.4-4.2"/><path d="M19 8a4 4 0 0 1 0 8"/><path d="M21 6a7 7 0 0 1 0 12"/></svg></span> Advertising &amp; Events</a>
+            <a href="../industry/construction-and-real-estate/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-realestate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="9" y1="17" x2="9" y2="17.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><line x1="15" y1="17" x2="15" y2="17.01"/></svg></span> Construction &amp; Real Estate</a>
+            <a href="../industry/automobiles-and-transport/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span> Automobiles &amp; Transport</a>
+            <a href="../industry/government-and-utilities/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4 10h16M2 21h20M5 10v8M19 10v8M9 10v8M15 10v8M12 5l8 5H4l8-5z"/></svg></span> Government &amp; Utilities</a>
+            <a href="../industry/manufacturing-and-supply/" class="mob-ind-link"><span class="mob-ind-icon sol-icon-manufacturing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><circle cx="17" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg></span> Manufacturing &amp; Supply</a>
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Business Leads</div>
             <a href="../business-leads/" style="font-weight:700;color:#4f46e5;">Browse All 12 Leads Categories &rarr;</a>
             <a href="../solutions/data-marketplace/#custom-request" style="color:var(--p2);font-weight:600;">+ Custom Data Request</a>
