@@ -1019,6 +1019,579 @@ include __DIR__ . '/../../includes/header.php';
       align-items: center !important;
     }
   }
+
+
+  /* Extracted Brand Marquee and Showcase Styles */
+     DUAL-ROW CLIENT TICKER (BRANDS MARQUEE) - Reference: media_1789590019527.png
+     ========================================================================== */
+  .brands-section {
+    background: #f0f0f0;
+    padding: 24px 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .brands-inner {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .brands-inner::before,
+  .brands-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    max-width: 140px;
+    min-width: 60px;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .brands-inner::before {
+    left: 0;
+    background: linear-gradient(to right, #f0f0f0 0%, rgba(240, 240, 240, 0) 100%);
+  }
+  .brands-inner::after {
+    right: 0;
+    background: linear-gradient(to left, #f0f0f0 0%, rgba(240, 240, 240, 0) 100%);
+  }
+  .brands-inner-dual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .brands-track {
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    align-items: center;
+    will-change: transform;
+  }
+  .brands-track-left {
+    animation: 50s linear infinite brandsScrollLeft;
+  }
+  .brands-track-right {
+    animation: 50s linear infinite brandsScrollRight;
+  }
+  .brands-inner:hover .brands-track-left,
+  .brands-inner:hover .brands-track-right {
+    animation-play-state: paused;
+  }
+  @keyframes brandsScrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes brandsScrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .brand-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 9999px !important;
+    padding: 6px 14px 6px 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    cursor: default !important;
+    user-select: none !important;
+  }
+  .brand-badge:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+  .brand-badge img:first-child {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 9999px !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+  }
+  .brand-badge span {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #1a1a1a !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    line-height: 1 !important;
+  }
+  .brand-badge span img {
+    width: 16px !important;
+    height: 12px !important;
+    object-fit: cover !important;
+    border-radius: 2px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-left: 4px !important;
+  }
+  .brand-badge svg {
+    width: 16px !important;
+    height: 16px !important;
+    color: #3b82f6 !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+  }
+  @media (max-width: 768px) {
+    .brands-section {
+      padding: 18px 0;
+    }
+    .brands-inner-dual {
+      gap: 12px;
+    }
+    .brands-track {
+      gap: 12px;
+    }
+    .brands-inner::before,
+    .brands-inner::after {
+      width: 50px;
+    }
+    .brand-badge {
+      padding: 5px 12px 5px 7px !important;
+    }
+    .brand-badge span {
+      font-size: 13px !important;
+    }
+  }
+
+
+
+  /* Platform Showcase Section */
+  .cw-platform-showcase-section {
+    padding: 4.5rem 1.5rem 5rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 60%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cw-showcase-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .cw-showcase-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+  }
+  .cw-showcase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .cw-showcase-title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+  .cw-showcase-subtitle {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .cw-showcase-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
+  }
+  .cw-showcase-tab {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  .cw-showcase-tab:hover {
+    border-color: #cbd5e1;
+    color: #0f172a;
+    transform: translateY(-1px);
+  }
+  .cw-showcase-tab.active {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+  }
+  .cw-showcase-window-wrap {
+    position: relative;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .cw-showcase-window {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  }
+  .cw-window-titlebar {
+    background: #0f172a;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .cw-window-dots {
+    display: flex;
+    gap: 7px;
+  }
+  .cw-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+  .cw-dot.red { background: #ef4444; }
+  .cw-dot.yellow { background: #f59e0b; }
+  .cw-dot.green { background: #10b981; }
+  .cw-window-url-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 5px 14px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 0.78rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    max-width: 480px;
+    width: 100%;
+    justify-content: center;
+  }
+  .cw-window-actions {
+    display: flex;
+    align-items: center;
+  }
+  .cw-window-expand {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #f1f5f9;
+    padding: 5px 12px;
+    border-radius: 7px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+  .cw-window-expand:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+  .cw-window-screen {
+    background: #0b0f19;
+    position: relative;
+    overflow: hidden;
+  }
+  .cw-tab-media {
+    display: none;
+    animation: cwFadeInMedia 0.35s ease;
+  }
+  .cw-tab-media.active {
+    display: block;
+  }
+  @keyframes cwFadeInMedia {
+    from { opacity: 0; transform: scale(0.995); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .cw-showcase-media-elem {
+    width: 100%;
+    height: auto;
+    max-height: 580px;
+    object-fit: contain;
+    display: block;
+    background: #0b0f19;
+    margin: 0 auto;
+  }
+  .cw-media-caption {
+    padding: 14px 22px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.88rem;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cw-caption-badge {
+    background: #10b981;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  /* Floating Proof Badges */
+  .cw-showcase-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    padding: 10px 16px;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .cw-sc-left {
+    bottom: 50px;
+    left: -28px;
+    animation: cwFloat 4s ease-in-out infinite alternate;
+  }
+  .cw-sc-right {
+    top: 70px;
+    right: -28px;
+    animation: cwFloat 4s ease-in-out infinite alternate -2s;
+  }
+  .cw-sc-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #ecfdf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+  .cw-sc-text strong {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+  }
+  .cw-sc-text span {
+    display: block;
+    font-size: 0.72rem;
+    color: #64748b;
+  }
+
+  /* Fullscreen Video Lightbox Modal */
+  .cw-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .cw-modal-overlay.open {
+    display: flex;
+  }
+  .cw-modal-box {
+    background: #0f172a;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 980px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: cwModalPop 0.25s ease;
+  }
+  @keyframes cwModalPop {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .cw-modal-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    background: #090d16;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .cw-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #f8fafc;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+  .cw-modal-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+  }
+  .cw-modal-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #cbd5e1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cw-modal-close:hover {
+    background: #ef4444;
+    color: #ffffff;
+  }
+  .cw-modal-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #131b2e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-x: auto;
+  }
+  .cw-m-tab {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    padding: 7px 15px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .cw-m-tab:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .cw-m-tab.active {
+    background: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+  }
+  .cw-modal-media-container {
+    position: relative;
+    background: #000000;
+    min-height: 360px;
+    max-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cw-modal-video, .cw-modal-img {
+    max-width: 100%;
+    max-height: 65vh;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  .cw-modal-footer {
+    padding: 16px 22px;
+    background: #090d16;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cw-modal-footnote {
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+  .cw-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cw-btn-modal-primary {
+    background: #10b981;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .cw-btn-modal-primary:hover {
+    background: #059669;
+    color: #ffffff;
+  }
+  .cw-btn-modal-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cw-btn-modal-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .cw-platform-showcase-section {
+      padding: 3rem 1rem 3.5rem;
+    }
+    .cw-showcase-title {
+      font-size: 1.65rem;
+    }
+    .cw-showcase-subtitle {
+      font-size: 0.92rem;
+    }
+    .cw-window-url-bar {
+      display: none;
+    }
+    .cw-showcase-card {
+      display: none !important;
+    }
+
 </style>
 
 <div class="cw-page">
@@ -1109,7 +1682,1522 @@ include __DIR__ . '/../../includes/header.php';
     </div>
   </section>
 
-  <!-- 2. COMPARISON GRID SECTION -->
+  <!-- 1.1 CLIENT BRANDS MARQUEE (media_1789590019527.png) -->
+  <section class="brands-section">
+    <div class="brands-inner">
+                <div class="brands-inner-dual">
+            <!-- First Row - Scrolling Left -->
+            <div class="brands-track brands-track-left">
+                                <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="GIVA">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/07/GIVA.jpg" alt="GIVA"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      GIVA                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="MultiFit">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/multifit.webp" alt="MultiFit"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      MultiFit                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="quelton">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/quelton.webp" alt="quelton"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      quelton                                              <img src="https://flagcdn.com/w40/es.png" alt="Spain"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Ravenwood">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/ravenwood.webp" alt="Ravenwood"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Ravenwood                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="University of Southampton">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/university-of-southampton.png" alt="University of Southampton"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      University of Southampton                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="SML Mahindra">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/SML-Mahindra.png" alt="SML Mahindra"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      SML Mahindra                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Think IAS">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Think-IAS.png" alt="Think IAS"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Think IAS                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Ayurvedic Village">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/ayurvedicvillage.png" alt="Ayurvedic Village"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Ayurvedic Village                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="dobbe.ai">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/dobbe.ai_-1.png" alt="dobbe.ai"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      dobbe.ai                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Vegetrainian">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/vegetrainian.png" alt="Vegetrainian"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Vegetrainian                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="HexaCoder">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/hexacoder.webp" alt="HexaCoder"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      HexaCoder                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Charity Commission">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/Charity-Commission.webp" alt="Charity Commission"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Charity Commission                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Blissify">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/blissify.webp" alt="Blissify"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Blissify                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Sansacosmetics">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sansacosmetics.webp" alt="Sansacosmetics"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Sansacosmetics                                              <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Shine&#038;Smooth">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shinesmooth.webp" alt="Shine&#038;Smooth"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Shine&#038;Smooth                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="shop.teamsg">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shop.teamsg.webp" alt="shop.teamsg"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      shop.teamsg                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="SOStravel">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sostravel.webp" alt="SOStravel"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      SOStravel                                              <img src="https://flagcdn.com/w40/it.png" alt="Italy"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Three Monkey">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/threemonkey.webp" alt="Three Monkey"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Three Monkey                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Totpro">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/totpro.webp" alt="Totpro"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Totpro                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="TrendyBay">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/TrendyBay.webp" alt="TrendyBay"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      TrendyBay                                              <img src="https://flagcdn.com/w40/gn.png" alt="Guinea"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="tumbledry">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/tumbledry.webp" alt="tumbledry"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      tumbledry                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Vivekananda Global University">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/vgu.webp" alt="Vivekananda Global University"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Vivekananda Global University                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Tumble Dry">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/tumbledry.png" alt="Tumble Dry"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Tumble Dry                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="GIVA">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/07/GIVA.jpg" alt="GIVA"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      GIVA                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="MultiFit">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/multifit.webp" alt="MultiFit"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      MultiFit                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="quelton">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/quelton.webp" alt="quelton"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      quelton                                              <img src="https://flagcdn.com/w40/es.png" alt="Spain"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Ravenwood">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/ravenwood.webp" alt="Ravenwood"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Ravenwood                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="University of Southampton">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/university-of-southampton.png" alt="University of Southampton"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      University of Southampton                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="SML Mahindra">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/SML-Mahindra.png" alt="SML Mahindra"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      SML Mahindra                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Think IAS">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Think-IAS.png" alt="Think IAS"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Think IAS                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Ayurvedic Village">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/ayurvedicvillage.png" alt="Ayurvedic Village"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Ayurvedic Village                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="dobbe.ai">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/dobbe.ai_-1.png" alt="dobbe.ai"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      dobbe.ai                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Vegetrainian">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/vegetrainian.png" alt="Vegetrainian"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Vegetrainian                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="HexaCoder">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/hexacoder.webp" alt="HexaCoder"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      HexaCoder                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Charity Commission">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/Charity-Commission.webp" alt="Charity Commission"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Charity Commission                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Blissify">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/blissify.webp" alt="Blissify"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Blissify                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Sansacosmetics">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sansacosmetics.webp" alt="Sansacosmetics"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Sansacosmetics                                              <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Shine&#038;Smooth">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shinesmooth.webp" alt="Shine&#038;Smooth"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Shine&#038;Smooth                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="shop.teamsg">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shop.teamsg.webp" alt="shop.teamsg"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      shop.teamsg                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="SOStravel">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sostravel.webp" alt="SOStravel"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      SOStravel                                              <img src="https://flagcdn.com/w40/it.png" alt="Italy"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Three Monkey">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/threemonkey.webp" alt="Three Monkey"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Three Monkey                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Totpro">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/totpro.webp" alt="Totpro"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Totpro                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="TrendyBay">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/TrendyBay.webp" alt="TrendyBay"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      TrendyBay                                              <img src="https://flagcdn.com/w40/gn.png" alt="Guinea"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="tumbledry">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/tumbledry.webp" alt="tumbledry"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      tumbledry                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Vivekananda Global University">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/vgu.webp" alt="Vivekananda Global University"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Vivekananda Global University                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Tumble Dry">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/tumbledry.png" alt="Tumble Dry"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Tumble Dry                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                              </div>
+
+            <!-- Second Row - Scrolling Right -->
+            <div class="brands-track brands-track-right">
+                                <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Salgar Tea">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/salgartea.png" alt="Salgar Tea"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Salgar Tea                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="FADE MMA &#038; Gym">
+                                          <img src="https://cdn.getgabs.com/newhomepage/fade-mma-and-gym.avif" alt="FADE MMA &#038; Gym"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      FADE MMA &#038; Gym                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="10 Hydrogen">
+                                          <img src="https://cdn.getgabs.com/newhomepage/10-hydrogen.avif" alt="10 Hydrogen"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      10 Hydrogen                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Davgrey">
+                                          <img src="https://cdn.getgabs.com/newhomepage/davgrey.avif" alt="Davgrey"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Davgrey                                              <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Voice AI Agency">
+                                          <img src="https://cdn.getgabs.com/newhomepage/voice-aI-agency.avif" alt="Voice AI Agency"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Voice AI Agency                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Ollic ict hub">
+                                          <img src="https://cdn.getgabs.com/newhomepage/ollic-ict-hub.avif" alt="Ollic ict hub"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Ollic ict hub                                              <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="i-jobs">
+                                          <img src="https://cdn.getgabs.com/newhomepage/i-jobs.avif" alt="i-jobs"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      i-jobs                                              <img src="https://flagcdn.com/w40/af.png" alt="UK"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="American Language Centre">
+                                          <img src="https://cdn.getgabs.com/newhomepage/the-american-language-centre-of-asablanca.avif" alt="American Language Centre"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      American Language Centre                                              <img src="https://flagcdn.com/w40/ma.png" alt="Morocco"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Abroad Routes">
+                                          <img src="https://cdn.getgabs.com/newhomepage/abroad-routes.avif" alt="Abroad Routes"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Abroad Routes                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Arriival">
+                                          <img src="https://cdn.getgabs.com/newhomepage/arriival.avif" alt="Arriival"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Arriival                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="tagshop AI">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/TAGSHOP.png" alt="tagshop AI"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      tagshop AI                                              <img src="https://flagcdn.com/w40/us.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Dreamcast">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/DREAMCAST.png" alt="Dreamcast"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Dreamcast                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="TIE Global">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/tie.png" alt="TIE Global"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      TIE Global                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Omni Ice Cream">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/omniicecream.png" alt="Omni Ice Cream"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Omni Ice Cream                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Alagasco">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Alagasco.png" alt="Alagasco"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Alagasco                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Northern Spices">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Northern-Spices.png" alt="Northern Spices"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Northern Spices                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Startup Chaupal">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/startup-chaupal.jpg" alt="Startup Chaupal"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Startup Chaupal                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Curious Hues">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Curious-Hues-e1773645714310.webp" alt="Curious Hues"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Curious Hues                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Satyam AI">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/Satyam-AI.jpg" alt="Satyam AI"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Satyam AI                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="GD Goenka School">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/GDGoenkaSchool.ico" alt="GD Goenka School"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      GD Goenka School                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Capgemini">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/capgemini.png" alt="Capgemini"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Capgemini                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Arte hair studio">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/arte.png" alt="Arte hair studio"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Arte hair studio                                              <img src="https://flagcdn.com/w40/sg.png" alt="Singapore"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="99pandit">
+                                          <img src="https://cdn.getgabs.com/newhomepage/99pandit.avif" alt="99pandit"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      99pandit                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Salgar Tea">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/salgartea.png" alt="Salgar Tea"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Salgar Tea                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="FADE MMA &#038; Gym">
+                                          <img src="https://cdn.getgabs.com/newhomepage/fade-mma-and-gym.avif" alt="FADE MMA &#038; Gym"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      FADE MMA &#038; Gym                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="10 Hydrogen">
+                                          <img src="https://cdn.getgabs.com/newhomepage/10-hydrogen.avif" alt="10 Hydrogen"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      10 Hydrogen                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Davgrey">
+                                          <img src="https://cdn.getgabs.com/newhomepage/davgrey.avif" alt="Davgrey"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Davgrey                                              <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Voice AI Agency">
+                                          <img src="https://cdn.getgabs.com/newhomepage/voice-aI-agency.avif" alt="Voice AI Agency"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Voice AI Agency                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Ollic ict hub">
+                                          <img src="https://cdn.getgabs.com/newhomepage/ollic-ict-hub.avif" alt="Ollic ict hub"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Ollic ict hub                                              <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="i-jobs">
+                                          <img src="https://cdn.getgabs.com/newhomepage/i-jobs.avif" alt="i-jobs"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      i-jobs                                              <img src="https://flagcdn.com/w40/af.png" alt="UK"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="American Language Centre">
+                                          <img src="https://cdn.getgabs.com/newhomepage/the-american-language-centre-of-asablanca.avif" alt="American Language Centre"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      American Language Centre                                              <img src="https://flagcdn.com/w40/ma.png" alt="Morocco"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Abroad Routes">
+                                          <img src="https://cdn.getgabs.com/newhomepage/abroad-routes.avif" alt="Abroad Routes"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Abroad Routes                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Arriival">
+                                          <img src="https://cdn.getgabs.com/newhomepage/arriival.avif" alt="Arriival"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Arriival                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="tagshop AI">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/TAGSHOP.png" alt="tagshop AI"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      tagshop AI                                              <img src="https://flagcdn.com/w40/us.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Dreamcast">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/DREAMCAST.png" alt="Dreamcast"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Dreamcast                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="TIE Global">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/tie.png" alt="TIE Global"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      TIE Global                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Omni Ice Cream">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/omniicecream.png" alt="Omni Ice Cream"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Omni Ice Cream                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Alagasco">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Alagasco.png" alt="Alagasco"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Alagasco                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Northern Spices">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Northern-Spices.png" alt="Northern Spices"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Northern Spices                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Startup Chaupal">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/startup-chaupal.jpg" alt="Startup Chaupal"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Startup Chaupal                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Curious Hues">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Curious-Hues-e1773645714310.webp" alt="Curious Hues"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Curious Hues                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Satyam AI">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/Satyam-AI.jpg" alt="Satyam AI"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Satyam AI                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="GD Goenka School">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/GDGoenkaSchool.ico" alt="GD Goenka School"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      GD Goenka School                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Capgemini">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/capgemini.png" alt="Capgemini"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Capgemini                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="Arte hair studio">
+                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/arte.png" alt="Arte hair studio"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      Arte hair studio                                              <img src="https://flagcdn.com/w40/sg.png" alt="Singapore"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                                    <div
+                    class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
+                    title="99pandit">
+                                          <img src="https://cdn.getgabs.com/newhomepage/99pandit.avif" alt="99pandit"
+                        class="w-6 h-6 rounded-full" loading="lazy">
+                                          <span class="text-sm font-medium">
+                      99pandit                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
+                          class="inline-block w-4 h-4 ml-1" loading="lazy">
+                                            </span>
+                                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4">
+                        <path fill="currentColor"
+                          d="m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z">
+                        </path>
+                      </svg>
+                                        </div>
+                              </div>
+          </div>
+                  
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ANIMATED PLATFORM SHOWCASE SECTION -->
+  <section class="cw-platform-showcase-section">
+    <div class="cw-showcase-container">
+      <div class="cw-showcase-header">
+        <div class="cw-showcase-pill">
+          <span class="cw-pulse-dot" style="width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;"></span>
+          LIVE PLATFORM WALKTHROUGH
+        </div>
+        <h2 class="cw-showcase-title">WhatsApp Automation Software in Action — Visual Automation &amp; AI Bots Built for Scale</h2>
+        <p class="cw-showcase-subtitle">No complicated coding. Build conversational customer journeys, automate broadcasts, and route high-value leads with zero friction.</p>
+      </div>
+
+      <!-- Feature Switcher Tabs -->
+      <div class="cw-showcase-tabs" role="tablist">
+        <button class="cw-showcase-tab active" data-target="flow" onclick="switchShowcaseTab('flow', this)">
+          <span class="cw-tab-icon">⚡</span>
+          <span class="cw-tab-label">Visual Flow Builder</span>
+        </button>
+        <button class="cw-showcase-tab" data-target="chat" onclick="switchShowcaseTab('chat', this)">
+          <span class="cw-tab-icon">💬</span>
+          <span class="cw-tab-label">Team Live Chat</span>
+        </button>
+        <button class="cw-showcase-tab" data-target="integrations" onclick="switchShowcaseTab('integrations', this)">
+          <span class="cw-tab-icon">🔌</span>
+          <span class="cw-tab-label">CRM &amp; Shopify Sync</span>
+        </button>
+        <button class="cw-showcase-tab" data-target="analytics" onclick="switchShowcaseTab('analytics', this)">
+          <span class="cw-tab-icon">📊</span>
+          <span class="cw-tab-label">Live Campaign Analytics</span>
+        </button>
+      </div>
+
+      <!-- Video / GIF Mac Window Frame -->
+      <div class="cw-showcase-window-wrap">
+        <div class="cw-showcase-window">
+          <!-- Window Titlebar with Mac Traffic Lights -->
+          <div class="cw-window-titlebar">
+            <div class="cw-window-dots">
+              <span class="cw-dot red"></span>
+              <span class="cw-dot yellow"></span>
+              <span class="cw-dot green"></span>
+            </div>
+            <div class="cw-window-url-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>app.hellobotz.com/flow-builder/lead-qualification-v3</span>
+            </div>
+            <div class="cw-window-actions">
+              <button class="cw-window-expand" onclick="openHelloBotzVideoModal('flow')" title="View Fullscreen Demo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                <span>Fullscreen</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Media Display Viewport -->
+          <div class="cw-window-screen">
+            <!-- Flow Builder Media -->
+            <div class="cw-tab-media active" id="media-flow">
+              <video class="cw-showcase-media-elem" autoplay loop muted playsinline poster="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif">
+                <source src="<?php echo $bp; ?>assets/images/animations/flow-builder.mp4" type="video/mp4">
+                <img src="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif" alt="HelloBotz Visual Flow Builder">
+              </video>
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Flow Builder</span>
+                <span>Drag &amp; drop conversational trigger nodes, rich interactive media cards, and custom logic without writing a single line of code.</span>
+              </div>
+            </div>
+
+            <!-- Team Live Chat Media -->
+            <div class="cw-tab-media" id="media-chat">
+              <img class="cw-showcase-media-elem" src="<?php echo $bp; ?>assets/images/animations/live-chat.gif" alt="HelloBotz Multi-Agent Team Live Chat Shared Inbox" loading="lazy">
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Multi-Agent Inbox</span>
+                <span>Shared team inbox on a single official WhatsApp Business number. Assign chats, use quick replies, and track agent response times.</span>
+              </div>
+            </div>
+
+            <!-- Integrations Media -->
+            <div class="cw-tab-media" id="media-integrations">
+              <img class="cw-showcase-media-elem" src="<?php echo $bp; ?>assets/images/animations/integration-1.gif" alt="HelloBotz CRM, Shopify and WooCommerce Integrations" loading="lazy">
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Seamless Integrations</span>
+                <span>Connect HelloBotz natively with Shopify, WooCommerce, Zoho, HubSpot, Google Sheets, and webhook endpoints with 1 click.</span>
+              </div>
+            </div>
+
+            <!-- Analytics Media -->
+            <div class="cw-tab-media" id="media-analytics">
+              <img class="cw-showcase-media-elem" src="<?php echo $bp; ?>assets/images/animations/analytics.gif" alt="HelloBotz Live Campaign Delivery &amp; Conversion Analytics" loading="lazy">
+              <div class="cw-media-caption">
+                <span class="cw-caption-badge">Real-Time Analytics</span>
+                <span>Measure read rates, link click-throughs, sales conversions, and customer engagement metrics with live broadcast reporting.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Proof Badges around window -->
+        <div class="cw-showcase-card cw-sc-left">
+          <div class="cw-sc-icon">⚡</div>
+          <div class="cw-sc-text">
+            <strong>3.8x Faster Reply Speed</strong>
+            <span>Instant AI agent auto-routing</span>
+          </div>
+        </div>
+
+        <div class="cw-showcase-card cw-sc-right">
+          <div class="cw-sc-icon">📈</div>
+          <div class="cw-sc-text">
+            <strong>98% Message Open Rate</strong>
+            <span>Direct WhatsApp Verified Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <!-- 2. COMPARISON GRID SECTION -->
   <section class="cw-comparison-section">
     <div class="cw-section-header">
       <span class="cw-badge-pill">Comparison Grid</span>
@@ -1295,7 +3383,117 @@ include __DIR__ . '/../../includes/header.php';
   </section>
 </div>
 
+
+<!-- Fullscreen Video Lightbox Modal -->
+<div id="hellobotz-video-modal" class="cw-modal-overlay" onclick="handleModalOverlayClick(event)">
+  <div class="cw-modal-box">
+    <div class="cw-modal-topbar">
+      <div class="cw-modal-title">
+        <span class="cw-modal-dot"></span>
+        <span>HelloBotz Platform Demo &bull; Interactive Tour</span>
+      </div>
+      <button class="cw-modal-close" onclick="closeHelloBotzVideoModal()" aria-label="Close demo modal">&times;</button>
+    </div>
+    <div class="cw-modal-body">
+      <div class="cw-modal-tabs">
+        <button class="cw-m-tab active" data-tab="flow" onclick="switchModalMedia('flow', this)">⚡ Flow Builder</button>
+        <button class="cw-m-tab" data-tab="chat" onclick="switchModalMedia('chat', this)">💬 Team Live Chat</button>
+        <button class="cw-m-tab" data-tab="integrations" onclick="switchModalMedia('integrations', this)">🔌 Integrations</button>
+        <button class="cw-m-tab" data-tab="analytics" onclick="switchModalMedia('analytics', this)">📊 Campaign Analytics</button>
+      </div>
+      <div class="cw-modal-media-container" id="hellobotz-modal-media">
+        <video class="cw-modal-video" autoplay loop muted playsinline controls poster="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif">
+          <source src="<?php echo $bp; ?>assets/images/animations/flow-builder.mp4" type="video/mp4">
+          <img src="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo">
+        </video>
+      </div>
+      <div class="cw-modal-footer">
+        <div class="cw-modal-footnote">Experience the full power of WhatsApp automation with zero ban risk.</div>
+        <div class="cw-modal-actions">
+          <a href="<?php echo $bp; ?>auth/register" class="cw-btn-modal-primary">Start 7-Day Free Trial</a>
+          <button type="button" class="cw-btn-modal-secondary btn-demo-open" onclick="closeHelloBotzVideoModal()">Schedule 1-on-1 Call</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+
+/* HelloBotz Showcase Video Lightbox & Tabs */
+function openHelloBotzVideoModal(tab) {
+  var modal = document.getElementById('hellobotz-video-modal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (tab) {
+      var tabBtn = modal.querySelector('.cw-m-tab[data-tab="' + tab + '"]');
+      if (tabBtn) switchModalMedia(tab, tabBtn);
+    }
+  }
+}
+
+function closeHelloBotzVideoModal() {
+  var modal = document.getElementById('hellobotz-video-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    var vid = modal.querySelector('video');
+    if (vid) vid.pause();
+  }
+}
+
+function handleModalOverlayClick(e) {
+  if (e.target && e.target.id === 'hellobotz-video-modal') {
+    closeHelloBotzVideoModal();
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeHelloBotzVideoModal();
+  }
+});
+
+function switchShowcaseTab(target, btn) {
+  var tabs = document.querySelectorAll('.cw-showcase-tab');
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  var medias = document.querySelectorAll('.cw-tab-media');
+  medias.forEach(function(m) { m.classList.remove('active'); });
+  var activeMedia = document.getElementById('media-' + target);
+  if (activeMedia) {
+    activeMedia.classList.add('active');
+    var vid = activeMedia.querySelector('video');
+    if (vid) {
+      vid.currentTime = 0;
+      vid.play().catch(function(){});
+    }
+  }
+}
+
+function switchModalMedia(type, btn) {
+  var container = document.getElementById('hellobotz-modal-media');
+  if (!container) return;
+
+  var tabs = document.querySelectorAll('.cw-m-tab');
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  var bp = "<?php echo $bp; ?>";
+  if (type === 'flow') {
+    container.innerHTML = '<video class="cw-modal-video" autoplay loop muted playsinline controls poster="' + bp + 'assets/images/animations/interakt-hero.gif"><source src="' + bp + 'assets/images/animations/flow-builder.mp4" type="video/mp4"><img src="' + bp + 'assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo"></video>';
+  } else if (type === 'chat') {
+    container.innerHTML = '<img class="cw-modal-img" src="' + bp + 'assets/images/animations/live-chat.gif" alt="Multi-Agent Live Chat Inbox">';
+  } else if (type === 'integrations') {
+    container.innerHTML = '<img class="cw-modal-img" src="' + bp + 'assets/images/animations/integration-1.gif" alt="CRM & eCommerce Integrations">';
+  } else if (type === 'analytics') {
+    container.innerHTML = '<img class="cw-modal-img" src="' + bp + 'assets/images/animations/analytics.gif" alt="Campaign Analytics">';
+  }
+}
+
+
 (function() {
   var basePath = "<?php echo $bp; ?>assets/images/channel/whatsapp/";
   var capabilities = [

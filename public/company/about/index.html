@@ -2737,26 +2737,6 @@
       margin-left: 1rem !important;
     }
 
-    /* Contact Sales Link */
-    .header-sales-link {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-size: 0.88rem !important;
-      font-weight: 550 !important;
-      color: #374151 !important;
-      text-decoration: none !important;
-      padding: 0.45rem 0.75rem !important;
-      border-radius: 8px !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      cursor: pointer !important;
-      transition: all 0.2s ease !important;
-    }
-    .header-sales-link:hover {
-      color: #044738 !important;
-      background: rgba(4, 71, 56, 0.06) !important;
-    }
 
     /* Secondary CTA - GetGabs Outline Pill Button */
     .header-btn-outline,
@@ -2834,15 +2814,6 @@
     }
 
     /* Dark Mode Action Button Variations */
-    html[data-theme="dark"] .header-sales-link,
-    body.dark-theme .header-sales-link {
-      color: #cbd5e1 !important;
-    }
-    html[data-theme="dark"] .header-sales-link:hover,
-    body.dark-theme .header-sales-link:hover {
-      color: #ffffff !important;
-      background: rgba(255, 255, 255, 0.08) !important;
-    }
     html[data-theme="dark"] .header-btn-outline,
     html[data-theme="dark"] .header-login,
     body.dark-theme .header-btn-outline,
@@ -2917,9 +2888,6 @@
         padding: 0.4rem 0.5rem !important;
         font-size: 0.88rem !important;
       }
-      .header-sales-link {
-        display: none !important;
-      }
       .header-btn-outline,
       .header-login {
         padding: 0.42rem 0.95rem !important;
@@ -2937,9 +2905,6 @@
       }
       .mobile-toggle {
         display: flex !important;
-      }
-      .header-sales-link {
-        display: none !important;
       }
       .header-btn-outline,
       .header-login {
@@ -3570,7 +3535,7 @@
                 <span class="mega-res-badge">SUPPORT &amp; ONBOARDING</span>
                 <h4 class="mega-res-title">Need 1-on-1 Help?</h4>
                 <p class="mega-res-desc">Our WhatsApp API architects help you setup flows, Meta Cloud API verification, and CRM integrations.</p>
-                <a href="../../contact/" class="btn-mega-res-primary">Talk to Support &rarr;</a>
+                <a href="../../#contact-section" class="btn-mega-res-primary">Talk to Support &rarr;</a>
                 <button type="button" class="btn-mega-res-secondary" onclick="if(window.openDemoModal) window.openDemoModal(); else window.location.href='/#contact-section';">Schedule Free Demo</button>
               </div>
             </div>
@@ -3679,9 +3644,6 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="../../contact/" class="header-sales-link" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
-          <span>Contact Sales</span>
-        </a>
         <a href="../../auth/login" class="header-login header-btn-outline">
           <span>Login</span>
         </a>
@@ -4056,7 +4018,6 @@
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="../../contact/" class="mnav-demo btn-demo-open" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
           <a href="../../auth/login" class="mnav-login">Login &rarr;</a>
           <a href="../../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>
@@ -4436,7 +4397,7 @@
         <p class="lead">HelloBotz brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together on one powerful platform.</p>
         <div class="ab-hero-ctas">
           <a href="/products/" class="btn btn-primary btn-lg">Explore Platform</a>
-          <a href="/contact/" class="btn btn-outline btn-lg">Talk to Our Team</a>
+          <a href="/#contact-section" class="btn btn-outline btn-lg">Talk to Our Team</a>
         </div>
       </div>
       <div class="ab-hero-visual ab-reveal" aria-hidden="true">
@@ -4568,7 +4529,7 @@
       <div class="ab-office-card ab-reveal"><div class="ab-office-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Surat</h3><div class="ab-office-type">Branch Office</div><p>India</p></div>
     </div>
     <div class="ab-map-flow ab-reveal"><span>Bangalore</span><span class="arrow">→</span><span>Surat</span><span class="arrow">→</span><span>Global Customers</span></div>
-    <div style="text-align:center;margin-top:2rem" class="ab-reveal"><a href="/contact/" class="btn btn-outline btn-lg">View Contact &amp; Locations</a></div>
+    <div style="text-align:center;margin-top:2rem" class="ab-reveal"><a href="/#contact-section" class="btn btn-outline btn-lg">View Contact &amp; Locations</a></div>
   </div>
 </section>
 
@@ -4776,7 +4737,7 @@
     <div class="ab-final-ctas">
       <a href="/products/" class="btn btn-white btn-lg">Explore Platform</a>
       <button type="button" class="btn btn-primary btn-lg btn-demo-open">Book a Demo</button>
-      <a href="/contact/" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">Contact Us</a>
+      <a href="/#contact-section" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">Contact Us</a>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="padding:0.78rem 1.5rem;font-size:0.95rem;">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Data
@@ -5890,7 +5851,7 @@
             <li><a href="../../pricing/">Pricing Plans</a></li>
             <li><a href="../../partners/">Partner Program</a></li>
             <li><a href="../../company/about/">About HelloBotz</a></li>
-            <li><a href="../../contact/">Contact Us</a></li>
+            <li><a href="../../#contact-section">Contact Us</a></li>
           </ul>
         </div>
 

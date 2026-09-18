@@ -2853,26 +2853,6 @@ if (!function_exists('hb_seo_esc')) {
       margin-left: 1rem !important;
     }
 
-    /* Contact Sales Link */
-    .header-sales-link {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-size: 0.88rem !important;
-      font-weight: 550 !important;
-      color: #374151 !important;
-      text-decoration: none !important;
-      padding: 0.45rem 0.75rem !important;
-      border-radius: 8px !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      cursor: pointer !important;
-      transition: all 0.2s ease !important;
-    }
-    .header-sales-link:hover {
-      color: #044738 !important;
-      background: rgba(4, 71, 56, 0.06) !important;
-    }
 
     /* Secondary CTA - GetGabs Outline Pill Button */
     .header-btn-outline,
@@ -2950,15 +2930,6 @@ if (!function_exists('hb_seo_esc')) {
     }
 
     /* Dark Mode Action Button Variations */
-    html[data-theme="dark"] .header-sales-link,
-    body.dark-theme .header-sales-link {
-      color: #cbd5e1 !important;
-    }
-    html[data-theme="dark"] .header-sales-link:hover,
-    body.dark-theme .header-sales-link:hover {
-      color: #ffffff !important;
-      background: rgba(255, 255, 255, 0.08) !important;
-    }
     html[data-theme="dark"] .header-btn-outline,
     html[data-theme="dark"] .header-login,
     body.dark-theme .header-btn-outline,
@@ -3033,9 +3004,6 @@ if (!function_exists('hb_seo_esc')) {
         padding: 0.4rem 0.5rem !important;
         font-size: 0.88rem !important;
       }
-      .header-sales-link {
-        display: none !important;
-      }
       .header-btn-outline,
       .header-login {
         padding: 0.42rem 0.95rem !important;
@@ -3053,9 +3021,6 @@ if (!function_exists('hb_seo_esc')) {
       }
       .mobile-toggle {
         display: flex !important;
-      }
-      .header-sales-link {
-        display: none !important;
       }
       .header-btn-outline,
       .header-login {
@@ -3694,7 +3659,7 @@ if (!function_exists('hb_seo_esc')) {
                 <span class="mega-res-badge">SUPPORT &amp; ONBOARDING</span>
                 <h4 class="mega-res-title">Need 1-on-1 Help?</h4>
                 <p class="mega-res-desc">Our WhatsApp API architects help you setup flows, Meta Cloud API verification, and CRM integrations.</p>
-                <a href="<?php echo $bp; ?>contact/" class="btn-mega-res-primary">Talk to Support &rarr;</a>
+                <a href="<?php echo $bp; ?>#contact-section" class="btn-mega-res-primary">Talk to Support &rarr;</a>
                 <button type="button" class="btn-mega-res-secondary" onclick="if(window.openDemoModal) window.openDemoModal(); else window.location.href='/#contact-section';">Schedule Free Demo</button>
               </div>
             </div>
@@ -3803,9 +3768,6 @@ if (!function_exists('hb_seo_esc')) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="<?php echo $bp; ?>contact/" class="header-sales-link" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">
-          <span>Contact Sales</span>
-        </a>
         <a href="<?php echo $bp; ?>auth/login" class="header-login header-btn-outline">
           <span>Login</span>
         </a>
@@ -4180,7 +4142,6 @@ if (!function_exists('hb_seo_esc')) {
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="<?php echo $bp; ?>contact/" class="mnav-demo btn-demo-open" onclick="if(window.openDemoModal){ window.openDemoModal(); return false; }">Contact Sales &rarr;</a>
           <a href="<?php echo $bp; ?>auth/login" class="mnav-login">Login &rarr;</a>
           <a href="<?php echo $bp; ?>auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>

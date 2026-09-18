@@ -264,7 +264,7 @@ include __DIR__ . '/../../includes/header.php';
         <p class="lead">HelloBotz brings WhatsApp, automation, AI, customer communication, campaigns and business workflows together on one powerful platform.</p>
         <div class="ab-hero-ctas">
           <a href="/products/" class="btn btn-primary btn-lg">Explore Platform</a>
-          <a href="/contact/" class="btn btn-outline btn-lg">Talk to Our Team</a>
+          <a href="/#contact-section" class="btn btn-outline btn-lg">Talk to Our Team</a>
         </div>
       </div>
       <div class="ab-hero-visual ab-reveal" aria-hidden="true">
@@ -396,7 +396,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="ab-office-card ab-reveal"><div class="ab-office-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Surat</h3><div class="ab-office-type">Branch Office</div><p>India</p></div>
     </div>
     <div class="ab-map-flow ab-reveal"><span>Bangalore</span><span class="arrow">→</span><span>Surat</span><span class="arrow">→</span><span>Global Customers</span></div>
-    <div style="text-align:center;margin-top:2rem" class="ab-reveal"><a href="/contact/" class="btn btn-outline btn-lg">View Contact &amp; Locations</a></div>
+    <div style="text-align:center;margin-top:2rem" class="ab-reveal"><a href="/#contact-section" class="btn btn-outline btn-lg">View Contact &amp; Locations</a></div>
   </div>
 </section>
 
@@ -604,7 +604,7 @@ include __DIR__ . '/../../includes/header.php';
     <div class="ab-final-ctas">
       <a href="/products/" class="btn btn-white btn-lg">Explore Platform</a>
       <button type="button" class="btn btn-primary btn-lg btn-demo-open">Book a Demo</button>
-      <a href="/contact/" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">Contact Us</a>
+      <a href="/#contact-section" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:#fff">Contact Us</a>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn-download-data" style="padding:0.78rem 1.5rem;font-size:0.95rem;">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Data
