@@ -380,46 +380,7 @@ include __DIR__ . '/../../includes/header.php';
         </div>
     </div>
 </section>
-<section class="how-it-works">
-    <div class="container">
-        <h2> How It Works</h2>
-        <p class="section-subtitle">
-            Follow these simple steps to setup and run CTWA ads.
-        </p>
-        <div class="steps-wrapper">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Connect Number</h3>
-                <p>
-                    Integrate your WhatsApp business number faster with the shared inbox.
-                </p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3> Add Team
-                </h3>
-                <p>
-                    Add your team members to collaborate and handle chats together.
-                </p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Assign Chats
-                </h3>
-                <p>
-                    Direct messages to the right agents to prevent overlaps.
-                </p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <h3>Collaborate Instantly</h3>
-                <p>
-                    Reply faster, leave internal messages, and work together effortlessly.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <style>
     .usecase-section {
     background: #fffaeb;
