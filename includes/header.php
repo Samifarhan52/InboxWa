@@ -4226,7 +4226,11 @@ if (!function_exists('hb_seo_esc')) {
         updateButtons(theme);
       }
 
+      var lastToggle = 0;
       function toggleTheme() {
+        var now = Date.now();
+        if (now - lastToggle < 250) return;
+        lastToggle = now;
         var current = document.documentElement.getAttribute('data-theme') || 'light';
         var next = current === 'dark' ? 'light' : 'dark';
         applyTheme(next, true);
@@ -4282,6 +4286,7 @@ if (!function_exists('hb_seo_esc')) {
             e.preventDefault();
             var targetTheme = mobileOpt.getAttribute('data-theme-val');
             if (targetTheme) applyTheme(targetTheme, true);
+          }
         });
       }
 

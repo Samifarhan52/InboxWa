@@ -765,3 +765,60 @@
     max-height: calc(100vh - 85px) !important;
   }
 }
+
+/* ==========================================================================
+   HELLOBOTZ ROBOT MASCOT & CHATBOX DARK MODE STYLES
+   ========================================================================== */
+html[data-theme="dark"] .hellobotz-speech-bubble {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(139, 92, 246, 0.4) !important;
+}
+
+html[data-theme="dark"] .hellobotz-chatbox {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .hellobotz-chat-messages {
+  background: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .bot-bubble {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .bot-bubble strong {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .hellobotz-chat-input-area {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .hellobotz-input {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .hellobotz-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .chat-quick-chip {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .chat-quick-chip:hover {
+  background: #8b5cf6 !important;
+  color: #ffffff !important;
+  border-color: #8b5cf6 !important;
+}
+

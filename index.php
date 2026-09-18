@@ -267,7 +267,7 @@ include __DIR__ . '/includes/header.php';
   /* Interactive 3D Mockup Phone Stage */
   .cw-phone-wrapper {
     position: relative;
-    max-width: 385px;
+    max-width: 375px;
     margin: 0 auto;
     perspective: 1200px;
     transform-style: preserve-3d;
@@ -277,7 +277,7 @@ include __DIR__ . '/includes/header.php';
   .cw-phone-aura {
     position: absolute;
     inset: -25px;
-    border-radius: 60px;
+    border-radius: 64px;
     background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.28) 0%, rgba(124, 58, 237, 0.18) 45%, rgba(6, 182, 212, 0.12) 65%, transparent 80%);
     filter: blur(35px);
     z-index: 1;
@@ -289,18 +289,64 @@ include __DIR__ . '/includes/header.php';
     100% { transform: scale(1.06); opacity: 1; }
   }
 
-  /* Phone Device Frame (Titanium Slate) */
+  /* Realistic iPhone 11 / 12 Device Chassis */
   .cw-phone-device {
-    background: #0d151c;
-    border-radius: 44px;
-    padding: 10px 10px 8px;
-    box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.6), 0 0 0 1.5px rgba(255, 255, 255, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.25);
-    border: 3px solid #22303c;
+    background: #0d1319;
+    border-radius: 48px;
+    padding: 8px 8px 7px;
+    box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.65), 0 0 0 1.5px rgba(255, 255, 255, 0.12) inset, 0 1px 3px rgba(255, 255, 255, 0.2) inset;
+    border: 10px solid #1a222d;
     position: relative;
     z-index: 2;
     transform-style: preserve-3d;
-    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
     will-change: transform;
+  }
+
+  /* Realistic iPhone 11/12 Hardware Side Buttons */
+  .cw-phone-btn-mute {
+    position: absolute;
+    left: -13px;
+    top: 92px;
+    width: 3.5px;
+    height: 18px;
+    background: #2a3443;
+    border-radius: 2px 0 0 2px;
+    box-shadow: -1px 0 2px rgba(0,0,0,0.5);
+    pointer-events: none;
+  }
+  .cw-phone-btn-vup {
+    position: absolute;
+    left: -13px;
+    top: 130px;
+    width: 3.5px;
+    height: 42px;
+    background: #2a3443;
+    border-radius: 2px 0 0 2px;
+    box-shadow: -1px 0 2px rgba(0,0,0,0.5);
+    pointer-events: none;
+  }
+  .cw-phone-btn-vdown {
+    position: absolute;
+    left: -13px;
+    top: 184px;
+    width: 3.5px;
+    height: 42px;
+    background: #2a3443;
+    border-radius: 2px 0 0 2px;
+    box-shadow: -1px 0 2px rgba(0,0,0,0.5);
+    pointer-events: none;
+  }
+  .cw-phone-btn-power {
+    position: absolute;
+    right: -13px;
+    top: 140px;
+    width: 3.5px;
+    height: 56px;
+    background: #2a3443;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 1px 0 2px rgba(0,0,0,0.5);
+    pointer-events: none;
   }
 
   /* Glare Sweep Reflection */
@@ -316,94 +362,177 @@ include __DIR__ . '/includes/header.php';
     z-index: 10;
   }
 
-  /* Hardware Top Bar (Status Clock + Dynamic Island) */
+  /* Hardware Top Bar (Live Status Clock + Classic iPhone 11/12 Notch) */
   .cw-phone-topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4px 14px 6px;
+    height: 28px;
+    padding: 0 16px;
+    background: #008069;
+    color: #ffffff;
+    position: relative;
+    z-index: 30;
+    flex-shrink: 0;
+    user-select: none;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-phone-topbar {
+    background: #202c33;
     color: #e9edef;
-    font-size: 0.72rem;
-    font-weight: 600;
   }
   .cw-status-time {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    line-height: 1;
+    z-index: 32;
   }
-  .cw-dynamic-island {
+
+  /* Classic iPhone 11 / 12 Notch (TrueDepth Sensor Housing) */
+  .cw-iphone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 154px;
+    height: 22px;
     background: #000000;
-    border-radius: 20px;
-    height: 18px;
-    width: 92px;
+    border-radius: 0 0 14px 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.15);
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+    z-index: 35;
+    pointer-events: none;
   }
-  .cw-island-camera {
-    width: 6px;
-    height: 6px;
+  .cw-notch-sensor {
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background: #111a24;
-    border: 1px solid #1f2c38;
+    background: #0d131a;
+  }
+  .cw-notch-speaker {
+    width: 46px;
+    height: 3.5px;
+    border-radius: 2px;
+    background: #181d24;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+  }
+  .cw-notch-camera {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #080e16;
+    border: 1px solid #1f2b38;
     position: relative;
   }
-  .cw-island-camera::after {
+  .cw-notch-camera::after {
     content: '';
     position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 2px;
-    height: 2px;
+    top: 1.5px;
+    left: 1.5px;
+    width: 2.5px;
+    height: 2.5px;
     border-radius: 50%;
-    background: rgba(56, 189, 248, 0.8);
-  }
-  .cw-island-speaker {
-    width: 28px;
-    height: 3px;
-    border-radius: 2px;
-    background: #1c2630;
+    background: rgba(56, 189, 248, 0.85);
   }
   .cw-status-icons {
     display: flex;
     align-items: center;
     gap: 5px;
-    opacity: 0.85;
+    opacity: 0.95;
+    z-index: 32;
   }
-  .cw-status-5g {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
+
+  /* Authentic iOS Cellular Signal Bars */
+  .cw-signal-bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 1.5px;
+    height: 10px;
+  }
+  .cw-signal-bars i {
+    display: inline-block;
+    width: 2.5px;
+    background: currentColor;
+    border-radius: 0.5px;
+  }
+  .cw-signal-bars i:nth-child(1) { height: 3px; }
+  .cw-signal-bars i:nth-child(2) { height: 5px; }
+  .cw-signal-bars i:nth-child(3) { height: 7px; }
+  .cw-signal-bars i:nth-child(4) { height: 9.5px; }
+
+  /* Authentic iOS Battery Icon */
+  .cw-battery-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+  }
+  .cw-battery-shell {
+    width: 19px;
+    height: 9.5px;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .cw-battery-fill {
+    width: 78%;
+    height: 100%;
+    background: #22c55e;
+    border-radius: 1px;
+  }
+  .cw-battery-nub {
+    width: 1.5px;
+    height: 4px;
+    border-radius: 0 1px 1px 0;
+    background: currentColor;
   }
 
   /* Phone Internal Screen */
   .cw-phone-screen {
-    background: #0b141a;
-    border-radius: 34px;
-    height: 485px;
+    background: #efeae2;
+    border-radius: 38px;
+    height: 525px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    transform: translateZ(0);
+    transition: background-color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-phone-screen {
+    background: #0b141a;
+    border-color: rgba(255, 255, 255, 0.05);
   }
 
   /* WhatsApp Header */
   .cw-wa-header {
-    background: #202c33;
-    padding: 8px 10px;
+    background: #008069;
+    padding: 7px 10px 8px;
     display: flex;
     align-items: center;
     gap: 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     flex-shrink: 0;
+    color: #ffffff;
+    transition: background-color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-wa-header {
+    background: #202c33;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
   .cw-wa-back {
     background: transparent;
     border: none;
-    color: #aebac1;
-    padding: 3px 2px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 4px 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -430,7 +559,7 @@ include __DIR__ . '/includes/header.php';
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 1.5px solid #2a3942;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
     display: block;
   }
   .cw-wa-avatar-badge {
@@ -440,8 +569,11 @@ include __DIR__ . '/includes/header.php';
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #00a884;
-    border: 2px solid #202c33;
+    background: #25d366;
+    border: 2px solid #008069;
+  }
+  html[data-theme="dark"] .cw-wa-avatar-badge {
+    border-color: #202c33;
   }
   .cw-wa-header-info {
     flex: 1;
@@ -454,7 +586,7 @@ include __DIR__ . '/includes/header.php';
     gap: 4px;
   }
   .cw-wa-title-row strong {
-    color: #e9edef;
+    color: #ffffff;
     font-size: 0.83rem;
     font-weight: 600;
     white-space: nowrap;
@@ -462,25 +594,31 @@ include __DIR__ . '/includes/header.php';
     text-overflow: ellipsis;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
+  html[data-theme="dark"] .cw-wa-title-row strong {
+    color: #e9edef;
+  }
   .cw-verified-check {
     flex-shrink: 0;
   }
   .cw-wa-subtitle {
-    color: #8696a0;
-    font-size: 0.67rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.66rem;
     display: flex;
     align-items: center;
     gap: 4px;
     margin-top: 1px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
+  html[data-theme="dark"] .cw-wa-subtitle {
+    color: #8696a0;
+  }
   .cw-live-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #00a884;
+    background: #25d366;
     display: inline-block;
-    box-shadow: 0 0 6px rgba(0, 168, 132, 0.8);
+    box-shadow: 0 0 6px rgba(37, 211, 102, 0.9);
   }
   .cw-wa-header-tools {
     display: flex;
@@ -490,7 +628,7 @@ include __DIR__ . '/includes/header.php';
   .cw-tool-btn {
     background: transparent;
     border: none;
-    color: #aebac1;
+    color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
     padding: 5px;
     border-radius: 50%;
@@ -500,6 +638,13 @@ include __DIR__ . '/includes/header.php';
     transition: all 0.2s;
   }
   .cw-tool-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  html[data-theme="dark"] .cw-tool-btn {
+    color: #aebac1;
+  }
+  html[data-theme="dark"] .cw-tool-btn:hover {
     color: #e9edef;
     background: rgba(255, 255, 255, 0.08);
   }
@@ -513,22 +658,33 @@ include __DIR__ . '/includes/header.php';
     gap: 8px;
     overflow-y: auto;
     scroll-behavior: smooth;
+    background-color: #efeae2;
+    background-image: url('/assets/images/whatsapp-doodle-bg.png');
+    background-repeat: repeat;
+    background-size: 380px auto;
+    transition: background-color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-wa-body {
     background-color: #0b141a;
-    background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-opacity='0.055' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M25 35h18a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-10l-6 5v-5h-2a4 4 0 0 1-4-4V39a4 4 0 0 1 4-4z'/%3E%3Ccircle cx='120' cy='45' r='10'/%3E%3Cpath d='M117 45h6m-3-3v6'/%3E%3Cpath d='M165 30l12 12-12 12'/%3E%3Cpath d='M30 115c0-6 5-11 11-11h14v14a11 11 0 0 1-11 11 11 11 0 0 1-14-14z'/%3E%3Cpath d='M110 110l15-8 15 8-4-17 13-11-17-2-7-16-7 16-17 2 13 11z'/%3E%3Cpath d='M160 120a10 10 0 1 0 20 0 10 10 0 1 0-20 0z'/%3E%3Cpath d='M165 120l3 3 7-6'/%3E%3Cpath d='M40 170h16v12a4 4 0 0 1-4 4H44a4 4 0 0 1-4-4z'/%3E%3Cpath d='M36 170h24'/%3E%3Cpath d='M115 170c-5-8 6-16 12-10 6-6 17 2 12 10l-12 12z'/%3E%3Cpath d='M168 165l14 14m0-14l-14 14'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 240px 240px;
+    background-image: linear-gradient(rgba(11, 20, 26, 0.90), rgba(11, 20, 26, 0.90)), url('/assets/images/whatsapp-doodle-bg.png');
+    background-repeat: repeat;
+    background-size: 380px auto;
   }
   .cw-wa-body::-webkit-scrollbar {
     width: 4px;
   }
   .cw-wa-body::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+  }
+  html[data-theme="dark"] .cw-wa-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
   }
 
   /* Authentic WhatsApp Chat Bubbles */
   .cw-bubble {
     max-width: 85%;
-    padding: 6px 9px 5px 10px;
+    padding: 6px 10px 5px 10px;
     font-size: 0.81rem;
     line-height: 1.38;
     position: relative;
@@ -543,8 +699,8 @@ include __DIR__ . '/includes/header.php';
   }
   .cw-bubble.user {
     align-self: flex-end;
-    background: #005c4b;
-    color: #e9edef;
+    background: #d9fdd3;
+    color: #111b21;
     border-radius: 8px 8px 0 8px;
   }
   .cw-bubble.user::after {
@@ -554,13 +710,20 @@ include __DIR__ . '/includes/header.php';
     right: -7px;
     width: 8px;
     height: 12px;
-    background: #005c4b;
+    background: #d9fdd3;
     clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  html[data-theme="dark"] .cw-bubble.user {
+    background: #005c4b;
+    color: #e9edef;
+  }
+  html[data-theme="dark"] .cw-bubble.user::after {
+    background: #005c4b;
   }
   .cw-bubble.bot {
     align-self: flex-start;
-    background: #202c33;
-    color: #e9edef;
+    background: #ffffff;
+    color: #111b21;
     border-radius: 8px 8px 8px 0;
   }
   .cw-bubble.bot::after {
@@ -570,8 +733,15 @@ include __DIR__ . '/includes/header.php';
     left: -7px;
     width: 8px;
     height: 12px;
-    background: #202c33;
+    background: #ffffff;
     clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+  html[data-theme="dark"] .cw-bubble.bot {
+    background: #202c33;
+    color: #e9edef;
+  }
+  html[data-theme="dark"] .cw-bubble.bot::after {
+    background: #202c33;
   }
   .cw-bubble-meta {
     display: flex;
@@ -580,6 +750,9 @@ include __DIR__ . '/includes/header.php';
     gap: 3px;
     margin-top: 3px;
     font-size: 0.63rem;
+    color: #667781;
+  }
+  html[data-theme="dark"] .cw-bubble-meta {
     color: #8696a0;
   }
   .cw-ticks {
@@ -591,6 +764,9 @@ include __DIR__ . '/includes/header.php';
     color: #53bdeb;
   }
   .cw-ticks.grey {
+    color: #667781;
+  }
+  html[data-theme="dark"] .cw-ticks.grey {
     color: #8696a0;
   }
 
@@ -599,11 +775,11 @@ include __DIR__ . '/includes/header.php';
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background: rgba(0, 168, 132, 0.15);
-    border: 1px solid rgba(0, 168, 132, 0.35);
-    color: #25d366;
+    background: rgba(0, 168, 132, 0.12);
+    border: 1px solid rgba(0, 168, 132, 0.4);
+    color: #008069;
     border-radius: 8px;
-    padding: 5px 9px;
+    padding: 5px 10px;
     font-size: 0.72rem;
     font-weight: 600;
     margin-top: 6px;
@@ -614,8 +790,13 @@ include __DIR__ . '/includes/header.php';
   .cw-bot-action-btn:hover {
     background: #00a884;
     color: #ffffff;
-    border-color: #25d366;
+    border-color: #00a884;
     transform: translateY(-1px);
+  }
+  html[data-theme="dark"] .cw-bot-action-btn {
+    background: rgba(0, 168, 132, 0.18);
+    border-color: rgba(0, 168, 132, 0.45);
+    color: #25d366;
   }
 
   /* Typing Indicator Bubble */
@@ -646,27 +827,41 @@ include __DIR__ . '/includes/header.php';
   }
   .cw-typing-label {
     font-size: 0.7rem;
-    color: #8696a0;
+    color: #667781;
     font-style: italic;
+  }
+  html[data-theme="dark"] .cw-typing-label {
+    color: #8696a0;
   }
 
   /* Quick Suggestion Chips Carousel */
   .cw-chips-wrap {
-    background: rgba(11, 20, 26, 0.98);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 6px 10px 4px;
+    background: rgba(240, 242, 245, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 7px 10px 5px;
     flex-shrink: 0;
     position: relative;
-    z-index: 15;
+    z-index: 20;
+    pointer-events: auto !important;
+    transition: background-color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-chips-wrap {
+    background: rgba(11, 20, 26, 0.98);
+    border-top-color: rgba(255, 255, 255, 0.05);
   }
   .cw-chips-hint {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 0.65rem;
-    color: #8696a0;
-    margin-bottom: 4px;
+    font-size: 0.66rem;
+    color: #54656f;
+    margin-bottom: 5px;
     font-weight: 600;
+  }
+  html[data-theme="dark"] .cw-chips-hint {
+    color: #8696a0;
   }
   .cw-chips-scroll {
     display: flex;
@@ -681,58 +876,81 @@ include __DIR__ . '/includes/header.php';
     display: none;
   }
   .cw-chip {
-    background: rgba(32, 44, 51, 0.9);
-    border: 1px solid rgba(0, 168, 132, 0.35);
-    color: #e9edef;
+    background: #ffffff;
+    border: 1.5px solid #00a884;
+    color: #008069;
     border-radius: 14px;
-    font-size: 0.72rem;
+    font-size: 0.73rem;
     font-weight: 600;
     padding: 5px 11px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.18s ease;
     flex-shrink: 0;
     position: relative;
-    z-index: 20;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 25;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    pointer-events: auto !important;
+    touch-action: manipulation;
+    user-select: none;
   }
   .cw-chip:hover {
-    background: #00a884;
-    border-color: #00a884;
+    background: #008069;
+    border-color: #008069;
     color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 168, 132, 0.4);
+    transform: translateY(-1.5px);
+    box-shadow: 0 3px 8px rgba(0, 128, 105, 0.35);
   }
   .cw-chip:active {
     transform: scale(0.96);
   }
+  html[data-theme="dark"] .cw-chip {
+    background: rgba(32, 44, 51, 0.9);
+    border-color: rgba(0, 168, 132, 0.45);
+    color: #e9edef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  html[data-theme="dark"] .cw-chip:hover {
+    background: #00a884;
+    border-color: #00a884;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 168, 132, 0.4);
+  }
 
-  /* WhatsApp Chat Input Footer */
+  /* WhatsApp Chat Input Footer - High Contrast, 100% Clickable */
   .cw-chat-footer {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 6px 8px 8px;
-    background: #202c33;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 6px;
+    padding: 7px 10px 8px;
+    background: #f0f2f5;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
     flex-shrink: 0;
     position: relative;
-    z-index: 20;
+    z-index: 30;
+    pointer-events: auto !important;
+    transition: background-color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-chat-footer {
+    background: #202c33;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
   .cw-chat-btn-emoji {
     background: transparent;
     border: none;
-    font-size: 1.18rem;
+    font-size: 1.25rem;
     cursor: pointer;
     padding: 4px;
     line-height: 1;
-    opacity: 0.85;
+    opacity: 0.9;
     transition: opacity 0.2s, transform 0.2s;
     position: relative;
-    z-index: 25;
+    z-index: 35;
+    pointer-events: auto !important;
+    touch-action: manipulation;
   }
   .cw-chat-btn-emoji:hover {
     opacity: 1;
-    transform: scale(1.12);
+    transform: scale(1.15);
   }
   .cw-chat-btn-clip {
     background: transparent;
@@ -742,42 +960,69 @@ include __DIR__ . '/includes/header.php';
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #8696a0;
+    color: #54656f;
     transition: color 0.2s, transform 0.2s;
     position: relative;
-    z-index: 25;
+    z-index: 35;
+    pointer-events: auto !important;
+    touch-action: manipulation;
   }
   .cw-chat-btn-clip:hover {
+    color: #111b21;
+    transform: scale(1.15);
+  }
+  html[data-theme="dark"] .cw-chat-btn-clip {
+    color: #8696a0;
+  }
+  html[data-theme="dark"] .cw-chat-btn-clip:hover {
     color: #e9edef;
-    transform: scale(1.12);
   }
   .cw-chat-input {
     flex: 1;
-    background: #2a3942;
-    border: none;
+    background: #ffffff;
+    border: 1.5px solid #d1d7db;
     border-radius: 20px;
-    padding: 7px 12px;
-    color: #ffffff;
-    font-size: 0.81rem;
+    padding: 8px 14px;
+    color: #111b21;
+    font-size: 0.84rem;
+    font-weight: 500;
     outline: none;
     transition: all 0.2s ease;
-    cursor: text;
-    user-select: text;
-    -webkit-user-select: text;
+    cursor: text !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
     position: relative;
-    z-index: 25;
+    z-index: 35;
+    pointer-events: auto !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   }
   .cw-chat-input:focus {
-    background: #32434d;
-    box-shadow: 0 0 0 1.5px rgba(0, 168, 132, 0.4);
+    background: #ffffff;
+    border-color: #00a884;
+    box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.25);
   }
   .cw-chat-input::placeholder {
+    color: #667781;
+    opacity: 1;
+  }
+  html[data-theme="dark"] .cw-chat-input {
+    background: #2a3942;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    box-shadow: none;
+  }
+  html[data-theme="dark"] .cw-chat-input:focus {
+    background: #32434d;
+    border-color: #00a884;
+    box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.35);
+  }
+  html[data-theme="dark"] .cw-chat-input::placeholder {
     color: #8696a0;
   }
   .cw-chat-send {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: #00a884;
     border: none;
@@ -785,12 +1030,14 @@ include __DIR__ . '/includes/header.php';
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: all 0.2s ease;
     flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(0, 168, 132, 0.4);
     position: relative;
-    z-index: 25;
+    z-index: 35;
+    pointer-events: auto !important;
+    touch-action: manipulation;
   }
   .cw-chat-send:hover {
     background: #008f6f;
@@ -802,12 +1049,16 @@ include __DIR__ . '/includes/header.php';
 
   /* Bottom iOS Home Indicator */
   .cw-home-bar {
-    width: 90px;
+    width: 120px;
     height: 4px;
     border-radius: 3px;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.25);
     margin: 4px auto 3px;
     flex-shrink: 0;
+    transition: background-color 0.25s ease;
+  }
+  html[data-theme="dark"] .cw-home-bar {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   /* ==========================================================================
@@ -1607,6 +1858,12 @@ include __DIR__ . '/includes/header.php';
       border-radius: 36px !important;
       padding: 8px 8px 6px !important;
       border-width: 2.5px !important;
+    }
+    .cw-phone-btn-mute,
+    .cw-phone-btn-vup,
+    .cw-phone-btn-vdown,
+    .cw-phone-btn-power {
+      display: none !important;
     }
     .cw-phone-screen {
       height: 440px !important;
@@ -2576,6 +2833,235 @@ include __DIR__ . '/includes/header.php';
     }
   }
 
+  /* ==========================================================================
+     HOMEPAGE MASTER DARK MODE OVERRIDES
+     ========================================================================== */
+  html[data-theme="dark"] .cw-main-page {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .cw-hero-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .cw-hero-desc {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .cw-trust-row,
+  html[data-theme="dark"] .cw-trust-item {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .cw-btn-secondary {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    color: #f8fafc !important;
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4) !important;
+  }
+  html[data-theme="dark"] .cw-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: rgba(255, 255, 255, 0.38) !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .cw-hero-anim-box {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  }
+  html[data-theme="dark"] .cw-hero-anim-box:hover {
+    border-color: rgba(16, 185, 129, 0.6) !important;
+  }
+  html[data-theme="dark"] .cw-hero-anim-heading {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .cw-hero-anim-sub {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .cw-hero-anim-expand-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+  }
+  html[data-theme="dark"] .cw-hero-anim-box:hover .cw-hero-anim-expand-btn {
+    background: #059669 !important;
+    color: #ffffff !important;
+  }
+
+  /* Platform Showcase Section */
+  html[data-theme="dark"] .cw-platform-showcase-section {
+    background: #080c14 !important;
+  }
+  html[data-theme="dark"] .cw-showcase-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .cw-showcase-subtitle {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .cw-showcase-tab {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .cw-showcase-tab:hover {
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+  html[data-theme="dark"] .cw-showcase-tab.active {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .cw-media-caption {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+  }
+  html[data-theme="dark"] .cw-showcase-card {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  html[data-theme="dark"] .cw-sc-text strong {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .cw-sc-text span {
+    color: #94a3b8 !important;
+  }
+
+  /* Features Section */
+  html[data-theme="dark"] .hb-features-section {
+    background: #080c14 !important;
+  }
+  html[data-theme="dark"] .hb-features-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .hb-features-subtitle {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .hb-feature-item-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .hb-feature-item-desc {
+    color: #94a3b8 !important;
+  }
+
+  /* How It Works Section */
+  html[data-theme="dark"] .hiw-section {
+    background: #080c14 !important;
+  }
+  html[data-theme="dark"] .hiw-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .hiw-subtitle {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .hiw-card {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  }
+  html[data-theme="dark"] .hiw-card:hover {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 22px 48px rgba(124, 58, 237, 0.22) !important;
+  }
+  html[data-theme="dark"] .hiw-card-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .hiw-card-desc {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .hiw-bullets {
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  html[data-theme="dark"] .hiw-bullets li {
+    color: #cbd5e1 !important;
+  }
+  html[data-theme="dark"] .hiw-card-media {
+    background: #0b0f19 !important;
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* Customer Stories Section */
+  html[data-theme="dark"] .stories-section {
+    background: #080c14 !important;
+  }
+  html[data-theme="dark"] .stories-title {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .stories-subtitle {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .stories-stats-strip {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  html[data-theme="dark"] .stories-stat-val {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .stories-stat-lbl {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .stories-stat-sep {
+    background: rgba(255, 255, 255, 0.12) !important;
+  }
+  html[data-theme="dark"] .story-chip-btn {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+  }
+  html[data-theme="dark"] .story-chip-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .story-chip-btn.active {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .stories-ctrl-btn {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+  }
+  html[data-theme="dark"] .stories-ctrl-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .stories-nav-arrow {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+  }
+  html[data-theme="dark"] .stories-nav-arrow:hover {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .story-scroller-card {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35) !important;
+  }
+  html[data-theme="dark"] .story-scroller-card:hover {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 24px 50px rgba(124, 58, 237, 0.25) !important;
+  }
+  html[data-theme="dark"] .story-headline {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .story-quote {
+    color: #94a3b8 !important;
+  }
+  html[data-theme="dark"] .story-author {
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  html[data-theme="dark"] .story-avatar-img {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+  html[data-theme="dark"] .story-author-name {
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .story-author-role {
+    color: #94a3b8 !important;
+  }
+
 </style>
 
 <div class="cw-main-page">
@@ -2662,27 +3148,38 @@ include __DIR__ . '/includes/header.php';
         <!-- Glowing Ambient Aura -->
         <div class="cw-phone-aura" aria-hidden="true"></div>
 
-        <!-- 3D Tilting Phone Device Frame -->
+        <!-- 3D Tilting Phone Device Frame (iPhone 11 / 12) -->
         <div class="cw-phone-device" id="cw-phone-device">
+          <!-- Realistic Hardware Side Buttons -->
+          <span class="cw-phone-btn-mute" aria-hidden="true"></span>
+          <span class="cw-phone-btn-vup" aria-hidden="true"></span>
+          <span class="cw-phone-btn-vdown" aria-hidden="true"></span>
+          <span class="cw-phone-btn-power" aria-hidden="true"></span>
+
           <!-- Glass Glare Sweep -->
           <div class="cw-phone-glare" aria-hidden="true"></div>
 
-          <!-- Hardware Top Bar: Live Clock & Dynamic Island -->
-          <div class="cw-phone-topbar">
-            <span class="cw-status-time" id="cw-status-clock">10:43</span>
-            <div class="cw-dynamic-island">
-              <span class="cw-island-camera"></span>
-              <span class="cw-island-speaker"></span>
-            </div>
-            <div class="cw-status-icons">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9.46 2.02-12.73 5.3l1.42 1.42C3.37 7.03 7.42 5.2 12 5.2s8.63 1.83 11.31 4.52l1.42-1.42C21.46 5.02 16.97 3 12 3zm0 4c-3.87 0-7.37 1.57-9.9 4.1l1.41 1.42C5.69 10.5 8.66 9.2 12 9.2s6.31 1.3 8.49 3.32l1.41-1.42C19.37 8.57 15.87 7 12 7zm0 4c-2.76 0-5.26 1.12-7.07 2.93l1.41 1.41C7.79 13.9 9.77 13 12 13s4.21.9 5.66 2.34l1.41-1.41C17.26 12.12 14.76 11 12 11zm0 4c-1.66 0-3.16.67-4.24 1.76L12 21.01l4.24-4.25C15.16 15.67 13.66 15 12 15z"/></svg>
-              <span class="cw-status-5g">5G</span>
-              <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="7" width="17" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 9h11v6H5z"/><rect x="20" y="10" width="2" height="4" rx="0.5"/></svg>
-            </div>
-          </div>
-
           <!-- Phone Screen -->
           <div class="cw-phone-screen">
+            <!-- Hardware Top Bar: Live Status Clock + Classic iPhone 11/12 Notch -->
+            <div class="cw-phone-topbar">
+              <span class="cw-status-time" id="cw-status-clock">9:41</span>
+              <div class="cw-iphone-notch" aria-hidden="true">
+                <span class="cw-notch-sensor"></span>
+                <span class="cw-notch-speaker"></span>
+                <span class="cw-notch-camera"></span>
+              </div>
+              <div class="cw-status-icons" aria-hidden="true">
+                <span class="cw-signal-bars" title="Signal">
+                  <i></i><i></i><i></i><i></i>
+                </span>
+                <svg class="cw-wifi-icon" width="12" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9.46 2.02-12.73 5.3l1.42 1.42C3.37 7.03 7.42 5.2 12 5.2s8.63 1.83 11.31 4.52l1.42-1.42C21.46 5.02 16.97 3 12 3zm0 4c-3.87 0-7.37 1.57-9.9 4.1l1.41 1.42C5.69 10.5 8.66 9.2 12 9.2s6.31 1.3 8.49 3.32l1.41-1.42C19.37 8.57 15.87 7 12 7zm0 4c-2.76 0-5.26 1.12-7.07 2.93l1.41 1.41C7.79 13.9 9.77 13 12 13s4.21.9 5.66 2.34l1.41-1.41C17.26 12.12 14.76 11 12 11zm0 4c-1.66 0-3.16.67-4.24 1.76L12 21.01l4.24-4.25C15.16 15.67 13.66 15 12 15z"/></svg>
+                <span class="cw-battery-icon" title="Battery 100%">
+                  <span class="cw-battery-shell"><span class="cw-battery-fill"></span></span>
+                  <span class="cw-battery-nub"></span>
+                </span>
+              </div>
+            </div>
             <!-- WhatsApp Chat Header -->
             <div class="cw-wa-header">
               <button type="button" class="cw-wa-back" aria-label="Back to chats">
@@ -2775,7 +3272,7 @@ include __DIR__ . '/includes/header.php';
               <button type="button" class="cw-chat-btn-clip" id="cw-clip-btn" title="Attach media">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
               </button>
-              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Message" autocomplete="off" maxlength="150">
+              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message..." autocomplete="off" maxlength="150" aria-label="Type your WhatsApp message">
               <button type="button" id="cw-chat-send" class="cw-chat-send" aria-label="Send message" title="Send message">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
               </button>
@@ -3559,11 +4056,25 @@ include __DIR__ . '/includes/header.php';
   updatePhoneClock();
   setInterval(updatePhoneClock, 30000);
 
-  // 2. 3D Tilt Effect on Desktop Hover
+  // 2. 3D Tilt Effect on Desktop Hover (Auto-stabilized when cursor enters screen)
   const phoneWrapper = document.getElementById('cw-phone-wrapper');
   const phoneDevice = document.getElementById('cw-phone-device');
+  const phoneScreen = document.querySelector('.cw-phone-screen');
+  let isInteractingWithScreen = false;
+
   if (phoneWrapper && phoneDevice && window.matchMedia('(pointer: fine)').matches) {
+    if (phoneScreen) {
+      phoneScreen.addEventListener('mouseenter', function() {
+        isInteractingWithScreen = true;
+        phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+      });
+      phoneScreen.addEventListener('mouseleave', function() {
+        isInteractingWithScreen = false;
+      });
+    }
+
     phoneWrapper.addEventListener('mousemove', function(e) {
+      if (isInteractingWithScreen) return; // Screen stays 100% stable while user reads, clicks, or types!
       const rect = phoneWrapper.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -3571,7 +4082,7 @@ include __DIR__ . '/includes/header.php';
       const cy = rect.height / 2;
       const dx = (x - cx) / cx;
       const dy = (y - cy) / cy;
-      phoneDevice.style.transform = `perspective(1200px) rotateY(${dx * 9}deg) rotateX(${-dy * 9}deg) scale3d(1.02, 1.02, 1.02)`;
+      phoneDevice.style.transform = `perspective(1200px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg) scale3d(1.01, 1.01, 1.01)`;
     });
     phoneWrapper.addEventListener('mouseleave', function() {
       phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
@@ -3905,7 +4416,7 @@ include __DIR__ . '/includes/header.php';
     handleUserMessage(val);
   }
 
-  // Click on Send Button
+  // Click & Touch on Send Button
   if (chatSendBtn) {
     chatSendBtn.addEventListener('click', function(e) {
       e.preventDefault();
@@ -3914,13 +4425,19 @@ include __DIR__ . '/includes/header.php';
     });
   }
 
-  // Press Enter key inside Input
+  // Press Enter key inside Input & Maintain Phone Stability while typing
   if (chatInput) {
     chatInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         e.preventDefault();
         e.stopPropagation();
         sendCurrentInput();
+      }
+    });
+
+    chatInput.addEventListener('focus', function() {
+      if (phoneDevice) {
+        phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
       }
     });
 
@@ -3938,6 +4455,16 @@ include __DIR__ . '/includes/header.php';
     });
   }
 
+  // Clicking anywhere in the input footer focuses the text field
+  const chatFooter = document.getElementById('cw-chat-footer');
+  if (chatFooter && chatInput) {
+    chatFooter.addEventListener('click', function(e) {
+      if (!e.target.closest('button')) {
+        chatInput.focus();
+      }
+    });
+  }
+
   // Click inside chat body auto-focuses input
   if (cwBody) {
     cwBody.addEventListener('click', function(e) {
@@ -3946,12 +4473,16 @@ include __DIR__ . '/includes/header.php';
     });
   }
 
-  // Quick Suggestion Chips Listener
+  // Quick Suggestion Chips Listener with Debounce
   const chips = document.querySelectorAll('.cw-chip');
+  let lastChipTapTime = 0;
   chips.forEach(function(chip) {
     chip.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
+      const now = Date.now();
+      if (now - lastChipTapTime < 350) return;
+      lastChipTapTime = now;
       const q = chip.getAttribute('data-query');
       if (q) {
         handleUserMessage(q);

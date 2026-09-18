@@ -87,27 +87,38 @@ include __DIR__ . '/header.php';
             <!-- Glowing Ambient Aura -->
             <div class="cw-phone-aura" aria-hidden="true"></div>
 
-            <!-- 3D Tilting Phone Device Frame -->
+            <!-- 3D Tilting Phone Device Frame (iPhone 11 / 12) -->
             <div class="cw-phone-device" id="cw-phone-device">
+              <!-- Realistic Hardware Side Buttons -->
+              <span class="cw-phone-btn-mute" aria-hidden="true"></span>
+              <span class="cw-phone-btn-vup" aria-hidden="true"></span>
+              <span class="cw-phone-btn-vdown" aria-hidden="true"></span>
+              <span class="cw-phone-btn-power" aria-hidden="true"></span>
+
               <!-- Glass Glare Sweep -->
               <div class="cw-phone-glare" aria-hidden="true"></div>
 
-              <!-- Hardware Top Bar: Live Clock & Dynamic Island -->
-              <div class="cw-phone-topbar">
-                <span class="cw-status-time" id="cw-status-clock">10:43</span>
-                <div class="cw-dynamic-island">
-                  <span class="cw-island-camera"></span>
-                  <span class="cw-island-speaker"></span>
-                </div>
-                <div class="cw-status-icons">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9.46 2.02-12.73 5.3l1.42 1.42C3.37 7.03 7.42 5.2 12 5.2s8.63 1.83 11.31 4.52l1.42-1.42C21.46 5.02 16.97 3 12 3zm0 4c-3.87 0-7.37 1.57-9.9 4.1l1.41 1.42C5.69 10.5 8.66 9.2 12 9.2s6.31 1.3 8.49 3.32l1.41-1.42C19.37 8.57 15.87 7 12 7zm0 4c-2.76 0-5.26 1.12-7.07 2.93l1.41 1.41C7.79 13.9 9.77 13 12 13s4.21.9 5.66 2.34l1.41-1.41C17.26 12.12 14.76 11 12 11zm0 4c-1.66 0-3.16.67-4.24 1.76L12 21.01l4.24-4.25C15.16 15.67 13.66 15 12 15z"/></svg>
-                  <span class="cw-status-5g">5G</span>
-                  <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="7" width="17" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 9h11v6H5z"/><rect x="20" y="10" width="2" height="4" rx="0.5"/></svg>
-                </div>
-              </div>
-
               <!-- Phone Internal Screen -->
               <div class="cw-phone-screen">
+                <!-- Hardware Top Bar: Live Status Clock + Classic iPhone 11/12 Notch -->
+                <div class="cw-phone-topbar">
+                  <span class="cw-status-time" id="cw-status-clock">9:41</span>
+                  <div class="cw-iphone-notch" aria-hidden="true">
+                    <span class="cw-notch-sensor"></span>
+                    <span class="cw-notch-speaker"></span>
+                    <span class="cw-notch-camera"></span>
+                  </div>
+                  <div class="cw-status-icons" aria-hidden="true">
+                    <span class="cw-signal-bars" title="Signal">
+                      <i></i><i></i><i></i><i></i>
+                    </span>
+                    <svg class="cw-wifi-icon" width="12" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9.46 2.02-12.73 5.3l1.42 1.42C3.37 7.03 7.42 5.2 12 5.2s8.63 1.83 11.31 4.52l1.42-1.42C21.46 5.02 16.97 3 12 3zm0 4c-3.87 0-7.37 1.57-9.9 4.1l1.41 1.42C5.69 10.5 8.66 9.2 12 9.2s6.31 1.3 8.49 3.32l1.41-1.42C19.37 8.57 15.87 7 12 7zm0 4c-2.76 0-5.26 1.12-7.07 2.93l1.41 1.41C7.79 13.9 9.77 13 12 13s4.21.9 5.66 2.34l1.41-1.41C17.26 12.12 14.76 11 12 11zm0 4c-1.66 0-3.16.67-4.24 1.76L12 21.01l4.24-4.25C15.16 15.67 13.66 15 12 15z"/></svg>
+                    <span class="cw-battery-icon" title="Battery 100%">
+                      <span class="cw-battery-shell"><span class="cw-battery-fill"></span></span>
+                      <span class="cw-battery-nub"></span>
+                    </span>
+                  </div>
+                </div>
                 <!-- WhatsApp Chat Header -->
                 <div class="cw-wa-header">
                   <div class="cw-wa-avatar">
