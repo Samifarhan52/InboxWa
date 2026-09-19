@@ -269,38 +269,45 @@ include __DIR__ . '/includes/header.php';
     position: relative;
     max-width: 375px;
     margin: 0 auto;
-    perspective: 1200px;
-    transform-style: preserve-3d;
   }
   
-  /* Glowing Ambient Aura */
+  /* Glowing Ambient WhatsApp Aura */
   .cw-phone-aura {
     position: absolute;
-    inset: -25px;
+    inset: -20px;
     border-radius: 64px;
-    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.28) 0%, rgba(124, 58, 237, 0.18) 45%, rgba(6, 182, 212, 0.12) 65%, transparent 80%);
-    filter: blur(35px);
+    background: radial-gradient(circle at 50% 45%, rgba(0, 168, 132, 0.22) 0%, rgba(37, 211, 102, 0.12) 40%, rgba(16, 185, 129, 0.04) 65%, transparent 80%);
+    filter: blur(28px);
     z-index: 1;
     pointer-events: none;
-    animation: cwAuraPulse 6s ease-in-out infinite alternate;
+    animation: cwAuraBreathe 6s ease-in-out infinite alternate;
   }
-  @keyframes cwAuraPulse {
-    0% { transform: scale(0.95); opacity: 0.7; }
-    100% { transform: scale(1.06); opacity: 1; }
+  @keyframes cwAuraBreathe {
+    0% { transform: scale(0.96); opacity: 0.75; }
+    100% { transform: scale(1.04); opacity: 1; }
   }
 
-  /* Realistic iPhone 11 / 12 Device Chassis */
+  /* Sleek Flagship iPhone Device Chassis with Smooth Floating Motion */
   .cw-phone-device {
     background: #0d1319;
     border-radius: 48px;
     padding: 8px 8px 7px;
-    box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.65), 0 0 0 1.5px rgba(255, 255, 255, 0.12) inset, 0 1px 3px rgba(255, 255, 255, 0.2) inset;
+    box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.5), 0 0 0 1.5px rgba(255, 255, 255, 0.12) inset, 0 1px 3px rgba(255, 255, 255, 0.2) inset;
     border: 10px solid #1a222d;
     position: relative;
     z-index: 2;
-    transform-style: preserve-3d;
-    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
-    will-change: transform;
+    animation: cwPhoneFloat 5s ease-in-out infinite alternate;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  @keyframes cwPhoneFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-7px); }
+  }
+  /* Stabilize phone completely when cursor hovers, focuses, or types so typing is 100% steady */
+  .cw-phone-wrapper:hover .cw-phone-device,
+  .cw-phone-wrapper:focus-within .cw-phone-device {
+    animation-play-state: paused;
+    box-shadow: 0 30px 75px -10px rgba(0, 0, 0, 0.6), 0 0 0 1.5px rgba(0, 168, 132, 0.4) inset;
   }
 
   /* Realistic iPhone 11/12 Hardware Side Buttons */
@@ -684,18 +691,32 @@ include __DIR__ . '/includes/header.php';
   /* Authentic WhatsApp Chat Bubbles */
   .cw-bubble {
     max-width: 85%;
-    padding: 6px 10px 5px 10px;
+    padding: 7px 11px 6px 11px;
     font-size: 0.81rem;
-    line-height: 1.38;
+    line-height: 1.4;
     position: relative;
     word-break: break-word;
     box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    animation: cwBubblePop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
-  @keyframes cwBubblePop {
-    from { opacity: 0; transform: translateY(6px) scale(0.97); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+  /* Only dynamically added messages slide in smoothly */
+  .cw-bubble.cw-msg-new {
+    animation: cwMsgSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes cwMsgSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cw-bubble.cw-msg-new {
+      animation: none !important;
+    }
   }
   .cw-bubble.user {
     align-self: flex-end;
@@ -757,11 +778,19 @@ include __DIR__ . '/includes/header.php';
   }
   .cw-ticks {
     font-size: 0.72rem;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
     font-weight: 700;
+    transition: color 0.2s ease, transform 0.2s ease;
   }
   .cw-ticks.double-blue {
     color: #53bdeb;
+    display: inline-block;
+    animation: cwTickPop 0.22s ease-out;
+  }
+  @keyframes cwTickPop {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
   }
   .cw-ticks.grey {
     color: #667781;
@@ -805,11 +834,18 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
+    border-radius: 8px 8px 8px 0;
+    background: #ffffff;
+    box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+    align-self: flex-start;
+  }
+  html[data-theme="dark"] .cw-typing-bubble {
+    background: #202c33;
   }
   .cw-typing-dots {
     display: inline-flex;
     align-items: center;
-    gap: 3px;
+    gap: 3.5px;
   }
   .cw-typing-dots span {
     width: 6px;
@@ -817,13 +853,14 @@ include __DIR__ . '/includes/header.php';
     border-radius: 50%;
     background: #00a884;
     display: inline-block;
-    animation: cwBounceDot 1.4s infinite ease-in-out;
+    animation: cwTypingWave 1.2s infinite ease-in-out;
   }
-  .cw-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-  .cw-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes cwBounceDot {
-    0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
-    40% { transform: translateY(-5px); opacity: 1; }
+  .cw-typing-dots span:nth-child(1) { animation-delay: 0s; }
+  .cw-typing-dots span:nth-child(2) { animation-delay: 0.18s; }
+  .cw-typing-dots span:nth-child(3) { animation-delay: 0.36s; }
+  @keyframes cwTypingWave {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-4px); opacity: 1; }
   }
   .cw-typing-label {
     font-size: 0.7rem;
@@ -836,11 +873,11 @@ include __DIR__ . '/includes/header.php';
 
   /* Quick Suggestion Chips Carousel */
   .cw-chips-wrap {
-    background: rgba(240, 242, 245, 0.96);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(240, 242, 245, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.06);
-    padding: 7px 10px 5px;
+    padding: 8px 10px 6px;
     flex-shrink: 0;
     position: relative;
     z-index: 20;
@@ -849,15 +886,15 @@ include __DIR__ . '/includes/header.php';
   }
   html[data-theme="dark"] .cw-chips-wrap {
     background: rgba(11, 20, 26, 0.98);
-    border-top-color: rgba(255, 255, 255, 0.05);
+    border-top-color: rgba(255, 255, 255, 0.06);
   }
   .cw-chips-hint {
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-size: 0.66rem;
+    gap: 5px;
+    font-size: 0.67rem;
     color: #54656f;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-weight: 600;
   }
   html[data-theme="dark"] .cw-chips-hint {
@@ -865,49 +902,51 @@ include __DIR__ . '/includes/header.php';
   }
   .cw-chips-scroll {
     display: flex;
-    gap: 6px;
+    gap: 7px;
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
   }
   .cw-chips-scroll::-webkit-scrollbar {
     display: none;
   }
   .cw-chip {
     background: #ffffff;
-    border: 1.5px solid #00a884;
+    border: 1px solid rgba(0, 168, 132, 0.35);
     color: #008069;
-    border-radius: 14px;
+    border-radius: 16px;
     font-size: 0.73rem;
     font-weight: 600;
-    padding: 5px 11px;
+    padding: 6px 12px;
     cursor: pointer;
-    transition: all 0.18s ease;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     flex-shrink: 0;
     position: relative;
     z-index: 25;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     pointer-events: auto !important;
     touch-action: manipulation;
     user-select: none;
+    -webkit-user-select: none;
   }
   .cw-chip:hover {
-    background: #008069;
-    border-color: #008069;
+    background: #00a884;
+    border-color: #00a884;
     color: #ffffff;
     transform: translateY(-1.5px);
-    box-shadow: 0 3px 8px rgba(0, 128, 105, 0.35);
+    box-shadow: 0 3px 8px rgba(0, 168, 132, 0.35);
   }
   .cw-chip:active {
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
   html[data-theme="dark"] .cw-chip {
-    background: rgba(32, 44, 51, 0.9);
-    border-color: rgba(0, 168, 132, 0.45);
+    background: #1f2c34;
+    border-color: rgba(0, 168, 132, 0.4);
     color: #e9edef;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
   html[data-theme="dark"] .cw-chip:hover {
     background: #00a884;
@@ -916,12 +955,12 @@ include __DIR__ . '/includes/header.php';
     box-shadow: 0 4px 10px rgba(0, 168, 132, 0.4);
   }
 
-  /* WhatsApp Chat Input Footer - High Contrast, 100% Clickable */
+  /* WhatsApp Chat Input Footer - High Contrast, Always-Active & Clickable */
   .cw-chat-footer {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 7px 10px 8px;
+    gap: 7px;
+    padding: 8px 10px 9px;
     background: #f0f2f5;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     flex-shrink: 0;
@@ -932,7 +971,7 @@ include __DIR__ . '/includes/header.php';
   }
   html[data-theme="dark"] .cw-chat-footer {
     background: #202c33;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .cw-chat-btn-emoji {
     background: transparent;
@@ -981,13 +1020,13 @@ include __DIR__ . '/includes/header.php';
     flex: 1;
     background: #ffffff;
     border: 1.5px solid #d1d7db;
-    border-radius: 20px;
-    padding: 8px 14px;
+    border-radius: 22px;
+    padding: 9px 15px;
     color: #111b21;
     font-size: 0.84rem;
     font-weight: 500;
     outline: none;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     cursor: text !important;
     user-select: text !important;
     -webkit-user-select: text !important;
@@ -1031,7 +1070,7 @@ include __DIR__ . '/includes/header.php';
     align-items: center;
     justify-content: center;
     cursor: pointer !important;
-    transition: all 0.2s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(0, 168, 132, 0.4);
     position: relative;
@@ -1044,7 +1083,11 @@ include __DIR__ . '/includes/header.php';
     transform: scale(1.08);
   }
   .cw-chat-send:active {
-    transform: scale(0.94);
+    transform: scale(0.92);
+  }
+  .cw-chat-send.has-text {
+    transform: scale(1.06);
+    box-shadow: 0 3px 12px rgba(0, 168, 132, 0.55);
   }
 
   /* Bottom iOS Home Indicator */
@@ -4056,38 +4099,9 @@ include __DIR__ . '/includes/header.php';
   updatePhoneClock();
   setInterval(updatePhoneClock, 30000);
 
-  // 2. 3D Tilt Effect on Desktop Hover (Auto-stabilized when cursor enters screen)
-  const phoneWrapper = document.getElementById('cw-phone-wrapper');
-  const phoneDevice = document.getElementById('cw-phone-device');
-  const phoneScreen = document.querySelector('.cw-phone-screen');
-  let isInteractingWithScreen = false;
-
-  if (phoneWrapper && phoneDevice && window.matchMedia('(pointer: fine)').matches) {
-    if (phoneScreen) {
-      phoneScreen.addEventListener('mouseenter', function() {
-        isInteractingWithScreen = true;
-        phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-      });
-      phoneScreen.addEventListener('mouseleave', function() {
-        isInteractingWithScreen = false;
-      });
-    }
-
-    phoneWrapper.addEventListener('mousemove', function(e) {
-      if (isInteractingWithScreen) return; // Screen stays 100% stable while user reads, clicks, or types!
-      const rect = phoneWrapper.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const dx = (x - cx) / cx;
-      const dy = (y - cy) / cy;
-      phoneDevice.style.transform = `perspective(1200px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg) scale3d(1.01, 1.01, 1.01)`;
-    });
-    phoneWrapper.addEventListener('mouseleave', function() {
-      phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-    });
-  }
+  // 2. Phone Mockup Floating Stability
+  // The phone uses a subtle, smooth CSS breathing float (cwPhoneFloat) that pauses on hover/focus.
+  // No 3D transform tilt is applied via JS so text stays razor-sharp and input focus/typing is 100% stable.
 
   // 3. Realistic Web Audio Chimes (Synthesized - zero external file dependencies)
   let audioEnabled = true;
@@ -4311,9 +4325,9 @@ include __DIR__ . '/includes/header.php';
     if (!msgText || !msgText.trim() || !cwBody) return;
     const cleanText = msgText.trim();
 
-    // 1. Append User Message
+    // 1. Append User Message with smooth slide-fade
     const userDiv = document.createElement('div');
-    userDiv.className = 'cw-bubble user';
+    userDiv.className = 'cw-bubble user cw-msg-new';
     userDiv.innerHTML = `
       <span>${escapeHtml(cleanText)}</span>
       <div class="cw-bubble-meta">
@@ -4329,8 +4343,11 @@ include __DIR__ . '/includes/header.php';
     }
     scrollToBottom();
     playChime(false);
+    setTimeout(function() {
+      userDiv.classList.remove('cw-msg-new');
+    }, 260);
 
-    // 2. Change tick to double blue after 220ms
+    // 2. Change tick to double blue after 220ms with smooth pop
     setTimeout(function() {
       const ticks = userDiv.querySelector('.cw-ticks');
       if (ticks) {
@@ -4339,25 +4356,22 @@ include __DIR__ . '/includes/header.php';
       }
     }, 220);
 
-    // 3. Increment Leads Captured Metric with bounce
+    // 3. Increment Leads Captured Metric with smooth pulse
     if (leadsNumEl) {
       const cur = parseInt(leadsNumEl.textContent, 10) || 128;
       leadsNumEl.textContent = cur + 1;
       const card = document.getElementById('cw-card-leads') || document.getElementById('cw-side-leads');
       if (card) {
-        card.style.transform = 'scale(1.08)';
-        setTimeout(() => { card.style.transform = ''; }, 350);
+        card.style.transform = 'scale(1.06)';
+        setTimeout(() => { card.style.transform = ''; }, 300);
       }
     }
 
-    // 4. Show Typing Indicator
+    // 4. Show Typing Indicator (input remains 100% active and enabled for user typing)
     if (typingIndicatorEl) {
       typingIndicatorEl.style.display = 'flex';
       scrollToBottom();
     }
-
-    // Disable input while bot is typing
-    if (chatInput) chatInput.disabled = true;
 
     // 5. Bot Response after realistic delay
     setTimeout(function() {
@@ -4365,7 +4379,7 @@ include __DIR__ . '/includes/header.php';
 
       const botReply = generateBotReply(cleanText);
       const botDiv = document.createElement('div');
-      botDiv.className = 'cw-bubble bot';
+      botDiv.className = 'cw-bubble bot cw-msg-new';
 
       let actionBtnHtml = '';
       if (botReply.actionText && botReply.actionUrl) {
@@ -4392,15 +4406,13 @@ include __DIR__ . '/includes/header.php';
 
       scrollToBottom();
       playChime(true);
-
-      if (chatInput) {
-        chatInput.disabled = false;
-        chatInput.focus();
-      }
-    }, 750);
+      setTimeout(function() {
+        botDiv.classList.remove('cw-msg-new');
+      }, 260);
+    }, 650);
   }
 
-  // Trigger Send Action
+  // Trigger Send Action smoothly without losing input focus
   function sendCurrentInput() {
     if (!chatInput) return;
     const val = chatInput.value;
@@ -4410,10 +4422,10 @@ include __DIR__ . '/includes/header.php';
     }
     chatInput.value = '';
     if (chatSendBtn) {
-      chatSendBtn.style.transform = '';
-      chatSendBtn.style.boxShadow = '';
+      chatSendBtn.classList.remove('has-text');
     }
     handleUserMessage(val);
+    chatInput.focus();
   }
 
   // Click & Touch on Send Button
@@ -4425,7 +4437,7 @@ include __DIR__ . '/includes/header.php';
     });
   }
 
-  // Press Enter key inside Input & Maintain Phone Stability while typing
+  // Press Enter key inside Input
   if (chatInput) {
     chatInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
@@ -4435,41 +4447,25 @@ include __DIR__ . '/includes/header.php';
       }
     });
 
-    chatInput.addEventListener('focus', function() {
-      if (phoneDevice) {
-        phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-      }
-    });
-
-    // Visual feedback when typing text
+    // Visual feedback when typing text via CSS class
     chatInput.addEventListener('input', function() {
       if (chatSendBtn) {
         if (chatInput.value.trim().length > 0) {
-          chatSendBtn.style.transform = 'scale(1.12)';
-          chatSendBtn.style.boxShadow = '0 0 10px rgba(0, 168, 132, 0.8)';
+          chatSendBtn.classList.add('has-text');
         } else {
-          chatSendBtn.style.transform = '';
-          chatSendBtn.style.boxShadow = '';
+          chatSendBtn.classList.remove('has-text');
         }
       }
     });
   }
 
-  // Clicking anywhere in the input footer focuses the text field
+  // Clicking empty area of the input footer focuses the text field
   const chatFooter = document.getElementById('cw-chat-footer');
   if (chatFooter && chatInput) {
     chatFooter.addEventListener('click', function(e) {
       if (!e.target.closest('button')) {
         chatInput.focus();
       }
-    });
-  }
-
-  // Click inside chat body auto-focuses input
-  if (cwBody) {
-    cwBody.addEventListener('click', function(e) {
-      if (e.target.closest('a') || e.target.closest('button')) return;
-      if (chatInput) chatInput.focus();
     });
   }
 
@@ -4489,19 +4485,6 @@ include __DIR__ . '/includes/header.php';
       }
     });
   });
-
-  // Highlight first chip gently after 2.5s if user hasn't interacted yet
-  setTimeout(function() {
-    const firstChip = document.querySelector('.cw-chip');
-    if (firstChip && chatInput && !chatInput.value) {
-      firstChip.style.transform = 'scale(1.08) translateY(-2px)';
-      firstChip.style.boxShadow = '0 0 12px rgba(16, 185, 129, 0.7)';
-      setTimeout(function() {
-        firstChip.style.transform = '';
-        firstChip.style.boxShadow = '';
-      }, 1200);
-    }
-  }, 2500);
 
   // -------------------------------------------------------------------------
   // Authentic Features & Sections Reveal Animations

@@ -5057,24 +5057,7 @@ function handleIndSubmit(e) {
   updatePhoneClock();
   setInterval(updatePhoneClock, 30000);
 
-  // 2. 3D Tilt Effect on Desktop Hover
-  const phoneWrapper = document.getElementById('cw-phone-wrapper');
-  const phoneDevice = document.getElementById('cw-phone-device');
-  if (phoneWrapper && phoneDevice && window.matchMedia('(pointer: fine)').matches) {
-    phoneWrapper.addEventListener('mousemove', function(e) {
-      const rect = phoneWrapper.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const dx = (x - cx) / cx;
-      const dy = (y - cy) / cy;
-      phoneDevice.style.transform = `perspective(1200px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-    phoneWrapper.addEventListener('mouseleave', function() {
-      phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-    });
-  }
+  // 2. Phone Mockup Floating Stability (CSS-driven float that pauses on hover/focus)
 
   // 3. Audio Chimes Synthesizer
   let audioEnabled = true;
@@ -5089,6 +5072,7 @@ function handleIndSubmit(e) {
         audioToggle.style.color = '#10b981';
         audioIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
         playChime(true);
+      setTimeout(function() { botDiv.classList.remove('cw-msg-new'); }, 260);
       } else {
         audioToggle.setAttribute('title', 'Audio sound MUTED (Click to unmute)');
         audioToggle.style.color = '#ef4444';
@@ -5164,6 +5148,7 @@ function handleIndSubmit(e) {
       cwBody.innerHTML = initialChatHtml;
       bindSimButtons();
       playChime(true);
+      setTimeout(function() { botDiv.classList.remove('cw-msg-new'); }, 260);
       scrollToBottom();
     });
   }
@@ -5642,7 +5627,7 @@ function handleIndSubmit(e) {
 
     // Append User Message
     const userDiv = document.createElement('div');
-    userDiv.className = 'cw-bubble user';
+    userDiv.className = 'cw-bubble user cw-msg-new';
     userDiv.innerHTML = `
       <span>${escapeHtml(cleanText)}</span>
       <div class="cw-bubble-meta">
@@ -5659,6 +5644,7 @@ function handleIndSubmit(e) {
     }
     scrollToBottom();
     playChime(false);
+    setTimeout(function() { userDiv.classList.remove('cw-msg-new'); }, 260);
 
     // Change tick to double blue after 220ms
     setTimeout(function() {
@@ -5675,7 +5661,7 @@ function handleIndSubmit(e) {
       scrollToBottom();
     }
 
-    if (chatInput) chatInput.disabled = true;
+    // input remains active
 
     // Bot Response after 750ms
     setTimeout(function() {
@@ -5683,7 +5669,7 @@ function handleIndSubmit(e) {
 
       const botReply = getIndustryBotReply(cleanText, currentIndustrySlug);
       const botDiv = document.createElement('div');
-      botDiv.className = 'cw-bubble bot';
+      botDiv.className = 'cw-bubble bot cw-msg-new';
 
       let actionBtnHtml = '';
       if (botReply.actionText && botReply.actionUrl) {
@@ -5712,11 +5698,9 @@ function handleIndSubmit(e) {
 
       scrollToBottom();
       playChime(true);
+      setTimeout(function() { botDiv.classList.remove('cw-msg-new'); }, 260);
 
-      if (chatInput) {
-        chatInput.disabled = false;
-        chatInput.focus();
-      }
+
     }, 750);
   }
 
@@ -5734,6 +5718,7 @@ function handleIndSubmit(e) {
       chatSendBtn.style.boxShadow = '';
     }
     handleUserMessage(val);
+    chatInput.focus();
   }
 
   if (chatSendBtn) {

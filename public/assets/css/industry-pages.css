@@ -266,31 +266,39 @@
 /* Glowing Ambient Aura */
 .cw-phone-aura {
   position: absolute;
-  inset: -25px;
+  inset: -20px;
   border-radius: 60px;
-  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.28) 0%, rgba(124, 58, 237, 0.18) 45%, rgba(6, 182, 212, 0.12) 65%, transparent 80%);
-  filter: blur(35px);
+  background: radial-gradient(circle at 50% 45%, rgba(0, 168, 132, 0.22) 0%, rgba(37, 211, 102, 0.12) 40%, rgba(16, 185, 129, 0.04) 65%, transparent 80%);
+  filter: blur(28px);
   z-index: 1;
   pointer-events: none;
-  animation: cwAuraPulse 6s ease-in-out infinite alternate;
+  animation: cwAuraBreathe 6s ease-in-out infinite alternate;
 }
-@keyframes cwAuraPulse {
-  0% { transform: scale(0.95); opacity: 0.7; }
-  100% { transform: scale(1.06); opacity: 1; }
+@keyframes cwAuraBreathe {
+  0% { transform: scale(0.96); opacity: 0.75; }
+  100% { transform: scale(1.04); opacity: 1; }
 }
 
-/* Realistic iPhone 11 / 12 Device Chassis */
+/* Sleek Flagship Phone Device Chassis with Floating Motion */
 .cw-phone-device {
   background: #0d1319;
   border-radius: 48px;
   padding: 8px 8px 7px;
-  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.65), 0 0 0 1.5px rgba(255, 255, 255, 0.12) inset, 0 1px 3px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.5), 0 0 0 1.5px rgba(255, 255, 255, 0.12) inset, 0 1px 3px rgba(255, 255, 255, 0.2) inset;
   border: 10px solid #1a222d;
   position: relative;
   z-index: 2;
-  transform-style: preserve-3d;
-  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
-  will-change: transform;
+  animation: cwPhoneFloat 5s ease-in-out infinite alternate;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+@keyframes cwPhoneFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-7px); }
+}
+.cw-phone-wrapper:hover .cw-phone-device,
+.cw-phone-wrapper:focus-within .cw-phone-device {
+  animation-play-state: paused;
+  box-shadow: 0 30px 75px -10px rgba(0, 0, 0, 0.6), 0 0 0 1.5px rgba(0, 168, 132, 0.4) inset;
 }
 
 /* Realistic iPhone 11/12 Hardware Side Buttons */
@@ -629,11 +637,18 @@ html[data-theme="dark"] .cw-wa-body {
   line-height: 1.42;
   position: relative;
   word-break: break-word;
-  animation: cwBubblePop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
-@keyframes cwBubblePop {
-  from { opacity: 0; transform: translateY(8px) scale(0.96); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+.cw-bubble.cw-msg-new {
+  animation: cwMsgSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes cwMsgSlideIn {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cw-bubble.cw-msg-new {
+    animation: none !important;
+  }
 }
 .cw-bubble.user {
   align-self: flex-end;
@@ -705,7 +720,7 @@ html[data-theme="dark"] .cw-wa-body {
 .cw-typing-dots {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 3.5px;
 }
 .cw-typing-dots span {
   width: 6px;
@@ -713,13 +728,14 @@ html[data-theme="dark"] .cw-wa-body {
   border-radius: 50%;
   background: #10b981;
   display: inline-block;
-  animation: cwBounceDot 1.4s infinite ease-in-out;
+  animation: cwTypingWave 1.2s infinite ease-in-out;
 }
-.cw-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-.cw-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes cwBounceDot {
-  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
-  40% { transform: translateY(-5px); opacity: 1; }
+.cw-typing-dots span:nth-child(1) { animation-delay: 0s; }
+.cw-typing-dots span:nth-child(2) { animation-delay: 0.18s; }
+.cw-typing-dots span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes cwTypingWave {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
 }
 .cw-typing-label {
   font-size: 0.7rem;

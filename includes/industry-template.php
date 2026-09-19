@@ -604,24 +604,7 @@ function handleIndSubmit(e) {
   updatePhoneClock();
   setInterval(updatePhoneClock, 30000);
 
-  // 2. 3D Tilt Effect on Desktop Hover
-  const phoneWrapper = document.getElementById('cw-phone-wrapper');
-  const phoneDevice = document.getElementById('cw-phone-device');
-  if (phoneWrapper && phoneDevice && window.matchMedia('(pointer: fine)').matches) {
-    phoneWrapper.addEventListener('mousemove', function(e) {
-      const rect = phoneWrapper.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const dx = (x - cx) / cx;
-      const dy = (y - cy) / cy;
-      phoneDevice.style.transform = `perspective(1200px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-    phoneWrapper.addEventListener('mouseleave', function() {
-      phoneDevice.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-    });
-  }
+  // 2. Phone Mockup Floating Stability (CSS-driven float that pauses on hover/focus)
 
   // 3. Audio Chimes Synthesizer
   let audioEnabled = true;
@@ -1187,9 +1170,9 @@ function handleIndSubmit(e) {
     if (!msgText || !msgText.trim() || !cwBody) return;
     const cleanText = msgText.trim();
 
-    // Append User Message
+    // Append User Message with smooth slide-fade
     const userDiv = document.createElement('div');
-    userDiv.className = 'cw-bubble user';
+    userDiv.className = 'cw-bubble user cw-msg-new';
     userDiv.innerHTML = `
       <span>${escapeHtml(cleanText)}</span>
       <div class="cw-bubble-meta">
@@ -1206,6 +1189,9 @@ function handleIndSubmit(e) {
     }
     scrollToBottom();
     playChime(false);
+    setTimeout(function() {
+      userDiv.classList.remove('cw-msg-new');
+    }, 260);
 
     // Change tick to double blue after 220ms
     setTimeout(function() {
@@ -1216,21 +1202,19 @@ function handleIndSubmit(e) {
       }
     }, 220);
 
-    // Show Typing Indicator
+    // Show Typing Indicator (input stays active and enabled)
     if (typingIndicatorEl) {
       typingIndicatorEl.style.display = 'flex';
       scrollToBottom();
     }
 
-    if (chatInput) chatInput.disabled = true;
-
-    // Bot Response after 750ms
+    // Bot Response after 650ms
     setTimeout(function() {
       if (typingIndicatorEl) typingIndicatorEl.style.display = 'none';
 
       const botReply = getIndustryBotReply(cleanText, currentIndustrySlug);
       const botDiv = document.createElement('div');
-      botDiv.className = 'cw-bubble bot';
+      botDiv.className = 'cw-bubble bot cw-msg-new';
 
       let actionBtnHtml = '';
       if (botReply.actionText && botReply.actionUrl) {
@@ -1259,15 +1243,13 @@ function handleIndSubmit(e) {
 
       scrollToBottom();
       playChime(true);
-
-      if (chatInput) {
-        chatInput.disabled = false;
-        chatInput.focus();
-      }
-    }, 750);
+      setTimeout(function() {
+        botDiv.classList.remove('cw-msg-new');
+      }, 260);
+    }, 650);
   }
 
-  // Trigger Send Action
+  // Trigger Send Action smoothly without losing input focus
   function sendCurrentInput() {
     if (!chatInput) return;
     const val = chatInput.value;
@@ -1281,6 +1263,7 @@ function handleIndSubmit(e) {
       chatSendBtn.style.boxShadow = '';
     }
     handleUserMessage(val);
+    chatInput.focus();
   }
 
   if (chatSendBtn) {
