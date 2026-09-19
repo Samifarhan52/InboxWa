@@ -172,45 +172,77 @@ body.dark-theme,
   object-fit: contain;
 }
 
-/* 2. TAB SUB-NAVIGATION (CLEAN LIGHT THEME) */
+/* 2. TAB SUB-NAVIGATION (MATCHING CLEAN PILL SYSTEM) */
 .prt-tabs-nav {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin: 2rem 0 1rem;
+  align-items: center;
+  gap: 12px;
+  margin: 2.25rem auto 1.25rem;
   overflow-x: auto;
-  padding: 4px;
+  padding: 6px 8px;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .prt-tabs-nav::-webkit-scrollbar { display: none; }
 
 .prt-tab-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--prt-subtle);
+  gap: 9px;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: #475569;
   background: #FFFFFF;
-  border: 1px solid var(--prt-border);
+  border: 1.5px solid #E2E8F0;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.prt-tab-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: 2.1;
+  transition: transform 0.2s ease;
 }
 
 .prt-tab-btn:hover {
-  color: var(--prt-purple);
-  border-color: #C4B5FD;
-  background: #F5F3FF;
+  color: #7C3AED;
+  border-color: #DDD6FE;
+  background: #FAF5FF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
 }
 
 .prt-tab-btn.active {
   color: #FFFFFF;
-  background: linear-gradient(135deg, #7C3AED, #6D28D9);
+  background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
   border-color: #7C3AED;
-  box-shadow: 0 6px 18px -4px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 8px 22px -3px rgba(124, 58, 237, 0.45);
+  font-weight: 700;
+}
+.prt-tab-btn.active:hover {
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -2px rgba(124, 58, 237, 0.52);
+}
+
+@media (max-width: 768px) {
+  .prt-tabs-nav {
+    justify-content: flex-start;
+    padding: 8px 1rem;
+    margin: 1.25rem 0 1rem;
+  }
+  .prt-tab-btn {
+    padding: 9px 18px;
+    font-size: 0.88rem;
+  }
 }
 
 /* 3. CLIENT LOGOS & COMPLIANCE STRIP (LIGHT THEME) */

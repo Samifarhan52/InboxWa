@@ -372,40 +372,7 @@
 
   /* ---------- Init ---------- */
 
-  /* ---------- Offer Popup (session) ---------- */
-  function initOfferPopup() {
-    return; // Disabled per user request
 
-    function open() {
-      el.hidden = false;
-      requestAnimationFrame(() => el.classList.add('open'));
-      document.body.classList.add('menu-open');
-    }
-    function close() {
-      el.classList.remove('open');
-      sessionStorage.setItem(KEY, '1');
-      setTimeout(() => { el.hidden = true; document.body.classList.remove('menu-open'); }, 280);
-    }
-
-    // Countdown timer (resets daily in session view)
-    const cd = $('#offer-countdown');
-    if (cd) {
-      let remaining = 24 * 60 * 60 - 1;
-      const tick = () => {
-        const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
-        const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
-        const s = String(remaining % 60).padStart(2, '0');
-        cd.textContent = h + ':' + m + ':' + s;
-        if (remaining > 0) remaining--;
-      };
-      tick();
-      setInterval(tick, 1000);
-    }
-
-    setTimeout(open, 2200);
-    el.querySelectorAll('[data-close-offer]').forEach((n) => on(n, 'click', close));
-    on(document, 'keydown', (e) => { if (e.key === 'Escape' && el.classList.contains('open')) close(); });
-  }
 
   /* ---------- Callback Popup ---------- */
   function initCallbackPopup() {
@@ -541,7 +508,6 @@
     initRipple();
     initWidget();
     initSmoothScroll();
-    initOfferPopup();
     initCallbackPopup();
     initDemoPopup();
     initFooterContact();

@@ -3646,7 +3646,5 @@ function switchModalMedia(type, btn) {
 
 <?php
 $footerContactText = "Talk to our team about Official WhatsApp Business API, automation and omnichannel setup for your business.";
-include __DIR__ . '/../../includes/offer-popup.php';
-include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';
 ?>

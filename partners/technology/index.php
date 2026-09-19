@@ -1,12 +1,11 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Business API Technology Partner Program | Build Integrations | HelloBotz';
-$pageDescription = 'Connect your SaaS, CRM, or e-commerce platform to WhatsApp Business API with HelloBotz developer platform. High-throughput REST API, webhooks, and partner marketplace.';
+$pageTitle = 'WhatsApp Technology & Developer Partner Program | HelloBotz';
+$pageDescription = 'Integrate with HelloBotz official WhatsApp Business API platform. Connect CRMs, ERPs, e-commerce stores, and software solutions with full developer API access.';
 $canonicalUrl = 'https://hellobotz.com/partners/technology/';
+$extraCss = ['/assets/css/partners.css?v=3'];
 include __DIR__ . '/../../includes/header.php';
 ?>
-
-<link rel="stylesheet" href="/assets/css/partners.css?v=3">
 <script defer src="/assets/js/partners.js"></script>
 
 <!-- 1. HERO SECTION -->

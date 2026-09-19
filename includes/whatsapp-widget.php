@@ -15,11 +15,7 @@ $waWidgetSupportMail = cms_setting('support_email', 'support@hellobotz.com');
 
 <div class="hellobotz-robot-widget wa-widget" id="hellobotz-robot-widget">
   
-  <!-- DYNAMIC SPEECH TEASER BUBBLE -->
-  <div class="hellobotz-speech-bubble" aria-label="Chat with HelloBotz">
-    <span class="speech-status-dot"></span>
-    <span class="hellobotz-speech-text">👋 Hi! I'm HelloBotz</span>
-  </div>
+
 
   <!-- COMPACT CHATBOX WINDOW -->
   <div class="hellobotz-chatbox wa-widget-panel" role="dialog" aria-label="HelloBotz AI Assistant">

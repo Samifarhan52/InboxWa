@@ -1203,7 +1203,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <?php
 $footerContactText = "Talk to our team about Facebook Messenger automation, lead ads sync, and omnichannel automation for your business.";
-include __DIR__ . '/../../includes/offer-popup.php';
-include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';
 ?>

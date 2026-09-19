@@ -3,10 +3,9 @@ $basePath = '../../';
 $pageTitle = 'WhatsApp Marketing API Affiliate Program | Refer & Earn 20% Recurring | HelloBotz';
 $pageDescription = 'Join the HelloBotz WhatsApp Business API Affiliate Program. Refer businesses to official WhatsApp automation, chatbots & CRM. Earn 20% lifetime recurring commissions with real-time tracking.';
 $canonicalUrl = 'https://hellobotz.com/partners/affiliate/';
+$extraCss = ['/assets/css/partners.css?v=3'];
 include __DIR__ . '/../../includes/header.php';
 ?>
-
-<link rel="stylesheet" href="/assets/css/partners.css?v=3">
 <script defer src="/assets/js/partners.js"></script>
 
 <!-- 1. HERO SECTION -->

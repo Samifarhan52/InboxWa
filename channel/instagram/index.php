@@ -1523,7 +1523,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <?php
 $footerContactText = "Talk to our team about Instagram automation, comment-to-DM setup, and omnichannel automation for your business.";
-include __DIR__ . '/../../includes/offer-popup.php';
-include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';
 ?>

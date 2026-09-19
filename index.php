@@ -4799,7 +4799,5 @@ function switchModalMedia(type, btn) {
 </script>
 
 <?php
-include __DIR__ . '/includes/offer-popup.php';
-include __DIR__ . '/includes/callback-popup.php';
 include __DIR__ . '/includes/footer.php';
 ?>

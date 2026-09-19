@@ -1175,7 +1175,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <?php
 $footerContactText = "Talk to our team about Telegram bot automation, broadcast setup, and omnichannel automation for your business.";
-include __DIR__ . '/../../includes/offer-popup.php';
-include __DIR__ . '/../../includes/callback-popup.php';
 include __DIR__ . '/../../includes/footer.php';
 ?>

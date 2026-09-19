@@ -3,10 +3,9 @@ $basePath = '../../';
 $pageTitle = 'WhatsApp Business API White Label Reseller Platform | Your Brand | HelloBotz';
 $pageDescription = 'Launch your own branded WhatsApp Business API software platform on your domain. Full white-label reseller panel, custom pricing, client provisioning, and 50%+ margins.';
 $canonicalUrl = 'https://hellobotz.com/partners/white-label/';
+$extraCss = ['/assets/css/partners.css?v=3'];
 include __DIR__ . '/../../includes/header.php';
 ?>
-
-<link rel="stylesheet" href="/assets/css/partners.css?v=3">
 <script defer src="/assets/js/partners.js"></script>
 
 <!-- 1. HERO SECTION -->

@@ -1,12 +1,11 @@
 <?php
 $basePath = '../../';
-$pageTitle = 'WhatsApp Marketing Agency Partner Program | Scale Clients & Earn 40% Margin | HelloBotz';
-$pageDescription = 'Join HelloBotz Agency Partner Program. Manage multi-client WhatsApp Business API, AI chatbots, shared team inboxes and CRM from one dashboard. Earn 40% recurring margins.';
+$pageTitle = 'WhatsApp Agency Partner Program | 40% Margin | HelloBotz';
+$pageDescription = 'Deliver official WhatsApp Business API, automations and multi-agent chat solutions to your clients. Earn 40% agency margins with centralized multi-client management.';
 $canonicalUrl = 'https://hellobotz.com/partners/agency/';
+$extraCss = ['/assets/css/partners.css?v=3'];
 include __DIR__ . '/../../includes/header.php';
 ?>
-
-<link rel="stylesheet" href="/assets/css/partners.css?v=3">
 <script defer src="/assets/js/partners.js"></script>
 
 <!-- 1. HERO SECTION -->
