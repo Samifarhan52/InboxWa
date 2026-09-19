@@ -374,10 +374,7 @@
 
   /* ---------- Offer Popup (session) ---------- */
   function initOfferPopup() {
-    const el = $('#offer-popup');
-    if (!el) return;
-    const KEY = 'hb_offer_closed';
-    if (sessionStorage.getItem(KEY) === '1') return;
+    return; // Disabled per user request
 
     function open() {
       el.hidden = false;

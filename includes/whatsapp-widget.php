@@ -11,7 +11,7 @@ $waWidgetSalesMail = cms_setting('sales_email', 'mail@hellobotz.com');
 $waWidgetSupportMail = cms_setting('support_email', 'support@hellobotz.com');
 ?>
 <!-- HELLOBOTZ INTERACTIVE ROBOT CHATBOT WIDGET -->
-<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=5">
+<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
 
 <div class="hellobotz-robot-widget wa-widget" id="hellobotz-robot-widget">
   
@@ -28,17 +28,7 @@ $waWidgetSupportMail = cms_setting('support_email', 'support@hellobotz.com');
     <div class="hellobotz-chat-header">
       <div class="hellobotz-chat-header-robot">
         <div class="header-robot-avatar">
-          <svg viewBox="0 0 36 36" width="24" height="24" fill="none">
-            <path d="M18 4v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="18" cy="3" r="2.2" fill="#10B981"/>
-            <rect x="6" y="8" width="24" height="20" rx="7" fill="#FFFFFF"/>
-            <rect x="3" y="14" width="3" height="8" rx="1.5" fill="#C7D2FE"/>
-            <rect x="30" y="14" width="3" height="8" rx="1.5" fill="#C7D2FE"/>
-            <rect x="9" y="12" width="18" height="10" rx="4" fill="#1E1B4B"/>
-            <circle cx="13.5" cy="17" r="2.2" fill="#06B6D4"/>
-            <circle cx="22.5" cy="17" r="2.2" fill="#06B6D4"/>
-            <path d="M14 23.5c1 1 2.5 1.5 4 1.5s3-.5 4-1.5" stroke="#8B5CF6" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
+          <img src="/assets/images/hellobotz-avatar.png" alt="HelloBotz Avatar" class="header-avatar-img" width="36" height="36">
           <span class="header-online-dot"></span>
         </div>
         <div class="header-robot-info">

@@ -1130,7 +1130,6 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
   <?php include __DIR__ . '/whatsapp-widget.php'; ?>
   <?php include __DIR__ . '/demo-popup.php'; ?>
   <?php include __DIR__ . '/callback-popup.php'; ?>
-  <?php include __DIR__ . '/offer-popup.php'; ?>
   <?php include __DIR__ . '/trial-popup.php'; ?>
   <!-- Google Website Translator Integration -->
   <div id="google_translate_element" style="display:none !important;" aria-hidden="true"></div>
@@ -1150,12 +1149,12 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
   <script src="/i18n.js?v=25" defer></script>
-  <script src="/main.js?v=40" defer></script>
+  <script src="/main.js?v=41" defer></script>
 
 <script src="/assets/js/mobile-menu.js?v=38"></script>
 
   <script src="/forms.js?v=22" defer></script>
-  <script src="/assets/js/robot-chatbot.js?v=5" defer></script>
+  <script src="/assets/js/robot-chatbot.js?v=6" defer></script>
   <?php echo cms_setting('custom_footer_code', ''); ?>
 </body>
 </html>
