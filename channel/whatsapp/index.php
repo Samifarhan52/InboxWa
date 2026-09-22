@@ -928,39 +928,70 @@ include __DIR__ . '/../../includes/header.php';
       padding: 1.25rem 1rem !important;
     }
     .cw-cap-tabs {
+      display: flex !important;
       flex-direction: row !important;
       overflow-x: auto !important;
       white-space: nowrap !important;
       max-height: none !important;
       gap: 8px !important;
-      padding-bottom: 6px !important;
+      padding: 4px 4px 10px !important;
       -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .cw-cap-tabs::-webkit-scrollbar {
+      display: none !important;
+      height: 0 !important;
     }
     .cw-cap-tab {
+      display: inline-flex !important;
+      align-items: center !important;
       flex-shrink: 0 !important;
       width: auto !important;
-      padding: 9px 14px !important;
+      padding: 9px 16px !important;
+      border-radius: 9999px !important;
       font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      white-space: nowrap !important;
+      border: 1.5px solid #e2e8f0 !important;
+      background: #ffffff !important;
+      color: #475569 !important;
+      gap: 8px !important;
+    }
+    .cw-cap-tab.active {
+      background: #059669 !important;
+      color: #ffffff !important;
+      border-color: #059669 !important;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3) !important;
     }
     .cw-cap-panel {
       padding: 1.5rem 1.2rem !important;
     }
     .cw-cap-preview {
       border-radius: 14px !important;
-      aspect-ratio: 16 / 9 !important;
+      aspect-ratio: auto !important;
       width: 100% !important;
-      max-height: 240px !important;
+      min-height: 200px !important;
+      max-height: 320px !important;
+      height: auto !important;
       position: relative !important;
-      overflow: hidden !important;
+      overflow: visible !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: transparent !important;
     }
     .cw-cap-img {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
       width: 100% !important;
-      height: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: 300px !important;
       object-fit: contain !important;
       display: block !important;
+      margin: 0 auto !important;
+      filter: drop-shadow(0 10px 24px rgba(15, 23, 42, 0.08)) !important;
     }
     .cw-cap-title {
       font-size: 1.45rem !important;
@@ -3602,7 +3633,11 @@ function switchModalMedia(type, btn) {
       if (i === index) {
         tab.classList.add("active");
         tab.setAttribute("aria-selected", "true");
-        tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        var tabsContainer = document.getElementById("cwCapTabs");
+        if (tabsContainer && tabsContainer.scrollWidth > tabsContainer.clientWidth) {
+          var targetLeft = tab.offsetLeft - (tabsContainer.clientWidth / 2) + (tab.clientWidth / 2);
+          tabsContainer.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+        }
       } else {
         tab.classList.remove("active");
         tab.setAttribute("aria-selected", "false");

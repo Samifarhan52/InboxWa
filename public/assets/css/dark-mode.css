@@ -2688,3 +2688,414 @@ body.dark-theme .sh-wa-bubble .sh-wa-btn {
   color: #00a884 !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
+
+/* ==========================================================================
+   COMPREHENSIVE MASTER DARK MODE PATCH (ALL PAGES & SECTIONS)
+   ========================================================================== */
+
+/* 1. Channel WhatsApp: Capabilities Showcase & Platform Walkthrough */
+html[data-theme="dark"] .cw-cap-container,
+body.dark-theme .cw-cap-container {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] .cw-cap-sidebar,
+body.dark-theme .cw-cap-sidebar {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-cap-sidebar-title,
+body.dark-theme .cw-cap-sidebar-title {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-cap-tab,
+body.dark-theme .cw-cap-tab {
+  background: #141d30 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cw-cap-tab:hover:not(.active),
+body.dark-theme .cw-cap-tab:hover:not(.active) {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-cap-tab.active,
+body.dark-theme .cw-cap-tab.active {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4) !important;
+}
+html[data-theme="dark"] .cw-cap-panel,
+body.dark-theme .cw-cap-panel {
+  background: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cw-cap-title,
+body.dark-theme .cw-cap-title {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-cap-desc,
+body.dark-theme .cw-cap-desc {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cw-cap-bullet-item,
+body.dark-theme .cw-cap-bullet-item {
+  color: #f1f5f9 !important;
+}
+html[data-theme="dark"] .cw-media-caption,
+body.dark-theme .cw-media-caption {
+  background: #111827 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cw-showcase-tab,
+body.dark-theme .cw-showcase-tab {
+  background: #141d30 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .cw-showcase-tab.active,
+body.dark-theme .cw-showcase-tab.active {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-showcase-card,
+body.dark-theme .cw-showcase-card {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] .cw-sc-text strong,
+body.dark-theme .cw-sc-text strong {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-sc-text span,
+body.dark-theme .cw-sc-text span {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cw-sc-icon,
+body.dark-theme .cw-sc-icon {
+  background: rgba(16, 185, 129, 0.2) !important;
+}
+html[data-theme="dark"] .cw-showcase-pill,
+body.dark-theme .cw-showcase-pill {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #34d399 !important;
+}
+html[data-theme="dark"] .cw-showcase-title,
+body.dark-theme .cw-showcase-title {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cw-showcase-subtitle,
+body.dark-theme .cw-showcase-subtitle {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cw-btn-secondary,
+html[data-theme="dark"] .cw-btn-white,
+body.dark-theme .cw-btn-secondary,
+body.dark-theme .cw-btn-white {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #334155 !important;
+}
+
+/* 2. Channel Instagram: Capabilities Cards, Simulator, & Flows */
+html[data-theme="dark"] .cig-cap-card,
+body.dark-theme .cig-cap-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+html[data-theme="dark"] .cig-cap-card:hover,
+body.dark-theme .cig-cap-card:hover {
+  background: #141d30 !important;
+  border-color: #ec4899 !important;
+  box-shadow: 0 12px 28px -6px rgba(236, 72, 153, 0.25) !important;
+}
+html[data-theme="dark"] .cig-cap-card h3,
+body.dark-theme .cig-cap-card h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cig-cap-card p,
+body.dark-theme .cig-cap-card p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cig-sim-box,
+body.dark-theme .cig-sim-box {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cig-sim-input-wrap input,
+body.dark-theme .cig-sim-input-wrap input {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cig-chip,
+body.dark-theme .cig-chip {
+  background: rgba(236, 72, 153, 0.15) !important;
+  border-color: rgba(236, 72, 153, 0.3) !important;
+  color: #f472b6 !important;
+}
+html[data-theme="dark"] .cig-flow-card,
+body.dark-theme .cig-flow-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cig-faq-trigger,
+body.dark-theme .cig-faq-trigger {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cig-faq-content,
+body.dark-theme .cig-faq-content {
+  background: #0b0f19 !important;
+  color: #cbd5e1 !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cig-btn-white,
+body.dark-theme .cig-btn-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* 3. Channel Facebook: Capabilities Cards & Buttons */
+html[data-theme="dark"] .cfb-cap-card,
+body.dark-theme .cfb-cap-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+html[data-theme="dark"] .cfb-cap-card:hover,
+body.dark-theme .cfb-cap-card:hover {
+  background: #141d30 !important;
+  border-color: #1877f2 !important;
+  box-shadow: 0 12px 28px -6px rgba(24, 119, 242, 0.25) !important;
+}
+html[data-theme="dark"] .cfb-cap-card h3,
+body.dark-theme .cfb-cap-card h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .cfb-cap-card p,
+body.dark-theme .cfb-cap-card p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .cfb-cap-icon,
+body.dark-theme .cfb-cap-icon {
+  background: rgba(24, 119, 242, 0.15) !important;
+  color: #60a5fa !important;
+}
+html[data-theme="dark"] .cfb-btn-white,
+body.dark-theme .cfb-btn-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* 4. Channel Telegram: Buttons & Secondary Actions */
+html[data-theme="dark"] .ctg-btn-white,
+body.dark-theme .ctg-btn-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* 5. Partners Page: Soft Sections, Steps, Social Grow */
+html[data-theme="dark"] .pp-section-soft,
+body.dark-theme .pp-section-soft {
+  background: #080c14 !important;
+}
+html[data-theme="dark"] .pp-join-card,
+body.dark-theme .pp-join-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .reseller-step,
+body.dark-theme .reseller-step {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .grow-social,
+body.dark-theme .grow-social {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 6. Homepage & Integrations Marquee */
+html[data-theme="dark"] .hb-integrations-marquee-section,
+body.dark-theme .hb-integrations-marquee-section {
+  background: transparent !important;
+}
+html[data-theme="dark"] .hb-int-card,
+body.dark-theme .hb-int-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .cw-typing-bubble,
+body.dark-theme .cw-typing-bubble {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .cw-chip,
+body.dark-theme .cw-chip {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+html[data-theme="dark"] .cw-floating-card,
+body.dark-theme .cw-floating-card {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+/* 7. Pricing & Addon Modals */
+html[data-theme="dark"] .meta-card,
+html[data-theme="dark"] .addon-card,
+html[data-theme="dark"] .faq-card,
+body.dark-theme .meta-card,
+body.dark-theme .addon-card,
+body.dark-theme .faq-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .addon-modal,
+html[data-theme="dark"] .addon-modal-dialog,
+html[data-theme="dark"] .callback-popup,
+body.dark-theme .addon-modal,
+body.dark-theme .addon-modal-dialog,
+body.dark-theme .callback-popup {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+/* 8. Industry & Solution Hub Pages */
+html[data-theme="dark"] .ind-stat-card,
+html[data-theme="dark"] .ind-why-card,
+html[data-theme="dark"] .ind-faq-item,
+html[data-theme="dark"] .bfsi-logo-card,
+html[data-theme="dark"] .bfsi-why-card,
+html[data-theme="dark"] .bfsi-faq-item,
+html[data-theme="dark"] .bl-dataset-card,
+html[data-theme="dark"] .bl-hub-card,
+html[data-theme="dark"] .bl-feature-card,
+html[data-theme="dark"] .bl-bsp-card,
+html[data-theme="dark"] .bl-faq-item,
+html[data-theme="dark"] .edu-journey-card,
+html[data-theme="dark"] .edu-solution-card,
+html[data-theme="dark"] .edu-why-card,
+html[data-theme="dark"] .edu-bsp-card,
+body.dark-theme .ind-stat-card,
+body.dark-theme .ind-why-card,
+body.dark-theme .ind-faq-item,
+body.dark-theme .bfsi-logo-card,
+body.dark-theme .bfsi-why-card,
+body.dark-theme .bfsi-faq-item,
+body.dark-theme .bl-dataset-card,
+body.dark-theme .bl-hub-card,
+body.dark-theme .bl-feature-card,
+body.dark-theme .bl-bsp-card,
+body.dark-theme .bl-faq-item,
+body.dark-theme .edu-journey-card,
+body.dark-theme .edu-solution-card,
+body.dark-theme .edu-why-card,
+body.dark-theme .edu-bsp-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .ind-usecases-section,
+html[data-theme="dark"] .ind-why-section,
+html[data-theme="dark"] .bfsi-features-section,
+html[data-theme="dark"] .bfsi-why-section,
+html[data-theme="dark"] .edu-usecase-section,
+html[data-theme="dark"] .edu-solutions-section,
+html[data-theme="dark"] .edu-why-section,
+body.dark-theme .ind-usecases-section,
+body.dark-theme .ind-why-section,
+body.dark-theme .bfsi-features-section,
+body.dark-theme .bfsi-why-section,
+body.dark-theme .edu-usecase-section,
+body.dark-theme .edu-solutions-section,
+body.dark-theme .edu-why-section {
+  background: transparent !important;
+}
+html[data-theme="dark"] .ind-btn-outline,
+html[data-theme="dark"] .bfsi-btn-outline,
+body.dark-theme .ind-btn-outline,
+body.dark-theme .bfsi-btn-outline {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+/* 9. Product Pages, Resources, & Integrations */
+html[data-theme="dark"] .prod-step-card,
+html[data-theme="dark"] .prod-faq-item,
+html[data-theme="dark"] .res-card,
+html[data-theme="dark"] .wa-tpl-card,
+html[data-theme="dark"] .cs-card,
+html[data-theme="dark"] .dm-cat-card,
+html[data-theme="dark"] .dm-product-card,
+html[data-theme="dark"] .dm-modal-box,
+html[data-theme="dark"] .integration-card,
+html[data-theme="dark"] .confused-box,
+body.dark-theme .prod-step-card,
+body.dark-theme .prod-faq-item,
+body.dark-theme .res-card,
+body.dark-theme .wa-tpl-card,
+body.dark-theme .cs-card,
+body.dark-theme .dm-cat-card,
+body.dark-theme .dm-product-card,
+body.dark-theme .dm-modal-box,
+body.dark-theme .integration-card,
+body.dark-theme .confused-box {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .prod-btn-secondary,
+html[data-theme="dark"] .prod-cta-btn-white,
+body.dark-theme .prod-btn-secondary,
+body.dark-theme .prod-cta-btn-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .sh-page-wrap,
+body.dark-theme .sh-page-wrap {
+  background: #080c14 !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .sh-leak-card,
+html[data-theme="dark"] .sh-engine-card,
+html[data-theme="dark"] .sh-moment-card,
+body.dark-theme .sh-leak-card,
+body.dark-theme .sh-engine-card,
+body.dark-theme .sh-moment-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .btn-sh-secondary,
+html[data-theme="dark"] .btn-sh-white,
+body.dark-theme .btn-sh-secondary,
+body.dark-theme .btn-sh-white {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
