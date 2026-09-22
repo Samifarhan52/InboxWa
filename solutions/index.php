@@ -5,7 +5,7 @@ $pageDescription = 'WhatsApp and omnichannel solutions for support, sales and gr
 $canonicalUrl = 'https://hellobotz.com/solutions/';
 include __DIR__ . '/../includes/header.php';
 ?>
-<nav class="container" style="padding-top:calc(var(--nav,72px) + 1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions</nav>
+<nav class="container" style="padding-top:0.75rem;padding-bottom:0.25rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions</nav>
 <section class="section page-hero" style="padding-top:1.25rem">
   <div class="container">
     <div class="section-header reveal">

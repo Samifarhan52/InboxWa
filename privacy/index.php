@@ -5,7 +5,7 @@ $pageDescription = 'HelloBotz Privacy Policy. Official WhatsApp Business API and
 $canonicalUrl = 'https://hellobotz.com/privacy/';
 include __DIR__ . '/../includes/header.php';
 ?>
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Privacy Policy</nav>
+<nav class="container" style="padding-top:0.75rem;padding-bottom:0.25rem;font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Privacy Policy</nav>
 <section class="section page-hero" style="padding-top:1.25rem">
   <div class="container" style="max-width:800px">
     <div class="section-header reveal" style="text-align:left">

@@ -5,7 +5,7 @@ $pageDescription = 'Click-to-WhatsApp and lead ads into HelloBotz inbox, qualifi
 $canonicalUrl = 'https://hellobotz.com/integrations/facebook-ads/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Integrations / Facebook Ads</nav>
+<nav class="container" style="padding-top:0.75rem;padding-bottom:0.25rem;font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Integrations / Facebook Ads</nav>
 
 <section class="section page-hero hero-animated" style="padding-top:1.25rem">
   <div class="container">

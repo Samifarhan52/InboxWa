@@ -5,7 +5,7 @@ $pageDescription = 'Dispatch, ETA and completion updates for field teams and cus
 $canonicalUrl = 'https://hellobotz.com/solutions/field-service/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Field Service Updates</nav>
+<nav class="container" style="padding-top:0.75rem;padding-bottom:0.25rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / Solutions / Field Service Updates</nav>
 <section class="section page-hero" style="padding-top:1.25rem"><div class="container"><div class="section-header reveal">
 <span class="badge badge-primary">Solution</span><h1>Field Service Updates</h1><p class="lead">Dispatch, ETA and completion updates for field teams and customers.</p>
 <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center"><a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Book Demo</a><a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Data</a></div>

@@ -42,7 +42,7 @@ body.dark-theme,
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: calc(var(--nav, 72px) + 1.25rem) 0 1rem;
+  padding: 0.75rem 0 0.25rem;
 }
 
 .industry-crumb-nav {
@@ -98,7 +98,7 @@ body.dark-theme,
 /* HERO SECTION */
 .industry-hero {
   position: relative;
-  padding: 2rem 0 4.5rem;
+  padding: 1rem 0 4rem;
   background: radial-gradient(1000px 500px at 50% -50px, rgba(99, 102, 241, 0.08), transparent 70%), #ffffff;
 }
 

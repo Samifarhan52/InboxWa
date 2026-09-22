@@ -6,7 +6,7 @@ $canonicalUrl = 'https://webtest.quickvtech.com/solutions/instagram-automation';
 $basePath = '../../';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<section class="section page-hero" style="padding-top:calc(var(--nav, 72px) + 3rem)">
+<section class="section page-hero" style="padding-top:1.5rem">
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Instagram</span>

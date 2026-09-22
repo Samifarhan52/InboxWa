@@ -20,7 +20,7 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/industry.css?v=2">
+<link rel="stylesheet" href="/assets/css/industry.css?v=3">
 
 <div class="industry-page">
   <div class="container">

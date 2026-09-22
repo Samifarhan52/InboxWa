@@ -7,7 +7,7 @@ include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/resources.css?v=3">
 
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Resources / API Docs</nav>
+<nav class="container" style="padding-top:0.75rem;padding-bottom:0.25rem;font-size:.85rem;color:var(--t3)"><a href="/">Home</a> / Resources / API Docs</nav>
 <section class="section page-hero" style="padding-top:1.25rem"><div class="container"><div class="section-header reveal">
 <span class="badge badge-primary">Developers</span>
 <h1>HelloBotz API overview</h1>

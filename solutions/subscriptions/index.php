@@ -5,7 +5,7 @@ $pageDescription = 'Onboard members, send renewal reminders and manage plan chan
 $canonicalUrl = 'https://hellobotz.com/solutions/subscriptions/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<nav class="container" style="padding-top:calc(var(--nav,72px)+1rem);font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / <a href="<?php echo $bp; ?>solutions/">Solutions</a> / Subscriptions on WhatsApp</nav>
+<nav class="container" style="padding-top:0.75rem;padding-bottom:0.25rem;font-size:.85rem;color:var(--t3)"><a href="<?php echo $bp; ?>">Home</a> / <a href="<?php echo $bp; ?>solutions/">Solutions</a> / Subscriptions on WhatsApp</nav>
 <section class="section page-hero" style="padding-top:1.25rem">
   <div class="container"><div class="section-header reveal">
     <span class="badge badge-primary">Solution · Subscriptions</span>

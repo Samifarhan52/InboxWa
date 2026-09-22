@@ -5,7 +5,7 @@ $pageDescription = 'Telegram bots and team support unified with other channels.'
 $canonicalUrl = 'https://hellobotz.com/products/Telegram-Automation/';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<section class="section page-hero" style="padding-top:calc(var(--nav,72px) + 3rem)">
+<section class="section page-hero" style="padding-top:1.5rem">
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">Product</span>

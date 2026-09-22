@@ -5,7 +5,7 @@ $pageDescription = 'Launch your own WhatsApp Business API business with HelloBot
 $canonicalUrl = 'https://hellobotz.com/partners/';
 $extraCss = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
-    '/assets/css/partners.css?v=5'
+    '/assets/css/partners.css?v=6'
 ];
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -41,14 +41,10 @@ include __DIR__ . '/../includes/header.php';
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                             Download Brochure
                         </a>
-                        <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn-download-data" style="gap:6px">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            Download Data
-                        </a>
                     </div>
                 </div>
                 <div class="pp-hero-img">
-                    <img src="/assets/images/partners/partner-hero.png" alt="WhatsApp Business API White Label Reseller Panel" width="540" height="360" loading="eager">
+                    <img src="/assets/images/partners/partner-hero.png" alt="WhatsApp Business API White Label Reseller Panel" width="440" height="440" loading="eager">
                 </div>
             </div>
         </div>
@@ -79,15 +75,15 @@ include __DIR__ . '/../includes/header.php';
             <p class="pp-subtext">Connect with HelloBotz through the partnership path that fits your business.</p>
             <div class="d-flex justify-content-center">
                 <div class="pp-tabs-bar">
-                    <button class="pp-tab-btn active" id="point_1">
+                    <button type="button" class="pp-tab-btn active" id="point_1" onclick="switchPartnerTab('point_1')">
                         <span class="pp-tab-full">White-Label Reseller Partners</span>
                         <span class="pp-tab-short">White-Label</span>
                     </button>
-                    <button class="pp-tab-btn" id="point_2">
+                    <button type="button" class="pp-tab-btn" id="point_2" onclick="switchPartnerTab('point_2')">
                         <span class="pp-tab-full">Affiliate Partners</span>
                         <span class="pp-tab-short">Affiliate</span>
                     </button>
-                    <button class="pp-tab-btn" id="point_3">
+                    <button type="button" class="pp-tab-btn" id="point_3" onclick="switchPartnerTab('point_3')">
                         <span class="pp-tab-full">Technology Partners</span>
                         <span class="pp-tab-short">Technology</span>
                     </button>
@@ -980,5 +976,25 @@ include __DIR__ . '/../includes/header.php';
 
 </div>
 
-<script src="/assets/js/partners.js?v=5" defer></script>
+<script>
+function switchPartnerTab(id) {
+    var tabs = ['point_1', 'point_2', 'point_3'];
+    tabs.forEach(function(tabId, idx) {
+        var num = idx + 1;
+        var btn = document.getElementById(tabId);
+        var content = document.getElementById('point_content_' + num);
+        if (btn) {
+            if (tabId === id) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        }
+        if (content) {
+            content.style.display = (tabId === id) ? 'block' : 'none';
+        }
+    });
+}
+</script>
+<script src="/assets/js/partners.js?v=6"></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
