@@ -9,6 +9,30 @@
     {
       "source": "/api/lead/",
       "destination": "/api/lead"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/admin/",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/secure-console-x7",
+      "destination": "/secure-console-x7/index.html"
+    },
+    {
+      "source": "/secure-console-x7/",
+      "destination": "/secure-console-x7/index.html"
+    },
+    {
+      "source": "/secure-console-x7/:path*",
+      "destination": "/secure-console-x7/index.html"
     }
   ],
   "redirects": [

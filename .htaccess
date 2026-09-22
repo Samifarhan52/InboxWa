@@ -9,6 +9,10 @@ RewriteBase /
 RewriteRule ^api/lead/?$ /php-api/lead.php [L,QSA]
 RewriteRule ^api/lead\.php/?$ /php-api/lead.php [L,QSA]
 
+# Admin console routing (Hostinger & Apache)
+RewriteRule ^admin/?$ /secure-console-x7/index.php [L,QSA]
+RewriteRule ^secure-console-x7/?$ /secure-console-x7/index.php [L,QSA]
+
 # Force lowercase for known capital folders
 RewriteRule ^assets/(.*)$ /public/assets/$1 [L]
 RewriteRule ^Products/(.*)$ /products/$1 [R=301,L]

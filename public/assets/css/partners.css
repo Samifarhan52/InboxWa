@@ -13,6 +13,20 @@
         --pp-shadow-hover: 0 10px 32px rgba(16, 24, 39, 0.10);
     }
 
+    html[data-theme="dark"],
+    body.dark-theme {
+        --pp-green: #9061F9;
+        --pp-green-dark: #7C3AED;
+        --pp-green-light: rgba(124, 58, 237, 0.18);
+        --pp-ink: #F8FAFC;
+        --pp-muted: #94A3B8;
+        --pp-border: rgba(255, 255, 255, 0.10);
+        --pp-bg: #0F172A;
+        --pp-bg-soft: #080C14;
+        --pp-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+        --pp-shadow-hover: 0 10px 32px rgba(0, 0, 0, 0.65);
+    }
+
     .pp-wrap * {
         box-sizing: border-box;
     }
@@ -1731,3 +1745,190 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+/* ==========================================================================
+   PARTNER PAGE PRO DARK MODE
+   ========================================================================== */
+html[data-theme="dark"] .pp-wrap,
+body.dark-theme .pp-wrap {
+    background: #080C14 !important;
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pp-breadcrumb,
+body.dark-theme .pp-breadcrumb {
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .pp-breadcrumb ol,
+body.dark-theme .pp-breadcrumb ol {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pp-breadcrumb a,
+body.dark-theme .pp-breadcrumb a {
+    color: #A78BFA !important;
+}
+
+html[data-theme="dark"] .pp-hero,
+body.dark-theme .pp-hero {
+    background: radial-gradient(1200px 600px at 50% -100px, rgba(124, 58, 237, 0.18), transparent 70%), #080C14 !important;
+}
+
+html[data-theme="dark"] .pp-badge,
+body.dark-theme .pp-badge {
+    background: #141D30 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #F8FAFC !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .pp-hero h1,
+body.dark-theme .pp-hero h1 {
+    color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .pp-hero p.pp-lead,
+body.dark-theme .pp-hero p.pp-lead {
+    color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .pp-btn-outline,
+body.dark-theme .pp-btn-outline {
+    background: #141D30 !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pp-btn-outline:hover,
+body.dark-theme .pp-btn-outline:hover {
+    background: #1E293B !important;
+    border-color: #8B5CF6 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25) !important;
+}
+
+html[data-theme="dark"] .pp-section,
+body.dark-theme .pp-section {
+    background: #080C14 !important;
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pp-section-soft,
+body.dark-theme .pp-section-soft {
+    background: #0D121F !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .pp-h2,
+body.dark-theme .pp-h2 {
+    color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .pp-subtext,
+body.dark-theme .pp-subtext {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pp-intro-card,
+body.dark-theme .pp-intro-card {
+    background: #0F172A !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #CBD5E1 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .pp-intro-card a,
+body.dark-theme .pp-intro-card a {
+    color: #38BDF8 !important;
+}
+
+html[data-theme="dark"] .pp-tabs-bar,
+body.dark-theme .pp-tabs-bar {
+    background: #141D30 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .pp-tab-btn,
+body.dark-theme .pp-tab-btn {
+    color: #94A3B8 !important;
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .pp-tab-btn.active,
+body.dark-theme .pp-tab-btn.active {
+    background: #7C3AED !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.45) !important;
+}
+
+html[data-theme="dark"] .pp-tab-panel,
+body.dark-theme .pp-tab-panel {
+    background: #0F172A !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .pp-tab-lead,
+body.dark-theme .pp-tab-lead {
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pp-body,
+body.dark-theme .pp-body {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pp-tab-list li,
+body.dark-theme .pp-tab-list li {
+    color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .pp-tab-list li::before,
+body.dark-theme .pp-tab-list li::before {
+    background: rgba(16, 185, 129, 0.2) !important;
+    color: #34D399 !important;
+}
+
+html[data-theme="dark"] .pp-flow-card,
+html[data-theme="dark"] .pp-feature-card,
+html[data-theme="dark"] .pp-card,
+html[data-theme="dark"] .pp-step-card,
+body.dark-theme .pp-flow-card,
+body.dark-theme .pp-feature-card,
+body.dark-theme .pp-card,
+body.dark-theme .pp-step-card {
+    background: #0F172A !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #F8FAFC !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .pp-flow-card:hover,
+html[data-theme="dark"] .pp-feature-card:hover,
+html[data-theme="dark"] .pp-card:hover,
+html[data-theme="dark"] .pp-step-card:hover,
+body.dark-theme .pp-flow-card:hover,
+body.dark-theme .pp-feature-card:hover,
+body.dark-theme .pp-card:hover,
+body.dark-theme .pp-step-card:hover {
+    background: #141D30 !important;
+    border-color: rgba(139, 92, 246, 0.45) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(139, 92, 246, 0.15) !important;
+}
+
+html[data-theme="dark"] .pp-card-title,
+html[data-theme="dark"] .pp-feature-card h3,
+body.dark-theme .pp-card-title,
+body.dark-theme .pp-feature-card h3 {
+    color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .pp-card-desc,
+html[data-theme="dark"] .pp-feature-card p,
+body.dark-theme .pp-card-desc,
+body.dark-theme .pp-feature-card p {
+    color: #94A3B8 !important;
+}
+

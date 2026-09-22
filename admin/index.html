@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelloBotz &lsaquo; Administration &mdash; WordPress 6.x CMS Studio</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --wp-admin-theme-color: #0073aa;
+      --wp-admin-theme-color-darker-10: #006291;
+      --wp-admin-theme-color-darker-20: #005177;
+      --wp-admin-border-color: #c3c4c7;
+      --wp-bar-bg: #1d2327;
+      --wp-menu-bg: #1d2327;
+      --wp-menu-text: #f0f0f1;
+      --wp-menu-hover-bg: #13171a;
+      --wp-menu-active-bg: #2271b1;
+      --wp-body-bg: #f0f0f1;
+      --wp-card-bg: #ffffff;
+      --wp-text: #2c3338;
+      --wp-text-muted: #646970;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+    body { background: var(--wp-body-bg); color: var(--wp-text); min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Login Screen */
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      background: #f0f0f1;
+    }
+    .login-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1d2327;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+    .login-brand-logo img { height: 42px; border-radius: 6px; }
+    .login-box {
+      background: #fff;
+      border: 1px solid var(--wp-admin-border-color);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      width: 100%;
+      max-width: 380px;
+      padding: 26px 24px;
+      border-radius: 4px;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #1d2327; margin-bottom: 0.4rem; }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      background: #fff;
+      border: 1px solid #8c8f94;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #2c3338;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .form-control:focus {
+      border-color: var(--wp-admin-theme-color);
+      box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--wp-admin-theme-color);
+      border: 1px solid var(--wp-admin-theme-color);
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-submit:hover { background: var(--wp-admin-theme-color-darker-10); }
+    .error-notice {
+      background: #fff;
+      border-left: 4px solid #d63638;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      padding: 12px;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      color: #3c434a;
+      max-width: 380px;
+      width: 100%;
+      display: none;
+    }
+
+    /* Admin Workspace */
+    #admin-app { display: none; min-height: 100vh; flex-direction: column; }
+    
+    /* Top WP Admin Bar */
+    .wp-admin-bar {
+      height: 32px;
+      background: var(--wp-bar-bg);
+      color: #c3c4c7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px 0 8px;
+      font-size: 13px;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+    .wp-bar-left, .wp-bar-right { display: flex; align-items: center; gap: 14px; height: 100%; }
+    .wp-bar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 8px;
+      color: #c3c4c7;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer;
+    }
+    .wp-bar-item:hover { background: #2c3338; color: #72aee6; }
+    .wp-bar-badge {
+      background: #2271b1;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 99px;
+    }
+
+    /* Layout: Sidebar + Main Content */
+    .wp-container { display: flex; flex: 1; position: relative; }
+    .wp-sidebar {
+      width: 180px;
+      background: var(--wp-menu-bg);
+      min-height: calc(100vh - 32px);
+      flex-shrink: 0;
+      padding-top: 10px;
+    }
+    .wp-menu-list { list-style: none; }
+    .wp-menu-item { position: relative; }
+    .wp-menu-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      color: var(--wp-menu-text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+    }
+    .wp-menu-link i { font-size: 14px; width: 18px; text-align: center; color: #a7aaad; }
+    .wp-menu-item:hover > .wp-menu-link {
+      background: var(--wp-menu-hover-bg);
+      color: #72aee6;
+    }
+    .wp-menu-item:hover > .wp-menu-link i { color: #72aee6; }
+    .wp-menu-item.active > .wp-menu-link {
+      background: var(--wp-menu-active-bg);
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .wp-menu-item.active > .wp-menu-link i { color: #ffffff; }
+
+    /* Content Area */
+    .wp-content {
+      flex: 1;
+      padding: 24px 32px 60px;
+      background: var(--wp-body-bg);
+      overflow-y: auto;
+    }
+    .wp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .wp-header h1 {
+      font-size: 23px;
+      font-weight: 600;
+      color: #1d2327;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-action-primary {
+      background: #2271b1;
+      border: 1px solid #2271b1;
+      color: #fff;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-action-primary:hover { background: #135e96; border-color: #135e96; }
+    .btn-action-secondary {
+      background: #f6f7f7;
+      border: 1px solid #dcdcde;
+      color: #2271b1;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-action-secondary:hover { background: #f0f0f1; border-color: #0a4b78; color: #0a4b78; }
+
+    /* Cards & Panels */
+    .wp-card {
+      background: #fff;
+      border: 1px solid var(--wp-admin-border-color);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    }
+    .wp-card-header {
+      border-bottom: 1px solid #f0f0f1;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wp-card-header h2 { font-size: 16px; font-weight: 600; color: #1d2327; }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--wp-admin-border-color);
+      border-left: 4px solid #2271b1;
+      border-radius: 4px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    }
+    .stat-card.green { border-left-color: #00a32a; }
+    .stat-card.orange { border-left-color: #dba617; }
+    .stat-card.purple { border-left-color: #7c3aed; }
+    .stat-val { font-size: 28px; font-weight: 700; color: #1d2327; line-height: 1.1; margin-bottom: 4px; }
+    .stat-lbl { font-size: 13px; color: #646970; font-weight: 500; }
+
+    /* Tables */
+    .wp-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--wp-admin-border-color);
+      box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+      font-size: 13px;
+    }
+    .wp-table th, .wp-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f1;
+    }
+    .wp-table th {
+      background: #f6f7f7;
+      font-weight: 600;
+      color: #2c3338;
+      border-bottom: 1px solid var(--wp-admin-border-color);
+    }
+    .wp-table tr:hover td { background: #f9f9f9; }
+    .lead-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-new { background: #e7f5ea; color: #1e7e34; }
+    .badge-demo { background: #e8f4fd; color: #0a4b78; }
+    .badge-trial { background: #f5f3ff; color: #7c3aed; }
+
+    /* Brand Identity Studio Styles */
+    .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } }
+    .mockup-preview-box {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 12px;
+    }
+    .mockup-bar-light {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .mockup-bar-dark {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mockup-logo-img { object-fit: contain; transition: width 0.2s, height 0.2s; }
+    .slider-row { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+    .slider-row input[type="range"] { flex: 1; accent-color: #2271b1; }
+    .slider-val-badge {
+      background: #e2e8f0;
+      color: #0f172a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    /* Visual Page Builder Blocks */
+    .builder-toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: #f6f7f7;
+      padding: 12px;
+      border: 1px solid var(--wp-admin-border-color);
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .btn-block-insert {
+      background: #fff;
+      border: 1px solid #8c8f94;
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #2c3338;
+      transition: all 0.15s;
+    }
+    .btn-block-insert:hover { background: #2271b1; color: #fff; border-color: #2271b1; }
+    .builder-canvas {
+      min-height: 400px;
+      background: #fff;
+      border: 2px dashed #c3c4c7;
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .builder-block {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .builder-block-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+    }
+    .builder-block-actions { display: flex; gap: 6px; }
+    .btn-block-del {
+      background: #fee2e2;
+      border: 1px solid #f87171;
+      color: #b91c1c;
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    /* Device Switcher */
+    .device-switcher { display: flex; gap: 4px; background: #e2e8f0; padding: 3px; border-radius: 6px; }
+    .device-btn {
+      background: transparent;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      color: #475569;
+    }
+    .device-btn.active { background: #fff; color: #0f172a; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+    /* Flash Notice */
+    .flash-notice {
+      background: #fff;
+      border-left: 4px solid #00a32a;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #1d2327;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. LOGIN SCREEN -->
+  <div id="login-screen">
+    <a href="/" class="login-brand-logo" title="Back to HelloBotz Website">
+      <img src="/assets/images/logo-light.png" alt="HelloBotz" onerror="this.src='/favicon.png'">
+      <span>HelloBotz</span>
+    </a>
+
+    <div id="login-error-box" class="error-notice"></div>
+
+    <div class="login-box">
+      <form id="login-form">
+        <div class="form-group">
+          <label for="admin-user">Username or Email Address</label>
+          <input type="text" id="admin-user" class="form-control" value="admin" required autofocus autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="admin-pass">Password</label>
+          <input type="password" id="admin-pass" class="form-control" value="admin123" required autocomplete="current-password">
+        </div>
+        <div class="form-group" style="display:flex; justify-content:space-between; align-items:center;">
+          <label style="display:flex; align-items:center; gap:6px; font-weight:400; font-size:0.85rem; cursor:pointer;">
+            <input type="checkbox" id="remember-me" checked> Remember Me
+          </label>
+          <a href="#lost-password" id="btn-lost-pwd" style="color:#0073aa; font-size:0.85rem; text-decoration:none;">Lost your password?</a>
+        </div>
+        <button type="submit" class="btn-submit">Log In</button>
+      </form>
+      <div id="lost-password-section" style="display:none; margin-top:16px; border-top:1px solid #e2e8f0; padding-top:14px;">
+        <p style="font-size:0.85rem; color:#64748b; margin-bottom:8px;"><strong>Security Recovery Question:</strong> Who is the developer &amp; agency founder?</p>
+        <input type="text" id="recovery-answer" class="form-control" placeholder="Farhan from ElavateX" style="margin-bottom:10px;">
+        <button type="button" id="btn-verify-recovery" class="btn-submit" style="background:#10b981; border-color:#10b981;">Verify &amp; Reset Access</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. WP-ADMIN WORKSPACE -->
+  <div id="admin-app">
+    <!-- Top Admin Bar -->
+    <header class="wp-admin-bar">
+      <div class="wp-bar-left">
+        <a href="#dashboard" class="wp-bar-item" title="HelloBotz CMS Studio">
+          <i class="fab fa-wordpress" style="font-size:16px;"></i>
+          <strong>HelloBotz</strong>
+        </a>
+        <a href="/" target="_blank" class="wp-bar-item" title="Visit Live Site">
+          <i class="fas fa-home"></i> Visit Site
+        </a>
+        <a href="#leads" class="wp-bar-item">
+          <i class="fas fa-user-friends"></i> Leads
+          <span class="wp-bar-badge" id="top-leads-count">14</span>
+        </a>
+        <a href="#settings-brand" class="wp-bar-item" style="color:#f59e0b;">
+          <i class="fas fa-paint-brush"></i> Brand &amp; HD Logos
+        </a>
+      </div>
+      <div class="wp-bar-right">
+        <span class="wp-bar-item" id="top-user-greeting">
+          Howdy, <strong style="margin-left:4px;" id="greeting-username">admin</strong>
+          <img src="/assets/images/hellobotz-avatar.png" onerror="this.src='/favicon.png'" style="width:20px; height:20px; border-radius:50%; margin-left:6px;">
+        </span>
+        <a href="#logout" id="btn-logout" class="wp-bar-item" style="color:#ef4444;" title="Log Out">
+          <i class="fas fa-sign-out-alt"></i> Log Out
+        </a>
+      </div>
+    </header>
+
+    <div class="wp-container">
+      <!-- Left Sidebar Menu -->
+      <aside class="wp-sidebar">
+        <ul class="wp-menu-list">
+          <li class="wp-menu-item active" data-page="dashboard">
+            <a href="#dashboard" class="wp-menu-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          </li>
+          <li class="wp-menu-item" data-page="settings-brand">
+            <a href="#settings-brand" class="wp-menu-link"><i class="fas fa-award"></i> Brand &amp; HD Logos</a>
+          </li>
+          <li class="wp-menu-item" data-page="page-builder">
+            <a href="#page-builder" class="wp-menu-link"><i class="fas fa-layer-group"></i> Visual Page Builder</a>
+          </li>
+          <li class="wp-menu-item" data-page="leads">
+            <a href="#leads" class="wp-menu-link"><i class="fas fa-envelope-open-text"></i> Leads &amp; Inquiries</a>
+          </li>
+          <li class="wp-menu-item" data-page="posts">
+            <a href="#posts" class="wp-menu-link"><i class="fas fa-feather-alt"></i> Blog Posts</a>
+          </li>
+          <li class="wp-menu-item" data-page="pricing">
+            <a href="#pricing" class="wp-menu-link"><i class="fas fa-tags"></i> Pricing Plans</a>
+          </li>
+          <li class="wp-menu-item" data-page="settings">
+            <a href="#settings" class="wp-menu-link"><i class="fas fa-sliders-h"></i> Settings</a>
+          </li>
+          <li class="wp-menu-item" data-page="profile">
+            <a href="#profile" class="wp-menu-link"><i class="fas fa-user-shield"></i> Users &amp; Profile</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="wp-content">
+        <div id="flash-notice" class="flash-notice"></div>
+
+        <!-- TAB: DASHBOARD -->
+        <section id="view-dashboard" class="admin-view">
+          <div class="wp-header">
+            <h1><i class="fas fa-tachometer-alt" style="color:#2271b1;"></i> Dashboard Overview</h1>
+            <div style="display:flex; gap:8px;">
+              <a href="#settings-brand" class="btn-action-primary"><i class="fas fa-paint-brush"></i> Brand &amp; Logos Studio</a>
+              <a href="#page-builder" class="btn-action-secondary"><i class="fas fa-plus"></i> Add New Page</a>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-val" id="stat-total-leads">14</div>
+              <div class="stat-lbl">Total Leads Captured</div>
+            </div>
+            <div class="stat-card green">
+              <div class="stat-val">98.4%</div>
+              <div class="stat-lbl">WhatsApp Open Rate</div>
+            </div>
+            <div class="stat-card orange">
+              <div class="stat-val">12</div>
+              <div class="stat-lbl">Published Blog Posts</div>
+            </div>
+            <div class="stat-card purple">
+              <div class="stat-val">100%</div>
+              <div class="stat-lbl">CMS Engine Status (Active)</div>
+            </div>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-header">
+              <h2>Recent Leads &amp; Demo Requests</h2>
+              <button type="button" class="btn-action-secondary btn-export-csv"><i class="fas fa-download"></i> Export Leads CSV</button>
+            </div>
+            <table class="wp-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Name / Business</th>
+                  <th>Phone / WhatsApp</th>
+                  <th>Requirement</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="dashboard-leads-tbody">
+                <!-- Dynamically filled -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- TAB: BRAND & HD LOGOS STUDIO -->
+        <section id="view-settings-brand" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-award" style="color:#f59e0b;"></i> Brand Identity &amp; HD Logos Studio</h1>
+            <button type="button" class="btn-action-primary btn-save-brand"><i class="fas fa-save"></i> Save Brand Changes</button>
+          </div>
+
+          <div class="brand-grid">
+            <!-- Left Form Controls -->
+            <div class="wp-card">
+              <div class="wp-card-header">
+                <h2>Navbar Logos &amp; Real-Time Scaling Sliders</h2>
+              </div>
+              <form id="brand-settings-form">
+                <div class="form-group">
+                  <label for="cfg-logo-light">Light Mode Logo URL</label>
+                  <input type="text" id="cfg-logo-light" class="form-control" value="/assets/images/logo-light.png">
+                </div>
+                <div class="form-group">
+                  <label for="cfg-logo-dark">Dark Mode Logo URL</label>
+                  <input type="text" id="cfg-logo-dark" class="form-control" value="/assets/images/logo-dark.png">
+                </div>
+                <div class="form-group">
+                  <label>Logo Width (Desktop Navbar)</label>
+                  <div class="slider-row">
+                    <input type="range" id="cfg-logo-width" min="80" max="320" value="160">
+                    <span class="slider-val-badge" id="lbl-logo-width">160px</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Logo Height (Desktop Navbar)</label>
+                  <div class="slider-row">
+                    <input type="range" id="cfg-logo-height" min="24" max="100" value="52">
+                    <span class="slider-val-badge" id="lbl-logo-height">52px</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="cfg-bot-avatar">Chatbot Robot Avatar Image URL</label>
+                  <input type="text" id="cfg-bot-avatar" class="form-control" value="/assets/images/hellobotz-avatar.png">
+                </div>
+                <div class="form-group">
+                  <label for="cfg-brochure">Company Brochure Link / Download URL</label>
+                  <input type="text" id="cfg-brochure" class="form-control" value="/assets/docs/hellobotz-brochure.pdf">
+                </div>
+                <div class="form-group">
+                  <label for="cfg-address">Official Office Address</label>
+                  <textarea id="cfg-address" class="form-control" rows="2">HelloBotz AI Technologies Pvt Ltd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</textarea>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right Live Navbar Mockup -->
+            <div>
+              <div class="wp-card">
+                <div class="wp-card-header">
+                  <h2>Live Navbar Mockup Scaling Preview</h2>
+                  <span style="font-size:12px; color:#64748b;">Updates in Real-Time</span>
+                </div>
+                <p style="font-size:13px; color:#64748b; margin-bottom:12px;">See exactly how your HD logo renders on both Light and Dark mode headers:</p>
+
+                <!-- Light Navbar Mockup -->
+                <div class="mockup-bar-light">
+                  <img src="/assets/images/logo-light.png" id="preview-logo-light" class="mockup-logo-img" alt="Light Logo Preview" style="width:160px; height:52px;" onerror="this.src='/favicon.png'">
+                  <div style="display:flex; gap:10px; align-items:center;">
+                    <span style="font-size:12px; font-weight:600; color:#334155;">Products</span>
+                    <span style="font-size:12px; font-weight:600; color:#334155;">Pricing</span>
+                    <button type="button" style="background:#7c3aed; color:#fff; border:none; padding:5px 12px; border-radius:99px; font-size:11px; font-weight:700;">Start Free</button>
+                  </div>
+                </div>
+
+                <!-- Dark Navbar Mockup -->
+                <div class="mockup-bar-dark">
+                  <img src="/assets/images/logo-dark.png" id="preview-logo-dark" class="mockup-logo-img" alt="Dark Logo Preview" style="width:160px; height:52px;" onerror="this.src='/favicon.png'">
+                  <div style="display:flex; gap:10px; align-items:center;">
+                    <span style="font-size:12px; font-weight:600; color:#cbd5e1;">Products</span>
+                    <span style="font-size:12px; font-weight:600; color:#cbd5e1;">Pricing</span>
+                    <button type="button" style="background:#7c3aed; color:#fff; border:none; padding:5px 12px; border-radius:99px; font-size:11px; font-weight:700;">Start Free</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wp-card">
+                <div class="wp-card-header">
+                  <h2>Official Social Media Channels</h2>
+                </div>
+                <div class="form-group">
+                  <label><i class="fab fa-facebook" style="color:#1877f2;"></i> Facebook URL</label>
+                  <input type="text" id="cfg-fb" class="form-control" value="https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr">
+                </div>
+                <div class="form-group">
+                  <label><i class="fab fa-instagram" style="color:#e4405f;"></i> Instagram URL</label>
+                  <input type="text" id="cfg-ig" class="form-control" value="https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr">
+                </div>
+                <div class="form-group">
+                  <label><i class="fab fa-linkedin" style="color:#0a66c2;"></i> LinkedIn URL</label>
+                  <input type="text" id="cfg-li" class="form-control" value="https://www.linkedin.com/company/hellobotz/">
+                </div>
+                <div class="form-group">
+                  <label><i class="fab fa-youtube" style="color:#ff0000;"></i> YouTube URL</label>
+                  <input type="text" id="cfg-yt" class="form-control" value="https://www.youtube.com/@Hellobotz">
+                </div>
+                <div class="form-group">
+                  <label><i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp Direct URL</label>
+                  <input type="text" id="cfg-wa" class="form-control" value="https://wa.me/918050854445">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: VISUAL NO-CODE PAGE BUILDER -->
+        <section id="view-page-builder" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-layer-group" style="color:#2271b1;"></i> Visual No-Code Page Builder</h1>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div class="device-switcher">
+                <button type="button" class="device-btn active" data-width="100%"><i class="fas fa-desktop"></i> Desktop</button>
+                <button type="button" class="device-btn" data-width="768px"><i class="fas fa-tablet-alt"></i> Tablet</button>
+                <button type="button" class="device-btn" data-width="375px"><i class="fas fa-mobile-alt"></i> Mobile</button>
+              </div>
+              <button type="button" class="btn-action-primary" id="btn-publish-page"><i class="fas fa-cloud-upload-alt"></i> Publish Page</button>
+            </div>
+          </div>
+
+          <div class="wp-card" style="margin-bottom:12px;">
+            <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+              <div style="flex:1; min-width:240px;">
+                <label style="font-size:12px; font-weight:700; color:#475569;">Page Title</label>
+                <input type="text" id="builder-page-title" class="form-control" value="WhatsApp Automation for Growth" placeholder="Enter page title">
+              </div>
+              <div style="flex:1; min-width:240px;">
+                <label style="font-size:12px; font-weight:700; color:#475569;">1-Click Template Preset</label>
+                <select id="builder-preset-select" class="form-control">
+                  <option value="careers">Careers &amp; Openings Preset</option>
+                  <option value="product" selected>Product Launch &amp; Feature Preset</option>
+                  <option value="leads">Lead Magnet &amp; Free Trial Preset</option>
+                  <option value="clean">Blank Clean Canvas</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inserter Toolbar -->
+          <div class="builder-toolbar">
+            <span style="font-size:12px; font-weight:700; color:#64748b; margin-right:4px; align-self:center;">Insert Block:</span>
+            <button type="button" class="btn-block-insert" data-type="hero"><i class="fas fa-heading"></i> + Hero Section</button>
+            <button type="button" class="btn-block-insert" data-type="cards"><i class="fas fa-th-large"></i> + 3 Feature Cards</button>
+            <button type="button" class="btn-block-insert" data-type="split"><i class="fas fa-columns"></i> + Split Content</button>
+            <button type="button" class="btn-block-insert" data-type="cta"><i class="fas fa-bullhorn"></i> + CTA Banner</button>
+            <button type="button" class="btn-block-insert" data-type="leadbox"><i class="fas fa-envelope-square"></i> + Lead Capture Box</button>
+            <button type="button" class="btn-block-insert" data-type="faq"><i class="fas fa-question-circle"></i> + FAQ Accordion</button>
+          </div>
+
+          <!-- Canvas -->
+          <div style="display:flex; justify-content:center;">
+            <div id="builder-canvas-wrapper" style="width:100%; transition:width 0.3s ease;">
+              <div id="builder-canvas" class="builder-canvas">
+                <!-- Blocks rendered here -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: LEADS & INQUIRIES -->
+        <section id="view-leads" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-envelope-open-text" style="color:#2271b1;"></i> Leads &amp; Inquiries CRM</h1>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="leads-search-input" class="form-control" placeholder="Search by name, phone, email..." style="width:260px;">
+              <button type="button" class="btn-action-primary btn-export-csv"><i class="fas fa-file-csv"></i> Export Leads CSV</button>
+            </div>
+          </div>
+
+          <div class="wp-card">
+            <table class="wp-table" id="full-leads-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Phone / WhatsApp</th>
+                  <th>Email</th>
+                  <th>Business / City</th>
+                  <th>Requirement</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="all-leads-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- TAB: BLOG POSTS -->
+        <section id="view-posts" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-feather-alt" style="color:#2271b1;"></i> Blog Posts &amp; Articles</h1>
+            <a href="/blogs/" target="_blank" class="btn-action-secondary"><i class="fas fa-external-link-alt"></i> View Public Blog</a>
+          </div>
+          <div class="wp-card">
+            <table class="wp-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Categories</th>
+                  <th>Views</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Best WhatsApp Business Platform in 2026</strong></td>
+                  <td>HelloBotz Team</td>
+                  <td>WhatsApp Guide</td>
+                  <td>1,420</td>
+                  <td>Published</td>
+                </tr>
+                <tr>
+                  <td><strong>Automate Delivery Notifications on WhatsApp</strong></td>
+                  <td>Farhan</td>
+                  <td>E-Commerce</td>
+                  <td>890</td>
+                  <td>Published</td>
+                </tr>
+                <tr>
+                  <td><strong>Top 10 WhatsApp Marketing Tools Compared</strong></td>
+                  <td>Editorial Team</td>
+                  <td>Marketing</td>
+                  <td>2,110</td>
+                  <td>Published</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- TAB: PRICING -->
+        <section id="view-pricing" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-tags" style="color:#2271b1;"></i> Pricing Plans Manager</h1>
+            <a href="/pricing" target="_blank" class="btn-action-secondary"><i class="fas fa-external-link-alt"></i> View Public Pricing</a>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-val">$29 / mo</div>
+              <div class="stat-lbl">Starter Plan (0% Meta Markup)</div>
+            </div>
+            <div class="stat-card green">
+              <div class="stat-val">$59 / mo</div>
+              <div class="stat-lbl">Growth Plan (Team Inbox + AI Flows)</div>
+            </div>
+            <div class="stat-card purple">
+              <div class="stat-val">$129 / mo</div>
+              <div class="stat-lbl">Enterprise Plan (Unlimited Agents)</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: SETTINGS & PROFILE -->
+        <section id="view-profile" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-user-shield" style="color:#2271b1;"></i> Admin Profile &amp; Security</h1>
+            <button type="button" class="btn-action-primary" id="btn-save-profile"><i class="fas fa-save"></i> Save Profile</button>
+          </div>
+          <div class="wp-card" style="max-width:600px;">
+            <div class="form-group">
+              <label for="prof-username">Admin Username</label>
+              <input type="text" id="prof-username" class="form-control" value="admin">
+            </div>
+            <div class="form-group">
+              <label for="prof-email">Notification &amp; Admin Email</label>
+              <input type="email" id="prof-email" class="form-control" value="mail@hellobotz.com">
+            </div>
+            <div class="form-group">
+              <label for="prof-newpass">Change Password (leave empty to keep current)</label>
+              <input type="password" id="prof-newpass" class="form-control" placeholder="Enter new password">
+            </div>
+          </div>
+        </section>
+
+        <section id="view-settings" class="admin-view" style="display:none;">
+          <div class="wp-header">
+            <h1><i class="fas fa-sliders-h" style="color:#2271b1;"></i> General CMS Settings</h1>
+            <button type="button" class="btn-action-primary btn-save-brand"><i class="fas fa-save"></i> Save All Settings</button>
+          </div>
+          <div class="wp-card" style="max-width:650px;">
+            <div class="form-group">
+              <label>Site Title</label>
+              <input type="text" class="form-control" value="HelloBotz - Official Meta WhatsApp Business API &amp; AI Automation Platform">
+            </div>
+            <div class="form-group">
+              <label>Tagline</label>
+              <input type="text" class="form-control" value="Convert 98% More WhatsApp Chats into Paying Customers">
+            </div>
+            <div class="form-group">
+              <label>Live CMS Sync Mode</label>
+              <select class="form-control">
+                <option selected>Automatic Real-Time Sync (hb-cms-runtime.js)</option>
+                <option>Manual Cache Purge</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // 1. Storage & State Management
+      var DEFAULT_SETTINGS = {
+        logo_light_url: "/assets/images/logo-light.png",
+        logo_dark_url: "/assets/images/logo-dark.png",
+        logo_width: "160px",
+        logo_height: "52px",
+        bot_avatar_url: "/assets/images/hellobotz-avatar.png",
+        brochure_url: "/assets/docs/hellobotz-brochure.pdf",
+        office_address: "HelloBotz AI Technologies Pvt Ltd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025",
+        social_facebook: "https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr",
+        social_instagram: "https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr",
+        social_linkedin: "https://www.linkedin.com/company/hellobotz/",
+        social_youtube: "https://www.youtube.com/@Hellobotz",
+        social_whatsapp: "https://wa.me/918050854445",
+        admin_user: "admin",
+        admin_pass: "admin123",
+        admin_email: "mail@hellobotz.com"
+      };
+
+      function getSettings() {
+        try {
+          var saved = localStorage.getItem('hb_cms_settings');
+          if (saved) return Object.assign({}, DEFAULT_SETTINGS, JSON.parse(saved));
+        } catch(e) {}
+        return Object.assign({}, DEFAULT_SETTINGS);
+      }
+
+      function saveSettings(obj) {
+        try {
+          localStorage.setItem('hb_cms_settings', JSON.stringify(obj));
+          window.__HELLOBOTZ_SETTINGS__ = obj;
+        } catch(e) {}
+      }
+
+      var DEFAULT_LEADS = [
+        { id: 101, type: "Free Trial", name: "Rahul Verma", phone: "+91 98765 43210", email: "rahul@vermatech.com", business: "Verma Tech", requirement: "Shopify WhatsApp Abandoned Cart & Catalog", date: "Today, 10:15 AM", status: "New" },
+        { id: 102, type: "Book Demo", name: "Priya Sundaram", phone: "+91 88452 19934", email: "priya@sundaramlogistics.in", business: "Sundaram Logistics", requirement: "Bulk broadcasting and live agent team inbox", date: "Yesterday, 4:30 PM", status: "Contacted" },
+        { id: 103, type: "White-Label", name: "Ahmed Al-Mansoor", phone: "+971 50 123 4567", email: "ahmed@gulfagency.ae", business: "Gulf Digital", requirement: "WhatsApp API Reseller panel with custom domain", date: "Sep 21, 2026", status: "Converted" },
+        { id: 104, type: "Enterprise", name: "Marcus Bennett", phone: "+44 20 7946 0912", email: "marcus@finbridge.co.uk", business: "FinBridge Banking", requirement: "Meta Verified Green Tick & 100K broadcasts", date: "Sep 20, 2026", status: "Contacted" }
+      ];
+
+      function getLeads() {
+        try {
+          var saved = localStorage.getItem('hb_leads_store');
+          if (saved) return JSON.parse(saved);
+        } catch(e) {}
+        return DEFAULT_LEADS;
+      }
+
+      // 2. Authentication Logic
+      var loginScreen = document.getElementById('login-screen');
+      var adminApp = document.getElementById('admin-app');
+      var loginForm = document.getElementById('login-form');
+      var loginErr = document.getElementById('login-error-box');
+
+      function isLoggedIn() {
+        return sessionStorage.getItem('hb_admin_logged') === '1' || localStorage.getItem('hb_admin_logged') === '1';
+      }
+
+      function showLogin() {
+        loginScreen.style.display = 'flex';
+        adminApp.style.display = 'none';
+      }
+
+      function showDashboard() {
+        loginScreen.style.display = 'none';
+        adminApp.style.display = 'flex';
+        initViews();
+      }
+
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var u = document.getElementById('admin-user').value.trim();
+        var p = document.getElementById('admin-pass').value.trim();
+        var remember = document.getElementById('remember-me').checked;
+        var s = getSettings();
+
+        if (u === s.admin_user && p === s.admin_pass) {
+          if (remember) localStorage.setItem('hb_admin_logged', '1');
+          sessionStorage.setItem('hb_admin_logged', '1');
+          loginErr.style.display = 'none';
+          showDashboard();
+        } else {
+          loginErr.textContent = 'ERROR: The username or password you entered is incorrect.';
+          loginErr.style.display = 'block';
+        }
+      });
+
+      // Lost Password Helper
+      document.getElementById('btn-lost-pwd').addEventListener('click', function(e) {
+        e.preventDefault();
+        var sec = document.getElementById('lost-password-section');
+        sec.style.display = sec.style.display === 'none' ? 'block' : 'none';
+      });
+
+      document.getElementById('btn-verify-recovery').addEventListener('click', function() {
+        var val = (document.getElementById('recovery-answer').value || '').toLowerCase().trim();
+        if (val.includes('farhan')) {
+          sessionStorage.setItem('hb_admin_logged', '1');
+          showDashboard();
+          showFlash('Security identity verified! You are now logged in. Please change your password under Users &gt; Profile.');
+        } else {
+          alert('Incorrect answer. Hint: Founder name is Farhan.');
+        }
+      });
+
+      document.getElementById('btn-logout').addEventListener('click', function(e) {
+        e.preventDefault();
+        sessionStorage.removeItem('hb_admin_logged');
+        localStorage.removeItem('hb_admin_logged');
+        showLogin();
+      });
+
+      // 3. Navigation & Views Routing
+      function switchView(tabKey) {
+        document.querySelectorAll('.admin-view').forEach(function(el) { el.style.display = 'none'; });
+        document.querySelectorAll('.wp-menu-item').forEach(function(el) { el.classList.remove('active'); });
+
+        var targetEl = document.getElementById('view-' + tabKey);
+        if (!targetEl) targetEl = document.getElementById('view-dashboard');
+        targetEl.style.display = 'block';
+
+        var menuEl = document.querySelector('.wp-menu-item[data-page="' + tabKey + '"]');
+        if (menuEl) menuEl.classList.add('active');
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      window.addEventListener('hashchange', function() {
+        var hash = window.location.hash.replace('#', '') || 'dashboard';
+        if (hash === 'logout') {
+          sessionStorage.removeItem('hb_admin_logged');
+          localStorage.removeItem('hb_admin_logged');
+          showLogin();
+          return;
+        }
+        switchView(hash);
+      });
+
+      // 4. Brand & Logo Studio Logic
+      function syncBrandInputs() {
+        var s = getSettings();
+        document.getElementById('cfg-logo-light').value = s.logo_light_url || '';
+        document.getElementById('cfg-logo-dark').value = s.logo_dark_url || '';
+        document.getElementById('cfg-logo-width').value = parseInt(s.logo_width) || 160;
+        document.getElementById('cfg-logo-height').value = parseInt(s.logo_height) || 52;
+        document.getElementById('lbl-logo-width').textContent = (parseInt(s.logo_width) || 160) + 'px';
+        document.getElementById('lbl-logo-height').textContent = (parseInt(s.logo_height) || 52) + 'px';
+
+        document.getElementById('cfg-bot-avatar').value = s.bot_avatar_url || '';
+        document.getElementById('cfg-brochure').value = s.brochure_url || '';
+        document.getElementById('cfg-address').value = s.office_address || '';
+
+        document.getElementById('cfg-fb').value = s.social_facebook || '';
+        document.getElementById('cfg-ig').value = s.social_instagram || '';
+        document.getElementById('cfg-li').value = s.social_linkedin || '';
+        document.getElementById('cfg-yt').value = s.social_youtube || '';
+        document.getElementById('cfg-wa').value = s.social_whatsapp || '';
+
+        updateMockup();
+      }
+
+      function updateMockup() {
+        var w = document.getElementById('cfg-logo-width').value + 'px';
+        var h = document.getElementById('cfg-logo-height').value + 'px';
+        document.getElementById('lbl-logo-width').textContent = w;
+        document.getElementById('lbl-logo-height').textContent = h;
+
+        var lImg = document.getElementById('preview-logo-light');
+        var dImg = document.getElementById('preview-logo-dark');
+        var lUrl = document.getElementById('cfg-logo-light').value.trim();
+        var dUrl = document.getElementById('cfg-logo-dark').value.trim();
+
+        if (lUrl) lImg.src = lUrl;
+        if (dUrl) dImg.src = dUrl;
+        lImg.style.width = w;
+        lImg.style.height = h;
+        dImg.style.width = w;
+        dImg.style.height = h;
+      }
+
+      document.getElementById('cfg-logo-width').addEventListener('input', updateMockup);
+      document.getElementById('cfg-logo-height').addEventListener('input', updateMockup);
+      document.getElementById('cfg-logo-light').addEventListener('input', updateMockup);
+      document.getElementById('cfg-logo-dark').addEventListener('input', updateMockup);
+
+      function saveBrandStudio() {
+        var s = getSettings();
+        s.logo_light_url = document.getElementById('cfg-logo-light').value.trim();
+        s.logo_dark_url = document.getElementById('cfg-logo-dark').value.trim();
+        s.logo_width = document.getElementById('cfg-logo-width').value + 'px';
+        s.logo_height = document.getElementById('cfg-logo-height').value + 'px';
+        s.bot_avatar_url = document.getElementById('cfg-bot-avatar').value.trim();
+        s.brochure_url = document.getElementById('cfg-brochure').value.trim();
+        s.office_address = document.getElementById('cfg-address').value.trim();
+        s.social_facebook = document.getElementById('cfg-fb').value.trim();
+        s.social_instagram = document.getElementById('cfg-ig').value.trim();
+        s.social_linkedin = document.getElementById('cfg-li').value.trim();
+        s.social_youtube = document.getElementById('cfg-yt').value.trim();
+        s.social_whatsapp = document.getElementById('cfg-wa').value.trim();
+
+        saveSettings(s);
+        showFlash('Brand Identity, HD Logos, and scaling dimensions saved successfully! Changes are synced site-wide.');
+      }
+
+      document.querySelectorAll('.btn-save-brand').forEach(function(btn) {
+        btn.addEventListener('click', saveBrandStudio);
+      });
+
+      // 5. Leads Table Rendering & CSV Export
+      function renderLeads() {
+        var leads = getLeads();
+        var dashTbody = document.getElementById('dashboard-leads-tbody');
+        var allTbody = document.getElementById('all-leads-tbody');
+        dashTbody.innerHTML = '';
+        allTbody.innerHTML = '';
+
+        leads.forEach(function(ld) {
+          var bCls = ld.type.toLowerCase().indexOf('demo') > -1 ? 'badge-demo' : (ld.type.toLowerCase().indexOf('trial') > -1 ? 'badge-trial' : 'badge-new');
+          
+          // Dash row
+          var r1 = document.createElement('tr');
+          r1.innerHTML = '<td><span class="lead-badge ' + bCls + '">' + ld.type + '</span></td>' +
+                         '<td><strong>' + ld.name + '</strong><br><span style="color:#64748b;font-size:11px;">' + ld.business + '</span></td>' +
+                         '<td>' + ld.phone + '</td>' +
+                         '<td>' + ld.requirement + '</td>' +
+                         '<td>' + ld.date + '</td>' +
+                         '<td><span style="color:#10b981;font-weight:600;">' + ld.status + '</span></td>';
+          dashTbody.appendChild(r1);
+
+          // All row
+          var r2 = document.createElement('tr');
+          r2.innerHTML = '<td>#' + ld.id + '</td>' +
+                         '<td><span class="lead-badge ' + bCls + '">' + ld.type + '</span></td>' +
+                         '<td><strong>' + ld.name + '</strong></td>' +
+                         '<td>' + ld.phone + '</td>' +
+                         '<td>' + ld.email + '</td>' +
+                         '<td>' + ld.business + '</td>' +
+                         '<td>' + ld.requirement + '</td>' +
+                         '<td>' + ld.date + '</td>' +
+                         '<td><span style="color:#10b981;font-weight:600;">' + ld.status + '</span></td>';
+          allTbody.appendChild(r2);
+        });
+
+        document.getElementById('stat-total-leads').textContent = leads.length;
+        document.getElementById('top-leads-count').textContent = leads.length;
+      }
+
+      function exportLeadsCSV() {
+        var leads = getLeads();
+        var csv = "ID,Type,Name,Phone,Email,Business,Requirement,Date,Status\n";
+        leads.forEach(function(l) {
+          csv += [l.id, '"' + l.type + '"', '"' + l.name + '"', '"' + l.phone + '"', '"' + l.email + '"', '"' + l.business + '"', '"' + l.requirement + '"', '"' + l.date + '"', '"' + l.status + '"'].join(",") + "\n";
+        });
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'hellobotz-leads-' + (new Date().toISOString().slice(0,10)) + '.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      document.querySelectorAll('.btn-export-csv').forEach(function(b) {
+        b.addEventListener('click', exportLeadsCSV);
+      });
+
+      // 6. Visual Page Builder Blocks
+      var canvas = document.getElementById('builder-canvas');
+      var BLOCKS_DATA = {
+        hero: {
+          name: "Hero Section",
+          html: '<div style="text-align:center; padding:30px 10px;">' +
+                '<h1 style="font-size:28px; font-weight:800; color:#0f172a; margin-bottom:10px;">Scale WhatsApp Revenue 10x</h1>' +
+                '<p style="font-size:15px; color:#475569; max-width:600px; margin:0 auto 16px;">Automate broadcasts, recover carts, and close leads on autopilot.</p>' +
+                '<button type="button" style="background:#7c3aed; color:#fff; border:none; padding:10px 24px; border-radius:99px; font-weight:700; cursor:pointer;">Start Free Trial</button>' +
+                '</div>'
+        },
+        cards: {
+          name: "3 Feature Cards",
+          html: '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:14px; padding:14px 0;">' +
+                '<div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:16px;">' +
+                '<h4 style="color:#7c3aed; margin-bottom:6px;">98% Open Rate</h4><p style="font-size:13px; color:#64748b;">Reach your audience with official Meta broadcast delivery.</p></div>' +
+                '<div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:16px;">' +
+                '<h4 style="color:#0ea5e9; margin-bottom:6px;">AI Chatbot Funnels</h4><p style="font-size:13px; color:#64748b;">Qualify leads 24/7 with zero human intervention.</p></div>' +
+                '<div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:16px;">' +
+                '<h4 style="color:#10b981; margin-bottom:6px;">Shared Team Inbox</h4><p style="font-size:13px; color:#64748b;">Connect multiple agents to 1 WhatsApp number.</p></div>' +
+                '</div>'
+        },
+        split: {
+          name: "Split Content & Media",
+          html: '<div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center; padding:16px 0;">' +
+                '<div><h3 style="color:#0f172a; margin-bottom:8px;">Native Shopify &amp; CRM Sync</h3>' +
+                '<p style="font-size:14px; color:#64748b; line-height:1.5;">Recover abandoned checkouts and dispatch order tracking in seconds.</p></div>' +
+                '<div style="background:#e2e8f0; height:120px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-weight:600;">Media Preview</div></div>'
+        },
+        cta: {
+          name: "CTA Conversion Banner",
+          html: '<div style="background:linear-gradient(135deg, #7c3aed, #4f46e5); color:#fff; border-radius:12px; padding:24px; text-align:center;">' +
+                '<h3 style="font-size:20px; margin-bottom:6px; color:#fff;">Ready to Transform Your Sales?</h3>' +
+                '<p style="font-size:14px; opacity:0.9; margin-bottom:14px;">Sign up today and get your WhatsApp API verified.</p>' +
+                '<button type="button" style="background:#fff; color:#4f46e5; border:none; padding:8px 20px; border-radius:99px; font-weight:700; cursor:pointer;">Book Live Demo</button></div>'
+        },
+        leadbox: {
+          name: "Lead Capture Form",
+          html: '<div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:20px; max-width:440px; margin:0 auto;">' +
+                '<h4 style="margin-bottom:10px; color:#0f172a;">Request a Free Consultation</h4>' +
+                '<input type="text" placeholder="Full Name" style="width:100%; padding:8px; margin-bottom:8px; border:1px solid #cbd5e1; border-radius:4px;">' +
+                '<input type="tel" placeholder="WhatsApp Number" style="width:100%; padding:8px; margin-bottom:12px; border:1px solid #cbd5e1; border-radius:4px;">' +
+                '<button type="button" style="width:100%; background:#10b981; color:#fff; border:none; padding:10px; border-radius:4px; font-weight:700;">Submit Requirement</button></div>'
+        },
+        faq: {
+          name: "FAQ Accordion",
+          html: '<div style="padding:10px 0;">' +
+                '<div style="border:1px solid #e2e8f0; border-radius:6px; padding:12px; margin-bottom:8px; background:#fff;"><strong>How fast is onboarding?</strong><p style="font-size:13px; color:#64748b; margin-top:4px;">Your WhatsApp Cloud API account is active within 10 to 15 minutes.</p></div>' +
+                '<div style="border:1px solid #e2e8f0; border-radius:6px; padding:12px; background:#fff;"><strong>Is there a phone ban risk?</strong><p style="font-size:13px; color:#64748b; margin-top:4px;">Zero risk. We connect directly through the official Meta Cloud API.</p></div></div>'
+        }
+      };
+
+      function addBlock(type) {
+        var b = BLOCKS_DATA[type];
+        if (!b) return;
+        var el = document.createElement('div');
+        el.className = 'builder-block';
+        el.innerHTML = '<div class="builder-block-header"><span><i class="fas fa-cube"></i> ' + b.name + '</span>' +
+                       '<div class="builder-block-actions"><button type="button" class="btn-block-del"><i class="fas fa-trash"></i> Delete</button></div></div>' +
+                       '<div class="builder-block-content">' + b.html + '</div>';
+        
+        el.querySelector('.btn-block-del').addEventListener('click', function() {
+          el.remove();
+        });
+        canvas.appendChild(el);
+      }
+
+      document.querySelectorAll('.btn-block-insert').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          addBlock(btn.getAttribute('data-type'));
+        });
+      });
+
+      // Preset Selector
+      document.getElementById('builder-preset-select').addEventListener('change', function() {
+        var p = this.value;
+        canvas.innerHTML = '';
+        if (p === 'product') {
+          addBlock('hero');
+          addBlock('cards');
+          addBlock('split');
+          addBlock('cta');
+        } else if (p === 'leads') {
+          addBlock('hero');
+          addBlock('leadbox');
+          addBlock('faq');
+        } else if (p === 'careers') {
+          addBlock('hero');
+          addBlock('cards');
+          addBlock('leadbox');
+        }
+      });
+
+      // Device switchers
+      document.querySelectorAll('.device-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.device-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('builder-canvas-wrapper').style.width = btn.getAttribute('data-width');
+        });
+      });
+
+      document.getElementById('btn-publish-page').addEventListener('click', function() {
+        showFlash('Page "' + document.getElementById('builder-page-title').value + '" published successfully!');
+      });
+
+      // 7. Profile Save
+      document.getElementById('btn-save-profile').addEventListener('click', function() {
+        var s = getSettings();
+        var u = document.getElementById('prof-username').value.trim();
+        var e = document.getElementById('prof-email').value.trim();
+        var np = document.getElementById('prof-newpass').value.trim();
+
+        if (u) s.admin_user = u;
+        if (e) s.admin_email = e;
+        if (np) s.admin_pass = np;
+        saveSettings(s);
+        document.getElementById('greeting-username').textContent = s.admin_user;
+        showFlash('Profile credentials updated successfully!');
+      });
+
+      function showFlash(msg) {
+        var f = document.getElementById('flash-notice');
+        f.innerHTML = '<i class="fas fa-check-circle" style="color:#00a32a; margin-right:6px;"></i> ' + msg;
+        f.style.display = 'block';
+        setTimeout(function() { f.style.display = 'none'; }, 4500);
+      }
+
+      function initViews() {
+        var s = getSettings();
+        document.getElementById('greeting-username').textContent = s.admin_user;
+        syncBrandInputs();
+        renderLeads();
+        // default block preset
+        if (!canvas.children.length) {
+          addBlock('hero');
+          addBlock('cards');
+          addBlock('cta');
+        }
+        var currentHash = window.location.hash.replace('#', '') || 'dashboard';
+        switchView(currentHash);
+      }
+
+      // Check initial auth state
+      if (isLoggedIn()) {
+        showDashboard();
+      } else {
+        showLogin();
+      }
+
+    })();
+  </script>
+</body>
+</html>

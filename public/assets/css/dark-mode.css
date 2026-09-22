@@ -1978,369 +1978,385 @@ html[data-theme="dark"] .ct-logo-slot {
 }
 
 /* ==========================================================================
-   PARTNERS & WHITE-LABEL DARK MODE OVERRIDES
+   PRO ENHANCEMENTS: HERO WHATSAPP SIMULATOR & INTERACTIVE COMPONENTS
    ========================================================================== */
-html[data-theme="dark"] .prt-hero {
-  background: linear-gradient(180deg, #090e1a 0%, #0d1322 60%, #0f172a 100%) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+/* Hero Animated Flow Builder Box */
+html[data-theme="dark"] .cw-hero-anim-box,
+body.dark-theme .cw-hero-anim-box {
+  background: rgba(15, 23, 42, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.6) !important;
 }
 
-html[data-theme="dark"] .prt-hero-copy h1,
-html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn,
-html[data-theme="dark"] .prt-pillar-content h3,
-html[data-theme="dark"] .prt-why-card h3,
-html[data-theme="dark"] .prt-offering-card h3,
-html[data-theme="dark"] .prt-audience-card h3,
-html[data-theme="dark"] .prt-calc-card h3,
-html[data-theme="dark"] .prt-plan h3,
-html[data-theme="dark"] .prt-form-wrap h3,
-html[data-theme="dark"] .prt-roadmap-step h4,
-html[data-theme="dark"] .faq-question {
+html[data-theme="dark"] .cw-hero-anim-heading,
+body.dark-theme .cw-hero-anim-heading {
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .prt-lead,
-html[data-theme="dark"] .prt-pillar-content p,
-html[data-theme="dark"] .prt-why-card p,
-html[data-theme="dark"] .prt-offering-card p,
-html[data-theme="dark"] .prt-audience-card p,
-html[data-theme="dark"] .prt-calc-card p,
-html[data-theme="dark"] .prt-plan-desc,
-html[data-theme="dark"] .prt-roadmap-step p,
-html[data-theme="dark"] .faq-answer {
+html[data-theme="dark"] .cw-hero-anim-sub,
+body.dark-theme .cw-hero-anim-sub {
   color: #94a3b8 !important;
 }
 
-html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn.active,
-html[data-theme="dark"] .prt-tabs-nav .prt-tab-btn:hover {
-  background: #1e293b !important;
-  border-color: #8b5cf6 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .prt-badge {
-  background: rgba(124, 58, 237, 0.15) !important;
-  border-color: rgba(124, 58, 237, 0.35) !important;
+html[data-theme="dark"] .cw-hero-anim-pill,
+body.dark-theme .cw-hero-anim-pill {
+  background: rgba(124, 58, 237, 0.22) !important;
   color: #c4b5fd !important;
+  border: 1px solid rgba(124, 58, 237, 0.35) !important;
 }
 
-html[data-theme="dark"] .prt-pillar-card,
-html[data-theme="dark"] .prt-why-card,
-html[data-theme="dark"] .prt-offering-card,
-html[data-theme="dark"] .prt-audience-card,
-html[data-theme="dark"] .prt-calc-card,
-html[data-theme="dark"] .prt-calc-box,
-html[data-theme="dark"] .prt-plan,
-html[data-theme="dark"] .prt-form-wrap,
-html[data-theme="dark"] .prt-roadmap-step,
-html[data-theme="dark"] .faq-item {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .prt-plan-featured {
-  border-color: #8b5cf6 !important;
-  background: #131c31 !important;
-}
-
-html[data-theme="dark"] .prt-field input,
-html[data-theme="dark"] .prt-field select,
-html[data-theme="dark"] .prt-field textarea {
-  background: #111827 !important;
-  border-color: #334155 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .prt-field label {
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .prt-brand-logo,
-html[data-theme="dark"] .prt-logos-grid {
-  filter: brightness(0.9) contrast(1.1);
-}
-
-/* ==========================================================================
-   CAREERS PAGE DARK MODE OVERRIDES
-   ========================================================================== */
-html[data-theme="dark"] .careers-hero {
-  background: linear-gradient(180deg, #090e1a 0%, #0d1322 60%, #0f172a 100%) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-html[data-theme="dark"] .careers-hero h1,
-html[data-theme="dark"] .phil-card h3,
-html[data-theme="dark"] .why-card h3,
-html[data-theme="dark"] .domain-card h3,
-html[data-theme="dark"] .role-item-name,
-html[data-theme="dark"] .apply-card h3,
-html[data-theme="dark"] .direct-email-card h3,
-html[data-theme="dark"] .careers-head h2,
-html[data-theme="dark"] .role-cat-head h3 {
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .careers-hero .lead-text,
-html[data-theme="dark"] .phil-card p,
-html[data-theme="dark"] .why-card p,
-html[data-theme="dark"] .domain-card p,
-html[data-theme="dark"] .role-item p,
-html[data-theme="dark"] .careers-section p {
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .careers-hero-badge {
-  background: rgba(139, 92, 246, 0.15) !important;
-  border-color: rgba(139, 92, 246, 0.3) !important;
-  color: #c4b5fd !important;
-}
-
-html[data-theme="dark"] .stat-pill,
-html[data-theme="dark"] .phil-card,
-html[data-theme="dark"] .why-card,
-html[data-theme="dark"] .domain-card,
-html[data-theme="dark"] .role-category-card,
-html[data-theme="dark"] .role-item,
-html[data-theme="dark"] .apply-card,
-html[data-theme="dark"] .direct-email-card {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .role-filter-btn {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .role-filter-btn.active {
+html[data-theme="dark"] .cw-hero-anim-expand-btn,
+body.dark-theme .cw-hero-anim-expand-btn {
   background: #1e293b !important;
-  border-color: #8b5cf6 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .careers-input,
-html[data-theme="dark"] .careers-select,
-html[data-theme="dark"] .careers-textarea {
-  background: #111827 !important;
-  border-color: #334155 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .careers-form-label {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   color: #cbd5e1 !important;
 }
 
-html[data-theme="dark"] .careers-section {
-  background: transparent !important;
-}
-
-html[data-theme="dark"] .careers-section.bg-light {
-  background: #080c14 !important;
-}
-
-/* ==========================================================================
-   INDUSTRY PAGES DARK MODE OVERRIDES
-   ========================================================================== */
-html[data-theme="dark"] .industry-page {
-  background: #080c14 !important;
-  color: #f8fafc !important;
-}
-
-html[data-theme="dark"] .industry-hero {
-  background: radial-gradient(1000px 500px at 50% -50px, rgba(99, 102, 241, 0.15), transparent 70%), #080c14 !important;
-}
-
-html[data-theme="dark"] .industry-hero-content h1,
-html[data-theme="dark"] .industry-marquee-title,
-html[data-theme="dark"] .industry-feature-title,
-html[data-theme="dark"] .industry-sol-card h3,
-html[data-theme="dark"] .stage-display-title,
-html[data-theme="dark"] .industry-faq-header {
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .industry-hero-lead,
-html[data-theme="dark"] .industry-marquee-sub,
-html[data-theme="dark"] .industry-feature-desc,
-html[data-theme="dark"] .industry-sol-card p,
-html[data-theme="dark"] .stage-subtitle,
-html[data-theme="dark"] .stage-features li,
-html[data-theme="dark"] .industry-faq-body {
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .industry-crumb-nav a {
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .industry-crumb-nav span {
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .industry-partner-badge {
-  background: rgba(99, 102, 241, 0.15) !important;
-  border-color: rgba(99, 102, 241, 0.3) !important;
-  color: #c4b5fd !important;
-}
-
-html[data-theme="dark"] .industry-marquee-section {
-  background: #0b0f19 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-}
-
-html[data-theme="dark"] .industry-features-section {
-  background: #080c14 !important;
-}
-
-html[data-theme="dark"] .industry-feature-bullets li {
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .industry-solutions-section {
-  background: #0b0f19 !important;
-}
-
-html[data-theme="dark"] .industry-sol-card {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .stage-tab {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .stage-tab.active {
-  background: #1e293b !important;
-  border-color: #6366f1 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .stage-pane {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-html[data-theme="dark"] .industry-faq-section {
-  background: #080c14 !important;
-}
-
-html[data-theme="dark"] .industry-faq-item {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .industry-hero-floating-badge {
+/* Trust Badges & Floating Elements in Hero */
+html[data-theme="dark"] .cw-trust-item,
+body.dark-theme .cw-trust-item {
   background: rgba(15, 23, 42, 0.85) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  color: #f8fafc !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
 }
 
-html[data-theme="dark"] .industry-btn-ghost {
+html[data-theme="dark"] .cw-counter-item,
+body.dark-theme .cw-counter-item {
   background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .cw-counter-num,
+body.dark-theme .cw-counter-num {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .cw-counter-label,
+body.dark-theme .cw-counter-label {
+  color: #94a3b8 !important;
+}
+
+/* Authentic Dark Mode WhatsApp Phone Simulator */
+html[data-theme="dark"] .cw-phone-device,
+body.dark-theme .cw-phone-device {
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.85), 0 0 35px rgba(124, 58, 237, 0.25) !important;
+  border-color: #242b35 !important;
+}
+
+html[data-theme="dark"] .cw-phone-topbar,
+body.dark-theme .cw-phone-topbar {
+  background: #111b21 !important;
+  color: #8696a0 !important;
+}
+
+html[data-theme="dark"] .cw-wa-header,
+body.dark-theme .cw-wa-header {
+  background: #202c33 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #e9edef !important;
+}
+
+html[data-theme="dark"] .cw-wa-title-row strong,
+body.dark-theme .cw-wa-title-row strong {
+  color: #e9edef !important;
+}
+
+html[data-theme="dark"] .cw-wa-subtitle,
+body.dark-theme .cw-wa-subtitle {
+  color: #8696a0 !important;
+}
+
+html[data-theme="dark"] .cw-tool-btn,
+body.dark-theme .cw-tool-btn {
+  color: #aebac1 !important;
+}
+
+html[data-theme="dark"] .cw-wa-body,
+body.dark-theme .cw-wa-body {
+  background: #0b141a !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
+}
+
+html[data-theme="dark"] .cw-bubble.user,
+body.dark-theme .cw-bubble.user {
+  background: #005c4b !important;
+  color: #e9edef !important;
+}
+
+html[data-theme="dark"] .cw-bubble.user::after,
+body.dark-theme .cw-bubble.user::after {
+  background: #005c4b !important;
+}
+
+html[data-theme="dark"] .cw-bubble.bot,
+body.dark-theme .cw-bubble.bot {
+  background: #202c33 !important;
+  color: #e9edef !important;
+}
+
+html[data-theme="dark"] .cw-bubble.bot::after,
+body.dark-theme .cw-bubble.bot::after {
+  background: #202c33 !important;
+}
+
+html[data-theme="dark"] .cw-bubble-meta,
+body.dark-theme .cw-bubble-meta {
+  color: #8696a0 !important;
+}
+
+html[data-theme="dark"] .cw-ticks.double-blue,
+body.dark-theme .cw-ticks.double-blue {
+  color: #53bdeb !important;
+}
+
+html[data-theme="dark"] .cw-wa-footer,
+body.dark-theme .cw-wa-footer {
+  background: #202c33 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .cw-chat-input,
+body.dark-theme .cw-chat-input {
+  background: #2a3942 !important;
+  color: #e9edef !important;
+  border: 1px solid transparent !important;
+}
+
+html[data-theme="dark"] .cw-action-chip,
+body.dark-theme .cw-action-chip {
+  background: #202c33 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #00a884 !important;
+}
+
+/* ==========================================================================
+   PRO ENHANCEMENTS: CUSTOMER STORIES & TESTIMONIALS INFINITE SCROLLER
+   ========================================================================== */
+html[data-theme="dark"] .stories-stats-strip,
+body.dark-theme .stories-stats-strip {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .stories-stat-val,
+body.dark-theme .stories-stat-val {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .stories-stat-lbl,
+body.dark-theme .stories-stat-lbl {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .stories-stat-sep,
+body.dark-theme .stories-stat-sep {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Story Filter Chips */
+html[data-theme="dark"] .story-chip-btn,
+body.dark-theme .story-chip-btn {
+  background: #111827 !important;
+  border: 1px solid #1f293d !important;
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .story-chip-btn.active,
+html[data-theme="dark"] .story-chip-btn:hover,
+body.dark-theme .story-chip-btn.active,
+body.dark-theme .story-chip-btn:hover {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35) !important;
+}
+
+/* Stories Scroller Card */
+html[data-theme="dark"] .story-scroller-card,
+body.dark-theme .story-scroller-card {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="dark"] .story-scroller-card:hover,
+body.dark-theme .story-scroller-card:hover {
+  background: #141d30 !important;
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.25) !important;
+}
+
+html[data-theme="dark"] .story-headline,
+body.dark-theme .story-headline {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .story-quote,
+body.dark-theme .story-quote {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .story-author-name,
+body.dark-theme .story-author-name {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .story-author-role,
+body.dark-theme .story-author-role {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .story-metric-chip,
+body.dark-theme .story-metric-chip {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Bottom CTA in Testimonials */
+html[data-theme="dark"] .stories-bottom-card,
+body.dark-theme .stories-bottom-card {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%) !important;
+  border: 1px solid rgba(139, 92, 246, 0.35) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+html[data-theme="dark"] .stories-bottom-content h3,
+body.dark-theme .stories-bottom-content h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .stories-bottom-content p,
+body.dark-theme .stories-bottom-content p {
+  color: #cbd5e1 !important;
+}
+
+/* Controls */
+html[data-theme="dark"] .stories-ctrl-btn,
+html[data-theme="dark"] .stories-nav-arrow,
+body.dark-theme .stories-ctrl-btn,
+body.dark-theme .stories-nav-arrow {
+  background: #141d30 !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
-  color: #ffffff !important;
+  color: #cbd5e1 !important;
 }
 
-html[data-theme="dark"] .industry-btn-white {
+html[data-theme="dark"] .stories-ctrl-btn:hover,
+html[data-theme="dark"] .stories-nav-arrow:hover,
+body.dark-theme .stories-ctrl-btn:hover,
+body.dark-theme .stories-nav-arrow:hover {
   background: #1e293b !important;
-  border-color: #334155 !important;
+  border-color: #8b5cf6 !important;
   color: #ffffff !important;
 }
 
-
-
-html[data-theme="dark"] .prt-trust-strip,
-html[data-theme="dark"] .prt-pillar-img-box {
-  background: #0b0f19 !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-html[data-theme="dark"] .prt-trust-label {
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .prt-cert-badge {
+/* ==========================================================================
+   PRO ENHANCEMENTS: MODALS & LEAD CAPTURE OVERLAYS
+   ========================================================================== */
+html[data-theme="dark"] .modal-box,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .custom-modal-content,
+body.dark-theme .modal-box,
+body.dark-theme .modal-content,
+body.dark-theme .custom-modal-content {
   background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
+}
+
+html[data-theme="dark"] .modal-header h3,
+html[data-theme="dark"] .modal-title,
+body.dark-theme .modal-header h3,
+body.dark-theme .modal-title {
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .prt-plan-badge {
-  background: #1e293b !important;
+html[data-theme="dark"] .modal-body label,
+html[data-theme="dark"] .form-label,
+body.dark-theme .modal-body label,
+body.dark-theme .form-label {
   color: #cbd5e1 !important;
 }
 
-html[data-theme="dark"] .prt-plan-commission {
+html[data-theme="dark"] .modal-body input,
+html[data-theme="dark"] .modal-body select,
+html[data-theme="dark"] .modal-body textarea,
+html[data-theme="dark"] .form-input,
+body.dark-theme .modal-body input,
+body.dark-theme .modal-body select,
+body.dark-theme .modal-body textarea,
+body.dark-theme .form-input {
+  background: #1e293b !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .prt-plan-commission span {
+html[data-theme="dark"] .modal-close,
+body.dark-theme .modal-close {
   color: #94a3b8 !important;
 }
 
-html[data-theme="dark"] .prt-plan-features li {
-  color: #cbd5e1 !important;
+/* ==========================================================================
+   PRO ENHANCEMENTS: ROBOT CHATBOT FLOATING WIDGET
+   ========================================================================== */
+html[data-theme="dark"] #cw-bot-chat-box,
+body.dark-theme #cw-bot-chat-box {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75) !important;
 }
 
-html[data-theme="dark"] .prt-why-icon-box,
-html[data-theme="dark"] .prt-offering-badge {
-  background: rgba(124, 58, 237, 0.15) !important;
+html[data-theme="dark"] .cw-teaser-bubble,
+body.dark-theme .cw-teaser-bubble {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .cw-teaser-text strong,
+body.dark-theme .cw-teaser-text strong {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .cw-teaser-text span,
+body.dark-theme .cw-teaser-text span {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   PRO ENHANCEMENTS: FOOTER & INTEGRATION OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .site-footer,
+body.dark-theme .site-footer {
+  background: #05080f !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .footer-address-text,
+body.dark-theme .footer-address-text {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .footer-social-links a,
+body.dark-theme .footer-social-links a {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #c4b5fd !important;
 }
 
-
-
-html[data-theme="dark"] .prt-trust-strip,
-html[data-theme="dark"] .prt-pillar-img-box {
-  background: #0b0f19 !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-html[data-theme="dark"] .prt-trust-label {
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .prt-cert-badge {
-  background: #0f172a !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+html[data-theme="dark"] .footer-social-links a:hover,
+body.dark-theme .footer-social-links a:hover {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
   color: #ffffff !important;
-}
-
-html[data-theme="dark"] .prt-plan-badge {
-  background: #1e293b !important;
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .prt-plan-commission {
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .prt-plan-commission span {
-  color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .prt-plan-features li {
-  color: #cbd5e1 !important;
-}
-
-html[data-theme="dark"] .prt-why-icon-box,
-html[data-theme="dark"] .prt-offering-badge {
-  background: rgba(124, 58, 237, 0.15) !important;
-  color: #c4b5fd !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4) !important;
 }
 
 /* ==========================================================================
@@ -2632,27 +2648,43 @@ body.dark-theme .ws-section .step-card {
 }
 
 /* WhatsApp Simulated Chat Bubbles & Mockup UI */
+html[data-theme="dark"] .sh-phone-screen,
+body.dark-theme .sh-phone-screen {
+  background: #0b141a !important;
+}
+html[data-theme="dark"] .sh-phone-frame .sh-wa-bubble,
+body.dark-theme .sh-phone-frame .sh-wa-bubble,
 html[data-theme="dark"] .sh-wa-bubble,
-body.dark-theme .sh-wa-bubble,
+body.dark-theme .sh-wa-bubble {
+  background: #202c33 !important;
+  color: #e9edef !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+html[data-theme="dark"] .sh-phone-frame .sh-wa-bubble.right,
+body.dark-theme .sh-phone-frame .sh-wa-bubble.right,
+html[data-theme="dark"] .sh-wa-bubble.right,
+body.dark-theme .sh-wa-bubble.right {
+  background: #005c4b !important;
+  color: #e9edef !important;
+}
+html[data-theme="dark"] .sh-phone-frame .sh-wa-bubble *,
+body.dark-theme .sh-phone-frame .sh-wa-bubble *,
 html[data-theme="dark"] .sh-wa-bubble *,
-body.dark-theme .sh-wa-bubble *,
-html[data-theme="dark"] .sh-wa-bubble strong,
-body.dark-theme .sh-wa-bubble strong,
-html[data-theme="dark"] .sh-wa-bubble b,
-body.dark-theme .sh-wa-bubble b,
-html[data-theme="dark"] .sh-wa-bubble p,
-body.dark-theme .sh-wa-bubble p,
-html[data-theme="dark"] .sh-wa-bubble span,
-body.dark-theme .sh-wa-bubble span,
-html[data-theme="dark"] .sh-wa-bubble div,
-body.dark-theme .sh-wa-bubble div {
-  color: #111827 !important;
+body.dark-theme .sh-wa-bubble * {
+  color: #e9edef !important;
+}
+html[data-theme="dark"] .sh-wa-bubble .time,
+body.dark-theme .sh-wa-bubble .time {
+  color: #8696a0 !important;
 }
 html[data-theme="dark"] .sh-wa-bubble .badge,
 body.dark-theme .sh-wa-bubble .badge {
+  background: #10b981 !important;
   color: #ffffff !important;
 }
 html[data-theme="dark"] .sh-wa-bubble .sh-wa-btn,
 body.dark-theme .sh-wa-bubble .sh-wa-btn {
+  background: #202c33 !important;
   color: #00a884 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
