@@ -3268,7 +3268,7 @@ include __DIR__ . '/includes/header.php';
           <?php echo htmlspecialchars(cms_section('hero', 'badge', 'Official WhatsApp Connection')); ?>
         </span>
         <h1 class="cw-hero-title">
-          HelloBotz — WhatsApp Automation Software &amp; <span class="dual-color-gradient" style="white-space:nowrap;">AI Chatbot for Business</span>
+          HelloBotz — WhatsApp Automation Software &amp; <span class="cw-rotator-wrap" id="cwHeroRotator" aria-live="polite"><span class="cw-rotator-item dual-color-gradient active">AI Chatbot</span><span class="cw-rotator-item dual-color-gradient">Lead Generation</span><span class="cw-rotator-item dual-color-gradient">Bulk Broadcasts</span><span class="cw-rotator-item dual-color-gradient">Sales Funnels</span><span class="cw-rotator-item dual-color-gradient">Shopify &amp; CRM Sync</span><span class="cw-rotator-item dual-color-gradient">Shared Team Inbox</span></span> for Business
         </h1>
         <p class="cw-hero-desc">
           A complete WhatsApp automation software and WhatsApp marketing tool with AI chatbot for business, shared inbox, and omnichannel customer engagement platform — across WhatsApp, Instagram, Facebook &amp; Telegram.
