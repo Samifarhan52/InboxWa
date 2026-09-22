@@ -3232,8 +3232,29 @@ if (!function_exists('hb_seo_esc')) {
   </script>
   <!-- HelloBotz Live CMS Client Runtime (Propagates brand logos, bot avatar, sizing, and links) -->
   <script src="/assets/js/hb-cms-runtime.js" defer></script>
+  <!-- HelloBotz Pure Mascot Entry Reveal Runtime (2.5s Zero-Word Greeting) -->
+  <script src="/assets/js/entry-reveal.js?v=1" defer></script>
 </head>
 <body>
+
+  <!-- =========================================================================
+       HELLOBOTZ PURE MASCOT ENTRY REVEAL (2-3s Pure Animated Greeting)
+       ========================================================================= -->
+  <div id="hb-entry-reveal" class="hb-entry-reveal" role="presentation" aria-hidden="true">
+    <div class="hb-entry-aura"></div>
+    <div class="hb-entry-stage">
+      <div class="hb-entry-sparkles">
+        <span class="hb-sparkle s1">✦</span>
+        <span class="hb-sparkle s2">✦</span>
+        <span class="hb-sparkle s3">✦</span>
+        <span class="hb-sparkle s4">✦</span>
+      </div>
+      <div class="hb-entry-bot-wrap">
+        <img class="hb-entry-bot-base" src="/assets/images/entry/bot-body.png" alt="HelloBotz Mascot" width="512" height="512" fetchpriority="high">
+        <img class="hb-entry-bot-hand" src="/assets/images/entry/bot-hand.png" alt="Waving Hand" width="512" height="512" fetchpriority="high">
+      </div>
+    </div>
+  </div>
 
   <?php if ($announcementEnabled && !empty($announcementText)): ?>
   <aside class="announcement-banner" style="background:linear-gradient(90deg,#8B5CF6,#6366F1,#06B6D4);color:#fff;text-align:center;padding:0.45rem 1rem;font-size:0.875rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:0.5rem;z-index:9999;position:relative;">
