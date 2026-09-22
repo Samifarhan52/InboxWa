@@ -277,103 +277,274 @@ include __DIR__ . '/../includes/header.php';
                 Scale quickly, serve customers seamlessly, and stay fully in control.</p>
 
             <div class="pp-feature-grid">
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Effortless Cloud Management</h3>
+                <!-- Card 1: Cloud Management -->
+                <div class="pp-feature-card pp-card-cloud" data-accent="cyan">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pp-visual-badge">
+                            <span class="pv-pulse-dot" style="background:#10B981;"></span>
+                            <span class="pv-badge-text">99.99% Cloud SLA</span>
+                        </div>
+                        <div class="pp-visual-cluster">
+                            <div class="pv-server-node"><i class="fas fa-server"></i><span>Cluster A</span></div>
+                            <div class="pv-flow-line"><span class="pv-flow-dot"></span></div>
+                            <div class="pv-server-node pv-node-highlight"><i class="fas fa-cloud"></i><span>Auto-Scale</span></div>
+                            <div class="pv-flow-line"><span class="pv-flow-dot"></span></div>
+                            <div class="pv-server-node"><i class="fas fa-shield-alt"></i><span>DDoS Defend</span></div>
+                        </div>
                     </div>
-                    <div class="pp-feature-expand">
-                        <h3>Effortless Cloud Management</h3>
-                        <p>We handle your cloud infrastructure — robust performance, error fixes, updates, and new
-                            features every week — so you can focus on growing your business.</p>
-                    </div>
-                </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-money-check"></i></div>
-                        <h3>Custom Pricing</h3>
-                    </div>
-                    <div class="pp-feature-expand">
-                        <h3>Custom Pricing</h3>
-                        <p>Draft a pricing model that fits your business. Set your own pricing, apply incentives, and
-                            support multiple currencies for global clients.</p>
-                    </div>
-                </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fab fa-paypal"></i></div>
-                        <h3>Flexible Payment Options</h3>
-                    </div>
-                    <div class="pp-feature-expand">
-                        <h3>Flexible Payment Options</h3>
-                        <p>Pick your preferred payment method. We securely manage transactions and ensure easy monthly
-                            payouts via PayPal or direct bank transfer.</p>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-cloud"></i></div>
+                            <h3>Effortless Cloud Management</h3>
+                        </div>
+                        <p class="pp-feature-desc">We handle your cloud infrastructure — robust performance, error fixes, updates, and new features every week — so you can focus on growing your business.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">99.99% Uptime</span>
+                            <span class="pp-chip">Weekly Releases</span>
+                            <span class="pp-chip">Zero Ops Burden</span>
+                        </div>
                     </div>
                 </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-users-cog"></i></div>
-                        <h3>Client Management Made Easy</h3>
+
+                <!-- Card 2: Custom Pricing -->
+                <div class="pp-feature-card pp-card-pricing" data-accent="emerald">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pp-visual-badge">
+                            <span class="pv-badge-text">100% Margin Retention</span>
+                        </div>
+                        <div class="pp-currencies-row">
+                            <span class="pv-cur-pill">$ USD</span>
+                            <span class="pv-cur-pill">€ EUR</span>
+                            <span class="pv-cur-pill">₹ INR</span>
+                            <span class="pv-cur-pill">AED</span>
+                        </div>
+                        <div class="pv-markup-bar">
+                            <div class="pv-markup-fill" style="width:78%"></div>
+                            <span class="pv-markup-label">Agency Margin: +45% Markup</span>
+                        </div>
                     </div>
-                    <div class="pp-feature-expand">
-                        <h3>Client Management Made Easy</h3>
-                        <p>Manage customers smoothly from your admin dashboard — charge them directly or use our
-                            protected, brand-neutral payment gateway.</p>
-                    </div>
-                </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-laptop"></i></div>
-                        <h3>All-in-One White-Label Platform</h3>
-                    </div>
-                    <div class="pp-feature-expand">
-                        <h3>All-in-One White-Label Platform</h3>
-                        <p>Give your audience the full suite of HelloBotz features — fully white-labeled and
-                            automatically upgraded as the platform evolves.</p>
-                    </div>
-                </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-flask"></i></div>
-                        <h3>No Card Needed</h3>
-                    </div>
-                    <div class="pp-feature-expand">
-                        <h3>No Card Needed</h3>
-                        <p>Use the HelloBotz platform without a card required. Let clients experience the full service
-                            with a risk-free demo that builds trust.</p>
-                    </div>
-                </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-sitemap"></i></div>
-                        <h3>Developer Resources</h3>
-                    </div>
-                    <div class="pp-feature-expand">
-                        <h3>Developer Resources</h3>
-                        <p>Access fully white-labeled features to support your platform, with detailed documentation
-                            and a live API tester.</p>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-tags"></i></div>
+                            <h3>Custom Pricing</h3>
+                        </div>
+                        <p class="pp-feature-desc">Draft a pricing model that fits your business. Set your own pricing, apply incentives, and support multiple currencies for global clients.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">Multi-Currency</span>
+                            <span class="pp-chip">Custom Markup</span>
+                            <span class="pp-chip">Client Invoicing</span>
+                        </div>
                     </div>
                 </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-globe-europe"></i></div>
-                        <h3>Multi-Language Support</h3>
+
+                <!-- Card 3: Flexible Payment Options -->
+                <div class="pp-feature-card pp-card-payments" data-accent="violet">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pp-visual-badge">
+                            <i class="fas fa-lock" style="font-size:0.75rem;margin-right:4px;color:#A78BFA;"></i>
+                            <span class="pv-badge-text">Escrow Payout Engine</span>
+                        </div>
+                        <div class="pv-payout-methods">
+                            <span class="pv-pay-pill"><i class="fab fa-paypal"></i> PayPal</span>
+                            <span class="pv-pay-pill"><i class="fas fa-university"></i> Bank Wire</span>
+                            <span class="pv-pay-pill"><i class="fas fa-credit-card"></i> Stripe</span>
+                        </div>
+                        <div class="pv-payout-status">
+                            <i class="fas fa-check-circle" style="color:#10B981;"></i> Guaranteed Monthly Payouts
+                        </div>
                     </div>
-                    <div class="pp-feature-expand">
-                        <h3>Multi-Language Support</h3>
-                        <p>Offer a smooth experience to clients globally with an interface available in French,
-                            German, Italian, and many more languages.</p>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-wallet"></i></div>
+                            <h3>Flexible Payment Options</h3>
+                        </div>
+                        <p class="pp-feature-desc">Pick your preferred payment method. We securely manage transactions and ensure easy monthly payouts via PayPal or direct bank transfer.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">PayPal Direct</span>
+                            <span class="pp-chip">Wire Transfers</span>
+                            <span class="pp-chip">Auto Settlements</span>
+                        </div>
                     </div>
                 </div>
-                <div class="pp-feature-card">
-                    <div class="pp-feature-default">
-                        <div class="pp-feature-icon"><i class="fas fa-headset"></i></div>
-                        <h3>Built-In Live Chat & Support</h3>
+
+                <!-- Card 4: Client Management Made Easy -->
+                <div class="pp-feature-card pp-card-crm" data-accent="amber">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pp-visual-badge">
+                            <i class="fas fa-user-shield" style="font-size:0.75rem;margin-right:4px;color:#FBBF24;"></i>
+                            <span class="pv-badge-text">Multi-Tenant CRM</span>
+                        </div>
+                        <div class="pv-crm-clients">
+                            <div class="pv-crm-row">
+                                <span class="pv-crm-name"><i class="fas fa-store"></i> RetailStore HQ</span>
+                                <span class="pv-crm-status active">Active</span>
+                            </div>
+                            <div class="pv-crm-row">
+                                <span class="pv-crm-name"><i class="fas fa-building"></i> Apex Logistics</span>
+                                <span class="pv-crm-status active">Active</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pp-feature-expand">
-                        <h3>Built-In Live Chat & Support</h3>
-                        <p>Improve customer experience with integrated live chat and a reliable ticketing feature —
-                            use our free widget or your own tools.</p>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-users-cog"></i></div>
+                            <h3>Client Management Made Easy</h3>
+                        </div>
+                        <p class="pp-feature-desc">Manage customers smoothly from your admin dashboard — charge them directly or use our protected, brand-neutral payment gateway.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">Tenant Switcher</span>
+                            <span class="pp-chip">Role Controls</span>
+                            <span class="pp-chip">Direct Billing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: All-in-One White-Label Platform -->
+                <div class="pp-feature-card pp-card-whitelabel" data-accent="blue">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pv-browser-mock">
+                            <div class="pv-browser-dots"><span></span><span></span><span></span></div>
+                            <div class="pv-browser-url"><i class="fas fa-lock"></i> app.yourbrand.com</div>
+                        </div>
+                        <div class="pv-brand-pill">
+                            <i class="fas fa-palette" style="color:#60A5FA;"></i> 100% Brand-Neutral Interface
+                        </div>
+                    </div>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>All-in-One White-Label Platform</h3>
+                        </div>
+                        <p class="pp-feature-desc">Give your audience the full suite of HelloBotz features — fully white-labeled and automatically upgraded as the platform evolves.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">Custom Domain</span>
+                            <span class="pp-chip">Custom Logos</span>
+                            <span class="pp-chip">Zero Vendor Marks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: No Card Needed -->
+                <div class="pp-feature-card pp-card-nocard" data-accent="sky">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pp-visual-badge">
+                            <i class="fas fa-gift" style="font-size:0.75rem;margin-right:4px;color:#38BDF8;"></i>
+                            <span class="pv-badge-text">Instant Sandbox Access</span>
+                        </div>
+                        <div class="pv-sandbox-box">
+                            <div class="pv-check-line"><i class="fas fa-check-circle" style="color:#10B981;"></i> Zero Credit Card Required</div>
+                            <div class="pv-check-line"><i class="fas fa-check-circle" style="color:#10B981;"></i> Risk-Free Partner Sandbox</div>
+                        </div>
+                    </div>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>No Card Needed</h3>
+                        </div>
+                        <p class="pp-feature-desc">Use the HelloBotz platform without a card required. Let clients experience the full service with a risk-free demo that builds trust.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">No CC Required</span>
+                            <span class="pp-chip">Instant Activation</span>
+                            <span class="pp-chip">Full Demo Sandbox</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Developer Resources -->
+                <div class="pp-feature-card pp-card-dev" data-accent="pink">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pv-terminal-mock">
+                            <div class="pv-terminal-head">
+                                <span class="pv-http-method">POST</span>
+                                <span class="pv-http-path">/api/v1/messages</span>
+                                <span class="pv-http-code">200 OK</span>
+                            </div>
+                            <div class="pv-terminal-body">
+                                <code>{"status":"delivered","latency":"18ms"}</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-code"></i></div>
+                            <h3>Developer Resources</h3>
+                        </div>
+                        <p class="pp-feature-desc">Access fully white-labeled features to support your platform, with detailed documentation and a live API tester.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">Interactive API Tester</span>
+                            <span class="pp-chip">Swagger Docs</span>
+                            <span class="pp-chip">Webhooks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Multi-Language Support -->
+                <div class="pp-feature-card pp-card-lang" data-accent="teal">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pp-visual-badge">
+                            <i class="fas fa-globe-americas" style="font-size:0.75rem;margin-right:4px;color:#2DD4BF;"></i>
+                            <span class="pv-badge-text">Global Localization</span>
+                        </div>
+                        <div class="pv-lang-pills">
+                            <span class="pv-lang-tag">English</span>
+                            <span class="pv-lang-tag">Español</span>
+                            <span class="pv-lang-tag">Français</span>
+                            <span class="pv-lang-tag">Deutsch</span>
+                            <span class="pv-lang-tag">العربية</span>
+                            <span class="pv-lang-tag">हिन्दी</span>
+                        </div>
+                    </div>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-globe-europe"></i></div>
+                            <h3>Multi-Language Support</h3>
+                        </div>
+                        <p class="pp-feature-desc">Offer a smooth experience to clients globally with an interface available in French, German, Italian, and many more languages.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">RTL & LTR Support</span>
+                            <span class="pp-chip">30+ Languages</span>
+                            <span class="pp-chip">Global Reach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9: Built-In Live Chat & Support -->
+                <div class="pp-feature-card pp-card-support" data-accent="orange">
+                    <div class="pp-card-visual">
+                        <div class="pp-visual-glow"></div>
+                        <div class="pv-support-chat">
+                            <div class="pv-support-avatar"><i class="fas fa-headset"></i></div>
+                            <div class="pv-support-content">
+                                <div class="pv-support-meta">
+                                    <span class="pv-support-agent">Support Specialist</span>
+                                    <span class="pv-pulse-dot" style="background:#10B981;width:6px;height:6px;"></span>
+                                </div>
+                                <div class="pv-support-bubble">How can we assist your client team today?</div>
+                            </div>
+                        </div>
+                        <div class="pv-sla-pill">
+                            <i class="fas fa-bolt" style="color:#F59E0B;"></i> Avg SLA Response: &lt; 60 seconds
+                        </div>
+                    </div>
+                    <div class="pp-card-body">
+                        <div class="pp-card-head">
+                            <div class="pp-feature-icon"><i class="fas fa-headset"></i></div>
+                            <h3>Built-In Live Chat & Support</h3>
+                        </div>
+                        <p class="pp-feature-desc">Improve customer experience with integrated live chat and a reliable ticketing feature — use our free widget or your own tools.</p>
+                        <div class="pp-feature-chips">
+                            <span class="pp-chip">Live Agent Desk</span>
+                            <span class="pp-chip">Ticketing Engine</span>
+                            <span class="pp-chip">Embeddable Widget</span>
+                        </div>
                     </div>
                 </div>
             </div>
