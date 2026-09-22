@@ -19,8 +19,9 @@ include __DIR__ . "/../includes/header.php";
     </p>
 
     <div class="search-box">
-      <div class="search-input-box">
-        <input type="text" id="blog-search-input" placeholder="Search articles, tutorials..." autocomplete="off">
+      <div class="search-input-box" style="position: relative;">
+        <input type="text" id="blog-search-input" placeholder="Search articles, tutorials, tools..." autocomplete="off">
+        <button type="button" id="blog-clear-btn" style="display:none;background:none;border:none;color:#94A3B8;font-size:20px;cursor:pointer;padding:0 10px;line-height:1;" aria-label="Clear search">&times;</button>
         <button id="blog-search-btn" type="button">
            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search
         </button>
@@ -41,6 +42,12 @@ include __DIR__ . "/../includes/header.php";
     <button type="button" class="tag-filter-btn" data-filter="automation">Automation</button>
     <button type="button" class="tag-filter-btn" data-filter="broadcasting">Broadcasting</button>
     <button type="button" class="tag-filter-btn" data-filter="e-commerce">E-Commerce</button>
+  </div>
+
+  <!-- Search Count & Active Filter Bar -->
+  <div id="search-status-bar" style="margin: 12px 0 24px; font-size: 14px; color: #64748B; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+    <span id="results-count-text">Showing <strong>13</strong> articles</span>
+    <span id="active-filter-indicator" style="display:none; color: #7C3AED; font-weight: 600;">Filtered by: <span id="active-filter-name"></span></span>
   </div>
 </div>
 
@@ -312,9 +319,13 @@ include __DIR__ . "/../includes/header.php";
     </div>
 
     <!-- No results message -->
-    <div id="no-results-msg" style="display: none; text-align: center; padding: 60px 20px;">
+    <div id="no-results-msg" style="display: none; text-align: center; padding: 50px 20px;">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">🔍</div>
       <h3 style="font-size: 1.35rem; color: #1F2937; margin-bottom: 8px;">No matching articles found</h3>
-      <p style="color: #64748B;">Try a different keyword or category filter above.</p>
+      <p style="color: #64748B; margin-bottom: 16px;">Try searching for <strong>WhatsApp</strong>, <strong>Chatbots</strong>, <strong>CRM</strong>, <strong>API</strong>, or <strong>Shopify</strong>.</p>
+      <button type="button" id="reset-search-btn" class="btn btn-outline" style="padding: 8px 22px; border-radius: 9999px; border: 1.5px solid #7C3AED; color: #7C3AED; font-weight: 700; cursor: pointer; background: #ffffff;">
+        View All 13 Articles
+      </button>
     </div>
   </div>
 
@@ -333,60 +344,156 @@ include __DIR__ . "/../includes/header.php";
 
 <!-- Interactive Real-Time Search & Category Filter Script -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var searchInput = document.getElementById('blog-search-input');
-  var searchBtn = document.getElementById('blog-search-btn');
-  var filterBtns = document.querySelectorAll('.tag-filter-btn');
-  var cards = document.querySelectorAll('.card.blog-card');
-  var noResults = document.getElementById('no-results-msg');
-  var activeTag = 'all';
+(function() {
+  function initBlogSearch() {
+    var searchInput = document.getElementById('blog-search-input');
+    var searchBtn = document.getElementById('blog-search-btn');
+    var clearBtn = document.getElementById('blog-clear-btn');
+    var filterBtns = document.querySelectorAll('.tag-filter-btn');
+    var cards = document.querySelectorAll('.card.blog-card');
+    var noResults = document.getElementById('no-results-msg');
+    var countText = document.getElementById('results-count-text');
+    var filterIndicator = document.getElementById('active-filter-indicator');
+    var filterName = document.getElementById('active-filter-name');
+    var activeTag = 'all';
 
-  function filterCards() {
-    var query = (searchInput.value || '').toLowerCase().trim();
-    var visibleCount = 0;
+    if (!searchInput || !searchBtn || !cards.length) return;
 
-    cards.forEach(function(card) {
-      var title = card.getAttribute('data-title') || '';
-      var text = card.textContent.toLowerCase();
-      var cat = card.getAttribute('data-category') || '';
+    function normalizeQuery(s) {
+      var q = (s || '').toLowerCase().trim();
+      q = q.replace(/\bwhatsa+p*\b/gi, 'whatsapp');
+      q = q.replace(/\bwatsa+p*\b/gi, 'whatsapp');
+      q = q.replace(/\bwhats\s+app\b/gi, 'whatsapp');
+      q = q.replace(/\bwapp\b/gi, 'whatsapp');
+      return q;
+    }
 
-      var matchesTag = (activeTag === 'all' || cat === activeTag);
-      var matchesQuery = (!query || title.indexOf(query) !== -1 || text.indexOf(query) !== -1);
+    function filterCards(shouldScroll) {
+      var rawQuery = (searchInput.value || '').trim();
+      var normQuery = normalizeQuery(rawQuery);
+      var visibleCount = 0;
 
-      if (matchesTag && matchesQuery) {
-        card.style.display = 'flex';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
+      if (clearBtn) {
+        clearBtn.style.display = rawQuery.length > 0 ? 'inline-block' : 'none';
       }
+
+      var tokens = [];
+      if (normQuery.length > 0) {
+        tokens = normQuery.split(/\s+/).filter(Boolean).map(function(t) {
+          return (t.length > 3 && t !== 'business') ? t.replace(/s$/, '') : t;
+        });
+      }
+
+      cards.forEach(function(card) {
+        var title = (card.getAttribute('data-title') || '').toLowerCase();
+        var text = (card.textContent || '').toLowerCase();
+        var cat = (card.getAttribute('data-category') || '').toLowerCase();
+
+        var matchesTag = (activeTag === 'all' || cat === activeTag);
+        var matchesQuery = true;
+
+        if (tokens.length > 0) {
+          matchesQuery = tokens.every(function(token) {
+            return title.indexOf(token) !== -1 || text.indexOf(token) !== -1 || cat.indexOf(token) !== -1;
+          });
+        }
+
+        if (matchesTag && matchesQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countText) {
+        countText.innerHTML = 'Showing <strong>' + visibleCount + '</strong> of 13 articles';
+      }
+
+      if (filterIndicator && filterName) {
+        if (activeTag !== 'all' || rawQuery.length > 0) {
+          filterIndicator.style.display = 'inline';
+          var desc = [];
+          if (activeTag !== 'all') desc.push(activeTag.replace('-', ' '));
+          if (rawQuery.length > 0) desc.push('"' + rawQuery + '"');
+          filterName.textContent = desc.join(' + ');
+        } else {
+          filterIndicator.style.display = 'none';
+        }
+      }
+
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      if (shouldScroll) {
+        var resultsSection = document.getElementById('blog-results') || document.querySelector('.tag-filters');
+        if (resultsSection) {
+          var yOffset = -90;
+          var y = resultsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    }
+
+    searchBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      searchBtn.style.transform = 'scale(0.95)';
+      setTimeout(function() { searchBtn.style.transform = ''; }, 150);
+      filterCards(true);
     });
 
-    if (noResults) {
-      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
-  }
-
-  if (searchBtn && searchInput) {
-    searchBtn.addEventListener('click', filterCards);
-    searchInput.addEventListener('input', filterCards);
-    searchInput.addEventListener('keypress', function(e) {
+    searchInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         e.preventDefault();
-        filterCards();
+        searchBtn.click();
       }
+    });
+
+    searchInput.addEventListener('input', function() {
+      filterCards(false);
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        searchInput.value = '';
+        searchInput.focus();
+        filterCards(false);
+      });
+    }
+
+    var resetBtn = document.getElementById('reset-search-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        searchInput.value = '';
+        activeTag = 'all';
+        filterBtns.forEach(function(b) {
+          if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        filterCards(false);
+      });
+    }
+
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        activeTag = this.getAttribute('data-filter') || 'all';
+        filterCards(false);
+      });
     });
   }
 
-  filterBtns.forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      filterBtns.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      activeTag = this.getAttribute('data-filter') || 'all';
-      filterCards();
-    });
-  });
-});
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBlogSearch);
+  } else {
+    initBlogSearch();
+  }
+})();
 </script>
 
 <?php include __DIR__ . "/../includes/footer.php"; ?>
