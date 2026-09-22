@@ -555,674 +555,117 @@
 
     .pp-feature-card {
         background: #FFFFFF;
-        border: 1.5px solid rgba(226, 232, 240, 0.95);
-        border-radius: 22px;
-        padding: 0;
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        border-radius: 16px;
+        padding: 24px 22px 22px;
         color: #0F172A;
         display: flex;
         flex-direction: column;
         position: relative;
         overflow: hidden;
         cursor: pointer;
-        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-        min-height: 440px;
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+        box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
         text-align: left;
     }
 
-    /* Individual Color Themes & Accents */
-    .pp-card-cloud { --card-accent: #06B6D4; --card-glow: rgba(6, 182, 212, 0.35); --card-bg-glow: rgba(6, 182, 212, 0.12); }
-    .pp-card-pricing { --card-accent: #10B981; --card-glow: rgba(16, 185, 129, 0.35); --card-bg-glow: rgba(16, 185, 129, 0.12); }
-    .pp-card-payments { --card-accent: #8B5CF6; --card-glow: rgba(139, 92, 246, 0.35); --card-bg-glow: rgba(139, 92, 246, 0.12); }
-    .pp-card-crm { --card-accent: #F59E0B; --card-glow: rgba(245, 158, 11, 0.35); --card-bg-glow: rgba(245, 158, 11, 0.12); }
-    .pp-card-whitelabel { --card-accent: #3B82F6; --card-glow: rgba(59, 130, 246, 0.35); --card-bg-glow: rgba(59, 130, 246, 0.12); }
-    .pp-card-nocard { --card-accent: #0EA5E9; --card-glow: rgba(14, 165, 233, 0.35); --card-bg-glow: rgba(14, 165, 233, 0.12); }
-    .pp-card-dev { --card-accent: #EC4899; --card-glow: rgba(236, 72, 153, 0.35); --card-bg-glow: rgba(236, 72, 153, 0.12); }
-    .pp-card-lang { --card-accent: #14B8A6; --card-glow: rgba(20, 184, 166, 0.35); --card-bg-glow: rgba(20, 184, 166, 0.12); }
-    .pp-card-support { --card-accent: #F97316; --card-glow: rgba(249, 115, 22, 0.35); --card-bg-glow: rgba(249, 115, 22, 0.12); }
-
-    .pp-feature-card:hover,
-    .pp-feature-card:focus-within,
-    .pp-feature-card.is-active {
-        transform: translateY(-8px) scale(1.015);
-        border-color: var(--card-accent);
-        box-shadow: 0 20px 45px -10px var(--card-glow), 0 0 25px var(--card-bg-glow);
-    }
-
-    /* Top Visual Illustration Box - Futuristic Gen-Z Height & Layout */
-    .pp-card-visual {
-        position: relative;
-        height: 180px;
-        background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%);
-        background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
-        background-size: 14px 14px;
-        border-bottom: 1px solid rgba(226, 232, 240, 0.85);
-        padding: 14px 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .pp-visual-glow {
+    .pp-card-glow-bar {
         position: absolute;
-        inset: -25px;
-        background: radial-gradient(circle at 50% 35%, var(--card-bg-glow) 0%, transparent 70%);
-        pointer-events: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3.5px;
+        opacity: 0.85;
+        transition: opacity 0.25s ease, height 0.25s ease;
+    }
+    .pp-feature-card[data-accent="cyan"] .pp-card-glow-bar { background: linear-gradient(90deg, #06B6D4, #0891B2); }
+    .pp-feature-card[data-accent="emerald"] .pp-card-glow-bar { background: linear-gradient(90deg, #10B981, #059669); }
+    .pp-feature-card[data-accent="violet"] .pp-card-glow-bar { background: linear-gradient(90deg, #8B5CF6, #7C3AED); }
+    .pp-feature-card[data-accent="amber"] .pp-card-glow-bar { background: linear-gradient(90deg, #F59E0B, #D97706); }
+    .pp-feature-card[data-accent="blue"] .pp-card-glow-bar { background: linear-gradient(90deg, #3B82F6, #2563EB); }
+    .pp-feature-card[data-accent="sky"] .pp-card-glow-bar { background: linear-gradient(90deg, #0EA5E9, #0284C7); }
+    .pp-feature-card[data-accent="pink"] .pp-card-glow-bar { background: linear-gradient(90deg, #EC4899, #DB2777); }
+    .pp-feature-card[data-accent="teal"] .pp-card-glow-bar { background: linear-gradient(90deg, #14B8A6, #0D9488); }
+    .pp-feature-card[data-accent="orange"] .pp-card-glow-bar { background: linear-gradient(90deg, #F97316, #EA580C); }
+
+    .pp-feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+    .pp-feature-card:hover .pp-card-glow-bar {
+        opacity: 1;
+        height: 4px;
     }
 
-    .pp-visual-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 12px;
-        border-radius: 9999px;
-        background: rgba(255, 255, 255, 0.95);
-        border: 1.5px solid rgba(0, 0, 0, 0.08);
-        font-size: 0.72rem;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #0F172A;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        margin-bottom: 4px;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        z-index: 2;
-    }
-
-    .pv-pulse-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        box-shadow: 0 0 10px currentColor;
-        animation: pvPulse 2s infinite ease-in-out;
-        flex-shrink: 0;
-    }
-    @keyframes pvPulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.35); opacity: 0.75; }
-    }
-
-    .pv-telemetry-tag {
-        font-size: 0.68rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        z-index: 2;
-    }
-
-    /* 1. Heartbeat Wave Animation (Card 1) */
-    .pv-heartbeat-box {
-        width: 100%;
-        max-width: 240px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        z-index: 1;
-    }
-    .pv-heartbeat-svg {
-        width: 100%;
-        height: 38px;
-        overflow: visible;
-    }
-    .pv-heartbeat-bg {
-        fill: none;
-        stroke: rgba(6, 182, 212, 0.2);
-        stroke-width: 2;
-    }
-    .pv-heartbeat-live {
-        fill: none;
-        stroke: url(#pvHeartbeatGrad);
-        stroke-width: 2.5;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 240;
-        stroke-dashoffset: 240;
-        animation: pvDrawHeartbeat 2.8s ease-in-out infinite alternate;
-        filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.7));
-    }
-    @keyframes pvDrawHeartbeat {
-        0% { stroke-dashoffset: 240; }
-        100% { stroke-dashoffset: 0; }
-    }
-    .pv-hud-nodes {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 4px;
-    }
-    .pv-hud-node {
-        font-size: 0.66rem;
-        font-weight: 700;
-        color: #475569;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-    }
-    .pv-led-green {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #10B981;
-        box-shadow: 0 0 8px #10B981;
-        animation: pvBlink 1.5s infinite ease-in-out;
-    }
-    @keyframes pvBlink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.4; }
-    }
-
-    /* 2. Profit Dashboard & 3D Tokens (Card 2) */
-    .pv-profit-dashboard {
-        width: 100%;
-        max-width: 240px;
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-        z-index: 1;
-    }
-    .pv-profit-split {
+    /* Top Row: Official Icon & Badge */
+    .pp-card-top-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 5px 10px;
-        background: rgba(16, 185, 129, 0.08);
-        border: 1px solid rgba(16, 185, 129, 0.25);
-        border-radius: 10px;
-    }
-    .pv-p-label {
-        font-size: 0.62rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: #64748B;
-        display: block;
-    }
-    .pv-p-num {
-        font-size: 0.95rem;
-        font-weight: 900;
-        color: #059669;
-    }
-    .pv-profit-badge-pill {
-        background: #10B981;
-        color: #FFFFFF;
-        padding: 3px 8px;
-        border-radius: 999px;
-        font-size: 0.68rem;
-        font-weight: 800;
-        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
-    }
-    .pv-3d-tokens {
-        display: flex;
-        justify-content: space-between;
-        gap: 5px;
-    }
-    .pv-token {
-        flex: 1;
-        text-align: center;
-        padding: 3px 0;
-        border-radius: 7px;
-        font-size: 0.68rem;
-        font-weight: 800;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        color: #0F172A;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-    }
-    .token-usd { border-color: #10B981 !important; color: #10B981 !important; }
-    .token-eur { border-color: #3B82F6 !important; color: #3B82F6 !important; }
-    .token-inr { border-color: #F59E0B !important; color: #F59E0B !important; }
-    .token-aed { border-color: #8B5CF6 !important; color: #8B5CF6 !important; }
-
-    /* 3. Escrow Vault (Card 3) */
-    .pv-escrow-vault {
-        width: 100%;
-        max-width: 240px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        z-index: 1;
-    }
-    .pv-vault-radar {
-        position: relative;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-    .pv-radar-ring {
-        position: absolute;
-        border-radius: 50%;
-        border: 1.5px solid rgba(139, 92, 246, 0.35);
-        animation: pvRadarExpand 2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
-    }
-    .pv-radar-1 { width: 34px; height: 34px; }
-    .pv-radar-2 { width: 44px; height: 44px; animation-delay: 0.6s; }
-    @keyframes pvRadarExpand {
-        0% { transform: scale(0.6); opacity: 0.8; }
-        100% { transform: scale(1.15); opacity: 0; }
-    }
-    .pv-vault-core {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #8B5CF6, #6D28D9);
-        color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.72rem;
-        box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
-        z-index: 2;
-    }
-    .pv-payout-methods {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        flex: 1;
-    }
-    .pv-pay-pill {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 3px 8px;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        border-radius: 7px;
-        font-size: 0.68rem;
-        font-weight: 700;
-        color: #334155;
-    }
-    .pv-pay-stripe i { color: #6366F1; }
-    .pv-pay-paypal i { color: #0079C1; }
-    .pv-pay-wire i { color: #10B981; }
-    .pv-payout-status {
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: #059669;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        z-index: 2;
-    }
-
-    /* 4. Multi-Tenant Cockpit (Card 4) */
-    .pv-cockpit-hud {
-        width: 100%;
-        max-width: 240px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        z-index: 1;
-    }
-    .pv-tenant-chip {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 9px;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        border-radius: 8px;
-    }
-    .pv-tenant-logo {
-        width: 22px;
-        height: 22px;
-        border-radius: 6px;
-        color: #FFFFFF;
-        font-size: 0.68rem;
-        font-weight: 800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-    .pv-tenant-meta {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.2;
-    }
-    .pv-tenant-name {
-        font-size: 0.72rem;
-        font-weight: 800;
-        color: #0F172A;
-    }
-    .pv-tenant-count {
-        font-size: 0.62rem;
-        color: #64748B;
-    }
-    .pv-tenant-status-dot.online {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #10B981;
-        box-shadow: 0 0 6px #10B981;
-    }
-
-    /* 5. Mac Browser Window (Card 5) */
-    .pv-browser-window {
-        width: 100%;
-        max-width: 240px;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        border-radius: 9px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        z-index: 1;
-    }
-    .pv-browser-bar {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 8px;
-        background: #F1F5F9;
-        border-bottom: 1px solid #E2E8F0;
-    }
-    .pv-mac-dots {
-        display: flex;
-        gap: 4px;
-    }
-    .mac-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-    }
-    .mac-dot.red { background: #EF4444; }
-    .mac-dot.yellow { background: #F59E0B; }
-    .mac-dot.green { background: #10B981; }
-    .pv-url-pill {
-        flex: 1;
-        background: #FFFFFF;
-        padding: 2px 7px;
-        border-radius: 5px;
-        font-size: 0.65rem;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        color: #2563EB;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    .pv-browser-body-mock {
-        padding: 6px;
-        display: flex;
-        justify-content: center;
-    }
-    .pv-client-brand-badge {
-        font-size: 0.66rem;
-        font-weight: 800;
-        color: #3B82F6;
-        letter-spacing: 0.03em;
-    }
-    .pv-brand-pill {
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: #0284C7;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        z-index: 2;
-    }
-
-    /* 6. VIP Pass (Card 6) */
-    .pv-vip-pass {
-        width: 100%;
-        max-width: 240px;
-        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-        border: 1px solid rgba(14, 165, 233, 0.35);
-        border-radius: 10px;
-        padding: 8px 12px;
-        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        z-index: 1;
-    }
-    .pv-pass-chip {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #F59E0B;
-        font-size: 0.9rem;
-    }
-    .pv-pass-lines {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        flex: 1;
-    }
-    .pv-pass-lines span {
-        height: 2px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 1px;
-    }
-    .pv-pass-title {
-        font-size: 0.65rem;
-        font-weight: 800;
-        color: #F8FAFC;
-        letter-spacing: 0.05em;
-    }
-    .pv-pass-stamp {
-        font-size: 0.62rem;
-        font-weight: 900;
-        color: #0EA5E9;
-        letter-spacing: 0.06em;
-    }
-
-    /* 7. Terminal Window (Card 7) */
-    .pv-terminal-window {
-        width: 100%;
-        max-width: 240px;
-        background: #0B0F19;
-        border: 1px solid #1E293B;
-        border-radius: 9px;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-        z-index: 1;
-    }
-    .pv-term-header {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 8px;
-        background: #111827;
-        border-bottom: 1px solid #1F2937;
-    }
-    .pv-term-tab {
-        font-size: 0.62rem;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        color: #94A3B8;
-        flex: 1;
-    }
-    .pv-term-status {
-        font-size: 0.6rem;
-        font-weight: 800;
-        color: #10B981;
-        background: rgba(16, 185, 129, 0.15);
-        padding: 1px 5px;
-        border-radius: 4px;
-    }
-    .pv-term-code {
-        padding: 6px 8px;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        font-size: 0.64rem;
-        line-height: 1.4;
-        display: flex;
-        flex-direction: column;
-    }
-    .pv-code-kw { color: #EC4899; font-weight: 800; }
-    .pv-code-url { color: #60A5FA; }
-    .pv-code-res { color: #A78BFA; }
-
-    /* 8. Lang Cloud & Audio Wave (Card 8) */
-    .pv-lang-cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        justify-content: center;
-        max-width: 240px;
-        z-index: 1;
-    }
-    .pv-lang-capsule {
-        padding: 3px 8px;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        border-radius: 6px;
-        font-size: 0.68rem;
-        font-weight: 700;
-        color: #1E293B;
-    }
-    .pv-soundwave-row {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        margin-top: 4px;
-        z-index: 1;
-    }
-    .pv-soundwave-bars {
-        display: flex;
-        align-items: center;
-        gap: 2.5px;
-        height: 14px;
-    }
-    .pv-soundwave-bars span {
-        width: 2.5px;
-        height: 100%;
-        background: #14B8A6;
-        border-radius: 2px;
-        animation: pvWaveAnim 1.2s infinite ease-in-out alternate;
-    }
-    .pv-soundwave-bars span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
-    .pv-soundwave-bars span:nth-child(3) { animation-delay: 0.4s; height: 90%; }
-    .pv-soundwave-bars span:nth-child(4) { animation-delay: 0.1s; height: 40%; }
-    .pv-soundwave-bars span:nth-child(5) { animation-delay: 0.5s; height: 80%; }
-    .pv-soundwave-bars span:nth-child(6) { animation-delay: 0.3s; height: 50%; }
-    .pv-soundwave-bars span:nth-child(7) { animation-delay: 0.6s; height: 70%; }
-    @keyframes pvWaveAnim {
-        0% { transform: scaleY(0.3); }
-        100% { transform: scaleY(1); }
-    }
-    .pv-soundwave-text {
-        font-size: 0.68rem;
-        font-weight: 700;
-        color: #14B8A6;
-    }
-
-    /* 9. Support Live Chat Bubble (Card 9) */
-    .pv-chat-widget {
-        width: 100%;
-        max-width: 240px;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        border-radius: 10px;
-        padding: 6px 9px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        z-index: 1;
-    }
-    .pv-chat-avatar {
-        position: relative;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #F97316, #EA580C);
-        color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.72rem;
-        flex-shrink: 0;
-    }
-    .pv-chat-online-dot {
-        position: absolute;
-        bottom: -1px;
-        right: -1px;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #10B981;
-        border: 1.5px solid #FFFFFF;
-    }
-    .pv-chat-bubble-wrap {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.25;
-    }
-    .pv-chat-sender {
-        font-size: 0.65rem;
-        font-weight: 800;
-        color: #0F172A;
-        display: flex;
-        justify-content: space-between;
-    }
-    .pv-chat-sender span {
-        font-size: 0.58rem;
-        font-weight: 600;
-        color: #64748B;
-    }
-    .pv-chat-text {
-        font-size: 0.68rem;
-        color: #475569;
-    }
-
-    /* Card Content Body */
-    .pp-card-body {
-        padding: 22px 20px 24px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        text-align: left;
-    }
-
-    .pp-card-head {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
     }
 
     .pp-feature-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: var(--card-bg-glow);
-        color: var(--card-accent);
-        border: 1px solid var(--card-accent);
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.05rem;
+        font-size: 1.15rem;
         flex-shrink: 0;
-        margin-bottom: 0;
+        transition: transform 0.25s ease;
+    }
+    .pp-feature-card:hover .pp-feature-icon {
+        transform: scale(1.06);
     }
 
-    .pp-card-head h3 {
-        font-size: 1.05rem;
+    .icon-cyan { background: rgba(6, 182, 212, 0.12); color: #0891B2; border: 1px solid rgba(6, 182, 212, 0.25); }
+    .icon-emerald { background: rgba(16, 185, 129, 0.12); color: #059669; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .icon-violet { background: rgba(139, 92, 246, 0.12); color: #7C3AED; border: 1px solid rgba(139, 92, 246, 0.25); }
+    .icon-amber { background: rgba(245, 158, 11, 0.12); color: #D97706; border: 1px solid rgba(245, 158, 11, 0.25); }
+    .icon-blue { background: rgba(59, 130, 246, 0.12); color: #2563EB; border: 1px solid rgba(59, 130, 246, 0.25); }
+    .icon-sky { background: rgba(14, 165, 233, 0.12); color: #0284C7; border: 1px solid rgba(14, 165, 233, 0.25); }
+    .icon-pink { background: rgba(236, 72, 153, 0.12); color: #DB2777; border: 1px solid rgba(236, 72, 153, 0.25); }
+    .icon-teal { background: rgba(20, 184, 166, 0.12); color: #0D9488; border: 1px solid rgba(20, 184, 166, 0.25); }
+    .icon-orange { background: rgba(249, 115, 22, 0.12); color: #EA580C; border: 1px solid rgba(249, 115, 22, 0.25); }
+
+    /* Official Status Badges */
+    .pp-feature-badge {
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 9999px;
+        letter-spacing: 0.02em;
+    }
+    .badge-cyan { background: rgba(6, 182, 212, 0.1); color: #0891B2; border: 1px solid rgba(6, 182, 212, 0.2); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.1); color: #059669; border: 1px solid rgba(16, 185, 129, 0.2); }
+    .badge-violet { background: rgba(139, 92, 246, 0.1); color: #7C3AED; border: 1px solid rgba(139, 92, 246, 0.2); }
+    .badge-amber { background: rgba(245, 158, 11, 0.1); color: #D97706; border: 1px solid rgba(245, 158, 11, 0.2); }
+    .badge-blue { background: rgba(59, 130, 246, 0.1); color: #2563EB; border: 1px solid rgba(59, 130, 246, 0.2); }
+    .badge-sky { background: rgba(14, 165, 233, 0.1); color: #0284C7; border: 1px solid rgba(14, 165, 233, 0.2); }
+    .badge-pink { background: rgba(236, 72, 153, 0.1); color: #DB2777; border: 1px solid rgba(236, 72, 153, 0.2); }
+    .badge-teal { background: rgba(20, 184, 166, 0.1); color: #0D9488; border: 1px solid rgba(20, 184, 166, 0.2); }
+    .badge-orange { background: rgba(249, 115, 22, 0.1); color: #EA580C; border: 1px solid rgba(249, 115, 22, 0.2); }
+
+    /* Card Content Typography */
+    .pp-card-title {
+        font-size: 1.15rem;
         font-weight: 700;
         color: #0F172A;
-        margin: 0;
-        line-height: 1.3;
+        margin: 0 0 8px;
+        line-height: 1.35;
     }
 
-    .pp-feature-desc {
+    .pp-card-desc {
         font-size: 0.88rem;
-        color: #475569;
+        color: #64748B;
         line-height: 1.6;
-        margin: 0 0 16px;
+        margin: 0 0 18px;
         flex: 1;
     }
 
+    /* Bottom Feature Chips */
     .pp-feature-chips {
         display: flex;
         flex-wrap: wrap;
@@ -1231,20 +674,14 @@
     }
 
     .pp-chip {
-        padding: 3px 9px;
+        padding: 3px 8px;
         border-radius: 6px;
-        background: #F1F5F9;
+        background: #F8FAFC;
         border: 1px solid #E2E8F0;
         font-size: 0.72rem;
         font-weight: 600;
-        color: #64748B;
+        color: #475569;
         transition: all 0.2s ease;
-    }
-
-    .pp-feature-card:hover .pp-chip {
-        border-color: var(--card-accent);
-        color: var(--card-accent);
-        background: var(--card-bg-glow);
     }
 
     @media (max-width: 900px) {
@@ -2495,178 +1932,41 @@ body.dark-theme .pv-token {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
-html[data-theme="dark"] .pv-vault-core,
-body.dark-theme .pv-vault-core {
-    background: #1E293B !important;
-    border-color: rgba(167, 139, 250, 0.4) !important;
-    color: #C4B5FD !important;
-}
-
-html[data-theme="dark"] .pv-pay-pill,
-body.dark-theme .pv-pay-pill {
-    background: #1E293B !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    color: #E2E8F0 !important;
-}
-
-html[data-theme="dark"] .pv-payout-status,
-html[data-theme="dark"] .pv-brand-pill,
-html[data-theme="dark"] .pv-telemetry-tag,
-body.dark-theme .pv-payout-status,
-body.dark-theme .pv-brand-pill,
-body.dark-theme .pv-telemetry-tag {
-    color: #94A3B8 !important;
-}
-
-html[data-theme="dark"] .pv-tenant-chip,
-body.dark-theme .pv-tenant-chip {
-    background: #1E293B !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
-
-html[data-theme="dark"] .pv-tenant-name,
-body.dark-theme .pv-tenant-name {
+html[data-theme="dark"] .pp-feature-card,
+body.dark-theme .pp-feature-card {
+    background: #0F172A !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
     color: #F8FAFC !important;
 }
 
-html[data-theme="dark"] .pv-tenant-count,
-body.dark-theme .pv-tenant-count {
-    color: #94A3B8 !important;
+html[data-theme="dark"] .pp-feature-card:hover,
+body.dark-theme .pp-feature-card:hover {
+    background: #141D30 !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6) !important;
 }
 
-html[data-theme="dark"] .pv-browser-window,
-body.dark-theme .pv-browser-window {
-    background: #1E293B !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-}
-
-html[data-theme="dark"] .pv-browser-bar,
-body.dark-theme .pv-browser-bar {
-    background: #0F172A !important;
-    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-html[data-theme="dark"] .pv-url-pill,
-body.dark-theme .pv-url-pill {
-    background: #1E293B !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    color: #60A5FA !important;
-}
-
-html[data-theme="dark"] .pv-client-brand-badge,
-body.dark-theme .pv-client-brand-badge {
-    background: rgba(59, 130, 246, 0.15) !important;
-    border-color: rgba(59, 130, 246, 0.3) !important;
-    color: #93C5FD !important;
-}
-
-html[data-theme="dark"] .pv-vip-pass,
-body.dark-theme .pv-vip-pass {
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(30, 41, 59, 0.85) 100%) !important;
-    border-color: rgba(14, 165, 233, 0.35) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-}
-
-html[data-theme="dark"] .pv-pass-title,
-body.dark-theme .pv-pass-title {
-    color: #38BDF8 !important;
-}
-
-html[data-theme="dark"] .pv-pass-chip,
-body.dark-theme .pv-pass-chip {
-    background: #0F172A !important;
-    border-color: rgba(14, 165, 233, 0.3) !important;
-    color: #38BDF8 !important;
-}
-
-html[data-theme="dark"] .pv-pass-lines span,
-body.dark-theme .pv-pass-lines span {
-    background: rgba(14, 165, 233, 0.4) !important;
-}
-
-html[data-theme="dark"] .pv-pass-stamp,
-body.dark-theme .pv-pass-stamp {
-    background: rgba(14, 165, 233, 0.2) !important;
-    border-color: rgba(14, 165, 233, 0.4) !important;
-    color: #7DD3FC !important;
-}
-
-html[data-theme="dark"] .pv-terminal-window,
-body.dark-theme .pv-terminal-window {
-    background: #090D16 !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
-}
-
-html[data-theme="dark"] .pv-term-header,
-body.dark-theme .pv-term-header {
-    background: #0F172A !important;
-    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-html[data-theme="dark"] .pv-term-tab,
-body.dark-theme .pv-term-tab {
-    color: #94A3B8 !important;
-}
-
-html[data-theme="dark"] .pv-lang-capsule,
-body.dark-theme .pv-lang-capsule {
-    background: #1E293B !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    color: #F8FAFC !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
-
-html[data-theme="dark"] .pv-soundwave-text,
-body.dark-theme .pv-soundwave-text {
-    color: #94A3B8 !important;
-}
-
-html[data-theme="dark"] .pv-chat-widget,
-body.dark-theme .pv-chat-widget {
-    background: #1E293B !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-}
-
-html[data-theme="dark"] .pv-chat-sender,
-body.dark-theme .pv-chat-sender {
-    color: #F8FAFC !important;
-}
-
-html[data-theme="dark"] .pv-chat-sender span,
-body.dark-theme .pv-chat-sender span {
-    color: #64748B !important;
-}
-
-html[data-theme="dark"] .pv-chat-text,
-body.dark-theme .pv-chat-text {
-    color: #CBD5E1 !important;
-}
-
-html[data-theme="dark"] .pv-chat-avatar,
-body.dark-theme .pv-chat-avatar {
-    background: rgba(249, 115, 22, 0.2) !important;
-    border-color: rgba(249, 115, 22, 0.35) !important;
-    color: #FB923C !important;
-}
-
-html[data-theme="dark"] .pp-card-head h3,
-body.dark-theme .pp-card-head h3 {
+html[data-theme="dark"] .pp-card-title,
+body.dark-theme .pp-card-title {
     color: #FFFFFF !important;
 }
 
-html[data-theme="dark"] .pp-feature-desc,
-body.dark-theme .pp-feature-desc {
+html[data-theme="dark"] .pp-card-desc,
+body.dark-theme .pp-card-desc {
     color: #94A3B8 !important;
 }
 
 html[data-theme="dark"] .pp-chip,
 body.dark-theme .pp-chip {
-    background: rgba(30, 41, 59, 0.6) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    color: #94A3B8 !important;
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .pp-feature-card:hover .pp-chip,
+body.dark-theme .pp-feature-card:hover .pp-chip {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
 }
 

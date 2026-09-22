@@ -1125,77 +1125,115 @@ include __DIR__ . '/includes/header.php';
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  /* Animated Floating Notification Pill for Phone Simulator */
-  .cw-type-here-alert {
+  /* Unique Floating Alert Banner OUTSIDE Phone Frame */
+  .cw-floating-sim-alert {
     position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #00A884 0%, #059669 100%);
-    color: #FFFFFF;
-    padding: 6px 14px 6px 12px;
-    border-radius: 9999px;
-    box-shadow: 0 4px 18px rgba(0, 168, 132, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.2);
+    top: 70px;
+    left: -75px;
+    z-index: 80;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    font-size: 0.76rem;
-    font-weight: 600;
-    white-space: nowrap;
-    z-index: 60;
+    gap: 9px;
+    padding: 7px 12px 7px 10px;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(16, 185, 129, 0.45);
+    border-radius: 9999px;
+    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.45), 0 0 20px rgba(16, 185, 129, 0.25);
     cursor: pointer;
-    pointer-events: auto;
-    animation: cwTypeAlertBounce 2.4s ease-in-out infinite;
+    animation: cwSimAlertFloat 3.5s ease-in-out infinite alternate;
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    user-select: none;
   }
-  .cw-type-here-alert::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px 6px 0 6px;
-    border-style: solid;
-    border-color: #059669 transparent transparent transparent;
+  @keyframes cwSimAlertFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-7px); }
   }
-  .cw-type-here-alert.dismissed {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-50%) translateY(6px);
-    pointer-events: none;
+  .cw-floating-sim-alert.dismissed {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-8px) scale(0.95) !important;
+    pointer-events: none !important;
   }
-  .cw-type-pulse-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 0 0 2.5px rgba(255, 255, 255, 0.35);
-    animation: cwPulseDot 1.4s infinite ease-in-out;
+  .cw-sim-alert-beacon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
-  @keyframes cwPulseDot {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.7; }
+  .cw-sim-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 10px #10B981;
+    z-index: 2;
   }
-  @keyframes cwTypeAlertBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-5px); }
+  .cw-sim-pulse-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgba(16, 185, 129, 0.6);
+    animation: cwSimRadar 2s infinite ease-out;
   }
-  .cw-type-close {
+  @keyframes cwSimRadar {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+  .cw-sim-alert-body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    text-align: left;
+  }
+  .cw-sim-alert-badge {
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #34D399;
+    text-transform: uppercase;
+  }
+  .cw-sim-alert-text {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    white-space: nowrap;
+  }
+  .cw-sim-alert-hand {
+    font-size: 0.95rem;
+    animation: cwPointHand 1.6s ease-in-out infinite alternate;
+  }
+  @keyframes cwPointHand {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+  }
+  .cw-sim-alert-close {
     background: transparent;
     border: none;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
     line-height: 1;
     padding: 0 0 0 4px;
     cursor: pointer;
+    transition: color 0.15s ease;
   }
-  .cw-type-close:hover {
+  .cw-sim-alert-close:hover {
     color: #FFFFFF;
   }
-  html[data-theme="dark"] .cw-type-here-alert {
-    background: linear-gradient(135deg, #00A884 0%, #047857 100%);
-    box-shadow: 0 6px 22px rgba(0, 168, 132, 0.55), 0 0 0 1.5px rgba(0, 168, 132, 0.4);
+
+  @media (max-width: 991px) {
+    .cw-floating-sim-alert {
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+      margin: 0 auto 14px !important;
+      display: inline-flex !important;
+      animation: none !important;
+    }
   }
 
   .cw-chat-btn-emoji {
@@ -3422,6 +3460,20 @@ include __DIR__ . '/includes/header.php';
         <!-- Glowing Ambient Aura -->
         <div class="cw-phone-aura" aria-hidden="true"></div>
 
+        <!-- Floating Interactive Simulator Alert OUTSIDE Phone Frame -->
+        <div class="cw-floating-sim-alert" id="cw-floating-sim-alert" role="status" title="Click to test live chat">
+          <div class="cw-sim-alert-beacon">
+            <span class="cw-sim-pulse-dot"></span>
+            <span class="cw-sim-pulse-ring"></span>
+          </div>
+          <div class="cw-sim-alert-body">
+            <div class="cw-sim-alert-badge">⚡ LIVE INTERACTIVE DEMO</div>
+            <strong class="cw-sim-alert-text">Type below to test live!</strong>
+          </div>
+          <div class="cw-sim-alert-hand">👉</div>
+          <button type="button" class="cw-sim-alert-close" id="cw-sim-alert-close" aria-label="Dismiss alert">&times;</button>
+        </div>
+
         <!-- 3D Tilting Phone Device Frame (iPhone 11 / 12) -->
         <div class="cw-phone-device" id="cw-phone-device">
           <!-- Realistic Hardware Side Buttons -->
@@ -3542,18 +3594,11 @@ include __DIR__ . '/includes/header.php';
 
             <!-- WhatsApp Chat Composer Footer -->
             <div class="cw-chat-footer" id="cw-chat-footer">
-              <!-- Animated Interactive Alert/Notification Pointing To Input -->
-              <div class="cw-type-here-alert" id="cw-type-here-alert" role="status" title="Click to test live chat">
-                <span class="cw-type-pulse-dot"></span>
-                <span class="cw-type-text">👇 <strong>Type here or text below</strong> to test live!</span>
-                <button type="button" class="cw-type-close" id="cw-type-alert-close" aria-label="Dismiss">&times;</button>
-              </div>
-
               <button type="button" class="cw-chat-btn-emoji" id="cw-emoji-btn" title="Add emoji">😊</button>
               <button type="button" class="cw-chat-btn-clip" id="cw-clip-btn" title="Attach media">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
               </button>
-              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="💬 Type a message here to test live..." autocomplete="off" maxlength="150" aria-label="Type your WhatsApp message">
+              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message..." autocomplete="off" maxlength="150" aria-label="Type your WhatsApp message">
               <button type="button" id="cw-chat-send" class="cw-chat-send" aria-label="Send message" title="Send message">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
               </button>
@@ -4904,30 +4949,30 @@ include __DIR__ . '/includes/header.php';
     });
   }
 
-  // Handle Interactive 'Type Here' Alert notification
-  const typeAlert = document.getElementById('cw-type-here-alert');
-  const typeAlertClose = document.getElementById('cw-type-alert-close');
-  if (typeAlert && chatInput) {
-    typeAlert.addEventListener('click', function(e) {
-      if (e.target === typeAlertClose || e.target.closest('#cw-type-alert-close')) {
+  // Handle Interactive Simulator Alert notification (outside phone device)
+  const floatingAlert = document.getElementById('cw-floating-sim-alert');
+  const floatingAlertClose = document.getElementById('cw-sim-alert-close');
+  if (floatingAlert && chatInput) {
+    floatingAlert.addEventListener('click', function(e) {
+      if (e.target === floatingAlertClose || e.target.closest('#cw-sim-alert-close')) {
         e.stopPropagation();
-        typeAlert.classList.add('dismissed');
+        floatingAlert.classList.add('dismissed');
         return;
       }
       chatInput.focus();
     });
-    if (typeAlertClose) {
-      typeAlertClose.addEventListener('click', function(e) {
+    if (floatingAlertClose) {
+      floatingAlertClose.addEventListener('click', function(e) {
         e.stopPropagation();
-        typeAlert.classList.add('dismissed');
+        floatingAlert.classList.add('dismissed');
       });
     }
     chatInput.addEventListener('focus', function() {
-      typeAlert.classList.add('dismissed');
+      floatingAlert.classList.add('dismissed');
     });
     chatInput.addEventListener('input', function() {
       if (chatInput.value.trim().length > 0) {
-        typeAlert.classList.add('dismissed');
+        floatingAlert.classList.add('dismissed');
       }
     });
   }

@@ -5,7 +5,7 @@ $pageDescription = 'Launch your own WhatsApp Business API business with HelloBot
 $canonicalUrl = 'https://hellobotz.com/partners/';
 $extraCss = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
-    '/assets/css/partners.css?v=7'
+    '/assets/css/partners.css?v=8'
 ];
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -278,364 +278,164 @@ include __DIR__ . '/../includes/header.php';
 
             <div class="pp-feature-grid">
                 <!-- Card 1: Cloud Management -->
-                <div class="pp-feature-card pp-card-cloud" data-accent="cyan">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#06B6D4;"></span>
-                            <span class="pv-badge-text">⚡ 99.999% REAL-TIME SLA</span>
+                <div class="pp-feature-card" data-accent="cyan">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-cyan">
+                            <i class="fas fa-cloud-arrow-up"></i>
                         </div>
-                        <!-- Live Animated SVG Heartbeat Monitor HUD -->
-                        <div class="pv-heartbeat-box">
-                            <svg class="pv-heartbeat-svg" viewBox="0 0 240 40" preserveAspectRatio="none">
-                                <defs>
-                                    <linearGradient id="pvHeartbeatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3"/>
-                                        <stop offset="60%" stop-color="#06B6D4" stop-opacity="1"/>
-                                        <stop offset="100%" stop-color="#10B981" stop-opacity="1"/>
-                                    </linearGradient>
-                                </defs>
-                                <path class="pv-heartbeat-bg" d="M0,20 L35,20 L45,10 L55,30 L65,5 L75,35 L85,20 L150,20 L160,8 L170,32 L180,20 L240,20"/>
-                                <path class="pv-heartbeat-live" d="M0,20 L35,20 L45,10 L55,30 L65,5 L75,35 L85,20 L150,20 L160,8 L170,32 L180,20 L240,20"/>
-                            </svg>
-                            <div class="pv-hud-nodes">
-                                <span class="pv-hud-node"><span class="pv-led-green"></span> US-East (Virginia)</span>
-                                <span class="pv-hud-node"><span class="pv-led-green"></span> EU-Central</span>
-                                <span class="pv-hud-node"><span class="pv-led-green"></span> AP-South</span>
-                            </div>
-                        </div>
-                        <div class="pv-telemetry-tag">
-                            <i class="fas fa-satellite-dish"></i> <span>Global Edge Mesh • 4ms Active Ping</span>
-                        </div>
+                        <span class="pp-feature-badge badge-cyan">⚡ 99.99% SLA</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-cloud-bolt"></i></div>
-                            <h3>Effortless Cloud Management</h3>
-                        </div>
-                        <p class="pp-feature-desc">Zero dev ops headaches. We manage global multi-region server clusters, automatic failover, and continuous weekly feature drops so you scale without downtime.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">99.999% SLA</span>
-                            <span class="pp-chip">Continuous Updates</span>
-                            <span class="pp-chip">Zero DevOps Cost</span>
-                        </div>
+                    <h3 class="pp-card-title">Effortless Cloud Management</h3>
+                    <p class="pp-card-desc">We handle your complete cloud infrastructure — enterprise server clusters, automated failover, security updates, and weekly feature releases so you scale without DevOps burden.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">High Availability</span>
+                        <span class="pp-chip">Weekly Releases</span>
+                        <span class="pp-chip">Zero DevOps</span>
                     </div>
                 </div>
 
                 <!-- Card 2: Custom Pricing -->
-                <div class="pp-feature-card pp-card-pricing" data-accent="emerald">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#10B981;"></span>
-                            <span class="pv-badge-text">💎 100% MARGIN RETENTION</span>
+                <div class="pp-feature-card" data-accent="emerald">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-emerald">
+                            <i class="fas fa-tags"></i>
                         </div>
-                        <!-- Holographic Profit Calculator & 3D Currency Tokens -->
-                        <div class="pv-profit-dashboard">
-                            <div class="pv-profit-split">
-                                <div class="pv-profit-stat">
-                                    <span class="pv-p-label">CLIENT BILLING</span>
-                                    <strong class="pv-p-num">$2,499<small>/mo</small></strong>
-                                </div>
-                                <div class="pv-profit-badge-pill">
-                                    <i class="fas fa-arrow-trend-up"></i> +400% Margin 🚀
-                                </div>
-                            </div>
-                            <div class="pv-3d-tokens">
-                                <span class="pv-token token-usd">$ USD</span>
-                                <span class="pv-token token-eur">€ EUR</span>
-                                <span class="pv-token token-inr">₹ INR</span>
-                                <span class="pv-token token-aed">د.إ AED</span>
-                            </div>
-                        </div>
-                        <div class="pv-telemetry-tag" style="color:#10B981;">
-                            <i class="fas fa-hand-holding-dollar"></i> <span>0% Vendor Cut • Keep 100% Agency Markup</span>
-                        </div>
+                        <span class="pp-feature-badge badge-emerald">💎 100% Margins</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-tags"></i></div>
-                            <h3>Custom Pricing &amp; High Margins</h3>
-                        </div>
-                        <p class="pp-feature-desc">You set your own retail price plans. Bundle monthly subscriptions, bill across global currencies, and retain 100% of your agency markup with zero vendor cuts.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">0% Revenue Cut</span>
-                            <span class="pp-chip">Multi-Currency</span>
-                            <span class="pp-chip">Custom Invoicing</span>
-                        </div>
+                    <h3 class="pp-card-title">Custom Pricing &amp; High Margins</h3>
+                    <p class="pp-card-desc">Draft your own retail pricing packages with zero platform revenue cuts. Set flexible subscription tiers, bill across local currencies, and retain 100% of your agency markup.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">0% Revenue Cut</span>
+                        <span class="pp-chip">Multi-Currency</span>
+                        <span class="pp-chip">Custom Invoicing</span>
                     </div>
                 </div>
 
                 <!-- Card 3: Flexible Payment Options -->
-                <div class="pp-feature-card pp-card-payments" data-accent="violet">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <i class="fas fa-shield-halved" style="font-size:0.75rem;margin-right:2px;color:#A78BFA;"></i>
-                            <span class="pv-badge-text">🛡️ T+0 QUANTUM ESCROW</span>
+                <div class="pp-feature-card" data-accent="violet">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-violet">
+                            <i class="fas fa-building-columns"></i>
                         </div>
-                        <!-- Cyber Escrow Vault with Holographic Rails -->
-                        <div class="pv-escrow-vault">
-                            <div class="pv-vault-radar">
-                                <div class="pv-radar-ring pv-radar-1"></div>
-                                <div class="pv-radar-ring pv-radar-2"></div>
-                                <div class="pv-vault-core">
-                                    <i class="fas fa-lock"></i>
-                                </div>
-                            </div>
-                            <div class="pv-payout-methods">
-                                <span class="pv-pay-pill pv-pay-stripe"><i class="fab fa-stripe-s"></i> Stripe</span>
-                                <span class="pv-pay-pill pv-pay-paypal"><i class="fab fa-paypal"></i> PayPal</span>
-                                <span class="pv-pay-pill pv-pay-wire"><i class="fas fa-building-columns"></i> Wire Transfer</span>
-                            </div>
-                        </div>
-                        <div class="pv-payout-status">
-                            <i class="fas fa-circle-check" style="color:#10B981;"></i> <span>Weekly Settlements &amp; Auto-Payouts</span>
-                        </div>
+                        <span class="pp-feature-badge badge-violet">🛡️ Auto Payouts</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-wallet"></i></div>
-                            <h3>Flexible Payment Options</h3>
-                        </div>
-                        <p class="pp-feature-desc">Seamless enterprise payouts directly into your bank or wallet. We handle complex international transaction processing and guarantee transparent automated payouts.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Auto Settlements</span>
-                            <span class="pp-chip">Direct Bank Wire</span>
-                            <span class="pp-chip">PayPal &amp; Stripe</span>
-                        </div>
+                    <h3 class="pp-card-title">Flexible Payment Options</h3>
+                    <p class="pp-card-desc">Seamless enterprise payouts directly into your bank or wallet. We handle international transaction processing and guarantee transparent automated settlements via Stripe, PayPal, or Wire.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Bank Wire Transfer</span>
+                        <span class="pp-chip">Stripe &amp; PayPal</span>
+                        <span class="pp-chip">Auto Settlements</span>
                     </div>
                 </div>
 
                 <!-- Card 4: Client Management Made Easy -->
-                <div class="pp-feature-card pp-card-crm" data-accent="amber">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#F59E0B;"></span>
-                            <span class="pv-badge-text">🛸 MULTI-TENANT COCKPIT</span>
+                <div class="pp-feature-card" data-accent="amber">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-amber">
+                            <i class="fas fa-users-gear"></i>
                         </div>
-                        <div class="pv-cockpit-hud">
-                            <div class="pv-tenant-chip">
-                                <div class="pv-tenant-logo" style="background:linear-gradient(135deg,#3B82F6,#6366F1);">A</div>
-                                <div class="pv-tenant-meta">
-                                    <span class="pv-tenant-name">Apex Global Store</span>
-                                    <span class="pv-tenant-count">18.4k chats • Pro Tenant</span>
-                                </div>
-                                <span class="pv-tenant-status-dot online" title="Online"></span>
-                            </div>
-                            <div class="pv-tenant-chip">
-                                <div class="pv-tenant-logo" style="background:linear-gradient(135deg,#EC4899,#8B5CF6);">Z</div>
-                                <div class="pv-tenant-meta">
-                                    <span class="pv-tenant-name">Zenith Media Lab</span>
-                                    <span class="pv-tenant-count">9.2k chats • Enterprise</span>
-                                </div>
-                                <span class="pv-tenant-status-dot online" title="Online"></span>
-                            </div>
-                        </div>
-                        <div class="pv-telemetry-tag" style="color:#F59E0B;">
-                            <i class="fas fa-layer-group"></i> <span>Isolated Sub-Tenants • Granular Roles</span>
-                        </div>
+                        <span class="pp-feature-badge badge-amber">🛸 Multi-Tenant</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-users-gear"></i></div>
-                            <h3>Multi-Tenant Client Hub</h3>
-                        </div>
-                        <p class="pp-feature-desc">Unified master admin control. Provision isolated client workspaces in seconds, adjust granular seat permissions, and manage billing effortlessly from one central cockpit.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Infinite Sub-Tenants</span>
-                            <span class="pp-chip">Role-Based Access</span>
-                            <span class="pp-chip">Instant Provisioning</span>
-                        </div>
+                    <h3 class="pp-card-title">Multi-Tenant Client Hub</h3>
+                    <p class="pp-card-desc">Unified master administration dashboard. Provision isolated client workspaces in seconds, adjust granular permissions, and manage billing effortlessly from one central cockpit.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Infinite Sub-Tenants</span>
+                        <span class="pp-chip">Role-Based Access</span>
+                        <span class="pp-chip">Instant Provisioning</span>
                     </div>
                 </div>
 
                 <!-- Card 5: All-in-One White-Label Platform -->
-                <div class="pp-feature-card pp-card-whitelabel" data-accent="blue">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#3B82F6;"></span>
-                            <span class="pv-badge-text">🌐 100% UNBRANDED STEALTH</span>
+                <div class="pp-feature-card" data-accent="blue">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-blue">
+                            <i class="fas fa-globe"></i>
                         </div>
-                        <div class="pv-browser-window">
-                            <div class="pv-browser-bar">
-                                <div class="pv-mac-dots">
-                                    <span class="mac-dot red"></span>
-                                    <span class="mac-dot yellow"></span>
-                                    <span class="mac-dot green"></span>
-                                </div>
-                                <div class="pv-url-pill">
-                                    <i class="fas fa-lock" style="color:#10B981;font-size:0.65rem;"></i>
-                                    <span>https://app.your-agency.ai</span>
-                                </div>
-                            </div>
-                            <div class="pv-browser-body-mock">
-                                <span class="pv-client-brand-badge">✦ Custom Domain • Logo • Favicon ✦</span>
-                            </div>
-                        </div>
-                        <div class="pv-brand-pill">
-                            <i class="fas fa-shield-halved" style="color:#3B82F6;"></i> <span>Zero Vendor Marks • 100% Native Agency</span>
-                        </div>
+                        <span class="pp-feature-badge badge-blue">🌐 100% Stealth</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h3>100% Stealth White-Label</h3>
-                        </div>
-                        <p class="pp-feature-desc">Completely unbranded under your custom domain, proprietary logo, favicon, and brand color theme. Your clients will never see any third-party references.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Custom Domain CNAME</span>
-                            <span class="pp-chip">Your Favicon &amp; Logos</span>
-                            <span class="pp-chip">Brand Colorways</span>
-                        </div>
+                    <h3 class="pp-card-title">100% Stealth White-Label</h3>
+                    <p class="pp-card-desc">Completely unbranded under your custom domain (CNAME), proprietary logo, favicon, and brand color theme. Your clients will never see any third-party vendor references.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Custom Domain CNAME</span>
+                        <span class="pp-chip">Your Favicon &amp; Logo</span>
+                        <span class="pp-chip">Brand Colorways</span>
                     </div>
                 </div>
 
                 <!-- Card 6: No Card Needed -->
-                <div class="pp-feature-card pp-card-nocard" data-accent="sky">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#0EA5E9;"></span>
-                            <span class="pv-badge-text">🔥 60s INSTANT ACCESS</span>
+                <div class="pp-feature-card" data-accent="sky">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-sky">
+                            <i class="fas fa-bolt"></i>
                         </div>
-                        <div class="pv-vip-pass">
-                            <div class="pv-pass-chip">
-                                <i class="fas fa-microchip"></i>
-                                <div class="pv-pass-lines"><span></span><span></span></div>
-                            </div>
-                            <div class="pv-pass-title">VIP RESELLER ACCESS PASS</div>
-                            <div class="pv-pass-stamp">● NO CREDIT CARD REQUIRED ●</div>
-                        </div>
-                        <div class="pv-telemetry-tag" style="color:#0EA5E9;">
-                            <i class="fas fa-bolt"></i> <span>Live Production Sandbox Ready in 60s</span>
-                        </div>
+                        <span class="pp-feature-badge badge-sky">🔥 Instant Setup</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-shield-check"></i></div>
-                            <h3>Instant Sandbox Activation</h3>
-                        </div>
-                        <p class="pp-feature-desc">Test drive the complete production stack immediately without entering credit card details. Demonstrate live chatbot prototypes to prospective clients with zero risk.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Zero Friction</span>
-                            <span class="pp-chip">Full Demo Sandbox</span>
-                            <span class="pp-chip">60s Live Setup</span>
-                        </div>
+                    <h3 class="pp-card-title">Instant Sandbox Activation</h3>
+                    <p class="pp-card-desc">Test drive the complete production stack immediately without entering credit card details. Demonstrate live chatbot prototypes to prospective clients with zero risk.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Zero Friction</span>
+                        <span class="pp-chip">Full Demo Sandbox</span>
+                        <span class="pp-chip">60s Live Setup</span>
                     </div>
                 </div>
 
                 <!-- Card 7: Developer Resources -->
-                <div class="pp-feature-card pp-card-dev" data-accent="pink">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#EC4899;"></span>
-                            <span class="pv-badge-text">⚡ REST + WEBSOCKETS // 4ms</span>
+                <div class="pp-feature-card" data-accent="pink">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-pink">
+                            <i class="fas fa-code"></i>
                         </div>
-                        <div class="pv-terminal-window">
-                            <div class="pv-term-header">
-                                <div class="pv-mac-dots">
-                                    <span class="mac-dot red"></span>
-                                    <span class="mac-dot yellow"></span>
-                                    <span class="mac-dot green"></span>
-                                </div>
-                                <span class="pv-term-tab">api.whatsapp.v2</span>
-                                <span class="pv-term-status">200 OK</span>
-                            </div>
-                            <div class="pv-term-code">
-                                <div><span class="pv-code-kw">POST</span> <span class="pv-code-url">/v2/messages/dispatch</span></div>
-                                <span class="pv-code-res">{"status":"delivered","ping":"4ms"}</span>
-                            </div>
-                        </div>
-                        <div class="pv-telemetry-tag" style="color:#EC4899;">
-                            <i class="fas fa-terminal"></i> <span>OpenAPI 3.1 • Real-Time Webhooks &amp; SDKs</span>
-                        </div>
+                        <span class="pp-feature-badge badge-pink">⚡ REST &amp; Webhooks</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-terminal"></i></div>
-                            <h3>Developer Console &amp; APIs</h3>
-                        </div>
-                        <p class="pp-feature-desc">Comprehensive white-labeled API documentation, webhooks, Swagger explorer, and ready-to-use SDKs to seamlessly plug into custom CRMs, ERPs, and internal apps.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Interactive API Tester</span>
-                            <span class="pp-chip">Real-Time Webhooks</span>
-                            <span class="pp-chip">OpenAPI 3.1 Specs</span>
-                        </div>
+                    <h3 class="pp-card-title">Developer Console &amp; APIs</h3>
+                    <p class="pp-card-desc">Comprehensive white-labeled API documentation, real-time webhooks, OpenAPI 3.1 specs, and ready-to-use SDKs to seamlessly plug into custom CRMs, ERPs, and internal apps.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Interactive API Tester</span>
+                        <span class="pp-chip">Real-Time Webhooks</span>
+                        <span class="pp-chip">OpenAPI 3.1 Specs</span>
                     </div>
                 </div>
 
                 <!-- Card 8: Multi-Language Support -->
-                <div class="pp-feature-card pp-card-lang" data-accent="teal">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#14B8A6;"></span>
-                            <span class="pv-badge-text">🌍 30+ GLOBAL LOCALES</span>
+                <div class="pp-feature-card" data-accent="teal">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-teal">
+                            <i class="fas fa-language"></i>
                         </div>
-                        <div class="pv-lang-cloud">
-                            <span class="pv-lang-capsule">🇺🇸 English</span>
-                            <span class="pv-lang-capsule">🇪🇸 Español</span>
-                            <span class="pv-lang-capsule">🇦🇪 العربية (RTL)</span>
-                            <span class="pv-lang-capsule">🇮🇳 हिन्दी</span>
-                        </div>
-                        <div class="pv-soundwave-row">
-                            <div class="pv-soundwave-bars">
-                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            </div>
-                            <span class="pv-soundwave-text">Real-Time AI Auto-Translation</span>
-                        </div>
+                        <span class="pp-feature-badge badge-teal">🌍 30+ Locales</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-earth-americas"></i></div>
-                            <h3>Global Multi-Language UI</h3>
-                        </div>
-                        <p class="pp-feature-desc">Deliver tailored localized experiences across 30+ languages including full Right-to-Left (RTL) Arabic support. Empower clients anywhere on the planet with native fluency.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Full RTL &amp; LTR</span>
-                            <span class="pp-chip">30+ Languages</span>
-                            <span class="pp-chip">Automated Translatability</span>
-                        </div>
+                    <h3 class="pp-card-title">Global Multi-Language UI</h3>
+                    <p class="pp-card-desc">Deliver tailored localized experiences across 30+ languages including full Right-to-Left (RTL) Arabic support. Empower clients anywhere on the planet with native fluency.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Full RTL &amp; LTR</span>
+                        <span class="pp-chip">30+ Languages</span>
+                        <span class="pp-chip">Automated Translation</span>
                     </div>
                 </div>
 
                 <!-- Card 9: Built-In Live Chat & Support -->
-                <div class="pp-feature-card pp-card-support" data-accent="orange">
-                    <div class="pp-card-visual">
-                        <div class="pp-visual-glow"></div>
-                        <div class="pp-visual-badge">
-                            <span class="pv-pulse-dot" style="background:#F97316;"></span>
-                            <span class="pv-badge-text">⚡ &lt; 15s LIGHTNING SLA</span>
+                <div class="pp-feature-card" data-accent="orange">
+                    <div class="pp-card-glow-bar"></div>
+                    <div class="pp-card-top-bar">
+                        <div class="pp-feature-icon icon-orange">
+                            <i class="fas fa-headset"></i>
                         </div>
-                        <div class="pv-chat-widget">
-                            <div class="pv-chat-avatar">
-                                <i class="fas fa-headset"></i>
-                                <span class="pv-chat-online-dot"></span>
-                            </div>
-                            <div class="pv-chat-bubble-wrap">
-                                <div class="pv-chat-sender">Partner Concierge <span>Just now</span></div>
-                                <div class="pv-chat-text">Ready to launch your agency stack? 🚀</div>
-                            </div>
-                        </div>
-                        <div class="pv-telemetry-tag" style="color:#F97316;">
-                            <i class="fas fa-headset"></i> <span>Dedicated WhatsApp Group &amp; White-Glove Support</span>
-                        </div>
+                        <span class="pp-feature-badge badge-orange">💬 &lt; 15s SLA</span>
                     </div>
-                    <div class="pp-card-body">
-                        <div class="pp-card-head">
-                            <div class="pp-feature-icon"><i class="fas fa-headset"></i></div>
-                            <h3>24/7 Live Chat &amp; Concierge</h3>
-                        </div>
-                        <p class="pp-feature-desc">Empower your client operations with built-in live customer service chat, priority ticket routing, and behind-the-scenes engineering escalation support when you need it.</p>
-                        <div class="pp-feature-chips">
-                            <span class="pp-chip">Live Agent Desk</span>
-                            <span class="pp-chip">Embeddable Widget</span>
-                            <span class="pp-chip">Under 25s Response</span>
-                        </div>
+                    <h3 class="pp-card-title">24/7 Live Chat &amp; Support</h3>
+                    <p class="pp-card-desc">Empower your client operations with built-in live customer service chat, priority ticket routing, dedicated WhatsApp escalation groups, and white-glove onboarding.</p>
+                    <div class="pp-feature-chips">
+                        <span class="pp-chip">Live Agent Desk</span>
+                        <span class="pp-chip">WhatsApp Group</span>
+                        <span class="pp-chip">White-Glove SLA</span>
                     </div>
                 </div>
             </div>

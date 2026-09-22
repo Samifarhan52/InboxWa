@@ -87,6 +87,20 @@ include __DIR__ . '/header.php';
             <!-- Glowing Ambient Aura -->
             <div class="cw-phone-aura" aria-hidden="true"></div>
 
+            <!-- Floating Interactive Simulator Alert OUTSIDE Phone Frame -->
+            <div class="cw-floating-sim-alert" id="cw-floating-sim-alert" role="status" title="Click to test live chat">
+              <div class="cw-sim-alert-beacon">
+                <span class="cw-sim-pulse-dot"></span>
+                <span class="cw-sim-pulse-ring"></span>
+              </div>
+              <div class="cw-sim-alert-body">
+                <div class="cw-sim-alert-badge">⚡ LIVE INTERACTIVE DEMO</div>
+                <strong class="cw-sim-alert-text">Type below to test live!</strong>
+              </div>
+              <div class="cw-sim-alert-hand">👉</div>
+              <button type="button" class="cw-sim-alert-close" id="cw-sim-alert-close" aria-label="Dismiss alert">&times;</button>
+            </div>
+
             <!-- 3D Tilting Phone Device Frame (iPhone 11 / 12) -->
             <div class="cw-phone-device" id="cw-phone-device">
               <!-- Realistic Hardware Side Buttons -->
@@ -197,13 +211,8 @@ include __DIR__ . '/header.php';
 
                 <!-- WhatsApp Chat Composer Footer -->
                 <div class="cw-chat-footer" id="cw-chat-footer">
-                  <div class="cw-type-here-alert" id="cw-type-here-alert" role="status" title="Click to test live chat">
-                    <span class="cw-type-pulse-dot"></span>
-                    <span class="cw-type-text">👇 <strong>Type here or text below</strong> to test live!</span>
-                    <button type="button" class="cw-type-close" id="cw-type-alert-close" aria-label="Dismiss">&times;</button>
-                  </div>
                   <button type="button" class="cw-chat-btn-emoji" id="cw-emoji-btn" title="Add emoji">😊</button>
-                  <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="💬 Type a message here to test live..." autocomplete="off" maxlength="150">
+                  <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message..." autocomplete="off" maxlength="150">
                   <button type="button" id="cw-chat-send" class="cw-chat-send" aria-label="Send message" title="Send message">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                   </button>
@@ -1297,6 +1306,34 @@ function handleIndSubmit(e) {
           chatSendBtn.style.transform = '';
           chatSendBtn.style.boxShadow = '';
         }
+      }
+    });
+  }
+
+  // Handle Interactive Simulator Alert notification (outside phone device)
+  const floatingAlert = document.getElementById('cw-floating-sim-alert');
+  const floatingAlertClose = document.getElementById('cw-sim-alert-close');
+  if (floatingAlert && chatInput) {
+    floatingAlert.addEventListener('click', function(e) {
+      if (e.target === floatingAlertClose || e.target.closest('#cw-sim-alert-close')) {
+        e.stopPropagation();
+        floatingAlert.classList.add('dismissed');
+        return;
+      }
+      chatInput.focus();
+    });
+    if (floatingAlertClose) {
+      floatingAlertClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        floatingAlert.classList.add('dismissed');
+      });
+    }
+    chatInput.addEventListener('focus', function() {
+      floatingAlert.classList.add('dismissed');
+    });
+    chatInput.addEventListener('input', function() {
+      if (chatInput.value.trim().length > 0) {
+        floatingAlert.classList.add('dismissed');
       }
     });
   }

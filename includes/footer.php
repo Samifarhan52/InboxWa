@@ -238,7 +238,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .footer-contact-section {
     position: relative;
     overflow: hidden;
-    padding: 3.25rem 0 3.75rem;
+    padding: 2.25rem 0 2.5rem !important;
     background-color: #080D1A;
     background-image: linear-gradient(180deg, rgba(8, 13, 26, 0.78) 0%, rgba(11, 18, 36, 0.68) 50%, rgba(8, 13, 26, 0.94) 100%), url('<?php echo $bp; ?>assets/images/contact-bg.jpg');
     background-size: cover;
@@ -439,37 +439,36 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     color: #A78BFA;
   }
 
-  /* Section Header Badge & Titles */
   .contact-section-head {
     text-align: center;
-    max-width: 620px;
-    margin: 0 auto 2.25rem;
+    max-width: 580px;
+    margin: 0 auto 1.35rem;
     position: relative;
     z-index: 3;
   }
   .contact-pill-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    padding: 0.35rem 0.95rem;
+    gap: 0.4rem;
+    padding: 0.28rem 0.85rem;
     border-radius: 9999px;
     background: rgba(16, 185, 129, 0.16);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(16, 185, 129, 0.4);
     box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: #34D399 !important;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.02em;
   }
   .contact-pill-dot {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: #10B981;
-    box-shadow: 0 0 0 2.5px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35);
     animation: contactDotBlink 2s ease-in-out infinite;
   }
   @keyframes contactDotBlink {
@@ -477,43 +476,43 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     50% { opacity: 0.6; transform: scale(1.2); }
   }
   .contact-section-head h2 {
-    font-size: 1.85rem;
+    font-size: 1.45rem !important;
     font-weight: 800;
     line-height: 1.25;
     color: #FFFFFF !important;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.35rem;
     letter-spacing: -0.02em;
   }
   .contact-section-head p {
-    font-size: 0.92rem;
+    font-size: 0.82rem !important;
     color: #CBD5E1 !important;
-    line-height: 1.5;
+    line-height: 1.4;
     margin: 0;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 
-  /* Two-Column Frosted Glass Layout - Compact & Balanced */
+  /* Two-Column Layout - Ultra Compact & Balanced */
   .footer-contact-grid {
     display: grid !important;
     grid-template-columns: 1fr 1.05fr !important;
-    gap: 1.5rem !important;
+    gap: 1.15rem !important;
     align-items: stretch !important;
     position: relative;
     z-index: 3;
-    max-width: 960px;
+    max-width: 820px !important;
     margin: 0 auto;
   }
 
-  /* Master Glassmorphic Card Architecture */
+  /* Master Card Architecture */
   .contact-glass-card {
     background: rgba(255, 255, 255, 0.96) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     border: 1px solid rgba(255, 255, 255, 0.85) !important;
-    border-radius: 18px !important;
-    padding: 1.6rem 1.75rem !important;
-    box-shadow: 0 16px 45px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(16, 185, 129, 0.18) !important;
+    border-radius: 14px !important;
+    padding: 1.15rem 1.25rem !important;
+    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(16, 185, 129, 0.15) !important;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -522,7 +521,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .contact-glass-card:hover {
-    box-shadow: 0 24px 55px -14px rgba(0, 0, 0, 0.55), 0 0 0 1.5px rgba(16, 185, 129, 0.35) !important;
+    box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.45), 0 0 0 1.5px rgba(16, 185, 129, 0.3) !important;
     transform: translateY(-2px);
   }
 
@@ -540,13 +539,13 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .contact-card-title-group {
     display: flex;
     align-items: flex-start;
-    gap: 0.85rem;
-    margin-bottom: 1.2rem;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
   }
   .contact-card-icon-pill {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -563,20 +562,20 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     border: 1px solid rgba(99, 102, 241, 0.25);
   }
   .contact-card-icon-pill svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
   .contact-card-title {
-    font-size: 1.22rem;
-    font-weight: 800;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: #0F172A;
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.15rem;
     letter-spacing: -0.015em;
   }
   .contact-card-desc {
-    font-size: 0.82rem;
+    font-size: 0.76rem;
     color: #64748B;
-    line-height: 1.45;
+    line-height: 1.35;
     margin: 0;
   }
 
@@ -584,15 +583,15 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .contact-details-list {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    margin-bottom: 1.25rem;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
   }
   .contact-item-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.55rem 0.8rem;
-    border-radius: 11px;
+    gap: 0.6rem;
+    padding: 0.38rem 0.65rem;
+    border-radius: 9px;
     background: rgba(248, 250, 252, 0.85);
     border: 1px solid rgba(226, 232, 240, 0.9);
     transition: all 0.2s ease;
@@ -603,12 +602,12 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     background: #ffffff;
     border-color: rgba(99, 102, 241, 0.35);
     transform: translateX(3px);
-    box-shadow: 0 4px 12px -3px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 3px 8px -2px rgba(15, 23, 42, 0.06);
   }
   .contact-item-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -631,15 +630,15 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     color: #0891B2;
   }
   .contact-item-icon svg {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
   }
   .contact-item-body {
     flex: 1;
     min-width: 0;
   }
   .contact-item-label {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -647,10 +646,10 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     margin-bottom: 1px;
   }
   .contact-item-val {
-    font-size: 0.84rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: #0F172A;
-    line-height: 1.35;
+    line-height: 1.25;
     word-break: break-word;
   }
   .contact-item-val.highlight-green {
@@ -660,7 +659,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .contact-item-arrow {
     align-self: center;
     color: #94A3B8;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: transform 0.2s ease, color 0.2s ease;
   }
@@ -671,46 +670,46 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
 
   /* App Download Section */
   .contact-app-block {
-    padding-top: 0.75rem;
+    padding-top: 0.5rem;
     border-top: 1px solid rgba(226, 232, 240, 0.8);
-    margin-bottom: 0.95rem;
+    margin-bottom: 0.65rem;
   }
   .contact-app-label {
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #475569;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
   .contact-app-btns {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
+    gap: 0.45rem;
   }
   .contact-app-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.42rem 0.8rem;
-    border-radius: 9px;
+    gap: 0.35rem;
+    padding: 0.32rem 0.65rem;
+    border-radius: 7px;
     background: #0F172A;
     color: #ffffff !important;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 600;
     transition: all 0.2s ease;
-    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
   }
   .contact-app-link:hover {
     background: #1E293B;
     transform: translateY(-1px);
-    box-shadow: 0 5px 12px rgba(15, 23, 42, 0.2);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
   }
   .contact-app-link svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     fill: currentColor;
   }
 
@@ -718,55 +717,63 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .contact-meta-card {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
-    padding: 0.7rem 0.95rem;
-    border-radius: 12px;
+    gap: 0.65rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 10px;
     background: linear-gradient(135deg, rgba(240, 249, 255, 0.9), rgba(245, 243, 255, 0.9));
     border: 1px solid rgba(207, 222, 247, 0.8);
   }
   .contact-meta-card img {
-    width: 90px;
+    width: 75px;
     height: auto;
-    max-height: 42px;
+    max-height: 32px;
     object-fit: contain;
-    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.06));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06));
   }
   .meta-title-flex {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.25rem;
+  }
+  .meta-title-flex strong {
+    font-size: 0.78rem;
   }
   .meta-blue-check {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: #0081FB;
     color: #fff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     font-weight: 900;
+  }
+  .contact-meta-sub {
+    font-size: 0.68rem !important;
+    color: #64748B;
+    margin: 0;
   }
 
   /* Modern Glassmorphic Form Styling - Compact Pro */
   .footer-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.55rem;
   }
   .contact-form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: 0.55rem;
   }
   .contact-field-group {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.18rem;
   }
   .contact-field-label {
-    font-size: 0.76rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: #1E293B;
     display: flex;
@@ -783,28 +790,44 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   }
   .contact-input-icon {
     position: absolute;
-    left: 0.75rem;
-    width: 15px;
-    height: 15px;
+    left: 0.65rem;
+    width: 14px;
+    height: 14px;
     color: #94A3B8;
     pointer-events: none;
     transition: color 0.2s ease;
   }
   .contact-glass-card .form-input {
     width: 100%;
-    height: 38px;
+    height: 35px;
     background: #ffffff !important;
     border: 1.5px solid #CBD5E1 !important;
     color: #0F172A !important;
-    border-radius: 10px !important;
-    font-size: 0.84rem !important;
+    border-radius: 8px !important;
+    font-size: 0.8rem !important;
     font-family: inherit !important;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    box-sizing: border-box !important;
   }
   .contact-input-wrap .form-input {
-    padding-left: 2.35rem !important;
-    padding-right: 0.75rem !important;
+    padding-left: 2.15rem !important;
+    padding-right: 0.65rem !important;
+  }
+  .contact-glass-card select.form-input {
+    height: 35px !important;
+    line-height: normal !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-right: 1.8rem !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.65rem center !important;
+    background-size: 12px !important;
+    cursor: pointer;
   }
   .contact-glass-card .form-input:focus {
     outline: none !important;
@@ -815,9 +838,11 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     color: #6366F1;
   }
   .contact-glass-card textarea.form-input {
-    height: auto !important;
-    padding: 0.6rem 0.75rem !important;
-    min-height: 64px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0.45rem 0.65rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
     resize: vertical;
   }
 
@@ -825,37 +850,37 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .contact-form-actions {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
-    margin-top: 0.35rem;
+    gap: 0.45rem;
+    margin-top: 0.2rem;
   }
   .btn-contact-submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
     width: 100%;
-    height: 42px;
-    border-radius: 11px;
+    height: 38px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #10B981 0%, #059669 100%);
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 18px -3px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.4);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .btn-contact-submit:hover {
     transform: translateY(-1px);
-    box-shadow: 0 10px 22px -3px rgba(16, 185, 129, 0.5);
+    box-shadow: 0 8px 18px -2px rgba(16, 185, 129, 0.5);
     background: linear-gradient(135deg, #059669 0%, #047857 100%);
   }
   .btn-contact-submit:active {
     transform: translateY(0);
   }
   .btn-contact-submit svg {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     transition: transform 0.2s ease;
   }
   .btn-contact-submit:hover svg {
@@ -865,13 +890,13 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.35rem;
-    font-size: 0.72rem;
+    gap: 0.3rem;
+    font-size: 0.68rem;
     color: #64748B;
   }
   .contact-security-guarantee svg {
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
     color: #10B981;
   }
 
