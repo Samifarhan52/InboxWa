@@ -570,6 +570,8 @@ html[data-theme="dark"] .cw-phone-screen {
   margin-top: 1px;
 }
 .cw-live-dot {
+  display: none !important;
+
   width: 6px;
   height: 6px;
   border-radius: 50%;

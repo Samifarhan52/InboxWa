@@ -284,7 +284,7 @@ function hb_pdo(): PDO {
             'notification_email' => 'mail@hellobotz.com',
             'sales_email' => 'mail@hellobotz.com',
             'support_email' => 'support@hellobotz.com',
-            'office_address' => 'HelloBotz AI Technologies Pvt Ltd, Bangalore, India',
+            'office_address' => "HelloBotz AI Technologies Pvt Ltd\nShanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025",
             'webhook_url' => '',
             'ga_id' => '',
             'meta_pixel_id' => '',
@@ -294,18 +294,42 @@ function hb_pdo(): PDO {
             'announcement_text' => 'Official WhatsApp Business API & AI Chatbots — Start 14-Day Free Trial Today!',
             'announcement_link' => '/auth/register',
             'logo_url' => '/assets/images/logo.png',
+            'logo_light_url' => '/assets/images/logo-light.png',
+            'logo_dark_url' => '/assets/images/logo-dark.png',
             'logo_footer_url' => '/assets/images/logo-footer.png',
+            'logo_width' => '160px',
+            'logo_height' => '52px',
+            'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
             'favicon_url' => '/assets/images/favicon-32x32.png',
             'social_whatsapp' => 'https://wa.me/918050854445',
-            'social_facebook' => 'https://facebook.com/hellobotz',
-            'social_instagram' => 'https://instagram.com/hellobotz',
-            'social_linkedin' => 'https://linkedin.com/company/hellobotz',
-            'social_youtube' => '',
+            'social_facebook' => 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr',
+            'social_instagram' => 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr',
+            'social_linkedin' => 'https://www.linkedin.com/company/hellobotz/',
+            'social_youtube' => 'https://www.youtube.com/@Hellobotz',
             'social_twitter' => '',
-            'brochure_url' => ''
+            'brochure_url' => '/assets/docs/hellobotz-brochure.pdf'
         ];
         foreach ($defaultSettings as $k => $v) {
             $stmt->execute([$k, $v]);
+        }
+    } else {
+        // Guarantee new visual keys exist in active database
+        $extraDefaults = [
+            'logo_light_url' => '/assets/images/logo-light.png',
+            'logo_dark_url' => '/assets/images/logo-dark.png',
+            'logo_width' => '160px',
+            'logo_height' => '52px',
+            'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
+            'brochure_url' => '/assets/docs/hellobotz-brochure.pdf',
+            'social_facebook' => 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr',
+            'social_instagram' => 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr',
+            'social_linkedin' => 'https://www.linkedin.com/company/hellobotz/',
+            'social_youtube' => 'https://www.youtube.com/@Hellobotz',
+            'social_whatsapp' => 'https://wa.me/918050854445'
+        ];
+        $exStmt = $pdo->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
+        foreach ($extraDefaults as $k => $v) {
+            $exStmt->execute([$k, $v]);
         }
     }
 
@@ -1150,19 +1174,35 @@ function hb_save_page(array $data): int {
     if ($id > 0) {
         $stmt = $db->prepare("UPDATE pages SET title = ?, slug = ?, content = ?, template = ?, meta_title = ?, meta_description = ?, status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
         $stmt->execute([$title, $slug, $content, $template, $metaTitle, $metaDesc, $status, $id]);
-        return $id;
+        $resId = $id;
     } else {
         $stmt = $db->prepare("INSERT INTO pages (title, slug, content, template, meta_title, meta_description, status, author, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
         $stmt->execute([$title, $slug, $content, $template, $metaTitle, $metaDesc, $status, $author]);
-        return (int)$db->lastInsertId();
+        $resId = (int)$db->lastInsertId();
     }
+
+    // Publish static HTML immediately to public/
+    hb_publish_page_html($title, $slug, $content, $template, $metaTitle, $metaDesc);
+    hb_save_cms_state_file();
+
+    return $resId;
 }
 
 function hb_delete_page(int $id): bool {
     try {
         $db = hb_pdo();
+        $stmt = $db->prepare("SELECT slug FROM pages WHERE id = ?");
+        $stmt->execute([$id]);
+        $slug = $stmt->fetchColumn();
+        if ($slug && $slug !== '/') {
+            $f = dirname(__DIR__) . '/public/' . trim((string)$slug, '/') . '/index.html';
+            if (file_exists($f)) @unlink($f);
+        }
+
         $stmt = $db->prepare("DELETE FROM pages WHERE id = ?");
-        return $stmt->execute([$id]);
+        $res = $stmt->execute([$id]);
+        hb_save_cms_state_file();
+        return $res;
     } catch (Throwable $e) {
         return false;
     }
@@ -1445,6 +1485,7 @@ function hb_save_cms_state_file(): bool {
     }
     @file_put_contents(sys_get_temp_dir() . '/cms_state.json', $json);
     
+    hb_propagate_site_settings();
     hb_sync_cloud();
     return true;
 }
@@ -1549,4 +1590,205 @@ function hb_sync_cloud(): void {
         } catch (Throwable $e) {}
     }
 }
+
+// -------------------------------------------------------------
+// Brand Asset Uploads & Site Settings Propagation
+// -------------------------------------------------------------
+
+function hb_upload_brand_file(array $file, string $type): ?string {
+    if ($file['error'] !== UPLOAD_ERR_OK) return null;
+    $orig = basename($file['name']);
+    $ext = strtolower(pathinfo($orig, PATHINFO_EXTENSION));
+
+    if ($type === 'brochure') {
+        if ($ext !== 'pdf') return null;
+        $dir = dirname(__DIR__) . '/public/assets/docs/';
+        if (!is_dir($dir)) @mkdir($dir, 0755, true);
+        $filename = 'hellobotz_brochure_' . time() . '.pdf';
+        if (move_uploaded_file($file['tmp_name'], $dir . $filename)) {
+            return '/assets/docs/' . $filename;
+        }
+    } else {
+        if (!in_array($ext, ['png', 'svg', 'jpg', 'jpeg', 'webp', 'gif'])) return null;
+        $dir = dirname(__DIR__) . '/public/assets/images/uploads/';
+        if (!is_dir($dir)) @mkdir($dir, 0755, true);
+        $prefix = preg_replace('/[^a-z0-9_-]/i', '', $type);
+        $filename = $prefix . '_' . time() . '.' . $ext;
+        if (move_uploaded_file($file['tmp_name'], $dir . $filename)) {
+            return '/assets/images/uploads/' . $filename;
+        }
+    }
+    return null;
+}
+
+function hb_propagate_site_settings(): void {
+    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png');
+    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png');
+    $logoWidth = hb_get_setting('logo_width', '160px');
+    $logoHeight = hb_get_setting('logo_height', '52px');
+    $botAvatar = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png');
+    $brochureUrl = hb_get_setting('brochure_url', '/assets/docs/hellobotz-brochure.pdf');
+    $officeAddress = hb_get_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nShanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025");
+    $fbUrl = hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr');
+    $igUrl = hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr');
+    $liUrl = hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/');
+    $ytUrl = hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz');
+    $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854445');
+
+    $runtimeData = [
+        'logo_light_url' => $lightLogo,
+        'logo_dark_url' => $darkLogo,
+        'logo_width' => $logoWidth,
+        'logo_height' => $logoHeight,
+        'bot_avatar_url' => $botAvatar,
+        'brochure_url' => $brochureUrl,
+        'office_address' => $officeAddress,
+        'social_facebook' => $fbUrl,
+        'social_instagram' => $igUrl,
+        'social_linkedin' => $liUrl,
+        'social_youtube' => $ytUrl,
+        'social_whatsapp' => $waUrl
+    ];
+
+    $jsDir = dirname(__DIR__) . '/public/assets/js';
+    if (!is_dir($jsDir)) @mkdir($jsDir, 0755, true);
+    
+    $jsContent = "/** HelloBotz Dynamic CMS Runtime - Generated via Admin **/\nwindow.__HELLOBOTZ_SETTINGS__ = " . json_encode($runtimeData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . ";\n";
+    $jsContent .= <<<'JS'
+(function() {
+  var s = window.__HELLOBOTZ_SETTINGS__ || {};
+  function apply() {
+    if (s.logo_width) document.documentElement.style.setProperty('--site-logo-width', s.logo_width.indexOf('px') > -1 ? s.logo_width : (s.logo_width + 'px'));
+    if (s.logo_height) document.documentElement.style.setProperty('--site-logo-height', s.logo_height.indexOf('px') > -1 ? s.logo_height : (s.logo_height + 'px'));
+    if (s.logo_light_url) document.querySelectorAll('.logo-img-light').forEach(function(el){ if (el.src !== s.logo_light_url) el.src = s.logo_light_url; });
+    if (s.logo_dark_url) document.querySelectorAll('.logo-img-dark').forEach(function(el){ if (el.src !== s.logo_dark_url) el.src = s.logo_dark_url; });
+    if (s.bot_avatar_url) document.querySelectorAll('.cw-wa-avatar-img, .header-avatar-img, .hellobotz-avatar-img').forEach(function(el){ if (el.src !== s.bot_avatar_url) el.src = s.bot_avatar_url; });
+    if (s.brochure_url) document.querySelectorAll('a[href*="brochure"], .btn-download-brochure, a.btn-brochure').forEach(function(el){ el.href = s.brochure_url; el.target = '_blank'; });
+    if (s.office_address) document.querySelectorAll('.footer-address-text, [data-cms="office_address"]').forEach(function(el){ el.textContent = s.office_address; });
+    if (s.social_facebook) document.querySelectorAll('.footer-social-fb').forEach(function(el){ el.href = s.social_facebook; });
+    if (s.social_instagram) document.querySelectorAll('.footer-social-ig').forEach(function(el){ el.href = s.social_instagram; });
+    if (s.social_linkedin) document.querySelectorAll('.footer-social-li').forEach(function(el){ el.href = s.social_linkedin; });
+    if (s.social_youtube) document.querySelectorAll('.footer-social-yt').forEach(function(el){ el.href = s.social_youtube; });
+    if (s.social_whatsapp) document.querySelectorAll('.footer-social-wa').forEach(function(el){ el.href = s.social_whatsapp; });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); } else { apply(); }
+})();
+JS;
+
+    @file_put_contents($jsDir . '/hb-cms-runtime.js', $jsContent);
+}
+
+function hb_publish_page_html(string $title, string $slug, string $content, string $template = 'default', string $metaTitle = '', string $metaDesc = ''): bool {
+    $cleanSlug = trim($slug, '/');
+    $publicDir = dirname(__DIR__) . '/public';
+    if (empty($cleanSlug)) {
+        $targetFile = $publicDir . '/index.html';
+    } else {
+        $targetDir = $publicDir . '/' . $cleanSlug;
+        if (!is_dir($targetDir)) {
+            @mkdir($targetDir, 0755, true);
+        }
+        $targetFile = $targetDir . '/index.html';
+    }
+
+    if (empty($metaTitle)) $metaTitle = $title . ' | HelloBotz';
+    if (empty($metaDesc)) $metaDesc = 'Explore ' . $title . ' on HelloBotz – Official WhatsApp Marketing & Automation Platform.';
+
+    $depth = empty($cleanSlug) ? 0 : substr_count($cleanSlug, '/') + 1;
+    $bp = str_repeat('../', $depth);
+
+    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png');
+    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png');
+    $logoWidth = hb_get_setting('logo_width', '160px');
+    $logoHeight = hb_get_setting('logo_height', '52px');
+    $botAvatar = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png');
+    $fbUrl = hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr');
+    $igUrl = hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr');
+    $liUrl = hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/');
+    $ytUrl = hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz');
+    $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854445');
+    $officeAddress = hb_get_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nShanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025");
+
+    $html = <<<HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$metaTitle}</title>
+  <meta name="description" content="{$metaDesc}">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="{$bp}assets/images/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="{$bp}app.css?v=52">
+  <link rel="stylesheet" href="{$bp}assets/css/style.css?v=53">
+  <link rel="stylesheet" href="{$bp}assets/css/robot-chatbot.css?v=6">
+  <link rel="stylesheet" href="{$bp}assets/css/dark-mode.css?v=52">
+  <style>
+    :root {
+      --site-logo-width: {$logoWidth};
+      --site-logo-height: {$logoHeight};
+    }
+  </style>
+  <script src="{$bp}assets/js/hb-cms-runtime.js" defer></script>
+</head>
+<body class="light-theme">
+  <header class="site-header" role="banner">
+    <div class="header-inner" style="display:flex; justify-content:space-between; align-items:center; max-width:1240px; margin:0 auto; padding:0.75rem 1.5rem;">
+      <a href="{$bp}" class="logo site-main-logo">
+        <img src="{$lightLogo}" alt="HelloBotz" class="logo-img logo-img-light" style="height:var(--site-logo-height, 52px); max-width:var(--site-logo-width, 230px); width:auto; object-fit:contain;">
+        <img src="{$darkLogo}" alt="HelloBotz" class="logo-img logo-img-dark" style="height:var(--site-logo-height, 52px); max-width:var(--site-logo-width, 230px); width:auto; object-fit:contain; display:none;">
+      </a>
+      <nav style="display:flex; gap:1.25rem; align-items:center;">
+        <a href="{$bp}" style="font-weight:600; color:#334155; text-decoration:none;">Home</a>
+        <a href="{$bp}channel/whatsapp/" style="font-weight:600; color:#334155; text-decoration:none;">WhatsApp API</a>
+        <a href="{$bp}pricing/" style="font-weight:600; color:#334155; text-decoration:none;">Pricing</a>
+        <a href="{$bp}partners/" style="font-weight:600; color:#334155; text-decoration:none;">Partners</a>
+        <a href="{$bp}resources/blog/" style="font-weight:600; color:#334155; text-decoration:none;">Blog</a>
+        <a href="https://panindiadata.com/" target="_blank" class="btn btn-primary" style="padding:8px 18px; border-radius:999px; background:#8B5CF6; color:#fff; text-decoration:none; font-weight:700;">Start Free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="min-height:65vh; padding:5rem 1.5rem 4rem; max-width:1200px; margin:0 auto;">
+    <div class="page-builder-content">
+      {$content}
+    </div>
+  </main>
+
+  <footer class="site-footer" style="background:#0b1120; color:#94A3B8; padding:4rem 1.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.5fr 1fr 1.2fr; gap:2.5rem;">
+      <div>
+        <img src="{$lightLogo}" alt="HelloBotz" style="height:44px; margin-bottom:1rem; filter:brightness(0) invert(1);">
+        <p style="font-size:0.88rem; line-height:1.6; max-width:320px;">AI-Powered WhatsApp Business API &amp; Omnichannel Customer Automation Platform. Official Meta Tech Partner.</p>
+        <div style="display:flex; gap:0.75rem; margin-top:1rem;">
+          <a href="{$igUrl}" target="_blank" rel="noopener" class="footer-social-btn footer-social-ig" style="display:inline-flex; width:36px; height:36px; border-radius:8px; align-items:center; justify-content:center; background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color:#fff;"><svg width="18" height="18" fill="#fff" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></a>
+          <a href="{$fbUrl}" target="_blank" rel="noopener" class="footer-social-btn footer-social-fb" style="display:inline-flex; width:36px; height:36px; border-radius:8px; align-items:center; justify-content:center; background:#1877F2; color:#fff;"><svg width="18" height="18" fill="#fff" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="{$liUrl}" target="_blank" rel="noopener" class="footer-social-btn footer-social-li" style="display:inline-flex; width:36px; height:36px; border-radius:8px; align-items:center; justify-content:center; background:#0A66C2; color:#fff;"><svg width="18" height="18" fill="#fff" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+          <a href="{$ytUrl}" target="_blank" rel="noopener" class="footer-social-btn footer-social-yt" style="display:inline-flex; width:36px; height:36px; border-radius:8px; align-items:center; justify-content:center; background:#FF0000; color:#fff;"><svg width="18" height="18" fill="#fff" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="{$waUrl}" target="_blank" rel="noopener" class="footer-social-btn footer-social-wa" style="display:inline-flex; width:36px; height:36px; border-radius:8px; align-items:center; justify-content:center; background:#25D366; color:#fff;"><svg width="18" height="18" fill="#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.477-.15-.678.15-.2.301-.778.978-.954 1.179-.176.2-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.895-.799-1.5-1.786-1.676-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.376-.025-.526-.075-.15-.678-1.632-.929-2.237-.245-.59-.494-.51-.678-.519-.176-.01-.376-.01-.577-.01-.201 0-.527.075-.803.376-.276.301-1.054 1.029-1.054 2.509 0 1.48 1.079 2.909 1.23 3.11.15.201 2.124 3.243 5.145 4.548.719.311 1.28.497 1.718.636.723.23 1.381.198 1.901.12.58-.088 1.78-.727 2.03-1.43.25-.703.25-1.305.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 21.75c-1.75 0-3.46-.46-4.98-1.33l-.36-.21-3.7 1.22 1.24-3.6-.23-.37c-.96-1.55-1.47-3.34-1.47-5.18 0-5.37 4.37-9.74 9.74-9.74 2.6 0 5.04 1.01 6.88 2.85 1.84 1.84 2.85 4.28 2.85 6.88 0 5.37-4.37 9.74-9.74 9.74zM12.04 0C5.39 0 0 5.39 0 12.04c0 2.12.55 4.19 1.6 6.01L0 24l6.15-1.57c1.76.96 3.75 1.47 5.89 1.47 6.65 0 12.04-5.39 12.04-12.04C24.08 5.39 18.69 0 12.04 0z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:1rem; font-size:1rem;">Quick Navigation</h4>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.92rem;">
+          <li><a href="{$bp}channel/whatsapp/" style="color:#94a3b8; text-decoration:none;">WhatsApp Business API</a></li>
+          <li><a href="{$bp}pricing/" style="color:#94a3b8; text-decoration:none;">Pricing Plans</a></li>
+          <li><a href="{$bp}partners/" style="color:#94a3b8; text-decoration:none;">Partner Program</a></li>
+          <li><a href="{$bp}company/about/" style="color:#94a3b8; text-decoration:none;">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:1rem; font-size:1rem;">Head Office</h4>
+        <p style="font-size:0.88rem; line-height:1.6; white-space:pre-line;">{$officeAddress}</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+HTML;
+
+    return (bool)@file_put_contents($targetFile, $html);
+}
+
 

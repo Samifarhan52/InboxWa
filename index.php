@@ -770,7 +770,7 @@ include __DIR__ . '/includes/header.php';
   html[data-theme="dark"] .cw-wa-subtitle {
     color: #8696a0;
   }
-  .cw-live-dot {
+  .cw-live-dot { display: none !important;  display: none !important;  display: none !important; 
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -3386,7 +3386,7 @@ include __DIR__ . '/includes/header.php';
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
               </button>
               <div class="cw-wa-avatar">
-                <img src="/assets/images/logo-icon.png" alt="HelloBotz" class="cw-wa-avatar-img">
+                <img src="<?php echo htmlspecialchars(cms_setting('bot_avatar_url', '/assets/images/logo-icon.png')); ?>" alt="HelloBotz" class="cw-wa-avatar-img">
                 <span class="cw-wa-avatar-badge"></span>
               </div>
               <div class="cw-wa-header-info">
@@ -3394,7 +3394,7 @@ include __DIR__ . '/includes/header.php';
                   <strong>HelloBotz Business AI</strong>
                   <svg class="cw-verified-check" width="13" height="13" viewBox="0 0 24 24" fill="#10b981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
-                <span class="cw-wa-subtitle"><i class="cw-live-dot"></i> Online • Official Meta Partner</span>
+                <span class="cw-wa-subtitle">Online • Official Meta Partner</span>
               </div>
               <div class="cw-wa-header-tools">
                 <button type="button" class="cw-tool-btn" title="Video Call">

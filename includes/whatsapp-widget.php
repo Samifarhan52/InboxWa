@@ -24,7 +24,7 @@ $waWidgetSupportMail = cms_setting('support_email', 'support@hellobotz.com');
     <div class="hellobotz-chat-header">
       <div class="hellobotz-chat-header-robot">
         <div class="header-robot-avatar">
-          <img src="/assets/images/hellobotz-avatar.png" alt="HelloBotz Avatar" class="header-avatar-img" width="36" height="36">
+          <img src="<?php echo htmlspecialchars(cms_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png')); ?>" alt="HelloBotz Avatar" class="header-avatar-img" width="36" height="36">
           <span class="header-online-dot"></span>
         </div>
         <div class="header-robot-info">

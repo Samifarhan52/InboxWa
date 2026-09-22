@@ -263,12 +263,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'site_title',
             'site_tagline',
             'favicon_url',
+            'logo_url',
+            'logo_light_url',
+            'logo_dark_url',
+            'logo_footer_url',
+            'logo_width',
+            'logo_height',
+            'bot_avatar_url',
             'admin_email',
             'sales_email',
             'support_email',
             'support_whatsapp',
             'phone_number',
             'office_address',
+            'social_facebook',
+            'social_instagram',
+            'social_linkedin',
+            'social_youtube',
+            'social_whatsapp',
+            'social_twitter',
             'default_role',
             'site_language',
             'timezone_string',
@@ -316,15 +329,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             hb_set_setting('github_auto_sync', isset($_POST['github_auto_sync']) ? '1' : '0');
         }
 
+        // Process Direct File Uploads for Brand Assets
+        if (!empty($_FILES['upload_logo_light']['tmp_name'])) {
+            $up = hb_upload_brand_file($_FILES['upload_logo_light'], 'logo_light');
+            if ($up) {
+                hb_set_setting('logo_light_url', $up);
+                hb_set_setting('logo_url', $up);
+            }
+        }
+        if (!empty($_FILES['upload_logo_dark']['tmp_name'])) {
+            $up = hb_upload_brand_file($_FILES['upload_logo_dark'], 'logo_dark');
+            if ($up) hb_set_setting('logo_dark_url', $up);
+        }
+        if (!empty($_FILES['upload_bot_avatar']['tmp_name'])) {
+            $up = hb_upload_brand_file($_FILES['upload_bot_avatar'], 'bot_avatar');
+            if ($up) hb_set_setting('bot_avatar_url', $up);
+        }
+        if (!empty($_FILES['upload_brochure_file']['tmp_name'])) {
+            $up = hb_upload_brand_file($_FILES['upload_brochure_file'], 'brochure');
+            if ($up) hb_set_setting('brochure_url', $up);
+        }
+
         foreach ($settingsKeys as $k) {
             if (isset($_POST[$k])) {
                 hb_set_setting($k, trim((string)$_POST[$k]));
             }
         }
+
+        hb_propagate_site_settings();
+
         if (isset($_POST['redirect_tab'])) {
             $settingsTab = trim($_POST['redirect_tab']);
         }
-        $noticeSuccess = 'Settings saved successfully.';
+        $noticeSuccess = 'Settings and brand visual assets saved successfully.';
     }
 
     // Change Admin Credentials
@@ -1784,6 +1821,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     </a>
                     <ul class="wp-submenu">
                         <li class="<?php echo ($page === 'settings' && (!isset($_GET['tab']) || $_GET['tab'] === 'general')) ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings">General</a></li>
+                        <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'brand') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=brand">Brand &amp; HD Logos</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'writing') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=writing">Writing</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'reading') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=reading">Reading</a></li>
                         <li class="<?php echo ($page === 'settings' && ($_GET['tab'] ?? '') === 'discussion') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=settings&tab=discussion">Discussion</a></li>
@@ -2498,9 +2536,64 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     </div>
                                 </div>
 
-                                <div style="margin-bottom:16px;">
-                                    <label style="font-weight:600; display:block; margin-bottom:4px;">Page Content (HTML or Markdown)</label>
-                                    <textarea name="content" rows="12" class="large-text" placeholder="Enter page content or markup here..."><?php echo htmlspecialchars($pageToEdit['content'] ?? ''); ?></textarea>
+                                <div style="margin-bottom:20px;">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px;">
+                                        <label style="font-weight:700; font-size:14px; color:#1d2327;">Page Content (Visual No-Code Builder &amp; HTML)</label>
+                                        <div style="display:inline-flex; border:1px solid #c3c4c7; border-radius:4px; overflow:hidden;">
+                                            <button type="button" class="button" id="btn-mode-editor" onclick="switchPageEditorMode('code')" style="border-radius:0; border:none; background:#2271b1; color:#fff; font-weight:600;">Visual Editor</button>
+                                            <button type="button" class="button" id="btn-mode-preview" onclick="switchPageEditorMode('preview')" style="border-radius:0; border:none; background:#f6f7f7; color:#50575e;">Live Preview</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick Page Templates Inserter -->
+                                    <div style="background:#f0f6fc; border:1px solid #c8d8f0; border-radius:6px; padding:10px 14px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+                                        <div style="font-size:12px; font-weight:700; color:#1d4ed8; text-transform:uppercase; letter-spacing:0.04em;">⚡ 1-Click Page Presets:</div>
+                                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                            <button type="button" class="button button-small" onclick="loadPagePreset('careers')" title="Load complete Careers &amp; Jobs page">Careers &amp; Opportunities</button>
+                                            <button type="button" class="button button-small" onclick="loadPagePreset('product')" title="Load Product Features showcase">Product Showcase</button>
+                                            <button type="button" class="button button-small" onclick="loadPagePreset('leads')" title="Load B2B Business Leads landing">B2B Leads Landing</button>
+                                            <button type="button" class="button button-small" onclick="loadPagePreset('blank')" title="Start with clean starter skeleton">Clean Skeleton</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Visual Block Inserter Bar -->
+                                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:12px;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+                                            <span style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#475569;">+ Insert No-Code Blocks:</span>
+                                            <span style="font-size:11px; color:#64748b;">Click any block to insert pre-styled responsive sections</span>
+                                        </div>
+                                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                                            <button type="button" class="button" onclick="insertContentBlock('hero')" title="Hero banner with headline, badge &amp; CTA buttons">+ Hero Banner</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('features')" title="3-Column feature grid with icons">+ 3 Feature Cards</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('split')" title="Split row: Image left, text &amp; button right">+ Split (Image + Text)</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('button')" title="Primary call-to-action button">+ Action Button</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('cta_banner')" title="Gradient full-width CTA banner">+ CTA Banner</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('image')" title="Responsive centered image with caption">+ Image Asset</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('lead_box')" title="Lead generation inquiry box">+ Lead Capture Box</button>
+                                            <button type="button" class="button" onclick="insertContentBlock('faq')" title="Collapsible FAQ accordion questions">+ FAQ Accordion</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Editor Pane -->
+                                    <div id="page-editor-code-pane">
+                                        <textarea id="page_content_field" name="content" rows="18" class="large-text code" placeholder="Enter page content or insert visual blocks above..." style="font-size:13px; font-family:Consolas, monospace; line-height:1.6; border-radius:4px;"><?php echo htmlspecialchars($pageToEdit['content'] ?? ''); ?></textarea>
+                                        <p class="description" style="margin-top:6px;">Supports full HTML markup, Tailwind/CSS inline styling, and standard Markdown.</p>
+                                    </div>
+
+                                    <!-- Live Preview Pane -->
+                                    <div id="page-editor-preview-pane" style="display:none; background:#ffffff; border:1px solid #c3c4c7; border-radius:6px; overflow:hidden;">
+                                        <div style="background:#f6f7f7; padding:8px 14px; border-bottom:1px solid #dcdcde; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                                            <span style="font-size:12px; font-weight:600; color:#50575e;">Real-Time Page Preview</span>
+                                            <div style="display:flex; gap:6px; align-items:center;">
+                                                <button type="button" class="button button-small" onclick="setPagePreviewDevice('100%')">Desktop (100%)</button>
+                                                <button type="button" class="button button-small" onclick="setPagePreviewDevice('768px')">Tablet (768px)</button>
+                                                <button type="button" class="button button-small" onclick="setPagePreviewDevice('375px')">Mobile (375px)</button>
+                                            </div>
+                                        </div>
+                                        <div style="display:flex; justify-content:center; background:#eaecf0; padding:16px;">
+                                            <iframe id="page-preview-iframe" style="width:100%; min-height:560px; border:none; background:#ffffff; box-shadow:0 4px 16px rgba(0,0,0,0.1); border-radius:6px; transition:width 0.25s ease;"></iframe>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
@@ -3399,7 +3492,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     </div>
 
                     <?php if ($settingsTab === 'general'): ?>
-                        <form method="post" action="" novalidate="novalidate">
+                        <form method="post" action="" enctype="multipart/form-data" novalidate="novalidate">
                             <input type="hidden" name="form_action" value="save_settings">
 
                             <table class="form-table" role="presentation">
@@ -3434,20 +3527,222 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </td>
                                     </tr>
 
-                                    <!-- WordPress Address (URL) -->
+                                    <!-- BRAND IDENTITY & HD LOGOS SECTION -->
+                                    <tr style="border-top:2px solid #c3c4c7;">
+                                        <th colspan="2" style="padding-top:20px; padding-bottom:8px;">
+                                            <h3 style="font-size:16px; margin:0 0 4px 0; color:#1d2327;">🎨 Brand Identity &amp; HD Logos (Light &amp; Dark Mode)</h3>
+                                            <p class="description" style="font-weight:normal; margin:0;">Upload crystal-clear high-definition vector (SVG) or PNG logos, customize dimensions with real-time preview, and customize the chatbot profile avatar without writing code.</p>
+                                        </th>
+                                    </tr>
+
+                                    <!-- Light Mode HD Logo -->
                                     <tr>
-                                        <th scope="row"><label for="siteurl">WordPress Address (URL)</label></th>
+                                        <th scope="row"><label for="logo_light_url">Light Mode HD Logo</label></th>
                                         <td>
-                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                            <?php $logoLightVal = hb_get_setting('logo_light_url', '/assets/images/logo-light.png'); ?>
+                                            <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;">
+                                                <div style="background:#ffffff; border:1px solid #c3c4c7; border-radius:6px; padding:8px 16px; min-width:180px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 1px 2px rgba(0,0,0,0.04);">
+                                                    <img id="preview_logo_light" src="<?php echo htmlspecialchars($logoLightVal); ?>" alt="Light Mode Logo" style="max-height:<?php echo htmlspecialchars(hb_get_setting('logo_height', '52px')); ?>; max-width:<?php echo htmlspecialchars(hb_get_setting('logo_width', '160px')); ?>; object-fit:contain;">
+                                                </div>
+                                                <div style="flex:1; min-width:240px;">
+                                                    <label style="display:block; font-weight:600; font-size:12px; margin-bottom:4px;">Upload New HD Logo File (PNG, SVG, WebP):</label>
+                                                    <input type="file" name="upload_logo_light" accept=".png,.svg,.webp,.jpg,.jpeg" style="margin-bottom:6px;">
+                                                    <div style="font-size:11px; color:#646970;">Or specify logo URL:</div>
+                                                    <input name="logo_light_url" type="text" id="logo_light_url" value="<?php echo htmlspecialchars($logoLightVal); ?>" class="regular-text code" style="width:100%; max-width:480px;">
+                                                </div>
+                                            </div>
+                                            <p class="description">Used on white / light-theme pages, headers, and documents. Vector SVG or high-resolution 2x PNG recommended.</p>
                                         </td>
                                     </tr>
 
-                                    <!-- Site Address (URL) -->
+                                    <!-- Dark Mode HD Logo -->
                                     <tr>
-                                        <th scope="row"><label for="home">Site Address (URL)</label></th>
+                                        <th scope="row"><label for="logo_dark_url">Dark Mode HD Logo</label></th>
                                         <td>
-                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                            <?php $logoDarkVal = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png'); ?>
+                                            <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;">
+                                                <div style="background:#0b1120; border:1px solid #1e293b; border-radius:6px; padding:8px 16px; min-width:180px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);">
+                                                    <img id="preview_logo_dark" src="<?php echo htmlspecialchars($logoDarkVal); ?>" alt="Dark Mode Logo" style="max-height:<?php echo htmlspecialchars(hb_get_setting('logo_height', '52px')); ?>; max-width:<?php echo htmlspecialchars(hb_get_setting('logo_width', '160px')); ?>; object-fit:contain;">
+                                                </div>
+                                                <div style="flex:1; min-width:240px;">
+                                                    <label style="display:block; font-weight:600; font-size:12px; margin-bottom:4px;">Upload New HD Dark Logo File (PNG, SVG, WebP):</label>
+                                                    <input type="file" name="upload_logo_dark" accept=".png,.svg,.webp,.jpg,.jpeg" style="margin-bottom:6px;">
+                                                    <div style="font-size:11px; color:#646970;">Or specify logo URL:</div>
+                                                    <input name="logo_dark_url" type="text" id="logo_dark_url" value="<?php echo htmlspecialchars($logoDarkVal); ?>" class="regular-text code" style="width:100%; max-width:480px;">
+                                                </div>
+                                            </div>
+                                            <p class="description">Used across dark-mode pages, dark navigation drawers, and dark backgrounds.</p>
                                         </td>
+                                    </tr>
+
+                                    <!-- Interactive Logo Sizing Controls & Live Scaling Dock -->
+                                    <tr>
+                                        <th scope="row">Logo Dimensions &amp; Scaling</th>
+                                        <td>
+                                            <?php 
+                                            $logoWStr = hb_get_setting('logo_width', '160px');
+                                            $logoHStr = hb_get_setting('logo_height', '52px');
+                                            $logoWNum = (int)filter_var($logoWStr, FILTER_SANITIZE_NUMBER_INT);
+                                            if ($logoWNum <= 0) $logoWNum = 160;
+                                            $logoHNum = (int)filter_var($logoHStr, FILTER_SANITIZE_NUMBER_INT);
+                                            if ($logoHNum <= 0) $logoHNum = 52;
+                                            ?>
+                                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; max-width:680px; margin-bottom:12px;">
+                                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:16px;">
+                                                    <div>
+                                                        <label style="display:flex; justify-content:space-between; font-weight:600; font-size:13px; margin-bottom:6px;">
+                                                            <span>Logo Width:</span>
+                                                            <span id="logo_width_val" style="color:#2563eb;"><?php echo htmlspecialchars($logoWStr); ?></span>
+                                                        </label>
+                                                        <input type="range" min="80" max="320" value="<?php echo $logoWNum; ?>" oninput="updateLogoScale('w', this.value)" style="width:100%; margin-bottom:6px;">
+                                                        <div style="display:flex; align-items:center; gap:6px;">
+                                                            <input type="text" name="logo_width" id="logo_width_input" value="<?php echo htmlspecialchars($logoWStr); ?>" style="width:90px; text-align:center; padding:4px 8px; font-weight:600;" oninput="updateLogoScale('w', this.value)">
+                                                            <span style="font-size:12px; color:#646970;">(e.g. 160px, 180px, 200px)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <label style="display:flex; justify-content:space-between; font-weight:600; font-size:13px; margin-bottom:6px;">
+                                                            <span>Logo Height:</span>
+                                                            <span id="logo_height_val" style="color:#2563eb;"><?php echo htmlspecialchars($logoHStr); ?></span>
+                                                        </label>
+                                                        <input type="range" min="24" max="90" value="<?php echo $logoHNum; ?>" oninput="updateLogoScale('h', this.value)" style="width:100%; margin-bottom:6px;">
+                                                        <div style="display:flex; align-items:center; gap:6px;">
+                                                            <input type="text" name="logo_height" id="logo_height_input" value="<?php echo htmlspecialchars($logoHStr); ?>" style="width:90px; text-align:center; padding:4px 8px; font-weight:600;" oninput="updateLogoScale('h', this.value)">
+                                                            <span style="font-size:12px; color:#646970;">(e.g. 48px, 52px, 60px)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Live Interactive Scaling Preview Dock -->
+                                                <div style="border-top:1px solid #e2e8f0; padding-top:12px;">
+                                                    <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#64748b; margin-bottom:8px;">Live Header Mockup Preview (Scales in Real-Time):</div>
+                                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                                        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; min-height:64px;">
+                                                            <img id="dock_logo_light" src="<?php echo htmlspecialchars($logoLightVal); ?>" alt="Light Mode" style="max-height:<?php echo htmlspecialchars($logoHStr); ?>; max-width:<?php echo htmlspecialchars($logoWStr); ?>; object-fit:contain; transition:all 0.15s ease;">
+                                                            <span style="font-size:11px; color:#94a3b8; font-weight:500;">Light Mode Navbar</span>
+                                                        </div>
+                                                        <div style="background:#0f172a; border:1px solid #334155; border-radius:6px; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; min-height:64px;">
+                                                            <img id="dock_logo_dark" src="<?php echo htmlspecialchars($logoDarkVal); ?>" alt="Dark Mode" style="max-height:<?php echo htmlspecialchars($logoHStr); ?>; max-width:<?php echo htmlspecialchars($logoWStr); ?>; object-fit:contain; transition:all 0.15s ease;">
+                                                            <span style="font-size:11px; color:#64748b; font-weight:500;">Dark Mode Navbar</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="description">Adjust sliders to find the perfect pixel-perfect fit for your brand's aspect ratio. Changes update headers across the entire website.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Chatbot / Robot Avatar Profile -->
+                                    <tr>
+                                        <th scope="row"><label for="bot_avatar_url">Chatbot &amp; Simulator Avatar</label></th>
+                                        <td>
+                                            <?php $botAvatarVal = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png'); ?>
+                                            <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;">
+                                                <div style="position:relative; width:52px; height:52px; border-radius:50%; border:2px solid #22c55e; background:#f0fdf4; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                                                    <img id="preview_bot_avatar" src="<?php echo htmlspecialchars($botAvatarVal); ?>" alt="Bot Avatar" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                                                    <span style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#22c55e; border:2px solid #fff; border-radius:50%;" title="Online Status"></span>
+                                                </div>
+                                                <div style="flex:1; min-width:240px;">
+                                                    <label style="display:block; font-weight:600; font-size:12px; margin-bottom:4px;">Upload New Robot / Bot Profile Image (Square PNG):</label>
+                                                    <input type="file" name="upload_bot_avatar" accept=".png,.svg,.webp,.jpg,.jpeg" style="margin-bottom:6px;">
+                                                    <div style="font-size:11px; color:#646970;">Or Avatar URL:</div>
+                                                    <input name="bot_avatar_url" type="text" id="bot_avatar_url" value="<?php echo htmlspecialchars($botAvatarVal); ?>" class="regular-text code" style="width:100%; max-width:480px;">
+                                                </div>
+                                            </div>
+                                            <p class="description">Avatar displayed in the floating AI Assistant chat widget and the WhatsApp simulator header. Shows a single clean green online dot.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Company Brochure File Upload & Link -->
+                                    <tr>
+                                        <th scope="row"><label for="brochure_url">Company Brochure (PDF)</label></th>
+                                        <td>
+                                            <?php $brochureVal = hb_get_setting('brochure_url', '/assets/docs/hellobotz-brochure.pdf'); ?>
+                                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px 16px; max-width:650px; margin-bottom:10px;">
+                                                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:8px;">
+                                                    <span style="font-weight:600; font-size:13px; color:#1e293b;">📄 Upload Brochure PDF:</span>
+                                                    <?php if (!empty($brochureVal)): ?>
+                                                        <a href="<?php echo htmlspecialchars($brochureVal); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small" style="display:inline-flex; align-items:center; gap:4px;">
+                                                            View / Download Current File ↗
+                                                        </a>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <input type="file" name="upload_brochure_file" accept=".pdf" style="margin-bottom:10px; display:block;">
+                                                <div style="font-size:12px; font-weight:600; margin-bottom:4px;">Or External Link / Google Drive URL:</div>
+                                                <input name="brochure_url" type="url" id="brochure_url" value="<?php echo htmlspecialchars($brochureVal); ?>" class="regular-text code" style="width:100%;" placeholder="https://drive.google.com/file/d/... or /assets/docs/brochure.pdf">
+                                            </div>
+                                            <p class="description">Uploaded brochure is automatically linked to all <strong>&ldquo;Download Brochure&rdquo;</strong> buttons across the entire website.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- SOCIAL MEDIA CHANNELS -->
+                                    <tr style="border-top:2px solid #c3c4c7;">
+                                        <th colspan="2" style="padding-top:20px; padding-bottom:8px;">
+                                            <h3 style="font-size:16px; margin:0 0 4px 0; color:#1d2327;">🌐 Social Media Channels &amp; Footer Links</h3>
+                                            <p class="description" style="font-weight:normal; margin:0;">Configure social media profile links displayed in the website footer with branded icons.</p>
+                                        </th>
+                                    </tr>
+
+                                    <!-- Facebook -->
+                                    <tr>
+                                        <th scope="row"><label for="social_facebook"><span style="display:inline-block; width:18px; height:18px; background:#1877F2; color:#fff; text-align:center; border-radius:3px; line-height:18px; font-size:11px; font-weight:700; margin-right:4px;">f</span> Facebook Profile</label></th>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:8px;">
+                                                <input name="social_facebook" type="url" id="social_facebook" value="<?php echo htmlspecialchars(hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                <a href="<?php echo htmlspecialchars(hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test Link ↗</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Instagram -->
+                                    <tr>
+                                        <th scope="row"><label for="social_instagram"><span style="display:inline-block; width:18px; height:18px; background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; text-align:center; border-radius:3px; line-height:18px; font-size:11px; font-weight:700; margin-right:4px;">📸</span> Instagram Profile</label></th>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:8px;">
+                                                <input name="social_instagram" type="url" id="social_instagram" value="<?php echo htmlspecialchars(hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                <a href="<?php echo htmlspecialchars(hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test Link ↗</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- LinkedIn -->
+                                    <tr>
+                                        <th scope="row"><label for="social_linkedin"><span style="display:inline-block; width:18px; height:18px; background:#0A66C2; color:#fff; text-align:center; border-radius:3px; line-height:18px; font-size:11px; font-weight:700; margin-right:4px;">in</span> LinkedIn Profile</label></th>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:8px;">
+                                                <input name="social_linkedin" type="url" id="social_linkedin" value="<?php echo htmlspecialchars(hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                <a href="<?php echo htmlspecialchars(hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test Link ↗</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- YouTube -->
+                                    <tr>
+                                        <th scope="row"><label for="social_youtube"><span style="display:inline-block; width:18px; height:18px; background:#FF0000; color:#fff; text-align:center; border-radius:3px; line-height:18px; font-size:11px; font-weight:700; margin-right:4px;">▶</span> YouTube Channel</label></th>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:8px;">
+                                                <input name="social_youtube" type="url" id="social_youtube" value="<?php echo htmlspecialchars(hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                <a href="<?php echo htmlspecialchars(hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test Link ↗</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- WhatsApp Support -->
+                                    <tr>
+                                        <th scope="row"><label for="social_whatsapp"><span style="display:inline-block; width:18px; height:18px; background:#25D366; color:#fff; text-align:center; border-radius:3px; line-height:18px; font-size:11px; font-weight:700; margin-right:4px;">💬</span> WhatsApp Direct Chat</label></th>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:8px;">
+                                                <input name="social_whatsapp" type="text" id="social_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854445')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                <a href="https://wa.me/<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854445')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test WhatsApp ↗</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- SERVER & CONTACT CONFIGURATION -->
+                                    <tr style="border-top:2px solid #c3c4c7;">
+                                        <th colspan="2" style="padding-top:20px; padding-bottom:8px;">
+                                            <h3 style="font-size:16px; margin:0 0 4px 0; color:#1d2327;">🏢 Company Contact &amp; Postal Address</h3>
+                                        </th>
                                     </tr>
 
                                     <!-- Administration Email Address -->
@@ -3455,7 +3750,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <th scope="row"><label for="admin_email">Administration Email Address</label></th>
                                         <td>
                                             <input name="admin_email" type="email" id="admin_email" value="<?php echo htmlspecialchars(hb_get_setting('admin_email', hb_get_setting('sales_email', 'admin@hellobotz.com'))); ?>" class="regular-text ltr">
-                                            <p class="description">This address is used for admin purposes. If you change this, an email will be sent to your new address to confirm it. <strong>The new address will not become active until confirmed.</strong></p>
+                                            <p class="description">This address is used for admin purposes.</p>
                                         </td>
                                     </tr>
 
@@ -3504,12 +3799,19 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </td>
                                     </tr>
 
-                                    <!-- Company Brochure Link (PDF or Google Drive) -->
+                                    <!-- WordPress Address (URL) -->
                                     <tr>
-                                        <th scope="row"><label for="brochure_url">Brochure Download Link</label></th>
+                                        <th scope="row"><label for="siteurl">WordPress Address (URL)</label></th>
                                         <td>
-                                            <input name="brochure_url" type="url" id="brochure_url" value="<?php echo htmlspecialchars(hb_get_setting('brochure_url', '')); ?>" class="regular-text code" style="width:100%; max-width:550px;" placeholder="https://drive.google.com/file/d/.../view or https://hellobotz.com/.../brochure.pdf">
-                                            <p class="description">Paste your public <strong>Google Drive file link</strong> or <strong>PDF URL</strong>. This will be opened when visitors click the <strong>&ldquo;Download Brochure&rdquo;</strong> buttons across the homepage.</p>
+                                            <input name="siteurl" type="url" id="siteurl" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Site Address (URL) -->
+                                    <tr>
+                                        <th scope="row"><label for="home">Site Address (URL)</label></th>
+                                        <td>
+                                            <input name="home" type="url" id="home" value="<?php echo htmlspecialchars((isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? 'hellobotz.com')); ?>" class="regular-text code" style="background:#f0f0f1; border-color:#dcdcde; color:#646970;" readonly>
                                         </td>
                                     </tr>
 
@@ -3667,6 +3969,171 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                             <p class="submit" style="margin-top:24px;">
                                 <button type="submit" name="submit" id="submit" class="button button-primary" style="background:#2271b1; border-color:#2271b1; min-height:34px; padding:0 16px; font-weight:600; font-size:13px;">Save Changes</button>
+                            </p>
+                        </form>
+
+                    <?php elseif ($settingsTab === 'brand'): ?>
+                        <h2 style="margin:16px 0 10px; font-size:18px;">Brand Identity, HD Logos &amp; Real-Time Sizing Studio</h2>
+                        <p class="description" style="margin-bottom:16px;">Upload HD logos for Light and Dark modes, set custom dimensions with real-time live preview scaling, change chatbot/robot avatar, upload company brochures, and configure social media links.</p>
+
+                        <form method="post" action="" enctype="multipart/form-data">
+                            <input type="hidden" name="form_action" value="save_settings">
+                            <input type="hidden" name="redirect_tab" value="brand">
+
+                            <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:960px;">
+                                <!-- Card 1: HD Logos & Dimensions -->
+                                <div class="postbox">
+                                    <div class="postbox-header"><h2>1. HD Logos (Light &amp; Dark Theme) &amp; Live Sizing</h2></div>
+                                    <div class="inside" style="padding:20px;">
+                                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:20px;">
+                                            <!-- Light Mode Logo Box -->
+                                            <div style="border:1px solid #c3c4c7; border-radius:6px; padding:16px; background:#ffffff;">
+                                                <div style="font-weight:700; font-size:14px; margin-bottom:10px; color:#1d2327;">☀️ Light Mode Logo (Vector / HD PNG)</div>
+                                                <div style="background:#f8fafc; border:1px dashed #cbd5e1; border-radius:6px; height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; padding:10px;">
+                                                    <img id="tab_preview_logo_light" src="<?php echo htmlspecialchars(hb_get_setting('logo_light_url', '/assets/images/logo-light.png')); ?>" alt="Light Mode" style="max-height:<?php echo htmlspecialchars(hb_get_setting('logo_height', '52px')); ?>; max-width:<?php echo htmlspecialchars(hb_get_setting('logo_width', '160px')); ?>; object-fit:contain;">
+                                                </div>
+                                                <label style="display:block; font-size:12px; font-weight:600; margin-bottom:4px;">Upload New HD File:</label>
+                                                <input type="file" name="upload_logo_light" accept=".png,.svg,.webp,.jpg,.jpeg" style="margin-bottom:8px; width:100%;">
+                                                <label style="display:block; font-size:12px; font-weight:600; margin-bottom:4px;">Or Image URL:</label>
+                                                <input type="text" name="logo_light_url" value="<?php echo htmlspecialchars(hb_get_setting('logo_light_url', '/assets/images/logo-light.png')); ?>" class="regular-text code" style="width:100%;">
+                                            </div>
+
+                                            <!-- Dark Mode Logo Box -->
+                                            <div style="border:1px solid #1e293b; border-radius:6px; padding:16px; background:#0b1120; color:#f8fafc;">
+                                                <div style="font-weight:700; font-size:14px; margin-bottom:10px; color:#f8fafc;">🌙 Dark Mode Logo (Vector / HD PNG)</div>
+                                                <div style="background:#020617; border:1px dashed #334155; border-radius:6px; height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; padding:10px;">
+                                                    <img id="tab_preview_logo_dark" src="<?php echo htmlspecialchars(hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png')); ?>" alt="Dark Mode" style="max-height:<?php echo htmlspecialchars(hb_get_setting('logo_height', '52px')); ?>; max-width:<?php echo htmlspecialchars(hb_get_setting('logo_width', '160px')); ?>; object-fit:contain;">
+                                                </div>
+                                                <label style="display:block; font-size:12px; font-weight:600; margin-bottom:4px; color:#cbd5e1;">Upload New HD File:</label>
+                                                <input type="file" name="upload_logo_dark" accept=".png,.svg,.webp,.jpg,.jpeg" style="margin-bottom:8px; width:100%;">
+                                                <label style="display:block; font-size:12px; font-weight:600; margin-bottom:4px; color:#cbd5e1;">Or Image URL:</label>
+                                                <input type="text" name="logo_dark_url" value="<?php echo htmlspecialchars(hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png')); ?>" class="regular-text code" style="width:100%; background:#0f172a; border-color:#334155; color:#fff;">
+                                            </div>
+                                        </div>
+
+                                        <!-- Interactive Dimensions Slider -->
+                                        <?php 
+                                        $tLogoW = hb_get_setting('logo_width', '160px');
+                                        $tLogoH = hb_get_setting('logo_height', '52px');
+                                        $tLogoWNum = (int)filter_var($tLogoW, FILTER_SANITIZE_NUMBER_INT) ?: 160;
+                                        $tLogoHNum = (int)filter_var($tLogoH, FILTER_SANITIZE_NUMBER_INT) ?: 52;
+                                        ?>
+                                        <div style="background:#f1f5f9; border-radius:8px; padding:16px; margin-bottom:16px;">
+                                            <div style="font-weight:700; font-size:13px; color:#334155; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.04em;">Interactive Logo Dimensions &amp; Scaling</div>
+                                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:16px;">
+                                                <div>
+                                                    <div style="display:flex; justify-content:space-between; font-weight:600; margin-bottom:6px;">
+                                                        <span>Logo Width:</span>
+                                                        <span id="tab_logo_w_disp" style="color:#2563eb;"><?php echo htmlspecialchars($tLogoW); ?></span>
+                                                    </div>
+                                                    <input type="range" min="80" max="320" value="<?php echo $tLogoWNum; ?>" oninput="updateTabLogoScale('w', this.value)" style="width:100%;">
+                                                    <input type="text" name="logo_width" id="tab_logo_width_input" value="<?php echo htmlspecialchars($tLogoW); ?>" style="width:90px; text-align:center; padding:4px 8px; font-weight:600; margin-top:6px;" oninput="updateTabLogoScale('w', this.value)">
+                                                </div>
+                                                <div>
+                                                    <div style="display:flex; justify-content:space-between; font-weight:600; margin-bottom:6px;">
+                                                        <span>Logo Height:</span>
+                                                        <span id="tab_logo_h_disp" style="color:#2563eb;"><?php echo htmlspecialchars($tLogoH); ?></span>
+                                                    </div>
+                                                    <input type="range" min="24" max="90" value="<?php echo $tLogoHNum; ?>" oninput="updateTabLogoScale('h', this.value)" style="width:100%;">
+                                                    <input type="text" name="logo_height" id="tab_logo_height_input" value="<?php echo htmlspecialchars($tLogoH); ?>" style="width:90px; text-align:center; padding:4px 8px; font-weight:600; margin-top:6px;" oninput="updateTabLogoScale('h', this.value)">
+                                                </div>
+                                            </div>
+
+                                            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#64748b; margin-bottom:8px;">Live Header Dock Preview (Scales as you drag):</div>
+                                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                                <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; min-height:64px;">
+                                                    <img id="dock2_logo_light" src="<?php echo htmlspecialchars(hb_get_setting('logo_light_url', '/assets/images/logo-light.png')); ?>" alt="Light Mode" style="max-height:<?php echo htmlspecialchars($tLogoH); ?>; max-width:<?php echo htmlspecialchars($tLogoW); ?>; object-fit:contain; transition:all 0.15s ease;">
+                                                    <span style="font-size:11px; color:#94a3b8; font-weight:500;">Light Mode Navbar</span>
+                                                </div>
+                                                <div style="background:#0f172a; border:1px solid #334155; border-radius:6px; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; min-height:64px;">
+                                                    <img id="dock2_logo_dark" src="<?php echo htmlspecialchars(hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png')); ?>" alt="Dark Mode" style="max-height:<?php echo htmlspecialchars($tLogoH); ?>; max-width:<?php echo htmlspecialchars($tLogoW); ?>; object-fit:contain; transition:all 0.15s ease;">
+                                                    <span style="font-size:11px; color:#64748b; font-weight:500;">Dark Mode Navbar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2: Bot Avatar & Brochure -->
+                                <div class="postbox">
+                                    <div class="postbox-header"><h2>2. AI Chatbot Avatar &amp; Company Brochure</h2></div>
+                                    <div class="inside" style="padding:20px;">
+                                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+                                            <!-- Bot Avatar -->
+                                            <div style="border:1px solid #e2e8f0; border-radius:6px; padding:16px;">
+                                                <div style="font-weight:700; font-size:14px; margin-bottom:10px;">🤖 Chatbot &amp; Simulator Avatar</div>
+                                                <div style="display:flex; align-items:center; gap:16px; margin-bottom:12px;">
+                                                    <div style="position:relative; width:52px; height:52px; border-radius:50%; border:2px solid #22c55e; background:#f0fdf4; display:flex; align-items:center; justify-content:center;">
+                                                        <img src="<?php echo htmlspecialchars(hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png')); ?>" alt="Bot Avatar" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                                                        <span style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#22c55e; border:2px solid #fff; border-radius:50%;" title="Online Status (1 Clean Dot)"></span>
+                                                    </div>
+                                                    <div>
+                                                        <span style="display:block; font-size:12px; font-weight:600; color:#15803d;">Online • Single Clean Dot</span>
+                                                        <span style="font-size:11px; color:#646970;">Appears in Chatbot &amp; Simulator</span>
+                                                    </div>
+                                                </div>
+                                                <input type="file" name="upload_bot_avatar" accept=".png,.svg,.webp,.jpg,.jpeg" style="margin-bottom:8px; width:100%;">
+                                                <input type="text" name="bot_avatar_url" value="<?php echo htmlspecialchars(hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png')); ?>" class="regular-text code" style="width:100%;">
+                                            </div>
+
+                                            <!-- Brochure -->
+                                            <div style="border:1px solid #e2e8f0; border-radius:6px; padding:16px;">
+                                                <div style="font-weight:700; font-size:14px; margin-bottom:10px;">📄 Official Brochure (PDF)</div>
+                                                <p style="font-size:12px; color:#646970; margin-bottom:10px;">Upload a PDF brochure or paste a Google Drive file link. All "Download Brochure" buttons will immediately link to it.</p>
+                                                <input type="file" name="upload_brochure_file" accept=".pdf" style="margin-bottom:8px; width:100%;">
+                                                <input type="url" name="brochure_url" value="<?php echo htmlspecialchars(hb_get_setting('brochure_url', '')); ?>" class="regular-text code" style="width:100%;" placeholder="https://drive.google.com/... or /assets/docs/...">
+                                                <?php $curBro = hb_get_setting('brochure_url', ''); if (!empty($curBro)): ?>
+                                                    <div style="margin-top:8px;">
+                                                        <a href="<?php echo htmlspecialchars($curBro); ?>" target="_blank" rel="noopener noreferrer" class="button button-small">Download Current Brochure ↗</a>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3: Social Media Channels -->
+                                <div class="postbox">
+                                    <div class="postbox-header"><h2>3. Social Media Channels</h2></div>
+                                    <div class="inside" style="padding:20px;">
+                                        <table class="form-table" style="margin:0;">
+                                            <tr>
+                                                <th style="width:180px;"><label for="tab_social_facebook">Facebook Profile</label></th>
+                                                <td>
+                                                    <input name="social_facebook" type="url" id="tab_social_facebook" value="<?php echo htmlspecialchars(hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="tab_social_instagram">Instagram Profile</label></th>
+                                                <td>
+                                                    <input name="social_instagram" type="url" id="tab_social_instagram" value="<?php echo htmlspecialchars(hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="tab_social_linkedin">LinkedIn Profile</label></th>
+                                                <td>
+                                                    <input name="social_linkedin" type="url" id="tab_social_linkedin" value="<?php echo htmlspecialchars(hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="tab_social_youtube">YouTube Channel</label></th>
+                                                <td>
+                                                    <input name="social_youtube" type="url" id="tab_social_youtube" value="<?php echo htmlspecialchars(hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="tab_social_whatsapp">WhatsApp Support</label></th>
+                                                <td>
+                                                    <input name="social_whatsapp" type="text" id="tab_social_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854445')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="submit" style="margin-top:20px;">
+                                <button type="submit" class="button button-primary button-large" style="padding:4px 20px; font-size:14px;">Save Brand Settings</button>
                             </p>
                         </form>
 
@@ -4711,6 +5178,278 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
     <!-- JAVASCRIPT: SIDEBAR COLLAPSE, MODALS & LIVE PREVIEWS -->
     <script>
+    function updateLogoScale(type, val) {
+        var str = val.toString();
+        var px = str.endsWith('px') ? str : (parseInt(str) || 0) + 'px';
+        if (type === 'w') {
+            var el = document.getElementById('logo_width_input');
+            if (el) el.value = px;
+            var disp = document.getElementById('logo_width_val');
+            if (disp) disp.textContent = px;
+            var p1 = document.getElementById('preview_logo_light');
+            var p2 = document.getElementById('preview_logo_dark');
+            var d1 = document.getElementById('dock_logo_light');
+            var d2 = document.getElementById('dock_logo_dark');
+            if (p1) p1.style.maxWidth = px;
+            if (p2) p2.style.maxWidth = px;
+            if (d1) d1.style.maxWidth = px;
+            if (d2) d2.style.maxWidth = px;
+        } else if (type === 'h') {
+            var el = document.getElementById('logo_height_input');
+            if (el) el.value = px;
+            var disp = document.getElementById('logo_height_val');
+            if (disp) disp.textContent = px;
+            var p1 = document.getElementById('preview_logo_light');
+            var p2 = document.getElementById('preview_logo_dark');
+            var d1 = document.getElementById('dock_logo_light');
+            var d2 = document.getElementById('dock_logo_dark');
+            if (p1) p1.style.maxHeight = px;
+            if (p2) p2.style.maxHeight = px;
+            if (d1) d1.style.maxHeight = px;
+            if (d2) d2.style.maxHeight = px;
+        }
+    }
+
+    function updateTabLogoScale(type, val) {
+        var str = val.toString();
+        var px = str.endsWith('px') ? str : (parseInt(str) || 0) + 'px';
+        if (type === 'w') {
+            var el = document.getElementById('tab_logo_width_input');
+            if (el) el.value = px;
+            var disp = document.getElementById('tab_logo_w_disp');
+            if (disp) disp.textContent = px;
+            var p1 = document.getElementById('tab_preview_logo_light');
+            var p2 = document.getElementById('tab_preview_logo_dark');
+            var d1 = document.getElementById('dock2_logo_light');
+            var d2 = document.getElementById('dock2_logo_dark');
+            if (p1) p1.style.maxWidth = px;
+            if (p2) p2.style.maxWidth = px;
+            if (d1) d1.style.maxWidth = px;
+            if (d2) d2.style.maxWidth = px;
+        } else if (type === 'h') {
+            var el = document.getElementById('tab_logo_height_input');
+            if (el) el.value = px;
+            var disp = document.getElementById('tab_logo_h_disp');
+            if (disp) disp.textContent = px;
+            var p1 = document.getElementById('tab_preview_logo_light');
+            var p2 = document.getElementById('tab_preview_logo_dark');
+            var d1 = document.getElementById('dock2_logo_light');
+            var d2 = document.getElementById('dock2_logo_dark');
+            if (p1) p1.style.maxHeight = px;
+            if (p2) p2.style.maxHeight = px;
+            if (d1) d1.style.maxHeight = px;
+            if (d2) d2.style.maxHeight = px;
+        }
+    }
+
+    function switchPageEditorMode(mode) {
+        var codePane = document.getElementById('page-editor-code-pane');
+        var prevPane = document.getElementById('page-editor-preview-pane');
+        var btnCode = document.getElementById('btn-mode-editor');
+        var btnPrev = document.getElementById('btn-mode-preview');
+        var iframe = document.getElementById('page-preview-iframe');
+
+        if (mode === 'preview') {
+            if (codePane) codePane.style.display = 'none';
+            if (prevPane) prevPane.style.display = 'block';
+            if (btnCode) { btnCode.style.background = '#f6f7f7'; btnCode.style.color = '#50575e'; btnCode.style.fontWeight = 'normal'; }
+            if (btnPrev) { btnPrev.style.background = '#2271b1'; btnPrev.style.color = '#fff'; btnPrev.style.fontWeight = '600'; }
+
+            if (iframe) {
+                var content = document.getElementById('page_content_field').value;
+                var doc = iframe.contentDocument || iframe.contentWindow.document;
+                doc.open();
+                doc.write('<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/pages.css"><link rel="stylesheet" href="/assets/css/industry-pages.css"><style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;padding:24px;color:#1e293b;background:#ffffff;line-height:1.6;}img{max-width:100%;height:auto;}</style></head><body>' + content + '</body></html>');
+                doc.close();
+            }
+        } else {
+            if (codePane) codePane.style.display = 'block';
+            if (prevPane) prevPane.style.display = 'none';
+            if (btnCode) { btnCode.style.background = '#2271b1'; btnCode.style.color = '#fff'; btnCode.style.fontWeight = '600'; }
+            if (btnPrev) { btnPrev.style.background = '#f6f7f7'; btnPrev.style.color = '#50575e'; btnPrev.style.fontWeight = 'normal'; }
+        }
+    }
+
+    function setPagePreviewDevice(width) {
+        var iframe = document.getElementById('page-preview-iframe');
+        if (iframe) iframe.style.width = width;
+    }
+
+    function insertContentBlock(blockType) {
+        var textarea = document.getElementById('page_content_field');
+        if (!textarea) return;
+
+        var snippet = "";
+        if (blockType === 'hero') {
+            snippet = '\n<!-- HERO SECTION -->\n' +
+                '<section style="padding:64px 24px; text-align:center; background:linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); border-radius:16px; margin:24px 0; border:1px solid #e2e8f0;">\n' +
+                '  <span style="display:inline-block; padding:6px 16px; background:#eff6ff; color:#2563eb; font-weight:700; font-size:12px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;">🚀 Next-Gen WhatsApp Automation</span>\n' +
+                '  <h1 style="font-size:38px; font-weight:800; color:#0f172a; margin-bottom:16px; line-height:1.2;">Empower Your Business With AI</h1>\n' +
+                '  <p style="font-size:17px; color:#475569; max-width:680px; margin:0 auto 28px; line-height:1.6;">Automate customer inquiries, broadcast personalized updates, and scale conversions effortlessly on the official WhatsApp Cloud API.</p>\n' +
+                '  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">\n' +
+                '    <a href="/auth/register" style="display:inline-block; background:#2563eb; color:#ffffff; padding:12px 26px; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 4px 12px rgba(37,99,235,0.25);">Get Started Free →</a>\n' +
+                '    <a href="https://wa.me/918050854445" target="_blank" style="display:inline-block; background:#25d366; color:#ffffff; padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Chat on WhatsApp 💬</a>\n' +
+                '  </div>\n' +
+                '</section>\n';
+        } else if (blockType === 'features') {
+            snippet = '\n<!-- 3 FEATURE CARDS -->\n' +
+                '<section style="padding:48px 0; max-width:1100px; margin:0 auto;">\n' +
+                '  <div style="text-align:center; margin-bottom:36px;">\n' +
+                '    <h2 style="font-size:28px; font-weight:700; color:#0f172a;">Why Industry Leaders Choose HelloBotz</h2>\n' +
+                '    <p style="color:#64748b; font-size:16px;">Enterprise reliability built for scale and seamless customer journeys.</p>\n' +
+                '  </div>\n' +
+                '  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">\n' +
+                '    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:28px; box-shadow:0 2px 8px rgba(0,0,0,0.04); text-align:left;">\n' +
+                '      <div style="width:48px; height:48px; border-radius:10px; background:#eff6ff; color:#2563eb; font-size:24px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">⚡</div>\n' +
+                '      <h3 style="font-size:19px; font-weight:700; margin-bottom:10px; color:#1e293b;">Automated AI Chatbots</h3>\n' +
+                '      <p style="color:#64748b; font-size:14px; line-height:1.6;">Engage prospects 24/7 with interactive buttons, natural language answers, and automatic routing.</p>\n' +
+                '    </div>\n' +
+                '    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:28px; box-shadow:0 2px 8px rgba(0,0,0,0.04); text-align:left;">\n' +
+                '      <div style="width:48px; height:48px; border-radius:10px; background:#ecfdf5; color:#059669; font-size:24px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">📢</div>\n' +
+                '      <h3 style="font-size:19px; font-weight:700; margin-bottom:10px; color:#1e293b;">Targeted Broadcasts</h3>\n' +
+                '      <p style="color:#64748b; font-size:14px; line-height:1.6;">Deliver verified marketing campaigns, seasonal promotions, and billing receipts with a 98% open rate.</p>\n' +
+                '    </div>\n' +
+                '    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:28px; box-shadow:0 2px 8px rgba(0,0,0,0.04); text-align:left;">\n' +
+                '      <div style="width:48px; height:48px; border-radius:10px; background:#faf5ff; color:#9333ea; font-size:24px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">👥</div>\n' +
+                '      <h3 style="font-size:19px; font-weight:700; margin-bottom:10px; color:#1e293b;">Multi-Agent Shared Inbox</h3>\n' +
+                '      <p style="color:#64748b; font-size:14px; line-height:1.6;">Centralize customer chats for sales and support reps with internal notes and SLA tracking.</p>\n' +
+                '    </div>\n' +
+                '  </div>\n' +
+                '</section>\n';
+        } else if (blockType === 'split') {
+            snippet = '\n<!-- SPLIT CONTENT SECTION -->\n' +
+                '<section style="padding:48px 0; max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:36px; align-items:center;">\n' +
+                '  <div style="text-align:center;">\n' +
+                '    <img src="/assets/images/logo.png" alt="Product Feature" style="max-width:100%; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.08); background:#f8fafc; padding:20px;">\n' +
+                '  </div>\n' +
+                '  <div>\n' +
+                '    <span style="font-size:12px; font-weight:700; color:#2563eb; text-transform:uppercase;">Intelligent Integration</span>\n' +
+                '    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:8px 0 16px;">Sync Conversations Seamlessly With Your CRM</h2>\n' +
+                '    <p style="color:#475569; font-size:15px; line-height:1.6; margin-bottom:20px;">Automatically record qualified leads into Google Sheets, Zoho, HubSpot, and Salesforce without manual data entry. Track attribution and conversions in real-time.</p>\n' +
+                '    <a href="/pricing/" style="display:inline-block; background:#0f172a; color:#ffffff; padding:10px 22px; border-radius:6px; font-weight:600; text-decoration:none;">View Pricing Plans →</a>\n' +
+                '  </div>\n' +
+                '</section>\n';
+        } else if (blockType === 'button') {
+            snippet = '\n<div style="text-align:center; margin:24px 0;">\n' +
+                '  <a href="/auth/register" style="display:inline-block; background:#2563eb; color:#ffffff; padding:14px 32px; border-radius:8px; font-weight:700; font-size:16px; text-decoration:none; box-shadow:0 4px 14px rgba(37,99,235,0.3);">Get Started Free Today</a>\n' +
+                '</div>\n';
+        } else if (blockType === 'cta_banner') {
+            snippet = '\n<!-- CTA BANNER -->\n' +
+                '<section style="background:linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%); color:#ffffff; padding:52px 28px; border-radius:16px; text-align:center; margin:40px 0; box-shadow:0 10px 30px rgba(49,46,129,0.25);">\n' +
+                '  <h2 style="font-size:32px; font-weight:800; margin-bottom:14px; color:#ffffff;">Ready to Transform Your Customer Communication?</h2>\n' +
+                '  <p style="font-size:16px; color:#c7d2fe; max-width:600px; margin:0 auto 28px; line-height:1.6;">Start your 14-day risk-free trial today. No setup fees, cancel anytime.</p>\n' +
+                '  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">\n' +
+                '    <a href="/auth/register" style="display:inline-block; background:#ffffff; color:#312e81; padding:12px 28px; border-radius:8px; font-weight:700; text-decoration:none;">Start Free Trial</a>\n' +
+                '    <a href="https://wa.me/918050854445" target="_blank" style="display:inline-block; background:rgba(255,255,255,0.15); color:#ffffff; border:1px solid rgba(255,255,255,0.3); padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Talk to Sales</a>\n' +
+                '  </div>\n' +
+                '</section>\n';
+        } else if (blockType === 'image') {
+            snippet = '\n<!-- RESPONSIVE IMAGE WITH CAPTION -->\n' +
+                '<figure style="margin:28px auto; max-width:850px; text-align:center;">\n' +
+                '  <img src="/assets/images/logo.png" alt="HelloBotz Feature Visual" style="max-width:100%; height:auto; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 4px 14px rgba(0,0,0,0.06); padding:16px; background:#fff;">\n' +
+                '  <figcaption style="font-size:13px; color:#64748b; margin-top:8px;">HelloBotz AI Messaging &amp; Omnichannel Platform</figcaption>\n' +
+                '</figure>\n';
+        } else if (blockType === 'lead_box') {
+            snippet = '\n<!-- LEAD CAPTURE FORM BOX -->\n' +
+                '<div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:32px; max-width:540px; margin:32px auto; box-shadow:0 4px 16px rgba(0,0,0,0.05);">\n' +
+                '  <h3 style="font-size:22px; font-weight:700; color:#0f172a; margin-bottom:8px; text-align:center;">Schedule a 1-on-1 Product Demo</h3>\n' +
+                '  <p style="font-size:14px; color:#64748b; text-align:center; margin-bottom:20px;">Leave your contact details and our team will get in touch in minutes.</p>\n' +
+                '  <form action="/api/leads/submit.php" method="POST" style="display:grid; gap:12px;">\n' +
+                '    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;">\n' +
+                '    <input type="email" name="email" placeholder="Business Email" required style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;">\n' +
+                '    <input type="tel" name="phone" placeholder="WhatsApp Number" required style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;">\n' +
+                '    <button type="submit" style="background:#2563eb; color:#fff; border:none; padding:12px; border-radius:6px; font-weight:700; cursor:pointer;">Request Live Demo →</button>\n' +
+                '  </form>\n' +
+                '</div>\n';
+        } else if (blockType === 'faq') {
+            snippet = '\n<!-- FAQ ACCORDION -->\n' +
+                '<div style="max-width:800px; margin:36px auto;">\n' +
+                '  <h2 style="font-size:24px; font-weight:700; text-align:center; margin-bottom:20px; color:#0f172a;">Frequently Asked Questions</h2>\n' +
+                '  <details style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin-bottom:12px; cursor:pointer;">\n' +
+                '    <summary style="font-weight:600; color:#1e293b;">How fast can our team go live with WhatsApp API?</summary>\n' +
+                '    <p style="margin-top:10px; color:#475569; font-size:14px; line-height:1.6;">Our onboarding team approves your Meta Business account and sets up your initial chatbot flows within 24 to 48 hours.</p>\n' +
+                '  </details>\n' +
+                '  <details style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin-bottom:12px; cursor:pointer;">\n' +
+                '    <summary style="font-weight:600; color:#1e293b;">Can we send automated broadcast messages to customer lists?</summary>\n' +
+                '    <p style="margin-top:10px; color:#475569; font-size:14px; line-height:1.6;">Yes, HelloBotz allows unlimited targeted broadcasts with pre-approved Meta message templates, media attachments, and click-to-chat CTA buttons.</p>\n' +
+                '  </details>\n' +
+                '</div>\n';
+        }
+
+        var start = textarea.selectionStart;
+        var end = textarea.selectionEnd;
+        var cur = textarea.value;
+        textarea.value = cur.substring(0, start) + snippet + cur.substring(end);
+        textarea.selectionStart = textarea.selectionEnd = start + snippet.length;
+        textarea.focus();
+    }
+
+    function loadPagePreset(preset) {
+        if (!confirm('Load this pre-built page template? Any unsaved edits in the content box will be replaced.')) return;
+
+        var textarea = document.getElementById('page_content_field');
+        var titleField = document.querySelector('input[name="title"]');
+        var slugField = document.querySelector('input[name="slug"]');
+        var metaTitle = document.querySelector('input[name="meta_title"]');
+        var metaDesc = document.querySelector('input[name="meta_description"]');
+
+        if (preset === 'careers') {
+            if (titleField) titleField.value = 'Careers & Opportunities | HelloBotz';
+            if (slugField) slugField.value = '/careers/';
+            if (metaTitle) metaTitle.value = 'Join HelloBotz — Build the Future of AI & WhatsApp Automation';
+            if (metaDesc) metaDesc.value = 'Explore open job positions at HelloBotz. Join our fast-growing engineering, product, and sales teams building official Meta Business solutions.';
+            if (textarea) {
+                textarea.value = '<section style="padding:60px 20px; max-width:1100px; margin:0 auto; text-align:center;">\n' +
+                    '  <span style="display:inline-block; padding:6px 14px; background:#eff6ff; color:#2563eb; font-weight:700; font-size:12px; border-radius:20px; text-transform:uppercase; margin-bottom:16px;">We\'re Hiring • Come Build With Us</span>\n' +
+                    '  <h1 style="font-size:42px; font-weight:800; color:#0f172a; margin-bottom:16px; line-height:1.2;">Careers at HelloBotz</h1>\n' +
+                    '  <p style="font-size:18px; color:#475569; max-width:700px; margin:0 auto 32px; line-height:1.6;">Join our high-impact team engineering next-generation WhatsApp AI automation, Meta API infrastructure, and customer intelligence platforms.</p>\n' +
+                    '  <a href="#open-roles" style="display:inline-block; background:#2563eb; color:#ffffff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none;">Explore Open Roles ↓</a>\n' +
+                    '</section>\n\n' +
+                    '<section id="open-roles" style="padding:40px 20px; max-width:960px; margin:0 auto;">\n' +
+                    '  <h2 style="font-size:28px; font-weight:700; color:#0f172a; margin-bottom:24px; text-align:center;">Current Open Positions</h2>\n' +
+                    '  <div style="display:grid; gap:16px;">\n' +
+                    '    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">\n' +
+                    '      <div>\n' +
+                    '        <h3 style="font-size:18px; font-weight:700; color:#1e293b; margin:0 0 6px 0;">Senior Full-Stack AI Engineer</h3>\n' +
+                    '        <div style="font-size:13px; color:#64748b;">Engineering • Full-Time • Remote / Bangalore</div>\n' +
+                    '      </div>\n' +
+                    '      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%20Careers%2C%20I%20am%20applying%20for%20Senior%20Full-Stack%20AI%20Engineer." target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; font-weight:600; text-decoration:none;">Apply on WhatsApp ↗</a>\n' +
+                    '    </div>\n' +
+                    '    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">\n' +
+                    '      <div>\n' +
+                    '        <h3 style="font-size:18px; font-weight:700; color:#1e293b; margin:0 0 6px 0;">Product Growth &amp; SaaS Marketing Manager</h3>\n' +
+                    '        <div style="font-size:13px; color:#64748b;">Growth • Full-Time • Hybrid / Bangalore</div>\n' +
+                    '      </div>\n' +
+                    '      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%20Careers%2C%20I%20am%20applying%20for%20Product%20Growth%20Manager." target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; font-weight:600; text-decoration:none;">Apply on WhatsApp ↗</a>\n' +
+                    '    </div>\n' +
+                    '  </div>\n' +
+                    '</section>';
+            }
+        } else if (preset === 'product') {
+            if (titleField) titleField.value = 'WhatsApp Automation Suite | HelloBotz';
+            if (slugField) slugField.value = '/solutions/whatsapp-suite/';
+            if (textarea) {
+                textarea.value = '<section style="padding:60px 20px; text-align:center;">\n' +
+                    '  <h1 style="font-size:40px; font-weight:800; color:#0f172a;">All-in-One WhatsApp Business Suite</h1>\n' +
+                    '  <p style="font-size:18px; color:#64748b; max-width:650px; margin:16px auto 30px;">Chatbots, Broadcasts, Shared Inbox, and CRM integration under one unified dashboard.</p>\n' +
+                    '  <a href="/pricing/" style="background:#2563eb; color:#fff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none;">See Pricing &rarr;</a>\n' +
+                    '</section>';
+            }
+        } else if (preset === 'leads') {
+            if (titleField) titleField.value = 'Verified Business Leads Database | HelloBotz';
+            if (slugField) slugField.value = '/business-leads/database/';
+            if (textarea) {
+                textarea.value = '<section style="padding:60px 20px; text-align:center;">\n' +
+                    '  <h1 style="font-size:40px; font-weight:800; color:#0f172a;">Verified B2B Leads Database</h1>\n' +
+                    '  <p style="font-size:18px; color:#64748b; max-width:650px; margin:16px auto 30px;">Reach verified business decision-makers with validated mobile numbers and email addresses.</p>\n' +
+                    '  <a href="/assets/docs/hellobotz-brochure.pdf" target="_blank" class="btn-download-brochure" style="background:#0f172a; color:#fff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none;">Download Lead Brochure 📄</a>\n' +
+                    '</section>';
+            }
+        } else if (preset === 'blank') {
+            if (textarea) textarea.value = '<div class="content-container" style="max-width:960px; margin:40px auto; padding:0 20px;">\n  <h1>Page Heading</h1>\n  <p>Start writing your custom page content here...</p>\n</div>';
+        }
+    }
+
     function setSiteIcon(url) {
         var prev = document.getElementById('site-icon-preview');
         var input = document.getElementById('site_icon_input');

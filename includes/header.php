@@ -18,6 +18,10 @@ $cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
 $cmsSalesEmail = cms_setting('sales_email', 'mail@hellobotz.com');
 $cmsSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
 $cmsLogo     = cms_setting('logo_url', '/assets/images/logo.png');
+$cmsLogoLight = cms_setting('logo_light_url', '/assets/images/logo-light.png');
+$cmsLogoDark  = cms_setting('logo_dark_url', '/assets/images/logo-dark.png');
+$cmsLogoWidth = cms_setting('logo_width', '160px');
+$cmsLogoHeight= cms_setting('logo_height', '52px');
 $announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
 $announcementText = cms_setting('announcement_text', '');
 $announcementLink = cms_setting('announcement_link', '/auth/register');
@@ -510,11 +514,16 @@ if (!function_exists('hb_seo_esc')) {
       transform: none !important;
     }
 
+    :root {
+      --site-logo-width: <?php echo htmlspecialchars($cmsLogoWidth); ?>;
+      --site-logo-height: <?php echo htmlspecialchars($cmsLogoHeight); ?>;
+    }
+
     /* Logo Image Sizing & Resizing on Scroll */
     .site-header .logo-img {
-      height: 52px !important;
+      height: var(--site-logo-height, 52px) !important;
       width: auto !important;
-      max-width: 230px !important;
+      max-width: var(--site-logo-width, 230px) !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast;
       display: block !important;
@@ -522,8 +531,8 @@ if (!function_exists('hb_seo_esc')) {
                   max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .site-header.scrolled .logo-img {
-      height: 33px !important;
-      max-width: 145px !important;
+      height: calc(var(--site-logo-height, 52px) * 0.65) !important;
+      max-width: calc(var(--site-logo-width, 230px) * 0.65) !important;
     }
 
     /* Theme Logo Switcher */
@@ -3220,6 +3229,8 @@ if (!function_exists('hb_seo_esc')) {
       }
     })();
   </script>
+  <!-- HelloBotz Live CMS Client Runtime (Propagates brand logos, bot avatar, sizing, and links) -->
+  <script src="/assets/js/hb-cms-runtime.js" defer></script>
 </head>
 <body>
 
@@ -3237,8 +3248,8 @@ if (!function_exists('hb_seo_esc')) {
     <div class="header-inner">
       <div class="logo-dock-wrapper" id="logo-dock-wrapper">
         <a href="<?php echo $bp; ?>" class="logo site-main-logo" id="site-logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
-          <img src="<?php echo $bp; ?>assets/images/logo-light.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-light" width="160" height="52">
-          <img src="<?php echo $bp; ?>assets/images/logo-dark.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-dark" width="160" height="52">
+          <img src="<?php echo htmlspecialchars($cmsLogoLight); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-light" width="160" height="52">
+          <img src="<?php echo htmlspecialchars($cmsLogoDark); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-dark" width="160" height="52">
           <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
             <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
             <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
