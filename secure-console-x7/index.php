@@ -302,7 +302,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'webhook_verify_token',
             'github_token',
             'github_repo',
-            'github_branch'
+            'github_branch',
+            'brochure_url'
         ];
 
         // Checkbox: users_can_register
@@ -3500,6 +3501,15 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <td>
                                             <textarea name="office_address" id="office_address" rows="3" class="large-text"><?php echo htmlspecialchars(hb_get_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nHead Office — Bangalore, India")); ?></textarea>
                                             <p class="description">Company physical office address shown in site footer.</p>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Company Brochure Link (PDF or Google Drive) -->
+                                    <tr>
+                                        <th scope="row"><label for="brochure_url">Brochure Download Link</label></th>
+                                        <td>
+                                            <input name="brochure_url" type="url" id="brochure_url" value="<?php echo htmlspecialchars(hb_get_setting('brochure_url', '')); ?>" class="regular-text code" style="width:100%; max-width:550px;" placeholder="https://drive.google.com/file/d/.../view or https://hellobotz.com/.../brochure.pdf">
+                                            <p class="description">Paste your public <strong>Google Drive file link</strong> or <strong>PDF URL</strong>. This will be opened when visitors click the <strong>&ldquo;Download Brochure&rdquo;</strong> buttons across the homepage.</p>
                                         </td>
                                     </tr>
 

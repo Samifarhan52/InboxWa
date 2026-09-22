@@ -301,7 +301,8 @@ function hb_pdo(): PDO {
             'social_instagram' => 'https://instagram.com/hellobotz',
             'social_linkedin' => 'https://linkedin.com/company/hellobotz',
             'social_youtube' => '',
-            'social_twitter' => ''
+            'social_twitter' => '',
+            'brochure_url' => ''
         ];
         foreach ($defaultSettings as $k => $v) {
             $stmt->execute([$k, $v]);

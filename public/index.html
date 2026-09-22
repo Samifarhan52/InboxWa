@@ -4284,7 +4284,9 @@
     box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.12) !important;
   }
   .cw-hero-actions .cw-btn-data,
-  .cw-hero-actions .btn-download-data {
+  .cw-hero-actions .btn-download-data,
+  .cw-hero-actions .btn-download-brochure,
+  .stories-bottom-actions .btn-download-brochure {
     background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
     color: #ffffff !important;
     font-family: inherit !important;
@@ -4309,22 +4311,171 @@
     vertical-align: middle !important;
   }
   .cw-hero-actions .cw-btn-data:hover,
-  .cw-hero-actions .btn-download-data:hover {
+  .cw-hero-actions .btn-download-data:hover,
+  .cw-hero-actions .btn-download-brochure:hover,
+  .stories-bottom-actions .btn-download-brochure:hover {
     background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 10px 24px -3px rgba(79, 70, 229, 0.58) !important;
     color: #ffffff !important;
   }
   .cw-hero-actions .cw-btn-data svg,
-  .cw-hero-actions .btn-download-data svg {
-    width: 16px !important;
-    height: 16px !important;
+  .cw-hero-actions .btn-download-data svg,
+  .cw-hero-actions .btn-download-brochure svg,
+  .stories-bottom-actions .btn-download-brochure svg {
+    width: 17px !important;
+    height: 17px !important;
     flex-shrink: 0 !important;
     transition: transform 0.2s ease !important;
   }
   .cw-hero-actions .cw-btn-data:hover svg,
-  .cw-hero-actions .btn-download-data:hover svg {
+  .cw-hero-actions .btn-download-data:hover svg,
+  .cw-hero-actions .btn-download-brochure:hover svg,
+  .stories-bottom-actions .btn-download-brochure:hover svg {
     transform: translateY(1.5px) !important;
+  }
+
+  /* ========================================================
+     SEAMLESSLY INTEGRATE MARQUEE SECTION (GETGABS CLONE)
+     ======================================================== */
+  .hb-integrations-marquee-section {
+    padding: 75px 0 65px;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  }
+  .hb-int-container {
+    max-width: 900px;
+    margin: 0 auto 36px;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .hb-int-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+  .hb-int-gradient-text {
+    color: #9333EA;
+    background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #C084FC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hb-int-subtitle {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    color: #64748B;
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .hb-marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hb-marquee-wrapper::before,
+  .hb-marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(60px, 12vw, 160px);
+    pointer-events: none;
+    z-index: 5;
+  }
+  .hb-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  .hb-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  .hb-marquee-row {
+    display: flex;
+    width: max-content;
+    gap: 16px;
+  }
+  .hb-marquee-scroll-left {
+    animation: hbMarqueeLeft 36s linear infinite;
+  }
+  .hb-marquee-scroll-right {
+    animation: hbMarqueeRight 36s linear infinite;
+  }
+  .hb-marquee-wrapper:hover .hb-marquee-row {
+    animation-play-state: paused;
+  }
+  @keyframes hbMarqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes hbMarqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .hb-int-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .hb-int-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #FFFFFF;
+    padding: 13px 24px;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 10px -2px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+    min-width: 190px;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .hb-int-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -4px rgba(124, 58, 237, 0.12), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+    border-color: #DDD6FE;
+  }
+  .hb-int-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .hb-int-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1E293B;
+    letter-spacing: -0.01em;
+  }
+  @media (max-width: 768px) {
+    .hb-integrations-marquee-section {
+      padding: 55px 0 45px;
+    }
+    .hb-int-card {
+      padding: 10px 18px;
+      min-width: 155px;
+      gap: 10px;
+    }
+    .hb-int-icon {
+      width: 26px;
+      height: 26px;
+    }
+    .hb-int-name {
+      font-size: 0.88rem;
+    }
   }
   .cw-trust-row {
     display: flex;
@@ -7204,9 +7355,9 @@
           </a>
           <button type="button" class="cw-btn-secondary btn-demo-open">
             Book a Demo          </button>
-          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="cw-btn-data btn-download-data">
+          <a href="#callback" onclick="if(window.openCallbackModal){openCallbackModal();return false;}" class="cw-btn-data btn-download-brochure" title="Download HelloBotz Brochure">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Data
+            Download Brochure
           </a>
         </div>
         <div class="cw-trust-row">
@@ -7396,6 +7547,213 @@
             <div class="cw-home-bar"></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.0 SEAMLESSLY INTEGRATE WITH YOUR STACK SECTION (GETGABS CLONE) -->
+  <section class="hb-integrations-marquee-section" id="integrations-stack">
+    <div class="hb-int-container">
+      <div class="hb-int-header">
+        <h2 class="hb-int-title">
+          Seamlessly <span class="hb-int-gradient-text">Integrate</span> with Your Stack
+        </h2>
+        <p class="hb-int-subtitle">
+          Connect HelloBotz with 50+ platforms including Shopify, Zoho, Zapier, and more to automate your entire revenue workflow.
+        </p>
+      </div>
+    </div>
+
+    <!-- Dual Marquee Slider Wrapper -->
+    <div class="hb-marquee-wrapper" aria-label="Seamlessly Integrated Platforms Marquee">
+      <!-- Row 1: Left Scroll -->
+      <div class="hb-marquee-row hb-marquee-scroll-left">
+        <!-- Set 1 -->
+        <a href="/integrations/shopify/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shopify.png" class="hb-int-icon" alt="Shopify" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shopify</span>
+          </div>
+        </a>
+        <a href="/integrations/woocommerce/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/woocommerce.png" class="hb-int-icon" alt="WooCommerce" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">WooCommerce</span>
+          </div>
+        </a>
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">Gotab</span>
+        </div>
+        <a href="/integrations/wortal/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Wortal</span>
+          </div>
+        </a>
+        <a href="/integrations/shiprocket/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shiprocket</span>
+          </div>
+        </a>
+        <a href="/integrations/zoho/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/zoho.png" class="hb-int-icon" alt="Zoho" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Zoho</span>
+          </div>
+        </a>
+        <a href="/integrations/google-sheets/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/google-sheet.png" class="hb-int-icon" alt="Google Sheet" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Google Sheet</span>
+          </div>
+        </a>
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/n8n.png" class="hb-int-icon" alt="n8n" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">n8n</span>
+        </div>
+
+        <!-- Duplicate Set 1 for seamless infinite loop -->
+        <a href="/integrations/shopify/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shopify.png" class="hb-int-icon" alt="Shopify" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shopify</span>
+          </div>
+        </a>
+        <a href="/integrations/woocommerce/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/woocommerce.png" class="hb-int-icon" alt="WooCommerce" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">WooCommerce</span>
+          </div>
+        </a>
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">Gotab</span>
+        </div>
+        <a href="/integrations/wortal/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Wortal</span>
+          </div>
+        </a>
+        <a href="/integrations/shiprocket/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shiprocket</span>
+          </div>
+        </a>
+        <a href="/integrations/zoho/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/zoho.png" class="hb-int-icon" alt="Zoho" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Zoho</span>
+          </div>
+        </a>
+        <a href="/integrations/google-sheets/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/google-sheet.png" class="hb-int-icon" alt="Google Sheet" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Google Sheet</span>
+          </div>
+        </a>
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/n8n.png" class="hb-int-icon" alt="n8n" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">n8n</span>
+        </div>
+      </div>
+
+      <!-- Row 2: Right Scroll -->
+      <div class="hb-marquee-row hb-marquee-scroll-right">
+        <!-- Set 2 (Offset sequence for visual interest) -->
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/n8n.png" class="hb-int-icon" alt="n8n" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">n8n</span>
+        </div>
+        <a href="/integrations/shopify/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shopify.png" class="hb-int-icon" alt="Shopify" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shopify</span>
+          </div>
+        </a>
+        <a href="/integrations/woocommerce/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/woocommerce.png" class="hb-int-icon" alt="WooCommerce" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">WooCommerce</span>
+          </div>
+        </a>
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">Gotab</span>
+        </div>
+        <a href="/integrations/wortal/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Wortal</span>
+          </div>
+        </a>
+        <a href="/integrations/shiprocket/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shiprocket</span>
+          </div>
+        </a>
+        <a href="/integrations/zoho/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/zoho.png" class="hb-int-icon" alt="Zoho" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Zoho</span>
+          </div>
+        </a>
+        <a href="/integrations/google-sheets/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/google-sheet.png" class="hb-int-icon" alt="Google Sheet" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Google Sheet</span>
+          </div>
+        </a>
+
+        <!-- Duplicate Set 2 for seamless infinite loop -->
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/n8n.png" class="hb-int-icon" alt="n8n" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">n8n</span>
+        </div>
+        <a href="/integrations/shopify/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shopify.png" class="hb-int-icon" alt="Shopify" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shopify</span>
+          </div>
+        </a>
+        <a href="/integrations/woocommerce/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/woocommerce.png" class="hb-int-icon" alt="WooCommerce" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">WooCommerce</span>
+          </div>
+        </a>
+        <div class="hb-int-card">
+          <img src="assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
+          <span class="hb-int-name">Gotab</span>
+        </div>
+        <a href="/integrations/wortal/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Wortal</span>
+          </div>
+        </a>
+        <a href="/integrations/shiprocket/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Shiprocket</span>
+          </div>
+        </a>
+        <a href="/integrations/zoho/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/zoho.png" class="hb-int-icon" alt="Zoho" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Zoho</span>
+          </div>
+        </a>
+        <a href="/integrations/google-sheets/" class="hb-int-link">
+          <div class="hb-int-card">
+            <img src="assets/images/integrations/google-sheet.png" class="hb-int-icon" alt="Google Sheet" width="40" height="40" loading="lazy">
+            <span class="hb-int-name">Google Sheet</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -8489,9 +8847,9 @@
           <a href="/auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
             Start Free 7-Day Trial
           </a>
-          <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="cw-btn-data btn-download-data">
+          <a href="#callback" onclick="if(window.openCallbackModal){openCallbackModal();return false;}" class="cw-btn-data btn-download-brochure" title="Download HelloBotz Brochure">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Data
+            Download Brochure
           </a>
           <a href="#callback" onclick="if(window.openCallbackModal){openCallbackModal();return false;}" class="btn-ghost-dark">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
