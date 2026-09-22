@@ -1,0 +1,413 @@
+/* ==========================================================================
+   HELLOBOTZ ANNOUNCEMENT & OFFERS INTERACTIVE SCROLL CAROUSEL
+   ========================================================================== */
+
+.announcement-banner.hb-announcement-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 1001 !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(90deg, #312E81 0%, #4338CA 18%, #6366F1 38%, #7C3AED 58%, #0891B2 82%, #059669 100%) !important;
+  background-size: 220% 100% !important;
+  animation: hbAnnShimmerBg 14s ease infinite !important;
+  color: #ffffff !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.15) !important;
+  box-sizing: border-box !important;
+  transition: height 0.3s ease, min-height 0.3s ease, opacity 0.25s ease, padding 0.25s ease !important;
+  overflow: hidden !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+@keyframes hbAnnShimmerBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.announcement-banner.hb-announcement-bar.hb-ann-closing {
+  height: 0 !important;
+  min-height: 0 !important;
+  opacity: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+  pointer-events: none !important;
+}
+
+.hb-ann-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 1380px !important;
+  margin: 0 auto !important;
+  height: 100% !important;
+  position: relative !important;
+}
+
+.hb-ann-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  height: 100% !important;
+  padding: 0 32px !important;
+}
+
+/* Small Navigation Buttons: Prev & Next */
+.hb-ann-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  flex-shrink: 0 !important;
+  outline: none !important;
+  user-select: none !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hb-ann-btn:hover {
+  background: rgba(255, 255, 255, 0.36) !important;
+  border-color: rgba(255, 255, 255, 0.75) !important;
+  transform: scale(1.12) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+.hb-ann-btn:active {
+  transform: scale(0.92) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.hb-ann-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85) !important;
+}
+
+.hb-ann-btn svg {
+  display: block !important;
+  pointer-events: none !important;
+  stroke: currentColor !important;
+}
+
+/* Slide Counter indicator */
+.hb-ann-counter {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  padding: 3px 8px !important;
+  border-radius: 12px !important;
+  letter-spacing: 0.5px !important;
+  font-variant-numeric: tabular-nums !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  user-select: none !important;
+  flex-shrink: 0 !important;
+  line-height: 1.1 !important;
+}
+
+/* Dismiss Close Button */
+.hb-ann-close {
+  position: absolute !important;
+  right: 6px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  opacity: 0.78 !important;
+}
+
+.hb-ann-close:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Center Carousel Viewport & Slides Track */
+.hb-ann-viewport {
+  position: relative !important;
+  overflow: hidden !important;
+  height: 100% !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+}
+
+.hb-ann-track {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Individual Slide */
+.hb-ann-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateX(24px) !important;
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s !important;
+}
+
+.hb-ann-slide.is-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateX(0) !important;
+  z-index: 2 !important;
+}
+
+.hb-ann-slide.is-exiting-prev {
+  opacity: 0 !important;
+  transform: translateX(28px) !important;
+}
+
+.hb-ann-slide.is-exiting-next {
+  opacity: 0 !important;
+  transform: translateX(-28px) !important;
+}
+
+.hb-ann-slide.is-entering-prev {
+  opacity: 0 !important;
+  transform: translateX(-28px) !important;
+}
+
+.hb-ann-slide.is-entering-next {
+  opacity: 0 !important;
+  transform: translateX(28px) !important;
+}
+
+/* Slide Link Wrapper */
+.hb-ann-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.hb-ann-link:hover {
+  opacity: 0.96 !important;
+  color: #ffffff !important;
+}
+
+.hb-ann-link:hover .hb-ann-cta svg {
+  transform: translateX(3px) !important;
+}
+
+/* Category Pill Badges */
+.hb-ann-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 3px 8px !important;
+  border-radius: 9999px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18) !important;
+  line-height: 1.15 !important;
+}
+
+.hb-badge-offer {
+  background: rgba(245, 158, 11, 0.32) !important;
+  border: 1px solid rgba(251, 191, 36, 0.7) !important;
+  color: #FEF3C7 !important;
+}
+
+.hb-badge-pulse {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #F59E0B !important;
+  box-shadow: 0 0 6px #FBBF24 !important;
+  display: inline-block !important;
+  animation: hbPulseDot 1.4s infinite !important;
+}
+
+@keyframes hbPulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.7; }
+}
+
+.hb-badge-update {
+  background: rgba(16, 185, 129, 0.3) !important;
+  border: 1px solid rgba(52, 211, 153, 0.7) !important;
+  color: #D1FAE5 !important;
+}
+
+.hb-badge-announcement {
+  background: rgba(139, 92, 246, 0.34) !important;
+  border: 1px solid rgba(167, 139, 250, 0.7) !important;
+  color: #EDE9FE !important;
+}
+
+.hb-badge-feature {
+  background: rgba(6, 182, 212, 0.3) !important;
+  border: 1px solid rgba(103, 232, 249, 0.7) !important;
+  color: #CFFAFE !important;
+}
+
+.hb-badge-partner {
+  background: rgba(236, 72, 153, 0.32) !important;
+  border: 1px solid rgba(244, 114, 182, 0.7) !important;
+  color: #FCE7F3 !important;
+}
+
+/* Announcement Text & Code Highlight */
+.hb-ann-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.hb-ann-text strong {
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.hb-ann-code {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.8) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  font-weight: 800 !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.5px !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* CTA Arrow Link */
+.hb-ann-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+  padding-bottom: 1px !important;
+  flex-shrink: 0 !important;
+  margin-left: 3px !important;
+  transition: all 0.15s ease !important;
+}
+
+.hb-ann-cta svg {
+  display: inline-block !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hb-ann-center {
+    padding: 0 28px !important;
+    gap: 8px !important;
+  }
+  .hb-ann-text {
+    font-size: 12.5px !important;
+  }
+  .hb-ann-cta {
+    font-size: 11.5px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcement-banner.hb-announcement-bar {
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 6px !important;
+  }
+  .hb-ann-center {
+    padding: 0 24px !important;
+    gap: 6px !important;
+  }
+  .hb-ann-btn {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+  }
+  .hb-ann-counter {
+    display: none !important;
+  }
+  .hb-ann-text {
+    font-size: 11.5px !important;
+    max-width: 260px !important;
+  }
+  .hb-ann-badge {
+    font-size: 9.5px !important;
+    padding: 2px 6px !important;
+  }
+  .hb-ann-cta {
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hb-ann-text {
+    max-width: 175px !important;
+  }
+  .hb-ann-cta {
+    display: none !important;
+  }
+}
