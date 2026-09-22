@@ -1,9 +1,9 @@
 <?php
-$basePath = "../../";
+$basePath = "../";
 $pageTitle = "Insights on WhatsApp Automation for Sales, Marketing & Support — HelloBotz";
 $pageDescription = "Discover marketing guides, automation tutorials, CRM workflows, and strategies to simplify communication and scale faster with HelloBotz.";
 $canonicalUrl = "https://hellobotz.com/resources/blog/";
-include __DIR__ . "/../../includes/header.php";
+include __DIR__ . "/../includes/header.php";
 ?>
 <link rel="stylesheet" href="/assets/css/articles-blog.css?v=2">
 
@@ -389,4 +389,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<?php include __DIR__ . "/../../includes/footer.php"; ?>
+<?php include __DIR__ . "/../includes/footer.php"; ?>
