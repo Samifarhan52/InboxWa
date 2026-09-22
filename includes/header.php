@@ -354,19 +354,36 @@ if (!function_exists('hb_seo_esc')) {
         ========================================================================== */
     :root {
       --nav: 74px !important;
+      --hb-ann-h: 40px;
     }
     html {
-      scroll-padding-top: 84px;
+      scroll-padding-top: calc(var(--nav, 74px) + var(--hb-ann-h, 40px) + 12px) !important;
     }
     body {
-      padding-top: 74px !important;
+      padding-top: calc(var(--nav, 74px) + var(--hb-ann-h, 40px)) !important;
     }
     @media (max-width: 768px) {
       :root {
         --nav: 60px !important;
+        --hb-ann-h: 38px;
       }
       body {
-        padding-top: 60px !important;
+        padding-top: calc(var(--nav, 60px) + var(--hb-ann-h, 38px)) !important;
+      }
+      html {
+        scroll-padding-top: calc(var(--nav, 60px) + var(--hb-ann-h, 38px) + 10px) !important;
+      }
+    }
+    body.hb-ann-dismissed {
+      --hb-ann-h: 0px !important;
+      padding-top: var(--nav, 74px) !important;
+    }
+    body.hb-ann-dismissed .site-header {
+      top: 0 !important;
+    }
+    @media (max-width: 768px) {
+      body.hb-ann-dismissed {
+        padding-top: var(--nav, 60px) !important;
       }
     }
 
@@ -390,7 +407,7 @@ if (!function_exists('hb_seo_esc')) {
     /* Edge-to-Edge Sticky Header Bar */
     .site-header {
       position: fixed !important;
-      top: 0 !important;
+      top: var(--hb-ann-h, 40px) !important;
       left: 0 !important;
       right: 0 !important;
       width: 100% !important;

@@ -1,7 +1,7 @@
 /**
  * HelloBotz Interactive Top Announcement & Offers Carousel
  * Provides auto-rotation, previous/next controls, touch swipe, keyboard accessibility,
- * pause on hover/focus, and smooth synchronization with the floating logo dock.
+ * pause on hover/focus, and smooth persistent synchronization with the fixed navbar.
  */
 (function() {
   'use strict';
@@ -14,9 +14,17 @@
     try {
       if (sessionStorage.getItem('hb_ann_dismissed') === '1') {
         bar.style.display = 'none';
+        document.body.classList.add('hb-ann-dismissed');
+        document.documentElement.style.setProperty('--hb-ann-h', '0px');
         return;
       }
     } catch (e) {}
+
+    // Ensure active announcement state
+    document.body.classList.remove('hb-ann-dismissed');
+    document.body.classList.add('has-ann-bar');
+    var isMobile = window.innerWidth <= 768;
+    document.documentElement.style.setProperty('--hb-ann-h', isMobile ? '38px' : '40px');
 
     var slides = bar.querySelectorAll('.hb-ann-slide');
     if (!slides || slides.length === 0) return;
@@ -54,7 +62,6 @@
       var currentSlide = slides[currentIndex];
       var nextSlide = slides[newIndex];
 
-      // Remove classes from all other slides to be clean
       slides.forEach(function(s, idx) {
         if (idx !== currentIndex && idx !== newIndex) {
           s.classList.remove('is-active', 'is-exiting-next', 'is-exiting-prev', 'is-entering-next', 'is-entering-prev');
@@ -62,19 +69,15 @@
         }
       });
 
-      // Prepare entering slide
       nextSlide.classList.remove('is-active', 'is-exiting-next', 'is-exiting-prev');
       nextSlide.classList.add(dir === 'next' ? 'is-entering-next' : 'is-entering-prev');
 
-      // Trigger reflow
       void nextSlide.offsetWidth;
 
-      // Animate current slide out
       currentSlide.classList.remove('is-active');
       currentSlide.classList.add(dir === 'next' ? 'is-exiting-next' : 'is-exiting-prev');
       currentSlide.setAttribute('aria-hidden', 'true');
 
-      // Animate next slide in
       nextSlide.classList.remove('is-entering-next', 'is-entering-prev');
       nextSlide.classList.add('is-active');
       nextSlide.removeAttribute('aria-hidden');
@@ -138,13 +141,15 @@
         e.stopPropagation();
         stopTimer();
         bar.classList.add('hb-ann-closing');
+        document.body.classList.remove('has-ann-bar');
+        document.body.classList.add('hb-ann-dismissed');
+        document.documentElement.style.setProperty('--hb-ann-h', '0px');
         try {
           sessionStorage.setItem('hb_ann_dismissed', '1');
         } catch (err) {}
 
         setTimeout(function() {
           bar.style.display = 'none';
-          // Notify main.js to smoothly recalibrate the logo dock offset
           window.dispatchEvent(new Event('resize'));
           window.dispatchEvent(new Event('scroll'));
         }, 280);
@@ -186,7 +191,6 @@
       if (e.changedTouches && e.changedTouches.length === 1) {
         var diffX = touchStartX - e.changedTouches[0].clientX;
         var diffY = touchStartY - e.changedTouches[0].clientY;
-        // Horizontal swipe detected
         if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
           if (diffX > 0) {
             nextSlide();
@@ -209,14 +213,29 @@
       }
     });
 
+    window.addEventListener('resize', function() {
+      if (!document.body.classList.contains('hb-ann-dismissed')) {
+        var mobile = window.innerWidth <= 768;
+        document.documentElement.style.setProperty('--hb-ann-h', mobile ? '38px' : '40px');
+      }
+    }, { passive: true });
+
     // Start auto-scroll
     startTimer();
 
-    // Trigger window resize so main.js computes logo dock with announcement offset immediately
     setTimeout(function() {
       window.dispatchEvent(new Event('resize'));
     }, 50);
   }
+
+  // Pre-check session storage immediately to avoid any flash if previously dismissed
+  try {
+    if (sessionStorage.getItem('hb_ann_dismissed') === '1') {
+      document.documentElement.classList.add('hb-ann-dismissed');
+      if (document.body) document.body.classList.add('hb-ann-dismissed');
+      document.documentElement.style.setProperty('--hb-ann-h', '0px');
+    }
+  } catch (e) {}
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAnnouncementBar);

@@ -4085,16 +4085,33 @@ html, body {
 
 /* ==========================================================================
    HELLOBOTZ ANNOUNCEMENT & OFFERS INTERACTIVE SCROLL CAROUSEL
+   Fixed along with the sticky navbar so both persist together during scroll
    ========================================================================== */
 
+:root {
+  --hb-ann-h: 40px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hb-ann-h: 38px;
+  }
+}
+
+/* Announcement Bar is fixed at the very top of viewport */
 .announcement-banner.hb-announcement-bar {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  position: relative !important;
-  z-index: 1001 !important;
-  min-height: 40px !important;
-  height: 40px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  z-index: 100002 !important;
+  min-height: var(--hb-ann-h, 40px) !important;
+  height: var(--hb-ann-h, 40px) !important;
   background: linear-gradient(90deg, #312E81 0%, #4338CA 18%, #6366F1 38%, #7C3AED 58%, #0891B2 82%, #059669 100%) !important;
   background-size: 220% 100% !important;
   animation: hbAnnShimmerBg 14s ease infinite !important;
@@ -4107,7 +4124,7 @@ html, body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
   box-shadow: 0 2px 12px rgba(15, 23, 42, 0.15) !important;
   box-sizing: border-box !important;
-  transition: height 0.3s ease, min-height 0.3s ease, opacity 0.25s ease, padding 0.25s ease !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
   overflow: hidden !important;
   -webkit-font-smoothing: antialiased !important;
 }
@@ -4119,13 +4136,44 @@ html, body {
 }
 
 .announcement-banner.hb-announcement-bar.hb-ann-closing {
-  height: 0 !important;
-  min-height: 0 !important;
+  transform: translateY(-100%) !important;
   opacity: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  border-bottom: none !important;
   pointer-events: none !important;
+}
+
+/* Ensure the fixed navbar stays directly beneath the announcement bar */
+html body .site-header {
+  top: var(--hb-ann-h, 40px) !important;
+  transition: top 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease !important;
+}
+
+/* Keep page content from being obscured beneath the two fixed bars */
+html body {
+  padding-top: calc(var(--nav, 74px) + var(--hb-ann-h, 40px)) !important;
+}
+
+html {
+  scroll-padding-top: calc(var(--nav, 74px) + var(--hb-ann-h, 40px) + 12px) !important;
+}
+
+/* Dismissed / Closed State */
+body.hb-ann-dismissed {
+  --hb-ann-h: 0px !important;
+}
+
+body.hb-ann-dismissed .announcement-banner.hb-announcement-bar {
+  display: none !important;
+}
+
+body.hb-ann-dismissed .site-header {
+  top: 0 !important;
+}
+
+body.hb-ann-dismissed {
+  padding-top: var(--nav, 74px) !important;
 }
 
 .hb-ann-inner {
@@ -4461,6 +4509,18 @@ html, body {
     height: 38px !important;
     min-height: 38px !important;
     padding: 0 6px !important;
+  }
+  html body .site-header {
+    top: var(--hb-ann-h, 38px) !important;
+  }
+  html body {
+    padding-top: calc(var(--nav, 60px) + var(--hb-ann-h, 38px)) !important;
+  }
+  html {
+    scroll-padding-top: calc(var(--nav, 60px) + var(--hb-ann-h, 38px) + 10px) !important;
+  }
+  body.hb-ann-dismissed {
+    padding-top: var(--nav, 60px) !important;
   }
   .hb-ann-center {
     padding: 0 24px !important;
