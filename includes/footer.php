@@ -7,7 +7,7 @@ $fWa = cms_setting('support_whatsapp', '918050854445');
 $fPhone = cms_setting('phone_number', '+91 80508 54445');
 $fSalesEmail = cms_setting('sales_email', 'mail@hellobotz.com');
 $fSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
-$fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nShanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025");
+$fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
 ?>
   <!-- Scoped Footer & Map Styles -->
   <style>
@@ -61,11 +61,11 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
   .footer-social-wa {
     background: #25D366 !important;
   }
-  /* Professional 3-Column Footer with Embedded Map */
+  /* Professional 4-Column Footer with Embedded Map */
   .footer-pro-layout {
     display: grid !important;
-    grid-template-columns: 1.35fr 0.95fr 1.45fr !important;
-    gap: 3rem !important;
+    grid-template-columns: 1.25fr 0.95fr 0.95fr 1.35fr !important;
+    gap: 2.5rem !important;
     align-items: start !important;
     padding-bottom: 2.5rem !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -121,6 +121,31 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     background: #1E293B;
+  }
+  .footer-global-presence {
+    margin-top: 0.85rem;
+    padding: 0.55rem 0.85rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #22D3EE;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  .footer-global-presence .presence-tag {
+    color: #E2E8F0;
+    transition: color 0.2s ease;
+  }
+  .footer-global-presence .presence-divider {
+    color: #64748B;
+    font-weight: 400;
   }
   @media (max-width: 1024px) {
     .footer-pro-layout {
@@ -1078,12 +1103,24 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
           </div>
         </div>
 
-        <!-- Column 2: Important Links (Only 6 Core Links) -->
+        <!-- Column 2: Our Channels -->
         <div class="footer-nav-col">
-          <div class="footer-heading">Important Links</div>
+          <div class="footer-heading">Our Channels</div>
           <ul>
             <li><a href="<?php echo $bp; ?>channel/whatsapp/">WhatsApp Business API</a></li>
-            <li><a href="<?php echo $bp; ?>products/chatbot/">AI Chatbot &amp; Automation</a></li>
+            <li><a href="<?php echo $bp; ?>channel/instagram/">Instagram Automation</a></li>
+            <li><a href="<?php echo $bp; ?>channel/facebook/">Facebook Messenger</a></li>
+            <li><a href="<?php echo $bp; ?>channel/telegram/">Telegram Bot</a></li>
+            <li><a href="<?php echo $bp; ?>whatsapp-team-inbox/">Omnichannel Shared Inbox</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Resources -->
+        <div class="footer-nav-col">
+          <div class="footer-heading">Resources</div>
+          <ul>
+            <li><a href="<?php echo $bp; ?>blogs/">Blogs &amp; Insights</a></li>
+            <li><a href="<?php echo $bp; ?>careers/">Careers</a></li>
             <li><a href="<?php echo $bp; ?>pricing/">Pricing Plans</a></li>
             <li><a href="<?php echo $bp; ?>partners/">Partner Program</a></li>
             <li><a href="<?php echo $bp; ?>company/about/">About HelloBotz</a></li>
@@ -1091,32 +1128,40 @@ $fAddress = cms_setting('office_address', "HelloBotz AI Technologies Pvt Ltd\nSh
           </ul>
         </div>
 
-        <!-- Column 3: Head Office Map Directly In Footer -->
+        <!-- Column 4: Location & Embedded Map -->
         <div class="footer-map-col">
           <div class="footer-heading" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
             <span style="display:inline-flex;align-items:center;gap:6px;color:#FFFFFF;font-weight:700;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Head Office
+              Location
             </span>
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025" target="_blank" rel="noopener noreferrer" class="footer-map-pill">
+            <a href="https://maps.google.com/maps?q=Bangalore+Karnataka+560030" target="_blank" rel="noopener noreferrer" class="footer-map-pill">
               Google Maps ↗
             </a>
           </div>
-          <p style="font-size:0.83rem;color:#94A3B8;margin:0 0 0.85rem;line-height:1.5;">
-            <strong style="color:#FFFFFF;">HelloBotz AI Technologies Pvt Ltd</strong><br>
-            Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025
+          <p style="font-size:0.88rem;color:#E2E8F0;margin:0 0 0.85rem;line-height:1.5;font-weight:600;">
+            Bangalore Karnataka 560030
           </p>
           <div class="footer-map-frame-wrap">
             <iframe
-              title="HelloBotz Head Office Map"
-              src="https://maps.google.com/maps?q=Shanthala+Nagar,+Ashok+Nagar,+Bengaluru,+Karnataka+560025&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              title="HelloBotz Office Location Map"
+              src="https://maps.google.com/maps?q=Bangalore+Karnataka+560030&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
               width="100%"
-              height="190"
+              height="170"
               style="border:0;display:block;"
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
+          </div>
+          <div class="footer-global-presence" aria-label="Global Presence: Bangalore, Gujarath, Dubai, Qatar">
+            <span class="presence-tag">Bangalore</span>
+            <span class="presence-divider">|</span>
+            <span class="presence-tag">Gujarath</span>
+            <span class="presence-divider">|</span>
+            <span class="presence-tag">Dubai</span>
+            <span class="presence-divider">|</span>
+            <span class="presence-tag">Qatar|</span>
           </div>
         </div>
       </div>

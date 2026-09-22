@@ -20,8 +20,8 @@ $cmsSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
 $cmsLogo     = cms_setting('logo_url', '/assets/images/logo.png');
 $cmsLogoLight = cms_setting('logo_light_url', '/assets/images/logo-light.png');
 $cmsLogoDark  = cms_setting('logo_dark_url', '/assets/images/logo-dark.png');
-$cmsLogoWidth = cms_setting('logo_width', '160px');
-$cmsLogoHeight= cms_setting('logo_height', '52px');
+$cmsLogoWidth = cms_setting('logo_width', '180px');
+$cmsLogoHeight= cms_setting('logo_height', '44px');
 $announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
 $announcementText = cms_setting('announcement_text', '');
 $announcementLink = cms_setting('announcement_link', '/auth/register');
@@ -521,18 +521,19 @@ if (!function_exists('hb_seo_esc')) {
 
     /* Logo Image Sizing & Resizing on Scroll */
     .site-header .logo-img {
-      height: var(--site-logo-height, 52px) !important;
+      height: var(--site-logo-height, 44px) !important;
       width: auto !important;
-      max-width: var(--site-logo-width, 230px) !important;
+      max-width: var(--site-logo-width, 220px) !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
       display: block !important;
       transition: height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                   max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .site-header.scrolled .logo-img {
-      height: calc(var(--site-logo-height, 52px) * 0.65) !important;
-      max-width: calc(var(--site-logo-width, 230px) * 0.65) !important;
+      height: calc(var(--site-logo-height, 44px) * 0.78) !important;
+      max-width: calc(var(--site-logo-width, 220px) * 0.78) !important;
     }
 
     /* Theme Logo Switcher */

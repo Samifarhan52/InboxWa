@@ -285,9 +285,10 @@
 .header-avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .header-online-dot {
@@ -463,9 +464,10 @@
 .bot-avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .chat-bubble {
