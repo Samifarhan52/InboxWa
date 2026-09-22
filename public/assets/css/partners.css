@@ -589,18 +589,18 @@
         box-shadow: 0 20px 45px -10px var(--card-glow), 0 0 25px var(--card-bg-glow);
     }
 
-    /* Top Visual Illustration Box */
+    /* Top Visual Illustration Box - Futuristic Gen-Z Height & Layout */
     .pp-card-visual {
         position: relative;
-        height: 165px;
+        height: 180px;
         background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%);
         background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
         background-size: 14px 14px;
         border-bottom: 1px solid rgba(226, 232, 240, 0.85);
-        padding: 16px 18px;
+        padding: 14px 16px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         overflow: hidden;
     }
@@ -627,7 +627,7 @@
         text-transform: uppercase;
         color: #0F172A;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        margin-bottom: 12px;
+        margin-bottom: 4px;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         z-index: 2;
@@ -646,242 +646,304 @@
         50% { transform: scale(1.35); opacity: 0.75; }
     }
 
-    /* Cluster elements (Card 1) */
-    .pp-visual-cluster {
+    .pv-telemetry-tag {
+        font-size: 0.68rem;
+        font-weight: 700;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 5px;
+        z-index: 2;
+    }
+
+    /* 1. Heartbeat Wave Animation (Card 1) */
+    .pv-heartbeat-box {
         width: 100%;
-        justify-content: center;
-        margin-bottom: 8px;
+        max-width: 240px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
         z-index: 1;
     }
-    .pv-server-node {
+    .pv-heartbeat-svg {
+        width: 100%;
+        height: 38px;
+        overflow: visible;
+    }
+    .pv-heartbeat-bg {
+        fill: none;
+        stroke: rgba(6, 182, 212, 0.2);
+        stroke-width: 2;
+    }
+    .pv-heartbeat-live {
+        fill: none;
+        stroke: url(#pvHeartbeatGrad);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 240;
+        stroke-dashoffset: 240;
+        animation: pvDrawHeartbeat 2.8s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.7));
+    }
+    @keyframes pvDrawHeartbeat {
+        0% { stroke-dashoffset: 240; }
+        100% { stroke-dashoffset: 0; }
+    }
+    .pv-hud-nodes {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 4px;
+    }
+    .pv-hud-node {
+        font-size: 0.66rem;
+        font-weight: 700;
+        color: #475569;
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        padding: 4px 9px;
-        background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
-        border-radius: 8px;
-        font-size: 0.72rem;
-        font-weight: 700;
-        color: #334155;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        gap: 4px;
     }
-    .pv-node-highlight {
-        border-color: var(--card-accent);
-        color: var(--card-accent);
-        background: var(--card-bg-glow);
-        box-shadow: 0 0 12px var(--card-glow);
-    }
-    .pv-flow-line {
-        flex: 1;
-        max-width: 22px;
-        height: 2px;
-        background: #CBD5E1;
-        position: relative;
-    }
-    .pv-flow-dot {
-        position: absolute;
+    .pv-led-green {
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: var(--card-accent);
-        box-shadow: 0 0 6px var(--card-accent);
-        top: -2px;
-        left: 0;
-        animation: pvFlow 2s infinite linear;
+        background: #10B981;
+        box-shadow: 0 0 8px #10B981;
+        animation: pvBlink 1.5s infinite ease-in-out;
     }
-    @keyframes pvFlow {
-        0% { left: 0%; opacity: 0; }
-        30% { opacity: 1; }
-        70% { opacity: 1; }
-        100% { left: 100%; opacity: 0; }
-    }
-    .pv-telemetry-tag {
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: #059669;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        z-index: 1;
+    @keyframes pvBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
     }
 
-    /* Currencies (Card 2) */
-    .pp-currencies-row {
-        display: flex;
-        gap: 6px;
-        margin-bottom: 8px;
-        z-index: 1;
-    }
-    .pv-cur-pill {
-        padding: 3px 8px;
-        background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
-        border: 1.5px solid #CBD5E1;
-        border-radius: 7px;
-        font-size: 0.72rem;
-        font-weight: 800;
-        color: #0F172A;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-        transition: transform 0.2s ease;
-    }
-    .pv-cur-usd { border-color: #10B981; color: #047857; background: rgba(16, 185, 129, 0.1); }
-    .pv-cur-eur { border-color: #3B82F6; color: #1D4ED8; background: rgba(59, 130, 246, 0.1); }
-    .pv-cur-inr { border-color: #F59E0B; color: #B45309; background: rgba(245, 158, 11, 0.1); }
-    .pv-cur-aed { border-color: #8B5CF6; color: #6D28D9; background: rgba(139, 92, 246, 0.1); }
-    .pv-markup-bar {
+    /* 2. Profit Dashboard & 3D Tokens (Card 2) */
+    .pv-profit-dashboard {
         width: 100%;
         max-width: 240px;
-        height: 22px;
-        background: #E2E8F0;
-        border-radius: 999px;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-        z-index: 1;
-    }
-    .pv-markup-fill {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(90deg, #10B981 0%, #34D399 50%, #10B981 100%);
-        background-size: 200% 100%;
-        animation: pvShimmer 3s infinite linear;
-        border-radius: 999px;
-    }
-    @keyframes pvShimmer {
-        0% { background-position: 100% 0; }
-        100% { background-position: -100% 0; }
-    }
-    .pv-markup-label {
-        position: relative;
-        font-size: 0.7rem;
-        font-weight: 800;
-        color: #064E3B;
-        z-index: 2;
-        letter-spacing: 0.02em;
-    }
-
-    /* Payments (Card 3) */
-    .pv-payout-methods {
-        display: flex;
-        gap: 6px;
-        margin-bottom: 8px;
-        z-index: 1;
-    }
-    .pv-pay-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        padding: 4px 9px;
-        background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
-        border-radius: 7px;
-        font-size: 0.72rem;
-        font-weight: 700;
-        color: #334155;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    }
-    .pv-pay-pill i {
-        color: var(--card-accent);
-    }
-    .pv-payout-status {
-        font-size: 0.72rem;
-        font-weight: 700;
-        color: #059669;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        z-index: 1;
-    }
-
-    /* CRM (Card 4) */
-    .pv-crm-clients {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        width: 100%;
-        max-width: 240px;
+        gap: 7px;
         z-index: 1;
     }
-    .pv-crm-row {
+    .pv-profit-split {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 4px 10px;
-        background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
-        border-radius: 8px;
-        font-size: 0.72rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        padding: 5px 10px;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.25);
+        border-radius: 10px;
     }
-    .pv-crm-name {
-        font-weight: 700;
-        color: #334155;
+    .pv-p-label {
+        font-size: 0.62rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #64748B;
+        display: block;
+    }
+    .pv-p-num {
+        font-size: 0.95rem;
+        font-weight: 900;
+        color: #059669;
+    }
+    .pv-profit-badge-pill {
+        background: #10B981;
+        color: #FFFFFF;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-size: 0.68rem;
+        font-weight: 800;
+        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    }
+    .pv-3d-tokens {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+    }
+    .pv-token {
+        flex: 1;
+        text-align: center;
+        padding: 3px 0;
+        border-radius: 7px;
+        font-size: 0.68rem;
+        font-weight: 800;
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        color: #0F172A;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    }
+    .token-usd { border-color: #10B981 !important; color: #10B981 !important; }
+    .token-eur { border-color: #3B82F6 !important; color: #3B82F6 !important; }
+    .token-inr { border-color: #F59E0B !important; color: #F59E0B !important; }
+    .token-aed { border-color: #8B5CF6 !important; color: #8B5CF6 !important; }
+
+    /* 3. Escrow Vault (Card 3) */
+    .pv-escrow-vault {
+        width: 100%;
+        max-width: 240px;
         display: flex;
         align-items: center;
-        gap: 6px;
+        justify-content: space-between;
+        gap: 10px;
+        z-index: 1;
     }
-    .pv-crm-avatar {
-        width: 18px;
-        height: 18px;
-        border-radius: 5px;
+    .pv-vault-radar {
+        position: relative;
+        width: 44px;
+        height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.62rem;
-        font-weight: 800;
-        color: #FFFFFF;
+        flex-shrink: 0;
     }
-    .pv-crm-status.active {
+    .pv-radar-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1.5px solid rgba(139, 92, 246, 0.35);
+        animation: pvRadarExpand 2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+    }
+    .pv-radar-1 { width: 34px; height: 34px; }
+    .pv-radar-2 { width: 44px; height: 44px; animation-delay: 0.6s; }
+    @keyframes pvRadarExpand {
+        0% { transform: scale(0.6); opacity: 0.8; }
+        100% { transform: scale(1.15); opacity: 0; }
+    }
+    .pv-vault-core {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+        z-index: 2;
+    }
+    .pv-payout-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+    }
+    .pv-pay-pill {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 8px;
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        border-radius: 7px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: #334155;
+    }
+    .pv-pay-stripe i { color: #6366F1; }
+    .pv-pay-paypal i { color: #0079C1; }
+    .pv-pay-wire i { color: #10B981; }
+    .pv-payout-status {
+        font-size: 0.7rem;
+        font-weight: 700;
         color: #059669;
-        font-weight: 800;
-        background: #D1FAE5;
-        padding: 2px 6px;
-        border-radius: 999px;
-        font-size: 0.62rem;
-        letter-spacing: 0.03em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        z-index: 2;
     }
 
-    /* Browser Mock (Card 5) */
-    .pv-browser-mock {
+    /* 4. Multi-Tenant Cockpit (Card 4) */
+    .pv-cockpit-hud {
         width: 100%;
         max-width: 240px;
-        background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
-        border-radius: 10px;
-        padding: 6px 9px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 1;
+    }
+    .pv-tenant-chip {
         display: flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        margin-bottom: 8px;
+        padding: 5px 9px;
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        border-radius: 8px;
+    }
+    .pv-tenant-logo {
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        color: #FFFFFF;
+        font-size: 0.68rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .pv-tenant-meta {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+    .pv-tenant-name {
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: #0F172A;
+    }
+    .pv-tenant-count {
+        font-size: 0.62rem;
+        color: #64748B;
+    }
+    .pv-tenant-status-dot.online {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #10B981;
+        box-shadow: 0 0 6px #10B981;
+    }
+
+    /* 5. Mac Browser Window (Card 5) */
+    .pv-browser-window {
+        width: 100%;
+        max-width: 240px;
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        border-radius: 9px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         z-index: 1;
     }
-    .pv-browser-dots {
+    .pv-browser-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 8px;
+        background: #F1F5F9;
+        border-bottom: 1px solid #E2E8F0;
+    }
+    .pv-mac-dots {
         display: flex;
         gap: 4px;
     }
-    .pv-browser-dots span {
+    .mac-dot {
         width: 6px;
         height: 6px;
         border-radius: 50%;
     }
-    .pv-browser-dots span:nth-child(1) { background: #EF4444; }
-    .pv-browser-dots span:nth-child(2) { background: #F59E0B; }
-    .pv-browser-dots span:nth-child(3) { background: #10B981; }
-    .pv-browser-url {
+    .mac-dot.red { background: #EF4444; }
+    .mac-dot.yellow { background: #F59E0B; }
+    .mac-dot.green { background: #10B981; }
+    .pv-url-pill {
         flex: 1;
-        background: #F1F5F9;
+        background: #FFFFFF;
+        padding: 2px 7px;
         border-radius: 5px;
-        padding: 3px 8px;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-family: ui-monospace, SFMono-Regular, monospace;
         color: #2563EB;
         font-weight: 700;
@@ -889,191 +951,229 @@
         align-items: center;
         gap: 5px;
     }
+    .pv-browser-body-mock {
+        padding: 6px;
+        display: flex;
+        justify-content: center;
+    }
+    .pv-client-brand-badge {
+        font-size: 0.66rem;
+        font-weight: 800;
+        color: #3B82F6;
+        letter-spacing: 0.03em;
+    }
     .pv-brand-pill {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         font-weight: 700;
         color: #0284C7;
         display: flex;
         align-items: center;
         gap: 5px;
-        z-index: 1;
+        z-index: 2;
     }
 
-    /* Sandbox (Card 6) */
-    .pv-sandbox-box {
+    /* 6. VIP Pass (Card 6) */
+    .pv-vip-pass {
+        width: 100%;
+        max-width: 240px;
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        border: 1px solid rgba(14, 165, 233, 0.35);
+        border-radius: 10px;
+        padding: 8px 12px;
+        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
+        z-index: 1;
+    }
+    .pv-pass-chip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #F59E0B;
+        font-size: 0.9rem;
+    }
+    .pv-pass-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        flex: 1;
+    }
+    .pv-pass-lines span {
+        height: 2px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 1px;
+    }
+    .pv-pass-title {
+        font-size: 0.65rem;
+        font-weight: 800;
+        color: #F8FAFC;
+        letter-spacing: 0.05em;
+    }
+    .pv-pass-stamp {
+        font-size: 0.62rem;
+        font-weight: 900;
+        color: #0EA5E9;
+        letter-spacing: 0.06em;
+    }
+
+    /* 7. Terminal Window (Card 7) */
+    .pv-terminal-window {
         width: 100%;
+        max-width: 240px;
+        background: #0B0F19;
+        border: 1px solid #1E293B;
+        border-radius: 9px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+    .pv-term-header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        background: #111827;
+        border-bottom: 1px solid #1F2937;
+    }
+    .pv-term-tab {
+        font-size: 0.62rem;
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        color: #94A3B8;
+        flex: 1;
+    }
+    .pv-term-status {
+        font-size: 0.6rem;
+        font-weight: 800;
+        color: #10B981;
+        background: rgba(16, 185, 129, 0.15);
+        padding: 1px 5px;
+        border-radius: 4px;
+    }
+    .pv-term-code {
+        padding: 6px 8px;
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 0.64rem;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+    }
+    .pv-code-kw { color: #EC4899; font-weight: 800; }
+    .pv-code-url { color: #60A5FA; }
+    .pv-code-res { color: #A78BFA; }
+
+    /* 8. Lang Cloud & Audio Wave (Card 8) */
+    .pv-lang-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        justify-content: center;
         max-width: 240px;
         z-index: 1;
     }
-    .pv-check-line {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 10px;
-        background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
-        border-radius: 7px;
-        font-size: 0.72rem;
-        font-weight: 700;
-        color: #334155;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    }
-
-    /* Terminal Mock (Card 7) */
-    .pv-terminal-mock {
-        width: 100%;
-        max-width: 245px;
-        background: #0B0F19;
-        border-radius: 10px;
-        border: 1.5px solid #1E293B;
-        padding: 8px 12px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-        z-index: 1;
-    }
-    .pv-terminal-head {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 0.68rem;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        margin-bottom: 5px;
-    }
-    .pv-http-method {
-        background: #EC4899;
-        color: #FFFFFF;
-        font-weight: 800;
-        padding: 1px 5px;
-        border-radius: 4px;
-        font-size: 0.62rem;
-        letter-spacing: 0.04em;
-    }
-    .pv-http-path {
-        color: #94A3B8;
-        flex: 1;
-        font-weight: 600;
-    }
-    .pv-http-code {
-        color: #34D399;
-        font-weight: 800;
-    }
-    .pv-terminal-body code {
-        font-size: 0.65rem;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        color: #E2E8F0;
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    /* Lang pills (Card 8) */
-    .pv-lang-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px 6px;
-        justify-content: center;
-        max-width: 235px;
-        margin-bottom: 8px;
-        z-index: 1;
-    }
-    .pv-lang-tag {
+    .pv-lang-capsule {
         padding: 3px 8px;
         background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
+        border: 1px solid #CBD5E1;
         border-radius: 6px;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         font-weight: 700;
-        color: #334155;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        color: #1E293B;
     }
-    .pv-wave-row {
+    .pv-soundwave-row {
         display: flex;
         align-items: center;
-        gap: 6px;
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: #0D9488;
+        gap: 7px;
+        margin-top: 4px;
         z-index: 1;
     }
-    .pv-audio-wave {
-        display: inline-flex;
+    .pv-soundwave-bars {
+        display: flex;
         align-items: center;
-        gap: 3px;
+        gap: 2.5px;
         height: 14px;
     }
-    .pv-audio-wave span {
-        width: 3px;
+    .pv-soundwave-bars span {
+        width: 2.5px;
+        height: 100%;
         background: #14B8A6;
         border-radius: 2px;
-        animation: pvWave 1.2s infinite ease-in-out;
+        animation: pvWaveAnim 1.2s infinite ease-in-out alternate;
     }
-    .pv-audio-wave span:nth-child(1) { height: 6px; animation-delay: 0.1s; }
-    .pv-audio-wave span:nth-child(2) { height: 12px; animation-delay: 0.3s; }
-    .pv-audio-wave span:nth-child(3) { height: 8px; animation-delay: 0.2s; }
-    .pv-audio-wave span:nth-child(4) { height: 14px; animation-delay: 0.4s; }
-    .pv-audio-wave span:nth-child(5) { height: 7px; animation-delay: 0.15s; }
-    @keyframes pvWave {
-        0%, 100% { transform: scaleY(0.5); }
-        50% { transform: scaleY(1.3); }
+    .pv-soundwave-bars span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+    .pv-soundwave-bars span:nth-child(3) { animation-delay: 0.4s; height: 90%; }
+    .pv-soundwave-bars span:nth-child(4) { animation-delay: 0.1s; height: 40%; }
+    .pv-soundwave-bars span:nth-child(5) { animation-delay: 0.5s; height: 80%; }
+    .pv-soundwave-bars span:nth-child(6) { animation-delay: 0.3s; height: 50%; }
+    .pv-soundwave-bars span:nth-child(7) { animation-delay: 0.6s; height: 70%; }
+    @keyframes pvWaveAnim {
+        0% { transform: scaleY(0.3); }
+        100% { transform: scaleY(1); }
+    }
+    .pv-soundwave-text {
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: #14B8A6;
     }
 
-    /* Support Chat Mock (Card 9) */
-    .pv-support-chat {
+    /* 9. Support Live Chat Bubble (Card 9) */
+    .pv-chat-widget {
+        width: 100%;
+        max-width: 240px;
         display: flex;
         align-items: flex-start;
         gap: 8px;
-        width: 100%;
-        max-width: 240px;
-        margin-bottom: 7px;
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        border-radius: 10px;
+        padding: 6px 9px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         z-index: 1;
     }
-    .pv-support-avatar {
-        width: 28px;
-        height: 28px;
+    .pv-chat-avatar {
+        position: relative;
+        width: 26px;
+        height: 26px;
         border-radius: 50%;
         background: linear-gradient(135deg, #F97316, #EA580C);
         color: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.75rem;
-        flex-shrink: 0;
-        box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
-    }
-    .pv-support-content {
-        flex: 1;
-    }
-    .pv-support-meta {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 0.68rem;
-        font-weight: 800;
-        color: #334155;
-        margin-bottom: 2px;
-    }
-    .pv-support-bubble {
-        background: #FFFFFF;
-        border: 1.5px solid #CBD5E1;
-        border-radius: 7px;
-        padding: 4px 8px;
-        font-size: 0.68rem;
-        font-weight: 600;
-        color: #0F172A;
-        line-height: 1.35;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .pv-sla-pill {
         font-size: 0.72rem;
-        font-weight: 700;
-        color: #D97706;
+        flex-shrink: 0;
+    }
+    .pv-chat-online-dot {
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #10B981;
+        border: 1.5px solid #FFFFFF;
+    }
+    .pv-chat-bubble-wrap {
+        flex: 1;
         display: flex;
-        align-items: center;
-        gap: 5px;
-        z-index: 1;
+        flex-direction: column;
+        line-height: 1.25;
+    }
+    .pv-chat-sender {
+        font-size: 0.65rem;
+        font-weight: 800;
+        color: #0F172A;
+        display: flex;
+        justify-content: space-between;
+    }
+    .pv-chat-sender span {
+        font-size: 0.58rem;
+        font-weight: 600;
+        color: #64748B;
+    }
+    .pv-chat-text {
+        font-size: 0.68rem;
+        color: #475569;
     }
 
     /* Card Content Body */
@@ -2364,61 +2464,193 @@ body.dark-theme .pp-visual-badge {
     color: #F8FAFC !important;
 }
 
-html[data-theme="dark"] .pv-server-node,
-html[data-theme="dark"] .pv-cur-pill,
+html[data-theme="dark"] .pv-hud-node,
+body.dark-theme .pv-hud-node {
+    background: rgba(30, 41, 59, 0.7) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pv-profit-split,
+body.dark-theme .pv-profit-split {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+html[data-theme="dark"] .pv-p-label,
+body.dark-theme .pv-p-label {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pv-p-num,
+body.dark-theme .pv-p-num {
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pv-token,
+body.dark-theme .pv-token {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #F8FAFC !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .pv-vault-core,
+body.dark-theme .pv-vault-core {
+    background: #1E293B !important;
+    border-color: rgba(167, 139, 250, 0.4) !important;
+    color: #C4B5FD !important;
+}
+
 html[data-theme="dark"] .pv-pay-pill,
-html[data-theme="dark"] .pv-crm-row,
-html[data-theme="dark"] .pv-check-line,
-html[data-theme="dark"] .pv-browser-mock,
-html[data-theme="dark"] .pv-lang-tag,
-html[data-theme="dark"] .pv-support-bubble,
-body.dark-theme .pv-server-node,
-body.dark-theme .pv-cur-pill,
-body.dark-theme .pv-pay-pill,
-body.dark-theme .pv-crm-row,
-body.dark-theme .pv-check-line,
-body.dark-theme .pv-browser-mock,
-body.dark-theme .pv-lang-tag,
-body.dark-theme .pv-support-bubble {
+body.dark-theme .pv-pay-pill {
     background: #1E293B !important;
     border-color: rgba(255, 255, 255, 0.12) !important;
     color: #E2E8F0 !important;
 }
 
-html[data-theme="dark"] .pv-markup-bar,
-body.dark-theme .pv-markup-bar {
-    background: #1E293B !important;
-}
-
-html[data-theme="dark"] .pv-flow-line,
-body.dark-theme .pv-flow-line {
-    background: #334155 !important;
-}
-
 html[data-theme="dark"] .pv-payout-status,
 html[data-theme="dark"] .pv-brand-pill,
-html[data-theme="dark"] .pv-support-meta,
-html[data-theme="dark"] .pv-sla-pill,
 html[data-theme="dark"] .pv-telemetry-tag,
-html[data-theme="dark"] .pv-wave-row,
 body.dark-theme .pv-payout-status,
 body.dark-theme .pv-brand-pill,
-body.dark-theme .pv-support-meta,
-body.dark-theme .pv-sla-pill,
-body.dark-theme .pv-telemetry-tag,
-body.dark-theme .pv-wave-row {
+body.dark-theme .pv-telemetry-tag {
     color: #94A3B8 !important;
 }
 
-html[data-theme="dark"] .pv-crm-name,
-body.dark-theme .pv-crm-name {
-    color: #E2E8F0 !important;
+html[data-theme="dark"] .pv-tenant-chip,
+body.dark-theme .pv-tenant-chip {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
-html[data-theme="dark"] .pv-browser-url,
-body.dark-theme .pv-browser-url {
+html[data-theme="dark"] .pv-tenant-name,
+body.dark-theme .pv-tenant-name {
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pv-tenant-count,
+body.dark-theme .pv-tenant-count {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pv-browser-window,
+body.dark-theme .pv-browser-window {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .pv-browser-bar,
+body.dark-theme .pv-browser-bar {
     background: #0F172A !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .pv-url-pill,
+body.dark-theme .pv-url-pill {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
     color: #60A5FA !important;
+}
+
+html[data-theme="dark"] .pv-client-brand-badge,
+body.dark-theme .pv-client-brand-badge {
+    background: rgba(59, 130, 246, 0.15) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+    color: #93C5FD !important;
+}
+
+html[data-theme="dark"] .pv-vip-pass,
+body.dark-theme .pv-vip-pass {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(30, 41, 59, 0.85) 100%) !important;
+    border-color: rgba(14, 165, 233, 0.35) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .pv-pass-title,
+body.dark-theme .pv-pass-title {
+    color: #38BDF8 !important;
+}
+
+html[data-theme="dark"] .pv-pass-chip,
+body.dark-theme .pv-pass-chip {
+    background: #0F172A !important;
+    border-color: rgba(14, 165, 233, 0.3) !important;
+    color: #38BDF8 !important;
+}
+
+html[data-theme="dark"] .pv-pass-lines span,
+body.dark-theme .pv-pass-lines span {
+    background: rgba(14, 165, 233, 0.4) !important;
+}
+
+html[data-theme="dark"] .pv-pass-stamp,
+body.dark-theme .pv-pass-stamp {
+    background: rgba(14, 165, 233, 0.2) !important;
+    border-color: rgba(14, 165, 233, 0.4) !important;
+    color: #7DD3FC !important;
+}
+
+html[data-theme="dark"] .pv-terminal-window,
+body.dark-theme .pv-terminal-window {
+    background: #090D16 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .pv-term-header,
+body.dark-theme .pv-term-header {
+    background: #0F172A !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .pv-term-tab,
+body.dark-theme .pv-term-tab {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pv-lang-capsule,
+body.dark-theme .pv-lang-capsule {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #F8FAFC !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .pv-soundwave-text,
+body.dark-theme .pv-soundwave-text {
+    color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .pv-chat-widget,
+body.dark-theme .pv-chat-widget {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .pv-chat-sender,
+body.dark-theme .pv-chat-sender {
+    color: #F8FAFC !important;
+}
+
+html[data-theme="dark"] .pv-chat-sender span,
+body.dark-theme .pv-chat-sender span {
+    color: #64748B !important;
+}
+
+html[data-theme="dark"] .pv-chat-text,
+body.dark-theme .pv-chat-text {
+    color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .pv-chat-avatar,
+body.dark-theme .pv-chat-avatar {
+    background: rgba(249, 115, 22, 0.2) !important;
+    border-color: rgba(249, 115, 22, 0.35) !important;
+    color: #FB923C !important;
 }
 
 html[data-theme="dark"] .pp-card-head h3,

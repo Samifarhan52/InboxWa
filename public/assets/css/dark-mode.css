@@ -3099,3 +3099,129 @@ body.dark-theme .btn-sh-white {
   border-color: #334155 !important;
   color: #ffffff !important;
 }
+
+/* =========================================================
+   PRO DARK MODE: FOOTER LEAD GENERATION FORM GLASSMORPHISM
+   ========================================================= */
+html[data-theme="dark"] .footer-contact-section,
+body.dark-theme .footer-contact-section,
+.dark-mode .footer-contact-section {
+  background-color: #050811 !important;
+  background-image: linear-gradient(180deg, rgba(5, 8, 17, 0.88) 0%, rgba(8, 13, 26, 0.78) 50%, rgba(5, 8, 17, 0.98) 100%), url('../images/contact-bg.jpg') !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .contact-glass-card,
+body.dark-theme .contact-glass-card,
+.dark-mode .contact-glass-card {
+  background: rgba(15, 23, 42, 0.84) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(16, 185, 129, 0.2) !important;
+  color: #F8FAFC !important;
+}
+html[data-theme="dark"] .contact-glass-card:hover,
+body.dark-theme .contact-glass-card:hover,
+.dark-mode .contact-glass-card:hover {
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.85), 0 0 0 1.5px rgba(16, 185, 129, 0.4) !important;
+}
+html[data-theme="dark"] .contact-card-title,
+body.dark-theme .contact-card-title,
+.dark-mode .contact-card-title {
+  color: #FFFFFF !important;
+}
+html[data-theme="dark"] .contact-card-desc,
+body.dark-theme .contact-card-desc,
+.dark-mode .contact-card-desc {
+  color: #94A3B8 !important;
+}
+html[data-theme="dark"] .contact-item-row,
+body.dark-theme .contact-item-row,
+.dark-mode .contact-item-row {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #F1F5F9 !important;
+}
+html[data-theme="dark"] a.contact-item-row:hover,
+body.dark-theme a.contact-item-row:hover,
+.dark-mode a.contact-item-row:hover {
+  background: rgba(51, 65, 85, 0.8) !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+}
+html[data-theme="dark"] .contact-item-label,
+body.dark-theme .contact-item-label,
+.dark-mode .contact-item-label {
+  color: #94A3B8 !important;
+}
+html[data-theme="dark"] .contact-item-val,
+body.dark-theme .contact-item-val,
+.dark-mode .contact-item-val {
+  color: #F8FAFC !important;
+}
+html[data-theme="dark"] .icon-loc,
+body.dark-theme .icon-loc,
+.dark-mode .icon-loc {
+  background: rgba(51, 65, 85, 0.6) !important;
+  color: #CBD5E1 !important;
+}
+html[data-theme="dark"] .contact-field-label,
+body.dark-theme .contact-field-label,
+.dark-mode .contact-field-label {
+  color: #E2E8F0 !important;
+}
+html[data-theme="dark"] .contact-glass-card .form-input,
+body.dark-theme .contact-glass-card .form-input,
+.dark-mode .contact-glass-card .form-input {
+  background: rgba(15, 23, 42, 0.88) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  color: #F8FAFC !important;
+}
+html[data-theme="dark"] .contact-glass-card .form-input:focus,
+body.dark-theme .contact-glass-card .form-input:focus,
+.dark-mode .contact-glass-card .form-input:focus {
+  background: #0B1120 !important;
+  border-color: #10B981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22) !important;
+}
+html[data-theme="dark"] .contact-glass-card .form-input::placeholder,
+body.dark-theme .contact-glass-card .form-input::placeholder,
+.dark-mode .contact-glass-card .form-input::placeholder {
+  color: #64748B !important;
+}
+html[data-theme="dark"] .contact-meta-card,
+body.dark-theme .contact-meta-card,
+.dark-mode .contact-meta-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.85)) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] .contact-meta-card strong,
+body.dark-theme .contact-meta-card strong,
+.dark-mode .contact-meta-card strong {
+  color: #F8FAFC !important;
+}
+html[data-theme="dark"] .contact-meta-card span,
+body.dark-theme .contact-meta-card span,
+.dark-mode .contact-meta-card span {
+  color: #94A3B8 !important;
+}
+html[data-theme="dark"] .contact-app-block,
+body.dark-theme .contact-app-block,
+.dark-mode .contact-app-block {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .contact-app-label,
+body.dark-theme .contact-app-label,
+.dark-mode .contact-app-label {
+  color: #94A3B8 !important;
+}
+html[data-theme="dark"] .contact-app-link,
+body.dark-theme .contact-app-link,
+.dark-mode .contact-app-link {
+  background: #1E293B !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] .contact-security-guarantee,
+body.dark-theme .contact-security-guarantee,
+.dark-mode .contact-security-guarantee {
+  color: #94A3B8 !important;
+}
+

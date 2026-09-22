@@ -3652,6 +3652,231 @@ html, body {
   }
 }
 
+/* =========================================================
+   COMPACT & SLEEK LEAD GENERATION FORM OVERRIDES (ALL PAGES)
+   ========================================================= */
+.footer-contact-section {
+  padding: 3.25rem 0 3.75rem !important;
+}
+.contact-section-head {
+  margin: 0 auto 2.25rem !important;
+  max-width: 620px !important;
+}
+.contact-section-head h2 {
+  font-size: 1.85rem !important;
+  margin-bottom: 0.6rem !important;
+}
+.contact-section-head p {
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+.footer-contact-grid {
+  max-width: 960px !important;
+  gap: 1.5rem !important;
+}
+.contact-glass-card {
+  padding: 1.6rem 1.75rem !important;
+  border-radius: 18px !important;
+}
+.contact-card-title-group {
+  margin-bottom: 1.2rem !important;
+  gap: 0.85rem !important;
+}
+.contact-card-icon-pill {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 10px !important;
+}
+.contact-card-icon-pill svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+.contact-card-title {
+  font-size: 1.22rem !important;
+  margin-bottom: 0.2rem !important;
+}
+.contact-card-desc {
+  font-size: 0.82rem !important;
+  line-height: 1.45 !important;
+}
+.contact-details-list {
+  gap: 0.6rem !important;
+  margin-bottom: 1.25rem !important;
+}
+.contact-item-row {
+  padding: 0.55rem 0.8rem !important;
+  border-radius: 11px !important;
+  gap: 0.75rem !important;
+}
+.contact-item-icon {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+}
+.contact-item-icon svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+.contact-item-label {
+  font-size: 0.68rem !important;
+}
+.contact-item-val {
+  font-size: 0.84rem !important;
+  line-height: 1.35 !important;
+}
+.contact-app-block {
+  padding-top: 0.75rem !important;
+  margin-bottom: 0.95rem !important;
+}
+.contact-app-label {
+  font-size: 0.72rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.contact-app-link {
+  padding: 0.42rem 0.8rem !important;
+  font-size: 0.78rem !important;
+  border-radius: 9px !important;
+}
+.contact-meta-card {
+  padding: 0.7rem 0.95rem !important;
+  border-radius: 12px !important;
+  gap: 0.85rem !important;
+}
+.contact-meta-card img {
+  width: 90px !important;
+  max-height: 42px !important;
+}
+.footer-contact-form {
+  gap: 0.75rem !important;
+}
+.contact-form-row {
+  gap: 0.75rem !important;
+}
+.contact-field-group {
+  gap: 0.25rem !important;
+}
+.contact-field-label {
+  font-size: 0.76rem !important;
+}
+.contact-glass-card .form-input {
+  height: 38px !important;
+  font-size: 0.84rem !important;
+  border-radius: 10px !important;
+}
+.contact-input-wrap .form-input {
+  padding-left: 2.35rem !important;
+  padding-right: 0.75rem !important;
+}
+.contact-input-icon {
+  left: 0.75rem !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+.contact-glass-card textarea.form-input {
+  height: auto !important;
+  min-height: 64px !important;
+  padding: 0.6rem 0.75rem !important;
+}
+.contact-form-actions {
+  gap: 0.65rem !important;
+  margin-top: 0.35rem !important;
+}
+.btn-contact-submit {
+  height: 42px !important;
+  font-size: 0.9rem !important;
+  border-radius: 11px !important;
+}
+@media (max-width: 1024px) {
+  .footer-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .footer-contact-section {
+    padding: 2.75rem 0 3.25rem !important;
+  }
+}
+@media (max-width: 640px) {
+  .contact-glass-card {
+    padding: 1.2rem 1rem !important;
+    border-radius: 14px !important;
+  }
+  .contact-section-head h2 {
+    font-size: 1.5rem !important;
+  }
+}
 
-
+/* =========================================================
+   PHONE SIMULATOR: INTERACTIVE "TYPE HERE" FLOATING ALERT
+   ========================================================= */
+.cw-type-here-alert {
+  position: absolute !important;
+  bottom: calc(100% + 10px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: linear-gradient(135deg, #00A884 0%, #059669 100%) !important;
+  color: #FFFFFF !important;
+  padding: 6px 14px 6px 12px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 18px rgba(0, 168, 132, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 0.76rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  z-index: 60 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  animation: cwTypeAlertBounce 2.4s ease-in-out infinite !important;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s !important;
+}
+.cw-type-here-alert::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-width: 6px 6px 0 6px !important;
+  border-style: solid !important;
+  border-color: #059669 transparent transparent transparent !important;
+}
+.cw-type-here-alert.dismissed {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateX(-50%) translateY(6px) !important;
+  pointer-events: none !important;
+}
+.cw-type-pulse-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 0 0 2.5px rgba(255, 255, 255, 0.35) !important;
+  animation: cwPulseDot 1.4s infinite ease-in-out !important;
+  flex-shrink: 0 !important;
+}
+@keyframes cwPulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+@keyframes cwTypeAlertBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+.cw-type-close {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  padding: 0 0 0 4px !important;
+  cursor: pointer !important;
+}
+.cw-type-close:hover {
+  color: #FFFFFF !important;
+}
+html[data-theme="dark"] .cw-type-here-alert {
+  background: linear-gradient(135deg, #00A884 0%, #047857 100%) !important;
+  box-shadow: 0 6px 22px rgba(0, 168, 132, 0.55), 0 0 0 1.5px rgba(0, 168, 132, 0.4) !important;
+}
 

@@ -5,7 +5,7 @@ $pageDescription = 'Launch your own WhatsApp Business API business with HelloBot
 $canonicalUrl = 'https://hellobotz.com/partners/';
 $extraCss = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
-    '/assets/css/partners.css?v=6'
+    '/assets/css/partners.css?v=7'
 ];
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -285,15 +285,27 @@ include __DIR__ . '/../includes/header.php';
                             <span class="pv-pulse-dot" style="background:#06B6D4;"></span>
                             <span class="pv-badge-text">⚡ 99.999% REAL-TIME SLA</span>
                         </div>
-                        <div class="pp-visual-cluster">
-                            <div class="pv-server-node"><i class="fas fa-server"></i><span>US-East</span></div>
-                            <div class="pv-flow-line"><span class="pv-flow-dot"></span></div>
-                            <div class="pv-server-node pv-node-highlight"><i class="fas fa-bolt"></i><span>Auto-Scale AI</span></div>
-                            <div class="pv-flow-line"><span class="pv-flow-dot"></span></div>
-                            <div class="pv-server-node"><i class="fas fa-shield-virus"></i><span>DDoS Guard</span></div>
+                        <!-- Live Animated SVG Heartbeat Monitor HUD -->
+                        <div class="pv-heartbeat-box">
+                            <svg class="pv-heartbeat-svg" viewBox="0 0 240 40" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="pvHeartbeatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3"/>
+                                        <stop offset="60%" stop-color="#06B6D4" stop-opacity="1"/>
+                                        <stop offset="100%" stop-color="#10B981" stop-opacity="1"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="pv-heartbeat-bg" d="M0,20 L35,20 L45,10 L55,30 L65,5 L75,35 L85,20 L150,20 L160,8 L170,32 L180,20 L240,20"/>
+                                <path class="pv-heartbeat-live" d="M0,20 L35,20 L45,10 L55,30 L65,5 L75,35 L85,20 L150,20 L160,8 L170,32 L180,20 L240,20"/>
+                            </svg>
+                            <div class="pv-hud-nodes">
+                                <span class="pv-hud-node"><span class="pv-led-green"></span> US-East (Virginia)</span>
+                                <span class="pv-hud-node"><span class="pv-led-green"></span> EU-Central</span>
+                                <span class="pv-hud-node"><span class="pv-led-green"></span> AP-South</span>
+                            </div>
                         </div>
                         <div class="pv-telemetry-tag">
-                            <i class="fas fa-satellite-dish"></i> <span>Global Edge Mesh • 4ms Ping</span>
+                            <i class="fas fa-satellite-dish"></i> <span>Global Edge Mesh • 4ms Active Ping</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -318,15 +330,26 @@ include __DIR__ . '/../includes/header.php';
                             <span class="pv-pulse-dot" style="background:#10B981;"></span>
                             <span class="pv-badge-text">💎 100% MARGIN RETENTION</span>
                         </div>
-                        <div class="pp-currencies-row">
-                            <span class="pv-cur-pill pv-cur-usd">$ USD</span>
-                            <span class="pv-cur-pill pv-cur-eur">€ EUR</span>
-                            <span class="pv-cur-pill pv-cur-inr">₹ INR</span>
-                            <span class="pv-cur-pill pv-cur-aed">AED</span>
+                        <!-- Holographic Profit Calculator & 3D Currency Tokens -->
+                        <div class="pv-profit-dashboard">
+                            <div class="pv-profit-split">
+                                <div class="pv-profit-stat">
+                                    <span class="pv-p-label">CLIENT BILLING</span>
+                                    <strong class="pv-p-num">$2,499<small>/mo</small></strong>
+                                </div>
+                                <div class="pv-profit-badge-pill">
+                                    <i class="fas fa-arrow-trend-up"></i> +400% Margin 🚀
+                                </div>
+                            </div>
+                            <div class="pv-3d-tokens">
+                                <span class="pv-token token-usd">$ USD</span>
+                                <span class="pv-token token-eur">€ EUR</span>
+                                <span class="pv-token token-inr">₹ INR</span>
+                                <span class="pv-token token-aed">د.إ AED</span>
+                            </div>
                         </div>
-                        <div class="pv-markup-bar">
-                            <div class="pv-markup-fill" style="width:85%"></div>
-                            <span class="pv-markup-label">Agency Margin: +300% Markup 🚀</span>
+                        <div class="pv-telemetry-tag" style="color:#10B981;">
+                            <i class="fas fa-hand-holding-dollar"></i> <span>0% Vendor Cut • Keep 100% Agency Markup</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -348,16 +371,26 @@ include __DIR__ . '/../includes/header.php';
                     <div class="pp-card-visual">
                         <div class="pp-visual-glow"></div>
                         <div class="pp-visual-badge">
-                            <i class="fas fa-lock" style="font-size:0.75rem;margin-right:2px;color:#A78BFA;"></i>
+                            <i class="fas fa-shield-halved" style="font-size:0.75rem;margin-right:2px;color:#A78BFA;"></i>
                             <span class="pv-badge-text">🛡️ T+0 QUANTUM ESCROW</span>
                         </div>
-                        <div class="pv-payout-methods">
-                            <span class="pv-pay-pill"><i class="fab fa-stripe"></i> Stripe</span>
-                            <span class="pv-pay-pill"><i class="fab fa-paypal"></i> PayPal</span>
-                            <span class="pv-pay-pill"><i class="fas fa-building-columns"></i> Wire</span>
+                        <!-- Cyber Escrow Vault with Holographic Rails -->
+                        <div class="pv-escrow-vault">
+                            <div class="pv-vault-radar">
+                                <div class="pv-radar-ring pv-radar-1"></div>
+                                <div class="pv-radar-ring pv-radar-2"></div>
+                                <div class="pv-vault-core">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                            </div>
+                            <div class="pv-payout-methods">
+                                <span class="pv-pay-pill pv-pay-stripe"><i class="fab fa-stripe-s"></i> Stripe</span>
+                                <span class="pv-pay-pill pv-pay-paypal"><i class="fab fa-paypal"></i> PayPal</span>
+                                <span class="pv-pay-pill pv-pay-wire"><i class="fas fa-building-columns"></i> Wire Transfer</span>
+                            </div>
                         </div>
                         <div class="pv-payout-status">
-                            <i class="fas fa-circle-check" style="color:#10B981;"></i> Guaranteed Monthly Settlements
+                            <i class="fas fa-circle-check" style="color:#10B981;"></i> <span>Weekly Settlements &amp; Auto-Payouts</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -382,15 +415,26 @@ include __DIR__ . '/../includes/header.php';
                             <span class="pv-pulse-dot" style="background:#F59E0B;"></span>
                             <span class="pv-badge-text">🛸 MULTI-TENANT COCKPIT</span>
                         </div>
-                        <div class="pv-crm-clients">
-                            <div class="pv-crm-row">
-                                <span class="pv-crm-name"><span class="pv-crm-avatar" style="background:#3B82F6;">A</span> Apex Global Store</span>
-                                <span class="pv-crm-status active">ACTIVE</span>
+                        <div class="pv-cockpit-hud">
+                            <div class="pv-tenant-chip">
+                                <div class="pv-tenant-logo" style="background:linear-gradient(135deg,#3B82F6,#6366F1);">A</div>
+                                <div class="pv-tenant-meta">
+                                    <span class="pv-tenant-name">Apex Global Store</span>
+                                    <span class="pv-tenant-count">18.4k chats • Pro Tenant</span>
+                                </div>
+                                <span class="pv-tenant-status-dot online" title="Online"></span>
                             </div>
-                            <div class="pv-crm-row">
-                                <span class="pv-crm-name"><span class="pv-crm-avatar" style="background:#8B5CF6;">Z</span> Zenith Media Lab</span>
-                                <span class="pv-crm-status active">ACTIVE</span>
+                            <div class="pv-tenant-chip">
+                                <div class="pv-tenant-logo" style="background:linear-gradient(135deg,#EC4899,#8B5CF6);">Z</div>
+                                <div class="pv-tenant-meta">
+                                    <span class="pv-tenant-name">Zenith Media Lab</span>
+                                    <span class="pv-tenant-count">9.2k chats • Enterprise</span>
+                                </div>
+                                <span class="pv-tenant-status-dot online" title="Online"></span>
                             </div>
+                        </div>
+                        <div class="pv-telemetry-tag" style="color:#F59E0B;">
+                            <i class="fas fa-layer-group"></i> <span>Isolated Sub-Tenants • Granular Roles</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -415,12 +459,24 @@ include __DIR__ . '/../includes/header.php';
                             <span class="pv-pulse-dot" style="background:#3B82F6;"></span>
                             <span class="pv-badge-text">🌐 100% UNBRANDED STEALTH</span>
                         </div>
-                        <div class="pv-browser-mock">
-                            <div class="pv-browser-dots"><span></span><span></span><span></span></div>
-                            <div class="pv-browser-url"><i class="fas fa-lock"></i> app.your-agency.ai</div>
+                        <div class="pv-browser-window">
+                            <div class="pv-browser-bar">
+                                <div class="pv-mac-dots">
+                                    <span class="mac-dot red"></span>
+                                    <span class="mac-dot yellow"></span>
+                                    <span class="mac-dot green"></span>
+                                </div>
+                                <div class="pv-url-pill">
+                                    <i class="fas fa-lock" style="color:#10B981;font-size:0.65rem;"></i>
+                                    <span>https://app.your-agency.ai</span>
+                                </div>
+                            </div>
+                            <div class="pv-browser-body-mock">
+                                <span class="pv-client-brand-badge">✦ Custom Domain • Logo • Favicon ✦</span>
+                            </div>
                         </div>
                         <div class="pv-brand-pill">
-                            <i class="fas fa-shield-halved" style="color:#3B82F6;"></i> Zero Vendor Marks • 100% Native
+                            <i class="fas fa-shield-halved" style="color:#3B82F6;"></i> <span>Zero Vendor Marks • 100% Native Agency</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -445,9 +501,16 @@ include __DIR__ . '/../includes/header.php';
                             <span class="pv-pulse-dot" style="background:#0EA5E9;"></span>
                             <span class="pv-badge-text">🔥 60s INSTANT ACCESS</span>
                         </div>
-                        <div class="pv-sandbox-box">
-                            <div class="pv-check-line"><i class="fas fa-circle-check" style="color:#10B981;"></i> Zero Credit Card Required</div>
-                            <div class="pv-check-line"><i class="fas fa-circle-check" style="color:#10B981;"></i> Full VIP Partner Sandbox Live</div>
+                        <div class="pv-vip-pass">
+                            <div class="pv-pass-chip">
+                                <i class="fas fa-microchip"></i>
+                                <div class="pv-pass-lines"><span></span><span></span></div>
+                            </div>
+                            <div class="pv-pass-title">VIP RESELLER ACCESS PASS</div>
+                            <div class="pv-pass-stamp">● NO CREDIT CARD REQUIRED ●</div>
+                        </div>
+                        <div class="pv-telemetry-tag" style="color:#0EA5E9;">
+                            <i class="fas fa-bolt"></i> <span>Live Production Sandbox Ready in 60s</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -470,17 +533,25 @@ include __DIR__ . '/../includes/header.php';
                         <div class="pp-visual-glow"></div>
                         <div class="pp-visual-badge">
                             <span class="pv-pulse-dot" style="background:#EC4899;"></span>
-                            <span class="pv-badge-text">⚡ REST + WEBSOCKETS // 6ms</span>
+                            <span class="pv-badge-text">⚡ REST + WEBSOCKETS // 4ms</span>
                         </div>
-                        <div class="pv-terminal-mock">
-                            <div class="pv-terminal-head">
-                                <span class="pv-http-method">POST</span>
-                                <span class="pv-http-path">/v2/messages/dispatch</span>
-                                <span class="pv-http-code">200 OK</span>
+                        <div class="pv-terminal-window">
+                            <div class="pv-term-header">
+                                <div class="pv-mac-dots">
+                                    <span class="mac-dot red"></span>
+                                    <span class="mac-dot yellow"></span>
+                                    <span class="mac-dot green"></span>
+                                </div>
+                                <span class="pv-term-tab">api.whatsapp.v2</span>
+                                <span class="pv-term-status">200 OK</span>
                             </div>
-                            <div class="pv-terminal-body">
-                                <code>{"status":"dispatched","latency":"6ms"}</code>
+                            <div class="pv-term-code">
+                                <div><span class="pv-code-kw">POST</span> <span class="pv-code-url">/v2/messages/dispatch</span></div>
+                                <span class="pv-code-res">{"status":"delivered","ping":"4ms"}</span>
                             </div>
+                        </div>
+                        <div class="pv-telemetry-tag" style="color:#EC4899;">
+                            <i class="fas fa-terminal"></i> <span>OpenAPI 3.1 • Real-Time Webhooks &amp; SDKs</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -505,16 +576,17 @@ include __DIR__ . '/../includes/header.php';
                             <span class="pv-pulse-dot" style="background:#14B8A6;"></span>
                             <span class="pv-badge-text">🌍 30+ GLOBAL LOCALES</span>
                         </div>
-                        <div class="pv-lang-pills">
-                            <span class="pv-lang-tag">🇺🇸 English</span>
-                            <span class="pv-lang-tag">🇪🇸 Español</span>
-                            <span class="pv-lang-tag">🇦🇪 العربية</span>
-                            <span class="pv-lang-tag">🇮🇳 हिन्दी</span>
-                            <span class="pv-lang-tag">🇩🇪 Deutsch</span>
+                        <div class="pv-lang-cloud">
+                            <span class="pv-lang-capsule">🇺🇸 English</span>
+                            <span class="pv-lang-capsule">🇪🇸 Español</span>
+                            <span class="pv-lang-capsule">🇦🇪 العربية (RTL)</span>
+                            <span class="pv-lang-capsule">🇮🇳 हिन्दी</span>
                         </div>
-                        <div class="pv-wave-row">
-                            <div class="pv-audio-wave"><span></span><span></span><span></span><span></span><span></span></div>
-                            <span>Auto AI Localization Active</span>
+                        <div class="pv-soundwave-row">
+                            <div class="pv-soundwave-bars">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <span class="pv-soundwave-text">Real-Time AI Auto-Translation</span>
                         </div>
                     </div>
                     <div class="pp-card-body">
@@ -537,20 +609,20 @@ include __DIR__ . '/../includes/header.php';
                         <div class="pp-visual-glow"></div>
                         <div class="pp-visual-badge">
                             <span class="pv-pulse-dot" style="background:#F97316;"></span>
-                            <span class="pv-badge-text">⚡ &lt; 25s LIGHTNING SLA</span>
+                            <span class="pv-badge-text">⚡ &lt; 15s LIGHTNING SLA</span>
                         </div>
-                        <div class="pv-support-chat">
-                            <div class="pv-support-avatar"><i class="fas fa-headset"></i></div>
-                            <div class="pv-support-content">
-                                <div class="pv-support-meta">
-                                    <span class="pv-support-agent">AI Copilot &amp; Concierge</span>
-                                    <span class="pv-pulse-dot" style="background:#10B981;width:6px;height:6px;"></span>
-                                </div>
-                                <div class="pv-support-bubble">How can we accelerate your agency revenue?</div>
+                        <div class="pv-chat-widget">
+                            <div class="pv-chat-avatar">
+                                <i class="fas fa-headset"></i>
+                                <span class="pv-chat-online-dot"></span>
+                            </div>
+                            <div class="pv-chat-bubble-wrap">
+                                <div class="pv-chat-sender">Partner Concierge <span>Just now</span></div>
+                                <div class="pv-chat-text">Ready to launch your agency stack? 🚀</div>
                             </div>
                         </div>
-                        <div class="pv-sla-pill">
-                            <i class="fas fa-bolt" style="color:#F59E0B;"></i> 24/7/365 White-Glove Escalation
+                        <div class="pv-telemetry-tag" style="color:#F97316;">
+                            <i class="fas fa-headset"></i> <span>Dedicated WhatsApp Group &amp; White-Glove Support</span>
                         </div>
                     </div>
                     <div class="pp-card-body">

@@ -1124,6 +1124,80 @@ include __DIR__ . '/includes/header.php';
     background: #202c33;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
+
+  /* Animated Floating Notification Pill for Phone Simulator */
+  .cw-type-here-alert {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #00A884 0%, #059669 100%);
+    color: #FFFFFF;
+    padding: 6px 14px 6px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 18px rgba(0, 168, 132, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 60;
+    cursor: pointer;
+    pointer-events: auto;
+    animation: cwTypeAlertBounce 2.4s ease-in-out infinite;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  }
+  .cw-type-here-alert::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #059669 transparent transparent transparent;
+  }
+  .cw-type-here-alert.dismissed {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(6px);
+    pointer-events: none;
+  }
+  .cw-type-pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 2.5px rgba(255, 255, 255, 0.35);
+    animation: cwPulseDot 1.4s infinite ease-in-out;
+    flex-shrink: 0;
+  }
+  @keyframes cwPulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+  }
+  @keyframes cwTypeAlertBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+  }
+  .cw-type-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 0 0 4px;
+    cursor: pointer;
+  }
+  .cw-type-close:hover {
+    color: #FFFFFF;
+  }
+  html[data-theme="dark"] .cw-type-here-alert {
+    background: linear-gradient(135deg, #00A884 0%, #047857 100%);
+    box-shadow: 0 6px 22px rgba(0, 168, 132, 0.55), 0 0 0 1.5px rgba(0, 168, 132, 0.4);
+  }
+
   .cw-chat-btn-emoji {
     background: transparent;
     border: none;
@@ -3468,11 +3542,18 @@ include __DIR__ . '/includes/header.php';
 
             <!-- WhatsApp Chat Composer Footer -->
             <div class="cw-chat-footer" id="cw-chat-footer">
+              <!-- Animated Interactive Alert/Notification Pointing To Input -->
+              <div class="cw-type-here-alert" id="cw-type-here-alert" role="status" title="Click to test live chat">
+                <span class="cw-type-pulse-dot"></span>
+                <span class="cw-type-text">👇 <strong>Type here or text below</strong> to test live!</span>
+                <button type="button" class="cw-type-close" id="cw-type-alert-close" aria-label="Dismiss">&times;</button>
+              </div>
+
               <button type="button" class="cw-chat-btn-emoji" id="cw-emoji-btn" title="Add emoji">😊</button>
               <button type="button" class="cw-chat-btn-clip" id="cw-clip-btn" title="Attach media">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
               </button>
-              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="Type a message..." autocomplete="off" maxlength="150" aria-label="Type your WhatsApp message">
+              <input type="text" id="cw-chat-input" class="cw-chat-input" placeholder="💬 Type a message here to test live..." autocomplete="off" maxlength="150" aria-label="Type your WhatsApp message">
               <button type="button" id="cw-chat-send" class="cw-chat-send" aria-label="Send message" title="Send message">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
               </button>
@@ -4823,12 +4904,30 @@ include __DIR__ . '/includes/header.php';
     });
   }
 
-  // Clicking empty area of the input footer focuses the text field
-  const chatFooter = document.getElementById('cw-chat-footer');
-  if (chatFooter && chatInput) {
-    chatFooter.addEventListener('click', function(e) {
-      if (!e.target.closest('button')) {
-        chatInput.focus();
+  // Handle Interactive 'Type Here' Alert notification
+  const typeAlert = document.getElementById('cw-type-here-alert');
+  const typeAlertClose = document.getElementById('cw-type-alert-close');
+  if (typeAlert && chatInput) {
+    typeAlert.addEventListener('click', function(e) {
+      if (e.target === typeAlertClose || e.target.closest('#cw-type-alert-close')) {
+        e.stopPropagation();
+        typeAlert.classList.add('dismissed');
+        return;
+      }
+      chatInput.focus();
+    });
+    if (typeAlertClose) {
+      typeAlertClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        typeAlert.classList.add('dismissed');
+      });
+    }
+    chatInput.addEventListener('focus', function() {
+      typeAlert.classList.add('dismissed');
+    });
+    chatInput.addEventListener('input', function() {
+      if (chatInput.value.trim().length > 0) {
+        typeAlert.classList.add('dismissed');
       }
     });
   }
