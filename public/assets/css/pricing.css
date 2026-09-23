@@ -163,7 +163,7 @@ body {
 
 .plan-cat-btn {
   border: none;
-  padding: 12px 32px;
+  padding: 10px 24px;
   font-size: 15px;
   font-weight: 700;
   border-radius: 48px;
@@ -171,7 +171,7 @@ body {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: #475569;
   background: transparent;
 }
@@ -180,6 +180,84 @@ body {
   background: #0f766e;
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+}
+
+/* Symmetrical Badges for Plan Category Toggle */
+.plan-cat-icon-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1.5px 4px rgba(15, 23, 42, 0.12);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.plan-cat-btn.active .plan-cat-icon-badge {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.plan-cat-icon-badge svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+/* Omnichannel Animated Icon Reel */
+.omni-icon-reel {
+  overflow: hidden;
+}
+
+.omni-icon-track {
+  display: flex;
+  flex-direction: column;
+  animation: omniIconRoll 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform;
+}
+
+.omni-icon-item {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.omni-icon-item svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* 6 slots (1.5s each = 9s total cycle) + seamless clone wrap */
+@keyframes omniIconRoll {
+  0%, 13.5% {
+    transform: translateY(0);
+  }
+  16.66%, 30.16% {
+    transform: translateY(-26px);
+  }
+  33.33%, 46.83% {
+    transform: translateY(-52px);
+  }
+  50%, 63.5% {
+    transform: translateY(-78px);
+  }
+  66.66%, 80.16% {
+    transform: translateY(-104px);
+  }
+  83.33%, 96.83% {
+    transform: translateY(-130px);
+  }
+  100% {
+    transform: translateY(-156px);
+  }
 }
 
 /* Billing Toggle Pill */
