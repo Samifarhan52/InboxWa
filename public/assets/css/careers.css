@@ -69,16 +69,32 @@
   gap: 1rem;
   margin-bottom: 2.5rem;
 }
-.careers-hero-actions .btn-outline {
-  border: 1.5px solid #034737;
-  color: #034737;
-  background: rgba(3, 71, 55, 0.05);
-  font-weight: 700;
-  transition: all 0.2s ease;
+.careers-hero-actions .btn-outline,
+.careers-hero-actions .btn-careers-apply {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  padding: 0.85rem 1.85rem !important;
+  border-radius: 9999px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  line-height: 1.4 !important;
+  background: #FFFFFF !important;
+  color: #047857 !important;
+  border: 2px solid #047857 !important;
+  box-shadow: 0 2px 8px rgba(4, 120, 87, 0.15) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
 }
-.careers-hero-actions .btn-outline:hover {
-  background: #034737;
-  color: #FFFFFF;
+.careers-hero-actions .btn-outline:hover,
+.careers-hero-actions .btn-careers-apply:hover {
+  background: #047857 !important;
+  color: #FFFFFF !important;
+  border-color: #047857 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(4, 120, 87, 0.28) !important;
 }
 .careers-hero-stats {
   display: flex;

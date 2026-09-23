@@ -2786,7 +2786,7 @@ body.menu-open{overflow:hidden !important}
 .edu-hero .btn-outline,
 .partner-hero .btn-outline,
 .page-hero .btn-outline,
-[class*="-hero"] .btn-outline,
+[class*="-hero"]:not(.careers-hero) .btn-outline,
 .section-dark .btn-outline{
   background:transparent!important;
   color:#fff!important;
@@ -2800,7 +2800,7 @@ body.menu-open{overflow:hidden !important}
 .edu-hero .btn-outline:hover,
 .partner-hero .btn-outline:hover,
 .page-hero .btn-outline:hover,
-[class*="-hero"] .btn-outline:hover,
+[class*="-hero"]:not(.careers-hero) .btn-outline:hover,
 .section-dark .btn-outline:hover{
   background:rgba(255,255,255,.14)!important;
   color:#fff!important;

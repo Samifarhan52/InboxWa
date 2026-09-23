@@ -3762,16 +3762,6 @@ if (!function_exists('hb_seo_esc')) {
                     </div>
                   </a>
 
-                  <a href="<?php echo $bp; ?>resources/case-studies/" class="mega-res-link" role="menuitem">
-                    <div class="res-icon-wrap res-icon-amber">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/><path d="M18 14.66V17c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2v12.66"/></svg>
-                    </div>
-                    <div class="res-text">
-                      <span class="res-title">Case Studies</span>
-                      <span class="res-desc">Real business metrics &amp; ROI</span>
-                    </div>
-                  </a>
-
                   <a href="<?php echo $bp; ?>resources/documentation/" class="mega-res-link" role="menuitem">
                     <div class="res-icon-wrap res-icon-blue">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -3779,16 +3769,6 @@ if (!function_exists('hb_seo_esc')) {
                     <div class="res-text">
                       <span class="res-title">Documentation</span>
                       <span class="res-desc">Feature manuals &amp; tutorials</span>
-                    </div>
-                  </a>
-
-                  <a href="<?php echo $bp; ?>resources/templates/" class="mega-res-link" role="menuitem">
-                    <div class="res-icon-wrap res-icon-green">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                    </div>
-                    <div class="res-text">
-                      <span class="res-title">Message Templates</span>
-                      <span class="res-desc">High-converting WhatsApp copies</span>
                     </div>
                   </a>
 
@@ -4174,8 +4154,6 @@ if (!function_exists('hb_seo_esc')) {
           <div class="mobile-submenu"><div class="mobile-submenu-inner">
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:6px 0 2px;border-bottom:1px solid #f1f5f9;">Knowledge &amp; Guides</div>
             <a href="<?php echo $bp; ?>resources/blog/">Blog &amp; Insights <span style="font-size:11px;color:#64748B;display:block;">WhatsApp tips &amp; guides</span></a>
-            <a href="<?php echo $bp; ?>resources/case-studies/">Case Studies <span style="font-size:11px;color:#64748B;display:block;">Customer results &amp; ROI</span></a>
-            <a href="<?php echo $bp; ?>resources/templates/">Message Templates <span style="font-size:11px;color:#64748B;display:block;">Pre-approved broadcast copies</span></a>
 
             <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--p2);text-transform:uppercase;padding:10px 0 2px;border-bottom:1px solid #f1f5f9;">Developers &amp; Support</div>
             <a href="<?php echo $bp; ?>resources/help-center/">Help Center <span style="font-size:11px;color:#64748B;display:block;">FAQs, onboarding &amp; guides</span></a>

@@ -6,7 +6,7 @@ $canonicalUrl = 'https://hellobotz.com/company/careers/';
 $ogImage = 'https://hellobotz.com/assets/images/og-parent-preview.png';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/careers.css?v=3">
+<link rel="stylesheet" href="/assets/css/careers.css?v=4">
 
 <!-- HERO SECTION -->
 <section class="careers-hero" aria-label="HelloBotz Careers Hero">
@@ -22,7 +22,7 @@ include __DIR__ . '/../../includes/header.php';
     <p class="tagline">Have the skills? Have the curiosity? Let’s build something together.</p>
     <div class="careers-hero-actions">
       <a href="#open-roles" class="btn btn-primary btn-lg" style="box-shadow:0 4px 14px rgba(3,71,55,0.3);">View Open Roles &darr;</a>
-      <a href="#apply-form" class="btn btn-outline btn-lg">Apply Now &rarr;</a>
+      <a href="#apply-form" class="btn btn-careers-apply btn-lg" style="display:inline-flex !important;align-items:center !important;justify-content:center !important;background:#ffffff !important;color:#047857 !important;border:2px solid #047857 !important;font-weight:700 !important;box-shadow:0 4px 14px rgba(4,120,87,0.15) !important;">Apply Now &rarr;</a>
     </div>
     <div class="careers-hero-stats">
       <div class="stat-pill">🤖 AI &amp; Automation Stack</div>

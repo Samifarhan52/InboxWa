@@ -37,6 +37,26 @@
   ],
   "redirects": [
     {
+      "source": "/resources/case-studies",
+      "destination": "/resources/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/case-studies/",
+      "destination": "/resources/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/templates",
+      "destination": "/resources/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/templates/",
+      "destination": "/resources/blog/",
+      "permanent": true
+    },
+    {
       "source": "/partners/reseller",
       "destination": "/partners/white-label/",
       "permanent": true

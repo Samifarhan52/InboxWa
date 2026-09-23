@@ -1652,14 +1652,18 @@ html[data-theme="dark"] .stat-pill {
   color: #cbd5e1 !important;
 }
 
-html[data-theme="dark"] .careers-hero-actions .btn-outline {
-  border-color: rgba(255, 255, 255, 0.25) !important;
+html[data-theme="dark"] .careers-hero-actions .btn-outline,
+html[data-theme="dark"] .careers-hero-actions .btn-careers-apply {
+  border-color: rgba(255, 255, 255, 0.35) !important;
   color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
 }
-html[data-theme="dark"] .careers-hero-actions .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-color: #ffffff !important;
+html[data-theme="dark"] .careers-hero-actions .btn-outline:hover,
+html[data-theme="dark"] .careers-hero-actions .btn-careers-apply:hover {
+  background: #10b981 !important;
+  color: #090e1a !important;
+  border-color: #10b981 !important;
 }
 
 html[data-theme="dark"] .phil-card,
