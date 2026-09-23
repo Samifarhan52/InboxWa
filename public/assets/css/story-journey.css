@@ -1276,12 +1276,17 @@ div#mobile-menu,
 #mobile-menu {
   display: none !important;
   position: fixed !important;
-  inset: 0 !important;
-  z-index: 100050 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: var(--hb-mobile-top, 98px) !important;
+  z-index: 99990 !important;
   width: 100% !important;
-  height: 100% !important;
+  height: calc(100vh - var(--hb-mobile-top, 98px)) !important;
+  height: calc(100dvh - var(--hb-mobile-top, 98px)) !important;
   background: transparent !important;
   pointer-events: none !important;
+  overflow: hidden !important;
 }
 
 /* Mobile Menu Overlay Root — OPEN */
@@ -1305,9 +1310,9 @@ div#mobile-menu.open,
 #mobile-menu.open .mobile-backdrop {
   position: absolute !important;
   inset: 0 !important;
-  background: rgba(15, 23, 42, 0.65) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
   z-index: 1 !important;
   pointer-events: auto !important;
   cursor: pointer !important;
@@ -1321,27 +1326,27 @@ div#mobile-menu.open,
   top: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: min(340px, 90vw) !important;
+  width: min(340px, 92vw) !important;
   max-width: 100% !important;
+  height: 100% !important;
   background: #FFFFFF !important;
   display: flex !important;
   flex-direction: column !important;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2) !important;
   z-index: 2 !important;
   pointer-events: auto !important;
   overflow: hidden !important;
   visibility: visible !important;
 }
 
-/* Drawer Header */
+/* Drawer Header — hidden because .site-header is fixed right above */
 #mobile-menu .mobile-drawer-header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 1rem 1.25rem !important;
-  border-bottom: 1px solid #E2E8F0 !important;
-  flex-shrink: 0 !important;
-  pointer-events: auto !important;
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
 }
 
 /* Drawer Body */
@@ -1349,7 +1354,8 @@ div#mobile-menu.open,
   flex: 1 1 auto !important;
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
-  padding: 0.5rem 1.25rem 1.5rem 1.25rem !important;
+  padding: 0.4rem 1rem 1.5rem !important;
+  min-height: 0 !important;
   pointer-events: auto !important;
 }
 

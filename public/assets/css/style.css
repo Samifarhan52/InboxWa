@@ -2199,17 +2199,19 @@ body.menu-open { overflow: hidden !important; touch-action: none; }
   #mobile-menu:not(.open):not(.is-open){display:none!important;visibility:hidden!important;pointer-events:none!important}
   #mobile-menu.open{
     display:block!important;visibility:visible!important;pointer-events:auto!important;
-    position:fixed!important;inset:0!important;z-index:10050!important;
-    width:100%!important;height:100dvh!important;background:transparent!important;
+    position:fixed!important;left:0!important;right:0!important;bottom:0!important;
+    top:var(--hb-mobile-top, 98px)!important;z-index:99990!important;
+    width:100%!important;height:calc(100dvh - var(--hb-mobile-top, 98px))!important;background:transparent!important;
+    overflow:hidden!important;
   }
   #mobile-menu.open .mobile-drawer{
     display:flex!important;flex-direction:column!important;
     position:absolute!important;top:0;right:0;bottom:0;
-    width:min(340px,100%)!important;background:#fff!important;
+    width:min(340px,92vw)!important;background:#fff!important;
     visibility:visible!important;overflow:hidden!important;
   }
-  #mobile-menu.open .mobile-drawer-body{display:block!important;flex:1;overflow-y:auto;visibility:visible!important}
-  #mobile-menu.open .mobile-drawer-header{display:flex!important;visibility:visible!important}
+  #mobile-menu.open .mobile-drawer-body{display:block!important;flex:1;overflow-y:auto;visibility:visible!important;padding:0.4rem 1rem 1.5rem!important}
+  #mobile-menu.open .mobile-drawer-header{display:none!important;visibility:hidden!important;height:0!important}
   #mobile-menu.open .mobile-backdrop{display:block!important;position:absolute;inset:0;background:rgba(11,17,32,.5)}
 }
 
@@ -2485,10 +2487,12 @@ button.mobile-nav-link svg{
   overflow:hidden !important;
 }
 #mobile-menu.open .mobile-drawer-header{
-  flex-shrink:0 !important;
-  padding:0.75rem 1rem !important;
-  min-height:52px !important;
-  max-height:56px !important;
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:none !important;
 }
 #mobile-menu.open .mobile-drawer-body{
   flex:1 1 auto !important;
@@ -2664,8 +2668,12 @@ button.mobile-nav-link svg{
   overflow:hidden;
 }
 #mobile-menu.is-open .mobile-drawer-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.75rem 1rem;border-bottom:1px solid #E5E7EB;flex-shrink:0;
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:none !important;
 }
 #mobile-menu.is-open .mobile-drawer-body{
   flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;

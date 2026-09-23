@@ -1,5 +1,5 @@
 /**
- * HelloBotz Mobile Menu v38 — single handler, no conflicts
+ * HelloBotz Mobile Menu v45 — single handler, no conflicts
  */
 (function () {
   'use strict';
@@ -13,7 +13,19 @@
     if (menu.getAttribute('data-hb-ready') === '1') return;
     menu.setAttribute('data-hb-ready', '1');
 
+    function syncMobileMenuTop() {
+      var header = document.querySelector('.site-header');
+      if (header) {
+        var rect = header.getBoundingClientRect();
+        var topPx = Math.round(rect.bottom);
+        if (topPx > 20) {
+          document.documentElement.style.setProperty('--hb-mobile-top', topPx + 'px');
+        }
+      }
+    }
+
     function openMenu() {
+      syncMobileMenuTop();
       menu.hidden = false;
       menu.removeAttribute('hidden');
       menu.style.display = 'block';
@@ -22,6 +34,12 @@
       toggle.classList.add('active');
       toggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('menu-open');
+
+      // Always reset scroll so Products is immediately visible at the top
+      var drawerBody = menu.querySelector('.mobile-drawer-body');
+      if (drawerBody) {
+        drawerBody.scrollTop = 0;
+      }
     }
 
     function closeMenu() {
@@ -90,6 +108,13 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && (menu.classList.contains('is-open') || menu.classList.contains('open'))) {
         closeMenu();
+      }
+    });
+
+    // Window resize / scroll sync
+    window.addEventListener('resize', function () {
+      if (menu.classList.contains('is-open') || menu.classList.contains('open')) {
+        syncMobileMenuTop();
       }
     });
 
