@@ -3770,6 +3770,29 @@ html, body {
   height: 35px !important;
   font-size: 0.8rem !important;
   border-radius: 8px !important;
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.contact-glass-card .form-input:focus {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #10B981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.16) !important;
+  outline: none !important;
+}
+.contact-glass-card .form-input::placeholder {
+  color: #94A3B8 !important;
+}
+.contact-glass-card .form-input:-webkit-autofill,
+.contact-glass-card .form-input:-webkit-autofill:hover,
+.contact-glass-card .form-input:-webkit-autofill:focus,
+.contact-glass-card .form-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #0f172a !important;
 }
 .contact-input-wrap .form-input {
   padding-left: 2.15rem !important;

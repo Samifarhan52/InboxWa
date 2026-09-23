@@ -955,6 +955,30 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .dark-mode .contact-field-label {
     color: #E2E8F0 !important;
   }
+  .contact-glass-card .form-input {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border: 1.5px solid #CBD5E1 !important;
+  }
+  .contact-glass-card .form-input:focus {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border-color: #10B981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.16) !important;
+    outline: none !important;
+  }
+  .contact-glass-card .form-input::placeholder {
+    color: #94A3B8 !important;
+  }
+  .contact-glass-card .form-input:-webkit-autofill,
+  .contact-glass-card .form-input:-webkit-autofill:hover,
+  .contact-glass-card .form-input:-webkit-autofill:focus,
+  .contact-glass-card .form-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #0f172a !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #0f172a !important;
+  }
   html[data-theme="dark"] .contact-glass-card .form-input,
   body.dark-theme .contact-glass-card .form-input,
   .dark-mode .contact-glass-card .form-input {
@@ -966,6 +990,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   body.dark-theme .contact-glass-card .form-input:focus,
   .dark-mode .contact-glass-card .form-input:focus {
     background: #0B1120 !important;
+    color: #F8FAFC !important;
     border-color: #10B981 !important;
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22) !important;
   }
@@ -973,6 +998,17 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   body.dark-theme .contact-glass-card .form-input::placeholder,
   .dark-mode .contact-glass-card .form-input::placeholder {
     color: #64748B !important;
+  }
+  html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill,
+  html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill:hover,
+  html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill:focus,
+  html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill:active,
+  body.dark-theme .contact-glass-card .form-input:-webkit-autofill,
+  .dark-mode .contact-glass-card .form-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #0b1120 inset !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #f8fafc !important;
   }
   html[data-theme="dark"] .contact-meta-card,
   body.dark-theme .contact-meta-card,

@@ -3339,6 +3339,17 @@ body.dark-theme .contact-glass-card .form-input::placeholder,
 .dark-mode .contact-glass-card .form-input::placeholder {
   color: #64748B !important;
 }
+html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill,
+html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill:hover,
+html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill:focus,
+html[data-theme="dark"] .contact-glass-card .form-input:-webkit-autofill:active,
+body.dark-theme .contact-glass-card .form-input:-webkit-autofill,
+.dark-mode .contact-glass-card .form-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0b1120 inset !important;
+  -webkit-text-fill-color: #f8fafc !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #f8fafc !important;
+}
 html[data-theme="dark"] .contact-meta-card,
 body.dark-theme .contact-meta-card,
 .dark-mode .contact-meta-card {
