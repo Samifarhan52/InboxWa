@@ -198,7 +198,7 @@ include __DIR__ . '/../../includes/header.php';
       <p>Start your 7-day free trial with full feature access and pre-loaded conversation credits — no credit card required. Or connect with our solutions engineering team for a personalized platform walkthrough.</p>
       <div class="about-cta-actions">
         <a href="/pricing/" class="btn-primary">View Pricing Plans &rarr;</a>
-        <a href="/#contact-section" class="btn-secondary">Talk to an Architect &rarr;</a>
+        <a href="#contact-section" class="btn-secondary">Talk to an Architect &rarr;</a>
       </div>
     </div>
 

@@ -73,7 +73,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="woo-step"><div class="ico">6</div><h4>Go Live</h4><p>Start selling on chat</p></div>
     </div>
     <div style="text-align:center;margin-top:1.5rem">
-      <a href="/#contact-section" class="btn btn-primary">Connect WooCommerce</a>
+      <a href="#contact-section" class="btn btn-primary">Connect WooCommerce</a>
     </div>
   </div>
 </section>
@@ -179,7 +179,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="reveal">
         <h2>Recover abandoned carts</h2>
         <p class="lead">Product added → checkout started → no purchase → WhatsApp reminder → customer returns → order completed.</p>
-        <a href="/#contact-section" class="btn btn-primary">Recover Abandoned Carts</a>
+        <a href="#contact-section" class="btn btn-primary">Recover Abandoned Carts</a>
       </div>
     </div>
   </div>
@@ -200,7 +200,7 @@ include __DIR__ . '/../../includes/header.php';
         <h2>WhatsApp marketing for WooCommerce</h2>
         <p class="lead">New launches, festival sales, flash offers, back-in-stock and win-back — using approved templates.</p>
         <p style="font-size:.9rem;color:var(--t2)">Select Audience → Create Campaign → Preview → Send → Track</p>
-        <a href="/#contact-section" class="btn btn-primary" style="margin-top:1rem">Create Campaign</a>
+        <a href="#contact-section" class="btn btn-primary" style="margin-top:1rem">Create Campaign</a>
       </div>
       <div class="reveal" style="border-radius:16px;min-height:220px;background:linear-gradient(135deg,#EDE9FE,#CFFAFE);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:#6B7280;font-weight:600;padding:1rem;text-align:center">
         Marketing banner area (replaceable)

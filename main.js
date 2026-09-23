@@ -389,6 +389,8 @@
       setTimeout(() => { el.hidden = true; document.body.classList.remove('menu-open'); }, 280);
     }
 
+    window.openCallbackModal = open;
+
     $$('.btn-callback-open').forEach((btn) => on(btn, 'click', (e) => {
       e.preventDefault();
       // close WA widget if open
@@ -417,6 +419,8 @@
       el.classList.remove('open');
       setTimeout(() => { el.hidden = true; document.body.classList.remove('menu-open'); }, 280);
     }
+
+    window.openDemoModal = open;
 
     // Open from buttons and header demo links
     $$('.btn-demo-open, a[href="demo"]').forEach((btn) => on(btn, 'click', (e) => {

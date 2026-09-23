@@ -17,7 +17,7 @@ include __DIR__ . '/../../includes/header.php';
     <p class="lead">Design branching conversations, wait steps and handoffs without writing code.</p>
     <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
-      <a href="/#contact-section" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Book a Demo</a>
+      <a href="#contact-section" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Book a Demo</a>
             <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Data
@@ -54,7 +54,7 @@ include __DIR__ . '/../../includes/header.php';
     <p class="lead reveal" style="margin-top:1.5rem">Same HelloBotz platform — this product page focuses on flow builder outcomes only.</p>
     <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
       <a href="/pricing/" class="btn btn-outline">View pricing</a>
-      <a href="/#contact-section" class="btn btn-primary">Talk to sales</a>
+      <a href="#contact-section" class="btn btn-primary">Talk to sales</a>
     </div>
   </div>
 </section>

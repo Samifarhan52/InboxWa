@@ -568,7 +568,9 @@ textarea.form-input{min-height:100px;resize:vertical}
 }
 
 /* Footer contact form on dark/light */
+#contact-section,
 .footer-contact-section{
+  scroll-margin-top: 90px;
   padding:2.5rem 0;
   border-bottom:1px solid rgba(255,255,255,.1);
   background:var(--bg2);
@@ -4671,3 +4673,109 @@ body.hb-ann-dismissed {
 .footer-global-presence {
   max-width: 250px !important;
 }
+
+/* =========================================================
+   UNIVERSAL HIGH-PRIORITY POPUP & MODAL FIX (z-index & bounds)
+   ========================================================= */
+.popup-overlay,
+#demo-popup,
+#callback-popup,
+#trial-popup,
+#offer-popup {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 200000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 1rem !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.popup-overlay:not(.open):not(:not([hidden])) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.popup-overlay.open,
+.popup-overlay:not([hidden]) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.popup-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 200001 !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.popup-card,
+.popup-card-compact,
+.offer-popup-card,
+.trial-popup-card {
+  position: relative !important;
+  z-index: 200005 !important;
+  background: #FFFFFF !important;
+  border-radius: 20px !important;
+  padding: 1.75rem 1.5rem 1.5rem !important;
+  max-width: 440px !important;
+  width: 100% !important;
+  max-height: min(88vh, 580px) !important;
+  overflow-y: auto !important;
+  margin: auto !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+  transform: none !important;
+}
+
+.popup-close {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  z-index: 200010 !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #F1F5F9 !important;
+  border: 1px solid #E2E8F0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.4rem !important;
+  color: #475569 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.popup-close:hover {
+  background: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+@media (max-width: 640px) {
+  .popup-overlay,
+  #demo-popup,
+  #callback-popup,
+  #trial-popup,
+  #offer-popup {
+    padding: 1rem 0.75rem !important;
+    align-items: center !important;
+  }
+  .popup-card,
+  .popup-card-compact,
+  .offer-popup-card,
+  .trial-popup-card {
+    max-width: min(390px, calc(100vw - 1.5rem)) !important;
+    max-height: min(86vh, 560px) !important;
+    border-radius: 18px !important;
+    padding: 1.4rem 1.15rem !important;
+    margin: auto !important;
+  }
+}
+

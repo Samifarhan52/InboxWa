@@ -16,19 +16,18 @@
     avatarUrl: '/assets/images/hellobotz-avatar.png'
   };
 
-  // Primary 5-6 Vertical Service/Platform Options
+  // Primary 5-6 Vertical Service/Platform Options (Concise & Direct)
   var SERVICES_MENU = [
     {
       id: 'whatsapp_api',
       icon: '📱',
-      label: 'WhatsApp Business API & Green Tick',
-      userText: 'I am interested in WhatsApp Business API & Green Tick verification',
-      answer: '<strong>Official Meta WhatsApp Business API:</strong><br>Power your customer communications on Meta\'s official cloud infrastructure with <strong>zero ban risk</strong>, full assistance for official green tick verification, high message throughput, and interactive CTA buttons.',
+      label: 'WhatsApp Business API & Blue Tick',
+      userText: 'Tell me about WhatsApp Business API & Blue Tick',
+      answer: '<strong>Official WhatsApp Business API:</strong> Connect on Meta\'s official cloud infrastructure with zero ban risk, official blue tick verification, and high messaging throughput.',
       actions: [
         { label: 'Explore WhatsApp API', url: '/products/channels/whatsapp/', type: 'primary' },
-        { label: 'Green Tick Verification', url: '/products/whatsapp-blue-tick/', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20am%20interested%20in%20Official%20WhatsApp%20API.', type: 'wa', target: '_blank' },
-        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
+        { label: 'Blue Tick Verification', url: '/products/whatsapp-blue-tick/', type: 'secondary' },
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20tell%20me%20about%20Official%20WhatsApp%20API.', type: 'wa', target: '_blank' }
       ]
     },
     {
@@ -36,35 +35,32 @@
       icon: '📢',
       label: 'Bulk WhatsApp Broadcast Campaigns',
       userText: 'Tell me about Bulk WhatsApp Broadcast Campaigns',
-      answer: '<strong>Unlimited Bulk Broadcasts (98% Open Rate):</strong><br>Deliver personalized promotional campaigns to thousands of verified contacts with rich media (PDF, video, image), dynamic custom tags, CSV contact uploads, and live read/click tracking.',
+      answer: '<strong>Bulk Broadcast Campaigns:</strong> Send personalized mass messages with 98% open rates, media attachments (images, PDFs, videos), dynamic tags, and live analytics.',
       actions: [
         { label: 'Broadcast Features', url: '/products/broadcast/', type: 'primary' },
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20bulk%20broadcasts.', type: 'wa', target: '_blank' }
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20tell%20me%20about%20bulk%20broadcasts.', type: 'wa', target: '_blank' }
       ]
     },
     {
       id: 'chatbot_flow_builder',
       icon: '🤖',
       label: 'AI Chatbots & Visual Flow Builder',
-      userText: 'I am looking for AI Chatbots & Visual Flow Builder',
-      answer: '<strong>Visual No-Code Flow Builder & 24/7 AI Chatbots:</strong><br>Automate routine customer support with drag-and-drop branching flows, 24/7 AI-powered answers, automated lead qualification, and seamless human agent handover.',
+      userText: 'Tell me about AI Chatbots & Flow Builder',
+      answer: '<strong>AI Chatbots & Visual Flow Builder:</strong> Build drag-and-drop automated flows to answer customer FAQs, capture leads, and support users 24/7 with human handoff.',
       actions: [
         { label: 'AI Chatbot Builder', url: '/products/chatbot/', type: 'primary' },
-        { label: 'Visual Flow Builder', url: '/products/flow-builder/', type: 'secondary' },
-        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
+        { label: 'Visual Flow Builder', url: '/products/flow-builder/', type: 'secondary' }
       ]
     },
     {
       id: 'integrations_shopify_crm',
       icon: '🔌',
       label: 'Shopify, E-Commerce & CRM Integrations',
-      userText: 'I am looking for Shopify & E-Commerce Integrations',
-      answer: '<strong>1-Click E-Commerce & CRM Integrations:</strong><br>Connect HelloBotz directly to Shopify, WooCommerce, Zoho, HubSpot, and Google Sheets to recover abandoned carts, automate COD confirmation, send tracking alerts, and sync leads.',
+      userText: 'Tell me about Shopify & CRM Integrations',
+      answer: '<strong>E-Commerce & CRM Integrations:</strong> Connect HelloBotz with Shopify, WooCommerce, Zoho, HubSpot, and Google Sheets to automate abandoned carts and order alerts.',
       actions: [
-        { label: 'Shopify Revenue Engine', url: '/solutions/shopify/', type: 'primary' },
-        { label: 'All Integrations', url: '/integrations/', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20integrate%20HelloBotz%20with%20my%20store.', type: 'wa', target: '_blank' }
+        { label: 'Shopify Integration', url: '/solutions/shopify/', type: 'primary' },
+        { label: 'All Integrations', url: '/integrations/', type: 'secondary' }
       ]
     },
     {
@@ -72,37 +68,35 @@
       icon: '💰',
       label: 'Pricing Plans & Subscriptions',
       userText: 'What are your pricing plans & packages?',
-      answer: '<strong>HelloBotz Transparent Subscription Plans:</strong><br>• <strong>WhatsApp Bulk (₹1,999/mo):</strong> Official API, Unlimited Broadcasts, Basic CRM.<br>• <strong>Automation Plan (₹2,999/mo):</strong> Flow Builder, Multi-Agent Shared Inbox, E-Commerce sync.<br>• <strong>Biz Pro Omnichannel (₹4,999/mo):</strong> WhatsApp + IG + Telegram + FB, AI Voice.<br><em>Save 20% on annual billing. 1,000 free Meta service conversations included monthly!</em>',
+      answer: '<strong>Transparent Pricing Plans:</strong> Plans start at ₹1,999/mo for Bulk Broadcasts, ₹2,999/mo for Automation & Shared Inbox, and ₹4,999/mo for Omnichannel Pro (save 20% yearly).',
       actions: [
         { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' },
-        { label: 'Get Custom Quote', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20am%20looking%20for%20a%20pricing%20quote.', type: 'wa', target: '_blank' }
+        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' }
       ]
     },
     {
       id: 'others',
       icon: '💬',
-      label: 'Others / Type Your Requirement',
+      label: 'Others / Custom Requirement',
       userText: 'I have a custom question or requirement',
-      answer: '<strong>How can we assist you specifically?</strong> ✍️<br>Please type your requirement or question in the box below. I will provide the exact details, documentation, or connect you directly with our team!',
+      answer: '<strong>How can we assist you?</strong> Please type your requirement below or chat directly with our specialist team for instant assistance.',
       actions: [
-        { label: 'Chat Directly on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20have%20a%20custom%20requirement.', type: 'wa', target: '_blank' },
-        { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20have%20a%20custom%20requirement.', type: 'wa', target: '_blank' },
+        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     }
   ];
 
-  // Comprehensive Website Knowledge Base Grounded on All HelloBotz Pages
+  // Comprehensive Website Knowledge Base Grounded on All HelloBotz Pages (Crisp & Direct)
   var KNOWLEDGE_BASE = [
     {
       id: 'pricing',
       intent: 'pricing_plans',
       keywords: ['price', 'pricing', 'plan', 'cost', 'charge', 'rate', 'package', 'subscription', 'fee', 'how much', 'cheap', 'expensive', 'discount', 'yearly', 'monthly', 'dollar', 'rupee', 'currency', 'inr'],
       title: 'HelloBotz Pricing & Plans',
-      answer: '<strong>HelloBotz Transparent Subscription Plans:</strong><br>• <strong>WhatsApp Bulk (₹1,999/mo):</strong> Unlimited Bulk Broadcasts, Official Meta API, Basic CRM.<br>• <strong>Automation Plan (₹2,999/mo):</strong> Multi-Agent Shared Team Inbox, Visual Flow Builder, AI Auto-Replies, Shopify/WooCommerce/Sheets sync.<br>• <strong>Biz Pro Omnichannel (₹4,999/mo):</strong> WhatsApp + Instagram + Telegram + Facebook Messenger in one inbox, AI Voice Agent.<br><em>Save 20% on yearly billing. Includes 1,000 Free Meta Service Conversations monthly!</em>',
+      answer: '<strong>HelloBotz Pricing:</strong> Plans start at ₹1,999/mo (Bulk Broadcast), ₹2,999/mo (Automation & Shared Inbox), and ₹4,999/mo (Omnichannel Pro). Annual billing saves 20%.',
       actions: [
         { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' },
         { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20know%20more%20about%20HelloBotz%20pricing.', type: 'wa', target: '_blank' }
       ]
     },
@@ -111,11 +105,10 @@
       intent: 'whatsapp_api_overview',
       keywords: ['whatsapp api', 'official api', 'business api', 'cloud api', 'green tick', 'meta verified', 'official whatsapp', 'meta partner', 'zero ban', 'anti ban', 'ban risk'],
       title: 'Official WhatsApp Business API Platform',
-      answer: '<strong>Official Meta WhatsApp Business API:</strong><br>• <strong>Zero Ban Risk:</strong> 100% compliant with Meta official infrastructure.<br>• <strong>Green Tick Verification:</strong> Full assistance for the verified green badge on WhatsApp.<br>• <strong>High Throughput:</strong> Scale from Tier-1 (1,000/day) to Tier-4 (Unlimited messages/day).<br>• <strong>Interactive Messaging:</strong> Buttons, Quick Replies, List Menus, and Product Catalogs.',
+      answer: '<strong>Official WhatsApp Business API:</strong> Official Meta cloud API with zero ban risk, official blue/green tick verification, and high message throughput.',
       actions: [
         { label: 'Explore WhatsApp API', url: '/products/channels/whatsapp/', type: 'primary' },
-        { label: 'Green Tick Verification', url: '/products/whatsapp-blue-tick/', type: 'secondary' },
-        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
+        { label: 'Blue Tick Verification', url: '/products/whatsapp-blue-tick/', type: 'secondary' }
       ]
     },
     {
@@ -123,11 +116,10 @@
       intent: 'broadcast_marketing',
       keywords: ['bulk', 'broadcast', 'campaign', 'mass message', 'promotional', 'blast', 'newsletter', 'bulk message', 'send to all', 'csv upload', 'contacts broadcast'],
       title: 'Bulk WhatsApp Broadcast Campaigns',
-      answer: '<strong>Unlimited Bulk Broadcasts with 98% Open Rate:</strong><br>• <strong>Personalized Dynamic Tags:</strong> Automatically insert Customer Name, Order ID, City, or custom fields.<br>• <strong>Rich Media Templates:</strong> Send images, PDF catalogs, videos, and clickable CTA buttons.<br>• <strong>Real-time Analytics:</strong> Track Live Sent, Delivered, Read, and Link Clicks.<br>• <strong>Easy CSV Upload:</strong> Import contact lists with one click and organize with smart tags.',
+      answer: '<strong>Bulk Broadcast Campaigns:</strong> Send personalized mass messages with 98% open rates, media attachments (images, PDFs, videos), and live read tracking.',
       actions: [
-        { label: 'Bulk Broadcast Details', url: '/products/broadcast/', type: 'primary' },
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20tell%20me%20about%20bulk%20broadcasts.', type: 'wa', target: '_blank' }
+        { label: 'Explore Broadcasts', url: '/products/broadcast/', type: 'primary' },
+        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' }
       ]
     },
     {
@@ -135,9 +127,9 @@
       intent: 'shared_team_inbox',
       keywords: ['shared inbox', 'team inbox', 'multiple agents', 'support team', 'assign chat', 'agent collision', 'multi user', 'multiple login', 'internal notes', 'canned response'],
       title: 'Shared Team Inbox for Multi-Agent Support',
-      answer: '<strong>Multi-Agent Shared Team Inbox:</strong><br>• <strong>Single WhatsApp Number:</strong> Team members handle customer chats simultaneously.<br>• <strong>Smart Auto-Assignment:</strong> Route queries round-robin or by department (Sales, Billing, Support).<br>• <strong>Collision Detection:</strong> See who is typing in real-time to avoid duplicate replies.<br>• <strong>Internal Private Notes:</strong> Leave team notes inside chat threads invisible to customers.',
+      answer: '<strong>Multi-Agent Shared Inbox:</strong> Manage all customer conversations from a single WhatsApp number with team assignments, collision detection, and private notes.',
       actions: [
-        { label: 'Shared Inbox Feature', url: '/products/shared-inbox/', type: 'primary' },
+        { label: 'Explore Shared Inbox', url: '/products/shared-inbox/', type: 'primary' },
         { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     },
@@ -146,11 +138,10 @@
       intent: 'ai_chatbot_builder',
       keywords: ['chatbot', 'bot', 'flow builder', 'auto reply', 'automation', 'drag and drop', 'no code', 'automated chat', 'ai bot', 'faq bot', 'lead qualification'],
       title: 'No-Code AI Chatbot & Visual Flow Builder',
-      answer: '<strong>Visual Flow Builder & 24/7 AI Chatbots:</strong><br>• <strong>Drag-and-Drop Canvas:</strong> Build button menus, interactive questionnaires, and branching logic without code.<br>• <strong>24/7 Automated Answers:</strong> Answer common FAQs, order inquiries, and greetings instantly.<br>• <strong>Automated Lead Capture:</strong> Collect Name, Email, Requirement, and sync directly to CRM.<br>• <strong>Human Handoff:</strong> Seamlessly transfer chats to human support agents whenever needed.',
+      answer: '<strong>Visual AI Chatbots:</strong> Drag-and-drop flow builder to automate customer inquiries, order updates, and lead capture with seamless human agent handoff.',
       actions: [
         { label: 'AI Chatbot Builder', url: '/products/chatbot/', type: 'primary' },
-        { label: 'Visual Flow Builder', url: '/products/flow-builder/', type: 'secondary' },
-        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
+        { label: 'Visual Flow Builder', url: '/products/flow-builder/', type: 'secondary' }
       ]
     },
     {
@@ -158,10 +149,10 @@
       intent: 'ai_voice_calling',
       keywords: ['voice', 'ai voice', 'call bot', 'calling', 'automated call', 'phone call', 'telephony', 'speech', 'inbound call', 'outbound call', 'hindi voice'],
       title: 'AI Voice Calling & Telephony Agents',
-      answer: '<strong>AI Voice Calling (Agentic Voice Telephony):</strong><br>• <strong>Multilingual Speech:</strong> Natural conversation in Hindi, English, and regional Indian languages.<br>• <strong>Outbound Automated Calling:</strong> Payment reminders, COD order confirmations, and event reminders.<br>• <strong>Inbound Virtual Receptionist:</strong> Answers calls 24/7, handles inquiries, and routes callers.',
+      answer: '<strong>AI Voice Calling:</strong> Automated conversational voice agents for payment reminders, COD verification, and 24/7 inbound reception in multiple languages.',
       actions: [
         { label: 'Explore AI Voice Calling', url: '/products/ai-voice/', type: 'primary' },
-        { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20tell%20me%20about%20AI%20Voice%20calling.', type: 'wa', target: '_blank' }
       ]
     },
     {
@@ -169,11 +160,10 @@
       intent: 'omnichannel_channels',
       keywords: ['omnichannel', 'channels', 'instagram', 'telegram', 'facebook', 'messenger', 'dm automation', 'comment to dm', 'all channels', 'multi channel'],
       title: 'Omnichannel Communication (WhatsApp, IG, Telegram, FB)',
-      answer: '<strong>Unified Omnichannel Communication:</strong><br>Connect and reply to customers across all major channels from a single unified inbox:<br>• <strong>WhatsApp Business API:</strong> Broadcasts, CRM, and chatbots.<br>• <strong>Instagram DM Automation:</strong> Story mentions, comment-to-DM, and auto-replies.<br>• <strong>Telegram Bot Platform:</strong> Custom bots and group broadcasts.<br>• <strong>Facebook Messenger:</strong> Integrated lead capture and nurturing.',
+      answer: '<strong>Unified Omnichannel Platform:</strong> Manage WhatsApp, Instagram DMs, Telegram, and Facebook Messenger from a single collaborative workspace.',
       actions: [
-        { label: 'Instagram DM Automation', url: '/products/channels/instagram/', type: 'primary' },
-        { label: 'Telegram Bot Platform', url: '/products/channels/telegram/', type: 'secondary' },
-        { label: 'Facebook Messenger', url: '/products/channels/facebook/', type: 'secondary' }
+        { label: 'Instagram Automation', url: '/products/channels/instagram/', type: 'primary' },
+        { label: 'WhatsApp API', url: '/products/channels/whatsapp/', type: 'secondary' }
       ]
     },
     {
@@ -181,11 +171,10 @@
       intent: 'integrations_ecommerce',
       keywords: ['shopify', 'woocommerce', 'ecommerce', 'integration', 'connect', 'crm', 'zoho', 'hubspot', 'sheets', 'google sheet', 'google forms', 'calendar', 'webhook', 'api'],
       title: 'E-commerce, CRM & Webhook Integrations',
-      answer: '<strong>1-Click E-Commerce & CRM Integrations:</strong><br>• <strong>Shopify & WooCommerce:</strong> Abandoned cart recovery, automated COD verification, order tracking.<br>• <strong>Google Sheets & Forms:</strong> Instant WhatsApp message whenever a form is submitted or row added.<br>• <strong>CRMs:</strong> Direct sync with Zoho, HubSpot, Salesforce, LeadSquared, and custom webhooks.<br>• <strong>REST APIs:</strong> Connect any custom website or database via developer webhooks.',
+      answer: '<strong>E-Commerce & CRM Integrations:</strong> One-click integrations with Shopify, WooCommerce, Zoho, HubSpot, and Google Sheets for automated notifications.',
       actions: [
-        { label: 'Shopify Integration', url: '/solutions/shopify/', type: 'primary' },
-        { label: 'All Integrations', url: '/integrations/', type: 'secondary' },
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20integrate%20with%20Shopify.', type: 'wa', target: '_blank' }
+        { label: 'Explore Integrations', url: '/integrations/', type: 'primary' },
+        { label: 'Shopify Integration', url: '/solutions/shopify/', type: 'secondary' }
       ]
     },
     {
@@ -193,21 +182,21 @@
       intent: 'b2b_business_leads',
       keywords: ['leads', 'business leads', 'pan india', 'database', 'panindiadata', 'data marketplace', 'b2b leads', 'customer data', 'buyers', 'verified data', 'lead generation'],
       title: 'Pan-India Business Leads Database (12 Categories)',
-      answer: '<strong>Pan-India Verified Business Leads:</strong><br>• <strong>12 High-Converting Categories:</strong> Real Estate, Automobiles, E-Commerce, Healthcare, BFSI, Education, IT/Software, Manufacturing, Food & Beverage, Travel, Advertising, and B2B Suppliers.<br>• <strong>Verified Contacts:</strong> Active WhatsApp phone numbers, city, company, and key decision makers.<br>• <strong>Direct Integration:</strong> Broadcast offers directly to verified leads via HelloBotz.',
+      answer: '<strong>Verified B2B Business Leads:</strong> Access active decision-maker contacts across 12 high-growth industries to drive your targeted WhatsApp campaigns.',
       actions: [
-        { label: 'Browse 12 Leads Categories', url: '/business-leads/', type: 'primary' },
-        { label: 'Custom Data Request', url: '/solutions/data-marketplace/#custom-request', type: 'secondary' }
+        { label: 'Browse 12 Lead Categories', url: '/business-leads/', type: 'primary' },
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20tell%20me%20about%20business%20leads.', type: 'wa', target: '_blank' }
       ]
     },
     {
       id: 'green_tick',
       intent: 'meta_green_tick',
-      keywords: ['green tick', 'tick', 'verification', 'badge', 'verified badge', 'green badge', 'official badge'],
-      title: 'Meta Official Green Tick Verification',
-      answer: '<strong>WhatsApp Official Green Tick Verification:</strong><br>• Displays your business brand name instead of a phone number even if the user has not saved your contact.<br>• <strong>Requirements:</strong> Meta Business Verification, working business website, and brand notability.<br>• <strong>Free Assistance:</strong> HelloBotz handles your official application with Meta at zero extra service fee!',
+      keywords: ['green tick', 'blue tick', 'tick', 'verification', 'badge', 'verified badge', 'green badge', 'official badge'],
+      title: 'Meta Official Blue/Green Tick Verification',
+      answer: '<strong>Official Blue Tick Verification:</strong> Get Meta\'s official verified badge on WhatsApp to boost brand trust and customer confidence with zero service fees.',
       actions: [
-        { label: 'Green Tick Guide', url: '/products/whatsapp-blue-tick/', type: 'primary' },
-        { label: 'Apply via WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20apply%20for%20WhatsApp%20Green%20Tick%20verification.', type: 'wa', target: '_blank' }
+        { label: 'Blue Tick Verification', url: '/products/whatsapp-blue-tick/', type: 'primary' },
+        { label: 'Apply on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%2C%20I%20want%20to%20apply%20for%20WhatsApp%20Blue%20Tick%20verification.', type: 'wa', target: '_blank' }
       ]
     },
     {
@@ -215,11 +204,10 @@
       intent: 'talk_to_human',
       keywords: ['talk to human', 'human', 'agent', 'sales', 'speak', 'call', 'support', 'contact', 'phone number', 'email', 'office', 'bangalore', 'address', 'real person', 'customer care'],
       title: 'Talk to Our Team & Human Support',
-      answer: '<strong>Connect with Our Specialist Team in Bangalore:</strong><br>• <strong>WhatsApp:</strong> +91 80508 54445 (Instant Replies)<br>• <strong>Phone:</strong> +91 80508 54445<br>• <strong>Sales Email:</strong> mail@hellobotz.com<br>• <strong>Support Email:</strong> support@hellobotz.com<br>• <strong>Office:</strong> Bangalore, Karnataka, India',
+      answer: '<strong>Talk to HelloBotz Team:</strong> Reach our Bangalore team 24/7 via WhatsApp (+91 80508 54445) or email (mail@hellobotz.com).',
       actions: [
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%20team%2C%20I%20would%20like%20to%20speak%20with%20a%20sales%20representative.', type: 'wa', target: '_blank' },
-        { label: 'Call Us Now', url: 'tel:' + CONFIG.phoneNumber, type: 'secondary' },
-        { label: 'Request a Callback', action: 'openCallback', type: 'secondary' }
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%20team%2C%20I%20would%20like%20to%20speak%20with%20sales.', type: 'wa', target: '_blank' },
+        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     },
     {
@@ -227,7 +215,7 @@
       intent: 'free_trial_onboarding',
       keywords: ['free trial', 'trial', 'sign up', 'register', 'create account', 'start', 'get started', 'demo', 'login', 'setup time', 'how to start'],
       title: 'Get Started with 7-Day Free Trial',
-      answer: '<strong>Start Free Today with HelloBotz:</strong><br>• <strong>7-Day Free Trial:</strong> Explore all features with zero risk.<br>• <strong>No Credit Card Required:</strong> Instant activation in less than 3 minutes.<br>• <strong>Dedicated Onboarding:</strong> Full setup support from our engineers.',
+      answer: '<strong>Start Free with HelloBotz:</strong> Enjoy our 7-day free trial with no credit card required and instant 3-minute onboarding.',
       actions: [
         { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'primary' },
         { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }

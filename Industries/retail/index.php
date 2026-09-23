@@ -15,7 +15,7 @@ include __DIR__ . '/../../includes/header.php';
       <h1>Retail automation on WhatsApp &amp; Instagram</h1>
       <p class="lead">Official WhatsApp Business API + Instagram messaging — designed for retail teams that need speed, compliance and a shared inbox.</p>
       <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/#contact-section" class="btn btn-primary btn-lg">Book industry demo</a>
+        <a href="#contact-section" class="btn btn-primary btn-lg">Book industry demo</a>
         <a href="#flow" class="btn btn-outline btn-lg">See flow</a>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -67,7 +67,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="section section-dark">
   <div class="container"><div class="section-header reveal" style="text-align:center">
     <h2 style="color:#fff">Run Retail conversations on HelloBotz</h2>
-    <a href="/#contact-section" class="btn btn-primary btn-lg" style="margin-top:1rem">Talk to us</a>
+    <a href="#contact-section" class="btn btn-primary btn-lg" style="margin-top:1rem">Talk to us</a>
   </div></div>
 </section>
 <script>

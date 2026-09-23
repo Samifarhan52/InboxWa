@@ -147,7 +147,7 @@ include __DIR__ . '/../../includes/header.php';
         <h2>WhatsApp marketing for Shopify</h2>
         <p class="lead">New launches, festival sales, limited offers, back-in-stock and win-back — using approved templates.</p>
         <p style="font-size:.9rem;color:var(--t2)">Select Audience → Create Template → Preview → Send → Track Results</p>
-        <a href="/#contact-section" class="btn btn-primary" style="margin-top:1rem">Create Campaign</a>
+        <a href="#contact-section" class="btn btn-primary" style="margin-top:1rem">Create Campaign</a>
       </div>
     </div>
   </div>
@@ -159,7 +159,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="reveal">
         <h2>Recover more carts</h2>
         <p class="lead">Cart created → no purchase → WhatsApp reminder → customer returns → order completed.</p>
-        <a href="/#contact-section" class="btn btn-primary">Recover Abandoned Carts</a>
+        <a href="#contact-section" class="btn btn-primary">Recover Abandoned Carts</a>
       </div>
       <div class="reveal" style="border-radius:16px;min-height:220px;background:linear-gradient(135deg,#CFFAFE,#EDE9FE);border:1px solid var(--bd)"></div>
     </div>

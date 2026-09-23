@@ -1099,9 +1099,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const whatsappLink = document.getElementById("whatsapp-enquiryy");
     if (whatsappLink) {
       const baseHref = "<?php echo $bp; ?>#contact-section";
-      whatsappLink.href = baseHref + encodeURIComponent(
-        "I have a query regarding for WhatsApp broadcast"
-      );
+      whatsappLink.href = baseHref;
     }
   });
 </script>
