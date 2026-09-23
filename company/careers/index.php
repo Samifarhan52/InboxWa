@@ -6,13 +6,7 @@ $canonicalUrl = 'https://hellobotz.com/company/careers/';
 $ogImage = 'https://hellobotz.com/assets/images/og-parent-preview.png';
 include __DIR__ . '/../../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/careers.css?v=2">
-
-<nav class="container" aria-label="Breadcrumb" style="padding-top:1.25rem;padding-bottom:0.5rem;font-size:.88rem;color:var(--t3);text-align:center;">
-  <a href="<?php echo $bp; ?>" style="color:var(--t3);text-decoration:none;">Home</a> &nbsp;/&nbsp; 
-  <a href="<?php echo $bp; ?>partners/" style="color:var(--t3);text-decoration:none;">Partners &amp; Company</a> &nbsp;/&nbsp; 
-  <span style="color:var(--p2);font-weight:600;">Careers</span>
-</nav>
+<link rel="stylesheet" href="/assets/css/careers.css?v=3">
 
 <!-- HERO SECTION -->
 <section class="careers-hero" aria-label="HelloBotz Careers Hero">
@@ -28,7 +22,7 @@ include __DIR__ . '/../../includes/header.php';
     <p class="tagline">Have the skills? Have the curiosity? Let’s build something together.</p>
     <div class="careers-hero-actions">
       <a href="#open-roles" class="btn btn-primary btn-lg" style="box-shadow:0 4px 14px rgba(3,71,55,0.3);">View Open Roles &darr;</a>
-      <a href="#apply-form" class="btn btn-outline btn-lg" style="border-color:#034737;color:#034737;background:rgba(3,71,55,0.06);font-weight:700;">Apply Now &rarr;</a>
+      <a href="#apply-form" class="btn btn-outline btn-lg">Apply Now &rarr;</a>
     </div>
     <div class="careers-hero-stats">
       <div class="stat-pill">🤖 AI &amp; Automation Stack</div>
@@ -668,12 +662,12 @@ include __DIR__ . '/../../includes/header.php';
           <h4>Prefer Direct Email?</h4>
           <p>Send your CV, portfolio links, and a brief introduction directly to our recruitment team.</p>
         </div>
-        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+        <div class="direct-email-actions">
           <a href="mailto:careers@hellobotz.com?subject=Application%20for%20HelloBotz" class="email-copy-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             careers@hellobotz.com
           </a>
-          <button type="button" id="btnCopyEmail" class="email-copy-btn" style="background:#F1F5F9;border-color:#CBD5E1;color:#334155;">
+          <button type="button" id="btnCopyEmail" class="email-copy-btn secondary">
             Copy Email
           </button>
         </div>
@@ -723,20 +717,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // 2. Filter Roles Categories
   var filterButtons = document.querySelectorAll('.role-filter-btn');
   var categoryCards = document.querySelectorAll('.role-category-card');
+  var rolesGrid = document.querySelector('.roles-grid');
 
   filterButtons.forEach(function(btn) {
     btn.addEventListener('click', function() {
       filterButtons.forEach(function(b) { b.classList.remove('active'); });
       this.classList.add('active');
       var filter = this.getAttribute('data-filter');
+      var visibleCount = 0;
 
       categoryCards.forEach(function(card) {
         if (filter === 'all' || card.getAttribute('data-cat') === filter) {
           card.style.display = 'flex';
+          visibleCount++;
         } else {
           card.style.display = 'none';
         }
       });
+
+      if (rolesGrid) {
+        if (filter !== 'all' && visibleCount <= 1) {
+          rolesGrid.classList.add('is-single-card');
+        } else {
+          rolesGrid.classList.remove('is-single-card');
+        }
+      }
     });
   });
 
