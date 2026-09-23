@@ -11,7 +11,9 @@ require_once dirname(__DIR__) . '/config/cms.php';
 
 $SITE_NAME   = cms_setting('site_title', 'HelloBotz');
 $SITE_TAGLINE = cms_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
-$SITE_DOMAIN = 'https://hellobotz.com';
+$detectedHost = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? 'inbox-wa-k1i3-five.vercel.app';
+$detectedProto = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
+$SITE_DOMAIN = (strpos($detectedHost, 'localhost') === false && strpos($detectedHost, '127.0.0.1') === false) ? $detectedProto . '://' . $detectedHost : 'https://inbox-wa-k1i3-five.vercel.app';
 $DEFAULT_OG  = $SITE_DOMAIN . '/assets/images/og-image.png';
 $cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
 $cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
