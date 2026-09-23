@@ -84,13 +84,29 @@ body { overflow-x: hidden; }
 }
 
 /* Search Bar & Quick Topic Pills */
-.res-search-box,
-.hc-search-wrap {
+.res-search-box {
   max-width: 580px;
   margin: 1.75rem auto 0;
   position: relative !important;
   display: flex !important;
   align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.hc-search-wrap {
+  max-width: 680px;
+  margin: 1.75rem auto 0;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.hc-search-input-box {
+  position: relative !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
@@ -133,6 +149,88 @@ body { overflow-x: hidden; }
   border-color: #8B5CF6 !important;
   box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15) !important;
 }
+
+/* Instant Search Dropdown */
+.hc-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  z-index: 100;
+  max-height: 380px;
+  overflow-y: auto;
+  display: none;
+  text-align: left;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.hc-search-dropdown.is-open {
+  display: block;
+}
+
+.hc-search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1E293B;
+  transition: background 0.15s ease;
+  gap: 12px;
+}
+
+.hc-search-item:hover,
+.hc-search-item:focus {
+  background: #F8FAFC;
+  color: #8B5CF6;
+}
+
+.hc-search-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hc-search-item-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.hc-search-item-desc {
+  font-size: 0.78rem;
+  color: #64748B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 480px;
+}
+
+.hc-search-item-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #7C3AED;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.hc-search-empty {
+  padding: 18px;
+  text-align: center;
+  color: #64748B;
+  font-size: 0.88rem;
+}
+
 .hc-quick-pills {
   display: flex;
   flex-wrap: wrap;
@@ -140,6 +238,7 @@ body { overflow-x: hidden; }
   justify-content: center;
   gap: 8px;
   margin-top: 1rem;
+  width: 100%;
 }
 .hc-quick-pills span {
   font-size: 0.8rem;

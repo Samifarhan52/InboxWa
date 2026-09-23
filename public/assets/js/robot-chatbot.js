@@ -20,7 +20,7 @@
   var SERVICES_MENU = [
     {
       id: 'whatsapp_api',
-      icon: '📱',
+      icon: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
       label: 'WhatsApp Business API & Blue Tick',
       userText: 'Tell me about WhatsApp Business API & Blue Tick',
       answer: '<strong>Official WhatsApp Business API:</strong> Connect on Meta\'s official cloud infrastructure with zero ban risk, official blue tick verification, and high messaging throughput.',
@@ -32,7 +32,7 @@
     },
     {
       id: 'bulk_broadcast',
-      icon: '📢',
+      icon: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>',
       label: 'Bulk WhatsApp Broadcast Campaigns',
       userText: 'Tell me about Bulk WhatsApp Broadcast Campaigns',
       answer: '<strong>Bulk Broadcast Campaigns:</strong> Send personalized mass messages with 98% open rates, media attachments (images, PDFs, videos), dynamic tags, and live analytics.',
@@ -43,7 +43,7 @@
     },
     {
       id: 'chatbot_flow_builder',
-      icon: '🤖',
+      icon: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>',
       label: 'AI Chatbots & Visual Flow Builder',
       userText: 'Tell me about AI Chatbots & Flow Builder',
       answer: '<strong>AI Chatbots & Visual Flow Builder:</strong> Build drag-and-drop automated flows to answer customer FAQs, capture leads, and support users 24/7 with human handoff.',
@@ -54,7 +54,7 @@
     },
     {
       id: 'integrations_shopify_crm',
-      icon: '🔌',
+      icon: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg>',
       label: 'Shopify, E-Commerce & CRM Integrations',
       userText: 'Tell me about Shopify & CRM Integrations',
       answer: '<strong>E-Commerce & CRM Integrations:</strong> Connect HelloBotz with Shopify, WooCommerce, Zoho, HubSpot, and Google Sheets to automate abandoned carts and order alerts.',
@@ -65,7 +65,7 @@
     },
     {
       id: 'pricing',
-      icon: '💰',
+      icon: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>',
       label: 'Pricing Plans & Subscriptions',
       userText: 'What are your pricing plans & packages?',
       answer: '<strong>Transparent Pricing Plans:</strong> Plans start at ₹1,999/mo for Bulk Broadcasts, ₹2,999/mo for Automation & Shared Inbox, and ₹4,999/mo for Omnichannel Pro (save 20% yearly).',
@@ -76,7 +76,7 @@
     },
     {
       id: 'others',
-      icon: '💬',
+      icon: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
       label: 'Others / Custom Requirement',
       userText: 'I have a custom question or requirement',
       answer: '<strong>How can we assist you?</strong> Please type your requirement below or chat directly with our specialist team for instant assistance.',
@@ -237,7 +237,7 @@
         return {
           type: 'greeting',
           title: 'Hello from HelloBotz!',
-          answer: '👋 <strong>Hello! Welcome to HelloBotz.</strong><br><br>Which service or platform are you looking for today? Please pick an option below or type your custom requirement:',
+          answer: '<strong>Hello! Welcome to HelloBotz.</strong><br><br>Which service or platform are you looking for today? Please pick an option below or type your custom requirement:',
           options: SERVICES_MENU
         };
       }
@@ -249,7 +249,7 @@
         return {
           type: 'thanks',
           title: 'You are welcome!',
-          answer: '😊 <strong>You are very welcome!</strong><br><br>Feel free to ask anything else, explore our services, or chat directly with our team on WhatsApp.',
+          answer: '<strong>You are very welcome!</strong><br><br>Feel free to ask anything else, explore our services, or chat directly with our team on WhatsApp.',
           actions: [
             { label: 'Start Free Trial', url: '/auth/register', type: 'primary' },
             { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber, type: 'wa', target: '_blank' }
@@ -338,12 +338,12 @@
 
       if (emotion === 'excited') {
         character.classList.add('state-excited');
-        if (speechText) speechText.textContent = "✨ Let's chat!";
+        if (speechText) speechText.textContent = "Let's chat!";
       } else if (emotion === 'bored') {
         character.classList.add('state-bored');
-        if (speechText) speechText.textContent = "💤 HelloBotz is here to help!";
+        if (speechText) speechText.textContent = "HelloBotz is here to help!";
       } else {
-        if (speechText) speechText.textContent = "👋 Hi! How can I help?";
+        if (speechText) speechText.textContent = "Hi! How can I help?";
       }
     }
 
@@ -549,9 +549,9 @@
         data.actions.forEach(function (act) {
           var cls = act.type === 'primary' ? 'bot-btn-primary' : (act.type === 'wa' ? 'bot-btn-wa' : 'bot-btn-secondary');
           if (act.action === 'openDemo') {
-            actionsHtml += `<button type="button" class="bot-btn ${cls} bot-action-demo">📅 ${escapeHtml(act.label)}</button>`;
+            actionsHtml += `<button type="button" class="bot-btn ${cls} bot-action-demo"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${escapeHtml(act.label)}</button>`;
           } else if (act.action === 'openCallback') {
-            actionsHtml += `<button type="button" class="bot-btn ${cls} bot-action-callback">📞 ${escapeHtml(act.label)}</button>`;
+            actionsHtml += `<button type="button" class="bot-btn ${cls} bot-action-callback"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>${escapeHtml(act.label)}</button>`;
           } else {
             var target = act.target ? `target="${act.target}" rel="noopener"` : '';
             actionsHtml += `<a href="${act.url}" ${target} class="bot-btn ${cls}">${escapeHtml(act.label)} &rarr;</a>`;
@@ -562,7 +562,7 @@
 
       var menuBtnHtml = '';
       if (data.showMenuBtn) {
-        menuBtnHtml = '<button type="button" class="bot-btn-menu bot-action-show-menu"><span>☰</span> Explore Services Menu</button>';
+        menuBtnHtml = '<button type="button" class="bot-btn-menu bot-action-show-menu"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>Explore Services Menu</button>';
       }
 
       row.innerHTML = `
@@ -709,7 +709,7 @@
     // Initial Greetings with Vertical Options
     function renderWelcomeMessage() {
       addBotResponse({
-        answer: '👋 <strong>Hello! Welcome to HelloBotz.</strong><br><br>Which service or platform are you looking for today?',
+        answer: '<strong>Hello! Welcome to HelloBotz.</strong><br><br>Which service or platform are you looking for today?',
         options: SERVICES_MENU,
         showMenuBtn: false
       });

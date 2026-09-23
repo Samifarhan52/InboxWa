@@ -3,12 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBots';
-$pageDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBots.';
+$pageTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBotz's;
+$pageDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/ctwa/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/click-to-whatsapp-ads/Ads-that-Click-to-WhatsApp.png';
-$ogTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBots';
-$ogDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBots.';
+$ogTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBotz's;
+$ogDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBotz.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -207,7 +207,7 @@ include __DIR__ . '/../../includes/header.php';
       <h3>Capture Qualified Leads in Real Time</h3>
       <p>
         No more hustle with losing interested leads due to lengthy sign-up forms. 
-        With HelloBots, convert single clicks into a WhatsApp communication, 
+        With HelloBotz, convert single clicks into a WhatsApp communication, 
         allowing you to qualify leads naturally via the chat.
       </p>
 

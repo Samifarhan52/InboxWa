@@ -459,7 +459,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="offer-heading-row">
                 <h2 class="offer-heading">What You Can Offer Under Your Brand</h2>
                 <a class="pp-btn pp-btn-primary"
-                    href="https://api.whatsapp.com/send/?phone=919024756882&text=Hi,%20I%20want%20to%20become%20a%20partner."
+                    href="https://api.whatsapp.com/send/?phone=918050854445&text=Hi,%20I%20want%20to%20become%20a%20partner."
                     target="_blank" rel="noopener noreferrer">Become a Partner
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

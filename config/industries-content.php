@@ -922,7 +922,7 @@ function getIndustryData($slug) {
             ],
 
             // =========================================================================
-            // 6. AUTOMOTIVE (Reference: getgabs.com/industries/automotive/)
+            // 6. AUTOMOTIVE 
             // =========================================================================
             'automotive' => [
                 'slug' => 'automotive',
@@ -1105,7 +1105,7 @@ function getIndustryData($slug) {
             ],
 
             // =========================================================================
-            // 7. RESTAURANTS & FOOD (Reference: getgabs.com/industries/restaurant-and-food-business/)
+            // 7. RESTAURANTS & FOOD 
             // =========================================================================
             'restaurants-food' => [
                 'slug' => 'restaurants-food',

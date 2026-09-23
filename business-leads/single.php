@@ -304,7 +304,7 @@ include __DIR__ . '/../includes/header.php';
   </section>
 
   <?php if ($categorySlug === 'education'): ?>
-  <!-- 6 EDTECH USE CASES (CLONED FROM GETGABS) -->
+  <!-- 6 EDTECH USE CASES (HELLOBOTZ) -->
   <section class="bl-section" id="use-cases">
     <div class="bl-container">
       <div class="bl-section-header">
@@ -485,7 +485,7 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
 
-  <!-- 10 ALL-IN-ONE FEATURES (CLONED FROM GETGABS) -->
+  <!-- 10 ALL-IN-ONE FEATURES (HELLOBOTZ) -->
   <section class="bl-section bl-section-alt" id="features">
     <div class="bl-container">
       <div class="bl-section-header">
@@ -722,7 +722,7 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
 
-  <!-- FAQS ACCORDION (CLONED FROM GETGABS) -->
+  <!-- FAQS ACCORDION (HELLOBOTZ) -->
   <section class="bl-section" id="faqs">
     <div class="bl-container">
       <div class="bl-section-header">

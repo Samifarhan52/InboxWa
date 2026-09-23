@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBots';
+$pageTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBotz's;
 $pageDescription = 'Automate courier tracking alerts, delivery notifications, and non-delivery report (NDR) verifications via WhatsApp.';
 $canonicalUrl = 'https://hellobotz.com/integrations/shiprocket/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-shiprocket/WhatsApp-Shiprocket-Integration.png';
-$ogTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBots';
+$ogTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBotz's;
 $ogDescription = 'Automate courier tracking alerts, delivery notifications, and non-delivery report (NDR) verifications via WhatsApp.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -134,9 +134,9 @@ include __DIR__ . '/../../includes/header.php';
 
 
   <script data-cookieconsent="ignore"
-    src="https://HelloBots.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://HelloBots.com/wp-content/themes/sierra/assets/css/whatsapp-blue-tick.css" class="css">
-<link rel="stylesheet" href="https://HelloBots.com/wp-content/themes/sierra/assets/css/template-industry.css" class="css">
+    src="https://HelloBotz.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://HelloBotz.com/wp-content/themes/sierra/assets/css/whatsapp-blue-tick.css" class="css">
+<link rel="stylesheet" href="https://HelloBotz.com/wp-content/themes/sierra/assets/css/template-industry.css" class="css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -264,10 +264,10 @@ include __DIR__ . '/../../includes/header.php';
     <div aria-label="breadcrumb" class="custom-breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="https://HelloBots.com/">Home</a>
+          <a href="https://HelloBotz.com/">Home</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="https://HelloBots.com/integrations/">Integrations</a>
+          <a href="https://HelloBotz.com/integrations/">Integrations</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           shiprocket        </li>
@@ -300,7 +300,7 @@ include __DIR__ . '/../../includes/header.php';
 </p>
         <div class="btn-groupp" style="display: flex; gap: 12px;">
      <a id="whatsapp-enquiry"
-          href="https://app.HelloBots.com/register"
+          href="https://app.HelloBotz.com/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Get Started
         </a>
@@ -443,7 +443,7 @@ include __DIR__ . '/../../includes/header.php';
             <div class="ws-icon-box"><span class="material-symbols-rounded ws-icon">route</span></div>
             <div class="ws-card-content">
                 <h3>Unified Multi-Courier Support</h3>
-                <p>Be it a Delhivery, BlueDart, or Ecom Express through Shiprocket, HelloBots delivers a unified brand experience. Monitor and notify about packages across all courier partners from a single WhatsApp API dashboard.</p>
+                <p>Be it a Delhivery, BlueDart, or Ecom Express through Shiprocket, HelloBotz delivers a unified brand experience. Monitor and notify about packages across all courier partners from a single WhatsApp API dashboard.</p>
             </div>
         </div>
 
@@ -473,7 +473,7 @@ include __DIR__ . '/../../includes/header.php';
 
     </div>
 
-     <a href="https://app.HelloBots.com/register" class="cta-button mt-3">Get Started</a>
+     <a href="https://app.HelloBotz.com/register" class="cta-button mt-3">Get Started</a>
     </div>
 </section>
 
@@ -481,7 +481,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="whatsapp-usecase py-5" style="background:#ffffff;">
   <div class="container">
-    <h2 class="whatsapp-heading mb-5">How to Integrate HelloBots WhatsApp API in Shiprocket
+    <h2 class="whatsapp-heading mb-5">How to Integrate HelloBotz WhatsApp API in Shiprocket
     </h2>
     <div class="usecase-row row align-items-center mb-5">
       <!-- Text -->
@@ -549,9 +549,9 @@ include __DIR__ . '/../../includes/header.php';
         <div class="step">
           <div class="step-number mb-3">#3</div>
           <div class="step-text">
-            <h3>Activate HelloBots Automation</h3>
+            <h3>Activate HelloBotz Automation</h3>
             <ul class="tick-list">
-                <li>Go to Automations in HelloBots and click 'Create New'
+                <li>Go to Automations in HelloBotz and click 'Create New'
 </li>
                 <li>Select 'Abandoned Checkout' as your primary trigger
 </li>
@@ -574,8 +574,8 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image -->
       <div class="col-lg-6 order-2 order-lg-1 text-center">
         <div class="api-image-box mt-3">
-          <img src="/assets/images/hellobots/integrations-shiprocket/Activate-HelloBots-Automation.png"
-            alt="Activate HelloBots Automation" class="api-image img-fluid rounded">
+          <img src="/assets/images/hellobots/integrations-shiprocket/Activate-HelloBotz-Automation.png"
+            alt="Activate HelloBotz Automation" class="api-image img-fluid rounded">
         </div>
       </div>
     </div>
@@ -863,14 +863,14 @@ document.addEventListener("click", function (e) {
     const key = card.dataset.key;
 
     const links = {
-        shopify: "https://HelloBots.com/integrations/shopify/",
-        woocommerce: "https://HelloBots.com/integrations/woocommerce/",
-        gotab: "https://HelloBots.com/integrations/gotab/",
-        wortal: "https://HelloBots.com/integrations/wortal/",
-        shiprocket: "https://HelloBots.com/integrations/shiprocket/",
-        zoho: "https://HelloBots.com/integrations/zoho/",
-        "google-sheets": "https://HelloBots.com/integrations/google-sheets/",
-        n8n: "https://HelloBots.com/integrations/n8n/"
+        shopify: "https://HelloBotz.com/integrations/shopify/",
+        woocommerce: "https://HelloBotz.com/integrations/woocommerce/",
+        gotab: "https://HelloBotz.com/integrations/gotab/",
+        wortal: "https://HelloBotz.com/integrations/wortal/",
+        shiprocket: "https://HelloBotz.com/integrations/shiprocket/",
+        zoho: "https://HelloBotz.com/integrations/zoho/",
+        "google-sheets": "https://HelloBotz.com/integrations/google-sheets/",
+        n8n: "https://HelloBotz.com/integrations/n8n/"
     };
 
     if (links[key]) {
@@ -992,7 +992,7 @@ document.addEventListener("click", function (e) {
                 <div class="iconn"><i class="fas fa-bullhorn"></i></div>
                 <h3>WhatsApp for Marketing</h3>
                 <p>Reach customers instantly with high-engagement broadcasts and personalized offers.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-marketing/" target="_blank"
+                <a class="learn-more" href="https://HelloBotz.com/whatsapp-marketing/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1001,7 +1001,7 @@ document.addEventListener("click", function (e) {
                 <div class="iconn"><i class="fas fa-handshake"></i></div>
                 <h3>WhatsApp for Sales</h3>
                 <p>Convert chats into sales with automated workflows, lead management, and fast follow-ups.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-sales-crm/" target="_blank"
+                <a class="learn-more" href="https://HelloBotz.com/whatsapp-sales-crm/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1011,14 +1011,14 @@ document.addEventListener("click", function (e) {
                 <h3>WhatsApp for Support</h3>
                 <p class="">Provide fast, reliable customer support with instant replies and automated ticket
                     management.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-customer-support/" target="_blank"
+                <a class="learn-more" href="https://HelloBotz.com/whatsapp-customer-support/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
 </section><section class="faq-section">
   <div class="container">
-          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can we customize how data from WhatsApp is recorded in Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Of Course. You can customize the way WhatsApp data is recorded in Shiprocket. It consist which data fields go into which fields of Shiprocket, setting up custom formats, and filtering out unwanted information.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>How often does the data sync between WhatsApp and Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">The data sync between WhatsApp and Shiprocket generally occurs in real-time through instant triggers. And in case of scheduled triggers, it can take a maximum of 15 minutes.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Can I filter or transform data before sending it from WhatsApp to Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, HelloBots enables you to add custom logic or use built-in filters to adjust data as per your requirements.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Is it possible to add conditions to the integration between WhatsApp and Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Absolutely. You can set conditional logic to control the flow of data between WhatsApp and Shiprocket. For example, you can select specific data that you want when certain conditions are met, or you can create if/else statements to manage different results.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can we customize how data from WhatsApp is recorded in Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"Of Course. You can customize the way WhatsApp data is recorded in Shiprocket. It consist which data fields go into which fields of Shiprocket, setting up custom formats, and filtering out unwanted information."}},{"@type":"Question","name":"How often does the data sync between WhatsApp and Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"The data sync between WhatsApp and Shiprocket generally occurs in real-time through instant triggers. And in case of scheduled triggers, it can take a maximum of 15 minutes."}},{"@type":"Question","name":"Can I filter or transform data before sending it from WhatsApp to Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"Yes, HelloBots enables you to add custom logic or use built-in filters to adjust data as per your requirements."}},{"@type":"Question","name":"Is it possible to add conditions to the integration between WhatsApp and Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can set conditional logic to control the flow of data between WhatsApp and Shiprocket. For example, you can select specific data that you want when certain conditions are met, or you can create if/else statements to manage different results."}}]}</script>
+          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can we customize how data from WhatsApp is recorded in Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Of Course. You can customize the way WhatsApp data is recorded in Shiprocket. It consist which data fields go into which fields of Shiprocket, setting up custom formats, and filtering out unwanted information.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>How often does the data sync between WhatsApp and Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">The data sync between WhatsApp and Shiprocket generally occurs in real-time through instant triggers. And in case of scheduled triggers, it can take a maximum of 15 minutes.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Can I filter or transform data before sending it from WhatsApp to Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, HelloBotz enables you to add custom logic or use built-in filters to adjust data as per your requirements.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Is it possible to add conditions to the integration between WhatsApp and Shiprocket?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Absolutely. You can set conditional logic to control the flow of data between WhatsApp and Shiprocket. For example, you can select specific data that you want when certain conditions are met, or you can create if/else statements to manage different results.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can we customize how data from WhatsApp is recorded in Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"Of Course. You can customize the way WhatsApp data is recorded in Shiprocket. It consist which data fields go into which fields of Shiprocket, setting up custom formats, and filtering out unwanted information."}},{"@type":"Question","name":"How often does the data sync between WhatsApp and Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"The data sync between WhatsApp and Shiprocket generally occurs in real-time through instant triggers. And in case of scheduled triggers, it can take a maximum of 15 minutes."}},{"@type":"Question","name":"Can I filter or transform data before sending it from WhatsApp to Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"Yes, HelloBotz enables you to add custom logic or use built-in filters to adjust data as per your requirements."}},{"@type":"Question","name":"Is it possible to add conditions to the integration between WhatsApp and Shiprocket?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can set conditional logic to control the flow of data between WhatsApp and Shiprocket. For example, you can select specific data that you want when certain conditions are met, or you can create if/else statements to manage different results."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1294,7 +1294,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
         assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
 <link rel="stylesheet"
-    href="https://HelloBots.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
+    href="https://HelloBotz.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
     media="all">
 
 

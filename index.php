@@ -259,7 +259,7 @@ include __DIR__ . '/includes/header.php';
   }
 
   /* ========================================================
-     SEAMLESSLY INTEGRATE MARQUEE SECTION (GETGABS CLONE)
+     SEAMLESSLY INTEGRATE MARQUEE SECTION (HELLOBOTZ)
      ======================================================== */
   .hb-integrations-marquee-section {
     padding: 75px 0 65px;
@@ -3637,7 +3637,7 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- 2.0 SEAMLESSLY INTEGRATE WITH YOUR STACK SECTION (GETGABS CLONE) -->
+  <!-- 2.0 SEAMLESSLY INTEGRATE WITH YOUR STACK SECTION (HELLOBOTZ) -->
   <section class="hb-integrations-marquee-section" id="integrations-stack">
     <div class="hb-int-container">
       <div class="hb-int-header">

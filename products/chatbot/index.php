@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBots';
+$pageTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBotz's;
 $pageDescription = 'Deploy no-code AI assistants to automate customer inquiries, book appointments, and close sales on WhatsApp around the clock.';
 $canonicalUrl = 'https://hellobotz.com/products/chatbot/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/ai-whatsapp-chatbot/01.png';
-$ogTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBots';
+$ogTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBotz's;
 $ogDescription = 'Deploy no-code AI assistants to automate customer inquiries, book appointments, and close sales on WhatsApp around the clock.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -228,7 +228,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1 class="hero-title">
           AI WhatsApp Chatbot That Turns Conversations Into Customers</h1>
         <p class="hero-text">
-          HelloBots' AI WhatsApp Chatbot understands context, responds quickly in your brand voice, and works 24/7 —
+          HelloBotz's AI WhatsApp Chatbot understands context, responds quickly in your brand voice, and works 24/7 —
           powered by the official WhatsApp Business API </p>
         <div class="btn-group">
           <!-- Enquiry Now Button -->
@@ -278,7 +278,7 @@ include __DIR__ . '/../../includes/header.php';
         <thead>
           <tr>
             <th>Feature</th>
-            <th>AI Chatbot (HelloBots)</th>
+            <th>AI Chatbot (HelloBotz)</th>
             <th>Human Agent</th>
             <th>Traditional Rule-Based Chatbot</th>
           </tr>
@@ -530,7 +530,7 @@ include __DIR__ . '/../../includes/header.php';
 <section class="ai-engines">
   <div class="container">
     <h2 class="whatsapp-heading fw-bold">Choose the AI Engine Behind Your Chatbot</h2>
-    <p class="api-subtext">Every AI model brings different strengths to a conversation. With HelloBots, you can
+    <p class="api-subtext">Every AI model brings different strengths to a conversation. With HelloBotz, you can
       choose the one that matches your business communication style while training it on your own content.</p>
 
     <div class="engine-grid">
@@ -589,10 +589,10 @@ include __DIR__ . '/../../includes/header.php';
 </section>
 
 
-<!-- ============ Why Businesses Choose HelloBots ============ -->
-<section class="why-hellobots why-getgabs">
+<!-- ============ Why Businesses Choose HelloBotz ============ -->
+<section class="why-hellobotz why-hellobots">
     <div class="container">
-        <h2 class="whatsapp-heading fw-bold text-center">Why Businesses Choose HelloBots for WhatsApp AI Chatbot</h2>
+        <h2 class="whatsapp-heading fw-bold text-center">Why Businesses Choose HelloBotz for WhatsApp AI Chatbot</h2>
 
         <div class="wg-grid">
 
@@ -638,7 +638,7 @@ include __DIR__ . '/../../includes/header.php';
                     <li><svg class="wg-check" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.1 14.2-4-4 1.4-1.4 2.6 2.6 5.4-5.4 1.4 1.4-6.8 6.8z" />
-                        </svg><span>HelloBots is a Meta-verified Business Partner.</span></li>
+                        </svg><span>HelloBotz is a Meta-verified Business Partner.</span></li>
                     <li><svg class="wg-check" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.1 14.2-4-4 1.4-1.4 2.6 2.6 5.4-5.4 1.4 1.4-6.8 6.8z" />
@@ -1087,7 +1087,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 </style><section class="faq-section">
   <div class="container">
-    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-8"><span class="faq-title"><h3>Is HelloBots&#039; AI Chatbot built on the official WhatsApp Business API?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-8" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-9"><span class="faq-title"><h3>Can I connect the chatbot to my CRM or existing tools?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-9" class="faq-answer" role="region" aria-hidden="true">Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-10"><span class="faq-title"><h3>Does the AI chatbot replace my human support team?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-10" class="faq-answer" role="region" aria-hidden="true">No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-11"><span class="faq-title"><h3>How long does it take to set up?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-11" class="faq-answer" role="region" aria-hidden="true">Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-12"><span class="faq-title"><h3>How do I train the chatbot on my business?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-12" class="faq-answer" role="region" aria-hidden="true">Upload FAQs, product details, or website content without any coding ot technical expertise needed.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is HelloBots' AI Chatbot built on the official WhatsApp Business API?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant."}},{"@type":"Question","name":"Can I connect the chatbot to my CRM or existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation."}},{"@type":"Question","name":"Does the AI chatbot replace my human support team?","acceptedAnswer":{"@type":"Answer","text":"No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached."}},{"@type":"Question","name":"How long does it take to set up?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules."}},{"@type":"Question","name":"How do I train the chatbot on my business?","acceptedAnswer":{"@type":"Answer","text":"Upload FAQs, product details, or website content without any coding ot technical expertise needed."}}]}</script>
+    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-8"><span class="faq-title"><h3>Is HelloBotz&#039; AI Chatbot built on the official WhatsApp Business API?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-8" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-9"><span class="faq-title"><h3>Can I connect the chatbot to my CRM or existing tools?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-9" class="faq-answer" role="region" aria-hidden="true">Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-10"><span class="faq-title"><h3>Does the AI chatbot replace my human support team?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-10" class="faq-answer" role="region" aria-hidden="true">No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-11"><span class="faq-title"><h3>How long does it take to set up?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-11" class="faq-answer" role="region" aria-hidden="true">Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-12"><span class="faq-title"><h3>How do I train the chatbot on my business?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-12" class="faq-answer" role="region" aria-hidden="true">Upload FAQs, product details, or website content without any coding ot technical expertise needed.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is HelloBotz's AI Chatbot built on the official WhatsApp Business API?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant."}},{"@type":"Question","name":"Can I connect the chatbot to my CRM or existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation."}},{"@type":"Question","name":"Does the AI chatbot replace my human support team?","acceptedAnswer":{"@type":"Answer","text":"No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached."}},{"@type":"Question","name":"How long does it take to set up?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules."}},{"@type":"Question","name":"How do I train the chatbot on my business?","acceptedAnswer":{"@type":"Answer","text":"Upload FAQs, product details, or website content without any coding ot technical expertise needed."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1363,7 +1363,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
   window.onload = function () {
     Calendly.initBadgeWidget({
-      url: 'https://calendly.com/HelloBots/15min',
+      url: 'https://calendly.com/HelloBotz/15min',
       text: 'Schedule time with me',
       color: '#0069ff',
       textColor: '#ffffff',
@@ -1376,7 +1376,7 @@ document.addEventListener("DOMContentLoaded", function() {
       button.addEventListener('click', function (e) {
         e.preventDefault();
         Calendly.initPopupWidget({
-          url: 'https://calendly.com/HelloBots/15min'
+          url: 'https://calendly.com/HelloBotz/15min'
         });
       });
     });

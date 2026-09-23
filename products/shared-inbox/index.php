@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBots';
+$pageTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBotz's;
 $pageDescription = 'Manage customer WhatsApp chats from a single business number with role-based routing, quick replies, and team collaboration.';
 $canonicalUrl = 'https://hellobotz.com/products/shared-inbox/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-team-inbox/WhatsApp-Team-Inbox.png';
-$ogTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBots';
+$ogTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBotz's;
 $ogDescription = 'Manage customer WhatsApp chats from a single business number with role-based routing, quick replies, and team collaboration.';
 
 include __DIR__ . '/../../includes/header.php';

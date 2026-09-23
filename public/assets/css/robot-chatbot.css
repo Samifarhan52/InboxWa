@@ -647,6 +647,13 @@
   font-size: 13px;
   flex-shrink: 0;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bot-option-btn .opt-icon svg {
+  display: block;
 }
 
 .bot-option-btn .opt-text {

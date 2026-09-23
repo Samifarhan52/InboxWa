@@ -3,12 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBots';
-$pageDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBots.';
+$pageTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBotz's;
+$pageDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-blue-tick/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png';
-$ogTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBots';
-$ogDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBots.';
+$ogTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBotz's;
+$ogDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBotz.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -1105,7 +1105,7 @@ body.wv-modal-open .wv-modal-overlay {
           <span class="material-icons">chat_bubble_outline</span>
         </div>
         <h3>WhatsApp API Setup</h3>
-        <p>Create a WhatsApp Business API account with the help of a partner like HelloBots.</p>
+        <p>Create a WhatsApp Business API account with the help of a partner like HelloBotz.</p>
       </div>
       <div class="benefit-card">
         <div class="card-icon purple">
@@ -2161,9 +2161,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                 Your API Provider <span class="wv-modal-label-required">*</span>
                             </label>
                             <div class="wv-modal-radio-group" id="wvProviderGroup">
-                                <div class="wv-modal-radio-option" data-value="HelloBots">
+                                <div class="wv-modal-radio-option" data-value="HelloBotz">
                                     <div class="wv-modal-radio-circle"><div class="wv-modal-radio-circle-inner"></div></div>
-                                    <span class="wv-modal-radio-label">HelloBots</span>
+                                    <span class="wv-modal-radio-label">HelloBotz</span>
                                 </div>
                                 <div class="wv-modal-radio-option" data-value="other">
                                     <div class="wv-modal-radio-circle"><div class="wv-modal-radio-circle-inner"></div></div>
@@ -2223,12 +2223,12 @@ document.addEventListener("DOMContentLoaded", function() {
                             </li>
                             <li>
                                 <div class="wv-modal-bullet"></div>
-                                <span><strong>Easy Migration:</strong> Transfer your number to HelloBots API in minutes</span>
+                                <span><strong>Easy Migration:</strong> Transfer your number to HelloBotz API in minutes</span>
                             </li>
                         </ul>
 
                         <p style="font-size: 0.75rem; font-weight: 600; color: #0f172a; text-align: center; padding: 1rem; background: #f0fdf4; border-radius: 0.5rem; border-left: 4px solid #10b981;">
-                            <strong>Ready for Blue Tick? Switch to HelloBots WhatsApp Business API today!</strong>
+                            <strong>Ready for Blue Tick? Switch to HelloBotz WhatsApp Business API today!</strong>
                         </p>
                     </div>
                 </div>

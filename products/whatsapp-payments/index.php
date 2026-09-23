@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp In-Chat Payments | UPI, Cards & Net Banking | HelloBots';
+$pageTitle = 'WhatsApp In-Chat Payments | UPI, Cards & Net Banking | HelloBotz's;
 $pageDescription = 'Accept frictionless digital payments directly in WhatsApp chat conversations. Speed up checkouts and maximize transaction success.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-payments/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-payments/WhatsApp-Payments.png';
-$ogTitle = 'WhatsApp In-Chat Payments | UPI, Cards & Net Banking | HelloBots';
+$ogTitle = 'WhatsApp In-Chat Payments | UPI, Cards & Net Banking | HelloBotz's;
 $ogDescription = 'Accept frictionless digital payments directly in WhatsApp chat conversations. Speed up checkouts and maximize transaction success.';
 
 include __DIR__ . '/../../includes/header.php';

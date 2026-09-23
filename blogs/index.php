@@ -7,7 +7,7 @@ include __DIR__ . "/../includes/header.php";
 ?>
 <link rel="stylesheet" href="/assets/css/articles-blog.css?v=2">
 
-<!-- Hero Section (GetGabs Clone) -->
+<!-- Hero Section (HelloBotz) -->
 <section class="blogs-section mb-5">
   <div class="container text-center">
     <h1>
@@ -329,7 +329,7 @@ include __DIR__ . "/../includes/header.php";
     </div>
   </div>
 
-  <!-- Pagination (Matching GetGabs) -->
+  <!-- Pagination (HelloBotz) -->
   <div class="pagination">
     <ul class="my-pagination">
       <li class="active"><span aria-current="page" class="page-numbers current">1</span></li>

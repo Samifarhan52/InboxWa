@@ -3295,7 +3295,7 @@ if (!function_exists('hb_seo_esc')) {
             <!-- Slide 1: Special Limited Offer -->
             <div class="hb-ann-slide is-active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 5">
               <a href="/pricing/" class="hb-ann-link">
-                <span class="hb-ann-badge hb-badge-offer"><span class="hb-badge-pulse"></span>🔥 LIMITED OFFER</span>
+                <span class="hb-ann-badge hb-badge-offer"><span class="hb-badge-pulse"></span><svg class="hb-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> LIMITED OFFER</span>
                 <span class="hb-ann-text"><?php if ($announcementEnabled && !empty($announcementText)): ?><strong><?php echo htmlspecialchars($announcementText); ?></strong><?php else: ?><strong>Flat 20% OFF</strong> on All Annual WhatsApp API &amp; AI Chatbot Plans — Code: <mark class="hb-ann-code">HB20OFF</mark><?php endif; ?></span>
                 <span class="hb-ann-cta">Claim Discount <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </a>
@@ -3304,7 +3304,7 @@ if (!function_exists('hb_seo_esc')) {
             <!-- Slide 2: Major Release Update -->
             <div class="hb-ann-slide" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 5" aria-hidden="true">
               <a href="/products/whatsapp-api/" class="hb-ann-link">
-                <span class="hb-ann-badge hb-badge-update">⚡ NEW UPDATE</span>
+                <span class="hb-ann-badge hb-badge-update"><svg class="hb-badge-svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> NEW UPDATE</span>
                 <span class="hb-ann-text">Official Meta WhatsApp Cloud API v20.0 with <strong>99.99% Uptime &amp; 0% Ban Shield</strong></span>
                 <span class="hb-ann-cta">Explore API <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </a>
@@ -3313,7 +3313,7 @@ if (!function_exists('hb_seo_esc')) {
             <!-- Slide 3: Official Announcement -->
             <div class="hb-ann-slide" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 5" aria-hidden="true">
               <a href="/products/whatsapp-blue-tick/" class="hb-ann-link">
-                <span class="hb-ann-badge hb-badge-announcement">💎 ANNOUNCEMENT</span>
+                <span class="hb-ann-badge hb-badge-announcement"><svg class="hb-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 18 3 22 9 12 22 2 9"/><polyline points="11 3 8 9 12 22 16 9 13 3"/><line x1="2" y1="9" x2="22" y2="9"/></svg> ANNOUNCEMENT</span>
                 <span class="hb-ann-text"><strong>Free Meta Official Green Tick Verification</strong> included with Pro &amp; Enterprise Plans</span>
                 <span class="hb-ann-cta">Get Verified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </a>
@@ -3322,7 +3322,7 @@ if (!function_exists('hb_seo_esc')) {
             <!-- Slide 4: New Omnichannel Inbox -->
             <div class="hb-ann-slide" data-index="3" role="group" aria-roledescription="slide" aria-label="4 of 5" aria-hidden="true">
               <a href="/products/shared-inbox/" class="hb-ann-link">
-                <span class="hb-ann-badge hb-badge-feature">🚀 NEW FEATURE</span>
+                <span class="hb-ann-badge hb-badge-feature"><svg class="hb-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4.5c1.62-1.63 5-2 5-2"/><path d="M12 15v5s3.03-.55 4.5-2c1.63-1.62 2-5 2-5"/></svg> NEW FEATURE</span>
                 <span class="hb-ann-text">Omnichannel Team Inbox Live: WhatsApp, Instagram DM &amp; Messenger in One Screen</span>
                 <span class="hb-ann-cta">See Demo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </a>
@@ -3331,7 +3331,7 @@ if (!function_exists('hb_seo_esc')) {
             <!-- Slide 5: White-Label Partner Program -->
             <div class="hb-ann-slide" data-index="4" role="group" aria-roledescription="slide" aria-label="5 of 5" aria-hidden="true">
               <a href="/partners/white-label/" class="hb-ann-link">
-                <span class="hb-ann-badge hb-badge-partner">💰 WHITE-LABEL</span>
+                <span class="hb-ann-badge hb-badge-partner"><svg class="hb-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> WHITE-LABEL</span>
                 <span class="hb-ann-text">Launch Your Own Branded WhatsApp SaaS — <strong>Keep 100% Client Margins</strong></span>
                 <span class="hb-ann-cta">Become a Partner <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </a>

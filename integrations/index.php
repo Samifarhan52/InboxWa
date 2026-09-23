@@ -3,12 +3,12 @@ $basePath = '../';
 $bp = '../';
 require_once __DIR__ . '/../config/cms.php';
 
-$pageTitle = 'WhatsApp Business API Integrations Directory | HelloBots';
-$pageDescription = 'Connect HelloBots WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
+$pageTitle = 'WhatsApp Business API Integrations Directory | HelloBotz's;
+$pageDescription = 'Connect HelloBotz WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 $canonicalUrl = 'https://hellobotz.com/integrations/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-main/WhatsApp-Business-API-Integration.png';
-$ogTitle = 'WhatsApp Business API Integrations Directory | HelloBots';
-$ogDescription = 'Connect HelloBots WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
+$ogTitle = 'WhatsApp Business API Integrations Directory | HelloBotz's;
+$ogDescription = 'Connect HelloBotz WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -133,7 +133,7 @@ include __DIR__ . '/../includes/header.php';
 
 
   <script data-cookieconsent="ignore"
-    src="https://HelloBots.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><style>
+    src="https://HelloBotz.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><style>
   .wa-process-section {}
 
   .wa-step-card {
@@ -591,7 +591,7 @@ include __DIR__ . '/../includes/header.php';
     <div aria-label="breadcrumb" class="custom-breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="https://HelloBots.com/">Home</a>
+          <a href="https://HelloBotz.com/">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           Integrations        </li>
@@ -620,7 +620,7 @@ include __DIR__ . '/../includes/header.php';
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
         <h1 class="hero-title"> Integrate WhatsApp Business API with Your Existing Platforms</h1>
-        <p class="hero-text">Easily integrate HelloBots WhatsApp Business API with your favorite business tools to
+        <p class="hero-text">Easily integrate HelloBotz WhatsApp Business API with your favorite business tools to
           automate conversations, notifications, and workflows from a single platform.
         </p>
         <div class="btn-groupp" style="display: flex; gap: 12px;">
@@ -649,7 +649,7 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="wa-process-section" style="padding: 60px 0px;background: #fcfbfc;">
   <div class="container">
-    <h2 class="wa-process-title text-center mb-5">How WhatsApp Integrations Work with HelloBots</h2>
+    <h2 class="wa-process-title text-center mb-5">How WhatsApp Integrations Work with HelloBotz</h2>
 
     <div class="row g-4">
 
@@ -665,8 +665,8 @@ include __DIR__ . '/../includes/header.php';
       <div class="col-md-6 col-lg-3">
         <div class="wa-step-card">
           <div class="wa-step-badge">2</div>
-          <div class="wa-step-heading">Connect your platform with HelloBots</div>
-          <p class="wa-step-description">Connect your platform securely with HelloBots’ WhatsApp Business API in just a
+          <div class="wa-step-heading">Connect your platform with HelloBotz</div>
+          <p class="wa-step-description">Connect your platform securely with HelloBotz’s WhatsApp Business API in just a
             few clicks.</p>
         </div>
       </div>
@@ -697,7 +697,7 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="whatsapp-section">
   <div class="container">
-    <h2 class="whatsapp-heading fw-bold">More Reasons to Choose HelloBots</h2>
+    <h2 class="whatsapp-heading fw-bold">More Reasons to Choose HelloBotz</h2>
 
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -757,7 +757,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="integration-grid">
 
       <!-- Card 1 -->
-      <a href="https://HelloBots.com/integrations/shopify/" target="_blank" rel="noopener noreferrer" class="">
+      <a href="https://HelloBotz.com/integrations/shopify/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card shopify-card">
           <img src="/assets/images/hellobots/integrations-main/shopify.png" alt="Shopify Logo" class="integration-logo" />
           <h3>Shopify</h3>
@@ -765,21 +765,21 @@ include __DIR__ . '/../includes/header.php';
         </div>
       </a>
       <!-- Card 2 -->
-      <a href="https://HelloBots.com/integrations/shiprocket/" target="_blank" rel="noopener noreferrer" class="">
+      <a href="https://HelloBotz.com/integrations/shiprocket/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card shiprocket-card">
           <img src="/assets/images/hellobots/integrations-main/shiprocket.png" alt="shiprocket" class="integration-logo" />
           <h3>Shiprocket</h3>
           <p>E-commerce</p>
         </div>
       </a>
-      <a href="https://HelloBots.com/integrations/wortal/" target="_blank" rel="noopener noreferrer" class="">
+      <a href="https://HelloBotz.com/integrations/wortal/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card wortal-card">
           <img src="/assets/images/hellobots/integrations-main/wortal.png" alt="Wortal" class="integration-logo" />
           <h3>Wortal</h3>
           <p>E-commerce</p>
         </div>
       </a>
-      <a href="https://HelloBots.com/integrations/google-sheets/" style="text-decoration:none;" target="_blank"
+      <a href="https://HelloBotz.com/integrations/google-sheets/" style="text-decoration:none;" target="_blank"
         rel="noopener noreferrer">
         <div class="integration-card google-sheet-card">
           <img src="/assets/images/hellobots/integrations-main/google-sheet.png" alt="Google Sheets Logo"
@@ -789,7 +789,7 @@ include __DIR__ . '/../includes/header.php';
         </div>
       </a>
 
-      <a href="https://HelloBots.com/integrations/zoho/" target="_blank" rel="noopener noreferrer">
+      <a href="https://HelloBotz.com/integrations/zoho/" target="_blank" rel="noopener noreferrer">
         <div class="integration-card zoho-card">
           <img src="/assets/images/hellobots/integrations-main/zoho.png" alt="zoho" class="integration-logo" />
           <h3>Zoho</h3>
@@ -819,7 +819,7 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="faq-section">
   <div class="container">
-    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Do I need technical knowledge to set up integrations?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">No. HelloBots provides you with ready-to-use integrations with a simple setup process. Just connect your platforms and configure basic automations without any technical skills.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can I use multiple integrations at once?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Of Course. Yes, you can use multiple integrations simultaneously, like eCommerce, CRM, payment, and support tools, and handle all WhatsApp chats from a single dashboard.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Is HelloBots WhatsApp Business API integration secure?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes. HelloBots follows secure API practices and utilizes encrypted connections to safeguard customer data and business communication.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Do I need a developer to set up WhatsApp Business API integrations?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">In most cases, it is not required. HelloBots integrations are created for non-technical users. But for advanced or custom workflows, you can seek the help of a developer for deeper customization.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>What kind of businesses can benefit from WhatsApp Business API integrations?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Every size of business, including eCommerce, retail, education, healthcare, logistics, and service-based companies, can take the edge by automating messages and engaging clients on WhatsApp.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need technical knowledge to set up integrations?","acceptedAnswer":{"@type":"Answer","text":"No. HelloBots provides you with ready-to-use integrations with a simple setup process. Just connect your platforms and configure basic automations without any technical skills."}},{"@type":"Question","name":"Can I use multiple integrations at once?","acceptedAnswer":{"@type":"Answer","text":"Of Course. Yes, you can use multiple integrations simultaneously, like eCommerce, CRM, payment, and support tools, and handle all WhatsApp chats from a single dashboard."}},{"@type":"Question","name":"Is HelloBots WhatsApp Business API integration secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. HelloBots follows secure API practices and utilizes encrypted connections to safeguard customer data and business communication."}},{"@type":"Question","name":"Do I need a developer to set up WhatsApp Business API integrations?","acceptedAnswer":{"@type":"Answer","text":"In most cases, it is not required. HelloBots integrations are created for non-technical users. But for advanced or custom workflows, you can seek the help of a developer for deeper customization."}},{"@type":"Question","name":"What kind of businesses can benefit from WhatsApp Business API integrations?","acceptedAnswer":{"@type":"Answer","text":"Every size of business, including eCommerce, retail, education, healthcare, logistics, and service-based companies, can take the edge by automating messages and engaging clients on WhatsApp."}}]}</script>
+    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Do I need technical knowledge to set up integrations?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">No. HelloBotz provides you with ready-to-use integrations with a simple setup process. Just connect your platforms and configure basic automations without any technical skills.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can I use multiple integrations at once?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Of Course. Yes, you can use multiple integrations simultaneously, like eCommerce, CRM, payment, and support tools, and handle all WhatsApp chats from a single dashboard.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Is HelloBotz WhatsApp Business API integration secure?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes. HelloBotz follows secure API practices and utilizes encrypted connections to safeguard customer data and business communication.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Do I need a developer to set up WhatsApp Business API integrations?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">In most cases, it is not required. HelloBotz integrations are created for non-technical users. But for advanced or custom workflows, you can seek the help of a developer for deeper customization.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>What kind of businesses can benefit from WhatsApp Business API integrations?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Every size of business, including eCommerce, retail, education, healthcare, logistics, and service-based companies, can take the edge by automating messages and engaging clients on WhatsApp.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need technical knowledge to set up integrations?","acceptedAnswer":{"@type":"Answer","text":"No. HelloBotz provides you with ready-to-use integrations with a simple setup process. Just connect your platforms and configure basic automations without any technical skills."}},{"@type":"Question","name":"Can I use multiple integrations at once?","acceptedAnswer":{"@type":"Answer","text":"Of Course. Yes, you can use multiple integrations simultaneously, like eCommerce, CRM, payment, and support tools, and handle all WhatsApp chats from a single dashboard."}},{"@type":"Question","name":"Is HelloBotz WhatsApp Business API integration secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. HelloBotz follows secure API practices and utilizes encrypted connections to safeguard customer data and business communication."}},{"@type":"Question","name":"Do I need a developer to set up WhatsApp Business API integrations?","acceptedAnswer":{"@type":"Answer","text":"In most cases, it is not required. HelloBotz integrations are created for non-technical users. But for advanced or custom workflows, you can seek the help of a developer for deeper customization."}},{"@type":"Question","name":"What kind of businesses can benefit from WhatsApp Business API integrations?","acceptedAnswer":{"@type":"Answer","text":"Every size of business, including eCommerce, retail, education, healthcare, logistics, and service-based companies, can take the edge by automating messages and engaging clients on WhatsApp."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1044,7 +1044,7 @@ include __DIR__ . '/../includes/header.php';
 <!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
         assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
 <link rel="stylesheet"
-    href="https://HelloBots.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
+    href="https://HelloBotz.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
     media="all">
 
 

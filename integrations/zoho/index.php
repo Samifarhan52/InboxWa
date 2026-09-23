@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBots';
+$pageTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBotz's;
 $pageDescription = 'Sync contacts, trigger instant WhatsApp messages on CRM stages, and automate support tickets between Zoho and WhatsApp.';
 $canonicalUrl = 'https://hellobotz.com/integrations/zoho/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-zoho/WhatsApp-Zoho-Integration.png';
-$ogTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBots';
+$ogTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBotz's;
 $ogDescription = 'Sync contacts, trigger instant WhatsApp messages on CRM stages, and automate support tickets between Zoho and WhatsApp.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -134,9 +134,9 @@ include __DIR__ . '/../../includes/header.php';
 
 
   <script data-cookieconsent="ignore"
-    src="https://HelloBots.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://HelloBots.com/wp-content/themes/sierra/assets/css/whatsapp-blue-tick.css" class="css">
-<link rel="stylesheet" href="https://HelloBots.com/wp-content/themes/sierra/assets/css/template-industry.css" class="css">
+    src="https://HelloBotz.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://HelloBotz.com/wp-content/themes/sierra/assets/css/whatsapp-blue-tick.css" class="css">
+<link rel="stylesheet" href="https://HelloBotz.com/wp-content/themes/sierra/assets/css/template-industry.css" class="css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -264,10 +264,10 @@ include __DIR__ . '/../../includes/header.php';
     <div aria-label="breadcrumb" class="custom-breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="https://HelloBots.com/">Home</a>
+          <a href="https://HelloBotz.com/">Home</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="https://HelloBots.com/integrations/">Integrations</a>
+          <a href="https://HelloBotz.com/integrations/">Integrations</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           Zoho        </li>
@@ -300,7 +300,7 @@ include __DIR__ . '/../../includes/header.php';
 </p>
 <div class="btn-groupp" style="display: flex; gap: 12px;">
      <a id="whatsapp-enquiry"
-          href="https://app.HelloBots.com/register"
+          href="https://app.HelloBotz.com/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Get Started
         </a>
@@ -572,7 +572,7 @@ font-size:20px;
             </div>
             <div class="btn-groupp" style="display: flex; gap: 12px; justify-content:center; margin-top:50px!important;">
      <a id="whatsapp-enquiry"
-          href="https://app.HelloBots.com/register"
+          href="https://app.HelloBotz.com/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Get Started
         </a>
@@ -584,7 +584,7 @@ font-size:20px;
   <section class="wa-process-section" style="padding: 60px 0px;background: #fcfbfc;"
     >
     <div class="container">
-        <h2 class="wa-process-title text-center mb-5">How to Integrate HelloBots WhatsApp API in Zoho CRM</h2>
+        <h2 class="wa-process-title text-center mb-5">How to Integrate HelloBotz WhatsApp API in Zoho CRM</h2>
 
         <div class="row g-4">
 
@@ -592,7 +592,7 @@ font-size:20px;
                 <div class="wa-step-card">
                     <div class="wa-step-badge">1</div>
                     <div class="wa-step-heading">Sync Contacts</div>
-                    <p class="wa-step-description">Enable seamless two-way contact synchronization between HelloBots WhatsApp API and Zoho CRM. Automatically update contact information within both platforms in real-time.</p>
+                    <p class="wa-step-description">Enable seamless two-way contact synchronization between HelloBotz WhatsApp API and Zoho CRM. Automatically update contact information within both platforms in real-time.</p>
                 </div>
             </div>
 
@@ -615,7 +615,7 @@ font-size:20px;
         </div>
         <div class="btn-groupp" style="display: flex; gap: 12px; justify-content:center; margin-top:50px;">
      <a id="whatsapp-enquiry"
-          href="https://app.HelloBots.com/register"
+          href="https://app.HelloBotz.com/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Integrate Now
         </a>
@@ -910,14 +910,14 @@ document.addEventListener("click", function (e) {
     const key = card.dataset.key;
 
     const links = {
-        shopify: "https://HelloBots.com/integrations/shopify/",
-        woocommerce: "https://HelloBots.com/integrations/woocommerce/",
-        gotab: "https://HelloBots.com/integrations/gotab/",
-        wortal: "https://HelloBots.com/integrations/wortal/",
-        shiprocket: "https://HelloBots.com/integrations/shiprocket/",
-        zoho: "https://HelloBots.com/integrations/zoho/",
-        "google-sheets": "https://HelloBots.com/integrations/google-sheets/",
-        n8n: "https://HelloBots.com/integrations/n8n/"
+        shopify: "https://HelloBotz.com/integrations/shopify/",
+        woocommerce: "https://HelloBotz.com/integrations/woocommerce/",
+        gotab: "https://HelloBotz.com/integrations/gotab/",
+        wortal: "https://HelloBotz.com/integrations/wortal/",
+        shiprocket: "https://HelloBotz.com/integrations/shiprocket/",
+        zoho: "https://HelloBotz.com/integrations/zoho/",
+        "google-sheets": "https://HelloBotz.com/integrations/google-sheets/",
+        n8n: "https://HelloBotz.com/integrations/n8n/"
     };
 
     if (links[key]) {
@@ -1040,7 +1040,7 @@ document.addEventListener("click", function (e) {
                 <div class="iconn"><i class="fas fa-bullhorn"></i></div>
                 <h3>WhatsApp for Marketing</h3>
                 <p>Reach customers instantly with high-engagement broadcasts and personalized offers.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-marketing/" target="_blank"
+                <a class="learn-more" href="https://HelloBotz.com/whatsapp-marketing/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1049,7 +1049,7 @@ document.addEventListener("click", function (e) {
                 <div class="iconn"><i class="fas fa-handshake"></i></div>
                 <h3>WhatsApp for Sales</h3>
                 <p>Convert chats into sales with automated workflows, lead management, and fast follow-ups.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-sales-crm/" target="_blank"
+                <a class="learn-more" href="https://HelloBotz.com/whatsapp-sales-crm/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1059,7 +1059,7 @@ document.addEventListener("click", function (e) {
                 <h3>WhatsApp for Support</h3>
                 <p class="">Provide fast, reliable customer support with instant replies and automated ticket
                     management.</p>
-                <a class="learn-more" href="https://HelloBots.com/whatsapp-customer-support/" target="_blank"
+                <a class="learn-more" href="https://HelloBotz.com/whatsapp-customer-support/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
@@ -1067,7 +1067,7 @@ document.addEventListener("click", function (e) {
 </section>
 <section class="faq-section">
   <div class="container">
-          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Do I need coding knowledge for Zoho WhatsApp Integration?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">No. You do not require any coding skills for Zoho and WhatsApp integration. Within a minute, you can send a tailored WhatsApp message and streamline communication for all your Zoho contacts.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Is it possible to automate WhatsApp messaging in Zoho CRM?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Of Course! By merging Zoho workflow with HelloBots, you can automate WhatsApp messages for purposes like reminders, follow-ups, confirmations, and status updates. Messages can be sent automatically based on CRM activities or field changes, enabling teams respond faster and smarter without manual effort.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Do I need the WhatsApp Business API for Zoho WhatsApp integration?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, you need the WhatsApp Business API through a Meta partner like HelloBots for Zoho WhatsApp integration. It ensures compliance, multi-user access, automation support, and proper message delivery for business communication.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need coding knowledge for Zoho WhatsApp Integration?","acceptedAnswer":{"@type":"Answer","text":"No. You do not require any coding skills for Zoho and WhatsApp integration. Within a minute, you can send a tailored WhatsApp message and streamline communication for all your Zoho contacts."}},{"@type":"Question","name":"Is it possible to automate WhatsApp messaging in Zoho CRM?","acceptedAnswer":{"@type":"Answer","text":"Of Course! By merging Zoho workflow with HelloBots, you can automate WhatsApp messages for purposes like reminders, follow-ups, confirmations, and status updates. Messages can be sent automatically based on CRM activities or field changes, enabling teams respond faster and smarter without manual effort."}},{"@type":"Question","name":"Do I need the WhatsApp Business API for Zoho WhatsApp integration?","acceptedAnswer":{"@type":"Answer","text":"Yes, you need the WhatsApp Business API through a Meta partner like HelloBots for Zoho WhatsApp integration. It ensures compliance, multi-user access, automation support, and proper message delivery for business communication."}}]}</script>
+          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Do I need coding knowledge for Zoho WhatsApp Integration?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">No. You do not require any coding skills for Zoho and WhatsApp integration. Within a minute, you can send a tailored WhatsApp message and streamline communication for all your Zoho contacts.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Is it possible to automate WhatsApp messaging in Zoho CRM?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Of Course! By merging Zoho workflow with HelloBotz, you can automate WhatsApp messages for purposes like reminders, follow-ups, confirmations, and status updates. Messages can be sent automatically based on CRM activities or field changes, enabling teams respond faster and smarter without manual effort.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Do I need the WhatsApp Business API for Zoho WhatsApp integration?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, you need the WhatsApp Business API through a Meta partner like HelloBotz for Zoho WhatsApp integration. It ensures compliance, multi-user access, automation support, and proper message delivery for business communication.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need coding knowledge for Zoho WhatsApp Integration?","acceptedAnswer":{"@type":"Answer","text":"No. You do not require any coding skills for Zoho and WhatsApp integration. Within a minute, you can send a tailored WhatsApp message and streamline communication for all your Zoho contacts."}},{"@type":"Question","name":"Is it possible to automate WhatsApp messaging in Zoho CRM?","acceptedAnswer":{"@type":"Answer","text":"Of Course! By merging Zoho workflow with HelloBotz, you can automate WhatsApp messages for purposes like reminders, follow-ups, confirmations, and status updates. Messages can be sent automatically based on CRM activities or field changes, enabling teams respond faster and smarter without manual effort."}},{"@type":"Question","name":"Do I need the WhatsApp Business API for Zoho WhatsApp integration?","acceptedAnswer":{"@type":"Answer","text":"Yes, you need the WhatsApp Business API through a Meta partner like HelloBotz for Zoho WhatsApp integration. It ensures compliance, multi-user access, automation support, and proper message delivery for business communication."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1346,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
         assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
 <link rel="stylesheet"
-    href="https://HelloBots.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
+    href="https://HelloBotz.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
     media="all">
 
 

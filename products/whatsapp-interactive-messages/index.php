@@ -3,12 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBots';
-$pageDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBots.';
+$pageTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz's;
+$pageDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-interactive-messages/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png';
-$ogTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBots';
-$ogDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBots.';
+$ogTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz's;
+$ogDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBotz.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
