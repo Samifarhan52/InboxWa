@@ -14,27 +14,28 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .footer-social-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.45rem;
     margin-top: 0.75rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   .footer-social-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
     color: #ffffff !important;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
     transition: transform 0.2s ease, filter 0.2s ease;
     text-decoration: none;
     cursor: pointer;
+    flex-shrink: 0;
   }
   .footer-social-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     fill: #ffffff !important;
     display: block;
   }
@@ -64,7 +65,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   /* Professional 5-Column Footer with Embedded Map */
   .footer-pro-layout {
     display: grid !important;
-    grid-template-columns: 1.25fr 0.9fr 0.95fr 0.75fr 1.35fr !important;
+    grid-template-columns: 1.35fr 0.9fr 0.95fr 0.75fr 1.15fr !important;
     gap: 2.2rem !important;
     align-items: start !important;
     padding-bottom: 2.5rem !important;
@@ -176,6 +177,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     background: #1E293B;
+    max-width: 250px;
   }
   .footer-global-presence {
     margin-top: 0.85rem;
@@ -1390,21 +1392,21 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
               title="HelloBotz Office Location Map"
               src="https://maps.google.com/maps?q=Bangalore+Karnataka+560030&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
               width="100%"
-              height="170"
+              height="125"
               style="border:0;display:block;"
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          <div class="footer-global-presence" aria-label="Global Presence: Bangalore, Gujarath, Dubai, Qatar">
+          <div class="footer-global-presence" aria-label="Global Presence: Bangalore, Gujarath, Dubai, Qatar" style="max-width:250px;">
             <span class="presence-tag">Bangalore</span>
             <span class="presence-divider">|</span>
             <span class="presence-tag">Gujarath</span>
             <span class="presence-divider">|</span>
             <span class="presence-tag">Dubai</span>
             <span class="presence-divider">|</span>
-            <span class="presence-tag">Qatar|</span>
+            <span class="presence-tag">Qatar</span>
           </div>
         </div>
       </div>

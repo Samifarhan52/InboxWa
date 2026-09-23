@@ -3804,6 +3804,16 @@ if (!function_exists('hb_seo_esc')) {
                       <span class="res-desc">Join our team &amp; build AI tech</span>
                     </div>
                   </a>
+
+                  <a href="<?php echo $bp; ?>about/" class="mega-res-link" role="menuitem">
+                    <div class="res-icon-wrap res-icon-cyan">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </div>
+                    <div class="res-text">
+                      <span class="res-title">About HelloBotz</span>
+                      <span class="res-desc">Mission, team &amp; Meta partnership</span>
+                    </div>
+                  </a>
                 </div>
               </div>
 
@@ -3823,6 +3833,8 @@ if (!function_exists('hb_seo_esc')) {
         <div class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></div>
 
         <div class="nav-item"><a href="<?php echo $bp; ?>partners/" class="nav-link">Partners</a></div>
+
+        <div class="nav-item"><a href="<?php echo $bp; ?>about/" class="nav-link">About</a></div>
       </nav>
       <div class="header-actions">
         <div class="lang-switch" id="lang-switch">
@@ -4171,6 +4183,7 @@ if (!function_exists('hb_seo_esc')) {
             <a href="<?php echo $bp; ?>resources/documentation/">Documentation <span style="font-size:11px;color:#64748B;display:block;">Platform manuals &amp; tutorials</span></a>
             <a href="<?php echo $bp; ?>integrations/api-webhooks/">API Docs &amp; Webhooks <span style="font-size:11px;color:#64748B;display:block;">Developer REST &amp; webhooks</span></a>
             <a href="<?php echo $bp; ?>careers/">Careers <span style="font-size:9px;background:#EEF2FF;color:#4F46E5;padding:1px 5px;border-radius:999px;font-weight:700;border:1px solid #C7D2FE;margin-left:4px;">Hiring</span> <span style="font-size:11px;color:#64748B;display:block;">Jobs, internships &amp; openings</span></a>
+            <a href="<?php echo $bp; ?>about/">About HelloBotz <span style="font-size:11px;color:#64748B;display:block;">Mission, team &amp; Meta partnership</span></a>
           </div></div>
         </div>
 
@@ -4178,6 +4191,7 @@ if (!function_exists('hb_seo_esc')) {
         <div class="mobile-nav-item"><a href="/pricing/" class="mobile-nav-link">Pricing</a></div>
 
         <div class="mobile-nav-item"><a href="<?php echo $bp; ?>partners/" class="mobile-nav-link">Partners</a></div>
+        <div class="mobile-nav-item"><a href="<?php echo $bp; ?>about/" class="mobile-nav-link">About Us</a></div>
         <div class="mobile-theme-section">
           <div class="mobile-theme-title">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>

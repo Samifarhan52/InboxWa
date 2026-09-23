@@ -4596,3 +4596,55 @@ body.hb-ann-dismissed {
     display: none !important;
   }
 }
+
+/* HELLOBOTZ FOOTER ENHANCEMENTS: SINGLE LINE SOCIAL ICONS & COMPACT MAP */
+.footer-social-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin-top: 0.75rem !important;
+  flex-wrap: nowrap !important;
+}
+.footer-social-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22) !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+}
+.footer-social-btn svg {
+  width: 17px !important;
+  height: 17px !important;
+  fill: #ffffff !important;
+  display: block !important;
+}
+.footer-pro-layout {
+  display: grid !important;
+  grid-template-columns: 1.35fr 0.9fr 0.95fr 0.75fr 1.15fr !important;
+  gap: 2.2rem !important;
+  align-items: start !important;
+  padding-bottom: 2.5rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.footer-map-frame-wrap {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  background: #1E293B !important;
+  max-width: 250px !important;
+}
+.footer-map-frame-wrap iframe {
+  height: 125px !important;
+}
+.footer-global-presence {
+  max-width: 250px !important;
+}
