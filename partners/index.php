@@ -5,7 +5,7 @@ $pageDescription = 'Launch your own WhatsApp Business API business with HelloBot
 $canonicalUrl = 'https://hellobotz.com/partners/';
 $extraCss = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
-    '/assets/css/partners.css?v=8'
+    '/assets/css/partners.css?v=9'
 ];
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -605,14 +605,15 @@ include __DIR__ . '/../includes/header.php';
 
 
 
-    <!-- How to Become a Reseller: sticky left, steps scroll on right -->
-
-<section class="pp-section reseller-steps-section">
+    <!-- How to Become a Reseller: Clean 2-column layout with full-width journey flow below -->
+    <section class="pp-section reseller-steps-section" id="how-to-become-a-partner">
         <div class="container">
             <div class="reseller-steps-grid">
-                <div class="reseller-steps-sticky">
+                <div class="reseller-steps-col-info">
+                    <span class="pp-badge" style="margin-bottom:14px;display:inline-block;background:#F5F3FF;color:#7C3AED;border:1px solid #DDD6FE;font-size:12px;font-weight:700;padding:5px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;">Simple 3-Step Process</span>
                     <h2 class="reseller-steps-heading">How to Become a White Label Partner</h2>
-                    <button type="button" class="pp-btn pp-btn-primary btn-demo-open">Become a Partner
+                    <p class="reseller-steps-desc" style="font-size:15.5px;color:#64748B;line-height:1.65;margin:0 0 28px;">Start your own branded WhatsApp SaaS business in minutes. We handle the enterprise infrastructure, BSP connections, and continuous product updates — while you set client pricing and keep 100% of your margins.</p>
+                    <button type="button" class="pp-btn pp-btn-primary btn-demo-open" style="box-shadow:0 8px 24px rgba(124,58,237,0.25);">Become a Partner Today
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="arrow-icon">
@@ -626,33 +627,35 @@ include __DIR__ . '/../includes/header.php';
                         <div class="reseller-step-number">1</div>
                         <div class="reseller-step-body">
                             <h3 class="reseller-step-title">Register</h3>
-                            <p class="reseller-step-text">Register as a HelloBotz partner and get instant access to
-                                your reseller dashboard.</p>
+                            <p class="reseller-step-text">Register as an official HelloBotz partner and unlock instant access to your dedicated White-Label admin console.</p>
                         </div>
                     </div>
                     <div class="reseller-step">
                         <div class="reseller-step-number">2</div>
                         <div class="reseller-step-body">
                             <h3 class="reseller-step-title">Customize</h3>
-                            <p class="reseller-step-text">Add your logo, domain, and pricing — your platform, your
-                                identity.</p>
+                            <p class="reseller-step-text">Add your custom domain (app.yourbrand.com), brand logo, colors, and configure custom client pricing tiers.</p>
                         </div>
                     </div>
                     <div class="reseller-step">
                         <div class="reseller-step-number">3</div>
                         <div class="reseller-step-body">
-                            <h3 class="reseller-step-title">Launch</h3>
-                            <p class="reseller-step-text">Onboard clients, manage billing, and earn recurring revenue
-                                from day one.</p>
+                            <h3 class="reseller-step-title">Launch &amp; Scale</h3>
+                            <p class="reseller-step-text">Onboard clients with official WhatsApp API deployments, manage user billing, and retain 100% of your recurring profits.</p>
                         </div>
                     </div>
                 </div>
-            
-            <!-- Visual Journey Flow PNG Diagram -->
+            </div>
+
+            <!-- Visual Journey Flow PNG Diagram (Spans Full Width Below Steps) -->
             <div class="pp-journey-flow-box">
+                <div class="journey-flow-head" style="text-align:center;margin-bottom:1.5rem;">
+                    <span style="display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#7C3AED;background:#F5F3FF;padding:4px 14px;border-radius:999px;margin-bottom:8px;">End-to-End Visual Workflow</span>
+                    <h3 style="font-size:22px;font-weight:800;color:#0F172A;margin:0 0 6px;">Visual Partner Journey</h3>
+                    <p style="font-size:14.5px;color:#64748B;margin:0;">From registration to custom domain setup and scaling your client base</p>
+                </div>
                 <img src="/assets/images/partners/partner-journey-flow.png" alt="How to Become a White Label Partner Journey Flow" width="1100" height="340" loading="eager">
             </div>
-        </div>
         </div>
     </section>
 
@@ -1026,10 +1029,6 @@ include __DIR__ . '/../includes/header.php';
                     <a href="/assets/downloads/hellobotz-partner-brochure.pdf" download="HelloBotz-Partner-Brochure.pdf" class="pp-btn pp-btn-outline" style="border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.1);gap:6px">
                         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                         Download Brochure
-                    </a>
-                    <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn-download-data" style="gap:6px">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download Data
                     </a>
                 </div>
             </div>

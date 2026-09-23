@@ -787,23 +787,24 @@
 
     .reseller-steps-grid {
         display: grid;
-        grid-template-columns: 0.9fr 1.3fr;
-        gap: 60px;
-        align-items: start;
+        grid-template-columns: 1fr 1.25fr;
+        gap: 48px;
+        align-items: center;
     }
 
-    .reseller-steps-sticky {
-        position: sticky;
-        top: 160px;
-        align-self: start;
+    .reseller-steps-sticky,
+    .reseller-steps-col-info {
+        position: relative;
+        top: auto;
+        align-self: center;
     }
 
     .reseller-steps-heading {
         font-size: 32px;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: -0.01em;
         color: var(--pp-ink);
-        margin: 0 0 24px;
+        margin: 0 0 16px;
         line-height: 1.25;
     }
 
@@ -858,7 +859,8 @@
             gap: 24px;
         }
 
-        .reseller-steps-sticky {
+        .reseller-steps-sticky,
+        .reseller-steps-col-info {
             position: static;
         }
     }
@@ -1643,21 +1645,24 @@
     max-width: 580px;
 }
 .pp-journey-flow-box {
-    margin-top: 3.5rem;
+    margin-top: 48px;
+    width: 100%;
     text-align: center;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.05);
     border: 1.5px solid #E2E8F0;
     background: #FFFFFF;
-    padding: 1.5rem;
+    padding: 2.25rem 1.75rem;
+    box-sizing: border-box;
 }
 .pp-journey-flow-box img {
     width: 100%;
-    max-width: 1050px;
+    max-width: 1060px;
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 12px;
 }
 .pp-tab-btn.active {
     color: #7C3AED !important;
