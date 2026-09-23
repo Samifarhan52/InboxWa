@@ -769,6 +769,54 @@ body {
   margin-top: 36px;
 }
 
+/* Initially display only first 3 add-ons */
+.addon-grid.is-collapsed .addon-card:nth-child(n+4) {
+  display: none !important;
+}
+
+/* View More / View Less Toggle Button */
+.addon-toggle-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.btn-addon-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 32px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1.5px solid #E2E8F0;
+  color: #0F172A;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.btn-addon-toggle:hover {
+  background: #F8FAFC;
+  border-color: #8B5CF6;
+  color: #7C3AED;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.16);
+}
+
+.btn-addon-toggle svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.btn-addon-toggle.is-expanded svg {
+  transform: rotate(180deg);
+}
+
 .addon-card {
   padding: 26px;
   border-radius: 20px;
@@ -821,6 +869,13 @@ body {
   font-size: 22px;
   flex-shrink: 0;
   background: #f1f5f9;
+}
+
+.addon-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .addon-head h4 {

@@ -249,6 +249,33 @@
       return;
     }
 
+    // 4b. Add-ons Grid View More / View Less Toggle
+    var addonToggleBtn = target.closest('#btn-addon-toggle');
+    if (addonToggleBtn) {
+      e.preventDefault();
+      var addonGrid = document.querySelector('.addon-grid');
+      if (addonGrid) {
+        var isCollapsed = addonGrid.classList.contains('is-collapsed');
+        var toggleText = addonToggleBtn.querySelector('.btn-addon-toggle-text');
+        if (isCollapsed) {
+          addonGrid.classList.remove('is-collapsed');
+          addonToggleBtn.classList.add('is-expanded');
+          addonToggleBtn.setAttribute('aria-expanded', 'true');
+          if (toggleText) toggleText.textContent = 'View Less';
+        } else {
+          addonGrid.classList.add('is-collapsed');
+          addonToggleBtn.classList.remove('is-expanded');
+          addonToggleBtn.setAttribute('aria-expanded', 'false');
+          if (toggleText) toggleText.textContent = 'View More';
+          var addonsSec = document.getElementById('addons');
+          if (addonsSec && typeof addonsSec.scrollIntoView === 'function') {
+            addonsSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+      return;
+    }
+
     // 5. Compare WhatsApp API Plans Toggle
     var regCompBtn = target.closest('#toggleRegularComparison');
     if (regCompBtn) {
