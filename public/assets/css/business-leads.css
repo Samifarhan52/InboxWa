@@ -1187,3 +1187,133 @@
 .bl-faq-item.active .bl-faq-answer {
   display: block;
 }
+
+/* ==========================================================================
+   BUSINESS LEADS DARK THEME
+   ========================================================================== */
+html[data-theme="dark"] .bl-page,
+body.dark-theme .bl-page {
+  background: #080c14 !important;
+  color: #e2e8f0 !important;
+}
+html[data-theme="dark"] .bl-stats-bar,
+body.dark-theme .bl-stats-bar {
+  background: #0b0f19 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .bl-stat-num,
+body.dark-theme .bl-stat-num {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-stat-lbl,
+body.dark-theme .bl-stat-lbl {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .bl-section-alt,
+body.dark-theme .bl-section-alt {
+  background: #080c14 !important;
+}
+html[data-theme="dark"] .bl-section-header h2,
+body.dark-theme .bl-section-header h2 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-section-header p,
+body.dark-theme .bl-section-header p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .bl-dataset-card,
+html[data-theme="dark"] .bl-hub-card,
+body.dark-theme .bl-dataset-card,
+body.dark-theme .bl-hub-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .bl-dataset-card:hover,
+html[data-theme="dark"] .bl-hub-card:hover,
+body.dark-theme .bl-dataset-card:hover,
+body.dark-theme .bl-hub-card:hover {
+  background: #172033 !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+}
+html[data-theme="dark"] .bl-dataset-card h3,
+body.dark-theme .bl-dataset-card h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-dataset-coverage,
+body.dark-theme .bl-dataset-coverage {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .bl-dataset-fields-box,
+body.dark-theme .bl-dataset-fields-box {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+html[data-theme="dark"] .bl-dataset-fields-title,
+body.dark-theme .bl-dataset-fields-title {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .bl-field-tag,
+body.dark-theme .bl-field-tag {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .bl-journey-card,
+body.dark-theme .bl-journey-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .bl-journey-title,
+body.dark-theme .bl-journey-title {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-journey-desc,
+body.dark-theme .bl-journey-desc {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .bl-journey-guide-box,
+body.dark-theme .bl-journey-guide-box {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+html[data-theme="dark"] .bl-journey-box-label,
+body.dark-theme .bl-journey-box-label {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-journey-list li,
+body.dark-theme .bl-journey-list li {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .bl-prob-sol-col,
+body.dark-theme .bl-prob-sol-col {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .bl-item-card,
+body.dark-theme .bl-item-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+html[data-theme="dark"] .bl-item-card h4,
+body.dark-theme .bl-item-card h4 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-item-card p,
+body.dark-theme .bl-item-card p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .bl-faq-item,
+body.dark-theme .bl-faq-item {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .bl-faq-question,
+body.dark-theme .bl-faq-question {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .bl-faq-answer,
+body.dark-theme .bl-faq-answer {
+  color: #94a3b8 !important;
+}
+

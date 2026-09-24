@@ -574,3 +574,74 @@ body.dark-theme #mobile-menu .mnav-login {
   border-color: rgba(255, 255, 255, 0.16) !important;
   color: #F8FAFC !important;
 }
+
+html[data-theme="dark"] #mobile-menu .mobile-submenu-inner a,
+html[data-theme="dark"] .mobile-menu .mobile-submenu-inner a,
+body.dark-theme #mobile-menu .mobile-submenu-inner a,
+body.dark-theme .mobile-menu .mobile-submenu-inner a {
+  color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] #mobile-menu .mobile-submenu-inner a:hover,
+html[data-theme="dark"] .mobile-menu .mobile-submenu-inner a:hover,
+body.dark-theme #mobile-menu .mobile-submenu-inner a:hover,
+body.dark-theme .mobile-menu .mobile-submenu-inner a:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #38EF7D !important;
+}
+
+html[data-theme="dark"] .mob-ind-link,
+body.dark-theme .mob-ind-link {
+  color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .mob-ind-link:hover,
+body.dark-theme .mob-ind-link:hover {
+  color: #38EF7D !important;
+}
+
+html[data-theme="dark"] .mobile-submenu-inner span,
+body.dark-theme .mobile-submenu-inner span {
+  color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .mobile-submenu-inner div,
+body.dark-theme .mobile-submenu-inner div {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .mobile-theme-title,
+body.dark-theme .mobile-theme-title {
+  color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .mobile-theme-toggle-box,
+body.dark-theme .mobile-theme-toggle-box {
+  background: #1E293B !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .mobile-theme-option,
+body.dark-theme .mobile-theme-option {
+  color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .mobile-theme-option.active,
+body.dark-theme .mobile-theme-option.active {
+  background: #0F172A !important;
+  color: #F8FAFC !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .prodocu-mob-chan-card,
+body.dark-theme .prodocu-mob-chan-card {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .prodocu-mob-chan-card:hover,
+body.dark-theme .prodocu-mob-chan-card:hover {
+  background: #334155 !important;
+  color: #38ef7d !important;
+}
