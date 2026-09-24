@@ -1,6 +1,13 @@
 /* ==========================================================================
    HELLOBOTZ PURE MASCOT ENTRY REVEAL ANIMATION (2.5s Zero-Word Greeting)
    ========================================================================== */
+html.hb-entry-skip #hb-entry-reveal {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .hb-entry-reveal {
   position: fixed;
   inset: 0;
@@ -13,16 +20,16 @@
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
-  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
 }
 
 .hb-entry-reveal.hb-entry-done {
   opacity: 0 !important;
   visibility: hidden !important;
-  transform: scale(1.06) !important;
+  transform: scale(1.04) !important;
   pointer-events: none !important;
 }
 
@@ -78,7 +85,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: hbBotEntrance 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: hbBotEntrance 0.42s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes hbBotEntrance {

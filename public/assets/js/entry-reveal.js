@@ -1,14 +1,42 @@
 /**
  * HELLOBOTZ - Pure Mascot Entry Reveal Runtime (entry-reveal.js)
- * Automatically plays a 2.4-second cheerful waving entry animation
- * and smoothly reveals the website content underneath.
+ * Plays once per session (on first site visit or direct shared link entry).
+ * Fast, snappy 1.1-second cheerful greeting animation that smoothly reveals the content.
+ * Automatically bypassed on all subsequent internal page navigations.
  */
 (function () {
   'use strict';
 
+  var hasSeen = false;
+  try {
+    hasSeen = sessionStorage.getItem('hb_entry_seen') === '1';
+  } catch (e) {}
+
+  // If already seen in this browsing session, immediately bypass and remove overlay
+  if (hasSeen) {
+    document.documentElement.classList.add('hb-entry-skip');
+    var el = document.getElementById('hb-entry-reveal');
+    if (el) {
+      el.style.display = 'none';
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }
+    return;
+  }
+
+  // First visit in session or external shared link entry: mark as seen and play snappy reveal
+  try {
+    sessionStorage.setItem('hb_entry_seen', '1');
+  } catch (e) {}
+
   function initEntryReveal() {
     var overlay = document.getElementById('hb-entry-reveal');
     if (!overlay) return;
+
+    if (document.documentElement.classList.contains('hb-entry-skip')) {
+      overlay.style.display = 'none';
+      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      return;
+    }
 
     var dismissed = false;
 
@@ -21,17 +49,17 @@
         if (overlay.parentNode) {
           overlay.parentNode.removeChild(overlay);
         }
-      }, 600);
+      }, 350);
     }
 
-    // Auto-dismiss after 2.4 seconds
-    setTimeout(dismiss, 2400);
+    // Snappy auto-dismiss in 1.1s (quick cheerful wave & instant reveal)
+    setTimeout(dismiss, 1100);
 
-    // Instant dismiss on user interaction
+    // Instant dismiss on any user interaction
     overlay.addEventListener('click', dismiss);
     overlay.addEventListener('touchstart', dismiss, { passive: true });
     window.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' || e.key === ' ') {
+      if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
         dismiss();
       }
     }, { once: true });
