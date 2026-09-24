@@ -126,7 +126,7 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/app.css?v=57">
-  <link rel="stylesheet" href="/assets/css/style.css?v=57">
+  <link rel="stylesheet" href="/assets/css/style.css?v=58">
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=57">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=52">

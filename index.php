@@ -1133,124 +1133,250 @@ include __DIR__ . '/includes/header.php';
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  /* Unique Floating Alert Banner OUTSIDE Phone Frame - Down on Right Side */
+  /* Trending Floating Alert Banner OUTSIDE Phone Frame - Down on Right Side */
   .cw-floating-sim-alert {
     position: absolute !important;
     bottom: 42px !important;
-    right: -75px !important;
+    right: -135px !important;
     top: auto !important;
     left: auto !important;
     z-index: 80 !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    padding: 8px 13px 8px 10px !important;
-    background: rgba(15, 23, 42, 0.95) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border: 1.5px solid rgba(16, 185, 129, 0.55) !important;
+    gap: 9px !important;
+    padding: 8px 14px 8px 11px !important;
+    background: linear-gradient(135deg, rgba(13, 22, 38, 0.97) 0%, rgba(15, 30, 48, 0.94) 50%, rgba(9, 18, 30, 0.98) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1.5px solid rgba(52, 211, 153, 0.75) !important;
     border-radius: 9999px !important;
-    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5), 0 0 22px rgba(16, 185, 129, 0.28) !important;
+    box-shadow: 0 18px 40px -6px rgba(0, 0, 0, 0.65), 0 0 24px rgba(16, 185, 129, 0.38), 0 0 45px rgba(6, 182, 212, 0.22) !important;
     cursor: pointer !important;
-    animation: cwSimAlertFloatRight 3.2s ease-in-out infinite alternate !important;
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s !important;
+    animation: cwTrendingFloat 3.6s ease-in-out infinite, cwTrendingGlow 3s ease-in-out infinite alternate !important;
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, visibility 0.25s !important;
     user-select: none !important;
+    overflow: visible !important;
   }
+
+  /* Trending Glass Sheen Shimmer Wave */
+  .cw-floating-sim-alert::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: 9999px !important;
+    background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.22) 45%, rgba(52, 211, 153, 0.28) 50%, transparent 60%) !important;
+    background-size: 200% 100% !important;
+    animation: cwSimShimmer 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+    pointer-events: none !important;
+  }
+  @keyframes cwSimShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Trending Speech Beak Pointer */
   .cw-floating-sim-alert::before {
-    content: '';
-    position: absolute;
-    left: -6px;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    width: 11px;
-    height: 11px;
-    background: rgba(15, 23, 42, 0.95);
-    border-left: 1.5px solid rgba(16, 185, 129, 0.55);
-    border-bottom: 1.5px solid rgba(16, 185, 129, 0.55);
-    border-top: none;
-    border-right: none;
-    border-radius: 0 0 0 2px;
-    pointer-events: none;
+    content: '' !important;
+    position: absolute !important;
+    left: -7px !important;
+    top: 50% !important;
+    transform: translateY(-50%) rotate(45deg) !important;
+    width: 12px !important;
+    height: 12px !important;
+    background: rgba(13, 22, 38, 0.97) !important;
+    border-left: 1.5px solid rgba(52, 211, 153, 0.75) !important;
+    border-bottom: 1.5px solid rgba(52, 211, 153, 0.75) !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-radius: 0 0 0 3px !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
   }
-  @keyframes cwSimAlertFloatRight {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-5px); }
+
+  @keyframes cwTrendingFloat {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    30% {
+      transform: translateY(-8px) rotate(-1.2deg) scale(1.015);
+    }
+    70% {
+      transform: translateY(-3px) rotate(1deg) scale(1.008);
+    }
   }
+
+  @keyframes cwTrendingGlow {
+    0%, 100% {
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 20px rgba(16, 185, 129, 0.3), 0 0 35px rgba(6, 182, 212, 0.15) !important;
+      border-color: rgba(16, 185, 129, 0.6) !important;
+    }
+    50% {
+      box-shadow: 0 22px 50px -6px rgba(0, 0, 0, 0.75), 0 0 32px rgba(52, 211, 153, 0.65), 0 0 65px rgba(6, 182, 212, 0.4) !important;
+      border-color: rgba(52, 211, 153, 1) !important;
+    }
+  }
+
+  .cw-floating-sim-alert:hover {
+    transform: translateY(-9px) scale(1.045) !important;
+    box-shadow: 0 24px 60px -8px rgba(0, 0, 0, 0.8), 0 0 38px rgba(52, 211, 153, 0.75), 0 0 75px rgba(6, 182, 212, 0.5) !important;
+    border-color: #38ef7d !important;
+  }
+
   .cw-floating-sim-alert.dismissed {
     opacity: 0 !important;
     visibility: hidden !important;
-    transform: translateY(-8px) scale(0.95) !important;
+    transform: translateY(-12px) scale(0.9) !important;
     pointer-events: none !important;
   }
+
+  /* Trending Pointing Hand with Playful Double-Tap Nudge */
   .cw-sim-alert-hand.cw-sim-hand-left {
-    font-size: 1.15rem !important;
-    animation: cwPointHandLeft 1.4s ease-in-out infinite alternate !important;
+    font-size: 1.25rem !important;
+    animation: cwTrendingHandNudge 2.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite !important;
     flex-shrink: 0 !important;
     line-height: 1 !important;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) !important;
+    z-index: 2 !important;
   }
-  @keyframes cwPointHandLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-6px); }
+  @keyframes cwTrendingHandNudge {
+    0%, 100% {
+      transform: translateX(0) scale(1) rotate(0deg);
+    }
+    15% {
+      transform: translateX(-8px) scale(1.2) rotate(-12deg);
+    }
+    28% {
+      transform: translateX(-3px) scale(1.08) rotate(-4deg);
+    }
+    42% {
+      transform: translateX(-10px) scale(1.25) rotate(-14deg);
+    }
+    60% {
+      transform: translateX(-2px) scale(1.05) rotate(-3deg);
+    }
+    75% {
+      transform: translateX(0) scale(1) rotate(0deg);
+    }
   }
+
+  /* Trending Staggered Multi-Ring Radar Beacon */
   .cw-sim-alert-beacon {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    position: relative !important;
+    width: 22px !important;
+    height: 22px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    z-index: 2 !important;
   }
   .cw-sim-pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #10B981;
-    box-shadow: 0 0 10px #10B981;
-    z-index: 2;
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50% !important;
+    background: #10B981 !important;
+    box-shadow: 0 0 12px #34D399, 0 0 22px rgba(16, 185, 129, 0.85) !important;
+    z-index: 2 !important;
+    animation: cwBeaconPulse 1.8s ease-in-out infinite alternate !important;
+  }
+  @keyframes cwBeaconPulse {
+    0% { transform: scale(0.9); filter: brightness(0.95); }
+    100% { transform: scale(1.2); filter: brightness(1.35); box-shadow: 0 0 16px #34D399, 0 0 28px rgba(52, 211, 153, 0.95); }
   }
   .cw-sim-pulse-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 1.5px solid rgba(16, 185, 129, 0.6);
-    animation: cwSimRadar 2s infinite ease-out;
+    position: absolute !important;
+    inset: -2px !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+  }
+  .cw-sim-pulse-ring::before,
+  .cw-sim-pulse-ring::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: 50% !important;
+    border: 1.8px solid rgba(52, 211, 153, 0.85) !important;
+    animation: cwSimRadar 2.4s infinite cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .cw-sim-pulse-ring::after {
+    animation-delay: 1.2s !important;
+    border-color: rgba(6, 182, 212, 0.75) !important;
   }
   @keyframes cwSimRadar {
-    0% { transform: scale(0.5); opacity: 1; }
-    100% { transform: scale(1.4); opacity: 0; }
+    0% { transform: scale(0.35); opacity: 1; border-color: rgba(52, 211, 153, 0.95); }
+    100% { transform: scale(2.3); opacity: 0; border-color: rgba(6, 182, 212, 0); }
   }
+
   .cw-sim-alert-body {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-    text-align: left;
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    z-index: 2 !important;
   }
   .cw-sim-alert-badge {
-    font-size: 0.58rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #34D399;
-    text-transform: uppercase;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.07em !important;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(6, 182, 212, 0.22)) !important;
+    color: #34D399 !important;
+    padding: 2px 7px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(52, 211, 153, 0.4) !important;
+    text-transform: uppercase !important;
+    margin-bottom: 2px !important;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.5) !important;
+    width: fit-content !important;
+    animation: cwBadgeGlow 2.5s ease-in-out infinite alternate !important;
   }
+  @keyframes cwBadgeGlow {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.25); text-shadow: 0 0 14px rgba(52, 211, 153, 0.8); }
+  }
+
   .cw-sim-alert-text {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    white-space: nowrap;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    white-space: nowrap !important;
+    letter-spacing: -0.01em !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
   }
+
   .cw-sim-alert-close {
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 15px;
-    line-height: 1;
-    padding: 0 0 0 4px;
-    cursor: pointer;
-    transition: color 0.15s ease;
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    margin-left: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    z-index: 2 !important;
+    flex-shrink: 0 !important;
   }
   .cw-sim-alert-close:hover {
-    color: #FFFFFF;
+    background: rgba(239, 68, 68, 0.25) !important;
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    color: #ff6b6b !important;
+    transform: rotate(90deg) scale(1.15) !important;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .cw-floating-sim-alert {
+      right: -105px !important;
+      bottom: 40px !important;
+    }
   }
 
   @media (max-width: 991px) {
@@ -1260,9 +1386,9 @@ include __DIR__ . '/includes/header.php';
       right: auto !important;
       left: auto !important;
       top: auto !important;
-      margin: 14px auto 0 !important;
+      margin: 16px auto 0 !important;
       display: inline-flex !important;
-      animation: none !important;
+      animation: cwTrendingFloat 3.6s ease-in-out infinite, cwTrendingGlow 3s ease-in-out infinite alternate !important;
     }
     .cw-floating-sim-alert::before {
       display: none !important;
