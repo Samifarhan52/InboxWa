@@ -138,9 +138,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <style>
   .custom-faq-accordion {
     margin-top: 30px;
@@ -239,7 +237,7 @@ include __DIR__ . '/../../includes/header.php';
           </button>
 
           <!-- Book A Free Demo Button -->
-          <div class="btn-book text-decoration-none d-flex align-items-center button1 order-lg-2 order-1 book-demo-btn">
+          <div class="btn-book text-decoration-none d-flex align-items-center button1 order-lg-2 order-1 book-demo-btn btn-demo-open" role="button" tabindex="0" style="cursor: pointer;" data-product="Chatbot">
             <!--<i class="fa-solid fa-calendar me-2"></i>-->
             Book A Demo
           </div>
@@ -1324,7 +1322,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="cta-buttons mt-4 order-3 order-lg-3 d-flex" style="gap:12px;">
           <a href="<?php echo $bp; ?>auth/register" target="_blank" rel="noopener noreferrer"
             class="btn btn-light me-2 shadow-sm apply-free" style="color: #645bb1;">Apply Free Now!</a>
-          <div class="btn btn-outline-light shadow-sm book-demo book-demo-btn">Book A Free Demo</div>
+          <div class="btn btn-outline-light shadow-sm book-demo book-demo-btn btn-demo-open" role="button" tabindex="0" style="cursor: pointer;" data-product="Chatbot">Book A Free Demo</div>
         </div>
       </div>
 
@@ -1361,23 +1359,26 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script>
-  window.onload = function () {
-    Calendly.initBadgeWidget({
-      url: 'https://calendly.com/HelloBotz/15min',
-      text: 'Schedule time with me',
-      color: '#0069ff',
-      textColor: '#ffffff',
-      branding: true
-    });
-  }
   document.addEventListener('DOMContentLoaded', function () {
-    const demoButtons = document.querySelectorAll('.book-demo-btn');
+    const demoButtons = document.querySelectorAll('.book-demo-btn, .btn-demo-open');
     demoButtons.forEach(function (button) {
+      button.style.cursor = 'pointer';
       button.addEventListener('click', function (e) {
         e.preventDefault();
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/HelloBotz/15min'
-        });
+        const productSelect = document.getElementById('dm-product');
+        if (productSelect) {
+          productSelect.value = 'Chatbot';
+        }
+        if (typeof window.openDemoModal === 'function') {
+          window.openDemoModal();
+        } else {
+          const modal = document.getElementById('demo-popup');
+          if (modal) {
+            modal.hidden = false;
+            requestAnimationFrame(() => modal.classList.add('open'));
+            document.body.classList.add('menu-open');
+          }
+        }
       });
     });
   });

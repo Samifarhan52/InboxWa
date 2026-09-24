@@ -1481,7 +1481,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
   <script src="/i18n.js?v=25" defer></script>
-  <script src="/main.js?v=41" defer></script>
+  <script src="/main.js?v=42" defer></script>
 
 <script src="/assets/js/mobile-menu.js?v=55"></script>
 

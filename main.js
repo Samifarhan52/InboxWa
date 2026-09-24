@@ -423,11 +423,20 @@
     window.openDemoModal = open;
 
     // Open from buttons and header demo links
-    $$('.btn-demo-open, a[href="demo"]').forEach((btn) => on(btn, 'click', (e) => {
+    $$('.btn-demo-open, .book-demo-btn, a[href="demo"]').forEach((btn) => on(btn, 'click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       const wa = $('.wa-widget');
       if (wa) wa.classList.remove('open');
+      const productSelect = $('#dm-product');
+      if (productSelect) {
+        const prod = btn.getAttribute('data-product');
+        if (prod) {
+          productSelect.value = prod;
+        } else if (window.location.pathname.includes('chatbot')) {
+          productSelect.value = 'Chatbot';
+        }
+      }
       open();
     }));
 
