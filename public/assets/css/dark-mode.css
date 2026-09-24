@@ -6072,13 +6072,34 @@ body.dark-theme .wv-modal-radio-label,
 html[data-theme="dark"] .wv-modal-close-btn,
 body.dark-theme .wv-modal-close-btn,
 [data-theme="dark"] .wv-modal-close-btn {
-  color: #cbd5e1 !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #f1f5f9 !important;
 }
 
 html[data-theme="dark"] .wv-modal-close-btn:hover,
 body.dark-theme .wv-modal-close-btn:hover,
 [data-theme="dark"] .wv-modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(239, 68, 68, 0.3) !important;
+  border-color: rgba(239, 68, 68, 0.6) !important;
+  color: #ff6b6b !important;
+  transform: rotate(90deg) scale(1.1) !important;
+}
+
+html[data-theme="dark"] .wv-modal-btn-cancel,
+body.dark-theme .wv-modal-btn-cancel,
+[data-theme="dark"] .wv-modal-btn-cancel {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] .wv-modal-btn-cancel:hover,
+body.dark-theme .wv-modal-btn-cancel:hover,
+[data-theme="dark"] .wv-modal-btn-cancel:hover {
+  background: rgba(239, 68, 68, 0.25) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  color: #ff6b6b !important;
 }
 
 html[data-theme="dark"] .wv-modal-footer,

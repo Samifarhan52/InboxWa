@@ -196,70 +196,109 @@ body.wv-modal-open .wv-modal-overlay {
         }
 
         .wv-modal-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(8px);
+            position: fixed !important;
+            inset: 0 !important;
+            z-index: 10000000 !important;
+            background: rgba(8, 12, 20, 0.8) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
-            animation: wv-fade-in 0.5s ease-out;
+            padding: 2rem 1rem !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            animation: wv-fade-in 0.3s ease-out;
         }
 
         .wv-modal-overlay.wv-active {
-            display: flex;
+            display: flex !important;
         }
 
         .wv-modal-card {
-            background: rgba(252, 252, 252, 0.95);
+            position: relative !important;
+            background: rgba(252, 252, 252, 0.98);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 1rem;
+            border-radius: 1.25rem;
             max-width: 42rem;
             width: 100%;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 8px 32px rgba(3, 71, 55, 0.15), 0 2px 8px rgba(0, 0, 0, 0.02);
-            animation: wv-scale-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-height: calc(100vh - 3rem) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            margin: auto !important;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), 0 0 35px rgba(16, 185, 129, 0.15);
+            animation: wv-scale-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden !important;
         }
 
         .wv-modal-header {
-            padding: 1rem 1rem 1rem 1rem;
-                background: rgb(27 204 145 / 10%);
-    
+            position: relative !important;
+            padding: 1.25rem 1.25rem 1rem 1.25rem !important;
+            background: rgb(27 204 145 / 10%);
+            flex-shrink: 0 !important;
         }
 
         .wv-modal-header-top {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1rem;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 0.85rem;
+            padding: 0 2.5rem;
         }
 
         .wv-modal-title {
-            font-size: 1.25rem!important;
+            font-size: 1.2rem !important;
             font-weight: 700;
-            color: #0f172a!important;
+            color: #0f172a !important;
+            text-align: center;
         }
 
         .wv-modal-close-btn {
-            background: transparent;
-            border: none;
-            padding: 0.5rem;
-            cursor: pointer;
-            border-radius: 9999px;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute !important;
+            top: 14px !important;
+            right: 14px !important;
+            z-index: 100 !important;
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 50% !important;
+            background: rgba(15, 23, 42, 0.08) !important;
+            border: 1px solid rgba(15, 23, 42, 0.12) !important;
+            color: #475569 !important;
+            padding: 0 !important;
+            cursor: pointer !important;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
         }
 
         .wv-modal-close-btn:hover {
-            background: rgba(255, 255, 255, 0.8);
-            transform: rotate(90deg);
+            background: rgba(239, 68, 68, 0.15) !important;
+            border-color: rgba(239, 68, 68, 0.4) !important;
+            color: #ef4444 !important;
+            transform: rotate(90deg) scale(1.1) !important;
+        }
+
+        .wv-modal-close-btn svg {
+            display: block !important;
+            width: 20px !important;
+            height: 20px !important;
+            pointer-events: none !important;
+        }
+
+        .wv-modal-btn-cancel {
+            background: rgba(148, 163, 184, 0.15) !important;
+            color: #475569 !important;
+            border: 1px solid rgba(148, 163, 184, 0.25) !important;
+        }
+
+        .wv-modal-btn-cancel:hover {
+            background: rgba(239, 68, 68, 0.12) !important;
+            border-color: rgba(239, 68, 68, 0.35) !important;
+            color: #ef4444 !important;
         }
 
         .wv-modal-steps {
@@ -837,11 +876,12 @@ body.wv-modal-open .wv-modal-overlay {
 /*Byyuvi*/
 /* Success Popup Overlay */
 .success-popup-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 10000001 !important;
+    background: rgba(8, 12, 20, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     display: none;
     align-items: center;
     justify-content: center;
@@ -1931,19 +1971,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <div class="wv-modal-overlay" id="wvModalOverlay">
         <div class="wv-modal-card">
+            <!-- Pinned Top-Right Close Button -->
+            <button class="wv-modal-close-btn" id="wvCloseModal" type="button" aria-label="Close form" title="Close form">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
             <!-- Header -->
             <div class="wv-modal-header">
                 <div class="wv-modal-header-top mb-0">
-                
-                    
-                        <div class="wv-modal-title mb-1 text-center" style="margin:0 auto;">Get WhatsApp Blue Tick Verified</div>
-                
-                    <button class="wv-modal-close-btn" id="wvCloseModal">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
+                    <div class="wv-modal-title mb-1 text-center" style="margin:0 auto;">Get WhatsApp Blue Tick Verified</div>
                 </div>
 
                 <!-- Step Indicators -->
@@ -2260,10 +2299,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <!-- Footer -->
             <div class="wv-modal-footer" id="wvModalFooter">
-                <button class="wv-modal-btn wv-modal-btn-back wv-hidden" style="background: grey;
-    color: #fff" id="wvBackBtn">Back</button>
-                <div></div>
-                <button class="wv-modal-btn wv-modal-btn-primary" id="wvNextBtn">
+                <button class="wv-modal-btn wv-modal-btn-back wv-hidden" style="background: grey; color: #fff;" id="wvBackBtn" type="button">Back</button>
+                <button class="wv-modal-btn wv-modal-btn-cancel" id="wvCancelBtn" type="button">Cancel</button>
+                <div style="flex: 1;"></div>
+                <button class="wv-modal-btn wv-modal-btn-primary" id="wvNextBtn" type="button">
                     Next
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="9 18 15 12 9 6"></polyline>
@@ -2591,6 +2630,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const elements = {
         openBtn: document.getElementById('wvOpenModal'),
         closeBtn: document.getElementById('wvCloseModal'),
+        cancelBtn: document.getElementById('wvCancelBtn'),
         overlay: document.getElementById('wvModalOverlay'),
         backBtn: document.getElementById('wvBackBtn'),
         nextBtn: document.getElementById('wvNextBtn'),
@@ -2661,12 +2701,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (elements.closeBtn) {
         elements.closeBtn.addEventListener('click', closeModal);
     }
+
+    if (elements.cancelBtn) {
+        elements.cancelBtn.addEventListener('click', closeModal);
+    }
     
     if (elements.overlay) {
         elements.overlay.addEventListener('click', (e) => {
             if (e.target === elements.overlay) closeModal();
         });
     }
+
+    // Keyboard ESC key to close modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (elements.overlay && elements.overlay.classList.contains('wv-active')) {
+                closeModal();
+            }
+            const successOverlay = document.getElementById('successPopupOverlay');
+            if (successOverlay && successOverlay.classList.contains('active')) {
+                closeSuccessPopup();
+            }
+        }
+    });
 
     function closeModal() {
         elements.overlay.classList.remove('wv-active');
@@ -2834,12 +2891,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (modalState.currentStep === 1) {
             elements.step1?.classList.add('wv-active');
             elements.backBtn?.classList.add('wv-hidden');
+            elements.cancelBtn?.classList.remove('wv-hidden');
             if (elements.nextBtn) {
                 elements.nextBtn.innerHTML = 'Next <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
             }
         } else if (modalState.currentStep === 2) {
             elements.step2?.classList.add('wv-active');
             elements.backBtn?.classList.remove('wv-hidden');
+            elements.cancelBtn?.classList.add('wv-hidden');
             if (elements.nextBtn) elements.nextBtn.textContent = 'Submit';
         }
 
