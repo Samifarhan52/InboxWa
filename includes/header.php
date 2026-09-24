@@ -126,12 +126,12 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/app.css?v=57">
-  <link rel="stylesheet" href="/assets/css/style.css?v=58">
+  <link rel="stylesheet" href="/assets/css/style.css?v=59">
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=57">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=52">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=7">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=58">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=59">
   <?php if (!empty($extraCss)): foreach ((array)$extraCss as $ecss): ?>
   <link rel="stylesheet" href="<?php echo hb_seo_esc($ecss); ?>">
   <?php endforeach; endif; ?>

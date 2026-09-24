@@ -32,6 +32,80 @@ include __DIR__ . '/../../includes/header.php';
     overflow-x: hidden;
     background: #ffffff;
   }
+  html[data-theme="dark"] .cloned-hellobots-page,
+  body.dark-theme .cloned-hellobots-page,
+  [data-theme="dark"] .cloned-hellobots-page {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .whatsapp-comparison,
+  body.dark-theme .whatsapp-comparison,
+  html[data-theme="dark"] .chatbot-comparison,
+  body.dark-theme .chatbot-comparison {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table thead tr,
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table thead th {
+    background: #064e3b !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(even) {
+    background: #0b1329 !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(odd) {
+    background: #0f172a !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:hover {
+    background: #1e293b !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table td {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #e2e8f0 !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table td:first-child {
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .cmp-yes { color: #34d399 !important; }
+  html[data-theme="dark"] .chatbot-comparison .cmp-no { color: #f87171 !important; }
+  html[data-theme="dark"] .chatbot-comparison .cmp-partial { color: #fbbf24 !important; }
+  html[data-theme="dark"] .chatbot-can-do,
+  html[data-theme="dark"] .ai-engines,
+  html[data-theme="dark"] .why-hellobotz,
+  html[data-theme="dark"] .usecase-section,
+  html[data-theme="dark"] #usecases-explore,
+  html[data-theme="dark"] .faq-section {
+    background: #080c14 !important;
+  }
+  html[data-theme="dark"] .chatbot-can-do .ccd-card,
+  html[data-theme="dark"] .ai-engines .engine-card,
+  html[data-theme="dark"] .usecase-section .grid-item,
+  html[data-theme="dark"] #usecases-explore .use-case-card,
+  html[data-theme="dark"] .faq-itemm,
+  html[data-theme="dark"] .custom-faq-accordion .faq-item {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  html[data-theme="dark"] .ccd-body h3,
+  html[data-theme="dark"] .engine-card h3,
+  html[data-theme="dark"] .grid-item h3,
+  html[data-theme="dark"] .use-case-card h3,
+  html[data-theme="dark"] .faq-text,
+  html[data-theme="dark"] .custom-faq-accordion .faq-question h3,
+  html[data-theme="dark"] .faq-section h2 {
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .ccd-body p,
+  html[data-theme="dark"] .engine-card p,
+  html[data-theme="dark"] .grid-item p,
+  html[data-theme="dark"] .faq-answerr,
+  html[data-theme="dark"] .custom-faq-accordion .faq-answer {
+    color: #94a3b8 !important;
+  }
   .cloned-hellobots-page .container {
     width: 100% !important;
     max-width: 1240px !important;

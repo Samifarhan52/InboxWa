@@ -50,12 +50,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/app.css?v=57">
-  <link rel="stylesheet" href="/assets/css/style.css?v=57">
+  <link rel="stylesheet" href="/assets/css/style.css?v=59">
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=55">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=57">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=59">
     <script>
     (function() {
       try {
@@ -4652,6 +4652,80 @@
     overflow-x: hidden;
     background: #ffffff;
   }
+  html[data-theme="dark"] .cloned-hellobots-page,
+  body.dark-theme .cloned-hellobots-page,
+  [data-theme="dark"] .cloned-hellobots-page {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .whatsapp-comparison,
+  body.dark-theme .whatsapp-comparison,
+  html[data-theme="dark"] .chatbot-comparison,
+  body.dark-theme .chatbot-comparison {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table thead tr,
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table thead th {
+    background: #064e3b !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(even) {
+    background: #0b1329 !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(odd) {
+    background: #0f172a !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:hover {
+    background: #1e293b !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table td {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #e2e8f0 !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .new-comparison-table td:first-child {
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .chatbot-comparison .cmp-yes { color: #34d399 !important; }
+  html[data-theme="dark"] .chatbot-comparison .cmp-no { color: #f87171 !important; }
+  html[data-theme="dark"] .chatbot-comparison .cmp-partial { color: #fbbf24 !important; }
+  html[data-theme="dark"] .chatbot-can-do,
+  html[data-theme="dark"] .ai-engines,
+  html[data-theme="dark"] .why-hellobotz,
+  html[data-theme="dark"] .usecase-section,
+  html[data-theme="dark"] #usecases-explore,
+  html[data-theme="dark"] .faq-section {
+    background: #080c14 !important;
+  }
+  html[data-theme="dark"] .chatbot-can-do .ccd-card,
+  html[data-theme="dark"] .ai-engines .engine-card,
+  html[data-theme="dark"] .usecase-section .grid-item,
+  html[data-theme="dark"] #usecases-explore .use-case-card,
+  html[data-theme="dark"] .faq-itemm,
+  html[data-theme="dark"] .custom-faq-accordion .faq-item {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  html[data-theme="dark"] .ccd-body h3,
+  html[data-theme="dark"] .engine-card h3,
+  html[data-theme="dark"] .grid-item h3,
+  html[data-theme="dark"] .use-case-card h3,
+  html[data-theme="dark"] .faq-text,
+  html[data-theme="dark"] .custom-faq-accordion .faq-question h3,
+  html[data-theme="dark"] .faq-section h2 {
+    color: #ffffff !important;
+  }
+  html[data-theme="dark"] .ccd-body p,
+  html[data-theme="dark"] .engine-card p,
+  html[data-theme="dark"] .grid-item p,
+  html[data-theme="dark"] .faq-answerr,
+  html[data-theme="dark"] .custom-faq-accordion .faq-answer {
+    color: #94a3b8 !important;
+  }
   .cloned-hellobots-page .container {
     width: 100% !important;
     max-width: 1240px !important;
@@ -6145,7 +6219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     display: inline-flex !important;
     align-items: center !important;
     gap: 0.65rem !important;
-    color: #94A3B8 !important;
+    color: #FFFFFF !important;
     text-decoration: none !important;
     font-size: 0.92rem !important;
     font-weight: 500 !important;
@@ -6182,7 +6256,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   .footer-brand-desc {
     font-size: 0.88rem;
-    color: #94A3B8;
+    color: #FFFFFF !important;
     line-height: 1.55;
     margin: 0.85rem 0 0;
     max-width: 24rem;
@@ -6196,7 +6270,7 @@ document.addEventListener('DOMContentLoaded', function() {
     margin-bottom: 0.75rem;
   }
   .footer-nav-col a {
-    color: #94A3B8;
+    color: #FFFFFF !important;
     text-decoration: none;
     font-size: 0.92rem;
     font-weight: 500;
@@ -6251,11 +6325,11 @@ document.addEventListener('DOMContentLoaded', function() {
     text-align: center;
   }
   .footer-global-presence .presence-tag {
-    color: #E2E8F0;
+    color: #FFFFFF !important;
     transition: color 0.2s ease;
   }
   .footer-global-presence .presence-divider {
-    color: #64748B;
+    color: rgba(255, 255, 255, 0.7) !important;
     font-weight: 400;
   }
   @media (max-width: 1200px) {
@@ -7388,7 +7462,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <button type="button" class="btn btn-primary btn-sm btn-callback-open">Request Callback</button>
           </div>
           <div class="footer-social-wrapper" style="margin-top:1.25rem;">
-            <span style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#94A3B8;font-weight:700;margin-bottom:0.55rem;">Follow Us</span>
+            <span style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#FFFFFF;font-weight:700;margin-bottom:0.55rem;">Follow Us</span>
             <div class="footer-social-row" style="margin-top:0;">
               <a href="https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-social-ig" aria-label="HelloBotz on Instagram" title="Instagram">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -7484,7 +7558,7 @@ document.addEventListener('DOMContentLoaded', function() {
               Google Maps ↗
             </a>
           </div>
-          <p style="font-size:0.88rem;color:#E2E8F0;margin:0 0 0.85rem;line-height:1.5;font-weight:600;">
+          <p style="font-size:0.88rem;color:#FFFFFF;margin:0 0 0.85rem;line-height:1.5;font-weight:600;">
             Bangalore Karnataka 560030
           </p>
           <div class="footer-map-frame-wrap">

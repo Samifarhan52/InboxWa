@@ -1493,3 +1493,226 @@ button.toggle-btn {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Chatbot Dark Mode Overrides
+   ========================================================================== */
+html[data-theme="dark"] .cloned-hellobots-page,
+body.dark-theme .cloned-hellobots-page,
+[data-theme="dark"] .cloned-hellobots-page {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .meta-partner,
+body.dark-theme .meta-partner,
+[data-theme="dark"] .meta-partner {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] .hero-title,
+body.dark-theme .hero-title,
+[data-theme="dark"] .hero-title {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .hero-text,
+body.dark-theme .hero-text,
+[data-theme="dark"] .hero-text {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .whatsapp-comparison,
+body.dark-theme .whatsapp-comparison,
+[data-theme="dark"] .whatsapp-comparison,
+html[data-theme="dark"] .chatbot-comparison,
+body.dark-theme .chatbot-comparison,
+[data-theme="dark"] .chatbot-comparison {
+    background: #080c14 !important;
+    color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .whatsapp-heading,
+body.dark-theme .whatsapp-heading,
+[data-theme="dark"] .whatsapp-heading {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .api-subtext,
+body.dark-theme .api-subtext,
+[data-theme="dark"] .api-subtext {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .comparison-wrapper,
+body.dark-theme .comparison-wrapper,
+[data-theme="dark"] .comparison-wrapper {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table,
+body.dark-theme .chatbot-comparison .new-comparison-table,
+[data-theme="dark"] .chatbot-comparison .new-comparison-table {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table thead tr,
+body.dark-theme .chatbot-comparison .new-comparison-table thead tr,
+[data-theme="dark"] .chatbot-comparison .new-comparison-table thead tr,
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table thead th,
+body.dark-theme .chatbot-comparison .new-comparison-table thead th,
+[data-theme="dark"] .chatbot-comparison .new-comparison-table thead th {
+    background: #064e3b !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(even),
+body.dark-theme .chatbot-comparison .new-comparison-table tbody tr:nth-child(even),
+[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(even) {
+    background: #0b1329 !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(odd),
+body.dark-theme .chatbot-comparison .new-comparison-table tbody tr:nth-child(odd),
+[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:nth-child(odd) {
+    background: #0f172a !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:hover,
+body.dark-theme .chatbot-comparison .new-comparison-table tbody tr:hover,
+[data-theme="dark"] .chatbot-comparison .new-comparison-table tbody tr:hover {
+    background: #1e293b !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table td,
+body.dark-theme .chatbot-comparison .new-comparison-table td,
+[data-theme="dark"] .chatbot-comparison .new-comparison-table td {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .new-comparison-table td:first-child,
+body.dark-theme .chatbot-comparison .new-comparison-table td:first-child,
+[data-theme="dark"] .chatbot-comparison .new-comparison-table td:first-child {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .cmp-yes,
+body.dark-theme .chatbot-comparison .cmp-yes,
+[data-theme="dark"] .chatbot-comparison .cmp-yes {
+    color: #34d399 !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .cmp-no,
+body.dark-theme .chatbot-comparison .cmp-no,
+[data-theme="dark"] .chatbot-comparison .cmp-no {
+    color: #f87171 !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .cmp-partial,
+body.dark-theme .chatbot-comparison .cmp-partial,
+[data-theme="dark"] .chatbot-comparison .cmp-partial {
+    color: #fbbf24 !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .wa-feature-card,
+body.dark-theme .chatbot-comparison .wa-feature-card,
+[data-theme="dark"] .chatbot-comparison .wa-feature-card {
+    background: #0f172a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .wa-feature-name,
+body.dark-theme .chatbot-comparison .wa-feature-name,
+[data-theme="dark"] .chatbot-comparison .wa-feature-name {
+    color: #34d399 !important;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .wa-col-item,
+body.dark-theme .chatbot-comparison .wa-col-item,
+[data-theme="dark"] .chatbot-comparison .wa-col-item {
+    background: #1e293b !important;
+}
+
+html[data-theme="dark"] .chatbot-comparison .wa-col-header,
+body.dark-theme .chatbot-comparison .wa-col-header,
+[data-theme="dark"] .chatbot-comparison .wa-col-header {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .chatbot-can-do,
+body.dark-theme .chatbot-can-do,
+[data-theme="dark"] .chatbot-can-do {
+    background: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .chatbot-can-do .ccd-title,
+body.dark-theme .chatbot-can-do .ccd-title,
+[data-theme="dark"] .chatbot-can-do .ccd-title {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .chatbot-can-do .ccd-card,
+body.dark-theme .chatbot-can-do .ccd-card,
+[data-theme="dark"] .chatbot-can-do .ccd-card {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+html[data-theme="dark"] .chatbot-can-do .ccd-body h3,
+body.dark-theme .chatbot-can-do .ccd-body h3,
+[data-theme="dark"] .chatbot-can-do .ccd-body h3 {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .chatbot-can-do .ccd-body p,
+body.dark-theme .chatbot-can-do .ccd-body p,
+[data-theme="dark"] .chatbot-can-do .ccd-body p {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .ai-engines,
+body.dark-theme .ai-engines,
+[data-theme="dark"] .ai-engines {
+    background: #080c14 !important;
+}
+
+html[data-theme="dark"] .ai-engines .engine-card,
+body.dark-theme .ai-engines .engine-card,
+[data-theme="dark"] .ai-engines .engine-card {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+html[data-theme="dark"] .ai-engines .engine-card h3,
+body.dark-theme .ai-engines .engine-card h3,
+[data-theme="dark"] .ai-engines .engine-card h3 {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ai-engines .engine-card p,
+body.dark-theme .ai-engines .engine-card p,
+[data-theme="dark"] .ai-engines .engine-card p {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .ai-engines .engine-link,
+body.dark-theme .ai-engines .engine-link,
+[data-theme="dark"] .ai-engines .engine-link {
+    color: #34d399 !important;
+}
+

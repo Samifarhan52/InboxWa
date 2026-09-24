@@ -91,14 +91,14 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     display: inline-flex !important;
     align-items: center !important;
     gap: 0.65rem !important;
-    color: #94A3B8 !important;
+    color: #FFFFFF !important;
     text-decoration: none !important;
     font-size: 0.92rem !important;
     font-weight: 500 !important;
     transition: color 0.2s ease, transform 0.2s ease !important;
   }
   .footer-channel-link:hover {
-    color: #FFFFFF !important;
+    color: #38BDF8 !important;
     transform: translateX(3px) !important;
   }
   .channel-icon-pill {
@@ -127,31 +127,43 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     background: #229ED9 !important;
   }
   .footer-brand-desc {
-    font-size: 0.88rem;
-    color: #94A3B8;
-    line-height: 1.55;
-    margin: 0.85rem 0 0;
-    max-width: 24rem;
+    font-size: 0.88rem !important;
+    color: #FFFFFF !important;
+    line-height: 1.55 !important;
+    margin: 0.85rem 0 0 !important;
+    max-width: 24rem !important;
   }
   .footer-nav-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .footer-nav-col li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem !important;
   }
   .footer-nav-col a {
-    color: #94A3B8;
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 500;
-    transition: color 0.2s ease, padding-left 0.2s ease;
-    display: inline-block;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease, padding-left 0.2s ease !important;
+    display: inline-block !important;
   }
   .footer-nav-col a:hover {
-    color: #FFFFFF;
-    padding-left: 4px;
+    color: #38BDF8 !important;
+    padding-left: 4px !important;
+  }
+  .footer-bottom,
+  .footer-copy {
+    color: #FFFFFF !important;
+  }
+  .footer-legal a {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+  }
+  .footer-legal a:hover {
+    color: #38BDF8 !important;
   }
   .footer-map-pill {
     font-size: 0.75rem;
@@ -197,11 +209,11 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     text-align: center;
   }
   .footer-global-presence .presence-tag {
-    color: #E2E8F0;
+    color: #FFFFFF !important;
     transition: color 0.2s ease;
   }
   .footer-global-presence .presence-divider {
-    color: #64748B;
+    color: rgba(255, 255, 255, 0.7) !important;
     font-weight: 400;
   }
   @media (max-width: 1200px) {
@@ -1324,7 +1336,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
             <button type="button" class="btn btn-primary btn-sm btn-callback-open">Request Callback</button>
           </div>
           <div class="footer-social-wrapper" style="margin-top:1.25rem;">
-            <span style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#94A3B8;font-weight:700;margin-bottom:0.55rem;">Follow Us</span>
+            <span style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#FFFFFF;font-weight:700;margin-bottom:0.55rem;">Follow Us</span>
             <div class="footer-social-row" style="margin-top:0;">
               <a href="<?php echo htmlspecialchars(cms_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr')); ?>" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-social-ig" aria-label="HelloBotz on Instagram" title="Instagram">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -1420,7 +1432,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
               Google Maps ↗
             </a>
           </div>
-          <p style="font-size:0.88rem;color:#E2E8F0;margin:0 0 0.85rem;line-height:1.5;font-weight:600;">
+          <p style="font-size:0.88rem;color:#FFFFFF;margin:0 0 0.85rem;line-height:1.5;font-weight:600;">
             Bangalore Karnataka 560030
           </p>
           <div class="footer-map-frame-wrap">
