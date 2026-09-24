@@ -813,3 +813,58 @@
   background: rgba(255, 255, 255, 0.22);
   border-color: rgba(255, 255, 255, 0.6);
 }
+
+/* ==========================================================================
+   PRODUCT PAGES DARK MODE OVERRIDES
+   ========================================================================== */
+html[data-theme="dark"] .prod-page,
+[data-theme="dark"] .prod-page {
+  background-color: #080c14 !important;
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .prod-hero h1,
+html[data-theme="dark"] .prod-feature-title,
+html[data-theme="dark"] .prod-stat-number,
+html[data-theme="dark"] .prod-section-header h2,
+html[data-theme="dark"] .prod-section h2,
+[data-theme="dark"] .prod-hero h1,
+[data-theme="dark"] .prod-feature-title,
+[data-theme="dark"] .prod-stat-number,
+[data-theme="dark"] .prod-section-header h2,
+[data-theme="dark"] .prod-section h2 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .prod-hero p,
+html[data-theme="dark"] .prod-hero-desc,
+html[data-theme="dark"] .prod-feature-desc,
+html[data-theme="dark"] .prod-stat-label,
+html[data-theme="dark"] .prod-section-header p,
+html[data-theme="dark"] .prod-section p,
+[data-theme="dark"] .prod-hero p,
+[data-theme="dark"] .prod-hero-desc,
+[data-theme="dark"] .prod-feature-desc,
+[data-theme="dark"] .prod-stat-label,
+[data-theme="dark"] .prod-section-header p,
+[data-theme="dark"] .prod-section p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .prod-feature-card,
+html[data-theme="dark"] .prod-stat-card,
+html[data-theme="dark"] .prod-workflow-box,
+html[data-theme="dark"] .prod-spec-table,
+html[data-theme="dark"] .prod-cta-box,
+html[data-theme="dark"] .prod-step-card,
+[data-theme="dark"] .prod-feature-card,
+[data-theme="dark"] .prod-stat-card,
+[data-theme="dark"] .prod-workflow-box,
+[data-theme="dark"] .prod-spec-table,
+[data-theme="dark"] .prod-cta-box,
+[data-theme="dark"] .prod-step-card {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}

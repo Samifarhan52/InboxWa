@@ -1077,3 +1077,67 @@
     padding: 2.5rem 1.5rem;
   }
 }
+
+/* ==========================================================================
+   BFSI SOLUTIONS DARK MODE
+   ========================================================================== */
+html[data-theme="dark"] .bfsi-page,
+[data-theme="dark"] .bfsi-page {
+  background: #080c14 !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .bfsi-hero,
+[data-theme="dark"] .bfsi-hero {
+  background: radial-gradient(1100px 500px at 50% -40px, rgba(96, 91, 229, 0.15), transparent 70%), #080c14 !important;
+}
+
+html[data-theme="dark"] .bfsi-card,
+html[data-theme="dark"] .bfsi-stat-card,
+html[data-theme="dark"] .bfsi-testimonial-card,
+html[data-theme="dark"] .bfsi-why-card,
+[data-theme="dark"] .bfsi-card,
+[data-theme="dark"] .bfsi-stat-card,
+[data-theme="dark"] .bfsi-testimonial-card,
+[data-theme="dark"] .bfsi-why-card {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .bfsi-usecases-section,
+html[data-theme="dark"] .bfsi-matrix-section,
+html[data-theme="dark"] .bfsi-faq-section,
+html[data-theme="dark"] .bfsi-cta-section,
+[data-theme="dark"] .bfsi-usecases-section,
+[data-theme="dark"] .bfsi-matrix-section,
+[data-theme="dark"] .bfsi-faq-section,
+[data-theme="dark"] .bfsi-cta-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .bfsi-marquee-section,
+[data-theme="dark"] .bfsi-marquee-section {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .bfsi-faq-item,
+[data-theme="dark"] .bfsi-faq-item {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .bfsi-faq-header,
+[data-theme="dark"] .bfsi-faq-header {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .bfsi-faq-body,
+[data-theme="dark"] .bfsi-faq-body {
+  background: #111827 !important;
+  color: #cbd5e1 !important;
+}

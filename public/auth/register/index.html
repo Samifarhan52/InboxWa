@@ -55,13 +55,23 @@
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=55">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=52">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=54">
     <link rel="stylesheet" href="/assets/css/auth-flip.css">
     <script>
     (function() {
       try {
-        if (sessionStorage.getItem('hb_entry_seen') === '1') {
+        var isInternal = false;
+        if (document.referrer) {
+          try {
+            var refHost = new URL(document.referrer).hostname;
+            if (refHost === window.location.hostname || (refHost && window.location.hostname && refHost.endsWith(window.location.hostname))) {
+              isInternal = true;
+            }
+          } catch(e) {}
+        }
+        if (sessionStorage.getItem('hb_entry_seen') === '1' || isInternal) {
           document.documentElement.classList.add('hb-entry-skip');
+          try { sessionStorage.setItem('hb_entry_seen', '1'); } catch(e) {}
         }
       } catch (e) {}
       try {

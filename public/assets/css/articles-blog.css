@@ -854,3 +854,43 @@ body.dark-theme .toc-box a:hover {
   color: #a78bfa !important;
 }
 
+/* Custom FAQ Accordion Dark Mode */
+html[data-theme="dark"] .custom-faq-accordion h2,
+body.dark-theme .custom-faq-accordion h2 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-item,
+body.dark-theme .custom-faq-accordion .faq-item {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-title h3,
+body.dark-theme .custom-faq-accordion .faq-title h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-question[aria-expanded="true"] .faq-title h3,
+body.dark-theme .custom-faq-accordion .faq-question[aria-expanded="true"] .faq-title h3 {
+  color: #a78bfa !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-arrow,
+body.dark-theme .custom-faq-accordion .faq-arrow {
+  background: #1e293b !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-arrow::before,
+body.dark-theme .custom-faq-accordion .faq-arrow::before {
+  border-right-color: #94a3b8 !important;
+  border-bottom-color: #94a3b8 !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-question[aria-expanded="true"] .faq-arrow::before,
+body.dark-theme .custom-faq-accordion .faq-question[aria-expanded="true"] .faq-arrow::before {
+  border-color: #a78bfa !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-answer[aria-hidden="false"],
+body.dark-theme .custom-faq-accordion .faq-answer[aria-hidden="false"] {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .custom-faq-accordion .faq-answer p,
+body.dark-theme .custom-faq-accordion .faq-answer p {
+  color: #cbd5e1 !important;
+}
+

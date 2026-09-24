@@ -68,3 +68,13 @@
         --block-width: 100%
     }
 }
+
+html[data-theme="dark"],
+[data-theme="dark"] {
+    --e-global-color-text: #F1F5F9;
+    --color-text: #94A3B8;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hard: rgba(255, 255, 255, 0.15);
+    --color-white: #0F172A;
+    --e-global-color-light: #0B0F19;
+}

@@ -11,6 +11,12 @@
     --gg-muted: #5b6472;
 }
 
+html[data-theme="dark"],
+[data-theme="dark"] {
+    --gg-ink: #FFFFFF;
+    --gg-muted: #94A3B8;
+}
+
 /* ---------- Headings & paragraph ---------- */
 h1 {
     font-size: 42px;

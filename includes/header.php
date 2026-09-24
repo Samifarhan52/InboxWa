@@ -125,21 +125,31 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/app.css?v=55">
-  <link rel="stylesheet" href="/assets/css/style.css?v=55">
-  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=55">
-  <link rel="stylesheet" href="/assets/css/story-journey.css?v=55">
-  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
-  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=53">
+  <link rel="stylesheet" href="/app.css?v=56">
+  <link rel="stylesheet" href="/assets/css/style.css?v=56">
+  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=56">
+  <link rel="stylesheet" href="/assets/css/story-journey.css?v=56">
+  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=52">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=7">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=54">
   <?php if (!empty($extraCss)): foreach ((array)$extraCss as $ecss): ?>
   <link rel="stylesheet" href="<?php echo hb_seo_esc($ecss); ?>">
   <?php endforeach; endif; ?>
   <script>
     (function() {
       try {
-        if (sessionStorage.getItem('hb_entry_seen') === '1') {
+        var isInternal = false;
+        if (document.referrer) {
+          try {
+            var refHost = new URL(document.referrer).hostname;
+            if (refHost === window.location.hostname || (refHost && window.location.hostname && refHost.endsWith(window.location.hostname))) {
+              isInternal = true;
+            }
+          } catch(e) {}
+        }
+        if (sessionStorage.getItem('hb_entry_seen') === '1' || isInternal) {
           document.documentElement.classList.add('hb-entry-skip');
+          try { sessionStorage.setItem('hb_entry_seen', '1'); } catch(e) {}
         }
       } catch (e) {}
       try {

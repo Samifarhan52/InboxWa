@@ -20,16 +20,16 @@ html.hb-entry-skip #hb-entry-reveal {
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
 }
 
 .hb-entry-reveal.hb-entry-done {
   opacity: 0 !important;
   visibility: hidden !important;
-  transform: scale(1.04) !important;
+  transform: scale(1.03) !important;
   pointer-events: none !important;
 }
 
@@ -85,7 +85,7 @@ html.hb-entry-skip #hb-entry-reveal {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: hbBotEntrance 0.42s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: hbBotEntrance 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes hbBotEntrance {
@@ -131,7 +131,7 @@ html.hb-entry-skip #hb-entry-reveal {
   pointer-events: none;
   /* Exact shoulder joint rotation origin */
   transform-origin: 26.75% 77.15%;
-  animation: hbWaveHello 0.52s ease-in-out 0.25s infinite alternate;
+  animation: hbWaveHello 0.38s ease-in-out 0.15s infinite alternate;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.3));
 }
 

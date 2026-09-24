@@ -55,12 +55,22 @@
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=55">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
   <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=52">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=54">
     <script>
     (function() {
       try {
-        if (sessionStorage.getItem('hb_entry_seen') === '1') {
+        var isInternal = false;
+        if (document.referrer) {
+          try {
+            var refHost = new URL(document.referrer).hostname;
+            if (refHost === window.location.hostname || (refHost && window.location.hostname && refHost.endsWith(window.location.hostname))) {
+              isInternal = true;
+            }
+          } catch(e) {}
+        }
+        if (sessionStorage.getItem('hb_entry_seen') === '1' || isInternal) {
           document.documentElement.classList.add('hb-entry-skip');
+          try { sessionStorage.setItem('hb_entry_seen', '1'); } catch(e) {}
         }
       } catch (e) {}
       try {
@@ -4796,6 +4806,14 @@
   .hb-marquee-wrapper::after {
     right: 0;
     background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  html[data-theme="dark"] .hb-marquee-wrapper::before,
+  body.dark-theme .hb-marquee-wrapper::before {
+    background: linear-gradient(to right, #080c14 0%, rgba(8, 12, 20, 0) 100%) !important;
+  }
+  html[data-theme="dark"] .hb-marquee-wrapper::after,
+  body.dark-theme .hb-marquee-wrapper::after {
+    background: linear-gradient(to left, #080c14 0%, rgba(8, 12, 20, 0) 100%) !important;
   }
   .hb-marquee-row {
     display: flex;

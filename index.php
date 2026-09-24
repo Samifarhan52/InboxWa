@@ -324,6 +324,14 @@ include __DIR__ . '/includes/header.php';
     right: 0;
     background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   }
+  html[data-theme="dark"] .hb-marquee-wrapper::before,
+  body.dark-theme .hb-marquee-wrapper::before {
+    background: linear-gradient(to right, #080c14 0%, rgba(8, 12, 20, 0) 100%) !important;
+  }
+  html[data-theme="dark"] .hb-marquee-wrapper::after,
+  body.dark-theme .hb-marquee-wrapper::after {
+    background: linear-gradient(to left, #080c14 0%, rgba(8, 12, 20, 0) 100%) !important;
+  }
   .hb-marquee-row {
     display: flex;
     width: max-content;

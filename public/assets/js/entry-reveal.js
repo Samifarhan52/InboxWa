@@ -1,19 +1,30 @@
 /**
  * HELLOBOTZ - Pure Mascot Entry Reveal Runtime (entry-reveal.js)
- * Plays once per session (on first site visit or direct shared link entry).
- * Fast, snappy 1.1-second cheerful greeting animation that smoothly reveals the content.
- * Automatically bypassed on all subsequent internal page navigations.
+ * Plays ONLY on initial visit to the website or when arriving at any page via a shared link / external referral.
+ * Automatically bypassed on all internal page navigations.
+ * Fast, snappy 650ms cheerful greeting animation that smoothly reveals the landing page.
  */
 (function () {
   'use strict';
+
+  var isInternalNav = false;
+  try {
+    if (document.referrer) {
+      var refHost = new URL(document.referrer).hostname;
+      if (refHost === window.location.hostname || (refHost && window.location.hostname && refHost.endsWith(window.location.hostname))) {
+        isInternalNav = true;
+      }
+    }
+  } catch (e) {}
 
   var hasSeen = false;
   try {
     hasSeen = sessionStorage.getItem('hb_entry_seen') === '1';
   } catch (e) {}
 
-  // If already seen in this browsing session, immediately bypass and remove overlay
-  if (hasSeen) {
+  // If already seen in this browsing session OR navigating internally from another page on the website, immediately bypass
+  if (hasSeen || isInternalNav) {
+    try { sessionStorage.setItem('hb_entry_seen', '1'); } catch (e) {}
     document.documentElement.classList.add('hb-entry-skip');
     var el = document.getElementById('hb-entry-reveal');
     if (el) {
@@ -23,7 +34,7 @@
     return;
   }
 
-  // First visit in session or external shared link entry: mark as seen and play snappy reveal
+  // Initial site visit or direct shared link entry: mark as seen and show quick snappy reveal
   try {
     sessionStorage.setItem('hb_entry_seen', '1');
   } catch (e) {}
@@ -49,11 +60,11 @@
         if (overlay.parentNode) {
           overlay.parentNode.removeChild(overlay);
         }
-      }, 350);
+      }, 250);
     }
 
-    // Snappy auto-dismiss in 1.1s (quick cheerful wave & instant reveal)
-    setTimeout(dismiss, 1100);
+    // Ultra-snappy auto-dismiss in 650ms (quick cheerful greeting & immediate reveal)
+    setTimeout(dismiss, 650);
 
     // Instant dismiss on any user interaction
     overlay.addEventListener('click', dismiss);

@@ -1905,3 +1905,74 @@ html[data-theme="dark"] .cw-wa-body {
     padding: 2.5rem 1.5rem;
   }
 }
+
+/* ==========================================================================
+   INDUSTRY PAGES (BUSINESS LEADS) DARK MODE
+   ========================================================================== */
+html[data-theme="dark"] .ind-page,
+[data-theme="dark"] .ind-page {
+  background: #080c14 !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .ind-hero,
+[data-theme="dark"] .ind-hero {
+  background: radial-gradient(1100px 500px at 50% -40px, rgba(96, 91, 229, 0.15), transparent 70%), #080c14 !important;
+}
+
+html[data-theme="dark"] .ind-stat-card,
+html[data-theme="dark"] .ind-feature-card,
+html[data-theme="dark"] .ind-testimonial-card,
+html[data-theme="dark"] .ind-why-card,
+[data-theme="dark"] .ind-stat-card,
+[data-theme="dark"] .ind-feature-card,
+[data-theme="dark"] .ind-testimonial-card,
+[data-theme="dark"] .ind-why-card {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .ind-stat-label,
+html[data-theme="dark"] .ind-section-header h2,
+[data-theme="dark"] .ind-stat-label,
+[data-theme="dark"] .ind-section-header h2 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ind-usecases-section,
+html[data-theme="dark"] .ind-matrix-section,
+html[data-theme="dark"] .ind-faq-section,
+html[data-theme="dark"] .ind-cta-section,
+[data-theme="dark"] .ind-usecases-section,
+[data-theme="dark"] .ind-matrix-section,
+[data-theme="dark"] .ind-faq-section,
+[data-theme="dark"] .ind-cta-section {
+  background: #080c14 !important;
+}
+
+html[data-theme="dark"] .ind-marquee-section,
+[data-theme="dark"] .ind-marquee-section {
+  background: #0b0f19 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .ind-faq-item,
+[data-theme="dark"] .ind-faq-item {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .ind-faq-header,
+[data-theme="dark"] .ind-faq-header {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ind-faq-body,
+[data-theme="dark"] .ind-faq-body {
+  background: #111827 !important;
+  color: #cbd5e1 !important;
+}
