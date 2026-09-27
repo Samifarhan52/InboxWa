@@ -111,53 +111,7 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
 
-  <!-- =========================================================================
-       2. TRUSTED BY SECTION / MARQUEE
-       ========================================================================= -->
-  <section class="industry-marquee-section">
-    <div class="container">
-      <h2 class="industry-marquee-title">Trusted by the world’s most ambitious teams.</h2>
-      <p class="industry-marquee-sub">Powering automated conversations, instant notifications, and mission-critical workflows across <?php echo htmlspecialchars($ind['name']); ?>.</p>
-      
-      <div class="industry-marquee-wrapper">
-        <div class="industry-marquee-track">
-          <?php if ($currentSlug === 'education-and-social-impacts'): ?>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Physics Wallah</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> IIM Bangalore</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> BITS Pilani Digital</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> Coursera</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> SRM University</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> Lovely Professional University</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Ashoka University</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> MIT World Peace University</span>
-            <!-- Duplicate for seamless loop -->
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Physics Wallah</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> IIM Bangalore</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> BITS Pilani Digital</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> Coursera</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> SRM University</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> Lovely Professional University</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Ashoka University</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> MIT World Peace University</span>
-          <?php else: ?>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Global Enterprise Cloud</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> Apex Healthcare Systems</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Prime Commerce Ltd</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> EduTech Global</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> City Transit Authority</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> Omnichannel Logistics</span>
-            <!-- Duplicate for seamless loop -->
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Global Enterprise Cloud</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> Apex Healthcare Systems</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Prime Commerce Ltd</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg> EduTech Global</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> City Transit Authority</span>
-            <span class="industry-logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg> Omnichannel Logistics</span>
-          <?php endif; ?>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <?php if ($currentSlug === 'education-and-social-impacts'): ?>
   <!-- =========================================================================

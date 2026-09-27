@@ -87,34 +87,6 @@ include __DIR__ . '/../../includes/header.php';
   </section>
 
   <!-- =========================================================================
-       2. SOCIAL PROOF / LOGO MARQUEE
-       ========================================================================= -->
-  <section class="bfsi-marquee-section">
-    <div class="container">
-      <h2 class="bfsi-marquee-title">Trusted by the world’s most ambitious teams.</h2>
-      <p class="bfsi-marquee-sub">Powering automated banking conversations, OTP verifications, and mission-critical financial alerts.</p>
-      
-      <div class="bfsi-marquee-wrapper">
-        <div class="bfsi-marquee-track">
-          <!-- First Set -->
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-1.webp" alt="Partner Bank 1" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-2.webp" alt="SVC Co-operative Bank" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-3.webp" alt="Brand Identity Bank" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-4.png" alt="PMC Bank" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-5.webp" alt="Partner Bank 5" loading="lazy"></div>
-
-          <!-- Duplicate Set for Seamless Infinite Loop -->
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-1.webp" alt="Partner Bank 1" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-2.webp" alt="SVC Co-operative Bank" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-3.webp" alt="Brand Identity Bank" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-4.png" alt="PMC Bank" loading="lazy"></div>
-          <div class="bfsi-logo-card"><img src="/assets/images/bfsi/logos/partner-5.webp" alt="Partner Bank 5" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
        3. KEY FEATURES (6 Alternating Banking & Financial Use Cases)
        ========================================================================= -->
   <section class="bfsi-features-section" id="features">
