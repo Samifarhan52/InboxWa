@@ -76,7 +76,6 @@ body {
     height: 60px !important;
     padding: 0 2rem !important;
   }
-}
 
   .nav-desktop {
     display: flex !important;
@@ -1729,6 +1728,47 @@ div#mobile-menu.open,
     width: 4px;
     background: linear-gradient(180deg, #EC4899, #8B5CF6, #06B6D4);
     border-radius: 999px;
+  }
+}
+
+/* =====================================================================
+   GLOBAL PRODUCT & INDUSTRY JOURNEY FLOW MOBILE ENHANCEMENTS
+   ===================================================================== */
+@media (max-width: 640px) {
+  .inb-j-nav, .ctw-j-nav, .bc-j-nav, .wf-j-nav, .bot-j-nav,
+  .bt-j-nav, .im-j-nav, .pay-j-nav, .cat-j-nav, .drip-j-nav,
+  .bfsi-j-nav, .ind-j-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    justify-content: flex-start !important;
+    padding: 0.25rem 0.5rem 0.75rem !important;
+    gap: 0.5rem !important;
+    scrollbar-width: none !important;
+    margin-bottom: 1.75rem !important;
+  }
+  .inb-j-nav::-webkit-scrollbar, .ctw-j-nav::-webkit-scrollbar,
+  .bc-j-nav::-webkit-scrollbar, .wf-j-nav::-webkit-scrollbar,
+  .bot-j-nav::-webkit-scrollbar, .bt-j-nav::-webkit-scrollbar,
+  .im-j-nav::-webkit-scrollbar, .pay-j-nav::-webkit-scrollbar,
+  .cat-j-nav::-webkit-scrollbar, .drip-j-nav::-webkit-scrollbar,
+  .bfsi-j-nav::-webkit-scrollbar, .ind-j-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  .inb-j-tab, .ctw-j-tab, .bc-j-tab, .wf-j-tab, .bot-j-tab,
+  .bt-j-tab, .im-j-tab, .pay-j-tab, .cat-j-tab, .drip-j-tab,
+  .bfsi-j-tab, .ind-j-tab {
+    flex-shrink: 0 !important;
+    padding: 0.55rem 1.05rem !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+  }
+  .inb-j-card, .ctw-j-card, .bc-j-card, .wf-j-card, .bot-j-card,
+  .bt-j-card, .im-j-card, .pay-j-card, .cat-j-card, .drip-j-card,
+  .bfsi-j-card, .ind-j-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
   }
 }
 

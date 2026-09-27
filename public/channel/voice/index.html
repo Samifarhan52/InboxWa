@@ -5976,6 +5976,13 @@ body.dark-theme .v-chip.on,
   .v-channel-actions {
     width: 100%;
     justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .v-channel-actions .v-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
   .v-channel-stats {
     justify-content: center;
@@ -5983,6 +5990,181 @@ body.dark-theme .v-chip.on,
   }
   .v-channel-stats .v-cs {
     align-items: center;
+  }
+
+  /* Simulator Mobile Optimization (768px) */
+  .v-call-card {
+    padding: 1.25rem 1rem;
+    border-radius: 20px;
+  }
+  .v-cc-top {
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .v-cc-av {
+    width: 46px;
+    height: 46px;
+    font-size: 1.05rem;
+    border-radius: 12px;
+  }
+  .v-cc-info h4 {
+    font-size: 0.98rem;
+  }
+  .v-cc-timer {
+    font-size: 0.78rem;
+    padding: 0.28rem 0.75rem;
+  }
+  .v-scenario-nav {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.35rem;
+    gap: 0.5rem;
+  }
+  .v-scenario-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .v-scen-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+  .v-wave-container {
+    padding: 0.75rem 0.9rem;
+    gap: 0.75rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+  }
+  .v-wave {
+    gap: 3px;
+    height: 32px;
+  }
+  .v-wave i {
+    width: 3.5px;
+  }
+  .v-audio-toggle {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.76rem;
+    gap: 0.4rem;
+  }
+  .v-transcript {
+    padding: 1rem 0.9rem;
+    min-height: 150px;
+    gap: 0.75rem;
+    border-radius: 16px;
+  }
+  .v-msg {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.86rem;
+    gap: 0.6rem;
+  }
+  .v-msg .v-who {
+    font-size: 0.75rem;
+    min-width: 26px;
+  }
+  .v-cc-foot {
+    gap: 0.45rem;
+    margin-top: 1rem;
+  }
+  .v-chip {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  /* ROI Calculator Mobile Optimization */
+  .v-roi-card {
+    padding: 1.5rem 1rem;
+    border-radius: 18px;
+    margin: 1.5rem 0;
+  }
+  .v-roi-results {
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+  }
+  .v-roi-row {
+    padding: 0.6rem 0;
+    font-size: 0.88rem;
+  }
+  .v-roi-val-save {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .v-stats-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .v-ind-grid {
+    grid-template-columns: 1fr;
+  }
+  .v-channel-hero {
+    padding: 1.75rem 0 1.25rem;
+  }
+  .v-call-card {
+    padding: 1rem 0.75rem;
+    border-radius: 16px;
+  }
+  .v-cc-top {
+    gap: 0.65rem;
+  }
+  .v-cc-av {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+  .v-cc-info h4 {
+    font-size: 0.92rem;
+  }
+  .v-cc-timer {
+    font-size: 0.72rem;
+    padding: 0.22rem 0.55rem;
+  }
+  .v-scen-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
+  }
+  .v-wave-container {
+    padding: 0.6rem 0.65rem;
+    gap: 0.5rem;
+  }
+  .v-wave {
+    gap: 2.2px;
+    height: 26px;
+  }
+  .v-wave i {
+    width: 2.5px;
+  }
+  .v-audio-toggle {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.72rem;
+  }
+  .v-audio-toggle svg {
+    width: 13px;
+    height: 13px;
+  }
+  .v-transcript {
+    padding: 0.75rem 0.65rem;
+    border-radius: 14px;
+  }
+  .v-msg {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.82rem;
+  }
+  .v-chip {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .v-roi-card {
+    padding: 1.2rem 0.75rem;
+  }
+  .v-calc-slider-val {
+    font-size: 1.1rem;
+  }
+  .v-roi-val-save {
+    font-size: 1.2rem;
   }
 }
 </style>

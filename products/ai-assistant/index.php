@@ -967,7 +967,7 @@ body.dark-theme .ai-faq-wrap details,
 
 @media (max-width: 640px) {
   .ai-hero {
-    padding: 3.5rem 0;
+    padding: 2.75rem 0;
   }
   .ai-cards-grid,
   .ai-journey-timeline,
@@ -979,6 +979,7 @@ body.dark-theme .ai-faq-wrap details,
   }
   .ai-app {
     grid-template-columns: 50px 1fr;
+    min-height: auto;
   }
   .ai-hero-actions {
     flex-direction: column;
@@ -986,6 +987,38 @@ body.dark-theme .ai-faq-wrap details,
   }
   .ai-btn {
     width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .ai-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ai-cta-actions .ai-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .ai-sidebar {
+    display: none !important;
+  }
+  .ai-app {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px;
+  }
+  .ai-chat-messages {
+    padding: 12px;
+    max-height: 250px;
+  }
+  .ai-msg {
+    max-width: 90%;
+    font-size: 0.8rem;
+    padding: 9px 12px;
+  }
+  .ai-chat-input-bar {
+    margin: 6px 10px 10px;
+    padding: 6px 10px;
   }
 }
 </style>

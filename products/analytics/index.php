@@ -999,7 +999,7 @@ body.dark-theme .an-faq-wrap details,
 
 @media (max-width: 640px) {
   .an-hero {
-    padding: 3.5rem 0;
+    padding: 2.75rem 0;
   }
   .an-cards-grid,
   .an-journey-timeline,
@@ -1017,6 +1017,7 @@ body.dark-theme .an-faq-wrap details,
   }
   .an-dashboard {
     grid-template-columns: 50px 1fr;
+    min-height: auto;
   }
   .an-actions {
     flex-direction: column;
@@ -1024,6 +1025,38 @@ body.dark-theme .an-faq-wrap details,
   }
   .an-btn {
     width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .an-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .an-cta-actions .an-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .an-side {
+    display: none !important;
+  }
+  .an-dashboard {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px;
+  }
+  .an-dash-main {
+    padding: 0.9rem 0.75rem;
+  }
+  .an-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .an-metric {
+    padding: 8px;
+  }
+  .an-metric strong {
+    font-size: 1rem;
   }
 }
 </style>
