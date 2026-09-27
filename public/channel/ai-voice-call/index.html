@@ -5077,216 +5077,377 @@ body.dark-theme,
 /* Scenario Selector Tabs */
 .v-scenario-nav {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.65rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
   margin-bottom: 1.25rem;
   scrollbar-width: thin;
 }
 .v-scen-btn {
-  padding: 0.45rem 0.95rem;
-  border-radius: var(--voice-r4);
-  font-size: 0.78rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
   font-weight: 700;
-  background: var(--voice-bg3);
-  color: var(--voice-t2);
-  border: 1px solid var(--voice-bd);
+  background: #F1F5F9;
+  color: #334155;
+  border: 1px solid #E2E8F0;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+.v-scen-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+  transform: translateY(-1px);
 }
 .v-scen-btn.active {
-  background: linear-gradient(135deg, var(--voice-p), var(--voice-a));
+  background: linear-gradient(135deg, #5B61F6 0%, #00A3FF 100%);
   color: #FFFFFF;
   border-color: transparent;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+  box-shadow: 0 6px 18px rgba(91, 97, 246, 0.35);
+}
+body.dark-theme .v-scen-btn,
+[data-theme="dark"] .v-scen-btn {
+  background: #1E293B;
+  color: #CBD5E1;
+  border-color: #334155;
+}
+body.dark-theme .v-scen-btn:hover,
+[data-theme="dark"] .v-scen-btn:hover {
+  background: #334155;
+  color: #FFFFFF;
+}
+body.dark-theme .v-scen-btn.active,
+[data-theme="dark"] .v-scen-btn.active {
+  background: linear-gradient(135deg, #6366F1 0%, #0EA5E9 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.45);
 }
 
 /* Call Card */
 .v-call-card {
   position: relative;
-  background: var(--voice-bg);
-  border: 1px solid var(--voice-bd);
-  border-radius: var(--voice-r3);
-  padding: 1.75rem;
-  box-shadow: var(--voice-sh2);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 20px 45px -12px rgba(100, 116, 139, 0.12);
   overflow: hidden;
+  transition: all 0.3s ease;
 }
-.v-call-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: calc(var(--voice-r3) + 1px);
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(139,92,246,.7), transparent 45%, rgba(6,182,212,.6));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+body.dark-theme .v-call-card,
+[data-theme="dark"] .v-call-card {
+  background: #0F172A;
+  border-color: #1E293B;
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.6);
 }
 .v-cc-top {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+  gap: 1.15rem;
+  margin-bottom: 1.35rem;
 }
 .v-cc-av {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #6366F1, #0EA5E9);
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: #FFFFFF;
   flex-shrink: 0;
-  box-shadow: 0 6px 18px -6px rgba(139,92,246,.8);
+  box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.55);
 }
 .v-cc-info {
   flex: 1;
   min-width: 0;
 }
 .v-cc-info h4 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--voice-t);
-  margin-bottom: 0.15rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.2rem 0;
+  letter-spacing: -0.01em;
+}
+body.dark-theme .v-cc-info h4,
+[data-theme="dark"] .v-cc-info h4 {
+  color: #F8FAFC;
 }
 .v-cc-info p {
-  font-size: 0.75rem;
-  color: var(--voice-t3);
+  font-size: 0.82rem;
+  color: #64748B;
+  margin: 0;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
+  font-weight: 500;
+}
+body.dark-theme .v-cc-info p,
+[data-theme="dark"] .v-cc-info p {
+  color: #94A3B8;
+}
+.v-badge-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  flex-shrink: 0;
 }
 .v-cc-timer {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  color: var(--voice-a);
-  background: var(--voice-a-l);
-  padding: 0.32rem 0.7rem;
-  border-radius: var(--voice-r4);
-  border: 1px solid rgba(6,182,212,.25);
+  color: #0284C7;
+  background: #E0F2FE;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid #BAE6FD;
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+body.dark-theme .v-cc-timer,
+[data-theme="dark"] .v-cc-timer {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38BDF8;
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 /* Waveform Visualizer */
 .v-wave-container {
-  background: var(--voice-bg3);
-  border: 1px solid var(--voice-bd);
-  border-radius: var(--voice-r);
-  padding: 0.85rem 1.25rem;
-  margin-bottom: 1.15rem;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+body.dark-theme .v-wave-container,
+[data-theme="dark"] .v-wave-container {
+  background: #1E293B;
+  border-color: #334155;
 }
 .v-wave {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
   height: 42px;
   flex: 1;
 }
 .v-wave i {
   display: block;
-  width: 4px;
-  border-radius: 4px;
+  width: 4.5px;
+  border-radius: 99px;
   background: linear-gradient(180deg, #8B5CF6, #06B6D4);
-  animation: v-wv 1.1s ease-in-out infinite;
-  height: 25%;
+  transition: height 0.15s ease, opacity 0.2s ease;
 }
-.v-wave.paused i {
-  animation-play-state: paused;
-  height: 20% !important;
+.v-wave i:nth-child(1) { height: 70%; }
+.v-wave i:nth-child(2) { height: 40%; }
+.v-wave i:nth-child(3) { height: 30%; }
+.v-wave i:nth-child(4) { height: 55%; }
+.v-wave i:nth-child(5) { height: 25%; }
+.v-wave i:nth-child(6) { height: 85%; }
+.v-wave i:nth-child(7) { height: 20%; }
+.v-wave i:nth-child(8) { height: 35%; }
+.v-wave i:nth-child(9) { height: 65%; }
+.v-wave i:nth-child(10) { height: 25%; }
+.v-wave i:nth-child(11) { height: 45%; }
+.v-wave i:nth-child(12) { height: 30%; }
+.v-wave i:nth-child(13) { height: 75%; }
+.v-wave i:nth-child(14) { height: 50%; }
+
+.v-wave.speaking i {
+  animation: v-wave-speak 0.85s ease-in-out infinite alternate;
 }
-@keyframes v-wv {
-  0%, 100% { height: 15%; }
-  50% { height: 100%; }
+.v-wave.speaking i:nth-child(2n) {
+  animation-duration: 0.65s;
+  animation-delay: 0.12s;
 }
+.v-wave.speaking i:nth-child(3n) {
+  animation-duration: 0.95s;
+  animation-delay: 0.24s;
+}
+.v-wave.speaking i:nth-child(5n) {
+  animation-duration: 0.72s;
+  animation-delay: 0.08s;
+}
+@keyframes v-wave-speak {
+  0% { height: 20%; transform: scaleY(0.7); }
+  50% { height: 95%; transform: scaleY(1); }
+  100% { height: 35%; transform: scaleY(0.75); }
+}
+
 .v-audio-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.85rem;
-  background: var(--voice-bg);
-  border: 1px solid var(--voice-bd2);
-  border-radius: var(--voice-r4);
-  font-size: 0.75rem;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9999px;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--voice-t);
+  color: #0F172A;
   cursor: pointer;
-  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  white-space: nowrap;
 }
 .v-audio-toggle:hover {
-  border-color: var(--voice-p);
-  color: var(--voice-p);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: #CBD5E1;
+}
+body.dark-theme .v-audio-toggle,
+[data-theme="dark"] .v-audio-toggle {
+  background: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+.v-audio-toggle.is-playing {
+  background: #ECFDF5;
+  border-color: #10B981;
+  color: #059669;
+}
+body.dark-theme .v-audio-toggle.is-playing,
+[data-theme="dark"] .v-audio-toggle.is-playing {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34D399;
 }
 
 /* Transcript Box */
 .v-transcript {
-  background: var(--voice-bg2);
-  border: 1px solid var(--voice-bd);
-  border-radius: var(--voice-r);
-  padding: 1rem;
-  display: grid;
-  gap: 0.75rem;
-  min-height: 155px;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  min-height: 180px;
+}
+body.dark-theme .v-transcript,
+[data-theme="dark"] .v-transcript {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: #334155;
 }
 .v-msg {
   display: flex;
-  gap: 0.65rem;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  animation: v-fadeUp 0.3s ease-out;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  position: relative;
+  cursor: pointer;
+  border-left: 3.5px solid transparent;
 }
-@keyframes v-fadeUp {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+.v-msg:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+.v-msg.active-speaking.ai {
+  background: rgba(2, 132, 199, 0.08);
+  border-left-color: #0284C7;
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+}
+.v-msg.active-speaking.user {
+  background: rgba(236, 72, 153, 0.08);
+  border-left-color: #EC4899;
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.08);
+}
+body.dark-theme .v-msg.active-speaking.ai,
+[data-theme="dark"] .v-msg.active-speaking.ai {
+  background: rgba(14, 165, 233, 0.15);
+}
+body.dark-theme .v-msg.active-speaking.user,
+[data-theme="dark"] .v-msg.active-speaking.user {
+  background: rgba(236, 72, 153, 0.15);
 }
 .v-msg .v-who {
   font-weight: 800;
   flex-shrink: 0;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
   padding-top: 1px;
+  min-width: 32px;
 }
 .v-msg.ai .v-who {
-  color: var(--voice-a);
+  color: #0284C7;
 }
 .v-msg.user .v-who {
   color: #EC4899;
 }
 .v-msg p {
-  color: var(--voice-t);
+  color: #0F172A;
   margin: 0;
+  flex: 1;
 }
+body.dark-theme .v-msg p,
+[data-theme="dark"] .v-msg p {
+  color: #F8FAFC;
+}
+
+/* Footer Chips */
 .v-cc-foot {
   display: flex;
-  gap: 0.5rem;
-  margin-top: 1.15rem;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
   flex-wrap: wrap;
 }
 .v-chip {
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.3rem 0.7rem;
-  border-radius: var(--voice-r4);
-  background: var(--voice-bg3);
-  border: 1px solid var(--voice-bd);
-  color: var(--voice-t3);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.42rem 0.95rem;
+  border-radius: 9999px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+body.dark-theme .v-chip,
+[data-theme="dark"] .v-chip {
+  background: #1E293B;
+  border-color: #334155;
+  color: #94A3B8;
 }
 .v-chip.on {
-  background: #DCFCE7;
-  border-color: rgba(22, 163, 74, 0.3);
-  color: #15803D;
+  background: #DCFCE7 !important;
+  border-color: #86EFAC !important;
+  color: #15803D !important;
+  font-weight: 700 !important;
 }
 body.dark-theme .v-chip.on,
 [data-theme="dark"] .v-chip.on {
-  background: rgba(22, 163, 74, 0.2);
-  color: #4ADE80;
+  background: rgba(22, 163, 74, 0.22) !important;
+  color: #4ADE80 !important;
+  border-color: rgba(34, 197, 94, 0.35) !important;
+}
+.v-chip-dot {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.v-chip.on .v-chip-dot {
+  animation: v-pulse-dot 1.8s infinite ease-in-out;
+}
+@keyframes v-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
 }
 
 /* =====================================================================
@@ -5919,15 +6080,15 @@ body.dark-theme .v-chip.on,
       <div class="v-reveal" style="position:relative">
         <!-- Scenario Switcher -->
         <div class="v-scenario-nav">
-          <button class="v-scen-btn active" data-scenario="real-estate">🏢 Real Estate</button>
-          <button class="v-scen-btn" data-scenario="ecommerce">🛒 E-Commerce COD</button>
-          <button class="v-scen-btn" data-scenario="healthcare">🏥 Clinic Booking</button>
-          <button class="v-scen-btn" data-scenario="bfsi">💳 Payment Alert</button>
+          <button class="v-scen-btn active" data-scenario="real-estate" type="button">🏢 Real Estate</button>
+          <button class="v-scen-btn" data-scenario="ecommerce" type="button">🛒 E-Commerce COD</button>
+          <button class="v-scen-btn" data-scenario="healthcare" type="button">🏥 Clinic Booking</button>
+          <button class="v-scen-btn" data-scenario="bfsi" type="button">💳 Payment Alert</button>
         </div>
 
         <div class="v-call-card">
           <div class="v-cc-top">
-            <div class="v-cc-av">AI</div>
+            <div class="v-cc-av" id="v-agent-av">AI</div>
             <div class="v-cc-info">
               <h4 id="v-agent-name">HelloBotz Agent — "Aria"</h4>
               <p><span class="v-badge-dot"></span> <span id="v-scenario-tag">Real Estate Inbound · Hindi + English</span></p>
@@ -5937,7 +6098,7 @@ body.dark-theme .v-chip.on,
 
           <!-- Waveform visualizer -->
           <div class="v-wave-container">
-            <div class="v-wave" id="v-waveform">
+            <div class="v-wave" id="v-waveform" aria-label="Audio Waveform Visualizer">
               <i style="animation-delay:0s"></i>
               <i style="animation-delay:.12s"></i>
               <i style="animation-delay:.25s"></i>
@@ -5953,7 +6114,7 @@ body.dark-theme .v-chip.on,
               <i style="animation-delay:.38s"></i>
               <i style="animation-delay:.1s"></i>
             </div>
-            <button class="v-audio-toggle" id="v-audio-btn" type="button">
+            <button class="v-audio-toggle" id="v-audio-btn" type="button" aria-label="Play AI Voice Call Sample">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               <span>Play Sample</span>
             </button>
@@ -5961,25 +6122,25 @@ body.dark-theme .v-chip.on,
 
           <!-- Transcript -->
           <div class="v-transcript" id="v-transcript-box">
-            <div class="v-msg ai">
+            <div class="v-msg ai" data-idx="0" title="Click to hear this line">
               <span class="v-who">AI</span>
               <p id="v-msg-1">Namaste! Main Aria bol rahi hoon HelloBotz Real Estate se. Kya aap 3 BHK luxury flats dekh rahe the?</p>
             </div>
-            <div class="v-msg user">
+            <div class="v-msg user" data-idx="1" title="Click to hear this line">
               <span class="v-who">YOU</span>
               <p id="v-msg-2">Haan, kal sham 4 baje sample flat visit ka slot mil jayega?</p>
             </div>
-            <div class="v-msg ai">
+            <div class="v-msg ai" data-idx="2" title="Click to hear this line">
               <span class="v-who">AI</span>
               <p id="v-msg-3">Bilkul! Kal sham 4:00 PM confirm kar diya. Location &amp; gate pass WhatsApp par bhej diya hai ✅</p>
             </div>
           </div>
 
           <div class="v-cc-foot">
-            <span class="v-chip on">● Live Connected</span>
-            <span class="v-chip">Latency 320ms</span>
+            <span class="v-chip on" id="v-status-connected"><span class="v-chip-dot">●</span> Live Connected</span>
+            <span class="v-chip" id="v-latency-tag">Latency 320ms</span>
             <span class="v-chip" id="v-sentiment-tag">Sentiment: High Intent 😊</span>
-            <span class="v-chip">Auto WhatsApp Sent</span>
+            <span class="v-chip" id="v-wa-sent-tag">Auto WhatsApp Sent</span>
           </div>
         </div>
       </div>
@@ -6418,59 +6579,536 @@ body.dark-theme .v-chip.on,
     });
   });
 
-  /* ========== SCENARIOS DATA & SWITCHER ========== */
+  /* ========== AUDIO CONTEXT & SOUND EFFECTS ========== */
+  var audioCtx = null;
+  function getAudioCtx() {
+    if (!audioCtx) {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) audioCtx = new AC();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  }
+
+  // Telephony connect chime: pleasant dual sine tone (C5 + E5)
+  function playConnectChime(onComplete) {
+    try {
+      var ctx = getAudioCtx();
+      if (!ctx) { if (onComplete) onComplete(); return; }
+      var t = ctx.currentTime;
+      var o1 = ctx.createOscillator();
+      var g1 = ctx.createGain();
+      o1.type = 'sine';
+      o1.frequency.setValueAtTime(523.25, t);
+      g1.gain.setValueAtTime(0.001, t);
+      g1.gain.linearRampToValueAtTime(0.08, t + 0.04);
+      g1.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+      o1.connect(g1); g1.connect(ctx.destination);
+      o1.start(t); o1.stop(t + 0.3);
+
+      var o2 = ctx.createOscillator();
+      var g2 = ctx.createGain();
+      o2.type = 'sine';
+      o2.frequency.setValueAtTime(659.25, t + 0.1);
+      g2.gain.setValueAtTime(0.001, t + 0.1);
+      g2.gain.linearRampToValueAtTime(0.09, t + 0.14);
+      g2.gain.exponentialRampToValueAtTime(0.001, t + 0.42);
+      o2.connect(g2); g2.connect(ctx.destination);
+      o2.start(t + 0.1); o2.stop(t + 0.42);
+
+      setTimeout(function() {
+        if (onComplete) onComplete();
+      }, 450);
+    } catch (e) {
+      if (onComplete) onComplete();
+    }
+  }
+
+  // WhatsApp delivery notification chime (double melodic bell ding)
+  function playWhatsAppChime() {
+    try {
+      var ctx = getAudioCtx();
+      if (!ctx) return;
+      var t = ctx.currentTime;
+      var o1 = ctx.createOscillator();
+      var g1 = ctx.createGain();
+      o1.type = 'sine';
+      o1.frequency.setValueAtTime(1318.5, t); // E6
+      g1.gain.setValueAtTime(0.001, t);
+      g1.gain.linearRampToValueAtTime(0.12, t + 0.02);
+      g1.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+      o1.connect(g1); g1.connect(ctx.destination);
+      o1.start(t); o1.stop(t + 0.28);
+
+      var o2 = ctx.createOscillator();
+      var g2 = ctx.createGain();
+      o2.type = 'sine';
+      o2.frequency.setValueAtTime(1760, t + 0.12); // A6
+      g2.gain.setValueAtTime(0.001, t + 0.12);
+      g2.gain.linearRampToValueAtTime(0.14, t + 0.14);
+      g2.gain.exponentialRampToValueAtTime(0.001, t + 0.55);
+      o2.connect(g2); g2.connect(ctx.destination);
+      o2.start(t + 0.12); o2.stop(t + 0.55);
+    } catch (e) {}
+  }
+
+  // Call completion chime (gentle double tone)
+  function playEndCallChime() {
+    try {
+      var ctx = getAudioCtx();
+      if (!ctx) return;
+      var t = ctx.currentTime;
+      var o = ctx.createOscillator();
+      var g = ctx.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(587.33, t); // D5
+      o.frequency.setValueAtTime(440, t + 0.12); // A4
+      g.gain.setValueAtTime(0.05, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t); o.stop(t + 0.35);
+    } catch(e) {}
+  }
+
+  // Fallback vocal-formant audio synthesis (if speechSynthesis unavailable/empty)
+  function playFormantSpeech(text, isFemale, onEnd) {
+    try {
+      var ctx = getAudioCtx();
+      if (!ctx) { setTimeout(onEnd, 1400); return; }
+      var words = text.split(/\s+/).length;
+      var wordDuration = 0.22;
+      var totalTime = Math.max(1.2, words * wordDuration);
+      var now = ctx.currentTime;
+      
+      var baseFreq = isFemale ? 210 : 130;
+      var f1 = isFemale ? 540 : 380;
+
+      var osc = ctx.createOscillator();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(baseFreq, now);
+
+      for (var i = 0; i < words; i++) {
+        var t = now + i * wordDuration;
+        var pMod = (i % 2 === 0 ? 1.06 : 0.94);
+        osc.frequency.linearRampToValueAtTime(baseFreq * pMod, t + 0.08);
+      }
+
+      var filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(f1, now);
+      filter.Q.setValueAtTime(3.5, now);
+
+      var gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.06, now + 0.04);
+      for (var j = 0; j < words; j++) {
+        var wt = now + j * wordDuration;
+        gain.gain.setValueAtTime(0.06, wt);
+        gain.gain.linearRampToValueAtTime(0.02, wt + wordDuration * 0.7);
+      }
+      gain.gain.linearRampToValueAtTime(0.0001, now + totalTime);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + totalTime);
+
+      setTimeout(function() {
+        if (onEnd) onEnd();
+      }, totalTime * 1000);
+    } catch(e) {
+      setTimeout(onEnd, 1400);
+    }
+  }
+
+  /* ========== SPEECH SYNTHESIS VOICE RESOLVER ========== */
+  var cachedVoices = [];
+  function loadVoices() {
+    if ('speechSynthesis' in window) {
+      cachedVoices = window.speechSynthesis.getVoices();
+    }
+  }
+  if ('speechSynthesis' in window) {
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function getBestVoice(gender) {
+    if (!cachedVoices || cachedVoices.length === 0) loadVoices();
+    if (!cachedVoices || cachedVoices.length === 0) return null;
+
+    // 1. Indian English / Hindi voices
+    var indianVoices = cachedVoices.filter(function(v) {
+      var lang = (v.lang || '').toLowerCase();
+      var name = (v.name || '').toLowerCase();
+      return lang.includes('in') || lang.includes('hi') || name.includes('india') || name.includes('hindi') || name.includes('veena') || name.includes('lekha') || name.includes('rishi') || name.includes('neerja');
+    });
+
+    if (indianVoices.length > 0) {
+      if (gender === 'female') {
+        var f = indianVoices.find(function(v) {
+          var n = v.name.toLowerCase();
+          return n.includes('female') || n.includes('veena') || n.includes('lekha') || n.includes('neerja') || n.includes('kiran');
+        });
+        if (f) return f;
+      } else {
+        var m = indianVoices.find(function(v) {
+          var n = v.name.toLowerCase();
+          return n.includes('male') || n.includes('rishi') || n.includes('karan') || n.includes('madhav');
+        });
+        if (m) return m;
+      }
+      return indianVoices[0];
+    }
+
+    // 2. High-quality natural English voices
+    if (gender === 'female') {
+      var fEng = cachedVoices.find(function(v) {
+        var n = v.name.toLowerCase();
+        var l = v.lang.toLowerCase();
+        return l.startsWith('en') && (n.includes('female') || n.includes('samantha') || n.includes('karen') || n.includes('moira') || n.includes('zira') || n.includes('google'));
+      });
+      if (fEng) return fEng;
+    } else {
+      var mEng = cachedVoices.find(function(v) {
+        var n = v.name.toLowerCase();
+        var l = v.lang.toLowerCase();
+        return l.startsWith('en') && (n.includes('male') || n.includes('daniel') || n.includes('david') || n.includes('george') || n.includes('alex'));
+      });
+      if (mEng) return mEng;
+    }
+
+    return cachedVoices.find(function(v) { return (v.lang || '').toLowerCase().startsWith('en'); }) || cachedVoices[0];
+  }
+
+  /* ========== SCENARIOS DATA ========== */
   var scenarios = {
     'real-estate': {
       agent: 'HelloBotz Agent — "Aria"',
       tag: 'Real Estate Inbound · Hindi + English',
-      timer: '01:24',
+      defaultTimer: '01:24',
       sentiment: 'Sentiment: High Intent 😊',
+      persona: 'real-estate',
+      isFemale: true,
       messages: [
         { who: 'AI', text: 'Namaste! Main Aria bol rahi hoon HelloBotz Real Estate se. Kya aap 3 BHK luxury flats dekh rahe the?' },
         { who: 'YOU', text: 'Haan, kal sham 4 baje sample flat visit ka slot mil jayega?' },
-        { who: 'AI', text: 'Bilkul! Kal sham 4:00 PM confirm kar diya. Location & gate pass WhatsApp par bhej diya hai ✅' }
+        { who: 'AI', text: 'Bilkul! Kal sham 4:00 PM confirm kar diya. Location & gate pass WhatsApp par bhej diya hai ✅', triggerWA: true }
       ]
     },
     'ecommerce': {
       agent: 'HelloBotz Agent — "Rohan"',
       tag: 'COD Order Verification · Instant Call',
-      timer: '00:48',
+      defaultTimer: '00:48',
       sentiment: 'Sentiment: Order Confirmed 📦',
+      persona: 'ecommerce',
+      isFemale: false,
       messages: [
         { who: 'AI', text: 'Namaste Mr. Verma! Aapka ₹2,499 ka Sneaker order received hua hai. Kya aap is order ko confirm karte hain?' },
         { who: 'YOU', text: 'Haan ji, confirm hai. Kab tak deliver hoga?' },
-        { who: 'AI', text: 'Order confirmed! Friday tak delivery ho jayegi. Live tracking link WhatsApp par bhej diya hai ✅' }
+        { who: 'AI', text: 'Order confirmed! Friday tak delivery ho jayegi. Live tracking link WhatsApp par bhej diya hai ✅', triggerWA: true }
       ]
     },
     'healthcare': {
       agent: 'HelloBotz Agent — "Dr. Assistant"',
       tag: 'Clinic Appointment · Auto Scheduler',
-      timer: '01:05',
+      defaultTimer: '01:05',
       sentiment: 'Sentiment: Appointment Booked 🩺',
+      persona: 'healthcare',
+      isFemale: true,
       messages: [
-        { who: 'AI', text: 'Hello! MediCare Dental Clinic me swagat hai. Kya aap consultation book karna chahte hain?' },
+        { who: 'AI', text: 'Hello! MediCare Clinic me swagat hai. Kya aap doctor consultation book karna chahte hain?' },
         { who: 'YOU', text: 'Haan, Dr. Gupta se kal morning consultation mil sakta hai?' },
-        { who: 'AI', text: 'Dr. Gupta ke paas kal 11:30 AM ka slot available hai. Booking confirm kar di hai, WhatsApp reminder set!' }
+        { who: 'AI', text: 'Dr. Gupta ke paas kal 11:30 AM ka slot available hai. Booking confirm kar di hai, WhatsApp reminder set ✅', triggerWA: true }
       ]
     },
     'bfsi': {
       agent: 'HelloBotz Agent — "Pooja"',
       tag: 'Payment Reminder & Instant Link',
-      timer: '00:52',
+      defaultTimer: '00:52',
       sentiment: 'Sentiment: Payment Link Sent 💳',
+      persona: 'bfsi',
+      isFemale: true,
       messages: [
         { who: 'AI', text: 'Namaste Rahul ji! Aapki EMI due date kal hai. Kya main instant UPI payment link WhatsApp kar doon?' },
         { who: 'YOU', text: 'Haan please, WhatsApp par bhej dijiye main abhi pay kar deta hoon.' },
-        { who: 'AI', text: 'Link bhej diya hai! Payment hote hi digital receipt automatically generate ho jayegi. Dhanyawad!' }
+        { who: 'AI', text: 'Link bhej diya hai! Payment hote hi digital receipt automatically generate ho jayegi. Dhanyawad ✅', triggerWA: true }
       ]
     }
   };
 
+  var currentScenarioKey = 'real-estate';
+  var isPlaying = false;
+  var currentStep = -1;
+  var timerInterval = null;
+  var elapsedSeconds = 0;
+  var stepTimeout = null;
+
+  var audioBtn = document.getElementById('v-audio-btn');
+  var waveform = document.getElementById('v-waveform');
+  var callTimerEl = document.getElementById('v-call-timer');
+  var waSentTag = document.getElementById('v-wa-sent-tag');
+  var statusConnectedTag = document.getElementById('v-status-connected');
+
+  function setWaveformActive(active) {
+    if (!waveform) return;
+    if (active) {
+      waveform.classList.add('speaking');
+    } else {
+      waveform.classList.remove('speaking');
+    }
+  }
+
+  function startLiveTimer() {
+    clearInterval(timerInterval);
+    elapsedSeconds = 0;
+    if (callTimerEl) callTimerEl.textContent = '00:00';
+    timerInterval = setInterval(function() {
+      elapsedSeconds++;
+      var m = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+      var s = String(elapsedSeconds % 60).padStart(2, '0');
+      if (callTimerEl) callTimerEl.textContent = m + ':' + s;
+    }, 1000);
+  }
+
+  function stopLiveTimer() {
+    clearInterval(timerInterval);
+  }
+
+  function renderTranscript(messages) {
+    var box = document.getElementById('v-transcript-box');
+    if (!box) return;
+    box.innerHTML = '';
+    messages.forEach(function(m, idx) {
+      var div = document.createElement('div');
+      div.className = 'v-msg ' + (m.who === 'AI' ? 'ai' : 'user');
+      div.setAttribute('data-idx', idx);
+      div.setAttribute('title', 'Click to hear this line');
+      div.innerHTML = '<span class="v-who">' + m.who + '</span><p id="v-msg-' + (idx + 1) + '">' + m.text + '</p>';
+      
+      div.addEventListener('click', function() {
+        playSingleLine(idx);
+      });
+      box.appendChild(div);
+    });
+  }
+
+  function highlightLine(idx) {
+    var box = document.getElementById('v-transcript-box');
+    if (!box) return;
+    var lines = box.querySelectorAll('.v-msg');
+    lines.forEach(function(el, i) {
+      if (i === idx) {
+        el.classList.add('active-speaking');
+      } else {
+        el.classList.remove('active-speaking');
+      }
+    });
+  }
+
+  function clearHighlight() {
+    var box = document.getElementById('v-transcript-box');
+    if (!box) return;
+    box.querySelectorAll('.v-msg').forEach(function(el) {
+      el.classList.remove('active-speaking');
+    });
+  }
+
+  function setButtonState(state) {
+    if (!audioBtn) return;
+    if (state === 'playing') {
+      audioBtn.classList.add('is-playing');
+      audioBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg><span>Pause</span>';
+    } else if (state === 'replay') {
+      audioBtn.classList.remove('is-playing');
+      audioBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg><span>Replay Call</span>';
+    } else {
+      audioBtn.classList.remove('is-playing');
+      audioBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg><span>Play Sample</span>';
+    }
+  }
+
+  function speakLine(messageObj, scenarioObj, onLineEnd) {
+    var isAI = (messageObj.who === 'AI');
+    var isFemale = isAI ? scenarioObj.isFemale : false; // Customer caller has distinct lower/male tone
+
+    // Trigger WhatsApp notification sound when AI announces WhatsApp sent
+    if (messageObj.triggerWA) {
+      setTimeout(function() {
+        playWhatsAppChime();
+        if (waSentTag) {
+          waSentTag.classList.add('on');
+          waSentTag.textContent = 'Auto WhatsApp Sent ✅';
+        }
+      }, 1200);
+    }
+
+    setWaveformActive(true);
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      var utt = new SpeechSynthesisUtterance(messageObj.text);
+      var v = getBestVoice(isFemale ? 'female' : 'male');
+      if (v) {
+        utt.voice = v;
+        utt.lang = v.lang || (v.lang.includes('hi') ? 'hi-IN' : 'en-IN');
+      }
+
+      if (isAI) {
+        utt.pitch = isFemale ? 1.05 : 0.95;
+        utt.rate = 0.96;
+      } else {
+        utt.pitch = 0.88;
+        utt.rate = 1.0;
+      }
+
+      var ended = false;
+      utt.onend = function() {
+        if (!ended) {
+          ended = true;
+          setWaveformActive(false);
+          if (onLineEnd) onLineEnd();
+        }
+      };
+      utt.onerror = function() {
+        if (!ended) {
+          ended = true;
+          setWaveformActive(false);
+          playFormantSpeech(messageObj.text, isFemale, onLineEnd);
+        }
+      };
+
+      // Safeguard for browsers where onend doesn't fire
+      var wordCount = messageObj.text.split(/\s+/).length;
+      var safetyMs = Math.max(3000, (wordCount * 550) + 2000);
+      setTimeout(function() {
+        if (!ended && isPlaying) {
+          ended = true;
+          setWaveformActive(false);
+          if (onLineEnd) onLineEnd();
+        }
+      }, safetyMs);
+
+      window.speechSynthesis.speak(utt);
+    } else {
+      playFormantSpeech(messageObj.text, isFemale, function() {
+        setWaveformActive(false);
+        if (onLineEnd) onLineEnd();
+      });
+    }
+  }
+
+  function stopAllAudio() {
+    isPlaying = false;
+    currentStep = -1;
+    clearTimeout(stepTimeout);
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    stopLiveTimer();
+    setWaveformActive(false);
+    clearHighlight();
+    setButtonState('idle');
+  }
+
+  function playStep(stepIdx) {
+    if (!isPlaying) return;
+    var scen = scenarios[currentScenarioKey];
+    if (!scen || !scen.messages || stepIdx >= scen.messages.length) {
+      // Call finished
+      stopLiveTimer();
+      setWaveformActive(false);
+      clearHighlight();
+      playEndCallChime();
+      if (statusConnectedTag) {
+        statusConnectedTag.innerHTML = '<span class="v-chip-dot">●</span> Call Completed';
+      }
+      setButtonState('replay');
+      isPlaying = false;
+      currentStep = -1;
+      return;
+    }
+
+    currentStep = stepIdx;
+    highlightLine(stepIdx);
+
+    speakLine(scen.messages[stepIdx], scen, function() {
+      if (!isPlaying) return;
+      clearHighlight();
+      // Natural conversational breath pause between turns
+      stepTimeout = setTimeout(function() {
+        if (isPlaying) {
+          playStep(stepIdx + 1);
+        }
+      }, 450);
+    });
+  }
+
+  function startFullCall() {
+    stopAllAudio();
+    isPlaying = true;
+    setButtonState('playing');
+
+    if (waSentTag) {
+      waSentTag.classList.remove('on');
+      waSentTag.textContent = 'Auto WhatsApp Sent';
+    }
+    if (statusConnectedTag) {
+      statusConnectedTag.classList.add('on');
+      statusConnectedTag.innerHTML = '<span class="v-chip-dot">●</span> Live Connected';
+    }
+
+    startLiveTimer();
+
+    // Play telecom connect chime first, then dialogue
+    playConnectChime(function() {
+      if (isPlaying) {
+        playStep(0);
+      }
+    });
+  }
+
+  function playSingleLine(idx) {
+    var scen = scenarios[currentScenarioKey];
+    if (!scen || !scen.messages[idx]) return;
+
+    stopAllAudio();
+    isPlaying = true;
+    setButtonState('playing');
+    highlightLine(idx);
+
+    speakLine(scen.messages[idx], scen, function() {
+      clearHighlight();
+      setWaveformActive(false);
+      setButtonState('idle');
+      isPlaying = false;
+    });
+  }
+
+  // Button toggle
+  if (audioBtn) {
+    audioBtn.addEventListener('click', function() {
+      if (isPlaying) {
+        stopAllAudio();
+      } else {
+        startFullCall();
+      }
+    });
+  }
+
+  /* ========== SCENARIOS SWITCHER ========== */
   window.switchScenario = function(key) {
     var data = scenarios[key];
     if (!data) return;
 
-    // update scenario buttons
+    currentScenarioKey = key;
+    stopAllAudio();
+
+    // Update scenario nav buttons
     document.querySelectorAll('.v-scen-btn').forEach(function(btn) {
       if (btn.getAttribute('data-scenario') === key) {
         btn.classList.add('active');
@@ -6479,19 +7117,30 @@ body.dark-theme .v-chip.on,
       }
     });
 
-    document.getElementById('v-agent-name').textContent = data.agent;
-    document.getElementById('v-scenario-tag').textContent = data.tag;
-    document.getElementById('v-call-timer').textContent = data.timer;
-    document.getElementById('v-sentiment-tag').textContent = data.sentiment;
+    // Update agent info & metrics
+    var nameEl = document.getElementById('v-agent-name');
+    if (nameEl) nameEl.textContent = data.agent;
 
-    var box = document.getElementById('v-transcript-box');
-    box.innerHTML = '';
-    data.messages.forEach(function(m) {
-      var div = document.createElement('div');
-      div.className = 'v-msg ' + (m.who === 'AI' ? 'ai' : 'user');
-      div.innerHTML = '<span class="v-who">' + m.who + '</span><p>' + m.text + '</p>';
-      box.appendChild(div);
-    });
+    var tagEl = document.getElementById('v-scenario-tag');
+    if (tagEl) tagEl.textContent = data.tag;
+
+    var timerEl = document.getElementById('v-call-timer');
+    if (timerEl) timerEl.textContent = data.defaultTimer;
+
+    var sentEl = document.getElementById('v-sentiment-tag');
+    if (sentEl) sentEl.textContent = data.sentiment;
+
+    if (waSentTag) {
+      waSentTag.classList.remove('on');
+      waSentTag.textContent = 'Auto WhatsApp Sent';
+    }
+    if (statusConnectedTag) {
+      statusConnectedTag.classList.add('on');
+      statusConnectedTag.innerHTML = '<span class="v-chip-dot">●</span> Live Connected';
+    }
+
+    renderTranscript(data.messages);
+    setButtonState('idle');
   };
 
   document.querySelectorAll('.v-scen-btn').forEach(function(btn) {
@@ -6501,39 +7150,12 @@ body.dark-theme .v-chip.on,
     });
   });
 
-  /* ========== AUDIO PLAY SIMULATOR ========== */
-  var audioBtn = document.getElementById('v-audio-btn');
-  var waveform = document.getElementById('v-waveform');
-  var isPlaying = false;
-  var audioCtx = null;
-
-  audioBtn.addEventListener('click', function() {
-    isPlaying = !isPlaying;
-    if (isPlaying) {
-      audioBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg><span>Pause</span>';
-      audioBtn.style.color = '#10B981';
-      waveform.classList.remove('paused');
-
-      // subtle pleasant tone synthesis via Web Audio API if supported
-      try {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-        var osc = audioCtx.createOscillator();
-        var gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(520, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.8);
-      } catch(e) {}
-    } else {
-      audioBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg><span>Play Sample</span>';
-      audioBtn.style.color = '';
-      waveform.classList.add('paused');
-    }
+  // Attach click to default rendered messages
+  document.querySelectorAll('#v-transcript-box .v-msg').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-idx') || '0', 10);
+      playSingleLine(idx);
+    });
   });
 
   /* ========== ROI CALCULATOR ========== */
