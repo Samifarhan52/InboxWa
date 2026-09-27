@@ -3911,7 +3911,7 @@ if (!function_exists('hb_seo_esc')) {
                       <span class="prodocu-item-desc">Unified conversations</span>
                     </div>
                   </a>
-                  <a href="<?php echo $bp; ?>products/ai-agent/" class="prodocu-item" role="menuitem">
+                  <a href="<?php echo $bp; ?>products/ai-assistant/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-ai-agent">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9a2 2 0 0 0 1.2 1.2L20 11l-4.9 1.9a2 2 0 0 0-1.2 1.2L12 19l-1.9-4.9a2 2 0 0 0-1.2-1.2L4 11l4.9-1.9a2 2 0 0 0 1.2-1.2L12 3z"/><path d="M19 3l.6 1.4a1 1 0 0 0 .6.6L21.6 5.6l-1.4.6a1 1 0 0 0-.6.6L19 8.2l-.6-1.4a1 1 0 0 0-.6-.6L16.4 5.6l1.4-.6a1 1 0 0 0 .6-.6L19 3z"/></svg>
                     </div>
@@ -3920,7 +3920,7 @@ if (!function_exists('hb_seo_esc')) {
                       <span class="prodocu-item-desc">Smart responses</span>
                     </div>
                   </a>
-                  <a href="<?php echo $bp; ?>solutions/feedback-surveys/" class="prodocu-item" role="menuitem">
+                  <a href="<?php echo $bp; ?>products/feedback-collection/" class="prodocu-item" role="menuitem">
                     <div class="prodocu-item-icon pro-icon-feedback">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
@@ -4457,7 +4457,7 @@ if (!function_exists('hb_seo_esc')) {
                     <span class="prodocu-item-desc">Unified conversations</span>
                   </div>
                 </a>
-                <a href="<?php echo $bp; ?>products/ai-agent/" class="prodocu-mob-item">
+                <a href="<?php echo $bp; ?>products/ai-assistant/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-ai-agent">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9a2 2 0 0 0 1.2 1.2L20 11l-4.9 1.9a2 2 0 0 0-1.2 1.2L12 19l-1.9-4.9a2 2 0 0 0-1.2-1.2L4 11l4.9-1.9a2 2 0 0 0 1.2-1.2L12 3z"/><path d="M19 3l.6 1.4a1 1 0 0 0 .6.6L21.6 5.6l-1.4.6a1 1 0 0 0-.6.6L19 8.2l-.6-1.4a1 1 0 0 0-.6-.6L16.4 5.6l1.4-.6a1 1 0 0 0 .6-.6L19 3z"/></svg>
                   </div>
@@ -4466,7 +4466,7 @@ if (!function_exists('hb_seo_esc')) {
                     <span class="prodocu-item-desc">Smart responses</span>
                   </div>
                 </a>
-                <a href="<?php echo $bp; ?>solutions/feedback-surveys/" class="prodocu-mob-item">
+                <a href="<?php echo $bp; ?>products/feedback-collection/" class="prodocu-mob-item">
                   <div class="prodocu-item-icon pro-icon-feedback">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   </div>

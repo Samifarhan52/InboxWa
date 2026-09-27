@@ -302,25 +302,18 @@ include __DIR__ . '/../../includes/header.php';
         <p class="hero-text">
           HelloBotz's AI WhatsApp Chatbot understands context, responds quickly in your brand voice, and works 24/7 —
           powered by the official WhatsApp Business API </p>
-        <div class="btn-group">
-          <!-- Enquiry Now Button -->
-          <button class="btn-call me-4 button1 order-lg-1 order-2" id="rcmCallAction">
-            <!--<i class="fa-solid fa-link"></i> -->
-            <a href="<?php echo $bp; ?>auth/register" target="_blank" rel="noopener noreferrer"
-              style="text-decoration: none; color: white;">Try for Free</a>
+        <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
+          <a href="<?php echo $bp; ?>auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+            Start Free Trial →
+          </a>
+          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
+            Book Live Demo
           </button>
-
-          <!-- Book A Free Demo Button -->
-          <div class="btn-book text-decoration-none d-flex align-items-center button1 order-lg-2 order-1 book-demo-btn btn-demo-open" role="button" tabindex="0" style="cursor: pointer;" data-product="Chatbot">
-            <!--<i class="fa-solid fa-calendar me-2"></i>-->
-            Book A Demo
-          </div>
-
-
+          <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
+          </a>
         </div>
-
-
-
       </div>
       <!-- Video Content -->
       <div class="col-lg-6">
@@ -1157,7 +1150,243 @@ document.addEventListener("DOMContentLoaded", function() {
             min-height: auto;
         }
     }
-</style><section class="faq-section">
+</style>
+<!-- INTERACTIVE JOURNEY FLOW SECTION -->
+<style>
+.bot-journey-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+.bot-journey-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+.bot-j-kicker {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4f46e5;
+  margin-bottom: 0.6rem;
+}
+.bot-j-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+.bot-j-intro {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+.bot-j-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+.bot-j-tab {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.bot-j-tab:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+.bot-j-tab.active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+}
+.bot-j-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 992px) {
+  .bot-j-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .bot-j-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+.bot-j-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.bot-j-card:hover {
+  transform: translateY(-4px);
+  border-color: #818cf8;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.12);
+}
+.bot-j-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+}
+.bot-j-card h4 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.bot-j-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+.bot-j-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  width: fit-content;
+}
+</style>
+
+<section class="bot-journey-section" id="journey-flow">
+  <div class="bot-journey-container">
+    <div class="bot-j-kicker">AUTONOMOUS CONVERSATIONAL FLOW</div>
+    <h2 class="bot-j-title">How HelloBotz AI Chatbot converts queries into revenue.</h2>
+    <p class="bot-j-intro">Experience how natural language AI understands intent, takes actions via APIs, and delights customers 24/7.</p>
+
+    <!-- Scenario Switcher -->
+    <div class="bot-j-nav">
+      <button type="button" class="bot-j-tab active" onclick="botSwitchJourney('ecommerce', this)">🛒 E-Commerce FAQ & Orders</button>
+        <button type="button" class="bot-j-tab" onclick="botSwitchJourney('booking', this)">📅 Healthcare & Appointment Booking</button>
+        <button type="button" class="bot-j-tab" onclick="botSwitchJourney('b2blead', this)">💼 B2B Lead Qualification</button>
+    </div>
+
+    <!-- 4-Stage Cards -->
+    <div class="bot-j-timeline">
+        <div class="bot-j-card" id="bot-step-1">
+          <div class="bot-j-step-num">01</div>
+          <h4 id="bot-title-1">Shopper Inquiry</h4>
+          <p id="bot-desc-1">Customer asks about order status, return policy, or sizing.</p>
+          <span class="bot-j-badge" id="bot-badge-1">Instant Inbound</span>
+        </div>
+        <div class="bot-j-card" id="bot-step-2">
+          <div class="bot-j-step-num">02</div>
+          <h4 id="bot-title-2">NLP & CRM Lookup</h4>
+          <p id="bot-desc-2">AI parses intent and queries Shopify/WooCommerce API via order #.</p>
+          <span class="bot-j-badge" id="bot-badge-2">Zero Hallucination</span>
+        </div>
+        <div class="bot-j-card" id="bot-step-3">
+          <div class="bot-j-step-num">03</div>
+          <h4 id="bot-title-3">Instant Contextual Reply</h4>
+          <p id="bot-desc-3">Bot replies with live tracking link and estimated delivery window.</p>
+          <span class="bot-j-badge" id="bot-badge-3"><1s Response Time</span>
+        </div>
+        <div class="bot-j-card" id="bot-step-4">
+          <div class="bot-j-step-num">04</div>
+          <h4 id="bot-title-4">Cross-Sell Offer</h4>
+          <p id="bot-desc-4">Bot suggests complementary items with 1-click WhatsApp checkout.</p>
+          <span class="bot-j-badge" id="bot-badge-4">+28% Repeat Sales</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var journeyData = {"ecommerce": [{"title": "Shopper Inquiry", "desc": "Customer asks about order status, return policy, or sizing.", "badge": "Instant Inbound"}, {"title": "NLP & CRM Lookup", "desc": "AI parses intent and queries Shopify/WooCommerce API via order #.", "badge": "Zero Hallucination"}, {"title": "Instant Contextual Reply", "desc": "Bot replies with live tracking link and estimated delivery window.", "badge": "<1s Response Time"}, {"title": "Cross-Sell Offer", "desc": "Bot suggests complementary items with 1-click WhatsApp checkout.", "badge": "+28% Repeat Sales"}], "booking": [{"title": "Appointment Request", "desc": "Patient asks to book a consultation slot or dental checkup.", "badge": "24/7 Availability"}, {"title": "Live Calendar Check", "desc": "Bot connects to Google Calendar/EHR and presents available slots.", "badge": "Real-Time Sync"}, {"title": "1-Tap Confirmation", "desc": "Patient picks slot and confirms details; Meet link issued in-chat.", "badge": "Instant Booking"}, {"title": "Automated Reminder", "desc": "WhatsApp reminders sent 24h & 2h before visit to eliminate no-shows.", "badge": "78% Less No-Shows"}], "b2blead": [{"title": "Ad / Website Inbound", "desc": "Buyer clicks ad and initiates chat asking for enterprise pricing.", "badge": "High Intent"}, {"title": "Smart Qualification", "desc": "Bot asks team size, budget, and timeline to calculate lead score.", "badge": "Automated Scoring"}, {"title": "AE Routing", "desc": "Hot leads assigned immediately to enterprise AE with priority tag.", "badge": "Zero Drop-Off"}, {"title": "Demo Scheduled", "desc": "Prospect selects an open calendar demo slot directly inside WhatsApp.", "badge": "4.2x Faster Pipeline"}]};
+
+  window.botSwitchJourney = function(scenarioId, btn) {
+    var nav = btn.closest('.bot-j-nav');
+    if (nav) {
+      var tabs = nav.querySelectorAll('.bot-j-tab');
+      for (var t = 0; t < tabs.length; t++) {
+        tabs[t].classList.remove('active');
+      }
+    }
+    btn.classList.add('active');
+
+    var steps = journeyData[scenarioId];
+    if (!steps) return;
+
+    for (var i = 0; i < steps.length; i++) {
+      var num = i + 1;
+      var titleEl = document.getElementById('bot-title-' + num);
+      var descEl = document.getElementById('bot-desc-' + num);
+      var badgeEl = document.getElementById('bot-badge-' + num);
+      var cardEl = document.getElementById('bot-step-' + num);
+
+      if (titleEl) titleEl.textContent = steps[i].title;
+      if (descEl) descEl.textContent = steps[i].desc;
+      if (badgeEl) badgeEl.textContent = steps[i].badge;
+
+      if (cardEl) {
+        cardEl.style.opacity = '0.4';
+        cardEl.style.transform = 'translateY(6px)';
+      }
+    }
+
+    setTimeout(function() {
+      for (var j = 1; j <= 4; j++) {
+        var c = document.getElementById('bot-step-' + j);
+        if (c) {
+          c.style.opacity = '1';
+          c.style.transform = 'translateY(0)';
+        }
+      }
+    }, 120);
+  };
+})();
+</script>
+
+
+<section class="faq-section">
   <div class="container">
     <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-8"><span class="faq-title"><h3>Is HelloBotz&#039; AI Chatbot built on the official WhatsApp Business API?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-8" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-9"><span class="faq-title"><h3>Can I connect the chatbot to my CRM or existing tools?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-9" class="faq-answer" role="region" aria-hidden="true">Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-10"><span class="faq-title"><h3>Does the AI chatbot replace my human support team?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-10" class="faq-answer" role="region" aria-hidden="true">No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-11"><span class="faq-title"><h3>How long does it take to set up?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-11" class="faq-answer" role="region" aria-hidden="true">Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-12"><span class="faq-title"><h3>How do I train the chatbot on my business?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-12" class="faq-answer" role="region" aria-hidden="true">Upload FAQs, product details, or website content without any coding ot technical expertise needed.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is HelloBotz's AI Chatbot built on the official WhatsApp Business API?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant."}},{"@type":"Question","name":"Can I connect the chatbot to my CRM or existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation."}},{"@type":"Question","name":"Does the AI chatbot replace my human support team?","acceptedAnswer":{"@type":"Answer","text":"No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached."}},{"@type":"Question","name":"How long does it take to set up?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules."}},{"@type":"Question","name":"How do I train the chatbot on my business?","acceptedAnswer":{"@type":"Answer","text":"Upload FAQs, product details, or website content without any coding ot technical expertise needed."}}]}</script>
     <script>
@@ -1513,6 +1742,121 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+
+
+<!-- PRODUCT BOTTOM CTA SECTION -->
+<style>
+.hb-bottom-cta-banner {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+  color: #ffffff;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hb-bottom-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hb-bottom-cta-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: #ffffff !important;
+}
+.hb-bottom-cta-desc {
+  font-size: 1.12rem;
+  color: #e0e7ff !important;
+  max-width: 650px;
+  margin: 0 auto 2.25rem;
+  line-height: 1.6;
+}
+.hb-bottom-cta-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hb-cta-btn-primary {
+  background: #ffffff !important;
+  color: #1e1b4b !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  padding: 13px 28px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.hb-cta-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+.hb-cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+.hb-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+}
+.hb-cta-btn-verified {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #6ee7b7 !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  transition: all 0.2s ease !important;
+}
+.hb-cta-btn-verified:hover {
+  background: rgba(16, 185, 129, 0.35) !important;
+  color: #ffffff !important;
+}
+</style>
+
+<section class="hb-bottom-cta-banner">
+  <div class="hb-bottom-cta-inner">
+    <div style="font-size:0.82rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#a5b4fc;margin-bottom:0.75rem;">
+      SUPERCHARGE YOUR WORKFLOW
+    </div>
+    <h2 class="hb-bottom-cta-title">Ready to transform your business with AI WhatsApp Chatbot?</h2>
+    <p class="hb-bottom-cta-desc">
+      Join fast-growing companies that rely on HelloBotz for official WhatsApp Business API automation, intelligent lead handling, and verified credibility.
+    </p>
+    <div class="hb-bottom-cta-btns">
+      <a href="<?php echo $bp; ?>auth/register" class="hb-cta-btn-primary">
+        Start Free Trial →
+      </a>
+      <button type="button" class="hb-cta-btn-secondary btn-demo-open">
+        Book a Live Demo
+      </button>
+      <a href="#contact-section" class="hb-cta-btn-verified">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Get Verified
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

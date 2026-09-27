@@ -236,11 +236,18 @@ include __DIR__ . '/../../includes/header.php';
                 <h1 class="hero-title"> Manage WhatsApp Chats Smarter with Shared Team Inbox</h1>
                 <p class="hero-text">Handle customer conversations, assign agents, and track performance, all from a
                     single, unified WhatsApp inbox.</p>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section"
-                    target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
+                <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
+          <a href="<?php echo $bp; ?>auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+            Start Free Trial →
+          </a>
+          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
+            Book Live Demo
+          </button>
+          <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
+          </a>
+        </div>
             </div>
             <!-- Image Content with background -->
             <div class="col-lg-6">
@@ -279,8 +286,7 @@ include __DIR__ . '/../../includes/header.php';
                     </ul>
                 </div>
                 <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section"
-                    target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
+                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
                     Enquiry Now
                 </a>
             </div>
@@ -314,8 +320,7 @@ include __DIR__ . '/../../includes/header.php';
                     </ul>
                 </div>
                 <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section"
-                    target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
+                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
                     Enquiry Now
                 </a>
             </div>
@@ -350,8 +355,7 @@ include __DIR__ . '/../../includes/header.php';
                     </ul>
                 </div>
                 <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section"
-                    target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
+                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
                     Enquiry Now
                 </a>
             </div>
@@ -934,7 +938,243 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </div>
     </div>
-</section><section class="faq-section">
+</section>
+<!-- INTERACTIVE JOURNEY FLOW SECTION -->
+<style>
+.inb-journey-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+.inb-journey-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+.inb-j-kicker {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4f46e5;
+  margin-bottom: 0.6rem;
+}
+.inb-j-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+.inb-j-intro {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+.inb-j-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+.inb-j-tab {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.inb-j-tab:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+.inb-j-tab.active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+}
+.inb-j-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 992px) {
+  .inb-j-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .inb-j-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+.inb-j-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.inb-j-card:hover {
+  transform: translateY(-4px);
+  border-color: #818cf8;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.12);
+}
+.inb-j-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+}
+.inb-j-card h4 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.inb-j-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+.inb-j-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  width: fit-content;
+}
+</style>
+
+<section class="inb-journey-section" id="journey-flow">
+  <div class="inb-journey-container">
+    <div class="inb-j-kicker">MULTI-AGENT COLLABORATION FLOW</div>
+    <h2 class="inb-j-title">From customer chat to resolved ticket in 4 steps.</h2>
+    <p class="inb-j-intro">See how your team coordinates conversations, tags specialists, and closes queries with zero friction.</p>
+
+    <!-- Scenario Switcher -->
+    <div class="inb-j-nav">
+      <button type="button" class="inb-j-tab active" onclick="inbSwitchJourney('multiagent', this)">👥 Multi-Agent Routing</button>
+        <button type="button" class="inb-j-tab" onclick="inbSwitchJourney('vip', this)">⭐ VIP Escalation & Handover</button>
+        <button type="button" class="inb-j-tab" onclick="inbSwitchJourney('afterhours', this)">🌙 After-Hours Bot-to-Inbox</button>
+    </div>
+
+    <!-- 4-Stage Cards -->
+    <div class="inb-j-timeline">
+        <div class="inb-j-card" id="inb-step-1">
+          <div class="inb-j-step-num">01</div>
+          <h4 id="inb-title-1">Inbound Message</h4>
+          <p id="inb-desc-1">Customer messages via WhatsApp, Instagram, or Facebook Business.</p>
+          <span class="inb-j-badge" id="inb-badge-1">Sub-20ms Routing</span>
+        </div>
+        <div class="inb-j-card" id="inb-step-2">
+          <div class="inb-j-step-num">02</div>
+          <h4 id="inb-title-2">Skill-Based Assignment</h4>
+          <p id="inb-desc-2">System auto-routes inquiry to the right department or agent.</p>
+          <span class="inb-j-badge" id="inb-badge-2">Auto Load-Balance</span>
+        </div>
+        <div class="inb-j-card" id="inb-step-3">
+          <div class="inb-j-step-num">03</div>
+          <h4 id="inb-title-3">Internal Notes & Templates</h4>
+          <p id="inb-desc-3">Agents coordinate via private team notes and 1-tap templates.</p>
+          <span class="inb-j-badge" id="inb-badge-3">Zero Customer Wait</span>
+        </div>
+        <div class="inb-j-card" id="inb-step-4">
+          <div class="inb-j-step-num">04</div>
+          <h4 id="inb-title-4">Resolution & CRM Sync</h4>
+          <p id="inb-desc-4">Chat marked resolved and conversation transcript pushed to CRM.</p>
+          <span class="inb-j-badge" id="inb-badge-4">100% Audit Trail</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var journeyData = {"multiagent": [{"title": "Inbound Message", "desc": "Customer messages via WhatsApp, Instagram, or Facebook Business.", "badge": "Sub-20ms Routing"}, {"title": "Skill-Based Assignment", "desc": "System auto-routes inquiry to the right department or agent.", "badge": "Auto Load-Balance"}, {"title": "Internal Notes & Templates", "desc": "Agents coordinate via private team notes and 1-tap templates.", "badge": "Zero Customer Wait"}, {"title": "Resolution & CRM Sync", "desc": "Chat marked resolved and conversation transcript pushed to CRM.", "badge": "100% Audit Trail"}], "vip": [{"title": "VIP Customer Message", "desc": "Key enterprise account reaches out with high-priority inquiry.", "badge": "Instant SLA Flag"}, {"title": "VIP Tag & Escalation", "desc": "Priority badge applied; routed immediately to senior account lead.", "badge": "Executive Alert"}, {"title": "Seamless Shift Handoff", "desc": "Next shift agent reviews context without asking customer to repeat.", "badge": "Full History Saved"}, {"title": "60-Second Resolution", "desc": "Query resolved in record time; CSAT recorded at 5.0/5.0.", "badge": "99.9% Retention"}], "afterhours": [{"title": "Midnight Customer Query", "desc": "Prospect sends WhatsApp message at 1:30 AM requesting quote.", "badge": "24/7 Coverage"}, {"title": "AI Bot Triage", "desc": "Chatbot greets customer, answers FAQs, and logs requirements.", "badge": "Zero Lead Loss"}, {"title": "Morning Priority Queue", "desc": "Chat assigned to morning team queue with conversation summary.", "badge": "Pre-Qualified Lead"}, {"title": "Instant Morning Follow-up", "desc": "Sales rep sends tailored proposal at the start of business day.", "badge": "3.8x Deal Velocity"}]};
+
+  window.inbSwitchJourney = function(scenarioId, btn) {
+    var nav = btn.closest('.inb-j-nav');
+    if (nav) {
+      var tabs = nav.querySelectorAll('.inb-j-tab');
+      for (var t = 0; t < tabs.length; t++) {
+        tabs[t].classList.remove('active');
+      }
+    }
+    btn.classList.add('active');
+
+    var steps = journeyData[scenarioId];
+    if (!steps) return;
+
+    for (var i = 0; i < steps.length; i++) {
+      var num = i + 1;
+      var titleEl = document.getElementById('inb-title-' + num);
+      var descEl = document.getElementById('inb-desc-' + num);
+      var badgeEl = document.getElementById('inb-badge-' + num);
+      var cardEl = document.getElementById('inb-step-' + num);
+
+      if (titleEl) titleEl.textContent = steps[i].title;
+      if (descEl) descEl.textContent = steps[i].desc;
+      if (badgeEl) badgeEl.textContent = steps[i].badge;
+
+      if (cardEl) {
+        cardEl.style.opacity = '0.4';
+        cardEl.style.transform = 'translateY(6px)';
+      }
+    }
+
+    setTimeout(function() {
+      for (var j = 1; j <= 4; j++) {
+        var c = document.getElementById('inb-step-' + j);
+        if (c) {
+          c.style.opacity = '1';
+          c.style.transform = 'translateY(0)';
+        }
+      }
+    }, 120);
+  };
+})();
+</script>
+
+
+<section class="faq-section">
     <div class="container">
                 <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can I add multiple team members to my shared inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes, this is a very basic function of shared inboxes to add multiple team members.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can multiple team members reply to the same chat?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Members are allowed to reply to the same chats with the shared inbox.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Will it work on desktop and mobile?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, the shared inbox often works on both desktop and mobile.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>How do I set up a WhatsApp shared inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">You can set a WhatsApp shared inbox by integrating your WhatsApp Business API number with the team inbox platform.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Can I send message templates from the inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Definitely, you can share message templates from your inbox to quickly reply and manage robust, on-brand conversations.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>Can we update customer details directly inside the chat?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">Of course, you can modify the details, including client name and phone numbers, add contacts to particular lists, and organize them using tags or custom details without leaving the chat.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I add multiple team members to my shared inbox?","acceptedAnswer":{"@type":"Answer","text":"Yes, this is a very basic function of shared inboxes to add multiple team members."}},{"@type":"Question","name":"Can multiple team members reply to the same chat?","acceptedAnswer":{"@type":"Answer","text":"Members are allowed to reply to the same chats with the shared inbox."}},{"@type":"Question","name":"Will it work on desktop and mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, the shared inbox often works on both desktop and mobile."}},{"@type":"Question","name":"How do I set up a WhatsApp shared inbox?","acceptedAnswer":{"@type":"Answer","text":"You can set a WhatsApp shared inbox by integrating your WhatsApp Business API number with the team inbox platform."}},{"@type":"Question","name":"Can I send message templates from the inbox?","acceptedAnswer":{"@type":"Answer","text":"Definitely, you can share message templates from your inbox to quickly reply and manage robust, on-brand conversations."}},{"@type":"Question","name":"Can we update customer details directly inside the chat?","acceptedAnswer":{"@type":"Answer","text":"Of course, you can modify the details, including client name and phone numbers, add contacts to particular lists, and organize them using tags or custom details without leaving the chat."}}]}</script>
     <script>
@@ -1211,6 +1451,121 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+
+
+<!-- PRODUCT BOTTOM CTA SECTION -->
+<style>
+.hb-bottom-cta-banner {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+  color: #ffffff;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hb-bottom-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hb-bottom-cta-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: #ffffff !important;
+}
+.hb-bottom-cta-desc {
+  font-size: 1.12rem;
+  color: #e0e7ff !important;
+  max-width: 650px;
+  margin: 0 auto 2.25rem;
+  line-height: 1.6;
+}
+.hb-bottom-cta-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hb-cta-btn-primary {
+  background: #ffffff !important;
+  color: #1e1b4b !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  padding: 13px 28px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.hb-cta-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+.hb-cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+.hb-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+}
+.hb-cta-btn-verified {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #6ee7b7 !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  transition: all 0.2s ease !important;
+}
+.hb-cta-btn-verified:hover {
+  background: rgba(16, 185, 129, 0.35) !important;
+  color: #ffffff !important;
+}
+</style>
+
+<section class="hb-bottom-cta-banner">
+  <div class="hb-bottom-cta-inner">
+    <div style="font-size:0.82rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#a5b4fc;margin-bottom:0.75rem;">
+      SUPERCHARGE YOUR WORKFLOW
+    </div>
+    <h2 class="hb-bottom-cta-title">Ready to transform your business with WhatsApp Shared Team Inbox?</h2>
+    <p class="hb-bottom-cta-desc">
+      Join fast-growing companies that rely on HelloBotz for official WhatsApp Business API automation, intelligent lead handling, and verified credibility.
+    </p>
+    <div class="hb-bottom-cta-btns">
+      <a href="<?php echo $bp; ?>auth/register" class="hb-cta-btn-primary">
+        Start Free Trial →
+      </a>
+      <button type="button" class="hb-cta-btn-secondary btn-demo-open">
+        Book a Live Demo
+      </button>
+      <a href="#contact-section" class="hb-cta-btn-verified">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Get Verified
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

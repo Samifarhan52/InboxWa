@@ -248,11 +248,18 @@ include __DIR__ . '/../../includes/header.php';
         <!-- End Breadcrumbs -->
         <h1 class="hero-title">Enable Instant In-Chat Payments on WhatsApp</h1>
         <p class="hero-text">Let your customers pay without leaving the chat, quick, secure, and smooth right inside WhatsApp.</p>
-        <a id="whatsapp-enquiry"
-          href="<?php echo $bp; ?>#contact-section"
-          target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
-          Enquiry Now
-        </a>
+        <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
+          <a href="<?php echo $bp; ?>auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+            Start Free Trial →
+          </a>
+          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
+            Book Live Demo
+          </button>
+          <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
+          </a>
+        </div>
       </div>
       <!-- Image Content with background -->
       <div class="col-lg-6">
@@ -894,7 +901,243 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </div>
     </div>
-</section><section class="faq-section">
+</section>
+<!-- INTERACTIVE JOURNEY FLOW SECTION -->
+<style>
+.pay-journey-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+.pay-journey-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+.pay-j-kicker {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4f46e5;
+  margin-bottom: 0.6rem;
+}
+.pay-j-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+.pay-j-intro {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+.pay-j-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+.pay-j-tab {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.pay-j-tab:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+.pay-j-tab.active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+}
+.pay-j-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 992px) {
+  .pay-j-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .pay-j-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+.pay-j-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.pay-j-card:hover {
+  transform: translateY(-4px);
+  border-color: #818cf8;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.12);
+}
+.pay-j-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+}
+.pay-j-card h4 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.pay-j-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+.pay-j-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  width: fit-content;
+}
+</style>
+
+<section class="pay-journey-section" id="journey-flow">
+  <div class="pay-journey-container">
+    <div class="pay-j-kicker">IN-CHAT PAYMENT LIFECYCLE</div>
+    <h2 class="pay-j-title">Accept payments inside WhatsApp with 1-tap checkout.</h2>
+    <p class="pay-j-intro">Collect payments seamlessly via UPI, credit/debit cards, and net banking without redirecting to external portals.</p>
+
+    <!-- Scenario Switcher -->
+    <div class="pay-j-nav">
+      <button type="button" class="pay-j-tab active" onclick="paySwitchJourney('upi', this)">⚡ UPI & QR Instant Pay</button>
+        <button type="button" class="pay-j-tab" onclick="paySwitchJourney('card', this)">💳 Cards & NetBanking</button>
+        <button type="button" class="pay-j-tab" onclick="paySwitchJourney('cod', this)">📦 Cash-on-Delivery Advance</button>
+    </div>
+
+    <!-- 4-Stage Cards -->
+    <div class="pay-j-timeline">
+        <div class="pay-j-card" id="pay-step-1">
+          <div class="pay-j-step-num">01</div>
+          <h4 id="pay-title-1">Itemized Invoice Sent</h4>
+          <p id="pay-desc-1">Customer receives clear order total with breakdown of items and tax.</p>
+          <span class="pay-j-badge" id="pay-badge-1">Clear In-Chat Bill</span>
+        </div>
+        <div class="pay-j-card" id="pay-step-2">
+          <div class="pay-j-step-num">02</div>
+          <h4 id="pay-title-2">Native UPI Prompt</h4>
+          <p id="pay-desc-2">Customer taps 'Pay Now'; WhatsApp opens UPI app chooser.</p>
+          <span class="pay-j-badge" id="pay-badge-2">Native UPI</span>
+        </div>
+        <div class="pay-j-card" id="pay-step-3">
+          <div class="pay-j-step-num">03</div>
+          <h4 id="pay-title-3">1-Tap PIN Authorization</h4>
+          <p id="pay-desc-3">Approved securely in Google Pay, PhonePe, Paytm, or BHIM.</p>
+          <span class="pay-j-badge" id="pay-badge-3">Bank-Grade Security</span>
+        </div>
+        <div class="pay-j-card" id="pay-step-4">
+          <div class="pay-j-step-num">04</div>
+          <h4 id="pay-title-4">Instant Confirmation</h4>
+          <p id="pay-desc-4">Sub-second payment settlement; GST invoice and receipt sent.</p>
+          <span class="pay-j-badge" id="pay-badge-4">Instant Settlement</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var journeyData = {"upi": [{"title": "Itemized Invoice Sent", "desc": "Customer receives clear order total with breakdown of items and tax.", "badge": "Clear In-Chat Bill"}, {"title": "Native UPI Prompt", "desc": "Customer taps 'Pay Now'; WhatsApp opens UPI app chooser.", "badge": "Native UPI"}, {"title": "1-Tap PIN Authorization", "desc": "Approved securely in Google Pay, PhonePe, Paytm, or BHIM.", "badge": "Bank-Grade Security"}, {"title": "Instant Confirmation", "desc": "Sub-second payment settlement; GST invoice and receipt sent.", "badge": "Instant Settlement"}], "card": [{"title": "High-Value Checkout", "desc": "Cart total above UPI limit; customer served multi-method card option.", "badge": "Multi-Payment Ready"}, {"title": "Secure Gateway Sheet", "desc": "Razorpay/Cashfree sheet loads with 3D Secure bank OTP verification.", "badge": "PCI-DSS Compliant"}, {"title": "Zero Drop-Off Success", "desc": "Payment authorized; funds instantly credited to merchant account.", "badge": "99.9% Success Rate"}, {"title": "Automated Fulfillment", "desc": "Warehouse system notified and shipping label created automatically.", "badge": "Auto Dispatch Trigger"}], "cod": [{"title": "COD Confirmation", "desc": "Shopper selects COD; bot requests \u20b999 refundable booking advance.", "badge": "Anti-RTO Protection"}, {"title": "Quick Token Pay", "desc": "Shopper pays small token in 10s, confirming serious buying intent.", "badge": "Committed Shopper"}, {"title": "Order Locked", "desc": "Inventory allocated with guaranteed customer fulfillment commitment.", "badge": "Inventory Reserved"}, {"title": "RTO Reduced by 68%", "desc": "Fake and return-to-origin orders drop dramatically; balance paid at doorstep.", "badge": "68% Lower RTO"}]};
+
+  window.paySwitchJourney = function(scenarioId, btn) {
+    var nav = btn.closest('.pay-j-nav');
+    if (nav) {
+      var tabs = nav.querySelectorAll('.pay-j-tab');
+      for (var t = 0; t < tabs.length; t++) {
+        tabs[t].classList.remove('active');
+      }
+    }
+    btn.classList.add('active');
+
+    var steps = journeyData[scenarioId];
+    if (!steps) return;
+
+    for (var i = 0; i < steps.length; i++) {
+      var num = i + 1;
+      var titleEl = document.getElementById('pay-title-' + num);
+      var descEl = document.getElementById('pay-desc-' + num);
+      var badgeEl = document.getElementById('pay-badge-' + num);
+      var cardEl = document.getElementById('pay-step-' + num);
+
+      if (titleEl) titleEl.textContent = steps[i].title;
+      if (descEl) descEl.textContent = steps[i].desc;
+      if (badgeEl) badgeEl.textContent = steps[i].badge;
+
+      if (cardEl) {
+        cardEl.style.opacity = '0.4';
+        cardEl.style.transform = 'translateY(6px)';
+      }
+    }
+
+    setTimeout(function() {
+      for (var j = 1; j <= 4; j++) {
+        var c = document.getElementById('pay-step-' + j);
+        if (c) {
+          c.style.opacity = '1';
+          c.style.transform = 'translateY(0)';
+        }
+      }
+    }, 120);
+  };
+})();
+</script>
+
+
+<section class="faq-section">
   <div class="container">
               <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Is WhatsApp Payments secure?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes, each transaction that you do via WhatsApp payments is end-to-end encrypted and verified via secure payment networks such as UPI.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Which countries support WhatsApp Payments?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">As of now, WhatsApp payments are supported in certain countries only, including India, Brazil, and Singapore. However, the availability can vary depending on the local restrictions.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Can any business use WhatsApp Payments?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Of course, all types and sizes of businesses can use this feature. You just have to have a verified WhatsApp business account in addition to access to the official Business API, through which you can send an in-chat payment request.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>What payment methods are supported?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">WhatsApp supports the following payment methods: credit/debit cards, UPI, and others as accepted by the local payment gateway integrated with WhatsApp.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Do customers need a WhatsApp Business account to pay?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">No, it is not necessary. Customers can easily pay for their purchases using their normal WhatsApp account.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>How quickly is payment confirmed?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">The payment confirmation is an instant process. Once the transaction is successful, WhatsApp automatically confirms it and sends a confirmation message to the customer.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6"><span class="faq-title"><h3>Does WhatsApp charge a fee for payments?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">The payment charges mainly depend on partners and regulations. Generally, peer-to-peer transactions are free, whereas business transaction requires small processing fees.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-7"><span class="faq-title"><h3>Can WhatsApp Payments help increase sales?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-7" class="faq-answer" role="region" aria-hidden="true">Yes, with in-chat payments, companies can minimize the drop-offs and boost the conversion rate while offering a smoother customer experience.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is WhatsApp Payments secure?","acceptedAnswer":{"@type":"Answer","text":"Yes, each transaction that you do via WhatsApp payments is end-to-end encrypted and verified via secure payment networks such as UPI."}},{"@type":"Question","name":"Which countries support WhatsApp Payments?","acceptedAnswer":{"@type":"Answer","text":"As of now, WhatsApp payments are supported in certain countries only, including India, Brazil, and Singapore. However, the availability can vary depending on the local restrictions."}},{"@type":"Question","name":"Can any business use WhatsApp Payments?","acceptedAnswer":{"@type":"Answer","text":"Of course, all types and sizes of businesses can use this feature. You just have to have a verified WhatsApp business account in addition to access to the official Business API, through which you can send an in-chat payment request."}},{"@type":"Question","name":"What payment methods are supported?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp supports the following payment methods: credit/debit cards, UPI, and others as accepted by the local payment gateway integrated with WhatsApp."}},{"@type":"Question","name":"Do customers need a WhatsApp Business account to pay?","acceptedAnswer":{"@type":"Answer","text":"No, it is not necessary. Customers can easily pay for their purchases using their normal WhatsApp account."}},{"@type":"Question","name":"How quickly is payment confirmed?","acceptedAnswer":{"@type":"Answer","text":"The payment confirmation is an instant process. Once the transaction is successful, WhatsApp automatically confirms it and sends a confirmation message to the customer."}},{"@type":"Question","name":"Does WhatsApp charge a fee for payments?","acceptedAnswer":{"@type":"Answer","text":"The payment charges mainly depend on partners and regulations. Generally, peer-to-peer transactions are free, whereas business transaction requires small processing fees."}},{"@type":"Question","name":"Can WhatsApp Payments help increase sales?","acceptedAnswer":{"@type":"Answer","text":"Yes, with in-chat payments, companies can minimize the drop-offs and boost the conversion rate while offering a smoother customer experience."}}]}</script>
     <script>
@@ -1162,6 +1405,121 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+
+
+<!-- PRODUCT BOTTOM CTA SECTION -->
+<style>
+.hb-bottom-cta-banner {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+  color: #ffffff;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hb-bottom-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hb-bottom-cta-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: #ffffff !important;
+}
+.hb-bottom-cta-desc {
+  font-size: 1.12rem;
+  color: #e0e7ff !important;
+  max-width: 650px;
+  margin: 0 auto 2.25rem;
+  line-height: 1.6;
+}
+.hb-bottom-cta-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hb-cta-btn-primary {
+  background: #ffffff !important;
+  color: #1e1b4b !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  padding: 13px 28px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.hb-cta-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+.hb-cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+.hb-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+}
+.hb-cta-btn-verified {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #6ee7b7 !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  transition: all 0.2s ease !important;
+}
+.hb-cta-btn-verified:hover {
+  background: rgba(16, 185, 129, 0.35) !important;
+  color: #ffffff !important;
+}
+</style>
+
+<section class="hb-bottom-cta-banner">
+  <div class="hb-bottom-cta-inner">
+    <div style="font-size:0.82rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#a5b4fc;margin-bottom:0.75rem;">
+      SUPERCHARGE YOUR WORKFLOW
+    </div>
+    <h2 class="hb-bottom-cta-title">Ready to transform your business with WhatsApp In-Chat Payments?</h2>
+    <p class="hb-bottom-cta-desc">
+      Join fast-growing companies that rely on HelloBotz for official WhatsApp Business API automation, intelligent lead handling, and verified credibility.
+    </p>
+    <div class="hb-bottom-cta-btns">
+      <a href="<?php echo $bp; ?>auth/register" class="hb-cta-btn-primary">
+        Start Free Trial →
+      </a>
+      <button type="button" class="hb-cta-btn-secondary btn-demo-open">
+        Book a Live Demo
+      </button>
+      <a href="#contact-section" class="hb-cta-btn-verified">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Get Verified
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
