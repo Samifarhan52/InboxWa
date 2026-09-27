@@ -126,6 +126,18 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   .ch-tg {
     background: #229ED9 !important;
   }
+  .ch-sms {
+    background: #F59E0B !important;
+  }
+  .ch-rcs {
+    background: #1A73E8 !important;
+  }
+  .ch-voice {
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4) !important;
+  }
+  .ch-email {
+    background: #EA4335 !important;
+  }
   .footer-brand-desc {
     font-size: 0.88rem !important;
     color: #FFFFFF !important;
@@ -1286,13 +1298,15 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
                   <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                   <select class="form-input" id="fc-regarding" name="regarding" required>
                     <option value="">Select topic</option>
-                    <option value="WhatsApp Business API">WhatsApp Business API &amp; Green Tick</option>
-                    <option value="Omnichannel Platform">AI WhatsApp &amp; Omnichannel Chatbots</option>
-                    <option value="Pricing / Plans">Enterprise Pricing &amp; High-Volume Broadcasts</option>
-                    <option value="Affiliate / Partner">Affiliate &amp; White-Label Partner Programs</option>
-                    <option value="Technical Support">Technical Support &amp; Integrations</option>
-                    <option value="Demo Request">Live Interactive Product Demo</option>
-                    <option value="Other">Other Query</option>
+                    <option value="WhatsApp Business API & Green Tick">WhatsApp Business API &amp; Green Tick</option>
+                    <option value="WhatsApp Marketing & Bulk Broadcast">WhatsApp Marketing &amp; Bulk Broadcast</option>
+                    <option value="Shopify & E-commerce Automation">Shopify &amp; E-commerce Automation</option>
+                    <option value="Enterprise API & High-Volume Messaging">Enterprise API &amp; High-Volume Messaging</option>
+                    <option value="Live Product Demo">Live Product Demo</option>
+                    <option value="Custom Pricing">Custom Pricing</option>
+                    <option value="Affiliate & White-Label Partner Program">Affiliate &amp; White-Label Partner Program</option>
+                    <option value="Technical Support & API Integration">Technical Support &amp; API Integration</option>
+                    <option value="Other Query">Other Query</option>
                   </select>
                 </div>
               </div>
@@ -1407,6 +1421,38 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.536-.196 1.006.128.832.918z"/></svg>
                 </span>
                 <span>Telegram</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo $bp; ?>channel/sms/" class="footer-channel-link">
+                <span class="channel-icon-pill ch-sms">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M7 8h10M7 12h7m-7 4h4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
+                </span>
+                <span>SMS</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo $bp; ?>channel/rcs/" class="footer-channel-link">
+                <span class="channel-icon-pill ch-rcs">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 4C7.58 4 4 7.13 4 11c0 1.54.58 2.96 1.56 4.1L4.5 18.5l3.67-1.12C9.35 17.73 10.63 18 12 18c4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="#FFFFFF"/><circle cx="8.5" cy="11" r="1.1" fill="#1A73E8"/><circle cx="12" cy="11" r="1.1" fill="#1A73E8"/><circle cx="15.5" cy="11" r="1.1" fill="#1A73E8"/></svg>
+                </span>
+                <span>RCS</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo $bp; ?>channel/ai-voice-call/" class="footer-channel-link">
+                <span class="channel-icon-pill ch-voice">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M15.2 13.2l-1.3-1.3a.8.8 0 00-1.1 0l-.6.6a6.5 6.5 0 01-3-3l.6-.6a.8.8 0 000-1.1L8.5 6.5a.8.8 0 00-1.1 0L6.4 7.4c-.5.5-.7 1.2-.6 1.9a11.5 11.5 0 008 8c.7.2 1.4-.1 1.9-.6l.9-.9a.8.8 0 000-1.1l-1.4-1.5z" fill="#FFFFFF"/></svg>
+                </span>
+                <span>AI Voice Call</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo $bp; ?>channel/email/" class="footer-channel-link">
+                <span class="channel-icon-pill ch-email">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M5.5 7.5l6.5 4.5 6.5-4.5M5.5 7.5h13a1 1 0 011 1v8a1 1 0 01-1 1h-13a1 1 0 01-1-1v-8a1 1 0 011-1z" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>EMAIL</span>
               </a>
             </li>
           </ul>
