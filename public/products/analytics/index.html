@@ -5736,6 +5736,29 @@ body.dark-theme .an-faq-wrap details,
   .an-cta-actions .an-btn {
     width: 100%;
   }
+  /* Journey Nav Horizontal Touch-Scroll */
+  .an-journey-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    justify-content: flex-start !important;
+    padding: 4px 1rem 12px !important;
+    margin: 1.25rem -1rem 1.75rem !important;
+    scrollbar-width: none !important;
+    gap: 0.5rem !important;
+    width: calc(100% + 2rem) !important;
+    box-sizing: border-box !important;
+  }
+  .an-journey-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  .an-j-tab {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.55rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
 }
 
 @media (max-width: 520px) {

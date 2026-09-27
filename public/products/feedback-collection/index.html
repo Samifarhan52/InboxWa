@@ -5687,6 +5687,29 @@ body.dark-theme .fb-faq-wrap details,
   .fb-cta-actions .fb-btn {
     width: 100%;
   }
+  /* Journey Nav Horizontal Touch-Scroll */
+  .fb-journey-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    justify-content: flex-start !important;
+    padding: 4px 1rem 12px !important;
+    margin: 1.25rem -1rem 1.75rem !important;
+    scrollbar-width: none !important;
+    gap: 0.5rem !important;
+    width: calc(100% + 2rem) !important;
+    box-sizing: border-box !important;
+  }
+  .fb-journey-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  .fb-j-tab {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.55rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
   .fb-app-body {
     padding: 1.25rem 1rem;
   }
