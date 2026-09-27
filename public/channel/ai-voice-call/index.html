@@ -6955,153 +6955,26 @@ body.dark-theme .v-chip.on,
     });
   });
 
-  /* ========== AUDIO CONTEXT & SOUND EFFECTS ========== */
-  var audioCtx = null;
-  function getAudioCtx() {
-    if (!audioCtx) {
-      var AC = window.AudioContext || window.webkitAudioContext;
-      if (AC) audioCtx = new AC();
-    }
-    if (audioCtx && audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    return audioCtx;
+  /* ========== HIGH-DEFINITION AUDIO ENGINE (STUDIO VOICE CLIPS) ========== */
+  var currentAudio = null;
+
+  function resolveAudioUrl(filename) {
+    if (!filename) return '';
+    var isSubdir = window.location.pathname.indexOf('/channel/') !== -1;
+    return (isSubdir ? '../../assets/audio/' : '/assets/audio/') + filename;
   }
 
-  // Telephony connect chime: pleasant dual sine tone (C5 + E5)
-  function playConnectChime(onComplete) {
-    try {
-      var ctx = getAudioCtx();
-      if (!ctx) { if (onComplete) onComplete(); return; }
-      var t = ctx.currentTime;
-      var o1 = ctx.createOscillator();
-      var g1 = ctx.createGain();
-      o1.type = 'sine';
-      o1.frequency.setValueAtTime(523.25, t);
-      g1.gain.setValueAtTime(0.001, t);
-      g1.gain.linearRampToValueAtTime(0.08, t + 0.04);
-      g1.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
-      o1.connect(g1); g1.connect(ctx.destination);
-      o1.start(t); o1.stop(t + 0.3);
-
-      var o2 = ctx.createOscillator();
-      var g2 = ctx.createGain();
-      o2.type = 'sine';
-      o2.frequency.setValueAtTime(659.25, t + 0.1);
-      g2.gain.setValueAtTime(0.001, t + 0.1);
-      g2.gain.linearRampToValueAtTime(0.09, t + 0.14);
-      g2.gain.exponentialRampToValueAtTime(0.001, t + 0.42);
-      o2.connect(g2); g2.connect(ctx.destination);
-      o2.start(t + 0.1); o2.stop(t + 0.42);
-
-      setTimeout(function() {
-        if (onComplete) onComplete();
-      }, 450);
-    } catch (e) {
-      if (onComplete) onComplete();
-    }
+  /* Safe fallback voice cleaner (strips emojis & non-verbal symbols) */
+  function cleanSpeechText(text) {
+    return (text || '')
+      .replace(/[✅📦🩺💳😊●·]/g, '')
+      .replace(/₹2,499/g, 'do hazaar char sau ninaanavve rupaye')
+      .replace(/4:00 PM/g, 'chaar baje')
+      .replace(/11:30 AM/g, 'saadhe gyarah baje')
+      .trim();
   }
 
-  // WhatsApp delivery notification chime (double melodic bell ding)
-  function playWhatsAppChime() {
-    try {
-      var ctx = getAudioCtx();
-      if (!ctx) return;
-      var t = ctx.currentTime;
-      var o1 = ctx.createOscillator();
-      var g1 = ctx.createGain();
-      o1.type = 'sine';
-      o1.frequency.setValueAtTime(1318.5, t); // E6
-      g1.gain.setValueAtTime(0.001, t);
-      g1.gain.linearRampToValueAtTime(0.12, t + 0.02);
-      g1.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
-      o1.connect(g1); g1.connect(ctx.destination);
-      o1.start(t); o1.stop(t + 0.28);
-
-      var o2 = ctx.createOscillator();
-      var g2 = ctx.createGain();
-      o2.type = 'sine';
-      o2.frequency.setValueAtTime(1760, t + 0.12); // A6
-      g2.gain.setValueAtTime(0.001, t + 0.12);
-      g2.gain.linearRampToValueAtTime(0.14, t + 0.14);
-      g2.gain.exponentialRampToValueAtTime(0.001, t + 0.55);
-      o2.connect(g2); g2.connect(ctx.destination);
-      o2.start(t + 0.12); o2.stop(t + 0.55);
-    } catch (e) {}
-  }
-
-  // Call completion chime (gentle double tone)
-  function playEndCallChime() {
-    try {
-      var ctx = getAudioCtx();
-      if (!ctx) return;
-      var t = ctx.currentTime;
-      var o = ctx.createOscillator();
-      var g = ctx.createGain();
-      o.type = 'sine';
-      o.frequency.setValueAtTime(587.33, t); // D5
-      o.frequency.setValueAtTime(440, t + 0.12); // A4
-      g.gain.setValueAtTime(0.05, t);
-      g.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
-      o.connect(g); g.connect(ctx.destination);
-      o.start(t); o.stop(t + 0.35);
-    } catch(e) {}
-  }
-
-  // Fallback vocal-formant audio synthesis (if speechSynthesis unavailable/empty)
-  function playFormantSpeech(text, isFemale, onEnd) {
-    try {
-      var ctx = getAudioCtx();
-      if (!ctx) { setTimeout(onEnd, 1400); return; }
-      var words = text.split(/\s+/).length;
-      var wordDuration = 0.22;
-      var totalTime = Math.max(1.2, words * wordDuration);
-      var now = ctx.currentTime;
-      
-      var baseFreq = isFemale ? 210 : 130;
-      var f1 = isFemale ? 540 : 380;
-
-      var osc = ctx.createOscillator();
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(baseFreq, now);
-
-      for (var i = 0; i < words; i++) {
-        var t = now + i * wordDuration;
-        var pMod = (i % 2 === 0 ? 1.06 : 0.94);
-        osc.frequency.linearRampToValueAtTime(baseFreq * pMod, t + 0.08);
-      }
-
-      var filter = ctx.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.frequency.setValueAtTime(f1, now);
-      filter.Q.setValueAtTime(3.5, now);
-
-      var gain = ctx.createGain();
-      gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.06, now + 0.04);
-      for (var j = 0; j < words; j++) {
-        var wt = now + j * wordDuration;
-        gain.gain.setValueAtTime(0.06, wt);
-        gain.gain.linearRampToValueAtTime(0.02, wt + wordDuration * 0.7);
-      }
-      gain.gain.linearRampToValueAtTime(0.0001, now + totalTime);
-
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start(now);
-      osc.stop(now + totalTime);
-
-      setTimeout(function() {
-        if (onEnd) onEnd();
-      }, totalTime * 1000);
-    } catch(e) {
-      setTimeout(onEnd, 1400);
-    }
-  }
-
-  /* ========== SPEECH SYNTHESIS VOICE RESOLVER ========== */
+  /* SpeechSynthesis voice resolver (fallback only) */
   var cachedVoices = [];
   function loadVoices() {
     if ('speechSynthesis' in window) {
@@ -7117,7 +6990,6 @@ body.dark-theme .v-chip.on,
     if (!cachedVoices || cachedVoices.length === 0) loadVoices();
     if (!cachedVoices || cachedVoices.length === 0) return null;
 
-    // 1. Indian English / Hindi voices
     var indianVoices = cachedVoices.filter(function(v) {
       var lang = (v.lang || '').toLowerCase();
       var name = (v.name || '').toLowerCase();
@@ -7141,7 +7013,6 @@ body.dark-theme .v-chip.on,
       return indianVoices[0];
     }
 
-    // 2. High-quality natural English voices
     if (gender === 'female') {
       var fEng = cachedVoices.find(function(v) {
         var n = v.name.toLowerCase();
@@ -7171,9 +7042,9 @@ body.dark-theme .v-chip.on,
       persona: 'real-estate',
       isFemale: true,
       messages: [
-        { who: 'AI', text: 'Namaste! Main Aria bol rahi hoon HelloBotz Real Estate se. Kya aap 3 BHK luxury flats dekh rahe the?' },
-        { who: 'YOU', text: 'Haan, kal sham 4 baje sample flat visit ka slot mil jayega?' },
-        { who: 'AI', text: 'Bilkul! Kal sham 4:00 PM confirm kar diya. Location & gate pass WhatsApp par bhej diya hai ✅', triggerWA: true }
+        { who: 'AI', text: 'Namaste! Main Aria bol rahi hoon HelloBotz Real Estate se. Kya aap 3 BHK luxury flats dekh rahe the?', audio: 'voice-real-estate-1.m4a' },
+        { who: 'YOU', text: 'Haan, kal sham 4 baje sample flat visit ka slot mil jayega?', audio: 'voice-real-estate-2.m4a' },
+        { who: 'AI', text: 'Bilkul! Kal sham 4:00 PM confirm kar diya. Location & gate pass WhatsApp par bhej diya hai ✅', audio: 'voice-real-estate-3.m4a', triggerWA: true }
       ]
     },
     'ecommerce': {
@@ -7184,9 +7055,9 @@ body.dark-theme .v-chip.on,
       persona: 'ecommerce',
       isFemale: false,
       messages: [
-        { who: 'AI', text: 'Namaste Mr. Verma! Aapka ₹2,499 ka Sneaker order received hua hai. Kya aap is order ko confirm karte hain?' },
-        { who: 'YOU', text: 'Haan ji, confirm hai. Kab tak deliver hoga?' },
-        { who: 'AI', text: 'Order confirmed! Friday tak delivery ho jayegi. Live tracking link WhatsApp par bhej diya hai ✅', triggerWA: true }
+        { who: 'AI', text: 'Namaste Mr. Verma! Aapka ₹2,499 ka Sneaker order received hua hai. Kya aap is order ko confirm karte hain?', audio: 'voice-ecommerce-1.m4a' },
+        { who: 'YOU', text: 'Haan ji, confirm hai. Kab tak deliver hoga?', audio: 'voice-ecommerce-2.m4a' },
+        { who: 'AI', text: 'Order confirmed! Friday tak delivery ho jayegi. Live tracking link WhatsApp par bhej diya hai ✅', audio: 'voice-ecommerce-3.m4a', triggerWA: true }
       ]
     },
     'healthcare': {
@@ -7197,9 +7068,9 @@ body.dark-theme .v-chip.on,
       persona: 'healthcare',
       isFemale: true,
       messages: [
-        { who: 'AI', text: 'Hello! MediCare Clinic me swagat hai. Kya aap doctor consultation book karna chahte hain?' },
-        { who: 'YOU', text: 'Haan, Dr. Gupta se kal morning consultation mil sakta hai?' },
-        { who: 'AI', text: 'Dr. Gupta ke paas kal 11:30 AM ka slot available hai. Booking confirm kar di hai, WhatsApp reminder set ✅', triggerWA: true }
+        { who: 'AI', text: 'Hello! MediCare Clinic me swagat hai. Kya aap doctor consultation book karna chahte hain?', audio: 'voice-healthcare-1.m4a' },
+        { who: 'YOU', text: 'Haan, Dr. Gupta se kal morning consultation mil sakta hai?', audio: 'voice-healthcare-2.m4a' },
+        { who: 'AI', text: 'Dr. Gupta ke paas kal 11:30 AM ka slot available hai. Booking confirm kar di hai, WhatsApp reminder set ✅', audio: 'voice-healthcare-3.m4a', triggerWA: true }
       ]
     },
     'bfsi': {
@@ -7210,9 +7081,9 @@ body.dark-theme .v-chip.on,
       persona: 'bfsi',
       isFemale: true,
       messages: [
-        { who: 'AI', text: 'Namaste Rahul ji! Aapki EMI due date kal hai. Kya main instant UPI payment link WhatsApp kar doon?' },
-        { who: 'YOU', text: 'Haan please, WhatsApp par bhej dijiye main abhi pay kar deta hoon.' },
-        { who: 'AI', text: 'Link bhej diya hai! Payment hote hi digital receipt automatically generate ho jayegi. Dhanyawad ✅', triggerWA: true }
+        { who: 'AI', text: 'Namaste Rahul ji! Aapki EMI due date kal hai. Kya main instant UPI payment link WhatsApp kar doon?', audio: 'voice-bfsi-1.m4a' },
+        { who: 'YOU', text: 'Haan please, WhatsApp par bhej dijiye main abhi pay kar deta hoon.', audio: 'voice-bfsi-2.m4a' },
+        { who: 'AI', text: 'Link bhej diya hai! Payment hote hi digital receipt automatically generate ho jayegi. Dhanyawad ✅', audio: 'voice-bfsi-3.m4a', triggerWA: true }
       ]
     }
   };
@@ -7310,71 +7181,115 @@ body.dark-theme .v-chip.on,
 
   function speakLine(messageObj, scenarioObj, onLineEnd) {
     var isAI = (messageObj.who === 'AI');
-    var isFemale = isAI ? scenarioObj.isFemale : false; // Customer caller has distinct lower/male tone
+    var isFemale = isAI ? scenarioObj.isFemale : false;
 
-    // Trigger WhatsApp notification sound when AI announces WhatsApp sent
+    // Trigger WhatsApp notification status tag smoothly without jarring beeps
     if (messageObj.triggerWA) {
       setTimeout(function() {
-        playWhatsAppChime();
         if (waSentTag) {
           waSentTag.classList.add('on');
           waSentTag.textContent = 'Auto WhatsApp Sent ✅';
         }
-      }, 1200);
+      }, 1400);
     }
 
     setWaveformActive(true);
 
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      var utt = new SpeechSynthesisUtterance(messageObj.text);
-      var v = getBestVoice(isFemale ? 'female' : 'male');
-      if (v) {
-        utt.voice = v;
-        utt.lang = v.lang || (v.lang.includes('hi') ? 'hi-IN' : 'en-IN');
-      }
+    // Primary: Play pre-recorded studio audio asset
+    if (messageObj.audio) {
+      try {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentAudio.onended = null;
+          currentAudio.onerror = null;
+        }
+        currentAudio = new Audio(resolveAudioUrl(messageObj.audio));
+        var hasEnded = false;
 
-      if (isAI) {
+        currentAudio.onplay = function() {
+          setWaveformActive(true);
+        };
+
+        currentAudio.onended = function() {
+          if (!hasEnded) {
+            hasEnded = true;
+            setWaveformActive(false);
+            if (onLineEnd) onLineEnd();
+          }
+        };
+
+        currentAudio.onerror = function() {
+          var fallbackSrc = '/assets/audio/' + messageObj.audio;
+          if (currentAudio && currentAudio.src.indexOf('/assets/audio/') === -1) {
+            currentAudio.onerror = function() { fallbackToTTS(); };
+            currentAudio.src = fallbackSrc;
+            currentAudio.play().catch(fallbackToTTS);
+            return;
+          }
+          fallbackToTTS();
+        };
+
+        var playPromise = currentAudio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function() {
+            fallbackToTTS();
+          });
+        }
+        return;
+      } catch (err) {
+        fallbackToTTS();
+        return;
+      }
+    }
+
+    function fallbackToTTS() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        var cleanText = cleanSpeechText(messageObj.text);
+        var utt = new SpeechSynthesisUtterance(cleanText);
+        var v = getBestVoice(isFemale ? 'female' : 'male');
+        if (v) {
+          utt.voice = v;
+          utt.lang = v.lang || (v.lang.includes('hi') ? 'hi-IN' : 'en-IN');
+        }
         utt.pitch = isFemale ? 1.05 : 0.95;
         utt.rate = 0.96;
+
+        var ended = false;
+        utt.onend = function() {
+          if (!ended) {
+            ended = true;
+            setWaveformActive(false);
+            if (onLineEnd) onLineEnd();
+          }
+        };
+        utt.onerror = function() {
+          if (!ended) {
+            ended = true;
+            setWaveformActive(false);
+            if (onLineEnd) onLineEnd();
+          }
+        };
+
+        var wordCount = cleanText.split(/\s+/).length;
+        var safetyMs = Math.max(2500, (wordCount * 500) + 1500);
+        setTimeout(function() {
+          if (!ended && isPlaying) {
+            ended = true;
+            setWaveformActive(false);
+            if (onLineEnd) onLineEnd();
+          }
+        }, safetyMs);
+
+        window.speechSynthesis.speak(utt);
       } else {
-        utt.pitch = 0.88;
-        utt.rate = 1.0;
+        var durationMs = Math.max(2200, messageObj.text.split(/\s+/).length * 350);
+        setTimeout(function() {
+          setWaveformActive(false);
+          if (onLineEnd) onLineEnd();
+        }, durationMs);
       }
-
-      var ended = false;
-      utt.onend = function() {
-        if (!ended) {
-          ended = true;
-          setWaveformActive(false);
-          if (onLineEnd) onLineEnd();
-        }
-      };
-      utt.onerror = function() {
-        if (!ended) {
-          ended = true;
-          setWaveformActive(false);
-          playFormantSpeech(messageObj.text, isFemale, onLineEnd);
-        }
-      };
-
-      // Safeguard for browsers where onend doesn't fire
-      var wordCount = messageObj.text.split(/\s+/).length;
-      var safetyMs = Math.max(3000, (wordCount * 550) + 2000);
-      setTimeout(function() {
-        if (!ended && isPlaying) {
-          ended = true;
-          setWaveformActive(false);
-          if (onLineEnd) onLineEnd();
-        }
-      }, safetyMs);
-
-      window.speechSynthesis.speak(utt);
-    } else {
-      playFormantSpeech(messageObj.text, isFemale, function() {
-        setWaveformActive(false);
-        if (onLineEnd) onLineEnd();
-      });
     }
   }
 
@@ -7382,6 +7297,13 @@ body.dark-theme .v-chip.on,
     isPlaying = false;
     currentStep = -1;
     clearTimeout(stepTimeout);
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio.onended = null;
+      currentAudio.onerror = null;
+      currentAudio = null;
+    }
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }
@@ -7395,11 +7317,10 @@ body.dark-theme .v-chip.on,
     if (!isPlaying) return;
     var scen = scenarios[currentScenarioKey];
     if (!scen || !scen.messages || stepIdx >= scen.messages.length) {
-      // Call finished
+      // Call finished smoothly
       stopLiveTimer();
       setWaveformActive(false);
       clearHighlight();
-      playEndCallChime();
       if (statusConnectedTag) {
         statusConnectedTag.innerHTML = '<span class="v-chip-dot">●</span> Call Completed';
       }
@@ -7420,7 +7341,7 @@ body.dark-theme .v-chip.on,
         if (isPlaying) {
           playStep(stepIdx + 1);
         }
-      }, 450);
+      }, 550);
     });
   }
 
@@ -7439,13 +7360,7 @@ body.dark-theme .v-chip.on,
     }
 
     startLiveTimer();
-
-    // Play telecom connect chime first, then dialogue
-    playConnectChime(function() {
-      if (isPlaying) {
-        playStep(0);
-      }
-    });
+    playStep(0);
   }
 
   function playSingleLine(idx) {
