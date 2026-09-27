@@ -346,10 +346,81 @@ body.dark-theme,
   .s-feat-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
+  .s-section { padding: 3rem 0; }
+  .s-channel-hero { padding: 2rem 0 1.5rem; }
   .s-feat-grid { grid-template-columns: 1fr; }
   .s-channel-head { flex-direction: column; text-align: center; }
-  .s-channel-actions { justify-content: center; }
-  .s-channel-stats { justify-content: center; }
+  .s-channel-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .s-channel-actions .s-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .s-channel-stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .s-channel-stats .s-cs {
+    align-items: center;
+  }
+  .s-phone-card,
+  .s-phone-mockup {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+    max-width: 100%;
+  }
+  .s-overview-grid .s-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .s-cta-box {
+    padding: 2.75rem 1.25rem;
+    border-radius: 18px;
+  }
+  .s-cta-box .s-channel-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-channel-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+  }
+  .s-channel-avatar svg {
+    width: 30px;
+    height: 30px;
+  }
+  .s-phone-card,
+  .s-phone-mockup {
+    padding: 1rem 0.75rem;
+    border-radius: 16px;
+  }
+  .s-sms-bubble {
+    padding: 1rem 0.75rem;
+  }
+  .s-sms-otp {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 0.35rem 0.65rem;
+  }
+  .s-feat {
+    padding: 1.35rem 1.15rem;
+  }
+  .s-cta-box {
+    padding: 2.25rem 1rem;
+  }
 }
 </style>
 

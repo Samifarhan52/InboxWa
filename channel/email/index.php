@@ -340,10 +340,79 @@ body.dark-theme,
   .em-feat-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
+  .em-section { padding: 3rem 0; }
+  .em-channel-hero { padding: 2rem 0 1.5rem; }
   .em-feat-grid { grid-template-columns: 1fr; }
   .em-channel-head { flex-direction: column; text-align: center; }
-  .em-channel-actions { justify-content: center; }
-  .em-channel-stats { justify-content: center; }
+  .em-channel-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .em-channel-actions .em-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .em-channel-stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .em-channel-stats .em-cs {
+    align-items: center;
+  }
+  .em-phone-card,
+  .em-phone-mockup {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+    max-width: 100%;
+  }
+  .em-overview-grid .em-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .em-cta-box {
+    padding: 2.75rem 1.25rem;
+    border-radius: 18px;
+  }
+  .em-cta-box .em-channel-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .em-channel-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+  }
+  .em-channel-avatar svg {
+    width: 30px;
+    height: 30px;
+  }
+  .em-phone-card,
+  .em-phone-mockup {
+    padding: 1rem 0.75rem;
+    border-radius: 16px;
+  }
+  .em-mail-preview-box {
+    padding: 1rem 0.75rem;
+  }
+  .em-mail-subject {
+    font-size: 0.96rem;
+  }
+  .em-feat {
+    padding: 1.35rem 1.15rem;
+  }
+  .em-cta-box {
+    padding: 2.25rem 1rem;
+  }
 }
 </style>
 

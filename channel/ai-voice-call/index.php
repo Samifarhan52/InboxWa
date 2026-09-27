@@ -1277,10 +1277,13 @@ body.dark-theme .v-chip.on,
     flex-direction: column;
     align-items: stretch;
   }
-  .v-channel-actions .v-btn {
+  .v-channel-actions .v-btn,
+  .v-overview-copy .v-btn,
+  .v-cta-box .v-btn {
     width: 100%;
     justify-content: center;
     text-align: center;
+    box-sizing: border-box;
   }
   .v-channel-stats {
     justify-content: center;
