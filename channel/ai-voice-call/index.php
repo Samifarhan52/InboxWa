@@ -1216,13 +1216,20 @@ body.dark-theme .v-chip.on,
 }
 
 /* =====================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (MOBILE & TABLET OPTIMIZED)
    ===================================================================== */
 @media (max-width: 1024px) {
   .v-overview-grid,
   .v-roi-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2.25rem !important;
+    width: 100% !important;
+  }
+  .v-overview-grid > div,
+  .v-roi-grid > div {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .v-feat-grid,
   .v-tst-grid {
@@ -1239,236 +1246,420 @@ body.dark-theme .v-chip.on,
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width: 768px) {
-  .v-section {
-    padding: 3rem 0;
+  .cvoice-page {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
-  .v-section-sm {
-    padding: 2.25rem 0;
+  .v-container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .v-stats-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 1rem;
-  }
-  .v-feat-grid,
-  .v-tst-grid {
-    grid-template-columns: 1fr;
-  }
-  .v-steps {
-    grid-template-columns: 1fr;
-  }
-  .v-ind-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .v-cta-box {
-    padding: 2.75rem 1.25rem;
-  }
-  .v-channel-hero {
-    padding: 2.25rem 0 1.75rem;
-  }
-  .v-channel-head {
-    flex-direction: column;
-    text-align: center;
-  }
-  .v-channel-actions {
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .v-channel-actions .v-btn,
-  .v-overview-copy .v-btn,
-  .v-cta-box .v-btn {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .v-channel-stats {
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  .v-channel-stats .v-cs {
-    align-items: center;
+  .cvoice-breadcrumb {
+    padding: 0.6rem 1rem 0.25rem !important;
+    font-size: 0.78rem !important;
+    flex-wrap: wrap !important;
   }
 
-  /* Simulator Mobile Optimization (768px) */
-  .v-call-card {
-    padding: 1.25rem 1rem;
-    border-radius: 20px;
+  /* Section Padding */
+  .v-section {
+    padding: 2.75rem 0 !important;
   }
-  .v-cc-top {
-    gap: 0.85rem;
-    margin-bottom: 1rem;
+  .v-section-sm {
+    padding: 2rem 0 !important;
   }
-  .v-cc-av {
-    width: 46px;
-    height: 46px;
-    font-size: 1.05rem;
-    border-radius: 12px;
+  .v-sec-head h2 {
+    font-size: 1.7rem !important;
+    line-height: 1.22 !important;
   }
-  .v-cc-info h4 {
-    font-size: 0.98rem;
+  .v-sec-head p {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
   }
-  .v-cc-timer {
-    font-size: 0.78rem;
-    padding: 0.28rem 0.75rem;
+
+  /* Channel Hero Header */
+  .v-channel-hero {
+    padding: 2rem 0 1.5rem !important;
   }
+  .v-channel-head {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    margin-bottom: 1.75rem !important;
+  }
+  .v-channel-avatar {
+    margin: 0 auto 0.25rem !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 18px !important;
+  }
+  .v-channel-avatar svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .v-channel-meta {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .v-channel-meta h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.75rem !important;
+    word-break: break-word !important;
+  }
+  .v-channel-meta p {
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    margin: 0 auto 1.25rem !important;
+    max-width: 100% !important;
+  }
+  .v-channel-actions {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+  .v-btn {
+    white-space: normal !important;
+    word-break: break-word !important;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.92rem !important;
+  }
+  .v-btn-lg {
+    padding: 0.85rem 1.15rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Hero Stats Grid (2x2 Balanced) */
+  .v-channel-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem 1rem !important;
+    padding-top: 1.25rem !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .v-channel-stats .v-cs {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .v-channel-stats .v-cs b {
+    font-size: 1.4rem !important;
+  }
+  .v-channel-stats .v-cs span {
+    font-size: 0.76rem !important;
+  }
+
+  /* Overview Copy & Action Buttons */
+  .v-overview-copy h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.22 !important;
+  }
+  .v-lead {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+  }
+  .v-overview-list li {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+  }
+  .v-overview-copy div[style*="display:flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+  }
+
+  /* Scenario Switcher Tabs Horizontal Touch-Scroll */
   .v-scenario-nav {
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 0.35rem;
-    gap: 0.5rem;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 4px 1rem 12px !important;
+    margin: 0 -1rem 1.25rem !important;
+    gap: 0.5rem !important;
+    width: calc(100% + 2rem) !important;
+    box-sizing: border-box !important;
   }
   .v-scenario-nav::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
   .v-scen-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.82rem;
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
   }
+
+  /* Interactive Simulator Call Card */
+  .v-call-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    padding: 1.15rem 0.85rem !important;
+    border-radius: 18px !important;
+  }
+  .v-cc-top {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .v-cc-av {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+  }
+  .v-cc-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .v-cc-info h4 {
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+    margin: 0 0 0.15rem !important;
+  }
+  .v-cc-info p {
+    font-size: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    margin: 0 !important;
+  }
+  #v-scenario-tag {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .v-cc-timer {
+    flex-shrink: 0 !important;
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.6rem !important;
+  }
+
+  /* Waveform Container */
   .v-wave-container {
-    padding: 0.75rem 0.9rem;
-    gap: 0.75rem;
-    border-radius: 14px;
-    margin-bottom: 1rem;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    padding: 0.65rem 0.75rem !important;
+    gap: 0.5rem !important;
+    margin-bottom: 0.9rem !important;
+    border-radius: 14px !important;
   }
   .v-wave {
-    gap: 3px;
-    height: 32px;
+    gap: 2.2px !important;
+    height: 28px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
   }
   .v-wave i {
-    width: 3.5px;
+    width: 2.5px !important;
   }
   .v-audio-toggle {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.76rem;
-    gap: 0.4rem;
+    flex-shrink: 0 !important;
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.72rem !important;
+    gap: 0.35rem !important;
   }
+
+  /* Transcript & Dialogue Bubbles */
   .v-transcript {
-    padding: 1rem 0.9rem;
-    min-height: 150px;
-    gap: 0.75rem;
-    border-radius: 16px;
+    padding: 0.85rem 0.75rem !important;
+    min-height: 140px !important;
+    gap: 0.65rem !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .v-msg {
-    padding: 0.45rem 0.65rem;
-    font-size: 0.86rem;
-    gap: 0.6rem;
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.82rem !important;
+    gap: 0.5rem !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+  .v-msg p {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    font-size: 0.82rem !important;
   }
   .v-msg .v-who {
-    font-size: 0.75rem;
-    min-width: 26px;
+    font-size: 0.7rem !important;
+    min-width: 24px !important;
+    padding: 2px 5px !important;
   }
+
+  /* Chips Footer */
   .v-cc-foot {
-    gap: 0.45rem;
-    margin-top: 1rem;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    margin-top: 0.85rem !important;
   }
   .v-chip {
-    font-size: 0.72rem;
-    padding: 0.35rem 0.75rem;
+    font-size: 0.68rem !important;
+    padding: 0.3rem 0.6rem !important;
   }
 
   /* ROI Calculator Mobile Optimization */
   .v-roi-card {
-    padding: 1.5rem 1rem;
-    border-radius: 18px;
-    margin: 1.5rem 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.25rem 0.85rem !important;
+    border-radius: 16px !important;
+    margin: 1.25rem 0 !important;
+  }
+  .v-calc-slider-box {
+    padding: 1rem 0.85rem !important;
+    border-radius: 14px !important;
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .v-calc-slider-label {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .v-calc-slider-val {
+    font-size: 1.15rem !important;
   }
   .v-roi-results {
-    padding: 1.25rem 1rem;
-    border-radius: 14px;
+    padding: 1rem 0.85rem !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .v-roi-row {
-    padding: 0.6rem 0;
-    font-size: 0.88rem;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    padding: 0.55rem 0 !important;
+    font-size: 0.84rem !important;
   }
   .v-roi-val-save {
-    font-size: 1.35rem;
+    font-size: 1.25rem !important;
+  }
+
+  /* Grids */
+  .v-stats-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem !important;
+    padding: 1.25rem 1rem !important;
+  }
+  .v-feat-grid,
+  .v-tst-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .v-steps {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .v-ind-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Bottom CTA Banner */
+  .v-cta-box {
+    padding: 2.25rem 1rem !important;
+    border-radius: 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .v-cta-box h2 {
+    font-size: 1.65rem !important;
+    line-height: 1.22 !important;
+    margin: 0.75rem 0 !important;
+  }
+  .v-cta-box p {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 1.5rem !important;
+  }
+  .v-cta-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+  }
+  .v-cta-btns .v-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  .v-cta-note {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    align-items: center !important;
+    margin-top: 1.25rem !important;
+    font-size: 0.78rem !important;
   }
 }
 
 @media (max-width: 480px) {
+  .v-channel-meta h1 {
+    font-size: 1.65rem !important;
+  }
+  .v-sec-head h2 {
+    font-size: 1.5rem !important;
+  }
   .v-stats-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
   .v-ind-grid {
-    grid-template-columns: 1fr;
-  }
-  .v-channel-hero {
-    padding: 1.75rem 0 1.25rem;
-  }
-  .v-call-card {
-    padding: 1rem 0.75rem;
-    border-radius: 16px;
-  }
-  .v-cc-top {
-    gap: 0.65rem;
-  }
-  .v-cc-av {
-    width: 40px;
-    height: 40px;
-    font-size: 0.95rem;
-    border-radius: 10px;
-  }
-  .v-cc-info h4 {
-    font-size: 0.92rem;
-  }
-  .v-cc-timer {
-    font-size: 0.72rem;
-    padding: 0.22rem 0.55rem;
-  }
-  .v-scen-btn {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.78rem;
-  }
-  .v-wave-container {
-    padding: 0.6rem 0.65rem;
-    gap: 0.5rem;
+    grid-template-columns: 1fr !important;
   }
   .v-wave {
-    gap: 2.2px;
-    height: 26px;
+    gap: 1.8px !important;
+    height: 24px !important;
   }
   .v-wave i {
-    width: 2.5px;
-  }
-  .v-audio-toggle {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.72rem;
-  }
-  .v-audio-toggle svg {
-    width: 13px;
-    height: 13px;
-  }
-  .v-transcript {
-    padding: 0.75rem 0.65rem;
-    border-radius: 14px;
-  }
-  .v-msg {
-    padding: 0.4rem 0.5rem;
-    font-size: 0.82rem;
-  }
-  .v-chip {
-    font-size: 0.68rem;
-    padding: 0.3rem 0.6rem;
-  }
-  .v-roi-card {
-    padding: 1.2rem 0.75rem;
-  }
-  .v-calc-slider-val {
-    font-size: 1.1rem;
+    width: 2.2px !important;
   }
   .v-roi-val-save {
-    font-size: 1.2rem;
+    font-size: 1.15rem !important;
   }
-}
-</style>
+}</style>
 
 <div class="cvoice-page">
   <!-- Breadcrumb -->
