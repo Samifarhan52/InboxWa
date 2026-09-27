@@ -1153,13 +1153,13 @@ body.dark-theme .v-chip.on,
           <p>Automate inbound &amp; outbound calls with human-like AI voice agents — directly inside your HelloBotz omnichannel inbox.</p>
         </div>
         <div class="v-channel-actions">
-          <a href="<?php echo $bp; ?>#contact-section" class="v-btn v-btn-primary">
+          <a href="#contact-section" class="v-btn v-btn-primary">
             Connect AI Voice
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="v-btn v-btn-leads">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            Get Verified Leads
+          <a href="#contact-section" class="v-btn v-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
           </a>
           <a href="#demo" class="v-btn v-btn-outline">
             Interactive Demo
@@ -1208,7 +1208,7 @@ body.dark-theme .v-chip.on,
           </li>
         </ul>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="<?php echo $bp; ?>#contact-section" class="v-btn v-btn-primary">Get Verified Setup →</a>
+          <a href="#contact-section" class="v-btn v-btn-primary">Get Verified Setup →</a>
           <a href="#calculator" class="v-btn v-btn-outline">Calculate Savings ⚡</a>
         </div>
       </div>
@@ -1635,13 +1635,14 @@ body.dark-theme .v-chip.on,
         <h2>AI Voice Call Channel Activate Karein</h2>
         <p>Apne business me 24/7 autonomous phone agents deploy karke har customer inquiry ko instant revenue me convert karein.</p>
         <div class="v-cta-btns">
-          <a href="<?php echo $bp; ?>#contact-section" class="v-btn v-btn-white v-btn-lg">
+          <a href="#contact-section" class="v-btn v-btn-white v-btn-lg">
             Connect AI Voice Channel 🚀
           </a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="v-btn v-btn-leads v-btn-lg">
-            Get Verified Leads 🎯
+          <a href="#contact-section" class="v-btn v-btn-leads v-btn-lg">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
           </a>
-          <a href="<?php echo $bp; ?>#contact-section" class="v-btn v-btn-outline-white v-btn-lg">
+          <a href="#contact-section" class="v-btn v-btn-outline-white v-btn-lg">
             📞 Book a Live Demo Call
           </a>
         </div>

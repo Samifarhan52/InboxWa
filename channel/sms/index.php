@@ -379,11 +379,12 @@ body.dark-theme,
           <p>High-deliverability transactional SMS, sub-2-second OTP delivery, and high-volume promotional broadcasts with 100% TRAI DLT compliance.</p>
         </div>
         <div class="s-channel-actions">
-          <a href="<?php echo $bp; ?>#contact-section" class="s-btn s-btn-primary">
+          <a href="#contact-section" class="s-btn s-btn-primary">
             Connect SMS Channel
           </a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="s-btn s-btn-leads">
-            Get Verified Leads 🎯
+          <a href="#contact-section" class="s-btn s-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
           </a>
           <a href="#overview" class="s-btn s-btn-outline">
             View Live Route Demo
@@ -426,8 +427,11 @@ body.dark-theme,
           </li>
         </ul>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="<?php echo $bp; ?>#contact-section" class="s-btn s-btn-primary">Connect SMS Now →</a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="s-btn s-btn-leads">Get Verified Leads</a>
+          <a href="#contact-section" class="s-btn s-btn-primary">Connect SMS Now →</a>
+          <a href="#contact-section" class="s-btn s-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
+          </a>
         </div>
       </div>
 
@@ -519,13 +523,14 @@ body.dark-theme,
         <h2>Connect Your SMS Channel Today</h2>
         <p>Scale your notifications, OTPs, and broadcasts with HelloBotz high-throughput enterprise SMS infrastructure.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="<?php echo $bp; ?>#contact-section" class="s-btn" style="background:#FFFFFF;color:#D97706;font-weight:800;">
+          <a href="#contact-section" class="s-btn" style="background:#FFFFFF;color:#D97706;font-weight:800;">
             Connect SMS Channel 🚀
           </a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="s-btn s-btn-leads">
-            Get Verified Leads 🎯
+          <a href="#contact-section" class="s-btn s-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
           </a>
-          <a href="<?php echo $bp; ?>#contact-section" class="s-btn" style="background:rgba(255,255,255,.15);color:#FFFFFF;border:1px solid #FFFFFF;">
+          <a href="#contact-section" class="s-btn" style="background:rgba(255,255,255,.15);color:#FFFFFF;border:1px solid #FFFFFF;">
             Get Custom Volume Pricing
           </a>
         </div>

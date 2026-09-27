@@ -373,11 +373,12 @@ body.dark-theme,
           <p>Deliver transactional receipts, automated drip onboarding, and AI-optimized newsletters with seamless shared inbox synchronization.</p>
         </div>
         <div class="em-channel-actions">
-          <a href="<?php echo $bp; ?>#contact-section" class="em-btn em-btn-primary">
+          <a href="#contact-section" class="em-btn em-btn-primary">
             Connect EMAIL Channel
           </a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="em-btn em-btn-leads">
-            Get Verified Leads 🎯
+          <a href="#contact-section" class="em-btn em-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
           </a>
           <a href="#overview" class="em-btn em-btn-outline">
             View Email Capabilities
@@ -420,8 +421,11 @@ body.dark-theme,
           </li>
         </ul>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="<?php echo $bp; ?>#contact-section" class="em-btn em-btn-primary">Connect EMAIL Now →</a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="em-btn em-btn-leads">Get Verified Leads</a>
+          <a href="#contact-section" class="em-btn em-btn-primary">Connect EMAIL Now →</a>
+          <a href="#contact-section" class="em-btn em-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
+          </a>
         </div>
       </div>
 
@@ -503,13 +507,14 @@ body.dark-theme,
         <h2>Supercharge Your Email Channel</h2>
         <p>Unify email with WhatsApp, Instagram, SMS, and RCS for the ultimate customer engagement experience.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="<?php echo $bp; ?>#contact-section" class="em-btn" style="background:#FFFFFF;color:#C5221F;font-weight:800;">
+          <a href="#contact-section" class="em-btn" style="background:#FFFFFF;color:#C5221F;font-weight:800;">
             Connect EMAIL Channel 🚀
           </a>
-          <a href="https://inbox-wa-k1i3-five.vercel.app/business-leads/" class="em-btn em-btn-leads">
-            Get Verified Leads 🎯
+          <a href="#contact-section" class="em-btn em-btn-leads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Get Verified
           </a>
-          <a href="<?php echo $bp; ?>#contact-section" class="em-btn" style="background:rgba(255,255,255,.15);color:#FFFFFF;border:1px solid #FFFFFF;">
+          <a href="#contact-section" class="em-btn" style="background:rgba(255,255,255,.15);color:#FFFFFF;border:1px solid #FFFFFF;">
             Talk to an Email Expert
           </a>
         </div>
