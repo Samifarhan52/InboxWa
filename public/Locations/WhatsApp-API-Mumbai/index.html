@@ -3656,8 +3656,9 @@
                   </a>
                   <a href="../../channel/ai-voice-call/" class="prodocu-channel-item" title="AI Voice Call Channel">
                     <span class="prodocu-chan-icon">
-                      <defs>
-                        <linearGradient id="voiceGradDesk" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                        <defs>
+                          <linearGradient id="voiceGradDesk" x1="0%" y1="0%" x2="100%" y2="100%">
                           <stop offset="0%" stop-color="#8B5CF6"/>
                           <stop offset="100%" stop-color="#06B6D4"/>
                         </linearGradient>
@@ -5185,11 +5186,15 @@
     /* Professional 5-Column Footer with Embedded Map */
   .footer-pro-layout {
     display: grid !important;
-    grid-template-columns: 1.35fr 0.9fr 0.95fr 0.75fr 1.15fr !important;
+    grid-template-columns: 1.25fr 0.85fr 1.55fr 0.65fr 1.15fr !important;
     gap: 2.2rem !important;
     align-items: start !important;
     padding-bottom: 2.5rem !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .footer-channels-grid {
+    display: flex !important;
+    gap: 1.5rem !important;
   }
   .footer-heading {
     font-size: 1rem !important;
@@ -5358,6 +5363,11 @@
     }
   }
   @media (max-width: 480px) {
+    .footer-channels-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0.75rem 1rem !important;
+    }
     .footer-pro-layout {
       grid-template-columns: 1fr !important;
       gap: 1.75rem !important;
@@ -6506,9 +6516,10 @@
         </div>
 
         <!-- Section 2: Our Channels (Styled exactly as in Screenshot 2) -->
-        <div class="footer-nav-col">
+        <div class="footer-nav-col footer-channels-nav-col">
           <div class="footer-heading">Our Channels</div>
-          <ul class="footer-channels-list">
+          <div class="footer-channels-grid">
+            <ul class="footer-channels-list">
             <li>
               <a href="/channel/whatsapp/" class="footer-channel-link">
                 <span class="channel-icon-pill ch-wa">
@@ -6541,7 +6552,9 @@
                 <span>Telegram</span>
               </a>
             </li>
-                      <li>
+            </ul>
+            <ul class="footer-channels-list">
+            <li>
               <a href="../../channel/sms/" class="footer-channel-link">
                 <span class="channel-icon-pill ch-sms">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M7 8h10M7 12h7m-7 4h4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
@@ -6573,7 +6586,8 @@
                 <span>EMAIL</span>
               </a>
             </li>
-</ul>
+            </ul>
+          </div>
         </div>
 
         <!-- Section 3: Resources (Blogs & Careers) -->

@@ -65,8 +65,8 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   /* Professional 5-Column Footer with Embedded Map */
   .footer-pro-layout {
     display: grid !important;
-    grid-template-columns: 1.35fr 0.9fr 0.95fr 0.75fr 1.15fr !important;
-    gap: 2.2rem !important;
+    grid-template-columns: 1.25fr 0.85fr 1.55fr 0.65fr 1.15fr !important;
+    gap: 2rem !important;
     align-items: start !important;
     padding-bottom: 2.5rem !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -79,13 +79,20 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     letter-spacing: -0.01em !important;
     text-transform: none !important;
   }
+  .footer-channels-grid {
+    display: flex !important;
+    gap: 1.5rem !important;
+  }
   .footer-channels-list {
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
   }
   .footer-channels-list li {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0 !important;
   }
   .footer-channel-link {
     display: inline-flex !important;
@@ -253,6 +260,11 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     .footer-pro-layout {
       grid-template-columns: 1fr !important;
       gap: 1.75rem !important;
+    }
+    .footer-channels-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0.75rem 1rem !important;
     }
   }
 
@@ -1387,75 +1399,79 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
           </ul>
         </div>
 
-        <!-- Section 2: Our Channels (Styled exactly as in Screenshot 2) -->
-        <div class="footer-nav-col">
+        <!-- Section 2: Our Channels (2 segments: 4 * 4) -->
+        <div class="footer-nav-col footer-channels-nav-col">
           <div class="footer-heading">Our Channels</div>
-          <ul class="footer-channels-list">
-            <li>
-              <a href="<?php echo $bp; ?>channel/whatsapp/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-wa">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM17.47 14.38C17.17 14.23 15.69 13.5 15.41 13.4C15.14 13.3 14.94 13.25 14.74 13.55C14.54 13.85 13.96 14.53 13.78 14.73C13.61 14.93 13.43 14.96 13.13 14.81C12.83 14.66 11.86 14.34 10.71 13.32C9.81 12.52 9.21 11.53 9.03 11.23C8.86 10.93 9.01 10.77 9.16 10.62C9.3 10.49 9.46 10.27 9.61 10.1C9.76 9.92 9.81 9.8 9.91 9.6C10.01 9.4 9.96 9.22 9.89 9.07C9.81 8.92 9.21 7.44 8.96 6.83C8.71 6.24 8.46 6.32 8.28 6.31C8.1 6.3 7.9 6.3 7.7 6.3C7.5 6.3 7.17 6.38 6.9 6.68C6.62 6.98 5.85 7.71 5.85 9.19C5.85 10.67 6.93 12.1 7.08 12.3C7.23 12.5 9.2 15.54 12.22 16.84C14.73 17.93 15.41 17.72 16.03 17.65C16.75 17.56 18.25 16.74 18.55 15.89C18.85 15.04 18.85 14.32 18.78 14.19C18.7 14.07 18.5 13.99 18.2 13.84L17.47 14.38Z"/></svg>
-                </span>
-                <span>WhatsApp</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/instagram/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-ig">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </span>
-                <span>Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/facebook/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-fb">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                </span>
-                <span>Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/telegram/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-tg">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.536-.196 1.006.128.832.918z"/></svg>
-                </span>
-                <span>Telegram</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/sms/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-sms">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M7 8h10M7 12h7m-7 4h4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
-                </span>
-                <span>SMS</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/rcs/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-rcs">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 4C7.58 4 4 7.13 4 11c0 1.54.58 2.96 1.56 4.1L4.5 18.5l3.67-1.12C9.35 17.73 10.63 18 12 18c4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="#FFFFFF"/><circle cx="8.5" cy="11" r="1.1" fill="#1A73E8"/><circle cx="12" cy="11" r="1.1" fill="#1A73E8"/><circle cx="15.5" cy="11" r="1.1" fill="#1A73E8"/></svg>
-                </span>
-                <span>RCS</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/ai-voice-call/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-voice">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M15.2 13.2l-1.3-1.3a.8.8 0 00-1.1 0l-.6.6a6.5 6.5 0 01-3-3l.6-.6a.8.8 0 000-1.1L8.5 6.5a.8.8 0 00-1.1 0L6.4 7.4c-.5.5-.7 1.2-.6 1.9a11.5 11.5 0 008 8c.7.2 1.4-.1 1.9-.6l.9-.9a.8.8 0 000-1.1l-1.4-1.5z" fill="#FFFFFF"/></svg>
-                </span>
-                <span>AI Voice Call</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo $bp; ?>channel/email/" class="footer-channel-link">
-                <span class="channel-icon-pill ch-email">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M5.5 7.5l6.5 4.5 6.5-4.5M5.5 7.5h13a1 1 0 011 1v8a1 1 0 01-1 1h-13a1 1 0 01-1-1v-8a1 1 0 011-1z" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span>EMAIL</span>
-              </a>
-            </li>
-          </ul>
+          <div class="footer-channels-grid">
+            <ul class="footer-channels-list">
+              <li>
+                <a href="<?php echo $bp; ?>channel/whatsapp/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-wa">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM17.47 14.38C17.17 14.23 15.69 13.5 15.41 13.4C15.14 13.3 14.94 13.25 14.74 13.55C14.54 13.85 13.96 14.53 13.78 14.73C13.61 14.93 13.43 14.96 13.13 14.81C12.83 14.66 11.86 14.34 10.71 13.32C9.81 12.52 9.21 11.53 9.03 11.23C8.86 10.93 9.01 10.77 9.16 10.62C9.3 10.49 9.46 10.27 9.61 10.1C9.76 9.92 9.81 9.8 9.91 9.6C10.01 9.4 9.96 9.22 9.89 9.07C9.81 8.92 9.21 7.44 8.96 6.83C8.71 6.24 8.46 6.32 8.28 6.31C8.1 6.3 7.9 6.3 7.7 6.3C7.5 6.3 7.17 6.38 6.9 6.68C6.62 6.98 5.85 7.71 5.85 9.19C5.85 10.67 6.93 12.1 7.08 12.3C7.23 12.5 9.2 15.54 12.22 16.84C14.73 17.93 15.41 17.72 16.03 17.65C16.75 17.56 18.25 16.74 18.55 15.89C18.85 15.04 18.85 14.32 18.78 14.19C18.7 14.07 18.5 13.99 18.2 13.84L17.47 14.38Z"/></svg>
+                  </span>
+                  <span>WhatsApp</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $bp; ?>channel/instagram/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-ig">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  </span>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $bp; ?>channel/facebook/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-fb">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </span>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $bp; ?>channel/telegram/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-tg">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.536-.196 1.006.128.832.918z"/></svg>
+                  </span>
+                  <span>Telegram</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="footer-channels-list">
+              <li>
+                <a href="<?php echo $bp; ?>channel/sms/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-sms">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M7 8h10M7 12h7m-7 4h4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
+                  </span>
+                  <span>SMS</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $bp; ?>channel/rcs/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-rcs">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 4C7.58 4 4 7.13 4 11c0 1.54.58 2.96 1.56 4.1L4.5 18.5l3.67-1.12C9.35 17.73 10.63 18 12 18c4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="#FFFFFF"/><circle cx="8.5" cy="11" r="1.1" fill="#1A73E8"/><circle cx="12" cy="11" r="1.1" fill="#1A73E8"/><circle cx="15.5" cy="11" r="1.1" fill="#1A73E8"/></svg>
+                  </span>
+                  <span>RCS</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $bp; ?>channel/ai-voice-call/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-voice">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M15.2 13.2l-1.3-1.3a.8.8 0 00-1.1 0l-.6.6a6.5 6.5 0 01-3-3l.6-.6a.8.8 0 000-1.1L8.5 6.5a.8.8 0 00-1.1 0L6.4 7.4c-.5.5-.7 1.2-.6 1.9a11.5 11.5 0 008 8c.7.2 1.4-.1 1.9-.6l.9-.9a.8.8 0 000-1.1l-1.4-1.5z" fill="#FFFFFF"/></svg>
+                  </span>
+                  <span>AI Voice Call</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $bp; ?>channel/email/" class="footer-channel-link">
+                  <span class="channel-icon-pill ch-email">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M5.5 7.5l6.5 4.5 6.5-4.5M5.5 7.5h13a1 1 0 011 1v8a1 1 0 01-1 1h-13a1 1 0 01-1-1v-8a1 1 0 011-1z" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>EMAIL</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Section 3: Resources (Blogs & Careers) -->
