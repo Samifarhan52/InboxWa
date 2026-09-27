@@ -3428,9 +3428,9 @@ html, body {
 }
 
 /* =========================================================
-   UNIVERSAL DOWNLOAD DATA CTA SYSTEM (PanIndiaData.com)
+   UNIVERSAL DOWNLOAD DATA & GET VERIFIED LEADS CTA SYSTEM
    ========================================================= */
-.btn-download-data, .cw-btn-data, .ind-btn-data {
+.btn-download-data, .btn-get-verified-leads, .cw-btn-data, .ind-btn-data {
   background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
   color: #ffffff !important;
   font-weight: 700 !important;
@@ -3449,18 +3449,22 @@ html, body {
   line-height: 1.25 !important;
   white-space: nowrap !important;
 }
-.btn-download-data:hover, .cw-btn-data:hover, .ind-btn-data:hover {
+.btn-download-data:hover, .btn-get-verified-leads:hover, .cw-btn-data:hover, .ind-btn-data:hover {
   background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 14px 28px -4px rgba(79, 70, 229, 0.6) !important;
   color: #ffffff !important;
 }
-.btn-download-data svg, .cw-btn-data svg, .ind-btn-data svg {
+.btn-download-data svg, .btn-get-verified-leads svg, .cw-btn-data svg, .ind-btn-data svg {
   flex-shrink: 0 !important;
   transition: transform 0.2s ease !important;
 }
-.btn-download-data:hover svg, .cw-btn-data:hover svg, .ind-btn-data:hover svg {
+.btn-download-data:hover svg, .btn-get-verified-leads:hover svg, .cw-btn-data:hover svg, .ind-btn-data:hover svg {
   transform: translateY(1.5px) !important;
+}
+
+#contact-section {
+  scroll-margin-top: 80px;
 }
 
 /* Hero Actions Single-Line Match */

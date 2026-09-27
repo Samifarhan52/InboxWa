@@ -760,7 +760,7 @@ include __DIR__ . '/../../includes/header.php';
           <button type="button" class="cfb-btn-secondary btn-demo-open">
             Book Facebook Demo
           </button>
-          <a href="<?php echo $bp; ?>business-leads/" class="btn-download-data btn-get-verified" style="padding:0.8rem 1.6rem;">
+          <a href="#contact-section" class="btn-download-data btn-get-verified" style="padding:0.8rem 1.6rem;">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
             Get Verified
           </a>
@@ -1174,7 +1174,7 @@ include __DIR__ . '/../../includes/header.php';
         <button type="button" class="cfb-btn-secondary btn-demo-open" style="background:rgba(255,255,255,0.15);color:#ffffff;border-color:rgba(255,255,255,0.3);">
           Book Facebook Demo
         </button>
-        <a href="<?php echo $bp; ?>business-leads/" class="btn-download-data btn-get-verified" style="background:#ffffff !important;color:#1877f2 !important;border:none !important;">
+        <a href="#contact-section" class="btn-download-data btn-get-verified" style="background:#ffffff !important;color:#1877f2 !important;border:none !important;">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           Get Verified
         </a>

@@ -1657,7 +1657,7 @@ include __DIR__ . '/../../includes/header.php';
           <button type="button" class="cw-btn-secondary btn-demo-open">
             Book a Demo
           </button>
-          <a href="<?php echo $bp; ?>business-leads/" class="cw-btn-data btn-download-data btn-get-verified">
+          <a href="#contact-section" class="cw-btn-data btn-download-data btn-get-verified">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
             Get Verified
           </a>
@@ -3400,7 +3400,7 @@ include __DIR__ . '/../../includes/header.php';
         <button type="button" class="cw-btn-transparent btn-demo-open">
           Talk to Sales
         </button>
-        <a href="<?php echo $bp; ?>business-leads/" class="cw-btn-data btn-download-data btn-get-verified" style="background:#ffffff !important;color:#059669 !important;border:none !important;">
+        <a href="#contact-section" class="cw-btn-data btn-download-data btn-get-verified" style="background:#ffffff !important;color:#059669 !important;border:none !important;">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           Get Verified
         </a>
