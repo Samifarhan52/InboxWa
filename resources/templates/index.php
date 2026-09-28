@@ -257,7 +257,7 @@ $templates = [
           <button type="button" class="btn btn-sm btn-outline copy-tpl" data-tpl="<?php echo htmlspecialchars($t['raw_copy']); ?>" style="flex:1">
             📋 Copy Template
           </button>
-          <a class="btn btn-sm btn-primary" href="/auth/register" style="flex:1;text-align:center">
+          <a class="btn btn-sm btn-primary" href="https://app.hellobotz.com" style="flex:1;text-align:center">
             Use in HelloBotz &rarr;
           </a>
         </div>

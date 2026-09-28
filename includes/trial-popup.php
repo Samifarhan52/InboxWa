@@ -323,19 +323,10 @@ function handleTrialSubmit(e) {
   });
 }
 
-// Global click listener for any Start Free buttons sitewide
+// Global click listener for explicit trial popup triggers
 document.addEventListener('click', function(e) {
-  var t = e.target.closest('.header-cta-start, .mnav-start, .btn-start-free, [data-open-trial], a[href*="auth/register"]');
+  var t = e.target.closest('[data-open-trial]');
   if (t) {
-    // If on auth login/register page, let it flip to signup instead
-    if (window.location.pathname.indexOf('/auth/login') !== -1 || window.location.pathname.indexOf('/auth/register') !== -1) {
-      if (typeof window.flipTo === 'function') {
-        e.preventDefault();
-        window.flipTo('signup');
-        return;
-      }
-      return;
-    }
     e.preventDefault();
     openTrialModal();
   }

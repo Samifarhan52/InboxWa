@@ -18,7 +18,7 @@ include __DIR__ . '/../includes/header.php';
       <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--t1); margin-bottom: 1rem; line-height: 1.2;">Official WhatsApp API by Location</h1>
       <p style="font-size: 1.1rem; color: var(--t2); line-height: 1.6;">Discover dedicated WhatsApp Business API solutions, local compliance, AI automations, and CRM setups tailored for your market.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free Trial</a>
         <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Data

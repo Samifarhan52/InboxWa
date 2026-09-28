@@ -71,7 +71,7 @@
       answer: '<strong>Transparent Pricing Plans:</strong> Plans start at ₹1,999/mo for Bulk Broadcasts, ₹2,999/mo for Automation & Shared Inbox, and ₹4,999/mo for Omnichannel Pro (save 20% yearly).',
       actions: [
         { label: 'View Pricing & Plans', url: '/pricing/', type: 'primary' },
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' }
+        { label: 'Start 7-Day Free Trial', url: 'https://app.hellobotz.com', type: 'secondary' }
       ]
     },
     {
@@ -119,7 +119,7 @@
       answer: '<strong>Bulk Broadcast Campaigns:</strong> Send personalized mass messages with 98% open rates, media attachments (images, PDFs, videos), and live read tracking.',
       actions: [
         { label: 'Explore Broadcasts', url: '/products/broadcast/', type: 'primary' },
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'secondary' }
+        { label: 'Start 7-Day Free Trial', url: 'https://app.hellobotz.com', type: 'secondary' }
       ]
     },
     {
@@ -217,7 +217,7 @@
       title: 'Get Started with 7-Day Free Trial',
       answer: '<strong>Start Free with HelloBotz:</strong> Enjoy our 7-day free trial with no credit card required and instant 3-minute onboarding.',
       actions: [
-        { label: 'Start 7-Day Free Trial', url: '/auth/register', type: 'primary' },
+        { label: 'Start 7-Day Free Trial', url: 'https://app.hellobotz.com', type: 'primary' },
         { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
       ]
     }
@@ -251,7 +251,7 @@
           title: 'You are welcome!',
           answer: '<strong>You are very welcome!</strong><br><br>Feel free to ask anything else, explore our services, or chat directly with our team on WhatsApp.',
           actions: [
-            { label: 'Start Free Trial', url: '/auth/register', type: 'primary' },
+            { label: 'Start Free Trial', url: 'https://app.hellobotz.com', type: 'primary' },
             { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber, type: 'wa', target: '_blank' }
           ]
         };
@@ -318,6 +318,14 @@
     var triggerBtn = widget.querySelector('.hellobotz-trigger');
     var character = widget.querySelector('.hellobotz-character');
     var speechBubble = widget.querySelector('.hellobotz-speech-bubble');
+    if (!speechBubble && triggerBtn) {
+      speechBubble = document.createElement('div');
+      speechBubble.className = 'hellobotz-speech-bubble';
+      speechBubble.setAttribute('role', 'tooltip');
+      speechBubble.setAttribute('aria-live', 'polite');
+      speechBubble.innerHTML = '<span class="speech-status-dot"></span><span class="hellobotz-speech-text">Hi! How can I help?</span>';
+      widget.insertBefore(speechBubble, triggerBtn);
+    }
     var speechText = widget.querySelector('.hellobotz-speech-text');
     var closeBtn = widget.querySelector('.header-close-btn');
     var resetBtn = widget.querySelector('.header-reset-btn');
@@ -404,6 +412,7 @@
         setEmotion('excited');
         widget.classList.add('is-open');
         widget.classList.add('open');
+        if (speechBubble) speechBubble.style.display = 'none';
         setTimeout(function () {
           if (chatInput) chatInput.focus();
           scrollToBottom();
@@ -411,6 +420,7 @@
       } else {
         widget.classList.remove('is-open');
         widget.classList.remove('open');
+        if (speechBubble) speechBubble.style.display = '';
         setEmotion('normal');
         resetIdleTimer();
       }

@@ -300,7 +300,7 @@ include __DIR__ . '/../../includes/header.php';
 </p>
         <div class="btn-groupp" style="display: flex; gap: 12px;">
      <a id="whatsapp-enquiry"
-          href="https://app.HelloBotz.com/register"
+          href="https://app.hellobotz.com"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Get Started
         </a>
@@ -438,7 +438,7 @@ include __DIR__ . '/../../includes/header.php';
 
     </div>
 
-      <a href="https://app.HelloBotz.com/register" class="cta-button mt-3">Get Started</a>
+      <a href="https://app.hellobotz.com" class="cta-button mt-3">Get Started</a>
     </div>
 </section>
 

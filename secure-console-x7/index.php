@@ -5287,7 +5287,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 '  <h1 style="font-size:38px; font-weight:800; color:#0f172a; margin-bottom:16px; line-height:1.2;">Empower Your Business With AI</h1>\n' +
                 '  <p style="font-size:17px; color:#475569; max-width:680px; margin:0 auto 28px; line-height:1.6;">Automate customer inquiries, broadcast personalized updates, and scale conversions effortlessly on the official WhatsApp Cloud API.</p>\n' +
                 '  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">\n' +
-                '    <a href="/auth/register" style="display:inline-block; background:#2563eb; color:#ffffff; padding:12px 26px; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 4px 12px rgba(37,99,235,0.25);">Get Started Free →</a>\n' +
+                '    <a href="https://app.hellobotz.com" style="display:inline-block; background:#2563eb; color:#ffffff; padding:12px 26px; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 4px 12px rgba(37,99,235,0.25);">Get Started Free →</a>\n' +
                 '    <a href="https://wa.me/918050854445" target="_blank" style="display:inline-block; background:#25d366; color:#ffffff; padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Chat on WhatsApp 💬</a>\n' +
                 '  </div>\n' +
                 '</section>\n';
@@ -5331,7 +5331,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 '</section>\n';
         } else if (blockType === 'button') {
             snippet = '\n<div style="text-align:center; margin:24px 0;">\n' +
-                '  <a href="/auth/register" style="display:inline-block; background:#2563eb; color:#ffffff; padding:14px 32px; border-radius:8px; font-weight:700; font-size:16px; text-decoration:none; box-shadow:0 4px 14px rgba(37,99,235,0.3);">Get Started Free Today</a>\n' +
+                '  <a href="https://app.hellobotz.com" style="display:inline-block; background:#2563eb; color:#ffffff; padding:14px 32px; border-radius:8px; font-weight:700; font-size:16px; text-decoration:none; box-shadow:0 4px 14px rgba(37,99,235,0.3);">Get Started Free Today</a>\n' +
                 '</div>\n';
         } else if (blockType === 'cta_banner') {
             snippet = '\n<!-- CTA BANNER -->\n' +
@@ -5339,7 +5339,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 '  <h2 style="font-size:32px; font-weight:800; margin-bottom:14px; color:#ffffff;">Ready to Transform Your Customer Communication?</h2>\n' +
                 '  <p style="font-size:16px; color:#c7d2fe; max-width:600px; margin:0 auto 28px; line-height:1.6;">Start your 14-day risk-free trial today. No setup fees, cancel anytime.</p>\n' +
                 '  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">\n' +
-                '    <a href="/auth/register" style="display:inline-block; background:#ffffff; color:#312e81; padding:12px 28px; border-radius:8px; font-weight:700; text-decoration:none;">Start Free Trial</a>\n' +
+                '    <a href="https://app.hellobotz.com" style="display:inline-block; background:#ffffff; color:#312e81; padding:12px 28px; border-radius:8px; font-weight:700; text-decoration:none;">Start Free Trial</a>\n' +
                 '    <a href="https://wa.me/918050854445" target="_blank" style="display:inline-block; background:rgba(255,255,255,0.15); color:#ffffff; border:1px solid rgba(255,255,255,0.3); padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Talk to Sales</a>\n' +
                 '  </div>\n' +
                 '</section>\n';

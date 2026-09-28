@@ -210,7 +210,7 @@ $iosUrl = trim($appLinks['ios'] ?? '') ?: 'https://apps.apple.com/app/hellobotz-
     </div>
 
     <div style="text-align:center;margin-top:2.5rem">
-      <a href="/auth/login" class="btn btn-primary btn-lg">Launch HelloBotz Web App</a>
+      <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Launch HelloBotz Web App</a>
     </div>
   </div>
 </section>

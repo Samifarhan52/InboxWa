@@ -24,9 +24,11 @@ RewriteRule ^Resources/(.*)$ /resources/$1 [R=301,L]
 RewriteRule ^Integrations/(.*)$ /integrations/$1 [R=301,L]
 RewriteRule ^Company/(.*)$ /company/$1 [R=301,L]
 
-# Auth internal routing
-RewriteRule ^login/?$ /auth/login/ [R=301,L]
-RewriteRule ^signup/?$ /auth/register/ [R=301,L]
+# Auth redirection to central app
+RewriteRule ^login/?$ https://app.hellobotz.com [R=302,L]
+RewriteRule ^signup/?$ https://app.hellobotz.com [R=302,L]
+RewriteRule ^auth/login/?$ https://app.hellobotz.com [R=302,L]
+RewriteRule ^auth/register/?$ https://app.hellobotz.com [R=302,L]
 
 # About: legacy /about/ -> /company/about/
 RewriteRule ^about/?$ /company/about/ [R=301,L]

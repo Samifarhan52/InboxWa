@@ -1059,7 +1059,7 @@ body.wv-modal-open .wv-modal-overlay {
           <button class="cta-button m-0" id="wvOpenModal" style="background:#10b981;border-color:#10b981;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;">
             Apply for Blue Tick
           </button>
-          <a href="<?php echo $bp; ?>auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+          <a href="https://app.hellobotz.com" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
           </a>
           <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
@@ -3497,7 +3497,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Join fast-growing companies that rely on HelloBotz for official WhatsApp Business API automation, intelligent lead handling, and verified credibility.
     </p>
     <div class="hb-bottom-cta-btns">
-      <a href="<?php echo $bp; ?>auth/register" class="hb-cta-btn-primary">
+      <a href="https://app.hellobotz.com" class="hb-cta-btn-primary">
         Start Free Trial →
       </a>
       <button type="button" class="hb-cta-btn-secondary btn-demo-open">

@@ -4103,10 +4103,10 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="auth/login" class="header-login header-btn-outline">
+        <a href="https://app.hellobotz.com" class="header-login header-btn-outline">
           <span>Login</span>
         </a>
-        <a href="auth/register" class="header-cta-start header-btn-primary">
+        <a href="https://app.hellobotz.com" class="header-cta-start header-btn-primary">
           <span>Sign Up</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -4501,8 +4501,8 @@
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="auth/login" class="mnav-login">Login &rarr;</a>
-          <a href="auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
+          <a href="https://app.hellobotz.com" class="mnav-login">Login &rarr;</a>
+          <a href="https://app.hellobotz.com" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>
       </div>
     </div>
@@ -5423,7 +5423,7 @@
       <h3>Accelerate Your WhatsApp Automation with HelloBotz</h3>
       <p>Transform customer conversations into revenue with AI agents, automated broadcasts, CRM integrations, and official Meta Cloud API.</p>
       <div class="single-blog-cta-btns">
-        <a href="/auth/register" class="btn btn-primary" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; color: #ffffff;">Start Free Trial</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; color: #ffffff;">Start Free Trial</a>
         <a href="/company/contact/" class="btn btn-outline" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; border: 1.5px solid #7C3AED; color: #7C3AED;">Book a Demo</a>
         <a href="/partners/" class="btn btn-outline" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; border: 1.5px solid #10B981; color: #10B981;">Become a Partner</a>
       </div>
@@ -7141,6 +7141,12 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
+    <!-- DYNAMIC SPEECH TEASER BUBBLE / NOTIFICATION -->
+  <div class="hellobotz-speech-bubble" role="tooltip" aria-live="polite">
+    <span class="speech-status-dot"></span>
+    <span class="hellobotz-speech-text">Hi! How can I help?</span>
+  </div>
+
   <!-- HELLOBOTZ INTERACTIVE ROBOT MASCOT TRIGGER -->
   <button class="hellobotz-trigger" id="hellobotz-trigger-btn" aria-label="Chat with HelloBotz Robot AI" type="button">
     
@@ -7652,7 +7658,7 @@ function handleTrialSubmit(e) {
 
 // Global click listener for any Start Free buttons sitewide
 document.addEventListener('click', function(e) {
-  var t = e.target.closest('.header-cta-start, .mnav-start, .btn-start-free, [data-open-trial], a[href*="auth/register"]');
+  var t = e.target.closest('[data-open-trial]');
   if (t) {
     // If on auth login/register page, let it flip to signup instead
     if (window.location.pathname.indexOf('/auth/login') !== -1 || window.location.pathname.indexOf('/auth/register') !== -1) {

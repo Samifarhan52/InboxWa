@@ -4212,10 +4212,10 @@ if (!function_exists('hb_seo_esc')) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="<?php echo $bp; ?>auth/login" class="header-login header-btn-outline">
+        <a href="https://app.hellobotz.com" class="header-login header-btn-outline">
           <span>Login</span>
         </a>
-        <a href="<?php echo $bp; ?>auth/register" class="header-cta-start header-btn-primary">
+        <a href="https://app.hellobotz.com" class="header-cta-start header-btn-primary">
           <span>Sign Up</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -4610,8 +4610,8 @@ if (!function_exists('hb_seo_esc')) {
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="<?php echo $bp; ?>auth/login" class="mnav-login">Login &rarr;</a>
-          <a href="<?php echo $bp; ?>auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
+          <a href="https://app.hellobotz.com" class="mnav-login">Login &rarr;</a>
+          <a href="https://app.hellobotz.com" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>
       </div>
     </div>

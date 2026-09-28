@@ -32,7 +32,7 @@ include __DIR__ . '/../../includes/header.php';
           Let clients pick dates, select practitioners, and book appointments inside WhatsApp. Sync with Google and Outlook calendars, collect deposits, and reduce no-shows with automated reminders.
         </p>
         <div class="prod-hero-ctas">
-          <a href="<?php echo $bp; ?>auth/register" class="prod-btn-primary">
+          <a href="https://app.hellobotz.com" class="prod-btn-primary">
             Start Booking Free
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
@@ -252,7 +252,7 @@ include __DIR__ . '/../../includes/header.php';
           Save 15+ hours each week on scheduling back-and-forth and cut no-show rates by 80%.
         </p>
         <div class="prod-cta-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="prod-cta-btn-white">
+          <a href="https://app.hellobotz.com" class="prod-cta-btn-white">
             Start Booking Free
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>

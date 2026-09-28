@@ -1,8 +1,6 @@
 <?php
-if (!isset($basePath)) {
-    $basePath = '../../';
-}
-$robots = 'noindex, nofollow';
+header('Location: https://app.hellobotz.com', true, 302);
+exit;
 $pageTitle = 'Login to HelloBotz';
 $pageDescription = 'Sign in to your HelloBotz workspace — Official WhatsApp Business API, shared team inbox, automation and CRM.';
 $canonicalUrl = '/auth/login';

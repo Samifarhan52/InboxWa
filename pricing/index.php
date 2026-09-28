@@ -742,7 +742,7 @@ include __DIR__ . '/../includes/header.php';
         <p>Join 500+ businesses using HelloBotz for WhatsApp automation. Start your free trial today!</p>
       </div>
       <div class="cta-buttons">
-        <a href="/auth/register" class="btn-cta-primary">Start Free Trial</a>
+        <a href="https://app.hellobotz.com" class="btn-cta-primary">Start Free Trial</a>
         <a href="#addons" class="btn-cta-secondary">View Add-ons</a>
       </div>
     </div>

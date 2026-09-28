@@ -980,7 +980,7 @@ include __DIR__ . '/../../includes/header.php';
           Our Instagram automation tool sends automated discount codes, product catalogs, and instant Instagram DM automation replies the moment someone comments on your posts or reels — powered by Meta-approved Instagram automation.
         </p>
         <div class="cig-hero-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">
+          <a href="https://app.hellobotz.com" class="cig-btn-primary">
             Connect Your Account
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -1148,7 +1148,7 @@ include __DIR__ . '/../../includes/header.php';
                 Fully compliant with Instagram platform guidelines
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Get Started Free</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Get Started Free</a>
           </div>
           <div class="cig-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/instagram/ask-followers.png?v=20260909" alt="Ask Followers to Follow You" class="cig-sc-img" loading="lazy">
@@ -1177,7 +1177,7 @@ include __DIR__ . '/../../includes/header.php';
                 Set custom timing delays or instant reaction modes
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Boost Engagement Now</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Boost Engagement Now</a>
           </div>
           <div class="cig-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/instagram/auto-like.png?v=20260909" alt="Auto Like Instagram Comments" class="cig-sc-img" loading="lazy">
@@ -1206,7 +1206,7 @@ include __DIR__ . '/../../includes/header.php';
                 Maintains clean ad comments to lower customer acquisition costs
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Protect Your Brand</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Protect Your Brand</a>
           </div>
           <div class="cig-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/instagram/hide-hate.png?v=20260909" alt="Hide Hate Comments Automatically" class="cig-sc-img" loading="lazy">
@@ -1235,7 +1235,7 @@ include __DIR__ . '/../../includes/header.php';
                 Zero latency response ensures you never lose a hot lead
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cig-btn-primary">Deploy AI Chatbot</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Deploy AI Chatbot</a>
           </div>
           <div class="cig-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/instagram/smart-ai-chatbot.png" alt="24/7 Smart AI Chatbot" class="cig-sc-img" loading="lazy">
@@ -1400,7 +1400,7 @@ include __DIR__ . '/../../includes/header.php';
         Turn comments into customers, automate customer service, and boost sales 24/7.
       </p>
       <div class="cig-cta-actions">
-        <a href="<?php echo $bp; ?>auth/register" class="cig-btn-white">
+        <a href="https://app.hellobotz.com" class="cig-btn-white">
           Start Free Trial
         </a>
         <button type="button" class="cig-btn-secondary btn-demo-open" style="color: #ffffff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);">

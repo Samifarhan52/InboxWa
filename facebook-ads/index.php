@@ -32,7 +32,7 @@ include __DIR__ . '/../includes/header.php';
           Create, manage, and optimize ad campaigns that open WhatsApp chats directly. Target high-intent audiences on Meta platforms, capture verified phone numbers instantly, and convert clicks into paying customers.
         </p>
         <div class="prod-hero-ctas">
-          <a href="<?php echo $bp; ?>auth/register" class="prod-btn-primary">
+          <a href="https://app.hellobotz.com" class="prod-btn-primary">
             Launch Your First Campaign
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
@@ -271,7 +271,7 @@ include __DIR__ . '/../includes/header.php';
           Drive 3x more qualified leads from Facebook and Instagram with instant WhatsApp chat openings.
         </p>
         <div class="prod-cta-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="prod-cta-btn-white">
+          <a href="https://app.hellobotz.com" class="prod-cta-btn-white">
             Launch Your First Campaign
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>

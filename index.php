@@ -4656,7 +4656,7 @@ include __DIR__ . '/includes/header.php';
           <p>Join 500+ businesses delivering standout customer experiences across WhatsApp, Instagram, Facebook &amp; Telegram with HelloBotz.</p>
         </div>
         <div class="stories-bottom-actions">
-          <a href="/auth/register" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
+          <a href="https://app.hellobotz.com" class="cw-btn-primary" style="background: #ffffff; color: #0f172a !important; font-weight: 800; border-radius: 9999px; box-shadow: 0 4px 15px rgba(255,255,255,0.25);">
             Start Free 7-Day Trial
           </a>
           <a href="<?php echo $brochureHref; ?>"<?php echo $brochureTarget; ?><?php echo $brochureOnClick; ?> class="cw-btn-data btn-download-brochure" title="Download HelloBotz Brochure">

@@ -17,7 +17,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1>Connect Pharma Teams, Medical Representatives &amp; Doctors With <span class="grad">Smarter Automation</span></h1>
         <p class="hc-lead">Help medical teams manage doctor engagement, MR workflows, appointment requests, follow-ups, product information and customer communication through connected WhatsApp automation.</p>
         <div class="hc-ctas">
-          <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
+          <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book Healthcare Demo</button>
         </div>
         <div class="hc-tabs" id="hc-tabs">
@@ -289,7 +289,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 style="color:#fff">Build a Smarter Healthcare Communication Workflow</h2>
       <p class="lead" style="color:rgba(255,255,255,.75)">Connect your pharma teams, medical representatives, doctors and healthcare operations with HelloBotz automation.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book Healthcare Demo</button>
               <a href="/business-leads/" class="btn btn-download-data btn-get-verified-leads btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>

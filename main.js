@@ -13,6 +13,34 @@
   const on = (el, evt, fn, opts) => el && el.addEventListener(evt, fn, opts);
   const off = (el, evt, fn) => el && el.removeEventListener(evt, fn);
 
+  /* ---------- Universal Auth Redirect to app.hellobotz.com ---------- */
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a, button');
+    if (!a) return;
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    const isAuth =
+      a.classList.contains('header-login') ||
+      a.classList.contains('header-cta-start') ||
+      a.classList.contains('mnav-login') ||
+      a.classList.contains('mnav-start') ||
+      a.classList.contains('btn-auth') ||
+      href.includes('auth/login') ||
+      href.includes('auth/register') ||
+      href === '/login' ||
+      href === '/signup' ||
+      href.endsWith('/login') ||
+      href.endsWith('/login/') ||
+      href.endsWith('/signup') ||
+      href.endsWith('/signup/') ||
+      href.includes('app.hellobotz.com');
+
+    if (isAuth) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.location.href = 'https://app.hellobotz.com';
+    }
+  }, true);
+
   function debounce(fn, ms = 100) {
     let t;
     return (...args) => {

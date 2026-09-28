@@ -17,7 +17,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1>Connect HelloBotz With Your <span class="grad">Entire Business Stack</span></h1>
         <p class="ic-lead">Connect WhatsApp, CRM, e-commerce, marketing, productivity and custom business systems with powerful integrations, APIs, webhooks and automation workflows.</p>
         <div class="ic-ctas">
-          <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
+          <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Talk to Integration Expert</button>
         </div>
       </div>
@@ -302,7 +302,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 style="color:#fff">Your Tools. Your Data. One Connected Workflow.</h2>
       <p class="lead" style="color:rgba(255,255,255,.75)">Tell us what you want to connect and build a workflow around your business.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Talk to Integration Expert</button>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

@@ -1650,7 +1650,7 @@ include __DIR__ . '/../../includes/header.php';
           Manage customer chats with a shared team inbox, run a complete WhatsApp automation software with automatic reply flows, and broadcast safely using the official WhatsApp Business API and WhatsApp CRM software.
         </p>
         <div class="cw-hero-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="cw-btn-primary">
+          <a href="https://app.hellobotz.com" class="cw-btn-primary">
             Start Free Trial
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -3394,7 +3394,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 class="cw-sales-title">Turn Your WhatsApp Into a Sales Engine with HelloBotz's WhatsApp Business API &amp; WhatsApp Automation Software</h2>
       <p class="cw-sales-desc">Start sending announcements, managing team chats, and answering customer questions automatically right now.</p>
       <div class="cw-sales-actions">
-        <a href="<?php echo $bp; ?>auth/register" class="cw-btn-white">
+        <a href="https://app.hellobotz.com" class="cw-btn-white">
           Try For Free &rarr;
         </a>
         <button type="button" class="cw-btn-transparent btn-demo-open">
@@ -3441,7 +3441,7 @@ include __DIR__ . '/../../includes/header.php';
       <div class="cw-modal-footer">
         <div class="cw-modal-footnote">Experience the full power of WhatsApp automation with zero ban risk.</div>
         <div class="cw-modal-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="cw-btn-modal-primary">Start 7-Day Free Trial</a>
+          <a href="https://app.hellobotz.com" class="cw-btn-modal-primary">Start 7-Day Free Trial</a>
           <button type="button" class="cw-btn-modal-secondary btn-demo-open" onclick="closeHelloBotzVideoModal()">Schedule 1-on-1 Call</button>
         </div>
       </div>

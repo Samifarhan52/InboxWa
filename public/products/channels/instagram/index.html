@@ -4102,10 +4102,10 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
         </button>
-        <a href="../../auth/login" class="header-login header-btn-outline">
+        <a href="https://app.hellobotz.com" class="header-login header-btn-outline">
           <span>Login</span>
         </a>
-        <a href="../../auth/register" class="header-cta-start header-btn-primary">
+        <a href="https://app.hellobotz.com" class="header-cta-start header-btn-primary">
           <span>Sign Up</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -4500,8 +4500,8 @@
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="../../auth/login" class="mnav-login">Login &rarr;</a>
-          <a href="../../auth/register" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
+          <a href="https://app.hellobotz.com" class="mnav-login">Login &rarr;</a>
+          <a href="https://app.hellobotz.com" class="mnav-start" style="background:#044738 !important;border-color:#044738 !important;color:#ffffff !important;">Sign Up Free &rarr;</a>
         </div>
       </div>
     </div>
@@ -5855,7 +5855,7 @@
           Our Instagram automation tool sends automated discount codes, product catalogs, and instant Instagram DM automation replies the moment someone comments on your posts or reels — powered by Meta-approved Instagram automation.
         </p>
         <div class="cig-hero-actions">
-          <a href="../../auth/register" class="cig-btn-primary">
+          <a href="https://app.hellobotz.com" class="cig-btn-primary">
             Connect Your Account
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -6023,7 +6023,7 @@
                 Fully compliant with Instagram platform guidelines
               </li>
             </ul>
-            <a href="../../auth/register" class="cig-btn-primary">Get Started Free</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Get Started Free</a>
           </div>
           <div class="cig-sc-visual">
             <img src="../../assets/images/channel/instagram/ask-followers.png?v=20260909" alt="Ask Followers to Follow You" class="cig-sc-img" loading="lazy">
@@ -6052,7 +6052,7 @@
                 Set custom timing delays or instant reaction modes
               </li>
             </ul>
-            <a href="../../auth/register" class="cig-btn-primary">Boost Engagement Now</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Boost Engagement Now</a>
           </div>
           <div class="cig-sc-visual">
             <img src="../../assets/images/channel/instagram/auto-like.png?v=20260909" alt="Auto Like Instagram Comments" class="cig-sc-img" loading="lazy">
@@ -6081,7 +6081,7 @@
                 Maintains clean ad comments to lower customer acquisition costs
               </li>
             </ul>
-            <a href="../../auth/register" class="cig-btn-primary">Protect Your Brand</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Protect Your Brand</a>
           </div>
           <div class="cig-sc-visual">
             <img src="../../assets/images/channel/instagram/hide-hate.png?v=20260909" alt="Hide Hate Comments Automatically" class="cig-sc-img" loading="lazy">
@@ -6110,7 +6110,7 @@
                 Zero latency response ensures you never lose a hot lead
               </li>
             </ul>
-            <a href="../../auth/register" class="cig-btn-primary">Deploy AI Chatbot</a>
+            <a href="https://app.hellobotz.com" class="cig-btn-primary">Deploy AI Chatbot</a>
           </div>
           <div class="cig-sc-visual">
             <img src="../../assets/images/channel/instagram/smart-ai-chatbot.png" alt="24/7 Smart AI Chatbot" class="cig-sc-img" loading="lazy">
@@ -6275,7 +6275,7 @@
         Turn comments into customers, automate customer service, and boost sales 24/7.
       </p>
       <div class="cig-cta-actions">
-        <a href="../../auth/register" class="cig-btn-white">
+        <a href="https://app.hellobotz.com" class="cig-btn-white">
           Start Free Trial
         </a>
         <button type="button" class="cig-btn-secondary btn-demo-open" style="color: #ffffff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);">
@@ -8052,6 +8052,12 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
+    <!-- DYNAMIC SPEECH TEASER BUBBLE / NOTIFICATION -->
+  <div class="hellobotz-speech-bubble" role="tooltip" aria-live="polite">
+    <span class="speech-status-dot"></span>
+    <span class="hellobotz-speech-text">Hi! How can I help?</span>
+  </div>
+
   <!-- HELLOBOTZ INTERACTIVE ROBOT MASCOT TRIGGER -->
   <button class="hellobotz-trigger" id="hellobotz-trigger-btn" aria-label="Chat with HelloBotz Robot AI" type="button">
     
@@ -8563,7 +8569,7 @@ function handleTrialSubmit(e) {
 
 // Global click listener for any Start Free buttons sitewide
 document.addEventListener('click', function(e) {
-  var t = e.target.closest('.header-cta-start, .mnav-start, .btn-start-free, [data-open-trial], a[href*="auth/register"]');
+  var t = e.target.closest('[data-open-trial]');
   if (t) {
     // If on auth login/register page, let it flip to signup instead
     if (window.location.pathname.indexOf('/auth/login') !== -1 || window.location.pathname.indexOf('/auth/register') !== -1) {

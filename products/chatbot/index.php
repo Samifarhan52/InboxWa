@@ -303,7 +303,7 @@ include __DIR__ . '/../../includes/header.php';
           HelloBotz's AI WhatsApp Chatbot understands context, responds quickly in your brand voice, and works 24/7 —
           powered by the official WhatsApp Business API </p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
-          <a href="<?php echo $bp; ?>auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+          <a href="https://app.hellobotz.com" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
           </a>
           <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
@@ -1623,7 +1623,7 @@ document.addEventListener("DOMContentLoaded", function() {
           customers
           24/7, and boost engagement - all on WhatsApp.</p>
         <div class="cta-buttons mt-4 order-3 order-lg-3 d-flex" style="gap:12px;">
-          <a href="<?php echo $bp; ?>auth/register" target="_blank" rel="noopener noreferrer"
+          <a href="https://app.hellobotz.com" target="_blank" rel="noopener noreferrer"
             class="btn btn-light me-2 shadow-sm apply-free" style="color: #645bb1;">Apply Free Now!</a>
           <div class="btn btn-outline-light shadow-sm book-demo book-demo-btn btn-demo-open" role="button" tabindex="0" style="cursor: pointer;" data-product="Chatbot">Book A Free Demo</div>
         </div>
@@ -1844,7 +1844,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Join fast-growing companies that rely on HelloBotz for official WhatsApp Business API automation, intelligent lead handling, and verified credibility.
     </p>
     <div class="hb-bottom-cta-btns">
-      <a href="<?php echo $bp; ?>auth/register" class="hb-cta-btn-primary">
+      <a href="https://app.hellobotz.com" class="hb-cta-btn-primary">
         Start Free Trial →
       </a>
       <button type="button" class="hb-cta-btn-secondary btn-demo-open">

@@ -171,7 +171,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1 class="hero-title"> Get More Conversions with Click to WhatsApp Ads</h1>
         <p class="hero-text">Boost Your Reach on platforms like Facebook, Instagram, and Google using click to WhatsApp ads.</p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
-          <a href="<?php echo $bp; ?>auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+          <a href="https://app.hellobotz.com" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
           </a>
           <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
@@ -1469,7 +1469,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Join fast-growing companies that rely on HelloBotz for official WhatsApp Business API automation, intelligent lead handling, and verified credibility.
     </p>
     <div class="hb-bottom-cta-btns">
-      <a href="<?php echo $bp; ?>auth/register" class="hb-cta-btn-primary">
+      <a href="https://app.hellobotz.com" class="hb-cta-btn-primary">
         Start Free Trial →
       </a>
       <button type="button" class="hb-cta-btn-secondary btn-demo-open">

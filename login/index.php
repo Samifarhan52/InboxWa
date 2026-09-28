@@ -1,3 +1,3 @@
 <?php
-$basePath = '../';
-require_once __DIR__ . '/../auth/login.php';
+header('Location: https://app.hellobotz.com', true, 302);
+exit;

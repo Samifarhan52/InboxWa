@@ -14,7 +14,7 @@ include __DIR__ . '/../includes/header.php';
       <h1>Everything You Need to Scale on WhatsApp</h1>
       <p class="lead">From high-volume broadcasts and AI chatbots to voice agents and in-chat shopping catalogs — built into one connected workspace.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free Trial</a>
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-outline btn-lg">Book a Demo</a>
       </div>
     </div>
@@ -129,7 +129,7 @@ include __DIR__ . '/../includes/header.php';
       <h2 style="color:#fff">Ready to supercharge your customer communication?</h2>
       <p class="lead" style="color:#cbd5e1;margin-top:.75rem">Get started with official Meta Cloud API, automated AI workflows, and dedicated 24/7 support.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free Trial</a>
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-white btn-lg">Talk to Sales</a>
       </div>
     </div>

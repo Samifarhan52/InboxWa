@@ -235,7 +235,7 @@ $caseStudies = [
     <h2 style="font-size:2.25rem;font-weight:900;color:#FFFFFF;margin:0 0 1rem;line-height:1.25">Ready to replicate these numbers in your business?</h2>
     <p style="color:#94A3B8;font-size:1.05rem;line-height:1.6;margin-bottom:2rem">Connect your official WhatsApp Business number today. Experience seamless automation, high deliverability, and real-time CRM integration.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free Trial</a>
       <a href="#contact-section" class="btn btn-outline btn-lg" style="color:#FFFFFF;border-color:rgba(255,255,255,0.3)">Schedule Demo</a>
       <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

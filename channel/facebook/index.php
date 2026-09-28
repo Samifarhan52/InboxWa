@@ -754,7 +754,7 @@ include __DIR__ . '/../../includes/header.php';
           Connect your Facebook business pages, run Facebook lead ads automation to save customer form details instantly, chat in a single inbox, and send automated Messenger auto-responder replies.
         </p>
         <div class="cfb-hero-actions">
-          <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">
+          <a href="https://app.hellobotz.com" class="cfb-btn-primary">
             Start Free Trial &rarr;
           </a>
           <button type="button" class="cfb-btn-secondary btn-demo-open">
@@ -823,7 +823,7 @@ include __DIR__ . '/../../includes/header.php';
                 Configure granular team permissions and role assignments
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Link Your Pages Free &rarr;</a>
+            <a href="https://app.hellobotz.com" class="cfb-btn-primary">Link Your Pages Free &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/facebook/link-pages.png?v=20260909" alt="Link Your Facebook Pages" class="cfb-sc-img" loading="lazy">
@@ -852,7 +852,7 @@ include __DIR__ . '/../../includes/header.php';
                 Instant Messenger auto-reply sent the second they submit
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Connect Lead Ads Free &rarr;</a>
+            <a href="https://app.hellobotz.com" class="cfb-btn-primary">Connect Lead Ads Free &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/facebook/save-leads.png?v=20260909" alt="Save Customer Form Details" class="cfb-sc-img" loading="lazy">
@@ -881,7 +881,7 @@ include __DIR__ . '/../../includes/header.php';
                 Direct Messenger and WhatsApp click-to-chat ad tracking
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Track Ad Campaigns &rarr;</a>
+            <a href="https://app.hellobotz.com" class="cfb-btn-primary">Track Ad Campaigns &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/facebook/track-ads.png?v=20260909" alt="Track Your Ad Campaigns" class="cfb-sc-img" loading="lazy">
@@ -910,7 +910,7 @@ include __DIR__ . '/../../includes/header.php';
                 Export CSV reports for executive reviews and client presentations
               </li>
             </ul>
-            <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-primary">Explore Ad Reports &rarr;</a>
+            <a href="https://app.hellobotz.com" class="cfb-btn-primary">Explore Ad Reports &rarr;</a>
           </div>
           <div class="cfb-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/facebook/ad-reports.png?v=20260909" alt="View Simple Ad Reports" class="cfb-sc-img" loading="lazy">
@@ -1168,7 +1168,7 @@ include __DIR__ . '/../../includes/header.php';
         Link your pages, track active ad campaigns, save lead form answers, and reply to customers automatically.
       </p>
       <div class="cfb-cta-actions">
-        <a href="<?php echo $bp; ?>auth/register" class="cfb-btn-white">
+        <a href="https://app.hellobotz.com" class="cfb-btn-white">
           Start Free Trial &rarr;
         </a>
         <button type="button" class="cfb-btn-secondary btn-demo-open" style="background:rgba(255,255,255,0.15);color:#ffffff;border-color:rgba(255,255,255,0.3);">

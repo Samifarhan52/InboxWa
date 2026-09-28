@@ -24,7 +24,7 @@ include __DIR__ . '/../../includes/header.php';
       <h1>HelloBotz Product Documentation</h1>
       <p class="lead">Complete step-by-step guides, configuration checklists, and best practices to launch and scale your WhatsApp communication infrastructure.</p>
       <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem">
-        <a href="/auth/register" class="btn btn-primary">Start Free Trial</a>
+        <a href="https://app.hellobotz.com" class="btn btn-primary">Start Free Trial</a>
         <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Data
@@ -76,7 +76,7 @@ include __DIR__ . '/../../includes/header.php';
 
         <h3>Quickstart Checklist:</h3>
         <ol class="docs-steps">
-          <li><strong>Create Your HelloBotz Account:</strong> Sign up at <a href="/auth/register" style="color:var(--p2);font-weight:700">HelloBotz Registration</a>. Choose your organization name and preferred workspace subdomain.</li>
+          <li><strong>Create Your HelloBotz Account:</strong> Sign up at <a href="https://app.hellobotz.com" style="color:var(--p2);font-weight:700">HelloBotz Registration</a>. Choose your organization name and preferred workspace subdomain.</li>
           <li><strong>Complete Meta Embedded Signup:</strong> From the HelloBotz Dashboard, click <em>"Connect WhatsApp"</em>. A secure Meta pop-up window will guide you through selecting or creating your Meta Business Manager and WABA (WhatsApp Business Account).</li>
           <li><strong>Verify Your Phone Number:</strong> Enter the 6-digit one-time code (OTP) sent via SMS or voice call to link your phone number to the WhatsApp Cloud API infrastructure.</li>
           <li><strong>Send a Test Message:</strong> Open the Shared Inbox, select your verified test contact, and dispatch an approved template message to confirm bidirectional connectivity.</li>

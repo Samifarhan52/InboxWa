@@ -198,22 +198,58 @@
 }
 
 /* ==========================================================================
-   DYNAMIC SPEECH TEASER BUBBLE
+   DYNAMIC SPEECH TEASER BUBBLE / NOTIFICATION
    ========================================================================== */
 .hellobotz-speech-bubble {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+  position: absolute;
+  bottom: 82px;
+  right: 6px;
+  background: #FFFFFF;
+  color: #1E293B;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(139, 92, 246, 0.25);
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  animation: hellobotz-bubble-hover 3s ease-in-out infinite;
+  z-index: 9999;
+  transition: all 0.25s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.hellobotz-speech-bubble:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.25), 0 0 0 1.5px #8B5CF6;
+}
+
+.hellobotz-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 24px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-right: 1px solid rgba(139, 92, 246, 0.25);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+  transform: rotate(45deg);
 }
 
 .speech-status-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--hb-glow);
+  background: #22C55E;
   box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
   animation: hb-dot-pulse 1.8s infinite;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -855,7 +891,21 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
   .hellobotz-speech-bubble {
+    display: flex !important;
+    bottom: 74px !important;
+    right: 4px !important;
+    font-size: 11.5px !important;
+    padding: 6px 11px !important;
+    border-radius: 12px !important;
+  }
+  #hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
+  #hellobotz-robot-widget.open .hellobotz-speech-bubble,
+  .hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
+  .hellobotz-robot-widget.open .hellobotz-speech-bubble {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
   .hellobotz-robot-widget {
     bottom: 1rem !important;

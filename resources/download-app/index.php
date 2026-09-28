@@ -29,7 +29,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
     
     <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
       <a class="btn btn-primary btn-lg" href="#platforms">Choose Your Platform &darr;</a>
-      <a class="btn btn-outline btn-lg" href="/auth/login">Launch Web App</a>
+      <a class="btn btn-outline btn-lg" href="https://app.hellobotz.com">Launch Web App</a>
       <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Data
@@ -85,7 +85,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
           <a class="btn btn-primary" href="/resources/download-ios-app/">
             View iOS App Showcase &rarr;
           </a>
-          <a class="btn btn-sm btn-outline" href="/auth/login">
+          <a class="btn btn-sm btn-outline" href="https://app.hellobotz.com">
             Install iOS PWA Icon
           </a>
         </div>
@@ -114,7 +114,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
           <a class="btn btn-primary" href="<?php echo htmlspecialchars($desktopUrl); ?>">
             Download for Desktop
           </a>
-          <a class="btn btn-sm btn-outline" href="/auth/login">
+          <a class="btn btn-sm btn-outline" href="https://app.hellobotz.com">
             Launch Web App in Browser
           </a>
         </div>
@@ -140,10 +140,10 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
         <p>Instant access with zero downloads required. Open Chrome, Safari, Edge, or Firefox and manage your operations in seconds.</p>
         
         <div style="display:flex;flex-direction:column;gap:8px;width:100%;margin-top:auto">
-          <a class="btn btn-primary" href="/auth/login">
+          <a class="btn btn-primary" href="https://app.hellobotz.com">
             Open Web App
           </a>
-          <a class="btn btn-sm btn-outline" href="/auth/register">
+          <a class="btn btn-sm btn-outline" href="https://app.hellobotz.com">
             Create Free Account
           </a>
         </div>
