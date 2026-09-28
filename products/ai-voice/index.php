@@ -32,7 +32,7 @@ include __DIR__ . '/../../includes/header.php';
           Configure custom voice bots to answer customer calls, run automated AI support prompts, trigger live API actions during conversations, and handle call handovers seamlessly.
         </p>
         <div class="prod-hero-ctas">
-          <a href="https://app.hellobotz.com" class="prod-btn-primary">
+          <a href="https://app.hellobotz.com/auth/register" class="prod-btn-primary">
             Get Started Free
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
@@ -219,7 +219,7 @@ include __DIR__ . '/../../includes/header.php';
           Automate customer voice phone calls with natural, context-aware AI agents in minutes.
         </p>
         <div class="prod-cta-actions">
-          <a href="https://app.hellobotz.com" class="prod-cta-btn-white">
+          <a href="https://app.hellobotz.com/auth/register" class="prod-cta-btn-white">
             Get Started Free
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>

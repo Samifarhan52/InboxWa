@@ -1398,7 +1398,7 @@ body.dark-theme .ai-faq-wrap details,
           Give your support team an intelligent co-pilot that understands customer intent, suggests accurate replies, handles repetitive queries, and helps your agents respond with confidence — 24/7 across WhatsApp and omnichannel inboxes.
         </p>
         <div class="ai-hero-actions">
-          <a href="https://app.hellobotz.com" class="ai-btn ai-btn-primary">
+          <a href="https://app.hellobotz.com/auth/register" class="ai-btn ai-btn-primary">
             Start Free with AI Assistant →
           </a>
           <button type="button" class="ai-btn ai-btn-secondary btn-demo-open">
@@ -1767,7 +1767,7 @@ body.dark-theme .ai-faq-wrap details,
         <p>Bring AI-powered assistance into your customer support workflow and let your team focus on high-impact customer relationships.</p>
       </div>
       <div class="ai-cta-actions">
-        <a href="https://app.hellobotz.com" class="ai-btn" style="background:#ffffff;color:#181528;font-weight:800;">
+        <a href="https://app.hellobotz.com/auth/register" class="ai-btn" style="background:#ffffff;color:#181528;font-weight:800;">
           Start Free Trial →
         </a>
         <button type="button" class="ai-btn btn-demo-open" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">

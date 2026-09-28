@@ -38,42 +38,42 @@
   "redirects": [
     {
       "source": "/login",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/login",
       "permanent": false
     },
     {
       "source": "/login/",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/login",
       "permanent": false
     },
     {
       "source": "/signup",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/register",
       "permanent": false
     },
     {
       "source": "/signup/",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/register",
       "permanent": false
     },
     {
       "source": "/auth/login",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/login",
       "permanent": false
     },
     {
       "source": "/auth/login/",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/login",
       "permanent": false
     },
     {
       "source": "/auth/register",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/register",
       "permanent": false
     },
     {
       "source": "/auth/register/",
-      "destination": "https://app.hellobotz.com",
+      "destination": "https://app.hellobotz.com/auth/register",
       "permanent": false
     },
     {

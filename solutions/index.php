@@ -14,7 +14,7 @@ include __DIR__ . '/../includes/header.php';
       <p class="lead">From first lead to loyal customer — automation your team can run.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-primary btn-lg">Book Demo</a>
-        <a href="https://app.hellobotz.com" class="btn btn-outline btn-lg">Start Free</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-outline btn-lg">Start Free</a>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Data
@@ -29,7 +29,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="section-header reveal" style="text-align:center">
       <h2 style="color:#fff">Ready to engage customers on WhatsApp?</h2>
       <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Start Free</a>
         <a href="<?php echo $bp; ?>#contact-section" class="btn btn-white btn-lg">Talk to sales</a>
       </div>
     </div>

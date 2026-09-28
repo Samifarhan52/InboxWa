@@ -18,7 +18,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1>Book Meetings. Automate Reminders. <span class="grad">Close More Deals.</span></h1>
         <p class="gcm-lead">Connect Google Calendar and Google Meet with HelloBotz to let customers book appointments, automatically create meetings and receive confirmations and reminders on WhatsApp.</p>
         <div class="gcm-ctas">
-          <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Get Started</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
         </div>
         <div class="gcm-tabs" id="gcm-tabs" role="tablist">
@@ -99,7 +99,7 @@ include __DIR__ . '/../../includes/header.php';
           <li>Rescheduling support where configured</li>
           <li>Automated customer notifications</li>
         </ul>
-        <a href="https://app.hellobotz.com" class="btn btn-primary">Start Booking Automation</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary">Start Booking Automation</a>
         <p class="gcm-note">Google Calendar branding used for illustration only — not an official Google endorsement.</p>
       </div>
     </div>
@@ -328,7 +328,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 style="color:#fff">Make Every Appointment Automatic</h2>
       <p class="lead" style="color:rgba(255,255,255,.75)">Connect Google Calendar and Google Meet with HelloBotz and turn bookings into seamless WhatsApp-powered meeting experiences.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Get Started</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Get Started</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

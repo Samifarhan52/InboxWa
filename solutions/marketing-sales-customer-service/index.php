@@ -17,7 +17,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1>Marketing, Sales &amp; Customer Service — <span class="grad">Connected in One Platform</span></h1>
         <p class="mscs-lead">Capture more leads, convert conversations into customers and deliver faster customer support with HelloBotz automation.</p>
         <div class="mscs-ctas">
-          <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
+          <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Start Free</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
         </div>
       </div>
@@ -210,7 +210,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 style="color:#fff">One Platform. Three Powerful Business Functions.</h2>
       <p class="lead" style="color:rgba(255,255,255,.75)">Generate Leads. Close Sales. Delight Customers.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Start Free</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book a Demo</button>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

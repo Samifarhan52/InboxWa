@@ -1,5 +1,5 @@
 <?php
-header('Location: https://app.hellobotz.com', true, 302);
+header('Location: https://app.hellobotz.com/auth/login', true, 302);
 exit;
 $pageTitle = 'Login to HelloBotz';
 $pageDescription = 'Sign in to your HelloBotz workspace — Official WhatsApp Business API, shared team inbox, automation and CRM.';

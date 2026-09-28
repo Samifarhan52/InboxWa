@@ -753,7 +753,7 @@ include __DIR__ . '/../../includes/header.php';
           Connect your Telegram bot for business, create quick message templates with buttons, set up a Telegram chatbot for automatic replies, and track every broadcast with our Telegram automation platform.
         </p>
         <div class="ctg-hero-actions">
-          <a href="https://app.hellobotz.com" class="ctg-btn-primary">
+          <a href="https://app.hellobotz.com/auth/register" class="ctg-btn-primary">
             Start Free Trial &rarr;
           </a>
           <button type="button" class="ctg-btn-secondary btn-demo-open">
@@ -822,7 +822,7 @@ include __DIR__ . '/../../includes/header.php';
                 Secure webhook routing with 99.9% uptime SLA
               </li>
             </ul>
-            <a href="https://app.hellobotz.com" class="ctg-btn-primary">Connect Telegram Free &rarr;</a>
+            <a href="https://app.hellobotz.com/auth/register" class="ctg-btn-primary">Connect Telegram Free &rarr;</a>
           </div>
           <div class="ctg-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/telegram/easy-setup.png?v=20260909" alt="Easy Account Setup" class="ctg-sc-img" loading="lazy">
@@ -851,7 +851,7 @@ include __DIR__ . '/../../includes/header.php';
                 Drastically reduce agent workload with 1-tap navigation
               </li>
             </ul>
-            <a href="https://app.hellobotz.com" class="ctg-btn-primary">Create Button Workflows &rarr;</a>
+            <a href="https://app.hellobotz.com/auth/register" class="ctg-btn-primary">Create Button Workflows &rarr;</a>
           </div>
           <div class="ctg-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/telegram/quick-buttons.png?v=20260909" alt="Messages with Quick Buttons" class="ctg-sc-img" loading="lazy">
@@ -1140,7 +1140,7 @@ include __DIR__ . '/../../includes/header.php';
         Connect your account in seconds, write easy reply buttons, set up key word detection, and view all chats in real-time.
       </p>
       <div class="ctg-cta-actions">
-        <a href="https://app.hellobotz.com" class="ctg-btn-white">
+        <a href="https://app.hellobotz.com/auth/register" class="ctg-btn-white">
           Start Free Trial &rarr;
         </a>
         <button type="button" class="ctg-btn-secondary btn-demo-open" style="background:rgba(255,255,255,0.15);color:#ffffff;border-color:rgba(255,255,255,0.3);">

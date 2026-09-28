@@ -378,7 +378,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 style="color:#fff;margin-bottom:0.75rem;">Ready to Build with HelloBotz APIs?</h2>
       <p class="lead" style="color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 1.75rem;">Get API credentials in minutes, explore comprehensive postman collections, and integrate enterprise WhatsApp automation.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Generate Free API Keys &rarr;</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Generate Free API Keys &rarr;</a>
         <a href="/resources/documentation/" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Read Documentation</a>
         <a href="/resources/help-center/#support-form" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Talk to Developer Support</a>
               <a href="https://panindiadata.com/" target="_blank" rel="noopener noreferrer" class="btn btn-download-data btn-lg">

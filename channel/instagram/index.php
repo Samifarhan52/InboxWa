@@ -1148,7 +1148,7 @@ include __DIR__ . '/../../includes/header.php';
                 Fully compliant with Instagram platform guidelines
               </li>
             </ul>
-            <a href="https://app.hellobotz.com" class="cig-btn-primary">Get Started Free</a>
+            <a href="https://app.hellobotz.com/auth/register" class="cig-btn-primary">Get Started Free</a>
           </div>
           <div class="cig-sc-visual">
             <img src="<?php echo $bp; ?>assets/images/channel/instagram/ask-followers.png?v=20260909" alt="Ask Followers to Follow You" class="cig-sc-img" loading="lazy">
@@ -1400,7 +1400,7 @@ include __DIR__ . '/../../includes/header.php';
         Turn comments into customers, automate customer service, and boost sales 24/7.
       </p>
       <div class="cig-cta-actions">
-        <a href="https://app.hellobotz.com" class="cig-btn-white">
+        <a href="https://app.hellobotz.com/auth/register" class="cig-btn-white">
           Start Free Trial
         </a>
         <button type="button" class="cig-btn-secondary btn-demo-open" style="color: #ffffff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);">

@@ -18,7 +18,7 @@ include __DIR__ . '/../../includes/header.php';
         <h1>Turn WhatsApp Conversations Into <span class="grad">E-commerce Sales</span></h1>
         <p class="ecom-lead">Help customers discover products, answer questions, recover abandoned carts, send order updates and automate customer engagement with WhatsApp and AI.</p>
         <div class="ecom-ctas">
-          <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Get Started</a>
           <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book E-commerce Demo</button>
         </div>
         <div class="ecom-tabs" id="ecom-tabs">
@@ -251,7 +251,7 @@ include __DIR__ . '/../../includes/header.php';
       <h2 style="color:#fff">Turn Conversations Into Commerce</h2>
       <p class="lead" style="color:rgba(255,255,255,.75)">Connect your store, automate customer conversations and build a better shopping experience with HelloBotz.</p>
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-        <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Get Started</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Get Started</a>
         <button type="button" class="btn btn-outline btn-lg btn-demo-open" style="border-color:rgba(255,255,255,.5);color:#fff;background:transparent">Book E-commerce Demo</button>
               <a href="/business-leads/" class="btn btn-download-data btn-get-verified-leads btn-lg">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>

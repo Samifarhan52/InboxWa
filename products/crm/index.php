@@ -16,7 +16,7 @@ include __DIR__ . '/../../includes/header.php';
     <h1>CRM pipelines fed by real WhatsApp conversations</h1>
     <p class="lead">Turn chats into contacts and deals — stages that match how your sales team actually sells.</p>
     <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-      <a href="https://app.hellobotz.com" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary btn-lg">Start Free Trial</a>
       <a href="#contact-section" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff">Book a Demo</a>
             <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none;">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>

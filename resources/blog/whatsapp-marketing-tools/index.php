@@ -961,7 +961,7 @@ include __DIR__ . '/../../../includes/header.php';
       <h3>Accelerate Your WhatsApp Automation with HelloBotz</h3>
       <p>Transform customer conversations into revenue with AI agents, automated broadcasts, CRM integrations, and official Meta Cloud API.</p>
       <div class="single-blog-cta-btns">
-        <a href="https://app.hellobotz.com" class="btn btn-primary" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; color: #ffffff;">Start Free Trial</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; color: #ffffff;">Start Free Trial</a>
         <a href="/company/contact/" class="btn btn-outline" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; border: 1.5px solid #7C3AED; color: #7C3AED;">Book a Demo</a>
         <a href="/partners/" class="btn btn-outline" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; border: 1.5px solid #10B981; color: #10B981;">Become a Partner</a>
       </div>

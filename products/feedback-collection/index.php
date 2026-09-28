@@ -1048,7 +1048,7 @@ body.dark-theme .fb-faq-wrap details,
           Collect CSAT ratings, NPS reviews, and qualitative customer feedback automatically at key touchpoints. Make it effortless for customers to share their experience and empower your team to optimize every interaction.
         </p>
         <div class="fb-actions">
-          <a href="https://app.hellobotz.com" class="fb-btn fb-btn-primary">
+          <a href="https://app.hellobotz.com/auth/register" class="fb-btn fb-btn-primary">
             Start Collecting Feedback →
           </a>
           <button type="button" class="fb-btn fb-btn-secondary btn-demo-open">
@@ -1402,7 +1402,7 @@ body.dark-theme .fb-faq-wrap details,
         <p>Collect feedback at the exact right moment, understand real-time sentiment, and turn reviews into sustainable business growth.</p>
       </div>
       <div class="fb-cta-actions">
-        <a href="https://app.hellobotz.com" class="fb-btn" style="background:#ffffff;color:#17152a;font-weight:800;">
+        <a href="https://app.hellobotz.com/auth/register" class="fb-btn" style="background:#ffffff;color:#17152a;font-weight:800;">
           Start Free Now →
         </a>
         <button type="button" class="fb-btn btn-demo-open" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">

@@ -591,7 +591,7 @@ include __DIR__ . '/../../../includes/header.php';
 <h3 id="2-via-a-whatsapp-business-solution-provider-bsp-like-HelloBotz"><b>2. Via a WhatsApp Business Solution Provider (BSP) like HelloBotz</b></h3>
 <p><span style="font-weight: 400;">It is the most popular route opted by businesses to integrate the API into their system. They offer you a ready-to-use platform. Follow these 6 simple steps to get started:</span></p>
 <ol>
-<li><a href="https://app.hellobotz.com" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">Sign up</span></a><span style="font-weight: 400;"> or </span><a href="https://app.hellobotz.com" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">log in</span></a><span style="font-weight: 400;"> to the HelloBotz panel.</span></li>
+<li><a href="https://app.hellobotz.com/auth/register" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">Sign up</span></a><span style="font-weight: 400;"> or </span><a href="https://app.hellobotz.com/auth/login" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">log in</span></a><span style="font-weight: 400;"> to the HelloBotz panel.</span></li>
 <li><span style="font-weight: 400;"> Go to manual onboarding on the left side panel.</span></li>
 <li><span style="font-weight: 400;"> To build an app, a Facebook developer account is used.</span></li>
 <li><span style="font-weight: 400;"> Link a non-WhatsApp or new WhatsApp number to the API setup.</span></li>
@@ -955,7 +955,7 @@ include __DIR__ . '/../../../includes/header.php';
       <h3>Accelerate Your WhatsApp Automation with HelloBotz</h3>
       <p>Transform customer conversations into revenue with AI agents, automated broadcasts, CRM integrations, and official Meta Cloud API.</p>
       <div class="single-blog-cta-btns">
-        <a href="https://app.hellobotz.com" class="btn btn-primary" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; color: #ffffff;">Start Free Trial</a>
+        <a href="https://app.hellobotz.com/auth/register" class="btn btn-primary" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; color: #ffffff;">Start Free Trial</a>
         <a href="/company/contact/" class="btn btn-outline" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; border: 1.5px solid #7C3AED; color: #7C3AED;">Book a Demo</a>
         <a href="/partners/" class="btn btn-outline" style="padding: 11px 26px; border-radius: 9999px; text-decoration: none; font-weight: 700; border: 1.5px solid #10B981; color: #10B981;">Become a Partner</a>
       </div>

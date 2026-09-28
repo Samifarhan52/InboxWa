@@ -17,7 +17,7 @@ include __DIR__ . '/../includes/header.php';
         <input type="email" required placeholder="you@company.com" style="width:100%;padding:.7rem;border:1px solid var(--bd);border-radius:10px;margin:1rem 0">
         <button class="btn btn-primary" style="width:100%">Send reset link</button>
       </form>
-      <p style="margin-top:1rem"><a href="https://app.hellobotz.com">Back to login</a></p>
+      <p style="margin-top:1rem"><a href="https://app.hellobotz.com/auth/login">Back to login</a></p>
     </div>
   </div>
 </section>

@@ -1488,7 +1488,7 @@ body.dark-theme .an-faq-wrap details,
         <p>Consolidate your customer messaging activity into one powerful console and empower your team with data-driven confidence.</p>
       </div>
       <div class="an-cta-actions">
-        <a href="https://app.hellobotz.com" class="an-btn" style="background:#ffffff;color:#17152a;font-weight:800;">
+        <a href="https://app.hellobotz.com/auth/register" class="an-btn" style="background:#ffffff;color:#17152a;font-weight:800;">
           Start Free Trial →
         </a>
         <button type="button" class="an-btn btn-demo-open" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">

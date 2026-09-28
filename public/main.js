@@ -18,26 +18,55 @@
     const a = e.target.closest('a, button');
     if (!a) return;
     const href = (a.getAttribute('href') || '').toLowerCase();
-    const isAuth =
-      a.classList.contains('header-login') ||
+    const text = (a.textContent || '').trim().toLowerCase();
+
+    const isRegister =
       a.classList.contains('header-cta-start') ||
-      a.classList.contains('mnav-login') ||
       a.classList.contains('mnav-start') ||
-      a.classList.contains('btn-auth') ||
-      href.includes('auth/login') ||
+      a.classList.contains('btn-start-free') ||
+      (a.classList.contains('cw-btn-primary') && (text.includes('free') || text.includes('start'))) ||
       href.includes('auth/register') ||
-      href === '/login' ||
+      href.includes('/signup') ||
       href === '/signup' ||
-      href.endsWith('/login') ||
-      href.endsWith('/login/') ||
       href.endsWith('/signup') ||
       href.endsWith('/signup/') ||
-      href.includes('app.hellobotz.com');
+      href.includes('app.hellobotz.com/auth/register') ||
+      href.includes('app.hellobotz.com/register') ||
+      text === 'sign up' ||
+      text.startsWith('sign up') ||
+      text.includes('sign up free') ||
+      text.includes('create free account') ||
+      text.includes('create account') ||
+      text.includes('create free trial') ||
+      text.includes('start 7-day free trial') ||
+      text.includes('start free trial');
 
-    if (isAuth) {
+    if (isRegister) {
       e.preventDefault();
       e.stopImmediatePropagation();
-      window.location.href = 'https://app.hellobotz.com';
+      window.location.href = 'https://app.hellobotz.com/auth/register';
+      return;
+    }
+
+    const isLogin =
+      a.classList.contains('header-login') ||
+      a.classList.contains('mnav-login') ||
+      href.includes('auth/login') ||
+      href.includes('/login') ||
+      href === '/login' ||
+      href.endsWith('/login') ||
+      href.endsWith('/login/') ||
+      href.includes('app.hellobotz.com/auth/login') ||
+      href.includes('app.hellobotz.com/login') ||
+      text === 'login' ||
+      text.startsWith('login') ||
+      text === 'sign in';
+
+    if (isLogin) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.location.href = 'https://app.hellobotz.com/auth/login';
+      return;
     }
   }, true);
 

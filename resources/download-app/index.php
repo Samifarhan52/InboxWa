@@ -143,7 +143,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
           <a class="btn btn-primary" href="https://app.hellobotz.com">
             Open Web App
           </a>
-          <a class="btn btn-sm btn-outline" href="https://app.hellobotz.com">
+          <a class="btn btn-sm btn-outline" href="https://app.hellobotz.com/auth/register">
             Create Free Account
           </a>
         </div>

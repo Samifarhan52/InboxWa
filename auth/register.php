@@ -1,5 +1,5 @@
 <?php
-header('Location: https://app.hellobotz.com', true, 302);
+header('Location: https://app.hellobotz.com/auth/register', true, 302);
 exit;
 $pageTitle = 'Create Free Account | HelloBotz';
 $pageDescription = 'Create your HelloBotz account and start your 14-day free trial with Official WhatsApp Business API, inbox and automation.';

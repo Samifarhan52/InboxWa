@@ -300,7 +300,7 @@ include __DIR__ . '/../../includes/header.php';
 </p>
 <div class="btn-groupp" style="display: flex; gap: 12px;">
      <a id="whatsapp-enquiry"
-          href="https://app.hellobotz.com"
+          href="https://app.hellobotz.com/auth/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Get Started
         </a>
@@ -572,7 +572,7 @@ font-size:20px;
             </div>
             <div class="btn-groupp" style="display: flex; gap: 12px; justify-content:center; margin-top:50px!important;">
      <a id="whatsapp-enquiry"
-          href="https://app.hellobotz.com"
+          href="https://app.hellobotz.com/auth/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Get Started
         </a>
@@ -615,7 +615,7 @@ font-size:20px;
         </div>
         <div class="btn-groupp" style="display: flex; gap: 12px; justify-content:center; margin-top:50px;">
      <a id="whatsapp-enquiry"
-          href="https://app.hellobotz.com"
+          href="https://app.hellobotz.com/auth/register"
           target="_blank" rel="noopener noreferrer" class="btn text-white cta-button m-0">
           Integrate Now
         </a>
