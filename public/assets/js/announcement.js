@@ -177,6 +177,21 @@
       startTimer();
     });
 
+    // Click on announcement slide or CTA to open verification / trial modal
+    bar.addEventListener('click', function(e) {
+      if (e.target.closest('.hb-ann-close, .hb-ann-prev, .hb-ann-next')) {
+        return;
+      }
+      var link = e.target.closest('.hb-ann-link, .hb-ann-slide, .hb-ann-cta');
+      if (link) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof openTrialModal === 'function') {
+          openTrialModal();
+        }
+      }
+    });
+
     // Touch Swipe gestures for mobile
     var touchStartX = 0;
     var touchStartY = 0;

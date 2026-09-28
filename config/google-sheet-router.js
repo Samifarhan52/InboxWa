@@ -17,6 +17,15 @@
  * ==============================================================================
  */
 
+function doGet(e) {
+  return ContentService.createTextOutput(JSON.stringify({
+    ok: true,
+    status: "active",
+    service: "HelloBotz Google Sheet Webhook Router",
+    timestamp: new Date().toISOString()
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
 function doPost(e) {
   var lock = LockService.getScriptLock();
   lock.tryLock(10000); // Wait up to 10 seconds to prevent concurrent write collisions

@@ -128,6 +128,7 @@ try {
             CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_POSTREDIR      => 3,
             CURLOPT_MAXREDIRS      => 5,
             CURLOPT_TIMEOUT        => 15,
             CURLOPT_SSL_VERIFYPEER => true

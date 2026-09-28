@@ -8,12 +8,12 @@
     
     <div class="trial-modal-header">
       <div class="trial-badge">
-        <span class="trial-sparkle">✨</span>
-        <span>14-DAY FREE TRIAL • NO CARD REQUIRED</span>
+        <span class="trial-sparkle">⚡</span>
+        <span>OFFICIAL META CLOUD API v20.0 • INSTANT ONBOARDING</span>
       </div>
-      <div id="trial-title" class="modal-title trial-heading">Start Your Free Trial</div>
+      <div id="trial-title" class="modal-title trial-heading">Get Verified &amp; Access Services</div>
       <p class="popup-lead trial-lead">
-        Get instant access to Official WhatsApp Business API, visual flow builder &amp; shared team inbox in under 2 minutes.
+        Fill out your details below to verify your business and get instant access to Official Meta WhatsApp Cloud API v20.0 services.
       </p>
     </div>
 
@@ -44,6 +44,7 @@
         <div class="form-group">
           <label class="form-label" for="trial-usecase">Primary Need</label>
           <select class="form-input" id="trial-usecase" name="use_case">
+            <option value="Official Meta WhatsApp API & Verification">Official Meta WhatsApp API &amp; Verification</option>
             <option value="WhatsApp Business API & Broadcasts">WhatsApp API &amp; Bulk Broadcasts</option>
             <option value="AI Chatbots & Visual Flow Builder">AI Chatbots &amp; Visual Flow Builder</option>
             <option value="Shared Team Inbox & CRM">Shared Team Inbox &amp; CRM</option>
@@ -64,7 +65,7 @@
       </div>
 
       <button type="submit" class="btn btn-primary btn-block btn-trial-submit" id="trialSubmitBtn">
-        <span>Claim Free Trial &amp; Get Started &rarr;</span>
+        <span>Submit Details &amp; Get Verified &rarr;</span>
       </button>
       
       <div class="trial-trust-footer">
@@ -323,10 +324,10 @@ function handleTrialSubmit(e) {
   });
 }
 
-// Global click listener for explicit trial popup triggers
+// Global click listener for explicit trial & announcement popup triggers
 document.addEventListener('click', function(e) {
-  var t = e.target.closest('[data-open-trial]');
-  if (t) {
+  var t = e.target.closest('[data-open-trial], .hb-ann-link, .hb-ann-slide, .hb-ann-cta, [data-open-verification]');
+  if (t && !e.target.closest('.hb-ann-close, .hb-ann-prev, .hb-ann-next')) {
     e.preventDefault();
     openTrialModal();
   }

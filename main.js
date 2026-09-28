@@ -18,7 +18,16 @@
     const a = e.target.closest('a, button');
     if (!a) return;
     const href = (a.getAttribute('href') || '').toLowerCase();
-    const text = (a.textContent || '').trim().toLowerCase();
+    // Announcement bar click to open verification & service form modal
+    const ann = e.target.closest('.hb-ann-link, .hb-ann-slide, .announcement-banner a, .hb-ann-cta');
+    if (ann && !e.target.closest('.hb-ann-close, .hb-ann-prev, .hb-ann-next')) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if (typeof openTrialModal === 'function') {
+        openTrialModal();
+      }
+      return;
+    }
 
     const isRegister =
       a.classList.contains('header-cta-start') ||
