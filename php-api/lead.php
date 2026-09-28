@@ -51,6 +51,51 @@ try {
         exit;
     }
 
+    // Handle optional direct Resume / Document upload (PDF, DOC, DOCX up to 15MB)
+    $resumeLink = trim((string)($data['resume_link'] ?? $data['resume'] ?? ''));
+    if (!empty($_FILES['resume_file']['name']) && (int)$_FILES['resume_file']['error'] === UPLOAD_ERR_OK) {
+        $allowedExts = ['pdf', 'doc', 'docx', 'txt', 'rtf'];
+        $origName = (string)$_FILES['resume_file']['name'];
+        $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+        $fileSize = (int)$_FILES['resume_file']['size'];
+
+        if (in_array($ext, $allowedExts, true) && $fileSize <= 15 * 1024 * 1024) {
+            $rootDir = dirname(__DIR__);
+            $uploadSubDir = '/uploads/resumes';
+            $uploadDir = $rootDir . $uploadSubDir;
+
+            if (!is_dir($uploadDir)) {
+                @mkdir($uploadDir, 0755, true);
+                @file_put_contents($uploadDir . '/.htaccess', "Options -ExecCGI\nRemoveHandler .php .phtml .php3 .php4 .php5 .php7 .phps\n<FilesMatch \"\.(?i:php|phtml|php3|php4|php5|php7|phps)$\">\nOrder allow,deny\nDeny from all\n</FilesMatch>\n");
+            }
+
+            $cleanBase = preg_replace('/[^a-zA-Z0-9_\-]/', '_', pathinfo($origName, PATHINFO_FILENAME));
+            $cleanBase = substr((string)$cleanBase, 0, 30);
+            $safeFileName = 'resume_' . date('Ymd_His') . '_' . $cleanBase . '_' . substr(bin2hex(random_bytes(4)), 0, 8) . '.' . $ext;
+            $targetPath = $uploadDir . '/' . $safeFileName;
+
+            if (move_uploaded_file($_FILES['resume_file']['tmp_name'], $targetPath)) {
+                $publicUploadDir = $rootDir . '/public' . $uploadSubDir;
+                if (is_dir($rootDir . '/public')) {
+                    if (!is_dir($publicUploadDir)) {
+                        @mkdir($publicUploadDir, 0755, true);
+                    }
+                    @copy($targetPath, $publicUploadDir . '/' . $safeFileName);
+                }
+
+                $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+                $host = $_SERVER['HTTP_HOST'] ?? 'hellobotz.com';
+                $uploadedUrl = $protocol . $host . $uploadSubDir . '/' . $safeFileName;
+                $resumeLink = !empty($resumeLink) ? $uploadedUrl . ' (External Link: ' . $resumeLink . ')' : $uploadedUrl;
+                $data['resume_link'] = $resumeLink;
+            }
+        }
+    }
+
+    if (!empty($resumeLink) && stripos($requirement, $resumeLink) === false) {
+        $requirement .= "\n\nRESUME / CV: " . $resumeLink;
+    }
+
     // Set Timezone to Asia/Kolkata (IST)
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('d/m/Y, h:i:s A');

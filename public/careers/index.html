@@ -5333,10 +5333,34 @@
             <input type="url" id="applicant_portfolio" name="portfolio" class="careers-input" placeholder="https://github.com/yourhandle or linkedin.com/in/..." required>
           </div>
 
-          <!-- Resume Link -->
-          <div>
-            <label class="careers-form-label" for="applicant_resume">Resume / CV Link <span class="req">*</span> <span class="opt">(Google Drive, Notion, Dropbox)</span></label>
-            <input type="url" id="applicant_resume" name="resume_link" class="careers-input" placeholder="https://drive.google.com/file/d/..." required>
+          <!-- Resume / CV (Direct Upload or Link) -->
+          <div class="form-group-full">
+            <label class="careers-form-label" for="applicant_resume_file">
+              Resume / CV Document <span class="req">*</span> 
+              <span class="opt">(Upload PDF, DOC, DOCX up to 15MB, or paste a Drive link below)</span>
+            </label>
+            
+            <div class="resume-upload-zone" id="resumeUploadZone" style="border: 2px dashed #CBD5E1; border-radius: 12px; padding: 1.25rem 1rem; text-align: center; background: #F8FAFC; cursor: pointer; transition: all 0.2s ease;">
+              <input type="file" id="applicant_resume_file" name="resume_file" accept=".pdf,.doc,.docx,.rtf,.txt" style="display: none;">
+              <div id="resumeUploadPrompt">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto 6px auto;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <div style="font-weight: 600; color: #1E293B; font-size: 0.95rem;">Click to upload Resume / CV file</div>
+                <div style="color: #64748B; font-size: 0.8rem; margin-top: 2px;">Supported formats: PDF, DOC, DOCX, TXT (Max 15MB)</div>
+              </div>
+              <div id="resumeFileInfo" style="display: none; align-items: center; justify-content: center; gap: 8px;">
+                <span style="font-size: 1.3rem;">📄</span>
+                <span id="resumeFileName" style="font-weight: 600; color: #047857; font-size: 0.95rem;"></span>
+                <span id="resumeFileSize" style="color: #64748B; font-size: 0.8rem;"></span>
+                <button type="button" id="resumeRemoveBtn" style="background: none; border: none; color: #EF4444; font-size: 0.85rem; font-weight: 700; cursor: pointer; padding: 2px 6px;">✕ Remove</button>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px; margin: 0.75rem 0 0.5rem 0;">
+              <span style="height: 1px; flex: 1; background: #E2E8F0;"></span>
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: #94A3B8;">OR PASTE GOOGLE DRIVE / NOTION LINK</span>
+              <span style="height: 1px; flex: 1; background: #E2E8F0;"></span>
+            </div>
+            <input type="url" id="applicant_resume" name="resume_link" class="careers-input" placeholder="https://drive.google.com/file/d/... or Dropbox / Notion link">
           </div>
 
           <!-- Tell Us About Yourself -->
@@ -5493,6 +5517,69 @@ document.addEventListener('DOMContentLoaded', function() {
   // 5. Careers Form Submission
   var form = document.getElementById('careersApplicationForm');
   var submitBtn = document.getElementById('careersSubmitBtn');
+  // 5. Resume File Upload UI Handlers
+  var resumeZone = document.getElementById('resumeUploadZone');
+  var resumeFileInput = document.getElementById('applicant_resume_file');
+  var resumePrompt = document.getElementById('resumeUploadPrompt');
+  var resumeInfo = document.getElementById('resumeFileInfo');
+  var resumeFileName = document.getElementById('resumeFileName');
+  var resumeFileSize = document.getElementById('resumeFileSize');
+  var resumeRemoveBtn = document.getElementById('resumeRemoveBtn');
+
+  if (resumeZone && resumeFileInput) {
+    resumeZone.addEventListener('click', function(e) {
+      if (e.target !== resumeRemoveBtn) {
+        resumeFileInput.click();
+      }
+    });
+
+    resumeZone.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      resumeZone.style.borderColor = '#047857';
+      resumeZone.style.background = '#ECFDF5';
+    });
+
+    resumeZone.addEventListener('dragleave', function(e) {
+      e.preventDefault();
+      resumeZone.style.borderColor = '#CBD5E1';
+      resumeZone.style.background = '#F8FAFC';
+    });
+
+    resumeZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      resumeZone.style.borderColor = '#CBD5E1';
+      resumeZone.style.background = '#F8FAFC';
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        resumeFileInput.files = e.dataTransfer.files;
+        updateResumeDisplay();
+      }
+    });
+
+    resumeFileInput.addEventListener('change', updateResumeDisplay);
+
+    if (resumeRemoveBtn) {
+      resumeRemoveBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        resumeFileInput.value = '';
+        resumePrompt.style.display = 'block';
+        resumeInfo.style.display = 'none';
+      });
+    }
+
+    function updateResumeDisplay() {
+      if (resumeFileInput.files && resumeFileInput.files[0]) {
+        var file = resumeFileInput.files[0];
+        resumeFileName.textContent = file.name;
+        resumeFileSize.textContent = '(' + (file.size / (1024 * 1024)).toFixed(2) + ' MB)';
+        resumePrompt.style.display = 'none';
+        resumeInfo.style.display = 'inline-flex';
+      }
+    }
+  }
+
+  // 6. Careers Form Submission
+  var form = document.getElementById('careersApplicationForm');
+  var submitBtn = document.getElementById('careersSubmitBtn');
   var statusBox = document.getElementById('careersFormStatus');
 
   if (form) {
@@ -5516,15 +5603,23 @@ document.addEventListener('DOMContentLoaded', function() {
       var skills = selectedSkillsInput.value || 'None specified';
       var portfolio = document.getElementById('applicant_portfolio').value.trim();
       var resume = document.getElementById('applicant_resume').value.trim();
+      var hasFile = resumeFileInput && resumeFileInput.files && resumeFileInput.files.length > 0;
       var about = document.getElementById('applicant_about').value.trim();
       var why = document.getElementById('applicant_why').value.trim();
+
+      if (!hasFile && !resume) {
+        statusBox.className = 'careers-form-status error';
+        statusBox.innerHTML = '<strong>Resume Required:</strong> Please upload your resume document or provide a link above.';
+        statusBox.style.display = 'block';
+        return;
+      }
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span>Submitting Application...</span>';
       statusBox.style.display = 'none';
       statusBox.className = 'careers-form-status';
 
-      // Comprehensive payload for /api/lead
+      // Comprehensive payload for /api/lead.php
       var combinedRequirement = [
         "TARGET TITLE: " + targetTitle,
         "LOCATION: " + location,
@@ -5532,96 +5627,109 @@ document.addEventListener('DOMContentLoaded', function() {
         "EMPLOYMENT TYPE: " + empType,
         "KEY SKILLS: " + skills,
         "PORTFOLIO / GITHUB: " + portfolio,
-        "RESUME LINK: " + resume,
+        "RESUME LINK: " + (resume || (hasFile ? "[Attached Document: " + resumeFileInput.files[0].name + "]" : "None")),
         "ABOUT & PROJECTS:\n" + about,
         "WHY HELLOBOTZ:\n" + why
       ].join("\n\n");
 
-      var payload = {
-        name: name,
-        email: email,
-        phone: phone,
-        location: location,
-        business: location + " (" + exp + ")",
-        type: "Job Application: " + targetTitle,
-        category: "Careers",
-        target_sheet: "Sheet3",
-        sheet_name: "Careers",
-        role_category: roleCat,
-        role: roleCat,
-        target_title: targetTitle,
-        experience: exp,
-        employment_type: empType,
-        selected_skills: skills,
-        skills: skills,
-        portfolio: portfolio,
-        resume_link: resume,
-        about_projects: about,
-        about: about,
-        why_hellobotz: why,
-        why: why,
-        product: roleCat + " | " + skills,
-        requirement: combinedRequirement,
-        source_page: window.location.href
-      };
+      var fd = new FormData();
+      fd.append('name', name);
+      fd.append('email', email);
+      fd.append('phone', phone);
+      fd.append('location', location);
+      fd.append('business', location + " (" + exp + ")");
+      fd.append('type', "Job Application: " + targetTitle);
+      fd.append('category', "Careers");
+      fd.append('target_sheet', "Sheet3");
+      fd.append('sheet_name', "Careers");
+      fd.append('role_category', roleCat);
+      fd.append('role', roleCat);
+      fd.append('target_title', targetTitle);
+      fd.append('experience', exp);
+      fd.append('employment_type', empType);
+      fd.append('selected_skills', skills);
+      fd.append('skills', skills);
+      fd.append('portfolio', portfolio);
+      fd.append('resume_link', resume);
+      if (hasFile) {
+        fd.append('resume_file', resumeFileInput.files[0]);
+      }
+      fd.append('about_projects', about);
+      fd.append('about', about);
+      fd.append('why_hellobotz', why);
+      fd.append('why', why);
+      fd.append('product', roleCat + " | " + skills);
+      fd.append('requirement', combinedRequirement);
+      fd.append('source_page', window.location.href);
 
-      fetch('/api/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      })
-      .then(function(res) {
-        return res.json().catch(function() {
-          return { ok: res.ok };
+      // Multi-tier resilient submission
+      function postLead(url) {
+        return fetch(url, {
+          method: 'POST',
+          body: fd
+        }).then(function(res) {
+          return res.json().catch(function() {
+            return { ok: res.ok };
+          });
         });
-      })
-      .then(function(data) {
-        if (data && data.ok) {
-          statusBox.className = 'careers-form-status success';
-          statusBox.innerHTML = '<strong>Application Submitted Successfully! 🎉</strong><br>Thank you, ' + escapeHtml(name) + '. Our engineering and recruitment team will review your portfolio and reach out to you via WhatsApp or Email (' + escapeHtml(email) + ') shortly.';
-          statusBox.style.display = 'block';
-          form.reset();
-          selectedSkills = [];
-          skillPills.forEach(function(p) { p.classList.remove('selected'); });
-          selectedSkillsInput.value = '';
-          submitBtn.innerHTML = '<span>Application Sent! ✓</span>';
-          setTimeout(function() {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span>Submit Another Application</span>';
-          }, 5000);
-        } else {
-          throw new Error(data && data.error ? data.error : 'Submission encountered an error.');
-        }
-      })
-      .catch(function(err) {
-        // Mailto fallback link
-        var mailSubject = encodeURIComponent("Job Application: " + targetTitle + " - " + name);
-        var mailBody = encodeURIComponent(
-          "Name: " + name + "\n" +
-          "Email: " + email + "\n" +
-          "Phone: " + phone + "\n" +
-          "Location: " + location + "\n" +
-          "Role Category: " + roleCat + "\n" +
-          "Target Title: " + targetTitle + "\n" +
-          "Experience: " + exp + "\n" +
-          "Employment Type: " + empType + "\n" +
-          "Skills: " + skills + "\n" +
-          "Portfolio: " + portfolio + "\n" +
-          "Resume: " + resume + "\n\n" +
-          "About & Projects:\n" + about + "\n\n" +
-          "Why HelloBotz:\n" + why
-        );
-        var mailtoUrl = "mailto:careers@hellobotz.com?subject=" + mailSubject + "&body=" + mailBody;
+      }
 
-        statusBox.className = 'careers-form-status error';
-        statusBox.innerHTML = '<strong>Submission Note:</strong> We had trouble saving automatically. Please <a href="' + mailtoUrl + '" style="font-weight:700;text-decoration:underline;color:#991B1B;">Click here to send directly to careers@hellobotz.com</a>, and your application will be instantly delivered.';
-        statusBox.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Retry Submission</span>';
-      });
+      postLead('/api/lead.php')
+        .then(function(data) {
+          if (data && data.ok) return data;
+          return postLead('/php-api/lead.php');
+        })
+        .catch(function() {
+          return postLead('/php-api/lead.php');
+        })
+        .then(function(data) {
+          if (data && data.ok) {
+            statusBox.className = 'careers-form-status success';
+            statusBox.innerHTML = '<strong>Application Submitted Successfully! 🎉</strong><br>Thank you, ' + escapeHtml(name) + '. Our engineering and recruitment team will review your application and reach out to you via WhatsApp or Email (' + escapeHtml(email) + ') shortly.';
+            statusBox.style.display = 'block';
+            form.reset();
+            if (resumePrompt && resumeInfo) {
+              resumePrompt.style.display = 'block';
+              resumeInfo.style.display = 'none';
+            }
+            selectedSkills = [];
+            skillPills.forEach(function(p) { p.classList.remove('selected'); });
+            selectedSkillsInput.value = '';
+            submitBtn.innerHTML = '<span>Application Sent! ✓</span>';
+            setTimeout(function() {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<span>Submit Another Application</span>';
+            }, 5000);
+          } else {
+            throw new Error(data && data.error ? data.error : 'Submission encountered an error.');
+          }
+        })
+        .catch(function(err) {
+          // Mailto fallback link
+          var mailSubject = encodeURIComponent("Job Application: " + targetTitle + " - " + name);
+          var mailBody = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n" +
+            "Phone: " + phone + "\n" +
+            "Location: " + location + "\n" +
+            "Role Category: " + roleCat + "\n" +
+            "Target Title: " + targetTitle + "\n" +
+            "Experience: " + exp + "\n" +
+            "Employment Type: " + empType + "\n" +
+            "Skills: " + skills + "\n" +
+            "Portfolio: " + portfolio + "\n" +
+            "Resume: " + (resume || (hasFile ? "[Attached File]" : "None")) + "\n\n" +
+            "About & Projects:\n" + about + "\n\n" +
+            "Why HelloBotz:\n" + why
+          );
+          var mailtoUrl = "mailto:careers@hellobotz.com?subject=" + mailSubject + "&body=" + mailBody;
+
+          statusBox.className = 'careers-form-status error';
+          statusBox.innerHTML = '<strong>Submission Note:</strong> We had trouble saving automatically. Please <a href="' + mailtoUrl + '" style="font-weight:700;text-decoration:underline;color:#991B1B;">Click here to send directly to careers@hellobotz.com</a>, and your application will be instantly delivered.';
+          statusBox.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Retry Submission</span>';
+        });
     });
   }
 
