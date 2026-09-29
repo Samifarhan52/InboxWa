@@ -1,9 +1,33 @@
 User-agent: *
 Allow: /
 
+# AI Crawlers & Generative Engine Optimization (GEO)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # Sensitive admin & private endpoints
 Disallow: /secure-console-x7/
 Disallow: /admin/
 Disallow: /auth/forgot-password
 
+# Sitemaps & Knowledge Graph
 Sitemap: https://hellobotz.com/sitemap.xml
+Sitemap: https://hellobotz.com/llms.txt

@@ -11,9 +11,9 @@ require_once dirname(__DIR__) . '/config/cms.php';
 
 $SITE_NAME   = cms_setting('site_title', 'HelloBotz');
 $SITE_TAGLINE = cms_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
-$detectedHost = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? 'inbox-wa-k1i3-five.vercel.app';
+$detectedHost = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? 'hellobotz.com';
 $detectedProto = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
-$SITE_DOMAIN = (strpos($detectedHost, 'localhost') === false && strpos($detectedHost, '127.0.0.1') === false) ? $detectedProto . '://' . $detectedHost : 'https://inbox-wa-k1i3-five.vercel.app';
+$SITE_DOMAIN = (strpos($detectedHost, 'localhost') === false && strpos($detectedHost, '127.0.0.1') === false) ? $detectedProto . '://' . $detectedHost : 'https://hellobotz.com';
 $DEFAULT_OG  = $SITE_DOMAIN . '/assets/images/og-image.png';
 $cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
 $cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
@@ -98,6 +98,9 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="canonical" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
   <link rel="alternate" hreflang="en" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
   <link rel="alternate" hreflang="en-IN" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
+  <link rel="alternate" hreflang="en-AE" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
+  <link rel="alternate" hreflang="en-US" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
+  <link rel="alternate" hreflang="en-GB" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
   <link rel="alternate" hreflang="x-default" href="<?php echo hb_seo_esc($canonicalUrl); ?>">
 
   <meta property="og:type" content="<?php echo hb_seo_esc($ogType); ?>">
@@ -244,17 +247,46 @@ if (!function_exists('hb_seo_esc')) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "HelloBotz AI Technologies Pvt Ltd",
+    "alternateName": "HelloBotz",
     "url": "https://hellobotz.com/",
     "logo": "https://hellobotz.com/assets/images/logo.png",
-    "description": "Official WhatsApp Business API and Omnichannel automation platform for WhatsApp, Instagram, Facebook and Telegram.",
+    "description": "Official Meta WhatsApp Business Cloud API v20.0 and AI Agent automation platform with shared team inbox, bulk broadcasting, and CRM integrations.",
     "email": "<?php echo htmlspecialchars($cmsSalesEmail); ?>",
     "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
-    "address": { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Bangalore" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "India" },
+      { "@type": "Country", "name": "United Arab Emirates" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "GeoShape", "name": "Global / Worldwide" }
+    ],
+    "knowsAbout": [
+      "Official Meta WhatsApp Cloud API v20.0",
+      "WhatsApp Business Platform",
+      "WhatsApp Broadcasting & Anti-Ban Architecture",
+      "AI Agent Automation & LLM Chatbots",
+      "WhatsApp Green Tick Official Verification",
+      "Click-to-WhatsApp Ads (CTWA)",
+      "Omnichannel Team Inbox",
+      "WhatsApp CRM & E-Commerce Automation"
+    ],
     "contactPoint": [{
       "@type": "ContactPoint",
       "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
       "contactType": "sales",
-      "areaServed": "IN",
+      "areaServed": ["IN", "AE", "US", "GB", "Global"],
       "availableLanguage": ["English", "Hindi"]
     }, {
       "@type": "ContactPoint",
@@ -262,6 +294,44 @@ if (!function_exists('hb_seo_esc')) {
       "contactType": "customer support",
       "email": "<?php echo htmlspecialchars($cmsSupportEmail); ?>"
     }],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "WhatsApp Marketing & Cloud API Solutions",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Official Meta WhatsApp Cloud API v20.0 Infrastructure",
+            "description": "Enterprise-grade high-throughput WhatsApp Cloud API with 99.99% uptime and zero-ban protection."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "WhatsApp Green Tick Official Badge Verification",
+            "description": "Meta verified business profile registration and Green Tick badge processing."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shared Team Inbox & AI Chatbot Agents",
+            "description": "Visual drag-and-drop conversational chatbot builder with OpenAI GPT/LLM intelligence."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Click-to-WhatsApp Ads (CTWA) & Smart Broadcasting",
+            "description": "Targeted WhatsApp marketing broadcasts, contact segmentation, and ad conversion tracking."
+          }
+        }
+      ]
+    },
     "sameAs": [
       "https://facebook.com/hellobotz",
       "https://instagram.com/hellobotz",
@@ -323,6 +393,7 @@ if (!function_exists('hb_seo_esc')) {
       "latitude": 12.9716,
       "longitude": 77.5946
     },
+    "areaServed": ["India", "United Arab Emirates", "United States", "United Kingdom", "Worldwide"],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],

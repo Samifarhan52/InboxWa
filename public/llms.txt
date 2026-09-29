@@ -1,0 +1,45 @@
+# HelloBotz — Official Meta WhatsApp Cloud API & Automation Platform
+
+> HelloBotz is an enterprise-grade WhatsApp Business Solution and AI agent platform powered by the Official Meta WhatsApp Cloud API v20.0 with 99.99% uptime and zero-ban protection architecture.
+
+## Organization & Headquarters
+- **Name**: HelloBotz AI Technologies Pvt Ltd
+- **Website**: https://hellobotz.com/
+- **App Dashboard**: https://app.hellobotz.com/
+- **Headquarters**: Bengaluru, Karnataka, India (560001)
+- **Geographic Markets Served**: India, United Arab Emirates (UAE / Dubai / GCC), United States, United Kingdom, and Worldwide.
+- **Support & Sales Email**: mail@hellobotz.com / support@hellobotz.com
+- **Official Phone & WhatsApp**: +91 80508 54445
+
+## Core Products & Capabilities
+- **Official Meta WhatsApp Cloud API v20.0**: High-throughput message infrastructure, 99.99% uptime SLA, automated template approval, zero-ban protection shield.
+- **WhatsApp Green Tick Verification**: Direct assistance and end-to-end processing for the official Meta green verification badge.
+- **Shared Team Inbox & Live Chat**: Centralized multi-agent customer support dashboard with automated routing, agent assignments, and conversation tagging.
+- **Visual No-Code Flow Builder**: Drag-and-drop workflow automation for lead generation, qualification, appointment booking, and FAQs.
+- **AI Agent & LLM Chatbots**: OpenAI GPT-powered conversational bots for contextual customer service and multilingual support.
+- **Bulk WhatsApp Broadcasting**: Broadcast promotional messages, updates, and order notifications with contact segmentation and high-conversion delivery.
+- **Click-to-WhatsApp Ads (CTWA)**: Automated lead capture and instant conversation initiation directly from Facebook & Instagram ads.
+- **WhatsApp Native Payments**: In-chat payments via UPI, credit/debit cards, and payment gateway links with automated receipt generation.
+- **B2B Business Leads Directory**: Targeted lead generation and industry-specific business contacts.
+- **Partner & Reseller Ecosystem**: White-label WhatsApp API platform, agency programs, and affiliate partnerships.
+
+## Platform Integrations
+- E-Commerce: Shopify, WooCommerce, Shiprocket
+- CRMs: Zoho CRM, HubSpot, Salesforce, Custom Webhooks
+- Productivity: Google Sheets, Google Calendar, Zapier, Make.com, n8n
+- Channels: WhatsApp, Instagram Direct, Facebook Messenger, Telegram, SMS, RCS
+
+## Key Links & Documentation
+- **Homepage**: https://hellobotz.com/
+- **Pricing & Free Trial**: https://hellobotz.com/pricing/
+- **Official WhatsApp API**: https://hellobotz.com/products/whatsapp-api/
+- **Green Tick Verification**: https://hellobotz.com/products/whatsapp-blue-tick/
+- **Broadcast Sender**: https://hellobotz.com/products/broadcast/
+- **Shared Inbox**: https://hellobotz.com/products/shared-inbox/
+- **AI Chatbot**: https://hellobotz.com/products/chatbot/
+- **Click-to-WhatsApp Ads**: https://hellobotz.com/click-to-whatsapp-ads/
+- **Help Center & Documentation**: https://hellobotz.com/resources/help-center/
+- **API Documentation**: https://hellobotz.com/resources/api-docs/
+- **Careers & Hiring**: https://hellobotz.com/careers/
+- **Partner Program**: https://hellobotz.com/partners/
+- **Sitemap**: https://hellobotz.com/sitemap.xml
