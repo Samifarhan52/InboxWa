@@ -1560,7 +1560,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
 <script src="/assets/js/mobile-menu.js?v=55"></script>
 
   <script src="/forms.js?v=22" defer></script>
-  <script src="/assets/js/robot-chatbot.js?v=8" defer></script>
+  <script src="/assets/js/robot-chatbot.js?v=9" defer></script>
   <?php echo cms_setting('custom_footer_code', ''); ?>
 </body>
 </html>

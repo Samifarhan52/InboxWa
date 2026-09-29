@@ -133,7 +133,7 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=57">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=52">
-  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=8">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=9">
   <link rel="stylesheet" href="/assets/css/dark-mode.css?v=60">
   <?php if (!empty($extraCss)): foreach ((array)$extraCss as $ecss): ?>
   <link rel="stylesheet" href="<?php echo hb_seo_esc($ecss); ?>">

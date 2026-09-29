@@ -800,18 +800,79 @@
       }
     });
 
-    // Quick Channels Bar triggers
-    quickChannels.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        if (btn.classList.contains('qc-demo')) {
-          var d = document.querySelector('.btn-demo-open');
-          if (d) d.click();
-        } else if (btn.classList.contains('qc-callback')) {
-          var c = document.querySelector('.btn-callback-open');
-          if (c) c.click();
+    // Setup Quick Channels: Pin WhatsApp & Call Us, make remaining items scrollable, replace Get Data with Get Verified
+    function setupQuickChannels() {
+      var qcContainer = widget.querySelector('.hellobotz-quick-channels');
+      if (!qcContainer) return;
+
+      // 1. Replace legacy Get Data (PanIndiaData) with Get Verified button
+      var oldDataBtn = qcContainer.querySelector('.qc-data, a[href*="panindiadata.com"]');
+      if (oldDataBtn) {
+        var verifiedBtn = document.createElement('button');
+        verifiedBtn.type = 'button';
+        verifiedBtn.className = 'quick-channel-item qc-verified btn-trial-open';
+        verifiedBtn.title = 'Get Verified & Access HelloBotz';
+        verifiedBtn.setAttribute('aria-label', 'Get Verified & Access HelloBotz');
+        verifiedBtn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Get Verified';
+        oldDataBtn.parentNode.replaceChild(verifiedBtn, oldDataBtn);
+      }
+
+      // 2. Wrap fixed and scrollable containers if not already partitioned
+      if (!qcContainer.querySelector('.quick-channels-fixed')) {
+        var fixedWrap = document.createElement('div');
+        fixedWrap.className = 'quick-channels-fixed';
+
+        var scrollWrap = document.createElement('div');
+        scrollWrap.className = 'quick-channels-scroll';
+
+        var allItems = Array.prototype.slice.call(qcContainer.querySelectorAll('.quick-channel-item'));
+        allItems.forEach(function (item) {
+          if (item.classList.contains('qc-wa') || item.classList.contains('qc-call')) {
+            fixedWrap.appendChild(item);
+          } else {
+            scrollWrap.appendChild(item);
+          }
+        });
+
+        qcContainer.innerHTML = '';
+        qcContainer.appendChild(fixedWrap);
+        qcContainer.appendChild(scrollWrap);
+      }
+
+      // 3. Delegate click events for modal actions
+      qcContainer.addEventListener('click', function (e) {
+        var target = e.target.closest('.quick-channel-item');
+        if (!target) return;
+
+        if (target.classList.contains('qc-verified') || target.classList.contains('btn-trial-open')) {
+          e.preventDefault();
+          if (typeof openTrialModal === 'function') {
+            openTrialModal();
+          } else {
+            var trialBtn = document.querySelector('.btn-trial-open:not(.hellobotz-quick-channels *), [data-open-trial]');
+            if (trialBtn) trialBtn.click();
+          }
+        } else if (target.classList.contains('qc-demo') || target.classList.contains('btn-demo-open')) {
+          e.preventDefault();
+          if (typeof openDemoModal === 'function') {
+            openDemoModal();
+          } else {
+            var demoBtn = document.querySelector('.btn-demo-open:not(.hellobotz-quick-channels *), [data-open-demo]');
+            if (demoBtn) demoBtn.click();
+          }
+        } else if (target.classList.contains('qc-callback') || target.classList.contains('btn-callback-open')) {
+          e.preventDefault();
+          if (typeof openCallbackModal === 'function') {
+            openCallbackModal();
+          } else {
+            var cbBtn = document.querySelector('.btn-callback-open:not(.hellobotz-quick-channels *), [data-open-callback]');
+            if (cbBtn) cbBtn.click();
+          }
         }
       });
-    });
+    }
+
+    setupQuickChannels();
 
     // Initial Greetings with Vertical Options
     function renderWelcomeMessage() {

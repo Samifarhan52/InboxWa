@@ -536,17 +536,48 @@
 .hellobotz-quick-channels {
   background: #F8FAFC;
   border-bottom: 1px solid #E2E8F0;
-  padding: 5px 8px;
+  padding: 6px 8px;
   display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 0;
+}
+
+/* Left Fixed Section: WhatsApp & Call Us always pinned */
+.quick-channels-fixed {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding-right: 6px;
+  border-right: 1px solid #E2E8F0;
+  margin-right: 6px;
+  z-index: 2;
+  background: inherit;
+}
+
+/* Right Scrollable Section: Remaining Channels */
+.quick-channels-scroll {
+  display: flex;
+  align-items: center;
   gap: 5px;
   overflow-x: auto;
   scrollbar-width: thin;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 1px 0;
 }
 
+.quick-channels-scroll::-webkit-scrollbar,
 .hellobotz-quick-channels::-webkit-scrollbar {
   height: 3px;
 }
+.quick-channels-scroll::-webkit-scrollbar-thumb,
 .hellobotz-quick-channels::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
@@ -566,8 +597,9 @@
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.15s ease-in-out;
   flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .quick-channel-item:hover {
@@ -583,12 +615,49 @@
 }
 .quick-channel-item.qc-wa:hover {
   background: #DCFCE7;
+  border-color: #86EFAC;
 }
 
 .quick-channel-item.qc-call {
   color: #0369A1;
   background: #F0F9FF;
   border-color: #BAE6FD;
+}
+.quick-channel-item.qc-call:hover {
+  background: #E0F2FE;
+  border-color: #7DD3FC;
+}
+
+.quick-channel-item.qc-demo {
+  color: #4338CA;
+  background: #EEF2FF;
+  border-color: #C7D2FE;
+}
+.quick-channel-item.qc-demo:hover {
+  background: #E0E7FF;
+  border-color: #A5B4FC;
+}
+
+.quick-channel-item.qc-verified {
+  color: #1d4ed8;
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+  font-weight: 700;
+}
+.quick-channel-item.qc-verified:hover {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+  color: #1E40AF;
+}
+
+.quick-channel-item.qc-callback {
+  color: #B45309;
+  background: #FFFBEB;
+  border-color: #FDE68A;
+}
+.quick-channel-item.qc-callback:hover {
+  background: #FEF3C7;
+  border-color: #FCD34D;
 }
 
 .quick-channel-item.qc-pricing {
@@ -1123,6 +1192,16 @@ html.dark .hellobotz-quick-channels {
   border-bottom-color: rgba(255, 255, 255, 0.08) !important;
 }
 
+html[data-theme="dark"] .quick-channels-fixed,
+html.dark .quick-channels-fixed {
+  border-right-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .quick-channels-scroll::-webkit-scrollbar-thumb,
+html.dark .quick-channels-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
 html[data-theme="dark"] .quick-channel-item,
 html.dark .quick-channel-item {
   background: #1e293b !important;
@@ -1148,6 +1227,27 @@ html.dark .quick-channel-item.qc-call {
   background: rgba(3, 105, 161, 0.2) !important;
   border-color: rgba(56, 189, 248, 0.35) !important;
   color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .quick-channel-item.qc-demo,
+html.dark .quick-channel-item.qc-demo {
+  background: rgba(99, 102, 241, 0.2) !important;
+  border-color: rgba(129, 140, 248, 0.35) !important;
+  color: #a5b4fc !important;
+}
+
+html[data-theme="dark"] .quick-channel-item.qc-verified,
+html.dark .quick-channel-item.qc-verified {
+  background: rgba(37, 99, 235, 0.2) !important;
+  border-color: rgba(96, 165, 250, 0.35) !important;
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .quick-channel-item.qc-callback,
+html.dark .quick-channel-item.qc-callback {
+  background: rgba(217, 119, 6, 0.2) !important;
+  border-color: rgba(251, 191, 36, 0.35) !important;
+  color: #fcd34d !important;
 }
 
 html[data-theme="dark"] .quick-channel-item.qc-pricing,
