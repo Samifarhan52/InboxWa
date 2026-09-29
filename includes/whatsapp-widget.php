@@ -115,14 +115,35 @@ $waWidgetSupportMail = cms_setting('support_email', 'support@hellobotz.com');
     </div>
   </div>
 
-  <!-- DYNAMIC SPEECH TEASER BUBBLE / NOTIFICATION -->
-  <div class="hellobotz-speech-bubble" role="tooltip" aria-live="polite">
-    <span class="speech-status-dot"></span>
-    <span class="hellobotz-speech-text">Hi! How can I help?</span>
+  <!-- DYNAMIC PROACTIVE NOTIFICATION ALERT BUBBLE / CARD -->
+  <div class="hellobotz-speech-bubble" id="hellobotz-speech-bubble" role="alert" aria-live="polite">
+    <div class="hellobotz-bubble-header">
+      <div class="hellobotz-bubble-sender">
+        <span class="speech-status-dot"></span>
+        <span class="hellobotz-bubble-title">HelloBotz AI</span>
+        <span class="hellobotz-bubble-time">&bull; Online</span>
+      </div>
+      <button type="button" class="hellobotz-bubble-close" id="hellobotz-bubble-close" aria-label="Close alert notification">&times;</button>
+    </div>
+    <div class="hellobotz-bubble-content">
+      <p class="hellobotz-speech-text">👋 Hi! Need help automating WhatsApp for your business? Chat with me!</p>
+    </div>
+    <div class="hellobotz-bubble-footer">
+      <span class="hellobotz-bubble-cta">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Ask a Question
+      </span>
+      <span class="hellobotz-bubble-reply-hint">Instant Reply &rarr;</span>
+    </div>
   </div>
 
   <!-- HELLOBOTZ INTERACTIVE ROBOT MASCOT TRIGGER -->
   <button class="hellobotz-trigger" id="hellobotz-trigger-btn" aria-label="Chat with HelloBotz Robot AI" type="button">
+    <!-- Glowing Unread Notification Alert Badge -->
+    <span class="hb-unread-badge" id="hb-unread-badge" aria-label="1 unread alert">
+      <span class="hb-unread-count">1</span>
+      <span class="hb-unread-ping"></span>
+    </span>
     
     <!-- Living Animated Character -->
     <div class="hellobotz-character">

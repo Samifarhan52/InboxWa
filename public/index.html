@@ -54,7 +54,7 @@
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=55">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=51">
-  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=8">
   <link rel="stylesheet" href="/assets/css/dark-mode.css?v=60">
     <script>
     (function() {
@@ -5838,14 +5838,15 @@
   .cw-floating-sim-alert {
     position: absolute !important;
     bottom: 42px !important;
-    right: -135px !important;
+    left: calc(100% - 10px) !important;
+    right: auto !important;
     top: auto !important;
-    left: auto !important;
     z-index: 80 !important;
     display: inline-flex !important;
     align-items: center !important;
     gap: 9px !important;
     padding: 8px 14px 8px 11px !important;
+    white-space: nowrap !important;
     background: linear-gradient(135deg, rgba(13, 22, 38, 0.97) 0%, rgba(15, 30, 48, 0.94) 50%, rgba(9, 18, 30, 0.98) 100%) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
@@ -6075,8 +6076,14 @@
 
   @media (min-width: 992px) and (max-width: 1199px) {
     .cw-floating-sim-alert {
-      right: -105px !important;
+      left: calc(100% - 10px) !important;
+      right: auto !important;
       bottom: 40px !important;
+      transform-origin: left center !important;
+      transform: scale(0.92) !important;
+    }
+    .cw-floating-sim-alert:hover {
+      transform: translateY(-9px) scale(0.96) !important;
     }
   }
 
@@ -12428,7 +12435,7 @@ function switchModalMedia(type, btn) {
   </footer>
 
   <!-- HELLOBOTZ INTERACTIVE ROBOT CHATBOT WIDGET -->
-<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=6">
+<link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=8">
 
 <div class="hellobotz-robot-widget wa-widget" id="hellobotz-robot-widget">
   
@@ -12532,14 +12539,35 @@ function switchModalMedia(type, btn) {
     </div>
   </div>
 
-    <!-- DYNAMIC SPEECH TEASER BUBBLE / NOTIFICATION -->
-  <div class="hellobotz-speech-bubble" role="tooltip" aria-live="polite">
-    <span class="speech-status-dot"></span>
-    <span class="hellobotz-speech-text">Hi! How can I help?</span>
+  <!-- DYNAMIC PROACTIVE NOTIFICATION ALERT BUBBLE / CARD -->
+  <div class="hellobotz-speech-bubble" id="hellobotz-speech-bubble" role="alert" aria-live="polite">
+    <div class="hellobotz-bubble-header">
+      <div class="hellobotz-bubble-sender">
+        <span class="speech-status-dot"></span>
+        <span class="hellobotz-bubble-title">HelloBotz AI</span>
+        <span class="hellobotz-bubble-time">&bull; Online</span>
+      </div>
+      <button type="button" class="hellobotz-bubble-close" id="hellobotz-bubble-close" aria-label="Close alert notification">&times;</button>
+    </div>
+    <div class="hellobotz-bubble-content">
+      <p class="hellobotz-speech-text">👋 Hi! Need help automating WhatsApp for your business? Chat with me!</p>
+    </div>
+    <div class="hellobotz-bubble-footer">
+      <span class="hellobotz-bubble-cta">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Ask a Question
+      </span>
+      <span class="hellobotz-bubble-reply-hint">Instant Reply &rarr;</span>
+    </div>
   </div>
 
   <!-- HELLOBOTZ INTERACTIVE ROBOT MASCOT TRIGGER -->
   <button class="hellobotz-trigger" id="hellobotz-trigger-btn" aria-label="Chat with HelloBotz Robot AI" type="button">
+    <!-- Glowing Unread Notification Alert Badge -->
+    <span class="hb-unread-badge" id="hb-unread-badge" aria-label="1 unread alert">
+      <span class="hb-unread-count">1</span>
+      <span class="hb-unread-ping"></span>
+    </span>
     
     <!-- Living Animated Character -->
     <div class="hellobotz-character">
@@ -13085,6 +13113,6 @@ document.addEventListener('click', function(e) {
 <script src="/assets/js/mobile-menu.js?v=55"></script>
 
   <script src="/forms.js?v=22" defer></script>
-  <script src="/assets/js/robot-chatbot.js?v=6" defer></script>
+  <script src="/assets/js/robot-chatbot.js?v=8" defer></script>
   </body>
 </html>

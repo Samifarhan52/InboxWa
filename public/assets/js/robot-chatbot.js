@@ -317,15 +317,51 @@
 
     var triggerBtn = widget.querySelector('.hellobotz-trigger');
     var character = widget.querySelector('.hellobotz-character');
+
+    // 1. Ensure Unread Notification Badge on Mascot Trigger
+    var unreadBadge = widget.querySelector('.hb-unread-badge');
+    if (!unreadBadge && triggerBtn) {
+      unreadBadge = document.createElement('span');
+      unreadBadge.className = 'hb-unread-badge';
+      unreadBadge.id = 'hb-unread-badge';
+      unreadBadge.setAttribute('aria-label', '1 unread alert');
+      unreadBadge.innerHTML = '<span class="hb-unread-count">1</span><span class="hb-unread-ping"></span>';
+      triggerBtn.appendChild(unreadBadge);
+    }
+
+    // 2. Ensure Rich Proactive Notification Alert Card
     var speechBubble = widget.querySelector('.hellobotz-speech-bubble');
     if (!speechBubble && triggerBtn) {
       speechBubble = document.createElement('div');
       speechBubble.className = 'hellobotz-speech-bubble';
-      speechBubble.setAttribute('role', 'tooltip');
+      speechBubble.id = 'hellobotz-speech-bubble';
+      speechBubble.setAttribute('role', 'alert');
       speechBubble.setAttribute('aria-live', 'polite');
-      speechBubble.innerHTML = '<span class="speech-status-dot"></span><span class="hellobotz-speech-text">Hi! How can I help?</span>';
       widget.insertBefore(speechBubble, triggerBtn);
     }
+    if (speechBubble && !speechBubble.querySelector('.hellobotz-bubble-header')) {
+      speechBubble.innerHTML = [
+        '<div class="hellobotz-bubble-header">',
+          '<div class="hellobotz-bubble-sender">',
+            '<span class="speech-status-dot"></span>',
+            '<span class="hellobotz-bubble-title">HelloBotz AI</span>',
+            '<span class="hellobotz-bubble-time">&bull; Online</span>',
+          '</div>',
+          '<button type="button" class="hellobotz-bubble-close" id="hellobotz-bubble-close" aria-label="Close alert notification">&times;</button>',
+        '</div>',
+        '<div class="hellobotz-bubble-content">',
+          '<p class="hellobotz-speech-text">👋 Hi! Need help automating WhatsApp for your business? Chat with me!</p>',
+        '</div>',
+        '<div class="hellobotz-bubble-footer">',
+          '<span class="hellobotz-bubble-cta">',
+            '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+            'Ask a Question',
+          '</span>',
+          '<span class="hellobotz-bubble-reply-hint">Instant Reply &rarr;</span>',
+        '</div>'
+      ].join('');
+    }
+
     var speechText = widget.querySelector('.hellobotz-speech-text');
     var closeBtn = widget.querySelector('.header-close-btn');
     var resetBtn = widget.querySelector('.header-reset-btn');
@@ -333,6 +369,27 @@
     var chatForm = widget.querySelector('.hellobotz-chat-form');
     var chatInput = widget.querySelector('.hellobotz-chat-input');
     var quickChannels = widget.querySelectorAll('.quick-channel-item');
+
+    // Subtle audio chime for incoming notification alert
+    function playNotificationChime() {
+      try {
+        var AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        var ctx = new AudioCtx();
+        var now = ctx.currentTime;
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.12); // A5
+        gain.gain.setValueAtTime(0.04, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      } catch (err) {}
+    }
 
     // -------------------------------------------------------------
     // CHARACTER EMOTION STATES (Blinking, Bored, Excited)
@@ -346,12 +403,12 @@
 
       if (emotion === 'excited') {
         character.classList.add('state-excited');
-        if (speechText) speechText.textContent = "Let's chat!";
+        if (speechText) speechText.textContent = "✨ Let's chat! Ask me anything about WhatsApp automation.";
       } else if (emotion === 'bored') {
         character.classList.add('state-bored');
-        if (speechText) speechText.textContent = "HelloBotz is here to help!";
+        if (speechText) speechText.textContent = "💬 HelloBotz AI is here! Need pricing or demo assistance?";
       } else {
-        if (speechText) speechText.textContent = "Hi! How can I help?";
+        if (speechText) speechText.textContent = "👋 Hi! Need help automating WhatsApp for your business? Chat with me!";
       }
     }
 
@@ -361,7 +418,7 @@
         setEmotion('normal');
       }
       idleTimer = setTimeout(function () {
-        if (!widget.classList.contains('is-open')) {
+        if (!widget.classList.contains('is-open') && !widget.classList.contains('open')) {
           setEmotion('bored');
         }
       }, 12000);
@@ -386,7 +443,7 @@
       });
 
       triggerBtn.addEventListener('mouseleave', function () {
-        if (!widget.classList.contains('is-open')) {
+        if (!widget.classList.contains('is-open') && !widget.classList.contains('open')) {
           setEmotion('normal');
           resetIdleTimer();
         }
@@ -403,6 +460,30 @@
     widget.classList.remove('is-open', 'open');
 
     // -------------------------------------------------------------
+    // PROACTIVE ALERT NOTIFICATION TIMING & CHIME (1.8s Delay)
+    // -------------------------------------------------------------
+    setTimeout(function () {
+      if (!widget.classList.contains('is-open') && !widget.classList.contains('open')) {
+        if (speechBubble) {
+          speechBubble.classList.remove('dismissed');
+          speechBubble.classList.add('hb-bubble-pop');
+        }
+        if (unreadBadge) {
+          unreadBadge.classList.remove('dismissed');
+        }
+        if (character) {
+          character.classList.add('state-excited');
+          setTimeout(function () {
+            if (character && !widget.classList.contains('is-open') && !widget.classList.contains('open')) {
+              character.classList.remove('state-excited');
+            }
+          }, 2400);
+        }
+        playNotificationChime();
+      }
+    }, 1800);
+
+    // -------------------------------------------------------------
     // CHATBOX OPEN / CLOSE CONTROLS
     // -------------------------------------------------------------
     function toggleWidget(force) {
@@ -412,7 +493,13 @@
         setEmotion('excited');
         widget.classList.add('is-open');
         widget.classList.add('open');
-        if (speechBubble) speechBubble.style.display = 'none';
+        if (speechBubble) {
+          speechBubble.classList.add('dismissed');
+          speechBubble.style.display = 'none';
+        }
+        if (unreadBadge) {
+          unreadBadge.classList.add('dismissed');
+        }
         setTimeout(function () {
           if (chatInput) chatInput.focus();
           scrollToBottom();
@@ -444,10 +531,20 @@
 
     if (speechBubble) {
       speechBubble.addEventListener('click', function (e) {
+        if (e.target.closest('.hellobotz-bubble-close')) return;
         e.preventDefault();
         e.stopPropagation();
         toggleWidget(true);
       });
+
+      var bubbleCloseBtn = speechBubble.querySelector('.hellobotz-bubble-close');
+      if (bubbleCloseBtn) {
+        bubbleCloseBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          speechBubble.classList.add('dismissed');
+        });
+      }
     }
 
     var closeButtons = widget.querySelectorAll('.header-close-btn, .hellobotz-close-circle');

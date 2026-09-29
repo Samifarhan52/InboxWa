@@ -190,7 +190,9 @@
 .hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
 .hellobotz-robot-widget.open .hellobotz-speech-bubble,
 #hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
-#hellobotz-robot-widget.open .hellobotz-speech-bubble {
+#hellobotz-robot-widget.open .hellobotz-speech-bubble,
+.hellobotz-robot-widget.is-open .hb-unread-badge,
+.hellobotz-robot-widget.open .hb-unread-badge {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
@@ -198,48 +200,189 @@
 }
 
 /* ==========================================================================
-   DYNAMIC SPEECH TEASER BUBBLE / NOTIFICATION
+   UNREAD NOTIFICATION BADGE ON ROBOT TRIGGER
+   ========================================================================== */
+.hb-unread-badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.55), 0 0 0 2px #FFFFFF;
+  z-index: 10005;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, visibility 0.3s;
+  pointer-events: none;
+}
+.hb-unread-badge.dismissed {
+  opacity: 0 !important;
+  transform: scale(0.5) !important;
+  visibility: hidden !important;
+}
+.hb-unread-ping {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid #EF4444;
+  animation: hbUnreadPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+@keyframes hbUnreadPing {
+  0% { transform: scale(0.9); opacity: 0.95; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ==========================================================================
+   DYNAMIC PROACTIVE NOTIFICATION ALERT BUBBLE / CARD
    ========================================================================== */
 .hellobotz-speech-bubble {
   position: absolute;
-  bottom: 82px;
-  right: 6px;
+  bottom: 84px;
+  right: 0;
+  width: 280px;
+  max-width: calc(100vw - 2rem);
   background: #FFFFFF;
-  color: #1E293B;
-  padding: 8px 14px;
-  border-radius: 14px;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(139, 92, 246, 0.25);
+  color: #0F172A;
+  border-radius: 18px;
+  padding: 12px 14px 11px;
+  box-shadow: 0 20px 45px -8px rgba(15, 23, 42, 0.22), 0 0 0 1.5px rgba(139, 92, 246, 0.3), 0 0 25px rgba(139, 92, 246, 0.12);
   display: flex !important;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
   cursor: pointer;
-  white-space: nowrap;
-  animation: hellobotz-bubble-hover 3s ease-in-out infinite;
   z-index: 9999;
-  transition: all 0.25s ease;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, visibility 0.3s, box-shadow 0.25s ease;
+  animation: hellobotz-bubble-hover 3.8s ease-in-out infinite;
+  opacity: 1;
+  visibility: visible;
+  user-select: none;
+}
+.hellobotz-speech-bubble.hb-bubble-pop {
+  animation: hbNotificationPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, hellobotz-bubble-hover 3.8s 0.55s ease-in-out infinite;
+}
+@keyframes hbNotificationPop {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.85);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.hellobotz-speech-bubble.dismissed {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(12px) scale(0.9) !important;
+  pointer-events: none !important;
 }
 
 .hellobotz-speech-bubble:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.25), 0 0 0 1.5px #8B5CF6;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 24px 50px -8px rgba(15, 23, 42, 0.28), 0 0 0 2px #8B5CF6, 0 0 30px rgba(139, 92, 246, 0.2);
 }
 
+/* Beak Pointer */
 .hellobotz-speech-bubble::after {
   content: '';
   position: absolute;
   bottom: -6px;
-  right: 24px;
-  width: 12px;
-  height: 12px;
-  background: inherit;
-  border-right: 1px solid rgba(139, 92, 246, 0.25);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+  right: 28px;
+  width: 13px;
+  height: 13px;
+  background: #FFFFFF;
+  border-right: 1.5px solid rgba(139, 92, 246, 0.3);
+  border-bottom: 1.5px solid rgba(139, 92, 246, 0.3);
   transform: rotate(45deg);
+  border-radius: 0 0 2px 0;
+}
+
+/* Header inside bubble */
+.hellobotz-bubble-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.hellobotz-bubble-sender {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hellobotz-bubble-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.01em;
+}
+.hellobotz-bubble-time {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #059669;
+}
+.hellobotz-bubble-close {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.hellobotz-bubble-close:hover {
+  color: #EF4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* Message body inside bubble */
+.hellobotz-bubble-content {
+  width: 100%;
+}
+.hellobotz-bubble-content p,
+.hellobotz-speech-text {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #334155;
+  white-space: normal;
+}
+
+/* Footer CTA strip inside bubble */
+.hellobotz-bubble-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  margin-top: 2px;
+}
+.hellobotz-bubble-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #7C3AED;
+}
+.hellobotz-bubble-reply-hint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748B;
 }
 
 .speech-status-dot {
@@ -892,16 +1035,26 @@
 @media (max-width: 768px) {
   .hellobotz-speech-bubble {
     display: flex !important;
-    bottom: 74px !important;
-    right: 4px !important;
-    font-size: 11.5px !important;
-    padding: 6px 11px !important;
-    border-radius: 12px !important;
+    bottom: 66px !important;
+    right: 0 !important;
+    width: 250px !important;
+    max-width: calc(100vw - 2rem) !important;
+    padding: 10px 12px 9px !important;
+    border-radius: 16px !important;
+  }
+  .hb-unread-badge {
+    top: 0px !important;
+    right: 0px !important;
+    width: 19px !important;
+    height: 19px !important;
+    font-size: 10px !important;
   }
   #hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
   #hellobotz-robot-widget.open .hellobotz-speech-bubble,
   .hellobotz-robot-widget.is-open .hellobotz-speech-bubble,
-  .hellobotz-robot-widget.open .hellobotz-speech-bubble {
+  .hellobotz-robot-widget.open .hellobotz-speech-bubble,
+  .hellobotz-robot-widget.is-open .hb-unread-badge,
+  .hellobotz-robot-widget.open .hb-unread-badge {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -933,7 +1086,28 @@
 html[data-theme="dark"] .hellobotz-speech-bubble {
   background: #1e293b !important;
   color: #f8fafc !important;
-  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.6), 0 0 0 1.5px rgba(139, 92, 246, 0.45), 0 0 25px rgba(139, 92, 246, 0.2) !important;
+}
+html[data-theme="dark"] .hellobotz-speech-bubble::after {
+  background: #1e293b !important;
+  border-right-color: rgba(139, 92, 246, 0.45) !important;
+  border-bottom-color: rgba(139, 92, 246, 0.45) !important;
+}
+html[data-theme="dark"] .hellobotz-bubble-title {
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] .hellobotz-bubble-content p,
+html[data-theme="dark"] .hellobotz-speech-text {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .hellobotz-bubble-footer {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .hellobotz-bubble-cta {
+  color: #a78bfa !important;
+}
+html[data-theme="dark"] .hellobotz-bubble-reply-hint {
+  color: #94a3b8 !important;
 }
 
 html[data-theme="dark"] .hellobotz-chatbox,
