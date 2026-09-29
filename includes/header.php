@@ -49,7 +49,7 @@ if ($pageDescription === '') {
   $pageDescription = 'Automate WhatsApp marketing with official WhatsApp Business API, chatbots, broadcasts, shared inbox & CRM. Start free with HelloBotz today.';
 }
 if ($pageKeywords === '') {
-  $pageKeywords = 'WhatsApp marketing software, WhatsApp Business API, WhatsApp automation tool, AI chatbot for business, WhatsApp CRM software, lead generation chatbot, shared inbox, broadcast campaigns, HelloBotz';
+  $pageKeywords = 'HelloBotz, WhatsApp marketing, WhatsApp automation, digital marketing automation, WhatsApp Business API, AI chatbot for business, WhatsApp CRM software, lead generation chatbot, shared team inbox, broadcast campaigns, WhatsApp green tick, Meta Cloud API v20.0, official HelloBotz platform';
 }
 if ($canonicalUrl === '') {
   $reqUri = isset($_SERVER['REQUEST_URI']) ? strtok($_SERVER['REQUEST_URI'], '?') : '/';
