@@ -4227,65 +4227,50 @@ html, body {
     right: auto !important;
     left: auto !important;
     top: auto !important;
-    margin: 0 auto 12px !important;
+    margin: 0 auto 10px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 8px !important;
-    padding: 6px 12px 6px 10px !important;
+    gap: 7px !important;
+    padding: 5px 11px 5px 8px !important;
+    height: 32px !important;
     width: auto !important;
     max-width: min(320px, calc(100vw - 32px)) !important;
     box-sizing: border-box !important;
-    background: linear-gradient(135deg, rgba(13, 22, 38, 0.97) 0%, rgba(15, 30, 48, 0.94) 50%, rgba(9, 18, 30, 0.98) 100%) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1.5px solid rgba(52, 211, 153, 0.7) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1.5px solid #10b981 !important;
     border-radius: 9999px !important;
-    box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(16, 185, 129, 0.25) !important;
+    box-shadow: 0 6px 18px -2px rgba(16, 185, 129, 0.22), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
     animation: cwFloatingAlertMobile 3.2s ease-in-out infinite alternate !important;
     z-index: 20 !important;
     overflow: visible !important;
   }
   @keyframes cwFloatingAlertMobile {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-4px); }
+    100% { transform: translateY(-3px); }
   }
-  /* Mobile Downward Speech Beak Pointer */
-  .cw-floating-sim-alert::before {
-    display: block !important;
-    content: '' !important;
-    position: absolute !important;
-    bottom: -5px !important;
-    left: 50% !important;
-    top: auto !important;
-    right: auto !important;
-    transform: translateX(-50%) rotate(45deg) !important;
-    width: 9px !important;
-    height: 9px !important;
-    background: rgba(13, 22, 38, 0.97) !important;
-    border-right: 1.5px solid rgba(52, 211, 153, 0.7) !important;
-    border-bottom: 1.5px solid rgba(52, 211, 153, 0.7) !important;
-    border-left: none !important;
-    border-top: none !important;
-    border-radius: 0 0 2px 0 !important;
-    z-index: 10 !important;
-    pointer-events: none !important;
+  /* Clean beak-free mobile capsule */
+  .cw-floating-sim-alert::before,
+  .cw-floating-sim-alert::after {
+    display: none !important;
   }
   .cw-sim-alert-hand.cw-sim-hand-left {
     display: none !important;
   }
   .cw-sim-alert-hand-down {
     display: inline-flex !important;
-    font-size: 1.05rem !important;
+    font-size: 0.95rem !important;
     line-height: 1 !important;
     animation: cwAlertHandBounce 1.8s ease-in-out infinite !important;
     flex-shrink: 0 !important;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) !important;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2)) !important;
     margin-left: 1px !important;
   }
   @keyframes cwAlertHandBounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(3px); }
+    50% { transform: translateY(2.5px); }
   }
   .cw-sim-text-desktop {
     display: none !important;
@@ -4293,14 +4278,14 @@ html, body {
   .cw-sim-text-mobile {
     display: inline !important;
     font-size: 0.76rem !important;
-    font-weight: 800 !important;
-    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
     white-space: nowrap !important;
     letter-spacing: -0.01em !important;
   }
   .cw-sim-alert-beacon {
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
   .cw-sim-pulse-dot {
     width: 7px !important;
@@ -4308,22 +4293,54 @@ html, body {
   }
   .cw-sim-pulse-ring::before,
   .cw-sim-pulse-ring::after {
-    border-width: 1.2px !important;
+    border-width: 1px !important;
   }
   .cw-sim-alert-body {
-    line-height: 1.15 !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    line-height: 1 !important;
     text-align: left !important;
   }
   .cw-sim-alert-badge {
     font-size: 0.58rem !important;
-    padding: 1.5px 6px !important;
-    margin-bottom: 2px !important;
+    padding: 2px 6px !important;
+    margin-bottom: 0 !important;
+    background: #ecfdf5 !important;
+    color: #059669 !important;
+    border: 1px solid #a7f3d0 !important;
+    text-shadow: none !important;
+    line-height: 1 !important;
   }
   .cw-sim-alert-close {
-    width: 20px !important;
-    height: 20px !important;
+    width: 18px !important;
+    height: 18px !important;
     font-size: 13px !important;
     margin-left: 2px !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #64748b !important;
+  }
+  /* Dark mode override for mobile alert */
+  html[data-theme="dark"] .cw-floating-sim-alert {
+    background: linear-gradient(135deg, rgba(13, 22, 38, 0.96) 0%, rgba(15, 30, 48, 0.94) 100%) !important;
+    border: 1.5px solid rgba(52, 211, 153, 0.7) !important;
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6), 0 0 16px rgba(16, 185, 129, 0.25) !important;
+  }
+  html[data-theme="dark"] .cw-sim-alert-badge {
+    background: rgba(16, 185, 129, 0.28) !important;
+    color: #34D399 !important;
+    border: 1px solid rgba(52, 211, 153, 0.4) !important;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.5) !important;
+  }
+  html[data-theme="dark"] .cw-sim-text-mobile {
+    color: #FFFFFF !important;
+  }
+  html[data-theme="dark"] .cw-sim-alert-close {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: rgba(255, 255, 255, 0.75) !important;
   }
 }
 
