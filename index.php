@@ -1375,6 +1375,25 @@ include __DIR__ . '/includes/header.php';
     transform: rotate(90deg) scale(1.15) !important;
   }
 
+  /* Responsive simulator alert text & hand elements */
+  .cw-sim-text-desktop {
+    display: inline !important;
+  }
+  .cw-sim-text-mobile {
+    display: none !important;
+  }
+  .cw-sim-alert-hand-down {
+    display: none !important;
+  }
+
+  @keyframes cwInputPulseGuide {
+    0%, 100% { box-shadow: none; }
+    50% { box-shadow: 0 0 0 2.5px #10b981, 0 0 20px rgba(16, 185, 129, 0.75); }
+  }
+  .cw-wa-footer.cw-input-pulse-guide {
+    animation: cwInputPulseGuide 0.7s ease-in-out 3 !important;
+  }
+
   @media (min-width: 992px) and (max-width: 1199px) {
     .cw-floating-sim-alert {
       left: calc(100% - 10px) !important;
@@ -1395,14 +1414,103 @@ include __DIR__ . '/includes/header.php';
       right: auto !important;
       left: auto !important;
       top: auto !important;
-      margin: 16px auto 0 !important;
+      margin: 0 auto 12px !important;
       display: inline-flex !important;
-      max-width: min(310px, 92vw) !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      padding: 6px 12px 6px 10px !important;
+      width: auto !important;
+      max-width: min(320px, calc(100vw - 32px)) !important;
       box-sizing: border-box !important;
-      animation: cwTrendingFloat 3.6s ease-in-out infinite, cwTrendingGlow 3s ease-in-out infinite alternate !important;
+      background: linear-gradient(135deg, rgba(13, 22, 38, 0.97) 0%, rgba(15, 30, 48, 0.94) 50%, rgba(9, 18, 30, 0.98) 100%) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1.5px solid rgba(52, 211, 153, 0.7) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(16, 185, 129, 0.25) !important;
+      animation: cwFloatingAlertMobile 3.2s ease-in-out infinite alternate !important;
+      z-index: 20 !important;
+      overflow: visible !important;
     }
+    @keyframes cwFloatingAlertMobile {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-4px); }
+    }
+    /* Mobile Downward Speech Beak Pointer */
     .cw-floating-sim-alert::before {
+      display: block !important;
+      content: '' !important;
+      position: absolute !important;
+      bottom: -5px !important;
+      left: 50% !important;
+      top: auto !important;
+      right: auto !important;
+      transform: translateX(-50%) rotate(45deg) !important;
+      width: 9px !important;
+      height: 9px !important;
+      background: rgba(13, 22, 38, 0.97) !important;
+      border-right: 1.5px solid rgba(52, 211, 153, 0.7) !important;
+      border-bottom: 1.5px solid rgba(52, 211, 153, 0.7) !important;
+      border-left: none !important;
+      border-top: none !important;
+      border-radius: 0 0 2px 0 !important;
+      z-index: 10 !important;
+      pointer-events: none !important;
+    }
+    .cw-sim-alert-hand.cw-sim-hand-left {
       display: none !important;
+    }
+    .cw-sim-alert-hand-down {
+      display: inline-flex !important;
+      font-size: 1.05rem !important;
+      line-height: 1 !important;
+      animation: cwAlertHandBounce 1.8s ease-in-out infinite !important;
+      flex-shrink: 0 !important;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) !important;
+      margin-left: 1px !important;
+    }
+    @keyframes cwAlertHandBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(3px); }
+    }
+    .cw-sim-text-desktop {
+      display: none !important;
+    }
+    .cw-sim-text-mobile {
+      display: inline !important;
+      font-size: 0.76rem !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      white-space: nowrap !important;
+      letter-spacing: -0.01em !important;
+    }
+    .cw-sim-alert-beacon {
+      width: 18px !important;
+      height: 18px !important;
+    }
+    .cw-sim-pulse-dot {
+      width: 7px !important;
+      height: 7px !important;
+    }
+    .cw-sim-pulse-ring::before,
+    .cw-sim-pulse-ring::after {
+      border-width: 1.2px !important;
+    }
+    .cw-sim-alert-body {
+      line-height: 1.15 !important;
+      text-align: left !important;
+    }
+    .cw-sim-alert-badge {
+      font-size: 0.58rem !important;
+      padding: 1.5px 6px !important;
+      margin-bottom: 2px !important;
+    }
+    .cw-sim-alert-close {
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 13px !important;
+      margin-left: 2px !important;
     }
   }
 
@@ -2319,6 +2427,9 @@ include __DIR__ . '/includes/header.php';
       font-size: 0.76rem !important;
     }
     .cw-phone-wrapper {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
       width: min(315px, calc(100vw - 32px)) !important;
       max-width: 315px !important;
       margin: 1.25rem auto 0 !important;
@@ -2348,7 +2459,12 @@ include __DIR__ . '/includes/header.php';
       border-radius: 28px !important;
     }
     .cw-phone-aura {
-      inset: 0 !important;
+      top: 48px !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      inset: auto !important;
+      height: calc(100% - 48px) !important;
       filter: blur(16px) !important;
       border-radius: 40px !important;
     }
@@ -3641,8 +3757,12 @@ include __DIR__ . '/includes/header.php';
           </div>
           <div class="cw-sim-alert-body">
             <div class="cw-sim-alert-badge">⚡ LIVE DEMO</div>
-            <strong class="cw-sim-alert-text">Type here to test Live!</strong>
+            <strong class="cw-sim-alert-text">
+              <span class="cw-sim-text-desktop">Type here to test Live!</span>
+              <span class="cw-sim-text-mobile">Test live chat below</span>
+            </strong>
           </div>
+          <div class="cw-sim-alert-hand-down" aria-hidden="true">👇</div>
           <button type="button" class="cw-sim-alert-close" id="cw-sim-alert-close" aria-label="Dismiss alert">&times;</button>
         </div>
 
@@ -5132,6 +5252,16 @@ include __DIR__ . '/includes/header.php';
         return;
       }
       chatInput.focus();
+      try {
+        chatInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {}
+      const waFooter = document.querySelector('.cw-wa-footer');
+      if (waFooter) {
+        waFooter.classList.add('cw-input-pulse-guide');
+        setTimeout(function() {
+          waFooter.classList.remove('cw-input-pulse-guide');
+        }, 2200);
+      }
     });
     if (floatingAlertClose) {
       floatingAlertClose.addEventListener('click', function(e) {
@@ -5154,6 +5284,9 @@ include __DIR__ . '/includes/header.php';
   let lastChipTapTime = 0;
   chips.forEach(function(chip) {
     chip.addEventListener('click', function(e) {
+      if (floatingAlert) {
+        floatingAlert.classList.add('dismissed');
+      }
       e.preventDefault();
       e.stopPropagation();
       const now = Date.now();

@@ -96,8 +96,12 @@ include __DIR__ . '/header.php';
               </div>
               <div class="cw-sim-alert-body">
                 <div class="cw-sim-alert-badge">⚡ LIVE DEMO</div>
-                <strong class="cw-sim-alert-text">Type here to test Live!</strong>
+                <strong class="cw-sim-alert-text">
+                  <span class="cw-sim-text-desktop">Type here to test Live!</span>
+                  <span class="cw-sim-text-mobile">Test live chat below</span>
+                </strong>
               </div>
+              <div class="cw-sim-alert-hand-down" aria-hidden="true">👇</div>
               <button type="button" class="cw-sim-alert-close" id="cw-sim-alert-close" aria-label="Dismiss alert">&times;</button>
             </div>
 
@@ -1321,6 +1325,16 @@ function handleIndSubmit(e) {
         return;
       }
       chatInput.focus();
+      try {
+        chatInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {}
+      const waFooter = document.querySelector('.cw-wa-footer');
+      if (waFooter) {
+        waFooter.classList.add('cw-input-pulse-guide');
+        setTimeout(function() {
+          waFooter.classList.remove('cw-input-pulse-guide');
+        }, 2200);
+      }
     });
     if (floatingAlertClose) {
       floatingAlertClose.addEventListener('click', function(e) {
@@ -1342,6 +1356,9 @@ function handleIndSubmit(e) {
   const chips = document.querySelectorAll('.cw-chip');
   chips.forEach(function(chip) {
     chip.addEventListener('click', function(e) {
+      if (floatingAlert) {
+        floatingAlert.classList.add('dismissed');
+      }
       e.preventDefault();
       e.stopPropagation();
       const q = chip.getAttribute('data-query');
