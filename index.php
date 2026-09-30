@@ -125,15 +125,17 @@ include __DIR__ . '/includes/header.php';
     max-width: 560px;
   }
   /* Master Hero CTA Action Row - Perfectly Aligned Single-Line Layout */
-  .cw-hero-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-    flex-wrap: nowrap !important;
-    margin-bottom: 2rem !important;
-    width: max-content !important;
-    max-width: 100% !important;
+  @media (min-width: 901px) {
+    .cw-hero-actions {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      flex-wrap: nowrap !important;
+      margin-bottom: 2rem !important;
+      width: max-content !important;
+      max-width: 100% !important;
+    }
   }
   .cw-btn-primary {
     background: #059669 !important;
@@ -1395,6 +1397,8 @@ include __DIR__ . '/includes/header.php';
       top: auto !important;
       margin: 16px auto 0 !important;
       display: inline-flex !important;
+      max-width: min(310px, 92vw) !important;
+      box-sizing: border-box !important;
       animation: cwTrendingFloat 3.6s ease-in-out infinite, cwTrendingGlow 3s ease-in-out infinite alternate !important;
     }
     .cw-floating-sim-alert::before {
@@ -2275,15 +2279,17 @@ include __DIR__ . '/includes/header.php';
       display: flex !important;
       flex-direction: column !important;
       width: 100% !important;
-      max-width: 320px !important;
+      max-width: min(340px, 100%) !important;
       margin: 0 auto 1.5rem !important;
       gap: 0.65rem !important;
       align-items: stretch !important;
+      flex-wrap: wrap !important;
     }
     .cw-hero-actions .cw-btn-primary,
     .cw-hero-actions .cw-btn-secondary,
     .cw-hero-actions .cw-btn-data,
-    .cw-hero-actions .btn-download-data {
+    .cw-hero-actions .btn-download-data,
+    .cw-hero-actions .btn-download-brochure {
       width: 100% !important;
       box-sizing: border-box !important;
       justify-content: center !important;

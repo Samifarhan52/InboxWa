@@ -104,15 +104,17 @@ include __DIR__ . '/../../includes/header.php';
     max-width: 520px;
   }
   /* Master Hero CTA Action Row - Perfectly Aligned Single-Line Layout */
-  .cfb-hero-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-    flex-wrap: nowrap !important;
-    margin-bottom: 2rem !important;
-    width: max-content !important;
-    max-width: 100% !important;
+  @media (min-width: 901px) {
+    .cfb-hero-actions {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      flex-wrap: nowrap !important;
+      margin-bottom: 2rem !important;
+      width: max-content !important;
+      max-width: 100% !important;
+    }
   }
   .cfb-btn-primary {
     display: inline-flex !important;
@@ -719,12 +721,25 @@ include __DIR__ . '/../../includes/header.php';
       padding: 3rem 1.5rem;
     }
     .cfb-hero-actions {
-      flex-direction: column;
-      align-items: stretch;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      max-width: min(340px, 100%) !important;
+      margin: 0 auto 1.5rem !important;
+      gap: 0.65rem !important;
+      flex-wrap: wrap !important;
     }
-    .cfb-btn-primary, .cfb-btn-secondary {
-      width: 100%;
-      text-align: center;
+    .cfb-btn-primary, .cfb-btn-secondary,
+    .cfb-hero-actions .btn-download-data {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      justify-content: center !important;
+      text-align: center !important;
+      height: 46px !important;
+      line-height: 46px !important;
+      padding: 0 1.25rem !important;
+      font-size: 0.92rem !important;
     }
   }
 </style>

@@ -3646,20 +3646,39 @@ html, body {
   .site-header.scrolled .site-main-logo {
     transform: none !important;
     position: static !important;
-    padding: 4px 10px !important;
-    height: 32px !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
     margin: 0 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
     --logo-fly-x: 0px !important;
     --logo-fly-y: 0px !important;
     --logo-fly-scale: 1 !important;
   }
   .site-header .logo-img,
   .site-header.scrolled .logo-img,
-  .site-header:not(.scrolled) .logo-img {
-    height: 40px !important;
-    max-width: 195px !important;
+  .site-header:not(.scrolled) .logo-img,
+  .logo-img {
+    height: 38px !important;
+    max-width: 175px !important;
     width: auto !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .logo-img,
+  .site-header.scrolled .logo-img,
+  .site-header:not(.scrolled) .logo-img,
+  .logo-img {
+    height: 34px !important;
+    max-width: 150px !important;
+    width: auto !important;
+    object-fit: contain !important;
   }
 }
 
@@ -3671,9 +3690,10 @@ html, body {
   .site-header.scrolled .logo-img,
   .site-header:not(.scrolled) .logo-img,
   .logo-img {
-    max-width: 170px !important;
-    height: 34px !important;
+    max-width: 135px !important;
+    height: 30px !important;
     width: auto !important;
+    object-fit: contain !important;
   }
 }
 

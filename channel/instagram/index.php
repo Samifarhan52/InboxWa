@@ -102,15 +102,17 @@ include __DIR__ . '/../../includes/header.php';
     max-width: 540px;
   }
   /* Master Hero CTA Action Row - Perfectly Aligned Single-Line Layout */
-  .cig-hero-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-    flex-wrap: nowrap !important;
-    margin-bottom: 2rem !important;
-    width: max-content !important;
-    max-width: 100% !important;
+  @media (min-width: 901px) {
+    .cig-hero-actions {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      flex-wrap: nowrap !important;
+      margin-bottom: 2rem !important;
+      width: max-content !important;
+      max-width: 100% !important;
+    }
   }
   .cig-btn-primary {
     background: var(--ig-gradient) !important;

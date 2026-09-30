@@ -437,13 +437,18 @@ body.hb-ann-dismissed {
   html body .site-header {
     top: var(--hb-ann-h, 38px) !important;
   }
+  body.hb-ann-dismissed .site-header,
+  html body.hb-ann-dismissed .site-header {
+    top: 0 !important;
+  }
   html body {
     padding-top: calc(var(--nav, 60px) + var(--hb-ann-h, 38px)) !important;
   }
   html {
     scroll-padding-top: calc(var(--nav, 60px) + var(--hb-ann-h, 38px) + 10px) !important;
   }
-  body.hb-ann-dismissed {
+  body.hb-ann-dismissed,
+  html body.hb-ann-dismissed {
     padding-top: var(--nav, 60px) !important;
   }
   .hb-ann-center {
