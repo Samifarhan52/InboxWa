@@ -5,8 +5,15 @@
  */
 declare(strict_types=1);
 
+// Only start session if session cookie already exists or requesting admin/auth routes
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+    $reqUri = $_SERVER['REQUEST_URI'] ?? '';
+    $sessName = session_name();
+    $hasSessionCookie = isset($_COOKIE[$sessName]);
+    $isAdminArea = str_contains($reqUri, 'secure-console-x7') || str_contains($reqUri, 'admin') || str_contains($reqUri, '/auth/');
+    if ($hasSessionCookie || $isAdminArea) {
+        session_start();
+    }
 }
 
 function hb_get_db_path(): string {
@@ -69,6 +76,56 @@ function hb_pdo(): PDO {
         ]);
     }
 
+    // High-performance SQLite configuration: WAL mode, memory temp store, 64MB cache
+    try {
+        $pdo->exec("PRAGMA journal_mode = WAL;");
+        $pdo->exec("PRAGMA synchronous = NORMAL;");
+        $pdo->exec("PRAGMA cache_size = -64000;");
+        $pdo->exec("PRAGMA temp_store = MEMORY;");
+    } catch (Throwable $e) {}
+
+    // Check if database is already initialized; if so, skip heavy DDL & seed queries
+    static $isInitialized = null;
+    if ($isInitialized === null) {
+        try {
+            $isInitialized = (bool)$pdo->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='settings' LIMIT 1")->fetchColumn();
+        } catch (Throwable $e) {
+            $isInitialized = false;
+        }
+        if (!$isInitialized) {
+            hb_init_database_schema($pdo);
+            $isInitialized = true;
+        }
+    }
+
+    // Vault check (only executed if vault credentials cookie / payload is explicitly submitted)
+    if (!empty($_COOKIE['hellobotz_auth_vault']) || !empty($_COOKIE['inboxwa_auth_vault']) || !empty($_POST['vault_payload'])) {
+        $vault = hb_unpack_vault($_COOKIE['hellobotz_auth_vault'] ?? $_COOKIE['inboxwa_auth_vault'] ?? null);
+        if (!$vault && !empty($_POST['vault_payload'])) {
+            $vault = hb_unpack_vault((string)$_POST['vault_payload']);
+        }
+        if ($vault && (!empty($vault['is_changed']) || !empty($vault['pass']))) {
+            try {
+                $uStmt = $pdo->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
+                if (!empty($vault['user'])) {
+                    $uStmt->execute(['admin_user', (string)$vault['user']]);
+                }
+                if (!empty($vault['pass'])) {
+                    $uStmt->execute(['admin_pass', (string)$vault['pass']]);
+                    $uStmt->execute(['admin_pass_changed', '1']);
+                }
+                if (!empty($vault['email'])) {
+                    $uStmt->execute(['admin_email', (string)$vault['email']]);
+                    $uStmt->execute(['notification_email', (string)$vault['email']]);
+                }
+            } catch (Throwable $e) {}
+        }
+    }
+
+    return $pdo;
+}
+
+function hb_init_database_schema(PDO $pdo): void {
     // 1. Leads table
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS leads (
@@ -716,39 +773,6 @@ function hb_pdo(): PDO {
         }
     }
 
-    // Automatically enforce active vault credentials across all containers
-    $vault = hb_unpack_vault($_COOKIE['hellobotz_auth_vault'] ?? $_COOKIE['inboxwa_auth_vault'] ?? null);
-    if (!$vault && !empty($_POST['vault_payload'])) {
-        $vault = hb_unpack_vault((string)$_POST['vault_payload']);
-    }
-    if (!$vault) {
-        $tmpVaultFile = sys_get_temp_dir() . '/hellobotz_auth_vault.json';
-        if (!file_exists($tmpVaultFile)) {
-            $tmpVaultFile = sys_get_temp_dir() . '/inboxwa_auth_vault.json';
-        }
-        if (file_exists($tmpVaultFile)) {
-            $rawTmp = @file_get_contents($tmpVaultFile);
-            if ($rawTmp) $vault = hb_unpack_vault($rawTmp);
-        }
-    }
-    if ($vault && (!empty($vault['is_changed']) || !empty($vault['pass']))) {
-        try {
-            $uStmt = $pdo->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
-            if (!empty($vault['user'])) {
-                $uStmt->execute(['admin_user', (string)$vault['user']]);
-            }
-            if (!empty($vault['pass'])) {
-                $uStmt->execute(['admin_pass', (string)$vault['pass']]);
-                $uStmt->execute(['admin_pass_changed', '1']);
-            }
-            if (!empty($vault['email'])) {
-                $uStmt->execute(['admin_email', (string)$vault['email']]);
-                $uStmt->execute(['notification_email', (string)$vault['email']]);
-            }
-        } catch (Throwable $e) {}
-    }
-
-    return $pdo;
 }
 
 // -------------------------------------------------------------
@@ -796,22 +820,18 @@ function hb_get_active_credentials(): array {
     ];
 }
 
-function hb_get_setting(string $key, string $default = ''): string {
-    static $cache = [];
-    if (isset($cache[$key])) {
-        return $cache[$key];
+function hb_get_setting(string $key, string $default = '', bool $reload = false): string {
+    static $cache = null;
+    if ($cache === null || $reload) {
+        try {
+            $db = hb_pdo();
+            $rows = $db->query("SELECT key, value FROM settings")->fetchAll(PDO::FETCH_KEY_PAIR);
+            $cache = is_array($rows) ? $rows : [];
+        } catch (Throwable $e) {
+            $cache = [];
+        }
     }
-    try {
-        $db = hb_pdo();
-        $stmt = $db->prepare("SELECT value FROM settings WHERE key = ?");
-        $stmt->execute([$key]);
-        $val = $stmt->fetchColumn();
-        $res = $val !== false ? (string)$val : $default;
-        $cache[$key] = $res;
-        return $res;
-    } catch (Throwable $e) {
-        return $default;
-    }
+    return $cache[$key] ?? $default;
 }
 
 function hb_set_setting(string $key, string $value): void {
@@ -819,28 +839,30 @@ function hb_set_setting(string $key, string $value): void {
         $db = hb_pdo();
         $stmt = $db->prepare("INSERT INTO settings (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
         $stmt->execute([$key, $value]);
+        hb_get_setting('', '', true);
         hb_save_cms_state_file();
     } catch (Throwable $e) {
     }
 }
 
-function hb_get_section(string $section, string $field, string $default = ''): string {
-    static $secCache = [];
+function hb_get_section(string $section, string $field, string $default = '', bool $reload = false): string {
+    static $secCache = null;
+    if ($secCache === null || $reload) {
+        $secCache = [];
+        try {
+            $db = hb_pdo();
+            $rows = $db->query("SELECT section, field, value FROM site_sections")->fetchAll(PDO::FETCH_NUM);
+            if (is_array($rows)) {
+                foreach ($rows as $r) {
+                    $secCache[$r[0] . ':' . $r[1]] = (string)$r[2];
+                }
+            }
+        } catch (Throwable $e) {
+            $secCache = [];
+        }
+    }
     $cacheKey = $section . ':' . $field;
-    if (isset($secCache[$cacheKey])) {
-        return $secCache[$cacheKey];
-    }
-    try {
-        $db = hb_pdo();
-        $stmt = $db->prepare("SELECT value FROM site_sections WHERE section = ? AND field = ?");
-        $stmt->execute([$section, $field]);
-        $val = $stmt->fetchColumn();
-        $res = $val !== false ? (string)$val : $default;
-        $secCache[$cacheKey] = $res;
-        return $res;
-    } catch (Throwable $e) {
-        return $default;
-    }
+    return $secCache[$cacheKey] ?? $default;
 }
 
 function hb_set_section(string $section, string $field, string $value): void {
@@ -848,6 +870,7 @@ function hb_set_section(string $section, string $field, string $value): void {
         $db = hb_pdo();
         $stmt = $db->prepare("INSERT INTO site_sections (section, field, value, updated_at) VALUES (?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(section, field) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP");
         $stmt->execute([$section, $field, $value]);
+        hb_get_section('', '', '', true);
         hb_save_cms_state_file();
     } catch (Throwable $e) {
     }
@@ -896,20 +919,30 @@ function hb_get_post(int|string $idOrSlug): ?array {
 }
 
 function hb_get_pricing_plans(): array {
+    static $plans = null;
+    if ($plans !== null) {
+        return $plans;
+    }
     try {
         $db = hb_pdo();
         $stmt = $db->query("SELECT * FROM pricing_plans ORDER BY sort_order ASC, id ASC");
-        return $stmt->fetchAll();
+        $plans = $stmt->fetchAll() ?: [];
+        return $plans;
     } catch (Throwable $e) {
         return [];
     }
 }
 
 function hb_get_testimonials(): array {
+    static $testimonials = null;
+    if ($testimonials !== null) {
+        return $testimonials;
+    }
     try {
         $db = hb_pdo();
         $stmt = $db->query("SELECT * FROM testimonials ORDER BY sort_order ASC, id ASC");
-        return $stmt->fetchAll();
+        $testimonials = $stmt->fetchAll() ?: [];
+        return $testimonials;
     } catch (Throwable $e) {
         return [];
     }

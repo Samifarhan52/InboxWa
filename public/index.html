@@ -8625,9 +8625,9 @@
         <!-- Interactive Animated Flow Builder Demo Box -->
         <div class="cw-hero-anim-box" onclick="openHelloBotzVideoModal('flow')" role="button" tabindex="0" aria-label="Watch HelloBotz Flow Builder Animation">
           <div class="cw-hero-anim-thumb">
-            <video class="cw-hero-anim-video" autoplay loop muted playsinline poster="/assets/images/animations/interakt-hero.gif">
+            <video class="cw-hero-anim-video" autoplay loop muted playsinline poster="/assets/images/animations/interakt-hero-poster.jpg">
               <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
-              <img src="/assets/images/animations/interakt-hero.gif" alt="HelloBotz Flow Builder Animation" loading="lazy">
+              <img src="/assets/images/animations/interakt-hero-poster.jpg" alt="HelloBotz Flow Builder Animation" loading="lazy">
             </video>
             <div class="cw-hero-anim-overlay">
               <span class="cw-hero-anim-play-icon">
@@ -10760,9 +10760,9 @@
         <button class="cw-m-tab" data-tab="analytics" onclick="switchModalMedia('analytics', this)">📊 Campaign Analytics</button>
       </div>
       <div class="cw-modal-media-container" id="hellobotz-modal-media">
-        <video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero.gif">
+        <video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero-poster.jpg">
           <source src="/assets/images/animations/flow-builder.mp4" type="video/mp4">
-          <img src="/assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo">
+          <img src="/assets/images/animations/interakt-hero-poster.jpg" alt="Flow Builder Demo">
         </video>
       </div>
       <div class="cw-modal-footer">
@@ -10839,7 +10839,7 @@ function switchModalMedia(type, btn) {
   if (btn) btn.classList.add('active');
 
   if (type === 'flow') {
-    container.innerHTML = '<video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero.gif"><source src="/assets/images/animations/flow-builder.mp4" type="video/mp4"><img src="/assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo"></video>';
+    container.innerHTML = '<video class="cw-modal-video" autoplay loop muted playsinline controls poster="/assets/images/animations/interakt-hero-poster.jpg"><source src="/assets/images/animations/flow-builder.mp4" type="video/mp4"><img src="/assets/images/animations/interakt-hero-poster.jpg" alt="Flow Builder Demo"></video>';
   } else if (type === 'chat') {
     container.innerHTML = '<img class="cw-modal-img" src="/assets/images/animations/live-chat.gif" alt="Multi-Agent Live Chat Inbox">';
   } else if (type === 'integrations') {

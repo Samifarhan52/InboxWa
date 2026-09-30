@@ -3167,9 +3167,9 @@ include __DIR__ . '/../../includes/header.php';
           <div class="cw-window-screen">
             <!-- Flow Builder Media -->
             <div class="cw-tab-media active" id="media-flow">
-              <video class="cw-showcase-media-elem" autoplay loop muted playsinline poster="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif">
+              <video class="cw-showcase-media-elem" autoplay loop muted playsinline poster="<?php echo $bp; ?>assets/images/animations/interakt-hero-poster.jpg">
                 <source src="<?php echo $bp; ?>assets/images/animations/flow-builder.mp4" type="video/mp4">
-                <img src="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif" alt="HelloBotz Visual Flow Builder">
+                <img src="<?php echo $bp; ?>assets/images/animations/interakt-hero-poster.jpg" alt="HelloBotz Visual Flow Builder">
               </video>
               <div class="cw-media-caption">
                 <span class="cw-caption-badge">Flow Builder</span>
@@ -3433,9 +3433,9 @@ include __DIR__ . '/../../includes/header.php';
         <button class="cw-m-tab" data-tab="analytics" onclick="switchModalMedia('analytics', this)">📊 Campaign Analytics</button>
       </div>
       <div class="cw-modal-media-container" id="hellobotz-modal-media">
-        <video class="cw-modal-video" autoplay loop muted playsinline controls poster="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif">
+        <video class="cw-modal-video" autoplay loop muted playsinline controls poster="<?php echo $bp; ?>assets/images/animations/interakt-hero-poster.jpg">
           <source src="<?php echo $bp; ?>assets/images/animations/flow-builder.mp4" type="video/mp4">
-          <img src="<?php echo $bp; ?>assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo">
+          <img src="<?php echo $bp; ?>assets/images/animations/interakt-hero-poster.jpg" alt="Flow Builder Demo">
         </video>
       </div>
       <div class="cw-modal-footer">
@@ -3514,7 +3514,7 @@ function switchModalMedia(type, btn) {
 
   var bp = "<?php echo $bp; ?>";
   if (type === 'flow') {
-    container.innerHTML = '<video class="cw-modal-video" autoplay loop muted playsinline controls poster="' + bp + 'assets/images/animations/interakt-hero.gif"><source src="' + bp + 'assets/images/animations/flow-builder.mp4" type="video/mp4"><img src="' + bp + 'assets/images/animations/interakt-hero.gif" alt="Flow Builder Demo"></video>';
+    container.innerHTML = '<video class="cw-modal-video" autoplay loop muted playsinline controls poster="' + bp + 'assets/images/animations/interakt-hero-poster.jpg"><source src="' + bp + 'assets/images/animations/flow-builder.mp4" type="video/mp4"><img src="' + bp + 'assets/images/animations/interakt-hero-poster.jpg" alt="Flow Builder Demo"></video>';
   } else if (type === 'chat') {
     container.innerHTML = '<img class="cw-modal-img" src="' + bp + 'assets/images/animations/live-chat.gif" alt="Multi-Agent Live Chat Inbox">';
   } else if (type === 'integrations') {

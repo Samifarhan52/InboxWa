@@ -7,4 +7,6 @@ node_modules/
 /assets
 scratch/
 myntra/
+*.sqlite-wal
+*.sqlite-shm
 

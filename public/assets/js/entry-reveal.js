@@ -54,17 +54,18 @@
     function dismiss() {
       if (dismissed) return;
       dismissed = true;
+      overlay.style.pointerEvents = 'none';
       overlay.classList.add('hb-entry-done');
       setTimeout(function () {
         overlay.style.display = 'none';
         if (overlay.parentNode) {
           overlay.parentNode.removeChild(overlay);
         }
-      }, 250);
+      }, 180);
     }
 
-    // Ultra-snappy auto-dismiss in 650ms (quick cheerful greeting & immediate reveal)
-    setTimeout(dismiss, 650);
+    // Ultra-snappy auto-dismiss in 160ms (instant reveal & non-blocking)
+    setTimeout(dismiss, 160);
 
     // Instant dismiss on any user interaction
     overlay.addEventListener('click', dismiss);

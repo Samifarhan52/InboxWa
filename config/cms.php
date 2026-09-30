@@ -39,10 +39,15 @@ function cms_post(int|string $idOrSlug): ?array {
  * Get live pricing plans
  */
 function cms_pricing_plans(): array {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
     $plans = hb_get_pricing_plans();
     if (empty($plans)) {
         $defaultConfig = is_file(__DIR__ . "/pricing.php") ? require __DIR__ . "/pricing.php" : [];
-        return $defaultConfig["plans"] ?? [];
+        $cached = $defaultConfig["plans"] ?? [];
+        return $cached;
     }
     
     $formatted = [];
@@ -64,7 +69,8 @@ function cms_pricing_plans(): array {
             "features" => json_decode($p["features_json"] ?: "[]", true) ?: []
         ];
     }
-    return $formatted;
+    $cached = $formatted;
+    return $cached;
 }
 
 /**
