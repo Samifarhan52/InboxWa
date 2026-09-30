@@ -81,8 +81,8 @@ p{color:var(--t2)}
 /* ========== HEADER ========== */
 .site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);height:var(--nav)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav);gap:1rem;max-width:var(--max);margin:0 auto;padding:0 1.25rem}
-.logo{display:inline-flex;align-items:center;gap:.5rem;max-width:180px;overflow:hidden;flex-shrink:0}
-.logo-img{height:36px!important;width:auto!important;max-width:160px!important;object-fit:contain!important}
+.logo{display:inline-flex;align-items:center;gap:.5rem;max-width:260px;overflow:hidden;flex-shrink:0}
+.logo-img{height:52px!important;width:auto!important;max-width:240px!important;object-fit:contain!important}
 .logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--p),var(--a));display:inline-flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 .logo-icon svg{width:20px;height:20px}
 .nav-desktop{display:flex;align-items:center;gap:.15rem;flex:1;justify-content:center}
@@ -296,6 +296,14 @@ textarea.form-input{min-height:100px;resize:vertical}
 .site-footer .footer-channel-link:hover,
 .site-footer .footer-legal a:hover,
 .footer-col a:hover {color:#38bdf8 !important}
+.site-footer .logo-img,
+footer .logo-img {
+  height: 48px !important;
+  max-width: 230px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-brand p{font-size:.875rem;margin:1rem 0;max-width:280px}
 .footer-col h4{font-size:.85rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.04em}
@@ -2460,8 +2468,9 @@ button.mobile-nav-link svg{
 }
 .mobile-drawer-header .logo-img{
   width:auto !important;
-  height:28px !important;
-  max-height:28px !important;
+  height:42px !important;
+  max-height:42px !important;
+  max-width:200px !important;
 }
 .mobile-close{
   width:40px !important;
@@ -3619,8 +3628,8 @@ html, body {
   .site-header .logo-img,
   .site-header.scrolled .logo-img,
   .site-header:not(.scrolled) .logo-img {
-    height: 22px !important;
-    max-width: 110px !important;
+    height: 38px !important;
+    max-width: 190px !important;
     width: auto !important;
   }
 }
@@ -3629,9 +3638,13 @@ html, body {
   .header-cta-start {
     display: none !important;
   }
+  .site-header .logo-img,
+  .site-header.scrolled .logo-img,
+  .site-header:not(.scrolled) .logo-img,
   .logo-img {
-    max-width: 110px !important;
-    height: auto !important;
+    max-width: 160px !important;
+    height: 32px !important;
+    width: auto !important;
   }
 }
 

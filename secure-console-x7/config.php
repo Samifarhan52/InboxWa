@@ -297,8 +297,8 @@ function hb_pdo(): PDO {
             'logo_light_url' => '/assets/images/logo-light.png',
             'logo_dark_url' => '/assets/images/logo-dark.png',
             'logo_footer_url' => '/assets/images/logo-footer.png',
-            'logo_width' => '180px',
-            'logo_height' => '44px',
+            'logo_width' => '240px',
+            'logo_height' => '52px',
             'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
             'favicon_url' => '/assets/images/favicon-32x32.png',
             'social_whatsapp' => 'https://wa.me/918050854445',
@@ -317,7 +317,7 @@ function hb_pdo(): PDO {
         $extraDefaults = [
             'logo_light_url' => '/assets/images/logo-light.png',
             'logo_dark_url' => '/assets/images/logo-dark.png',
-            'logo_width' => '160px',
+            'logo_width' => '240px',
             'logo_height' => '52px',
             'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
             'brochure_url' => '/assets/docs/hellobotz-brochure.pdf',
@@ -1622,10 +1622,10 @@ function hb_upload_brand_file(array $file, string $type): ?string {
 }
 
 function hb_propagate_site_settings(): void {
-    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png');
-    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png');
-    $logoWidth = hb_get_setting('logo_width', '180px');
-    $logoHeight = hb_get_setting('logo_height', '44px');
+    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png?v=2');
+    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png?v=2');
+    $logoWidth = hb_get_setting('logo_width', '240px');
+    $logoHeight = hb_get_setting('logo_height', '52px');
     $botAvatar = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png');
     $brochureUrl = hb_get_setting('brochure_url', '/assets/docs/hellobotz-brochure.pdf');
     $officeAddress = hb_get_setting('office_address', "Bangalore Karnataka 560030");
@@ -1697,10 +1697,10 @@ function hb_publish_page_html(string $title, string $slug, string $content, stri
     $depth = empty($cleanSlug) ? 0 : substr_count($cleanSlug, '/') + 1;
     $bp = str_repeat('../', $depth);
 
-    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png');
-    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png');
-    $logoWidth = hb_get_setting('logo_width', '180px');
-    $logoHeight = hb_get_setting('logo_height', '44px');
+    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png?v=2');
+    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png?v=2');
+    $logoWidth = hb_get_setting('logo_width', '240px');
+    $logoHeight = hb_get_setting('logo_height', '52px');
     $botAvatar = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png');
     $fbUrl = hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr');
     $igUrl = hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr');
