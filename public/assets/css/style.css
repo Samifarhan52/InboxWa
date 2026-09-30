@@ -81,8 +81,37 @@ p{color:var(--t2)}
 /* ========== HEADER ========== */
 .site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);height:var(--nav)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav);gap:1rem;max-width:var(--max);margin:0 auto;padding:0 1.25rem}
-.logo{display:inline-flex;align-items:center;gap:.5rem;max-width:260px;overflow:hidden;flex-shrink:0}
-.logo-img{height:52px!important;width:auto!important;max-width:240px!important;object-fit:contain!important}
+.logo{display:inline-flex;align-items:center;gap:.5rem;max-width:280px;overflow:hidden;flex-shrink:0}
+.logo-img{height:56px!important;width:auto!important;max-width:250px!important;object-fit:contain!important}
+.site-header.scrolled .logo-img{height:44px!important;max-width:210px!important}
+.site-header .logo-img-light,
+.mobile-drawer-header .logo-img-light,
+html[data-theme="light"] .site-header .logo-img-light,
+html[data-theme="light"] .mobile-drawer-header .logo-img-light,
+body.light-theme .site-header .logo-img-light,
+body.light-theme .mobile-drawer-header .logo-img-light {
+  display: block !important;
+}
+.site-header .logo-img-dark,
+.mobile-drawer-header .logo-img-dark,
+html[data-theme="light"] .site-header .logo-img-dark,
+html[data-theme="light"] .mobile-drawer-header .logo-img-dark,
+body.light-theme .site-header .logo-img-dark,
+body.light-theme .mobile-drawer-header .logo-img-dark {
+  display: none !important;
+}
+html[data-theme="dark"] .site-header .logo-img-light,
+html[data-theme="dark"] .mobile-drawer-header .logo-img-light,
+body.dark-theme .site-header .logo-img-light,
+body.dark-theme .mobile-drawer-header .logo-img-light {
+  display: none !important;
+}
+html[data-theme="dark"] .site-header .logo-img-dark,
+html[data-theme="dark"] .mobile-drawer-header .logo-img-dark,
+body.dark-theme .site-header .logo-img-dark,
+body.dark-theme .mobile-drawer-header .logo-img-dark {
+  display: block !important;
+}
 .logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--p),var(--a));display:inline-flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 .logo-icon svg{width:20px;height:20px}
 .nav-desktop{display:flex;align-items:center;gap:.15rem;flex:1;justify-content:center}
@@ -298,8 +327,8 @@ textarea.form-input{min-height:100px;resize:vertical}
 .footer-col a:hover {color:#38bdf8 !important}
 .site-footer .logo-img,
 footer .logo-img {
-  height: 48px !important;
-  max-width: 230px !important;
+  height: 52px !important;
+  max-width: 240px !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
@@ -2468,9 +2497,9 @@ button.mobile-nav-link svg{
 }
 .mobile-drawer-header .logo-img{
   width:auto !important;
-  height:42px !important;
-  max-height:42px !important;
-  max-width:200px !important;
+  height:44px !important;
+  max-height:44px !important;
+  max-width:210px !important;
 }
 .mobile-close{
   width:40px !important;
@@ -3628,8 +3657,8 @@ html, body {
   .site-header .logo-img,
   .site-header.scrolled .logo-img,
   .site-header:not(.scrolled) .logo-img {
-    height: 38px !important;
-    max-width: 190px !important;
+    height: 40px !important;
+    max-width: 195px !important;
     width: auto !important;
   }
 }
@@ -3642,8 +3671,8 @@ html, body {
   .site-header.scrolled .logo-img,
   .site-header:not(.scrolled) .logo-img,
   .logo-img {
-    max-width: 160px !important;
-    height: 32px !important;
+    max-width: 170px !important;
+    height: 34px !important;
     width: auto !important;
   }
 }

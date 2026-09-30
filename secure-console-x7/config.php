@@ -293,12 +293,12 @@ function hb_pdo(): PDO {
             'announcement_enabled' => '0',
             'announcement_text' => 'Official WhatsApp Business API & AI Chatbots — Start 14-Day Free Trial Today!',
             'announcement_link' => '/auth/register',
-            'logo_url' => '/assets/images/logo.png',
-            'logo_light_url' => '/assets/images/logo-light.png',
-            'logo_dark_url' => '/assets/images/logo-dark.png',
-            'logo_footer_url' => '/assets/images/logo-footer.png',
-            'logo_width' => '240px',
-            'logo_height' => '52px',
+            'logo_url' => '/assets/images/logo-v3.png',
+            'logo_light_url' => '/assets/images/logo-light-v3.png',
+            'logo_dark_url' => '/assets/images/logo-dark-v3.png',
+            'logo_footer_url' => '/assets/images/logo-footer-v3.png',
+            'logo_width' => '250px',
+            'logo_height' => '56px',
             'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
             'favicon_url' => '/assets/images/favicon-32x32.png',
             'social_whatsapp' => 'https://wa.me/918050854445',
@@ -315,10 +315,12 @@ function hb_pdo(): PDO {
     } else {
         // Guarantee new visual keys exist in active database
         $extraDefaults = [
-            'logo_light_url' => '/assets/images/logo-light.png',
-            'logo_dark_url' => '/assets/images/logo-dark.png',
-            'logo_width' => '240px',
-            'logo_height' => '52px',
+            'logo_url' => '/assets/images/logo-v3.png',
+            'logo_light_url' => '/assets/images/logo-light-v3.png',
+            'logo_dark_url' => '/assets/images/logo-dark-v3.png',
+            'logo_footer_url' => '/assets/images/logo-footer-v3.png',
+            'logo_width' => '250px',
+            'logo_height' => '56px',
             'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
             'brochure_url' => '/assets/docs/hellobotz-brochure.pdf',
             'social_facebook' => 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr',
@@ -331,6 +333,14 @@ function hb_pdo(): PDO {
         foreach ($extraDefaults as $k => $v) {
             $exStmt->execute([$k, $v]);
         }
+
+        // Auto-upgrade legacy logo settings to high-res v3 assets
+        $pdo->exec("UPDATE settings SET value = '/assets/images/logo-light-v3.png' WHERE key = 'logo_light_url' AND (value LIKE '%logo-light%' OR value LIKE '%logo.png%' OR value = '');");
+        $pdo->exec("UPDATE settings SET value = '/assets/images/logo-dark-v3.png' WHERE key = 'logo_dark_url' AND (value LIKE '%logo-dark%' OR value = '');");
+        $pdo->exec("UPDATE settings SET value = '/assets/images/logo-v3.png' WHERE key = 'logo_url' AND (value LIKE '%logo.png%' OR value = '');");
+        $pdo->exec("UPDATE settings SET value = '/assets/images/logo-footer-v3.png' WHERE key = 'logo_footer_url' AND (value LIKE '%logo-footer%' OR value = '');");
+        $pdo->exec("UPDATE settings SET value = '250px' WHERE key = 'logo_width' AND (value = '180px' OR value = '200px' OR value = '240px');");
+        $pdo->exec("UPDATE settings SET value = '56px' WHERE key = 'logo_height' AND (value = '44px' OR value = '48px' OR value = '52px');");
     }
 
     // Seed default site sections if empty
@@ -1622,10 +1632,10 @@ function hb_upload_brand_file(array $file, string $type): ?string {
 }
 
 function hb_propagate_site_settings(): void {
-    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png?v=2');
-    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png?v=2');
-    $logoWidth = hb_get_setting('logo_width', '240px');
-    $logoHeight = hb_get_setting('logo_height', '52px');
+    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light-v3.png');
+    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark-v3.png');
+    $logoWidth = hb_get_setting('logo_width', '250px');
+    $logoHeight = hb_get_setting('logo_height', '56px');
     $botAvatar = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png');
     $brochureUrl = hb_get_setting('brochure_url', '/assets/docs/hellobotz-brochure.pdf');
     $officeAddress = hb_get_setting('office_address', "Bangalore Karnataka 560030");
@@ -1697,10 +1707,10 @@ function hb_publish_page_html(string $title, string $slug, string $content, stri
     $depth = empty($cleanSlug) ? 0 : substr_count($cleanSlug, '/') + 1;
     $bp = str_repeat('../', $depth);
 
-    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light.png?v=2');
-    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark.png?v=2');
-    $logoWidth = hb_get_setting('logo_width', '240px');
-    $logoHeight = hb_get_setting('logo_height', '52px');
+    $lightLogo = hb_get_setting('logo_light_url', '/assets/images/logo-light-v3.png');
+    $darkLogo = hb_get_setting('logo_dark_url', '/assets/images/logo-dark-v3.png');
+    $logoWidth = hb_get_setting('logo_width', '250px');
+    $logoHeight = hb_get_setting('logo_height', '56px');
     $botAvatar = hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png');
     $fbUrl = hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr');
     $igUrl = hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr');

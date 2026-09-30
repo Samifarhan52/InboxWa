@@ -1,9 +1,9 @@
 /** HelloBotz Dynamic CMS Runtime - Generated via Admin **/
 window.__HELLOBOTZ_SETTINGS__ = {
-  "logo_light_url": "/assets/images/logo-light.png?v=2",
-  "logo_dark_url": "/assets/images/logo-dark.png?v=2",
-  "logo_width": "240px",
-  "logo_height": "52px",
+  "logo_light_url": "/assets/images/logo-light-v3.png",
+  "logo_dark_url": "/assets/images/logo-dark-v3.png",
+  "logo_width": "250px",
+  "logo_height": "56px",
   "bot_avatar_url": "/assets/images/hellobotz-avatar.png",
   "brochure_url": "/assets/docs/hellobotz-brochure.pdf",
   "office_address": "Bangalore Karnataka 560030",

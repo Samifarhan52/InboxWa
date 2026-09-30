@@ -19,11 +19,11 @@ $cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
 $cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
 $cmsSalesEmail = cms_setting('sales_email', 'mail@hellobotz.com');
 $cmsSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
-$cmsLogo     = cms_setting('logo_url', '/assets/images/logo.png?v=2');
-$cmsLogoLight = cms_setting('logo_light_url', '/assets/images/logo-light.png?v=2');
-$cmsLogoDark  = cms_setting('logo_dark_url', '/assets/images/logo-dark.png?v=2');
-$cmsLogoWidth = cms_setting('logo_width', '240px');
-$cmsLogoHeight= cms_setting('logo_height', '52px');
+$cmsLogo     = cms_setting('logo_url', '/assets/images/logo-v3.png');
+$cmsLogoLight = cms_setting('logo_light_url', '/assets/images/logo-light-v3.png');
+$cmsLogoDark  = cms_setting('logo_dark_url', '/assets/images/logo-dark-v3.png');
+$cmsLogoWidth = cms_setting('logo_width', '250px');
+$cmsLogoHeight= cms_setting('logo_height', '56px');
 $announcementEnabled = cms_setting('announcement_enabled', '0') === '1';
 $announcementText = cms_setting('announcement_text', '');
 $announcementLink = cms_setting('announcement_link', '/auth/register');
@@ -129,7 +129,7 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/app.css?v=57">
-  <link rel="stylesheet" href="/assets/css/style.css?v=62">
+  <link rel="stylesheet" href="/assets/css/style.css?v=63">
   <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
   <link rel="stylesheet" href="/assets/css/story-journey.css?v=57">
   <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=52">
@@ -626,9 +626,9 @@ if (!function_exists('hb_seo_esc')) {
 
     /* Logo Image Sizing & Resizing on Scroll */
     .site-header .logo-img {
-      height: var(--site-logo-height, 52px) !important;
+      height: var(--site-logo-height, 56px) !important;
       width: auto !important;
-      max-width: var(--site-logo-width, 240px) !important;
+      max-width: var(--site-logo-width, 250px) !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
@@ -637,8 +637,8 @@ if (!function_exists('hb_seo_esc')) {
                   max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .site-header.scrolled .logo-img {
-      height: 42px !important;
-      max-width: 200px !important;
+      height: 44px !important;
+      max-width: 210px !important;
     }
 
     /* Theme Logo Switcher */
@@ -685,8 +685,8 @@ if (!function_exists('hb_seo_esc')) {
       .site-header .logo-img,
       .site-header.scrolled .logo-img,
       .site-header:not(.scrolled) .logo-img {
-        height: 38px !important;
-        max-width: 190px !important;
+        height: 40px !important;
+        max-width: 195px !important;
         width: auto !important;
       }
     }
@@ -695,8 +695,8 @@ if (!function_exists('hb_seo_esc')) {
       .site-header .logo-img,
       .site-header.scrolled .logo-img,
       .site-header:not(.scrolled) .logo-img {
-        height: 32px !important;
-        max-width: 160px !important;
+        height: 34px !important;
+        max-width: 170px !important;
         width: auto !important;
       }
     }
@@ -709,9 +709,9 @@ if (!function_exists('hb_seo_esc')) {
       box-shadow: none !important;
     }
     .mobile-drawer-header .logo-img {
-      height: 42px !important;
+      height: 44px !important;
       width: auto !important;
-      max-width: 200px !important;
+      max-width: 210px !important;
       object-fit: contain !important;
     }
     .site-footer .logo-img {
@@ -3635,7 +3635,7 @@ if (!function_exists('hb_seo_esc')) {
     })();
   </script>
   <!-- HelloBotz Live CMS Client Runtime (Propagates brand logos, bot avatar, sizing, and links) -->
-  <script src="/assets/js/hb-cms-runtime.js" defer></script>
+  <script src="/assets/js/hb-cms-runtime.js?v=63" defer></script>
   <!-- HelloBotz Pure Mascot Entry Reveal Runtime (2.5s Zero-Word Greeting) -->
   <script src="/assets/js/entry-reveal.js?v=2" defer></script>
   <!-- HelloBotz Interactive Top Announcement & Offers Carousel Runtime -->
@@ -3748,8 +3748,8 @@ if (!function_exists('hb_seo_esc')) {
     <div class="header-inner">
       <div class="logo-dock-wrapper" id="logo-dock-wrapper">
         <a href="<?php echo $bp; ?>" class="logo site-main-logo" id="site-logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
-          <img src="<?php echo htmlspecialchars($cmsLogoLight); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-light" width="240" height="52">
-          <img src="<?php echo htmlspecialchars($cmsLogoDark); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-dark" width="240" height="52">
+          <img src="<?php echo htmlspecialchars($cmsLogoLight); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-light" width="250" height="56">
+          <img src="<?php echo htmlspecialchars($cmsLogoDark); ?>" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-dark" width="250" height="56">
           <span class="logo-fallback" style="display:none;align-items:center;gap:0.4rem">
             <img src="<?php echo $bp; ?>assets/images/logo-icon.png" width="32" height="32" style="border-radius:8px" alt="<?php echo htmlspecialchars($SITE_NAME); ?>">
             <span style="font-weight:800;font-size:1.15rem;color:#fff">Hellobotz</span>
@@ -4309,8 +4309,8 @@ if (!function_exists('hb_seo_esc')) {
     <div class="mobile-drawer">
       <div class="mobile-drawer-header">
         <a href="<?php echo $bp; ?>" class="logo" aria-label="<?php echo htmlspecialchars($SITE_NAME); ?> Home">
-          <img src="<?php echo $bp; ?>assets/images/logo-light.png?v=2" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-light" width="200" height="42">
-          <img src="<?php echo $bp; ?>assets/images/logo-dark.png?v=2" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-dark" width="200" height="42">
+          <img src="<?php echo $bp; ?>assets/images/logo-light-v3.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-light" width="210" height="44">
+          <img src="<?php echo $bp; ?>assets/images/logo-dark-v3.png" alt="<?php echo htmlspecialchars($SITE_NAME); ?>" class="logo-img logo-img-dark" width="210" height="44">
         </a>
         <button type="button" class="mobile-close btn btn-icon btn-ghost" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
       </div>
