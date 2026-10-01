@@ -3,11 +3,11 @@ $basePath = '../';
 $bp = '../';
 require_once __DIR__ . '/../config/cms.php';
 
-$pageTitle = 'WhatsApp Business API Integrations Directory | HelloBotz's;
+$pageTitle = 'WhatsApp Business API Integrations Directory | HelloBotz';
 $pageDescription = 'Connect HelloBotz WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 $canonicalUrl = 'https://hellobotz.com/integrations/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-main/WhatsApp-Business-API-Integration.png';
-$ogTitle = 'WhatsApp Business API Integrations Directory | HelloBotz's;
+$ogTitle = 'WhatsApp Business API Integrations Directory | HelloBotz';
 $ogDescription = 'Connect HelloBotz WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 
 include __DIR__ . '/../includes/header.php';

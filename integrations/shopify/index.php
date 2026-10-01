@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../config/cms.php';
 $pageTitle = 'Shopify WhatsApp Automation & Revenue Engine | HelloBotz';
 $pageDescription = 'Recover abandoned carts, slash COD return-to-origin (RTO), and drive repeat sales on Shopify with HelloBotz automated WhatsApp Business API.';
 $canonicalUrl = 'https://hellobotz.com/integrations/shopify/';
-$ogImage = 'https://hellobotz.com/assets/images/integrations/shopify.png';
+$ogImage = 'https://hellobotz.com/assets/images/og/shopify-whatsapp-og.png';
 $ogTitle = 'Shopify WhatsApp Automation & Revenue Engine | HelloBotz';
 $ogDescription = 'Recover abandoned carts, slash COD return-to-origin (RTO), and drive repeat sales on Shopify with HelloBotz automated WhatsApp Business API.';
 

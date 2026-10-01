@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Google Sheets WhatsApp Integration | Auto-Send Messages | HelloBotz's;
+$pageTitle = 'Google Sheets WhatsApp Integration | Auto-Send Messages | HelloBotz';
 $pageDescription = 'Dispatch automated WhatsApp campaigns directly from Google Sheets rows and log incoming chat responses in real time.';
 $canonicalUrl = 'https://hellobotz.com/integrations/google-sheets/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-google-sheets/WhatsApp-Google-Sheets-Integration.png';
-$ogTitle = 'Google Sheets WhatsApp Integration | Auto-Send Messages | HelloBotz's;
+$ogTitle = 'Google Sheets WhatsApp Integration | Auto-Send Messages | HelloBotz';
 $ogDescription = 'Dispatch automated WhatsApp campaigns directly from Google Sheets rows and log incoming chat responses in real time.';
 
 include __DIR__ . '/../../includes/header.php';

@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBotz's;
+$pageTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBotz';
 $pageDescription = 'Automate courier tracking alerts, delivery notifications, and non-delivery report (NDR) verifications via WhatsApp.';
 $canonicalUrl = 'https://hellobotz.com/integrations/shiprocket/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-shiprocket/WhatsApp-Shiprocket-Integration.png';
-$ogTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBotz's;
+$ogTitle = 'Shiprocket WhatsApp Integration | Order Tracking & NDR | HelloBotz';
 $ogDescription = 'Automate courier tracking alerts, delivery notifications, and non-delivery report (NDR) verifications via WhatsApp.';
 
 include __DIR__ . '/../../includes/header.php';

@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBotz's;
+$pageTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBotz';
 $pageDescription = 'Sync contacts, trigger instant WhatsApp messages on CRM stages, and automate support tickets between Zoho and WhatsApp.';
 $canonicalUrl = 'https://hellobotz.com/integrations/zoho/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-zoho/WhatsApp-Zoho-Integration.png';
-$ogTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBotz's;
+$ogTitle = 'Zoho CRM WhatsApp Integration | Automated Workflows | HelloBotz';
 $ogDescription = 'Sync contacts, trigger instant WhatsApp messages on CRM stages, and automate support tickets between Zoho and WhatsApp.';
 
 include __DIR__ . '/../../includes/header.php';

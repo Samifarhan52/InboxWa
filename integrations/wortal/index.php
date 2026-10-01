@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Wortal CRM WhatsApp Integration | Multi-Channel Automation | HelloBotz's;
+$pageTitle = 'Wortal CRM WhatsApp Integration | Multi-Channel Automation | HelloBotz';
 $pageDescription = 'Connect Wortal CRM with HelloBotz WhatsApp Business API to streamline customer communication and automated marketing campaigns.';
 $canonicalUrl = 'https://hellobotz.com/integrations/wortal/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-wortal/WhatsApp-Wortal-Integration.png';
-$ogTitle = 'Wortal CRM WhatsApp Integration | Multi-Channel Automation | HelloBotz's;
+$ogTitle = 'Wortal CRM WhatsApp Integration | Multi-Channel Automation | HelloBotz';
 $ogDescription = 'Connect Wortal CRM with HelloBotz WhatsApp Business API to streamline customer communication and automated marketing campaigns.';
 
 include __DIR__ . '/../../includes/header.php';

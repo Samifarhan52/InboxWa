@@ -3,6 +3,9 @@ $basePath = '../../';
 $pageTitle = 'WooCommerce WhatsApp Automation | Cart Recovery, Orders & Support | HelloBotz';
 $pageDescription = 'Connect WooCommerce with HelloBotz: abandoned cart recovery, product search, order tracking, COD confirmation, campaigns and support on Official WhatsApp Business API.';
 $canonicalUrl = 'https://hellobotz.com/solutions/woocommerce/';
+$ogImage = 'https://hellobotz.com/assets/images/og/woocommerce-whatsapp-og.png';
+$ogTitle = 'WooCommerce WhatsApp Automation | Cart Recovery, Orders & Support | HelloBotz';
+$ogDescription = 'Connect WooCommerce with HelloBotz: abandoned cart recovery, product search, order tracking, COD confirmation, campaigns and support on Official WhatsApp Business API.';
 include __DIR__ . '/../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/woocommerce.css?v=41">
