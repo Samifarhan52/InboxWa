@@ -974,7 +974,7 @@ include __DIR__ . '/../../includes/header.php';
 
         <div class="col-lg-6">
           <div class="text-center mb-4">
-            <img src="<?php echo $bp; ?>assets/images/shopify-funnel/shopify_hero.png" alt="Shopify WhatsApp Revenue Engine" class="img-fluid" style="max-height:240px;object-fit:contain;" loading="eager">
+            <img src="<?php echo $bp; ?>assets/images/hellobots/integrations-shopify/Shopify-WhatsApp-Integration.png" alt="Shopify WhatsApp Revenue Engine | HelloBotz" class="img-fluid rounded-4 shadow-sm" style="max-height:280px;object-fit:contain;" loading="eager">
           </div>
           <!-- Interactive Mockup Visual -->
           <div class="sh-hero-mockup">
