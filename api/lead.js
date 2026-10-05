@@ -52,27 +52,39 @@ module.exports = async (req, res) => {
 
     if (sheetWebhookUrl && sheetWebhookUrl.startsWith('http')) {
       try {
-        // Multi-Sheet Routing: Sheet 1 (Leads), Sheet 2 (Partners), Sheet 3 (Careers)
-        let targetSheet = 'Sheet1';
+        // Multi-Sheet Routing: leads, Partners, Careers
+        let targetSheet = 'leads';
         let category = 'General Leads';
 
-        if (
-          (data.type && data.type.includes('Job Application')) ||
-          (data.source_page && data.source_page.includes('/careers')) ||
-          data.target_sheet === 'Sheet3' ||
-          (data.category && data.category.toLowerCase() === 'careers')
-        ) {
-          targetSheet = 'Sheet3';
-          category = 'Careers';
-        } else if (
+        const isPartner = (
           (data.type && data.type.toLowerCase().includes('partner')) ||
           (data.source_page && data.source_page.includes('/partners')) ||
           data.partner_type ||
           data.target_sheet === 'Sheet2' ||
+          (data.target_sheet && data.target_sheet.toLowerCase() === 'partners') ||
           (data.category && data.category.toLowerCase() === 'partners')
-        ) {
-          targetSheet = 'Sheet2';
+        );
+
+        const isCareer = !isPartner && (
+          (data.type && data.type.includes('Job Application')) ||
+          (data.type && data.type.toLowerCase().includes('career')) ||
+          (data.source_page && data.source_page.includes('/careers')) ||
+          data.resume_link ||
+          data.role_category ||
+          data.target_sheet === 'Sheet3' ||
+          (data.target_sheet && data.target_sheet.toLowerCase() === 'careers') ||
+          (data.category && data.category.toLowerCase() === 'careers')
+        );
+
+        if (isPartner) {
+          targetSheet = 'Partners';
           category = 'Partners';
+        } else if (isCareer) {
+          targetSheet = 'Careers';
+          category = 'Careers';
+        } else {
+          targetSheet = 'leads';
+          category = 'General Leads';
         }
 
         const payload = {

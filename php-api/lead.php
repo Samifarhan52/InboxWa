@@ -104,26 +104,35 @@ try {
     // Sheet 1: General Leads (Contact, Demo, Inquiries, Pricing)
     // Sheet 2: Partners (Affiliate, Agency, White Label, Technology)
     // Sheet 3: Careers (Job Applications, Internships, Freshers)
-    $targetSheet = 'Sheet1';
-    $category = 'General Leads';
-
-    if (
-        stripos($type, 'Job Application') !== false ||
-        stripos($sourcePage, '/careers') !== false ||
-        ($data['target_sheet'] ?? '') === 'Sheet3' ||
-        strtolower((string)($data['category'] ?? '')) === 'careers'
-    ) {
-        $targetSheet = 'Sheet3';
-        $category = 'Careers';
-    } elseif (
+    $isPartner = (
         stripos($type, 'partner') !== false ||
         stripos($sourcePage, '/partners') !== false ||
         !empty($data['partner_type']) ||
         ($data['target_sheet'] ?? '') === 'Sheet2' ||
-        strtolower((string)($data['category'] ?? '')) === 'partners'
-    ) {
-        $targetSheet = 'Sheet2';
+        strcasecmp((string)($data['target_sheet'] ?? ''), 'partners') === 0 ||
+        strcasecmp((string)($data['category'] ?? ''), 'partners') === 0
+    );
+
+    $isCareer = !$isPartner && (
+        stripos($type, 'Job Application') !== false ||
+        stripos($type, 'career') !== false ||
+        stripos($sourcePage, '/careers') !== false ||
+        !empty($data['resume_link']) ||
+        !empty($data['role_category']) ||
+        ($data['target_sheet'] ?? '') === 'Sheet3' ||
+        strcasecmp((string)($data['target_sheet'] ?? ''), 'careers') === 0 ||
+        strcasecmp((string)($data['category'] ?? ''), 'careers') === 0
+    );
+
+    if ($isPartner) {
+        $targetSheet = 'Partners';
         $category = 'Partners';
+    } elseif ($isCareer) {
+        $targetSheet = 'Careers';
+        $category = 'Careers';
+    } else {
+        $targetSheet = 'leads';
+        $category = 'General Leads';
     }
 
     // 1. Forward to Google Sheet Webhook if configured
