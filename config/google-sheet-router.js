@@ -1,21 +1,29 @@
 /**
  * ==============================================================================
- * HELLOBOTZ MULTI-SHEET LEAD & RECRUITMENT ROUTER (Google Apps Script)
+ * HELLOBOTZ MULTI-SHEET LEAD, PARTNER & RECRUITMENT ROUTER (Google Apps Script)
  * ==============================================================================
  * 
- * Automatically segregates and routes submissions to separate sheets:
+ * Automatically segregates and routes submissions into 3 distinct sheets:
  * 
  * - SHEET 1: "General Leads"  -> Contact forms, Demo Bookings, Inquiries, Pricing
  * - SHEET 2: "Partners"       -> Affiliate, Agency, White-Label & Tech Partners
- * - SHEET 3: "Careers"        -> Job Applications, Freshers, Internships
+ * - SHEET 3: "Careers"        -> Job Applications, Freshers, Internships & CVs
  * 
  * Features:
- *  - Auto-creates tabs if they don't already exist.
- *  - Automatically sets up professional frozen header rows with custom colors.
+ *  - Auto-creates sheet tabs if they don't already exist.
+ *  - Automatically sets up professional frozen header rows with custom brand colors.
  *  - Auto-adjusts column widths for optimal readability.
+ *  - Optional instant email notification to your inbox for every submission!
  *  - Handles concurrency safely with LockService.
  * ==============================================================================
  */
+
+// ==============================================================================
+// 1. CONFIGURATION
+// ==============================================================================
+// Set your email here to receive instant email alerts for every submission.
+// Leave as "" if you only want rows saved to the Google Sheet without email alerts.
+var NOTIFICATION_EMAIL = ""; // e.g. "mail@hellobotz.com" or "your-email@gmail.com"
 
 function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({
@@ -106,6 +114,24 @@ function doPost(e) {
         data.source_page || ""
       ]);
 
+      // Optional Instant Email Alert
+      sendEmailNotification("🚀 New Job Application: " + (data.name || "Candidate") + " (" + (data.target_title || data.role_category || "Careers") + ")", [
+        "Full Name: " + (data.name || ""),
+        "Email: " + (data.email || ""),
+        "Phone / WhatsApp: " + (data.phone || ""),
+        "Location: " + (data.location || data.business || ""),
+        "Role / Category: " + (data.role_category || data.role || ""),
+        "Target Title: " + (data.target_title || ""),
+        "Experience: " + (data.experience || ""),
+        "Skills: " + (data.skills || data.selected_skills || ""),
+        "Portfolio: " + (data.portfolio || ""),
+        "Resume / CV: " + (data.resume_link || ""),
+        "About: " + (data.about || data.about_projects || data.requirement || ""),
+        "Why HelloBotz: " + (data.why || data.why_hellobotz || ""),
+        "Source Page: " + (data.source_page || ""),
+        "Timestamp: " + timestamp
+      ]);
+
       return ContentService.createTextOutput(JSON.stringify({
         ok: true,
         sheet: "Sheet3 (Careers)",
@@ -139,6 +165,18 @@ function doPost(e) {
         data.partner_type || data.type || "Partner Application",
         data.requirement || data.message || "",
         data.source_page || ""
+      ]);
+
+      // Optional Instant Email Alert
+      sendEmailNotification("🤝 New Partner Application: " + (data.name || "Partner") + " (" + (data.company || data.business || "Partner Program") + ")", [
+        "Full Name: " + (data.name || ""),
+        "Email: " + (data.email || ""),
+        "Phone / WhatsApp: " + (data.phone || ""),
+        "Company / Agency: " + (data.company || data.business || ""),
+        "Partner Program: " + (data.partner_type || data.type || "Partner Application"),
+        "Details / Strategy: " + (data.requirement || data.message || ""),
+        "Source Page: " + (data.source_page || ""),
+        "Timestamp: " + timestamp
       ]);
 
       return ContentService.createTextOutput(JSON.stringify({
@@ -177,6 +215,19 @@ function doPost(e) {
       data.source_page || ""
     ]);
 
+    // Optional Instant Email Alert
+    sendEmailNotification("📊 New Website Lead: " + (data.name || "Lead") + " (" + (data.type || "General Inquiry") + ")", [
+      "Full Name: " + (data.name || ""),
+      "Email: " + (data.email || ""),
+      "Phone / WhatsApp: " + (data.phone || ""),
+      "Company / Business: " + (data.business || data.company || ""),
+      "Inquiry Type: " + (data.type || "General Lead"),
+      "Product / Interest: " + (data.product || ""),
+      "Requirement / Message: " + (data.requirement || data.message || ""),
+      "Source Page: " + (data.source_page || ""),
+      "Timestamp: " + timestamp
+    ]);
+
     return ContentService.createTextOutput(JSON.stringify({
       ok: true,
       sheet: "Sheet1 (General Leads)",
@@ -194,7 +245,48 @@ function doPost(e) {
 }
 
 /**
- * Helper to locate or generate a sheet with styled headers
+ * Sends a clean, styled HTML email notification
+ */
+function sendEmailNotification(subject, lines) {
+  if (!NOTIFICATION_EMAIL || NOTIFICATION_EMAIL.indexOf("@") === -1) {
+    return;
+  }
+  try {
+    var plainBody = lines.join("\n");
+    var rowsHtml = lines.map(function(line) {
+      var sepIdx = line.indexOf(": ");
+      var k = sepIdx !== -1 ? line.substring(0, sepIdx) : line;
+      var v = sepIdx !== -1 ? line.substring(sepIdx + 2) : "";
+      return "<tr><td style='padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:600;width:35%;color:#475569;background:#f8fafc;'>" + k + "</td><td style='padding:8px 12px;border-bottom:1px solid #e2e8f0;color:#0f172a;'>" + (v || "-") + "</td></tr>";
+    }).join("");
+
+    var htmlBody = "<div style='font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,sans-serif;line-height:1.6;color:#1e293b;max-width:620px;margin:20px auto;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05);'>"
+      + "<div style='background:#034737;padding:18px 24px;border-bottom:3px solid #10b981;'>"
+      + "<h2 style='color:#ffffff;margin:0;font-size:1.25rem;'>" + subject + "</h2>"
+      + "</div>"
+      + "<div style='padding:20px 24px;background:#ffffff;'>"
+      + "<table style='width:100%;border-collapse:collapse;margin:10px 0;'>"
+      + rowsHtml
+      + "</table>"
+      + "</div>"
+      + "<div style='padding:12px 24px;background:#f1f5f9;font-size:12px;color:#64748b;text-align:center;border-top:1px solid #e2e8f0;'>"
+      + "HelloBotz Multi-Sheet Lead Router · Automated Notification"
+      + "</div>"
+      + "</div>";
+
+    MailApp.sendEmail({
+      to: NOTIFICATION_EMAIL,
+      subject: subject,
+      body: plainBody,
+      htmlBody: htmlBody
+    });
+  } catch (err) {
+    Logger.log("Email notification error: " + err);
+  }
+}
+
+/**
+ * Helper to locate or generate a sheet tab with styled headers
  */
 function getOrCreateSheet(ss, sheetId, fallbackName, headers, headerColorHex) {
   var sheet = ss.getSheetByName(sheetId) || ss.getSheetByName(fallbackName);
@@ -226,66 +318,4 @@ function getOrCreateSheet(ss, sheetId, fallbackName, headers, headerColorHex) {
   }
 
   return sheet;
-}
-
-/**
- * Test function to verify script manually inside Google Apps Script editor
- */
-function testMultiSheetRouter() {
-  var testLead = {
-    postData: {
-      contents: JSON.stringify({
-        timestamp: Utilities.formatDate(new Date(), "Asia/Kolkata", "dd/MM/yyyy, hh:mm:ss a"),
-        type: "Demo Request",
-        name: "John Doe",
-        email: "john@example.com",
-        phone: "+91 98765 43210",
-        business: "TechCorp",
-        requirement: "Looking for WhatsApp API automation"
-      })
-    }
-  };
-
-  var testPartner = {
-    postData: {
-      contents: JSON.stringify({
-        timestamp: Utilities.formatDate(new Date(), "Asia/Kolkata", "dd/MM/yyyy, hh:mm:ss a"),
-        type: "partner",
-        partner_type: "agency",
-        target_sheet: "Sheet2",
-        name: "Agency Owner",
-        email: "owner@agency.com",
-        phone: "+91 98765 43211",
-        company: "Growth Media LLC",
-        message: "50+ clients looking for WhatsApp white label"
-      })
-    }
-  };
-
-  var testCareer = {
-    postData: {
-      contents: JSON.stringify({
-        timestamp: Utilities.formatDate(new Date(), "Asia/Kolkata", "dd/MM/yyyy, hh:mm:ss a"),
-        type: "Job Application: AI Automation Engineer",
-        target_sheet: "Sheet3",
-        name: "Sarah Dev",
-        email: "sarah@dev.com",
-        phone: "+91 98765 43212",
-        location: "Bengaluru",
-        role_category: "AI & Automation Engineer",
-        target_title: "Lead AI Engineer",
-        experience: "1 - 3 Years",
-        employment_type: "Full-Time",
-        skills: "n8n, Python, WhatsApp Cloud API",
-        portfolio: "https://github.com/sarahdev",
-        resume_link: "https://drive.google.com/file/...",
-        about: "Built 10+ custom n8n workflows and WhatsApp bots",
-        why: "Passionate about AI agents and automating business systems"
-      })
-    }
-  };
-
-  Logger.log(doPost(testLead).getContent());
-  Logger.log(doPost(testPartner).getContent());
-  Logger.log(doPost(testCareer).getContent());
 }
