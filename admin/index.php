@@ -1,12 +1,12 @@
 <?php
 header('Content-Type: text/plain; charset=utf-8');
-class HbMockPdo extends PDO {
+class HbStmtSub extends PDOStatement {
     public function __construct() {}
 }
 try {
-    $m = new HbMockPdo();
-    echo "HbMockPdo created: " . (is_a($m, 'PDO') ? 'YES' : 'NO') . "\n";
+    $s = new HbStmtSub();
+    echo "HbStmtSub created: " . (is_a($s, 'PDOStatement') ? 'YES' : 'NO') . "\n";
 } catch (Throwable $e) {
-    echo "HbMockPdo error: " . $e->getMessage() . "\n";
+    echo "HbStmtSub error: " . $e->getMessage() . "\n";
 }
 exit;
