@@ -1682,6 +1682,26 @@ function hb_propagate_site_settings(): void {
     $ytUrl = hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz');
     $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854445');
 
+    $annEnabled = hb_get_setting('announcement_enabled', '1');
+    $annBadge = hb_get_setting('announcement_badge', 'LIMITED OFFER');
+    $annText = hb_get_setting('announcement_text', 'Flat 20% OFF on All Annual WhatsApp API & AI Chatbot Plans');
+    $annCode = hb_get_setting('announcement_code', 'HB20OFF');
+    $annCta = hb_get_setting('announcement_cta', 'Claim Discount');
+    $annLink = hb_get_setting('announcement_link', '');
+    $annMode = hb_get_setting('announcement_mode', 'carousel');
+    $annTheme = hb_get_setting('announcement_theme', 'gradient');
+
+    $annConfig = [
+        'enabled' => $annEnabled,
+        'badge' => $annBadge,
+        'text' => $annText,
+        'code' => $annCode,
+        'cta' => $annCta,
+        'link' => $annLink,
+        'mode' => $annMode,
+        'theme' => $annTheme
+    ];
+
     $runtimeData = [
         'logo_light_url' => $lightLogo,
         'logo_dark_url' => $darkLogo,
@@ -1694,7 +1714,8 @@ function hb_propagate_site_settings(): void {
         'social_instagram' => $igUrl,
         'social_linkedin' => $liUrl,
         'social_youtube' => $ytUrl,
-        'social_whatsapp' => $waUrl
+        'social_whatsapp' => $waUrl,
+        'announcement' => $annConfig
     ];
 
     $jsDir = dirname(__DIR__) . '/public/assets/js';
@@ -1723,6 +1744,19 @@ function hb_propagate_site_settings(): void {
 JS;
 
     @file_put_contents($jsDir . '/hb-cms-runtime.js', $jsContent);
+
+    // Also update dynamic announcement header in announcement.js directly
+    $annJsFile = $jsDir . '/announcement.js';
+    if (file_exists($annJsFile)) {
+        $annJsContent = (string)@file_get_contents($annJsFile);
+        $headerConfig = "/** HelloBotz Dynamic Announcement Configuration **/\nwindow.__HELLOBOTZ_ANNOUNCEMENT__ = " . json_encode($annConfig, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . ";\n";
+        if (preg_match('/\/\*\* HelloBotz Dynamic Announcement Configuration \*\*\/[\s\S]*?window\.__HELLOBOTZ_ANNOUNCEMENT__\s*=\s*[\s\S]*?\};/s', $annJsContent)) {
+            $updatedAnnJs = preg_replace('/\/\*\* HelloBotz Dynamic Announcement Configuration \*\*\/[\s\S]*?window\.__HELLOBOTZ_ANNOUNCEMENT__\s*=\s*[\s\S]*?\};/s', trim($headerConfig), $annJsContent, 1);
+            @file_put_contents($annJsFile, $updatedAnnJs);
+        } else {
+            @file_put_contents($annJsFile, $headerConfig . "\n" . $annJsContent);
+        }
+    }
 }
 
 function hb_publish_page_html(string $title, string $slug, string $content, string $template = 'default', string $metaTitle = '', string $metaDesc = ''): bool {

@@ -612,6 +612,150 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Save Top Offer Banner Settings & Propagate Across All Pages
+    if ($action === 'save_offer_banner') {
+        $enabled = isset($_POST['announcement_enabled']) && ($_POST['announcement_enabled'] === '1' || $_POST['announcement_enabled'] === 'on') ? '1' : '0';
+        $badge = trim((string)($_POST['announcement_badge'] ?? 'LIMITED OFFER'));
+        $text = trim((string)($_POST['announcement_text'] ?? ''));
+        $code = trim((string)($_POST['announcement_code'] ?? ''));
+        $cta = trim((string)($_POST['announcement_cta'] ?? 'Claim Discount'));
+        $link = trim((string)($_POST['announcement_link'] ?? ''));
+        $mode = trim((string)($_POST['announcement_mode'] ?? 'carousel'));
+        $theme = trim((string)($_POST['announcement_theme'] ?? 'gradient'));
+
+        hb_set_setting('announcement_enabled', $enabled);
+        hb_set_setting('announcement_badge', $badge);
+        hb_set_setting('announcement_text', $text);
+        hb_set_setting('announcement_code', $code);
+        hb_set_setting('announcement_cta', $cta);
+        hb_set_setting('announcement_link', $link);
+        hb_set_setting('announcement_mode', $mode);
+        hb_set_setting('announcement_theme', $theme);
+
+        hb_propagate_site_settings();
+
+        if (!empty($_POST['is_ajax'])) {
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'enabled' => $enabled === '1',
+                'message' => $enabled === '1' ? 'Top Offer Banner is now LIVE across all pages!' : 'Top Offer Banner is now TURNED OFF across all pages.'
+            ]);
+            exit;
+        }
+
+        $noticeSuccess = $enabled === '1' 
+            ? 'Top Offer Banner is now LIVE across all 260+ website pages!' 
+            : 'Top Offer Banner has been TURNED OFF across all website pages.';
+    }
+
+    // Quick 1-Click Toggle for Offer Banner
+    if ($action === 'toggle_offer_banner') {
+        $current = hb_get_setting('announcement_enabled', '1');
+        $target = isset($_POST['target_state']) ? (string)$_POST['target_state'] : ($current === '1' ? '0' : '1');
+        hb_set_setting('announcement_enabled', $target);
+        hb_propagate_site_settings();
+
+        if (!empty($_POST['is_ajax'])) {
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'enabled' => $target === '1',
+                'message' => $target === '1' ? 'Offer banner is now ACTIVE on website.' : 'Offer banner is now TURNED OFF on website.'
+            ]);
+            exit;
+        }
+
+        $noticeSuccess = ($target === '1') ? 'Offer banner is now ACTIVE on website.' : 'Offer banner is now TURNED OFF on website.';
+        header('Location: ' . $adminBase . '?page=' . ($page === 'offer-banner' ? 'offer-banner' : 'dashboard'));
+        exit;
+    }
+
+    // Save Visual On-Page Canvas Changes (Canva / WordPress Elementor Style)
+    if ($action === 'save_visual_page') {
+        $slug = trim((string)($_POST['slug'] ?? ''));
+        $rawHtml = (string)($_POST['raw_html'] ?? '');
+
+        if (!empty($slug) && !empty($rawHtml)) {
+            $saved = HbPagesManager::savePageDetails($slug, [
+                'use_raw_html' => true,
+                'raw_html' => $rawHtml
+            ]);
+
+            if (!empty($_POST['is_ajax'])) {
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => (bool)$saved,
+                    'slug' => $slug,
+                    'message' => $saved ? 'Page published live successfully!' : 'Failed to save page. Please check file permissions.',
+                    'timestamp' => time()
+                ]);
+                exit;
+            }
+
+            if ($saved) {
+                $noticeSuccess = 'Page published live successfully! <a href="' . htmlspecialchars($slug) . '" target="_blank" style="text-decoration:underline; font-weight:700;">View Live Page &rarr;</a>';
+            } else {
+                $noticeError = 'Failed to publish page. Please check file permissions.';
+            }
+        } else {
+            if (!empty($_POST['is_ajax'])) {
+                header('Content-Type: application/json');
+                echo json_encode(['success' => false, 'message' => 'Missing slug or page HTML content.']);
+                exit;
+            }
+            $noticeError = 'Missing page route or HTML content.';
+        }
+    }
+
+    // AJAX Upload Image directly from Canva Editor Modal
+    if ($action === 'ajax_upload_image') {
+        header('Content-Type: application/json');
+        if (!empty($_FILES['image_file']['tmp_name'])) {
+            $up = hb_upload_brand_file($_FILES['image_file'], 'page_img');
+            if ($up) {
+                echo json_encode(['success' => true, 'url' => $up]);
+                exit;
+            }
+        }
+        echo json_encode(['success' => false, 'message' => 'Image upload failed. Allowed formats: PNG, JPG, WEBP, SVG, GIF.']);
+        exit;
+    }
+
+    // AJAX List Available Images for Canva Gallery Modal
+    if ($action === 'ajax_list_images') {
+        header('Content-Type: application/json');
+        $imgDir = dirname(__DIR__) . '/public/assets/images';
+        $results = [];
+        if (is_dir($imgDir)) {
+            foreach (scandir($imgDir) as $f) {
+                if ($f === '.' || $f === '..' || is_dir($imgDir . '/' . $f)) continue;
+                $ext = strtolower(pathinfo($f, PATHINFO_EXTENSION));
+                if (in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'svg'])) {
+                    $results[] = [
+                        'url' => '/assets/images/' . $f,
+                        'name' => $f
+                    ];
+                }
+            }
+        }
+        $uploadDir = $imgDir . '/uploads';
+        if (is_dir($uploadDir)) {
+            foreach (scandir($uploadDir) as $f) {
+                if ($f === '.' || $f === '..' || is_dir($uploadDir . '/' . $f)) continue;
+                $ext = strtolower(pathinfo($f, PATHINFO_EXTENSION));
+                if (in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'svg'])) {
+                    $results[] = [
+                        'url' => '/assets/images/uploads/' . $f,
+                        'name' => $f
+                    ];
+                }
+            }
+        }
+        echo json_encode(['success' => true, 'images' => $results]);
+        exit;
+    }
+
     // Upload Media File
     if ($action === 'upload_media') {
         if (isset($_FILES['media_file']) && $_FILES['media_file']['error'] === UPLOAD_ERR_OK) {
@@ -1818,9 +1962,26 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     </a>
                     <ul class="wp-submenu">
                         <li class="<?php echo ($page === 'editor' || $page === 'appearance' || $page === 'themes') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=editor">Customize (Live CMS)</a></li>
+                        <li class="<?php echo $page === 'offer-banner' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=offer-banner">🔥 Top Offer Banner</a></li>
                         <li class="<?php echo $page === 'menus' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=menus">Dropdown Menus</a></li>
                         <li class="<?php echo $page === 'colors' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=colors">Color Palette</a></li>
                     </ul>
+                </li>
+
+                <!-- 7b. Top Offer Banner (Dedicated) -->
+                <?php
+                $isOfferBannerActive = (hb_get_setting('announcement_enabled', '1') === '1');
+                ?>
+                <li class="menu-top <?php echo $page === 'offer-banner' ? 'current' : ''; ?>">
+                    <a href="<?php echo $adminBase; ?>?page=offer-banner" class="menu-link" style="display:flex; align-items:center; justify-content:space-between;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="menu-icon" style="color:#f59e0b;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                            <span class="wp-menu-name">Top Offer Banner</span>
+                        </div>
+                        <span class="badge" style="font-size:10px; padding:2px 7px; border-radius:10px; font-weight:800; background:<?php echo $isOfferBannerActive ? '#10b981' : '#64748b'; ?>; color:#fff;">
+                            <?php echo $isOfferBannerActive ? 'ON' : 'OFF'; ?>
+                        </span>
+                    </a>
                 </li>
 
                 <!-- 8. Plugins -->
@@ -1959,8 +2120,76 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 // =============================================================
                 // 1. DASHBOARD SCREEN (EXACT MATCH FOR media_1788876670751.png)
                 // =============================================================
-                if ($page === 'dashboard'): ?>
-                    <h1 class="wp-heading-inline">Dashboard</h1>
+                if ($page === 'dashboard'): 
+                    $isAnnActive = (hb_get_setting('announcement_enabled', '1') === '1');
+                    $annCurrentText = hb_get_setting('announcement_text', 'Flat 20% OFF on All Annual WhatsApp API & AI Chatbot Plans');
+                    $annCurrentBadge = hb_get_setting('announcement_badge', 'LIMITED OFFER');
+                ?>
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+                        <h1 class="wp-heading-inline" style="margin:0;">Dashboard</h1>
+                        <div style="display:flex; gap:8px;">
+                            <a href="<?php echo $adminBase; ?>?page=pages" class="button button-primary" style="background:#2563eb; border-color:#1d4ed8; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                                <span>🎨 Open Canva Visual Page Editor</span>
+                            </a>
+                            <a href="<?php echo $adminBase; ?>?page=offer-banner" class="button" style="font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                                <span>🔥 Top Offer Banner</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Top Executive Control Bar: Offer Banner & Pages Studio -->
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:20px;">
+                        <!-- Card 1: Top Offer Banner Master Switch -->
+                        <div style="background:#ffffff; border:1px solid <?php echo $isAnnActive ? '#86efac' : '#e2e8f0'; ?>; border-left:4px solid <?php echo $isAnnActive ? '#10b981' : '#64748b'; ?>; border-radius:8px; padding:16px 20px; box-shadow:0 1px 3px rgba(0,0,0,0.05); display:flex; justify-content:space-between; align-items:center; gap:16px;">
+                            <div>
+                                <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                                    <span style="font-size:18px;">🔥</span>
+                                    <strong style="font-size:15px; color:#0f172a;">Top Offer &amp; Announcement Banner</strong>
+                                    <span class="badge" style="font-size:11px; font-weight:800; padding:2px 8px; border-radius:12px; background:<?php echo $isAnnActive ? '#dcfce7' : '#f1f5f9'; ?>; color:<?php echo $isAnnActive ? '#15803d' : '#475569'; ?>;">
+                                        <?php echo $isAnnActive ? '🟢 ACTIVE & LIVE' : '⚪ DISABLED & HIDDEN'; ?>
+                                    </span>
+                                </div>
+                                <div style="font-size:12px; color:#64748b; line-height:1.4;">
+                                    <?php if ($isAnnActive): ?>
+                                        Showing across all 260+ pages: <em>"<?php echo htmlspecialchars(mb_substr($annCurrentText, 0, 55)); ?>..."</em>
+                                    <?php else: ?>
+                                        Currently hidden from all website visitors. 1-click turn on anytime.
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                                <form method="post" action="" style="margin:0;">
+                                    <input type="hidden" name="form_action" value="toggle_offer_banner">
+                                    <input type="hidden" name="target_state" value="<?php echo $isAnnActive ? '0' : '1'; ?>">
+                                    <button type="submit" class="button" style="font-weight:700; background:<?php echo $isAnnActive ? '#fee2e2' : '#ecfdf5'; ?>; color:<?php echo $isAnnActive ? '#b91c1c' : '#047857'; ?>; border-color:<?php echo $isAnnActive ? '#fca5a5' : '#a7f3d0'; ?>;">
+                                        <?php echo $isAnnActive ? 'Turn OFF' : 'Turn ON'; ?>
+                                    </button>
+                                </form>
+                                <a href="<?php echo $adminBase; ?>?page=offer-banner" class="button" title="Customize banner content">Edit &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Canva Live Visual Studio Quick Launch -->
+                        <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #2563eb; border-radius:8px; padding:16px 20px; box-shadow:0 1px 3px rgba(0,0,0,0.05); display:flex; justify-content:space-between; align-items:center; gap:16px;">
+                            <div>
+                                <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                                    <span style="font-size:18px;">🎨</span>
+                                    <strong style="font-size:15px; color:#0f172a;">Live Visual Page Studio (Canva Style)</strong>
+                                    <span class="badge" style="font-size:11px; font-weight:800; padding:2px 8px; border-radius:12px; background:#eff6ff; color:#1d4ed8;">
+                                        261 Pages Indexed
+                                    </span>
+                                </div>
+                                <div style="font-size:12px; color:#64748b; line-height:1.4;">
+                                    Click anywhere on your live pages to edit texts, replace images, and publish without code.
+                                </div>
+                            </div>
+                            <div style="flex-shrink:0;">
+                                <a href="<?php echo $adminBase; ?>?page=pages" class="button button-primary" style="background:#2563eb; border-color:#1d4ed8; font-weight:700;">
+                                    Select Page &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div id="dashboard-widgets-wrap">
                         <div id="dashboard-widgets">
@@ -2571,7 +2800,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                             }
                         }
                     }
-                    $activeTab = $_GET['tab'] ?? 'content';
+                    $activeTab = $_GET['tab'] ?? 'visual';
                 ?>
                     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
                         <div>
@@ -2608,17 +2837,91 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         </div>
                     <?php endif; ?>
 
-                    <form method="post" action="">
+                    <!-- Subtab Navigation -->
+                    <div style="display:flex; gap:4px; border-bottom:2px solid #e2e8f0; margin-bottom:20px; overflow-x:auto;">
+                        <button type="button" class="tab-btn <?php echo $activeTab === 'visual' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('visual')" id="tab-nav-visual" style="padding:10px 18px; border:none; background:none; font-weight:800; font-size:13px; color:<?php echo $activeTab === 'visual' ? '#2563eb' : '#475569'; ?>; cursor:pointer; border-bottom:2px solid <?php echo $activeTab === 'visual' ? '#2563eb' : 'transparent'; ?>; margin-bottom:-2px;">🎨 Canva Live Visual Editor</button>
+                        <button type="button" class="tab-btn <?php echo $activeTab === 'content' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('content')" id="tab-nav-content" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:<?php echo $activeTab === 'content' ? '#2563eb' : '#475569'; ?>; cursor:pointer; border-bottom:2px solid <?php echo $activeTab === 'content' ? '#2563eb' : 'transparent'; ?>; margin-bottom:-2px;">📝 Headings &amp; Text Fields</button>
+                        <button type="button" class="tab-btn <?php echo $activeTab === 'images' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('images')" id="tab-nav-images" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:<?php echo $activeTab === 'images' ? '#2563eb' : '#475569'; ?>; cursor:pointer; border-bottom:2px solid <?php echo $activeTab === 'images' ? '#2563eb' : 'transparent'; ?>; margin-bottom:-2px;">🖼️ Images &amp; Media Assets</button>
+                        <button type="button" class="tab-btn <?php echo $activeTab === 'seo' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('seo')" id="tab-nav-seo" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:<?php echo $activeTab === 'seo' ? '#2563eb' : '#475569'; ?>; cursor:pointer; border-bottom:2px solid <?php echo $activeTab === 'seo' ? '#2563eb' : 'transparent'; ?>; margin-bottom:-2px;">🔍 SEO &amp; Google Snippet</button>
+                        <button type="button" class="tab-btn <?php echo $activeTab === 'code' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('code')" id="tab-nav-code" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:<?php echo $activeTab === 'code' ? '#2563eb' : '#475569'; ?>; cursor:pointer; border-bottom:2px solid <?php echo $activeTab === 'code' ? '#2563eb' : 'transparent'; ?>; margin-bottom:-2px;">💻 Raw HTML Code</button>
+                    </div>
+
+                    <!-- TAB 0: CANVA LIVE VISUAL BUILDER (RECOMMENDED & CODE-FREE) -->
+                    <div id="tab-panel-visual" class="tab-panel" style="<?php echo $activeTab === 'visual' ? '' : 'display:none;'; ?>">
+                        <!-- Top Canva Studio Control Bar -->
+                        <div style="background:#0f172a; border-radius:10px 10px 0 0; padding:12px 18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; color:#ffffff; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                            <!-- Left: Device Responsive Switcher -->
+                            <div style="display:flex; align-items:center; gap:6px;">
+                                <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.5px; color:#94a3b8; font-weight:700; margin-right:4px;">View:</span>
+                                <button type="button" class="canva-dev-btn canva-dev-active" onclick="canvaSetDevice('100%', this)" style="background:#1e293b; color:#fff; border:1px solid #334155; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                                    <span>🖥️ Desktop</span>
+                                </button>
+                                <button type="button" class="canva-dev-btn" onclick="canvaSetDevice('1200px', this)" style="background:#0f172a; color:#94a3b8; border:1px solid #334155; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                                    <span>💻 Laptop</span>
+                                </button>
+                                <button type="button" class="canva-dev-btn" onclick="canvaSetDevice('768px', this)" style="background:#0f172a; color:#94a3b8; border:1px solid #334155; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                                    <span>📱 Tablet</span>
+                                </button>
+                                <button type="button" class="canva-dev-btn" onclick="canvaSetDevice('375px', this)" style="background:#0f172a; color:#94a3b8; border:1px solid #334155; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                                    <span>📱 Mobile</span>
+                                </button>
+                            </div>
+
+                            <!-- Center: Mode Toggle & Text Tools -->
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <div style="display:inline-flex; background:#1e293b; padding:2px; border-radius:6px; border:1px solid #334155;">
+                                    <button type="button" id="canva-mode-edit-btn" onclick="canvaSetMode('edit')" style="background:#2563eb; color:#fff; border:none; padding:5px 12px; border-radius:4px; font-size:12px; font-weight:700; cursor:pointer;">
+                                        ✏️ Edit Mode
+                                    </button>
+                                    <button type="button" id="canva-mode-preview-btn" onclick="canvaSetMode('preview')" style="background:transparent; color:#94a3b8; border:none; padding:5px 12px; border-radius:4px; font-size:12px; font-weight:700; cursor:pointer;">
+                                        👁️ Browse Mode
+                                    </button>
+                                </div>
+
+                                <!-- Text Formatting Toolbar -->
+                                <div id="canva-text-format-bar" style="display:inline-flex; align-items:center; gap:2px; background:#1e293b; padding:2px 6px; border-radius:6px; border:1px solid #334155;">
+                                    <button type="button" onclick="canvaFormat('bold')" title="Bold" style="background:none; border:none; color:#fff; font-weight:900; font-size:13px; padding:4px 8px; cursor:pointer; border-radius:3px;">B</button>
+                                    <button type="button" onclick="canvaFormat('italic')" title="Italic" style="background:none; border:none; color:#fff; font-style:italic; font-size:13px; padding:4px 8px; cursor:pointer; border-radius:3px;">I</button>
+                                    <button type="button" onclick="canvaFormat('underline')" title="Underline" style="background:none; border:none; color:#fff; text-decoration:underline; font-size:13px; padding:4px 8px; cursor:pointer; border-radius:3px;">U</button>
+                                    <button type="button" onclick="canvaInsertLink()" title="Add Link" style="background:none; border:none; color:#38bdf8; font-size:13px; padding:4px 8px; cursor:pointer; border-radius:3px;">🔗</button>
+                                    <button type="button" onclick="canvaFormat('removeFormat')" title="Clear Formatting" style="background:none; border:none; color:#94a3b8; font-size:13px; padding:4px 8px; cursor:pointer; border-radius:3px;">🧹</button>
+                                </div>
+                            </div>
+
+                            <!-- Right: Publish & Status -->
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <button type="button" onclick="canvaReloadFrame()" title="Reload page to original" style="background:#1e293b; color:#94a3b8; border:1px solid #334155; padding:6px 10px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer;">
+                                    🔄 Reload
+                                </button>
+                                <button type="button" id="canva-publish-btn" onclick="publishCanvaPage()" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%); color:#ffffff; border:none; padding:8px 22px; border-radius:6px; font-size:14px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:6px; box-shadow:0 2px 8px rgba(16,185,129,0.4); transition:transform 0.15s ease;">
+                                    <span id="canva-pub-icon">🚀</span>
+                                    <span id="canva-pub-text">Publish Changes Live</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Instruction Bar -->
+                        <div style="background:#1e293b; padding:8px 18px; border-bottom:1px solid #334155; font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                            <div>
+                                <strong style="color:#38bdf8;">💡 How to edit:</strong>
+                                Click <strong>directly on any text</strong> on the page below to type. Click <strong>any image</strong> to replace it. When finished, click <strong>"Publish Changes Live"</strong>.
+                            </div>
+                            <div id="canva-dirty-indicator" style="display:none; color:#fbbf24; font-weight:700;">
+                                ⚠️ You have unsaved changes
+                            </div>
+                        </div>
+
+                        <!-- Canva Studio Frame Canvas -->
+                        <div id="canva-workspace-wrap" style="background:#090d16; padding:24px 12px; min-height:84vh; display:flex; justify-content:center; align-items:flex-start; overflow-x:auto;">
+                            <div id="canva-frame-container" style="width:100%; max-width:100%; transition:width 0.3s cubic-bezier(0.4, 0, 0.2, 1); margin:0 auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.5);">
+                                <iframe id="canva-studio-iframe" src="<?php echo htmlspecialchars($pageDetails['slug']); ?>" style="width:100%; height:82vh; border:none; display:block; background:#ffffff;" onload="initCanvaBridge()"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form method="post" action="" id="classic-editor-form">
                         <input type="hidden" name="form_action" value="save_page_details">
                         <input type="hidden" name="slug" value="<?php echo htmlspecialchars($pageDetails['slug'] ?? '/custom-page/'); ?>">
-
-                        <!-- Subtab Navigation -->
-                        <div style="display:flex; gap:4px; border-bottom:2px solid #e2e8f0; margin-bottom:20px; overflow-x:auto;">
-                            <button type="button" class="tab-btn <?php echo $activeTab === 'content' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('content')" id="tab-nav-content" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">📝 Texts, Headings &amp; CTAs</button>
-                            <button type="button" class="tab-btn <?php echo $activeTab === 'images' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('images')" id="tab-nav-images" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">🖼️ Images &amp; Media Assets</button>
-                            <button type="button" class="tab-btn <?php echo $activeTab === 'seo' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('seo')" id="tab-nav-seo" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">🔍 SEO &amp; Google Snippet</button>
-                            <button type="button" class="tab-btn <?php echo $activeTab === 'code' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('code')" id="tab-nav-code" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">💻 Visual Code &amp; Live Preview</button>
-                        </div>
 
                         <!-- TAB 1: TEXTS, HEADINGS & CTAs -->
                         <div id="tab-panel-content" class="tab-panel" style="<?php echo $activeTab === 'content' ? '' : 'display:none;'; ?>">
@@ -2786,7 +3089,138 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                         </div>
                     </form>
 
+                    <!-- CANVA IMAGE INSPECTOR MODAL -->
+                    <div id="canva-img-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.8); backdrop-filter:blur(4px); z-index:99999; justify-content:center; align-items:center;">
+                        <div style="background:#ffffff; border-radius:12px; width:92%; max-width:680px; max-height:90vh; overflow-y:auto; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); border:1px solid #e2e8f0;">
+                            <div style="padding:18px 24px; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                                <h3 style="margin:0; font-size:18px; font-weight:800; color:#0f172a; display:flex; align-items:center; gap:8px;">
+                                    <span>🖼️ Replace Image</span>
+                                </h3>
+                                <button type="button" onclick="closeCanvaImageModal()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#94a3b8; font-weight:700;">&times;</button>
+                            </div>
+                            <div style="padding:22px 24px;">
+                                <!-- Current Image Preview -->
+                                <div style="display:flex; gap:16px; margin-bottom:20px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px;">
+                                    <div style="width:100px; height:80px; background:#e2e8f0; border-radius:6px; display:flex; align-items:center; justify-content:center; overflow:hidden; flex-shrink:0;">
+                                        <img id="canva-modal-preview-img" src="" style="max-width:100%; max-height:100%; object-fit:contain;">
+                                    </div>
+                                    <div style="overflow:hidden;">
+                                        <div style="font-size:12px; font-weight:700; color:#475569; margin-bottom:4px;">Current Image Source:</div>
+                                        <code id="canva-modal-current-src" style="font-size:11px; word-break:break-all; color:#1e293b;"></code>
+                                    </div>
+                                </div>
+
+                                <!-- Image Source Tabs -->
+                                <div style="display:flex; gap:4px; border-bottom:1px solid #e2e8f0; margin-bottom:16px;">
+                                    <button type="button" class="canva-img-tab canva-img-tab-active" onclick="switchImgModalTab('gallery', this)" style="padding:8px 14px; border:none; background:none; font-weight:700; font-size:13px; color:#2563eb; cursor:pointer; border-bottom:2px solid #2563eb;">📚 Media Gallery</button>
+                                    <button type="button" class="canva-img-tab" onclick="switchImgModalTab('upload', this)" style="padding:8px 14px; border:none; background:none; font-weight:700; font-size:13px; color:#64748b; cursor:pointer; border-bottom:2px solid transparent;">⬆️ Upload from Laptop</button>
+                                    <button type="button" class="canva-img-tab" onclick="switchImgModalTab('url', this)" style="padding:8px 14px; border:none; background:none; font-weight:700; font-size:13px; color:#64748b; cursor:pointer; border-bottom:2px solid transparent;">🔗 Paste Image URL</button>
+                                </div>
+
+                                <!-- TAB 1: MEDIA GALLERY -->
+                                <div id="canva-img-tab-gallery" class="canva-img-tab-pane">
+                                    <input type="text" id="canva-gallery-search" placeholder="Search gallery images..." oninput="filterCanvaGallery(this.value)" style="width:100%; padding:8px 12px; border:1px solid #cbd5e1; border-radius:6px; margin-bottom:12px; font-size:13px;">
+                                    <div id="canva-gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(110px, 1fr)); gap:10px; max-height:220px; overflow-y:auto; padding:4px;">
+                                        <div style="grid-column:1/-1; text-align:center; color:#94a3b8; padding:20px;">Loading images...</div>
+                                    </div>
+                                </div>
+
+                                <!-- TAB 2: UPLOAD IMAGE -->
+                                <div id="canva-img-tab-upload" class="canva-img-tab-pane" style="display:none;">
+                                    <div style="border:2px dashed #93c5fd; background:#f0f9ff; border-radius:8px; padding:28px 16px; text-align:center;">
+                                        <p style="font-size:14px; font-weight:700; color:#1e40af; margin-bottom:8px;">Select image to upload from your computer</p>
+                                        <p style="font-size:12px; color:#60a5fa; margin-bottom:16px;">PNG, JPG, WEBP, SVG or GIF</p>
+                                        <input type="file" id="canva-file-input" accept="image/*" onchange="canvaDoUploadImage(this)" style="display:none;">
+                                        <button type="button" onclick="document.getElementById('canva-file-input').click()" class="button button-primary" style="font-weight:700;">
+                                            Browse Files...
+                                        </button>
+                                        <div id="canva-upload-progress" style="display:none; margin-top:12px; font-size:13px; font-weight:700; color:#2563eb;">
+                                            Uploading image...
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TAB 3: CUSTOM URL -->
+                                <div id="canva-img-tab-url" class="canva-img-tab-pane" style="display:none;">
+                                    <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Direct Image URL</label>
+                                    <input type="text" id="canva-direct-url-input" class="large-text" placeholder="https://... or /assets/images/..." oninput="updateModalPreviewFromUrl(this.value)">
+                                </div>
+                            </div>
+                            <div style="padding:14px 24px; border-top:1px solid #e2e8f0; background:#f8fafc; border-radius:0 0 12px 12px; display:flex; justify-content:flex-end; gap:10px;">
+                                <button type="button" class="button" onclick="closeCanvaImageModal()">Cancel</button>
+                                <button type="button" class="button button-primary" onclick="canvaApplySelectedImage()" style="background:#2563eb; font-weight:700; padding:6px 18px;">
+                                    ✨ Apply Image to Page
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CANVA BUTTON / LINK INSPECTOR MODAL -->
+                    <div id="canva-link-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.8); backdrop-filter:blur(4px); z-index:99999; justify-content:center; align-items:center;">
+                        <div style="background:#ffffff; border-radius:12px; width:90%; max-width:520px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); border:1px solid #e2e8f0;">
+                            <div style="padding:18px 22px; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                                <h3 style="margin:0; font-size:17px; font-weight:800; color:#0f172a;">🔗 Edit Button &amp; Link Destination</h3>
+                                <button type="button" onclick="closeCanvaLinkModal()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#94a3b8;">&times;</button>
+                            </div>
+                            <div style="padding:20px 22px;">
+                                <div style="margin-bottom:14px;">
+                                    <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Button Label / Text</label>
+                                    <input type="text" id="canva-modal-btn-text" class="large-text" placeholder="e.g. Start Free" style="font-weight:600;">
+                                </div>
+                                <div style="margin-bottom:14px;">
+                                    <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Destination URL / Link</label>
+                                    <input type="text" id="canva-modal-btn-href" class="large-text" placeholder="e.g. /pricing/ or https://...">
+                                    <div style="margin-top:6px; display:flex; gap:6px; flex-wrap:wrap;">
+                                        <span style="font-size:11px; color:#64748b; font-weight:600;">Quick links:</span>
+                                        <a href="javascript:void(0)" onclick="document.getElementById('canva-modal-btn-href').value='/pricing/';" style="font-size:11px; color:#2563eb;">/pricing/</a>
+                                        <a href="javascript:void(0)" onclick="document.getElementById('canva-modal-btn-href').value='/contact/';" style="font-size:11px; color:#2563eb;">/contact/</a>
+                                        <a href="javascript:void(0)" onclick="document.getElementById('canva-modal-btn-href').value='https://panindiadata.com/';" style="font-size:11px; color:#2563eb;">panindiadata.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding:14px 22px; border-top:1px solid #e2e8f0; background:#f8fafc; border-radius:0 0 12px 12px; display:flex; justify-content:flex-end; gap:10px;">
+                                <button type="button" class="button" onclick="closeCanvaLinkModal()">Cancel</button>
+                                <button type="button" class="button button-primary" onclick="canvaApplySelectedLink()" style="background:#2563eb; font-weight:700;">
+                                    ✨ Update Button
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CANVA PUBLISH CELEBRATION MODAL -->
+                    <div id="canva-publish-success-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.85); backdrop-filter:blur(6px); z-index:999999; justify-content:center; align-items:center;">
+                        <div style="background:#ffffff; border-radius:16px; width:90%; max-width:480px; padding:32px 28px; text-align:center; box-shadow:0 25px 60px rgba(0,0,0,0.6); border:1px solid #86efac;">
+                            <div style="width:68px; height:68px; background:#dcfce7; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:34px; margin-bottom:16px; box-shadow:0 0 0 8px rgba(34,197,94,0.15);">
+                                🎉
+                            </div>
+                            <h2 style="font-size:22px; font-weight:900; color:#0f172a; margin:0 0 8px 0;">
+                                Page Published Live!
+                            </h2>
+                            <p style="font-size:14px; color:#475569; margin:0 0 24px 0; line-height:1.5;">
+                                Your edits are now deployed live across the website on: <br>
+                                <strong style="color:#0f172a;"><?php echo htmlspecialchars($pageDetails['slug']); ?></strong>
+                            </p>
+                            <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                                <button type="button" class="button" onclick="document.getElementById('canva-publish-success-modal').style.display='none';" style="padding:8px 18px; font-weight:600;">
+                                    Keep Editing
+                                </button>
+                                <a href="<?php echo htmlspecialchars($pageDetails['slug']); ?>" target="_blank" class="button button-primary" style="padding:8px 22px; font-weight:800; background:#10b981; border-color:#059669; display:inline-flex; align-items:center; gap:6px;">
+                                    <span>🌐 Open Live Page</span>
+                                    <span>&rarr;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CANVA STUDIO ENGINE JAVASCRIPT -->
                     <script>
+                        var canvaActiveElement = null;
+                        var canvaTargetImg = null;
+                        var canvaTargetLink = null;
+                        var canvaGalleryCache = null;
+                        var canvaMode = 'edit'; // 'edit' or 'preview'
+                        var canvaSelectedImageSrc = '';
+
                         function switchEditorTab(tab) {
                             document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
                             document.querySelectorAll('.tab-btn').forEach(b => {
@@ -2803,6 +3237,428 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                             if (tab === 'code') {
                                 updateLiveIframe();
                             }
+                        }
+
+                        function canvaSetDevice(width, btn) {
+                            var container = document.getElementById('canva-frame-container');
+                            if (container) {
+                                container.style.width = width;
+                            }
+                            document.querySelectorAll('.canva-dev-btn').forEach(b => {
+                                b.style.background = '#0f172a';
+                                b.style.color = '#94a3b8';
+                            });
+                            if (btn) {
+                                btn.style.background = '#1e293b';
+                                btn.style.color = '#ffffff';
+                            }
+                        }
+
+                        function canvaSetMode(mode) {
+                            canvaMode = mode;
+                            var editBtn = document.getElementById('canva-mode-edit-btn');
+                            var prevBtn = document.getElementById('canva-mode-preview-btn');
+                            var textBar = document.getElementById('canva-text-format-bar');
+
+                            if (mode === 'edit') {
+                                editBtn.style.background = '#2563eb';
+                                editBtn.style.color = '#ffffff';
+                                prevBtn.style.background = 'transparent';
+                                prevBtn.style.color = '#94a3b8';
+                                if (textBar) textBar.style.display = 'inline-flex';
+                            } else {
+                                editBtn.style.background = 'transparent';
+                                editBtn.style.color = '#94a3b8';
+                                prevBtn.style.background = '#2563eb';
+                                prevBtn.style.color = '#ffffff';
+                                if (textBar) textBar.style.display = 'none';
+                            }
+                        }
+
+                        function canvaFormat(cmd, val) {
+                            var ifr = document.getElementById('canva-studio-iframe');
+                            if (!ifr || !ifr.contentDocument) return;
+                            ifr.contentDocument.execCommand(cmd, false, val || null);
+                            markCanvaDirty();
+                        }
+
+                        function canvaInsertLink() {
+                            var url = prompt('Enter link URL:', 'https://');
+                            if (url) canvaFormat('createLink', url);
+                        }
+
+                        function canvaReloadFrame() {
+                            if (confirm('Reload page to original? Any unsaved edits will be discarded.')) {
+                                var ifr = document.getElementById('canva-studio-iframe');
+                                if (ifr) ifr.src = ifr.src;
+                                var dirty = document.getElementById('canva-dirty-indicator');
+                                if (dirty) dirty.style.display = 'none';
+                            }
+                        }
+
+                        function markCanvaDirty() {
+                            var dirty = document.getElementById('canva-dirty-indicator');
+                            if (dirty) dirty.style.display = 'block';
+                        }
+
+                        // Initialize Visual Bridge inside Iframe
+                        function initCanvaBridge() {
+                            var ifr = document.getElementById('canva-studio-iframe');
+                            if (!ifr) return;
+                            var doc = ifr.contentDocument || ifr.contentWindow.document;
+                            if (!doc) return;
+
+                            // Inject Canva Visual Styles into Iframe
+                            var existingStyle = doc.getElementById('hb-canva-injected-styles');
+                            if (!existingStyle) {
+                                var style = doc.createElement('style');
+                                style.id = 'hb-canva-injected-styles';
+                                style.innerHTML = `
+                                    .hb-canva-hover {
+                                        outline: 2px dashed #2563eb !important;
+                                        outline-offset: 2px !important;
+                                        cursor: text !important;
+                                    }
+                                    .hb-canva-img-hover {
+                                        outline: 3px dashed #7c3aed !important;
+                                        outline-offset: 2px !important;
+                                        cursor: pointer !important;
+                                    }
+                                    .hb-canva-btn-hover {
+                                        outline: 2px dashed #10b981 !important;
+                                        outline-offset: 2px !important;
+                                        cursor: pointer !important;
+                                    }
+                                    .hb-canva-active {
+                                        outline: 2px solid #2563eb !important;
+                                        background-color: rgba(37, 99, 235, 0.06) !important;
+                                    }
+                                `;
+                                doc.head.appendChild(style);
+                            }
+
+                            // 1. Text Elements
+                            var textSelector = 'h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, td, th, strong, em, b, blockquote, .badge, .btn';
+                            doc.querySelectorAll(textSelector).forEach(function(el) {
+                                if (el.closest('#hb-canva-injected-styles')) return;
+
+                                el.addEventListener('mouseenter', function() {
+                                    if (canvaMode === 'edit' && doc.activeElement !== el) {
+                                        el.classList.add('hb-canva-hover');
+                                    }
+                                });
+                                el.addEventListener('mouseleave', function() {
+                                    el.classList.remove('hb-canva-hover');
+                                });
+
+                                el.addEventListener('click', function(e) {
+                                    if (canvaMode === 'edit') {
+                                        // If image, handle separately
+                                        if (el.tagName === 'IMG') return;
+
+                                        // If button/link, let button handler check
+                                        if (el.tagName === 'A' || el.tagName === 'BUTTON' || el.classList.contains('btn')) {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            openCanvaLinkEditor(el);
+                                            return;
+                                        }
+
+                                        el.contentEditable = "true";
+                                        el.focus();
+                                        el.classList.add('hb-canva-active');
+                                        canvaActiveElement = el;
+
+                                        el.addEventListener('blur', function() {
+                                            el.classList.remove('hb-canva-active');
+                                            el.removeAttribute('contenteditable');
+                                            markCanvaDirty();
+                                        }, { once: true });
+                                    }
+                                });
+                            });
+
+                            // 2. Images
+                            doc.querySelectorAll('img').forEach(function(img) {
+                                img.addEventListener('mouseenter', function() {
+                                    if (canvaMode === 'edit') img.classList.add('hb-canva-img-hover');
+                                });
+                                img.addEventListener('mouseleave', function() {
+                                    img.classList.remove('hb-canva-img-hover');
+                                });
+                                img.addEventListener('click', function(e) {
+                                    if (canvaMode === 'edit') {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        openCanvaImagePicker(img);
+                                    }
+                                });
+                            });
+
+                            // 3. Links and Buttons (Prevent navigation in Edit Mode)
+                            doc.querySelectorAll('a, button').forEach(function(btn) {
+                                btn.addEventListener('mouseenter', function() {
+                                    if (canvaMode === 'edit') btn.classList.add('hb-canva-btn-hover');
+                                });
+                                btn.addEventListener('mouseleave', function() {
+                                    btn.classList.remove('hb-canva-btn-hover');
+                                });
+                                btn.addEventListener('click', function(e) {
+                                    if (canvaMode === 'edit') {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        openCanvaLinkEditor(btn);
+                                    }
+                                });
+                            });
+                        }
+
+                        // Image Picker Modal Handlers
+                        function openCanvaImagePicker(img) {
+                            canvaTargetImg = img;
+                            canvaSelectedImageSrc = img.src;
+
+                            var modal = document.getElementById('canva-img-modal');
+                            var prev = document.getElementById('canva-modal-preview-img');
+                            var srcText = document.getElementById('canva-modal-current-src');
+                            var urlInput = document.getElementById('canva-direct-url-input');
+
+                            if (prev) prev.src = img.src;
+                            if (srcText) srcText.textContent = img.src;
+                            if (urlInput) urlInput.value = img.getAttribute('src') || img.src;
+
+                            if (modal) modal.style.display = 'flex';
+
+                            loadCanvaGallery();
+                        }
+
+                        function closeCanvaImageModal() {
+                            var modal = document.getElementById('canva-img-modal');
+                            if (modal) modal.style.display = 'none';
+                            canvaTargetImg = null;
+                        }
+
+                        function switchImgModalTab(tab, btn) {
+                            document.querySelectorAll('.canva-img-tab-pane').forEach(p => p.style.display = 'none');
+                            document.querySelectorAll('.canva-img-tab').forEach(b => {
+                                b.style.color = '#64748b';
+                                b.style.borderBottomColor = 'transparent';
+                            });
+                            var pane = document.getElementById('canva-img-tab-' + tab);
+                            if (pane) pane.style.display = 'block';
+                            if (btn) {
+                                btn.style.color = '#2563eb';
+                                btn.style.borderBottomColor = '#2563eb';
+                            }
+                        }
+
+                        function loadCanvaGallery() {
+                            var grid = document.getElementById('canva-gallery-grid');
+                            if (!grid) return;
+
+                            if (canvaGalleryCache) {
+                                renderGalleryItems(canvaGalleryCache);
+                                return;
+                            }
+
+                            var fd = new FormData();
+                            fd.append('form_action', 'ajax_list_images');
+
+                            fetch('<?php echo $adminBase; ?>', {
+                                method: 'POST',
+                                body: fd
+                            })
+                            .then(r => r.json())
+                            .then(data => {
+                                if (data && data.images) {
+                                    canvaGalleryCache = data.images;
+                                    renderGalleryItems(data.images);
+                                }
+                            })
+                            .catch(err => {
+                                grid.innerHTML = '<div style="grid-column:1/-1; color:#ef4444;">Failed to load media gallery.</div>';
+                            });
+                        }
+
+                        function renderGalleryItems(items) {
+                            var grid = document.getElementById('canva-gallery-grid');
+                            if (!grid) return;
+                            grid.innerHTML = '';
+
+                            items.forEach(function(item) {
+                                var div = document.createElement('div');
+                                div.className = 'canva-gallery-thumb';
+                                div.style.cssText = 'height:70px; border:1px solid #e2e8f0; border-radius:6px; overflow:hidden; cursor:pointer; display:flex; align-items:center; justify-content:center; background:#f8fafc; padding:4px;';
+                                div.innerHTML = '<img src="' + item.url + '" style="max-height:100%; max-width:100%; object-fit:contain;" alt="' + item.name + '">';
+                                
+                                div.onclick = function() {
+                                    document.querySelectorAll('.canva-gallery-thumb').forEach(t => t.style.borderColor = '#e2e8f0');
+                                    div.style.borderColor = '#2563eb';
+                                    canvaSelectedImageSrc = item.url;
+                                    var prev = document.getElementById('canva-modal-preview-img');
+                                    if (prev) prev.src = item.url;
+                                    var inp = document.getElementById('canva-direct-url-input');
+                                    if (inp) inp.value = item.url;
+                                };
+
+                                grid.appendChild(div);
+                            });
+                        }
+
+                        function filterCanvaGallery(query) {
+                            if (!canvaGalleryCache) return;
+                            var filtered = canvaGalleryCache.filter(function(i) {
+                                return i.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
+                            });
+                            renderGalleryItems(filtered);
+                        }
+
+                        function canvaDoUploadImage(input) {
+                            if (!input.files || !input.files[0]) return;
+                            var file = input.files[0];
+                            var prog = document.getElementById('canva-upload-progress');
+                            if (prog) prog.style.display = 'block';
+
+                            var fd = new FormData();
+                            fd.append('form_action', 'ajax_upload_image');
+                            fd.append('image_file', file);
+
+                            fetch('<?php echo $adminBase; ?>', {
+                                method: 'POST',
+                                body: fd
+                            })
+                            .then(r => r.json())
+                            .then(data => {
+                                if (prog) prog.style.display = 'none';
+                                if (data && data.success && data.url) {
+                                    canvaSelectedImageSrc = data.url;
+                                    var prev = document.getElementById('canva-modal-preview-img');
+                                    if (prev) prev.src = data.url;
+                                    var inp = document.getElementById('canva-direct-url-input');
+                                    if (inp) inp.value = data.url;
+                                    canvaGalleryCache = null; // refresh gallery
+                                    alert('Image uploaded successfully! Click "Apply Image to Page" to confirm.');
+                                } else {
+                                    alert('Upload failed: ' + (data.message || 'Unknown error.'));
+                                }
+                            })
+                            .catch(err => {
+                                if (prog) prog.style.display = 'none';
+                                alert('Network error during upload.');
+                            });
+                        }
+
+                        function updateModalPreviewFromUrl(url) {
+                            canvaSelectedImageSrc = url;
+                            var prev = document.getElementById('canva-modal-preview-img');
+                            if (prev) prev.src = url;
+                        }
+
+                        function canvaApplySelectedImage() {
+                            if (canvaTargetImg && canvaSelectedImageSrc) {
+                                canvaTargetImg.src = canvaSelectedImageSrc;
+                                markCanvaDirty();
+                            }
+                            closeCanvaImageModal();
+                        }
+
+                        // Link Editor Modal Handlers
+                        function openCanvaLinkEditor(btn) {
+                            canvaTargetLink = btn;
+                            var modal = document.getElementById('canva-link-modal');
+                            var textInput = document.getElementById('canva-modal-btn-text');
+                            var hrefInput = document.getElementById('canva-modal-btn-href');
+
+                            if (textInput) textInput.value = (btn.textContent || '').trim();
+                            if (hrefInput) hrefInput.value = btn.getAttribute('href') || '#';
+
+                            if (modal) modal.style.display = 'flex';
+                        }
+
+                        function closeCanvaLinkModal() {
+                            var modal = document.getElementById('canva-link-modal');
+                            if (modal) modal.style.display = 'none';
+                            canvaTargetLink = null;
+                        }
+
+                        function canvaApplySelectedLink() {
+                            if (canvaTargetLink) {
+                                var text = document.getElementById('canva-modal-btn-text').value;
+                                var href = document.getElementById('canva-modal-btn-href').value;
+                                if (text) canvaTargetLink.textContent = text;
+                                if (href) canvaTargetLink.setAttribute('href', href);
+                                markCanvaDirty();
+                            }
+                            closeCanvaLinkModal();
+                        }
+
+                        // PUBLISH CHANGES LIVE TO HOSTINGER VPS
+                        function publishCanvaPage() {
+                            var pubBtn = document.getElementById('canva-publish-btn');
+                            var pubText = document.getElementById('canva-pub-text');
+                            var pubIcon = document.getElementById('canva-pub-icon');
+                            var ifr = document.getElementById('canva-studio-iframe');
+
+                            if (!ifr || !ifr.contentDocument) {
+                                alert('Studio canvas is not ready.');
+                                return;
+                            }
+
+                            if (pubBtn) pubBtn.disabled = true;
+                            if (pubText) pubText.textContent = 'Publishing Live...';
+                            if (pubIcon) pubIcon.textContent = '⏳';
+
+                            var doc = ifr.contentDocument;
+
+                            // Clean editor artifacts from DOM
+                            doc.querySelectorAll('.hb-canva-hover, .hb-canva-img-hover, .hb-canva-btn-hover, .hb-canva-active').forEach(function(el) {
+                                el.classList.remove('hb-canva-hover', 'hb-canva-img-hover', 'hb-canva-btn-hover', 'hb-canva-active');
+                                el.removeAttribute('contenteditable');
+                            });
+
+                            var injectedStyle = doc.getElementById('hb-canva-injected-styles');
+                            if (injectedStyle) injectedStyle.remove();
+
+                            // Get pure HTML string
+                            var cleanHtml = '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+
+                            var fd = new FormData();
+                            fd.append('form_action', 'save_visual_page');
+                            fd.append('slug', '<?php echo $pageDetails['slug'] ?? '/'; ?>');
+                            fd.append('raw_html', cleanHtml);
+                            fd.append('is_ajax', '1');
+
+                            fetch('<?php echo $adminBase; ?>', {
+                                method: 'POST',
+                                body: fd
+                            })
+                            .then(r => r.json())
+                            .then(data => {
+                                if (pubBtn) pubBtn.disabled = false;
+                                if (pubText) pubText.textContent = 'Publish Changes Live';
+                                if (pubIcon) pubIcon.textContent = '🚀';
+
+                                if (data && data.success) {
+                                    var dirty = document.getElementById('canva-dirty-indicator');
+                                    if (dirty) dirty.style.display = 'none';
+
+                                    var successModal = document.getElementById('canva-publish-success-modal');
+                                    if (successModal) successModal.style.display = 'flex';
+
+                                    // Re-initialize bridge on canvas
+                                    initCanvaBridge();
+                                } else {
+                                    alert('Publishing failed: ' + (data.message || 'Check server write permissions.'));
+                                    initCanvaBridge();
+                                }
+                            })
+                            .catch(err => {
+                                if (pubBtn) pubBtn.disabled = false;
+                                if (pubText) pubText.textContent = 'Publish Changes Live';
+                                if (pubIcon) pubIcon.textContent = '🚀';
+                                alert('Network error during publishing. Please try again.');
+                                initCanvaBridge();
+                            });
                         }
 
                         function setIframeDevice(width) {
@@ -2971,7 +3827,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </td>
                                         <td style="text-align:right;">
                                             <div style="display:inline-flex; gap:6px;">
-                                                <a href="<?php echo $adminBase; ?>?page=pages&action=edit_page&slug=<?php echo urlencode($pg['slug']); ?>" class="button button-small" style="font-weight:600; background:#f8fafc;">Edit Page</a>
+                                                <a href="<?php echo $adminBase; ?>?page=pages&action=edit_page&slug=<?php echo urlencode($pg['slug']); ?>" class="button button-small" style="font-weight:700; background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe; display:inline-flex; align-items:center; gap:4px;">🎨 Visual Edit</a>
                                                 <a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank" class="button button-small" title="View live on website">View ↗</a>
                                             </div>
                                         </td>
@@ -3137,6 +3993,268 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                             <button type="submit" class="button button-primary button-large" style="padding:10px 24px; font-size:14px; font-weight:700;">Save Navigation Menus</button>
                         </p>
                     </form>
+
+                <?php
+                // =============================================================
+                // 5D. TOP OFFER & ANNOUNCEMENT BANNER MANAGER
+                // =============================================================
+                elseif ($page === 'offer-banner'):
+                    $annEnabled = (hb_get_setting('announcement_enabled', '1') === '1');
+                    $annBadge = hb_get_setting('announcement_badge', 'LIMITED OFFER');
+                    $annText = hb_get_setting('announcement_text', 'Flat 20% OFF on All Annual WhatsApp API & AI Chatbot Plans');
+                    $annCode = hb_get_setting('announcement_code', 'HB20OFF');
+                    $annCta = hb_get_setting('announcement_cta', 'Claim Discount');
+                    $annLink = hb_get_setting('announcement_link', '');
+                    $annMode = hb_get_setting('announcement_mode', 'carousel');
+                    $annTheme = hb_get_setting('announcement_theme', 'gradient');
+                ?>
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:16px;">
+                        <div>
+                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                                <a href="<?php echo $adminBase; ?>?page=dashboard" class="button" style="font-size:12px; font-weight:600;">&larr; Dashboard</a>
+                                <span class="badge" style="font-size:11px; font-weight:800; padding:3px 10px; border-radius:12px; background:<?php echo $annEnabled ? '#dcfce7' : '#f1f5f9'; ?>; color:<?php echo $annEnabled ? '#15803d' : '#64748b'; ?>;">
+                                    <?php echo $annEnabled ? '🟢 BANNER IS ACTIVE & LIVE' : '⚪ BANNER IS TURNED OFF'; ?>
+                                </span>
+                            </div>
+                            <h1 class="wp-heading-inline" style="margin:0; font-size:26px; font-weight:800; color:#0f172a;">
+                                🔥 Top Offer &amp; Announcement Banner Manager
+                            </h1>
+                        </div>
+                        <div style="display:flex; gap:8px;">
+                            <a href="/" target="_blank" class="button button-secondary" style="font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                                <span>🌐 View Live Website</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p style="font-size:14px; color:#475569; margin-bottom:20px; line-height:1.5;">
+                        Manage the announcement banner displayed at the very top of all <strong>260+ pages</strong>. Turn it on or off with a single click, customize promotional deals, coupon codes, and action buttons effortlessly.
+                    </p>
+
+                    <form method="post" action="" id="offer-banner-form">
+                        <input type="hidden" name="form_action" value="save_offer_banner">
+
+                        <!-- 1. MASTER ON / OFF TOGGLE CARD -->
+                        <div class="postbox" style="border:2px solid <?php echo $annEnabled ? '#10b981' : '#cbd5e1'; ?>; border-radius:10px; margin-bottom:22px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                            <div style="background:<?php echo $annEnabled ? '#ecfdf5' : '#f8fafc'; ?>; padding:18px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                                <div>
+                                    <div style="font-size:16px; font-weight:800; color:#0f172a; margin-bottom:4px; display:flex; align-items:center; gap:8px;">
+                                        <span>Master Banner Switch:</span>
+                                        <span id="banner-toggle-status-badge" style="font-size:12px; padding:3px 10px; border-radius:12px; font-weight:800; background:<?php echo $annEnabled ? '#10b981' : '#64748b'; ?>; color:#ffffff;">
+                                            <?php echo $annEnabled ? 'ON (VISIBLE)' : 'OFF (HIDDEN)'; ?>
+                                        </span>
+                                    </div>
+                                    <div style="font-size:13px; color:#64748b;">
+                                        When turned OFF, the top announcement bar is <strong>instantly hidden</strong> across the entire website and header padding snaps cleanly to 0px.
+                                    </div>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:14px;">
+                                    <label style="position:relative; display:inline-block; width:64px; height:34px; cursor:pointer;">
+                                        <input type="checkbox" name="announcement_enabled" value="1" id="ann-master-toggle" <?php echo $annEnabled ? 'checked' : ''; ?> onchange="updateLiveToggleState(this.checked)" style="opacity:0; width:0; height:0;">
+                                        <span id="ann-toggle-slider" style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:<?php echo $annEnabled ? '#10b981' : '#cbd5e1'; ?>; transition:.3s; border-radius:34px; box-shadow:inset 0 1px 3px rgba(0,0,0,0.2);"></span>
+                                        <span id="ann-toggle-knob" style="position:absolute; content:''; height:26px; width:26px; left:<?php echo $annEnabled ? '34px' : '4px'; ?>; bottom:4px; background-color:white; transition:.3s; border-radius:50%; box-shadow:0 2px 4px rgba(0,0,0,0.2);"></span>
+                                    </label>
+                                    <span style="font-size:14px; font-weight:700; color:#1e293b;" id="ann-toggle-label">
+                                        <?php echo $annEnabled ? 'Active' : 'Turned Off'; ?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. REAL-TIME REALISTIC BANNER PREVIEW -->
+                        <div class="postbox" style="border-radius:10px; margin-bottom:24px; overflow:hidden;">
+                            <div class="postbox-header" style="background:#f8fafc; padding:12px 20px;">
+                                <h2 style="font-size:14px; font-weight:800; color:#1e293b; margin:0;">
+                                    👀 Real-Time Live Preview (Exactly as seen by visitors)
+                                </h2>
+                            </div>
+                            <div class="inside" style="padding:24px 20px; background:#0f172a;">
+                                <div id="preview-banner-box" style="background:linear-gradient(90deg, #1e1b4b 0%, #1e293b 50%, #0f172a 100%); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:10px 16px; color:#ffffff; display:flex; align-items:center; justify-content:space-between; box-shadow:0 4px 14px rgba(0,0,0,0.4); font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; transition:all 0.3s ease;">
+                                    <div style="display:flex; align-items:center; gap:12px; flex:1; justify-content:center; flex-wrap:wrap; text-align:center;">
+                                        <!-- Prev button -->
+                                        <button type="button" style="background:rgba(255,255,255,0.08); border:none; color:#cbd5e1; width:22px; height:22px; border-radius:50%; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;">&lsaquo;</button>
+                                        
+                                        <!-- Badge -->
+                                        <span id="prev-badge" style="background:linear-gradient(135deg, #ef4444 0%, #f97316 100%); color:#ffffff; font-size:11px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:4px;">
+                                            <span style="width:6px; height:6px; background:#ffffff; border-radius:50%; display:inline-block;"></span>
+                                            <?php echo htmlspecialchars($annBadge); ?>
+                                        </span>
+
+                                        <!-- Offer Text -->
+                                        <span id="prev-text" style="font-size:13px; color:#f8fafc; font-weight:500;">
+                                            <?php echo htmlspecialchars($annText); ?>
+                                            <?php if (!empty($annCode)): ?>
+                                                &mdash; Code: <mark id="prev-code" style="background:#fbbf24; color:#0f172a; font-weight:800; padding:1px 6px; border-radius:4px;"><?php echo htmlspecialchars($annCode); ?></mark>
+                                            <?php endif; ?>
+                                        </span>
+
+                                        <!-- CTA Button -->
+                                        <span id="prev-cta" style="background:#2563eb; color:#ffffff; font-size:12px; font-weight:700; padding:4px 10px; border-radius:4px; display:inline-flex; align-items:center; gap:4px; cursor:pointer;">
+                                            <span><?php echo htmlspecialchars($annCta); ?></span>
+                                            <span>&rarr;</span>
+                                        </span>
+
+                                        <!-- Next button -->
+                                        <button type="button" style="background:rgba(255,255,255,0.08); border:none; color:#cbd5e1; width:22px; height:22px; border-radius:50%; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;">&rsaquo;</button>
+                                    </div>
+                                    <div style="font-size:11px; color:#94a3b8; margin-left:12px; flex-shrink:0;">
+                                        <span id="prev-counter">1/5</span>
+                                    </div>
+                                </div>
+                                <div id="preview-hidden-note" style="display:<?php echo $annEnabled ? 'none' : 'block'; ?>; margin-top:12px; text-align:center; color:#fca5a5; font-size:12px; font-weight:600;">
+                                    ⚠️ Note: Banner is currently TURNED OFF and will NOT be shown on the live website until enabled.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. BANNER CUSTOMIZATION FIELDS -->
+                        <div class="postbox" style="border-radius:10px; margin-bottom:24px;">
+                            <div class="postbox-header" style="padding:14px 20px;">
+                                <h2 style="font-size:15px; font-weight:800; color:#0f172a; margin:0;">
+                                    ✏️ Customize Offer Details &amp; Promotional Text
+                                </h2>
+                            </div>
+                            <div class="inside" style="padding:22px;">
+                                <div style="display:grid; grid-template-columns:1fr 2fr; gap:18px; margin-bottom:18px;">
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            Offer Badge Label
+                                        </label>
+                                        <input type="text" name="announcement_badge" id="input-badge" class="large-text" value="<?php echo htmlspecialchars($annBadge); ?>" placeholder="e.g. LIMITED OFFER, FLASH SALE" oninput="liveUpdatePreview()" style="font-weight:700;">
+                                        <p class="description">Displayed in the glowing red pill at the start of the offer.</p>
+                                    </div>
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            Main Offer Headline Text
+                                        </label>
+                                        <input type="text" name="announcement_text" id="input-text" class="large-text" value="<?php echo htmlspecialchars($annText); ?>" placeholder="e.g. Flat 20% OFF on All Annual WhatsApp API & AI Chatbot Plans" oninput="liveUpdatePreview()" style="font-size:14px; font-weight:600;">
+                                        <p class="description">The primary hook visitors see across all pages.</p>
+                                    </div>
+                                </div>
+
+                                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:20px;">
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            Coupon / Promo Code (Optional)
+                                        </label>
+                                        <input type="text" name="announcement_code" id="input-code" class="large-text" value="<?php echo htmlspecialchars($annCode); ?>" placeholder="e.g. HB20OFF, FESTIVE50" oninput="liveUpdatePreview()" style="font-weight:700; letter-spacing:1px; text-transform:uppercase;">
+                                        <p class="description">Highlighted in yellow inside the announcement text.</p>
+                                    </div>
+
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            CTA Button Text
+                                        </label>
+                                        <input type="text" name="announcement_cta" id="input-cta" class="large-text" value="<?php echo htmlspecialchars($annCta); ?>" placeholder="e.g. Claim Discount, Start Free" oninput="liveUpdatePreview()" style="font-weight:700;">
+                                        <p class="description">Label for the interactive call-to-action button.</p>
+                                    </div>
+
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            Destination Link URL (Optional)
+                                        </label>
+                                        <input type="text" name="announcement_link" id="input-link" class="large-text" value="<?php echo htmlspecialchars($annLink); ?>" placeholder="e.g. /pricing/ or https://...">
+                                        <p class="description">Leave blank to open the Free Trial / Signup modal.</p>
+                                    </div>
+                                </div>
+
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; padding-top:16px; border-top:1px solid #f1f5f9;">
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            Offer Carousel Mode
+                                        </label>
+                                        <select name="announcement_mode" id="input-mode" class="large-text" onchange="liveUpdatePreview()">
+                                            <option value="carousel" <?php echo $annMode === 'carousel' ? 'selected' : ''; ?>>Multi-Offer Carousel (Rotate through all updates)</option>
+                                            <option value="single" <?php echo $annMode === 'single' ? 'selected' : ''; ?>>Single Pinned Offer Only (Do not rotate)</option>
+                                        </select>
+                                        <p class="description">Choose whether to cycle multiple announcements or show only this offer.</p>
+                                    </div>
+
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">
+                                            Color Theme Accent
+                                        </label>
+                                        <select name="announcement_theme" id="input-theme" class="large-text">
+                                            <option value="gradient" <?php echo $annTheme === 'gradient' ? 'selected' : ''; ?>>Indigo &amp; Dark Navy (Default HelloBotz Tech)</option>
+                                            <option value="coral" <?php echo $annTheme === 'coral' ? 'selected' : ''; ?>>Vibrant Coral &amp; Fire (Flash Sales)</option>
+                                            <option value="gold" <?php echo $annTheme === 'gold' ? 'selected' : ''; ?>>Emerald &amp; Gold (Enterprise Deals)</option>
+                                        </select>
+                                        <p class="description">Visual atmosphere for the top announcement.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. SAVE SUBMIT BAR -->
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; background:#ffffff; padding:16px 20px; border:1px solid #e2e8f0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <div>
+                                <span style="font-size:13px; color:#64748b;">
+                                    Changes propagate instantly to <strong>all 260+ pages</strong> via <code>announcement.js</code>.
+                                </span>
+                            </div>
+                            <div style="display:flex; gap:10px;">
+                                <button type="submit" class="button button-primary button-large" style="padding:10px 28px; font-size:15px; font-weight:800; background:#10b981; border-color:#059669; box-shadow:0 2px 6px rgba(16,185,129,0.3);">
+                                    💾 Save &amp; Update Live Banner Across Website
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <script>
+                        function updateLiveToggleState(isChecked) {
+                            var slider = document.getElementById('ann-toggle-slider');
+                            var knob = document.getElementById('ann-toggle-knob');
+                            var label = document.getElementById('ann-toggle-label');
+                            var badge = document.getElementById('banner-toggle-status-badge');
+                            var note = document.getElementById('preview-hidden-note');
+
+                            if (isChecked) {
+                                slider.style.backgroundColor = '#10b981';
+                                knob.style.left = '34px';
+                                label.textContent = 'Active (Live)';
+                                badge.textContent = 'ON (VISIBLE)';
+                                badge.style.backgroundColor = '#10b981';
+                                if (note) note.style.display = 'none';
+                            } else {
+                                slider.style.backgroundColor = '#cbd5e1';
+                                knob.style.left = '4px';
+                                label.textContent = 'Turned Off';
+                                badge.textContent = 'OFF (HIDDEN)';
+                                badge.style.backgroundColor = '#64748b';
+                                if (note) note.style.display = 'block';
+                            }
+                        }
+
+                        function liveUpdatePreview() {
+                            var badgeVal = document.getElementById('input-badge').value || 'LIMITED OFFER';
+                            var textVal = document.getElementById('input-text').value || '';
+                            var codeVal = document.getElementById('input-code').value || '';
+                            var ctaVal = document.getElementById('input-cta').value || 'Claim Discount';
+                            var modeVal = document.getElementById('input-mode').value;
+
+                            var prevBadge = document.getElementById('prev-badge');
+                            if (prevBadge) {
+                                prevBadge.innerHTML = '<span style="width:6px; height:6px; background:#ffffff; border-radius:50%; display:inline-block;"></span> ' + badgeVal;
+                            }
+
+                            var prevText = document.getElementById('prev-text');
+                            if (prevText) {
+                                var codePart = codeVal ? (' &mdash; Code: <mark style="background:#fbbf24; color:#0f172a; font-weight:800; padding:1px 6px; border-radius:4px;">' + codeVal + '</mark>') : '';
+                                prevText.innerHTML = textVal + codePart;
+                            }
+
+                            var prevCta = document.getElementById('prev-cta');
+                            if (prevCta) {
+                                prevCta.innerHTML = '<span>' + ctaVal + '</span> <span>&rarr;</span>';
+                            }
+
+                            var prevCounter = document.getElementById('prev-counter');
+                            if (prevCounter) {
+                                prevCounter.textContent = (modeVal === 'single') ? '1/1' : '1/5';
+                            }
+                        }
+                    </script>
 
                 <?php
                 // =============================================================
