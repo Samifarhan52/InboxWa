@@ -22,6 +22,7 @@ register_shutdown_function(function() {
 });
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/hb-pages-manager.php';
 
 $db = hb_pdo();
 
@@ -587,6 +588,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Save Page Details (Full Website Content, Headings, Paragraphs, Images, SEO)
+    if ($action === 'save_page_details') {
+        $slug = trim($_POST['slug'] ?? '');
+        if (!empty($slug)) {
+            $saved = HbPagesManager::savePageDetails($slug, $_POST);
+            if ($saved) {
+                $noticeSuccess = 'Page content, images, and SEO updated successfully! <a href="' . htmlspecialchars($slug) . '" target="_blank" style="text-decoration:underline; font-weight:700;">View Live Page &rarr;</a>';
+            } else {
+                $noticeError = 'Failed to update page. Please check file permissions.';
+            }
+        } else {
+            $noticeError = 'Page route slug is required.';
+        }
+    }
+
+    // Save Header Dropdown Navigation Menus
+    if ($action === 'save_header_menus') {
+        $menus = $_POST['menus'] ?? [];
+        if (is_array($menus)) {
+            HbPagesManager::saveHeaderMenus($menus);
+            $noticeSuccess = 'Header navigation dropdown menus updated and deployed globally.';
+        }
+    }
+
     // Upload Media File
     if ($action === 'upload_media') {
         if (isset($_FILES['media_file']) && $_FILES['media_file']['error'] === UPLOAD_ERR_OK) {
@@ -773,6 +798,13 @@ if (isset($_GET['action'])) {
     if ($act === 'delete_page' && isset($_GET['id'])) {
         hb_delete_page((int)$_GET['id']);
         header('Location: ' . $adminBase . '?page=pages');
+        exit;
+    }
+
+    // Refresh Pages Inventory
+    if ($act === 'refresh_pages_index') {
+        HbPagesManager::getAllPages(true);
+        header('Location: ' . $adminBase . '?page=pages&refreshed=1');
         exit;
     }
 
@@ -1779,13 +1811,14 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 <li class="wp-menu-separator"></li>
 
                 <!-- 7. Appearance / Customize (Live CMS) -->
-                <li class="menu-top <?php echo in_array($page, ['appearance', 'themes', 'editor', 'colors']) ? 'current' : ''; ?>">
+                <li class="menu-top <?php echo in_array($page, ['appearance', 'themes', 'editor', 'colors', 'menus']) ? 'current' : ''; ?>">
                     <a href="<?php echo $adminBase; ?>?page=editor" class="menu-link">
                         <span class="menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.59 10.56 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg></span>
                         <span class="wp-menu-name">Appearance</span>
                     </a>
                     <ul class="wp-submenu">
                         <li class="<?php echo ($page === 'editor' || $page === 'appearance' || $page === 'themes') ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=editor">Customize (Live CMS)</a></li>
+                        <li class="<?php echo $page === 'menus' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=menus">Dropdown Menus</a></li>
                         <li class="<?php echo $page === 'colors' ? 'current' : ''; ?>"><a href="<?php echo $adminBase; ?>?page=colors">Color Palette</a></li>
                     </ul>
                 </li>
@@ -2510,173 +2543,600 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                 <?php
                 // =============================================================
-                // 5A. ADD / EDIT PAGE SCREEN
+                // 5A. COMPREHENSIVE PAGE CONTENT, IMAGES & SEO EDITOR
                 // =============================================================
                 elseif ($page === 'page-new' || ($page === 'pages' && isset($_GET['action']) && $_GET['action'] === 'edit_page')):
+                    $editSlug = isset($_GET['slug']) ? trim((string)$_GET['slug']) : '';
                     $editPageId = (int)($_GET['id'] ?? 0);
-                    $pageToEdit = $editPageId > 0 ? hb_get_page($editPageId) : null;
+                    $pageDetails = !empty($editSlug) ? HbPagesManager::getPageDetails($editSlug) : null;
+                    if (!$pageDetails && $editPageId > 0) {
+                        $legacyPg = hb_get_page($editPageId);
+                        if ($legacyPg) {
+                            $editSlug = $legacyPg['slug'];
+                            $pageDetails = HbPagesManager::getPageDetails($editSlug);
+                            if (!$pageDetails) {
+                                $pageDetails = [
+                                    'slug' => $legacyPg['slug'],
+                                    'title' => $legacyPg['title'],
+                                    'meta_title' => $legacyPg['meta_title'] ?? $legacyPg['title'],
+                                    'meta_description' => $legacyPg['meta_description'] ?? '',
+                                    'h1_text' => $legacyPg['title'],
+                                    'lead_text' => '',
+                                    'images' => [],
+                                    'buttons' => [],
+                                    'raw_html' => $legacyPg['content'] ?? '',
+                                    'category' => 'Custom Page',
+                                    'category_badge' => 'badge-default'
+                                ];
+                            }
+                        }
+                    }
+                    $activeTab = $_GET['tab'] ?? 'content';
                 ?>
-                    <h1 class="wp-heading-inline"><?php echo $pageToEdit ? 'Edit Page' : 'Add New Page'; ?></h1>
-                    <a href="<?php echo $adminBase; ?>?page=pages" class="page-title-action">Back to Pages</a>
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+                        <div>
+                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+                                <a href="<?php echo $adminBase; ?>?page=pages" class="button" style="display:inline-flex; align-items:center; gap:4px; font-weight:600;">&larr; All Pages</a>
+                                <?php if ($pageDetails && !empty($pageDetails['category'])): ?>
+                                    <span class="badge <?php echo htmlspecialchars($pageDetails['category_badge']); ?>" style="padding:4px 10px; font-size:12px; font-weight:700;"><?php echo htmlspecialchars($pageDetails['category']); ?></span>
+                                <?php endif; ?>
+                            </div>
+                            <h1 class="wp-heading-inline" style="margin:0; font-size:24px; font-weight:800; color:#1e293b;">
+                                <?php echo $pageDetails ? ('Edit Page: ' . htmlspecialchars($pageDetails['title'])) : 'Create New Page'; ?>
+                            </h1>
+                        </div>
+                        <?php if ($pageDetails): ?>
+                            <div style="display:flex; gap:8px; align-items:center;">
+                                <a href="<?php echo htmlspecialchars($pageDetails['slug']); ?>" target="_blank" class="button button-secondary" style="display:inline-flex; align-items:center; gap:6px; font-weight:600;">
+                                    <span>🌐 View Live Page</span>
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
 
-                    <div class="postbox" style="margin-top:16px;">
-                        <div class="inside" style="padding:20px;">
-                            <form method="post" action="">
-                                <input type="hidden" name="form_action" value="save_page">
-                                <input type="hidden" name="page_id" value="<?php echo $pageToEdit['id'] ?? 0; ?>">
+                    <!-- Live Route Pill -->
+                    <?php if ($pageDetails): ?>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+                            <div style="font-size:13px; color:#475569;">
+                                <strong style="color:#0f172a;">Live Route URL:</strong>
+                                <code style="background:#e2e8f0; padding:2px 8px; border-radius:4px; font-size:12px; color:#1e293b;"><?php echo htmlspecialchars($pageDetails['slug']); ?></code>
+                            </div>
+                            <div style="font-size:12px; color:#64748b;">
+                                File: <code><?php echo htmlspecialchars(basename(dirname($pageDetails['file_path'] ?? '')) . '/index.html'); ?></code>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
-                                <div style="margin-bottom:16px;">
-                                    <label style="font-weight:600; display:block; margin-bottom:6px; font-size:14px;">Page Title</label>
-                                    <input type="text" name="title" class="large-text" required value="<?php echo htmlspecialchars($pageToEdit['title'] ?? ''); ?>" placeholder="Enter page title" style="font-size:18px; min-height:42px;">
+                    <form method="post" action="">
+                        <input type="hidden" name="form_action" value="save_page_details">
+                        <input type="hidden" name="slug" value="<?php echo htmlspecialchars($pageDetails['slug'] ?? '/custom-page/'); ?>">
+
+                        <!-- Subtab Navigation -->
+                        <div style="display:flex; gap:4px; border-bottom:2px solid #e2e8f0; margin-bottom:20px; overflow-x:auto;">
+                            <button type="button" class="tab-btn <?php echo $activeTab === 'content' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('content')" id="tab-nav-content" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">📝 Texts, Headings &amp; CTAs</button>
+                            <button type="button" class="tab-btn <?php echo $activeTab === 'images' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('images')" id="tab-nav-images" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">🖼️ Images &amp; Media Assets</button>
+                            <button type="button" class="tab-btn <?php echo $activeTab === 'seo' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('seo')" id="tab-nav-seo" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">🔍 SEO &amp; Google Snippet</button>
+                            <button type="button" class="tab-btn <?php echo $activeTab === 'code' ? 'tab-btn-active' : ''; ?>" onclick="switchEditorTab('code')" id="tab-nav-code" style="padding:10px 18px; border:none; background:none; font-weight:700; font-size:13px; color:#475569; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px;">💻 Visual Code &amp; Live Preview</button>
+                        </div>
+
+                        <!-- TAB 1: TEXTS, HEADINGS & CTAs -->
+                        <div id="tab-panel-content" class="tab-panel" style="<?php echo $activeTab === 'content' ? '' : 'display:none;'; ?>">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>Page Title &amp; Primary Headlines</h2></div>
+                                <div class="inside" style="padding:20px;">
+                                    <div style="margin-bottom:16px;">
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">Navigation &amp; Page Title</label>
+                                        <input type="text" name="title" class="large-text" required value="<?php echo htmlspecialchars($pageDetails['title'] ?? ''); ?>" placeholder="Enter page title" style="font-size:16px; font-weight:600; padding:8px 12px;">
+                                        <p class="description">Displayed in breadcrumbs, header menus, and page listings.</p>
+                                    </div>
+
+                                    <div style="margin-bottom:16px;">
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">Main Hero Headline (H1)</label>
+                                        <input type="text" name="h1" class="large-text" value="<?php echo htmlspecialchars($pageDetails['h1_raw'] ?: ($pageDetails['h1_text'] ?? '')); ?>" placeholder="Main page headline" style="font-size:16px; font-weight:600; padding:8px 12px; color:#0f172a;">
+                                        <p class="description">The primary H1 heading visitors see above the fold.</p>
+                                    </div>
+
+                                    <div style="margin-bottom:16px;">
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px; color:#1e293b;">Lead Paragraph / Subheadline</label>
+                                        <textarea name="lead" rows="3" class="large-text" placeholder="Introductory paragraph" style="font-size:14px; line-height:1.6; padding:8px 12px;"><?php echo htmlspecialchars($pageDetails['lead_raw'] ?: ($pageDetails['lead_text'] ?? '')); ?></textarea>
+                                        <p class="description">The supporting text immediately below the H1 headline.</p>
+                                    </div>
+
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; background:#f8fafc; padding:16px; border-radius:6px; border:1px solid #e2e8f0;">
+                                        <div>
+                                            <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Primary CTA Button Text</label>
+                                            <input type="text" name="cta_text" class="large-text" value="<?php echo htmlspecialchars($pageDetails['buttons'][0]['text'] ?? 'Start Free'); ?>" placeholder="e.g. Start Free, Book a Demo">
+                                        </div>
+                                        <div>
+                                            <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Primary CTA Target Link</label>
+                                            <input type="text" name="cta_link" class="large-text" value="<?php echo htmlspecialchars($pageDetails['buttons'][0]['href'] ?? 'https://panindiadata.com/'); ?>" placeholder="e.g. https://panindiadata.com/ or #demo">
+                                        </div>
+                                    </div>
+
+                                    <?php if (!empty($pageDetails['h2_list'])): ?>
+                                        <div style="margin-top:24px;">
+                                            <h3 style="font-size:14px; font-weight:700; color:#334155; margin-bottom:10px;">Subsections &amp; H2 Headings Detected in this Page:</h3>
+                                            <ul style="list-style:disc; padding-left:20px; color:#64748b; font-size:13px; line-height:1.8;">
+                                                <?php foreach ($pageDetails['h2_list'] as $h2): ?>
+                                                    <li><?php echo htmlspecialchars($h2['text']); ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-bottom:16px;">
-                                    <div>
-                                        <label style="font-weight:600; display:block; margin-bottom:4px;">Route Slug / URL</label>
-                                        <input type="text" name="slug" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['slug'] ?? ''); ?>" placeholder="e.g. /custom-landing/">
-                                    </div>
-                                    <div>
-                                        <label style="font-weight:600; display:block; margin-bottom:4px;">Page Template</label>
-                                        <select name="template" class="large-text">
-                                            <option value="default" <?php echo ($pageToEdit['template'] ?? '') === 'default' ? 'selected' : ''; ?>>Default Template</option>
-                                            <option value="home" <?php echo ($pageToEdit['template'] ?? '') === 'home' ? 'selected' : ''; ?>>Homepage Hero &amp; Sections</option>
-                                            <option value="channel" <?php echo ($pageToEdit['template'] ?? '') === 'channel' ? 'selected' : ''; ?>>Channel Landing Page</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label style="font-weight:600; display:block; margin-bottom:4px;">Status</label>
-                                        <select name="status" class="large-text">
-                                            <option value="published" <?php echo ($pageToEdit['status'] ?? 'published') === 'published' ? 'selected' : ''; ?>>Published</option>
-                                            <option value="draft" <?php echo ($pageToEdit['status'] ?? '') === 'draft' ? 'selected' : ''; ?>>Draft</option>
-                                        </select>
-                                    </div>
+                        <!-- TAB 2: IMAGES & MEDIA -->
+                        <div id="tab-panel-images" class="tab-panel" style="<?php echo $activeTab === 'images' ? '' : 'display:none;'; ?>">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>Page Images &amp; Visual Assets</h2></div>
+                                <div class="inside" style="padding:20px;">
+                                    <p class="description" style="margin-bottom:16px;">
+                                        Review all graphics, feature banners, and UI mockups on this page. Replace any image URL below to update it instantly on the live website.
+                                    </p>
+
+                                    <?php if (empty($pageDetails['images'])): ?>
+                                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:24px; text-align:center; color:#64748b;">
+                                            No standard image tags detected on this page skeleton. You can insert images via the Visual Code editor tab.
+                                        </div>
+                                    <?php else: ?>
+                                        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:16px;">
+                                            <?php foreach ($pageDetails['images'] as $idx => $img): ?>
+                                                <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                                                    <div style="height:140px; background:#f1f5f9; border-radius:6px; display:flex; align-items:center; justify-content:center; overflow:hidden; margin-bottom:10px; border:1px solid #e2e8f0;">
+                                                        <img src="<?php echo htmlspecialchars($img['src']); ?>" alt="<?php echo htmlspecialchars($img['alt']); ?>" style="max-height:100%; max-width:100%; object-fit:contain;" onerror="this.src='/assets/images/placeholder.png';">
+                                                    </div>
+                                                    <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#64748b; margin-bottom:4px;">
+                                                        Asset #<?php echo $idx + 1; ?> <?php echo !empty($img['alt']) ? ('(' . htmlspecialchars($img['alt']) . ')') : ''; ?>
+                                                    </div>
+                                                    <label style="font-size:12px; font-weight:600; color:#1e293b; display:block; margin-bottom:4px;">Image URL Source:</label>
+                                                    <input type="text" name="replace_images[<?php echo htmlspecialchars($img['src']); ?>]" class="large-text" value="<?php echo htmlspecialchars($img['src']); ?>" style="font-size:12px; font-family:Consolas, monospace;">
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div style="margin-bottom:20px;">
-                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px;">
-                                        <label style="font-weight:700; font-size:14px; color:#1d2327;">Page Content (Visual No-Code Builder &amp; HTML)</label>
-                                        <div style="display:inline-flex; border:1px solid #c3c4c7; border-radius:4px; overflow:hidden;">
-                                            <button type="button" class="button" id="btn-mode-editor" onclick="switchPageEditorMode('code')" style="border-radius:0; border:none; background:#2271b1; color:#fff; font-weight:600;">Visual Editor</button>
-                                            <button type="button" class="button" id="btn-mode-preview" onclick="switchPageEditorMode('preview')" style="border-radius:0; border:none; background:#f6f7f7; color:#50575e;">Live Preview</button>
-                                        </div>
+                        <!-- TAB 3: SEO & GOOGLE SNIPPET -->
+                        <div id="tab-panel-seo" class="tab-panel" style="<?php echo $activeTab === 'seo' ? '' : 'display:none;'; ?>">
+                            <div class="postbox">
+                                <div class="postbox-header"><h2>Search Engine Optimization (SEO)</h2></div>
+                                <div class="inside" style="padding:20px;">
+                                    <div style="margin-bottom:16px;">
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">SEO Meta Title</label>
+                                        <input type="text" name="meta_title" id="seo_input_title" class="large-text" value="<?php echo htmlspecialchars($pageDetails['meta_title'] ?? ''); ?>" placeholder="Page Title | HelloBotz" oninput="updateSeoPreview()">
+                                        <p class="description">Optimal length: 50–60 characters. Appears in browser tabs and Google search results.</p>
                                     </div>
 
-                                    <!-- Quick Page Templates Inserter -->
-                                    <div style="background:#f0f6fc; border:1px solid #c8d8f0; border-radius:6px; padding:10px 14px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-                                        <div style="font-size:12px; font-weight:700; color:#1d4ed8; text-transform:uppercase; letter-spacing:0.04em;">⚡ 1-Click Page Presets:</div>
-                                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
-                                            <button type="button" class="button button-small" onclick="loadPagePreset('careers')" title="Load complete Careers &amp; Jobs page">Careers &amp; Opportunities</button>
-                                            <button type="button" class="button button-small" onclick="loadPagePreset('product')" title="Load Product Features showcase">Product Showcase</button>
-                                            <button type="button" class="button button-small" onclick="loadPagePreset('leads')" title="Load B2B Business Leads landing">B2B Leads Landing</button>
-                                            <button type="button" class="button button-small" onclick="loadPagePreset('blank')" title="Start with clean starter skeleton">Clean Skeleton</button>
-                                        </div>
+                                    <div style="margin-bottom:20px;">
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">SEO Meta Description</label>
+                                        <textarea name="meta_description" id="seo_input_desc" rows="3" class="large-text" placeholder="Concise summary for search engines..." oninput="updateSeoPreview()"><?php echo htmlspecialchars($pageDetails['meta_description'] ?? ''); ?></textarea>
+                                        <p class="description">Optimal length: 140–160 characters. Higher click-through rates on search engines.</p>
                                     </div>
 
-                                    <!-- Visual Block Inserter Bar -->
-                                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:12px;">
-                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
-                                            <span style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#475569;">+ Insert No-Code Blocks:</span>
-                                            <span style="font-size:11px; color:#64748b;">Click any block to insert pre-styled responsive sections</span>
-                                        </div>
-                                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
-                                            <button type="button" class="button" onclick="insertContentBlock('hero')" title="Hero banner with headline, badge &amp; CTA buttons">+ Hero Banner</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('features')" title="3-Column feature grid with icons">+ 3 Feature Cards</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('split')" title="Split row: Image left, text &amp; button right">+ Split (Image + Text)</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('button')" title="Primary call-to-action button">+ Action Button</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('cta_banner')" title="Gradient full-width CTA banner">+ CTA Banner</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('image')" title="Responsive centered image with caption">+ Image Asset</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('lead_box')" title="Lead generation inquiry box">+ Lead Capture Box</button>
-                                            <button type="button" class="button" onclick="insertContentBlock('faq')" title="Collapsible FAQ accordion questions">+ FAQ Accordion</button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Editor Pane -->
-                                    <div id="page-editor-code-pane">
-                                        <textarea id="page_content_field" name="content" rows="18" class="large-text code" placeholder="Enter page content or insert visual blocks above..." style="font-size:13px; font-family:Consolas, monospace; line-height:1.6; border-radius:4px;"><?php echo htmlspecialchars($pageToEdit['content'] ?? ''); ?></textarea>
-                                        <p class="description" style="margin-top:6px;">Supports full HTML markup, Tailwind/CSS inline styling, and standard Markdown.</p>
-                                    </div>
-
-                                    <!-- Live Preview Pane -->
-                                    <div id="page-editor-preview-pane" style="display:none; background:#ffffff; border:1px solid #c3c4c7; border-radius:6px; overflow:hidden;">
-                                        <div style="background:#f6f7f7; padding:8px 14px; border-bottom:1px solid #dcdcde; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                                            <span style="font-size:12px; font-weight:600; color:#50575e;">Real-Time Page Preview</span>
-                                            <div style="display:flex; gap:6px; align-items:center;">
-                                                <button type="button" class="button button-small" onclick="setPagePreviewDevice('100%')">Desktop (100%)</button>
-                                                <button type="button" class="button button-small" onclick="setPagePreviewDevice('768px')">Tablet (768px)</button>
-                                                <button type="button" class="button button-small" onclick="setPagePreviewDevice('375px')">Mobile (375px)</button>
+                                    <!-- Google Search SERP Snippet Preview Card -->
+                                    <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:16px; max-width:650px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                                        <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#64748b; letter-spacing:0.04em; margin-bottom:10px;">🔍 Google Search Preview</div>
+                                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                                            <div style="width:24px; height:24px; border-radius:50%; background:#7c3aed; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; font-weight:800;">H</div>
+                                            <div>
+                                                <div style="font-size:12px; color:#202124; font-weight:500;">HelloBotz</div>
+                                                <div style="font-size:11px; color:#5f6368;">https://hellobotz.com<?php echo htmlspecialchars($pageDetails['slug'] ?? '/'); ?></div>
                                             </div>
                                         </div>
-                                        <div style="display:flex; justify-content:center; background:#eaecf0; padding:16px;">
-                                            <iframe id="page-preview-iframe" style="width:100%; min-height:560px; border:none; background:#ffffff; box-shadow:0 4px 16px rgba(0,0,0,0.1); border-radius:6px; transition:width 0.25s ease;"></iframe>
+                                        <div id="seo-preview-title" style="color:#1a0dab; font-size:18px; font-weight:500; text-decoration:none; margin-bottom:4px; line-height:1.3; cursor:pointer;">
+                                            <?php echo htmlspecialchars($pageDetails['meta_title'] ?: ($pageDetails['title'] . ' | HelloBotz')); ?>
+                                        </div>
+                                        <div id="seo-preview-desc" style="color:#4d5156; font-size:13px; line-height:1.5;">
+                                            <?php echo htmlspecialchars($pageDetails['meta_description'] ?: 'Explore official WhatsApp Business API, AI chatbots, and multi-agent customer support on HelloBotz.'); ?>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
-                                    <div>
-                                        <label style="font-weight:600; display:block; margin-bottom:4px;">SEO Meta Title</label>
-                                        <input type="text" name="meta_title" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['meta_title'] ?? ''); ?>" placeholder="HelloBotz Page Title">
-                                    </div>
-                                    <div>
-                                        <label style="font-weight:600; display:block; margin-bottom:4px;">SEO Meta Description</label>
-                                        <input type="text" name="meta_description" class="large-text" value="<?php echo htmlspecialchars($pageToEdit['meta_description'] ?? ''); ?>" placeholder="Brief description for search engines">
+                        <!-- TAB 4: VISUAL CODE & LIVE PREVIEW -->
+                        <div id="tab-panel-code" class="tab-panel" style="<?php echo $activeTab === 'code' ? '' : 'display:none;'; ?>">
+                            <div class="postbox">
+                                <div class="postbox-header">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                                        <h2>Visual HTML &amp; Responsive Simulator</h2>
+                                        <div style="display:flex; gap:6px; align-items:center;">
+                                            <button type="button" class="button button-small" onclick="setIframeDevice('100%')">Desktop (100%)</button>
+                                            <button type="button" class="button button-small" onclick="setIframeDevice('768px')">Tablet (768px)</button>
+                                            <button type="button" class="button button-small" onclick="setIframeDevice('375px')">Mobile (375px)</button>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <button type="submit" class="button button-primary button-large"><?php echo $pageToEdit ? 'Update Page' : 'Publish Page'; ?></button>
-                            </form>
+                                <div class="inside" style="padding:16px;">
+                                    <div style="margin-bottom:12px;">
+                                        <label style="font-weight:600; display:inline-flex; align-items:center; gap:6px;">
+                                            <input type="checkbox" name="use_raw_html" value="1">
+                                            <span><strong>Apply direct edits from HTML Editor below</strong> (overrides individual field updates)</span>
+                                        </label>
+                                    </div>
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                                        <div>
+                                            <label style="font-weight:700; font-size:12px; display:block; margin-bottom:6px; color:#475569;">HTML Source Code</label>
+                                            <textarea id="page_raw_html_editor" name="raw_html" rows="24" class="large-text" style="font-family:Consolas, Monaco, monospace; font-size:12px; line-height:1.5; white-space:pre; tab-size:2;" oninput="updateLiveIframe()"><?php echo htmlspecialchars($pageDetails['raw_html'] ?? ''); ?></textarea>
+                                        </div>
+                                        <div style="background:#eaecf0; padding:12px; border-radius:6px; display:flex; flex-direction:column; align-items:center;">
+                                            <div style="font-size:12px; font-weight:700; color:#475569; margin-bottom:8px; align-self:flex-start;">Live Rendering Output</div>
+                                            <iframe id="live-render-iframe" style="width:100%; height:520px; border:none; background:#fff; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:width 0.2s ease;"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+                        <!-- Sticky Action Bar -->
+                        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:16px 20px; margin-top:20px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,0.06); position:sticky; bottom:16px; z-index:900;">
+                            <div>
+                                <strong style="font-size:14px; color:#0f172a;">Ready to deploy changes?</strong>
+                                <span style="font-size:12px; color:#64748b; margin-left:8px;">Edits will write directly to the live page and clear caches.</span>
+                            </div>
+                            <div style="display:flex; gap:10px;">
+                                <a href="<?php echo $adminBase; ?>?page=pages" class="button">Cancel</a>
+                                <button type="submit" class="button button-primary button-large" style="padding:8px 24px; font-size:14px; font-weight:700; background:#2563eb; border-color:#1d4ed8;">Save Changes to Live Site</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <script>
+                        function switchEditorTab(tab) {
+                            document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+                            document.querySelectorAll('.tab-btn').forEach(b => {
+                                b.style.color = '#475569';
+                                b.style.borderBottomColor = 'transparent';
+                            });
+                            var panel = document.getElementById('tab-panel-' + tab);
+                            var btn = document.getElementById('tab-nav-' + tab);
+                            if (panel) panel.style.display = 'block';
+                            if (btn) {
+                                btn.style.color = '#2563eb';
+                                btn.style.borderBottomColor = '#2563eb';
+                            }
+                            if (tab === 'code') {
+                                updateLiveIframe();
+                            }
+                        }
+
+                        function setIframeDevice(width) {
+                            var ifr = document.getElementById('live-render-iframe');
+                            if (ifr) ifr.style.width = width;
+                        }
+
+                        function updateLiveIframe() {
+                            var ifr = document.getElementById('live-render-iframe');
+                            var code = document.getElementById('page_raw_html_editor');
+                            if (ifr && code) {
+                                var doc = ifr.contentDocument || ifr.contentWindow.document;
+                                doc.open();
+                                doc.write(code.value);
+                                doc.close();
+                            }
+                        }
+
+                        function updateSeoPreview() {
+                            var t = document.getElementById('seo_input_title').value;
+                            var d = document.getElementById('seo_input_desc').value;
+                            var pt = document.getElementById('seo-preview-title');
+                            var pd = document.getElementById('seo-preview-desc');
+                            if (pt) pt.textContent = t ? t : 'HelloBotz Page Title';
+                            if (pd) pd.textContent = d ? d : 'Explore official WhatsApp Business API on HelloBotz.';
+                        }
+                    </script>
 
                 <?php
                 // =============================================================
-                // 5B. ALL PAGES SCREEN
+                // 5B. ALL 260+ WEBSITE PAGES DIRECTORY
                 // =============================================================
                 elseif ($page === 'pages'):
-                ?>
-                    <h1 class="wp-heading-inline">Pages</h1>
-                    <a href="<?php echo $adminBase; ?>?page=page-new" class="page-title-action">Add New</a>
+                    $allSitePages = HbPagesManager::getAllPages(isset($_GET['refreshed']));
+                    $totalPagesCount = count($allSitePages);
 
-                    <div class="wp-table-responsive">
-                        <table class="wp-list-table">
+                    // Compute category counts
+                    $catCounts = ['all' => $totalPagesCount];
+                    foreach ($allSitePages as $p) {
+                        $cat = $p['category'] ?? 'Other';
+                        $catCounts[$cat] = ($catCounts[$cat] ?? 0) + 1;
+                    }
+                    $filterCat = $_GET['cat'] ?? 'all';
+                ?>
+                    <style>
+                        .badge-products { background:#e0e7ff; color:#3730a3; border:1px solid #c7d2fe; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-solutions { background:#fae8ff; color:#86198f; border:1px solid #f5d0fe; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-integrations { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-industries { background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-leads { background:#ffedd5; color:#9a3412; border:1px solid #fed7aa; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-channels { background:#fee2e2; color:#991b1b; border:1px solid #fecaca; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-resources { background:#e0f2fe; color:#075985; border:1px solid #bae6fd; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-partners { background:#f3e8ff; color:#6b21a8; border:1px solid #e9d5ff; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-core { background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                        .badge-default { background:#f3f4f6; color:#4b5563; border:1px solid #e5e7eb; font-weight:600; padding:3px 8px; border-radius:999px; font-size:11px; }
+                    </style>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+                        <div>
+                            <h1 class="wp-heading-inline" style="margin:0; font-size:26px; font-weight:800; color:#0f172a;">Website Pages Directory</h1>
+                            <p class="description" style="margin-top:4px; font-size:13px; color:#64748b;">
+                                Complete catalog of all <strong><?php echo $totalPagesCount; ?></strong> live website routes. Edit texts, paragraphs, hero headlines, images, and SEO meta tags live.
+                            </p>
+                        </div>
+                        <div style="display:flex; gap:8px;">
+                            <a href="<?php echo $adminBase; ?>?page=pages&action=refresh_pages_index" class="button" title="Rescan public/ folder for any newly added routes">⚡ Rescan All Pages</a>
+                            <a href="<?php echo $adminBase; ?>?page=page-new" class="button button-primary">+ Add New Page</a>
+                        </div>
+                    </div>
+
+                    <!-- Metric Cards Row -->
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:20px;">
+                        <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 18px; box-shadow:0 1px 2px rgba(0,0,0,0.03);">
+                            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#64748b; letter-spacing:0.04em;">Total Website Pages</div>
+                            <div style="font-size:24px; font-weight:800; color:#0f172a; margin-top:2px;"><?php echo $totalPagesCount; ?></div>
+                        </div>
+                        <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 18px; box-shadow:0 1px 2px rgba(0,0,0,0.03);">
+                            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#64748b; letter-spacing:0.04em;">Active Categories</div>
+                            <div style="font-size:24px; font-weight:800; color:#7c3aed; margin-top:2px;"><?php echo count($catCounts) - 1; ?> Sections</div>
+                        </div>
+                        <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 18px; box-shadow:0 1px 2px rgba(0,0,0,0.03);">
+                            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#64748b; letter-spacing:0.04em;">Live Index Status</div>
+                            <div style="font-size:20px; font-weight:800; color:#16a34a; margin-top:4px; display:flex; align-items:center; gap:6px;">
+                                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#16a34a;"></span>
+                                100% Operational
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter Tabs -->
+                    <ul class="subsubsub" style="margin-bottom:14px; display:flex; flex-wrap:wrap; gap:4px; font-size:13px;">
+                        <li><a href="javascript:void(0)" onclick="filterTableCategory('all')" id="cat-pill-all" class="cat-pill current" style="font-weight:700;">All (<?php echo $totalPagesCount; ?>)</a> |</li>
+                        <?php
+                        $catKeys = ['Products', 'Solutions', 'Integrations', 'Industries', 'Business Leads', 'Channels', 'Resources & Blog', 'Partners', 'Core & Company'];
+                        foreach ($catKeys as $ck):
+                            if (!isset($catCounts[$ck])) continue;
+                        ?>
+                            <li><a href="javascript:void(0)" onclick="filterTableCategory('<?php echo htmlspecialchars($ck); ?>')" id="cat-pill-<?php echo preg_replace('/[^a-z0-9]/', '', strtolower($ck)); ?>" class="cat-pill"><?php echo htmlspecialchars($ck); ?> (<?php echo $catCounts[$ck]; ?>)</a> |</li>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <!-- Search Filter Bar -->
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:12px; flex-wrap:wrap;">
+                        <div style="position:relative; flex:1; max-width:440px;">
+                            <input type="search" id="page-live-search" placeholder="Type to search pages by title, slug, or keyword (e.g. shopify, crm, api)..." class="large-text" style="padding:8px 12px 8px 36px; border-radius:6px; font-size:13px;" oninput="applyTableSearch()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" style="position:absolute; left:12px; top:11px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
+                        <div style="font-size:12px; color:#64748b;" id="page-search-counter">
+                            Showing all <?php echo $totalPagesCount; ?> pages
+                        </div>
+                    </div>
+
+                    <!-- All Pages Table -->
+                    <div class="wp-table-responsive" style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.03);">
+                        <table class="wp-list-table" id="site-pages-table">
                             <thead>
-                                <tr>
-                                    <th style="width:40px;"><input type="checkbox" disabled></th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Route URL</th>
-                                    <th>Template</th>
-                                    <th>Date</th>
+                                <tr style="background:#f8fafc;">
+                                    <th style="width:40px; text-align:center;">#</th>
+                                    <th>Page Title &amp; Live Route</th>
+                                    <th style="width:140px;">Section Category</th>
+                                    <th>Primary Headline (H1) Preview</th>
+                                    <th style="width:110px;">SEO Status</th>
+                                    <th style="width:120px;">Modified</th>
+                                    <th style="width:130px; text-align:right;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (empty($pagesList)): ?>
-                                    <tr><td colspan="6" style="text-align:center; color:#646970;">No pages found.</td></tr>
-                                <?php else:
-                                    foreach ($pagesList as $pg): ?>
-                                    <tr>
-                                        <td><input type="checkbox" disabled></td>
+                                <?php
+                                $counter = 1;
+                                foreach ($allSitePages as $pg):
+                                    $hasDesc = !empty($pg['meta_description']);
+                                ?>
+                                    <tr class="page-table-row" data-category="<?php echo htmlspecialchars($pg['category']); ?>" data-search="<?php echo htmlspecialchars(strtolower($pg['title'] . ' ' . $pg['slug'] . ' ' . $pg['h1'] . ' ' . $pg['category'])); ?>">
+                                        <td style="text-align:center; color:#94a3b8; font-size:12px;"><?php echo $counter++; ?></td>
                                         <td>
-                                            <strong><a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank"><?php echo htmlspecialchars($pg['title']); ?></a></strong>
-                                            <div class="row-actions" style="margin-top:4px; font-size:12px;">
-                                                <a href="<?php echo $adminBase; ?>?page=pages&action=edit_page&id=<?php echo $pg['id']; ?>">Edit Page</a> |
-                                                <a href="<?php echo $adminBase; ?>?page=editor">Customizer</a> |
-                                                <a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank">View Live</a> |
-                                                <a href="<?php echo $adminBase; ?>?page=pages&action=delete_page&id=<?php echo $pg['id']; ?>" onclick="return confirm('Delete this page?')" style="color:#d63638;">Delete</a>
+                                            <strong style="font-size:14px;">
+                                                <a href="<?php echo $adminBase; ?>?page=pages&action=edit_page&slug=<?php echo urlencode($pg['slug']); ?>" style="color:#0f172a; text-decoration:none;">
+                                                    <?php echo htmlspecialchars($pg['title']); ?>
+                                                </a>
+                                            </strong>
+                                            <div style="margin-top:3px; display:flex; align-items:center; gap:6px;">
+                                                <code style="font-size:11px; background:#f1f5f9; padding:1px 6px; border-radius:4px; color:#475569;"><?php echo htmlspecialchars($pg['slug']); ?></code>
+                                                <a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank" title="Open live URL" style="color:#2563eb; text-decoration:none; display:inline-flex; align-items:center;">
+                                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                                </a>
                                             </div>
                                         </td>
-                                        <td><?php echo htmlspecialchars($pg['author'] ?? 'admin'); ?></td>
-                                        <td><code><?php echo htmlspecialchars($pg['slug']); ?></code></td>
-                                        <td><span class="badge badge-type"><?php echo htmlspecialchars($pg['template'] ?? 'default'); ?></span></td>
                                         <td>
-                                            <?php echo ucfirst($pg['status'] ?? 'published'); ?><br>
-                                            <span style="color:#646970; font-size:11px;"><?php echo date('Y/m/d', strtotime($pg['created_at'] ?? 'now')); ?></span>
+                                            <span class="badge <?php echo htmlspecialchars($pg['category_badge']); ?>"><?php echo htmlspecialchars($pg['category']); ?></span>
+                                        </td>
+                                        <td style="color:#475569; font-size:12px; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                                            <?php echo htmlspecialchars($pg['h1'] ?: '—'); ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($hasDesc): ?>
+                                                <span style="color:#16a34a; font-size:11px; font-weight:700; display:inline-flex; align-items:center; gap:4px;">
+                                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Optimized
+                                                </span>
+                                            <?php else: ?>
+                                                <span style="color:#f59e0b; font-size:11px; font-weight:600;">Needs Meta</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td style="color:#64748b; font-size:11px;">
+                                            <?php echo date('M d, Y', $pg['modified']); ?><br>
+                                            <span style="color:#94a3b8; font-size:10px;"><?php echo round($pg['size'] / 1024, 1); ?> KB</span>
+                                        </td>
+                                        <td style="text-align:right;">
+                                            <div style="display:inline-flex; gap:6px;">
+                                                <a href="<?php echo $adminBase; ?>?page=pages&action=edit_page&slug=<?php echo urlencode($pg['slug']); ?>" class="button button-small" style="font-weight:600; background:#f8fafc;">Edit Page</a>
+                                                <a href="<?php echo htmlspecialchars($pg['slug']); ?>" target="_blank" class="button button-small" title="View live on website">View ↗</a>
+                                            </div>
                                         </td>
                                     </tr>
-                                <?php endforeach; endif; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
+
+                    <script>
+                        var currentSelectedCat = 'all';
+
+                        function filterTableCategory(category) {
+                            currentSelectedCat = category;
+                            document.querySelectorAll('.cat-pill').forEach(el => el.classList.remove('current'));
+                            var pillId = (category === 'all') ? 'cat-pill-all' : ('cat-pill-' + category.toLowerCase().replace(/[^a-z0-9]/g, ''));
+                            var pill = document.getElementById(pillId);
+                            if (pill) pill.classList.add('current');
+                            applyTableSearch();
+                        }
+
+                        function applyTableSearch() {
+                            var query = (document.getElementById('page-live-search').value || '').trim().toLowerCase();
+                            var rows = document.querySelectorAll('.page-table-row');
+                            var visible = 0;
+
+                            rows.forEach(function(row) {
+                                var rowCat = row.getAttribute('data-category') || '';
+                                var rowSearch = row.getAttribute('data-search') || '';
+
+                                var catMatch = (currentSelectedCat === 'all' || rowCat === currentSelectedCat);
+                                var queryMatch = (query === '' || rowSearch.indexOf(query) > -1);
+
+                                if (catMatch && queryMatch) {
+                                    row.style.display = '';
+                                    visible++;
+                                } else {
+                                    row.style.display = 'none';
+                                }
+                            });
+
+                            var counter = document.getElementById('page-search-counter');
+                            if (counter) {
+                                counter.textContent = 'Showing ' + visible + ' of <?php echo $totalPagesCount; ?> pages';
+                            }
+                        }
+                    </script>
+
+                <?php
+                // =============================================================
+                // 5C. NAVIGATION DROPDOWNS & MENUS MANAGER
+                // =============================================================
+                elseif ($page === 'menus'):
+                    $menus = HbPagesManager::getHeaderMenus();
+                ?>
+                    <h1 class="wp-heading-inline" style="font-size:26px; font-weight:800; color:#0f172a;">Navigation Menus &amp; Header Dropdowns</h1>
+                    <p class="description" style="margin-bottom:20px; font-size:13px; color:#64748b;">
+                        Customize top header dropdown menus (Products, Solutions, Resources) and primary header action CTA buttons live across all website pages.
+                    </p>
+
+                    <form method="post" action="">
+                        <input type="hidden" name="form_action" value="save_header_menus">
+
+                        <!-- Primary Header CTA Button -->
+                        <div class="postbox" style="margin-bottom:20px;">
+                            <div class="postbox-header"><h2>Header Primary Action Button (Call-To-Action)</h2></div>
+                            <div class="inside" style="padding:18px;">
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Button Label Text</label>
+                                        <input type="text" name="menus[cta_button][text]" class="large-text" value="<?php echo htmlspecialchars($menus['cta_button']['text'] ?? 'Start Free'); ?>" placeholder="e.g. Start Free, Book a Demo">
+                                    </div>
+                                    <div>
+                                        <label style="font-weight:700; display:block; margin-bottom:6px; font-size:13px;">Target Link URL</label>
+                                        <input type="text" name="menus[cta_button][url]" class="large-text" value="<?php echo htmlspecialchars($menus['cta_button']['url'] ?? 'https://panindiadata.com/'); ?>" placeholder="e.g. https://panindiadata.com/">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1. Products Dropdown Menu -->
+                        <div class="postbox" style="margin-bottom:20px;">
+                            <div class="postbox-header"><h2>Products Dropdown Menu Items</h2></div>
+                            <div class="inside" style="padding:18px;">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr style="background:#f8fafc;">
+                                            <th style="width:25%;">Item Title</th>
+                                            <th style="width:25%;">Route URL</th>
+                                            <th style="width:35%;">Short Tagline / Description</th>
+                                            <th style="width:15%;">Badge</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($menus['products'] as $idx => $item): ?>
+                                            <tr>
+                                                <td><input type="text" name="menus[products][<?php echo $idx; ?>][title]" class="large-text" value="<?php echo htmlspecialchars($item['title']); ?>"></td>
+                                                <td><input type="text" name="menus[products][<?php echo $idx; ?>][url]" class="large-text" value="<?php echo htmlspecialchars($item['url']); ?>"></td>
+                                                <td><input type="text" name="menus[products][<?php echo $idx; ?>][desc]" class="large-text" value="<?php echo htmlspecialchars($item['desc']); ?>"></td>
+                                                <td><input type="text" name="menus[products][<?php echo $idx; ?>][badge]" class="large-text" value="<?php echo htmlspecialchars($item['badge'] ?? ''); ?>" placeholder="Optional badge"></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 2. Solutions Dropdown Menu -->
+                        <div class="postbox" style="margin-bottom:20px;">
+                            <div class="postbox-header"><h2>Solutions Dropdown Menu Items</h2></div>
+                            <div class="inside" style="padding:18px;">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr style="background:#f8fafc;">
+                                            <th style="width:25%;">Item Title</th>
+                                            <th style="width:25%;">Route URL</th>
+                                            <th style="width:35%;">Short Tagline / Description</th>
+                                            <th style="width:15%;">Badge</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($menus['solutions'] as $idx => $item): ?>
+                                            <tr>
+                                                <td><input type="text" name="menus[solutions][<?php echo $idx; ?>][title]" class="large-text" value="<?php echo htmlspecialchars($item['title']); ?>"></td>
+                                                <td><input type="text" name="menus[solutions][<?php echo $idx; ?>][url]" class="large-text" value="<?php echo htmlspecialchars($item['url']); ?>"></td>
+                                                <td><input type="text" name="menus[solutions][<?php echo $idx; ?>][desc]" class="large-text" value="<?php echo htmlspecialchars($item['desc']); ?>"></td>
+                                                <td><input type="text" name="menus[solutions][<?php echo $idx; ?>][badge]" class="large-text" value="<?php echo htmlspecialchars($item['badge'] ?? ''); ?>" placeholder="Optional badge"></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 3. Resources Dropdown Menu -->
+                        <div class="postbox" style="margin-bottom:20px;">
+                            <div class="postbox-header"><h2>Resources Dropdown Menu Items</h2></div>
+                            <div class="inside" style="padding:18px;">
+                                <table class="wp-list-table">
+                                    <thead>
+                                        <tr style="background:#f8fafc;">
+                                            <th style="width:25%;">Item Title</th>
+                                            <th style="width:25%;">Route URL</th>
+                                            <th style="width:35%;">Short Tagline / Description</th>
+                                            <th style="width:15%;">Badge</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($menus['resources'] as $idx => $item): ?>
+                                            <tr>
+                                                <td><input type="text" name="menus[resources][<?php echo $idx; ?>][title]" class="large-text" value="<?php echo htmlspecialchars($item['title']); ?>"></td>
+                                                <td><input type="text" name="menus[resources][<?php echo $idx; ?>][url]" class="large-text" value="<?php echo htmlspecialchars($item['url']); ?>"></td>
+                                                <td><input type="text" name="menus[resources][<?php echo $idx; ?>][desc]" class="large-text" value="<?php echo htmlspecialchars($item['desc']); ?>"></td>
+                                                <td><input type="text" name="menus[resources][<?php echo $idx; ?>][badge]" class="large-text" value="<?php echo htmlspecialchars($item['badge'] ?? ''); ?>" placeholder="Optional badge"></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <p class="submit">
+                            <button type="submit" class="button button-primary button-large" style="padding:10px 24px; font-size:14px; font-weight:700;">Save Navigation Menus</button>
+                        </p>
+                    </form>
 
                 <?php
                 // =============================================================
@@ -4425,6 +4885,8 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                     <ul class="subsubsub">
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=hero" class="<?php echo $editorTab === 'hero' ? 'current' : ''; ?>">Hero Section</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=editor&tab=logo" class="<?php echo $editorTab === 'logo' ? 'current' : ''; ?>">Brand Logos &amp; Assets</a> |</li>
+                        <li><a href="<?php echo $adminBase; ?>?page=menus">Header Dropdowns &rarr;</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=stats" class="<?php echo $editorTab === 'stats' ? 'current' : ''; ?>">Stats Counter Row</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=simulator" class="<?php echo $editorTab === 'simulator' ? 'current' : ''; ?>">WhatsApp Simulator</a> |</li>
                         <li><a href="<?php echo $adminBase; ?>?page=editor&tab=announcement" class="<?php echo $editorTab === 'announcement' ? 'current' : ''; ?>">Announcement Top Bar</a> |</li>
@@ -4582,6 +5044,123 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         </tr>
                                     </table>
                                     <p class="submit"><button type="submit" class="button button-primary">Save CTA Banner</button></p>
+                                </form>
+                            </div>
+                        </div>
+                    <?php elseif ($editorTab === 'logo'): ?>
+                        <div class="postbox">
+                            <div class="postbox-header"><h2>Brand Logos, Dimensions &amp; Visual Assets</h2></div>
+                            <div class="inside" style="padding:20px;">
+                                <form method="post" action="" enctype="multipart/form-data">
+                                    <input type="hidden" name="form_action" value="save_settings">
+                                    <input type="hidden" name="redirect_tab" value="logo">
+
+                                    <table class="form-table">
+                                        <tr>
+                                            <th style="width:200px;">Primary Light Logo URL</th>
+                                            <td>
+                                                <input type="text" name="logo_light_url" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('logo_light_url', '/assets/images/logo-light-v3.png')); ?>" style="margin-bottom:8px;">
+                                                <div style="background:#f8fafc; padding:10px 14px; border:1px solid #cbd5e1; border-radius:6px; display:inline-flex; align-items:center; gap:12px;">
+                                                    <span style="font-size:11px; font-weight:700; color:#64748b;">PREVIEW:</span>
+                                                    <img src="<?php echo htmlspecialchars(hb_get_setting('logo_light_url', '/assets/images/logo-light-v3.png')); ?>" style="height:36px; max-width:200px; object-fit:contain;" alt="Light Logo Preview">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dark Mode Logo URL</th>
+                                            <td>
+                                                <input type="text" name="logo_dark_url" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('logo_dark_url', '/assets/images/logo-dark-v3.png')); ?>" style="margin-bottom:8px;">
+                                                <div style="background:#0f172a; padding:10px 14px; border-radius:6px; display:inline-flex; align-items:center; gap:12px;">
+                                                    <span style="font-size:11px; font-weight:700; color:#94a3b8;">DARK PREVIEW:</span>
+                                                    <img src="<?php echo htmlspecialchars(hb_get_setting('logo_dark_url', '/assets/images/logo-dark-v3.png')); ?>" style="height:36px; max-width:200px; object-fit:contain;" alt="Dark Logo Preview">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Footer Logo URL</th>
+                                            <td>
+                                                <input type="text" name="logo_footer_url" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('logo_footer_url', '/assets/images/logo-footer-v3.png')); ?>">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Logo Dimensions</th>
+                                            <td>
+                                                <div style="display:flex; gap:14px; align-items:center;">
+                                                    <div>
+                                                        <label style="font-size:11px; font-weight:600; display:block; color:#64748b;">Max Width:</label>
+                                                        <input type="text" name="logo_width" class="regular-text" style="max-width:120px;" value="<?php echo htmlspecialchars(hb_get_setting('logo_width', '250px')); ?>">
+                                                    </div>
+                                                    <div>
+                                                        <label style="font-size:11px; font-weight:600; display:block; color:#64748b;">Max Height:</label>
+                                                        <input type="text" name="logo_height" class="regular-text" style="max-width:120px;" value="<?php echo htmlspecialchars(hb_get_setting('logo_height', '56px')); ?>">
+                                                    </div>
+                                                </div>
+                                                <p class="description">Controls the dimensions across all headers and mobile navigation bars.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Chatbot Avatar Icon</th>
+                                            <td>
+                                                <input type="text" name="bot_avatar_url" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png')); ?>" style="margin-bottom:8px;">
+                                                <div style="display:inline-flex; align-items:center; gap:10px;">
+                                                    <img src="<?php echo htmlspecialchars(hb_get_setting('bot_avatar_url', '/assets/images/hellobotz-avatar.png')); ?>" style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid #cbd5e1;" alt="Avatar">
+                                                    <span style="font-size:11px; color:#64748b;">Displays in floating WhatsApp widget &amp; simulator</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Favicon URL</th>
+                                            <td>
+                                                <input type="text" name="favicon_url" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('favicon_url', '/assets/images/favicon-32x32.png')); ?>">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Official Company Brochure PDF</th>
+                                            <td>
+                                                <input type="text" name="brochure_url" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('brochure_url', '/assets/docs/hellobotz-brochure.pdf')); ?>">
+                                                <p class="description">Linked by all &ldquo;Download Brochure&rdquo; buttons across the website.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <h3 style="margin-top:24px; margin-bottom:12px; font-size:15px; font-weight:700; color:#1e293b; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">Social Media Links</h3>
+                                    <table class="form-table">
+                                        <tr>
+                                            <th style="width:200px;">Official WhatsApp</th>
+                                            <td><input type="text" name="social_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', 'https://wa.me/918050854445')); ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Instagram</th>
+                                            <td><input type="text" name="social_instagram" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr')); ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Facebook</th>
+                                            <td><input type="text" name="social_facebook" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_facebook', 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr')); ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>LinkedIn</th>
+                                            <td><input type="text" name="social_linkedin" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/')); ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>YouTube</th>
+                                            <td><input type="text" name="social_youtube" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz')); ?>"></td>
+                                        </tr>
+                                    </table>
+
+                                    <h3 style="margin-top:24px; margin-bottom:12px; font-size:15px; font-weight:700; color:#1e293b; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">Company Office Address</h3>
+                                    <table class="form-table">
+                                        <tr>
+                                            <th style="width:200px;">Head Office Address</th>
+                                            <td>
+                                                <textarea name="office_address" rows="3" class="large-text"><?php echo htmlspecialchars(hb_get_setting('office_address', "Bangalore Karnataka 560030")); ?></textarea>
+                                                <p class="description">Displayed in the footer across all 260+ website pages.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <p class="submit" style="margin-top:20px;">
+                                        <button type="submit" class="button button-primary button-large" style="padding:10px 24px; font-size:14px; font-weight:700;">Save Brand Logos &amp; Visual Settings</button>
+                                    </p>
                                 </form>
                             </div>
                         </div>
