@@ -56,33 +56,37 @@ function hb_unpack_vault(?string $raw): ?array {
     return is_array($arr) ? $arr : null;
 }
 
-function hb_pdo(): PDO {
+require_once __DIR__ . '/hb-json-db.php';
+
+function hb_pdo(): object {
     static $pdo = null;
     if ($pdo !== null) {
         return $pdo;
     }
 
     $dbFile = hb_get_db_path();
+    $hasSqliteDriver = extension_loaded('pdo_sqlite') && in_array('sqlite', PDO::getAvailableDrivers());
     
-    try {
-        $pdo = new PDO("sqlite:" . $dbFile, null, null, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]);
-    } catch (Throwable $e) {
-        $pdo = new PDO("sqlite::memory:", null, null, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]);
+    if ($hasSqliteDriver) {
+        try {
+            $pdo = new PDO("sqlite:" . $dbFile, null, null, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]);
+            try {
+                $pdo->exec("PRAGMA journal_mode = WAL;");
+                $pdo->exec("PRAGMA synchronous = NORMAL;");
+                $pdo->exec("PRAGMA cache_size = -64000;");
+                $pdo->exec("PRAGMA temp_store = MEMORY;");
+            } catch (Throwable $e) {}
+        } catch (Throwable $e) {
+            $pdo = null;
+        }
     }
 
-    // High-performance SQLite configuration: WAL mode, memory temp store, 64MB cache
-    try {
-        $pdo->exec("PRAGMA journal_mode = WAL;");
-        $pdo->exec("PRAGMA synchronous = NORMAL;");
-        $pdo->exec("PRAGMA cache_size = -64000;");
-        $pdo->exec("PRAGMA temp_store = MEMORY;");
-    } catch (Throwable $e) {}
+    if (!$pdo) {
+        $pdo = new HbJsonPdo();
+    }
 
     // Check if database is already initialized; if so, skip heavy DDL & seed queries
     static $isInitialized = null;
@@ -125,7 +129,7 @@ function hb_pdo(): PDO {
     return $pdo;
 }
 
-function hb_init_database_schema(PDO $pdo): void {
+function hb_init_database_schema(object $pdo): void {
     // 1. Leads table
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS leads (

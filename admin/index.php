@@ -1,12 +1,10 @@
 <?php
-header('Content-Type: text/plain; charset=utf-8');
-class HbStmtSub extends PDOStatement {
-    public function __construct() {}
-}
-try {
-    $s = new HbStmtSub();
-    echo "HbStmtSub created: " . (is_a($s, 'PDOStatement') ? 'YES' : 'NO') . "\n";
-} catch (Throwable $e) {
-    echo "HbStmtSub error: " . $e->getMessage() . "\n";
-}
-exit;
+/**
+ * HelloBotz WordPress 6.x Admin Dashboard
+ * Direct entrypoint at /admin/
+ */
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+require_once __DIR__ . '/../secure-console-x7/index.php';
