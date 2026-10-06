@@ -1,4 +1,12 @@
 <?php
 header('Content-Type: text/plain; charset=utf-8');
-echo "sudo -l:\n" . @shell_exec('sudo -n -l 2>&1') . "\n";
+class HbMockPdo extends PDO {
+    public function __construct() {}
+}
+try {
+    $m = new HbMockPdo();
+    echo "HbMockPdo created: " . (is_a($m, 'PDO') ? 'YES' : 'NO') . "\n";
+} catch (Throwable $e) {
+    echo "HbMockPdo error: " . $e->getMessage() . "\n";
+}
 exit;
