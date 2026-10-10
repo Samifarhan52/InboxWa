@@ -15,7 +15,7 @@
 
 /* Announcement Bar is fixed at the very top of viewport */
 .announcement-banner.hb-announcement-bar {
-  display: flex !important;
+  display: flex;
   align-items: center !important;
   justify-content: center !important;
   position: fixed !important;
@@ -42,6 +42,23 @@
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
   overflow: hidden !important;
   -webkit-font-smoothing: antialiased !important;
+}
+
+.announcement-banner.hb-announcement-bar.is-hidden,
+.announcement-banner.hb-announcement-bar[hidden],
+.announcement-banner.hb-announcement-bar[style*="display: none"],
+.announcement-banner.hb-announcement-bar[style*="display:none"],
+html.hb-ann-dismissed .announcement-banner.hb-announcement-bar,
+body.hb-ann-dismissed .announcement-banner.hb-announcement-bar,
+html.hb-ann-dismissed #hb-announcement-bar,
+body.hb-ann-dismissed #hb-announcement-bar {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
 }
 
 @keyframes hbAnnShimmerBg {

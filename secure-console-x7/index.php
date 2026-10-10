@@ -4202,6 +4202,27 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     </form>
 
                     <script>
+                        function showBannerAdminToast(msg, isSuccess) {
+                            var t = document.getElementById('ann-admin-toast');
+                            if (!t) {
+                                t = document.createElement('div');
+                                t.id = 'ann-admin-toast';
+                                t.style.cssText = 'position:fixed; top:42px; right:24px; z-index:999999; padding:12px 20px; border-radius:8px; font-size:14px; font-weight:700; box-shadow:0 10px 25px rgba(0,0,0,0.2); transition:all 0.3s cubic-bezier(0.16,1,0.3,1); display:flex; align-items:center; gap:10px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;';
+                                document.body.appendChild(t);
+                            }
+                            t.style.backgroundColor = isSuccess ? '#065f46' : '#1e293b';
+                            t.style.color = '#ffffff';
+                            t.style.border = isSuccess ? '1px solid #10b981' : '1px solid #475569';
+                            t.innerHTML = '<span>' + (isSuccess ? '✅' : '⚪') + '</span> <span>' + msg + '</span>';
+                            t.style.opacity = '1';
+                            t.style.transform = 'translateY(0)';
+                            clearTimeout(window.__annToastTimer);
+                            window.__annToastTimer = setTimeout(function() {
+                                t.style.opacity = '0';
+                                t.style.transform = 'translateY(-10px)';
+                            }, 3500);
+                        }
+
                         function updateLiveToggleState(isChecked) {
                             var slider = document.getElementById('ann-toggle-slider');
                             var knob = document.getElementById('ann-toggle-knob');
@@ -4224,6 +4245,24 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                 badge.style.backgroundColor = '#64748b';
                                 if (note) note.style.display = 'block';
                             }
+
+                            // Instant 1-click auto-save to database & static file caches via AJAX
+                            var formData = new FormData();
+                            formData.append('form_action', 'toggle_offer_banner');
+                            formData.append('target_state', isChecked ? '1' : '0');
+                            formData.append('is_ajax', '1');
+
+                            fetch(window.location.href, {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(function(res) { return res.json(); })
+                            .then(function(data) {
+                                showBannerAdminToast(isChecked ? 'Top Offer Banner is now LIVE across all pages!' : 'Top Offer Banner turned OFF & collapsed cleanly.', isChecked);
+                            })
+                            .catch(function(err) {
+                                console.error('Failed to auto-save toggle state:', err);
+                            });
                         }
 
                         function liveUpdatePreview() {

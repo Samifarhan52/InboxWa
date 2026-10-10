@@ -5457,6 +5457,103 @@ include __DIR__ . '/includes/header.php';
 })();
 </script>
 
+<!-- =========================================================================
+     HELLOBOTZ FREQUENTLY ASKED QUESTIONS (FAQ) SECTION
+     ========================================================================= -->
+<section class="section cw-faq-home-section" id="faq" style="padding: 5rem 1.25rem 4.5rem; background: #ffffff;">
+  <div class="container" style="max-width: 980px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 14px; border-radius:9999px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:#059669; font-size:13px; font-weight:700; margin-bottom:12px;">
+        <span style="width:8px; height:8px; background:#10b981; border-radius:50%; display:inline-block;"></span>
+        Got Questions? We've Got Answers
+      </div>
+      <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 900; color: #0f172a; margin: 0 0 12px; letter-spacing: -0.02em;">
+        Frequently Asked <span style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Questions</span>
+      </h2>
+      <p style="font-size: 1.1rem; color: #475569; max-width: 620px; margin: 0 auto; line-height: 1.6;">
+        Quick answers to the most common questions about HelloBotz WhatsApp API, chatbots, billing, and verification.
+      </p>
+    </div>
+
+    <div class="cw-faq-list" style="display:flex; flex-direction:column; gap:12px;">
+      <!-- FAQ 1 -->
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #ffffff; transition: all 0.2s ease;">
+        <button type="button" class="faq-question" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:1.25rem 1.5rem; font-size:1.05rem; font-weight:700; color:#0f172a; background:transparent; border:none; text-align:left; cursor:pointer;">
+          <span>What is the official WhatsApp Business API and how does HelloBotz help?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.25s ease; flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" style="padding:0 1.5rem 1.25rem; font-size:0.96rem; color:#475569; line-height:1.65;">
+            Official WhatsApp Business API is Meta’s enterprise infrastructure allowing businesses to automate customer communications, deploy AI chatbots, send high-volume marketing broadcasts, and connect multi-agent team inboxes without ban risks. HelloBotz provides a 100% no-code interface and visual flow builder on top of Meta's Cloud API.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #ffffff; transition: all 0.2s ease;">
+        <button type="button" class="faq-question" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:1.25rem 1.5rem; font-size:1.05rem; font-weight:700; color:#0f172a; background:transparent; border:none; text-align:left; cursor:pointer;">
+          <span>How does the 3-day free trial work? Is a credit card required?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.25s ease; flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" style="padding:0 1.5rem 1.25rem; font-size:0.96rem; color:#475569; line-height:1.65;">
+            No credit card is required. You can sign up in 30 seconds and get 3 full days of unrestricted access to our chatbot builder, team inbox, API webhooks, and sample templates to test everything thoroughly.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #ffffff; transition: all 0.2s ease;">
+        <button type="button" class="faq-question" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:1.25rem 1.5rem; font-size:1.05rem; font-weight:700; color:#0f172a; background:transparent; border:none; text-align:left; cursor:pointer;">
+          <span>Can I get the Meta Official Green Tick verification badge?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.25s ease; flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" style="padding:0 1.5rem 1.25rem; font-size:0.96rem; color:#475569; line-height:1.65;">
+            Yes! HelloBotz submits Green Tick verification applications directly to Meta on behalf of all eligible clients at zero additional cost. Once approved, your brand name and official green checkmark appear automatically in customer chats.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #ffffff; transition: all 0.2s ease;">
+        <button type="button" class="faq-question" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:1.25rem 1.5rem; font-size:1.05rem; font-weight:700; color:#0f172a; background:transparent; border:none; text-align:left; cursor:pointer;">
+          <span>How does WhatsApp conversation billing work? Are there any hidden fees?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.25s ease; flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" style="padding:0 1.5rem 1.25rem; font-size:0.96rem; color:#475569; line-height:1.65;">
+            There are zero setup fees and zero markup. HelloBotz offers a 100% transparent pricing model: you only pay your affordable platform subscription fee, and WhatsApp conversation fees are deducted directly from your wallet at official Meta rates with 0% markup.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #ffffff; transition: all 0.2s ease;">
+        <button type="button" class="faq-question" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:1.25rem 1.5rem; font-size:1.05rem; font-weight:700; color:#0f172a; background:transparent; border:none; text-align:left; cursor:pointer;">
+          <span>Does HelloBotz integrate with Shopify, WooCommerce, and CRM tools?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.25s ease; flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" style="padding:0 1.5rem 1.25rem; font-size:0.96rem; color:#475569; line-height:1.65;">
+            Yes, natively! We provide instant integrations for Shopify, WooCommerce, Zoho CRM, HubSpot, Google Sheets, Shiprocket, and custom webhooks so you can automate abandoned cart recovery, order dispatch alerts, and lead capture effortlessly.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All FAQs Button CTA -->
+    <div style="text-align:center; margin-top: 2.5rem; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+      <a href="/faq/" class="btn-faq-view-all" style="display:inline-flex; align-items:center; gap:8px; padding:12px 28px; border-radius:10px; background:#4f46e5; color:#ffffff; font-weight:700; font-size:15px; text-decoration:none; box-shadow:0 4px 14px rgba(79,70,229,0.3); transition:all 0.2s ease;">
+        <span>View All 20+ Frequently Asked Questions &rarr;</span>
+      </a>
+      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20have%20a%20question" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:10px; background:#f1f5f9; color:#0f172a; font-weight:700; font-size:15px; text-decoration:none; border:1px solid #cbd5e1; transition:all 0.2s ease;">
+        <span>Ask on WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- HELLOBOTZ INTERACTIVE PLATFORM DEMO MODAL -->
 <div id="hellobotz-video-modal" class="cw-modal-overlay" onclick="handleModalOverlayClick(event)">
   <div class="cw-modal-box">

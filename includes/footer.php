@@ -1474,11 +1474,12 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
           </div>
         </div>
 
-        <!-- Section 3: Resources (Blogs & Careers) -->
+        <!-- Section 3: Resources (Blogs, FAQ & Careers) -->
         <div class="footer-nav-col">
           <div class="footer-heading">Resources</div>
           <ul>
             <li><a href="<?php echo $bp; ?>blogs/">Blogs &amp; Insights</a></li>
+            <li><a href="<?php echo $bp; ?>faq/">Frequently Asked Questions (FAQ)</a></li>
             <li><a href="<?php echo $bp; ?>careers/">Careers</a></li>
           </ul>
         </div>
@@ -1524,10 +1525,11 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
       <div class="footer-bottom">
         <p class="footer-copy">&copy; <?php echo date('Y'); ?> HelloBotz AI Technologies Pvt Ltd. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="/privacy/">Privacy Policy</a>
-          <a href="/terms/">Terms of Service</a>
-          <a href="/security/">Security</a>
-          <a href="/cookie-policy/">Cookie Policy</a>
+          <a href="<?php echo $bp; ?>faq/">FAQ</a>
+          <a href="<?php echo $bp; ?>privacy/">Privacy Policy</a>
+          <a href="<?php echo $bp; ?>terms/">Terms of Service</a>
+          <a href="<?php echo $bp; ?>security/">Security</a>
+          <a href="<?php echo $bp; ?>cookie-policy/">Cookie Policy</a>
         </div>
       </div>
     </div>
@@ -1555,7 +1557,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
   <script src="/i18n.js?v=25" defer></script>
-  <script src="/main.js?v=42" defer></script>
+  <script src="/main.js?v=<?= @filemtime(dirname(__DIR__) . '/main.js') ?: 43 ?>" defer></script>
 
 <script src="/assets/js/mobile-menu.js?v=55"></script>
 

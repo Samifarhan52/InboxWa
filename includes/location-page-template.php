@@ -188,7 +188,7 @@ include __DIR__ . '/header.php';
 </section>
 
 <!-- FAQ -->
-<section class="section section-alt">
+<section class="section section-alt" id="faq">
   <div class="container">
     <div class="section-header reveal">
       <span class="badge badge-primary">FAQ</span>

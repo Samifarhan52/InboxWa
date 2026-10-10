@@ -323,7 +323,7 @@ include __DIR__ . '/../includes/header.php';
   <!-- =========================================================================
        5. FAQS ACCORDION
        ========================================================================= -->
-  <section class="industry-faq-section">
+  <section class="industry-faq-section" id="faq">
     <div class="container">
       <div class="industry-section-header">
         <h2>Got Questions? We’ve Got Answers!</h2>

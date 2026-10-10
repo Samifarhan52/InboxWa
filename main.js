@@ -300,6 +300,114 @@
     });
   }
 
+  /* ---------- Smart FAQ Redirection & Router ---------- */
+  function initSmartFAQRouter() {
+    function scrollToFaqSection(targetEl, shouldOpenFirst) {
+      if (!targetEl) return false;
+      const header = $('.site-header') || $('header');
+      const offset = (header ? header.offsetHeight : 72) + 20;
+      const rect = targetEl.getBoundingClientRect();
+      const top = rect.top + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: 'smooth'
+      });
+
+      if (shouldOpenFirst) {
+        const firstItem = targetEl.querySelector('.faq-item, .ind-faq-item, .industry-faq-item');
+        if (firstItem && !firstItem.classList.contains('open') && !firstItem.classList.contains('active')) {
+          const btn = firstItem.querySelector('.faq-question, .ind-faq-header, .industry-faq-header');
+          if (btn) {
+            setTimeout(() => {
+              btn.click();
+            }, 350);
+          }
+        }
+      }
+      return true;
+    }
+
+    // Intercept clicks on FAQ navigation links & buttons
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      // Allow intentional buttons linking specifically to full FAQ archive/page
+      if (link.classList.contains('btn-faq-view-all') || link.getAttribute('data-faq-external') === 'true') {
+        return;
+      }
+
+      const rawHref = link.getAttribute('href') || '';
+      const href = rawHref.trim().toLowerCase();
+
+      // Check if this link points to FAQ
+      const isFaqLink = href === '/faq/' || 
+                        href === '/faq' || 
+                        href === '#faq' || 
+                        href === '#faqs' || 
+                        href.endsWith('/faq/') || 
+                        href.endsWith('/faq') ||
+                        href.includes('/faq/#') ||
+                        (href.includes('#faq') && !href.includes('/blog'));
+
+      if (!isFaqLink) return;
+
+      const path = window.location.pathname.replace(/\/+$/, '');
+      const isDedicatedFaqPage = path === '/faq' || document.body.classList.contains('page-faq');
+
+      // If already on /faq/ page
+      if (isDedicatedFaqPage) {
+        if (href.startsWith('#') || href.endsWith('/faq/') || href.endsWith('/faq')) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        return;
+      }
+
+      // If on another page, check if an FAQ section exists on the current page
+      const onPageFaq = $('#faq') || 
+                        $('#faqs') || 
+                        $('.cw-faq-home-section') || 
+                        $('.ind-faq-section') || 
+                        $('.industry-faq-section') || 
+                        $('.faq-list');
+
+      if (onPageFaq) {
+        e.preventDefault();
+        
+        // Close mobile menu if open
+        const mobMenu = $('#mobile-menu');
+        const mobToggle = $('.mobile-toggle');
+        if (mobMenu && (mobMenu.classList.contains('open') || mobMenu.classList.contains('is-open'))) {
+          if (mobToggle) mobToggle.click();
+        }
+
+        scrollToFaqSection(onPageFaq, true);
+
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, '', '#faq');
+        }
+      } else {
+        // No FAQ section on this page, let normal link navigation proceed to /faq/
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          window.location.href = '/faq/';
+        }
+      }
+    });
+
+    // Auto-scroll on initial page load if URL contains #faq hash
+    if (window.location.hash === '#faq' || window.location.hash === '#faqs') {
+      const onPageFaq = $('#faq') || $('#faqs') || $('.cw-faq-home-section') || $('.ind-faq-section') || $('.industry-faq-section');
+      if (onPageFaq) {
+        setTimeout(() => {
+          scrollToFaqSection(onPageFaq, true);
+        }, 350);
+      }
+    }
+  }
+
   /* ---------- Scroll Reveal ---------- */
   function initReveal() {
     const els = $$('.reveal');
@@ -582,6 +690,7 @@
     initMegaMenu();
     initMobileMenu();
     initFAQ();
+    initSmartFAQRouter();
     initReveal();
     initCounters();
     initRipple();

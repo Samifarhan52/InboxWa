@@ -26,10 +26,16 @@ window.__HELLOBOTZ_ANNOUNCEMENT__ = window.__HELLOBOTZ_ANNOUNCEMENT__ || {
 
     // Master On/Off Switch from Admin
     if (ann.enabled === '0' || ann.enabled === 0 || ann.enabled === false || ann.enabled === 'false') {
-      bar.style.display = 'none';
-      document.body.classList.add('hb-ann-dismissed');
-      document.body.classList.remove('has-ann-bar');
-      document.documentElement.style.setProperty('--hb-ann-h', '0px');
+      bar.style.setProperty('display', 'none', 'important');
+      bar.classList.add('is-hidden');
+      bar.setAttribute('hidden', 'true');
+      document.documentElement.classList.add('hb-ann-dismissed');
+      document.documentElement.style.setProperty('--hb-ann-h', '0px', 'important');
+      if (document.body) {
+        document.body.classList.add('hb-ann-dismissed');
+        document.body.classList.remove('has-ann-bar');
+        document.body.style.setProperty('--hb-ann-h', '0px', 'important');
+      }
       return;
     }
 
@@ -308,11 +314,18 @@ window.__HELLOBOTZ_ANNOUNCEMENT__ = window.__HELLOBOTZ_ANNOUNCEMENT__ || {
     var preAnn = window.__HELLOBOTZ_ANNOUNCEMENT__ || (window.__HELLOBOTZ_SETTINGS__ && window.__HELLOBOTZ_SETTINGS__.announcement);
     if ((preAnn && (preAnn.enabled === '0' || preAnn.enabled === 0 || preAnn.enabled === false || preAnn.enabled === 'false')) || sessionStorage.getItem('hb_ann_dismissed') === '1') {
       document.documentElement.classList.add('hb-ann-dismissed');
+      document.documentElement.style.setProperty('--hb-ann-h', '0px', 'important');
+      var immediateBar = document.getElementById('hb-announcement-bar');
+      if (immediateBar) {
+        immediateBar.style.setProperty('display', 'none', 'important');
+        immediateBar.classList.add('is-hidden');
+        immediateBar.setAttribute('hidden', 'true');
+      }
       if (document.body) {
         document.body.classList.add('hb-ann-dismissed');
         document.body.classList.remove('has-ann-bar');
+        document.body.style.setProperty('--hb-ann-h', '0px', 'important');
       }
-      document.documentElement.style.setProperty('--hb-ann-h', '0px');
     }
   } catch (e) {}
 

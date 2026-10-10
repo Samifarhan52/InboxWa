@@ -431,7 +431,7 @@ include __DIR__ . '/header.php';
   <!-- =========================================================================
        6. ACCORDION FAQS
        ========================================================================= -->
-  <section class="ind-faq-section">
+  <section class="ind-faq-section" id="faq">
     <div class="container">
       <div class="ind-section-header">
         <span class="ind-kicker">FREQUENTLY ASKED QUESTIONS</span>
