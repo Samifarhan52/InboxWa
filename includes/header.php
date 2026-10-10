@@ -9,6 +9,20 @@ $bp = $basePath;
 
 require_once dirname(__DIR__) . '/config/cms.php';
 
+// If Canva visual editor published a static version for this route, serve it directly
+$currentRouteSlug = trim((string)parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+if (!empty($currentRouteSlug)) {
+    $canvaPublishedList = json_decode(cms_setting('canva_published_slugs', '[]'), true) ?: [];
+    if (in_array($currentRouteSlug, $canvaPublishedList, true)) {
+        $publishedHtmlPath = dirname(__DIR__) . '/public/' . $currentRouteSlug . '/index.html';
+        if (file_exists($publishedHtmlPath)) {
+            while (ob_get_level() > 0) { ob_end_clean(); }
+            readfile($publishedHtmlPath);
+            exit;
+        }
+    }
+}
+
 $SITE_NAME   = cms_setting('site_title', 'HelloBotz');
 $SITE_TAGLINE = cms_setting('site_tagline', 'WhatsApp Marketing & Automation Platform');
 $detectedHost = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? 'hellobotz.com';

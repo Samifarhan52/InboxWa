@@ -2,6 +2,12 @@
 $basePath = "";
 require_once __DIR__ . '/config/cms.php';
 
+// If Canva visual editor published a modified homepage, serve the live published HTML
+if (cms_setting('canva_homepage_published', '0') === '1' && file_exists(__DIR__ . '/public/index.html')) {
+    readfile(__DIR__ . '/public/index.html');
+    exit;
+}
+
 $pageTitle = cms_setting('site_title', 'HelloBotz') . ' – ' . cms_setting('site_tagline', 'Scale Your Sales and Support on WhatsApp');
 $pageDescription = 'Official WhatsApp Business API platform with shared inbox, AI chatbots, visual flow builder, bulk broadcasts, and CRM integrations.';
 $canonicalUrl = 'https://hellobotz.com/';

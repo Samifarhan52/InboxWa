@@ -333,6 +333,22 @@ class HbPagesManager {
         // Write updated HTML to public
         $res = @file_put_contents($filePath, $newHtml);
 
+        // Record published slug in settings so runtime serves the live visual version
+        if (function_exists('hb_set_setting')) {
+            if (empty($cleanSlug)) {
+                hb_set_setting('canva_homepage_published', '1');
+            }
+            $existing = [];
+            if (function_exists('hb_get_setting')) {
+                $raw = hb_get_setting('canva_published_slugs', '[]');
+                $existing = json_decode($raw, true) ?: [];
+            }
+            if (!in_array($cleanSlug, $existing, true)) {
+                $existing[] = $cleanSlug;
+                hb_set_setting('canva_published_slugs', json_encode(array_values($existing)));
+            }
+        }
+
         // Invalidate cache
         if (file_exists(self::$cacheFile)) {
             @unlink(self::$cacheFile);
