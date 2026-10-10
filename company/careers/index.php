@@ -885,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var name = document.getElementById('applicant_name').value.trim();
       var email = document.getElementById('applicant_email').value.trim();
-      var phone = document.getElementById('applicant_phone').value.trim();
+      var phone = document.getElementById('applicant_phone').value.trim().replace(/\s+/g, ' ');
       var location = document.getElementById('applicant_location').value.trim();
       var roleCat = roleDropdown.value;
       var targetTitle = titleInput.value.trim() || roleCat;

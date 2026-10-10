@@ -39,13 +39,31 @@ try {
     $name = trim((string)($data['name'] ?? $data['full_name'] ?? ''));
     $email = trim((string)($data['email'] ?? ''));
     $phone = trim((string)($data['phone'] ?? $data['whatsapp'] ?? $data['mobile'] ?? ''));
+
+    // Universal International Phone Number Sanitizer & Sheet-Safety Formatter
+    $cleanPhone = preg_replace('/[\r\n\t]+/', ' ', $phone);
+    $cleanPhone = preg_replace('/\s+/', ' ', $cleanPhone);
+    $cleanPhone = trim($cleanPhone);
+    if (preg_match('/^00[1-9]/', $cleanPhone)) {
+        $cleanPhone = '+' . substr($cleanPhone, 2);
+    }
+
+    // In Google Sheets / Excel, any cell starting with '+' or '=' is evaluated as a mathematical formula.
+    // If the phone has spaces/hyphens (e.g. "+43 665 67088186"), Google Sheets formula parser fails with #ERROR!.
+    // Prepending "'" forces Google Sheets to store it as pure literal TEXT.
+    // The apostrophe is invisible in the sheet, but protects '+', spaces, and leading zeros.
+    $sheetSafePhone = $cleanPhone;
+    if ($sheetSafePhone !== '' && $sheetSafePhone[0] !== "'") {
+        $sheetSafePhone = "'" . $sheetSafePhone;
+    }
+
     $business = trim((string)($data['business'] ?? $data['company'] ?? ''));
     $type = trim((string)($data['type'] ?? $data['lead_type'] ?? 'General Lead'));
     $product = trim((string)($data['product'] ?? $data['use_case'] ?? ''));
     $requirement = trim((string)($data['requirement'] ?? $data['volume'] ?? $data['message'] ?? ''));
     $sourcePage = trim((string)($data['source_page'] ?? $data['source'] ?? ($_SERVER['HTTP_REFERER'] ?? '')));
 
-    if (empty($name) || (empty($email) && empty($phone))) {
+    if (empty($name) || (empty($email) && empty($cleanPhone))) {
         http_response_code(422);
         echo json_encode(['ok' => false, 'error' => 'Name and either Email or Phone are required.']);
         exit;
@@ -154,7 +172,9 @@ try {
             'category'        => $category,
             'type'            => $type,
             'name'            => $name,
-            'phone'           => $phone,
+            'phone'           => $sheetSafePhone,
+            'whatsapp'        => $sheetSafePhone,
+            'raw_phone'       => $cleanPhone,
             'email'           => $email,
             'business'        => $business,
             'company'         => $business,
@@ -203,7 +223,7 @@ try {
             if (function_exists('hb_pdo')) {
                 $pdo = hb_pdo();
                 $stmt = $pdo->prepare('INSERT INTO leads (name, email, phone, business, type, product, requirement, source_page, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-                $stmt->execute([$name, $email, $phone, $business, $type, $product, $requirement, $sourcePage, date('Y-m-d H:i:s')]);
+                $stmt->execute([$name, $email, $cleanPhone, $business, $type, $product, $requirement, $sourcePage, date('Y-m-d H:i:s')]);
             }
         } catch (Throwable $dbErr) {
             // Non-blocking database fallback

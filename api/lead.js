@@ -21,10 +21,15 @@ module.exports = async (req, res) => {
   try {
     const data = req.body || {};
     const name = (data.name || data.full_name || '').trim();
-    const email = (data.email || '').trim();
     const phone = (data.phone || data.whatsapp || data.mobile || '').trim();
 
-    if (!name || (!email && !phone)) {
+    let cleanPhone = String(phone).replace(/[\r\n\t]+/g, ' ').replace(/\s+/g, ' ').trim();
+    if (/^00[1-9]/.test(cleanPhone)) {
+      cleanPhone = '+' + cleanPhone.substring(2);
+    }
+    const sheetSafePhone = cleanPhone ? (cleanPhone.startsWith("'") ? cleanPhone : ("'" + cleanPhone)) : '';
+
+    if (!name || (!email && !cleanPhone)) {
       res.status(422).json({ ok: false, error: 'Name and email or phone required' });
       return;
     }
@@ -94,7 +99,9 @@ module.exports = async (req, res) => {
           category: category,
           type: data.type || 'General Lead',
           name: name,
-          phone: phone,
+          phone: sheetSafePhone,
+          whatsapp: sheetSafePhone,
+          raw_phone: cleanPhone,
           email: email,
           business: data.business || data.company || '',
           company: data.company || data.business || '',
