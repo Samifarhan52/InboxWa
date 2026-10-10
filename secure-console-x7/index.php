@@ -2913,8 +2913,21 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
 
                         <!-- Canva Studio Frame Canvas -->
                         <div id="canva-workspace-wrap" style="background:#090d16; padding:24px 12px; min-height:84vh; display:flex; justify-content:center; align-items:flex-start; overflow-x:auto;">
-                            <div id="canva-frame-container" style="width:100%; max-width:100%; transition:width 0.3s cubic-bezier(0.4, 0, 0.2, 1); margin:0 auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.5);">
-                                <iframe id="canva-studio-iframe" src="<?php echo htmlspecialchars($pageDetails['slug']); ?>" style="width:100%; height:82vh; border:none; display:block; background:#ffffff;" onload="initCanvaBridge()"></iframe>
+                                <?php
+                                $canvaRawSlug = trim((string)($pageDetails['slug'] ?? '/'), '/');
+                                if (empty($canvaRawSlug)) {
+                                    $canvaIframeSrc = '/';
+                                } else {
+                                    if (file_exists(dirname(__DIR__) . '/public/' . $canvaRawSlug . '/index.html')) {
+                                        $canvaIframeSrc = '/public/' . $canvaRawSlug . '/index.html';
+                                    } elseif (str_starts_with($canvaRawSlug, 'blogs/') && file_exists(dirname(__DIR__) . '/public/resources/blog/' . substr($canvaRawSlug, 6) . '/index.html')) {
+                                        $canvaIframeSrc = '/public/resources/blog/' . substr($canvaRawSlug, 6) . '/index.html';
+                                    } else {
+                                        $canvaIframeSrc = '/' . $canvaRawSlug . '/';
+                                    }
+                                }
+                                ?>
+                                <iframe id="canva-studio-iframe" src="<?php echo htmlspecialchars($canvaIframeSrc); ?>" style="width:100%; height:82vh; border:none; display:block; background:#ffffff;" onload="initCanvaBridge()"></iframe>
                             </div>
                         </div>
                     </div>

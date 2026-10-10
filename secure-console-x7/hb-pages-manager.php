@@ -131,7 +131,16 @@ class HbPagesManager {
         $filePath = empty($cleanSlug) ? ($baseDir . '/index.html') : ($baseDir . '/' . $cleanSlug . '/index.html');
 
         if (!file_exists($filePath)) {
-            return null;
+            if (str_starts_with($cleanSlug, 'blogs/')) {
+                $alt = $baseDir . '/resources/blog/' . substr($cleanSlug, 6) . '/index.html';
+                if (file_exists($alt)) $filePath = $alt;
+            } elseif (str_starts_with($cleanSlug, 'resources/blog/')) {
+                $alt = $baseDir . '/blogs/' . substr($cleanSlug, 15) . '/index.html';
+                if (file_exists($alt)) $filePath = $alt;
+            }
+            if (!file_exists($filePath)) {
+                return null;
+            }
         }
 
         $content = @file_get_contents($filePath);
@@ -333,6 +342,19 @@ class HbPagesManager {
         // Write updated HTML to public
         $res = @file_put_contents($filePath, $newHtml);
 
+        // Keep blog aliases synchronized between blogs/ and resources/blog/
+        if (str_starts_with($cleanSlug, 'blogs/')) {
+            $altFile = $baseDir . '/resources/blog/' . substr($cleanSlug, 6) . '/index.html';
+            if (is_dir(dirname($altFile))) {
+                @file_put_contents($altFile, $newHtml);
+            }
+        } elseif (str_starts_with($cleanSlug, 'resources/blog/')) {
+            $altFile = $baseDir . '/blogs/' . substr($cleanSlug, 15) . '/index.html';
+            if (is_dir(dirname($altFile))) {
+                @file_put_contents($altFile, $newHtml);
+            }
+        }
+
         // Record published slug in settings so runtime serves the live visual version
         if (function_exists('hb_set_setting')) {
             if (empty($cleanSlug)) {
@@ -345,8 +367,15 @@ class HbPagesManager {
             }
             if (!in_array($cleanSlug, $existing, true)) {
                 $existing[] = $cleanSlug;
-                hb_set_setting('canva_published_slugs', json_encode(array_values($existing)));
             }
+            if (str_starts_with($cleanSlug, 'blogs/')) {
+                $altSlug = 'resources/blog/' . substr($cleanSlug, 6);
+                if (!in_array($altSlug, $existing, true)) $existing[] = $altSlug;
+            } elseif (str_starts_with($cleanSlug, 'resources/blog/')) {
+                $altSlug = 'blogs/' . substr($cleanSlug, 15);
+                if (!in_array($altSlug, $existing, true)) $existing[] = $altSlug;
+            }
+            hb_set_setting('canva_published_slugs', json_encode(array_values($existing)));
         }
 
         // Invalidate cache

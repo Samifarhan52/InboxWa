@@ -2,8 +2,61 @@
 $basePath = "";
 require_once __DIR__ . '/config/cms.php';
 
-// If Canva visual editor published a modified homepage, serve the live published HTML
-if (cms_setting('canva_homepage_published', '0') === '1' && file_exists(__DIR__ . '/public/index.html')) {
+// Route sub-pages when requested through Nginx fallback
+$requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+$requestPath = trim($requestUri, '/');
+
+// 1. If this is a request for a sub-page (NOT the homepage)
+if ($requestPath !== '' && $requestPath !== 'index.php') {
+    // A. Check if static HTML page exists in public/ (e.g. public/blogs/.../index.html)
+    $publicPageHtml = __DIR__ . '/public/' . $requestPath . '/index.html';
+    if (file_exists($publicPageHtml)) {
+        readfile($publicPageHtml);
+        exit;
+    }
+
+    // B. Check if blogs/ slug maps to resources/blog/
+    if (str_starts_with($requestPath, 'blogs/')) {
+        $blogSub = substr($requestPath, 6);
+        $publicBlogHtml = __DIR__ . '/public/resources/blog/' . $blogSub . '/index.html';
+        if (file_exists($publicBlogHtml)) {
+            readfile($publicBlogHtml);
+            exit;
+        }
+        $blogPhp = __DIR__ . '/resources/blog/' . $blogSub . '/index.php';
+        if (file_exists($blogPhp)) {
+            $basePath = "../../";
+            require $blogPhp;
+            exit;
+        }
+    }
+
+    // C. Check if direct static file exists in public/
+    $publicDirectFile = __DIR__ . '/public/' . $requestPath;
+    if (is_file($publicDirectFile)) {
+        $ext = strtolower(pathinfo($publicDirectFile, PATHINFO_EXTENSION));
+        $mimes = [
+            'html' => 'text/html', 'css' => 'text/css', 'js' => 'application/javascript',
+            'png' => 'image/png', 'jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg',
+            'webp' => 'image/webp', 'svg' => 'image/svg+xml', 'json' => 'application/json'
+        ];
+        if (isset($mimes[$ext])) {
+            header('Content-Type: ' . $mimes[$ext]);
+        }
+        readfile($publicDirectFile);
+        exit;
+    }
+
+    // D. Check if root directory with index.php exists
+    $rootPhp = __DIR__ . '/' . $requestPath . '/index.php';
+    if (file_exists($rootPhp)) {
+        require $rootPhp;
+        exit;
+    }
+}
+
+// 2. Homepage: If Canva visual editor published a modified homepage, serve the live published HTML
+if (($requestPath === '' || $requestPath === 'index.php') && cms_setting('canva_homepage_published', '0') === '1' && file_exists(__DIR__ . '/public/index.html')) {
     readfile(__DIR__ . '/public/index.html');
     exit;
 }
