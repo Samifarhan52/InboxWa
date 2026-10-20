@@ -2,7 +2,7 @@
 $basePath = '../';
 $pageTitle = 'WhatsApp Business API White Label Reseller Panel & Partner Program | HelloBotz';
 $pageDescription = 'Launch your own WhatsApp Business API business with HelloBotz. 100% white label reseller panel, custom branding, custom domain, and set your own pricing.';
-$canonicalUrl = 'https://hellobotz.com/partners/';
+$canonicalUrl = '/partners/';
 $extraCss = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
     '/assets/css/partners.css?v=9'
@@ -659,7 +659,7 @@ include __DIR__ . '/../includes/header.php';
         </div>
     </section>
 
-    <link rel="stylesheet" href="https://hellobotz.com/wp-content/themes/sierra/assets/css/g2reviews.css" class="css">
+    
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <style>
   .review-role {}
@@ -685,7 +685,7 @@ include __DIR__ . '/../includes/header.php';
 
 
 
-<script src="https://hellobotz.com/wp-content/themes/sierra/assets/js/g2reviews.js"></script>
+
     <!-- FAQ -->
 
 <section class="pp-section pp-section-soft">

@@ -55,19 +55,278 @@ include __DIR__ . "/../includes/header.php";
 <section class="container" style="max-width: 1200px; margin: 0 auto 60px; padding: 0 20px;">
   <div id="blog-results">
     <div class="blog-grid" id="blog-grid">
-
-      <div class="card blog-card" data-category="chatbots" data-title="whatsapp vtu bot: a complete guide to setup and automation">
-        <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-vtu-bot.webp?v=hb20261020" alt="WhatsApp VTU Bot: A Complete Guide to Setup and Automation" title="WhatsApp VTU Bot: A Complete Guide to Setup and Automation" loading="lazy" width="600" height="340">
+      <div class="card blog-card" data-category="e-commerce" data-title="how to automate whatsapp delivery notifications for e-commerce (2026 guide)">
+        <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-card-thumb">
+          <img src="/assets/images/blog/automate-delivery-notifications-on-whatsapp.webp?v=hb20261020" alt="How to Automate WhatsApp Delivery Notifications for E-Commerce (2026 Guide)" title="How to Automate WhatsApp Delivery Notifications for E-Commerce (2026 Guide)" loading="lazy" width="600" height="340">
         </a>
-        <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-card-title">
-          <h2>WhatsApp VTU Bot: A Complete Guide to Setup and Automation</h2>
+        <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-card-title">
+          <h2>How to Automate WhatsApp Delivery Notifications for E-Commerce (2026 Guide)</h2>
         </a>
         <div class="blog-card-meta">
           <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Learn how to set up a WhatsApp VTU bot to automate airtime sales, data bundles, utility bills, payments, and customer support with ease using HelloBotz.
+          Discover how direct-to-consumer and e-commerce brands automate shipping confirmations, tracking links, and delivery alerts on WhatsApp to cut WISMO tickets by 75%.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="automation" data-title="automate invoicing & payment reminders on whatsapp: a complete guide">
+        <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-card-thumb">
+          <img src="/assets/images/blog/automate-invoice-sending-via-whatsapp.webp?v=hb20261020" alt="Automate Invoicing & Payment Reminders on WhatsApp: A Complete Guide" title="Automate Invoicing & Payment Reminders on WhatsApp: A Complete Guide" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-card-title">
+          <h2>Automate Invoicing & Payment Reminders on WhatsApp: A Complete Guide</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn how businesses automate PDF invoice delivery, payment reminders, and instant digital payment collection on WhatsApp with HelloBotz to accelerate cash flow.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="whatsapp-api" data-title="best whatsapp business platforms in 2026: features, pricing & comparison">
+        <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-thumb">
+          <img src="/assets/images/blog/best-whatsapp-business-platform.webp?v=hb20261020" alt="Best WhatsApp Business Platforms in 2026: Features, Pricing & Comparison" title="Best WhatsApp Business Platforms in 2026: Features, Pricing & Comparison" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-title">
+          <h2>Best WhatsApp Business Platforms in 2026: Features, Pricing & Comparison</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Compare the top WhatsApp Business API platforms of 2026. Discover key differences in pricing transparency, shared inbox functionality, chatbots, and enterprise reliability.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="chatbots" data-title="7 best whatsapp ai chatbots for businesses in 2026 (ranked & reviewed)">
+        <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-thumb">
+          <img src="/assets/images/blog/best-whatsapp-chatbots.webp?v=hb20261020" alt="7 Best WhatsApp AI Chatbots for Businesses in 2026 (Ranked & Reviewed)" title="7 Best WhatsApp AI Chatbots for Businesses in 2026 (Ranked & Reviewed)" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-title">
+          <h2>7 Best WhatsApp AI Chatbots for Businesses in 2026 (Ranked & Reviewed)</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Discover the 7 top-rated WhatsApp AI chatbot solutions in 2026. Compare visual flow builders, NLP capabilities, e-commerce support, and multi-agent handover.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="whatsapp-crm" data-title="10 best whatsapp crm software for sales and support teams in 2026">
+        <a href="/resources/blog/best-whatsapp-crm/" class="blog-card-thumb">
+          <img src="/assets/images/blog/best-whatsapp-crm.webp?v=hb20261020" alt="10 Best WhatsApp CRM Software for Sales and Support Teams in 2026" title="10 Best WhatsApp CRM Software for Sales and Support Teams in 2026" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/best-whatsapp-crm/" class="blog-card-title">
+          <h2>10 Best WhatsApp CRM Software for Sales and Support Teams in 2026</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Evaluate the 10 best WhatsApp CRM platforms of 2026. Discover how modern sales teams centralize conversations, manage pipelines, and automate follow-ups on WhatsApp.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/best-whatsapp-crm/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="lead-generation" data-title="how to create click-to-whatsapp ads that convert: step-by-step meta ads guide">
+        <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-card-thumb">
+          <img src="/assets/images/blog/create-click-to-whatsapp-ads.webp?v=hb20261020" alt="How to Create Click-to-WhatsApp Ads That Convert: Step-by-Step Meta Ads Guide" title="How to Create Click-to-WhatsApp Ads That Convert: Step-by-Step Meta Ads Guide" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-card-title">
+          <h2>How to Create Click-to-WhatsApp Ads That Convert: Step-by-Step Meta Ads Guide</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Master Click-to-WhatsApp (CTWA) ads on Facebook and Instagram. Learn how to route high-intent traffic into automated HelloBotz chatbot qualification flows for 3x higher ROI.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="whatsapp-api" data-title="choosing the right whatsapp api provider: meta cloud api vs solution partners">
+        <a href="/resources/blog/whatsapp-api-providers/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-api-providers.webp?v=hb20261020" alt="Choosing the Right WhatsApp API Provider: Meta Cloud API vs Solution Partners" title="Choosing the Right WhatsApp API Provider: Meta Cloud API vs Solution Partners" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-api-providers/" class="blog-card-title">
+          <h2>Choosing the Right WhatsApp API Provider: Meta Cloud API vs Solution Partners</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Meta Cloud API vs On-Premises BSPs: Learn how to choose the right WhatsApp API provider for high message throughput, enterprise uptime, and zero middleman markups.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-api-providers/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="broadcasting" data-title="best whatsapp broadcasting tools for high-roi marketing campaigns in 2026">
+        <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-broadcasting-tools.webp?v=hb20261020" alt="Best WhatsApp Broadcasting Tools for High-ROI Marketing Campaigns in 2026" title="Best WhatsApp Broadcasting Tools for High-ROI Marketing Campaigns in 2026" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-card-title">
+          <h2>Best WhatsApp Broadcasting Tools for High-ROI Marketing Campaigns in 2026</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Discover the best WhatsApp broadcast software in 2026. Learn how to run personalized marketing campaigns, segment customer lists, and maintain high Meta quality scores.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="broadcasting" data-title="whatsapp bulk message senders in 2026: safe, ban-proof campaign guide">
+        <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-bulk-message-senders.webp?v=hb20261020" alt="WhatsApp Bulk Message Senders in 2026: Safe, Ban-Proof Campaign Guide" title="WhatsApp Bulk Message Senders in 2026: Safe, Ban-Proof Campaign Guide" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-card-title">
+          <h2>WhatsApp Bulk Message Senders in 2026: Safe, Ban-Proof Campaign Guide</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn the vital differences between dangerous unofficial WhatsApp bulk sender tools and the official Meta WhatsApp Business API to safeguard your brand from permanent bans.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="lead-generation" data-title="whatsapp lead generation in 2026: high-converting tactics & automation">
+        <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-lead-generation.webp?v=hb20261020" alt="WhatsApp Lead Generation in 2026: High-Converting Tactics & Automation" title="WhatsApp Lead Generation in 2026: High-Converting Tactics & Automation" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-title">
+          <h2>WhatsApp Lead Generation in 2026: High-Converting Tactics & Automation</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Discover how top-performing marketing teams generate high-intent inbound leads via WhatsApp widgets, QR codes, Click-to-WhatsApp ads, and automated AI chatbots.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-lead-generation/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="e-commerce" data-title="whatsapp marketing automation for shopify: the ultimate merchant playbook">
+        <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-marketing-automation-for-shopify.webp?v=hb20261020" alt="WhatsApp Marketing Automation for Shopify: The Ultimate Merchant Playbook" title="WhatsApp Marketing Automation for Shopify: The Ultimate Merchant Playbook" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-card-title">
+          <h2>WhatsApp Marketing Automation for Shopify: The Ultimate Merchant Playbook</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Unlock higher repeat revenue on Shopify. Master abandoned cart recovery, automated COD confirmation, shipping updates, and loyalty promos with HelloBotz.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="marketing-tools" data-title="10 best whatsapp marketing tools for businesses (comprehensive 2026 review)">
+        <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-marketing-tools.webp?v=hb20261020" alt="10 Best WhatsApp Marketing Tools for Businesses (Comprehensive 2026 Review)" title="10 Best WhatsApp Marketing Tools for Businesses (Comprehensive 2026 Review)" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-card-title">
+          <h2>10 Best WhatsApp Marketing Tools for Businesses (Comprehensive 2026 Review)</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Discover the 10 best WhatsApp marketing software tools in 2026. Compare broadcast campaign builders, audience segmentation, analytics, and Meta API pricing.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="automation" data-title="top whatsapp automation tools for customer workflows & support in 2026">
+        <a href="/resources/blog/whatsapp-automation-tools/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-automation-tools.webp?v=hb20261020" alt="Top WhatsApp Automation Tools for Customer Workflows & Support in 2026" title="Top WhatsApp Automation Tools for Customer Workflows & Support in 2026" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-automation-tools/" class="blog-card-title">
+          <h2>Top WhatsApp Automation Tools for Customer Workflows & Support in 2026</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Streamline customer support and business operations. Explore the best WhatsApp automation tools for automated ticket routing, AI chatbots, and webhook triggers in 2026.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-automation-tools/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="chatbots" data-title="building an automated whatsapp vtu bot: setup, airtime & utility apis">
+        <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-vtu-bot.webp?v=hb20261020" alt="Building an Automated WhatsApp VTU Bot: Setup, Airtime & Utility APIs" title="Building an Automated WhatsApp VTU Bot: Setup, Airtime & Utility APIs" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-card-title">
+          <h2>Building an Automated WhatsApp VTU Bot: Setup, Airtime & Utility APIs</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn how to build and automate a Virtual Top-Up (VTU) WhatsApp bot to sell mobile airtime, data bundles, and utility bill payments 24/7 with HelloBotz.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-read-more-btn">
@@ -76,18 +335,18 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="e-commerce" data-title="best woocommerce whatsapp order plugins in 2026">
+      <div class="card blog-card" data-category="e-commerce" data-title="best woocommerce whatsapp order & notification plugins in 2026">
         <a href="/resources/blog/woocommerce-whatsapp-order-plugins/" class="blog-card-thumb">
-          <img src="/assets/images/blog/woocommerce-whatsapp-order-plugins.webp?v=hb20261020" alt="Best WooCommerce WhatsApp Order Plugins in 2026" title="Best WooCommerce WhatsApp Order Plugins in 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/woocommerce-whatsapp-order-plugins.webp?v=hb20261020" alt="Best WooCommerce WhatsApp Order & Notification Plugins in 2026" title="Best WooCommerce WhatsApp Order & Notification Plugins in 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/woocommerce-whatsapp-order-plugins/" class="blog-card-title">
-          <h2>Best WooCommerce WhatsApp Order Plugins in 2026</h2>
+          <h2>Best WooCommerce WhatsApp Order & Notification Plugins in 2026</h2>
         </a>
         <div class="blog-card-meta">
           <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Compare the best WooCommerce WhatsApp order plugins by features, pricing, and automation to streamline store operations and boost order fulfillment.
+          Compare the best WooCommerce WhatsApp plugins in 2026. Discover how store owners automate order confirmations, tracking alerts, and 1-click WhatsApp checkouts.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/woocommerce-whatsapp-order-plugins/" class="blog-read-more-btn">
@@ -96,18 +355,18 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="e-commerce" data-title="whatsapp abandoned cart recovery for shopify (2026 guide)">
+      <div class="card blog-card" data-category="e-commerce" data-title="shopify whatsapp abandoned cart recovery: strategy to win back lost sales">
         <a href="/resources/blog/whatsapp-abandoned-cart-recovery-for-shopify/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-abandoned-cart-recovery-for-shopify.webp?v=hb20261020" alt="WhatsApp Abandoned Cart Recovery for Shopify (2026 Guide)" title="WhatsApp Abandoned Cart Recovery for Shopify (2026 Guide)" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-abandoned-cart-recovery-for-shopify.webp?v=hb20261020" alt="Shopify WhatsApp Abandoned Cart Recovery: Strategy to Win Back Lost Sales" title="Shopify WhatsApp Abandoned Cart Recovery: Strategy to Win Back Lost Sales" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-abandoned-cart-recovery-for-shopify/" class="blog-card-title">
-          <h2>WhatsApp Abandoned Cart Recovery for Shopify (2026 Guide)</h2>
+          <h2>Shopify WhatsApp Abandoned Cart Recovery: Strategy to Win Back Lost Sales</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 19, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Recover lost Shopify sales with WhatsApp abandoned cart recovery. Automate reminders, personalize messages, and bring shoppers back to checkout with HelloBotz.
+          Recover up to 25% of abandoned Shopify checkouts with automated WhatsApp cart recovery sequences. Learn timing cadences, copy formulas, and discount incentives with HelloBotz.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/whatsapp-abandoned-cart-recovery-for-shopify/" class="blog-read-more-btn">
@@ -116,18 +375,18 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="whatsapp-api" data-title="start whatsapp api business with a white-label partner">
+      <div class="card blog-card" data-category="whatsapp-api" data-title="how to start a profitable white-label whatsapp api business in 2026">
         <a href="/resources/blog/start-whatsapp-api-business/" class="blog-card-thumb">
-          <img src="/assets/images/blog/start-whatsapp-api-business.webp?v=hb20261020" alt="Start WhatsApp API Business with a White-Label Partner" title="Start WhatsApp API Business with a White-Label Partner" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/start-whatsapp-api-business.webp?v=hb20261020" alt="How to Start a Profitable White-Label WhatsApp API Business in 2026" title="How to Start a Profitable White-Label WhatsApp API Business in 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/start-whatsapp-api-business/" class="blog-card-title">
-          <h2>Start WhatsApp API Business with a White-Label Partner</h2>
+          <h2>How to Start a Profitable White-Label WhatsApp API Business in 2026</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 19, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Start your own WhatsApp API business with a white-label partner program. Learn setup steps, custom branding, pricing models, and recurring revenue with HelloBotz.
+          Discover how marketing agencies and entrepreneurs launch their own branded WhatsApp automation SaaS with HelloBotz White-Label Partnership. Custom domains, billing control, and recurring revenue.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/start-whatsapp-api-business/" class="blog-read-more-btn">
@@ -136,18 +395,18 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="marketing-tools" data-title="instagram statistics 2026: 35+ facts every marketer should know">
+      <div class="card blog-card" data-category="marketing-tools" data-title="35+ crucial instagram statistics for marketers & growth teams in 2026">
         <a href="/resources/blog/instagram-statistics/" class="blog-card-thumb">
-          <img src="/assets/images/blog/instagram-statistics.webp?v=hb20261020" alt="Instagram Statistics 2026: 35+ Facts Every Marketer Should Know" title="Instagram Statistics 2026: 35+ Facts Every Marketer Should Know" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/instagram-statistics.webp?v=hb20261020" alt="35+ Crucial Instagram Statistics for Marketers & Growth Teams in 2026" title="35+ Crucial Instagram Statistics for Marketers & Growth Teams in 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/instagram-statistics/" class="blog-card-title">
-          <h2>Instagram Statistics 2026: 35+ Facts Every Marketer Should Know</h2>
+          <h2>35+ Crucial Instagram Statistics for Marketers & Growth Teams in 2026</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 19, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Explore 35+ essential Instagram statistics and trends for 2026 covering DM automation, Reels engagement, user demographics, and social commerce growth.
+          Explore 35+ essential Instagram statistics for 2026. Discover key data on Reels engagement, DM automation conversion rates, user demographics, and social commerce growth.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/instagram-statistics/" class="blog-read-more-btn">
@@ -156,18 +415,18 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="whatsapp-api" data-title="whatsapp api to send messages – a complete guide 2026">
+      <div class="card blog-card" data-category="whatsapp-api" data-title="how to send whatsapp api messages: technical guide to meta cloud api">
         <a href="/resources/blog/whatsapp-api-to-send-messages/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-api-to-send-messages.webp?v=hb20261020" alt="WhatsApp API to Send Messages – A Complete Guide 2026" title="WhatsApp API to Send Messages – A Complete Guide 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-api-to-send-messages.webp?v=hb20261020" alt="How to Send WhatsApp API Messages: Technical Guide to Meta Cloud API" title="How to Send WhatsApp API Messages: Technical Guide to Meta Cloud API" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-api-to-send-messages/" class="blog-card-title">
-          <h2>WhatsApp API to Send Messages – A Complete Guide 2026</h2>
+          <h2>How to Send WhatsApp API Messages: Technical Guide to Meta Cloud API</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 17, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Learn how to send WhatsApp API messages using Meta Cloud API and HelloBotz, with step-by-step setup, automation workflows, templates, and pricing.
+          A comprehensive developer and business guide to sending WhatsApp API messages via Meta Cloud API. Explore token setup, message payloads, webhooks, and HelloBotz automation.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/whatsapp-api-to-send-messages/" class="blog-read-more-btn">
@@ -176,15 +435,15 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="broadcasting" data-title="how to send bulk messages on whatsapp without getting banned">
+      <div class="card blog-card" data-category="broadcasting" data-title="how to send bulk messages on whatsapp safely without getting banned">
         <a href="/resources/blog/how-to-send-bulk-messages-on-whatsapp/" class="blog-card-thumb">
-          <img src="/assets/images/blog/how-to-send-bulk-messages-on-whatsapp.webp?v=hb20261020" alt="How to Send Bulk Messages on WhatsApp Without Getting Banned" title="How to Send Bulk Messages on WhatsApp Without Getting Banned" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/how-to-send-bulk-messages-on-whatsapp.webp?v=hb20261020" alt="How to Send Bulk Messages on WhatsApp Safely Without Getting Banned" title="How to Send Bulk Messages on WhatsApp Safely Without Getting Banned" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/how-to-send-bulk-messages-on-whatsapp/" class="blog-card-title">
-          <h2>How to Send Bulk Messages on WhatsApp Without Getting Banned</h2>
+          <h2>How to Send Bulk Messages on WhatsApp Safely Without Getting Banned</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 17, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
           Learn how to send high-volume broadcast messages on WhatsApp safely without getting banned or blocked using official Meta WhatsApp Business API and HelloBotz.
@@ -196,18 +455,18 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="lead-generation" data-title="click-to-whatsapp on google ads: setup, cost & best practices">
+      <div class="card blog-card" data-category="lead-generation" data-title="click-to-whatsapp on google ads: setup guide, costs & lead capture">
         <a href="/resources/blog/click-to-whatsapp-on-google-ads/" class="blog-card-thumb">
-          <img src="/assets/images/blog/click-to-whatsapp-on-google-ads.webp?v=hb20261020" alt="Click-to-WhatsApp on Google Ads: Setup, Cost & Best Practices" title="Click-to-WhatsApp on Google Ads: Setup, Cost & Best Practices" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/click-to-whatsapp-on-google-ads.webp?v=hb20261020" alt="Click-to-WhatsApp on Google Ads: Setup Guide, Costs & Lead Capture" title="Click-to-WhatsApp on Google Ads: Setup Guide, Costs & Lead Capture" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/click-to-whatsapp-on-google-ads/" class="blog-card-title">
-          <h2>Click-to-WhatsApp on Google Ads: Setup, Cost & Best Practices</h2>
+          <h2>Click-to-WhatsApp on Google Ads: Setup Guide, Costs & Lead Capture</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 16, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Setting up Click-to-WhatsApp on Google Ads connects high-intent searchers directly on WhatsApp. Discover step-by-step setup, cost calculation, and optimization tips.
+          Connect high-intent Google Search traffic directly to WhatsApp chat. Discover step-by-step setup, message extensions, AI lead qualification, and conversion tracking with HelloBotz.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/click-to-whatsapp-on-google-ads/" class="blog-read-more-btn">
@@ -216,282 +475,21 @@ include __DIR__ . "/../includes/header.php";
         </div>
       </div>
 
-      <div class="card blog-card" data-category="e-commerce" data-title="5+ strategies to reduce rto with whatsapp api">
+      <div class="card blog-card" data-category="e-commerce" data-title="how to reduce return to origin (rto) in e-commerce with whatsapp api">
         <a href="/resources/blog/reduce-rto-with-whatsapp-api/" class="blog-card-thumb">
-          <img src="/assets/images/blog/reduce-rto-with-whatsapp-api.webp?v=hb20261020" alt="5+ Strategies to Reduce RTO with WhatsApp API" title="5+ Strategies to Reduce RTO with WhatsApp API" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/reduce-rto-with-whatsapp-api.webp?v=hb20261020" alt="How to Reduce Return to Origin (RTO) in E-Commerce with WhatsApp API" title="How to Reduce Return to Origin (RTO) in E-Commerce with WhatsApp API" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/reduce-rto-with-whatsapp-api/" class="blog-card-title">
-          <h2>5+ Strategies to Reduce RTO with WhatsApp API</h2>
+          <h2>How to Reduce Return to Origin (RTO) in E-Commerce with WhatsApp API</h2>
         </a>
         <div class="blog-card-meta">
-          <span>Oct 16, 2026</span> • <span class="meta-author">Faris</span>
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
         </div>
         <p class="blog-card-excerpt">
-          Learn how to reduce Return to Origin (RTO) using WhatsApp API with COD confirmations, delivery reminders, address checks, and NDR recovery workflows.
+          Learn how e-commerce brands reduce Return to Origin (RTO) by up to 35% using WhatsApp COD confirmations, delivery reminders, address checks, and NDR recovery workflows.
         </p>
         <div class="blog-card-action">
           <a href="/resources/blog/reduce-rto-with-whatsapp-api/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-
-      <div class="card blog-card" data-category="lead-generation" data-title="whatsapp lead generation - best strategies & tools 2026">
-        <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-lead-generation.webp?v=hb20261020" alt="WhatsApp Lead Generation - Best Strategies & Tools 2026" title="WhatsApp Lead Generation - Best Strategies & Tools 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-title">
-          <h2>WhatsApp Lead Generation - Best Strategies & Tools 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp lead generation strategies and tools for 2026 to capture quality leads and boost conversions.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-lead-generation/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="chatbots" data-title="7+ best whatsapp chatbots for businesses in 2026">
-        <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-thumb">
-          <img src="/assets/images/blog/best-whatsapp-chatbots.webp?v=hb20261020" alt="7+ Best WhatsApp Chatbots for Businesses in 2026" title="7+ Best WhatsApp Chatbots for Businesses in 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-title">
-          <h2>7+ Best WhatsApp Chatbots for Businesses in 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Faris</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp chatbots for businesses to automate support, boost sales, and engage customers.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="whatsapp-api" data-title="best whatsapp business platforms - comparison 2026">
-        <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-thumb">
-          <img src="/assets/images/blog/best-whatsapp-business-platform.webp?v=hb20261020" alt="Best WhatsApp Business Platforms - Comparison 2026" title="Best WhatsApp Business Platforms - Comparison 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-title">
-          <h2>Best WhatsApp Business Platforms - Comparison 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Compare the best WhatsApp Business platforms of 2026. Find the right fit for your team with reviews, key features, and pricing insights.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="whatsapp-crm" data-title="10 best whatsapp crm for businesses 2026">
-        <a href="/resources/blog/best-whatsapp-crm/" class="blog-card-thumb">
-          <img src="/assets/images/blog/best-whatsapp-crm.webp?v=hb20261020" alt="10 Best WhatsApp CRM for Businesses 2026" title="10 Best WhatsApp CRM for Businesses 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/best-whatsapp-crm/" class="blog-card-title">
-          <h2>10 Best WhatsApp CRM for Businesses 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Faris</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp CRM reviewed and compared for automation, sales, customer support, and business growth.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/best-whatsapp-crm/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="broadcasting" data-title="whatsapp bulk message senders 2026">
-        <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-bulk-message-senders.webp?v=hb20261020" alt="WhatsApp Bulk Message Senders 2026" title="WhatsApp Bulk Message Senders 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-card-title">
-          <h2>WhatsApp Bulk Message Senders 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp bulk message senders in 2026. Compare features and pricing, and choose the right sender to grow your business
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="marketing-tools" data-title="10+ best whatsapp marketing tools (2026 comparison)">
-        <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-marketing-tools.webp?v=hb20261020" alt="10+ Best WhatsApp Marketing Tools (2026 Comparison)" title="10+ Best WhatsApp Marketing Tools (2026 Comparison)" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-card-title">
-          <h2>10+ Best WhatsApp Marketing Tools (2026 Comparison)</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Faris</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the 10+ best WhatsApp marketing tools to engage customers, save time, and boost sales effortlessly.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="automation" data-title="best whatsapp automation tools (ai-powered) 2026">
-        <a href="/resources/blog/whatsapp-automation-tools/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-automation-tools.webp?v=hb20261020" alt="Best WhatsApp Automation Tools (AI-Powered) 2026" title="Best WhatsApp Automation Tools (AI-Powered) 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-automation-tools/" class="blog-card-title">
-          <h2>Best WhatsApp Automation Tools (AI-Powered) 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp automation tools (AI-powered) to engage customers, save time, and boost sales effortlessly.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-automation-tools/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="whatsapp-api" data-title="best whatsapp api providers - solution partners 2026">
-        <a href="/resources/blog/whatsapp-api-providers/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-api-providers.webp?v=hb20261020" alt="Best WhatsApp API Providers - Solution Partners 2026" title="Best WhatsApp API Providers - Solution Partners 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-api-providers/" class="blog-card-title">
-          <h2>Best WhatsApp API Providers - Solution Partners 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Faris</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp API providers. Compare features, pricing, and choose the right solution to grow your business
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-api-providers/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="broadcasting" data-title="best whatsapp broadcasting tools 2026">
-        <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-broadcasting-tools.webp?v=hb20261020" alt="Best WhatsApp Broadcasting Tools 2026" title="Best WhatsApp Broadcasting Tools 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-card-title">
-          <h2>Best WhatsApp Broadcasting Tools 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Discover the best WhatsApp broadcasting tools. Compare features, pricing, broadcast limits, and automation features for bulk messaging.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="e-commerce" data-title="automate invoice sending via whatsapp for faster payments">
-        <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-card-thumb">
-          <img src="/assets/images/blog/automate-invoice-sending-via-whatsapp.webp?v=hb20261020" alt="Automate Invoice Sending via WhatsApp for Faster Payments" title="Automate Invoice Sending via WhatsApp for Faster Payments" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-card-title">
-          <h2>Automate Invoice Sending via WhatsApp for Faster Payments</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Faris</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Learn how to automate invoice sending via WhatsApp, deliver bills instantly, add payment links, reduce manual work, and get paid faster.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="marketing-tools" data-title="create click to whatsapp ads - a detailed guide 2026">
-        <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-card-thumb">
-          <img src="/assets/images/blog/create-click-to-whatsapp-ads.webp?v=hb20261020" alt="Create Click to WhatsApp Ads - A Detailed Guide 2026" title="Create Click to WhatsApp Ads - A Detailed Guide 2026" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-card-title">
-          <h2>Create Click to WhatsApp Ads - A Detailed Guide 2026</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Learn how to create Click-to-WhatsApp Ads, set up campaigns in Meta Ads Manager, generate leads, and turn WhatsApp chats into sales.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="e-commerce" data-title="whatsapp marketing automation for shopify - a complete guide">
-        <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-marketing-automation-for-shopify.webp?v=hb20261020" alt="WhatsApp Marketing Automation for Shopify - A Complete Guide" title="WhatsApp Marketing Automation for Shopify - A Complete Guide" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-card-title">
-          <h2>WhatsApp Marketing Automation for Shopify - A Complete Guide</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Faris</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Explore WhatsApp marketing automation for Shopify to recover carts, send personalized messages, automate orders, and boost repeat sales.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-read-more-btn">
-            Read More &rarr;
-          </a>
-        </div>
-      </div>
-
-      <div class="card blog-card" data-category="e-commerce" data-title="automate delivery notifications on whatsapp - complete guide">
-        <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-card-thumb">
-          <img src="/assets/images/blog/automate-delivery-notifications-on-whatsapp.webp?v=hb20261020" alt="Automate Delivery Notifications on WhatsApp - Complete Guide" title="Automate Delivery Notifications on WhatsApp - Complete Guide" loading="lazy" width="600" height="340">
-        </a>
-        <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-card-title">
-          <h2>Automate Delivery Notifications on WhatsApp - Complete Guide</h2>
-        </a>
-        <div class="blog-card-meta">
-          <span>Sep 17, 2026</span> • <span class="meta-author">Farhan</span>
-        </div>
-        <p class="blog-card-excerpt">
-          Learn how to automate delivery notifications on WhatsApp with API triggers, templates, tracking links, and real-time customer updates.
-        </p>
-        <div class="blog-card-action">
-          <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-read-more-btn">
             Read More &rarr;
           </a>
         </div>

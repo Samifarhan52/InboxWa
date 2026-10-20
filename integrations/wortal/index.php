@@ -5,8 +5,8 @@ require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'Wortal CRM WhatsApp Integration | Multi-Channel Automation | HelloBotz';
 $pageDescription = 'Connect Wortal CRM with HelloBotz WhatsApp Business API to streamline customer communication and automated marketing campaigns.';
-$canonicalUrl = 'https://hellobotz.com/integrations/wortal/';
-$ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-wortal/WhatsApp-Wortal-Integration.png';
+$canonicalUrl = '/integrations/wortal/';
+$ogImage = '/assets/images/hellobots/integrations-wortal/WhatsApp-Wortal-Integration.png';
 $ogTitle = 'Wortal CRM WhatsApp Integration | Multi-Channel Automation | HelloBotz';
 $ogDescription = 'Connect Wortal CRM with HelloBotz WhatsApp Business API to streamline customer communication and automated marketing campaigns.';
 
@@ -133,10 +133,9 @@ include __DIR__ . '/../../includes/header.php';
 <div class="cloned-hellobots-page">
 
 
-  <script data-cookieconsent="ignore"
-    src="https://HelloBotz.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://HelloBotz.com/wp-content/themes/sierra/assets/css/whatsapp-blue-tick.css" class="css">
-<link rel="stylesheet" href="https://HelloBotz.com/wp-content/themes/sierra/assets/css/template-industry.css" class="css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -264,10 +263,10 @@ include __DIR__ . '/../../includes/header.php';
     <div aria-label="breadcrumb" class="custom-breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="https://HelloBotz.com/">Home</a>
+          <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="https://HelloBotz.com/integrations/">Integrations</a>
+          <a href="/integrations/">Integrations</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           Wortal        </li>
@@ -295,7 +294,7 @@ include __DIR__ . '/../../includes/header.php';
   </span>
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
-        <h1 class="hero-title">Power Your Wortal CRM with WhatsApp Integration</h1>
+        <h1 class="hero-title">Automate Wortal CRM Communication with HelloBotz WhatsApp API</h1>
         <p class="hero-text">Integrate WhatsApp with Wortal CRM to centralize messaging, improve response times, and deliver exceptional customer experiences from a single place.
 </p>
         <div class="btn-groupp" style="display: flex; gap: 12px;">
@@ -401,7 +400,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="ws-section">
     <div class="container">
-    <h2 class="ws-title mb-5">Why Wortal WhatsApp Integration</h2>
+    <h2 class="ws-title mb-5">Key Advantages of Integrating Wortal with HelloBotz</h2>
     <div class="ws-grid mb-5">
         <div class="ws-card">
             <div class="ws-icon-box"><span class="material-symbols-rounded ws-icon">hub</span></div>
@@ -897,14 +896,14 @@ document.addEventListener("click", function (e) {
     const key = card.dataset.key;
 
     const links = {
-        shopify: "https://HelloBotz.com/integrations/shopify/",
-        woocommerce: "https://HelloBotz.com/integrations/woocommerce/",
-        gotab: "https://HelloBotz.com/integrations/gotab/",
-        wortal: "https://HelloBotz.com/integrations/wortal/",
-        shiprocket: "https://HelloBotz.com/integrations/shiprocket/",
-        zoho: "https://HelloBotz.com/integrations/zoho/",
-        "google-sheets": "https://HelloBotz.com/integrations/google-sheets/",
-        n8n: "https://HelloBotz.com/integrations/n8n/"
+        shopify: "/integrations/shopify/",
+        woocommerce: "/integrations/woocommerce/",
+        gotab: "/integrations/gotab/",
+        wortal: "/integrations/wortal/",
+        shiprocket: "/integrations/shiprocket/",
+        zoho: "/integrations/zoho/",
+        "google-sheets": "/integrations/google-sheets/",
+        n8n: "/integrations/n8n/"
     };
 
     if (links[key]) {
@@ -1016,7 +1015,7 @@ document.addEventListener("click", function (e) {
 
 <section class="section">
     <div class="container">
-        <h2 class="whatsapp-heading fw-bold mb-2">Department Wise Uses of WhatsApp Official API</h2>
+        <h2 class="whatsapp-heading fw-bold mb-2">Explore HelloBotz Across Your Entire Organization</h2>
         <p class="text-center mb-5">See how WhatsApp Business Platform helps businesses boost marketing, streamline
             sales, and improve customer support.</p>
 
@@ -1026,7 +1025,7 @@ document.addEventListener("click", function (e) {
                 <div class="iconn"><i class="fas fa-bullhorn"></i></div>
                 <h3>WhatsApp for Marketing</h3>
                 <p>Reach customers instantly with high-engagement broadcasts and personalized offers.</p>
-                <a class="learn-more" href="https://HelloBotz.com/whatsapp-marketing/" target="_blank"
+                <a class="learn-more" href="/whatsapp-marketing/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1035,7 +1034,7 @@ document.addEventListener("click", function (e) {
                 <div class="iconn"><i class="fas fa-handshake"></i></div>
                 <h3>WhatsApp for Sales</h3>
                 <p>Convert chats into sales with automated workflows, lead management, and fast follow-ups.</p>
-                <a class="learn-more" href="https://HelloBotz.com/whatsapp-sales-crm/" target="_blank"
+                <a class="learn-more" href="/whatsapp-sales-crm/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
@@ -1045,7 +1044,7 @@ document.addEventListener("click", function (e) {
                 <h3>WhatsApp for Support</h3>
                 <p class="">Provide fast, reliable customer support with instant replies and automated ticket
                     management.</p>
-                <a class="learn-more" href="https://HelloBotz.com/whatsapp-customer-support/" target="_blank"
+                <a class="learn-more" href="/whatsapp-customer-support/" target="_blank"
                     rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
@@ -1106,9 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
         assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
-<link rel="stylesheet"
-    href="https://HelloBotz.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
-    media="all">
+
 
 
 </div>

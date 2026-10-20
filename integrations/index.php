@@ -5,8 +5,8 @@ require_once __DIR__ . '/../config/cms.php';
 
 $pageTitle = 'WhatsApp Business API Integrations Directory | HelloBotz';
 $pageDescription = 'Connect HelloBotz WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
-$canonicalUrl = 'https://hellobotz.com/integrations/';
-$ogImage = 'https://hellobotz.com/assets/images/hellobots/integrations-main/WhatsApp-Business-API-Integration.png';
+$canonicalUrl = '/integrations/';
+$ogImage = '/assets/images/hellobots/integrations-main/WhatsApp-Business-API-Integration.png';
 $ogTitle = 'WhatsApp Business API Integrations Directory | HelloBotz';
 $ogDescription = 'Connect HelloBotz WhatsApp API seamlessly with CRMs, e-commerce stores, Google Workspace, billing tools, and payment gateways.';
 
@@ -132,8 +132,7 @@ include __DIR__ . '/../includes/header.php';
 <div class="cloned-hellobots-page">
 
 
-  <script data-cookieconsent="ignore"
-    src="https://HelloBotz.com/wp-content/themes/sierra/assets/jsnewhome/header-shared.js?v=1788956171"></script><style>
+  <style>
   .wa-process-section {}
 
   .wa-step-card {
@@ -591,7 +590,7 @@ include __DIR__ . '/../includes/header.php';
     <div aria-label="breadcrumb" class="custom-breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="https://HelloBotz.com/">Home</a>
+          <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           Integrations        </li>
@@ -757,7 +756,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="integration-grid">
 
       <!-- Card 1 -->
-      <a href="https://HelloBotz.com/integrations/shopify/" target="_blank" rel="noopener noreferrer" class="">
+      <a href="/integrations/shopify/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card shopify-card">
           <img src="/assets/images/hellobots/integrations-main/shopify.png" alt="Shopify Logo" class="integration-logo" />
           <h3>Shopify</h3>
@@ -765,21 +764,21 @@ include __DIR__ . '/../includes/header.php';
         </div>
       </a>
       <!-- Card 2 -->
-      <a href="https://HelloBotz.com/integrations/shiprocket/" target="_blank" rel="noopener noreferrer" class="">
+      <a href="/integrations/shiprocket/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card shiprocket-card">
           <img src="/assets/images/hellobots/integrations-main/shiprocket.png" alt="shiprocket" class="integration-logo" />
           <h3>Shiprocket</h3>
           <p>E-commerce</p>
         </div>
       </a>
-      <a href="https://HelloBotz.com/integrations/wortal/" target="_blank" rel="noopener noreferrer" class="">
+      <a href="/integrations/wortal/" target="_blank" rel="noopener noreferrer" class="">
         <div class="integration-card wortal-card">
           <img src="/assets/images/hellobots/integrations-main/wortal.png" alt="Wortal" class="integration-logo" />
           <h3>Wortal</h3>
           <p>E-commerce</p>
         </div>
       </a>
-      <a href="https://HelloBotz.com/integrations/google-sheets/" style="text-decoration:none;" target="_blank"
+      <a href="/integrations/google-sheets/" style="text-decoration:none;" target="_blank"
         rel="noopener noreferrer">
         <div class="integration-card google-sheet-card">
           <img src="/assets/images/hellobots/integrations-main/google-sheet.png" alt="Google Sheets Logo"
@@ -789,7 +788,7 @@ include __DIR__ . '/../includes/header.php';
         </div>
       </a>
 
-      <a href="https://HelloBotz.com/integrations/zoho/" target="_blank" rel="noopener noreferrer">
+      <a href="/integrations/zoho/" target="_blank" rel="noopener noreferrer">
         <div class="integration-card zoho-card">
           <img src="/assets/images/hellobots/integrations-main/zoho.png" alt="zoho" class="integration-logo" />
           <h3>Zoho</h3>
@@ -1043,9 +1042,7 @@ include __DIR__ . '/../includes/header.php';
 
 <!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
         assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
-<link rel="stylesheet"
-    href="https://HelloBotz.com/wp-content/themes/sierra/assets/cssnewhome/footer-shared.css?v=1788952221"
-    media="all">
+
 
 
 </div>
