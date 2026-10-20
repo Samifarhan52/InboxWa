@@ -544,7 +544,7 @@ font-size:20px;
     margin-bottom: 45px;
 }
 
-.gg-step-item {
+.hb-step-item {
     
     border-radius: 10px;
     padding: 20px 25px;
@@ -555,13 +555,13 @@ font-size:20px;
     transition: 0.3s ease;
 }
 
-.gg-step-item:hover {
+.hb-step-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     background: #e8f9ef;
 }
 
-.gg-step-number {
+.hb-step-number {
     min-width: 42px;
     height: 42px;
     background: #e8f9ef;
@@ -574,11 +574,11 @@ font-size:20px;
     font-size: 16px;
 }
 
-.gg-step-content h3 {
+.hb-step-content h3 {
     margin-bottom: 6px;
 }
 
-.gg-step-content p {
+.hb-step-content p {
     margin: 0;
 }
 
@@ -601,41 +601,41 @@ font-size:20px;
             <h2 class="gg-setup-title">Why WhatsApp Google Sheet Integration
 </h2>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Real-Time Sales Notifications</h3>
                     <p>Whenever a new entry is added to Google Sheets with sales data, an instant WhatsApp message can be sent to your clients. It keeps them informed in real-time without any manual efforts.</p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Automated Event Reminders</h3>
                     <p>Use Google Sheets to record event schedules and automatically send reminder messages to participants via WhatsApp. This ensures timely conversation and decrease chances of missed events.</p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Instant Support Team Alerts</h3>
                     <p>When a customer inquiry is added to your support sheet in Google Sheets, send an automatic WhatsApp message to notify your support team. It boosts response times. </p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Order Status Updates</h3>
                     <p>Send automatic WhatsApp messages to customers when their order status is updated in Google Sheets. It keeps your delivery smooth and hassle-free.</p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Seamless Grade Distribution</h3>
                     <p>Enter student grades into Google Sheets and send personalized WhatsApp notifications to each student or parent. It is an effective method to share important academic updates when it matters the most.</p>
                 </div>

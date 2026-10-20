@@ -481,7 +481,7 @@ font-size:20px;
     margin-bottom: 45px;
 }
 
-.gg-step-item {
+.hb-step-item {
     
     border-radius: 10px;
     padding: 20px 25px;
@@ -492,13 +492,13 @@ font-size:20px;
     transition: 0.3s ease;
 }
 
-.gg-step-item:hover {
+.hb-step-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     background: #e8f9ef;
 }
 
-.gg-step-number {
+.hb-step-number {
     min-width: 42px;
     height: 42px;
     background: #e8f9ef;
@@ -511,11 +511,11 @@ font-size:20px;
     font-size: 16px;
 }
 
-.gg-step-content h3 {
+.hb-step-content h3 {
     margin-bottom: 6px;
 }
 
-.gg-step-content p {
+.hb-step-content p {
     margin: 0;
 }
 
@@ -538,33 +538,33 @@ font-size:20px;
             <h2 class="gg-setup-title">Why Integrate WhatsApp with Zoho CRM
 </h2>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Instant communication</h3>
                     <p>Reply to your customers in real-time with WhatsApp directly from your Zoho CRM dashboard. Instantly answer queries, resolve concerns, and build trust with quick and reliable support.</p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Automation</h3>
                     <p>Reduce manual workload by automating routine tasks like scheduling reminders, sending order updates, and sharing follow-up messages. Manage repetitive conversations to enable your team focus on more important tasks.</p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Better engagement</h3>
                     <p>Stay active on the messaging channels your customers most prefer and use. Personalized WhatsApp conversation to strengthen relationships, improve customer loyalty, and offer memorable brand experiences. </p>
                 </div>
             </div>
 
-            <div class="gg-step-item">
-                <div class="gg-step-number">✔</div>
-                <div class="gg-step-content">
+            <div class="hb-step-item">
+                <div class="hb-step-number">✔</div>
+                <div class="hb-step-content">
                     <h3>Improved sales follow-up</h3>
                     <p>Never miss a potential lead with automatic notifications and reminders in Zoho CRM. Engage with prospects on time, keep them engaged, and close more deals.</p>
                 </div>

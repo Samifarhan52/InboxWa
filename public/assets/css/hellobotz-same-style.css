@@ -5,16 +5,16 @@
    ============================================================ */
 
 :root {
-    --gg-green: #05603a;
-    --gg-green-dark: #034737;
-    --gg-ink: #101827;
-    --gg-muted: #5b6472;
+    --hb-green: #05603a;
+    --hb-green-dark: #034737;
+    --hb-ink: #101827;
+    --hb-muted: #5b6472;
 }
 
 html[data-theme="dark"],
 [data-theme="dark"] {
-    --gg-ink: #FFFFFF;
-    --gg-muted: #94A3B8;
+    --hb-ink: #FFFFFF;
+    --hb-muted: #94A3B8;
 }
 
 /* ---------- Headings & paragraph ---------- */
@@ -24,7 +24,7 @@ h1 {
     font-weight: 700;
     letter-spacing: -0.02em;
     margin: 0 0 18px;
-    color: var(--gg-ink);
+    color: var(--hb-ink);
 }
 
 h2 {
@@ -33,7 +33,7 @@ h2 {
     font-weight: 700;
     letter-spacing: -0.01em;
     margin: 0 0 14px;
-    color: var(--gg-ink);
+    color: var(--hb-ink);
 }
 
 h3 {
@@ -41,13 +41,13 @@ h3 {
     line-height: 1.35;
     font-weight: 700;
     margin: 0 0 10px;
-    color: var(--gg-ink);
+    color: var(--hb-ink);
 }
 
 p {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--gg-muted);
+    color: var(--hb-muted);
     margin: 0 0 16px;
 }
 
@@ -88,13 +88,13 @@ p {
 }
 
 .btn-primary {
-    background: var(--gg-green-dark);
+    background: var(--hb-green-dark);
     color: #fff;
     border: none;
 }
 
 .btn-primary:hover {
-    background: var(--gg-green);
+    background: var(--hb-green);
 }
 
 .btn-outline {

@@ -4591,7 +4591,7 @@ html[data-theme="dark"] .bfsi-comparison-table,
 }
 
 /* ==========================================================================
-   GETGABS / FEATURE TEMPLATE COMPONENTS
+   HELLOBOTZ / FEATURE TEMPLATE COMPONENTS
    ========================================================================== */
 html[data-theme="dark"] .usecase-section,
 [data-theme="dark"] .usecase-section {
@@ -4806,54 +4806,54 @@ body.dark-theme .ws-icon,
 }
 
 /* --- GG SETUP & REASONS --- */
-html[data-theme="dark"] .gg-setup-section,
-body.dark-theme .gg-setup-section,
-[data-theme="dark"] .gg-setup-section {
+html[data-theme="dark"] .hb-setup-section,
+body.dark-theme .hb-setup-section,
+[data-theme="dark"] .hb-setup-section {
   background: #080c14 !important;
 }
 
-html[data-theme="dark"] .gg-setup-wrapper,
-body.dark-theme .gg-setup-wrapper,
-[data-theme="dark"] .gg-setup-wrapper {
+html[data-theme="dark"] .hb-setup-wrapper,
+body.dark-theme .hb-setup-wrapper,
+[data-theme="dark"] .hb-setup-wrapper {
   background: #111827 !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
 }
 
-html[data-theme="dark"] .gg-setup-title,
-body.dark-theme .gg-setup-title,
-[data-theme="dark"] .gg-setup-title {
+html[data-theme="dark"] .hb-setup-title,
+body.dark-theme .hb-setup-title,
+[data-theme="dark"] .hb-setup-title {
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .gg-step-item,
-body.dark-theme .gg-step-item,
-[data-theme="dark"] .gg-step-item {
+html[data-theme="dark"] .hb-step-item,
+body.dark-theme .hb-step-item,
+[data-theme="dark"] .hb-step-item {
   color: #cbd5e1 !important;
 }
 
-html[data-theme="dark"] .gg-step-item:hover,
-body.dark-theme .gg-step-item:hover,
-[data-theme="dark"] .gg-step-item:hover {
+html[data-theme="dark"] .hb-step-item:hover,
+body.dark-theme .hb-step-item:hover,
+[data-theme="dark"] .hb-step-item:hover {
   background: #1e293b !important;
 }
 
-html[data-theme="dark"] .gg-step-number,
-body.dark-theme .gg-step-number,
-[data-theme="dark"] .gg-step-number {
+html[data-theme="dark"] .hb-step-number,
+body.dark-theme .hb-step-number,
+[data-theme="dark"] .hb-step-number {
   background: rgba(16, 185, 129, 0.2) !important;
   color: #34d399 !important;
 }
 
-html[data-theme="dark"] .gg-step-content h3,
-body.dark-theme .gg-step-content h3,
-[data-theme="dark"] .gg-step-content h3 {
+html[data-theme="dark"] .hb-step-content h3,
+body.dark-theme .hb-step-content h3,
+[data-theme="dark"] .hb-step-content h3 {
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .gg-step-content p,
-body.dark-theme .gg-step-content p,
-[data-theme="dark"] .gg-step-content p {
+html[data-theme="dark"] .hb-step-content p,
+body.dark-theme .hb-step-content p,
+[data-theme="dark"] .hb-step-content p {
   color: #94a3b8 !important;
 }
 
@@ -5285,7 +5285,7 @@ body.dark-theme .loc-hero-media img,
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6)) !important;
 }
 
-/* --- GETGABS WHATSAPP BROADCASTING & BLUE TICK --- */
+/* --- HELLOBOTZ WHATSAPP BROADCASTING & BLUE TICK --- */
 html[data-theme="dark"] .why-whatsapp-section,
 body.dark-theme .why-whatsapp-section,
 [data-theme="dark"] .why-whatsapp-section {

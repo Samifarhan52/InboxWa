@@ -522,7 +522,7 @@
 }
 
 /* Key Highlights Box */
-.gg-highlights-box {
+.hb-takeaways-box {
   background: #f8fafc !important;
   border: 1.5px solid #e2e8f0 !important;
   border-radius: 14px !important;
@@ -530,7 +530,7 @@
   margin: 1.5rem 0 2.5rem !important;
 }
 
-.gg-highlights-title {
+.hb-takeaways-title {
   font-size: 18px !important;
   font-weight: 700 !important;
   color: #0F172A !important;
@@ -540,7 +540,7 @@
   gap: 8px !important;
 }
 
-.gg-highlights-list {
+.hb-takeaways-list {
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -549,7 +549,7 @@
   gap: 12px !important;
 }
 
-.gg-highlights-item {
+.hb-takeaways-item {
   display: flex !important;
   align-items: flex-start !important;
   gap: 11px !important;
@@ -558,25 +558,25 @@
   line-height: 1.6 !important;
 }
 
-.gg-highlights-icon {
+.hb-takeaways-icon {
   flex-shrink: 0 !important;
   margin-top: 2px !important;
   display: flex !important;
   align-items: center !important;
 }
 
-.gg-highlights-text {
+.hb-takeaways-text {
   font-size: 15px !important;
   color: #334155 !important;
   line-height: 1.65 !important;
 }
 
-.gg-highlights-text strong {
+.hb-takeaways-text strong {
   color: #0F172A !important;
   font-weight: 700 !important;
 }
 
-.gg-highlights-text a {
+.hb-takeaways-text a {
   color: #7C3AED !important;
   text-decoration: underline !important;
 }
@@ -894,3 +894,252 @@ body.dark-theme .custom-faq-accordion .faq-answer p {
   color: #cbd5e1 !important;
 }
 
+
+/* ==========================================================================
+   HelloBotz V2 Modern Blog Component Architecture
+   ========================================================================== */
+
+.hb-takeaways-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-left: 5px solid #25D366 !important;
+  border-radius: 14px !important;
+  padding: 24px 28px !important;
+  margin: 2rem 0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+
+html[data-theme="dark"] .hb-takeaways-box,
+body.dark-theme .hb-takeaways-box {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-left-color: #25D366 !important;
+}
+
+.hb-takeaways-title {
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  margin: 0 0 16px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+html[data-theme="dark"] .hb-takeaways-title,
+body.dark-theme .hb-takeaways-title {
+  color: #FFFFFF !important;
+}
+
+.hb-takeaways-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.hb-takeaways-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.6 !important;
+}
+
+.hb-takeaways-icon {
+  flex-shrink: 0 !important;
+  margin-top: 3px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hb-takeaways-text {
+  font-size: 15.5px !important;
+  color: #334155 !important;
+  line-height: 1.65 !important;
+}
+
+html[data-theme="dark"] .hb-takeaways-text,
+body.dark-theme .hb-takeaways-text {
+  color: #CBD5E1 !important;
+}
+
+/* In-Article Diagram Wrapper */
+.hb-diagram-wrapper {
+  margin: 2.5rem 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: #090D16 !important;
+  border: 1px solid #1E293B !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.hb-diagram-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.hb-diagram-caption {
+  padding: 12px 20px !important;
+  background: #0F172A !important;
+  border-top: 1px solid #1E293B !important;
+  font-size: 13px !important;
+  color: #94A3B8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Pro Tip Callout */
+.hb-pro-tip-box {
+  background: #ECFDF5 !important;
+  border: 1px solid #A7F3D0 !important;
+  border-left: 4px solid #10B981 !important;
+  border-radius: 12px !important;
+  padding: 20px 24px !important;
+  margin: 2rem 0 !important;
+}
+
+html[data-theme="dark"] .hb-pro-tip-box,
+body.dark-theme .hb-pro-tip-box {
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+.hb-pro-tip-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #065F46 !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+html[data-theme="dark"] .hb-pro-tip-title,
+body.dark-theme .hb-pro-tip-title {
+  color: #34D399 !important;
+}
+
+.hb-pro-tip-text {
+  font-size: 14.5px !important;
+  color: #047857 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
+
+html[data-theme="dark"] .hb-pro-tip-text,
+body.dark-theme .hb-pro-tip-text {
+  color: #A7F3D0 !important;
+}
+
+/* Author Bio Card */
+.hb-author-bio-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  padding: 22px 26px !important;
+  margin: 3rem 0 2rem !important;
+}
+
+html[data-theme="dark"] .hb-author-bio-card,
+body.dark-theme .hb-author-bio-card {
+  background: #0F172A !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.hb-author-avatar-lg {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #25D366, #059669) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25) !important;
+}
+
+.hb-author-details h4 {
+  margin: 0 0 4px !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+}
+
+html[data-theme="dark"] .hb-author-details h4,
+body.dark-theme .hb-author-details h4 {
+  color: #FFFFFF !important;
+}
+
+.hb-author-details p {
+  margin: 0 !important;
+  font-size: 13.5px !important;
+  color: #64748B !important;
+  line-height: 1.5 !important;
+}
+
+html[data-theme="dark"] .hb-author-details p,
+body.dark-theme .hb-author-details p {
+  color: #94A3B8 !important;
+}
+
+/* High Converting CTA Banner */
+.hb-blog-cta-banner {
+  background: linear-gradient(135deg, #064E3B 0%, #0F172A 100%) !important;
+  border-radius: 16px !important;
+  padding: 36px 32px !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  margin: 3rem 0 2rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 36px rgba(6, 78, 59, 0.2) !important;
+}
+
+.hb-blog-cta-banner h3 {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  margin: 0 0 12px !important;
+}
+
+.hb-blog-cta-banner p {
+  font-size: 15.5px !important;
+  color: #A7F3D0 !important;
+  max-width: 620px !important;
+  margin: 0 auto 24px !important;
+  line-height: 1.6 !important;
+}
+
+.hb-blog-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #25D366 !important;
+  color: #064E3B !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  padding: 14px 28px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.hb-blog-cta-btn:hover {
+  transform: translateY(-2px) !important;
+  background: #22c55e !important;
+  color: #064E3B !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5) !important;
+}

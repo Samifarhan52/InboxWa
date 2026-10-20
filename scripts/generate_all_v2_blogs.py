@@ -1,0 +1,246 @@
+import os
+import json
+import html
+
+# Palette configurations
+PALETTES = [
+    {"accent": "#25D366", "sec": "#06B6D4", "cat_bg": "#064E3B", "text_acc": "#25D366"}, # Emerald/Cyan
+    {"accent": "#38BDF8", "sec": "#6366F1", "cat_bg": "#0C4A6E", "text_acc": "#38BDF8"}, # Sky/Indigo
+    {"accent": "#10B981", "sec": "#3B82F6", "cat_bg": "#064E3B", "text_acc": "#10B981"}, # Mint/Blue
+    {"accent": "#A855F7", "sec": "#EC4899", "cat_bg": "#581C87", "text_acc": "#A855F7"}, # Purple/Pink
+    {"accent": "#F59E0B", "sec": "#EF4444", "cat_bg": "#78350F", "text_acc": "#F59E0B"}, # Amber/Red
+    {"accent": "#14B8A6", "sec": "#8B5CF6", "cat_bg": "#134E4A", "text_acc": "#14B8A6"}, # Teal/Violet
+]
+
+def make_hero_svg(path, category, title, metric, palette):
+    acc = palette["accent"]
+    sec = palette["sec"]
+    # Break title into two lines if long
+    words = title.split()
+    mid = len(words) // 2
+    line1 = " ".join(words[:mid])
+    line2 = " ".join(words[mid:])
+    if len(line1) > 34:
+        # better split
+        line1 = " ".join(words[:4])
+        line2 = " ".join(words[4:])
+
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080E1A" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#05181E" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="80%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="{acc}" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="{acc}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="20%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="{sec}" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="{sec}" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{acc}" />
+      <stop offset="100%" stop-color="{sec}" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#glow1)" />
+  <rect width="1200" height="630" fill="url(#glow2)" />
+
+  <!-- Subtle Tech Grid Lines -->
+  <g opacity="0.06" stroke="#94A3B8" stroke-width="1">
+    <line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="240" y1="0" x2="240" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" />
+  </g>
+
+  <!-- Top Header Nav -->
+  <g transform="translate(80, 65)">
+    <rect width="40" height="40" rx="10" fill="url(#accentGrad)" />
+    <path d="M12 20 C12 15 15.5 12 20 12 C24.5 12 28 15 28 20 C28 25 24.5 28 20 28 C18.5 28 17 27.5 15.5 26.5 L12 28 L13 25 C12.3 23.5 12 22 12 20 Z" fill="#FFFFFF" />
+    <text x="52" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0.05em">HELLOBOTZ <tspan fill="{acc}">INSIGHTS</tspan></text>
+    
+    <rect x="830" y="2" width="210" height="34" rx="17" fill="#1E293B" stroke="{acc}" stroke-width="1.5" />
+    <text x="935" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="{acc}" text-anchor="middle" letter-spacing="0.08em">{html.escape(category.upper())}</text>
+  </g>
+
+  <!-- Main Left Content -->
+  <g transform="translate(80, 160)">
+    <rect x="0" y="0" width="56" height="5" rx="2.5" fill="url(#accentGrad)" />
+    
+    <text x="0" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#FFFFFF" line-height="1.2">
+      {html.escape(line1)}
+    </text>
+    <text x="0" y="108" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#CBD5E1" line-height="1.2">
+      {html.escape(line2)}
+    </text>
+
+    <!-- Key Metrics Pill -->
+    <g transform="translate(0, 155)">
+      <rect width="470" height="42" rx="21" fill="#0F172A" stroke="#334155" stroke-width="1" />
+      <circle cx="22" cy="21" r="7" fill="{acc}" />
+      <text x="40" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="600" fill="#E2E8F0">{html.escape(metric)}</text>
+    </g>
+
+    <!-- Author & Verification Badges -->
+    <g transform="translate(0, 235)">
+      <circle cx="18" cy="18" r="18" fill="#1E293B" stroke="{acc}" stroke-width="1.5" />
+      <text x="18" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">F</text>
+      <text x="46" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">By Faris</text>
+      <text x="46" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#94A3B8">Official HelloBotz Technical Specialist • 2026 Edition</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Card (Interactive UI simulation) -->
+  <g transform="translate(690, 155)" filter="url(#dropShadow)">
+    <rect width="430" height="395" rx="20" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+    
+    <rect width="430" height="42" rx="20" fill="#1E293B" opacity="0.9" />
+    <circle cx="25" cy="21" r="6" fill="#EF4444" />
+    <circle cx="45" cy="21" r="6" fill="#F59E0B" />
+    <circle cx="65" cy="21" r="6" fill="#10B981" />
+    <text x="215" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">HelloBotz Enterprise Cloud v20</text>
+
+    <!-- Inbound Chat Message -->
+    <g transform="translate(25, 70)">
+      <rect width="320" height="65" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1" />
+      <text x="16" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#94A3B8">Customer • Inbound Request</text>
+      <text x="16" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="500" fill="#FFFFFF">Looking to automate our WhatsApp workflows.</text>
+    </g>
+
+    <!-- Outbound HelloBotz Instant Automation -->
+    <g transform="translate(85, 155)">
+      <rect width="320" height="100" rx="14" fill="#064E3B" stroke="{acc}" stroke-width="1.2" />
+      <text x="16" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="{acc}">HelloBotz AI • Verified Cloud Engine</text>
+      <text x="16" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">Workflow triggered! Instant webhook active.</text>
+      <rect x="16" y="62" width="140" height="24" rx="6" fill="{acc}" />
+      <text x="86" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#064E3B" text-anchor="middle">VIEW LIVE ANALYTICS</text>
+    </g>
+
+    <!-- Metrics Bar -->
+    <g transform="translate(25, 285)">
+      <rect width="380" height="85" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+      
+      <text x="30" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">DELIVERY SPEED</text>
+      <text x="30" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="{acc}">&lt; 1.2s</text>
+
+      <text x="155" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">OPEN RATE</text>
+      <text x="155" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#38BDF8">98.2%</text>
+
+      <text x="275" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">AUTO RESOLVE</text>
+      <text x="275" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="{sec}">84.5%</text>
+    </g>
+  </g>
+</svg>'''
+    with open(path, 'w') as f:
+        f.write(svg)
+
+def make_diagram_svg(path, title, step1, step2, step3, step4, metric_pill, palette):
+    acc = palette["accent"]
+    sec = palette["sec"]
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460">
+  <defs>
+    <linearGradient id="diagBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="cardGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1000" height="460" rx="16" fill="url(#diagBg)" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Diagram Header -->
+  <g transform="translate(40, 36)">
+    <rect width="165" height="26" rx="13" fill="#1E293B" stroke="{acc}" stroke-width="1" />
+    <text x="82" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="{acc}" text-anchor="middle" letter-spacing="0.06em">WORKFLOW PIPELINE</text>
+    <text x="0" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">{html.escape(title)}</text>
+    <rect x="650" y="10" width="270" height="36" rx="18" fill="#064E3B" stroke="{acc}" stroke-width="1" />
+    <text x="785" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">⚡ {html.escape(metric_pill)}</text>
+  </g>
+
+  <!-- Flow Line Connecting Steps -->
+  <line x1="140" y1="230" x2="860" y2="230" stroke="#334155" stroke-width="3" stroke-dasharray="6 6" />
+  <line x1="140" y1="230" x2="620" y2="230" stroke="{acc}" stroke-width="3" />
+
+  <!-- Step 1 -->
+  <g transform="translate(40, 135)" filter="url(#cardGlow)">
+    <rect width="200" height="185" rx="14" fill="url(#stepGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="100" cy="45" r="22" fill="#1E293B" stroke="#64748B" stroke-width="1.5" />
+    <text x="100" y="52" font-family="sans-serif" font-size="16" font-weight="800" fill="#94A3B8" text-anchor="middle">1</text>
+    <text x="100" y="95" font-family="sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">{html.escape(step1['title'])}</text>
+    <text x="100" y="120" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step1['desc1'])}</text>
+    <text x="100" y="138" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step1['desc2'])}</text>
+    <rect x="35" y="154" width="130" height="18" rx="9" fill="#0F172A" />
+    <text x="100" y="167" font-family="sans-serif" font-size="10" font-weight="700" fill="#64748B" text-anchor="middle">{html.escape(step1['badge'])}</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(280, 135)" filter="url(#cardGlow)">
+    <rect width="200" height="185" rx="14" fill="url(#stepGrad)" stroke="{acc}" stroke-width="1.5" />
+    <circle cx="100" cy="45" r="22" fill="#064E3B" stroke="{acc}" stroke-width="2" />
+    <text x="100" y="52" font-family="sans-serif" font-size="16" font-weight="800" fill="{acc}" text-anchor="middle">2</text>
+    <text x="100" y="95" font-family="sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">{html.escape(step2['title'])}</text>
+    <text x="100" y="120" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step2['desc1'])}</text>
+    <text x="100" y="138" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step2['desc2'])}</text>
+    <rect x="35" y="154" width="130" height="18" rx="9" fill="#064E3B" />
+    <text x="100" y="167" font-family="sans-serif" font-size="10" font-weight="700" fill="{acc}" text-anchor="middle">{html.escape(step2['badge'])}</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(520, 135)" filter="url(#cardGlow)">
+    <rect width="200" height="185" rx="14" fill="url(#stepGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="100" cy="45" r="22" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5" />
+    <text x="100" y="52" font-family="sans-serif" font-size="16" font-weight="800" fill="#38BDF8" text-anchor="middle">3</text>
+    <text x="100" y="95" font-family="sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">{html.escape(step3['title'])}</text>
+    <text x="100" y="120" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step3['desc1'])}</text>
+    <text x="100" y="138" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step3['desc2'])}</text>
+    <rect x="35" y="154" width="130" height="18" rx="9" fill="#0F172A" />
+    <text x="100" y="167" font-family="sans-serif" font-size="10" font-weight="700" fill="#38BDF8" text-anchor="middle">{html.escape(step3['badge'])}</text>
+  </g>
+
+  <!-- Step 4 -->
+  <g transform="translate(760, 135)" filter="url(#cardGlow)">
+    <rect width="200" height="185" rx="14" fill="url(#stepGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="100" cy="45" r="22" fill="#1E293B" stroke="{sec}" stroke-width="1.5" />
+    <text x="100" y="52" font-family="sans-serif" font-size="16" font-weight="800" fill="{sec}" text-anchor="middle">4</text>
+    <text x="100" y="95" font-family="sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">{html.escape(step4['title'])}</text>
+    <text x="100" y="120" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step4['desc1'])}</text>
+    <text x="100" y="138" font-family="sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">{html.escape(step4['desc2'])}</text>
+    <rect x="35" y="154" width="130" height="18" rx="9" fill="#0F172A" />
+    <text x="100" y="167" font-family="sans-serif" font-size="10" font-weight="700" fill="{sec}" text-anchor="middle">{html.escape(step4['badge'])}</text>
+  </g>
+
+  <!-- Bottom Guaranteed Stats Banner -->
+  <g transform="translate(40, 360)">
+    <rect width="920" height="60" rx="12" fill="#0B132B" stroke="#1E293B" stroke-width="1" />
+    <text x="30" y="35" font-family="sans-serif" font-size="12.5" font-weight="600" fill="#94A3B8">ENTERPRISE SPECIFICATION</text>
+    <text x="210" y="35" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">⚡ Sub-Second Processing</text>
+    <text x="480" y="35" font-family="sans-serif" font-size="13" font-weight="700" fill="{acc}">🔒 Direct Meta Encryption</text>
+    <text x="740" y="35" font-family="sans-serif" font-size="13" font-weight="700" fill="#38BDF8">📈 99.99% Cloud Uptime</text>
+  </g>
+</svg>'''
+    with open(path, 'w') as f:
+        f.write(svg)
+
+print('SVG builder helper ready!')
