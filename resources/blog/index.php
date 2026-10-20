@@ -33,7 +33,7 @@ include __DIR__ . "/../../includes/header.php";
 <!-- Tag Filters -->
 <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
   <div class="tag-filters">
-    <button type="button" class="tag-filter-btn active" data-filter="all">All Articles (13)</button>
+    <button type="button" class="tag-filter-btn active" data-filter="all">All Articles (22)</button>
     <button type="button" class="tag-filter-btn" data-filter="lead-generation">Lead Generation</button>
     <button type="button" class="tag-filter-btn" data-filter="chatbots">Chatbots</button>
     <button type="button" class="tag-filter-btn" data-filter="whatsapp-api">WhatsApp API</button>
@@ -55,6 +55,187 @@ include __DIR__ . "/../../includes/header.php";
 <section class="container" style="max-width: 1200px; margin: 0 auto 60px; padding: 0 20px;">
   <div id="blog-results">
     <div class="blog-grid" id="blog-grid">
+
+      <div class="card blog-card" data-category="chatbots" data-title="whatsapp vtu bot: a complete guide to setup and automation">
+        <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-vtu-bot.webp?v=hb20261020" alt="WhatsApp VTU Bot: A Complete Guide to Setup and Automation" title="WhatsApp VTU Bot: A Complete Guide to Setup and Automation" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-card-title">
+          <h2>WhatsApp VTU Bot: A Complete Guide to Setup and Automation</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn how to set up a WhatsApp VTU bot to automate airtime sales, data bundles, utility bills, payments, and customer support with ease using HelloBotz.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-vtu-bot/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="e-commerce" data-title="best woocommerce whatsapp order plugins in 2026">
+        <a href="/resources/blog/woocommerce-whatsapp-order-plugins/" class="blog-card-thumb">
+          <img src="/assets/images/blog/woocommerce-whatsapp-order-plugins.webp?v=hb20261020" alt="Best WooCommerce WhatsApp Order Plugins in 2026" title="Best WooCommerce WhatsApp Order Plugins in 2026" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/woocommerce-whatsapp-order-plugins/" class="blog-card-title">
+          <h2>Best WooCommerce WhatsApp Order Plugins in 2026</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 20, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Compare the best WooCommerce WhatsApp order plugins by features, pricing, and automation to streamline store operations and boost order fulfillment.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/woocommerce-whatsapp-order-plugins/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="e-commerce" data-title="whatsapp abandoned cart recovery for shopify (2026 guide)">
+        <a href="/resources/blog/whatsapp-abandoned-cart-recovery-for-shopify/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-abandoned-cart-recovery-for-shopify.webp?v=hb20261020" alt="WhatsApp Abandoned Cart Recovery for Shopify (2026 Guide)" title="WhatsApp Abandoned Cart Recovery for Shopify (2026 Guide)" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-abandoned-cart-recovery-for-shopify/" class="blog-card-title">
+          <h2>WhatsApp Abandoned Cart Recovery for Shopify (2026 Guide)</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 19, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Recover lost Shopify sales with WhatsApp abandoned cart recovery. Automate reminders, personalize messages, and bring shoppers back to checkout with HelloBotz.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-abandoned-cart-recovery-for-shopify/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="whatsapp-api" data-title="start whatsapp api business with a white-label partner">
+        <a href="/resources/blog/start-whatsapp-api-business/" class="blog-card-thumb">
+          <img src="/assets/images/blog/start-whatsapp-api-business.webp?v=hb20261020" alt="Start WhatsApp API Business with a White-Label Partner" title="Start WhatsApp API Business with a White-Label Partner" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/start-whatsapp-api-business/" class="blog-card-title">
+          <h2>Start WhatsApp API Business with a White-Label Partner</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 19, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Start your own WhatsApp API business with a white-label partner program. Learn setup steps, custom branding, pricing models, and recurring revenue with HelloBotz.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/start-whatsapp-api-business/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="marketing-tools" data-title="instagram statistics 2026: 35+ facts every marketer should know">
+        <a href="/resources/blog/instagram-statistics/" class="blog-card-thumb">
+          <img src="/assets/images/blog/instagram-statistics.webp?v=hb20261020" alt="Instagram Statistics 2026: 35+ Facts Every Marketer Should Know" title="Instagram Statistics 2026: 35+ Facts Every Marketer Should Know" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/instagram-statistics/" class="blog-card-title">
+          <h2>Instagram Statistics 2026: 35+ Facts Every Marketer Should Know</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 19, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Explore 35+ essential Instagram statistics and trends for 2026 covering DM automation, Reels engagement, user demographics, and social commerce growth.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/instagram-statistics/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="whatsapp-api" data-title="whatsapp api to send messages – a complete guide 2026">
+        <a href="/resources/blog/whatsapp-api-to-send-messages/" class="blog-card-thumb">
+          <img src="/assets/images/blog/whatsapp-api-to-send-messages.webp?v=hb20261020" alt="WhatsApp API to Send Messages – A Complete Guide 2026" title="WhatsApp API to Send Messages – A Complete Guide 2026" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/whatsapp-api-to-send-messages/" class="blog-card-title">
+          <h2>WhatsApp API to Send Messages – A Complete Guide 2026</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 17, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn how to send WhatsApp API messages using Meta Cloud API and HelloBotz, with step-by-step setup, automation workflows, templates, and pricing.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/whatsapp-api-to-send-messages/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="broadcasting" data-title="how to send bulk messages on whatsapp without getting banned">
+        <a href="/resources/blog/how-to-send-bulk-messages-on-whatsapp/" class="blog-card-thumb">
+          <img src="/assets/images/blog/how-to-send-bulk-messages-on-whatsapp.webp?v=hb20261020" alt="How to Send Bulk Messages on WhatsApp Without Getting Banned" title="How to Send Bulk Messages on WhatsApp Without Getting Banned" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/how-to-send-bulk-messages-on-whatsapp/" class="blog-card-title">
+          <h2>How to Send Bulk Messages on WhatsApp Without Getting Banned</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 17, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn how to send high-volume broadcast messages on WhatsApp safely without getting banned or blocked using official Meta WhatsApp Business API and HelloBotz.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/how-to-send-bulk-messages-on-whatsapp/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="lead-generation" data-title="click-to-whatsapp on google ads: setup, cost & best practices">
+        <a href="/resources/blog/click-to-whatsapp-on-google-ads/" class="blog-card-thumb">
+          <img src="/assets/images/blog/click-to-whatsapp-on-google-ads.webp?v=hb20261020" alt="Click-to-WhatsApp on Google Ads: Setup, Cost & Best Practices" title="Click-to-WhatsApp on Google Ads: Setup, Cost & Best Practices" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/click-to-whatsapp-on-google-ads/" class="blog-card-title">
+          <h2>Click-to-WhatsApp on Google Ads: Setup, Cost & Best Practices</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 16, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Setting up Click-to-WhatsApp on Google Ads connects high-intent searchers directly on WhatsApp. Discover step-by-step setup, cost calculation, and optimization tips.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/click-to-whatsapp-on-google-ads/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="card blog-card" data-category="e-commerce" data-title="5+ strategies to reduce rto with whatsapp api">
+        <a href="/resources/blog/reduce-rto-with-whatsapp-api/" class="blog-card-thumb">
+          <img src="/assets/images/blog/reduce-rto-with-whatsapp-api.webp?v=hb20261020" alt="5+ Strategies to Reduce RTO with WhatsApp API" title="5+ Strategies to Reduce RTO with WhatsApp API" loading="lazy" width="600" height="340">
+        </a>
+        <a href="/resources/blog/reduce-rto-with-whatsapp-api/" class="blog-card-title">
+          <h2>5+ Strategies to Reduce RTO with WhatsApp API</h2>
+        </a>
+        <div class="blog-card-meta">
+          <span>Oct 16, 2026</span> • <span class="meta-author">Faris</span>
+        </div>
+        <p class="blog-card-excerpt">
+          Learn how to reduce Return to Origin (RTO) using WhatsApp API with COD confirmations, delivery reminders, address checks, and NDR recovery workflows.
+        </p>
+        <div class="blog-card-action">
+          <a href="/resources/blog/reduce-rto-with-whatsapp-api/" class="blog-read-more-btn">
+            Read More &rarr;
+          </a>
+        </div>
+      </div>
+
 
       <div class="card blog-card" data-category="lead-generation" data-title="whatsapp lead generation - best strategies & tools 2026">
         <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-thumb">
@@ -324,7 +505,7 @@ include __DIR__ . "/../../includes/header.php";
       <h3 style="font-size: 1.35rem; color: #1F2937; margin-bottom: 8px;">No matching articles found</h3>
       <p style="color: #64748B; margin-bottom: 16px;">Try searching for <strong>WhatsApp</strong>, <strong>Chatbots</strong>, <strong>CRM</strong>, <strong>API</strong>, or <strong>Shopify</strong>.</p>
       <button type="button" id="reset-search-btn" class="btn btn-outline" style="padding: 8px 22px; border-radius: 9999px; border: 1.5px solid #7C3AED; color: #7C3AED; font-weight: 700; cursor: pointer; background: #ffffff;">
-        View All 13 Articles
+        View All 22 Articles
       </button>
     </div>
   </div>

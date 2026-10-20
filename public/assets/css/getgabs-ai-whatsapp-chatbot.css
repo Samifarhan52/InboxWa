@@ -1343,14 +1343,14 @@ button.toggle-btn {
 }
 
 /* ============ Why Businesses Choose HelloBotz ============ */
-.why-getgabs,
+.why-hellobotz,
 .why-hellobots,
 .why-HelloBotz {
     padding: 60px 0;
     background: #ffffff;
 }
 
-.why-getgabs .wg-grid,
+.why-hellobotz .wg-grid,
 .why-hellobots .wg-grid,
 .why-HelloBotz .wg-grid {
     display: grid;
@@ -1359,7 +1359,7 @@ button.toggle-btn {
     margin-top: 40px;
 }
 
-.why-getgabs .wg-card,
+.why-hellobotz .wg-card,
 .why-hellobots .wg-card,
 .why-HelloBotz .wg-card {
     border-radius: 20px;
@@ -1372,35 +1372,35 @@ button.toggle-btn {
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.why-getgabs .wg-card--1,
+.why-hellobotz .wg-card--1,
 .why-hellobots .wg-card--1,
 .why-HelloBotz .wg-card--1 {
     background: #034737;
 }
 
-.why-getgabs .wg-card--2,
+.why-hellobotz .wg-card--2,
 .why-hellobots .wg-card--2,
 .why-HelloBotz .wg-card--2 {
     background: #2e3a8c;
 }
 
-.why-getgabs .wg-card--3,
+.why-hellobotz .wg-card--3,
 .why-hellobots .wg-card--3,
 .why-HelloBotz .wg-card--3 {
     background: #5b3a5f;
 }
 
-.why-getgabs .wg-card:hover,
+.why-hellobotz .wg-card:hover,
 .why-hellobots .wg-card:hover,
 .why-HelloBotz .wg-card:hover,
-.why-getgabs .wg-card:focus-within,
+.why-hellobotz .wg-card:focus-within,
 .why-hellobots .wg-card:focus-within,
 .why-HelloBotz .wg-card:focus-within {
     transform: translateY(-6px);
     box-shadow: 0 18px 36px rgba(0, 0, 0, .22);
 }
 
-.why-getgabs .wg-card h3,
+.why-hellobotz .wg-card h3,
 .why-hellobots .wg-card h3,
 .why-HelloBotz .wg-card h3 {
     font-size: 24px;
@@ -1410,7 +1410,7 @@ button.toggle-btn {
     margin: 0;
 }
 
-.why-getgabs .wg-points,
+.why-hellobotz .wg-points,
 .why-hellobots .wg-points,
 .why-HelloBotz .wg-points {
     list-style: none;
@@ -1421,7 +1421,7 @@ button.toggle-btn {
     gap: 14px;
 }
 
-.why-getgabs .wg-points li,
+.why-hellobotz .wg-points li,
 .why-hellobots .wg-points li,
 .why-HelloBotz .wg-points li {
     display: flex;
@@ -1433,7 +1433,7 @@ button.toggle-btn {
     list-style: none;
 }
 
-.why-getgabs .wg-check,
+.why-hellobotz .wg-check,
 .why-hellobots .wg-check,
 .why-HelloBotz .wg-check {
     flex-shrink: 0;
@@ -1442,13 +1442,13 @@ button.toggle-btn {
 }
 
 @media (max-width: 991px) {
-    .why-getgabs .wg-grid,
+    .why-hellobotz .wg-grid,
     .why-hellobots .wg-grid,
     .why-HelloBotz .wg-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    .why-getgabs .wg-card h3,
+    .why-hellobotz .wg-card h3,
     .why-hellobots .wg-card h3,
     .why-HelloBotz .wg-card h3 {
         font-size: 22px;
@@ -1456,25 +1456,25 @@ button.toggle-btn {
 }
 
 @media (max-width: 767px) {
-    .why-getgabs .wg-card,
+    .why-hellobotz .wg-card,
     .why-hellobots .wg-card,
     .why-HelloBotz .wg-card {
         padding: 26px 20px;
     }
-    .why-getgabs .wg-card h3,
+    .why-hellobotz .wg-card h3,
     .why-hellobots .wg-card h3,
     .why-HelloBotz .wg-card h3 {
         font-size: 20px;
     }
-    .why-getgabs .wg-points,
+    .why-hellobotz .wg-points,
     .why-hellobots .wg-points,
     .why-HelloBotz .wg-points {
         margin-top: 18px;
     }
-    .why-getgabs .wg-card:hover,
+    .why-hellobotz .wg-card:hover,
     .why-hellobots .wg-card:hover,
     .why-HelloBotz .wg-card:hover,
-    .why-getgabs .wg-card:focus-within,
+    .why-hellobotz .wg-card:focus-within,
     .why-hellobots .wg-card:focus-within,
     .why-HelloBotz .wg-card:focus-within {
         transform: none;
@@ -1482,12 +1482,12 @@ button.toggle-btn {
 }
 
 @media (max-width: 600px) {
-    .why-getgabs,
+    .why-hellobotz,
     .why-hellobots,
     .why-HelloBotz {
         padding: 40px 0;
     }
-    .why-getgabs .wg-grid,
+    .why-hellobotz .wg-grid,
     .why-hellobots .wg-grid,
     .why-HelloBotz .wg-grid {
         grid-template-columns: 1fr;

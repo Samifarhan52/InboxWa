@@ -1726,7 +1726,7 @@ include __DIR__ . '/../../includes/header.php';
                                 <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="GIVA">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/07/GIVA.jpg" alt="GIVA"
+                                          <img src="/assets/images/clients/GIVA.jpg" alt="GIVA"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       GIVA                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1741,7 +1741,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="MultiFit">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/multifit.webp" alt="MultiFit"
+                                          <img src="/assets/images/clients/multifit.webp" alt="MultiFit"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       MultiFit                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -1756,7 +1756,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="quelton">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/quelton.webp" alt="quelton"
+                                          <img src="/assets/images/clients/quelton.webp" alt="quelton"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       quelton                                              <img src="https://flagcdn.com/w40/es.png" alt="Spain"
@@ -1771,7 +1771,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Ravenwood">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/ravenwood.webp" alt="Ravenwood"
+                                          <img src="/assets/images/clients/ravenwood.webp" alt="Ravenwood"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Ravenwood                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -1786,7 +1786,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="University of Southampton">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/university-of-southampton.png" alt="University of Southampton"
+                                          <img src="/assets/images/clients/university-of-southampton.png" alt="University of Southampton"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       University of Southampton                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
@@ -1801,7 +1801,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="SML Mahindra">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/SML-Mahindra.png" alt="SML Mahindra"
+                                          <img src="/assets/images/clients/SML-Mahindra.png" alt="SML Mahindra"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       SML Mahindra                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1816,7 +1816,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Think IAS">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Think-IAS.png" alt="Think IAS"
+                                          <img src="/assets/images/clients/Think-IAS.png" alt="Think IAS"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Think IAS                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1831,7 +1831,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Ayurvedic Village">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/ayurvedicvillage.png" alt="Ayurvedic Village"
+                                          <img src="/assets/images/clients/ayurvedicvillage.png" alt="Ayurvedic Village"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Ayurvedic Village                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1846,7 +1846,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="dobbe.ai">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/dobbe.ai_-1.png" alt="dobbe.ai"
+                                          <img src="/assets/images/clients/dobbe.ai_-1.png" alt="dobbe.ai"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       dobbe.ai                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1861,7 +1861,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Vegetrainian">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/vegetrainian.png" alt="Vegetrainian"
+                                          <img src="/assets/images/clients/vegetrainian.png" alt="Vegetrainian"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Vegetrainian                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1876,7 +1876,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="HexaCoder">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/hexacoder.webp" alt="HexaCoder"
+                                          <img src="/assets/images/clients/hexacoder.webp" alt="HexaCoder"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       HexaCoder                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -1891,7 +1891,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Charity Commission">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/Charity-Commission.webp" alt="Charity Commission"
+                                          <img src="/assets/images/clients/Charity-Commission.webp" alt="Charity Commission"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Charity Commission                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
@@ -1906,7 +1906,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Blissify">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/blissify.webp" alt="Blissify"
+                                          <img src="/assets/images/clients/blissify.webp" alt="Blissify"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Blissify                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -1921,7 +1921,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Sansacosmetics">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sansacosmetics.webp" alt="Sansacosmetics"
+                                          <img src="/assets/images/clients/sansacosmetics.webp" alt="Sansacosmetics"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Sansacosmetics                                              <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela"
@@ -1936,7 +1936,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Shine&#038;Smooth">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shinesmooth.webp" alt="Shine&#038;Smooth"
+                                          <img src="/assets/images/clients/shinesmooth.webp" alt="Shine&#038;Smooth"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Shine&#038;Smooth                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -1951,7 +1951,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="shop.teamsg">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shop.teamsg.webp" alt="shop.teamsg"
+                                          <img src="/assets/images/clients/shop.teamsg.webp" alt="shop.teamsg"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       shop.teamsg                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -1966,7 +1966,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="SOStravel">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sostravel.webp" alt="SOStravel"
+                                          <img src="/assets/images/clients/sostravel.webp" alt="SOStravel"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       SOStravel                                              <img src="https://flagcdn.com/w40/it.png" alt="Italy"
@@ -1981,7 +1981,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Three Monkey">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/threemonkey.webp" alt="Three Monkey"
+                                          <img src="/assets/images/clients/threemonkey.webp" alt="Three Monkey"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Three Monkey                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -1996,7 +1996,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Totpro">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/totpro.webp" alt="Totpro"
+                                          <img src="/assets/images/clients/totpro.webp" alt="Totpro"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Totpro                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2011,7 +2011,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="TrendyBay">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/TrendyBay.webp" alt="TrendyBay"
+                                          <img src="/assets/images/clients/TrendyBay.webp" alt="TrendyBay"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       TrendyBay                                              <img src="https://flagcdn.com/w40/gn.png" alt="Guinea"
@@ -2026,7 +2026,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="tumbledry">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/tumbledry.webp" alt="tumbledry"
+                                          <img src="/assets/images/clients/tumbledry.webp" alt="tumbledry"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       tumbledry                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2041,7 +2041,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Vivekananda Global University">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/vgu.webp" alt="Vivekananda Global University"
+                                          <img src="/assets/images/clients/vgu.webp" alt="Vivekananda Global University"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Vivekananda Global University                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2056,7 +2056,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Tumble Dry">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/tumbledry.png" alt="Tumble Dry"
+                                          <img src="/assets/images/clients/tumbledry.png" alt="Tumble Dry"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Tumble Dry                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2071,7 +2071,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="GIVA">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/07/GIVA.jpg" alt="GIVA"
+                                          <img src="/assets/images/clients/GIVA.jpg" alt="GIVA"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       GIVA                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2086,7 +2086,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="MultiFit">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/multifit.webp" alt="MultiFit"
+                                          <img src="/assets/images/clients/multifit.webp" alt="MultiFit"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       MultiFit                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2101,7 +2101,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="quelton">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/quelton.webp" alt="quelton"
+                                          <img src="/assets/images/clients/quelton.webp" alt="quelton"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       quelton                                              <img src="https://flagcdn.com/w40/es.png" alt="Spain"
@@ -2116,7 +2116,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Ravenwood">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/ravenwood.webp" alt="Ravenwood"
+                                          <img src="/assets/images/clients/ravenwood.webp" alt="Ravenwood"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Ravenwood                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2131,7 +2131,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="University of Southampton">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/university-of-southampton.png" alt="University of Southampton"
+                                          <img src="/assets/images/clients/university-of-southampton.png" alt="University of Southampton"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       University of Southampton                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
@@ -2146,7 +2146,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="SML Mahindra">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/SML-Mahindra.png" alt="SML Mahindra"
+                                          <img src="/assets/images/clients/SML-Mahindra.png" alt="SML Mahindra"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       SML Mahindra                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2161,7 +2161,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Think IAS">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Think-IAS.png" alt="Think IAS"
+                                          <img src="/assets/images/clients/Think-IAS.png" alt="Think IAS"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Think IAS                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2176,7 +2176,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Ayurvedic Village">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/ayurvedicvillage.png" alt="Ayurvedic Village"
+                                          <img src="/assets/images/clients/ayurvedicvillage.png" alt="Ayurvedic Village"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Ayurvedic Village                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2191,7 +2191,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="dobbe.ai">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/dobbe.ai_-1.png" alt="dobbe.ai"
+                                          <img src="/assets/images/clients/dobbe.ai_-1.png" alt="dobbe.ai"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       dobbe.ai                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2206,7 +2206,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Vegetrainian">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/vegetrainian.png" alt="Vegetrainian"
+                                          <img src="/assets/images/clients/vegetrainian.png" alt="Vegetrainian"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Vegetrainian                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2221,7 +2221,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="HexaCoder">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/hexacoder.webp" alt="HexaCoder"
+                                          <img src="/assets/images/clients/hexacoder.webp" alt="HexaCoder"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       HexaCoder                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2236,7 +2236,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Charity Commission">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/Charity-Commission.webp" alt="Charity Commission"
+                                          <img src="/assets/images/clients/Charity-Commission.webp" alt="Charity Commission"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Charity Commission                                              <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom"
@@ -2251,7 +2251,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Blissify">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/blissify.webp" alt="Blissify"
+                                          <img src="/assets/images/clients/blissify.webp" alt="Blissify"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Blissify                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2266,7 +2266,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Sansacosmetics">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sansacosmetics.webp" alt="Sansacosmetics"
+                                          <img src="/assets/images/clients/sansacosmetics.webp" alt="Sansacosmetics"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Sansacosmetics                                              <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela"
@@ -2281,7 +2281,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Shine&#038;Smooth">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shinesmooth.webp" alt="Shine&#038;Smooth"
+                                          <img src="/assets/images/clients/shinesmooth.webp" alt="Shine&#038;Smooth"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Shine&#038;Smooth                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2296,7 +2296,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="shop.teamsg">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/shop.teamsg.webp" alt="shop.teamsg"
+                                          <img src="/assets/images/clients/shop.teamsg.webp" alt="shop.teamsg"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       shop.teamsg                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2311,7 +2311,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="SOStravel">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/sostravel.webp" alt="SOStravel"
+                                          <img src="/assets/images/clients/sostravel.webp" alt="SOStravel"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       SOStravel                                              <img src="https://flagcdn.com/w40/it.png" alt="Italy"
@@ -2326,7 +2326,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Three Monkey">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/threemonkey.webp" alt="Three Monkey"
+                                          <img src="/assets/images/clients/threemonkey.webp" alt="Three Monkey"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Three Monkey                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2341,7 +2341,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Totpro">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/totpro.webp" alt="Totpro"
+                                          <img src="/assets/images/clients/totpro.webp" alt="Totpro"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Totpro                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2356,7 +2356,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="TrendyBay">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/TrendyBay.webp" alt="TrendyBay"
+                                          <img src="/assets/images/clients/TrendyBay.webp" alt="TrendyBay"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       TrendyBay                                              <img src="https://flagcdn.com/w40/gn.png" alt="Guinea"
@@ -2371,7 +2371,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="tumbledry">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/tumbledry.webp" alt="tumbledry"
+                                          <img src="/assets/images/clients/tumbledry.webp" alt="tumbledry"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       tumbledry                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2386,7 +2386,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Vivekananda Global University">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/06/vgu.webp" alt="Vivekananda Global University"
+                                          <img src="/assets/images/clients/vgu.webp" alt="Vivekananda Global University"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Vivekananda Global University                                              <img src="https://flagcdn.com/w40/in.png" alt="india"
@@ -2401,7 +2401,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Tumble Dry">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/tumbledry.png" alt="Tumble Dry"
+                                          <img src="/assets/images/clients/tumbledry.png" alt="Tumble Dry"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Tumble Dry                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2420,7 +2420,7 @@ include __DIR__ . '/../../includes/header.php';
                                 <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Salgar Tea">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/salgartea.png" alt="Salgar Tea"
+                                          <img src="/assets/images/clients/salgartea.png" alt="Salgar Tea"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Salgar Tea                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2435,7 +2435,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="FADE MMA &#038; Gym">
-                                          <img src="https://cdn.getgabs.com/newhomepage/fade-mma-and-gym.avif" alt="FADE MMA &#038; Gym"
+                                          <img src="/assets/images/clients/fade-mma-and-gym.avif" alt="FADE MMA &#038; Gym"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       FADE MMA &#038; Gym                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
@@ -2450,7 +2450,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="10 Hydrogen">
-                                          <img src="https://cdn.getgabs.com/newhomepage/10-hydrogen.avif" alt="10 Hydrogen"
+                                          <img src="/assets/images/clients/10-hydrogen.avif" alt="10 Hydrogen"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       10 Hydrogen                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
@@ -2465,7 +2465,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Davgrey">
-                                          <img src="https://cdn.getgabs.com/newhomepage/davgrey.avif" alt="Davgrey"
+                                          <img src="/assets/images/clients/davgrey.avif" alt="Davgrey"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Davgrey                                              <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan"
@@ -2480,7 +2480,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Voice AI Agency">
-                                          <img src="https://cdn.getgabs.com/newhomepage/voice-aI-agency.avif" alt="Voice AI Agency"
+                                          <img src="/assets/images/clients/voice-aI-agency.avif" alt="Voice AI Agency"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Voice AI Agency                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
@@ -2495,7 +2495,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Ollic ict hub">
-                                          <img src="https://cdn.getgabs.com/newhomepage/ollic-ict-hub.avif" alt="Ollic ict hub"
+                                          <img src="/assets/images/clients/ollic-ict-hub.avif" alt="Ollic ict hub"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Ollic ict hub                                              <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria"
@@ -2510,7 +2510,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="i-jobs">
-                                          <img src="https://cdn.getgabs.com/newhomepage/i-jobs.avif" alt="i-jobs"
+                                          <img src="/assets/images/clients/i-jobs.avif" alt="i-jobs"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       i-jobs                                              <img src="https://flagcdn.com/w40/af.png" alt="UK"
@@ -2525,7 +2525,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="American Language Centre">
-                                          <img src="https://cdn.getgabs.com/newhomepage/the-american-language-centre-of-asablanca.avif" alt="American Language Centre"
+                                          <img src="/assets/images/clients/the-american-language-centre-of-asablanca.avif" alt="American Language Centre"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       American Language Centre                                              <img src="https://flagcdn.com/w40/ma.png" alt="Morocco"
@@ -2540,7 +2540,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Abroad Routes">
-                                          <img src="https://cdn.getgabs.com/newhomepage/abroad-routes.avif" alt="Abroad Routes"
+                                          <img src="/assets/images/clients/abroad-routes.avif" alt="Abroad Routes"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Abroad Routes                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
@@ -2555,7 +2555,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Arriival">
-                                          <img src="https://cdn.getgabs.com/newhomepage/arriival.avif" alt="Arriival"
+                                          <img src="/assets/images/clients/arriival.avif" alt="Arriival"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Arriival                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
@@ -2570,7 +2570,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="tagshop AI">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/TAGSHOP.png" alt="tagshop AI"
+                                          <img src="/assets/images/clients/TAGSHOP.png" alt="tagshop AI"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       tagshop AI                                              <img src="https://flagcdn.com/w40/us.png" alt="India"
@@ -2585,7 +2585,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Dreamcast">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/DREAMCAST.png" alt="Dreamcast"
+                                          <img src="/assets/images/clients/DREAMCAST.png" alt="Dreamcast"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Dreamcast                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2600,7 +2600,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="TIE Global">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/tie.png" alt="TIE Global"
+                                          <img src="/assets/images/clients/tie.png" alt="TIE Global"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       TIE Global                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2615,7 +2615,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Omni Ice Cream">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/omniicecream.png" alt="Omni Ice Cream"
+                                          <img src="/assets/images/clients/omniicecream.png" alt="Omni Ice Cream"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Omni Ice Cream                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2630,7 +2630,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Alagasco">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Alagasco.png" alt="Alagasco"
+                                          <img src="/assets/images/clients/Alagasco.png" alt="Alagasco"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Alagasco                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
@@ -2645,7 +2645,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Northern Spices">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Northern-Spices.png" alt="Northern Spices"
+                                          <img src="/assets/images/clients/Northern-Spices.png" alt="Northern Spices"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Northern Spices                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2660,7 +2660,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Startup Chaupal">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/startup-chaupal.jpg" alt="Startup Chaupal"
+                                          <img src="/assets/images/clients/startup-chaupal.jpg" alt="Startup Chaupal"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Startup Chaupal                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2675,7 +2675,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Curious Hues">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Curious-Hues-e1773645714310.webp" alt="Curious Hues"
+                                          <img src="/assets/images/clients/Curious-Hues-e1773645714310.webp" alt="Curious Hues"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Curious Hues                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2690,7 +2690,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Satyam AI">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/Satyam-AI.jpg" alt="Satyam AI"
+                                          <img src="/assets/images/clients/Satyam-AI.jpg" alt="Satyam AI"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Satyam AI                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2705,7 +2705,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="GD Goenka School">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/GDGoenkaSchool.ico" alt="GD Goenka School"
+                                          <img src="/assets/images/clients/GDGoenkaSchool.ico" alt="GD Goenka School"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       GD Goenka School                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2720,7 +2720,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Capgemini">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/capgemini.png" alt="Capgemini"
+                                          <img src="/assets/images/clients/capgemini.png" alt="Capgemini"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Capgemini                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2735,7 +2735,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Arte hair studio">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/arte.png" alt="Arte hair studio"
+                                          <img src="/assets/images/clients/arte.png" alt="Arte hair studio"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Arte hair studio                                              <img src="https://flagcdn.com/w40/sg.png" alt="Singapore"
@@ -2750,7 +2750,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="99pandit">
-                                          <img src="https://cdn.getgabs.com/newhomepage/99pandit.avif" alt="99pandit"
+                                          <img src="/assets/images/clients/99pandit.avif" alt="99pandit"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       99pandit                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2765,7 +2765,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Salgar Tea">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/salgartea.png" alt="Salgar Tea"
+                                          <img src="/assets/images/clients/salgartea.png" alt="Salgar Tea"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Salgar Tea                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2780,7 +2780,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="FADE MMA &#038; Gym">
-                                          <img src="https://cdn.getgabs.com/newhomepage/fade-mma-and-gym.avif" alt="FADE MMA &#038; Gym"
+                                          <img src="/assets/images/clients/fade-mma-and-gym.avif" alt="FADE MMA &#038; Gym"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       FADE MMA &#038; Gym                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
@@ -2795,7 +2795,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="10 Hydrogen">
-                                          <img src="https://cdn.getgabs.com/newhomepage/10-hydrogen.avif" alt="10 Hydrogen"
+                                          <img src="/assets/images/clients/10-hydrogen.avif" alt="10 Hydrogen"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       10 Hydrogen                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
@@ -2810,7 +2810,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Davgrey">
-                                          <img src="https://cdn.getgabs.com/newhomepage/davgrey.avif" alt="Davgrey"
+                                          <img src="/assets/images/clients/davgrey.avif" alt="Davgrey"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Davgrey                                              <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan"
@@ -2825,7 +2825,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Voice AI Agency">
-                                          <img src="https://cdn.getgabs.com/newhomepage/voice-aI-agency.avif" alt="Voice AI Agency"
+                                          <img src="/assets/images/clients/voice-aI-agency.avif" alt="Voice AI Agency"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Voice AI Agency                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
@@ -2840,7 +2840,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Ollic ict hub">
-                                          <img src="https://cdn.getgabs.com/newhomepage/ollic-ict-hub.avif" alt="Ollic ict hub"
+                                          <img src="/assets/images/clients/ollic-ict-hub.avif" alt="Ollic ict hub"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Ollic ict hub                                              <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria"
@@ -2855,7 +2855,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="i-jobs">
-                                          <img src="https://cdn.getgabs.com/newhomepage/i-jobs.avif" alt="i-jobs"
+                                          <img src="/assets/images/clients/i-jobs.avif" alt="i-jobs"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       i-jobs                                              <img src="https://flagcdn.com/w40/af.png" alt="UK"
@@ -2870,7 +2870,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="American Language Centre">
-                                          <img src="https://cdn.getgabs.com/newhomepage/the-american-language-centre-of-asablanca.avif" alt="American Language Centre"
+                                          <img src="/assets/images/clients/the-american-language-centre-of-asablanca.avif" alt="American Language Centre"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       American Language Centre                                              <img src="https://flagcdn.com/w40/ma.png" alt="Morocco"
@@ -2885,7 +2885,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Abroad Routes">
-                                          <img src="https://cdn.getgabs.com/newhomepage/abroad-routes.avif" alt="Abroad Routes"
+                                          <img src="/assets/images/clients/abroad-routes.avif" alt="Abroad Routes"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Abroad Routes                                              <img src="https://flagcdn.com/w40/ae.png" alt="UAE"
@@ -2900,7 +2900,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Arriival">
-                                          <img src="https://cdn.getgabs.com/newhomepage/arriival.avif" alt="Arriival"
+                                          <img src="/assets/images/clients/arriival.avif" alt="Arriival"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Arriival                                              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia"
@@ -2915,7 +2915,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="tagshop AI">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/TAGSHOP.png" alt="tagshop AI"
+                                          <img src="/assets/images/clients/TAGSHOP.png" alt="tagshop AI"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       tagshop AI                                              <img src="https://flagcdn.com/w40/us.png" alt="India"
@@ -2930,7 +2930,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Dreamcast">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/DREAMCAST.png" alt="Dreamcast"
+                                          <img src="/assets/images/clients/DREAMCAST.png" alt="Dreamcast"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Dreamcast                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2945,7 +2945,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="TIE Global">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/tie.png" alt="TIE Global"
+                                          <img src="/assets/images/clients/tie.png" alt="TIE Global"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       TIE Global                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2960,7 +2960,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Omni Ice Cream">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/omniicecream.png" alt="Omni Ice Cream"
+                                          <img src="/assets/images/clients/omniicecream.png" alt="Omni Ice Cream"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Omni Ice Cream                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -2975,7 +2975,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Alagasco">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/04/Alagasco.png" alt="Alagasco"
+                                          <img src="/assets/images/clients/Alagasco.png" alt="Alagasco"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Alagasco                                              <img src="https://flagcdn.com/w40/us.png" alt="USA"
@@ -2990,7 +2990,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Northern Spices">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Northern-Spices.png" alt="Northern Spices"
+                                          <img src="/assets/images/clients/Northern-Spices.png" alt="Northern Spices"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Northern Spices                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -3005,7 +3005,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Startup Chaupal">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/startup-chaupal.jpg" alt="Startup Chaupal"
+                                          <img src="/assets/images/clients/startup-chaupal.jpg" alt="Startup Chaupal"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Startup Chaupal                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -3020,7 +3020,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Curious Hues">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/03/Curious-Hues-e1773645714310.webp" alt="Curious Hues"
+                                          <img src="/assets/images/clients/Curious-Hues-e1773645714310.webp" alt="Curious Hues"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Curious Hues                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -3035,7 +3035,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Satyam AI">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/Satyam-AI.jpg" alt="Satyam AI"
+                                          <img src="/assets/images/clients/Satyam-AI.jpg" alt="Satyam AI"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Satyam AI                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -3050,7 +3050,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="GD Goenka School">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/GDGoenkaSchool.ico" alt="GD Goenka School"
+                                          <img src="/assets/images/clients/GDGoenkaSchool.ico" alt="GD Goenka School"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       GD Goenka School                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -3065,7 +3065,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Capgemini">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/02/capgemini.png" alt="Capgemini"
+                                          <img src="/assets/images/clients/capgemini.png" alt="Capgemini"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Capgemini                                              <img src="https://flagcdn.com/w40/in.png" alt="India"
@@ -3080,7 +3080,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="Arte hair studio">
-                                          <img src="https://getgabs.com/wp-content/uploads/2026/01/arte.png" alt="Arte hair studio"
+                                          <img src="/assets/images/clients/arte.png" alt="Arte hair studio"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       Arte hair studio                                              <img src="https://flagcdn.com/w40/sg.png" alt="Singapore"
@@ -3095,7 +3095,7 @@ include __DIR__ . '/../../includes/header.php';
                                     <div
                     class="brand-badge flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 shadow-sm"
                     title="99pandit">
-                                          <img src="https://cdn.getgabs.com/newhomepage/99pandit.avif" alt="99pandit"
+                                          <img src="/assets/images/clients/99pandit.avif" alt="99pandit"
                         class="w-6 h-6 rounded-full" loading="lazy">
                                           <span class="text-sm font-medium">
                       99pandit                                              <img src="https://flagcdn.com/w40/in.png" alt="India"

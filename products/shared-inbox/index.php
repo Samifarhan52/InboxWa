@@ -19,10 +19,10 @@ include __DIR__ . '/../../includes/header.php';
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/getgabs-variables.css">
-<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/getgabs-same-style.css">
-<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/getgabs-template-industry.css">
-<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/getgabs-g2reviews.css">
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/hellobotz-variables.css">
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/hellobotz-same-style.css">
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/hellobotz-template-industry.css">
+<link rel="stylesheet" href="<?php echo $bp; ?>assets/css/hellobotz-g2reviews.css">
 
 <style>
   /* Container Centering & Layout Enforced (1240px max-width) */
