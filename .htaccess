@@ -69,16 +69,14 @@ RewriteRule ^(.*)$ $1/index.php [L]
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
 
-  # HTML & dynamic pages: never cache stale versions, always revalidate
+  # HTML & dynamic pages: allow instant navigation and stale-while-revalidate
   <FilesMatch "\.(html|htm|php)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
+    Header set Cache-Control "public, max-age=1800, stale-while-revalidate=86400"
   </FilesMatch>
 
-  # Static assets: allow cache but require revalidation on expiry
-  <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|css|js)$">
-    Header set Cache-Control "public, max-age=604800, must-revalidate"
+  # Static assets: aggressive browser caching (1 year)
+  <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|css|js|woff2?|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
 

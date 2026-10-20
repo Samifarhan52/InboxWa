@@ -8,9 +8,7 @@ if (!isset($basePath)) { $basePath = ''; }
 $bp = $basePath;
 
 if (!headers_sent()) {
-    header("Cache-Control: no-cache, no-store, must-revalidate");
-    header("Pragma: no-cache");
-    header("Expires: 0");
+    header("Cache-Control: public, max-age=1800, stale-while-revalidate=86400");
 }
 
 require_once dirname(__DIR__) . '/config/cms.php';
