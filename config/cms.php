@@ -162,3 +162,33 @@ function cms_pages(): array {
 function cms_page(int|string $idOrSlug): ?array {
     return hb_get_page($idOrSlug);
 }
+
+/**
+ * Auto Cache-Busting Asset URL Helper
+ * Returns asset URL with ?v=<filemtime> based on disk modification time.
+ * When any asset is updated, the timestamp changes automatically,
+ * forcing browsers to immediately fetch the new file!
+ */
+function hb_asset(string $url): string {
+    static $assetCache = [];
+    if (isset($assetCache[$url])) {
+        return $assetCache[$url];
+    }
+    $path = parse_url($url, PHP_URL_PATH) ?: $url;
+    $clean = ltrim($path, '/');
+    $file = dirname(__DIR__) . '/' . $clean;
+    if (!file_exists($file)) {
+        $file = dirname(__DIR__) . '/public/' . $clean;
+    }
+    if (file_exists($file)) {
+        $assetCache[$url] = $path . '?v=' . filemtime($file);
+    } else {
+        $assetCache[$url] = $path . '?v=20261020';
+    }
+    return $assetCache[$url];
+}
+
+function cms_asset(string $url): string {
+    return hb_asset($url);
+}
+

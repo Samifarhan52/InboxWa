@@ -58,7 +58,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="lead-generation" data-title="whatsapp lead generation - best strategies & tools 2026">
         <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-lead-generation.webp" alt="WhatsApp Lead Generation - Best Strategies & Tools 2026" title="WhatsApp Lead Generation - Best Strategies & Tools 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-lead-generation.webp?v=hb20261020" alt="WhatsApp Lead Generation - Best Strategies & Tools 2026" title="WhatsApp Lead Generation - Best Strategies & Tools 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-title">
           <h2>WhatsApp Lead Generation - Best Strategies & Tools 2026</h2>
@@ -78,7 +78,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="chatbots" data-title="7+ best whatsapp chatbots for businesses in 2026">
         <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-thumb">
-          <img src="/assets/images/blog/best-whatsapp-chatbots.webp" alt="7+ Best WhatsApp Chatbots for Businesses in 2026" title="7+ Best WhatsApp Chatbots for Businesses in 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/best-whatsapp-chatbots.webp?v=hb20261020" alt="7+ Best WhatsApp Chatbots for Businesses in 2026" title="7+ Best WhatsApp Chatbots for Businesses in 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-title">
           <h2>7+ Best WhatsApp Chatbots for Businesses in 2026</h2>
@@ -98,7 +98,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="whatsapp-api" data-title="best whatsapp business platforms - comparison 2026">
         <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-thumb">
-          <img src="/assets/images/blog/best-whatsapp-business-platform.webp" alt="Best WhatsApp Business Platforms - Comparison 2026" title="Best WhatsApp Business Platforms - Comparison 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/best-whatsapp-business-platform.webp?v=hb20261020" alt="Best WhatsApp Business Platforms - Comparison 2026" title="Best WhatsApp Business Platforms - Comparison 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-title">
           <h2>Best WhatsApp Business Platforms - Comparison 2026</h2>
@@ -118,7 +118,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="whatsapp-crm" data-title="10 best whatsapp crm for businesses 2026">
         <a href="/resources/blog/best-whatsapp-crm/" class="blog-card-thumb">
-          <img src="/assets/images/blog/best-whatsapp-crm.webp" alt="10 Best WhatsApp CRM for Businesses 2026" title="10 Best WhatsApp CRM for Businesses 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/best-whatsapp-crm.webp?v=hb20261020" alt="10 Best WhatsApp CRM for Businesses 2026" title="10 Best WhatsApp CRM for Businesses 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/best-whatsapp-crm/" class="blog-card-title">
           <h2>10 Best WhatsApp CRM for Businesses 2026</h2>
@@ -138,7 +138,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="broadcasting" data-title="whatsapp bulk message senders 2026">
         <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-bulk-message-senders.webp" alt="WhatsApp Bulk Message Senders 2026" title="WhatsApp Bulk Message Senders 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-bulk-message-senders.webp?v=hb20261020" alt="WhatsApp Bulk Message Senders 2026" title="WhatsApp Bulk Message Senders 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-bulk-message-senders/" class="blog-card-title">
           <h2>WhatsApp Bulk Message Senders 2026</h2>
@@ -158,7 +158,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="marketing-tools" data-title="10+ best whatsapp marketing tools (2026 comparison)">
         <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-marketing-tools.webp" alt="10+ Best WhatsApp Marketing Tools (2026 Comparison)" title="10+ Best WhatsApp Marketing Tools (2026 Comparison)" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-marketing-tools.webp?v=hb20261020" alt="10+ Best WhatsApp Marketing Tools (2026 Comparison)" title="10+ Best WhatsApp Marketing Tools (2026 Comparison)" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-marketing-tools/" class="blog-card-title">
           <h2>10+ Best WhatsApp Marketing Tools (2026 Comparison)</h2>
@@ -178,7 +178,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="automation" data-title="best whatsapp automation tools (ai-powered) 2026">
         <a href="/resources/blog/whatsapp-automation-tools/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-automation-tools.webp" alt="Best WhatsApp Automation Tools (AI-Powered) 2026" title="Best WhatsApp Automation Tools (AI-Powered) 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-automation-tools.webp?v=hb20261020" alt="Best WhatsApp Automation Tools (AI-Powered) 2026" title="Best WhatsApp Automation Tools (AI-Powered) 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-automation-tools/" class="blog-card-title">
           <h2>Best WhatsApp Automation Tools (AI-Powered) 2026</h2>
@@ -198,7 +198,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="whatsapp-api" data-title="best whatsapp api providers - solution partners 2026">
         <a href="/resources/blog/whatsapp-api-providers/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-api-providers.webp" alt="Best WhatsApp API Providers - Solution Partners 2026" title="Best WhatsApp API Providers - Solution Partners 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-api-providers.webp?v=hb20261020" alt="Best WhatsApp API Providers - Solution Partners 2026" title="Best WhatsApp API Providers - Solution Partners 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-api-providers/" class="blog-card-title">
           <h2>Best WhatsApp API Providers - Solution Partners 2026</h2>
@@ -218,7 +218,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="broadcasting" data-title="best whatsapp broadcasting tools 2026">
         <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-broadcasting-tools.webp" alt="Best WhatsApp Broadcasting Tools 2026" title="Best WhatsApp Broadcasting Tools 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-broadcasting-tools.webp?v=hb20261020" alt="Best WhatsApp Broadcasting Tools 2026" title="Best WhatsApp Broadcasting Tools 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-broadcasting-tools/" class="blog-card-title">
           <h2>Best WhatsApp Broadcasting Tools 2026</h2>
@@ -238,7 +238,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="e-commerce" data-title="automate invoice sending via whatsapp for faster payments">
         <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-card-thumb">
-          <img src="/assets/images/blog/automate-invoice-sending-via-whatsapp.webp" alt="Automate Invoice Sending via WhatsApp for Faster Payments" title="Automate Invoice Sending via WhatsApp for Faster Payments" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/automate-invoice-sending-via-whatsapp.webp?v=hb20261020" alt="Automate Invoice Sending via WhatsApp for Faster Payments" title="Automate Invoice Sending via WhatsApp for Faster Payments" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/automate-invoice-sending-via-whatsapp/" class="blog-card-title">
           <h2>Automate Invoice Sending via WhatsApp for Faster Payments</h2>
@@ -258,7 +258,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="marketing-tools" data-title="create click to whatsapp ads - a detailed guide 2026">
         <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-card-thumb">
-          <img src="/assets/images/blog/create-click-to-whatsapp-ads.webp" alt="Create Click to WhatsApp Ads - A Detailed Guide 2026" title="Create Click to WhatsApp Ads - A Detailed Guide 2026" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/create-click-to-whatsapp-ads.webp?v=hb20261020" alt="Create Click to WhatsApp Ads - A Detailed Guide 2026" title="Create Click to WhatsApp Ads - A Detailed Guide 2026" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/create-click-to-whatsapp-ads/" class="blog-card-title">
           <h2>Create Click to WhatsApp Ads - A Detailed Guide 2026</h2>
@@ -278,7 +278,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="e-commerce" data-title="whatsapp marketing automation for shopify - a complete guide">
         <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-card-thumb">
-          <img src="/assets/images/blog/whatsapp-marketing-automation-for-shopify.webp" alt="WhatsApp Marketing Automation for Shopify - A Complete Guide" title="WhatsApp Marketing Automation for Shopify - A Complete Guide" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/whatsapp-marketing-automation-for-shopify.webp?v=hb20261020" alt="WhatsApp Marketing Automation for Shopify - A Complete Guide" title="WhatsApp Marketing Automation for Shopify - A Complete Guide" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/whatsapp-marketing-automation-for-shopify/" class="blog-card-title">
           <h2>WhatsApp Marketing Automation for Shopify - A Complete Guide</h2>
@@ -298,7 +298,7 @@ include __DIR__ . "/../../includes/header.php";
 
       <div class="card blog-card" data-category="e-commerce" data-title="automate delivery notifications on whatsapp - complete guide">
         <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-card-thumb">
-          <img src="/assets/images/blog/automate-delivery-notifications-on-whatsapp.webp" alt="Automate Delivery Notifications on WhatsApp - Complete Guide" title="Automate Delivery Notifications on WhatsApp - Complete Guide" loading="lazy" width="600" height="340">
+          <img src="/assets/images/blog/automate-delivery-notifications-on-whatsapp.webp?v=hb20261020" alt="Automate Delivery Notifications on WhatsApp - Complete Guide" title="Automate Delivery Notifications on WhatsApp - Complete Guide" loading="lazy" width="600" height="340">
         </a>
         <a href="/resources/blog/automate-delivery-notifications-on-whatsapp/" class="blog-card-title">
           <h2>Automate Delivery Notifications on WhatsApp - Complete Guide</h2>

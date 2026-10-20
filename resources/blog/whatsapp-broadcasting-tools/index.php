@@ -36,7 +36,7 @@ include __DIR__ . '/../../../includes/header.php';
 
     <!-- Featured Banner Image -->
     <div class="single-blog-featured-img">
-      <img src="/assets/images/blog/whatsapp-broadcasting-tools.webp" alt="Best WhatsApp Broadcasting Tools 2026" title="Best WhatsApp Broadcasting Tools 2026" width="1200" height="630">
+      <img src="/assets/images/blog/whatsapp-broadcasting-tools.webp?v=hb20261020" alt="Best WhatsApp Broadcasting Tools 2026" title="Best WhatsApp Broadcasting Tools 2026" width="1200" height="630">
     </div>
 
     <!-- Cleaned Article Body -->
@@ -897,7 +897,7 @@ include __DIR__ . '/../../../includes/header.php';
         
         <div class="card blog-card" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
           <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-thumb">
-            <img src="/assets/images/blog/whatsapp-lead-generation.webp" alt="WhatsApp Lead Generation - Best Strategies & Tools 2026" title="WhatsApp Lead Generation - Best Strategies & Tools 2026" loading="lazy">
+            <img src="/assets/images/blog/whatsapp-lead-generation.webp?v=hb20261020" alt="WhatsApp Lead Generation - Best Strategies & Tools 2026" title="WhatsApp Lead Generation - Best Strategies & Tools 2026" loading="lazy">
           </a>
           <a href="/resources/blog/whatsapp-lead-generation/" class="blog-card-title">
             <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.4;">WhatsApp Lead Generation - Best Strategies & Tools 2026</h4>
@@ -917,7 +917,7 @@ include __DIR__ . '/../../../includes/header.php';
         
         <div class="card blog-card" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
           <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-thumb">
-            <img src="/assets/images/blog/best-whatsapp-chatbots.webp" alt="7+ Best WhatsApp Chatbots for Businesses in 2026" title="7+ Best WhatsApp Chatbots for Businesses in 2026" loading="lazy">
+            <img src="/assets/images/blog/best-whatsapp-chatbots.webp?v=hb20261020" alt="7+ Best WhatsApp Chatbots for Businesses in 2026" title="7+ Best WhatsApp Chatbots for Businesses in 2026" loading="lazy">
           </a>
           <a href="/resources/blog/best-whatsapp-chatbots/" class="blog-card-title">
             <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.4;">7+ Best WhatsApp Chatbots for Businesses in 2026</h4>
@@ -937,7 +937,7 @@ include __DIR__ . '/../../../includes/header.php';
         
         <div class="card blog-card" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
           <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-thumb">
-            <img src="/assets/images/blog/best-whatsapp-business-platform.webp" alt="Best WhatsApp Business Platforms - Comparison 2026" title="Best WhatsApp Business Platforms - Comparison 2026" loading="lazy">
+            <img src="/assets/images/blog/best-whatsapp-business-platform.webp?v=hb20261020" alt="Best WhatsApp Business Platforms - Comparison 2026" title="Best WhatsApp Business Platforms - Comparison 2026" loading="lazy">
           </a>
           <a href="/resources/blog/best-whatsapp-business-platform/" class="blog-card-title">
             <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.4;">Best WhatsApp Business Platforms - Comparison 2026</h4>

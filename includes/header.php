@@ -7,6 +7,12 @@
 if (!isset($basePath)) { $basePath = ''; }
 $bp = $basePath;
 
+if (!headers_sent()) {
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+}
+
 require_once dirname(__DIR__) . '/config/cms.php';
 
 // If Canva visual editor published a static version for this route, serve it directly
