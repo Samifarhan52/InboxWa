@@ -1394,7 +1394,6 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
             <li><a href="<?php echo $bp; ?>products/chatbot/">AI Chatbot &amp; Automation</a></li>
             <li><a href="<?php echo $bp; ?>pricing/">Pricing Plans</a></li>
             <li><a href="<?php echo $bp; ?>partners/">Partner Program</a></li>
-            <li><a href="<?php echo $bp; ?>company/about/">About HelloBotz</a></li>
             <li><a href="<?php echo $bp; ?>#contact-section">Contact Us</a></li>
           </ul>
         </div>

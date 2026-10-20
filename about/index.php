@@ -1,3 +1,3 @@
 <?php
-header('Location: /company/about/', true, 301);
+header('Location: /', true, 301);
 exit;
