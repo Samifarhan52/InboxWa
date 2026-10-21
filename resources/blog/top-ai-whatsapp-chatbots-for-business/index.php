@@ -3,7 +3,7 @@ $basePath = "../../../";
 $pageTitle = '7 Top AI WhatsApp Chatbots for Scalable Enterprise Support in 2026 — HelloBotz Insights';
 $pageDescription = 'Supercharge support efficiency with the top AI WhatsApp chatbots of 2026. Explore generative conversational AI, hybrid human handoff, and setup best practices.';
 $canonicalUrl = 'https://hellobotz.com/resources/blog/top-ai-whatsapp-chatbots-for-business/';
-$ogImage = 'https://hellobotz.com/assets/images/blog/v2/top-ai-whatsapp-chatbots-for-business-hero.jpg?v=hb20261022v1';
+$ogImage = 'https://hellobotz.com/assets/images/blog/v2/top-ai-whatsapp-chatbots-for-business-hero.jpg?v=hb20261022v2';
 include __DIR__ . '/../../../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/articles-blog.css?v=3">
@@ -37,7 +37,7 @@ include __DIR__ . '/../../../includes/header.php';
 
     <!-- Featured Banner Image -->
     <div class="single-blog-featured-img">
-      <img src="/assets/images/blog/v2/top-ai-whatsapp-chatbots-for-business-hero.jpg?v=hb20261022v1" alt="7 Top AI WhatsApp Chatbots for Scalable Enterprise Support in 2026" title="7 Top AI WhatsApp Chatbots for Scalable Enterprise Support in 2026" width="1200" height="630" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+      <img src="/assets/images/blog/v2/top-ai-whatsapp-chatbots-for-business-hero.jpg?v=hb20261022v2" alt="7 Top AI WhatsApp Chatbots for Scalable Enterprise Support in 2026" title="7 Top AI WhatsApp Chatbots for Scalable Enterprise Support in 2026" width="1200" height="630" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
     </div>
 
     <!-- Article Content -->
@@ -258,7 +258,7 @@ include __DIR__ . '/../../../includes/header.php';
       <div class="blog-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
         <div class="card blog-card" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
           <a href="/resources/blog/b2b-whatsapp-lead-generation-strategies/" class="blog-card-thumb">
-            <img src="/assets/images/blog/v2/b2b-whatsapp-lead-generation-strategies-hero.jpg?v=hb20261022v1" alt="WhatsApp Lead Generation in 2026: High-Converting Tactics &amp; Automation" title="WhatsApp Lead Generation in 2026: High-Converting Tactics &amp; Automation" loading="lazy">
+            <img src="/assets/images/blog/v2/b2b-whatsapp-lead-generation-strategies-hero.jpg?v=hb20261022v2" alt="WhatsApp Lead Generation in 2026: High-Converting Tactics &amp; Automation" title="WhatsApp Lead Generation in 2026: High-Converting Tactics &amp; Automation" loading="lazy">
           </a>
           <a href="/resources/blog/b2b-whatsapp-lead-generation-strategies/" class="blog-card-title">
             <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.4;">WhatsApp Lead Generation in 2026: High-Converting Tactics &amp; Automation</h4>
@@ -275,7 +275,7 @@ include __DIR__ . '/../../../includes/header.php';
 
         <div class="card blog-card" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
           <a href="/resources/blog/top-ai-whatsapp-chatbots-for-business/" class="blog-card-thumb">
-            <img src="/assets/images/blog/v2/top-ai-whatsapp-chatbots-for-business-hero.jpg?v=hb20261022v1" alt="7 Best WhatsApp AI Chatbots for Businesses in 2026" title="7 Best WhatsApp AI Chatbots for Businesses in 2026" loading="lazy">
+            <img src="/assets/images/blog/v2/top-ai-whatsapp-chatbots-for-business-hero.jpg?v=hb20261022v2" alt="7 Best WhatsApp AI Chatbots for Businesses in 2026" title="7 Best WhatsApp AI Chatbots for Businesses in 2026" loading="lazy">
           </a>
           <a href="/resources/blog/top-ai-whatsapp-chatbots-for-business/" class="blog-card-title">
             <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.4;">7 Best WhatsApp AI Chatbots for Businesses in 2026</h4>
@@ -292,7 +292,7 @@ include __DIR__ . '/../../../includes/header.php';
 
         <div class="card blog-card" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
           <a href="/resources/blog/top-whatsapp-crm-software-platforms/" class="blog-card-thumb">
-            <img src="/assets/images/blog/v2/top-whatsapp-crm-software-platforms-hero.jpg?v=hb20261022v1" alt="10 Best WhatsApp CRM Software for Sales and Support Teams in 2026" title="10 Best WhatsApp CRM Software for Sales and Support Teams in 2026" loading="lazy">
+            <img src="/assets/images/blog/v2/top-whatsapp-crm-software-platforms-hero.jpg?v=hb20261022v2" alt="10 Best WhatsApp CRM Software for Sales and Support Teams in 2026" title="10 Best WhatsApp CRM Software for Sales and Support Teams in 2026" loading="lazy">
           </a>
           <a href="/resources/blog/top-whatsapp-crm-software-platforms/" class="blog-card-title">
             <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.4;">10 Best WhatsApp CRM Software for Sales and Support Teams in 2026</h4>
