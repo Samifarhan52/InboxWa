@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBotz's;
+$pageTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBotz';
 $pageDescription = 'Deploy no-code AI assistants to automate customer inquiries, book appointments, and close sales on WhatsApp around the clock.';
 $canonicalUrl = 'https://hellobotz.com/products/chatbot/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/ai-whatsapp-chatbot/01.png';
-$ogTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBotz's;
+$ogTitle = 'AI WhatsApp Chatbot | 24/7 Smart Conversations | HelloBotz';
 $ogDescription = 'Deploy no-code AI assistants to automate customer inquiries, book appointments, and close sales on WhatsApp around the clock.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -294,14 +294,14 @@ include __DIR__ . '/../../includes/header.php';
     border-radius: 8px;
     background: #fdfffe;
     font-weight: 600;
-    margin-bottom: 40px;">
-          <i class="fa-brands fa-meta meta-icon"></i> Official Meta Partner
+    margin-bottom: 24px;">
+          <i class="fa-brands fa-meta meta-icon"></i> Official Meta Business Partner
         </span>
         <h1 class="hero-title">
-          AI WhatsApp Chatbot That Turns Conversations Into Customers</h1>
+          AI WhatsApp Chatbot That Converts Inbound Chats Into Customers</h1>
         <p class="hero-text">
-          HelloBotz's AI WhatsApp Chatbot understands context, responds quickly in your brand voice, and works 24/7 —
-          powered by the official WhatsApp Business API </p>
+          Deploy intelligent, zero-hallucination AI assistants on WhatsApp. Automatically qualify inbound leads, schedule demos, resolve complex customer FAQs 24/7, and sync real-time with your CRM and product catalog — powered by the official Meta WhatsApp Business API.
+        </p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
@@ -315,11 +315,11 @@ include __DIR__ . '/../../includes/header.php';
           </a>
         </div>
       </div>
-      <!-- Video Content -->
+      <!-- Hero Visual -->
       <div class="col-lg-6">
         <div class="api-image-box">
-          <img width="100%" src="/assets/images/hellobots/ai-whatsapp-chatbot/01.png"
-            alt="AI WhatsApp Chatbot">
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/01.png"
+            alt="HelloBotz Official AI WhatsApp Chatbot Assistant" class="img-fluid" style="border-radius: 16px;">
         </div>
       </div>
     </div>
@@ -508,13 +508,12 @@ include __DIR__ . '/../../includes/header.php';
       <div class="ccd-card">
         <div class="ccd-media">
           <img
-            src="/assets/images/hellobots/ai-whatsapp-chatbot/1789624184091_19a9c417_Answers_FAQs_Inst.png"
+            src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/1789624184091_19a9c417_Answers_FAQs_Inst.png"
             alt="WhatsApp AI chatbot answering customer FAQs instantly" loading="lazy" width="100%" height="360">
         </div>
         <div class="ccd-body">
           <h3>Answers FAQs Instantly</h3>
-          <p>No more typing the same response. From pricing, hours, delivery windows to return policy, your chatbot
-            offers instant answers at any time of day.</p>
+          <p>No more repetitive manual replies. From pricing, catalog queries, delivery windows to return policies, your AI chatbot provides immediate, verified answers 24/7.</p>
         </div>
       </div>
 
@@ -522,65 +521,60 @@ include __DIR__ . '/../../includes/header.php';
       <div class="ccd-card">
         <div class="ccd-media">
           <img
-            src="/assets/images/hellobots/ai-whatsapp-chatbot/1789624189254_6a40793e_Qualifies_Every_L.png"
+            src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/1789624189254_6a40793e_Qualifies_Every_L.png"
             alt="Chatbot qualifying leads on WhatsApp" loading="lazy" width="100%" height="360">
         </div>
         <div class="ccd-body">
-          <h3>Qualifies Every Lead</h3>
-          <p>It helps qualify leads by asking the right questions like budget, requirements, or timelines before
-            routing only high-intent prospects to your sales team.</p>
+          <h3>Qualifies Every Inbound Lead</h3>
+          <p>Automate lead scoring by collecting budget, requirements, and timeline parameters, routing only high-intent, sales-ready prospects directly to your sales team.</p>
         </div>
       </div>
 
       <div class="ccd-card">
         <div class="ccd-media">
           <img
-            src="/assets/images/hellobots/ai-whatsapp-chatbot/1789624186412_bb02a085_Books_Appointment.png"
+            src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/1789624186412_bb02a085_Books_Appointment.png"
             alt="Booking appointments inside WhatsApp" loading="lazy" width="100%" height="360">
         </div>
         <div class="ccd-body">
           <h3>Books Appointments On the Spot</h3>
-          <p>Customers can select and confirm slots directly within WhatsApp, eliminating missed calls and
-            double-booked calendars.</p>
+          <p>Customers select and confirm available slots directly within WhatsApp, auto-syncing with Calendly and Google Calendar without phone tag.</p>
         </div>
       </div>
 
       <div class="ccd-card">
         <div class="ccd-media">
           <img
-            src="/assets/images/hellobots/ai-whatsapp-chatbot/1789624190253_45fa1398_Recommends_the_Ri.png"
+            src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/1789624190253_45fa1398_Recommends_the_Ri.png"
             alt="Chatbot recommending the right product" loading="lazy" width="100%" height="360">
         </div>
         <div class="ccd-body">
           <h3>Recommends the Right Product</h3>
-          <p>Based on customer inquiries, it suggests a suitable match with images, pricing details, and direct
-            purchase links.</p>
+          <p>Analyzes customer preferences and search inquiries to showcase tailored product carousels with real-time pricing and 1-tap WhatsApp checkout links.</p>
         </div>
       </div>
 
       <div class="ccd-card">
         <div class="ccd-media">
           <img
-            src="/assets/images/hellobots/ai-whatsapp-chatbot/1789624188262_2cee0169_Keeps_Customers_P.png"
+            src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/1789624188262_2cee0169_Keeps_Customers_P.png"
             alt="Automated order and shipping updates on WhatsApp" loading="lazy" width="100%" height="360">
         </div>
         <div class="ccd-body">
           <h3>Keeps Customers Posted on Orders</h3>
-          <p>Shipping updates, delivery status, and order confirmations are sent automatically the moment something
-            changes.</p>
+          <p>Shipping updates, tracking URLs, and dispatch confirmations are delivered automatically the moment order status changes in Shopify or WooCommerce.</p>
         </div>
       </div>
 
       <div class="ccd-card">
         <div class="ccd-media">
           <img
-            src="/assets/images/hellobots/ai-whatsapp-chatbot/1789624187230_96a61986_Handoff_to_Human.png"
+            src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/1789624187230_96a61986_Handoff_to_Human.png"
             alt="Chatbot handing off the conversation to a human agent" loading="lazy" width="100%" height="360">
         </div>
         <div class="ccd-body">
-          <h3>Handoff to Human</h3>
-          <p>When a conversation requires human expertise or personalized support, the chatbot hands off queries to a
-            human agent with full chat history attached.</p>
+          <h3>Seamless Human Escalation</h3>
+          <p>When high-touch human expertise is required, the conversation transitions smoothly to your team inbox with full conversational context and CRM history attached.</p>
         </div>
       </div>
 
@@ -602,51 +596,47 @@ include __DIR__ . '/../../includes/header.php';
 
       <div class="engine-card">
         <div class="engine-logo">
-          <img loading="lazy" src="https://cdn.simpleicons.org/openai/10A37F" alt="ChatGPT (OpenAI) logo" loading="lazy" width="48"
+          <img loading="lazy" src="https://cdn.simpleicons.org/openai/10A37F" alt="ChatGPT (OpenAI) logo" width="48"
             height="48">
         </div>
-        <h3>ChatGPT (OpenAI)</h3>
-        <p>The industry standard for natural, flowing conversation. Excels at handling varied phrasing, creative
-          responses, and open-ended questions.</p>
-        <a class="engine-link" href="LEARN_MORE_URL_CHATGPT">Learn more <svg xmlns="http://www.w3.org/2000/svg"
+        <h3>GPT-4o (OpenAI)</h3>
+        <p>The global benchmark for natural, flowing conversation. Excels at nuanced multilingual comprehension, witty responses, and high-converting commercial banter.</p>
+        <div class="engine-link btn-demo-open" role="button" tabindex="0" data-product="Chatbot" style="cursor:pointer;">Deploy GPT-4o <svg xmlns="http://www.w3.org/2000/svg"
             width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
             <path d="M5 12h14"></path>
             <path d="m12 5 7 7-7 7"></path>
-          </svg></a>
+          </svg></div>
       </div>
 
       <div class="engine-card">
         <div class="engine-logo">
-          <img loading="lazy" src="/assets/images/hellobots/ai-whatsapp-chatbot/img_ef2bc8434b.png" alt="Claude (Anthropic) logo" loading="lazy" width="48"
+          <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/img_ef2bc8434b.png" alt="Claude (Anthropic) logo" width="48"
             height="48">
         </div>
-        <h3>Claude (Anthropic)</h3>
-        <p>Built for accuracy and detailed responses. It is an ideal fit when customers need step-by-step explanations,
-          and your chatbot has to follow multi-part instructions correctly.</p>
-        <a class="engine-link" href="LEARN_MORE_URL_CLAUDE">Learn more <svg xmlns="http://www.w3.org/2000/svg"
+        <h3>Claude 3.5 Sonnet (Anthropic)</h3>
+        <p>Engineered for unmatched safety, precision, and zero-hallucination compliance. The premier choice for technical documentation, policies, and complex workflows.</p>
+        <div class="engine-link btn-demo-open" role="button" tabindex="0" data-product="Chatbot" style="cursor:pointer;">Deploy Claude <svg xmlns="http://www.w3.org/2000/svg"
             width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
             <path d="M5 12h14"></path>
             <path d="m12 5 7 7-7 7"></path>
-          </svg></a>
+          </svg></div>
       </div>
 
       <div class="engine-card">
         <div class="engine-logo">
-          <img loading="lazy" src="/assets/images/hellobots/ai-whatsapp-chatbot/img_9dc4c66f41.png" alt="Gemini (Google) logo" loading="lazy"
+          <img loading="lazy" src="<?php echo $bp; ?>assets/images/hellobots/ai-whatsapp-chatbot/img_9dc4c66f41.png" alt="Gemini (Google) logo"
             width="48" height="48">
         </div>
-        <h3>Gemini (Google)</h3>
-        <p>Google&rsquo;s advanced multimodal AI model that is well-suited for conversations that mix text,
-          documents,
-          images, and other media.</p>
-        <a class="engine-link" href="LEARN_MORE_URL_GEMINI">Learn more <svg xmlns="http://www.w3.org/2000/svg"
+        <h3>Gemini 1.5 Pro (Google)</h3>
+        <p>Google&rsquo;s flagship multimodal AI engine. Built with massive context windows to ingest large PDFs, product catalogs, customer histories, and rich media files.</p>
+        <div class="engine-link btn-demo-open" role="button" tabindex="0" data-product="Chatbot" style="cursor:pointer;">Deploy Gemini <svg xmlns="http://www.w3.org/2000/svg"
             width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
             <path d="M5 12h14"></path>
             <path d="m12 5 7 7-7 7"></path>
-          </svg></a>
+          </svg></div>
       </div>
 
     </div>
@@ -1388,7 +1378,144 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-8"><span class="faq-title"><h3>Is HelloBotz&#039; AI Chatbot built on the official WhatsApp Business API?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-8" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-9"><span class="faq-title"><h3>Can I connect the chatbot to my CRM or existing tools?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-9" class="faq-answer" role="region" aria-hidden="true">Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-10"><span class="faq-title"><h3>Does the AI chatbot replace my human support team?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-10" class="faq-answer" role="region" aria-hidden="true">No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-11"><span class="faq-title"><h3>How long does it take to set up?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-11" class="faq-answer" role="region" aria-hidden="true">Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-12"><span class="faq-title"><h3>How do I train the chatbot on my business?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-12" class="faq-answer" role="region" aria-hidden="true">Upload FAQs, product details, or website content without any coding ot technical expertise needed.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is HelloBotz's AI Chatbot built on the official WhatsApp Business API?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each conversation runs via the official WhatsApp Business API, which keeps your number verified and compliant."}},{"@type":"Question","name":"Can I connect the chatbot to my CRM or existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can integrate the chatbot with your CRM, order management, and booking system to pull real-time information into a conversation."}},{"@type":"Question","name":"Does the AI chatbot replace my human support team?","acceptedAnswer":{"@type":"Answer","text":"No. It's mainly built to handle repetitive, high-volume queries, with easy handover of complex queries with full context attached."}},{"@type":"Question","name":"How long does it take to set up?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live within a day by connecting their number, uploading business info, and setting their escalation rules."}},{"@type":"Question","name":"How do I train the chatbot on my business?","acceptedAnswer":{"@type":"Answer","text":"Upload FAQs, product details, or website content without any coding ot technical expertise needed."}}]}</script>
+    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+      <h2 class="whatsapp-heading fw-bold text-center mb-4">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-1">
+          <span class="faq-title"><h3>Is HelloBotz's AI Chatbot built on the official Meta WhatsApp Business API?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-1" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+          Yes, 100%. HelloBotz is an official Meta Business Partner. All chatbot conversations run strictly through the official WhatsApp Business Cloud API route, providing enterprise-grade encryption, high throughput, Meta verification support, and zero risk of phone number bans associated with unofficial scraping tools.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+          <span class="faq-title"><h3>Which AI models power HelloBotz, and can I choose between them?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+          HelloBotz features a multi-LLM engine allowing you to power your chatbot with OpenAI's GPT-4o, Anthropic's Claude 3.5 Sonnet, or Google's Gemini 1.5 Pro. You can switch models or route inquiries dynamically based on whether your use case demands natural conversational sales banter, complex analytical logic, or multimodal document processing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+          <span class="faq-title"><h3>How does HelloBotz guarantee zero hallucinations and grounded responses?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+          HelloBotz utilizes strict retrieval-augmented generation (RAG) and customizable boundary constraints. The AI is grounded exclusively on your verified business knowledge base—including website URLs, PDF catalogs, internal policies, and FAQ documents. If an inquiry falls outside your verified data, the bot politely flags the limitation or triggers an instant human handoff.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+          <span class="faq-title"><h3>Can the chatbot integrate with our CRM, Shopify store, and booking tools?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+          Yes. HelloBotz offers seamless native integrations with Shopify, WooCommerce, HubSpot, Zoho CRM, Salesforce, Google Sheets, Calendly, and custom REST API webhooks. Your chatbot can look up live order statuses, recommend in-stock catalog products, confirm appointment bookings, and update CRM contact lead scores in real time without human intervention.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+          <span class="faq-title"><h3>How does the AI hand off complex conversations to human agents?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+          When a customer requests human assistance or asks a question requiring high-touch human approval, HelloBotz seamlessly routes the chat to your team's HelloBotz Shared Multi-Agent Inbox. The assigned support agent receives the full conversational transcript and CRM customer profile so they can jump in immediately without asking the customer to repeat themselves.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+          <span class="faq-title"><h3>How quickly can we launch, and do we need technical or AI coding skills?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+          No coding or AI engineering experience is required. With HelloBotz's intuitive visual drag-and-drop workflow builder and 1-click knowledge base sync, most businesses are live in under 15 minutes. You simply connect your WhatsApp Business number, upload your documents or website link, define your brand tone, and activate your bot.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-7">
+          <span class="faq-title"><h3>How does WhatsApp conversation pricing work for inbound AI customer chats?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-7" class="faq-answer" role="region" aria-hidden="true">
+          When customers message your WhatsApp chatbot first (User-Initiated / Service Conversations), you receive an active 24-hour customer service window where unlimited incoming and outgoing messages are completely free from Meta per-message conversation fees. If incoming traffic originates from Click-to-WhatsApp (CTWA) ads, Meta provides a 72-hour completely free messaging window, drastically reducing acquisition and support costs.
+        </div>
+      </div>
+
+    </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is HelloBotz's AI Chatbot built on the official Meta WhatsApp Business API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. HelloBotz is an official Meta Business Partner. All chatbot conversations run strictly through the official WhatsApp Business Cloud API route, providing enterprise-grade encryption, high throughput, Meta verification support, and zero risk of phone number bans associated with unofficial scraping tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI models power HelloBotz, and can I choose between them?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HelloBotz features a multi-LLM engine allowing you to power your chatbot with OpenAI's GPT-4o, Anthropic's Claude 3.5 Sonnet, or Google's Gemini 1.5 Pro. You can switch models or route inquiries dynamically based on whether your use case demands natural conversational sales banter, complex analytical logic, or multimodal document processing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does HelloBotz guarantee zero hallucinations and grounded responses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HelloBotz utilizes strict retrieval-augmented generation (RAG) and customizable boundary constraints. The AI is grounded exclusively on your verified business knowledge base—including website URLs, PDF catalogs, internal policies, and FAQ documents. If an inquiry falls outside your verified data, the bot politely flags the limitation or triggers an instant human handoff."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the chatbot integrate with our CRM, Shopify store, and booking tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. HelloBotz offers seamless native integrations with Shopify, WooCommerce, HubSpot, Zoho CRM, Salesforce, Google Sheets, Calendly, and custom REST API webhooks. Your chatbot can look up live order statuses, recommend in-stock catalog products, confirm appointment bookings, and update CRM contact lead scores in real time without human intervention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the AI hand off complex conversations to human agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a customer requests human assistance or asks a question requiring high-touch human approval, HelloBotz seamlessly routes the chat to your team's HelloBotz Shared Multi-Agent Inbox. The assigned support agent receives the full conversational transcript and CRM customer profile so they can jump in immediately without asking the customer to repeat themselves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can we launch, and do we need technical or AI coding skills?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No coding or AI engineering experience is required. With HelloBotz's intuitive visual drag-and-drop workflow builder and 1-click knowledge base sync, most businesses are live in under 15 minutes. You simply connect your WhatsApp Business number, upload your documents or website link, define your brand tone, and activate your bot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does WhatsApp conversation pricing work for inbound AI customer chats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When customers message your WhatsApp chatbot first (User-Initiated / Service Conversations), you receive an active 24-hour customer service window where unlimited incoming and outgoing messages are completely free from Meta per-message conversation fees. If incoming traffic originates from Click-to-WhatsApp (CTWA) ads, Meta provides a 72-hour completely free messaging window, drastically reducing acquisition and support costs."
+          }
+        }
+      ]
+    }
+    </script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1610,122 +1737,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </section>
 
-<section class="cta-section my-5">
-  <div class="container rounded text-white text-center cta-container" style="background: #034737; padding: 33px 50px;">
-    <div class="row justify-content-center align-items-center">
+</div>
 
-      <!-- Left Side - Text & Buttons -->
-      <div class="col-lg-7 col-md-12 cta-heading">
-        <h2 style="font-size:32px; color:#ffffff; text-align:start " class="whatsapp-heading cta-heading">Ready to
-          use
-          WhatsApp AI Chatbot?</h2>
-        <p style="color:#ffffff!important; text-align:start" class="cta-para">Automate conversations, support
-          customers
-          24/7, and boost engagement - all on WhatsApp.</p>
-        <div class="cta-buttons mt-4 order-3 order-lg-3 d-flex" style="gap:12px;">
-          <a href="https://app.hellobotz.com/auth/register" target="_blank" rel="noopener noreferrer"
-            class="btn btn-light me-2 shadow-sm apply-free" style="color: #645bb1;">Apply Free Now!</a>
-          <div class="btn btn-outline-light shadow-sm book-demo book-demo-btn btn-demo-open" role="button" tabindex="0" style="cursor: pointer;" data-product="Chatbot">Book A Free Demo</div>
-        </div>
-      </div>
-
-      <!-- Right Side - Image -->
-      <div class="col-lg-5 col-md-12 text-center order-2 order-lg-2 ">
-        <img src="/assets/images/hellobots/ai-whatsapp-chatbot/Cta-1.png" alt="WhatsApp AI Assistant"
-          class="img-fluid cta-image" style="max-width: 70%;">
-      </div>
-
-    </div>
-  </div>
-</section>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-  var swiper = document.querySelector(".partners-slider") && new Swiper(".partners-slider", {
-    slidesPerView: 2, // Show 2 logos on mobile
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: true,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 5, // Show 4 logos on desktop
-      }
-    }
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const demoButtons = document.querySelectorAll('.book-demo-btn, .btn-demo-open');
-    demoButtons.forEach(function (button) {
-      button.style.cursor = 'pointer';
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        const productSelect = document.getElementById('dm-product');
-        if (productSelect) {
-          productSelect.value = 'Chatbot';
-        }
-        if (typeof window.openDemoModal === 'function') {
-          window.openDemoModal();
-        } else {
-          const modal = document.getElementById('demo-popup');
-          if (modal) {
-            modal.hidden = false;
-            requestAnimationFrame(() => modal.classList.add('open'));
-            document.body.classList.add('menu-open');
-          }
-        }
-      });
-    });
-  });
-</script>
-<script>
-  let bannerIndex = 0;
-  const bannerTrack = document.getElementById("bannerTrack");
-  const bannerTotal = bannerTrack.children.length;
-
-  setInterval(() => {
-    bannerIndex = (bannerIndex + 1) % bannerTotal;
-    bannerTrack.style.transform = `translateX(-${bannerIndex * 100}%)`;
-  }, 3000); // every 3 seconds
-</script>
-<!-- Homepage-style footer. Loaded here (not in <head>) same as header.php - see
-        assets/cssnewhome/footer-shared.css for the dedicated, footer-only CSS this uses. -->
-
-
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // FAQ accordion
-  document.querySelectorAll('.faq-questionn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const item = this.closest('.faq-itemm');
-      const ans = item ? item.querySelector('.faq-answerr') : null;
-      const isOpen = this.classList.contains('open');
-      
-      // Close all in this section
-      const parent = this.closest('.custom-faq-accordion') || document;
-      parent.querySelectorAll('.faq-questionn').forEach(b => b.classList.remove('open'));
-      parent.querySelectorAll('.faq-answerr').forEach(a => a.classList.remove('open'));
-
-      if (!isOpen && ans) {
-        this.classList.add('open');
-        ans.classList.add('open');
-      }
-    });
-  });
-
+document.addEventListener('DOMContentLoaded', function () {
   // Init Swiper if present
   if (typeof Swiper !== 'undefined') {
     document.querySelector(".partners-slider") && new Swiper(".partners-slider", {
@@ -1733,12 +1750,50 @@ document.addEventListener('DOMContentLoaded', function() {
       spaceBetween: 20,
       loop: true,
       autoplay: { delay: 2500, disableOnInteraction: false },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
       breakpoints: {
         640: { slidesPerView: 3, spaceBetween: 20 },
         768: { slidesPerView: 4, spaceBetween: 30 },
         1024: { slidesPerView: 5, spaceBetween: 30 }
       }
     });
+  }
+
+  // Demo modal openers
+  const demoButtons = document.querySelectorAll('.book-demo-btn, .btn-demo-open');
+  demoButtons.forEach(function (button) {
+    button.style.cursor = 'pointer';
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const productSelect = document.getElementById('dm-product');
+      if (productSelect) {
+        productSelect.value = 'Chatbot';
+      }
+      if (typeof window.openDemoModal === 'function') {
+        window.openDemoModal();
+      } else {
+        const modal = document.getElementById('demo-popup');
+        if (modal) {
+          modal.hidden = false;
+          requestAnimationFrame(() => modal.classList.add('open'));
+          document.body.classList.add('menu-open');
+        }
+      }
+    });
+  });
+
+  // Banner rotation if element exists
+  const bannerTrack = document.getElementById("bannerTrack");
+  if (bannerTrack && bannerTrack.children.length > 0) {
+    let bannerIndex = 0;
+    const bannerTotal = bannerTrack.children.length;
+    setInterval(() => {
+      bannerIndex = (bannerIndex + 1) % bannerTotal;
+      bannerTrack.style.transform = `translateX(-${bannerIndex * 100}%)`;
+    }, 3000);
   }
 });
 </script>
