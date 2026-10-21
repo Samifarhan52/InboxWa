@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../config/cms.php';
 $pageTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz';
 $pageDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-interactive-messages/';
-$ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png?v=2';
 $ogTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz';
 $ogDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBotz.';
 
@@ -275,7 +275,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box" style="padding: 10px; border-radius: 10px;">
-          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png" loading="lazy"
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png?v=2" loading="lazy"
             alt="WhatsApp Interactive Messages - HelloBotz" class="img-fluid">
         </div>
       </div>
@@ -318,7 +318,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-2 order-lg-1 text-center">
                 <div class="api-image-box">
-                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Reply-Buttons.png" alt="WhatsApp Reply Buttons - HelloBotz" class="api-image img-fluid rounded">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Reply-Buttons.png?v=2" alt="WhatsApp Reply Buttons - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -351,7 +351,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-1 order-lg-2 text-center">
                 <div class="api-image-box">
-                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/List-Messages.png"
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/List-Messages.png?v=2"
                         alt="WhatsApp List Messages - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
@@ -385,7 +385,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-2 order-lg-1 text-center">
                 <div class="api-image-box">
-                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Single-Product-Messages.png"
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Single-Product-Messages.png?v=2"
                         alt="WhatsApp Single Product Messages - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
@@ -419,7 +419,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-1 order-lg-2 text-center">
                 <div class="api-image-box">
-                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Multi-Product-Messages.png"
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Multi-Product-Messages.png?v=2"
                         alt="WhatsApp Multi Product Messages - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
@@ -453,7 +453,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-2 order-lg-1 text-center">
                 <div class="api-image-box">
-                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Location-Request-Messages.png"
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Location-Request-Messages.png?v=2"
                         alt="WhatsApp Location Request Messages - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
@@ -487,7 +487,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-1 order-lg-2 text-center">
                 <div class="api-image-box">
-                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Flow-Messages.png"
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Flow-Messages.png?v=2"
                         alt="WhatsApp Flow Messages - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
@@ -555,7 +555,7 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
         <div class="api-image-box" style="padding: 10px; border-radius: 12px;">
-          <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/img_3cdda3d145.png"
+          <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/img_3cdda3d145.png?v=2"
             alt="Why WhatsApp Interactive Messages - HelloBotz" class="img-fluid rounded" />
         </div>
       </div>
