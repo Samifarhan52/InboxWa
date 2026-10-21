@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz's;
+$pageTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz';
 $pageDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-interactive-messages/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png';
-$ogTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz's;
+$ogTitle = 'WhatsApp Interactive Messages | Quick Replies & CTA Buttons | HelloBotz';
 $ogDescription = 'Boost response rates with interactive buttons, list pickers, and dynamic CTA messages on WhatsApp using HelloBotz.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -251,13 +251,13 @@ include __DIR__ . '/../../includes/header.php';
     </span>
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
-        <h1 class="hero-title">Boost Customer Engagement Using WhatsApp Messages with Interactive Buttons</h1>
-        <p class="hero-text">Drive customer engagement and actions by adding buttons in an interactive message</p>
+        <h1 class="hero-title">Boost Customer Engagement with WhatsApp Interactive Buttons & Menus</h1>
+        <p class="hero-text">Replace typing friction and drop-offs with 1-tap quick replies, 10-item list pickers, and WhatsApp Flows. Accelerate lead qualification, bookings, and instant in-chat checkouts with 3.8x higher conversion.</p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
           </a>
-          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
+          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
             Book Live Demo
           </button>
           <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
@@ -265,12 +265,18 @@ include __DIR__ . '/../../includes/header.php';
             Get Verified
           </a>
         </div>
+        <div class="hero-sub-badges" style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:14px;font-size:0.85rem;color:#475569;font-weight:600;">
+          <span><i class="fa-solid fa-bolt text-warning"></i> 3 Quick Reply Buttons</span>
+          <span><i class="fa-solid fa-list-check text-primary"></i> 10-Item List Menus</span>
+          <span><i class="fa-solid fa-mobile-screen text-success"></i> Native WhatsApp Flows</span>
+          <span><i class="fa-solid fa-shield-halved text-success"></i> Official Meta Cloud API</span>
+        </div>
       </div>
       <!-- Image Content with background -->
       <div class="col-lg-6">
-        <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="/assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png" loading="lazy"
-            alt="WhatsApp Interactive Messages">
+        <div class="api-image-box" style="padding: 10px; border-radius: 10px;">
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/WhatsApp-Interactive-Messages.png" loading="lazy"
+            alt="WhatsApp Interactive Messages - HelloBotz" class="img-fluid">
         </div>
       </div>
     </div>
@@ -282,198 +288,276 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="whatsapp-usecase py-5">
     <div class="container">
-        <h2 class="whatsapp-heading mb-5">Types of Interactive Messages
-        </h2>
+        <h2 class="whatsapp-heading mb-5">Types of WhatsApp Interactive Messages</h2>
+        
+        <!-- Feature 1: Reply Buttons -->
         <div class="usecase-row row align-items-center mb-5">
             <!-- Text -->
             <div class="col-lg-6 order-1 order-lg-2 mb-5">
                 <div class="api-content">
+                    <span class="badge mb-2" style="background:#e0e7ff;color:#4338ca;font-weight:700;padding:6px 12px;border-radius:6px;font-size:0.82rem;">1-TAP ACTIONS</span>
                     <h3>Reply Buttons</h3>
                     <p class="mb-3">
-                        Allows the user to give a quick reply consisting of three button options (e.g., to continue a conversation, reorder, or complete a task) with a single click
+                        Guide customer decisions instantly with up to 3 clickable quick-reply buttons. Whether it's choosing a subscription tier, confirming an appointment, or reordering a favorite product, customers reply with a single tap—eliminating typos, hesitation, and chat drop-off.
                     </p>
-                   
+                    <div class="mb-3" style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.83rem;font-weight:600;">
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">✓ Up to 3 Action Buttons</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">⚡ Instant Webhook Triggers</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📈 3.8x Higher Conversion</span>
+                    </div>
                 </div>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                        Start Free Trial →
+                    </a>
+                    <button type="button" class="btn btn-outline-primary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;">
+                        Book Demo
+                    </button>
+                </div>
             </div>
             <!-- Image -->
             <div class="col-lg-6 order-2 order-lg-1 text-center">
                 <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-interactive-messages/Reply-Buttons.png" alt="Reply Buttons
-" class="api-image img-fluid rounded">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Reply-Buttons.png" alt="WhatsApp Reply Buttons - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
         </div>
-        <div class="usecase-row row align-items-center mb-5">
-            <!-- Text -->
-            <div class="col-lg-6 order-1 order-lg-1 mb-5">
-                <div class="api-content">
-                    <h3>List Messages
-                    </h3>
-                    <p class="mb-3">
-                        Give a menu of up to 10 scrollable options to let users choose what they want. For example, checking FAQs, viewing the restaurant menu, and the nearby store. 
-                    </p>
-                   
-                </div>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
-            </div>
-            <!-- Image -->
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-interactive-messages/List-Messages.png"
-                        alt="List Messages" class="api-image img-fluid rounded">
-                </div>
-            </div>
-        </div>
-        <div class="usecase-row row align-items-center mb-5">
-            <!-- Text -->
-            <div class="col-lg-6 order-1 order-lg-2 mb-5">
-                <div class="api-content">
-                    <h3>Single-Product Messages
-                    </h3>
-                    <p class="mb-3">
-                        Display your specific product with its details and call-to-action button, great for promoting offers and bestsellers.
-                    </p>
-                   
-                </div>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
-            </div>
-            <!-- Image -->
-            <div class="col-lg-6 order-2 order-lg-1 text-center">
-                <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-interactive-messages/Single-Product-Messages.png"
-                        alt="Single Product Messages" class="api-image img-fluid rounded">
-                </div>
-            </div>
-        </div>
-        
-          <div class="usecase-row row align-items-center mb-5">
-            <!-- Text -->
-            <div class="col-lg-6 order-1 order-lg-1 mb-5">
-                <div class="api-content">
-                    <h3>Multi-Product Messages
-                    </h3>
-                    <p class="mb-3">
-                        Show up to 30 products in a scrollable format, making it easier for customers to see all product categories and bundles.
-                    </p>
-                   
-                </div>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
-            </div>
-            <!-- Image -->
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-interactive-messages/Multi-Product-Messages.png"
-                        alt="Multi Product Messages" class="api-image img-fluid rounded">
-                </div>
-            </div>
-        </div>
-        <div class="usecase-row row align-items-center mb-5">
-            <!-- Text -->
-            <div class="col-lg-6 order-1 order-lg-2 mb-5">
-                <div class="api-content">
-                    <h3>Location Request Messages
-                    </h3>
-                    <p class="mb-3">
-                        Ask your clients to share their location with a single click for easier delivery and finding the nearby store.
-                    </p>
-                   
-                </div>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
-            </div>
-            <!-- Image -->
-            <div class="col-lg-6 order-2 order-lg-1 text-center">
-                <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-interactive-messages/Location-Request-Messages.png"
-                        alt="Location Request Messages" class="api-image img-fluid rounded">
-                </div>
-            </div>
-        </div>
-        
-         <div class="usecase-row row align-items-center mb-5">
-            <!-- Text -->
-            <div class="col-lg-6 order-1 order-lg-1 mb-5">
-                <div class="api-content">
-                    <h3>Flow Messages
-                    </h3>
-                    <p class="mb-3">
-                        Help users to complete step-by-step processes such as sign-ups, bookings, or surveys.
 
+        <!-- Feature 2: List Messages -->
+        <div class="usecase-row row align-items-center mb-5">
+            <!-- Text -->
+            <div class="col-lg-6 order-1 order-lg-1 mb-5">
+                <div class="api-content">
+                    <span class="badge mb-2" style="background:#ecfdf5;color:#047857;font-weight:700;padding:6px 12px;border-radius:6px;font-size:0.82rem;">ORGANIZED MENUS</span>
+                    <h3>List Messages</h3>
+                    <p class="mb-3">
+                        Present an organized, scrollable menu of up to 10 categorized options in a single clean message. Perfect for customer support departments, product catalogs, branch selection, and FAQs without cluttering the chat with dozens of individual messages.
                     </p>
-                   
+                    <div class="mb-3" style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.83rem;font-weight:600;">
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📋 Up to 10 Scrollable Items</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📂 Multi-Section Grouping</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">✨ Zero Chat Clutter</span>
+                    </div>
                 </div>
-                <a id="whatsapp-enquiry"
-                    href="<?php echo $bp; ?>#contact-section" class="btn text-white cta-button m-0">
-                    Enquiry Now
-                </a>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                        Start Free Trial →
+                    </a>
+                    <button type="button" class="btn btn-outline-primary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;">
+                        Book Demo
+                    </button>
+                </div>
             </div>
             <!-- Image -->
             <div class="col-lg-6 order-1 order-lg-2 text-center">
                 <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-interactive-messages/Flow-Messages.png"
-                        alt="Flow Messages" class="api-image img-fluid rounded">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/List-Messages.png"
+                        alt="WhatsApp List Messages - HelloBotz" class="api-image img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3: Single-Product Messages -->
+        <div class="usecase-row row align-items-center mb-5">
+            <!-- Text -->
+            <div class="col-lg-6 order-1 order-lg-2 mb-5">
+                <div class="api-content">
+                    <span class="badge mb-2" style="background:#fef3c7;color:#92400e;font-weight:700;padding:6px 12px;border-radius:6px;font-size:0.82rem;">FOCUSED CHECKOUT</span>
+                    <h3>Single-Product Messages</h3>
+                    <p class="mb-3">
+                        Showcase a specific product directly from your catalog with high-res imagery, live price, product description, and an instant 'Add to Cart' or 'Buy Now' button. Drive laser-focused re-engagement for abandoned carts, flash sales, and personalized customer recommendations.
+                    </p>
+                    <div class="mb-3" style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.83rem;font-weight:600;">
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">🛍️ Real-Time Catalog Sync</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">⚡ 1-Tap Cart Addition</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">🛒 Shopify & WooCommerce Sync</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                        Start Free Trial →
+                    </a>
+                    <button type="button" class="btn btn-outline-primary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;">
+                        Book Demo
+                    </button>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="col-lg-6 order-2 order-lg-1 text-center">
+                <div class="api-image-box">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Single-Product-Messages.png"
+                        alt="WhatsApp Single Product Messages - HelloBotz" class="api-image img-fluid rounded">
                 </div>
             </div>
         </div>
         
-     
+        <!-- Feature 4: Multi-Product Messages -->
+        <div class="usecase-row row align-items-center mb-5">
+            <!-- Text -->
+            <div class="col-lg-6 order-1 order-lg-1 mb-5">
+                <div class="api-content">
+                    <span class="badge mb-2" style="background:#fce7f3;color:#9d174d;font-weight:700;padding:6px 12px;border-radius:6px;font-size:0.82rem;">IN-CHAT STOREFRONT</span>
+                    <h3>Multi-Product Messages</h3>
+                    <p class="mb-3">
+                        Deliver a complete native storefront experience inside WhatsApp with up to 30 products organized into up to 10 custom sections. Customers can browse collections, compare items, add multiple products to their in-chat cart, and checkout seamlessly without ever opening an external browser.
+                    </p>
+                    <div class="mb-3" style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.83rem;font-weight:600;">
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📦 Up to 30 Products</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📂 10 Storefront Sections</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">🔒 Zero Website Drop-Off</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                        Start Free Trial →
+                    </a>
+                    <button type="button" class="btn btn-outline-primary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;">
+                        Book Demo
+                    </button>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <div class="api-image-box">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Multi-Product-Messages.png"
+                        alt="WhatsApp Multi Product Messages - HelloBotz" class="api-image img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 5: Location Request Messages -->
+        <div class="usecase-row row align-items-center mb-5">
+            <!-- Text -->
+            <div class="col-lg-6 order-1 order-lg-2 mb-5">
+                <div class="api-content">
+                    <span class="badge mb-2" style="background:#e0f2fe;color:#0369a1;font-weight:700;padding:6px 12px;border-radius:6px;font-size:0.82rem;">GEOLOCATION</span>
+                    <h3>Location Request Messages</h3>
+                    <p class="mb-3">
+                        Prompt customers to securely transmit their precise GPS coordinates or pin delivery addresses with a single tap. Streamline doorstep deliveries, field agent routing, service technician dispatch, and nearest-store recommendations with zero manual address typing errors.
+                    </p>
+                    <div class="mb-3" style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.83rem;font-weight:600;">
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📍 1-Tap GPS Transmission</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">🚚 Automated Delivery Routing</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">🏪 Nearest Store Locator</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                        Start Free Trial →
+                    </a>
+                    <button type="button" class="btn btn-outline-primary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;">
+                        Book Demo
+                    </button>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="col-lg-6 order-2 order-lg-1 text-center">
+                <div class="api-image-box">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Location-Request-Messages.png"
+                        alt="WhatsApp Location Request Messages - HelloBotz" class="api-image img-fluid rounded">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feature 6: WhatsApp Flows -->
+        <div class="usecase-row row align-items-center mb-5">
+            <!-- Text -->
+            <div class="col-lg-6 order-1 order-lg-1 mb-5">
+                <div class="api-content">
+                    <span class="badge mb-2" style="background:#f3e8ff;color:#6b21a8;font-weight:700;padding:6px 12px;border-radius:6px;font-size:0.82rem;">NATIVE FORMS</span>
+                    <h3>WhatsApp Flow Messages</h3>
+                    <p class="mb-3">
+                        Deploy rich, dynamic, multi-screen interactive forms directly inside WhatsApp without external redirects. Collect qualified lead information, book appointments, execute KYC checks, register warranties, and gather customer feedback within a native, silky-smooth mobile form.
+                    </p>
+                    <div class="mb-3" style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.83rem;font-weight:600;">
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">📲 Native Multi-Screen Forms</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">⚡ Real-Time Field Validation</span>
+                        <span class="badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:6px 12px;border-radius:20px;">🔄 Direct CRM & ERP Ingestion</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                        Start Free Trial →
+                    </a>
+                    <button type="button" class="btn btn-outline-primary m-0 btn-demo-open" data-product="Interactive Messages" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;">
+                        Book Demo
+                    </button>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <div class="api-image-box">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/Flow-Messages.png"
+                        alt="WhatsApp Flow Messages - HelloBotz" class="api-image img-fluid rounded">
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <section class="trust-section py-5" style="background:#fff!important">
   <div class="container">
-    <h2 class="text-center mb-4">Why Should Businesses Use WhatsApp Interactive Messages?
-</h2>
+    <div class="text-center mb-5">
+      <span class="badge mb-2" style="background:#ecfdf5;color:#047857;font-weight:700;padding:6px 14px;border-radius:20px;font-size:0.85rem;border:1px solid #a7f3d0;">BUSINESS VALUE</span>
+      <h2 class="fw-bold mb-3">Why Should Businesses Use WhatsApp Interactive Messages?</h2>
+      <p class="text-muted" style="max-width:720px;margin:0 auto;font-size:1.05rem;">
+        Transform static chat interactions into high-conversion digital experiences that drive engagement, qualification, and revenue without leaving WhatsApp.
+      </p>
+    </div>
     <div class="row align-items-center">
       <!-- Left Text Section -->
       <div class="col-lg-6">
         <div class="trust-point mb-4 d-flex align-items-start">
-          <div>
-            <h3>Boost Engagement</h3>
-            <p>The buttons and quick replies can be used to improve the response rate and make the users act without delay.</p>
+          <div class="me-3 mt-1" style="width:40px;height:40px;border-radius:10px;background:#e0e7ff;color:#4338ca;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">
+            <i class="fa-solid fa-bolt"></i>
           </div>
-        </div>
-        <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Enhance Customer Experience</h3>
-            <p>Customers can do all things within a conversation; they can find information and take actions like booking and purchasing.
+            <h3 style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px;">Boost Response & Engagement (+64% Lift)</h3>
+            <p style="color:#475569;font-size:0.95rem;line-height:1.6;margin-bottom:0;">
+              Clickable quick reply buttons and interactive list menus eliminate cognitive friction and typing effort. Prospects respond instantly, driving up to +64% higher engagement compared to traditional plain-text broadcasts.
             </p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
+          <div class="me-3 mt-1" style="width:40px;height:40px;border-radius:10px;background:#ecfdf5;color:#047857;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
           <div>
-            <h3></span>Increase Conversions</h3>
-            <p>User experience becomes much easier with the help of call-to-action buttons and transforms the chat into a conversion.</p>
+            <h3 style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px;">Seamless Frictionless Journeys</h3>
+            <p style="color:#475569;font-size:0.95rem;line-height:1.6;margin-bottom:0;">
+              Enable customers to discover products, schedule appointments, and complete purchases entirely inside WhatsApp. No browser redirects, no forgotten passwords, and zero drop-off along the conversion path.
+            </p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
+          <div class="me-3 mt-1" style="width:40px;height:40px;border-radius:10px;background:#fef3c7;color:#92400e;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
           <div>
-            <h3></span>Automate Communication</h3>
-            <p>Use WhatsApp interactive messages to automate workflow to send instant responses and save time. </p>
+            <h3 style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px;">Accelerate Conversions (3.8x CTR)</h3>
+            <p style="color:#475569;font-size:0.95rem;line-height:1.6;margin-bottom:0;">
+              Interactive call-to-action buttons guide high-intent prospects straight into conversion funnels. Deliver personalized recommendations and 1-tap checkout links that convert 3.8x faster than traditional web forms.
+            </p>
           </div>
         </div>
-        
-        
+        <div class="trust-point mb-4 d-flex align-items-start">
+          <div class="me-3 mt-1" style="width:40px;height:40px;border-radius:10px;background:#f3e8ff;color:#6b21a8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <div>
+            <h3 style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px;">Sub-Second Automated Workflows</h3>
+            <p style="color:#475569;font-size:0.95rem;line-height:1.6;margin-bottom:0;">
+              Integrate button selections with HelloBotz no-code automation and AI chatbots. Instantly sync user responses with HubSpot, Salesforce, Zoho, and Shopify via high-speed webhooks with &lt;120ms latency.
+            </p>
+          </div>
+        </div>
       </div>
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <img src="/assets/images/hellobots/whatsapp-interactive-messages/img_3cdda3d145.png"
-          alt="Why WhatsApp Interactive Messages " class="img-fluid" />
+        <div class="api-image-box" style="padding: 10px; border-radius: 12px;">
+          <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-interactive-messages/img_3cdda3d145.png"
+            alt="Why WhatsApp Interactive Messages - HelloBotz" class="img-fluid rounded" />
+        </div>
       </div>
     </div>
   </div>
@@ -637,10 +721,9 @@ include __DIR__ . '/../../includes/header.php';
 
       </div>
     <div class="grid-item">
-        <h3><i class="fas fa-database"></i> WhatsApp Interactive</h3>
-        <p>Engage customers with interactive buttons, lists and reply options that make conversations faster, easier, and actionable.</p>
-               
-<a class="learn-more" href="<?php echo $bp; ?>products/whatsapp-interactive-messages/" target="_blank" rel="noopener noreferrer">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        <h3><i class="fas fa-network-wired"></i> WhatsApp Automation</h3>
+        <p>Build no-code branching workflows and automated sequences that qualify leads and route requests 24/7.</p>
+        <a class="learn-more" href="<?php echo $bp; ?>products/chatbot/">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="grid-item">
         <h3><i class="fas fa-lock"></i> WhatsApp Authentication</h3>
@@ -1293,7 +1376,160 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can I use Interactive Messages for marketing campaigns?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes, you can use Interactive messages for running your marketing campaigns. They help you promote, collect feedback, guide users via the sales funnel, and generate leads.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can I customize the functions of WhatsApp interactive buttons?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Of Course, WhatsApp interactive buttons can be personalized for actions such as sending instant replies, triggering certain actions, or opening links.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Are Interactive Messages supported on all devices?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, from Android, iOS, and WhatsApp Web, the interactive messages seamlessly work across all of them.Yes. You can customize WhatsApp forms like add your own queries, branding, and automation - hence it feels aligned with your business.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Do I need the WhatsApp Business API to send Interactive Messages?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Absolutely, you can only access interactive buttons via the official WhatsApp Business API. It is not available on your normal WhatsApp Business App.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Is there a limit on the WhatsApp button?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Yes, there is. Each button can only have up to 30 characters, and everyone must be unique. Plus, you can add a ten reply button and a five-list option in each message, and the title section is limited to 24 characters with emoji support in the template message.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use Interactive Messages for marketing campaigns?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can use Interactive messages for running your marketing campaigns. They help you promote, collect feedback, guide users via the sales funnel, and generate leads."}},{"@type":"Question","name":"Can I customize the functions of WhatsApp interactive buttons?","acceptedAnswer":{"@type":"Answer","text":"Of Course, WhatsApp interactive buttons can be personalized for actions such as sending instant replies, triggering certain actions, or opening links."}},{"@type":"Question","name":"Are Interactive Messages supported on all devices?","acceptedAnswer":{"@type":"Answer","text":"Yes, from Android, iOS, and WhatsApp Web, the interactive messages seamlessly work across all of them.Yes. You can customize WhatsApp forms like add your own queries, branding, and automation - hence it feels aligned with your business."}},{"@type":"Question","name":"Do I need the WhatsApp Business API to send Interactive Messages?","acceptedAnswer":{"@type":"Answer","text":"Absolutely, you can only access interactive buttons via the official WhatsApp Business API. It is not available on your normal WhatsApp Business App."}},{"@type":"Question","name":"Is there a limit on the WhatsApp button?","acceptedAnswer":{"@type":"Answer","text":"Yes, there is. Each button can only have up to 30 characters, and everyone must be unique. Plus, you can add a ten reply button and a five-list option in each message, and the title section is limited to 24 characters with emoji support in the template message."}}]}</script>
+    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+      <div class="text-center mb-4">
+        <span class="badge mb-2" style="background:#e0e7ff;color:#4338ca;font-weight:700;padding:6px 14px;border-radius:20px;font-size:0.85rem;">KNOWLEDGE BASE</span>
+        <h2 class="fw-bold">Frequently Asked Questions</h2>
+        <p class="text-muted" style="max-width:680px;margin:0 auto;">Everything you need to know about WhatsApp interactive messages, technical limits, Flows, and Meta API integration.</p>
+      </div>
+
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0">
+          <span class="faq-title"><h3>What are WhatsApp Interactive Messages and how do they differ from plain text?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+          WhatsApp Interactive Messages allow businesses to include native, clickable interface elements—such as Quick Reply buttons (up to 3 options), List Messages (up to 10 scrollable items), WhatsApp Flows (multi-screen native forms), and Single/Multi-Product storefront cards—directly inside the chat. Unlike standard plain text where users must type replies or click external links, interactive messages offer 1-tap responses that achieve up to 3.8x higher click-through rates (CTR) and eliminate website drop-off.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+          <span class="faq-title"><h3>What are the technical limits for Quick Reply buttons and List Messages?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">
+          Under the official WhatsApp Cloud API specifications:
+          <ul style="margin:8px 0 0;padding-left:20px;">
+            <li><strong>Quick Reply Buttons:</strong> Up to 3 buttons per message. Each button label can contain up to 20 characters (including emojis).</li>
+            <li><strong>List Messages:</strong> Up to 10 selectable items organized across up to 10 sections. Each row supports a title (up to 24 characters) and an optional description (up to 72 characters).</li>
+            <li><strong>Multi-Product Messages:</strong> Up to 30 items categorized into up to 10 catalog sections.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+          <span class="faq-title"><h3>How do WhatsApp Flows work with Interactive Messages?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+          WhatsApp Flows enable businesses to deploy rich, multi-screen forms natively inside WhatsApp without opening an external browser or third-party web view. Customers can book appointments, configure products, submit KYC documents, fill out customer surveys, and complete sign-ups directly within a smooth, app-like interface. Form inputs are validated in real time and automatically dispatched via webhooks to your CRM or ERP.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+          <span class="faq-title"><h3>Do I need the official WhatsApp Business Cloud API to send Interactive Messages?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+          Yes. Interactive components (Reply Buttons, List Messages, Location Requests, Flows, and Product Cards) are exclusively supported on the official Meta WhatsApp Business Cloud API. They are not available on the free consumer WhatsApp app or the standard WhatsApp Business mobile app. HelloBotz provides immediate Meta API onboarding, verified number routing, and full interactive message builder tools.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+          <span class="faq-title"><h3>Can Interactive Messages be automated with chatbots and CRM webhooks?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+          Absolutely. HelloBotz features a visual drag-and-drop workflow builder that connects interactive button taps directly to AI chatbots (powered by GPT-4o and Claude), routing logic, and webhook triggers. When a customer selects an option, HelloBotz can instantly update records in HubSpot, Salesforce, Zoho, Shopify, or custom databases with sub-second response times.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+          <span class="faq-title"><h3>Can customers make payments directly through WhatsApp Interactive Messages?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+          Yes. Interactive messages seamlessly integrate with WhatsApp In-Chat Payments and UPI. You can trigger dynamic payment requests, catalog checkout cards, and 1-tap UPI deep-links (Google Pay, PhonePe, Paytm, CRED). Customers complete payments securely without leaving WhatsApp, achieving up to 54% higher transaction completion.
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+          <span class="faq-title"><h3>How does Meta charge for WhatsApp Interactive Messages?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+          Interactive messages adhere to Meta's standard conversation-based pricing model. When initiated within an active 24-hour customer service window (initiated by the user), responses and interactive messages incur standard service rates. When sent as outbound proactive campaigns, they fall under Meta's Marketing or Utility template categories. Within a Click-to-WhatsApp (CTWA) 72-hour free window, all conversations are 100% free of Meta conversation charges.
+        </div>
+      </div>
+    </div>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are WhatsApp Interactive Messages and how do they differ from plain text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsApp Interactive Messages allow businesses to include native, clickable interface elements—such as Quick Reply buttons (up to 3 options), List Messages (up to 10 scrollable items), WhatsApp Flows (multi-screen native forms), and Single/Multi-Product storefront cards—directly inside the chat. Unlike standard plain text where users must type replies or click external links, interactive messages offer 1-tap responses that achieve up to 3.8x higher click-through rates (CTR) and eliminate website drop-off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the technical limits for Quick Reply buttons and List Messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under the official WhatsApp Cloud API specifications: Quick Reply Buttons allow up to 3 buttons per message (each up to 20 characters including emojis). List Messages support up to 10 selectable items across up to 10 sections with title up to 24 characters and description up to 72 characters. Multi-Product Messages support up to 30 items."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do WhatsApp Flows work with Interactive Messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsApp Flows enable businesses to deploy rich, multi-screen forms natively inside WhatsApp without opening an external browser or third-party web view. Customers can book appointments, configure products, submit KYC documents, fill out customer surveys, and complete sign-ups directly within a smooth, app-like interface. Form inputs are validated in real time and automatically dispatched via webhooks to your CRM or ERP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need the official WhatsApp Business Cloud API to send Interactive Messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Interactive components (Reply Buttons, List Messages, Location Requests, Flows, and Product Cards) are exclusively supported on the official Meta WhatsApp Business Cloud API. They are not available on the free consumer WhatsApp app or the standard WhatsApp Business mobile app. HelloBotz provides immediate Meta API onboarding, verified number routing, and full interactive message builder tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Interactive Messages be automated with chatbots and CRM webhooks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. HelloBotz features a visual drag-and-drop workflow builder that connects interactive button taps directly to AI chatbots (powered by GPT-4o and Claude), routing logic, and webhook triggers. When a customer selects an option, HelloBotz can instantly update records in HubSpot, Salesforce, Zoho, Shopify, or custom databases with sub-second response times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can customers make payments directly through WhatsApp Interactive Messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Interactive messages seamlessly integrate with WhatsApp In-Chat Payments and UPI. You can trigger dynamic payment requests, catalog checkout cards, and 1-tap UPI deep-links (Google Pay, PhonePe, Paytm, CRED). Customers complete payments securely without leaving WhatsApp, achieving up to 54% higher transaction completion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Meta charge for WhatsApp Interactive Messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Interactive messages adhere to Meta's standard conversation-based pricing model. When initiated within an active 24-hour customer service window (initiated by the user), responses and interactive messages incur standard service rates. When sent as outbound proactive campaigns, they fall under Meta's Marketing or Utility template categories. Within a Click-to-WhatsApp (CTWA) 72-hour free window, all conversations are 100% free of Meta conversation charges."
+          }
+        }
+      ]
+    }
+    </script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1665,7 +1901,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://app.hellobotz.com/auth/register" class="hb-cta-btn-primary">
         Start Free Trial →
       </a>
-      <button type="button" class="hb-cta-btn-secondary btn-demo-open">
+      <button type="button" class="hb-cta-btn-secondary btn-demo-open" data-product="Interactive Messages">
         Book a Live Demo
       </button>
       <a href="#contact-section" class="hb-cta-btn-verified">
