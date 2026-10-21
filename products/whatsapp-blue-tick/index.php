@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBotz's;
+$pageTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBotz';
 $pageDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-blue-tick/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png';
-$ogTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBotz's;
+$ogTitle = 'Official WhatsApp Green/Blue Tick Verification | HelloBotz';
 $ogDescription = 'Get the verified green badge on your WhatsApp Business Profile. Build brand authority and customer trust with HelloBotz.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -1052,9 +1052,8 @@ body.wv-modal-open .wv-modal-overlay {
     </span>
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
-        <h1 class="hero-title"> Get a Verified Blue Tick Badge on Your WhatsApp Next Button Handler</h1>
-        <p class="hero-text">Get more trust and authority for your brand! Easily get your WhatsApp blue tick verified badge.
-          Apply for free and be more productive with customers!</p>
+        <h1 class="hero-title">Get the Official WhatsApp Verified Green/Blue Tick Badge</h1>
+        <p class="hero-text">Establish instant brand authority, protect your business name from impersonation, and boost customer response rates. Apply for your official Meta Verified WhatsApp green/blue badge with HelloBotz expert guidance.</p>
           <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <button class="cta-button m-0" id="wvOpenModal" style="background:#10b981;border-color:#10b981;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;">
             Apply for Blue Tick
@@ -1071,9 +1070,8 @@ body.wv-modal-open .wv-modal-overlay {
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="/assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png" loading="lazy"
-            alt="WhatsApp Blue Tick
-">
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-blue-tick/WhatsApp-Blue-Tick.png" loading="lazy"
+            alt="WhatsApp Verified Blue Tick Badge">
 
       </div>
     </div>
@@ -1083,46 +1081,45 @@ body.wv-modal-open .wv-modal-overlay {
 
 <section class="trust-section py-5">
   <div class="container">
-    <h2 class="text-center mb-4">Why Verified Badge on WhatsApp Matters for Your Brand</h2>
+    <h2 class="text-center mb-4">Why the Official Verified Badge Matters for Your Brand</h2>
     <div class="row align-items-center">
       <!-- Left Text Section -->
       <div class="col-lg-6">
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3> Brand Credibility Boost</h3>
-            <p>The blue tick badge is given by Meta, guaranteeing the business is verified and trustworthy.</p>
+            <h3>Official Meta Credibility</h3>
+            <p>The verified checkmark is granted directly by Meta, certifying to customers that your business is genuine and authentic.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3> Protection Against Impersonation</h3>
-            <p>Authentication support to prevent impostors or fake accounts from misusing the business name or identity.
-            </p>
+            <h3>Protection Against Impersonation</h3>
+            <p>Prevent impostors, spammers, and rogue accounts from misusing your company name, logo, or reputation.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span> Reduce Ban Risk</h3>
-            <p>A verified WhatsApp Business Account lowers ban risk and confirms a secure conversation.</p>
+            <h3>Brand Name Display Without Saving Contact</h3>
+            <p>Your official brand name appears in bold header text in the chat list and notifications, even if the user hasn't saved your number.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span> Stronger Customer Confidence</h3>
-            <p>Users are more likely to interact with a company official trusted by WhatsApp.</p>
+            <h3>Stronger Customer Trust & Higher CTR</h3>
+            <p>Customers are significantly more likely to open messages, click catalog links, and complete purchases with verified businesses.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Higher Conversion Rates</h3>
-            <p>A blue-tick verified account experience increases up to 40% in customer conversion rates.</p>
+            <h3>Zero Ban Risk on High-Volume Routes</h3>
+            <p>Operating as an Official Business Account (OBA) guarantees priority routing and the lowest spam complaints on large broadcast campaigns.</p>
           </div>
         </div>
       </div>
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <img src="/assets/images/hellobots/whatsapp-blue-tick/Why-WhatsApp-Blue-Tick-Matters.png"
-          alt="Why WhatsApp Blue Tick" class="img-fluid" />
+        <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-blue-tick/Why-WhatsApp-Blue-Tick-Matters.png"
+          alt="Why WhatsApp Blue Tick Matters" class="img-fluid" />
       </div>
     </div>
   </div>
@@ -1985,7 +1982,73 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-        <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Is the Verified Badge on WhatsApp free?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">If you are using the WhatsApp Business API, getting the verified badge is completely free. You do not have to get a subscription to apply for the Meta Verified badge.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>What to do if my WhatsApp blue tick application is rejected?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">If your WhatsApp Blue Tick (verification) application is denied, then you can apply again after fixing the problems. To get verified, just ensure your business meets the requirements. The important requirements are: a verified Facebook Business Manager account, an active WhatsApp Business API account, and an active online presence.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>How long does the verification process take?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">If your account is set up correctly and fulfills all the needed requirements, approval through the API usually takes less than a week. If your application was denied, do not worry, since you can apply again after 30 days.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Can I use the WhatsApp Business API without a Blue Tick?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Yes, the Blue Tick is optional. You can operate the WhatsApp Business API without having the Blue Tick. However, having the Blue Tick shows trust and credibility and can improve customer engagement.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Can any business apply for the Blue Tick?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Not every business can apply for the Blue Tick. WhatsApp only approves verification for established businesses/brands that have an established, active online presence and a verified business profile. Although any business can attempt to apply, your chances of getting verification are greatly improved if you meet WhatsApp's criteria.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the Verified Badge on WhatsApp free?","acceptedAnswer":{"@type":"Answer","text":"If you are using the WhatsApp Business API, getting the verified badge is completely free. You do not have to get a subscription to apply for the Meta Verified badge."}},{"@type":"Question","name":"What to do if my WhatsApp blue tick application is rejected?","acceptedAnswer":{"@type":"Answer","text":"If your WhatsApp Blue Tick (verification) application is denied, then you can apply again after fixing the problems. To get verified, just ensure your business meets the requirements. The important requirements are: a verified Facebook Business Manager account, an active WhatsApp Business API account, and an active online presence."}},{"@type":"Question","name":"How long does the verification process take?","acceptedAnswer":{"@type":"Answer","text":"If your account is set up correctly and fulfills all the needed requirements, approval through the API usually takes less than a week. If your application was denied, do not worry, since you can apply again after 30 days."}},{"@type":"Question","name":"Can I use the WhatsApp Business API without a Blue Tick?","acceptedAnswer":{"@type":"Answer","text":"Yes, the Blue Tick is optional. You can operate the WhatsApp Business API without having the Blue Tick. However, having the Blue Tick shows trust and credibility and can improve customer engagement."}},{"@type":"Question","name":"Can any business apply for the Blue Tick?","acceptedAnswer":{"@type":"Answer","text":"Not every business can apply for the Blue Tick. WhatsApp only approves verification for established businesses/brands that have an established, active online presence and a verified business profile. Although any business can attempt to apply, your chances of getting verification are greatly improved if you meet WhatsApp's criteria."}}]}</script>
+        <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0">
+              <span class="faq-title"><h3>Is the Verified Green/Blue Badge on WhatsApp free?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+              Yes. Meta does not charge an application fee for the official Official Business Account (OBA) verification badge via the WhatsApp Business API. With HelloBotz, our team assists you through the eligibility audit and documentation submission with zero hidden service fees.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+              <span class="faq-title"><h3>What are the primary requirements to qualify for WhatsApp verification?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">
+              To qualify for an Official Business Account (green/blue tick), Meta requires: (1) A fully verified Meta Business Manager account, (2) Active WhatsApp Business API access with 2-Factor Authentication enabled, (3) A notable brand presence with organic press mentions, and (4) Strict adherence to WhatsApp Commerce and Messaging Policies.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+              <span class="faq-title"><h3>What happens if my WhatsApp Blue Tick verification is rejected?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+              If Meta rejects your initial application, your WhatsApp Business API account remains fully functional with standard messaging capabilities. You can re-apply after 30 days. HelloBotz helps you strengthen brand notability, update website schema, and optimize documentation to dramatically improve approval odds upon re-submission.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+              <span class="faq-title"><h3>How long does the Meta verification review take?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+              Once your application is submitted through the HelloBotz Meta Partner portal, Meta typically completes review within 2 to 7 business days. You will receive real-time notifications inside your HelloBotz dashboard upon status updates.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+              <span class="faq-title"><h3>Can I use all HelloBotz WhatsApp Business API features without the verified badge?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+              Yes, absolutely. The verified badge is purely visual recognition. Without it, you still get access to unlimited broadcasting, AI chatbots, shared team inbox, native catalogs, forms, and CRM integrations without any feature restrictions.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+              <span class="faq-title"><h3>What is the difference between WhatsApp Green Tick and Blue Tick?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+              Historically, Meta awarded a green checkmark badge for verified WhatsApp Business accounts. Following Meta's brand harmonization across Instagram, Facebook, and WhatsApp, the badge is transitioning to a blue checkmark. Both signify the highest level of official business verification (OBA).
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+              <span class="faq-title"><h3>Does having the verified badge prevent my phone number from being banned?</h3></span>
+              <span class="faq-arrow" aria-hidden="true"></span>
+            </button>
+            <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+              Verified Official Business Accounts (OBA) enjoy Meta's highest tier of route trust and priority delivery. While businesses must always maintain high messaging quality and comply with anti-spam policies, verified accounts have near-zero false-positive ban risks.
+            </div>
+          </div>
+        </div>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the Verified Green/Blue Badge on WhatsApp free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Meta does not charge an application fee for the official Official Business Account (OBA) verification badge via the WhatsApp Business API. With HelloBotz, our team assists you through the eligibility audit and documentation submission with zero hidden service fees."}},{"@type":"Question","name":"What are the primary requirements to qualify for WhatsApp verification?","acceptedAnswer":{"@type":"Answer","text":"To qualify for an Official Business Account (green/blue tick), Meta requires: (1) A fully verified Meta Business Manager account, (2) Active WhatsApp Business API access with 2-Factor Authentication enabled, (3) A notable brand presence with organic press mentions, and (4) Strict adherence to WhatsApp Commerce and Messaging Policies."}},{"@type":"Question","name":"What happens if my WhatsApp Blue Tick verification is rejected?","acceptedAnswer":{"@type":"Answer","text":"If Meta rejects your initial application, your WhatsApp Business API account remains fully functional with standard messaging capabilities. You can re-apply after 30 days. HelloBotz helps you strengthen brand notability, update website schema, and optimize documentation to dramatically improve approval odds upon re-submission."}},{"@type":"Question","name":"How long does the Meta verification review take?","acceptedAnswer":{"@type":"Answer","text":"Once your application is submitted through the HelloBotz Meta Partner portal, Meta typically completes review within 2 to 7 business days. You will receive real-time notifications inside your HelloBotz dashboard upon status updates."}},{"@type":"Question","name":"Can I use all HelloBotz WhatsApp Business API features without the verified badge?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. The verified badge is purely visual recognition. Without it, you still get access to unlimited broadcasting, AI chatbots, shared team inbox, native catalogs, forms, and CRM integrations without any feature restrictions."}},{"@type":"Question","name":"What is the difference between WhatsApp Green Tick and Blue Tick?","acceptedAnswer":{"@type":"Answer","text":"Historically, Meta awarded a green checkmark badge for verified WhatsApp Business accounts. Following Meta's brand harmonization across Instagram, Facebook, and WhatsApp, the badge is transitioning to a blue checkmark. Both signify the highest level of official business verification (OBA)."}},{"@type":"Question","name":"Does having the verified badge prevent my phone number from being banned?","acceptedAnswer":{"@type":"Answer","text":"Verified Official Business Accounts (OBA) enjoy Meta's highest tier of route trust and priority delivery. While businesses must always maintain high messaging quality and comply with anti-spam policies, verified accounts have near-zero false-positive ban risks."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
