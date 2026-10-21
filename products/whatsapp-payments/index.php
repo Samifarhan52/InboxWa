@@ -3,12 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp In-Chat Payments | UPI, Cards & Net Banking | HelloBotz's;
-$pageDescription = 'Accept frictionless digital payments directly in WhatsApp chat conversations. Speed up checkouts and maximize transaction success.';
+$pageTitle = 'WhatsApp In-Chat Payments | Native UPI, Cards & Instant Settlement | HelloBotz';
+$pageDescription = 'Accept frictionless digital payments directly in WhatsApp chat conversations via UPI, Credit/Debit cards & NetBanking with instant automated GST invoices.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-payments/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-payments/WhatsApp-Payments.png';
-$ogTitle = 'WhatsApp In-Chat Payments | UPI, Cards & Net Banking | HelloBotz's;
-$ogDescription = 'Accept frictionless digital payments directly in WhatsApp chat conversations. Speed up checkouts and maximize transaction success.';
+$ogTitle = 'WhatsApp In-Chat Payments | Native UPI, Cards & Instant Settlement | HelloBotz';
+$ogDescription = 'Accept frictionless digital payments directly in WhatsApp chat conversations via UPI, Credit/Debit cards & NetBanking with instant automated GST invoices.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -246,13 +246,13 @@ include __DIR__ . '/../../includes/header.php';
   </span>
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
-        <h1 class="hero-title">Enable Instant In-Chat Payments on WhatsApp</h1>
-        <p class="hero-text">Let your customers pay without leaving the chat, quick, secure, and smooth right inside WhatsApp.</p>
+        <h1 class="hero-title">Accept In-Chat WhatsApp Payments with 1-Tap UPI & Cards</h1>
+        <p class="hero-text">Turn WhatsApp conversations into completed checkouts. Let shoppers pay in seconds via Google Pay, PhonePe, Paytm, or Credit/Debit Cards without leaving the chat window.</p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
           </a>
-          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
+          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" data-product="Payments" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
             Book Live Demo
           </button>
           <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
@@ -260,12 +260,17 @@ include __DIR__ . '/../../includes/header.php';
             Get Verified
           </a>
         </div>
+        <div class="hero-trust-badges mt-3" style="font-size: 0.85rem; color: #4b5563; display: flex; flex-wrap: wrap; gap: 15px;">
+          <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> 1-Tap UPI Intent</span>
+          <span><i class="fa-solid fa-shield-halved" style="color: #4f46e5;"></i> RBI & PCI-DSS Level 1</span>
+          <span><i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> Sub-2s Settlement</span>
+        </div>
       </div>
       <!-- Image Content with background -->
       <div class="col-lg-6">
-        <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="/assets/images/hellobots/whatsapp-payments/WhatsApp-Payments.png" loading="lazy"
-            alt="WhatsApp Payments">
+        <div class="api-image-box" style="padding: 10px; border-radius: 10px;">
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-payments/WhatsApp-Payments.png" loading="lazy"
+            alt="WhatsApp In-Chat Payments via HelloBotz">
         </div>
       </div>
     </div>
@@ -277,49 +282,45 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="trust-section py-5" style="background:#fff!important">
   <div class="container">
-    <h2 class="text-center mb-4">Why WhatsApp Payments?
-</h2>
+    <h2 class="text-center mb-4">Why WhatsApp In-Chat Payments with HelloBotz?</h2>
     <div class="row align-items-center">
       <!-- Left Text Section -->
       <div class="col-lg-6">
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Instant Checkout</h3>
-            <p>Allow your customers to complete the purchase within a chat without switching to another app or website. It makes the buying experience smoother and faster.</p>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">1-Tap Native UPI Checkout (+54% Conversion)</h3>
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Allow buyers to complete transactions in Google Pay, PhonePe, Paytm, or BHIM with zero browser redirects or app switching. Eliminates mobile drop-offs and lifts checkout conversion by up to 54%.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Secure Transactions</h3>
-            <p>All the payments you make with WhatsApp payments are secure via WhatsApp encryption and UPI verification, making transactions stress-free.
-            </p>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Bank-Grade 256-Bit SSL & RBI / PCI-DSS Compliance</h3>
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Operates over official Meta Cloud API endpoints with enterprise 256-bit encryption. Payment credentials are handled directly by PCI-DSS Level 1 certified gateways and NPCI-compliant UPI networks.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span>Higher Conversions</h3>
-            <p>Provide in-chat payment options to customers for simple checkouts. It reduces drop-offs, keeps customers engaged, and improves conversion rate.</p>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Anti-RTO COD Token Pay (68% Lower RTO)</h3>
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Protect fulfillment margins by automatically collecting a nominal refundable booking token (e.g. ₹99) via WhatsApp UPI before dispatching Cash-on-Delivery orders, reducing fake orders by 68%.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span>Faster Customer Journey</h3>
-            <p>From browsing to payments, do everything within a single platform. Clients can browse, decide, and complete the payment without any friction or hassle.</p>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Automated GST Invoices & ERP Synchronization</h3>
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Deliver itemized PDF tax invoices with GSTIN and HSN codes directly to the buyer's WhatsApp chat in under 2 seconds. Automatically sync orders and inventory with Shopify, WooCommerce, and ERPs.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span>Trusted Experience</h3>
-            <p>Gain customer trust with an encrypted and verified payment option to make your brand look more reliable, improving customer satisfaction and repeat business.</p>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Multi-Gateway Smart Failover (Razorpay, Cashfree, PayU)</h3>
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Connect your own existing merchant accounts with zero markup. Intelligent dynamic routing automatically switches gateways if downtime is detected, maintaining a 99.98% payment success rate.</p>
           </div>
         </div>
-        
-        
       </div>
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <img src="/assets/images/hellobots/whatsapp-payments/Why-WhatsApp-Payments.png"
-          alt="Why WhatsApp Payments " class="img-fluid" />
+        <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-payments/Why-WhatsApp-Payments.png"
+          alt="Why WhatsApp Payments Architecture by HelloBotz" class="img-fluid" />
       </div>
     </div>
   </div>
@@ -1139,7 +1140,144 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-              <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Is WhatsApp Payments secure?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes, each transaction that you do via WhatsApp payments is end-to-end encrypted and verified via secure payment networks such as UPI.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Which countries support WhatsApp Payments?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">As of now, WhatsApp payments are supported in certain countries only, including India, Brazil, and Singapore. However, the availability can vary depending on the local restrictions.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Can any business use WhatsApp Payments?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Of course, all types and sizes of businesses can use this feature. You just have to have a verified WhatsApp business account in addition to access to the official Business API, through which you can send an in-chat payment request.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>What payment methods are supported?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">WhatsApp supports the following payment methods: credit/debit cards, UPI, and others as accepted by the local payment gateway integrated with WhatsApp.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Do customers need a WhatsApp Business account to pay?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">No, it is not necessary. Customers can easily pay for their purchases using their normal WhatsApp account.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>How quickly is payment confirmed?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">The payment confirmation is an instant process. Once the transaction is successful, WhatsApp automatically confirms it and sends a confirmation message to the customer.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6"><span class="faq-title"><h3>Does WhatsApp charge a fee for payments?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">The payment charges mainly depend on partners and regulations. Generally, peer-to-peer transactions are free, whereas business transaction requires small processing fees.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-7"><span class="faq-title"><h3>Can WhatsApp Payments help increase sales?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-7" class="faq-answer" role="region" aria-hidden="true">Yes, with in-chat payments, companies can minimize the drop-offs and boost the conversion rate while offering a smoother customer experience.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is WhatsApp Payments secure?","acceptedAnswer":{"@type":"Answer","text":"Yes, each transaction that you do via WhatsApp payments is end-to-end encrypted and verified via secure payment networks such as UPI."}},{"@type":"Question","name":"Which countries support WhatsApp Payments?","acceptedAnswer":{"@type":"Answer","text":"As of now, WhatsApp payments are supported in certain countries only, including India, Brazil, and Singapore. However, the availability can vary depending on the local restrictions."}},{"@type":"Question","name":"Can any business use WhatsApp Payments?","acceptedAnswer":{"@type":"Answer","text":"Of course, all types and sizes of businesses can use this feature. You just have to have a verified WhatsApp business account in addition to access to the official Business API, through which you can send an in-chat payment request."}},{"@type":"Question","name":"What payment methods are supported?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp supports the following payment methods: credit/debit cards, UPI, and others as accepted by the local payment gateway integrated with WhatsApp."}},{"@type":"Question","name":"Do customers need a WhatsApp Business account to pay?","acceptedAnswer":{"@type":"Answer","text":"No, it is not necessary. Customers can easily pay for their purchases using their normal WhatsApp account."}},{"@type":"Question","name":"How quickly is payment confirmed?","acceptedAnswer":{"@type":"Answer","text":"The payment confirmation is an instant process. Once the transaction is successful, WhatsApp automatically confirms it and sends a confirmation message to the customer."}},{"@type":"Question","name":"Does WhatsApp charge a fee for payments?","acceptedAnswer":{"@type":"Answer","text":"The payment charges mainly depend on partners and regulations. Generally, peer-to-peer transactions are free, whereas business transaction requires small processing fees."}},{"@type":"Question","name":"Can WhatsApp Payments help increase sales?","acceptedAnswer":{"@type":"Answer","text":"Yes, with in-chat payments, companies can minimize the drop-offs and boost the conversion rate while offering a smoother customer experience."}}]}</script>
+    <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0">
+          <span class="faq-title"><h3>How do WhatsApp In-Chat Payments work for Indian customers?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+          When a customer is ready to purchase, HelloBotz generates an interactive payment message displaying the itemized order total. The customer taps "Pay Now", selects their preferred UPI app (Google Pay, PhonePe, Paytm, BHIM) or Credit/Debit Card/NetBanking, enters their PIN securely in their UPI app, and completes the transaction without leaving WhatsApp. The entire checkout takes less than 5 seconds with zero browser redirects.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+          <span class="faq-title"><h3>Which payment gateways can I integrate with HelloBotz WhatsApp Payments?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">
+          HelloBotz integrates directly with leading RBI-authorized payment gateways including Razorpay, Cashfree Payments, PayU, and Stripe. You connect your own existing merchant accounts with zero middleman markup, ensuring direct bank settlement and instant webhook reconciliation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+          <span class="faq-title"><h3>Is WhatsApp In-Chat Payment secure and RBI / PCI-DSS compliant?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+          Yes. All payment requests operate over official Meta Cloud API endpoints with bank-grade 256-bit SSL encryption. Sensitive card and UPI credentials are never exposed or stored in chat. All transaction processing is handled directly by PCI-DSS Level 1 certified gateways and NPCI-compliant UPI networks.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+          <span class="faq-title"><h3>How does WhatsApp Payments reduce Cash-on-Delivery (COD) Return-to-Origin (RTO)?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+          HelloBotz enables automated COD confirmation workflows where shoppers verify serious buying intent by paying a nominal refundable booking advance (e.g. ₹99) via 1-tap WhatsApp UPI. Orders with token advance verification experience a 68% drop in RTO, saving significant logistics expenses.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+          <span class="faq-title"><h3>Can I automatically send GST invoices and order tracking after payment?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+          Yes. As soon as your connected payment gateway confirms settlement via webhook, HelloBotz automatically generates an itemized PDF tax invoice (complete with your GSTIN, SAC/HSN codes, and tax breakdown) and delivers it directly into the customer's WhatsApp chat alongside real-time courier tracking.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+          <span class="faq-title"><h3>Does Meta charge fees for sending WhatsApp payment messages?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+          When a customer initiates an inquiry or places an order via Click-to-WhatsApp (CTWA) ads, Meta provides a 72-hour free messaging window with zero conversation fees. For organic chats, service conversations within the 24-hour customer care window are also 100% free of Meta conversation fees. Standard gateway transaction processing fees (e.g. 0% for UPI or 1.99% for cards) are handled directly by your connected gateway (Razorpay/Cashfree).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+          <span class="faq-title"><h3>Do customers need any special app or setup to pay in WhatsApp?</h3></span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+          No. Customers do not need to install any new apps, register separate accounts, or link new cards. They can complete payments using standard consumer WhatsApp on Android or iOS using any UPI app already installed on their phone (PhonePe, Google Pay, Paytm) or any standard debit/credit card.
+        </div>
+      </div>
+    </div>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do WhatsApp In-Chat Payments work for Indian customers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a customer is ready to purchase, HelloBotz generates an interactive payment message displaying the itemized order total. The customer taps \"Pay Now\", selects their preferred UPI app (Google Pay, PhonePe, Paytm, BHIM) or Credit/Debit Card/NetBanking, enters their PIN securely in their UPI app, and completes the transaction without leaving WhatsApp. The entire checkout takes less than 5 seconds with zero browser redirects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which payment gateways can I integrate with HelloBotz WhatsApp Payments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HelloBotz integrates directly with leading RBI-authorized payment gateways including Razorpay, Cashfree Payments, PayU, and Stripe. You connect your own existing merchant accounts with zero middleman markup, ensuring direct bank settlement and instant webhook reconciliation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is WhatsApp In-Chat Payment secure and RBI / PCI-DSS compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All payment requests operate over official Meta Cloud API endpoints with bank-grade 256-bit SSL encryption. Sensitive card and UPI credentials are never exposed or stored in chat. All transaction processing is handled directly by PCI-DSS Level 1 certified gateways and NPCI-compliant UPI networks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does WhatsApp Payments reduce Cash-on-Delivery (COD) Return-to-Origin (RTO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HelloBotz enables automated COD confirmation workflows where shoppers verify serious buying intent by paying a nominal refundable booking advance (e.g. ₹99) via 1-tap WhatsApp UPI. Orders with token advance verification experience a 68% drop in RTO, saving significant logistics expenses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I automatically send GST invoices and order tracking after payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. As soon as your connected payment gateway confirms settlement via webhook, HelloBotz automatically generates an itemized PDF tax invoice (complete with your GSTIN, SAC/HSN codes, and tax breakdown) and delivers it directly into the customer's WhatsApp chat alongside real-time courier tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Meta charge fees for sending WhatsApp payment messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a customer initiates an inquiry or places an order via Click-to-WhatsApp (CTWA) ads, Meta provides a 72-hour free messaging window with zero conversation fees. For organic chats, service conversations within the 24-hour customer care window are also 100% free of Meta conversation fees. Standard gateway transaction processing fees (e.g. 0% for UPI or 1.99% for cards) are handled directly by your connected gateway (Razorpay/Cashfree)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do customers need any special app or setup to pay in WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Customers do not need to install any new apps, register separate accounts, or link new cards. They can complete payments using standard consumer WhatsApp on Android or iOS using any UPI app already installed on their phone (PhonePe, Google Pay, Paytm) or any standard debit/credit card."
+          }
+        }
+      ]
+    }
+    </script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
@@ -1510,7 +1648,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://app.hellobotz.com/auth/register" class="hb-cta-btn-primary">
         Start Free Trial →
       </a>
-      <button type="button" class="hb-cta-btn-secondary btn-demo-open">
+      <button type="button" class="hb-cta-btn-secondary btn-demo-open" data-product="Payments">
         Book a Live Demo
       </button>
       <a href="#contact-section" class="hb-cta-btn-verified">
