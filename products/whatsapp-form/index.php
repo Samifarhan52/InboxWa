@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Native WhatsApp Forms & Flows | Collect Leads & Feedback | HelloBotz's;
+$pageTitle = 'Native WhatsApp Forms & Flows | Collect Leads & Feedback | HelloBotz';
 $pageDescription = 'Create interactive multi-screen WhatsApp forms and surveys. Capture high-intent customer leads without external landing pages.';
 $canonicalUrl = 'https://hellobotz.com/products/whatsapp-form/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-forms/WhatsApp-Form.png';
-$ogTitle = 'Native WhatsApp Forms & Flows | Collect Leads & Feedback | HelloBotz's;
+$ogTitle = 'Native WhatsApp Forms & Flows | Collect Leads & Feedback | HelloBotz';
 $ogDescription = 'Create interactive multi-screen WhatsApp forms and surveys. Capture high-intent customer leads without external landing pages.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -256,8 +256,8 @@ include __DIR__ . '/../../includes/header.php';
   </span>
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
-        <h1 class="hero-title">Capture Leads and Streamline Customer Interactions Using WhatsApp Forms</h1>
-        <p class="hero-text">Use interactive forms and automated flows to gather client feedback, information, and orders directly on WhatsApp. </p>
+        <h1 class="hero-title">Capture High-Intent Leads with Native WhatsApp Forms & Flows</h1>
+        <p class="hero-text">Replace clunky landing pages and slow web forms. Deploy interactive multi-screen WhatsApp forms and automated Meta Flows directly in chat to qualify leads, book appointments, and capture feedback in seconds.</p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
@@ -274,8 +274,8 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="/assets/images/hellobots/whatsapp-forms/WhatsApp-Form.png" loading="lazy"
-            alt="WhatsApp Forms">
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-forms/WhatsApp-Form.png" loading="lazy"
+            alt="Native WhatsApp Forms and Flows">
         </div>
       </div>
     </div>
@@ -285,47 +285,51 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="trust-section py-5" style="background:#fff!important">
   <div class="container">
-    <h2 class="text-center mb-4">Why WhatsApp Forms</h2>
+    <h2 class="text-center mb-4">Why Modern Businesses Choose Native WhatsApp Forms</h2>
     <div class="row align-items-center">
       <!-- Left Text Section -->
       <div class="col-lg-6">
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Higher completion rates:</h3>
-            <p>Users find WhatsApp forms quick and easy to fill out as it open directly in WhatsApp, leading to more completions.</p>
+            <h3>3.8x Higher Completion Rates</h3>
+            <p>Keep respondents inside their favorite app. In-chat native forms eliminate slow browser redirects and reduce form abandonments by up to 380%.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Enhanced user experience</h3>
-            <p>Improve user experience and make the process smooth and convenient. Users do not need to switch between apps or open a browser.
-            </p>
+            <h3>Frictionless In-Chat User Experience</h3>
+            <p>Pre-populate customer name and verified phone number automatically. Enable 1-tap options, clean date pickers, and dynamic field dependencies.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span>Instant follow-up</h3>
-            <p>When a form is submitted, automated replies or messages can be sent quickly, improving conversion rates.</p>
+            <h3>Instant Automated Follow-Ups</h3>
+            <p>Trigger instant WhatsApp confirmation receipts, appointment booking alerts, and relevant catalog suggestions the moment a form is submitted.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span>Real-time CRM integration</h3>
-            <p>Replies are automatically synced with CRM for immediate tagging, lead monitoring, and workflow automation.</p>
+            <h3>Real-Time CRM & Webhook Integration</h3>
+            <p>Automatically push lead submissions into HubSpot, Salesforce, Zoho, Google Sheets, or internal webhooks with zero manual data entry.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>Streamlined processes</h3>
-            <p>Manage appointments, product inquiries, or quote requests seamlessly without repeated questions or manual steps.</p>
+            <h3>Multi-Screen Flows & Custom Questionnaires</h3>
+            <p>Build branching surveys, feedback assessments, and multi-step inquiry forms that adapt dynamically based on previous user answers.</p>
           </div>
         </div>
-        
+        <div class="trust-point mb-4 d-flex align-items-start">
+          <div>
+            <h3>End-to-End Enterprise Encryption</h3>
+            <p>Collect sensitive user registrations, KYC credentials, and customer feedback with official WhatsApp Business API end-to-end encryption.</p>
+          </div>
+        </div>
       </div>
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <img src="/assets/images/hellobots/whatsapp-forms/Why-WhatsApp-Form.png"
-          alt="Why WhatsApp Forms" class="img-fluid" />
+        <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-forms/Why-WhatsApp-Form.png"
+          alt="Why Choose WhatsApp Forms" class="img-fluid" />
       </div>
     </div>
   </div>
@@ -1138,7 +1142,73 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-            <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Do I need any coding skills to create WhatsApp Forms?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">No coding skills are required to create WhatsApp forms with HelloBotz’s user friendly interface.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can multiple WhatsApp Forms be run simultaneously?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Of course, you’re allowed to run different types of WhatsApp forms like customer service, appointment booking, or product queries.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Can I customize my WhatsApp Form?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes. You can customize WhatsApp forms like add your own queries, branding, and automation - hence it feels aligned with your business.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Are WhatsApp Forms secure?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Absolutely. WhatsApp forms are end-to-end encrypted, keep customers’ details confidential, and messages safe.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>What types of businesses can use WhatsApp Forms?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Every business, whether eCommerce, education, or healthcare, can leverage WhatsApp forms to generate leads, feedback, or customer service.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>Can WhatsApp Forms be integrated with CRM tools?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">Yes. Many WhatsApp form solutions (like HelloBotz) offer easy CRM integration to handle leads and automate follow-ups.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6"><span class="faq-title"><h3>What are the rules for the WhatsApp Business catalog?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">Every item or service in the business WhatsApp catalog needs to have a unique title, at least one photo displaying the item, and the origin country for the product.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need any coding skills to create WhatsApp Forms?","acceptedAnswer":{"@type":"Answer","text":"No coding skills are required to create WhatsApp forms with HelloBotz’s user friendly interface."}},{"@type":"Question","name":"Can multiple WhatsApp Forms be run simultaneously?","acceptedAnswer":{"@type":"Answer","text":"Of course, you’re allowed to run different types of WhatsApp forms like customer service, appointment booking, or product queries."}},{"@type":"Question","name":"Can I customize my WhatsApp Form?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can customize WhatsApp forms like add your own queries, branding, and automation - hence it feels aligned with your business."}},{"@type":"Question","name":"Are WhatsApp Forms secure?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. WhatsApp forms are end-to-end encrypted, keep customers’ details confidential, and messages safe."}},{"@type":"Question","name":"What types of businesses can use WhatsApp Forms?","acceptedAnswer":{"@type":"Answer","text":"Every business, whether eCommerce, education, or healthcare, can leverage WhatsApp forms to generate leads, feedback, or customer service."}},{"@type":"Question","name":"Can WhatsApp Forms be integrated with CRM tools?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many WhatsApp form solutions (like HelloBotz) offer easy CRM integration to handle leads and automate follow-ups."}},{"@type":"Question","name":"What are the rules for the WhatsApp Business catalog?","acceptedAnswer":{"@type":"Answer","text":"Every item or service in the business WhatsApp catalog needs to have a unique title, at least one photo displaying the item, and the origin country for the product."}}]}</script>
+            <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+              <h2>Frequently Asked Questions</h2>
+              <div class="faq-item">
+                <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0">
+                  <span class="faq-title"><h3>Do I need coding skills to build interactive WhatsApp Forms?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+                  No. HelloBotz provides an intuitive drag-and-drop WhatsApp Form and Flow builder. You can easily add text inputs, dropdown menus, radio buttons, date pickers, and checkbox fields without writing a single line of code.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+                  <span class="faq-title"><h3>Can I run multiple WhatsApp Forms and surveys simultaneously?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">
+                  Yes. You can deploy unlimited concurrent forms tailored to distinct customer touchpoints—such as lead qualification, appointment booking, post-purchase CSAT feedback, event registration, and warranty claims.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+                  <span class="faq-title"><h3>Can I customize form fields, branding, and automated confirmation messages?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+                  Absolutely. You can customize form headers, field validation rules, pre-filled options, and brand colors. Once submitted, HelloBotz automatically sends personalized confirmation messages with booking summaries or instant discount coupons.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+                  <span class="faq-title"><h3>How secure are customer submissions captured via WhatsApp Forms?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+                  WhatsApp Forms leverage Meta's enterprise-grade end-to-end encryption. All submitted customer data is protected in transit and stored securely with GDPR, SOC 2, and ISO 27001-compliant standards.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+                  <span class="faq-title"><h3>How do WhatsApp Forms integrate with CRMs, ERPs, and Google Sheets?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+                  Form submissions sync in real time with major CRMs (HubSpot, Salesforce, Zoho, LeadSquared), Google Sheets, and custom databases via native webhooks and REST APIs. New submissions automatically trigger lead assignment, agent notifications, and email alerts.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+                  <span class="faq-title"><h3>Can WhatsApp Forms pre-populate customer information?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+                  Yes. Since respondents are already logged into WhatsApp, their verified phone number and profile name can be automatically captured or pre-filled, reducing typing friction and eliminating fake leads.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+                  <span class="faq-title"><h3>What is the difference between WhatsApp native Forms (Meta Flows) and standard web forms?</h3></span>
+                  <span class="faq-arrow" aria-hidden="true"></span>
+                </button>
+                <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+                  WhatsApp native forms (powered by Meta Flows) open instantly inside the WhatsApp chat screen without external browser redirects or slow page loads. With zero login barriers and instant 1-tap submission, completion rates are up to 3.8x higher than traditional web forms.
+                </div>
+              </div>
+            </div>
+            <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need coding skills to build interactive WhatsApp Forms?","acceptedAnswer":{"@type":"Answer","text":"No. HelloBotz provides an intuitive drag-and-drop WhatsApp Form and Flow builder. You can easily add text inputs, dropdown menus, radio buttons, date pickers, and checkbox fields without writing a single line of code."}},{"@type":"Question","name":"Can I run multiple WhatsApp Forms and surveys simultaneously?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deploy unlimited concurrent forms tailored to distinct customer touchpoints—such as lead qualification, appointment booking, post-purchase CSAT feedback, event registration, and warranty claims."}},{"@type":"Question","name":"Can I customize form fields, branding, and automated confirmation messages?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can customize form headers, field validation rules, pre-filled options, and brand colors. Once submitted, HelloBotz automatically sends personalized confirmation messages with booking summaries or instant discount coupons."}},{"@type":"Question","name":"How secure are customer submissions captured via WhatsApp Forms?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp Forms leverage Meta's enterprise-grade end-to-end encryption. All submitted customer data is protected in transit and stored securely with GDPR, SOC 2, and ISO 27001-compliant standards."}},{"@type":"Question","name":"How do WhatsApp Forms integrate with CRMs, ERPs, and Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Form submissions sync in real time with major CRMs (HubSpot, Salesforce, Zoho, LeadSquared), Google Sheets, and custom databases via native webhooks and REST APIs. New submissions automatically trigger lead assignment, agent notifications, and email alerts."}},{"@type":"Question","name":"Can WhatsApp Forms pre-populate customer information?","acceptedAnswer":{"@type":"Answer","text":"Yes. Since respondents are already logged into WhatsApp, their verified phone number and profile name can be automatically captured or pre-filled, reducing typing friction and eliminating fake leads."}},{"@type":"Question","name":"What is the difference between WhatsApp native Forms (Meta Flows) and standard web forms?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp native forms (powered by Meta Flows) open instantly inside the WhatsApp chat screen without external browser redirects or slow page loads. With zero login barriers and instant 1-tap submission, completion rates are up to 3.8x higher than traditional web forms."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
