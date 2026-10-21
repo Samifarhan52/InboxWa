@@ -8,7 +8,9 @@ if (!isset($basePath)) { $basePath = ''; }
 $bp = $basePath;
 
 if (!headers_sent()) {
-    header("Cache-Control: public, max-age=1800, stale-while-revalidate=86400");
+    header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0");
+    header("Pragma: no-cache");
+    header("Expires: Wed, 11 Jan 1984 05:00:00 GMT");
 }
 
 require_once dirname(__DIR__) . '/config/cms.php';
@@ -103,6 +105,9 @@ if (!function_exists('hb_seo_esc')) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
   <title><?php echo hb_seo_esc($fullTitle); ?></title>
   <meta name="description" content="<?php echo hb_seo_esc($pageDescription); ?>">
@@ -151,13 +156,13 @@ if (!function_exists('hb_seo_esc')) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/app.css?v=57">
-  <link rel="stylesheet" href="/assets/css/style.css?v=63">
-  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=57">
-  <link rel="stylesheet" href="/assets/css/story-journey.css?v=57">
-  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=52">
-  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=9">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=60">
+  <link rel="stylesheet" href="/app.css?v=20261022">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261022">
+  <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20261022">
+  <link rel="stylesheet" href="/assets/css/story-journey.css?v=20261022">
+  <link rel="stylesheet" href="/assets/css/hero-mobile-system.css?v=20261022">
+  <link rel="stylesheet" href="/assets/css/robot-chatbot.css?v=20261022">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css?v=20261022">
   <?php if (!empty($extraCss)): foreach ((array)$extraCss as $ecss): ?>
   <link rel="stylesheet" href="<?php echo hb_seo_esc($ecss); ?>">
   <?php endforeach; endif; ?>

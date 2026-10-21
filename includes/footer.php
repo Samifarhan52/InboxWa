@@ -1555,13 +1555,13 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
     }
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-  <script src="/i18n.js?v=25" defer></script>
-  <script src="/main.js?v=<?= @filemtime(dirname(__DIR__) . '/main.js') ?: 43 ?>" defer></script>
+  <script src="/i18n.js?v=20261022" defer></script>
+  <script src="/main.js?v=<?= @filemtime(dirname(__DIR__) . '/main.js') ?: 20261022 ?>" defer></script>
 
-<script src="/assets/js/mobile-menu.js?v=55"></script>
+<script src="/assets/js/mobile-menu.js?v=20261022"></script>
 
-  <script src="/forms.js?v=22" defer></script>
-  <script src="/assets/js/robot-chatbot.js?v=9" defer></script>
+  <script src="/forms.js?v=20261022" defer></script>
+  <script src="/assets/js/robot-chatbot.js?v=20261022" defer></script>
   <?php echo cms_setting('custom_footer_code', ''); ?>
 </body>
 </html>
