@@ -4,9 +4,9 @@ $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'Feedback Collection | CSAT & NPS Surveys | HelloBotz';
-$pageDescription = 'Collect customer feedback, ratings and insights automatically with HelloBotz Feedback Collection across WhatsApp and digital channels.';
+$pageDescription = 'Collect 1-tap CSAT ratings, NPS scores, and customer feedback automatically inside WhatsApp with HelloBotz. Achieve 4.2x higher response rates with automated event triggers.';
 $canonicalUrl = 'https://hellobotz.com/products/feedback-collection/';
-$ogImage = 'assets/images/og-image.png';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/feedback-collection/Feedback-Collection-Hero.png';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -1041,17 +1041,17 @@ body.dark-theme .fb-faq-wrap details,
     <div class="fb-container fb-hero-grid">
       <div>
         <div class="fb-badge">
-          <span class="fb-badge-dot"></span> CUSTOMER FEEDBACK &amp; CSAT AUTOMATION
+          <span class="fb-badge-dot"></span> OFFICIAL META CLOUD API v20.0 • CSAT &amp; NPS AUTOMATION
         </div>
-        <h1>Turn customer opinions into <span class="fb-gradient">actionable insights.</span></h1>
+        <h1>Turn Customer Feedback into <span class="fb-gradient">Actionable Growth.</span></h1>
         <p class="fb-hero-copy">
-          Collect CSAT ratings, NPS reviews, and qualitative customer feedback automatically at key touchpoints. Make it effortless for customers to share their experience and empower your team to optimize every interaction.
+          Collect 1-tap CSAT ratings, NPS scores, and verified reviews natively inside WhatsApp. Achieve 4.2x higher response rates compared to traditional email surveys with automated post-resolution triggers and real-time CRM sync.
         </p>
         <div class="fb-actions">
           <a href="https://app.hellobotz.com/auth/register" class="fb-btn fb-btn-primary">
-            Start Collecting Feedback →
+            Start Free Trial →
           </a>
-          <button type="button" class="fb-btn fb-btn-secondary btn-demo-open">
+          <button type="button" class="fb-btn fb-btn-secondary btn-demo-open" data-product="Feedback Collection">
             Book Live Demo
           </button>
           <a href="#contact-section" class="fb-btn fb-btn-verified">
@@ -1060,14 +1060,30 @@ body.dark-theme .fb-faq-wrap details,
           </a>
         </div>
         <div class="fb-trust">
-          <span><b class="fb-check">✓</b> 1-Tap WhatsApp Surveys</span>
-          <span><b class="fb-check">✓</b> Instant CSAT &amp; NPS Scoring</span>
-          <span><b class="fb-check">✓</b> Closed-Loop Escalations</span>
+          <span><b class="fb-check">✓</b> 98.6% Customer Satisfaction Rate</span>
+          <span><b class="fb-check">✓</b> 1-Tap In-Chat Star &amp; NPS Ratings</span>
+          <span><b class="fb-check">✓</b> Instant CRM &amp; Google Review Sync</span>
         </div>
       </div>
 
+      <!-- PHOTOREALISTIC HERO MARKETING COMPOSITE -->
+      <div class="fb-hero-visual-card text-center" style="display:flex;justify-content:center;align-items:center;">
+        <img src="<?php echo $bp; ?>assets/images/hellobots/feedback-collection/Feedback-Collection-Hero.png" alt="HelloBotz Feedback Collection Suite" class="img-fluid" style="max-width:100%;height:auto;border-radius:20px;box-shadow:0 24px 60px rgba(109,74,255,0.18);">
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FEEDBACK SANDBOX -->
+  <section class="fb-section" style="padding: 3.5rem 0 4.5rem; background: var(--fb-surface);">
+    <div class="fb-container">
+      <div class="fb-center" style="margin-bottom: 2.5rem;">
+        <div class="fb-kicker">INTERACTIVE SANDBOX</div>
+        <h2 class="fb-section-title" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Experience In-Chat WhatsApp Feedback Live</h2>
+        <p class="fb-intro">Test the 1-tap rating workflow below to see how effortless it is for your customers to share their feedback without leaving WhatsApp.</p>
+      </div>
+
       <!-- INTERACTIVE FEEDBACK UI MOCKUP -->
-      <div class="fb-shell">
+      <div class="fb-shell" style="max-width: 820px; margin: 0 auto;">
         <div class="fb-browser-bar">
           <span class="fb-browser-dot red"></span>
           <span class="fb-browser-dot yellow"></span>
@@ -1389,7 +1405,81 @@ body.dark-theme .fb-faq-wrap details,
           <summary>How do you prevent spamming customers with survey requests?</summary>
           <p>HelloBotz includes built-in survey cooldown frequency limits (e.g. maximum one survey request per customer every 30 days) to protect your brand relationship and ensure high response quality.</p>
         </details>
+
+        <details>
+          <summary>Can 5-star raters be prompted to leave a public Google or Trustpilot review?</summary>
+          <p>Yes. HelloBotz Smart Closed-Loop Routing detects promoter scores (4 or 5 stars / NPS 9-10) and automatically sends an instant 1-tap link inviting them to copy their feedback to your public Google Maps, Trustpilot, or G2 review profile.</p>
+        </details>
+
+        <details>
+          <summary>Does Feedback Collection work with WhatsApp Cloud API v20.0?</summary>
+          <p>Yes. HelloBotz is built directly on Meta's official WhatsApp Business Cloud API v20.0. Surveys utilize approved interactive button messages and WhatsApp Flows, ensuring 100% policy compliance, zero account restrictions, and ultra-high deliverability.</p>
+        </details>
       </div>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can feedback be collected directly inside WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HelloBotz uses official WhatsApp interactive button templates and flows so customers can submit ratings with a single tap directly in the chat, without opening external browser windows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I combine star ratings, multiple-choice, and open text comments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can build multi-step conversational surveys: start with a quick 1–5 star rating, ask why they selected that score via choice pills, and invite an optional audio or text comment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the automated detractor alert work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If a customer rates 1 or 2 stars, HelloBotz immediately alerts your customer support manager via WhatsApp and email, pauses promotional broadcasts to that contact, and creates a high-priority retention ticket."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we integrate feedback data with Shopify, WooCommerce, or Zoho CRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every rating, tag, and review comment is automatically synchronized into your connected CRM, Google Sheets, or e-commerce platform via our native webhooks and API integrations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you prevent spamming customers with survey requests?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "HelloBotz includes built-in survey cooldown frequency limits (e.g. maximum one survey request per customer every 30 days) to protect your brand relationship and ensure high response quality."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can 5-star raters be prompted to leave a public Google or Trustpilot review?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HelloBotz Smart Closed-Loop Routing detects promoter scores (4 or 5 stars / NPS 9-10) and automatically sends an instant 1-tap link inviting them to copy their feedback to your public Google Maps, Trustpilot, or G2 review profile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Feedback Collection work with WhatsApp Cloud API v20.0?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HelloBotz is built directly on Meta's official WhatsApp Business Cloud API v20.0. Surveys utilize approved interactive button messages and WhatsApp Flows, ensuring 100% policy compliance, zero account restrictions, and ultra-high deliverability."
+            }
+          }
+        ]
+      }
+      </script>
     </div>
   </section>
 
@@ -1405,7 +1495,7 @@ body.dark-theme .fb-faq-wrap details,
         <a href="https://app.hellobotz.com/auth/register" class="fb-btn" style="background:#ffffff;color:#17152a;font-weight:800;">
           Start Free Now →
         </a>
-        <button type="button" class="fb-btn btn-demo-open" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">
+        <button type="button" class="fb-btn btn-demo-open" data-product="Feedback Collection" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">
           Book a Live Demo
         </button>
         <a href="#contact-section" class="fb-btn fb-btn-verified">

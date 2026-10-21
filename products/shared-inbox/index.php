@@ -3,12 +3,12 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBotz's;
-$pageDescription = 'Manage customer WhatsApp chats from a single business number with role-based routing, quick replies, and team collaboration.';
+$pageTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBotz';
+$pageDescription = 'Manage customer WhatsApp chats from a single business number with role-based routing, quick replies, collision detection, and multi-agent team collaboration.';
 $canonicalUrl = 'https://hellobotz.com/products/shared-inbox/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-team-inbox/WhatsApp-Team-Inbox.png';
-$ogTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBotz's;
-$ogDescription = 'Manage customer WhatsApp chats from a single business number with role-based routing, quick replies, and team collaboration.';
+$ogTitle = 'WhatsApp Shared Team Inbox | Multi-Agent Collaboration | HelloBotz';
+$ogDescription = 'Manage customer WhatsApp chats from a single business number with role-based routing, quick replies, collision detection, and multi-agent team collaboration.';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -228,19 +228,18 @@ include __DIR__ . '/../../includes/header.php';
     padding: 9px;
     border-radius: 8px;
     background: #fdfffe;
-    margin-bottom: 40px;">
-    <i class="fa-brands fa-meta meta-icon"></i> Official Meta Partner
+    margin-bottom: 24px;">
+    <i class="fa-brands fa-meta meta-icon"></i> Official Meta Partner • Cloud API v20.0
   </span>
                 <!-- Breadcrumbs -->
                 <!-- End Breadcrumbs -->
-                <h1 class="hero-title"> Manage WhatsApp Chats Smarter with Shared Team Inbox</h1>
-                <p class="hero-text">Handle customer conversations, assign agents, and track performance, all from a
-                    single, unified WhatsApp inbox.</p>
+                <h1 class="hero-title">Collaborate Smarter with WhatsApp Shared Team Inbox</h1>
+                <p class="hero-text">Empower your entire sales and support team to manage customer conversations from a single verified WhatsApp number with intelligent round-robin routing, private teammate notes, and collision detection.</p>
                 <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
           </a>
-          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
+          <button type="button" class="btn btn-outline-primary cta-button-secondary m-0 btn-demo-open" data-product="Shared Inbox" style="border:1.5px solid #4f46e5;color:#4f46e5;background:#ffffff;font-weight:700;padding:12px 22px;border-radius:10px;cursor:pointer;">
             Book Live Demo
           </button>
           <a href="#contact-section" class="btn btn-verified-outline m-0" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid #10b981;color:#047857;background:#ecfdf5;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none;">
@@ -251,9 +250,9 @@ include __DIR__ . '/../../includes/header.php';
             </div>
             <!-- Image Content with background -->
             <div class="col-lg-6">
-                <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-                    <img width="100%" src="/assets/images/hellobots/whatsapp-team-inbox/WhatsApp-Team-Inbox.png"
-                        loading="lazy" alt=" WhatsApp Team Inbox">
+                <div class="api-image-box text-center" style="padding: 10px; border-radius: 14px;">
+                    <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-team-inbox/WhatsApp-Team-Inbox.png"
+                        loading="lazy" alt="WhatsApp Shared Team Inbox Dashboard">
                 </div>
             </div>
         </div>
@@ -263,25 +262,24 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="whatsapp-usecase py-5">
     <div class="container">
-        <h2 class="whatsapp-heading mb-5">Key Features of WhatsApp Team Inbox
-        </h2>
+        <h2 class="whatsapp-heading mb-5">Key Features of WhatsApp Team Inbox</h2>
         <div class="usecase-row row align-items-center mb-5">
             <!-- Text -->
             <div class="col-lg-6 order-1 order-lg-2">
                 <div class="api-content">
-                    <h3>One WhatsApp Number, Multiple Team Members</h3>
+                    <h3>One WhatsApp Number, 100+ Team Agents</h3>
                     <p>
-                        Handle each customer's messages without the effort of handling different WhatsApp numbers.
+                        Scale customer support and sales operations effortlessly without juggling multiple SIM cards or physical smartphones.
                     </p>
                     <ul style="padding-left:0em!important">
                         <li>
-                            Access every chat from a single or unified dashboard.
+                            Connect 5 to 100+ agents simultaneously under a single Meta-verified WhatsApp Business profile.
                         </li>
                         <li>
-                            Add agents from 5 to 100, with different logins under the same WhatsApp number.
+                            Smart round-robin, skill-based, and sticky routing auto-assigns incoming chats in under 20ms.
                         </li>
                         <li>
-                            Never missed a message with quick <a href="<?php echo $bp; ?>products/chatbot/" target="_blank" rel="noopener noreferrer">AI-powered bot</a> replies.
+                            Real-time agent presence and typing indicators prevent double replies and customer confusion.
                         </li>
                     </ul>
                 </div>
@@ -293,8 +291,7 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-2 order-lg-1 text-center">
                 <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-team-inbox/One-Number-Multiple-Team.png" alt="One Number Multiple Team
-" class="api-image img-fluid rounded">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-team-inbox/One-Number-Multiple-Team.png" alt="One Number Multiple Team Members" class="api-image img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -302,20 +299,19 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Text -->
             <div class="col-lg-6 order-1 order-lg-1">
                 <div class="api-content">
-                    <h3>Effortless Agent-to-Agent Communication
-                    </h3>
+                    <h3>Private Teammate Notes & Instant Handover</h3>
                     <p>
-                        No need to take screenshots or switch chats to seek help anymore.
+                        Enable frictionless cross-team collaboration and ticket resolution without switching windows or capturing manual screenshots.
                     </p>
                     <ul style="padding-left:0em!important">
                         <li>
-                            Directly assign chat or queries within the same interface.
+                            Post yellow internal private notes and @mention colleagues visible strictly to your team, not the customer.
                         </li>
                         <li>
-                            Tag agents or handover tickets effectively.
+                            Transfer complex tickets to technical specialists or billing managers with complete conversation context.
                         </li>
                         <li>
-                            Collaborate easily without leaving the WhatsApp screen.
+                            Built-in collision detection alerts agents immediately when another teammate is viewing or drafting a reply.
                         </li>
                     </ul>
                 </div>
@@ -327,8 +323,8 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-1 order-lg-2 text-center">
                 <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-team-inbox/Agent-to-Agent-Communication.png"
-                        alt="Agent-to-Agent Communication" class="api-image img-fluid rounded">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-team-inbox/Agent-to-Agent-Communication.png"
+                        alt="Agent-to-Agent Communication & Private Notes" class="api-image img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -336,21 +332,19 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Text -->
             <div class="col-lg-6 order-1 order-lg-2">
                 <div class="api-content">
-                    <h3>Templates & Quick Replies
-                    </h3>
+                    <h3>Pre-Approved Meta Templates & 1-Click Quick Replies</h3>
                     <p>
-                        Increase accuracy and speed with pre-defined WhatsApp message templates and reply faster during
-                        communication.
+                        Accelerate first-response resolution rates by 92% with standardized message templates and dynamic shortcut macros.
                     </p>
                     <ul style="padding-left:0em!important">
                         <li>
-                            Immediately reply to common FAQs, delivery updates, and general queries.
+                            Access 50+ pre-approved rich media WhatsApp templates (/welcome, /pricing, /demo, /invoice) in 1 click.
                         </li>
                         <li>
-                            Optimize scalable and professional engagement every time.
+                            Dynamic parameter injection automatically fills customer names, order tracking numbers, and custom fields.
                         </li>
                         <li>
-                            Minimizes response time while enhancing customer experience.
+                            100% official Meta Cloud API route ensures 99.9% delivery SLA and zero account ban risks.
                         </li>
                     </ul>
                 </div>
@@ -362,8 +356,8 @@ include __DIR__ . '/../../includes/header.php';
             <!-- Image -->
             <div class="col-lg-6 order-2 order-lg-1 text-center">
                 <div class="api-image-box">
-                    <img src="/assets/images/hellobots/whatsapp-team-inbox/Templates-_-Quick-Replies.png"
-                        alt="Templates & Quick Replies" class="api-image img-fluid rounded">
+                    <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-team-inbox/Templates-_-Quick-Replies.png"
+                        alt="WhatsApp Templates & Quick Replies" class="api-image img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -1176,7 +1170,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
     <div class="container">
-                <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can I add multiple team members to my shared inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes, this is a very basic function of shared inboxes to add multiple team members.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can multiple team members reply to the same chat?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Members are allowed to reply to the same chats with the shared inbox.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Will it work on desktop and mobile?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, the shared inbox often works on both desktop and mobile.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>How do I set up a WhatsApp shared inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">You can set a WhatsApp shared inbox by integrating your WhatsApp Business API number with the team inbox platform.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Can I send message templates from the inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Definitely, you can share message templates from your inbox to quickly reply and manage robust, on-brand conversations.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>Can we update customer details directly inside the chat?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">Of course, you can modify the details, including client name and phone numbers, add contacts to particular lists, and organize them using tags or custom details without leaving the chat.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I add multiple team members to my shared inbox?","acceptedAnswer":{"@type":"Answer","text":"Yes, this is a very basic function of shared inboxes to add multiple team members."}},{"@type":"Question","name":"Can multiple team members reply to the same chat?","acceptedAnswer":{"@type":"Answer","text":"Members are allowed to reply to the same chats with the shared inbox."}},{"@type":"Question","name":"Will it work on desktop and mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, the shared inbox often works on both desktop and mobile."}},{"@type":"Question","name":"How do I set up a WhatsApp shared inbox?","acceptedAnswer":{"@type":"Answer","text":"You can set a WhatsApp shared inbox by integrating your WhatsApp Business API number with the team inbox platform."}},{"@type":"Question","name":"Can I send message templates from the inbox?","acceptedAnswer":{"@type":"Answer","text":"Definitely, you can share message templates from your inbox to quickly reply and manage robust, on-brand conversations."}},{"@type":"Question","name":"Can we update customer details directly inside the chat?","acceptedAnswer":{"@type":"Answer","text":"Of course, you can modify the details, including client name and phone numbers, add contacts to particular lists, and organize them using tags or custom details without leaving the chat."}}]}</script>
+                <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>How does the WhatsApp Shared Team Inbox work with a single business number?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">HelloBotz connects your official WhatsApp Business API phone number to a cloud-based multi-agent workspace. Your entire support, sales, and operations team can log in from their own computers or devices simultaneously. Incoming customer messages are automatically assigned via round-robin or skill-based logic, allowing dozens of reps to converse under one unified brand identity.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can multiple agents reply to the same customer without causing collision or confusion?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Yes. HelloBotz features built-in Real-Time Collision Detection. When an agent opens or begins drafting a response in a conversation, all other team members immediately see an active typing indicator and lock badge, preventing double replies or contradictory answers.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Are private internal teammate notes visible to our customers?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">No. Private teammate notes are highlighted in yellow and encrypted within your team's console. You can mention teammates (@Priya, @Rahul) to request second opinions, share sensitive client context, or handover tickets without the customer ever seeing these internal communications.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>How many team members or agents can we add to the shared inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">HelloBotz supports unlimited agents and role-based permissions (Admin, Manager, Agent, Billing). You can scale seamlessly from a boutique team of 5 agents to enterprise contact centers with over 100+ concurrent agents under the same verified WhatsApp line.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>Does the HelloBotz Shared Inbox integrate with CRM platforms like HubSpot and Salesforce?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Yes. HelloBotz natively syncs with major CRMs including HubSpot, Salesforce, Zoho, Shopify, and custom webhooks. All conversation transcripts, customer attributes, and ticket tags automatically sync bi-directionally in real time.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>Can we send pre-approved Meta rich media message templates from the inbox?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">Absolutely. Agents can trigger approved WhatsApp templates (including catalogs, PDFs, booking links, and payment requests) using fast keyboard macros like /welcome, /pricing, or /invoice to answer complex queries in seconds.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6"><span class="faq-title"><h3>What happens to incoming WhatsApp chats outside of business hours?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">Outside business hours, HelloBotz intelligent AI Chatbots and automated out-of-office workflows instantly engage prospects, capture inquiries, and queue prioritized tickets for your morning shift with complete context.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the WhatsApp Shared Team Inbox work with a single business number?","acceptedAnswer":{"@type":"Answer","text":"HelloBotz connects your official WhatsApp Business API phone number to a cloud-based multi-agent workspace. Your entire support, sales, and operations team can log in from their own computers or devices simultaneously. Incoming customer messages are automatically assigned via round-robin or skill-based logic, allowing dozens of reps to converse under one unified brand identity."}},{"@type":"Question","name":"Can multiple agents reply to the same customer without causing collision or confusion?","acceptedAnswer":{"@type":"Answer","text":"Yes. HelloBotz features built-in Real-Time Collision Detection. When an agent opens or begins drafting a response in a conversation, all other team members immediately see an active typing indicator and lock badge, preventing double replies or contradictory answers."}},{"@type":"Question","name":"Are private internal teammate notes visible to our customers?","acceptedAnswer":{"@type":"Answer","text":"No. Private teammate notes are highlighted in yellow and encrypted within your team's console. You can mention teammates (@Priya, @Rahul) to request second opinions, share sensitive client context, or handover tickets without the customer ever seeing these internal communications."}},{"@type":"Question","name":"How many team members or agents can we add to the shared inbox?","acceptedAnswer":{"@type":"Answer","text":"HelloBotz supports unlimited agents and role-based permissions (Admin, Manager, Agent, Billing). You can scale seamlessly from a boutique team of 5 agents to enterprise contact centers with over 100+ concurrent agents under the same verified WhatsApp line."}},{"@type":"Question","name":"Does the HelloBotz Shared Inbox integrate with CRM platforms like HubSpot and Salesforce?","acceptedAnswer":{"@type":"Answer","text":"Yes. HelloBotz natively syncs with major CRMs including HubSpot, Salesforce, Zoho, Shopify, and custom webhooks. All conversation transcripts, customer attributes, and ticket tags automatically sync bi-directionally in real time."}},{"@type":"Question","name":"Can we send pre-approved Meta rich media message templates from the inbox?","acceptedAnswer":{"@type":"Answer","text":"Definitely. Agents can trigger approved WhatsApp templates (including catalogs, PDFs, booking links, and payment requests) using fast keyboard macros like /welcome, /pricing, or /invoice to answer complex queries in seconds."}},{"@type":"Question","name":"What happens to incoming WhatsApp chats outside of business hours?","acceptedAnswer":{"@type":"Answer","text":"Outside business hours, HelloBotz intelligent AI Chatbots and automated out-of-office workflows instantly engage prospects, capture inquiries, and queue prioritized tickets for your morning shift with complete context."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;

@@ -4,9 +4,9 @@ $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
 $pageTitle = 'Analytics Dashboard & Business Intelligence | HelloBotz';
-$pageDescription = 'HelloBotz Analytics Dashboard gives businesses a clear view of conversations, automation, customers, campaigns and team performance across WhatsApp and digital channels.';
+$pageDescription = 'HelloBotz Analytics Dashboard gives businesses real-time 360° telemetry across WhatsApp conversations, broadcast campaigns, agent productivity, and revenue ROI.';
 $canonicalUrl = 'https://hellobotz.com/products/analytics/';
-$ogImage = 'assets/images/og-image.png';
+$ogImage = 'https://hellobotz.com/assets/images/hellobots/analytics/Analytics-Hero.png';
 
 include __DIR__ . '/../../includes/header.php';
 ?>
@@ -1092,17 +1092,17 @@ body.dark-theme .an-faq-wrap details,
     <div class="an-container an-hero-grid">
       <div>
         <div class="an-badge">
-          <span class="an-dot"></span> REAL-TIME BUSINESS ANALYTICS
+          <span class="an-dot"></span> OFFICIAL META CLOUD API v20.0 • REAL-TIME BUSINESS TELEMETRY
         </div>
-        <h1>Turn your business data into <span class="an-gradient">clear decisions.</span></h1>
+        <h1>Turn WhatsApp Data into <span class="an-gradient">Predictable Revenue.</span></h1>
         <p class="an-hero-copy">
-          Get a complete 360° view of customer conversations, broadcast campaigns, chatbot automation, agent productivity, and revenue conversion from one unified, high-speed Analytics Dashboard.
+          Get a complete 360° real-time view of customer conversations, broadcast campaigns, chatbot deflection, agent SLA productivity, and revenue attribution from one enterprise Analytics Dashboard.
         </p>
         <div class="an-actions">
           <a href="https://app.hellobotz.com" class="an-btn an-btn-primary">
             Explore Live Dashboard →
           </a>
-          <button type="button" class="an-btn an-btn-secondary btn-demo-open">
+          <button type="button" class="an-btn an-btn-secondary btn-demo-open" data-product="Analytics">
             Book Live Demo
           </button>
           <a href="#contact-section" class="an-btn an-btn-verified">
@@ -1111,14 +1111,30 @@ body.dark-theme .an-faq-wrap details,
           </a>
         </div>
         <div class="an-trust">
-          <span><b class="an-check">✓</b> Real-Time Data Streaming</span>
-          <span><b class="an-check">✓</b> Multi-Channel Cohorts</span>
-          <span><b class="an-check">✓</b> Automated ROI Tracking</span>
+          <span><b class="an-check">✓</b> 99.8% Broadcast Delivery SLA</span>
+          <span><b class="an-check">✓</b> Real-Time Agent SLA &amp; CSAT Telemetry</span>
+          <span><b class="an-check">✓</b> Instant BI Export: PowerBI, BigQuery &amp; CSV</span>
         </div>
       </div>
 
+      <!-- PHOTOREALISTIC HERO MARKETING COMPOSITE -->
+      <div class="an-hero-visual-card text-center" style="display:flex;justify-content:center;align-items:center;">
+        <img src="<?php echo $bp; ?>assets/images/hellobots/analytics/Analytics-Hero.png" alt="HelloBotz Real-Time Business Analytics Dashboard" class="img-fluid" style="max-width:100%;height:auto;border-radius:20px;box-shadow:0 24px 60px rgba(109,74,255,0.18);">
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE DASHBOARD SANDBOX -->
+  <section class="an-section" style="padding: 3.5rem 0 4.5rem; background: var(--an-surface);">
+    <div class="an-container">
+      <div class="an-center" style="margin-bottom: 2.5rem;">
+        <div class="an-kicker">INTERACTIVE SANDBOX</div>
+        <h2 class="an-section-title" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Experience HelloBotz Analytics Live</h2>
+        <p class="an-intro">Switch date periods and inspect live conversation trends, resolution rates, and channel volume distribution in the interactive console below.</p>
+      </div>
+
       <!-- INTERACTIVE DASHBOARD MOCKUP -->
-      <div class="an-dashboard-shell">
+      <div class="an-dashboard-shell" style="max-width: 960px; margin: 0 auto;">
         <div class="an-browser">
           <span class="an-browser-dot red"></span>
           <span class="an-browser-dot yellow"></span>
@@ -1475,7 +1491,81 @@ body.dark-theme .an-faq-wrap details,
           <summary>Can team members access custom permission-based dashboards?</summary>
           <p>Yes. HelloBotz supports role-based access control (RBAC). Marketing teams see campaign metrics, support managers see ticket and agent KPIs, while executives access top-level revenue dashboards.</p>
         </details>
+
+        <details>
+          <summary>How is marketing campaign ROAS and revenue attribution calculated?</summary>
+          <p>HelloBotz tracks customer actions through unique UTM parameters, Click-to-WhatsApp ad identifiers (ctwa_clid), and webhook purchase receipts. When a customer converts via in-chat payments or on Shopify/WooCommerce, the sale is directly attributed to the exact broadcast or ad creative that initiated the thread.</p>
+        </details>
+
+        <details>
+          <summary>Does HelloBotz provide automated anomaly detection and delivery alerts?</summary>
+          <p>Yes. Our automated telemetry engine monitors Meta webhook delivery latency and customer opt-out rates 24/7. If a broadcast experiences unexpected bounce rates or webhook latency spikes, the system automatically triggers smart routing failovers and notifies your account admin.</p>
+        </details>
       </div>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What data can I monitor in the HelloBotz Analytics Dashboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can track total incoming and outgoing messages, campaign delivery and read rates, agent response latency (FRT/ART), bot resolution percentage, customer acquisition costs, and revenue generated via conversational commerce."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the analytics telemetry updated in real time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The dashboard streams updates in sub-second latency. When a broadcast is dispatched or an agent responds, you can observe live counters incrementing immediately without manual page refreshes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I filter reports by specific marketing campaigns or team agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HelloBotz offers granular filtering: filter by communication channel (WhatsApp, Instagram, SMS, RCS), specific broadcast tag, date range, or individual support representative."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I export analytics data to CSV, Excel, or Google BigQuery?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. You can download one-click CSV and Excel reports, or schedule automated raw webhook data exports into Google BigQuery, Snowflake, or Google Sheets for custom enterprise business intelligence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can team members access custom permission-based dashboards?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HelloBotz supports role-based access control (RBAC). Marketing teams see campaign metrics, support managers see ticket and agent KPIs, while executives access top-level revenue dashboards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is marketing campaign ROAS and revenue attribution calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "HelloBotz tracks customer actions through unique UTM parameters, Click-to-WhatsApp ad identifiers (ctwa_clid), and webhook purchase receipts. When a customer converts via in-chat payments or on Shopify/WooCommerce, the sale is directly attributed to the exact broadcast or ad creative that initiated the thread."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does HelloBotz provide automated anomaly detection and delivery alerts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Our automated telemetry engine monitors Meta webhook delivery latency and customer opt-out rates 24/7. If a broadcast experiences unexpected bounce rates or webhook latency spikes, the system automatically triggers smart routing failovers and notifies your account admin."
+            }
+          }
+        ]
+      }
+      </script>
     </div>
   </section>
 
@@ -1491,7 +1581,7 @@ body.dark-theme .an-faq-wrap details,
         <a href="https://app.hellobotz.com/auth/register" class="an-btn" style="background:#ffffff;color:#17152a;font-weight:800;">
           Start Free Trial →
         </a>
-        <button type="button" class="an-btn btn-demo-open" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">
+        <button type="button" class="an-btn btn-demo-open" data-product="Analytics" style="border:1.5px solid rgba(255,255,255,0.35);color:#ffffff;background:transparent;">
           Book a Live Demo
         </button>
         <a href="#contact-section" class="an-btn an-btn-verified">
