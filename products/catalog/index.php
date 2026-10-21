@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'WhatsApp Product Catalog & Storefront | HelloBotz's;
+$pageTitle = 'WhatsApp Product Catalog & Storefront | HelloBotz';
 $pageDescription = 'Showcase collections, display product catalogs, and accept direct orders inside WhatsApp with automated checkout and payment.';
 $canonicalUrl = 'https://hellobotz.com/products/catalog/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/whatsapp-catalog/Whatsapp-Catalog.png';
-$ogTitle = 'WhatsApp Product Catalog & Storefront | HelloBotz's;
+$ogTitle = 'WhatsApp Product Catalog & Storefront | HelloBotz';
 $ogDescription = 'Showcase collections, display product catalogs, and accept direct orders inside WhatsApp with automated checkout and payment.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -248,8 +248,8 @@ include __DIR__ . '/../../includes/header.php';
   </span>
         <!-- Breadcrumbs -->
         <!-- End Breadcrumbs -->
-        <h1 class="hero-title"> Showcase and Sell Your Products Using WhatsApp Catalog</h1>
-        <p class="hero-text">Easily display your products, engage customers, and drive orders, all within WhatsApp</p>
+        <h1 class="hero-title">Scale Sales with Native WhatsApp Product Catalogs</h1>
+        <p class="hero-text">Turn WhatsApp into your most profitable mobile storefront. Showcase product collections, enable multi-item in-chat shopping carts, and drive seamless order checkout with automated UPI and card payments.</p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
@@ -266,8 +266,8 @@ include __DIR__ . '/../../includes/header.php';
       <!-- Image Content with background -->
       <div class="col-lg-6">
         <div class="api-image-box " style="padding: 20px; border-radius: 10px;">
-          <img width="100%" src="/assets/images/hellobots/whatsapp-catalog/Whatsapp-Catalog.png" loading="lazy"
-            alt="WhatsApp Catalog">
+          <img width="100%" src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-catalog/Whatsapp-Catalog.png" loading="lazy"
+            alt="WhatsApp Product Catalog">
         </div>
       </div>
     </div>
@@ -277,51 +277,50 @@ include __DIR__ . '/../../includes/header.php';
 
 <section class="trust-section py-5" style="background:#fff!important">
   <div class="container">
-    <h2 class="text-center mb-4">Why WhatsApp Catalog for Businesses</h2>
+    <h2 class="text-center mb-4">Why Modern Brands Sell with WhatsApp Catalogs</h2>
     <div class="row align-items-center">
       <!-- Left Text Section -->
       <div class="col-lg-6">
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3> Mobile Storefront</h3>
-            <p>No more separate website, show your products directly on WhatsApp.</p>
+            <h3>In-Chat Mobile Storefront</h3>
+            <p>Bypass external website friction and cart abandonment. Let customers browse full collections and place orders directly inside WhatsApp.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3>  Detailed Listings</h3>
-            <p>Add multiple product images, prices, and short info for every product.
-            </p>
+            <h3>Rich Multi-Image Listings</h3>
+            <p>Showcase high-resolution product photography, detailed specs, size guides, and transparent pricing in interactive carousel formats.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span> Organized Collections</h3>
-            <p>Make product browsing easy by grouping similar products into categories.</p>
+            <h3>Organized Collections & Categories</h3>
+            <p>Structure your offerings intuitively by season, category, or promotional offers, making browsing frictionless for buyers.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3></span> Simple Management</h3>
-            <p>Hide or show items anytime to match product stock availability.</p>
+            <h3>Real-Time Inventory Sync</h3>
+            <p>Automatically synchronize stock counts and price adjustments with Shopify, WooCommerce, or your internal ERP in real time.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3> Direct Messaging</h3>
-            <p>Let customers inquire with you instantly about products or orders.</p>
+            <h3>Instant Conversational Sales</h3>
+            <p>Address pre-purchase questions, recommend complementary items, and upsell instantly through AI chatbots or live sales reps.</p>
           </div>
         </div>
         <div class="trust-point mb-4 d-flex align-items-start">
           <div>
-            <h3> Easy Sharing</h3>
-            <p>Send a product catalog or a single item through shareable or quick links.</p>
+            <h3>1-Tap Shareable Links & CTWA Integration</h3>
+            <p>Distribute specific product cards or full catalogs across WhatsApp broadcast campaigns, Instagram ads, and physical QR codes.</p>
           </div>
         </div>
       </div>
       <!-- Right Image Section -->
       <div class="col-lg-6 text-center mt-4 mt-lg-0">
-        <img src="/assets/images/hellobots/whatsapp-catalog/Why-WhatsApp-Catalog.png"
+        <img src="<?php echo $bp; ?>assets/images/hellobots/whatsapp-catalog/Why-WhatsApp-Catalog.png"
           alt="Why WhatsApp Catalog" class="img-fluid" />
       </div>
     </div>
@@ -1135,7 +1134,73 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can customers order directly from the WhatsApp Catalog?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes. Users can easily explore the products, add products to the cart, and place orders in WhatsApp directly. The complete process, from browsing to completing checkout, everything done effortlessly in chat. It makes it faster and convenient for users to buy.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Can I update my catalog regularly?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Definitely. HelloBotz lets you add, edit, or delete products and services from your WhatsApp catalog anytime, making sure listings are always updated.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>Can I integrate payment options with my WhatsApp Catalog?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Yes, you can integrate multiple payment options with your WhatsApp catalog through platforms such as WhatsApp Pay or third-party payment gateways. It simplifies payment for customers directly in WhatsApp chat.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>Can I sell digital products using the WhatsApp Catalog?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Of course, you’re allowed to list digital items such as eBooks, software licenses, online courses, or memberships in your WhatsApp catalog.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>How many products can we add to a WhatsApp catalog?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">Yes, you can add up to 500 products to a single WhatsApp catalog. Yet, companies using the API can upload an unlimited products via a data feed, as per the resources.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>How long does a WhatsApp catalog review take?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">The process of WhatsApp catalog review takes more than 24 hours as the review collection is used to confirm they are adhering to the WhatsApp commerce policy before it becomes available to clients.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6"><span class="faq-title"><h3>What are the rules for the WhatsApp Business catalog?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">Every item or service in the business WhatsApp catalog needs to have a unique title, at least one photo displaying the item, and the origin country for the product.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can customers order directly from the WhatsApp Catalog?","acceptedAnswer":{"@type":"Answer","text":"Yes. Users can easily explore the products, add products to the cart, and place orders in WhatsApp directly. The complete process, from browsing to completing checkout, everything done effortlessly in chat. It makes it faster and convenient for users to buy."}},{"@type":"Question","name":"Can I update my catalog regularly?","acceptedAnswer":{"@type":"Answer","text":"Definitely. HelloBotz lets you add, edit, or delete products and services from your WhatsApp catalog anytime, making sure listings are always updated."}},{"@type":"Question","name":"Can I integrate payment options with my WhatsApp Catalog?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can integrate multiple payment options with your WhatsApp catalog through platforms such as WhatsApp Pay or third-party payment gateways. It simplifies payment for customers directly in WhatsApp chat."}},{"@type":"Question","name":"Can I sell digital products using the WhatsApp Catalog?","acceptedAnswer":{"@type":"Answer","text":"Of course, you’re allowed to list digital items such as eBooks, software licenses, online courses, or memberships in your WhatsApp catalog."}},{"@type":"Question","name":"How many products can we add to a WhatsApp catalog?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can add up to 500 products to a single WhatsApp catalog. Yet, companies using the API can upload an unlimited products via a data feed, as per the resources."}},{"@type":"Question","name":"How long does a WhatsApp catalog review take?","acceptedAnswer":{"@type":"Answer","text":"The process of WhatsApp catalog review takes more than 24 hours as the review collection is used to confirm they are adhering to the WhatsApp commerce policy before it becomes available to clients."}},{"@type":"Question","name":"What are the rules for the WhatsApp Business catalog?","acceptedAnswer":{"@type":"Answer","text":"Every item or service in the business WhatsApp catalog needs to have a unique title, at least one photo displaying the item, and the origin country for the product."}}]}</script>
+          <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+              <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0">
+                <span class="faq-title"><h3>Can customers browse and order products directly inside WhatsApp?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+                Yes. With HelloBotz native WhatsApp Catalog integration, shoppers can view detailed product collections, select variants (sizes, colors), add multiple items to their in-chat cart, and complete orders with integrated checkout—all without ever leaving the WhatsApp conversation.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+                <span class="faq-title"><h3>Can I automatically sync my catalog with Shopify, WooCommerce, or custom inventory?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">
+                Absolutely. HelloBotz offers real-time bi-directional catalog sync with major ecommerce platforms like Shopify, WooCommerce, and Magento, as well as CSV feeds and custom ERP APIs. Product updates, prices, and out-of-stock statuses sync instantly to WhatsApp.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+                <span class="faq-title"><h3>How do in-chat payments work with WhatsApp Catalog?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+                Customers can pay directly in chat using WhatsApp Pay, UPI, credit/debit cards, net banking, or popular gateways like Razorpay, Cashfree, Stripe, and PayU. Once payment completes, automated receipts and tracking numbers are sent immediately to the chat.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+                <span class="faq-title"><h3>Can I sell digital products, courses, or services through WhatsApp Catalog?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+                Yes. In addition to physical goods, you can showcase digital products, professional consulting packages, subscription memberships, event tickets, or software licenses. Upon purchase, automated bots can instantly dispatch download links or booking confirmations.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+                <span class="faq-title"><h3>How many products can I upload to my WhatsApp Business API catalog?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+                While standard mobile WhatsApp Business apps have limits, the official WhatsApp Business Platform (API) powered by HelloBotz supports up to 100,000+ SKUs via automated data feeds and Meta Commerce Manager catalogs with multi-category structures.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+                <span class="faq-title"><h3>How does Meta review and approve WhatsApp Catalog listings?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+                Products uploaded through Meta Commerce Manager are reviewed automatically against WhatsApp Commerce Policies. HelloBotz ensures your listings adhere to compliance standards, with most items approved within minutes to a few hours.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+                <span class="faq-title"><h3>Can I combine WhatsApp Catalogs with Click-to-WhatsApp (CTWA) ads?</h3></span>
+                <span class="faq-arrow" aria-hidden="true"></span>
+              </button>
+              <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+                Yes! You can connect your catalog directly to Click-to-WhatsApp ads on Instagram and Facebook. When a prospect clicks your ad, they instantly open a WhatsApp conversation with the specific featured product card or category pre-loaded in the chat.
+              </div>
+            </div>
+          </div>
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can customers browse and order products directly inside WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"Yes. With HelloBotz native WhatsApp Catalog integration, shoppers can view detailed product collections, select variants (sizes, colors), add multiple items to their in-chat cart, and complete orders with integrated checkout—all without ever leaving the WhatsApp conversation."}},{"@type":"Question","name":"Can I automatically sync my catalog with Shopify, WooCommerce, or custom inventory?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. HelloBotz offers real-time bi-directional catalog sync with major ecommerce platforms like Shopify, WooCommerce, and Magento, as well as CSV feeds and custom ERP APIs. Product updates, prices, and out-of-stock statuses sync instantly to WhatsApp."}},{"@type":"Question","name":"How do in-chat payments work with WhatsApp Catalog?","acceptedAnswer":{"@type":"Answer","text":"Customers can pay directly in chat using WhatsApp Pay, UPI, credit/debit cards, net banking, or popular gateways like Razorpay, Cashfree, Stripe, and PayU. Once payment completes, automated receipts and tracking numbers are sent immediately to the chat."}},{"@type":"Question","name":"Can I sell digital products, courses, or services through WhatsApp Catalog?","acceptedAnswer":{"@type":"Answer","text":"Yes. In addition to physical goods, you can showcase digital products, professional consulting packages, subscription memberships, event tickets, or software licenses. Upon purchase, automated bots can instantly dispatch download links or booking confirmations."}},{"@type":"Question","name":"How many products can I upload to my WhatsApp Business API catalog?","acceptedAnswer":{"@type":"Answer","text":"While standard mobile WhatsApp Business apps have limits, the official WhatsApp Business Platform (API) powered by HelloBotz supports up to 100,000+ SKUs via automated data feeds and Meta Commerce Manager catalogs with multi-category structures."}},{"@type":"Question","name":"How does Meta review and approve WhatsApp Catalog listings?","acceptedAnswer":{"@type":"Answer","text":"Products uploaded through Meta Commerce Manager are reviewed automatically against WhatsApp Commerce Policies. HelloBotz ensures your listings adhere to compliance standards, with most items approved within minutes to a few hours."}},{"@type":"Question","name":"Can I combine WhatsApp Catalogs with Click-to-WhatsApp (CTWA) ads?","acceptedAnswer":{"@type":"Answer","text":"Yes! You can connect your catalog directly to Click-to-WhatsApp ads on Instagram and Facebook. When a prospect clicks your ad, they instantly open a WhatsApp conversation with the specific featured product card or category pre-loaded in the chat."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
