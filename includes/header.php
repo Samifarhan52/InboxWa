@@ -4114,12 +4114,6 @@ if (!function_exists('hb_seo_esc')) {
                     <a href="<?php echo $bp; ?>integrations/woocommerce/" class="prodocu-int-tile" title="WooCommerce">
                       <img src="<?php echo $bp; ?>assets/images/integrations/woocommerce.png" alt="WooCommerce" width="48" height="48" loading="lazy">
                     </a>
-                    <a href="<?php echo $bp; ?>integrations/wortal/" class="prodocu-int-tile" title="Wortal">
-                      <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" alt="Wortal" width="48" height="48" loading="lazy">
-                    </a>
-                    <a href="<?php echo $bp; ?>integrations/" class="prodocu-int-tile" title="GoTab">
-                      <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" alt="GoTab" width="48" height="48" loading="lazy">
-                    </a>
                     <a href="<?php echo $bp; ?>integrations/shiprocket/" class="prodocu-int-tile" title="Shiprocket">
                       <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" alt="Shiprocket" width="48" height="48" loading="lazy">
                     </a>
@@ -4669,16 +4663,6 @@ if (!function_exists('hb_seo_esc')) {
                 <a href="<?php echo $bp; ?>integrations/woocommerce/" class="prodocu-mob-int-tile" title="WooCommerce">
                   <div class="int-inner-card">
                     <img src="<?php echo $bp; ?>assets/images/integrations/woocommerce.png" alt="WooCommerce">
-                  </div>
-                </a>
-                <a href="<?php echo $bp; ?>integrations/wortal/" class="prodocu-mob-int-tile" title="Wortal">
-                  <div class="int-inner-card">
-                    <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" alt="Wortal">
-                  </div>
-                </a>
-                <a href="<?php echo $bp; ?>integrations/" class="prodocu-mob-int-tile" title="GoTab">
-                  <div class="int-inner-card">
-                    <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" alt="GoTab">
                   </div>
                 </a>
                 <a href="<?php echo $bp; ?>integrations/shiprocket/" class="prodocu-mob-int-tile" title="Shiprocket">

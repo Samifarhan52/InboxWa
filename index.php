@@ -4010,16 +4010,7 @@ include __DIR__ . '/includes/header.php';
             <span class="hb-int-name">WooCommerce</span>
           </div>
         </a>
-        <div class="hb-int-card">
-          <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
-          <span class="hb-int-name">Gotab</span>
-        </div>
-        <a href="/integrations/wortal/" class="hb-int-link">
-          <div class="hb-int-card">
-            <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
-            <span class="hb-int-name">Wortal</span>
-          </div>
-        </a>
+
         <a href="/integrations/shiprocket/" class="hb-int-link">
           <div class="hb-int-card">
             <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
@@ -4056,16 +4047,7 @@ include __DIR__ . '/includes/header.php';
             <span class="hb-int-name">WooCommerce</span>
           </div>
         </a>
-        <div class="hb-int-card">
-          <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
-          <span class="hb-int-name">Gotab</span>
-        </div>
-        <a href="/integrations/wortal/" class="hb-int-link">
-          <div class="hb-int-card">
-            <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
-            <span class="hb-int-name">Wortal</span>
-          </div>
-        </a>
+
         <a href="/integrations/shiprocket/" class="hb-int-link">
           <div class="hb-int-card">
             <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
@@ -4109,16 +4091,7 @@ include __DIR__ . '/includes/header.php';
             <span class="hb-int-name">WooCommerce</span>
           </div>
         </a>
-        <div class="hb-int-card">
-          <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
-          <span class="hb-int-name">Gotab</span>
-        </div>
-        <a href="/integrations/wortal/" class="hb-int-link">
-          <div class="hb-int-card">
-            <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
-            <span class="hb-int-name">Wortal</span>
-          </div>
-        </a>
+
         <a href="/integrations/shiprocket/" class="hb-int-link">
           <div class="hb-int-card">
             <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">
@@ -4155,16 +4128,7 @@ include __DIR__ . '/includes/header.php';
             <span class="hb-int-name">WooCommerce</span>
           </div>
         </a>
-        <div class="hb-int-card">
-          <img src="<?php echo $bp; ?>assets/images/integrations/gotab.png" class="hb-int-icon" alt="Gotab" width="40" height="40" loading="lazy">
-          <span class="hb-int-name">Gotab</span>
-        </div>
-        <a href="/integrations/wortal/" class="hb-int-link">
-          <div class="hb-int-card">
-            <img src="<?php echo $bp; ?>assets/images/integrations/wortal.png" class="hb-int-icon" alt="Wortal" width="40" height="40" loading="lazy">
-            <span class="hb-int-name">Wortal</span>
-          </div>
-        </a>
+
         <a href="/integrations/shiprocket/" class="hb-int-link">
           <div class="hb-int-card">
             <img src="<?php echo $bp; ?>assets/images/integrations/shiprocket.png" class="hb-int-icon" alt="Shiprocket" width="40" height="40" loading="lazy">

@@ -771,10 +771,10 @@ include __DIR__ . '/../includes/header.php';
           <p>E-commerce</p>
         </div>
       </a>
-      <a href="/integrations/wortal/" target="_blank" rel="noopener noreferrer" class="">
-        <div class="integration-card wortal-card">
-          <img src="/assets/images/hellobots/integrations-main/wortal.png" alt="Wortal" class="integration-logo" />
-          <h3>Wortal</h3>
+      <a href="/solutions/woocommerce/" target="_blank" rel="noopener noreferrer" class="">
+        <div class="integration-card woocommerce-card">
+          <img src="/assets/images/integrations/woocommerce.png" alt="WooCommerce" class="integration-logo" />
+          <h3>WooCommerce</h3>
           <p>E-commerce</p>
         </div>
       </a>
