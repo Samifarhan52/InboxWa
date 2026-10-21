@@ -3,11 +3,11 @@ $basePath = '../../';
 $bp = '../../';
 require_once __DIR__ . '/../../config/cms.php';
 
-$pageTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBotz's;
+$pageTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBotz';
 $pageDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBotz.';
 $canonicalUrl = 'https://hellobotz.com/products/ctwa/';
 $ogImage = 'https://hellobotz.com/assets/images/hellobots/click-to-whatsapp-ads/Ads-that-Click-to-WhatsApp.png';
-$ogTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBotz's;
+$ogTitle = 'Click-to-WhatsApp Ads (CTWA) | Scale Social Leads | HelloBotz';
 $ogDescription = 'Turn Facebook and Instagram ad clicks into instant WhatsApp chats. Qualify leads 24/7 and boost conversion rates with HelloBotz.';
 
 include __DIR__ . '/../../includes/header.php';
@@ -168,8 +168,8 @@ include __DIR__ . '/../../includes/header.php';
 
         <!-- End Breadcrumbs -->
 
-        <h1 class="hero-title"> Get More Conversions with Click to WhatsApp Ads</h1>
-        <p class="hero-text">Boost Your Reach on platforms like Facebook, Instagram, and Google using click to WhatsApp ads.</p>
+        <h1 class="hero-title">Scale Social Ad Conversions with Click-to-WhatsApp Ads (CTWA)</h1>
+        <p class="hero-text">Turn high-intent Facebook, Instagram, and Google ad clicks directly into instant WhatsApp conversations. Qualify prospects 24/7 with automated chatbots and close deals within Meta's 72-hour free messaging window.</p>
         <div class="product-hero-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.5rem;">
           <a href="https://app.hellobotz.com/auth/register" class="btn text-white cta-button m-0" style="background:#4f46e5;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(79,70,229,0.35);">
             Start Free Trial →
@@ -213,22 +213,20 @@ include __DIR__ . '/../../includes/header.php';
     <div class="api-content">
       <h3>Capture Qualified Leads in Real Time</h3>
       <p>
-        No more hustle with losing interested leads due to lengthy sign-up forms. 
-        With HelloBotz, convert single clicks into a WhatsApp communication, 
-        allowing you to qualify leads naturally via the chat.
+        Eliminate high drop-off rates from slow landing pages and complex forms. 
+        With HelloBotz, every click on your Facebook, Instagram, or Google ad launches an active WhatsApp chat, 
+        capturing verified phone numbers and auto-qualifying buyer intent immediately.
       </p>
 
       <ul style="padding-left:0em!important">
         <li>
-          <strong>Smart Lead Qualification:</strong> 
-          Deploy an <a href="<?php echo $bp; ?>products/chatbot/">automated WhatsApp chatbot</a> to gather details, 
-          know intent, and qualify leads instantly when they engage with your ad.
+          <strong>Conversational Lead Qualification:</strong> 
+          Deploy an <a href="<?php echo $bp; ?>products/chatbot/">intelligent WhatsApp chatbot</a> to collect requirements, 
+          verify contact info, and score leads in real time before passing them to sales.
         </li>
         <li>
-          <strong>Unified Inbox for Every Platform:
-</strong> 
-          Handle each message from Facebook, Instagram, and Google Click-to-Message ads in a <a href="<?php echo $bp; ?>products/shared-inbox/">single WhatsApp inbox</a>. Now, no more switching of tabs or tools.
-
+          <strong>Unified Shared Inbox for Social Ads:</strong> 
+          Route incoming ad leads from Facebook, Instagram, and Google campaigns into a <a href="<?php echo $bp; ?>products/shared-inbox/">centralized multi-agent WhatsApp inbox</a> with smart routing and instant agent takeover.
         </li>
       </ul>
     </div>
@@ -244,8 +242,7 @@ include __DIR__ . '/../../includes/header.php';
   <div class="col-lg-6 order-2 order-lg-1 text-center">
     <div class="api-image-box">
       <img src="<?php echo $bp; ?>assets/images/hellobots/click-to-whatsapp-ads/Capture-Qualified-Leads-in-Real-Time.png" 
-           alt="Capture Qualified Leads in Real Time
-" 
+           alt="Capture Qualified Leads in Real Time" 
            class="api-image img-fluid rounded">
     </div>
   </div>
@@ -255,26 +252,19 @@ include __DIR__ . '/../../includes/header.php';
   <!-- Text -->
   <div class="col-lg-6 order-1 order-lg-1">
     <div class="api-content">
-      <h3>Convert Faster Without Spending More
-
-</h3>
+      <h3>Convert Faster Without Spending More</h3>
       <p>
-        Use WhatsApp’s 72-hour no-cost messaging window to connect customers without extra ad spend when they’re most interested.
-
-
+        Leverage Meta's official 72-hour free messaging window to guide prospects from initial ad inquiry to closed deal with zero per-message conversation charges.
       </p>
 
       <ul style="padding-left:0em!important">
         <li>
-          <strong>Retarget with Precision and Zero Waste:</strong> 
-         Re-connect your leads with your own first-party data. Share custom WhatsApp campaigns within the 72-hour free messaging window to re-engage with high-intent leads and enhance conversions seamlessly.
-
+          <strong>Zero Meta Fee Retargeting:</strong> 
+          Engage high-intent prospects for 3 full days completely free of per-message fees. Send personalized product catalogs, custom discount vouchers, and automated follow-up sequences within the active session.
         </li>
         <li>
-          <strong>Smarter Ad Targeting:
-</strong> 
-          Send real shopping data with Meta to support their algorithm to get more people like your best prospects, increasing ROI while minimizing costs.
-
+          <strong>Algorithmic Ad Optimization & Higher ROAS:</strong> 
+          Feed conversational conversion events back to Meta Conversion API (CAPI) to optimize ad targeting toward your best buyers, slashing cost-per-lead (CPL) while scaling campaign ROI.
         </li>
       </ul>
     </div>
@@ -1109,7 +1099,73 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="faq-section">
   <div class="container">
-  <div class="custom-faq-accordion" aria-label="Frequently Asked Questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0"><span class="faq-title"><h3>Can I use this with my existing Meta and Google ad accounts?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">Yes, you can use the button with your Existing Meta and Google Ad accounts. Just link your WhatsApp business number to Meta or Google ads to initiate Click-to-WhatsApp campaigns without setting up a new account.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1"><span class="faq-title"><h3>Do I Need a WhatsApp Business API Account to Run Click to WhatsApp Ads?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">Small businesses can run click to WhatsApp ads using the WhatsApp Business App. For advanced features like automation, multi-agent access, and CRM integration, medium or large businesses need the WhatsApp Business API.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span class="faq-title"><h3>How can Ads that Click to WhatsApp benefit my business?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">Ads that click-to-WhatsApp benefit the organization by allowing direct customer communication, giving a custom experience on a verified platform. The strategy lets you nudge leads, offer immediate support, guide prospects via shopping, basically grow sales, and provide better customer service.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span class="faq-title"><h3>How does the 72-hour free messaging window work?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">Meta enables unlimited messages to that customer for 72 hours without extra charges whenever the user starts communicating with your ad. It creates a useful possibility for improving leads cost-free.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span class="faq-title"><h3>How do I set up a click-to-WhatsApp ad?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">You can set up ads that click-to-WhatsApp with Meta Ads Manager or from the WhatsApp business app directly. Check the details in the guide for detailed guidance.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5"><span class="faq-title"><h3>Where can I run CTWA (Click-to-WhatsApp) ads?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">You can run Click-to-WhatsApp ads (CTWA) primarily on Meta platforms, including Facebook (Feed, Stories, Marketplace) and Instagram (Feed, Stories, Reels), and WhatsApp (Status or Stories) and also on search engines like Google ads, Bing ads and etc.</div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6"><span class="faq-title"><h3>What Are the Requirements to Run CTWA Ads on WhatsApp Stories?</h3></span><span class="faq-arrow" aria-hidden="true"></span></button><div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">To run CTWA ads that appears in WhatsApp Status or Stories, you need a verified WhatsApp Business Account connected to Meta Ads Manager, an active phone number linked to WhatsApp, and an ad campaign with WhatsApp selected as the messaging destination.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use this with my existing Meta and Google ad accounts?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can use the button with your Existing Meta and Google Ad accounts. Just link your WhatsApp business number to Meta or Google ads to initiate Click-to-WhatsApp campaigns without setting up a new account."}},{"@type":"Question","name":"Do I Need a WhatsApp Business API Account to Run Click to WhatsApp Ads?","acceptedAnswer":{"@type":"Answer","text":"Small businesses can run click to WhatsApp ads using the WhatsApp Business App. For advanced features like automation, multi-agent access, and CRM integration, medium or large businesses need the WhatsApp Business API."}},{"@type":"Question","name":"How can Ads that Click to WhatsApp benefit my business?","acceptedAnswer":{"@type":"Answer","text":"Ads that click-to-WhatsApp benefit the organization by allowing direct customer communication, giving a custom experience on a verified platform. The strategy lets you nudge leads, offer immediate support, guide prospects via shopping, basically grow sales, and provide better customer service."}},{"@type":"Question","name":"How does the 72-hour free messaging window work?","acceptedAnswer":{"@type":"Answer","text":"Meta enables unlimited messages to that customer for 72 hours without extra charges whenever the user starts communicating with your ad. It creates a useful possibility for improving leads cost-free."}},{"@type":"Question","name":"How do I set up a click-to-WhatsApp ad?","acceptedAnswer":{"@type":"Answer","text":"You can set up ads that click-to-WhatsApp with Meta Ads Manager or from the WhatsApp business app directly. Check the details in the guide for detailed guidance."}},{"@type":"Question","name":"Where can I run CTWA (Click-to-WhatsApp) ads?","acceptedAnswer":{"@type":"Answer","text":"You can run Click-to-WhatsApp ads (CTWA) primarily on Meta platforms, including Facebook (Feed, Stories, Marketplace) and Instagram (Feed, Stories, Reels), and WhatsApp (Status or Stories) and also on search engines like Google ads, Bing ads and etc."}},{"@type":"Question","name":"What Are the Requirements to Run CTWA Ads on WhatsApp Stories?","acceptedAnswer":{"@type":"Answer","text":"To run CTWA ads that appears in WhatsApp Status or Stories, you need a verified WhatsApp Business Account connected to Meta Ads Manager, an active phone number linked to WhatsApp, and an ad campaign with WhatsApp selected as the messaging destination."}}]}</script>
+  <div class="custom-faq-accordion" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question open" type="button" aria-expanded="true" aria-controls="faq-answer-0">
+        <span class="faq-title"><h3>Can I use Click-to-WhatsApp ads with my existing Meta and Google ad accounts?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-0" class="faq-answer open" role="region" aria-hidden="false" style="max-height:none;">
+        Yes. You can seamlessly connect your existing Meta Ads Manager and Google Ads accounts. Simply link your official WhatsApp Business phone number and connect your HelloBotz API webhook to capture, auto-qualify, and manage Click-to-WhatsApp leads directly inside your centralized inbox.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+        <span class="faq-title"><h3>Do I need a WhatsApp Business API account to run Click-to-WhatsApp ads?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true">
+        While micro-businesses can run basic ads through the standard WhatsApp Business app, scaling ad spend requires the official WhatsApp Business Platform (API). HelloBotz provides verified Meta Cloud API access with unlimited multi-agent seats, conversational chatbots, automated CRM sync, and no phone lock-in.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+        <span class="faq-title"><h3>How do Click-to-WhatsApp ads improve ROAS and conversion rates?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true">
+        Traditional ads lose up to 70% of traffic on slow landing pages and lengthy lead forms. CTWA routes prospects directly into a WhatsApp chat where response rates exceed 90%. Instant AI chatbot replies, pre-filled intent prompts, and immediate human handover shorten the sales cycle and yield 3x–5x higher conversion rates.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+        <span class="faq-title"><h3>How does Meta's 72-hour free messaging window work?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true">
+        When a user clicks your Meta ad (Facebook or Instagram) and sends a message, Meta opens an official 72-hour free messaging window. During these 3 full days, your business can send unlimited free-form text messages, product carousels, and follow-ups to that contact with zero Meta per-conversation charges.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+        <span class="faq-title"><h3>Where can I run Click-to-WhatsApp (CTWA) ads?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-4" class="faq-answer" role="region" aria-hidden="true">
+        You can deploy CTWA campaigns across the entire Meta ecosystem—including Facebook Feed, Instagram Feed, Facebook Stories, Instagram Stories, Reels, and Marketplace—as well as Google Search and Display ads with WhatsApp message extensions.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+        <span class="faq-title"><h3>Can HelloBotz automatically qualify leads and route them to sales reps?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-5" class="faq-answer" role="region" aria-hidden="true">
+        Yes. HelloBotz automated chatbot flows trigger instantly when an ad click initiates a conversation. The bot collects qualification data (e.g., budget, specific product interest, purchase timeframe) and instantly routes qualified buyers to the right sales agent via round-robin distribution with instant notifications.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+        <span class="faq-title"><h3>How do I set up Click-to-WhatsApp ads in Meta Ads Manager?</h3></span>
+        <span class="faq-arrow" aria-hidden="true"></span>
+      </button>
+      <div id="faq-answer-6" class="faq-answer" role="region" aria-hidden="true">
+        In Meta Ads Manager, create a new campaign with the 'Engagement' objective, select 'Messaging Apps' as the conversion location, and pick WhatsApp. Connect your HelloBotz-linked WhatsApp number, define your target audience, customize your ad creative, and configure a default greeting message to jumpstart the chat.
+      </div>
+    </div>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use Click-to-WhatsApp ads with my existing Meta and Google ad accounts?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can seamlessly connect your existing Meta Ads Manager and Google Ads accounts. Simply link your official WhatsApp Business phone number and connect your HelloBotz API webhook to capture, auto-qualify, and manage Click-to-WhatsApp leads directly inside your centralized inbox."}},{"@type":"Question","name":"Do I need a WhatsApp Business API account to run Click-to-WhatsApp ads?","acceptedAnswer":{"@type":"Answer","text":"While micro-businesses can run basic ads through the standard WhatsApp Business app, scaling ad spend requires the official WhatsApp Business Platform (API). HelloBotz provides verified Meta Cloud API access with unlimited multi-agent seats, conversational chatbots, automated CRM sync, and no phone lock-in."}},{"@type":"Question","name":"How do Click-to-WhatsApp ads improve ROAS and conversion rates?","acceptedAnswer":{"@type":"Answer","text":"Traditional ads lose up to 70% of traffic on slow landing pages and lengthy lead forms. CTWA routes prospects directly into a WhatsApp chat where response rates exceed 90%. Instant AI chatbot replies, pre-filled intent prompts, and immediate human handover shorten the sales cycle and yield 3x–5x higher conversion rates."}},{"@type":"Question","name":"How does Meta's 72-hour free messaging window work?","acceptedAnswer":{"@type":"Answer","text":"When a user clicks your Meta ad (Facebook or Instagram) and sends a message, Meta opens an official 72-hour free messaging window. During these 3 full days, your business can send unlimited free-form text messages, product carousels, and follow-ups to that contact with zero Meta per-conversation charges."}},{"@type":"Question","name":"Where can I run Click-to-WhatsApp (CTWA) ads?","acceptedAnswer":{"@type":"Answer","text":"You can deploy CTWA campaigns across the entire Meta ecosystem—including Facebook Feed, Instagram Feed, Facebook Stories, Instagram Stories, Reels, and Marketplace—as well as Google Search and Display ads with WhatsApp message extensions."}},{"@type":"Question","name":"Can HelloBotz automatically qualify leads and route them to sales reps?","acceptedAnswer":{"@type":"Answer","text":"Yes. HelloBotz automated chatbot flows trigger instantly when an ad click initiates a conversation. The bot collects qualification data (e.g., budget, specific product interest, purchase timeframe) and instantly routes qualified buyers to the right sales agent via round-robin distribution with instant notifications."}},{"@type":"Question","name":"How do I set up Click-to-WhatsApp ads in Meta Ads Manager?","acceptedAnswer":{"@type":"Answer","text":"In Meta Ads Manager, create a new campaign with the 'Engagement' objective, select 'Messaging Apps' as the conversion location, and pick WhatsApp. Connect your HelloBotz-linked WhatsApp number, define your target audience, customize your ad creative, and configure a default greeting message to jumpstart the chat."}}]}</script>
     <script>
     (function(){
         if (window.__customFaqAccordionInit) return;
