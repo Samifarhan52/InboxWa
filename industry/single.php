@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=retail20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=travel20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -630,6 +630,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>Autonomous WISMO &amp; Loyalty</h4>
           <p>24/7 AI handles tracking inquiries in &lt;0.8s, captures post-delivery reviews, and triggers automated replenishment re-engagement campaigns.</p>
           <span class="bfsi-step-tag">Step 04 · 24/7 Post-Purchase Care &amp; Retention</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'travel-and-hospitality'): ?>
+  <!-- =========================================================================
+       2.1 TRAVEL & HOSPITALITY 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="travel-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Guest &amp; Traveler Engagement</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Travel &amp; Hospitality on WhatsApp</h2>
+        <p class="stage-subtitle">From flight search and instant suite booking to automated boarding passes, 24/7 AI concierge, 1-tap room upgrades, and post-checkout loyalty reviews on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Travel &amp; Hospitality Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Discover &amp; Reserve</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Confirm &amp; Board</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Pay &amp; Upgrade</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">AI Virtual Concierge</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Reviews &amp; Loyalty</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: DISCOVER & RESERVE -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Discover &amp; Reserve</div>
+            <h3>Interactive flight &amp; hotel <br>reservation directly <br>inside WhatsApp.</h3>
+            <p>Eliminate app fatigue and booking friction. Guests explore room types, flight itineraries, villa packages, and seasonal offers with interactive list pickers and native booking flows.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive 10-item menu pickers for destinations, suites, and tour packages.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Live bi-directional sync with Amadeus, Sabre, Opera PMS &amp; Cloudbeds.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant availability check and dynamic seasonal tariff quotes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Flows for passport capture and guest preferences.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-booking FAQs answered autonomously by conversational AI in &lt;0.8s.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>3.4x higher booking completion rate vs traditional OTA mobile redirects.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz WhatsApp Travel Reservation and Direct Hotel Booking" src="/assets/images/industry/travel-and-hospitality/stage-guest-booking.png?v=travel20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: CONFIRM & BOARD -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Confirm &amp; Board</div>
+            <h3>Automated boarding passes, <br>digital room keys &amp; <br>instant itineraries.</h3>
+            <p>Deliver mission-critical travel documents straight to where travelers are already looking. Automated PDF e-tickets, QR boarding passes, and web check-in reminders with 98% open rates.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Instant PDF boarding pass, PNR confirmation, and booking voucher delivery.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>QR code check-in passes compatible with airport scanners and hotel kiosks.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated 24h &amp; 2h pre-arrival reminders with interactive web check-in links.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time gate changes, flight delay alerts, and baggage carousel updates.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-approved Meta utility templates with zero account ban risk.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Reduces front-desk and check-in lobby congestion by up to 52%.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Automated Boarding Passes and Flight Schedule Updates" src="/assets/images/industry/travel-and-hospitality/stage-boarding-pass.png?v=travel20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: PAY & UPGRADE -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Pay &amp; Upgrade</div>
+            <h3>1-Tap WhatsApp UPI <br>payments and instant <br>room upgrades.</h3>
+            <p>Maximize ancillary revenue without tedious payment gateway links. Guests pay deposit balances, airport transfers, gourmet meal plans, and spa appointments with 1-tap in-chat payments.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Payments via UPI (Google Pay, PhonePe, Paytm, BHIM).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Global multi-currency support with Stripe, Razorpay &amp; international cards.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated personalized room upgrade offers (e.g., Ocean Suite for +$45/night).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant GST tax invoice and digital payment receipts dispatched to chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time webhook reconciliation with hotel ERP and PMS accounting.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Increases ancillary guest spend by 36% during the pre-arrival window.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap WhatsApp In-Chat Payments and Room Upgrades" src="/assets/images/industry/travel-and-hospitality/stage-guest-payments.png?v=travel20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: AI VIRTUAL CONCIERGE -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">AI Virtual Concierge</div>
+            <h3>24/7 in-stay guest <br>service and autonomous <br>concierge requests.</h3>
+            <p>Turn every smartphone into a 5-star digital concierge. Guests order room service, request fresh towels, book airport cabs, or ask for local attraction guides anytime, anywhere.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Natural language room service ordering with dietary preference customization.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Housekeeping and amenity requests auto-routed to on-duty staff PMS tickets.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant local sightseeing, restaurant recommendations &amp; weather forecasts.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Interactive 1-tap reply buttons: "[ Fresh Towels ]", "[ Late Checkout ]", "[ Airport Cab ]".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Seamless human manager handover with complete chat history and VIP flags.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Resolves 82% of in-stay guest service requests with sub-1-second response times.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 24/7 AI Virtual Concierge and Guest Room Service" src="/assets/images/industry/travel-and-hospitality/stage-ai-concierge.png?v=travel20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: REVIEWS & LOYALTY -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Reviews &amp; Loyalty</div>
+            <h3>Automated post-stay <br>NPS surveys and loyalty <br>re-booking loops.</h3>
+            <p>Protect online reputation on TripAdvisor &amp; Google while driving direct repeat bookings. Automated post-checkout check-ins capture glowing guest reviews and offer exclusive member re-booking privileges.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>1-tap WhatsApp CSAT &amp; NPS star ratings captured 2 hours post-checkout.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct deep-link routing for 5-star guests to Google Reviews &amp; TripAdvisor.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Private issue alerting for dissatisfied guests to recover sentiment proactively.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated anniversary &amp; birthday greetings with personalized loyalty discount codes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Exclusive repeat booking incentives bypassing expensive 20% OTA commissions.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Boosts verified review collection by 4.2x and drives 28% repeat direct bookings.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Post-Stay Guest NPS Reviews and Loyalty Re-engagement" src="/assets/images/industry/travel-and-hospitality/stage-guest-reviews.png?v=travel20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 HELLOBOTZ TRAVEL & HOSPITALITY ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">HOSPITALITY ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Travel &amp; Hospitality Architecture</h2>
+        <p class="stage-subtitle">From omnichannel traveler inquiry and GDS/PMS synchronization to automated boarding passes, 24/7 AI concierge care, and post-stay loyalty loops.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Omnichannel Discovery</h4>
+          <p>Traveler connects via hotel website, airport QR code, travel ads, or reservation SMS. Session initialized in under 200ms with multilingual support.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>GDS &amp; PMS Live Sync</h4>
+          <p>Real-time webhooks query Amadeus, Sabre, Opera PMS, or custom CRS to verify availability, room rates, flight schedules, and booking PNRs.</p>
+          <span class="bfsi-step-tag">Step 02 · Enterprise Travel Webhooks</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap Booking &amp; Pay</h4>
+          <p>Guest selects room or flight, completes 1-tap UPI or international card payment, and receives instant QR boarding pass and digital itinerary.</p>
+          <span class="bfsi-step-tag">Step 03 · Zero-Friction Fulfillment</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>In-Stay Concierge &amp; Loyalty</h4>
+          <p>Autonomous AI manages room service, flight status alerts, and concierge requests, transitioning to post-stay NPS reviews and repeat booking perks.</p>
+          <span class="bfsi-step-tag">Step 04 · 24/7 Guest Care &amp; Retention</span>
         </div>
       </div>
     </div>
