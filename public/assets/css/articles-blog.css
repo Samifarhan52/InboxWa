@@ -188,21 +188,36 @@
 }
 
 .blog-card-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.4;
-  color: #0F172A;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  color: #0F172A !important;
+  margin-bottom: 10px !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+  min-height: 2.8em !important;
 }
 
-.blog-card-title:hover {
-  color: #7C3AED;
+.blog-card-title h2,
+.card.blog-card h2,
+.blog-card h2 {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  color: inherit !important;
+  letter-spacing: -0.015em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline !important;
+}
+
+.blog-card-title:hover,
+.blog-card-title:hover h2 {
+  color: #7C3AED !important;
 }
 
 .blog-card-meta {
@@ -877,8 +892,12 @@ body.dark-theme .blog-card:hover {
 
 html[data-theme="dark"] .blog-title,
 html[data-theme="dark"] .blog-card-title,
+html[data-theme="dark"] .blog-card-title h2,
+html[data-theme="dark"] .card.blog-card h2,
 body.dark-theme .blog-title,
-body.dark-theme .blog-card-title {
+body.dark-theme .blog-card-title,
+body.dark-theme .blog-card-title h2,
+body.dark-theme .card.blog-card h2 {
   color: #ffffff !important;
 }
 

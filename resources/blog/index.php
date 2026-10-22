@@ -5,7 +5,7 @@ $pageDescription = "Discover marketing guides, automation tutorials, CRM workflo
 $canonicalUrl = "https://hellobotz.com/resources/blog/";
 include __DIR__ . "/../../includes/header.php";
 ?>
-<link rel="stylesheet" href="/assets/css/articles-blog.css?v=hb20261022v2">
+<link rel="stylesheet" href="/assets/css/articles-blog.css?v=hb20261022v3">
 
 <!-- Hero Section (HelloBotz) -->
 <section class="blogs-section mb-5">
