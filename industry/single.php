@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate' || $currentSlug === 'automobiles-and-transport' || $currentSlug === 'government-and-utilities'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=gov20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate' || $currentSlug === 'automobiles-and-transport' || $currentSlug === 'government-and-utilities' || $currentSlug === 'manufacturing-and-supply'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=mfg20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -2022,6 +2022,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>Grievance SLA &amp; Smart City Telemetry</h4>
           <p>Field teams resolve civic complaints with photo proof, updating smart city command dashboards and notifying citizens in real time.</p>
           <span class="bfsi-step-tag">Step 04 · Grievance SLA &amp; Telemetry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'manufacturing-and-supply'): ?>
+  <!-- =========================================================================
+       2.1 MANUFACTURING & SUPPLY 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="mfg-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Smart Manufacturing &amp; Supply Chain Logistics</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Factory Procurement &amp; Logistics on WhatsApp</h2>
+        <p class="stage-subtitle">From automated Purchase Order (PO) dispatch and live freight GPS tracking to 1-tap B2B invoice settlement, plant floor inventory alerts, and supply chain telemetry on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Manufacturing and Supply Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">PO &amp; Vendor Dispatch</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Freight &amp; Transit GPS</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Invoicing &amp; E-Way Bills</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Floor Alerts &amp; Stock</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Supply Telemetry &amp; SLAs</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: PO & VENDOR DISPATCH -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">PO &amp; Vendor Dispatch</div>
+            <h3>Automated Purchase Orders <br>with 1-tap vendor <br>acknowledgment &amp; delivery dates.</h3>
+            <p>Eliminate procurement bottlenecks and endless vendor follow-up phone calls. Ingest approved POs directly from your ERP and dispatch digitized WhatsApp messages with itemized line items and 1-tap acceptance buttons.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated PO dispatch with itemized Bill of Materials (BOM) and delivery timelines.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap supplier reply buttons: "[ Accept PO ]", "[ Modify Delivery Date ]", or "[ Request Revision ]".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Reduces procurement cycle turnaround from 72 hours to under 30 minutes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated vendor onboarding documentation and bank mandate collection.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct bi-directional sync with SAP S/4HANA, Oracle SCM, and Microsoft Dynamics.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>100% Meta Cloud API verified message delivery with full audit logging.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Automated Purchase Orders and Vendor Dispatch on WhatsApp" src="/assets/images/industry/manufacturing-and-supply/stage-po-management.png?v=mfg20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: FREIGHT & TRANSIT GPS -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Freight &amp; Transit GPS</div>
+            <h3>Real-time freight tracking, <br>carrier dispatch &amp; <br>factory gate dwell reduction.</h3>
+            <p>Provide plant floor managers and distributor networks with continuous in-transit shipment visibility. Automatically share live vehicle GPS links, carrier contact numbers, and delivery ETA alerts.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Real-time milestone notifications: "Dispatched from Plant" ➔ "In Transit" ➔ "At Weighbridge" ➔ "Unloaded".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct Google Maps live GPS tracking link dispatched for freight trucks and 3PL carriers.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated factory gate detention dwell time alerts minimizing expensive demurrage penalties.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Electronic Proof of Delivery (e-POD) capture via in-chat signature and photo upload.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant exception alerts for route deviations, weather slowdowns, or vehicle breakdowns.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>99.2% on-time delivery visibility across primary and secondary logistics fleets.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Real-Time Freight Logistics and Vehicle GPS Tracking" src="/assets/images/industry/manufacturing-and-supply/stage-freight-tracking.png?v=mfg20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: INVOICING & E-WAY BILLS -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Invoicing &amp; E-Way Bills</div>
+            <h3>1-tap B2B settlement, <br>government E-Way bills <br>&amp; automated ledger sync.</h3>
+            <p>Accelerate supplier cash flow and streamline GST reconciliation. Suppliers and enterprise buyers exchange cryptographically verified E-Way bills, tax invoices, and process milestone advances via 1-tap WhatsApp UPI or NEFT.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Instant automated delivery of government-validated E-Way bills and GST tax invoices.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap instant payment settlement via WhatsApp UPI intents, NEFT/RTGS, or corporate cards.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated 3-way matching of Purchase Order, Goods Receipt Note (GRN), and Invoice.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time financial ledger posting into Tally Prime, SAP Finance, and QuickBooks.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated payment voucher receipt generation with bank reference numbers.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>PCI DSS and RBI compliant end-to-end 256-bit encrypted financial processing.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz B2B Invoicing, E-Way Bills and 1-Tap Payment Settlement" src="/assets/images/industry/manufacturing-and-supply/stage-invoice-settlement.png?v=mfg20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: FLOOR ALERTS & STOCK -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Floor Alerts &amp; Stock</div>
+            <h3>Plant-floor inventory alerts, <br>safety stock triggers &amp; <br>machine downtime pings.</h3>
+            <p>Prevent catastrophic assembly line shutdowns caused by component stockouts or sudden machine failures. Broadcast automated raw material re-order alerts and equipment maintenance tickets in sub-seconds.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Real-time ERP webhook triggers when critical components breach safety stock thresholds.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct 1-tap re-order authorization buttons for plant managers and shift supervisors.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant machine breakdown alert dispatch to on-call maintenance engineers with SOP checklists.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Shift handover voice notes and operational log capture natively inside chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Eliminates line-stoppage stockouts across multi-plant assembly lines and raw material warehouses.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated supplier replenishment schedules aligned with JIT (Just-In-Time) manufacturing.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Factory Floor Inventory Alerts and Machine Downtime Pings" src="/assets/images/industry/manufacturing-and-supply/stage-inventory-alerts.png?v=mfg20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: SUPPLY TELEMETRY & SLAS -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Supply Telemetry &amp; SLAs</div>
+            <h3>Vendor OTIF scorecards, <br>carrier transit metrics &amp; <br>executive supply chain BI.</h3>
+            <p>Equip Chief Supply Chain Officers and plant leadership with complete operational transparency. Track vendor On-Time In-Full (OTIF) fulfillment rates, carrier transit bottlenecks, and plant throughput on unified BI dashboards.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Live executive dashboards tracking supplier OTIF fulfillment and defect percentages.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Carrier transit latency and route bottleneck analytics with demurrage cost tracking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated quarterly supplier performance scorecards delivered directly via WhatsApp.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Deep bi-directional sync with SAP S/4HANA, Oracle SCM, Microsoft Dynamics &amp; Tableau.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Warehouse dock throughput and pallet unloading turnaround telemetry.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant BI data export to BigQuery, Snowflake, PowerBI, and enterprise data lakes.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Supply Chain Telemetry and Vendor SLA Scorecards" src="/assets/images/industry/manufacturing-and-supply/stage-supply-telemetry.png?v=mfg20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 MANUFACTURING & SUPPLY ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">SMART MANUFACTURING &amp; SCM ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Manufacturing &amp; Supply Chain Architecture</h2>
+        <p class="stage-subtitle">From ERP purchase order ingestion and bi-directional vendor sync to 1-tap B2B invoice settlement, real-time freight tracking, and plant floor telemetry.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>ERP PO &amp; Manifest Ingestion</h4>
+          <p>Webhooks ingest approved Purchase Orders and dispatch manifests from SAP S/4HANA, Oracle SCM, or Dynamics 365 in &lt;200ms.</p>
+          <span class="bfsi-step-tag">Step 01 · ERP PO &amp; Manifest Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Bi-Directional Vendor &amp; Carrier Sync</h4>
+          <p>Suppliers confirm PO line items with 1-tap buttons, and 3PL carriers stream real-time GPS telemetry and delivery ETAs into WhatsApp.</p>
+          <span class="bfsi-step-tag">Step 02 · Vendor &amp; Carrier Sync</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap B2B Settle &amp; E-Way Bill Delivery</h4>
+          <p>Vendors and plant accounts exchange validated E-Way bills and settle invoices via 1-tap WhatsApp UPI/NEFT with automated ledger posting.</p>
+          <span class="bfsi-step-tag">Step 03 · 1-Tap B2B Settle &amp; E-Way Bill</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Floor Alerts &amp; Vendor SLA Telemetry</h4>
+          <p>Low-stock webhooks protect assembly lines from stockouts, while automated vendor OTIF scorecards maintain peak supply chain performance.</p>
+          <span class="bfsi-step-tag">Step 04 · Floor Alerts &amp; SLA Telemetry</span>
         </div>
       </div>
     </div>
