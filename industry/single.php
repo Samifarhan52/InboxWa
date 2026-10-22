@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=adv20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=real20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -1505,6 +1505,185 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
   <?php endif; ?>
+
+  <?php if ($currentSlug === 'construction-and-real-estate'): ?>
+  <!-- =========================================================================
+       2.1 CONSTRUCTION & REAL ESTATE 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="realestate-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Real Estate Sales &amp; PropTech CRM</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Property Sales &amp; Buyer Engagement on WhatsApp</h2>
+        <p class="stage-subtitle">From sub-45 second portal lead triage and interactive floorplan catalogs to 1-tap site visit scheduling, digital token deposits, and construction milestone updates on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Real Estate Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Capture &amp; Triage</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Floorplans &amp; Tours</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Site Visit Booking</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Token Advance &amp; KYC</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Milestones &amp; CRM</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: CAPTURE & TRIAGE -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Capture &amp; Triage</div>
+            <h3>Sub-45s lead qualification <br>from 99acres, portals <br>&amp; Meta Click-to-WhatsApp.</h3>
+            <p>Eliminate lead decay and beat competitor developers to high-intent buyers. Inbound inquiries from real estate portals and social ads receive instant personalized greetings, budget triage, and digital brochures.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Instant automated greeting dispatched in &lt;45s with project introductory video.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap qualification chips: Budget (₹75L - ₹1.5Cr+), Configuration (2/3/4 BHK), and Timeline.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Slashing lead drop-off and leakage to rival developers by over 72%.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Smart round-robin lead routing to designated on-site sales consultants.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time webhook sync from 99acres, MagicBricks, Housing.com &amp; Meta Ads.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant bi-directional lead creation in Salesforce, LeadSquared &amp; Sell.Do.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Real Estate Lead Capture and Instant 45-Second Triage" src="/assets/images/industry/construction-and-real-estate/stage-lead-capture.png?v=real20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: FLOORPLANS & TOURS -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Floorplans &amp; Tours</div>
+            <h3>Interactive unit plans, <br>360° virtual tours &amp; <br>RERA approvals.</h3>
+            <p>Showcase unit layouts, tower elevations, carpet areas, and dynamic cost sheets directly inside WhatsApp. Buyers can explore virtual walkthroughs and download verified RERA sanction certificates with a single tap.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Multi-Product WhatsApp catalogs with 2BHK, 3BHK, and Penthouse floor plans.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap RERA-approved PDF project brochure download without website friction.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Embedded 360-degree virtual sample flat walkthrough videos and drone view clips.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Dynamic payment milestone calculator: Construction-linked vs Subvention schemes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct bank approval list (SBI, HDFC, ICICI) with loan eligibility estimates.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time unit inventory availability sync preventing double bookings.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Interactive Floorplans, Virtual Tours and RERA Brochures" src="/assets/images/industry/construction-and-real-estate/stage-virtual-tour.png?v=real20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: SITE VISIT BOOKING -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Site Visit Booking</div>
+            <h3>1-tap site visit calendar, <br>chauffeur dispatch &amp; <br>live GPS directions.</h3>
+            <p>Transform digital interest into physical sales gallery footfall. Buyers choose their preferred weekend visit slot in seconds, receive live Google Maps route pins, and get automated calendar invites that reduce no-shows.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive date and time slot calendar picker inside WhatsApp Flows.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated site location Google Maps pin and driving landmark instructions.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Optional VIP complimentary cab / chauffeur booking integration for qualified buyers.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated WhatsApp visit reminder pings sent at 24 hours and 2 hours prior.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>58% reduction in site visit no-show rates across premium residential projects.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant sales executive allocation with notification badge sent to on-site host.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap Site Visit Scheduling and Google Maps Navigation" src="/assets/images/industry/construction-and-real-estate/stage-site-visit.png?v=real20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: TOKEN ADVANCE & KYC -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Token Advance &amp; KYC</div>
+            <h3>Instant UPI token deposits, <br>RERA receipts &amp; <br>encrypted KYC capture.</h3>
+            <p>Lock in interested buyers before they leave the sales lounge. Collect earnest token deposits via 1-tap WhatsApp UPI, issue RERA-compliant digital booking acknowledgments, and collect buyer identity documents securely.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Sub-2 second token advance settlement via UPI, GPay, PhonePe, and Net Banking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant RERA-compliant digital token booking receipt generated and sent in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Secure in-chat KYC document collection: PAN card, Aadhaar, and address proof.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>End-to-end 256-bit AES encryption protecting sensitive buyer financial data.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Immediate unit block in inventory ERP preventing competing sales allocation.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated demand notice schedule generation aligned with builder-buyer agreement.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap UPI Token Deposit Settlement and Encrypted KYC" src="/assets/images/industry/construction-and-real-estate/stage-token-checkout.png?v=real20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: MILESTONES & CRM -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Milestones &amp; CRM</div>
+            <h3>Slab completion updates, <br>demand letter dispatch <br>&amp; CRM pipeline sync.</h3>
+            <p>Build lasting buyer trust and streamline project cash flows. Broadcast slab-wise drone videos to existing buyers, automate construction milestone payment links, and keep pipeline metrics synchronized across your enterprise CRM.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated slab-wise milestone broadcast updates with high-res drone footage.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated payment demand letters with 1-tap payment links and GST invoices.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Channel partner and broker attribution tracking with commission milestone alerts.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time bi-directional sync with Salesforce, LeadSquared, Sell.Do &amp; Zoho.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Post-handover snag reporting and automated maintenance ticketing.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>3.4x higher referral lead generation from satisfied existing homeowners.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Construction Milestone Updates and CRM Pipeline Telemetry" src="/assets/images/industry/construction-and-real-estate/stage-buyer-telemetry.png?v=real20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 CONSTRUCTION & REAL ESTATE ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">PROPTECH &amp; REAL ESTATE ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Real Estate Architecture</h2>
+        <p class="stage-subtitle">From omnichannel property inquiry ingestion and autonomous AI triage to 1-tap site visit booking, digital token checkout, and post-sales milestone tracking.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Omnichannel Lead Ingestion</h4>
+          <p>Real-time webhooks ingest buyer leads from 99acres, MagicBricks, Housing.com, Google Ads, Meta Click-to-WhatsApp ads, and site signage in &lt;200ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Lead Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Autonomous AI Triage &amp; CRM Sync</h4>
+          <p>Autonomous AI engages leads within 45s, qualifies budgets and BHK requirements, shares brochures, and syncs data to Salesforce, LeadSquared, or Sell.Do.</p>
+          <span class="bfsi-step-tag">Step 02 · Autonomous Triage &amp; CRM Sync</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap Site Visit Booking &amp; Directions</h4>
+          <p>Buyers select visit slots on an interactive calendar, receive live Google Maps GPS location pins, and get automated reminder alerts reducing no-shows by 58%.</p>
+          <span class="bfsi-step-tag">Step 03 · Site Visit &amp; GPS Navigation</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Token Advance &amp; Milestone Tracking</h4>
+          <p>Buyers settle earnest token deposits via 1-tap UPI with RERA receipts, while homeowners receive automated slab milestone drone updates and payment notices.</p>
+          <span class="bfsi-step-tag">Step 04 · Token Checkout &amp; Milestones</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <!-- =========================================================================
+       3. 6 ALTERNATING FEATURE ROWS (FLOATING TRANSPARENT PNG VISUALS)
+       ========================================================================= -->
+  <section class="industry-features-section">
     <div class="container">
       <div class="industry-section-header">
         <h2>Enterprise-Grade WhatsApp Solutions for <br><?php echo htmlspecialchars($ind['name']); ?></h2>
