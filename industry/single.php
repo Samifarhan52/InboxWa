@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=it20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=fnb20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -1158,9 +1158,179 @@ include __DIR__ . '/../includes/header.php';
   </section>
   <?php endif; ?>
 
+  <?php if ($currentSlug === 'food-and-beverages'): ?>
   <!-- =========================================================================
-       3. 6 ALTERNATING FEATURE ROWS (FLOATING TRANSPARENT PNG VISUALS)
+       2.1 FOOD & BEVERAGES 5-STAGE INTERACTIVE LIFECYCLE TOUR
        ========================================================================= -->
+  <section class="stages-native" id="fnb-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Restaurant &amp; F&amp;B Commerce</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Food Ordering &amp; Guest Loyalty on WhatsApp</h2>
+        <p class="stage-subtitle">From interactive digital menu browsing and instant table reservations to 1-tap WhatsApp UPI payment, live kitchen display (KDS) dispatch, and post-dining reviews on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Food and Beverage Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Digital Menu</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Table Booking</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">1-Tap WhatsApp Pay</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Kitchen &amp; Dispatch</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Reviews &amp; Loyalty</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: DIGITAL MENU -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Digital Menu</div>
+            <h3>Interactive visual menu <br>with instant dietary tags <br>&amp; custom modifiers.</h3>
+            <p>Replace clunky PDF downloads with rich interactive WhatsApp catalog messages. Diners browse appetizers, chef specials, beverages, and desserts with high-resolution imagery, spice levels, and allergen indicators.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Multi-Product Catalog integration with dynamic pricing and out-of-stock sync.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Dietary tag badges: Veg, Non-Veg, Vegan, Gluten-Free, and Jain preferences.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Custom dish modifiers: crust types, spice levels, toppings, and portion sizes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated smart cross-sells (beverages, sides, dips) boosting average cart value by 28%.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Sub-second catalog loading without downloading bulky external PDF files.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant multilingual menu support across English, Hindi, and regional languages.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Interactive WhatsApp Digital Food Menu" src="/assets/images/industry/food-and-beverages/stage-digital-menu.png?v=fnb20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: TABLE BOOKING -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Table Booking</div>
+            <h3>Frictionless table <br>reservations &amp; live <br>virtual waitlist queues.</h3>
+            <p>Eliminate diner walkaways during peak weekend rushes. Diners pick their dining date, party size, and seating area in seconds, while walk-in guests receive real-time queue tokens and "Table Ready" WhatsApp notifications.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive date, time-slot, and party size picker natively inside WhatsApp.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Live seating area selection: Rooftop, Outdoor Patio, AC Dining, or Private Booth.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Virtual queue waitlist token system with automated "Your Table is Ready" alerts.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Reduces table no-shows by 65% with automated WhatsApp reminder pings.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Optional pre-order meal selection so food is prepared right upon diner arrival.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct sync with restaurant host stand software and seating management ERPs.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Instant Table Reservations and Virtual Queue on WhatsApp" src="/assets/images/industry/food-and-beverages/stage-table-booking.png?v=fnb20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: 1-TAP WHATSAPP PAY -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">1-Tap WhatsApp Pay</div>
+            <h3>Sub-2s UPI checkout <br>&amp; 100% margin retention <br>with zero commission.</h3>
+            <p>Keep 100% of your order revenues without surrendering 25% to 35% to food aggregators. Diners pay instantly via WhatsApp native payments, UPI (Google Pay, PhonePe, Paytm), cards, or net banking.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Direct 1-tap UPI intent checkout natively inside the WhatsApp chat thread.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Supports Google Pay, PhonePe, Paytm, BHIM, Credit/Debit Cards, and Net Banking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Zero aggregator commission: keep 100% of dish revenue and diner relationship.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant automated GST tax invoice dispatch with itemized discounts and tips.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant automated refund triggers for unavailable ingredients or cancelled dishes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>RBI and Meta compliant end-to-end 256-bit encrypted payment settlement.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap WhatsApp UPI Payments and In-Chat Order Settlement" src="/assets/images/industry/food-and-beverages/stage-inchat-pay.png?v=fnb20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: KITCHEN & DISPATCH -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Kitchen &amp; Dispatch</div>
+            <h3>Direct POS &amp; KDS injection <br>with live GPS rider <br>tracking alerts.</h3>
+            <p>Eliminate human error and order delays. Paid orders immediately generate Kitchen Order Tickets (KOT) in Petpooja, Posist, UrbanPiper, or Toast, while dispatching automated live delivery tracking updates to diners.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated KOT (Kitchen Order Ticket) printing in &lt;1 second via POS webhook.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Bi-directional sync with Petpooja, Posist, UrbanPiper, Toast, and custom ERPs.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Dynamic prep time estimations and kitchen throttling during heavy peak hours.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated delivery rider assignment with live GPS location map pin dispatch.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Milestone alerts: "Order Cooking" ➔ "Rider Dispatched" ➔ "Arrived at Doorstep".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct 1-tap WhatsApp call or message button to contact delivery executive.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Kitchen Display System Sync and Live Delivery Tracking" src="/assets/images/industry/food-and-beverages/stage-live-kitchen.png?v=fnb20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: REVIEWS & LOYALTY -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Reviews &amp; Loyalty</div>
+            <h3>Automated CSAT loops, <br>Google Review prompts <br>&amp; 1-click re-orders.</h3>
+            <p>Transform casual diners into habitual regulars. Automatically trigger post-meal feedback 30 minutes after dining or delivery, funnel 5-star ratings to Google Maps, and reward guests with redeemable loyalty points.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated post-dining CSAT surveys with 1-tap interactive star rating chips.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Smart Google Maps / TripAdvisor review booster routing satisfied 5-star diners.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Digital loyalty wallet showing cashback balance, tier status, and reward expiry.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated re-order prompts: "Re-order your favorite Friday Dinner in 1 click".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Private manager alerts for sub-3 star ratings enabling immediate guest recovery.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>3.6x higher guest retention and repeat dine-in frequency within 60 days.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Automated Post-Meal CSAT Reviews and Loyalty Rewards" src="/assets/images/industry/food-and-beverages/stage-fnb-loyalty.png?v=fnb20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 FOOD & BEVERAGES ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">RESTAURANT COMMERCE ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Food &amp; Beverage Architecture</h2>
+        <p class="stage-subtitle">From omnichannel QR and chat ordering ingestion to bi-directional POS/KOT sync, 1-tap UPI payment settlement, and automated rider dispatch &amp; loyalty rewards.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Omnichannel Dine-In &amp; Delivery Ingestion</h4>
+          <p>Diners scan tabletop QR codes, click Instagram/Facebook ads, or message your WhatsApp number to open rich interactive digital menus in &lt;100ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>POS &amp; Kitchen Display Sync</h4>
+          <p>Orders instantly inject into Petpooja, Posist, UrbanPiper, or Toast POS. Kitchen Order Tickets (KOT) print automatically in the kitchen with zero manual data entry.</p>
+          <span class="bfsi-step-tag">Step 02 · KDS &amp; POS Bi-Directional Sync</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap UPI Settlement (0% Commission)</h4>
+          <p>Diners complete checkout via WhatsApp Pay, Google Pay, PhonePe, or cards. Revenue settles directly into the restaurant's merchant account with zero aggregator cuts.</p>
+          <span class="bfsi-step-tag">Step 03 · Zero-Commission Checkout</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Live Dispatch &amp; Re-Order Loyalty</h4>
+          <p>Automated live GPS dispatch updates keep diners informed. Post-meal CSAT surveys boost Google ratings, while 1-tap re-order triggers drive repeat orders.</p>
+          <span class="bfsi-step-tag">Step 04 · Dispatch &amp; Guest Retention</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
   <section class="industry-features-section">
     <div class="container">
       <div class="industry-section-header">
