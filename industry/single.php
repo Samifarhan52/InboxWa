@@ -24,6 +24,80 @@ include __DIR__ . '/../includes/header.php';
 <?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate' || $currentSlug === 'automobiles-and-transport' || $currentSlug === 'government-and-utilities' || $currentSlug === 'manufacturing-and-supply'): ?>
 <link rel="stylesheet" href="/assets/css/bfsi.css?v=mfg20261022">
 <?php endif; ?>
+<?php
+// Structured Data / Schema.org (BreadcrumbList + FAQPage + Service) for Search Engine Rich Snippets
+$breadcrumbSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => 'Home',
+            'item' => 'https://hellobotz.com/'
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => 'Solutions',
+            'item' => 'https://hellobotz.com/solutions/'
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 3,
+            'name' => $ind['name'],
+            'item' => $canonicalUrl
+        ]
+    ]
+];
+
+$faqSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => []
+];
+
+if (!empty($ind['faqs']) && is_array($ind['faqs'])) {
+    foreach ($ind['faqs'] as $faq) {
+        if (!empty($faq['q']) && !empty($faq['a'])) {
+            $faqSchema['mainEntity'][] = [
+                '@type' => 'Question',
+                'name' => $faq['q'],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $faq['a']
+                ]
+            ];
+        }
+    }
+}
+
+$serviceSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Service',
+    'name' => $ind['name'] . ' WhatsApp Automation & Messaging Solutions',
+    'serviceType' => 'WhatsApp Business API & Conversational AI',
+    'provider' => [
+        '@type' => 'Organization',
+        'name' => 'HelloBotz',
+        'url' => 'https://hellobotz.com/'
+    ],
+    'description' => $ind['meta_desc'],
+    'url' => $canonicalUrl,
+    'areaServed' => ['IN', 'AE', 'US', 'GB']
+];
+?>
+<script type="application/ld+json">
+<?php echo json_encode($breadcrumbSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
+</script>
+<?php if (!empty($faqSchema['mainEntity'])): ?>
+<script type="application/ld+json">
+<?php echo json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
+</script>
+<?php endif; ?>
+<script type="application/ld+json">
+<?php echo json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
+</script>
 
 <div class="industry-page">
   <div class="container">
