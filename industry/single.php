@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=health20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=retail20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -456,6 +456,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>Fulfillment &amp; Care</h4>
           <p>Instant consultation booking, password-protected lab PDF delivery, 1-tap UPI fee payment, and automated post-visit checkup alerts.</p>
           <span class="bfsi-step-tag">Step 04 · 24/7 Patient Care &amp; Follow-up</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'retail-and-ecommerce'): ?>
+  <!-- =========================================================================
+       2.1 RETAIL & E-COMMERCE 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="retail-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End WhatsApp Commerce</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of E-Commerce on WhatsApp</h2>
+        <p class="stage-subtitle">From interactive catalog browsing and abandoned cart recovery to 1-tap UPI in-chat checkout, real-time WISMO tracking, and repeat purchase loops on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="E-Commerce Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Browse &amp; Discover</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Recover Abandoned Carts</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">1-Tap In-Chat Checkout</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Track &amp; Deflect WISMO</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Anti-RTO &amp; Loyalty</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: BROWSE & DISCOVER -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Browse &amp; Discover</div>
+            <h3>Showcase rich product <br>catalogs &amp; collections <br>directly inside WhatsApp.</h3>
+            <p>Eliminate high mobile drop-offs caused by slow external landing pages. HelloBotz presents multi-product catalogs with high-res imagery, real-time stock availability, and 1-tap "Add to Cart" actions right in the conversational thread.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Multi-product collection carousels and single-product hero showcase cards.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Live bi-directional catalog sync with Shopify, WooCommerce, Magento &amp; ERPs.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Contextual product search and natural language conversational recommendations.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Dynamic variant selectors for sizes, colors, pricing, and bundle discounts.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant WhatsApp cart sync directly connected to your online store checkout.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>3.8x higher catalog engagement rate compared to standard external web links.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz WhatsApp Product Catalog Browsing and In-Chat Cart" src="/assets/images/industry/retail-and-ecommerce/stage-catalog-browse.png?v=retail20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: RECOVER ABANDONED CARTS -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Recover Abandoned Carts</div>
+            <h3>Recover high-intent <br>shoppers with intelligent <br>multi-touch nudges.</h3>
+            <p>Over 70% of e-commerce carts are abandoned at checkout. HelloBotz automatically triggers personalized WhatsApp reminders featuring the customer's exact items, product snapshots, and time-sensitive discount codes to drive instant checkout.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated multi-stage drip sequence (15 min, 2 hr, 24 hr) post drop-off.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>High-resolution product cards displaying exact items left in the checkout cart.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Personalized dynamic discount coupons with 1-tap coupon auto-apply links.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-approved Meta utility &amp; marketing templates with 98% open rates.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Smart intent detection: answers shopper questions before checkout completion.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Recovers up to 45% of abandoned carts, unlocking immediate revenue.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Automated WhatsApp Abandoned Cart Recovery Sequences" src="/assets/images/industry/retail-and-ecommerce/stage-cart-recovery.png?v=retail20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: 1-TAP IN-CHAT CHECKOUT -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">1-Tap In-Chat Checkout</div>
+            <h3>Frictionless native <br>WhatsApp payments &amp; <br>sub-second UPI checkout.</h3>
+            <p>Complete transactions without sending customers away to third-party payment gateways. Shoppers complete payment in seconds via native UPI, Google Pay, PhonePe, Paytm, or credit/debit cards with instant confirmation.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Payments powered by NPCI UPI and Razorpay/Cashfree.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap pay with popular UPI apps (Google Pay, PhonePe, Paytm, CRED).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-filled customer shipping details and saved billing preferences.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time webhook confirmation with sub-second order placement.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated GST tax invoice PDF generated and delivered immediately in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>54% higher conversion rate vs traditional redirected payment flows.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz In-Chat WhatsApp Payments and UPI Checkout" src="/assets/images/industry/retail-and-ecommerce/stage-inchat-checkout.png?v=retail20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: TRACK & DEFLECT WISMO -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Track &amp; Deflect WISMO</div>
+            <h3>Real-time dispatch alerts <br>and autonomous 24/7 <br>order tracking.</h3>
+            <p>Eliminate repetitive customer support overhead. HelloBotz automates dispatch notifications, courier AWB tracking links, and autonomous answers to "Where Is My Order?" inquiries in under 0.8 seconds.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated milestone alerts: Order Confirmed, Dispatched, Out for Delivery, Delivered.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Live GPS courier tracking links via Shiprocket, Delhivery, BlueDart, Bluedart.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Sub-0.8s autonomous AI responses to order status and delivery timeline inquiries.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap delivery rescheduling and alternative delivery address update.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Seamless human agent escalation with full Shopify order context attached.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Deflects up to 84% of post-purchase WISMO support tickets.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Live Order Dispatch Tracking and WISMO Deflection" src="/assets/images/industry/retail-and-ecommerce/stage-wismo-tracking.png?v=retail20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: ANTI-RTO & LOYALTY -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Anti-RTO &amp; Loyalty</div>
+            <h3>Anti-RTO COD verification <br>and automated repeat <br>purchase loops.</h3>
+            <p>Protect operating margins by verifying Cash-on-Delivery orders before dispatch, and turn happy customers into repeat buyers with automated post-delivery NPS reviews and replenishment offers.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>1-tap interactive COD confirmation buttons: "[ Confirm Order ]" vs "[ Cancel ]".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Incentivize instant prepaid conversion with 5-10% discount on 1-tap UPI payment.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Reduces Return to Origin (RTO) rates by up to 35% across high-risk pin codes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Post-delivery 1-tap CSAT rating, Google review prompt, and photo feedback.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated replenishment reminders tailored to customer purchase cycles.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Lifts customer lifetime value (LTV) and boosts repeat orders by 38%.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Anti-RTO COD Verification and Post-Purchase Reviews" src="/assets/images/industry/retail-and-ecommerce/stage-loyalty-reviews.png?v=retail20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 HELLOBOTZ RETAIL & E-COMMERCE ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">COMMERCE ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Retail &amp; E-Commerce Architecture</h2>
+        <p class="stage-subtitle">From real-time storefront synchronization and interactive in-chat browsing to anti-RTO verification, automated courier dispatch, and retention loops.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Storefront Sync &amp; Ingestion</h4>
+          <p>Real-time webhooks ingest catalogs, pricing, inventory levels, and customer cart sessions from Shopify, WooCommerce, Magento, or custom ERPs.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Catalog Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Conversational Cart &amp; Checkout</h4>
+          <p>Shoppers browse multi-product catalogs, select product variants, and complete purchases via native 1-tap WhatsApp UPI or cards.</p>
+          <span class="bfsi-step-tag">Step 02 · Zero-Friction Conversational Commerce</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>Anti-RTO &amp; Courier Dispatch</h4>
+          <p>COD orders are validated with interactive reply buttons. Real-time courier APIs (Shiprocket, Delhivery, BlueDart) generate dispatch AWBs.</p>
+          <span class="bfsi-step-tag">Step 03 · Automated Dispatch &amp; Anti-RTO</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Autonomous WISMO &amp; Loyalty</h4>
+          <p>24/7 AI handles tracking inquiries in &lt;0.8s, captures post-delivery reviews, and triggers automated replenishment re-engagement campaigns.</p>
+          <span class="bfsi-step-tag">Step 04 · 24/7 Post-Purchase Care &amp; Retention</span>
         </div>
       </div>
     </div>
