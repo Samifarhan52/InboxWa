@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=real20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate' || $currentSlug === 'automobiles-and-transport'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=auto20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -1674,6 +1674,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>Token Advance &amp; Milestone Tracking</h4>
           <p>Buyers settle earnest token deposits via 1-tap UPI with RERA receipts, while homeowners receive automated slab milestone drone updates and payment notices.</p>
           <span class="bfsi-step-tag">Step 04 · Token Checkout &amp; Milestones</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'automobiles-and-transport'): ?>
+  <!-- =========================================================================
+       2.1 AUTOMOBILES & TRANSPORT 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="auto-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Automotive CRM &amp; Service Bay Operations</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Car Sales &amp; Workshop Operations on WhatsApp</h2>
+        <p class="stage-subtitle">From doorstep test drive bookings and interactive vehicle configurators to transparent service job cards, 1-tap UPI bill settlement, and 24/7 Roadside Assistance on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Automotive and Transport Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Test Drive</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Brochure &amp; Specs</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Service &amp; Job Card</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">1-Tap UPI Pay</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Insurance &amp; Fleet</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: TEST DRIVE -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Test Drive</div>
+            <h3>Frictionless doorstep <br>&amp; showroom test drive <br>scheduling in &lt;60s.</h3>
+            <p>Convert digital automotive leads into showroom footfall and home test drives. Buyers select vehicle model, trim, fuel type, date, and preferred location with automated sales consultant allocation.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive model and trim selector inside native WhatsApp Flows.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Choice of Doorstep Test Drive or Express Showroom Experience.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>In-chat driving license photo capture for express paperwork clearance.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated WhatsApp reminders sent 24h and 2h prior, achieving 88% attendance.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant sales consultant allocation with live Google Maps route tracking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Bi-directional test drive logging into CDK Global, DealerTrack &amp; Salesforce.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Doorstep and Showroom Test Drive Booking on WhatsApp" src="/assets/images/industry/automobiles-and-transport/stage-test-drive.png?v=auto20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: BROCHURE & SPECS -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Brochure &amp; Specs</div>
+            <h3>Interactive vehicle catalogs, <br>360° views &amp; dynamic <br>on-road price quotes.</h3>
+            <p>Empower car shoppers with instant product knowledge. Share rich vehicle catalogs with color swatches, technical spec sheets, variant comparison sheets, and personalized on-road pricing breakdowns.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Multi-Product WhatsApp catalogs showcasing vehicle variants, colors, and trims.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap high-definition PDF brochure and technical spec sheet download.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Dynamic on-road price estimator including RTO, insurance, and accessories.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Embedded 360-degree interior and exterior walkthrough video clips.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant loan EMI calculator with partner bank financing schemes (HDFC, SBI, ICICI).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Old car exchange valuation request with instant photo appraisal in chat.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Interactive Vehicle Catalogs, Specs and On-Road Pricing" src="/assets/images/industry/automobiles-and-transport/stage-car-config.png?v=auto20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: SERVICE & JOB CARD -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Service &amp; Job Card</div>
+            <h3>Proactive maintenance alerts, <br>bay booking &amp; transparent <br>video job cards.</h3>
+            <p>Maximize service workshop retention and eliminate repair mistrust. Send automated service due reminders based on vehicle odometer intervals, provide upfront job card estimates, and share technician inspection videos.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated service due broadcasts triggered 30 days and 7 days prior.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Transparent upfront repair cost estimates with itemized parts and labor.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap add-on service approvals for brake pads, tire rotation, or wheel alignment.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Technician photo/video clips demonstrating worn components prior to replacement.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Self-service workshop bay booking with pick-and-drop driver allocation.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time milestone notifications: "Washing Completed" ➔ "Ready for Delivery".</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Automated Vehicle Service Booking and Transparent Job Cards" src="/assets/images/industry/automobiles-and-transport/stage-service-booking.png?v=auto20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: 1-TAP UPI PAY -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">1-Tap UPI Pay</div>
+            <h3>Sub-2s service bill checkout, <br>genuine accessories <br>&amp; digital gate passes.</h3>
+            <p>Eliminate long cashier lines at the service center. Car owners review itemized invoices and pay in seconds via WhatsApp UPI intents or credit cards, receiving an express digital gate pass for 10-second vehicle pickup.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Sub-2 second payment completion via WhatsApp Pay, UPI, GPay, and PhonePe.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated GST tax invoice PDF delivered instantly to the WhatsApp thread.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Cryptographically verified digital gate pass barcode for express showroom exit.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Genuine manufacturer accessories catalog with 1-tap add-to-bill capability.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Zero cashier friction: 4.2x faster service bill clearance during evening rushes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>End-to-end 256-bit encrypted transactions with zero payment reconciliation errors.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap WhatsApp UPI Service Payments and Digital Gate Pass" src="/assets/images/industry/automobiles-and-transport/stage-auto-pay.png?v=auto20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: INSURANCE & FLEET -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Insurance &amp; Fleet</div>
+            <h3>Proactive policy renewals, <br>warranty alerts &amp; 24/7 <br>Roadside Assistance (RSA).</h3>
+            <p>Retain high-margin after-sales renewals and provide emergency protection. Automate motor insurance renewal comparisons, extended warranty notices, and 1-tap live GPS dispatch for roadside breakdowns and towing.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated insurance expiry reminders with instant multi-insurer comparison quotes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap digital policy renewal and digital certificate issuance in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>24/7 Roadside Assistance (RSA) with 1-tap WhatsApp live GPS location dispatch.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time ETA tracking of the dispatched mechanic or recovery crane.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Extended warranty and roadside package purchase options with instant activation.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Fleet maintenance tracking and driver compliance alerts for transport operators.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Motor Insurance Renewals, Warranty Alerts and Roadside SOS" src="/assets/images/industry/automobiles-and-transport/stage-fleet-telemetry.png?v=auto20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 AUTOMOBILES & TRANSPORT ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">AUTOMOTIVE &amp; FLEET ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Automotive Architecture</h2>
+        <p class="stage-subtitle">From omnichannel vehicle inquiry ingestion and Dealership Management System (DMS) sync to 1-tap UPI bill settlement, digital gate passes, and 24/7 roadside assistance.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Omnichannel Inquiry Ingestion</h4>
+          <p>Webhooks ingest vehicle inquiries from Meta Click-to-WhatsApp ads, CarDekho, CarWale, dealership websites, and showroom QR codes in &lt;200ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>DMS &amp; Workshop Bay Sync</h4>
+          <p>Test drive bookings and periodic service requests sync bi-directionally with CDK Global, DealerTrack, Keyloop, or SAP Auto ERP with zero manual re-entry.</p>
+          <span class="bfsi-step-tag">Step 02 · DMS &amp; Workshop Bay Sync</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap UPI Settle &amp; Gate Pass</h4>
+          <p>Car owners approve job cards, pay repair bills via 1-tap WhatsApp UPI, and instantly receive automated GST invoices and digital workshop gate passes.</p>
+          <span class="bfsi-step-tag">Step 03 · 1-Tap UPI Settle &amp; Gate Pass</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Roadside SOS &amp; Lifecycle Renewals</h4>
+          <p>AI concierge handles 24/7 emergency roadside assistance with live GPS dispatch, while driving high-margin insurance renewals and warranty extensions.</p>
+          <span class="bfsi-step-tag">Step 04 · Roadside SOS &amp; Renewals</span>
         </div>
       </div>
     </div>
