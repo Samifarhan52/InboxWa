@@ -20,7 +20,10 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/industry.css?v=3">
+<link rel="stylesheet" href="/assets/css/industry.css?v=4">
+<?php if ($currentSlug === 'bfsi'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=bfsi20261022">
+<?php endif; ?>
 
 <div class="industry-page">
   <div class="container">
@@ -111,7 +114,179 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
 
+  <?php if ($currentSlug === 'bfsi'): ?>
+  <!-- =========================================================================
+       2.1 BFSI 5-STAGE CONVERSATIONAL BANKING LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="banking-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Conversational Banking</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Banking on WhatsApp</h2>
+        <p class="stage-subtitle">From instant digital KYC onboarding to real-time fraud locks, automated lending, and 1-tap UPI collections on one unified enterprise platform.</p>
+      </div>
 
+      <!-- 5 TABS -->
+      <div aria-label="Banking Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Onboard &amp; KYC</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Protect &amp; Alert</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Engage &amp; Advise</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Originate &amp; Disburse</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Collect &amp; Settle</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: ONBOARD & KYC -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Onboard &amp; KYC</div>
+            <h3>Frictionless e-KYC <br>and instant account <br>opening in minutes.</h3>
+            <p>Eliminate branch visits and lengthy onboarding queues. Customers complete identity verification, upload Aadhaar/PAN documents, and open savings or demat accounts natively inside WhatsApp.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Flows for structured in-chat document collection.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>AI-powered OCR extracts PAN, Aadhaar &amp; passport data in &lt;1.5s.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time CKYC and Aadhaar OTP verification via UIDAI gateways.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Video KYC scheduling with automated reminder notifications.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant virtual account generation with welcome kit and e-statement.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>100% compliant with RBI Master Directions on digital onboarding.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz WhatsApp Digital KYC and Onboarding" src="/assets/images/bfsi/stage-kyc-onboarding.png?v=bfsi20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: PROTECT & ALERT -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Protect &amp; Alert</div>
+            <h3>Sub-second OTPs <br>and 1-tap instant <br>card fraud lock.</h3>
+            <p>Safeguard cardholders against unauthorized transactions and cyber threats. HelloBotz delivers high-priority authentication OTPs and instant fraud alerts with 1-tap interactive card controls.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>99.99% OTP delivery SLA with sub-1.2s latency via Meta Direct Route.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Proactive suspicious transaction alerts for out-of-pattern spending.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Interactive 1-tap quick buttons: &ldquo;Freeze Card Now&rdquo; &amp; &ldquo;Confirm Transaction&rdquo;.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant automated SMS fallback ensuring zero missed OTP alerts.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct hot-transfer to bank fraud investigation desk in one tap.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>PCI-DSS Level 1 certified architecture with end-to-end encryption.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Fraud Alerts and Sub-Second Banking OTPs" src="/assets/images/bfsi/stage-fraud-alert.png?v=bfsi20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: ENGAGE & ADVISE -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Engage &amp; Advise</div>
+            <h3>24/7 AI Banking Concierge <br>for balances, statements, <br>and wealth advisory.</h3>
+            <p>Empower customers with self-service conversational banking. HelloBotz AI resolves balance queries, generates mini-statements, and suggests wealth investments around the clock.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Real-time balance check and last 5 transactions in under 800ms.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant password-protected PDF e-statement generation in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Fixed deposit, mutual fund &amp; SIP calculators with personalized projections.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Zero-hallucination AI guardrails for regulatory and compliance queries.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Smart escalation to assigned Relationship Managers with complete chat context.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Deflects over 68% of routine inbound banking call-center volume.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 24/7 AI Banking Concierge and Inquiries" src="/assets/images/bfsi/stage-ai-banking.png?v=bfsi20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: ORIGINATE & DISBURSE -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Originate &amp; Disburse</div>
+            <h3>Pre-approved loans <br>and digital credit <br>sanction in minutes.</h3>
+            <p>Turn browsing borrowers into funded accounts. Guide prospective applicants through personal, home, or vehicle loan eligibility, salary verification, and instant sanction letter dispatch.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive in-chat EMI calculator with dynamic loan tenure sliders.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant salary slip and 6-month bank statement document upload.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct API hook to credit bureaus (CIBIL, Experian, Equifax, CRIF).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated pre-approval sanction letter delivered directly in WhatsApp.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Digital e-Mandate and NACH setup via NPCI DigiLocker link.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>4.2x higher loan application completion rate vs traditional web forms.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Automated Loan Origination and Disbursal" src="/assets/images/bfsi/stage-loan-disbursal.png?v=bfsi20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: COLLECT & SETTLE -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Collect &amp; Settle</div>
+            <h3>1-Tap WhatsApp UPI <br>payments and automated <br>EMI recovery.</h3>
+            <p>Maximize recovery rates without annoying manual debt collection calls. HelloBotz automates polite EMI due alerts with native WhatsApp UPI checkout for instant, sub-second settlement.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Payments powered by NPCI UPI (Google Pay, PhonePe, Paytm).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated multi-stage EMI reminder sequences prior to due dates.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Sub-second payment settlement with automated GST payment receipt.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Dynamic payment links supporting credit cards, debit cards &amp; net banking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time webhook reconciliation with Finacle, TCS BaNCS &amp; SAP ERP.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Cuts overdue debt collection turnaround times by up to 54%.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz In-Chat WhatsApp Payments and UPI Settlement" src="/assets/images/bfsi/stage-upi-collection.png?v=bfsi20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 HELLOBOTZ CONVERSATIONAL BANKING ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Banking Architecture</h2>
+        <p class="stage-subtitle">From omnichannel customer ingestion to identity authentication, CBS synchronization, and instant fulfillment.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Inquiry &amp; Discovery</h4>
+          <p>Customer connects via website click, QR scan, WhatsApp Ads, or missed-call alert. Session initialized within 200 milliseconds.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Secure Identity &amp; KYC</h4>
+          <p>HelloBotz AI verifies identity via encrypted WhatsApp OTP. User shares PAN/Aadhaar photos parsed in real-time by computer vision.</p>
+          <span class="bfsi-step-tag">Step 02 · 100% Encrypted &amp; Compliant</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>Core Banking API Sync</h4>
+          <p>Live bi-directional webhooks query Finacle, TCS BaNCS, Salesforce CRM, or loan engines to retrieve statements and balances.</p>
+          <span class="bfsi-step-tag">Step 03 · Enterprise Webhooks</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Instant Fulfillment</h4>
+          <p>Customer completes payment, receives PDF e-statement, sets up auto-debit mandates, or connects live with their relationship manager.</p>
+          <span class="bfsi-step-tag">Step 04 · 24/7 Servicing &amp; Escalation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
 
   <?php if ($currentSlug === 'education-and-social-impacts'): ?>
   <!-- =========================================================================

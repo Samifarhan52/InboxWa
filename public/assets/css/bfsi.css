@@ -1141,3 +1141,33 @@ html[data-theme="dark"] .bfsi-faq-body,
   background: #111827 !important;
   color: #cbd5e1 !important;
 }
+
+/* BFSI Journey Flow Dark Mode */
+html[data-theme="dark"] .bfsi-journey-section,
+[data-theme="dark"] .bfsi-journey-section {
+  background: #0b0f19 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .bfsi-journey-step,
+[data-theme="dark"] .bfsi-journey-step {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .bfsi-journey-step h4,
+[data-theme="dark"] .bfsi-journey-step h4 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .bfsi-journey-step p,
+[data-theme="dark"] .bfsi-journey-step p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .bfsi-step-tag,
+[data-theme="dark"] .bfsi-step-tag {
+  background: rgba(96, 91, 229, 0.15) !important;
+  color: #a5b4fc !important;
+}
