@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=fnb20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=adv20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -1331,7 +1331,180 @@ include __DIR__ . '/../includes/header.php';
     </div>
   </section>
   <?php endif; ?>
-  <section class="industry-features-section">
+
+  <?php if ($currentSlug === 'advertising-and-events'): ?>
+  <!-- =========================================================================
+       2.1 ADVERTISING & EVENTS 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="events-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Advertising &amp; Event Operations</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Event Marketing &amp; Attendee Operations on WhatsApp</h2>
+        <p class="stage-subtitle">From high-impact marketing broadcasts and native in-chat registration flows to 1-tap UPI ticket checkout, live on-site AI concierge, and post-event analytics on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Advertising and Event Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Broadcast &amp; Promote</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Register &amp; Book</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">1-Tap Ticket Pay</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Live Concierge</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Analytics &amp; CSAT</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: BROADCAST & PROMOTE -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Broadcast &amp; Promote</div>
+            <h3>High-impact WhatsApp <br>marketing blasts with <br>98% open rates.</h3>
+            <p>Cut through email clutter and spam filters. Deliver personalized rich media teasers, speaker announcements, early-bird passes, and festival updates directly to opt-in audience pockets with verified sender trust.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>100% Meta Cloud API verified message delivery with green badge credibility.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Rich media headers: teasers, speaker video reels, and interactive banners.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Audience segmentation by past event attendance, job title, and location.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated retargeting sequences for abandoned ticket bookings and VIP passes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>4.8x higher click-through rates (CTR) compared to traditional promotional emails.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Meta compliance guardrails ensuring zero account suspension or spam flags.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz WhatsApp Event Marketing Broadcasts and Promotions" src="/assets/images/industry/advertising-and-events/stage-broadcast-promote.png?v=adv20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: REGISTER & BOOK -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Register &amp; Book</div>
+            <h3>Frictionless in-chat <br>registration flows &amp; <br>breakout track selection.</h3>
+            <p>Eliminate registration drop-offs caused by slow external landing pages. Attendees enter contact details, choose ticket tiers (VIP, Delegate, Student), and select breakout workshops natively inside WhatsApp Flows in under 60 seconds.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Flows with multi-step interactive forms and date selectors.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time seat reservation for high-demand masterclasses and roundtables.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Sub-100ms form submission with zero external website redirection.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant bi-directional CRM lead sync into HubSpot, Salesforce, and Zoho.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Group delegation booking and multiple companion registration support.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>3.8x higher form completion rate compared to traditional web portals.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz In-Chat Event Registration and Interactive WhatsApp Flows" src="/assets/images/industry/advertising-and-events/stage-register-book.png?v=adv20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: 1-TAP TICKET PAY -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">1-Tap Ticket Pay</div>
+            <h3>Instant in-chat UPI <br>ticketing &amp; dynamic <br>turnstile QR badges.</h3>
+            <p>Monetize conferences, concerts, and expos with frictionless in-chat checkout. Attendees pay via WhatsApp Pay, UPI (GPay, PhonePe, Paytm), or credit cards, and immediately receive cryptographically secure QR passes.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Sub-2 second payment completion via WhatsApp native UPI intents and cards.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant delivery of encrypted dynamic QR code entry passes in the chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap Apple Wallet and Google Wallet pass addition buttons.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated GST tax invoice PDF generation and immediate dispatch.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Bi-directional webhook synchronization with Eventbrite, Stripe, and Townscript.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>End-to-end 256-bit encrypted transactions with zero fraud chargeback risks.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap WhatsApp UPI Ticketing and Instant QR Passes" src="/assets/images/industry/advertising-and-events/stage-ticket-pay.png?v=adv20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: LIVE CONCIERGE -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Live Concierge</div>
+            <h3>24/7 autonomous AI <br>attendee concierge &amp; <br>real-time venue alerts.</h3>
+            <p>Provide VIP-level support to tens of thousands of attendees simultaneously. Autonomous AI resolves venue navigation, speaker bios, WiFi credentials, dining options, and parking questions in sub-seconds.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Autonomous resolution of 85%+ live attendee venue inquiries.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Interactive floor maps and hall navigation pins delivered directly in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated session countdown pings: "Keynote starts in 15 mins in Hall A".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Urgent broadcast alerts for room reassignments, schedule shifts, or weather alerts.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Human agent handover via shared team inbox for VIP sponsors and speakers.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Multilingual real-time translation across 30+ regional and global languages.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz AI Event Concierge and Live Venue Support on WhatsApp" src="/assets/images/industry/advertising-and-events/stage-live-concierge.png?v=adv20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: ANALYTICS & CSAT -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Analytics &amp; CSAT</div>
+            <h3>Live campaign telemetry, <br>sponsor lead reports <br>&amp; post-event NPS loops.</h3>
+            <p>Prove undeniable ROI to event sponsors and stakeholders. Track real-time broadcast delivery, session engagement, and ticket sales velocity, then trigger post-event feedback surveys right after the closing remarks.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Automated post-event CSAT surveys with 1-tap interactive star rating chips.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct attendee routing to Google Reviews and LinkedIn testimonial sharing.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Live sponsor booth lead capture telemetry and engagement reporting.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant BI export to HubSpot, Tableau, PowerBI, BigQuery, and CSV.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Session popularity metrics, drop-off analytics, and attendee retention rates.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated "early access" campaign triggers for the upcoming year's summit.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Live Campaign Analytics and Post-Event CSAT Surveys" src="/assets/images/industry/advertising-and-events/stage-analytics-csat.png?v=adv20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 ADVERTISING & EVENTS ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">CAMPAIGN &amp; EVENT ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Advertising &amp; Event Architecture</h2>
+        <p class="stage-subtitle">From CRM segmentation and Meta broadcast dispatch to native in-chat registration, 1-tap UPI ticket checkout, and live AI concierge with sponsor telemetry.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Audience Ingestion &amp; Campaign Launch</h4>
+          <p>Meta Cloud API ingests contact lists, synchronizes CRM segments from HubSpot/Salesforce, and dispatches rich media marketing broadcasts with 98% open rates.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Broadcast Launch</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Native In-Chat Registration Flows</h4>
+          <p>Interactive WhatsApp Flows capture attendee credentials, job titles, and masterclass preferences in &lt;60s with zero external website redirection.</p>
+          <span class="bfsi-step-tag">Step 02 · Native WhatsApp Flows</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap UPI Ticketing &amp; Dynamic QR Passes</h4>
+          <p>Attendees complete instant checkout via WhatsApp Pay, UPI, or cards. Cryptographically verified dynamic QR badges are generated for contactless entry.</p>
+          <span class="bfsi-step-tag">Step 03 · 1-Tap UPI Ticketing</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Live AI Concierge &amp; Sponsor Telemetry</h4>
+          <p>On-site AI resolves venue FAQs, pushes session countdowns, and collects post-event CSAT feedback with instant sponsor lead reporting into CRM.</p>
+          <span class="bfsi-step-tag">Step 04 · Live Support &amp; Sponsor ROI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
     <div class="container">
       <div class="industry-section-header">
         <h2>Enterprise-Grade WhatsApp Solutions for <br><?php echo htmlspecialchars($ind['name']); ?></h2>
