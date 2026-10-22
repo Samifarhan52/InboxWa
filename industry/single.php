@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=edu20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=it20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -978,6 +978,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>SIS / LMS Sync &amp; Retention</h4>
           <p>Real-time webhooks sync student profiles with Moodle, Canvas, or Ellucian ERP. Dispatches automated attendance alerts and exam grade cards.</p>
           <span class="bfsi-step-tag">Step 04 · 24/7 Campus Servicing &amp; Alerts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'communication-and-it'): ?>
+  <!-- =========================================================================
+       2.1 COMMUNICATION & IT 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="it-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End IT &amp; DevOps Operations</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Enterprise IT &amp; DevOps on WhatsApp</h2>
+        <p class="stage-subtitle">From P1/P2 incident alerting and autonomous L1/L2 employee helpdesk resolution to developer 2FA authentication, Jira/ServiceNow ticketing, and SLA telemetry on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="IT &amp; DevOps Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Alert &amp; Triage</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">AI IT Helpdesk</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Procure &amp; Provision</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Auth &amp; Approvals</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Telemetry &amp; SLAs</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: ALERT & TRIAGE -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Alert &amp; Triage</div>
+            <h3>Sub-second P1 incident alerts <br>and real-time DevOps <br>triage on WhatsApp.</h3>
+            <p>Stop missing critical production alerts buried in noisy email inboxes or Slack channels. Dispatches instant incident telemetry via PagerDuty, Datadog &amp; CloudWatch webhooks with 1-tap on-call acknowledgement.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Instant incident dispatch triggered by Datadog, PagerDuty, AWS &amp; New Relic.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap acknowledge and pod restart reply buttons: "[ Ack ]" vs "[ Escalate ]".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Reduces Mean Time to Acknowledge (MTTA) by 68% for critical production outages.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated on-call engineer phone paging and escalation rota sync.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct deep-link integration to live metrics dashboards and error logs.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-approved Meta utility message templates with 99.99% delivery guarantee.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Real-Time IT Incident Alerting and DevOps Triage" src="/assets/images/industry/communication-and-it/stage-incident-alert.png?v=it20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: AI IT HELPDESK -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">AI IT Helpdesk</div>
+            <h3>24/7 autonomous L1/L2 <br>support and internal <br>employee troubleshooting.</h3>
+            <p>Empower remote and in-office teams with an always-on internal IT engineer. Autonomous AI resolves password resets, VPN configuration, software installations, and hardware requests in seconds.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Autonomous password resets and zero-trust identity verification in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Step-by-step troubleshooting guides for macOS, Windows, Linux, and VPNs.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Grounded on internal knowledge repositories (Notion, Confluence, Jira).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Natural language intent recognition with zero-hallucination guardrails.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Deflects up to 76% of routine internal IT helpdesk support tickets.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Sub-0.8s response time across 50+ languages for global engineering teams.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 24/7 Autonomous AI Employee and Developer Helpdesk" src="/assets/images/industry/communication-and-it/stage-ai-helpdesk.png?v=it20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: PROCURE & PROVISION -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Procure &amp; Provision</div>
+            <h3>Interactive software <br>catalog and hardware <br>procurement approval.</h3>
+            <p>Streamline software license and developer workstation provisioning. Employees browse approved tools and request access; managers approve instantly with 1-tap WhatsApp buttons.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive 10-item list menu displaying enterprise SaaS tools and dev licenses.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap manager approval workflows sent directly to department heads via WhatsApp.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Triggers automated provisioning webhooks to Okta, Google Workspace &amp; Azure AD.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time software license allocation and compliance audit tracking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Eliminates multi-day procurement delay, provisioning access in under 2 minutes.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Complete audit trail logging for SOC 2, ISO 27001, and ITIL compliance.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Interactive IT Software Catalog and Hardware Procurement" src="/assets/images/industry/communication-and-it/stage-procure-catalog.png?v=it20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: AUTH & APPROVALS -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Auth &amp; Approvals</div>
+            <h3>Sub-second 2FA OTPs <br>and zero-trust access <br>verification.</h3>
+            <p>Protect developer credentials and critical enterprise databases with WhatsApp 2-Factor Authentication (2FA) and biometric approvals, cutting SMS toll fraud risks to zero.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Sub-800ms OTP delivery with 99.99% message throughput SLA.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Guaranteed delivery bypassing carrier SMS filtering and international routing delays.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Cuts OTP transmission costs by up to 45% compared to legacy SMS aggregators.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>End-to-end encrypted with zero risk of SIM-swap attacks or telecom interception.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-approved Meta authentication templates compliant with global security standards.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Frictionless 1-tap autofill verification for internal developer tools.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz WhatsApp 2FA OTP Delivery and Zero-Trust Authentication" src="/assets/images/industry/communication-and-it/stage-auth-approvals.png?v=it20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: TELEMETRY & SLAS -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Telemetry &amp; SLAs</div>
+            <h3>Real-time MTTA/MTTR <br>telemetry, SLA tracking <br>&amp; post-incident reviews.</h3>
+            <p>Gain executive visibility into enterprise IT velocity and support quality. Live telemetry streams track ticket turnaround times, engineer resolution metrics, and post-mortems in real-time.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Live tracking of Mean Time to Acknowledge (MTTA) and Mean Time to Resolve (MTTR).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated post-ticket closure 1-tap CSAT rating capture for IT service quality.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Bi-directional sync with Jira Service Management, ServiceNow &amp; Zendesk.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated incident post-mortem generation delivered directly to leadership.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant BI export to Tableau, PowerBI, BigQuery, and enterprise SIEM tools.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Guaranteed 99.99% Meta API uptime backed by enterprise SLA.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz IT Operations SLA Telemetry and Post-Incident Reviews" src="/assets/images/industry/communication-and-it/stage-it-telemetry.png?v=it20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 HELLOBOTZ COMMUNICATION & IT ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">DEVOPS &amp; ITSM ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End IT Operations Architecture</h2>
+        <p class="stage-subtitle">From real-time monitoring webhook ingestion and autonomous AI triage to zero-trust 2FA approvals, Jira/ServiceNow sync, and SLA telemetry.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Incident &amp; Event Ingestion</h4>
+          <p>Real-time webhooks ingest events from PagerDuty, Datadog, AWS CloudWatch, Jira Service Management, or employee chats in &lt;200ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel IT Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Autonomous AI Triage</h4>
+          <p>Autonomous AI resolves routine L1/L2 issues (passwords, VPN, permissions) and immediately pages on-call DevOps leads for critical outages.</p>
+          <span class="bfsi-step-tag">Step 02 · Autonomous Triage &amp; Diagnostics</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>Interactive Approvals &amp; 2FA</h4>
+          <p>Managers authorize software provisioning with 1-tap buttons. Employees receive sub-second encrypted 2FA OTPs for zero-trust login.</p>
+          <span class="bfsi-step-tag">Step 03 · Zero-Trust Access &amp; Approvals</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>ITSM Sync &amp; SLA Telemetry</h4>
+          <p>Bi-directional webhooks update ServiceNow, Jira, and internal audit logs with resolution time, post-mortem notes, and CSAT scores.</p>
+          <span class="bfsi-step-tag">Step 04 · Enterprise ITSM &amp; Audit Compliance</span>
         </div>
       </div>
     </div>
