@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=travel20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=edu20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -849,7 +849,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="HelloBotz Attract and Capture Dashboard" src="/assets/images/home-meritto/attract-and-capture.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Attract and Capture Dashboard" src="/assets/images/industry/education-and-social-impacts/stage-attract-capture.png?v=edu20261022" loading="lazy">
           </div>
         </article>
 
@@ -869,7 +869,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="HelloBotz Engage and Nurture Dashboard" src="/assets/images/home-meritto/engage-and-nurture.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Engage and Nurture Dashboard" src="/assets/images/industry/education-and-social-impacts/stage-engage-nurture.png?v=edu20261022" loading="lazy">
           </div>
         </article>
 
@@ -889,7 +889,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="HelloBotz Apply and Enroll Dashboard" src="/assets/images/home-meritto/apply-and-enroll.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Apply and Enroll Dashboard" src="/assets/images/industry/education-and-social-impacts/stage-apply-enroll.png?v=edu20261022" loading="lazy">
           </div>
         </article>
 
@@ -909,7 +909,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="HelloBotz Collect and Reconcile Dashboard" src="/assets/images/home-meritto/collect-and-reconcile.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Collect and Reconcile Dashboard" src="/assets/images/industry/education-and-social-impacts/stage-collect-reconcile.png?v=edu20261022" loading="lazy">
           </div>
         </article>
 
@@ -929,9 +929,56 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="stage-media">
-            <img decoding="async" alt="HelloBotz Reports and Analysis Dashboard" src="/assets/images/home-meritto/reports-and-analysis.png" loading="lazy">
+            <img decoding="async" alt="HelloBotz Reports and Analysis Dashboard" src="/assets/images/industry/education-and-social-impacts/stage-campus-intelligence.png?v=edu20261022" loading="lazy">
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 HELLOBOTZ EDUCATION & SOCIAL IMPACT ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">ADMISSIONS &amp; CAMPUS ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Education Architecture</h2>
+        <p class="stage-subtitle">From omnichannel student inquiry and automated eligibility triage to digital admission enrollment, 1-tap fee collection, and LMS/SIS integration.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Lead Capture &amp; Ingestion</h4>
+          <p>Student connects via campus website, college fair QR code, Google Ads, or social outreach. Intake session initialized in &lt;200ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Admissions Intake</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>AI Qualification &amp; Counseling</h4>
+          <p>Conversational AI qualifies course interest, verifies eligibility criteria, answers tuition FAQs, and schedules 1-on-1 advisor counseling.</p>
+          <span class="bfsi-step-tag">Step 02 · 24/7 AI Academic Counseling</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap Enrollment &amp; Fee Pay</h4>
+          <p>Applicant submits digital documents via WhatsApp Flows and completes application or semester fee payments with native 1-tap UPI.</p>
+          <span class="bfsi-step-tag">Step 03 · Zero-Friction Fee Collection</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>SIS / LMS Sync &amp; Retention</h4>
+          <p>Real-time webhooks sync student profiles with Moodle, Canvas, or Ellucian ERP. Dispatches automated attendance alerts and exam grade cards.</p>
+          <span class="bfsi-step-tag">Step 04 · 24/7 Campus Servicing &amp; Alerts</span>
+        </div>
       </div>
     </div>
   </section>
