@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=bfsi20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=health20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -282,6 +282,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>Instant Fulfillment</h4>
           <p>Customer completes payment, receives PDF e-statement, sets up auto-debit mandates, or connects live with their relationship manager.</p>
           <span class="bfsi-step-tag">Step 04 · 24/7 Servicing &amp; Escalation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'healthcare'): ?>
+  <!-- =========================================================================
+       2.1 HEALTHCARE 5-STAGE INTERACTIVE PATIENT LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="healthcare-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End Patient Engagement</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Healthcare on WhatsApp</h2>
+        <p class="stage-subtitle">From instant doctor appointment booking and clinical triage to diagnostic lab report delivery, pharmacy payments, and post-op care on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Healthcare Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Discover &amp; Register</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Schedule &amp; Triage</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Consult &amp; Diagnose</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Deliver &amp; Remind</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Settle &amp; Follow-Up</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: DISCOVER & REGISTER -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Discover &amp; Register</div>
+            <h3>Frictionless digital <br>intake and patient <br>registration in minutes.</h3>
+            <p>Eliminate paper clipboards and waiting room congestion. Patients complete registration, provide medical history, and upload insurance health cards directly via Native WhatsApp Flows before their hospital arrival.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Flows for structured in-chat clinical intake forms.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant extraction of government health IDs and insurance cards via OCR.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated patient unique hospital identifier (UHID) generation.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Digital consent capture and privacy disclosures compliant with HIPAA.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct bi-directional sync with leading HIS and EHR software platforms.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>84% digital completion rate with zero website redirects or app installs.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Healthcare Patient Intake and Registration" src="/assets/images/industry/healthcare/stage-patient-onboard.png?v=health20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: SCHEDULE & TRIAGE -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Schedule &amp; Triage</div>
+            <h3>Sub-second doctor booking <br>and 24/7 clinical <br>symptom triage.</h3>
+            <p>Empower patients to check specialist availability and select OPD consultation slots in real-time. Automated AI symptom triage prioritizes urgent cases and guides emergency admissions immediately.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Interactive time slot selector connected to real-time doctor rosters.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Certified AI clinical symptom screener with zero-hallucination guardrails.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated 24h and 2h pre-visit reminders that cut no-shows by 44%.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>1-tap instant rescheduling, cancellations, and waitlist management.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Emergency red-flag detection with instant hot-transfer to duty doctors.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Turnaround time for slot confirmations reduced to under 1.2 seconds.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Doctor Appointment Scheduling and Clinical Triage" src="/assets/images/industry/healthcare/stage-doctor-booking.png?v=health20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: CONSULT & DIAGNOSE -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Consult &amp; Diagnose</div>
+            <h3>Teleconsultation access, <br>live OPD queue status, <br>and specialist routing.</h3>
+            <p>Streamline virtual and physical clinical visits. Deliver encrypted video consultation links, real-time live OPD queue token trackers, and direct chat handoffs to attending medical specialists.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Encrypted 1-click video consultation links sent directly via WhatsApp.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Live OPD queue token tracking reducing patient waiting room anxiety.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Hospital department routing (Cardiology, Pediatrics, Orthopedics, Oncology).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Pre-consultation vital recording (blood pressure, temperature, sugar levels).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Private internal staff collaboration notes between attending doctors and nurses.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>62% reduction in patient front-desk inquiry phone calls.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 24/7 Clinical AI Assistant and Teleconsultation" src="/assets/images/industry/healthcare/stage-clinical-ai.png?v=health20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: DELIVER & REMIND -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Deliver &amp; Remind</div>
+            <h3>Instant lab report dispatch <br>and automated dosage <br>reminders.</h3>
+            <p>Deliver diagnostic pathology, radiology, and blood reports the moment they are certified. Keep patients on track with intelligent dosage reminder notifications and preventive wellness advice.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Password-protected PDF lab reports dispatched automatically from LIMS.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Digital doctor e-prescriptions sent with dosage guidelines and dietary tips.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated medication adherence reminders tailored to patient treatment plans.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Diagnostic test preparation instructions (e.g. fasting guidelines before blood draw).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Proactive chronic disease management journeys (Diabetes, Hypertension).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Eliminates 75% of administrative workload for physical report dispatch.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Diagnostic Lab Report Delivery and Medication Reminders" src="/assets/images/industry/healthcare/stage-lab-reports.png?v=health20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: SETTLE & FOLLOW-UP -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Settle &amp; Follow-Up</div>
+            <h3>1-Tap WhatsApp UPI <br>payments and post-op <br>recovery monitoring.</h3>
+            <p>Settle consultation fees, pharmacy orders, and diagnostic test bills instantly without billing counter lines. Track patient recovery with automated post-discharge wellness check-ins.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Payments via UPI (Google Pay, PhonePe, Paytm, BHIM).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Digital tax-ready healthcare GST invoice automatically sent to chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Home medicine refill ordering with live delivery dispatch updates.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated Day 3, Day 7 &amp; Day 14 post-discharge recovery check-in surveys.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant feedback and CSAT rating capture to monitor patient satisfaction.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Accelerates hospital bill settlement cycles by up to 58%.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Healthcare Billing UPI Payments and Post-Op Monitoring" src="/assets/images/industry/healthcare/stage-health-payments.png?v=health20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 HELLOBOTZ HEALTHCARE ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">CLINICAL ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End Healthcare Architecture</h2>
+        <p class="stage-subtitle">From omnichannel patient discovery and clinical triage to EHR synchronization, report delivery, and seamless billing fulfillment.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Discovery &amp; Triage</h4>
+          <p>Patient connects via hospital website, QR code at OPD desk, or WhatsApp emergency helpline. AI triage classifies intent in under 200ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Identity &amp; Digital Intake</h4>
+          <p>Patient confirms mobile number, uploads insurance card/government ID via WhatsApp Flows, and receives unique hospital UHID token.</p>
+          <span class="bfsi-step-tag">Step 02 · 100% HIPAA &amp; NABH Compliant</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>HIS / EHR Integration</h4>
+          <p>Bi-directional webhooks query hospital management software, doctor appointment rosters, and diagnostic LIMS in real-time.</p>
+          <span class="bfsi-step-tag">Step 03 · Enterprise Clinical Webhooks</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Fulfillment &amp; Care</h4>
+          <p>Instant consultation booking, password-protected lab PDF delivery, 1-tap UPI fee payment, and automated post-visit checkup alerts.</p>
+          <span class="bfsi-step-tag">Step 04 · 24/7 Patient Care &amp; Follow-up</span>
         </div>
       </div>
     </div>
