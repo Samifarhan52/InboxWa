@@ -21,8 +21,8 @@ $canonicalUrl = 'https://hellobotz.com' . ($reqPath ?: ('/industry/' . $currentS
 include __DIR__ . '/../includes/header.php';
 ?>
 <link rel="stylesheet" href="/assets/css/industry.css?v=4">
-<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate' || $currentSlug === 'automobiles-and-transport'): ?>
-<link rel="stylesheet" href="/assets/css/bfsi.css?v=auto20261022">
+<?php if ($currentSlug === 'bfsi' || $currentSlug === 'healthcare' || $currentSlug === 'retail-and-ecommerce' || $currentSlug === 'travel-and-hospitality' || $currentSlug === 'education-and-social-impacts' || $currentSlug === 'communication-and-it' || $currentSlug === 'food-and-beverages' || $currentSlug === 'advertising-and-events' || $currentSlug === 'construction-and-real-estate' || $currentSlug === 'automobiles-and-transport' || $currentSlug === 'government-and-utilities'): ?>
+<link rel="stylesheet" href="/assets/css/bfsi.css?v=gov20261022">
 <?php endif; ?>
 
 <div class="industry-page">
@@ -1848,6 +1848,180 @@ include __DIR__ . '/../includes/header.php';
           <h4>Roadside SOS &amp; Lifecycle Renewals</h4>
           <p>AI concierge handles 24/7 emergency roadside assistance with live GPS dispatch, while driving high-margin insurance renewals and warranty extensions.</p>
           <span class="bfsi-step-tag">Step 04 · Roadside SOS &amp; Renewals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <?php if ($currentSlug === 'government-and-utilities'): ?>
+  <!-- =========================================================================
+       2.1 GOVERNMENT & UTILITIES 5-STAGE INTERACTIVE LIFECYCLE TOUR
+       ========================================================================= -->
+  <section class="stages-native" id="gov-lifecycle-system">
+    <div class="stages-wrap">
+      <div class="stage-heading">
+        <span class="stage-kicker">End-to-End GovTech &amp; Public Utility Operations</span>
+        <h2 class="stage-display-title">Orchestrate Every Stage of Citizen Services &amp; Utility Billing on WhatsApp</h2>
+        <p class="stage-subtitle">From digital certificate issuance and 1-tap utility bill payments to geo-tagged grievance redressal, emergency disaster alerts, and smart city telemetry on one unified platform.</p>
+      </div>
+
+      <!-- 5 TABS -->
+      <div aria-label="Government and Utilities Lifecycle Stages" class="stage-tabs" role="tablist">
+        <button aria-selected="true" class="stage-tab active" data-stage="0" role="tab">Citizen Services</button>
+        <button aria-selected="false" class="stage-tab" data-stage="1" role="tab">Utility Billing</button>
+        <button aria-selected="false" class="stage-tab" data-stage="2" role="tab">Grievance Redressal</button>
+        <button aria-selected="false" class="stage-tab" data-stage="3" role="tab">Public Safety Alerts</button>
+        <button aria-selected="false" class="stage-tab" data-stage="4" role="tab">Smart City Telemetry</button>
+      </div>
+
+      <!-- 5 PANES -->
+      <div class="stage-panes">
+        <!-- STAGE 0: CITIZEN SERVICES -->
+        <article class="stage-pane active" data-pane="0">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Citizen Services</div>
+            <h3>Frictionless certificate <br>issuance, trade permits <br>&amp; DigiLocker verification.</h3>
+            <p>Eliminate long queues at government offices. Citizens apply for birth certificates, trade licenses, property documents, and welfare schemes natively inside WhatsApp with instant DigiLocker authentication.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Native WhatsApp Flows for citizen application submission and status tracking.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Direct bi-directional integration with DigiLocker and National Informatics Centre (NIC).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant delivery of cryptographically signed digital certificates (PDF with QR verification).</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Aadhaar OTP authentication complying with UIDAI and DPDP data security standards.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Multi-lingual application support across 22+ official Indian regional languages.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Reduces municipal office counter footfall and processing overhead by over 74%.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Citizen Service Delivery and DigiLocker Integration" src="/assets/images/industry/government-and-utilities/stage-citizen-services.png?v=gov20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 1: UTILITY BILLING -->
+        <article class="stage-pane" data-pane="1">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Utility Billing</div>
+            <h3>1-tap electricity, water <br>&amp; property tax checkout <br>with instant tax receipts.</h3>
+            <p>Accelerate utility revenue realization and eliminate bill payment friction. Citizens receive itemized monthly consumption summaries and pay via WhatsApp UPI in seconds, instantly getting official government receipts.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Sub-2 second payment completion via WhatsApp Pay, UPI, GPay, and PhonePe.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated generation of official municipal tax receipts with payment timestamp.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Proactive bill reminders sent 7 days and 2 days before due date, slashing defaults by 42%.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Support for electricity (DISCOMs), municipal water, piped natural gas (PNG), and waste cess.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Historical bill download and meter consumption graph comparisons in chat.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>RBI and BBPS compliant end-to-end 256-bit encrypted payment settlement.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz 1-Tap WhatsApp UPI Utility Bill Payments and Tax Receipts" src="/assets/images/industry/government-and-utilities/stage-utility-billing.png?v=gov20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 2: GRIEVANCE REDRESSAL -->
+        <article class="stage-pane" data-pane="2">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Grievance Redressal</div>
+            <h3>Geo-tagged civic issue <br>reporting with photo proof <br>&amp; live ticket tracking.</h3>
+            <p>Empower citizens to become the eyes and ears of your smart city. Citizens report potholes, broken streetlights, water pipeline leaks, or garbage accumulation by snapping a photo and sharing their live GPS coordinates.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>1-tap live GPS location pin capture with automatic municipal ward tagging.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated ticket generation with unique grievance reference ID and field officer routing.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time milestone notifications: "Assigned" ➔ "Work in Progress" ➔ "Resolved".</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Before-and-after photo proof sent to citizen upon ticket resolution.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Slashing citizen grievance turnaround time from 7+ days to under 24 hours.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automatic escalation triggers if nodal officers fail to meet department SLAs.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Geo-Tagged Public Grievance Redressal on WhatsApp" src="/assets/images/industry/government-and-utilities/stage-grievance-redressal.png?v=gov20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 3: PUBLIC SAFETY ALERTS -->
+        <article class="stage-pane" data-pane="3">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Public Safety Alerts</div>
+            <h3>High-priority disaster warnings, <br>weather advisories &amp; <br>planned outage rosters.</h3>
+            <p>Deliver life-saving information with guaranteed 99.9% delivery. Municipalities and utility boards broadcast urgent flood warnings, cyclone evacuations, heatwave alerts, and scheduled maintenance shutdown rosters.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Official Meta Cloud API emergency utility broadcast templates exempt from spam filters.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Geo-fenced broadcasting targeted by municipal ward, pin code, or disaster impact zone.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Interactive emergency helpline calling buttons and nearest shelter navigation pins.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Planned electricity and water shutdown rosters sent 24h in advance.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Verified green checkmark profile ensuring zero fake news or public panic.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Capable of broadcasting to 10+ million citizens in minutes with sub-second latency.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Emergency Public Safety Broadcasts and Disaster Alerts" src="/assets/images/industry/government-and-utilities/stage-emergency-broadcast.png?v=gov20261022" loading="lazy">
+          </div>
+        </article>
+
+        <!-- STAGE 4: SMART CITY TELEMETRY -->
+        <article class="stage-pane" data-pane="4">
+          <div class="stage-copy">
+            <div class="stage-demo-label">Smart City Telemetry</div>
+            <h3>Real-time municipal SLAs, <br>revenue collection BI &amp; <br>citizen CSAT loops.</h3>
+            <p>Provide municipal commissioners and utility leadership with complete operational transparency. Track ward-level grievance resolution velocities, collection efficiency, and citizen feedback on unified command dashboards.</p>
+            <div class="stage-features">
+              <div class="stage-feature-item"><i>✓</i><span>Live executive dashboards displaying department-wise SLA compliance and pending tickets.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Real-time utility payment collection telemetry with ward-level breakdown.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Automated post-resolution citizen CSAT surveys with 1-tap star ratings.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Deep bi-directional sync with SAP Public Sector, municipal ERPs, and NIC portals.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Heatmap analytics identifying high-frequency civic problem hotspots across the city.</span></div>
+              <div class="stage-feature-item"><i>✓</i><span>Instant BI data export to Tableau, PowerBI, BigQuery, and state GovTech platforms.</span></div>
+            </div>
+          </div>
+          <div class="stage-media">
+            <img decoding="async" alt="HelloBotz Smart City Command Center Telemetry and Citizen CSAT" src="/assets/images/industry/government-and-utilities/stage-gov-analytics.png?v=gov20261022" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2.2 GOVERNMENT & UTILITIES ARCHITECTURE JOURNEY FLOW (4 STEPS)
+       ========================================================================= -->
+  <section class="bfsi-journey-section">
+    <div class="container">
+      <div class="stage-heading" style="margin-bottom:2.5rem;">
+        <span class="stage-kicker">GOVTECH &amp; SMART CITY ARCHITECTURE FLOW</span>
+        <h2 class="stage-display-title">HelloBotz End-to-End GovTech &amp; Public Utility Architecture</h2>
+        <p class="stage-subtitle">From omnichannel citizen service ingestion and municipal ERP routing to 1-tap UPI utility billing, geo-tagged grievance resolution, and smart city telemetry.</p>
+      </div>
+
+      <div class="bfsi-journey-grid">
+        <!-- Step 1 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">1</div>
+          <h4>Omnichannel Citizen Ingestion</h4>
+          <p>Citizens initiate services via official WhatsApp verified numbers, SMS shortcodes, DigiLocker, or municipal QR signage in &lt;100ms.</p>
+          <span class="bfsi-step-tag">Step 01 · Omnichannel Citizen Ingestion</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">2</div>
+          <h4>Gov ERP &amp; Departmental Routing</h4>
+          <p>Requests route automatically to designated departments (Power DISCOM, Water Board, Municipal Corp) via NIC and SAP Public Sector APIs.</p>
+          <span class="bfsi-step-tag">Step 02 · Gov ERP &amp; Department Routing</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">3</div>
+          <h4>1-Tap UPI Settle &amp; Official Receipts</h4>
+          <p>Citizens settle utility bills and property taxes via WhatsApp Pay or UPI with instant cryptographically signed receipt and certificate delivery.</p>
+          <span class="bfsi-step-tag">Step 03 · 1-Tap UPI &amp; Digital Receipts</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bfsi-journey-step">
+          <div class="bfsi-step-badge">4</div>
+          <h4>Grievance SLA &amp; Smart City Telemetry</h4>
+          <p>Field teams resolve civic complaints with photo proof, updating smart city command dashboards and notifying citizens in real time.</p>
+          <span class="bfsi-step-tag">Step 04 · Grievance SLA &amp; Telemetry</span>
         </div>
       </div>
     </div>
