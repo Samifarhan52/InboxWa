@@ -36,7 +36,7 @@
     var symbol = c.symbol;
 
     if (cur === 'INR') {
-      if (inrAmount < 1 && inrAmount > 0) return '₹' + inrAmount;
+      if (inrAmount < 1 && inrAmount > 0) return '₹' + inrAmount.toFixed(4);
       return '₹' + Math.round(inrAmount).toLocaleString('en-IN');
     }
 
