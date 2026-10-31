@@ -7,7 +7,7 @@ $canonicalUrl = 'https://hellobotz.com/pricing/';
 
 include __DIR__ . '/../includes/header.php';
 ?>
-<link rel="stylesheet" href="/assets/css/pricing.css?v=11">
+<link rel="stylesheet" href="/assets/css/pricing.css?v=12">
 
 <!-- HERO SECTION WITH LIVE CURRENCY CONVERTER -->
 <section class="hero-section small-hero pricing-hero">
@@ -157,7 +157,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
             <div>
               <h2>Starter</h2>
-              <p class="plan-short">Essential broadcasting &amp; messaging</p>
+              <p class="plan-short">1 Agent • 10k contacts • WhatsApp Cloud API</p>
             </div>
           </div>
           <div class="price-wrap">
@@ -166,18 +166,20 @@ include __DIR__ . '/../includes/header.php';
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="3989">₹3,989</span> yearly <span class="save-pill" style="font-size:10.5px;padding:1px 7px;margin-left:4px;">15% Discount</span></p>
           <ul class="plan-features">
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Connect 2 WhatsApp numbers</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited broadcast campaigns</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Contact list management</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Basic analytics &amp; reports</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>1 Agent</strong> included</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>10,000 contacts</strong> storage</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>100 campaigns</strong> &amp; 5 bot flows</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Unlimited AI Prompts</strong> &amp; conversations</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>5 WhatsApp Forms</strong> &amp; quick replies</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>REST API &amp; WhatsApp Webhook</li>
             <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Email &amp; chat support</li>
           </ul>
           <div class="plan-divider"></div>
           <p class="sub-heading">Ideal for</p>
           <ul class="plan-limitations">
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Promotional broadcasts</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Newsletters &amp; alerts</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Small businesses</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Solo businesses &amp; small teams</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Promotional broadcasts &amp; alerts</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Automated FAQs &amp; replies</li>
           </ul>
         </div>
         <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="Starter Plan">
@@ -196,7 +198,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
             <div>
               <h2>Business</h2>
-              <p class="plan-short">Advanced automation with 100k contacts</p>
+              <p class="plan-short">5 Agents • 25k contacts • WA, FB &amp; Instagram</p>
             </div>
           </div>
           <div class="price-wrap">
@@ -205,19 +207,21 @@ include __DIR__ . '/../includes/header.php';
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="5989">₹5,989</span> yearly <span class="save-pill" style="font-size:10.5px;padding:1px 7px;margin-left:4px;">15% Discount</span></p>
           <ul class="plan-features">
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Up to 5 WhatsApp numbers</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>100,000 contacts</strong> storage</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Drag-&amp;-drop automation builder</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Advanced segments &amp; tags</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Webhook &amp; API access</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>5 Agents &amp; 5 Teams</strong> included</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>25,000 contacts</strong> storage</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Channels:</strong> WhatsApp + Facebook + Instagram</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>10 Bot Flows</strong> &amp; drag-and-drop builder</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Unlimited AI Calling Agent</strong> &amp; Prompts</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Unlimited WhatsApp Forms</strong> &amp; quick replies</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Facebook Ads campaigns &amp; leads</li>
             <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Priority WhatsApp support</li>
           </ul>
           <div class="plan-divider"></div>
           <p class="sub-heading">Ideal for</p>
           <ul class="plan-limitations">
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Growing businesses</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>E-commerce &amp; D2C brands</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Marketing agencies</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Growing sales &amp; support teams</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Multi-channel selling (WA, FB, Instagram)</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>E-commerce, D2C &amp; marketing agencies</li>
           </ul>
         </div>
         <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="Business Plan">
@@ -236,7 +240,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
             <div>
               <h2>Enterprise</h2>
-              <p class="plan-short">AI agent + 5 team members + 100k contacts</p>
+              <p class="plan-short">10 Agents • Unlimited contacts • All Channels (WA, FB, IG, TG)</p>
             </div>
           </div>
           <div class="price-wrap">
@@ -245,20 +249,21 @@ include __DIR__ . '/../includes/header.php';
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="9989">₹9,989</span> yearly <span class="save-pill" style="font-size:10.5px;padding:1px 7px;margin-left:4px;">15% Discount</span></p>
           <ul class="plan-features">
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Up to 10 WhatsApp numbers</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>100,000 contacts</strong> storage</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>AI Agent</strong> (ChatGPT integration)</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>5 Team Members</strong> included</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Advanced automation &amp; flows</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dedicated account manager</li>
-            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Priority support &amp; SLA</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>10 Agents &amp; 10 Teams (2 Workspaces)</strong></li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Unlimited contacts</strong> &amp; segments</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>All Channels:</strong> WhatsApp, FB, Instagram &amp; Telegram</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Unlimited campaigns</strong> &amp; bot flows</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>AI Agent (ChatGPT)</strong> &amp; AI Calling Agent</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Unlimited WhatsApp Forms</strong>, tags &amp; fields</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>REST API, Webhook &amp; 500 MB file limit</li>
+            <li><span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dedicated account manager &amp; 24/7 SLA</li>
           </ul>
           <div class="plan-divider"></div>
           <p class="sub-heading">Ideal for</p>
           <ul class="plan-limitations">
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Large enterprises</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>High-volume support teams</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>AI-first businesses</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Large enterprises &amp; multi-branch brands</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>High-volume support &amp; sales operations</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full omnichannel AI automation</li>
           </ul>
         </div>
         <button type="button" class="btn-primary full activate-plan-btn" data-plan-name="Enterprise Plan">
@@ -271,11 +276,11 @@ include __DIR__ . '/../includes/header.php';
     <!-- COMPARISON TOGGLE - WHATSAPP API -->
     <div id="regularComparisonToggle" class="comparison-toggle-wrap">
       <button type="button" id="toggleRegularComparison" class="btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Compare WhatsApp API Plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Compare All Plans
       </button>
     </div>
     <div id="regularComparisonTable" class="comparison-table-wrap" style="display:none;">
-      <h3 style="font-size:22px;margin:20px 20px 10px;color:#0f172a;">WhatsApp API Plan Comparison</h3>
+      <h3 style="font-size:22px;margin:20px 20px 10px;color:#0f172a;">Plan Comparison</h3>
       <table class="comparison-table">
         <thead>
           <tr>
@@ -286,13 +291,23 @@ include __DIR__ . '/../includes/header.php';
           </tr>
         </thead>
         <tbody>
-          <tr><td>WhatsApp Numbers</td><td>2</td><td class="col-highlight">5</td><td>10</td></tr>
-          <tr><td>Contacts</td><td>Unlimited</td><td class="col-highlight">100,000</td><td>100,000</td></tr>
-          <tr><td>Automation Builder</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td class="col-highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>AI Agent</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td class="col-highlight"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Team Members</td><td>1</td><td class="col-highlight">1</td><td>5</td></tr>
-          <tr><td>API &amp; Webhooks</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td class="col-highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Support Level</td><td>Email &amp; Chat</td><td class="col-highlight">Priority WhatsApp</td><td>Dedicated Manager</td></tr>
+          <tr><td>Contacts</td><td>10,000</td><td class="col-highlight">25,000</td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>Agents</td><td>1</td><td class="col-highlight">5</td><td>10</td></tr>
+          <tr><td>Teams</td><td><span style="color:#94a3b8;font-weight:600;">—</span></td><td class="col-highlight">5</td><td>10</td></tr>
+          <tr><td>Workspaces</td><td>1</td><td class="col-highlight">1</td><td>2</td></tr>
+          <tr><td>Channels</td><td>WhatsApp Cloud API</td><td class="col-highlight">WhatsApp, FB &amp; IG</td><td>WhatsApp, FB, IG &amp; TG</td></tr>
+          <tr><td>Bot Flows</td><td>5</td><td class="col-highlight">10</td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>Campaigns</td><td>100</td><td class="col-highlight">1 (Broadcast)</td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>AI Prompts</td><td><strong>Unlimited</strong></td><td class="col-highlight"><strong>Unlimited</strong></td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>AI Calling Agent</td><td><span style="color:#94a3b8;font-weight:600;">—</span></td><td class="col-highlight"><strong>Unlimited</strong></td><td>Included</td></tr>
+          <tr><td>AI Agent (ChatGPT)</td><td><span style="color:#94a3b8;font-weight:600;">—</span></td><td class="col-highlight"><span style="color:#94a3b8;font-weight:600;">—</span></td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>WhatsApp Forms</td><td>5</td><td class="col-highlight"><strong>Unlimited</strong></td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>Custom Fields / Tags</td><td>4 / 5</td><td class="col-highlight">10 / 10</td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>Kanban Funnels</td><td>5</td><td class="col-highlight">10</td><td>10</td></tr>
+          <tr><td>Facebook Ads &amp; Leads</td><td><span style="color:#94a3b8;font-weight:600;">—</span></td><td class="col-highlight"><strong>Unlimited</strong></td><td><strong>Unlimited</strong></td></tr>
+          <tr><td>File Upload Limit</td><td>100 MB</td><td class="col-highlight">250 MB</td><td>500 MB</td></tr>
+          <tr><td>REST API &amp; Webhooks</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td><td class="col-highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Support Level</td><td>Email &amp; Chat</td><td class="col-highlight">Priority WhatsApp</td><td>Dedicated Manager &amp; SLA</td></tr>
         </tbody>
       </table>
     </div>
@@ -876,5 +891,5 @@ include __DIR__ . '/../includes/header.php';
   <p style="font-size:11px;color:#94a3b8;margin-top:8px;margin-bottom:0;text-align:center;">Our WhatsApp experts will call you & share live demo.</p>
 </div>
 
-<script src="/assets/js/pricing.js?v=10" defer></script>
+<script src="/assets/js/pricing.js?v=11" defer></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
