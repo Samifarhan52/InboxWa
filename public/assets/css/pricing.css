@@ -361,6 +361,13 @@ body {
   height: 100%;
 }
 
+.pricing-card > div:first-child,
+.card-content-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
 .pricing-card::before {
   content: '';
   position: absolute;
@@ -425,6 +432,7 @@ body {
   align-items: center;
   gap: 14px;
   margin-bottom: 16px;
+  min-height: 52px;
 }
 
 .plan-icon {
@@ -498,10 +506,11 @@ body {
 .plan-features {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px;
-  font-size: 14px;
+  margin: 0 0 16px;
+  font-size: 13.5px;
   color: #111827;
   text-align: left;
+  flex: 1 0 auto;
 }
 
 .plan-features li {
@@ -509,7 +518,13 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  line-height: 1.5;
+  line-height: 1.45;
+}
+
+.plan-features li .feat-text {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
 }
 
 .check-icon {
@@ -518,11 +533,11 @@ body {
   font-size: 15px;
   flex-shrink: 0;
   display: inline-flex;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .plan-divider {
-  margin: 20px 0;
+  margin: 18px 0;
   height: 1px;
   background: #e5e7eb;
   position: relative;
@@ -544,6 +559,10 @@ body {
   100% { left: 100%; }
 }
 
+.ideal-for-wrap {
+  margin-bottom: 22px;
+}
+
 .sub-heading {
   font-size: 12px;
   text-transform: uppercase;
@@ -557,17 +576,23 @@ body {
 .plan-limitations {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
+  margin: 0;
   font-size: 13px;
   color: #475569;
   text-align: left;
 }
 
 .plan-limitations li {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+  line-height: 1.4;
+}
+
+.plan-limitations li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* CTA buttons inside cards */
@@ -587,6 +612,7 @@ body {
   text-decoration: none;
   transition: all 0.25s ease;
   box-shadow: 0 4px 14px rgba(15, 118, 110, 0.25);
+  margin-top: auto;
 }
 
 .btn-primary.full:hover, .pricing-card .btn-primary:hover {
