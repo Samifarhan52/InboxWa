@@ -134,7 +134,8 @@
       if (omniToggle) omniToggle.style.display = 'none';
       if (regTable) regTable.style.display = 'none';
       if (omniTable) omniTable.style.display = 'none';
-      if (regBtn) regBtn.innerHTML = '📊 Compare WhatsApp API Plans';
+      var chartIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>';
+      if (regBtn) regBtn.innerHTML = chartIcon + 'Compare WhatsApp API Plans';
 
       for (var b = 0; b < btns.length; b++) {
         var isReg = btns[b].getAttribute('data-plan-cat') === 'regular';
@@ -150,7 +151,8 @@
       if (omniToggle) omniToggle.style.display = 'block';
       if (regTable) regTable.style.display = 'none';
       if (omniTable) omniTable.style.display = 'none';
-      if (omniBtn) omniBtn.innerHTML = '📊 Compare Omnichannel Plans';
+      var chartIconOmni = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>';
+      if (omniBtn) omniBtn.innerHTML = chartIconOmni + 'Compare Omnichannel Plans';
 
       for (var c = 0; c < btns.length; c++) {
         var isOmni = btns[c].getAttribute('data-plan-cat') === 'omnichannel';
@@ -284,7 +286,8 @@
       if (regTable) {
         var isHidden = regTable.style.display === 'none' || regTable.style.display === '';
         regTable.style.display = isHidden ? 'block' : 'none';
-        regCompBtn.innerHTML = isHidden ? '📊 Hide Comparison' : '📊 Compare WhatsApp API Plans';
+        var chartIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>';
+        regCompBtn.innerHTML = isHidden ? chartIcon + 'Hide Comparison' : chartIcon + 'Compare WhatsApp API Plans';
         if (isHidden && typeof regTable.scrollIntoView === 'function') {
           regTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -300,7 +303,8 @@
       if (omniTable) {
         var isHiddenOmni = omniTable.style.display === 'none' || omniTable.style.display === '';
         omniTable.style.display = isHiddenOmni ? 'block' : 'none';
-        omniCompBtn.innerHTML = isHiddenOmni ? '📊 Hide Comparison' : '📊 Compare Omnichannel Plans';
+        var chartIconOmni = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>';
+        omniCompBtn.innerHTML = isHiddenOmni ? chartIconOmni + 'Hide Comparison' : chartIconOmni + 'Compare Omnichannel Plans';
         if (isHiddenOmni && typeof omniTable.scrollIntoView === 'function') {
           omniTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -392,7 +396,7 @@
           applyCurrency(currentCurrency);
           var syncTag = document.getElementById('currencySyncText');
           if (syncTag) {
-            syncTag.innerHTML = '🟢 Live market rates active (Synced Today)<br>All plans support monthly & yearly billing';
+            syncTag.innerHTML = '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#16a34a;margin-right:5px;vertical-align:1px;"></span>Live market rates active (Synced Today)<br>All plans support monthly & yearly billing';
           }
         }
       })
