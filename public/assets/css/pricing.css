@@ -235,6 +235,13 @@ body {
   display: block;
 }
 
+.omni-icon-item.item-ig svg {
+  border-radius: 4px;
+  overflow: hidden;
+  background: #E4405F;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
 /* 6 slots (1.5s each = 9s total cycle) + seamless clone wrap */
 @keyframes omniIconRoll {
   0%, 13.5% {
