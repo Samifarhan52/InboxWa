@@ -8,7 +8,7 @@
 
   var WA_NUMBER = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || '918050854445';
   var FORM_MODE = 'both';
-  var FORM_ENDPOINT = '/api/lead.php';
+  var FORM_ENDPOINT = '/php-api/lead.php';
 
   function openWhatsApp(text) {
     var num = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || WA_NUMBER;

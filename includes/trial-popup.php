@@ -301,7 +301,7 @@ function handleTrialSubmit(e) {
     source_page: location.pathname
   };
 
-  fetch('/api/lead.php', {
+  fetch('/php-api/lead.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
