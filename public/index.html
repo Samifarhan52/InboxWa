@@ -13396,7 +13396,7 @@ document.addEventListener('click', function(e) {
         Thank you for your interest in HelloBotz. Your official 7-page PDF brochure is downloading now.
       </p>
       <div style="margin-top: 1.25rem;">
-        <a id="brochureDirectDownloadLink" href="/assets/downloads/hellobotz-brochure.pdf" download="HelloBotz_Official_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px; padding: 0.75rem 1.4rem; text-decoration:none; font-weight:700;">
+        <a id="brochureDirectDownloadLink" href="/download-brochure.php" download="HelloBotz_Official_Brochure.pdf" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px; padding: 0.75rem 1.4rem; text-decoration:none; font-weight:700;">
           <span>Click Here if Download Didn't Start</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
@@ -13680,7 +13680,7 @@ function ensureBrochureModal() {
     '<h3>Your Download Has Started!</h3>' +
     '<p>Thank you for your interest in HelloBotz. Your official 7-page PDF brochure is downloading now.</p>' +
     '<div style="margin-top:1.25rem;">' +
-    '<a id="brochureDirectDownloadLink" href="/assets/downloads/hellobotz-brochure.pdf" download="HelloBotz_Official_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:0.75rem 1.4rem;text-decoration:none;font-weight:700;">' +
+    '<a id="brochureDirectDownloadLink" href="/download-brochure.php" download="HelloBotz_Official_Brochure.pdf" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:0.75rem 1.4rem;text-decoration:none;font-weight:700;">' +
     '<span>Click Here if Download Didn\'t Start</span>' +
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
     '</a>' +
@@ -13718,30 +13718,38 @@ function closeBrochureModal() {
 }
 
 function triggerBrochureFileDownload() {
-  var brochureUrl = window.__HELLOBOTZ_BROCHURE_URL || '/assets/downloads/hellobotz-brochure.pdf';
-  var link = document.createElement('a');
-  link.href = brochureUrl;
-  link.setAttribute('download', 'HelloBotz_Official_Brochure.pdf');
-  link.setAttribute('target', '_blank');
-  link.style.display = 'none';
-  document.body.appendChild(link);
-  link.click();
-  setTimeout(function() {
-    if (link.parentNode) {
-      link.parentNode.removeChild(link);
+  var dlUrl = window.__HELLOBOTZ_BROCHURE_URL || '/download-brochure.php';
+
+  // Strategy 1: Hidden iframe download (Natively forces attachment download in background, 0 popup blocks)
+  try {
+    var iframe = document.getElementById('hb-brochure-dl-frame');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'hb-brochure-dl-frame';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
     }
-  }, 300);
+    iframe.src = dlUrl;
+  } catch (errIframe) {}
+
+  // Strategy 2: Programmatic anchor download (same origin, explicit filename, NO target="_blank")
+  try {
+    var link = document.createElement('a');
+    link.href = '/download-brochure.php';
+    link.download = 'HelloBotz_Official_Brochure.pdf';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(function() {
+      if (link.parentNode) link.parentNode.removeChild(link);
+    }, 400);
+  } catch (errLink) {}
 }
 
 function handleBrochureSubmit(e) {
   e.preventDefault();
   var form = e.target;
   var btn = document.getElementById('brochureSubmitBtn');
-  var origText = btn ? btn.innerHTML : '';
-  if (btn) {
-    btn.disabled = true;
-    btn.innerHTML = '<span>Preparing Download...</span>';
-  }
 
   var name = form.name ? form.name.value.trim() : '';
   var company = form.company ? form.company.value.trim() : '';
@@ -13750,13 +13758,20 @@ function handleBrochureSubmit(e) {
 
   if (!name || !email || !phone) {
     alert('Please fill out all required fields (Name, Work Email, WhatsApp Number).');
-    if (btn) {
-      btn.disabled = false;
-      btn.innerHTML = origText;
-    }
     return;
   }
 
+  // 1. Trigger the download IMMEDIATELY while user click gesture is active!
+  triggerBrochureFileDownload();
+
+  // 2. Immediately switch to the success screen with fallback button
+  form.style.display = 'none';
+  var header = document.querySelector('.brochure-modal-header');
+  if (header) header.style.display = 'none';
+  var successBox = document.getElementById('brochure-success-box');
+  if (successBox) successBox.style.display = 'block';
+
+  // 3. Background lead ingestion
   var payload = {
     type: 'brochure_download',
     name: name,
@@ -13772,25 +13787,7 @@ function handleBrochureSubmit(e) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
-  })
-  .then(function(res) { return res.json().catch(function() { return { ok: true }; }); })
-  .then(function(data) {
-    showBrochureSuccess();
-  })
-  .catch(function() {
-    showBrochureSuccess();
-  });
-
-  function showBrochureSuccess() {
-    form.style.display = 'none';
-    var header = document.querySelector('.brochure-modal-header');
-    if (header) header.style.display = 'none';
-    var successBox = document.getElementById('brochure-success-box');
-    if (successBox) successBox.style.display = 'block';
-
-    // Automatically trigger PDF download
-    triggerBrochureFileDownload();
-  }
+  }).catch(function() {});
 }
 
 // Global click delegation for all brochure buttons across the site
