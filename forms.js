@@ -70,6 +70,17 @@
         }
       }
 
+      var phoneVal = data.mobile || data.phone || data.whatsapp || '';
+      if (phoneVal) {
+        var digits = phoneVal.replace(/\D/g, '');
+        if (digits.length < 7) {
+          alert('Please enter a valid mobile number (digits only).');
+          var phFocus = form.querySelector('[name="mobile"], [name="phone"], [name="whatsapp"]');
+          if (phFocus) phFocus.focus();
+          return;
+        }
+      }
+
       // Save to admin DB (non-blocking), then WhatsApp for human follow-up
       var payload = {
         type: type,

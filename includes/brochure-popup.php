@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="brochure-phone">WhatsApp Number *</label>
-          <input type="tel" class="form-input" id="brochure-phone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210">
+          <input type="tel" class="form-input" id="brochure-phone" name="phone" required autocomplete="tel" inputmode="tel" pattern="[0-9+]*" oninput="this.value = (this.value.startsWith('+') ? '+' : '') + this.value.replace(/\D/g, '')" placeholder="+91 98765 43210">
         </div>
       </div>
 
@@ -326,7 +326,7 @@ function ensureBrochureModal() {
     '</div>' +
     '<div class="form-row">' +
     '<div class="form-group"><label class="form-label" for="brochure-email">Work Email *</label><input type="email" class="form-input" id="brochure-email" name="email" required autocomplete="email" placeholder="rahul@company.com"></div>' +
-    '<div class="form-group"><label class="form-label" for="brochure-phone">WhatsApp Number *</label><input type="tel" class="form-input" id="brochure-phone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210"></div>' +
+    '<div class="form-group"><label class="form-label" for="brochure-phone">WhatsApp Number *</label><input type="tel" class="form-input" id="brochure-phone" name="phone" required autocomplete="tel" inputmode="tel" pattern="[0-9+]*" oninput="this.value = (this.value.startsWith(\'+\') ? \'+\' : \'\') + this.value.replace(/\\D/g, \'\')" placeholder="+91 98765 43210"></div>' +
     '</div>' +
     '<button type="submit" id="brochureSubmitBtn" class="btn btn-primary btn-block" style="margin-top:0.75rem;padding:0.85rem 1.5rem;font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;">' +
     '<span>Download Brochure (PDF)</span>' +
@@ -431,6 +431,13 @@ function handleBrochureSubmit(e) {
     return;
   }
 
+  var digitsOnly = phone.replace(/\D/g, '');
+  if (digitsOnly.length < 7) {
+    alert('Please enter a valid WhatsApp / Mobile number (digits only).');
+    if (form.phone) form.phone.focus();
+    return;
+  }
+
   // 1. Trigger the download IMMEDIATELY while user click gesture is active!
   triggerBrochureFileDownload();
 
@@ -487,4 +494,58 @@ document.addEventListener('keydown', function(e) {
 // Expose globals for external callers
 window.openBrochureModal = openBrochureModal;
 window.closeBrochureModal = closeBrochureModal;
+
+// Strict Global Mobile/Phone Input Sanitizer: Allows ONLY numbers 0-9 (and optional leading '+') across the whole page
+(function() {
+  function isPhoneField(el) {
+    if (!el || el.tagName !== 'INPUT') return false;
+    var t = (el.type || '').toLowerCase();
+    var n = (el.name || '').toLowerCase();
+    var id = (el.id || '').toLowerCase();
+    var ph = (el.placeholder || '').toLowerCase();
+    return t === 'tel' ||
+           n.includes('phone') || n.includes('mobile') || n.includes('whatsapp') ||
+           id.includes('phone') || id.includes('mobile') || id.includes('whatsapp') ||
+           ph.includes('98765') || ph.includes('phone') || ph.includes('mobile') || ph.includes('whatsapp');
+  }
+
+  function sanitizePhone(val) {
+    if (!val) return '';
+    var hasPlus = val.trim().startsWith('+');
+    var clean = val.replace(/\D/g, '');
+    return (hasPlus ? '+' : '') + clean;
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (!isPhoneField(e.target)) return;
+    if (e.key === 'Backspace' || e.key === 'Tab' || e.key === 'Delete' ||
+        e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown' ||
+        e.key === 'Enter' || e.key === 'Escape' || e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+    if (e.key === '+' && e.target.selectionStart === 0 && !e.target.value.includes('+')) {
+      return;
+    }
+    if (!/^[0-9]$/.test(e.key)) {
+      e.preventDefault();
+    }
+  }, true);
+
+  document.addEventListener('input', function(e) {
+    if (!isPhoneField(e.target)) return;
+    var clean = sanitizePhone(e.target.value);
+    if (e.target.value !== clean) {
+      e.target.value = clean;
+    }
+  }, true);
+
+  document.addEventListener('paste', function(e) {
+    if (!isPhoneField(e.target)) return;
+    e.preventDefault();
+    var pasteData = (e.clipboardData || window.clipboardData).getData('text') || '';
+    var clean = sanitizePhone(pasteData);
+    e.target.value = clean;
+    e.target.dispatchEvent(new Event('input', { bubbles: true }));
+  }, true);
+})();
 </script>

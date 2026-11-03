@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="trial-phone">WhatsApp Number *</label>
-          <input type="tel" class="form-input" id="trial-phone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210">
+          <input type="tel" class="form-input" id="trial-phone" name="phone" required autocomplete="tel" inputmode="tel" pattern="[0-9+]*" oninput="this.value = (this.value.startsWith('+') ? '+' : '') + this.value.replace(/\D/g, '')" placeholder="+91 98765 43210">
         </div>
       </div>
 

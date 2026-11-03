@@ -671,6 +671,59 @@
     });
   }
 
+  /* ---------- Strict Phone/Mobile Input Sanitizer ---------- */
+  function initStrictPhoneInputs() {
+    function isPhoneField(el) {
+      if (!el || el.tagName !== 'INPUT') return false;
+      const t = (el.type || '').toLowerCase();
+      const n = (el.name || '').toLowerCase();
+      const id = (el.id || '').toLowerCase();
+      const ph = (el.placeholder || '').toLowerCase();
+      return t === 'tel' ||
+             n.includes('phone') || n.includes('mobile') || n.includes('whatsapp') ||
+             id.includes('phone') || id.includes('mobile') || id.includes('whatsapp') ||
+             ph.includes('98765') || ph.includes('phone') || ph.includes('mobile') || ph.includes('whatsapp');
+    }
+
+    function sanitize(val) {
+      if (!val) return '';
+      const hasPlus = val.trim().startsWith('+');
+      const clean = val.replace(/\D/g, '');
+      return (hasPlus ? '+' : '') + clean;
+    }
+
+    on(document, 'keydown', (e) => {
+      if (!isPhoneField(e.target)) return;
+      if (e.key === 'Backspace' || e.key === 'Tab' || e.key === 'Delete' ||
+          e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown' ||
+          e.key === 'Enter' || e.key === 'Escape' || e.metaKey || e.ctrlKey || e.altKey) {
+        return;
+      }
+      if (e.key === '+' && e.target.selectionStart === 0 && !e.target.value.includes('+')) {
+        return;
+      }
+      if (!/^[0-9]$/.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    on(document, 'input', (e) => {
+      if (!isPhoneField(e.target)) return;
+      const clean = sanitize(e.target.value);
+      if (e.target.value !== clean) {
+        e.target.value = clean;
+      }
+    });
+
+    on(document, 'paste', (e) => {
+      if (!isPhoneField(e.target)) return;
+      e.preventDefault();
+      const pasteData = (e.clipboardData || window.clipboardData).getData('text') || '';
+      e.target.value = sanitize(pasteData);
+      e.target.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+  }
+
   /* ---------- Footer contact form → WhatsApp ---------- */
   function initFooterContact() { /* forms.js */ }
 
@@ -750,6 +803,7 @@
     initCallbackPopup();
     initDemoPopup();
     initBrochurePopup();
+    initStrictPhoneInputs();
     initFooterContact();
     initExploreFeaturesBtn();
   }

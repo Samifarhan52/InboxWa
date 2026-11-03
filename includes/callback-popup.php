@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="cb-mobile">Mobile</label>
-          <input type="tel" class="form-input" id="cb-mobile" name="mobile" required autocomplete="tel" placeholder="+91 98765 43210">
+          <input type="tel" class="form-input" id="cb-mobile" name="mobile" required autocomplete="tel" inputmode="tel" pattern="[0-9+]*" oninput="this.value = (this.value.startsWith('+') ? '+' : '') + this.value.replace(/\D/g, '')" placeholder="+91 98765 43210">
         </div>
       </div>
       <div class="form-group">
