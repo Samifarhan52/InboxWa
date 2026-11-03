@@ -108,6 +108,7 @@
       // close popups if open
       var demo = document.getElementById('demo-popup');
       var cb = document.getElementById('callback-popup');
+      var bro = document.getElementById('brochure-popup');
       if (demo) {
         demo.classList.remove('open');
         demo.hidden = true;
@@ -115,6 +116,10 @@
       if (cb) {
         cb.classList.remove('open');
         cb.hidden = true;
+      }
+      if (bro) {
+        bro.classList.remove('open');
+        bro.hidden = true;
       }
       document.body.classList.remove('menu-open');
     });

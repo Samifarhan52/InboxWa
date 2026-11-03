@@ -75,8 +75,8 @@
         type: type,
         name: data.name || '',
         email: data.email || '',
-        phone: data.mobile || data.phone || '',
-        whatsapp: data.mobile || data.whatsapp || '',
+        phone: (data.mobile || data.phone || '').trim().replace(/\s+/g, ' '),
+        whatsapp: (data.mobile || data.whatsapp || '').trim().replace(/\s+/g, ' '),
         business: data.company || data.business || '',
         product: data.product || '',
         requirement: data.requirement || data.regarding || '',
@@ -90,6 +90,7 @@
         utm_campaign: (new URLSearchParams(location.search)).get('utm_campaign') || ''
       };
       if (FORM_MODE === 'api' || FORM_MODE === 'both') {
+        try {
           fetch(FORM_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -107,6 +108,7 @@
       // close popups if open
       var demo = document.getElementById('demo-popup');
       var cb = document.getElementById('callback-popup');
+      var bro = document.getElementById('brochure-popup');
       if (demo) {
         demo.classList.remove('open');
         demo.hidden = true;
@@ -114,6 +116,10 @@
       if (cb) {
         cb.classList.remove('open');
         cb.hidden = true;
+      }
+      if (bro) {
+        bro.classList.remove('open');
+        bro.hidden = true;
       }
       document.body.classList.remove('menu-open');
     });

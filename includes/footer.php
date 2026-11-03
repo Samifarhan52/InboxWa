@@ -1538,6 +1538,7 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
   <?php include __DIR__ . '/demo-popup.php'; ?>
   <?php include __DIR__ . '/callback-popup.php'; ?>
   <?php include __DIR__ . '/trial-popup.php'; ?>
+  <?php include __DIR__ . '/brochure-popup.php'; ?>
   <!-- Google Website Translator Integration -->
   <div id="google_translate_element" style="display:none !important;" aria-hidden="true"></div>
   <script type="text/javascript">

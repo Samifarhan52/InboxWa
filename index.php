@@ -3758,10 +3758,9 @@ include __DIR__ . '/includes/header.php';
             <?php echo htmlspecialchars(cms_section('hero', 'cta2_text', 'Book a Demo')); ?>
           </button>
           <?php 
-            $brochureUrl = trim(cms_setting('brochure_url', ''));
-            $brochureHref = !empty($brochureUrl) ? htmlspecialchars($brochureUrl) : '#callback';
-            $brochureTarget = !empty($brochureUrl) ? ' target="_blank" rel="noopener noreferrer"' : '';
-            $brochureOnClick = empty($brochureUrl) ? ' onclick="if(window.openCallbackModal){openCallbackModal();return false;}"' : '';
+            $brochureHref = '#brochure';
+            $brochureTarget = '';
+            $brochureOnClick = ' onclick="if(window.openBrochureModal){openBrochureModal();return false;}"';
           ?>
           <a href="<?php echo $brochureHref; ?>"<?php echo $brochureTarget; ?><?php echo $brochureOnClick; ?> class="cw-btn-data btn-download-brochure" title="Download HelloBotz Brochure">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

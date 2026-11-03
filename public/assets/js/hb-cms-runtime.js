@@ -21,7 +21,14 @@ window.__HELLOBOTZ_SETTINGS__ = {
     if (s.logo_light_url) document.querySelectorAll('.logo-img-light').forEach(function(el){ if (el.src !== s.logo_light_url) el.src = s.logo_light_url; });
     if (s.logo_dark_url) document.querySelectorAll('.logo-img-dark').forEach(function(el){ if (el.src !== s.logo_dark_url) el.src = s.logo_dark_url; });
     if (s.bot_avatar_url) document.querySelectorAll('.cw-wa-avatar-img, .header-avatar-img, .hellobotz-avatar-img').forEach(function(el){ if (el.src !== s.bot_avatar_url) el.src = s.bot_avatar_url; });
-    if (s.brochure_url) document.querySelectorAll('a[href*="brochure"], .btn-download-brochure, a.btn-brochure').forEach(function(el){ el.href = s.brochure_url; el.target = '_blank'; });
+    if (s.brochure_url) window.__HELLOBOTZ_BROCHURE_URL = s.brochure_url;
+    document.querySelectorAll('a[href*="brochure"], .btn-download-brochure, a.btn-brochure').forEach(function(el){
+      el.addEventListener('click', function(e){
+        if (e.target.closest('#brochure-success-box') || e.target.closest('#brochureDirectDownloadLink')) return;
+        e.preventDefault();
+        if (window.openBrochureModal) { window.openBrochureModal(); }
+      });
+    });
     if (s.office_address) document.querySelectorAll('.footer-address-text, [data-cms="office_address"]').forEach(function(el){ el.textContent = s.office_address; });
     if (s.social_facebook) document.querySelectorAll('.footer-social-fb').forEach(function(el){ el.href = s.social_facebook; });
     if (s.social_instagram) document.querySelectorAll('.footer-social-ig').forEach(function(el){ el.href = s.social_instagram; });

@@ -620,6 +620,57 @@
     /* form submit handled by forms.js */
   }
 
+  /* ---------- Brochure Popup ---------- */
+  function initBrochurePopup() {
+    function getEl() {
+      let el = $('#brochure-popup');
+      if (!el && typeof window.ensureBrochureModal === 'function') {
+        el = window.ensureBrochureModal();
+      }
+      return el;
+    }
+
+    function open() {
+      const el = getEl();
+      if (el) {
+        el.hidden = false;
+        requestAnimationFrame(() => el.classList.add('open'));
+        document.body.classList.add('menu-open');
+      } else if (typeof window.openBrochureModal === 'function') {
+        window.openBrochureModal();
+      }
+    }
+    function close() {
+      const el = $('#brochure-popup');
+      if (el) {
+        el.classList.remove('open');
+        setTimeout(() => { el.hidden = true; document.body.classList.remove('menu-open'); }, 280);
+      } else if (typeof window.closeBrochureModal === 'function') {
+        window.closeBrochureModal();
+      }
+    }
+
+    if (!window.openBrochureModal) window.openBrochureModal = open;
+    if (!window.closeBrochureModal) window.closeBrochureModal = close;
+
+    $$('.btn-download-brochure, a.btn-brochure, a[href*="brochure"], .mega-company-brochure-link, .mega-part-brochure-link, [data-open-brochure]').forEach((btn) => on(btn, 'click', (e) => {
+      if (e.target.closest('#brochure-success-box') || e.target.closest('#brochureDirectDownloadLink')) return;
+      e.preventDefault();
+      const wa = $('.wa-widget');
+      if (wa) wa.classList.remove('open');
+      open();
+    }));
+
+    const el = $('#brochure-popup');
+    if (el) {
+      el.querySelectorAll('[data-close-brochure]').forEach((n) => on(n, 'click', close));
+    }
+    on(document, 'keydown', (e) => {
+      const p = $('#brochure-popup');
+      if (e.key === 'Escape' && p && p.classList.contains('open')) close();
+    });
+  }
+
   /* ---------- Footer contact form → WhatsApp ---------- */
   function initFooterContact() { /* forms.js */ }
 
@@ -698,6 +749,7 @@
     initSmoothScroll();
     initCallbackPopup();
     initDemoPopup();
+    initBrochurePopup();
     initFooterContact();
     initExploreFeaturesBtn();
   }
