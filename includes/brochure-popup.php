@@ -74,17 +74,99 @@
 </div>
 
 <style>
+#brochure-popup {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 200000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.5rem 1rem !important;
+}
+
+#brochure-popup:not(.open):not(:not([hidden])) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#brochure-popup.open,
+#brochure-popup:not([hidden]) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+#brochure-popup .popup-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 200001 !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
 .brochure-popup-card {
   max-width: 520px !important;
   width: 95% !important;
   background: #ffffff !important;
   border-radius: 20px !important;
   padding: 2rem 2.25rem !important;
-  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35) !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.45) !important;
   position: relative !important;
-  z-index: 100001 !important;
-  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  z-index: 200010 !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
   animation: brochurePopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+#brochure-popup .popup-close {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  z-index: 200020 !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: none !important;
+  font-size: 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+#brochure-popup .popup-close:hover {
+  background: #e2e8f0 !important;
+  transform: scale(1.08) !important;
+}
+
+#brochure-popup .form-label {
+  display: block !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-bottom: 0.35rem !important;
+}
+
+#brochure-popup .form-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 0.65rem 0.9rem !important;
+  font-size: 0.95rem !important;
+  color: #0f172a !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+#brochure-popup .form-input:focus {
+  outline: none !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18) !important;
 }
 
 @keyframes brochurePopIn {
@@ -173,6 +255,34 @@
   line-height: 1.5;
   max-width: 420px;
   margin: 0 auto;
+}
+
+/* Dark theme support */
+html[data-theme="dark"] #brochure-popup .brochure-popup-card,
+body.dark-theme #brochure-popup .brochure-popup-card,
+[data-theme="dark"] #brochure-popup .brochure-popup-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+html[data-theme="dark"] #brochure-popup .brochure-heading,
+body.dark-theme #brochure-popup .brochure-heading {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] #brochure-popup .brochure-lead {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] #brochure-popup .form-label {
+  color: #e2e8f0 !important;
+}
+html[data-theme="dark"] #brochure-popup .form-input {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] #brochure-popup .popup-close {
+  background: #1e293b !important;
+  color: #f8fafc !important;
 }
 
 @media (max-width: 640px) {

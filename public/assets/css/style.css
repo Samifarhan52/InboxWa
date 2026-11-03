@@ -5058,6 +5058,7 @@ body.hb-ann-dismissed {
 #demo-popup,
 #callback-popup,
 #trial-popup,
+#brochure-popup,
 #offer-popup {
   position: fixed !important;
   inset: 0 !important;
@@ -5095,7 +5096,8 @@ body.hb-ann-dismissed {
 .popup-card,
 .popup-card-compact,
 .offer-popup-card,
-.trial-popup-card {
+.trial-popup-card,
+.brochure-popup-card {
   position: relative !important;
   z-index: 200005 !important;
   background: #FFFFFF !important;
@@ -5140,6 +5142,7 @@ body.hb-ann-dismissed {
   #demo-popup,
   #callback-popup,
   #trial-popup,
+  #brochure-popup,
   #offer-popup {
     padding: 1rem 0.75rem !important;
     align-items: center !important;
@@ -5147,7 +5150,8 @@ body.hb-ann-dismissed {
   .popup-card,
   .popup-card-compact,
   .offer-popup-card,
-  .trial-popup-card {
+  .trial-popup-card,
+  .brochure-popup-card {
     max-width: min(390px, calc(100vw - 1.5rem)) !important;
     max-height: min(86vh, 560px) !important;
     border-radius: 18px !important;
