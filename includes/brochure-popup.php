@@ -59,7 +59,7 @@
         Thank you for your interest in HelloBotz. Your official 7-page PDF brochure is downloading now.
       </p>
       <div style="margin-top: 1.25rem;">
-        <a id="brochureDirectDownloadLink" href="/assets/docs/hellobotz-brochure.pdf" download="HelloBotz_Official_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px; padding: 0.75rem 1.4rem; text-decoration:none; font-weight:700;">
+        <a id="brochureDirectDownloadLink" href="/assets/downloads/hellobotz-brochure.pdf" download="HelloBotz_Official_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px; padding: 0.75rem 1.4rem; text-decoration:none; font-weight:700;">
           <span>Click Here if Download Didn't Start</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
@@ -233,7 +233,7 @@ function ensureBrochureModal() {
     '<h3>Your Download Has Started!</h3>' +
     '<p>Thank you for your interest in HelloBotz. Your official 7-page PDF brochure is downloading now.</p>' +
     '<div style="margin-top:1.25rem;">' +
-    '<a id="brochureDirectDownloadLink" href="/assets/docs/hellobotz-brochure.pdf" download="HelloBotz_Official_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:0.75rem 1.4rem;text-decoration:none;font-weight:700;">' +
+    '<a id="brochureDirectDownloadLink" href="/assets/downloads/hellobotz-brochure.pdf" download="HelloBotz_Official_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:0.75rem 1.4rem;text-decoration:none;font-weight:700;">' +
     '<span>Click Here if Download Didn\'t Start</span>' +
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
     '</a>' +
@@ -278,7 +278,7 @@ function closeBrochureModal() {
 }
 
 function triggerBrochureFileDownload() {
-  var brochureUrl = window.__HELLOBOTZ_BROCHURE_URL || '/assets/docs/hellobotz-brochure.pdf';
+  var brochureUrl = window.__HELLOBOTZ_BROCHURE_URL || '/assets/downloads/hellobotz-brochure.pdf';
   var link = document.createElement('a');
   link.href = brochureUrl;
   link.setAttribute('download', 'HelloBotz_Official_Brochure.pdf');
