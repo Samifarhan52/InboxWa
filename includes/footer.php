@@ -1384,7 +1384,11 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
               <a href="<?php echo htmlspecialchars(cms_setting('social_youtube', 'https://www.youtube.com/@Hellobotz')); ?>" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-social-yt" aria-label="HelloBotz on YouTube" title="YouTube">
                 <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
-              <a href="https://wa.me/<?php echo urlencode(cms_setting('social_whatsapp', $fWa)); ?>" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-social-wa" aria-label="HelloBotz on WhatsApp" title="WhatsApp">
+<?php
+ = cms_setting('social_whatsapp', );
+ = (strpos(, 'http') === 0) ?  : ('https://wa.me/' . urlencode());
+?>
+              <a href="<?php echo htmlspecialchars(); ?>" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-social-wa" aria-label="HelloBotz on WhatsApp" title="WhatsApp">
                 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.477-.15-.678.15-.2.301-.778.978-.954 1.179-.176.2-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.895-.799-1.5-1.786-1.676-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.376-.025-.526-.075-.15-.678-1.632-.929-2.237-.245-.59-.494-.51-.678-.519-.176-.01-.376-.01-.577-.01-.201 0-.527.075-.803.376-.276.301-1.054 1.029-1.054 2.509 0 1.48 1.079 2.909 1.23 3.11.15.201 2.124 3.243 5.145 4.548.719.311 1.28.497 1.718.636.723.23 1.381.198 1.901.12.58-.088 1.78-.727 2.03-1.43.25-.703.25-1.305.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 21.75c-1.75 0-3.46-.46-4.98-1.33l-.36-.21-3.7 1.22 1.24-3.6-.23-.37c-.96-1.55-1.47-3.34-1.47-5.18 0-5.37 4.37-9.74 9.74-9.74 2.6 0 5.04 1.01 6.88 2.85 1.84 1.84 2.85 4.28 2.85 6.88 0 5.37-4.37 9.74-9.74 9.74zM12.04 0C5.39 0 0 5.39 0 12.04c0 2.12.55 4.19 1.6 6.01L0 24l6.15-1.57c1.76.96 3.75 1.47 5.89 1.47 6.65 0 12.04-5.39 12.04-12.04C24.08 5.39 18.69 0 12.04 0z"/></svg>
               </a>
             </div>
