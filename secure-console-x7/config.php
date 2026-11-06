@@ -340,11 +340,15 @@ function hb_init_database_schema(object $pdo): void {
             'admin_pass' => 'admin123',
             'site_title' => 'HelloBotz',
             'site_tagline' => 'WhatsApp Marketing & Automation Platform',
-            'support_whatsapp' => '918050854445',
-            'phone_number' => '+91 80508 54445',
+            'support_whatsapp' => '918050854449',
+            'enquiry_whatsapp' => '918050854448',
+            'support_phone' => '+918050854449',
+            'enquiry_phone' => '+918050854448',
+            'phone_number' => '+918050854448',
             'notification_email' => 'mail@hellobotz.com',
             'sales_email' => 'mail@hellobotz.com',
-            'support_email' => 'support@hellobotz.com',
+            'support_email' => 'mail@hellobotz.com',
+            'official_email' => 'mail@hellobotz.com',
             'office_address' => "Bangalore Karnataka 560030",
             'webhook_url' => '',
             'ga_id' => '',
@@ -362,7 +366,7 @@ function hb_init_database_schema(object $pdo): void {
             'logo_height' => '56px',
             'bot_avatar_url' => '/assets/images/hellobotz-avatar.png',
             'favicon_url' => '/assets/images/favicon-32x32.png',
-            'social_whatsapp' => 'https://wa.me/918050854445',
+            'social_whatsapp' => 'https://wa.me/918050854448',
             'social_facebook' => 'https://www.facebook.com/share/19EDrKbF2P/?mibextid=wwXIfr',
             'social_instagram' => 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr',
             'social_linkedin' => 'https://www.linkedin.com/company/hellobotz/',
@@ -388,7 +392,7 @@ function hb_init_database_schema(object $pdo): void {
             'social_instagram' => 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr',
             'social_linkedin' => 'https://www.linkedin.com/company/hellobotz/',
             'social_youtube' => 'https://www.youtube.com/@Hellobotz',
-            'social_whatsapp' => 'https://wa.me/918050854445'
+            'social_whatsapp' => 'https://wa.me/918050854448'
         ];
         $exStmt = $pdo->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
         foreach ($extraDefaults as $k => $v) {
@@ -672,7 +676,7 @@ function hb_init_database_schema(object $pdo): void {
                 1,
                 'Hello world!',
                 'An ElavateX User',
-                'support@hellobotz.com',
+                'mail@hellobotz.com',
                 'https://elavatex.com',
                 '127.0.0.1',
                 'Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from Gravatar.',
@@ -1680,7 +1684,7 @@ function hb_propagate_site_settings(): void {
     $igUrl = hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr');
     $liUrl = hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/');
     $ytUrl = hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz');
-    $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854445');
+    $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854448');
 
     $annEnabled = hb_get_setting('announcement_enabled', '1');
     $annBadge = hb_get_setting('announcement_badge', 'LIMITED OFFER');
@@ -1794,7 +1798,7 @@ function hb_publish_page_html(string $title, string $slug, string $content, stri
     $igUrl = hb_get_setting('social_instagram', 'https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr');
     $liUrl = hb_get_setting('social_linkedin', 'https://www.linkedin.com/company/hellobotz/');
     $ytUrl = hb_get_setting('social_youtube', 'https://www.youtube.com/@Hellobotz');
-    $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854445');
+    $waUrl = hb_get_setting('social_whatsapp', 'https://wa.me/918050854448');
     $officeAddress = hb_get_setting('office_address', "Bangalore Karnataka 560030");
 
     $html = <<<HTML

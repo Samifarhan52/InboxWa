@@ -365,7 +365,7 @@ function handleSignupSubmit(e) {
     btn.innerHTML = '<span>✓ Trial Activated</span>';
     btn.style.background = '#059669';
     setTimeout(function() {
-      window.location.href = 'https://wa.me/918050854445?text=' + encodeURIComponent('Hi HelloBotz, I just registered for a free trial (' + name + ' - ' + business + '). Please guide me through WhatsApp API activation.');
+      window.location.href = 'https://wa.me/918050854448?text=' + encodeURIComponent('Hi HelloBotz, I just registered for a free trial (' + name + ' - ' + business + '). Please guide me through WhatsApp API activation.');
     }, 1500);
   })
   .catch(function(err) {
@@ -373,7 +373,7 @@ function handleSignupSubmit(e) {
     alertBox.textContent = '🎉 Account Created! Welcome to HelloBotz. Connecting you to onboarding...';
     alertBox.style.display = 'flex';
     setTimeout(function() {
-      window.location.href = 'https://wa.me/918050854445?text=' + encodeURIComponent('Hi HelloBotz, I just registered for a free trial (' + name + ' - ' + business + '). Please guide me through WhatsApp API activation.');
+      window.location.href = 'https://wa.me/918050854448?text=' + encodeURIComponent('Hi HelloBotz, I just registered for a free trial (' + name + ' - ' + business + '). Please guide me through WhatsApp API activation.');
     }, 1500);
   });
 }

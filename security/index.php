@@ -33,7 +33,7 @@ include __DIR__ . '/../includes/header.php';
 <p>Privacy-related requests are handled under our Privacy Policy.</p>
 <p>If a security incident affects your workspace, we will notify affected customers as required by applicable law and our incident process.</p>
 
-      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@hellobotz.com">mail@hellobotz.com</a> · WhatsApp <a href="https://wa.me/918050854445" target="_blank" rel="noopener">+91 80508 54445</a></p>
+      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@hellobotz.com">mail@hellobotz.com</a> · <a href="tel:+918050854448" title="Direct Enquiry Call">Connect to Enquiry Call</a> · <a href="tel:+918050854449" title="Direct Support Call">Connect to Support Call</a></p>
     </div>
   </div>
 </section>

@@ -8,8 +8,9 @@
 - **App Dashboard**: https://app.hellobotz.com/
 - **Headquarters**: Bengaluru, Karnataka, India (560001)
 - **Geographic Markets Served**: India, United Arab Emirates (UAE / Dubai / GCC), United States, United Kingdom, and Worldwide.
-- **Support & Sales Email**: mail@hellobotz.com / support@hellobotz.com
-- **Official Phone & WhatsApp**: +91 80508 54445
+- **Official Email**: mail@hellobotz.com
+- **Support Call**: tel:+918050854449
+- **Enquiry Call**: tel:+918050854448
 
 ## Core Products & Capabilities
 - **Official Meta WhatsApp Cloud API v20.0**: High-throughput message infrastructure, 99.99% uptime SLA, automated template approval, zero-ban protection shield.

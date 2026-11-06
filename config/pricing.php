@@ -120,7 +120,7 @@ return [
   'gst_rate' => 0.18,
   'trial_days' => 14,
   'register_url' => '/auth/register',
-  'whatsapp' => cms_setting('support_whatsapp', '918050854445'),
+  'whatsapp' => cms_setting('support_whatsapp', '918050854448'),
   'plans' => $activePlans,
   'comparison' => [
     ['Contacts', '50,000', '100,000', 'Unlimited'],

@@ -58,7 +58,7 @@ $desktopUrl = trim($appLinks['desktop'] ?? '') ?: '/auth/login';
           <a class="btn btn-primary" href="<?php echo htmlspecialchars($androidUrl); ?>" target="_blank" rel="noopener">
             Get it on Google Play
           </a>
-          <a class="btn btn-sm btn-outline" href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20please%20send%20me%20the%20direct%20Android%20APK%20download%20link" target="_blank" rel="noopener">
+          <a class="btn btn-sm btn-outline" href="https://wa.me/918050854448?text=Hi%20HelloBotz%2C%20please%20send%20me%20the%20direct%20Android%20APK%20download%20link" target="_blank" rel="noopener">
             Request Direct APK (.apk)
           </a>
         </div>

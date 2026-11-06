@@ -2,7 +2,7 @@
   var modal = document.getElementById('addon-modal');
   var form = document.getElementById('addon-form');
   if(!modal||!form) return;
-  var wa = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || (window.HB_PRICING && window.HB_PRICING.wa) || '918050854445';
+  var wa = (window.HELLOBOTZ_CONFIG && window.HELLOBOTZ_CONFIG.whatsapp) || (window.HB_PRICING && window.HB_PRICING.wa) || '918050854448';
 
   function openModal(card){
     var id = card.getAttribute('data-addon-id')||'';

@@ -112,7 +112,7 @@ include __DIR__ . '/../../includes/header.php';
 
         <div class="docs-callout docs-callout-tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          <div><strong>Approval Timeline:</strong> Meta typically reviews and approves verification submissions within 24 to 72 business hours. If Meta requests additional info, our support team at <a href="mailto:support@hellobotz.com" style="color:#059669;font-weight:700">support@hellobotz.com</a> can review your submission files.</div>
+          <div><strong>Approval Timeline:</strong> Meta typically reviews and approves verification submissions within 24 to 72 business hours. If Meta requests additional info, our support team at <a href="mailto:mail@hellobotz.com" style="color:#059669;font-weight:700">mail@hellobotz.com</a> can review your submission files.</div>
         </div>
       </article>
 
@@ -286,7 +286,7 @@ curl -X POST https://api.hellobotz.com/v1/messages \
       <p class="lead" style="color:rgba(255,255,255,.75);max-width:580px;margin:0 auto 1.5rem;">Our solution engineers are available to guide you through Meta verification, API setup, and flow design.</p>
       <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center">
         <a href="/resources/help-center/#support-form" class="btn btn-primary btn-lg">Open Support Ticket &rarr;</a>
-        <a href="https://wa.me/918050854445" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.4)">Chat on WhatsApp</a>
+        <a href="https://wa.me/918050854448" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.4)">Chat on WhatsApp</a>
       </div>
     </div>
   </div>

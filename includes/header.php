@@ -35,10 +35,14 @@ $detectedHost = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? 'h
 $detectedProto = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
 $SITE_DOMAIN = (strpos($detectedHost, 'localhost') === false && strpos($detectedHost, '127.0.0.1') === false) ? $detectedProto . '://' . $detectedHost : 'https://hellobotz.com';
 $DEFAULT_OG  = $SITE_DOMAIN . '/assets/images/og-image.png';
-$cmsWhatsapp = cms_setting('support_whatsapp', '918050854445');
-$cmsPhone    = cms_setting('phone_number', '+91 80508 54445');
+$cmsWhatsapp = cms_setting('support_whatsapp', '918050854449');
+$cmsEnquiryWhatsapp = cms_setting('enquiry_whatsapp', '918050854448');
+$cmsPhone    = cms_setting('phone_number', '+918050854448');
+$cmsEnquiryPhone = cms_setting('enquiry_phone', '+918050854448');
+$cmsSupportPhone = cms_setting('support_phone', '+918050854449');
 $cmsSalesEmail = cms_setting('sales_email', 'mail@hellobotz.com');
-$cmsSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
+$cmsSupportEmail = cms_setting('support_email', 'mail@hellobotz.com');
+$cmsOfficialEmail = 'mail@hellobotz.com';
 $cmsLogo     = cms_setting('logo_url', '/assets/images/logo-v3.png');
 $cmsLogoLight = cms_setting('logo_light_url', '/assets/images/logo-light-v3.png');
 $cmsLogoDark  = cms_setting('logo_dark_url', '/assets/images/logo-dark-v3.png');
@@ -312,15 +316,15 @@ if (!function_exists('hb_seo_esc')) {
     ],
     "contactPoint": [{
       "@type": "ContactPoint",
-      "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
+      "telephone": "<?php echo htmlspecialchars($cmsEnquiryPhone); ?>",
       "contactType": "sales",
       "areaServed": ["IN", "AE", "US", "GB", "Global"],
       "availableLanguage": ["English", "Hindi"]
     }, {
       "@type": "ContactPoint",
-      "telephone": "<?php echo htmlspecialchars($cmsPhone); ?>",
+      "telephone": "<?php echo htmlspecialchars($cmsSupportPhone); ?>",
       "contactType": "customer support",
-      "email": "<?php echo htmlspecialchars($cmsSupportEmail); ?>"
+      "email": "<?php echo htmlspecialchars($cmsOfficialEmail); ?>"
     }],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

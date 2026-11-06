@@ -128,12 +128,12 @@ include __DIR__ . '/../../includes/header.php';
         </button>
       </div>
       <pre class="api-code" id="api-code-block"><code>curl -X POST "https://api.hellobotz.com/v1/messages" \
-  -H "Authorization: Bearer inb_live_sec_918050854445" \
+  -H "Authorization: Bearer inb_live_sec_918050854448" \
   -H "Content-Type: application/json" \
   -d '{
     "messaging_product": "whatsapp",
     "recipient_type": "individual",
-    "to": "+918050854445",
+    "to": "+918050854448",
     "type": "template",
     "template": {
       "name": "order_confirmation",
@@ -165,8 +165,8 @@ include __DIR__ . '/../../includes/header.php';
   "messaging_product": "whatsapp",
   "contacts": [
     {
-      "input": "+918050854445",
-      "wa_id": "918050854445"
+      "input": "+918050854448",
+      "wa_id": "918050854448"
     }
   ],
   "messages": [

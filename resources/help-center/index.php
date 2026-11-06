@@ -381,7 +381,7 @@ include __DIR__ . '/../../includes/header.php';
           <button type="submit" class="btn btn-primary btn-lg" style="flex:1;min-width:200px">
             Submit Support Request &rarr;
           </button>
-          <a class="btn btn-outline btn-lg" href="https://wa.me/918050854445?text=Hi%20HelloBotz%20Support%2C%20I%20need%20assistance%20with%20my%20account" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px">
+          <a class="btn btn-outline btn-lg" href="https://wa.me/918050854449?text=Hi%20HelloBotz%20Support%2C%20I%20need%20assistance%20with%20my%20account" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
             Chat Live on WhatsApp
           </a>
@@ -391,8 +391,9 @@ include __DIR__ . '/../../includes/header.php';
       </form>
 
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #F3F4F6;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:0.85rem;color:#6B7280;">
-        <div><strong>Email Technical Support:</strong> <a href="mailto:support@hellobotz.com" style="color:var(--p2);text-decoration:none">support@hellobotz.com</a></div>
-        <div><strong>Direct Support Hotline:</strong> <a href="tel:+918050854445" style="color:var(--p2);text-decoration:none">+91 80508 54445</a></div>
+        <div><strong>Official Email:</strong> <a href="mailto:mail@hellobotz.com" style="color:var(--p2);text-decoration:none;font-weight:700;">mail@hellobotz.com</a></div>
+        <div><strong>Customer Support:</strong> <a href="tel:+918050854449" style="color:var(--p2);text-decoration:none;font-weight:700;">Connect to Support Call</a></div>
+        <div><strong>Sales &amp; Enquiry:</strong> <a href="tel:+918050854448" style="color:var(--p2);text-decoration:none;font-weight:700;">Connect to Enquiry Call</a></div>
       </div>
     </div>
   </div>

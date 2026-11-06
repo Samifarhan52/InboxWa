@@ -5378,8 +5378,8 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                         <th scope="row"><label for="social_whatsapp"><span style="display:inline-block; width:18px; height:18px; background:#25D366; color:#fff; text-align:center; border-radius:3px; line-height:18px; font-size:11px; font-weight:700; margin-right:4px;">💬</span> WhatsApp Direct Chat</label></th>
                                         <td>
                                             <div style="display:flex; align-items:center; gap:8px;">
-                                                <input name="social_whatsapp" type="text" id="social_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854445')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
-                                                <a href="https://wa.me/<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854445')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test WhatsApp ↗</a>
+                                                <input name="social_whatsapp" type="text" id="social_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854448')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                <a href="https://wa.me/<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854448')); ?>" target="_blank" rel="noopener noreferrer" class="button button-secondary button-small">Test WhatsApp ↗</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -5413,7 +5413,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="support_email">Technical Support Email</label></th>
                                         <td>
-                                            <input name="support_email" type="email" id="support_email" value="<?php echo htmlspecialchars(hb_get_setting('support_email', 'support@hellobotz.com')); ?>" class="regular-text ltr">
+                                            <input name="support_email" type="email" id="support_email" value="<?php echo htmlspecialchars(hb_get_setting('support_email', 'mail@hellobotz.com')); ?>" class="regular-text ltr">
                                             <p class="description">Technical support inquiries and bug reports are routed to this inbox.</p>
                                         </td>
                                     </tr>
@@ -5422,8 +5422,8 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="support_whatsapp">Support WhatsApp Number</label></th>
                                         <td>
-                                            <input name="support_whatsapp" type="text" id="support_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854445')); ?>" class="regular-text ltr">
-                                            <p class="description">Number with country code (e.g. <code>918050854445</code>) for WhatsApp chat links and widgets.</p>
+                                            <input name="support_whatsapp" type="text" id="support_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854448')); ?>" class="regular-text ltr">
+                                            <p class="description">Number with country code (e.g. <code>918050854448</code>) for WhatsApp chat links and widgets.</p>
                                         </td>
                                     </tr>
 
@@ -5431,8 +5431,8 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <tr>
                                         <th scope="row"><label for="phone_number">Display Phone Number</label></th>
                                         <td>
-                                            <input name="phone_number" type="text" id="phone_number" value="<?php echo htmlspecialchars(hb_get_setting('phone_number', '+91 80508 54445')); ?>" class="regular-text ltr">
-                                            <p class="description">Human-readable phone format displayed on website (e.g. <code>+91 80508 54445</code>).</p>
+                                            <input name="phone_number" type="text" id="phone_number" value="<?php echo htmlspecialchars(hb_get_setting('phone_number', '+918050854448')); ?>" class="regular-text ltr">
+                                            <p class="description">Human-readable phone format displayed on website (e.g. <code>+918050854448</code>).</p>
                                         </td>
                                     </tr>
 
@@ -5770,7 +5770,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                             <tr>
                                                 <th><label for="tab_social_whatsapp">WhatsApp Support</label></th>
                                                 <td>
-                                                    <input name="social_whatsapp" type="text" id="tab_social_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854445')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
+                                                    <input name="social_whatsapp" type="text" id="tab_social_whatsapp" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', '918050854448')); ?>" class="regular-text code" style="width:100%; max-width:520px;">
                                                 </td>
                                             </tr>
                                         </table>
@@ -5926,7 +5926,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                             <table class="form-table">
                                 <tr>
                                     <th>Support WhatsApp Number</th>
-                                    <td><input type="text" name="support_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854445')); ?>" required></td>
+                                    <td><input type="text" name="support_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('support_whatsapp', '918050854448')); ?>" required></td>
                                 </tr>
                                 <tr>
                                     <th>Meta Graph API Token</th>
@@ -6297,7 +6297,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                                     <table class="form-table">
                                         <tr>
                                             <th style="width:200px;">Official WhatsApp</th>
-                                            <td><input type="text" name="social_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', 'https://wa.me/918050854445')); ?>"></td>
+                                            <td><input type="text" name="social_whatsapp" class="large-text" value="<?php echo htmlspecialchars(hb_get_setting('social_whatsapp', 'https://wa.me/918050854448')); ?>"></td>
                                         </tr>
                                         <tr>
                                             <th>Instagram</th>
@@ -7053,7 +7053,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 '  <p style="font-size:17px; color:#475569; max-width:680px; margin:0 auto 28px; line-height:1.6;">Automate customer inquiries, broadcast personalized updates, and scale conversions effortlessly on the official WhatsApp Cloud API.</p>\n' +
                 '  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">\n' +
                 '    <a href="https://app.hellobotz.com/auth/register" style="display:inline-block; background:#2563eb; color:#ffffff; padding:12px 26px; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 4px 12px rgba(37,99,235,0.25);">Get Started Free →</a>\n' +
-                '    <a href="https://wa.me/918050854445" target="_blank" style="display:inline-block; background:#25d366; color:#ffffff; padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Chat on WhatsApp 💬</a>\n' +
+                '    <a href="https://wa.me/918050854448" target="_blank" style="display:inline-block; background:#25d366; color:#ffffff; padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Chat on WhatsApp 💬</a>\n' +
                 '  </div>\n' +
                 '</section>\n';
         } else if (blockType === 'features') {
@@ -7105,7 +7105,7 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                 '  <p style="font-size:16px; color:#c7d2fe; max-width:600px; margin:0 auto 28px; line-height:1.6;">Start your 14-day risk-free trial today. No setup fees, cancel anytime.</p>\n' +
                 '  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">\n' +
                 '    <a href="https://app.hellobotz.com/auth/register" style="display:inline-block; background:#ffffff; color:#312e81; padding:12px 28px; border-radius:8px; font-weight:700; text-decoration:none;">Start Free Trial</a>\n' +
-                '    <a href="https://wa.me/918050854445" target="_blank" style="display:inline-block; background:rgba(255,255,255,0.15); color:#ffffff; border:1px solid rgba(255,255,255,0.3); padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Talk to Sales</a>\n' +
+                '    <a href="https://wa.me/918050854448" target="_blank" style="display:inline-block; background:rgba(255,255,255,0.15); color:#ffffff; border:1px solid rgba(255,255,255,0.3); padding:12px 24px; border-radius:8px; font-weight:600; text-decoration:none;">Talk to Sales</a>\n' +
                 '  </div>\n' +
                 '</section>\n';
         } else if (blockType === 'image') {
@@ -7178,14 +7178,14 @@ $themePreset = hb_get_setting('theme_palette_preset', 'modern-violet');
                     '        <h3 style="font-size:18px; font-weight:700; color:#1e293b; margin:0 0 6px 0;">Senior Full-Stack AI Engineer</h3>\n' +
                     '        <div style="font-size:13px; color:#64748b;">Engineering • Full-Time • Remote / Bangalore</div>\n' +
                     '      </div>\n' +
-                    '      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%20Careers%2C%20I%20am%20applying%20for%20Senior%20Full-Stack%20AI%20Engineer." target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; font-weight:600; text-decoration:none;">Apply on WhatsApp ↗</a>\n' +
+                    '      <a href="https://wa.me/918050854448?text=Hi%20HelloBotz%20Careers%2C%20I%20am%20applying%20for%20Senior%20Full-Stack%20AI%20Engineer." target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; font-weight:600; text-decoration:none;">Apply on WhatsApp ↗</a>\n' +
                     '    </div>\n' +
                     '    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">\n' +
                     '      <div>\n' +
                     '        <h3 style="font-size:18px; font-weight:700; color:#1e293b; margin:0 0 6px 0;">Product Growth &amp; SaaS Marketing Manager</h3>\n' +
                     '        <div style="font-size:13px; color:#64748b;">Growth • Full-Time • Hybrid / Bangalore</div>\n' +
                     '      </div>\n' +
-                    '      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%20Careers%2C%20I%20am%20applying%20for%20Product%20Growth%20Manager." target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; font-weight:600; text-decoration:none;">Apply on WhatsApp ↗</a>\n' +
+                    '      <a href="https://wa.me/918050854448?text=Hi%20HelloBotz%20Careers%2C%20I%20am%20applying%20for%20Product%20Growth%20Manager." target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; font-weight:600; text-decoration:none;">Apply on WhatsApp ↗</a>\n' +
                     '    </div>\n' +
                     '  </div>\n' +
                     '</section>';

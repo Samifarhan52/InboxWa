@@ -3,10 +3,12 @@
 
 <?php
 require_once dirname(__DIR__) . '/config/cms.php';
-$fWa = cms_setting('support_whatsapp', '918050854445');
-$fPhone = cms_setting('phone_number', '+91 80508 54445');
+$fWa = cms_setting('support_whatsapp', '918050854449');
+$fEnquiryPhone = cms_setting('enquiry_phone', '+918050854448');
+$fSupportPhone = cms_setting('support_phone', '+918050854449');
 $fSalesEmail = cms_setting('sales_email', 'mail@hellobotz.com');
-$fSupportEmail = cms_setting('support_email', 'support@hellobotz.com');
+$fSupportEmail = cms_setting('support_email', 'mail@hellobotz.com');
+$fOfficialEmail = 'mail@hellobotz.com';
 $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
 ?>
   <!-- Scoped Footer & Map Styles -->
@@ -1207,35 +1209,38 @@ $fAddress = cms_setting('office_address', "Bangalore Karnataka 560030");
                 </div>
               </div>
 
-              <a href="https://wa.me/<?php echo urlencode($fWa); ?>" target="_blank" rel="noopener" class="contact-item-row">
-                <div class="contact-item-icon icon-phone">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM17.47 14.38C17.17 14.23 15.69 13.5 15.41 13.4C15.14 13.3 14.94 13.25 14.74 13.55C14.54 13.85 13.96 14.53 13.78 14.73C13.61 14.93 13.43 14.96 13.13 14.81C12.83 14.66 11.86 14.34 10.71 13.32C9.81 12.52 9.21 11.53 9.03 11.23C8.86 10.93 9.01 10.77 9.16 10.62C9.3 10.49 9.46 10.27 9.61 10.1C9.76 9.92 9.81 9.8 9.91 9.6C10.01 9.4 9.96 9.22 9.89 9.07C9.81 8.92 9.21 7.44 8.96 6.83C8.71 6.24 8.46 6.32 8.28 6.31C8.1 6.3 7.9 6.3 7.7 6.3C7.5 6.3 7.17 6.38 6.9 6.68C6.62 6.98 5.85 7.71 5.85 9.19C5.85 10.67 6.93 12.1 7.08 12.3C7.23 12.5 9.2 15.54 12.22 16.84C14.73 17.93 15.41 17.72 16.03 17.65C16.75 17.56 18.25 16.74 18.55 15.89C18.85 15.04 18.85 14.32 18.78 14.19C18.7 14.07 18.5 13.99 18.2 13.84L17.47 14.38Z"/></svg>
+              <!-- Direct Enquiry Call (No open number, connects call directly) -->
+              <a href="tel:<?php echo htmlspecialchars($fEnquiryPhone); ?>" class="contact-item-row" title="Call Enquiry directly">
+                <div class="contact-item-icon icon-sales">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 </div>
                 <div class="contact-item-body">
-                  <div class="contact-item-label">Direct WhatsApp / Call (24/7 Available)</div>
-                  <div class="contact-item-val highlight-green"><?php echo htmlspecialchars($fPhone); ?></div>
+                  <div class="contact-item-label">Sales &amp; Business Enquiry</div>
+                  <div class="contact-item-val" style="color:#4F46E5; font-weight:700;">Connect to Enquiry Call</div>
                 </div>
                 <div class="contact-item-arrow">→</div>
               </a>
 
-              <a href="mailto:<?php echo htmlspecialchars($fSalesEmail); ?>" class="contact-item-row">
-                <div class="contact-item-icon icon-sales">
+              <!-- Direct Customer Support Call (No open number, connects call directly) -->
+              <a href="tel:<?php echo htmlspecialchars($fSupportPhone); ?>" class="contact-item-row" title="Call Support directly">
+                <div class="contact-item-icon icon-support">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="contact-item-body">
+                  <div class="contact-item-label">Customer &amp; Technical Support</div>
+                  <div class="contact-item-val" style="color:#0891B2; font-weight:700;">Connect to Support Call</div>
+                </div>
+                <div class="contact-item-arrow">→</div>
+              </a>
+
+              <!-- Official Email (Openly visible, directly opens email client) -->
+              <a href="mailto:<?php echo htmlspecialchars($fOfficialEmail); ?>" class="contact-item-row" title="Email <?php echo htmlspecialchars($fOfficialEmail); ?>">
+                <div class="contact-item-icon icon-phone" style="background:rgba(16, 185, 129, 0.12); color:#059669;">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
                 </div>
                 <div class="contact-item-body">
-                  <div class="contact-item-label">Sales &amp; Enterprise Enquiries</div>
-                  <div class="contact-item-val"><?php echo htmlspecialchars($fSalesEmail); ?></div>
-                </div>
-                <div class="contact-item-arrow">→</div>
-              </a>
-
-              <a href="mailto:<?php echo htmlspecialchars($fSupportEmail); ?>" class="contact-item-row">
-                <div class="contact-item-icon icon-support">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </div>
-                <div class="contact-item-body">
-                  <div class="contact-item-label">Technical &amp; Developer Support</div>
-                  <div class="contact-item-val"><?php echo htmlspecialchars($fSupportEmail); ?></div>
+                  <div class="contact-item-label">Official Email Support &amp; Enquiry</div>
+                  <div class="contact-item-val highlight-green"><?php echo htmlspecialchars($fOfficialEmail); ?></div>
                 </div>
                 <div class="contact-item-arrow">→</div>
               </a>

@@ -51,13 +51,13 @@
         'Category: ' + (payload.category || '') + '\n' +
         'Subject: ' + (payload.subject || '') + '\n' +
         'Message: ' + (payload.message || '');
-      var waUrl = 'https://wa.me/918050854445?text=' + encodeURIComponent(msg);
+      var waUrl = 'https://wa.me/918050854449?text=' + encodeURIComponent(msg);
       window.open(waUrl, '_blank', 'noopener,noreferrer');
 
       var st = document.getElementById('support-status');
       if(st){
         st.style.display='block';
-        st.innerHTML = '⏳ Submitting ticket to support@hellobotz.com...';
+        st.innerHTML = '⏳ Submitting ticket to mail@hellobotz.com...';
       }
 
       fetch('/api/lead.php',{
@@ -70,13 +70,13 @@
           if(st){
             st.style.display='block';
             st.style.color='#15803D';
-            st.innerHTML = '✅ Support request dispatched to <strong>support@hellobotz.com</strong> (Ticket #' + (res.id || '') + ') and WhatsApp. <a href="' + (res.whatsapp_url || waUrl) + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
+            st.innerHTML = '✅ Support request dispatched to <strong>mail@hellobotz.com</strong> (Ticket #' + (res.id || '') + ') and WhatsApp. <a href="' + (res.whatsapp_url || waUrl) + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
           }
         }).catch(function(){
           if(st){
             st.style.display='block';
             st.style.color='#15803D';
-            st.innerHTML = '✅ Support request submitted to <strong>support@hellobotz.com</strong> and WhatsApp. <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
+            st.innerHTML = '✅ Support request submitted to <strong>mail@hellobotz.com</strong> and WhatsApp. <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:#8B5CF6;font-weight:700;margin-left:8px;">Open WhatsApp Chat</a>';
           }
         });
 

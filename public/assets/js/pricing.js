@@ -349,7 +349,7 @@
         'Registered Number: ' + reg + '\n' +
         'Currency: ' + currentCurrency;
 
-      window.open('https://wa.me/918050854445?text=' + encodeURIComponent(text), '_blank');
+      window.open('https://wa.me/918050854448?text=' + encodeURIComponent(text), '_blank');
       alert('Request sent! Our team will contact you on WhatsApp.');
       closeModal();
       e.target.reset();
@@ -364,7 +364,7 @@
         return;
       }
       var cbText = 'Callback Request:\nName: ' + cbName + '\nMobile: ' + cbMobile;
-      window.open('https://wa.me/918050854445?text=' + encodeURIComponent(cbText), '_blank');
+      window.open('https://wa.me/918050854448?text=' + encodeURIComponent(cbText), '_blank');
       var cb = document.getElementById('callbackPopup');
       if (cb) cb.style.display = 'none';
     }

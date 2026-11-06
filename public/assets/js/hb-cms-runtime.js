@@ -11,7 +11,7 @@ window.__HELLOBOTZ_SETTINGS__ = {
   "social_instagram": "https://www.instagram.com/hellobotz_official?igsi=MXdhY2FkY3AzcmF0ZA%3D%3D&utm_source=qr",
   "social_linkedin": "https://www.linkedin.com/company/hellobotz/",
   "social_youtube": "https://www.youtube.com/@Hellobotz",
-  "social_whatsapp": "https://wa.me/918050854445"
+  "social_whatsapp": "https://wa.me/918050854448"
 };
 (function() {
   var s = window.__HELLOBOTZ_SETTINGS__ || {};

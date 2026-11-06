@@ -45,7 +45,7 @@ include __DIR__ . '/../includes/header.php';
 <h2>Changes</h2>
 <p>We may update this policy from time to time. The “Last updated” date will change when we do. Continued use of the service after updates constitutes acceptance where permitted by law.</p>
 
-      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@hellobotz.com">mail@hellobotz.com</a> · WhatsApp <a href="https://wa.me/918050854445" target="_blank" rel="noopener">+91 80508 54445</a></p>
+      <p style="margin-top:2rem"><strong>Contact:</strong> <a href="mailto:mail@hellobotz.com">mail@hellobotz.com</a> · <a href="tel:+918050854448" title="Direct Enquiry Call">Connect to Enquiry Call</a> · <a href="tel:+918050854449" title="Direct Support Call">Connect to Support Call</a></p>
     </div>
   </div>
 </section>

@@ -98,15 +98,21 @@
         </a>
       </div>
       <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.25rem; line-height: 1.5;">
-        Need instant answers about API pricing or onboarding? Chat directly on WhatsApp:
-        <br>
-        <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20just%20downloaded%20the%20brochure%20and%20would%20like%20to%20learn%20more." target="_blank" rel="noopener noreferrer" style="color: #10b981; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" style="vertical-align: middle;">
-            <circle cx="12" cy="12" r="12" fill="#25D366"/>
-            <path d="M12.04 4C7.6 4 4 7.6 4 12.04c0 1.54.44 2.99 1.2 4.23L4 20l3.86-1.18c1.19.7 2.58 1.1 4.18 1.1 4.44 0 8.04-3.6 8.04-8.04 0-4.44-3.6-7.88-8.04-7.88zm4.73 11.23c-.2.56-1.17 1.07-1.63 1.14-.42.06-.97.09-2.77-.66-2.31-.96-3.8-3.32-3.91-3.48-.12-.15-.93-1.24-.93-2.36 0-1.12.59-1.67.8-1.9.21-.23.46-.29.62-.29.15 0 .31 0 .44.01.14.01.33-.05.51.39.19.45.65 1.58.71 1.7.06.11.1.25.02.4-.07.14-.11.24-.22.37-.12.13-.24.3-.35.4-.12.11-.24.23-.1.47.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.53-.06.14-.17.6-.7.76-.94.16-.24.32-.2.53-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.6-.14 1.15z" fill="#FFFFFF"/>
-          </svg>
-          <span>+91 80508 54445</span>
-        </a>
+        Need instant answers about API pricing or onboarding? Connect with our team:
+        <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap;">
+          <a href="tel:+918050854448" class="btn btn-outline" style="padding:6px 14px; font-size:0.82rem; font-weight:700; border-radius:8px; display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:#4F46E5; border:1px solid rgba(99,102,241,0.35);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>Call Enquiry</span>
+          </a>
+          <a href="tel:+918050854449" class="btn btn-outline" style="padding:6px 14px; font-size:0.82rem; font-weight:700; border-radius:8px; display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:#0891b2; border:1px solid rgba(8,145,178,0.35);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>Call Support</span>
+          </a>
+          <a href="mailto:mail@hellobotz.com" style="padding:6px 14px; font-size:0.85rem; font-weight:700; color:#10b981; display:inline-flex; align-items:center; gap:6px; text-decoration:underline;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <span>mail@hellobotz.com</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -419,8 +425,12 @@ function ensureBrochureModal() {
     '</a>' +
     '</div>' +
     '<div style="font-size:0.85rem;color:#64748B;margin-top:1.25rem;line-height:1.5;">' +
-    'Need instant answers about API pricing or onboarding? Chat directly on WhatsApp:<br>' +
-    '<a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20just%20downloaded%20the%20brochure%20and%20would%20like%20to%20learn%20more." target="_blank" rel="noopener noreferrer" style="color:#10b981;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-top:4px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="12" fill="#25D366"/><path d="M12.04 4C7.6 4 4 7.6 4 12.04c0 1.54.44 2.99 1.2 4.23L4 20l3.86-1.18c1.19.7 2.58 1.1 4.18 1.1 4.44 0 8.04-3.6 8.04-8.04 0-4.44-3.6-7.88-8.04-7.88zm4.73 11.23c-.2.56-1.17 1.07-1.63 1.14-.42.06-.97.09-2.77-.66-2.31-.96-3.8-3.32-3.91-3.48-.12-.15-.93-1.24-.93-2.36 0-1.12.59-1.67.8-1.9.21-.23.46-.29.62-.29.15 0 .31 0 .44.01.14.01.33-.05.51.39.19.45.65 1.58.71 1.7.06.11.1.25.02.4-.07.14-.11.24-.22.37-.12.13-.24.3-.35.4-.12.11-.24.23-.1.47.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.53-.06.14-.17.6-.7.76-.94.16-.24.32-.2.53-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.6-.14 1.15z" fill="#FFFFFF"/></svg><span>+91 80508 54445</span></a>' +
+    'Need instant answers about API pricing or onboarding? Connect with our team:<br>' +
+    '<div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;">' +
+    '<a href="tel:+918050854448" class="btn btn-outline" style="padding:6px 14px;font-size:0.82rem;font-weight:700;border-radius:8px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#4F46E5;border:1px solid rgba(99,102,241,0.35);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>Call Enquiry</span></a>' +
+    '<a href="tel:+918050854449" class="btn btn-outline" style="padding:6px 14px;font-size:0.82rem;font-weight:700;border-radius:8px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#0891b2;border:1px solid rgba(8,145,178,0.35);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>Call Support</span></a>' +
+    '<a href="mailto:mail@hellobotz.com" style="padding:6px 14px;font-size:0.85rem;font-weight:700;color:#10b981;display:inline-flex;align-items:center;gap:6px;text-decoration:underline;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg><span>mail@hellobotz.com</span></a>' +
+    '</div>' +
     '</div>' +
     '</div>' +
     '</div>' +

@@ -8,10 +8,11 @@
   'use strict';
 
   var CONFIG = {
-    whatsappNumber: (window.HelloBotzData && window.HelloBotzData.whatsapp) || '918050854445',
-    phoneNumber: '+91 80508 54445',
+    whatsappNumber: (window.HelloBotzData && window.HelloBotzData.whatsapp) || '918050854448',
+    enquiryPhone: '+918050854448',
+    supportPhone: '+918050854449',
     salesEmail: 'mail@hellobotz.com',
-    supportEmail: 'support@hellobotz.com',
+    supportEmail: 'mail@hellobotz.com',
     siteName: 'HelloBotz',
     avatarUrl: '/assets/images/hellobotz-avatar.png'
   };
@@ -204,10 +205,11 @@
       intent: 'talk_to_human',
       keywords: ['talk to human', 'human', 'agent', 'sales', 'speak', 'call', 'support', 'contact', 'phone number', 'email', 'office', 'bangalore', 'address', 'real person', 'customer care'],
       title: 'Talk to Our Team & Human Support',
-      answer: '<strong>Talk to HelloBotz Team:</strong> Reach our Bangalore team 24/7 via WhatsApp (+91 80508 54445) or email (mail@hellobotz.com).',
+      answer: '<strong>Talk to HelloBotz Team:</strong> Connect with our team directly via Enquiry Call, Support Call, or official email (mail@hellobotz.com).',
       actions: [
-        { label: 'Chat on WhatsApp', url: 'https://wa.me/' + CONFIG.whatsappNumber + '?text=Hi%20HelloBotz%20team%2C%20I%20would%20like%20to%20speak%20with%20sales.', type: 'wa', target: '_blank' },
-        { label: 'Book Live Demo', action: 'openDemo', type: 'secondary' }
+        { label: 'Call Enquiry', url: 'tel:+918050854448', type: 'primary' },
+        { label: 'Call Support', url: 'tel:+918050854449', type: 'secondary' },
+        { label: 'Email Us', url: 'mailto:mail@hellobotz.com', type: 'secondary' }
       ]
     },
     {

@@ -88,7 +88,7 @@
       <div class="trial-success-icon">✓</div>
       <h3>Welcome to HelloBotz!</h3>
       <p>Your 14-day free trial request has been registered. Our onboarding specialist will connect with your WhatsApp credentials and setup guide in under 10 minutes.</p>
-      <a href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20just%20signed%20up%20for%20a%20Free%20Trial.%20Please%20help%20me%20activate%20my%20WhatsApp%20API%20workspace." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;display:inline-flex;align-items:center;gap:8px;">
+      <a href="https://wa.me/918050854448?text=Hi%20HelloBotz%2C%20I%20just%20signed%20up%20for%20a%20Free%20Trial.%20Please%20help%20me%20activate%20my%20WhatsApp%20API%20workspace." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;display:inline-flex;align-items:center;gap:8px;">
         <span>Chat with Onboarding on WhatsApp &rarr;</span>
       </a>
     </div>

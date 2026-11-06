@@ -220,7 +220,7 @@ $caseStudies = [
         <!-- Card Footer CTA -->
         <div style="margin-top:auto;padding-top:1rem;border-top:1px solid #F3F4F6;display:flex;align-items:center;justify-content:space-between">
           <a href="#contact-section" class="btn btn-sm btn-outline">Book Similar Demo</a>
-          <a class="btn btn-sm btn-primary" href="https://wa.me/918050854445?text=Hi%20HelloBotz%2C%20I%20am%20interested%20in%20a%20solution%20similar%20to%20<?php echo urlencode($cs['company']); ?>" target="_blank" rel="noopener">Talk to Expert &rarr;</a>
+          <a class="btn btn-sm btn-primary" href="https://wa.me/918050854448?text=Hi%20HelloBotz%2C%20I%20am%20interested%20in%20a%20solution%20similar%20to%20<?php echo urlencode($cs['company']); ?>" target="_blank" rel="noopener">Talk to Expert &rarr;</a>
         </div>
       </article>
       <?php endforeach; ?>

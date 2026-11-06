@@ -24,7 +24,7 @@ $pageDescription = $category['subtitle'] . ' Get verified mobile contacts, autom
 $canonicalUrl = 'https://hellobotz.com/business-leads/' . urlencode($category['slug']) . '/';
 $ogImage = '/assets/images/og-image.png';
 
-$waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918050854445';
+$waNumber = $HBContact['data_marketplace_whatsapp'] ?? '918050854448';
 $defaultWaMsg = urlencode("Hi HelloBotz team, I would like to request verified business leads and datasets for {$category['name']}. Please share available counts and sample preview.");
 
 include __DIR__ . '/../includes/header.php';

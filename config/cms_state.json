@@ -27,28 +27,28 @@
     },
     {
       "key": "support_whatsapp",
-      "value": "918050854445",
-      "updated_at": "2026-09-08 07:53:03"
+      "value": "918050854449",
+      "updated_at": "2026-11-06 15:55:00"
     },
     {
       "key": "phone_number",
-      "value": "+91 80508 54445",
-      "updated_at": "2026-09-08 07:53:03"
+      "value": "+918050854448",
+      "updated_at": "2026-11-06 15:55:00"
     },
     {
       "key": "notification_email",
       "value": "mail@hellobotz.com",
-      "updated_at": "2026-09-08 07:53:03"
+      "updated_at": "2026-11-06 15:55:00"
     },
     {
       "key": "sales_email",
       "value": "mail@hellobotz.com",
-      "updated_at": "2026-09-08 07:53:03"
+      "updated_at": "2026-11-06 15:55:00"
     },
     {
       "key": "support_email",
-      "value": "support@hellobotz.com",
-      "updated_at": "2026-09-08 07:53:03"
+      "value": "mail@hellobotz.com",
+      "updated_at": "2026-11-06 15:55:00"
     },
     {
       "key": "office_address",
@@ -87,7 +87,7 @@
     },
     {
       "key": "announcement_text",
-      "value": "Official WhatsApp Business API & AI Chatbots — Start 14-Day Free Trial Today!",
+      "value": "Official WhatsApp Business API & AI Chatbots \u2014 Start 14-Day Free Trial Today!",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "key": "social_whatsapp",
-      "value": "https://wa.me/918050854445",
+      "value": "https://wa.me/918050854448",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -139,13 +139,33 @@
       "key": "social_twitter",
       "value": "",
       "updated_at": "2026-09-08 07:53:03"
+    },
+    {
+      "key": "enquiry_whatsapp",
+      "value": "918050854448",
+      "updated_at": "2026-11-06 15:55:00"
+    },
+    {
+      "key": "enquiry_phone",
+      "value": "+918050854448",
+      "updated_at": "2026-11-06 15:55:00"
+    },
+    {
+      "key": "support_phone",
+      "value": "+918050854449",
+      "updated_at": "2026-11-06 15:55:00"
+    },
+    {
+      "key": "official_email",
+      "value": "mail@hellobotz.com",
+      "updated_at": "2026-11-06 15:55:00"
     }
   ],
   "site_sections": [
     {
       "section": "hero",
       "field": "badge",
-      "value": "Official WhatsApp Business API · Meta Tech Partner",
+      "value": "Official WhatsApp Business API \u00b7 Meta Tech Partner",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -283,25 +303,25 @@
     {
       "section": "simulator",
       "field": "bot_greeting",
-      "value": "👋 Hello! Welcome to HelloBotz. How can we help automate your business today?",
+      "value": "\ud83d\udc4b Hello! Welcome to HelloBotz. How can we help automate your business today?",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "section": "simulator",
       "field": "btn1",
-      "value": "🤖 AI Chatbot for Leads",
+      "value": "\ud83e\udd16 AI Chatbot for Leads",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "section": "simulator",
       "field": "btn2",
-      "value": "📢 Broadcast Campaigns",
+      "value": "\ud83d\udce2 Broadcast Campaigns",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
       "section": "simulator",
       "field": "btn3",
-      "value": "👥 Shared Team Inbox",
+      "value": "\ud83d\udc65 Shared Team Inbox",
       "updated_at": "2026-09-08 07:53:03"
     },
     {
@@ -396,7 +416,7 @@
       "company": "Zenith Retail Brands",
       "avatar": "",
       "rating": 5,
-      "quote": "Switching to HelloBotz increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered ₹18 Lakhs in the first quarter.",
+      "quote": "Switching to HelloBotz increased our lead qualification speed by 300%. The shared team inbox and automated abandoned cart recovery recovered \u20b918 Lakhs in the first quarter.",
       "sort_order": 1
     },
     {
@@ -551,7 +571,7 @@
       "slug": "/",
       "content": "Official WhatsApp Business API, AI Chatbot & Omnichannel Marketing Platform.",
       "template": "home",
-      "meta_title": "HelloBotz – WhatsApp Automation & AI Chatbots",
+      "meta_title": "HelloBotz \u2013 WhatsApp Automation & AI Chatbots",
       "meta_description": "Scale customer engagement with verified Meta WhatsApp API and AI chatbots.",
       "status": "published",
       "author": "admin",
@@ -560,7 +580,7 @@
     },
     {
       "id": 2,
-      "title": "Solutions – WhatsApp API",
+      "title": "Solutions \u2013 WhatsApp API",
       "slug": "/solutions/whatsapp-api/",
       "content": "Complete enterprise WhatsApp API solutions with shared inbox and broadcasts.",
       "template": "default",
@@ -577,8 +597,8 @@
       "slug": "/pricing/",
       "content": "Transparent pricing for WhatsApp API, AI bots and multi-agent seats.",
       "template": "default",
-      "meta_title": "HelloBotz Pricing – Plans & Addons",
-      "meta_description": "Simple transparent pricing starting at ₹1,999/month.",
+      "meta_title": "HelloBotz Pricing \u2013 Plans & Addons",
+      "meta_description": "Simple transparent pricing starting at \u20b91,999/month.",
       "status": "published",
       "author": "admin",
       "created_at": "2026-09-09 09:00:12",
