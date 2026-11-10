@@ -106,6 +106,13 @@ if (!function_exists('hb_seo_esc')) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WZ5DXXMQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -434,7 +441,7 @@ if (!function_exists('hb_seo_esc')) {
     }
   }
   </script>
-  <?php if (!empty($gaId)): ?>
+  <?php if (!empty($gaId) && $gaId !== 'GTM-WZ5DXXMQ'): ?>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo htmlspecialchars($gaId); ?>"></script>
   <script>
