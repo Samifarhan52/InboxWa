@@ -161,8 +161,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="price-wrap">
-            <span class="price monthly active" data-inr-val="4999" data-suffix="/month">₹4,999<span>/month</span></span>
-            <span class="price yearly" data-inr-val="49999" data-suffix="/year">₹49,999<span>/year</span></span>
+            <span class="price monthly active" data-inr-val="4999" data-suffix="/month + 18% GST">₹4,999<span>/month + 18% GST</span></span>
+            <span class="price yearly" data-inr-val="49999" data-suffix="/year + 18% GST">₹49,999<span>/year + 18% GST</span></span>
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="9989">₹9,989</span> yearly <span class="save-pill" style="font-size:10.5px;padding:1px 7px;margin-left:4px;">Save 17%</span></p>
           <ul class="plan-features">
@@ -205,8 +205,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="price-wrap">
-            <span class="price monthly active" data-inr-val="9999" data-suffix="/month">₹9,999<span>/month</span></span>
-            <span class="price yearly" data-inr-val="99999" data-suffix="/year">₹99,999<span>/year</span></span>
+            <span class="price monthly active" data-inr-val="9999" data-suffix="/month + 18% GST">₹9,999<span>/month + 18% GST</span></span>
+            <span class="price yearly" data-inr-val="99999" data-suffix="/year + 18% GST">₹99,999<span>/year + 18% GST</span></span>
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="19989">₹19,989</span> yearly <span class="save-pill" style="font-size:10.5px;padding:1px 7px;margin-left:4px;">Save 17%</span></p>
           <ul class="plan-features">
@@ -249,8 +249,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="price-wrap">
-            <span class="price monthly active" data-inr-val="14999" data-suffix="/month">₹14,999<span>/month</span></span>
-            <span class="price yearly" data-inr-val="149999" data-suffix="/year">₹1,49,999<span>/year</span></span>
+            <span class="price monthly active" data-inr-val="14999" data-suffix="/month + 18% GST">₹14,999<span>/month + 18% GST</span></span>
+            <span class="price yearly" data-inr-val="149999" data-suffix="/year + 18% GST">₹1,49,999<span>/year + 18% GST</span></span>
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="29989">₹29,989</span> yearly <span class="save-pill" style="font-size:10.5px;padding:1px 7px;margin-left:4px;">Save 17%</span></p>
           <ul class="plan-features">
@@ -292,9 +292,9 @@ include __DIR__ . '/../includes/header.php';
         <thead>
           <tr>
             <th>Features</th>
-            <th>Starter<br><span class="price-col" data-inr-val="4999" data-suffix="/mo">₹4,999/mo</span></th>
-            <th class="col-highlight">Business<br><span class="price-col" data-inr-val="9999" data-suffix="/mo">₹9,999/mo</span></th>
-            <th>Enterprise<br><span class="price-col" data-inr-val="14999" data-suffix="/mo">₹14,999/mo</span></th>
+            <th>Starter<br><span class="price-col" data-inr-val="4999" data-suffix="/mo + 18% GST">₹4,999/mo + 18% GST</span></th>
+            <th class="col-highlight">Business<br><span class="price-col" data-inr-val="9999" data-suffix="/mo + 18% GST">₹9,999/mo + 18% GST</span></th>
+            <th>Enterprise<br><span class="price-col" data-inr-val="14999" data-suffix="/mo + 18% GST">₹14,999/mo + 18% GST</span></th>
           </tr>
         </thead>
         <tbody>
@@ -335,8 +335,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="price-wrap">
-            <span class="price monthly active" data-inr-val="2499" data-suffix="/month">₹2,499<span>/month</span></span>
-            <span class="price yearly" data-inr-val="24999" data-suffix="/year">₹24,999<span>/year</span></span>
+            <span class="price monthly active" data-inr-val="2499" data-suffix="/month + 18% GST">₹2,499<span>/month + 18% GST</span></span>
+            <span class="price yearly" data-inr-val="24999" data-suffix="/year + 18% GST">₹24,999<span>/year + 18% GST</span></span>
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="5000">~₹5,000</span> yearly</p>
           <ul class="plan-features">
@@ -374,8 +374,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="price-wrap">
-            <span class="price monthly active" data-inr-val="4999" data-suffix="/month">₹4,999<span>/month</span></span>
-            <span class="price yearly" data-inr-val="49999" data-suffix="/year">₹49,999<span>/year</span></span>
+            <span class="price monthly active" data-inr-val="4999" data-suffix="/month + 18% GST">₹4,999<span>/month + 18% GST</span></span>
+            <span class="price yearly" data-inr-val="49999" data-suffix="/year + 18% GST">₹49,999<span>/year + 18% GST</span></span>
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="9989">₹9,989</span> yearly</p>
           <ul class="plan-features">
@@ -415,8 +415,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
           </div>
           <div class="price-wrap">
-            <span class="price monthly active" data-inr-val="9999" data-suffix="/month">₹9,999<span>/month</span></span>
-            <span class="price yearly" data-inr-val="99999" data-suffix="/year">₹99,999<span>/year</span></span>
+            <span class="price monthly active" data-inr-val="9999" data-suffix="/month + 18% GST">₹9,999<span>/month + 18% GST</span></span>
+            <span class="price yearly" data-inr-val="99999" data-suffix="/year + 18% GST">₹99,999<span>/year + 18% GST</span></span>
           </div>
           <p class="price-subtext">Billed <span class="billing-mode-text">monthly</span> • Save <span class="savings" data-inr-val="20000">₹20,000</span> yearly</p>
           <ul class="plan-features">
@@ -456,9 +456,9 @@ include __DIR__ . '/../includes/header.php';
         <thead>
           <tr>
             <th>Features</th>
-            <th>Starter<br><span class="price-col" data-inr-val="2499" data-suffix="/mo">₹2,499/mo</span></th>
-            <th class="col-highlight">Pro<br><span class="price-col" data-inr-val="4999" data-suffix="/mo">₹4,999/mo</span></th>
-            <th>Enterprise<br><span class="price-col" data-inr-val="9999" data-suffix="/mo">₹9,999/mo</span></th>
+            <th>Starter<br><span class="price-col" data-inr-val="2499" data-suffix="/mo + 18% GST">₹2,499/mo + 18% GST</span></th>
+            <th class="col-highlight">Pro<br><span class="price-col" data-inr-val="4999" data-suffix="/mo + 18% GST">₹4,999/mo + 18% GST</span></th>
+            <th>Enterprise<br><span class="price-col" data-inr-val="9999" data-suffix="/mo + 18% GST">₹9,999/mo + 18% GST</span></th>
           </tr>
         </thead>
         <tbody>
